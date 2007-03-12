@@ -1,0 +1,60 @@
+'''
+Provides support for internationalization using the Python gettext
+module. Configures gettext to use the translation associated with the locale
+set by the user's environment at runtime. If no appropriate translation is 
+found, the default language is used: the one in which the strings in the
+code are written (i.e. English).
+
+The gettext function in the gettext module is alised as _ to match the name of 
+the equivalent C function provided by GNU gettext tools.
+
+See the Python documentation on the gettext module at 
+U{http://docs.python.org/lib/module-gettext.html}. A brief tutorial on 
+i18n and Python is available at 
+U{http://www.async.com.br/faq/pygtk/index.py?req=show&file=faq22.002.htp}
+
+@author: Peter Parente
+@organization: IBM Corporation
+@copyright: Copyright (c) 2005, 2007 IBM Corporation
+@license: The BSD License
+
+All rights reserved. This program and the accompanying materials are made 
+available under the terms of the BSD license which accompanies
+this distribution, and is available at 
+U{http://www.opensource.org/licenses/bsd-license.php}
+'''
+import sys, locale, gettext, os.path
+
+def bind(domain, locale_dir):
+  '''
+  Convenience function for creating a new instance of a Python translation 
+  class bound to a domain and locale directory other than the default one for
+  LSR. This function is useful in L{UIElement}s which have translatable strings
+  and ship separately from LSR with their own translation files. For instance,
+  a L{Perk} writer may call this function globally in his L{Perk} and assign
+  the result to a global variable _ to use the GNU translation system without
+  affecting how other components of LSR are translated.
+  
+  @param domain: Filename of the translation file, typically the name of the
+    project with which it is associated
+  @type domain: string
+  @param locale_dir: Directory to search for translation files for the domain
+  @type locale_dir: string
+  @return: Bound method ugettext on the translation object
+  @rtype: callable
+  '''
+  try:
+    t = gettext.translation(domain, locale_dir)
+    return t.ugettext
+  except IOError:
+    # no translation file, so just return the unicode version of the given 
+    # string
+    return lambda x: unicode(x)
+
+# use the current system locale
+locale.setlocale(locale.LC_ALL, '')
+# build the path to where the main translation file lives
+LOCALE_DIR = os.path.join(sys.prefix, '@DATADIRNAME@', 'locale')
+DOMAIN = '@GETTEXT_PACKAGE@'
+# build a default instance to the LSR domain and locale directory
+_ = bind(DOMAIN, LOCALE_DIR)

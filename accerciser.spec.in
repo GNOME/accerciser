@@ -1,0 +1,63 @@
+%define name accerciser
+%define version @VERSION@
+%define release %{?custom_release}%{!?custom_release:1}
+
+Summary: An interactive Python tool for querying accessibility information
+Name: %{name}
+Version: %{version}
+Release: %{release}
+Source0: %{name}-%{version}.tar.gz
+License: BSD
+BuildRoot: %{_builddir}/%{name}-%{version}-rpmroot
+Prefix: @prefix@
+BuildArch: noarch
+Group: Desktop/Accessibility
+Vendor: IBM Corporation
+Packager: Peter Parente <pparent@us.ibm.com>
+Url: http://live.gnome.org/Accerciser
+
+Requires: gnome-python2-libwnck >= 2.14
+Requires: pygtk2 >= 2.8
+Requires: python >= 2.4
+Requires: pygtk2-libglade >= 2.8
+Requires: pyorbit >= 2.14
+Requires: at-spi >= 1.7
+Requires: gnome-python2 >= 2.12
+Requires: glib2 >= 2.10
+Requires: gnome-python2-bonobo >= 2.12
+
+%description
+An interactive Python tool for querying accessibility information.
+
+%prep
+%setup -q
+
+%build
+./configure --prefix=%{prefix} --disable-scrollkeeper
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make DESTDIR=$RPM_BUILD_ROOT install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+%doc AUTHORS README COPYING NEWS ChangeLog
+%{prefix}/bin/accerciser
+%{prefix}/lib/python?.?/site-packages/accerciser
+# No locale yet %{prefix}/share/locale/*/*/accerciser*
+%{prefix}/share/omf/accerciser/*
+%{prefix}/share/gnome/help/accerciser/*
+%{prefix}/share/accerciser/*
+%{prefix}/share/icons/hicolor/16x16/apps/accerciser.png
+%{prefix}/share/icons/hicolor/22x22/apps/accerciser.png
+%{prefix}/share/icons/hicolor/32x32/apps/accerciser.png
+%{prefix}/share/icons/hicolor/48x48/apps/accerciser.png
+%{prefix}/share/icons/hicolor/scalable/apps/accerciser.svg
+%{prefix}/share/applications/accerciser.desktop
+%changelog
+* Wed Feb 22 2007 Peter Parente <parente@cs.unc.edu>
+- First release

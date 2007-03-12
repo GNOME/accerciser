@@ -1,0 +1,525 @@
+2007-03-12  Peter Parente  <parente@cs.unc.edu>
+
+	* src/lib/accerciser/accessible_treeview.py: Fixed bug #414915, also
+	added _buildRow convenience method for constructing new rows without
+	awareness of the current order of data fields in the model
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade: Labeled value interface spinner
+	(bug 414909).
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade: Made all informative labels
+	selectable (bug 414911).
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade: added "label-for" and
+	"labelled-by" accessible relations where appropriate (bug 414914).
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/ipython_view.py: 
+	* plugins/console.py: Show appropriate error dialog when IPython
+	is not installed. And eliminate the need for running ipython from
+	a shell for the first time.
+	* src/lib/accerciser/accerciser.py: Fixed bug 415810.
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/plugin.py: Added an __eq__ method to the
+	method wrapper class.
+
+2007-03-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/api_view.py:
+	* plugins/console.py:
+	* plugins/event_monitor.py:
+	* plugins/interface_view.py:
+	* src/lib/accerciser/plugin.py: Added error messages to plugin
+	tabs when something goes wrong (bug 412249).
+	* src/lib/accerciser/plugin_manager.py: Added a tab to the bottom
+	plugin view that appears with error messages if plugins failed to
+	load (bug 412249).
+	
+2007-03-03  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/node.py: 
+	* src/lib/accerciser/plugin.py: 
+	* src/lib/accerciser/tools.py: Added epydoc docstrings.
+	
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade
+	* plugins/interface_view.py: Added Document interface (Bug 412729).
+
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade
+	* plugins/interface_view.py: Improved Hypertext interface (Bug 412728).
+	
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/accerciser.glade:
+	* src/lib/accerciser/accerciser.py: Added status bar with path to
+	selected accessible (Bug 412797).
+
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade:
+	* plugins/interface_view.py: Fixed cursor offeset reporting
+	(Bug 413121).
+	
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accessible_treeview.py: Activating row blinks
+	accessible on screen (Bug 413918).
+	* src/lib/accerciser/node.py: Minor refactor.
+
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+	
+	* src/lib/accerciser/accessible_treeview.py: Columns are resizable
+	(Bug 413606).
+	* src/lib/accerciser/tools.py: Removed debug print when saving 
+	settings.
+
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade:
+	* plugins/interface_view.py: Added minimum, maximum and minimum
+	increment fields to value interface view (Bug 413151).
+	
+2007-03-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/plugin_manager.py: Minor cleanup.
+	* src/accerciser.glade: Changed help hotkey to F1. Still doesn't work.
+	
+2007-03-01  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accerciser.py: Added toggle cellrenderer to
+	plugin name column in plugin dialog.
+	* src/lib/accerciser/plugin.py: Added _close method to manually
+	disconnect signal handlers that hold a reference to the plugin and
+	don't let it get garbage collected.
+	* src/lib/accerciser/plugin_manager.py: Added enable/disable
+	feature that persists.
+	* src/lib/accerciser/tools.py: Added Proxy class that is currently
+	not utilized
+
+2007-02-27  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/accerciser.glade: Got rid of inconsistent padding of bottom
+	plugin pane (Bug #412510).
+	
+2007-02-27  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accerciser.py: Persist window size (Bug #412417).
+	* src/lib/accerciser/plugin_manager.py: Persist plugin view sizes.
+	* src/lib/accerciser/tools.py: Added methods for loading/saving
+	settings.
+	* src/accerciser.glade: Use inner vbox for top level
+	widget. Create gtk.Window manually.
+
+2007-02-27  Peter Parente  <parente@cs.unc.edu>
+
+	* src/lib/accerciser/pyLinAcc.zip: Updated from LSR proper
+
+2007-02-27  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accessible_treeview.py: Revert the last
+	changes. (Remove public method for setting cursor, it doesn't do
+	what I thought it would).
+	* plugins/interface_view.glade: Added a 'show' button for relation
+	view. (Bug #412272)
+	* plugins/interface_view.py: Added proper callbacks for the 'show' 
+	button
+	
+2007-02-26  Eitan Isaacson  <eitan@ascender.com>
+	
+	* plugins/api_view.py: Hide private attributes by default.
+	* plugins/interface_view.py: Disable selection of headers in
+	relation view. Dummy callback for selection in relation view, to
+	be continued.
+	* plugins/ipython_view.py: System commands now ouput in the
+	shell window (Bug #412235).
+	* src/lib/accerciser/accessible_treeview.py: Added public method
+	for setting tree view cursor on given accessible.
+
+2007-02-26  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/console.py: Added show() function for selecting an
+	accessible object in the treeview.
+	* src/lib/accerciser/accessible_treeview.py: Don't expand selected
+	accessible.
+
+2007-02-22  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accerciser.py: Refresh current callback.
+	* src/lib/accerciser/accessible_treeview.py: Some
+	refactoring. more dependable auto refresh.
+	* src/accerciser.glade: Refresh current in view menu.
+
+2007-02-23  Peter Parente  <parente@cs.unc.edu>
+
+	* src/lib/accerciser/plugin_manager.py: Iterating over keys list in
+	dictionary instead of using dictionary iterator to avoid size changes
+	* help/C/accerciser.xml.in: Using autotools version number, fixed intro
+	paragraph
+	* plugins/console.py: Pulled __dict__ from Constants and Interfaces to
+	add to local console namespace
+	* accerciser.spec.in: Added custom_release
+	* plugins/console.py: Raise exception when .ipython not created
+	* src/lib/accerciser/plugin_manager.py: Added try/except around init
+	* accerciser.spec.in: Fixed so rpmbuild works
+	* src/lib/accerciser/accerciser.py: Fixed wrong method name
+	* src/lib/accerciser/accessible_treeview.py: Added method for 
+	refreshing the current level (not being used yet in the UI)
+	* plugins/interface_view.glade: Fixed pre-expanded text view
+
+2007-02-22  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.glade (Module): Fixed a few misnamed callbacks
+	
+2007-02-22  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/api_view.py (Module): restored it. Did Pete forget 'cvs add'?
+	(Pete: yes I did :))
+	* src/lib/accerciser/accerciser.py (Module): Select accessible
+	with mouseover now works.
+
+2007-02-22  Peter Parente  <parente@cs.unc.edu>
+	
+	* help/accerciser.omf.in: Fixed legal info
+	* src/lib/accerciser/Makefile.am: Added DISTCLEANFILES
+	* help/Makefile.am: Added DISTCLEANFILES
+	* examples/: Removed
+	* plugins/console.py: Changed human readable name to IPython console
+	* plugins/viewport_demo.py: Renamed to api_view.py
+	* src/accerciser.glade: Fixed copyright date
+	* src/accerciser.in: Fixed icon not loading
+	* src/lib/accerciser/pyLinAcc.zip: Updated from LSR, added version date
+	file
+	* src/lib/accerciser/plugin_manager.py: Handle plugins with unresolved
+	dependencies
+	* help/C/legal.xml: BSD license
+	* help/C/accerciser.xml: Version number from autoconf
+	* configure.in: Version number from autoconf
+	* accerciser.spec.in: Version number from autoconf
+	* accerciser.desktop.in: New description
+	* NEWS: Updated
+	* README: Updated
+	* help/C/accerciser.xml: Fixed some documentation errors
+	* plugins/console.py: Added header info, i18n
+	* plugins/event_monitor.py: Added header info, i18n
+	* plugins/interface_view.py: Added header info, i18n
+	* plugins/viewport_demo.py: Renamed to api_view.py, added header info,
+	i18n
+	* src/accerciser.glade: Updated license and artist info
+	* src/accerciser.in: Added global icon info, moved main loop, correct
+	version numbering
+	* src/lib/accerciser/__init__.py: Moved main loop here
+	* src/lib/accerciser/accerciser.py: Added header info, i18n
+	* src/lib/accerciser/accessible_treeview.py: Added header info
+	* src/lib/accerciser/i18n.py.in: Corrected prefix
+	* src/lib/accerciser/icons.py: Added header info
+	* src/lib/accerciser/nodes.py: Added header info
+	* src/lib/accerciser/plugin.py: Added header info
+	* src/lib/accerciser/plugin_manager.py: Added header info
+	* src/lib/accerciser/tools.py: Added header info
+	
+2007-02-22  Eitan Isaacson  <eitan@ascender.com>
+
+	* Makefile.am (Module): 
+	* accerciser.png (Module): 
+	* accerciser.svg (Module): 
+	* icons/Makefile.am (Module): 
+	* icons/accerciser-16.png (Module): 
+	* icons/accerciser-22.png (Module): 
+	* icons/accerciser-32.png (Module): 
+	* icons/accerciser-small.svg (Module): 
+	* icons/accerciser.png (Module): 
+	* icons/accerciser.svg (Module): Logo rework.
+	* src/accerciser.glade (Module): 
+
+2007-02-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/ipython_view.py (Message): The cursor could not leave
+	the editable command line.
+
+2007-02-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* accerciser.png (Module): 
+	* accerciser.svg (Module): New PC logo.
+
+2007-02-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* Makefile.am (Module): 
+	* configure.in (Module): 
+	* pkg/.cvsignore (Module): 
+	* pkg/Makefile.am (Module): 
+	* pkg/accerciser/.cvsignore (Module): 
+	* pkg/accerciser/Makefile.am (Module): 
+	* pkg/accerciser/__init__.py (Module): 
+	* pkg/accerciser/accerciser.py (Module): 
+	* pkg/accerciser/accessible_treeview.py (Module): 
+	* pkg/accerciser/i18n.py.in (Module): 
+	* pkg/accerciser/icons.py (Module): 
+	* pkg/accerciser/node.py (Module): 
+	* pkg/accerciser/plugin.py (Module): 
+	* pkg/accerciser/plugin_manager.py (Module): 
+	* pkg/accerciser/pyLinAcc.zip (Module): 
+	* pkg/accerciser/tools.py (Module): 
+	* src/Makefile.am (Module): 
+	* src/lib/Makefile.am (Module): 
+	* src/lib/accerciser/.cvsignore (Module): 
+	* src/lib/accerciser/Makefile.am (Module): 
+	* src/lib/accerciser/__init__.py (Module): 
+	* src/lib/accerciser/accerciser.py (Module): 
+	* src/lib/accerciser/accessible_treeview.py (Module): 
+	* src/lib/accerciser/i18n.py.in (Module): 
+	* src/lib/accerciser/icons.py (Module): 
+	* src/lib/accerciser/node.py (Module): 
+	* src/lib/accerciser/plugin.py (Module): 
+	* src/lib/accerciser/plugin_manager.py (Module): 
+	* src/lib/accerciser/pyLinAcc.zip (Module): 
+	* src/lib/accerciser/tools.py (Module): Moved accerciser package
+	from pkg to src/lib
+	
+2007-02-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* Makefile.am (Module): 
+	* configure.in (Module): 
+	* src/Makefile.am (Module): 
+	* src/accerciser.glade (Module): 
+	* src/accerciser.in (Module): 
+	* accerciser.glade (Module): 
+	* accerciser.in (Module): Undid move.
+
+2007-02-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/i18n.py.in (Module): Localization.
+	* Makefile.am (Module): Fixed icon updating.
+	* configure.in (Module): 
+	* pkg/accerciser/accerciser.py (Module): Added app icon to window.
+	* pkg/accerciser/plugin_manager.py (Module): Fixed .accerciser
+	direcotry creation
+	* src/accerciser (Module): Not needed. Removed.
+	* accerciser.spec (Module): Not needed. Removed.
+	* help/C/Makefile.am (Module): Not needed. Removed.
+
+2007-02-20  Eitan Isaacson  <eitan@ascender.com>
+
+	* Makefile.am (Module): 
+	* accerciser.desktop.in (Module): 
+	* accerciser.png (Module): 
+	* accerciser.svg (Module): Fixed desktop file and added
+	application icons.
+	* debian/menu (Module): 
+	* debian/rules (Module): Fixed a few things related to scrollkeeper.
+	* help/Makefile.am (Module): 
+	* help/accerciser.omf.in (Module): 
+	* help/C/accerciser.xml (Module): 
+	* help/C/figures/accerciser.png (Module): 
+	* help/C/figures/api_browser.png (Module): 
+	* help/C/figures/event_monitor.png (Module): 
+	* help/C/figures/interface_viewer.png (Module): Fixed help
+	docs. They should work now.
+	* pkg/accerciser/accerciser.py (Module): 
+	* src/accerciser (Module): 
+	* src/accerciser.glade (Module): 
+	* src/accerciser.in (Module): Changed help menu to start
+	Yelp. Fixed about dialog to show app icon.
+
+2007-02-19  Peter Parente  <parente@cs.unc.edu>
+
+	* src/accerciser.in (Module): Fixed some sys.path issues.
+
+2007-02-19  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/accerciser.in (Module): Fixed some sys.path issues.
+
+2007-02-19  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py (Module): Cleanup, reordering of
+	methods. New fancy IText controls.
+
+2007-02-19  Eitan Isaacson  <eitan@ascender.com>
+
+	* help/.cvsignore (Module): Added
+	* pkg/accerciser/tools.py (Module): Fixed crasher.
+	* po/.cvsignore (Module): Added
+
+2007-02-19  Peter Parente  <parente@cs.unc.edu>
+
+	* src/accerciser.in: fixed sys.prefix and paths for locating
+	accerciser packages and pyLinAcc
+	
+2007-02-16  Peter Parente  <parente@cs.unc.edu>
+
+	* configure.in: fixed linguas
+	* COPYING: corrected license
+	* NOTICE: corrected info
+	* COPYING.lib: removed
+
+2007-02-16  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/tools.py (Message): Fixed isMyApp method.
+
+2007-02-16  Eitan Isaacson  <eitan@ascender.com>
+
+	* .cvsignore (Module): 
+	* Makefile.am (Module): 
+	* configure.in (Module): 
+	* debian/accerciser.xpm (Module): 
+	* debian/compat (Module): 
+	* debian/control (Module): 
+	* debian/install (Module): 
+	* debian/menu (Module): 
+	* debian/rules (Module): 
+	* help/Makefile.am (Module): 
+	* help/accerciser.omf.in (Module): 
+	* help/C/Makefile.am (Module): 
+	* help/C/accerciser.xml (Module): 
+	* help/C/legal.xml (Module): 
+	* help/C/figures/accerciser.png (Module): 
+	* po/Makefile.in.in (Module): 
+	* po/POTFILES.in (Module): Added help system.
+
+2007-02-16  Eitan Isaacson  <eitan@ascender.com>
+
+	* .cvsignore (Module): 
+	* COPYING (Module): 
+	* INSTALL (Module): 
+	* Makefile.am (Module): 
+	* NEWS (Module): 
+	* accerciser.desktop.in (Module): 
+	* accerciser.spec.in (Module): 
+	* acinclude.m4 (Module): 
+	* autogen.sh (Module): 
+	* configure.in (Module): 
+	* pyreqs.py (Module): 
+	* icons/Makefile.am (Module): 
+	* pkg/Makefile.am (Module): 
+	* pkg/accerciser/.cvsignore (Module): 
+	* pkg/accerciser/Makefile.am (Module): 
+	* pkg/accerciser/accerciser.py (Module): 
+	* plugins/Makefile.am (Module): 
+	* plugins/event_monitor.glade (Module): 
+	* src/.cvsignore (Module): 
+	* src/Makefile.am (Module): 
+	* src/accerciser (Module): 
+	* src/accerciser.in (Module): Package now builds via automake.
+
+2007-02-15  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/accerciser.py (Module): 
+	* pkg/accerciser/accessible_treeview.py (Module): Redid auto
+	update feature. Still not perfect.
+	* pkg/accerciser/tools.py (Module): 
+	* plugins/event_monitor.py (Module): Decoupled logging and
+	textview printout.
+	* plugins/ipython_view.py (Module): Got rid of weird IPython
+	exception hook.
+
+2007-02-14  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/plugin_manager.py (Message): If the .accerciser
+	direcotry does not exist - create it.
+
+2007-02-14  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/plugin_manager.py (Message): Fixed use-case of no
+	layout file.
+
+2007-02-13  Eitan Isaacson  <eitan@ascender.com>
+
+	* examples/console_demo.py (Module): 
+	* plugins/console_demo.py (Module): Moved console_demo.py to examples.
+
+2007-02-13  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py (Message): Only populate interface
+	views when they are expanded.
+
+2007-02-13  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/console.py (Message): Added pyLinAcc.__dict__ to shell's 
+	namespace
+	* plugins/ipython_view.py (Message): Better auto-completion.
+
+2007-02-13  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/plugin_manager.py (Message): Keep plugin tab
+	order persistant.
+
+2007-02-13  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/tools.py (Module): Added Tools class. For now it
+	just has a method to test if in accessible is a child of the
+	current accerciser process.
+	* pkg/accerciser/accerciser.py (Module): Use Tools.isMyApp()
+	* pkg/accerciser/plugin.py (Module): Plugin base class inherits Tools.
+	* plugins/event_monitor.py (Module): Use Tools.isMyApp()
+	* pkg/accerciser/accessible_treeview.py (Module): Expanding does
+	not automatically select an accessible. Made self insensitive.
+
+2007-02-12  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/accessible_treeview.py (Module): Handle exception
+	if path to an accessible does not exist.
+	* plugins/interface_view.glade (Module): 
+	* plugins/interface_view.py (Module): Added relations view.
+	(Module): 
+
+2007-02-12  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/plugin.py (Module): 
+	* pkg/accerciser/plugin_manager.py (Module): Handle current
+	accessible in plugin load time.
+	* plugins/event_monitor.py (Module): 
+	* plugins/interface_view.glade (Module): 
+	* plugins/interface_view.py (Module): Better expander
+	behavior. Only the expander's children become insensitive.
+	(Module): 
+
+2007-02-12  Eitan Isaacson  <eitan@ascender.com>
+
+	* pkg/accerciser/accerciser.py (Module): Check if pane exists
+	befaure resizing
+	* pkg/accerciser/plugin_manager.py (Module): Add plugin file's
+	direcotory to sys.path.
+	* plugins/event_monitor.glade (Module): 
+	* plugins/event_monitor.py (Module): Redid some UI
+	elements, collabsable event chooser, got rid of top menu bar.
+
+2007-02-12  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/console.py (Module): New interactive console plugin.
+	* plugins/ipython_view.py (Module): Generic module that provides
+	an IPython console in a textview.
+	(Module): 
+
+2007-02-06  Eitan Isaacson  <eitan@ascender.com>
+
+	* debian/accerciser.xpm (Module): 
+	* debian/changelog (Module): 
+	* debian/compat (Module): 
+	* debian/control (Module): 
+	* debian/copyright (Module): 
+	* debian/install (Module): 
+	* debian/menu (Module): 
+	* debian/pycompat (Module): 
+	* debian/pyversions (Module): 
+	* debian/rules (Module): Added debian packaging.
+	* setup.py (Module): glob *.* in plugins instead of just *.py
+	* pkg/accerciser/plugin_manager.py (Module): Position new window
+	at mouse center.
+	(Module): 
+
+	* plugins/interface_view.glade (Module): 
+
+	* plugins/interface_view.py (Module): Some cleanup.
+	(Module): 
+
