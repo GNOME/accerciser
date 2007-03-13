@@ -215,7 +215,7 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
         str(event.source), hyperlink)
       self.monitor_buffer.insert(
         self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        '\n\tapplication: ' % event.source.getApplication())
+        '\n\tapplication: ')
       hyperlink = self.monitor_buffer.create_tag(
         None, 
         foreground='blue',
