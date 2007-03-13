@@ -106,14 +106,17 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
                     gtk.POLICY_AUTOMATIC)
     self.set_border_width(3)
     self.set_shadow_type(gtk.SHADOW_NONE)
+    self.viewport = gtk.Viewport()
     vbox = gtk.VBox()
-    self.add_with_viewport(vbox)
+    self.viewport.add(vbox)
+    self.add(self.viewport)
     # Message area
     self.message_area = gtk.VBox()
     vbox.pack_start(self.message_area, False, False)
 
     # Plugin area
     self.plugin_area = gtk.Frame()
+    self.plugin_area.set_shadow_type(gtk.SHADOW_NONE)
     vbox.pack_start(self.plugin_area)
 
   def _onMessageResponse(self, error_message, response_id):

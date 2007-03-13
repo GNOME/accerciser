@@ -46,6 +46,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     for expander in vbox_expanders.get_children():
       if isinstance(expander, gtk.Expander):
         expander.connect('notify::expanded', self._onIfaceExpanded)
+        expander.connect('focus-in-event', self._onScrollToFocus)
 
     self.event_manager = pyLinAcc.Event.Manager()
     self.event_manager.addClient(self._accEventText, 
@@ -235,6 +236,25 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=1)
     treeview.append_column(tvc)
+
+  def _onScrollToFocus(self, widget, event):
+    '''
+    Scrolls a focused widget in a settings panel into view.
+    
+    @param widget: Widget that has the focus
+    @type widget: gtk.Widget
+    @param direction: Direction constant, ignored
+    @type direction: integert
+    '''
+    x, y = widget.translate_coordinates(self.viewport, 0, 0)
+    w, h = widget.size_request()
+    vw, vh = self.allocation.width, self.allocation.height
+
+    adj = self.viewport.get_vadjustment()
+    if y+h > vh:
+      adj.value += min((y+h) - vh + 3, y)
+    elif y < 0:
+      adj.value = max(adj.value + y, adj.lower)
 
   def _getInterfaces(self, acc):
     ints = []

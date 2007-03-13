@@ -1,5 +1,11 @@
 2007-03-13  Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/interface_view.py: When tabbing to lower panels,
+	vieport is scrolled if needed (bug 416189).
+	* src/lib/accerciser/plugin.py: Removed shadow on plugin_area frame.
+	
+2007-03-13  Eitan Isaacson  <eitan@ascender.com>
+
 	* src/lib/accerciser/accerciser.py:
 	* src/lib/accerciser/plugin_manager.py: Added accelerators for
 	quick plugin tab switching (bug 417424).
