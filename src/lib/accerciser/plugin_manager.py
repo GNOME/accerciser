@@ -78,10 +78,21 @@ class PluginViewWindow(gtk.Window, Tools):
     self.add(self.plugin_view)
     view_dimensions = self.loadSettings('plugin_view_sizes') or {}
     window_size = view_dimensions.get(view_name, (480, 480))
+    self.connect('key_press_event', self._onKeyPress)
     self.set_default_size(window_size[0], window_size[1])
     self.set_title(view_name)
     self.set_position(gtk.WIN_POS_MOUSE)
     self.show_all()
+
+  def _onKeyPress(self, widget, event):
+    if event.state & gtk.gdk.MOD1_MASK and \
+          event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
+                                 gtk.gdk.keyval_from_name('9')):
+      tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
+      pages_count = self.plugin_view.get_n_pages()
+      if pages_count >= tab_num:
+        self.plugin_view.set_current_page(tab_num - 1)
+      
   
 class PluginManager(gobject.GObject, Tools):
   def __init__(self, node, pluginviews_main):

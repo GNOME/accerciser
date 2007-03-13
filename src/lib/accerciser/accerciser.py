@@ -64,6 +64,7 @@ class MainWindow(Tools):
     self.window.set_icon_name('accerciser')
     self.window.add(main_vbox)
     self.window.connect('destroy', self._onQuit)
+    self.window.connect('key_press_event', self._onKeyPress)
     window_size = self.loadSettings('main_window_size')
     if window_size:
       width, height = window_size[0], window_size[1]
@@ -78,15 +79,18 @@ class MainWindow(Tools):
     scrolled_window.add(self.acc_treeview)
     
     bin = self.main_xml.get_widget('alignment_topright')
-    plugin_view1 = PluginView('Top right')
-    bin.add(plugin_view1)
+    self.plugin_view1 = PluginView('Top right')
+    bin.add(self.plugin_view1)
     bin = self.main_xml.get_widget('alignment_bottom')
-    plugin_view2 = PluginView('Bottom panel')
-    plugin_view2.connect('page_added', self._onBottomPanelChange, 'added')
-    plugin_view2.connect('page_removed', self._onBottomPanelChange, 'removed')
-    bin.add(plugin_view2)
+    self.plugin_view2 = PluginView('Bottom panel')
+    self.plugin_view2.connect('page_added', 
+                              self._onBottomPanelChange, 'added')
+    self.plugin_view2.connect('page_removed', 
+                              self._onBottomPanelChange, 'removed')
+    bin.add(self.plugin_view2)
     # load plugins
-    self.plugin_manager = PluginManager(self.node, [plugin_view1, plugin_view2])
+    self.plugin_manager = PluginManager(self.node, 
+                                        [self.plugin_view1, self.plugin_view2])
     self.plugin_manager.loadPlugins()
 
     # connect signal handlers and show the GUI in its initial state
@@ -296,3 +300,17 @@ class MainWindow(Tools):
       paned.set_position(350)
     elif pluginview.get_n_pages() == 0:
       paned.set_position(paned.allocation.height - 30)
+
+  def _onKeyPress(self, widget, event):
+    if event.state & gtk.gdk.MOD1_MASK and \
+          event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
+                                 gtk.gdk.keyval_from_name('9')):
+      tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
+      pages_count1 = self.plugin_view1.get_n_pages()
+      pages_count2 = self.plugin_view2.get_n_pages()
+      if pages_count1 + pages_count2 < tab_num:
+        return
+      elif pages_count1 >= tab_num:
+        self.plugin_view1.set_current_page(tab_num - 1)
+      else:
+        self.plugin_view2.set_current_page(tab_num - pages_count1 - 1)
