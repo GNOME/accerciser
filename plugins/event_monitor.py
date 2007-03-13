@@ -19,6 +19,7 @@ from Queue import Queue, Empty
 import accerciser.plugin
 from accerciser.tools import Tools
 from accerciser.i18n import _
+import pango
 
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
                           'event_monitor.glade')
@@ -192,12 +193,47 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
       self.monitor_buffer.move_mark_by_name(
         'mark_last_log', 
         self.monitor_buffer.get_iter_at_mark(self.monitor_mark))
-      self.monitor_buffer.insert(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark), 
-        str(event)+'\n')
+      self._insertEventIntoBuffer(event)
       self.textview_monitor.scroll_mark_onscreen(self.monitor_mark)
     return True
-        
+
+  def _insertEventIntoBuffer(self, event):
+    if event.source:
+      self.monitor_buffer.insert(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        '%s(%s, %s, %s)\n\tsource: ' % \
+          (event.type.asString(), event.detail1, 
+           event.detail2, event.any_data))
+      hyperlink = self.monitor_buffer.create_tag(
+        None, 
+        foreground='blue',
+        underline=pango.UNDERLINE_SINGLE)
+      hyperlink.connect('event', self._onTagEvent)
+      hyperlink.set_data('acc', event.source)
+      self.monitor_buffer.insert_with_tags(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        str(event.source), hyperlink)
+      self.monitor_buffer.insert(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        '\n\tapplication: ' % event.source.getApplication())
+      hyperlink = self.monitor_buffer.create_tag(
+        None, 
+        foreground='blue',
+        underline=pango.UNDERLINE_SINGLE)
+      hyperlink.connect('event', self._onTagEvent)
+      hyperlink.set_data('acc', event.source.getApplication())
+      self.monitor_buffer.insert_with_tags(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        str(event.source.getApplication())+'\n', hyperlink)
+    else:
+      self.monitor_buffer.insert(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        str(event)+'\n')
+
+  def _onTagEvent(self, tag, widget, event, iter):
+    if event.type == gtk.gdk._2BUTTON_PRESS and event.button == 1:
+      self.node.update(tag.get_data('acc'))
+
   def _handleAccEvent(self, event):
     if self.isMyApp(event.source) or not self._eventFilter(event):
       return
