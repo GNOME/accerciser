@@ -58,6 +58,8 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     self.event_manager.addClient(self._accEventComponent, 
                                  'object:bounds-changed',
                                  'object:visible-data-changed')
+    self.event_manager.addClient(self._accEventTable,
+                                 'object:active-descendant-changed')
     # Initialize fifos to help eliminate the viscous cycle of signals.
     # It would be nice if we could just block/unblock it like in gtk, but
     # since it is IPC, asynchronous and not atomic, we are forced to do this.
@@ -311,7 +313,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
           try:
             pop_func = getattr(self, 'popIface'+iface.capitalize())
           except AttributeError:
-            continue
+            print 'attr error', 'popIface'+iface.capitalize()
           pop_func(acc)
       else:
         self._setExpanderChildrenSensitive(expander, False)
@@ -646,7 +648,61 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       streams_model.append([content_type,
                             sci.getURI(content_type)])
 
+##############################
+# Table Interface
+##############################
 
+  def popIfaceTable(self, acc):
+    ti = pyLinAcc.Interfaces.ITable(acc)
+    frame = self.main_xml.get_widget('selected_cell_frame')
+    frame.set_sensitive(False)
+    for attr, label_name in [(ti.caption, 'table_caption_label'),
+                             (ti.summary, 'table_summary_label'),
+                             (ti.nRows, 'table_rows_label'),
+                             (ti.nColumns, 'table_columns_label'),
+                             (ti.nSelectedRows, 'table_srows_label'),
+                             (ti.nSelectedColumns, 'table_scolumns_label')]:
+      label = self.main_xml.get_widget(label_name)
+      label.set_text(str(attr))
+  
+  def _accEventTable(self, event):
+    if self.acc != event.source:
+      return
+    
+    try:
+      ti = pyLinAcc.Interfaces.ITable(self.acc)
+    except:
+      return
+
+    frame = self.main_xml.get_widget('selected_cell_frame')
+    frame.set_sensitive(True)
+    is_cell, row, column, rextents, cextents, selected = \
+        ti.getRowColumnExtentsAtIndex(event.any_data.getIndexInParent())
+    
+    for attr, label_name in [(rextents, 'table_row_extents'),
+                             (cextents, 'table_column_extents'),
+                             (ti.nSelectedRows, 'table_srows_label'),
+                             (ti.nSelectedColumns, 'table_scolumns_label')]:
+      label = self.main_xml.get_widget(label_name)
+      label.set_text(str(attr))           
+    
+    for desc, acc, button_name in [(ti.getRowDescription(row), 
+                                    ti.getRowHeader(row),
+                                    'table_hrow_button'),
+                                   (ti.getColumnDescription(column), 
+                                    ti.getColumnHeader(column),
+                                    'table_hcol_button'),
+                                   ('%s (%s, %s)' % (event.any_data, row, column), 
+                                    event.any_data,
+                                    'table_cell_button')]:
+      button = self.main_xml.get_widget(button_name)
+      button.set_label(str(desc or '<no description>'))
+      button.set_sensitive(bool(acc))
+      button.set_data('acc', acc)
+        
+  def _onTableButtonClicked(self, button):
+    self.node.update(button.get_data('acc'))
+    
 ##############################
 # Text Interface
 ##############################
