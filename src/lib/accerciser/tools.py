@@ -14,6 +14,7 @@ import os
 import pickle
 import weakref
 import new
+from ConfigParser import RawConfigParser
 
 class Tools(object):
   '''
@@ -30,7 +31,7 @@ class Tools(object):
   '''
   SETTINGS_PATH = os.path.join(os.environ['HOME'],
                                '.accerciser')
-  SETTINGS_FILE = 'settings.pickle'
+  SETTINGS_FILE = 'accerciser.conf'
   
 
   def isMyApp(self, acc):
@@ -72,40 +73,43 @@ class Tools(object):
     dictionary with all the settings.
     @rtype: dictionary
     '''
-    layout_fn = os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)
-    try:
-      f = open(layout_fn, 'r')
-    except:
-      return {}
-    try:
-      rv = pickle.load(f)
-    except:
-      rv = {}
-    f.close()
+    config = RawConfigParser()
+    config.read([os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)])
+    rv = {}
     if section is None:
-      return rv
-    else:
-      return rv.get(section)
+      for sec in config.sections():
+        rv[sec] = {}
+        for key, value in config.items(sec):
+          rv[sec][key] = eval(value)
+    elif config.has_section(section):
+      for key, value in config.items(section):
+        rv[key] = eval(value)
+    return rv
 
-  def saveSettings(self, section, value):
+  def saveSettings(self, section, items):
     '''
     Save settings.
 
     @param section: The section we want to save the data to. 
     @type section: string
-    @param value: The arbitrary data we want to save.
-    @type value: anything
+    @param items: The arbitrary data we want to save.
+    @type items: dictionary
     '''
-    layout_fn = os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)
-    settings = self.loadSettings()
-    settings[section] = value
+    filename = os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)
+    config = RawConfigParser()
+    config.read([filename])
+    if not config.has_section(section):
+      config.add_section(section)
+    for key, value in items.iteritems():
+      config.set(section, key, value)
     try:
-      if not os.path.exists(os.path.dirname(layout_fn)):
-        os.mkdir(os.path.dirname(layout_fn))
-      f = open(layout_fn, 'w')
-    except:
+      if not os.path.exists(os.path.dirname(filename)):
+        os.mkdir(os.path.dirname(filename))
+      f = open(filename, 'w')
+    except Exception, e:
+      print e
       return
-    pickle.dump(settings, f)
+    config.write(f)
     f.close()
 
 

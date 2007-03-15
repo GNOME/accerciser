@@ -60,7 +60,7 @@ class MainWindow(Tools):
                                   gettext.textdomain())
     self.window = self.main_xml.get_widget('window')
     self.window.set_icon_name('accerciser')
-    window_size = self.loadSettings('main_window_size')
+    window_size = self.loadSettings('main').get('window_size')
     width, height = window_size or (640, 640)
     self.window.set_default_size(width, height)
     self.acc_treeview = AccessibleTreeView()
@@ -116,9 +116,9 @@ class MainWindow(Tools):
       statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
 
   def _shutDown(self):
-    self.saveSettings('main_window_size', 
-                      (self.window.allocation.width,
-                       self.window.allocation.height))
+    self.saveSettings('main', {'window_size' :
+                                 (self.window.allocation.width,
+                                  self.window.allocation.height)})
     self.event_manager.close()
     self.acc_treeview.destroy()
     self.plugin_manager.close()

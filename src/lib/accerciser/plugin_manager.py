@@ -77,7 +77,7 @@ class PluginViewWindow(gtk.Window, Tools):
     self.plugin_view = PluginView(view_name)
     self.add(self.plugin_view)
     view_dimensions = self.loadSettings('plugin_view_sizes') or {}
-    window_size = view_dimensions.get(view_name, (480, 480))
+    window_size = view_dimensions.get(view_name.lower(), (480, 480))
     self.connect('key_press_event', self._onKeyPress)
     self.set_default_size(window_size[0], window_size[1])
     self.set_title(view_name)
@@ -146,9 +146,10 @@ class PluginManager(gobject.GObject, Tools):
         if isinstance(child, accerciser_plugin.Plugin):
           plugin = child
           view.reorder_child(child, 
-                             plugin_layout.get(plugin.plugin_name,
+                             plugin_layout.get(plugin.plugin_name.lower(),
                                                [None,-1])[1])
       self._connectSignals(view)
+      view.set_current_page(0)
       view.show_all()
     self.error_manager.keepOnTop()
 
@@ -200,7 +201,7 @@ class PluginManager(gobject.GObject, Tools):
                                 (plugin_dir, plugin_fn))
           continue
         # if a plugin class is found, initialize
-        if plugin_layout.get(plugin_locals[symbol].plugin_name, 
+        if plugin_layout.get(plugin_locals[symbol].plugin_name.lower(), 
                              [None,None,True])[2]:
           self._enablePlugin(plugin_locals, iter)
 
@@ -273,7 +274,8 @@ class PluginManager(gobject.GObject, Tools):
       self._reloadPlugin(self.plugins_store.get_iter(path))
 
   def _getViewNameForPlugin(self, name, plugin_layout):
-    return plugin_layout.get(name, [self.pluginviews_main[0].view_name])[0]
+    return plugin_layout.get(name.lower(), 
+                             [self.pluginviews_main[0].view_name])[0]
 
   def _getViewByName(self, view_name):
     if view_name not in [row[1] for row in self.views_store]:
@@ -342,7 +344,14 @@ class PluginManager(gobject.GObject, Tools):
           row[self.plugins_store.COL_VIEW] = view.view_name
     
   def _loadLayout(self):
-    rv = self.loadSettings('plugin_layout') or {}
+    # TODO: create a default system-wide default configuration for stuff 
+    # like this.
+    rv = {'ipython console' : ('Bottom panel', 0, True),
+          'interface viewer' : ('Top right', 0, True),
+          'event monitor' : ('Top right', 1, True),
+          'api browser' : ('Top right', 2, True)}
+    layout = self.loadSettings('plugin_layout') or {}
+    rv.update(layout)
     return rv
 
   def _saveLayout(self):
@@ -380,16 +389,15 @@ class PluginManager(gobject.GObject, Tools):
   def _restorePanedViews(self, views):
     view_dimensions = self.loadSettings('plugin_view_sizes') or {}
     for view in views:
-      if not view_dimensions.has_key(view.view_name):
+      if not view_dimensions.has_key(view.view_name.lower()):
         continue
       child = view
       while child:
         if isinstance(child.parent, gtk.Paned):
           paned = child.parent
-          paned.set_position(view_dimensions[view.view_name][0])
+          paned.set_position(view_dimensions[view.view_name.lower()][0])
           break
         child = child.parent
-    self.saveSettings('plugin_view_sizes', view_dimensions)
 
   def changeView(self, path, new_text):
     plugin = self.plugins_store[path][3]
