@@ -56,21 +56,12 @@ class MainWindow(Tools):
     root_atk.set_description(str(os.getpid()))
 
     # parse the glade
-    self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'main_vbox', 
+    self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window', 
                                   gettext.textdomain())
-    main_vbox = self.main_xml.get_widget('main_vbox')
-    self.window = gtk.Window()
-    self.window.set_title('accerciser')
+    self.window = self.main_xml.get_widget('window')
     self.window.set_icon_name('accerciser')
-    self.window.add(main_vbox)
-    self.window.connect('destroy', self._onQuit)
-    self.window.connect('key_press_event', self._onKeyPress)
     window_size = self.loadSettings('main_window_size')
-    if window_size:
-      width, height = window_size[0], window_size[1]
-    else:
-      width = height = 640
-    print 'setting default size', width, height
+    width, height = window_size or (640, 640)
     self.window.set_default_size(width, height)
     self.acc_treeview = AccessibleTreeView()
     self.node = self.acc_treeview.node

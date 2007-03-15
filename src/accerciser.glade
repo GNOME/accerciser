@@ -3,7 +3,6 @@
 <!--*- mode: xml -*-->
 <glade-interface>
   <widget class="GtkWindow" id="window">
-    <property name="visible">True</property>
     <property name="title" translatable="yes">accerciser</property>
     <signal name="destroy" handler="_onQuit"/>
     <child>
@@ -47,6 +46,7 @@
                         <property name="label" translatable="yes">_Plugins...</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="_onShowPlugins"/>
+                        <accelerator key="p" modifiers="GDK_CONTROL_MASK" signal="activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="menu-item-image1">
                             <property name="visible">True</property>

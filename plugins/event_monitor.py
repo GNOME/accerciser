@@ -221,10 +221,14 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
         foreground='blue',
         underline=pango.UNDERLINE_SINGLE)
       hyperlink.connect('event', self._onTagEvent)
-      hyperlink.set_data('acc', event.source.getApplication())
+      try:
+        app = event.source.getApplication()
+      except:
+        app = None
+      hyperlink.set_data('acc', app)
       self.monitor_buffer.insert_with_tags(
         self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        str(event.source.getApplication())+'\n', hyperlink)
+        str(app)+'\n', hyperlink)
     else:
       self.monitor_buffer.insert(
         self.monitor_buffer.get_iter_at_mark(self.monitor_mark),

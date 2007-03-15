@@ -99,8 +99,12 @@ class DemoViewport(accerciser.plugin.ViewportPlugin):
   
   def _refreshAttribs(self, widget):
     iface = self.iface_combo.get_active_text()
-    self.curr_iface = self.constructors[iface](self.acc)
-    self._popAttribViews()
+    try:
+      self.curr_iface = self.constructors[iface](self.acc)
+    except KeyError:
+      pass
+    else:
+      self._popAttribViews()
 
   def _popAttribViews(self):
     prop_model = self.property_tree.get_model()

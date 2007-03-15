@@ -45,7 +45,10 @@ class Tools(object):
     '''
     if not acc:
       return False
-    app = acc.getApplication()
+    try:
+      app = acc.getApplication()
+    except Exception, e:
+      return False
     if not app or not hasattr(app, 'id'):
       return False
     if hasattr(self,'my_app_id'):

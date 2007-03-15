@@ -240,8 +240,13 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       new_child = added.pop()
     except KeyError:
       return
-    row = self.model._buildRow(new_child, False)
-    self.model.insert(iter, new_child.getIndexInParent(), row)
+    if new_child is None:
+      row = self.model._buildRow(new_child, False, name='<dead>')
+      self.model.append(iter, row)
+      return
+    else:
+      row = self.model._buildRow(new_child, False)
+      self.model.insert(iter, new_child.getIndexInParent(), row)
     # We do this because an application won't have an icon loaded in 
     # the window manager when it is first registered to at-spi
     if new_child == new_child.getApplication():
