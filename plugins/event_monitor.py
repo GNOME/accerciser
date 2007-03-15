@@ -199,44 +199,73 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
 
   def _insertEventIntoBuffer(self, event):
     if event.source:
-      self.monitor_buffer.insert(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        '%s(%s, %s, %s)\n\tsource: ' % \
-          (event.type.asString(), event.detail1, 
-           event.detail2, event.any_data))
-      hyperlink = self.monitor_buffer.create_tag(
-        None, 
-        foreground='blue',
-        underline=pango.UNDERLINE_SINGLE)
-      hyperlink.connect('event', self._onTagEvent)
-      hyperlink.set_data('acc', event.source)
-      self.monitor_buffer.insert_with_tags(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        str(event.source), hyperlink)
-      self.monitor_buffer.insert(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        '\n\tapplication: ')
-      hyperlink = self.monitor_buffer.create_tag(
-        None, 
-        foreground='blue',
-        underline=pango.UNDERLINE_SINGLE)
-      hyperlink.connect('event', self._onTagEvent)
+      self._writeText('%s(%s, %s, %s)\n\tsource: ' % \
+                        (event.type.asString(), event.detail1, 
+                         event.detail2, event.any_data))
+      hyperlink = self._createHyperlink(event.source)
+      self._writeText(str(event.source), hyperlink)
+      self._writeText('\n\tapplication: ')
       try:
         app = event.source.getApplication()
       except:
         app = None
-      hyperlink.set_data('acc', app)
-      self.monitor_buffer.insert_with_tags(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        str(app)+'\n', hyperlink)
+      hyperlink = self._createHyperlink(app)
+      self._writeText(str(app), hyperlink)
+      self._writeText('\n')
     else:
       self.monitor_buffer.insert(
         self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
         str(event)+'\n')
 
-  def _onTagEvent(self, tag, widget, event, iter):
+  def _writeText(self, text, *tags):
+    if tags:
+      self.monitor_buffer.insert_with_tags(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        text, *tags)
+    else:
+      self.monitor_buffer.insert(
+        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
+        text)
+
+  def _createHyperlink(self, acc):
+    hyperlink = self.monitor_buffer.create_tag(
+      None, 
+      foreground='blue',
+      underline=pango.UNDERLINE_SINGLE)
+    hyperlink.connect('event', self._onLinkClicked)
+    hyperlink.set_data('acc', acc)
+    hyperlink.set_data('islink', True)
+    return hyperlink
+
+  def _onLinkClicked(self, tag, widget, event, iter):
     if event.type == gtk.gdk._2BUTTON_PRESS and event.button == 1:
       self.node.update(tag.get_data('acc'))
+
+  def _onLinkKeyPress(self, textview, event):
+    if event.keyval in (gtk.keysyms.Return, 
+                        gtk.keysyms.KP_Enter,
+                        gtk.keysyms.space):
+      buffer = textview.get_buffer()
+      iter = buffer.get_iter_at_mark(buffer.get_insert())
+      acc = None
+      for tag in iter.get_tags():
+        acc = tag.get_data('acc')
+        if acc:
+          self.node.update(acc)
+          break
+
+  def _onLinkMotion(self, textview, event):
+    x, y = textview.window_to_buffer_coords(gtk.TEXT_WINDOW_WIDGET,
+                                             int(event.x), int(event.y))
+    iter = textview.get_iter_at_location(x, y)
+    cursor = gtk.gdk.Cursor(gtk.gdk.XTERM)
+    for tag in iter.get_tags():
+      if tag.get_data('islink'):
+        cursor = gtk.gdk.Cursor(gtk.gdk.HAND2)
+        break
+    textview.get_window(gtk.TEXT_WINDOW_TEXT).set_cursor(cursor)
+    textview.window.get_pointer()
+    return False
 
   def _handleAccEvent(self, event):
     if self.isMyApp(event.source) or not self._eventFilter(event):

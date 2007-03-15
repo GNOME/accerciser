@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.0.2 on Fri Feb 16 11:34:53 2007 by eitan@lifebook-->
+<!--Generated with glade3 3.0.2 on Wed Mar 14 18:40:09 2007 by eitan@lifebook-->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
     <child>
@@ -27,7 +27,8 @@
                       <widget class="GtkTextView" id="textview_monitor">
                         <property name="visible">True</property>
                         <property name="editable">False</property>
-                        <property name="cursor_visible">False</property>
+                        <signal name="motion_notify_event" handler="_onLinkMotion"/>
+                        <signal name="key_press_event" handler="_onLinkKeyPress"/>
                       </widget>
                     </child>
                   </widget>
