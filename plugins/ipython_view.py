@@ -250,7 +250,6 @@ class IPythonView(ConsoleView, IterableIPShell):
     return self.getCurrentLine()
 
   def keyPress(self, widget, event):
-    #print event.keyval, int(event.state)
     if event.state & gtk.gdk.CONTROL_MASK and event.keyval == 99:
       self.interrupt = True
       self._processLine()

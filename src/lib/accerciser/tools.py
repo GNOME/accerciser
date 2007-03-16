@@ -107,7 +107,6 @@ class Tools(object):
         os.mkdir(os.path.dirname(filename))
       f = open(filename, 'w')
     except Exception, e:
-      print e
       return
     config.write(f)
     f.close()

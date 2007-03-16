@@ -121,7 +121,6 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
 
   def _onMessageResponse(self, error_message, response_id):
     if response_id == gtk.RESPONSE_APPLY:
-      print 'refresh'
       self.emit('reload-request')
     elif response_id == gtk.RESPONSE_CLOSE:
       error_message.destroy()

@@ -313,7 +313,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
           try:
             pop_func = getattr(self, 'popIface'+iface.capitalize())
           except AttributeError:
-            print 'attr error', 'popIface'+iface.capitalize()
+            pass
           pop_func(acc)
       else:
         self._setExpanderChildrenSensitive(expander, False)
@@ -856,7 +856,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
      spinbutton.set_value(iter.get_offset())
 
   def _onTextCursorMove(self, text_buffer, param_spec, spinbutton):
-    print 'cursor move'
     spinbutton.set_value(text_buffer.get_property('cursor-position'))
 
   def _accEventText(self, event):
@@ -911,7 +910,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
   def _onTextFocusChanged(self, text_view, event):
     text_buffer = text_view.get_buffer()
     mark = text_buffer.get_mark('attr_mark')
-    print 'set visible', not event.in_
     mark.set_visible(not event.in_)
       
 

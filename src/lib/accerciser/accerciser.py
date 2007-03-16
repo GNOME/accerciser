@@ -31,6 +31,7 @@ from plugin_manager import *
 from tools import Tools
 from i18n import _
 import wnck
+from gnome import program_get
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
@@ -135,6 +136,9 @@ class MainWindow(Tools):
     Shows the about dialog.
     '''
     xml = gtk.glade.XML(GLADE_FILENAME, 'about', gettext.textdomain())
+    about = xml.get_widget('about')
+    prog = program_get()
+    about.set_version(prog.get_app_version())
     xml.signal_autoconnect(self)
 
   def _onAboutResponse(self, widget, response_id):
