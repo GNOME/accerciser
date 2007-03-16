@@ -5,5 +5,6 @@ plugins_DATA = api_view.py \
 	event_monitor.py \
 	interface_view.glade \
 	interface_view.py \
-	ipython_view.py
+	ipython_view.py \
+	script_recorder.py
 EXTRA_DIST = $(plugins_DATA)
