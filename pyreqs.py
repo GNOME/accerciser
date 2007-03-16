@@ -24,7 +24,7 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['bonobo', 'ORBit', 'pygtk', 'gtk', 'gtk.glade', 'gtk.gdk']
+modules = ['wnck', 'bonobo', 'ORBit', 'pygtk', 'gtk', 'gtk.glade', 'gtk.gdk']
 for name in modules:
   try:
     m = __import__(name)
