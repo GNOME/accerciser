@@ -4,6 +4,14 @@
 
 2007-03-15  Eitan Isaacson  <eitan@ascender.com>
 
+	* configure.in: removed accerciser.xml from generated
+	files. distcheck was not succeeding with it for some reason.
+	* help/C/accerciser.xml.in: Deleted.
+	* help/C/accerciser.xml: Added.
+	* help/Makefile.am: Removed C/accerciser.xml.in from EXTRA_DIST.
+
+2007-03-15  Eitan Isaacson  <eitan@ascender.com>
+
 	* plugins/interface_view.py: Removed debug prints.
 	* plugins/ipython_view.py: Removed debug prints.
 	* src/lib/accerciser/accerciser.py: Added program version to
