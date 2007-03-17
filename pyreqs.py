@@ -24,12 +24,15 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['wnck', 'bonobo', 'ORBit', 'pygtk', 'gtk', 'gtk.glade', 'gtk.gdk']
+modules = ['bonobo', 'ORBit', 'pygtk', 'gtk', 'gtk.glade', 'gtk.gdk', 'wnck']
 for name in modules:
   try:
     m = __import__(name)
     print name, 
-  except ImportError:
+  except ImportError, e:
+    if name == 'wnck' and e.args[0].find('gtk') > -1:
+      # just no display, continue
+      continue
     print name, '*MISSING*'
     sys.exit(1)
   except RuntimeError:
