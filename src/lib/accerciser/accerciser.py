@@ -32,6 +32,7 @@ from tools import Tools
 from i18n import _
 import wnck
 from gnome import program_get
+import gconf
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
@@ -54,6 +55,10 @@ class MainWindow(Tools):
     # mark the root of this window with its PID so we can easily identify it
     # as this app
     root_atk = atk.get_root()
+    if not root_atk:
+      # Gail might have been enabled in gconf, but a logout is still needed.
+      self._showNoGailDialog()
+      return
     root_atk.set_description(str(os.getpid()))
 
     # parse the glade
@@ -93,6 +98,37 @@ class MainWindow(Tools):
     self.event_manager.addClient(self._accEventFocusChanged, 'focus')
     self.event_manager.addClient(self._accEventKeyPressed, 'keyboard:press')
     self.last_focused = None
+
+  def _showNoGailDialog(self):
+    cl = gconf.client_get_default()
+    if not cl.get_bool('/desktop/gnome/interface/accessibility'):
+      message = _('''\
+Accerciser could not see the applications on your desktop. \
+You must enable desktop accessibility to fix this problem. \
+Do you want to enable it now?\
+''')
+      secondary = 'Note: Changes only take effect after logout.'
+      buttons = gtk.BUTTONS_YES_NO
+    else:
+      message = _('Desktop accessibility is still not functioning \
+although it has been enabled.')
+      secondary = \
+          _('Note: You must logout for desktop accessibility options \
+to take effect.')
+      buttons = gtk.BUTTONS_CLOSE
+    dialog = gtk.MessageDialog(type=gtk.MESSAGE_ERROR,
+                               buttons=buttons, 
+                               message_format=message)
+    dialog.format_secondary_text(secondary)
+    
+    dialog.connect('response', self._onNoGailResponse)
+    dialog.show()
+
+  def _onNoGailResponse(self, dialog, response_id):
+    if response_id == gtk.RESPONSE_YES:
+      cl = gconf.client_get_default()
+      cl.set_bool('/desktop/gnome/interface/accessibility', True)
+    gtk.main_quit()
 
   def _onRefreshAll(self, widget):
     '''
