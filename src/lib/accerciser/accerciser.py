@@ -99,14 +99,26 @@ class MainWindow(Tools):
     self.event_manager.addClient(self._accEventKeyPressed, 'keyboard:press')
     self.last_focused = None
 
+  def run(self):
+    '''
+    Runs the app.
+    '''
+    try:
+      gtk.main()
+    except KeyboardInterrupt:
+      self._shutDown()
+
   def _showNoGailDialog(self):
+    '''
+    Shows a dialog with a relevant message when desktop accessibility seems to
+    be disabled. If desktop accessibility is disabled in gconf, prompts the
+    user to enable it.
+    '''
     cl = gconf.client_get_default()
     if not cl.get_bool('/desktop/gnome/interface/accessibility'):
-      message = _('''\
-Accerciser could not see the applications on your desktop. \
+      message = _('Accerciser could not see the applications on your desktop. \
 You must enable desktop accessibility to fix this problem. \
-Do you want to enable it now?\
-''')
+Do you want to enable it now?')
       secondary = 'Note: Changes only take effect after logout.'
       buttons = gtk.BUTTONS_YES_NO
     else:
@@ -125,6 +137,15 @@ to take effect.')
     dialog.show()
 
   def _onNoGailResponse(self, dialog, response_id):
+    '''
+    Callback for the 'response' signal emited from the "no gail" dialog.
+    if the response is 'yes', enable accessibility in gconf.
+
+    @param dialog: The dialog that emited the signal.
+    @type dialog: L{gtk.MessageDialog}
+    @param response_id: Response type that was received.
+    @type response_id: integer
+    '''
     if response_id == gtk.RESPONSE_YES:
       cl = gconf.client_get_default()
       cl.set_bool('/desktop/gnome/interface/accessibility', True)
@@ -133,13 +154,34 @@ to take effect.')
   def _onRefreshAll(self, widget):
     '''
     Refreshes the entire tree at the desktop level.
+    
+    @param widget: Widget that emited a signal that this callback 
+    caught (if any).
+    @type widget: gtk.Widget
     '''
     self.acc_treeview.refreshTopLevel()
 
   def _onRefreshCurrent(self, widget):
+    '''
+    Refreshes the currently selected level.
+    
+    @param widget: Widget that emited a signal that this callback 
+    caught.
+    @type widget: gtk.Widget
+    '''
     self.acc_treeview.refreshCurrentLevel()
 
   def _onAccesibleChange(self, node, acc):
+    '''
+    Callback for "accessible_changed" signal that is emitted by the L{Node}
+    referenced as an instance variable.
+    Updates the status bar with the path to the selected accessible.
+
+    @param node: The node that emitted the signal.
+    @type node: L{Node}
+    @param acc: The new accessible that is referenced by the node.
+    @type acc: L{pyLinAcc.Accessible}
+    '''
     # Update status bar
     statusbar = self.main_xml.get_widget('statusbar')
     context_id = statusbar.get_context_id('lineage')
@@ -153,6 +195,9 @@ to take effect.')
       statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
 
   def _shutDown(self):
+    '''
+    Cleans up any object instances that need explicit shutdown.
+    '''
     self.saveSettings('main', {'window_size' :
                                  (self.window.allocation.width,
                                   self.window.allocation.height)})
@@ -163,6 +208,9 @@ to take effect.')
   def _onQuit(self, widget):
     '''
     Quits the app.
+
+    @param widget: The widget that emitted the signal that this callback caught.
+    @type widget: L{gtk.Widget}
     '''
     self._shutDown()
     gtk.main_quit()
@@ -170,6 +218,9 @@ to take effect.')
   def _onAbout(self, widget):
     '''
     Shows the about dialog.
+
+    @param widget: The widget that emitted the signal that this callback caught.
+    @type widget: L{gtk.Widget}
     '''
     xml = gtk.glade.XML(GLADE_FILENAME, 'about', gettext.textdomain())
     about = xml.get_widget('about')
@@ -177,59 +228,49 @@ to take effect.')
     about.set_version(prog.get_app_version())
     xml.signal_autoconnect(self)
 
-  def _onAboutResponse(self, widget, response_id):
+  def _onAboutResponse(self, dialog, response_id):
     '''
-    close the about dialog.
+    Callback for the 'response' signal emited from the "about" dialog.
+    Close the dialog if the response is 'cancel'.
+
+    @param dialog: The dialog that emited the signal.
+    @type dialog: L{gtk.AboutDialog}
+    @param response_id: Response type that was received.
+    @type response_id: integer
     '''
     if response_id == gtk.RESPONSE_CANCEL:
-      widget.destroy()
+      dialog.destroy()
     
   def _onHelp(self, widget):
     '''
     Shows the help dialog.
+
+    @param widget: The widget that emitted the signal that this callback caught.
+    @type widget: L{gtk.Widget}
     '''
     gnome.help_display('accerciser.xml')
-    
-  def _onCloseDialog(self, widget):
-    '''
-    Closes the window of the widget firing this event.
-    '''
-    widget.get_parent_window().destroy()
-
-  def run(self):
-    '''
-    Runs the app.
-    '''
-    try:
-      gtk.main()
-    except KeyboardInterrupt:
-      self._shutDown()
-
-  def _onShowPlugins(self, widget):
-     plugins_frame = self.main_xml.get_widget('frame_plugins')
-     if widget.get_active():
-        plugins_frame.show()
-     else:
-        plugins_frame.hide()
-     
-  def _onShowEventMonitor(self, widget):
-    self.monitor_window.run()
-
-  def _onSelectToggled(self, widget):
-    if widget.get_active():
-      self.event_manager.addClient(self._followFocus, 'focus')
-    else:
-      self.event_manager.removeClient(self._followFocus, 'focus')
-
+         
   def _accEventFocusChanged(self, event):
+    '''
+    Hold a reference for the last focused accessible. This is used when a certain 
+    global hotkey is pressed to select this accessible.
+
+    @param event: The event that is being handled.
+    @type event: L{pyLinAcc.Event}
+    '''
     if not self.isMyApp(event.source):
       self.last_focused = event.source
-
-  def _followFocus(self, event):
-    if self.isMyApp(event.source):
-      return
-  
+ 
   def _accEventKeyPressed(self, event):
+    '''
+    Handle certain key presses globally.
+    
+    - B{<Meta3>?}: Inspect last focused accessible
+    - B{<Meta3>A}: Inspect accessible under mouse
+
+    @param event: The event that is being handled.
+    @type event: L{pyLinAcc.Event}
+    '''
     if (event.any_data[1] & (1 << pyLinAcc.Constants.MODIFIER_META3) and
         event.any_data[0] == '?'):
       # Inspect last focused accessible
@@ -250,7 +291,7 @@ to take effect.')
         for frame in app:
           if not frame:
             continue
-          acc, z_order = self._getChildAccAtCoords(frame, x, y)
+          acc = self._getChildAccAtCoords(frame, x, y)
           if acc:
             try:
               z_order = window_order.index(frame.name)
@@ -262,12 +303,25 @@ to take effect.')
         self.node.update(top_window[0])
 
   def _getChildAccAtCoords(self, parent, x, y):
+    '''
+    Gets any child accessible that resides under given desktop coordinates.
+
+    @param parent: Top-level accessible.
+    @type parent: L{pyLinAcc.Accessible}
+    @param x: X coordinate.
+    @type x: integer
+    @param y: Y coordinate.
+    @type y: integer
+
+    @return: Child accessible at given coordinates, or None.
+    @rtype: L{pyLinAcc.Accessible}
+    '''
     container = parent
     while container:
       try:
         ci = pyLinAcc.Interfaces.IComponent(container)
       except:
-        return None, 0
+        return None
       container =  ci.getAccessibleAtPoint(
         x, y, pyLinAcc.Constants.DESKTOP_COORDS)
       if container == pyLinAcc.Interfaces.IAccessible(ci):
@@ -280,11 +334,17 @@ to take effect.')
         acc = None
       ci = pyLinAcc.Interfaces.IComponent(parent)
       z_order = ci.getMDIZOrder()
-      return acc, z_order
+      return acc
     else:
-      return None, 0
+      return None
 
   def _onShowPlugins(self, widget):
+    '''
+    Shows the plugins dialog.
+
+    @param widget: The widget that emitted the signal that this callback caught.
+    @type widget: L{gtk.Widget}
+    '''
     xml = gtk.glade.XML(GLADE_FILENAME, 
                         'dialog_plugins', 
                         gettext.textdomain())
@@ -314,16 +374,58 @@ to take effect.')
     d = xml.get_widget('dialog_plugins')
     d.show_all()
 
-  def _onPluginsResponse(self, widget, response):
-    widget.destroy()
+  def _onPluginsResponse(self, dialog, response):
+    '''
+    Callback for the 'response' signal emited from the "about" dialog.
+    Close the dialog if the response is 'cancel'.
+
+    @param dialog: The dialog that emited the signal.
+    @type dialog: L{gtk.AboutDialog}
+    @param response_id: Response type that was received.
+    @type response_id: integer
+    '''
+    dialog.destroy()
 
   def _onPluginToggled(self, renderer_toggle, path):
+    '''
+    Callback for a "toggled" signal from a L{gtk.CellRendererToggle} in the
+    plugin dialog. Passes along the toggle request to the L{PluginManager}.
+
+    @param renderer_toggle: The toggle cellrenderer that emitted the signal.
+    @type renderer_toggle: L{gtk.CellRendererToggle}
+    @param path: The path that has been toggled.
+    @type path: tuple
+    '''
     self.plugin_manager.togglePlugin(path)
 
   def _onViewChanged(self, cellrenderertext, path, new_text):
+    '''
+    Callback for an "edited" signal from a L{gtk.CellRendererCombo} in the
+    plugin dialog. Passes along the new requested view name to the L{PluginManager}.
+
+    @param cellrenderertext: The combo cellrenderer that emitted the signal.
+    @type renderer_toggle: L{gtk.CellRendererCombo}
+    @param path: The path that has been touched.
+    @type path: tuple
+    @param new_text: The new text that has been entered in to the combo entry.
+    @type new_text: string
+    '''
     self.plugin_manager.changeView(path, new_text)
 
   def _onBottomPanelChange(self, pluginview, page, page_num, action):
+    '''
+    Callback for changes to the bottom L{PluginView}'s children. If there are no
+    tabs, shrink the paned.
+
+    @param pluginview: The L{PluginView} that emitted the signal.
+    @type pluginview: L{PluginView}
+    @param page: The child widget affected.
+    @type page: L{gtk.Widget}
+    @param page_num: the new page number for page.
+    @type page_num: integer
+    @param action: The type of event that accured, either "removed" or "added"
+    @type action: string
+    '''
     paned = self.main_xml.get_widget('vpaned1')
     if not paned:
       return
@@ -333,6 +435,15 @@ to take effect.')
       paned.set_position(paned.allocation.height - 30)
 
   def _onKeyPress(self, widget, event):
+    '''
+    Callback for a keypress event in the main window.
+    Used for navigating plugin tabs (<alt>+num).
+
+    @param widget: The widget that emitted the event.
+    @type widget: L{gtk.Widget}
+    @param event: The event that accured.
+    @type event: L{gtk.gdk.Event}
+    '''
     if event.state & gtk.gdk.MOD1_MASK and \
           event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
                                  gtk.gdk.keyval_from_name('9')):
