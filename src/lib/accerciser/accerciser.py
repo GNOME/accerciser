@@ -430,8 +430,10 @@ to take effect.')
     if not paned:
       return
     elif pluginview.get_n_pages() == 1 and action == 'added':
-      paned.set_position(350)
+      last_pos = paned.get_data('last_position')
+      paned.set_position(last_pos or 350)
     elif pluginview.get_n_pages() == 0:
+      paned.set_data('last_position', paned.get_position())
       paned.set_position(paned.allocation.height - 30)
 
   def _onKeyPress(self, widget, event):

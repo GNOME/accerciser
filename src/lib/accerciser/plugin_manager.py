@@ -396,6 +396,7 @@ class PluginManager(gobject.GObject, Tools):
         if isinstance(child.parent, gtk.Paned):
           paned = child.parent
           paned.set_position(view_dimensions[view.view_name.lower()][0])
+          paned.set_data('last_position', paned.get_position())
           break
         child = child.parent
 
