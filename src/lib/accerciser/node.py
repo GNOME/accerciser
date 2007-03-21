@@ -15,6 +15,7 @@ import gtk
 import gtk.gdk
 import pyLinAcc
 import gobject
+from tools import Tools
 
 MAX_BLINKS = 4
 
@@ -28,7 +29,7 @@ class Bag(object):
   def __str__(self):
     return ', '.join(vars(self).keys())
 
-class Node(gobject.GObject):
+class Node(gobject.GObject, Tools):
   '''
   Node class that contains convient references to accessibility information 
   for the currently selected node. A L{Node} instance will emit an 
@@ -63,7 +64,7 @@ class Node(gobject.GObject):
     @param acc: An accessible.
     @type acc: L{pyLinAcc.Accessible}
     '''
-    if not acc:
+    if not acc or self.isMyApp(acc):
       return
     self.acc = acc
     try:
