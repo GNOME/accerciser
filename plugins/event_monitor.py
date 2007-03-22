@@ -20,6 +20,7 @@ import accerciser.plugin
 from accerciser.tools import Tools
 from accerciser.i18n import _
 import pango
+from gtk import keysyms, gdk
 
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
                           'event_monitor.glade')
@@ -36,6 +37,9 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
   COL_INCONSISTENT = 3
 
   def init(self):
+    self.global_hotkeys = [('Highlight last event entry', 
+                            self._onHighlightEvent,
+                            keysyms.L, gdk.MOD1_MASK | gdk.SHIFT_MASK)]
     self.source_filter = None
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'event_monitor_vbox')
     vbox = self.main_xml.get_widget('event_monitor_vbox')
@@ -316,15 +320,14 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
       return True
 
   def _onHotKey(self, event):
-    if (event.any_data[1] & (1 << pyLinAcc.Constants.MODIFIER_META3) and
-        event.any_data[0] == 'L'):
-      self._onFlushQueue()
-      start_iter = self.monitor_buffer.get_iter_at_mark(
-        self.monitor_buffer.get_mark('mark_last_log'))
-      end_iter = self.monitor_buffer.get_end_iter()
-      self.monitor_buffer.apply_tag_by_name('last_log', start_iter, end_iter)
-      event.consume = True
-      
+    pass
+  
+  def _onHighlightEvent(self):
+    self._onFlushQueue()
+    start_iter = self.monitor_buffer.get_iter_at_mark(
+      self.monitor_buffer.get_mark('mark_last_log'))
+    end_iter = self.monitor_buffer.get_end_iter()
+    self.monitor_buffer.apply_tag_by_name('last_log', start_iter, end_iter)
 
   def close(self):
     self.event_manager.close()

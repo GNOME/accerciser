@@ -9,6 +9,7 @@ accerciser_PYTHON = accerciser.py \
 	plugin.py \
 	pyLinAcc.zip \
 	tools.py \
+	hotkey_manager.py \
 	__init__.py
 accerciserdir = $(pkgpythondir)/
 DISTCLEANFILES = i18n.py

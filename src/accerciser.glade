@@ -34,32 +34,34 @@
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="edit1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Edit</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="edit1_menu">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="preferences_menuitem">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">gtk-preferences</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="_onShowPreferences"/>
+                        <accelerator key="p" modifiers="GDK_CONTROL_MASK" signal="activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
               <widget class="GtkMenuItem" id="view1">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">_View</property>
                 <property name="use_underline">True</property>
                 <child>
                   <widget class="GtkMenu" id="view1_menu">
-                    <child>
-                      <widget class="GtkImageMenuItem" id="imagemenuitem2">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">_Plugins...</property>
-                        <property name="use_underline">True</property>
-                        <signal name="activate" handler="_onShowPlugins"/>
-                        <accelerator key="p" modifiers="GDK_CONTROL_MASK" signal="activate"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image1">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-disconnect</property>
-                          </widget>
-                        </child>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem1">
-                        <property name="visible">True</property>
-                      </widget>
-                    </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="imagemenuitem3">
                         <property name="visible">True</property>
@@ -237,27 +239,75 @@ Peter Parente &lt;pparent@us.ibm.com&gt;</property>
       </widget>
     </child>
   </widget>
-  <widget class="GtkDialog" id="dialog_plugins">
+  <widget class="GtkDialog" id="preferences">
     <property name="border_width">5</property>
-    <property name="default_width">360</property>
+    <property name="title" translatable="yes">accercicer Preferences</property>
+    <property name="default_width">480</property>
     <property name="default_height">240</property>
     <property name="has_separator">False</property>
-    <signal name="close" handler="_onPluginsClose"/>
-    <signal name="response" handler="_onPluginsResponse"/>
+    <signal name="close" handler="_onPreferencesClose"/>
+    <signal name="response" handler="_onPreferencesResponse"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog-vbox3">
         <property name="visible">True</property>
         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
         <property name="spacing">2</property>
         <child>
-          <widget class="GtkScrolledWindow" id="scrolledwindow3">
+          <widget class="GtkNotebook" id="notebook1">
             <property name="visible">True</property>
-            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
             <child>
-              <widget class="GtkTreeView" id="plugins_treeview">
+              <widget class="GtkScrolledWindow" id="plugins_sw">
                 <property name="visible">True</property>
+                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                <property name="shadow_type">GTK_SHADOW_IN</property>
+                <child>
+                  <placeholder/>
+                </child>
               </widget>
+              <packing>
+                <property name="tab_expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Plugins</property>
+                <property name="use_underline">True</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+                <property name="tab_expand">False</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkScrolledWindow" id="hotkeys_sw">
+                <property name="visible">True</property>
+                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                <property name="shadow_type">GTK_SHADOW_IN</property>
+                <child>
+                  <placeholder/>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab_expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label2">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Global _Hotkeys</property>
+                <property name="use_underline">True</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+                <property name="position">1</property>
+                <property name="tab_expand">False</property>
+                <property name="tab_fill">False</property>
+              </packing>
             </child>
           </widget>
           <packing>

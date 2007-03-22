@@ -33,6 +33,7 @@ from i18n import _
 import wnck
 from gnome import program_get
 import gconf
+from hotkey_manager import HotkeyManager, HotkeyTreeView
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
@@ -61,6 +62,17 @@ class MainWindow(Tools):
       return
     root_atk.set_description(str(os.getpid()))
 
+    # Start hotkey manager
+    self.hotkey_manager = HotkeyManager()
+    self.hotkey_manager.addKeyCombo('Core', 'Inspect last focused accessible',
+                                    self._inspectLastFocused, 
+                                    gtk.keysyms.question,
+                                    gtk.gdk.SHIFT_MASK | gtk.gdk.MOD1_MASK)
+    self.hotkey_manager.addKeyCombo('Core', 'Inspect accessible under mouse',
+                                    self._inspectUnderMouse, 
+                                    gtk.keysyms.A,
+                                    gtk.gdk.SHIFT_MASK | gtk.gdk.MOD1_MASK)
+
     # parse the glade
     self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window', 
                                   gettext.textdomain())
@@ -86,7 +98,7 @@ class MainWindow(Tools):
                               self._onBottomPanelChange, 'removed')
     bin.add(self.plugin_view2)
     # load plugins
-    self.plugin_manager = PluginManager(self.node, 
+    self.plugin_manager = PluginManager(self.node, self.hotkey_manager,
                                         [self.plugin_view1, self.plugin_view2])
     self.plugin_manager.loadPlugins()
 
@@ -260,47 +272,46 @@ to take effect.')
     '''
     if not self.isMyApp(event.source):
       self.last_focused = event.source
+
+  def _inspectLastFocused(self):
+    if self.last_focused:
+      self.node.update(self.last_focused)
+      
+  def _inspectUnderMouse(self):
+    # Inspect accessible under mouse
+    display = gtk.gdk.Display(gtk.gdk.get_display())
+    screen, x, y, flags =  display.get_pointer()
+    desktop = pyLinAcc.Registry.getDesktop(0)
+    wnck_screen = wnck.screen_get_default()
+    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
+    top_window = (None, -1)
+    for app in desktop:
+      if not app:
+        continue
+      for frame in app:
+        if not frame:
+          continue
+        acc = self._getChildAccAtCoords(frame, x, y)
+        if acc:
+          try:
+            z_order = window_order.index(frame.name)
+          except ValueError:
+            continue
+          if z_order > top_window[1]:
+            top_window = (acc, z_order)
+    if top_window[0]:
+      self.node.update(top_window[0])
+
  
   def _accEventKeyPressed(self, event):
     '''
-    Handle certain key presses globally.
+    Handle certain key presses globally. Pass on to the hotkey manager the 
+    key combinations pressed for further processing.
     
-    - B{<Meta3>?}: Inspect last focused accessible
-    - B{<Meta3>A}: Inspect accessible under mouse
-
-    @param event: The event that is being handled.
+   @param event: The event that is being handled.
     @type event: L{pyLinAcc.Event}
     '''
-    if (event.any_data[1] & (1 << pyLinAcc.Constants.MODIFIER_META3) and
-        event.any_data[0] == '?'):
-      # Inspect last focused accessible
-      if self.last_focused:
-        self.node.update(self.last_focused)
-    elif (event.any_data[1] & (1 << pyLinAcc.Constants.MODIFIER_META3) and
-          event.any_data[0] == 'A'):
-      # Inspect accessible under mouse
-      display = gtk.gdk.Display(gtk.gdk.get_display())
-      screen, x, y, flags =  display.get_pointer()
-      desktop = pyLinAcc.Registry.getDesktop(0)
-      wnck_screen = wnck.screen_get_default()
-      window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
-      top_window = (None, -1)
-      for app in desktop:
-        if not app:
-          continue
-        for frame in app:
-          if not frame:
-            continue
-          acc = self._getChildAccAtCoords(frame, x, y)
-          if acc:
-            try:
-              z_order = window_order.index(frame.name)
-            except ValueError:
-              continue
-            if z_order > top_window[1]:
-              top_window = (acc, z_order)
-      if top_window[0]:
-        self.node.update(top_window[0])
+    self.hotkey_manager.hotkeyPress(event.any_data[0], event.any_data[1])
 
   def _getChildAccAtCoords(self, parent, x, y):
     '''
@@ -338,43 +349,30 @@ to take effect.')
     else:
       return None
 
-  def _onShowPlugins(self, widget):
+  def _onShowPreferences(self, widget):
     '''
-    Shows the plugins dialog.
+    Shows the preferences dialog.
 
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
     xml = gtk.glade.XML(GLADE_FILENAME, 
-                        'dialog_plugins', 
+                        'preferences', 
                         gettext.textdomain())
     xml.signal_autoconnect(self)
-    plugins_treeview = xml.get_widget('plugins_treeview')
-    plugins_treeview.set_model(self.plugin_manager.plugins_store)
-    crt = gtk.CellRendererText()
-    crc = gtk.CellRendererToggle()
-    crc.connect('toggled', self._onPluginToggled)
-    tvc = gtk.TreeViewColumn('Name')
-    tvc.pack_start(crc, True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    tvc.set_attributes(crc, active=4)
-    plugins_treeview.append_column(tvc)
-    crc = gtk.CellRendererCombo()
-    tvc = gtk.TreeViewColumn('View')
-    tvc.pack_start(crc, False)
-    tvc.set_expand(False)
-    tvc.set_attributes(crc, text=2)
-    crc.set_property('editable', True)
-    crc.set_property('model', self.plugin_manager.views_store)
-    crc.set_property('text-column', 1)
-    crc.set_property('has-entry', True)
-    crc.connect('edited', self._onViewChanged)
-    plugins_treeview.append_column(tvc)
-    d = xml.get_widget('dialog_plugins')
-    d.show_all()
 
-  def _onPluginsResponse(self, dialog, response):
+    sw = xml.get_widget('plugins_sw')
+    treeview = PluginTreeView(self.plugin_manager)
+    sw.add(treeview)
+
+    sw = xml.get_widget('hotkeys_sw')
+    treeview = HotkeyTreeView(self.hotkey_manager)
+    sw.add(treeview)
+
+    d = xml.get_widget('preferences')
+    d.show_all()
+    
+  def _onPreferencesResponse(self, dialog, response):
     '''
     Callback for the 'response' signal emited from the "about" dialog.
     Close the dialog if the response is 'cancel'.
@@ -385,32 +383,6 @@ to take effect.')
     @type response_id: integer
     '''
     dialog.destroy()
-
-  def _onPluginToggled(self, renderer_toggle, path):
-    '''
-    Callback for a "toggled" signal from a L{gtk.CellRendererToggle} in the
-    plugin dialog. Passes along the toggle request to the L{PluginManager}.
-
-    @param renderer_toggle: The toggle cellrenderer that emitted the signal.
-    @type renderer_toggle: L{gtk.CellRendererToggle}
-    @param path: The path that has been toggled.
-    @type path: tuple
-    '''
-    self.plugin_manager.togglePlugin(path)
-
-  def _onViewChanged(self, cellrenderertext, path, new_text):
-    '''
-    Callback for an "edited" signal from a L{gtk.CellRendererCombo} in the
-    plugin dialog. Passes along the new requested view name to the L{PluginManager}.
-
-    @param cellrenderertext: The combo cellrenderer that emitted the signal.
-    @type renderer_toggle: L{gtk.CellRendererCombo}
-    @param path: The path that has been touched.
-    @type path: tuple
-    @param new_text: The new text that has been entered in to the combo entry.
-    @type new_text: string
-    '''
-    self.plugin_manager.changeView(path, new_text)
 
   def _onBottomPanelChange(self, pluginview, page, page_num, action):
     '''

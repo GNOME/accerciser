@@ -1,3 +1,17 @@
+2007-03-21  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/event_monitor.py: Changed to new global hotkey method.
+	* src/accerciser.glade: Removed plugins dialog, and replaced with
+	global hotkey scheme.
+	* src/lib/accerciser/Makefile.am: Added hotkey_manager.py
+	* src/lib/accerciser/accerciser.py: Removed plugin dialog. Added
+	preferences dialog and added hotkey manager.
+	* src/lib/accerciser/hotkey_manager.py: A new global hotkey
+	manager. A centralized place to do all hotkey configurations.
+	* src/lib/accerciser/plugin.py: Changed to new global hotkey method.
+	* src/lib/accerciser/plugin_manager.py: Changed to new global 
+	hotkey method.
+
 2007-03-20  Eitan Isaacson  <eitan@ascender.com>
 
 	* src/lib/accerciser/node.py: Fix bug 420774.

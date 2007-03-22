@@ -22,6 +22,8 @@ class Plugin(Tools):
   and finalizing a plugin. It also holds a reference to the main L{Node} and
   listens for 'accessible_changed' events on it.
 
+  @ivar global_hotkeys: A list of tuples containing hotkeys and callbacks.
+  @type global_hotkeys: list
   @ivar node: An object with a reference to the currently selected 
   accessible in the main  treeview.
   @type node: L{Node}
@@ -30,7 +32,6 @@ class Plugin(Tools):
   @ivar _handler: The handler id for the L{Node}'s 'accessible_changed' signal
   @type _handler: integer
   '''
-
   def __init__(self, node):
     '''
     Connects the L{Node}'s 'accessible_changed' signal to a handler.
@@ -40,6 +41,7 @@ class Plugin(Tools):
     @note: L{Plugin} writers should override L{init} to do initialization, not
     this method.
     '''
+    self.global_hotkeys = []
     self.node = node
     self._handler = self.node.connect('accessible_changed', self._onAccChanged)
     self.acc = self.node.acc

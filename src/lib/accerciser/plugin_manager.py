@@ -95,9 +95,10 @@ class PluginViewWindow(gtk.Window, Tools):
       
   
 class PluginManager(gobject.GObject, Tools):
-  def __init__(self, node, pluginviews_main):
+  def __init__(self, node, hotkey_manager, pluginviews_main):
     gobject.GObject.__init__(self)
     self.node = node
+    self.hotkey_manager = hotkey_manager
     self.pluginviews_main = pluginviews_main
     self._restorePanedViews(pluginviews_main)
     self.views_store = gtk.ListStore(PluginView, str)
@@ -212,6 +213,9 @@ class PluginManager(gobject.GObject, Tools):
       plugin_instance = plugin_class(self.node)
       plugin_instance.init()
       plugin_instance.onAccChanged(plugin_instance.node.acc)
+      for key_combo in plugin_instance.global_hotkeys:
+        self.hotkey_manager.addKeyCombo(
+          self.plugins_store[iter][self.plugins_store.COL_NAME], *key_combo)
     except Exception, e:
       error_message = self.error_manager.newError(
         traceback.format_exception_only(e.__class__, e)[0].strip(),
@@ -231,6 +235,9 @@ class PluginManager(gobject.GObject, Tools):
   def _disablePlugin(self, iter):
     plugin_instance = self.plugins_store[iter][self.plugins_store.COL_INSTANCE]
     if not plugin_instance: return
+    for key_combo in plugin_instance.global_hotkeys:
+      self.hotkey_manager.removeKeyCombo(
+        self.plugins_store[iter][self.plugins_store.COL_NAME], *key_combo)
     if isinstance(plugin_instance, gtk.Widget):
       plugin_instance.destroy()
     plugin_instance._close()
@@ -464,3 +471,55 @@ class PluginErrorManager(object):
         self.viewport = None
         self.vbox = None
 
+
+class PluginTreeView(gtk.TreeView):
+  def __init__(self, plugin_manager):
+    gtk.TreeView.__init__(self)
+    self.plugin_manager = plugin_manager
+    self.set_model(plugin_manager.plugins_store)
+    crt = gtk.CellRendererText()
+    crc = gtk.CellRendererToggle()
+    crc.connect('toggled', self._onPluginToggled)
+    tvc = gtk.TreeViewColumn('Name')
+    tvc.pack_start(crc, True)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    tvc.set_attributes(crc, active=4)
+    self.append_column(tvc)
+    crc = gtk.CellRendererCombo()
+    tvc = gtk.TreeViewColumn('View')
+    tvc.pack_start(crc, False)
+    tvc.set_expand(False)
+    tvc.set_attributes(crc, text=2)
+    crc.set_property('editable', True)
+    crc.set_property('model', self.plugin_manager.views_store)
+    crc.set_property('text-column', 1)
+    crc.set_property('has-entry', True)
+    crc.connect('edited', self._onViewChanged)
+    self.append_column(tvc)
+
+  def _onPluginToggled(self, renderer_toggle, path):
+    '''
+    Callback for a "toggled" signal from a L{gtk.CellRendererToggle} in the
+    plugin dialog. Passes along the toggle request to the L{PluginManager}.
+
+    @param renderer_toggle: The toggle cellrenderer that emitted the signal.
+    @type renderer_toggle: L{gtk.CellRendererToggle}
+    @param path: The path that has been toggled.
+    @type path: tuple
+    '''
+    self.plugin_manager.togglePlugin(path)
+
+  def _onViewChanged(self, cellrenderertext, path, new_text):
+    '''
+    Callback for an "edited" signal from a L{gtk.CellRendererCombo} in the
+    plugin dialog. Passes along the new requested view name to the L{PluginManager}.
+
+    @param cellrenderertext: The combo cellrenderer that emitted the signal.
+    @type renderer_toggle: L{gtk.CellRendererCombo}
+    @param path: The path that has been touched.
+    @type path: tuple
+    @param new_text: The new text that has been entered in to the combo entry.
+    @type new_text: string
+    '''
+    self.plugin_manager.changeView(path, new_text)
