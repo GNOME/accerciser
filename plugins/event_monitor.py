@@ -29,7 +29,7 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
   '''
   Class for the monitor viewer.
   '''
-  plugin_name = 'Event monitor'
+  plugin_name = 'Event Monitor'
   plugin_description = 'Shows events as they occur from selected types and sources'
   COL_NAME = 0
   COL_FULL_NAME = 1

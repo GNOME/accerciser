@@ -21,7 +21,7 @@ if ipython_view.IPython == None:
  
 
 class Console(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'IPython console'
+  plugin_name = 'IPython Console'
   plugin_description = 'Interactive console for manipulating currently selected accessible'
   def init(self):
     sw = gtk.ScrolledWindow()

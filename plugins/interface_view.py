@@ -31,7 +31,7 @@ class CallCache(list):
          return False
 
 class InterfaceViewer(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'Interface viewer'
+  plugin_name = 'Interface Viewer'
   plugin_description = 'Allows viewing of various interfac propertiesXS'
   def init(self):
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')

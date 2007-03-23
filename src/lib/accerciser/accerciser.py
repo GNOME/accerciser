@@ -34,12 +34,15 @@ import wnck
 from gnome import program_get
 import gconf
 from hotkey_manager import HotkeyManager, HotkeyTreeView
+import gconf
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
 if not os.path.exists(GLADE_FILENAME):
   GLADE_FILENAME = os.path.join(os.getcwd(), 'accerciser.glade')
   
+GCONF_GENERAL = '/apps/accerciser/general'
+
 class MainWindow(Tools):
   '''
   Class for the main accerciser window. 
@@ -78,8 +81,9 @@ class MainWindow(Tools):
                                   gettext.textdomain())
     self.window = self.main_xml.get_widget('window')
     self.window.set_icon_name('accerciser')
-    window_size = self.loadSettings('main').get('window_size')
-    width, height = window_size or (640, 640)
+    cl = gconf.client_get_default()
+    width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
+    height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
     self.window.set_default_size(width, height)
     self.acc_treeview = AccessibleTreeView()
     self.node = self.acc_treeview.node
@@ -210,9 +214,9 @@ to take effect.')
     '''
     Cleans up any object instances that need explicit shutdown.
     '''
-    self.saveSettings('main', {'window_size' :
-                                 (self.window.allocation.width,
-                                  self.window.allocation.height)})
+    cl = gconf.client_get_default()
+    cl.set_int(GCONF_GENERAL+'/window_width', self.window.allocation.width)
+    cl.set_int(GCONF_GENERAL+'/window_height', self.window.allocation.height)
     self.event_manager.close()
     self.acc_treeview.destroy()
     self.plugin_manager.close()

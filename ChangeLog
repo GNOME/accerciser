@@ -1,3 +1,22 @@
+2007-03-23  Eitan Isaacson  <eitan@ascender.com>
+
+	* Makefile.am: Added gconf schema and schema installation
+	* accerciser.schemas: A new schema with default values for plugin layout.
+	* configure.in: Added gconf stuff
+	* debian/changelog: Bumped to version 0.2.0
+	* debian/rules: Added dh_gconf
+	* plugins/api_view.py: Capitalized plugin name
+	* plugins/console.py: Capitalized plugin name
+	* plugins/event_monitor.py: Capitalized plugin name
+	* plugins/interface_view.py: Capitalized plugin name
+	* src/lib/accerciser/accerciser.py: Using gconf for saving and
+	restoring main window size.
+	* src/lib/accerciser/hotkey_manager.py: Using gconf for saving and
+	restoring global hotkey combinations.
+	* src/lib/accerciser/plugin_manager.py: Using gconf for saving and
+	restoring plugin layout and pluginview dimensions.
+	* src/lib/accerciser/tools.py: removed old *.ini save/load stuff.
+
 2007-03-21  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/event_monitor.py: Changed to new global hotkey method.

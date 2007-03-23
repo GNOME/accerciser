@@ -16,7 +16,7 @@ from accerciser.i18n import _
 from pyLinAcc import *
 
 class DemoViewport(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'API browser'
+  plugin_name = 'API Browser'
   plugin_description = 'Browse the various methods of the current accessible'
   def init(self):
     self._buildUI()

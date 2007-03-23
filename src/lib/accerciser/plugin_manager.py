@@ -21,6 +21,10 @@ import sys
 import imp
 import pango
 import traceback
+import gconf
+
+GCONF_PLUGINS = '/apps/accerciser/plugins'
+GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
 
 PLUGIN_NOTEBOOK_GROUP = 1
 
@@ -76,10 +80,14 @@ class PluginViewWindow(gtk.Window, Tools):
     gtk.Window.__init__(self)
     self.plugin_view = PluginView(view_name)
     self.add(self.plugin_view)
-    view_dimensions = self.loadSettings('plugin_view_sizes') or {}
-    window_size = view_dimensions.get(view_name.lower(), (480, 480))
+
+    cl = gconf.client_get_default()
+    escaped_view_name = '/%s' % gconf.escape_key(view_name, len(view_name))
+    width = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width') or 480
+    height = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height') or 480
+    self.set_default_size(width, height)
+
     self.connect('key_press_event', self._onKeyPress)
-    self.set_default_size(window_size[0], window_size[1])
     self.set_title(view_name)
     self.set_position(gtk.WIN_POS_MOUSE)
     self.show_all()
@@ -98,6 +106,7 @@ class PluginManager(gobject.GObject, Tools):
   def __init__(self, node, hotkey_manager, pluginviews_main):
     gobject.GObject.__init__(self)
     self.node = node
+    self.gconf_client = gconf.client_get_default()
     self.hotkey_manager = hotkey_manager
     self.pluginviews_main = pluginviews_main
     self._restorePanedViews(pluginviews_main)
@@ -129,7 +138,6 @@ class PluginManager(gobject.GObject, Tools):
     self.closed = True
 
   def loadPlugins(self):
-    plugin_layout = self._loadLayout()
     plugin_dir_local = os.path.join(os.environ['HOME'], 
                                     '.accerciser', 'plugins')
     plugin_dir_global = os.path.join(sys.prefix, 'share',
@@ -140,15 +148,19 @@ class PluginManager(gobject.GObject, Tools):
         continue
       for fn in os.listdir(plugin_dir):
         if fn.endswith('.py') and not fn.startswith('.'):
-          self._loadPluginFile(plugin_dir, fn[:-3],
-                               plugin_layout)
+          self._loadPluginFile(plugin_dir, fn[:-3])
     for view, view_name in self.views_store:
       for child in view.get_children():
         if isinstance(child, accerciser_plugin.Plugin):
           plugin = child
-          view.reorder_child(child, 
-                             plugin_layout.get(plugin.plugin_name.lower(),
-                                               [None,-1])[1])
+          key_name = '/%s/tab_order' % gconf.escape_key(plugin.plugin_name,
+                                                      len(plugin.plugin_name))
+          gconf_value = self.gconf_client.get(GCONF_PLUGINS+key_name)
+          if gconf_value is None:
+            tab_order = -1
+          else:
+            tab_order = gconf_value.get_int()
+          view.reorder_child(child, tab_order)
       self._connectSignals(view)
       view.set_current_page(0)
       view.show_all()
@@ -171,13 +183,11 @@ class PluginManager(gobject.GObject, Tools):
 
   def _onRetryFileLoad(self, error_message, response_id, plugin_file_info):
     if response_id == gtk.RESPONSE_APPLY:
-      plugin_layout = self._loadLayout()
       self._loadPluginFile(plugin_file_info[0], 
-                           plugin_file_info[1], 
-                           plugin_layout)
+                           plugin_file_info[1])
       error_message.emit('response', gtk.RESPONSE_CLOSE)
 
-  def _loadPluginFile(self, plugin_dir, plugin_fn, plugin_layout):
+  def _loadPluginFile(self, plugin_dir, plugin_fn):
     plugin_locals = self._getPluginLocals(plugin_dir, plugin_fn)
     # use keys list to avoid size changes during iteration
     for symbol in plugin_locals.keys():
@@ -187,8 +197,7 @@ class PluginManager(gobject.GObject, Tools):
       except TypeError:
         continue
       if is_plugin:
-        view_name = self._getViewNameForPlugin(plugin_locals[symbol].plugin_name,
-                                               plugin_layout)
+        view_name = self._getViewNameForPlugin(plugin_locals[symbol].plugin_name)
         try:
           iter = self.plugins_store.append([plugin_locals[symbol].plugin_name,
                                             plugin_locals[symbol].plugin_description,
@@ -202,8 +211,10 @@ class PluginManager(gobject.GObject, Tools):
                                 (plugin_dir, plugin_fn))
           continue
         # if a plugin class is found, initialize
-        if plugin_layout.get(plugin_locals[symbol].plugin_name.lower(), 
-                             [None,None,True])[2]:
+        key_name = '/%s/enabled' % gconf.escape_key(plugin_locals[symbol].plugin_name,
+                                                    len(plugin_locals[symbol].plugin_name))
+        enabled = self.gconf_client.get(GCONF_PLUGINS+key_name)
+        if enabled is None or enabled.get_bool():
           self._enablePlugin(plugin_locals, iter)
 
   def _enablePlugin(self, plugin_locals, iter, set_current=False):
@@ -280,9 +291,10 @@ class PluginManager(gobject.GObject, Tools):
       # Enable plugin
       self._reloadPlugin(self.plugins_store.get_iter(path))
 
-  def _getViewNameForPlugin(self, name, plugin_layout):
-    return plugin_layout.get(name.lower(), 
-                             [self.pluginviews_main[0].view_name])[0]
+  def _getViewNameForPlugin(self, plugin_name):
+    key_name = '/%s/view_name' % gconf.escape_key(plugin_name, len(plugin_name))
+    return self.gconf_client.get_string(GCONF_PLUGINS+key_name) or \
+        self.pluginviews_main[0].view_name
 
   def _getViewByName(self, view_name):
     if view_name not in [row[1] for row in self.views_store]:
@@ -350,19 +362,8 @@ class PluginManager(gobject.GObject, Tools):
         if view:
           row[self.plugins_store.COL_VIEW] = view.view_name
     
-  def _loadLayout(self):
-    # TODO: create a default system-wide default configuration for stuff 
-    # like this.
-    rv = {'ipython console' : ('Bottom panel', 0, True),
-          'interface viewer' : ('Top right', 0, True),
-          'event monitor' : ('Top right', 1, True),
-          'api browser' : ('Top right', 2, True)}
-    layout = self.loadSettings('plugin_layout') or {}
-    rv.update(layout)
-    return rv
-
   def _saveLayout(self):
-    layout = {}
+    # TODO implement better model/controller/view. This is crap.
     for row in self.plugins_store:
       view_name = row[self.plugins_store.COL_VIEW]
       plugin_name = row[self.plugins_store.COL_NAME]
@@ -372,37 +373,43 @@ class PluginManager(gobject.GObject, Tools):
         tab_order = plugin_instance.parent.page_num(plugin_instance)
       else:
         tab_order = -1
-      layout[plugin_name] = (view_name, tab_order, state)
-    self.saveSettings('plugin_layout', layout)
+      escaped_name = '/%s' % gconf.escape_key(plugin_name, len(plugin_name))
+      self.gconf_client.set_string(GCONF_PLUGINS+escaped_name+'/view_name', view_name)
+      self.gconf_client.set_int(GCONF_PLUGINS+escaped_name+'/tab_order', tab_order)
+      self.gconf_client.set_bool(GCONF_PLUGINS+escaped_name+'/enabled', state)
     
 
   def _saveViewDimensions(self):
-    view_dimensions = {}
     for view, view_name in self.views_store:
+      escaped_view_name = '/%s' % gconf.escape_key(view_name, len(view_name))
       child = view
       while child:
         if isinstance(child.parent, PluginViewWindow):
           window = child.parent
-          view_dimensions[view_name] = (window.allocation.width, 
-                                        window.allocation.height)
+          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width', 
+                                    window.allocation.width)
+          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height', 
+                                    window.allocation.height)
           break
         elif isinstance(child.parent, gtk.Paned):
           paned = child.parent
-          view_dimensions[view_name] = (paned.get_position(),)
+          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position', 
+                                    paned.get_position())
           break
         child = child.parent
-    self.saveSettings('plugin_view_sizes', view_dimensions)
   
   def _restorePanedViews(self, views):
-    view_dimensions = self.loadSettings('plugin_view_sizes') or {}
     for view in views:
-      if not view_dimensions.has_key(view.view_name.lower()):
+      escaped_view_name = '/%s' % gconf.escape_key(view.view_name, len(view.view_name))      
+      if not self.gconf_client.get(GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position'):
         continue
       child = view
       while child:
         if isinstance(child.parent, gtk.Paned):
           paned = child.parent
-          paned.set_position(view_dimensions[view.view_name.lower()][0])
+          paned_position = self.gconf_client.get_int(
+            GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position')
+          paned.set_position(paned_position)
           paned.set_data('last_position', paned.get_position())
           break
         child = child.parent

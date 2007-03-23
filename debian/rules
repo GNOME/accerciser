@@ -30,7 +30,7 @@ config.status: configure
 	  cp /usr/share/misc/config.guess .
 	test -r /usr/share/misc/config.sub && \
 	  cp /usr/share/misc/config.sub .
-	CFLAGS="$(CFLAGS) -Wl,-z,defs" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --disable-scrollkeeper
+	CFLAGS="$(CFLAGS) -Wl,-z,defs" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info --disable-scrollkeeper --with-gconf-schema-file-dir=/usr/share/gconf/schemas --disable-schemas-install
 
 
 build: build-stamp
@@ -58,7 +58,7 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
-	
+
 	# Add here commands to install the package into debian/accerciser.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/accerciser
 
@@ -78,6 +78,7 @@ binary-arch: build install
 	dh_fixperms
 	dh_scrollkeeper
 	dh_desktop
+	dh_gconf
 	dh_iconcache
 	dh_pycentral
 	dh_installdeb

@@ -1,5 +1,7 @@
-import gtk
+import gtk, gconf
 from pyLinAcc import Constants
+
+GCONF_HOTKEYS = '/apps/accerciser/global_hotkeys'
 
 COL_COMPONENT = 0
 COL_DESC = 1
@@ -36,7 +38,9 @@ class HotkeyManager(gtk.ListStore):
     Constructor for the L{HotkeyManager}
     '''
     gtk.ListStore.__init__(self, str, str, object, int, int)
-
+    self.connect('row-changed', self._onComboChanged)
+    self.gconf_client = gconf.client_get_default()
+    
   def hotkeyPress(self, key, modifiers):
     '''
     Call the appropriate callbacks for given key combination. This method 
@@ -55,7 +59,7 @@ class HotkeyManager(gtk.ListStore):
         if callback:
           callback()
   
-  def addKeyCombo(self, component, description, callback, key, modifiers):
+  def addKeyCombo(self, component, description, callback, keypress, modifiers):
     '''
     Adds the given key combination with the appropriate callbacks to 
     the L{HotkeyManager}. If an identical description with the identical 
@@ -72,8 +76,8 @@ class HotkeyManager(gtk.ListStore):
     @param callback: The callback to call when the given key combination 
     is pressed.
     @type callback: callable
-    @param key: The key symbol of the keystroke that performs given operation.
-    @type key: long
+    @param keypress: The key symbol of the keystroke that performs given operation.
+    @type keypress: long
     @param modifiers: The modifiers that must be depressed for function to 
     be perfomed.
     @type modifiers: int
@@ -84,7 +88,13 @@ class HotkeyManager(gtk.ListStore):
       path = component_desc_pairs.index((component, description))
       self[path][COL_CALLBACK] = callback
     else:
-      self.append([component, description, callback, key, modifiers])
+      combo_gconf_key = self._getComboGConfKey(component, description)
+      if self.gconf_client.get(combo_gconf_key):
+        final_keypress, final_modifiers = \
+            self._keyComboParse(self.gconf_client.get_string(combo_gconf_key))
+      else:
+        final_keypress, final_modifiers = keypress, modifiers
+      self.append([component, description, callback, final_keypress, final_modifiers])
 
   def removeKeyCombo(self, component, description, callback, key, modifiers):
     '''
@@ -111,6 +121,78 @@ class HotkeyManager(gtk.ListStore):
         # We never really remove it, just set the callback to None
         self[iter][COL_CALLBACK] = None
       iter = self.iter_next(iter)
+    
+  def _onComboChanged(self, model, path, iter):
+    '''
+    Callback for row changes. Copies the changed key combos over to gconf.
+
+    @param model: The model that emitted the signal. Should be this class instance.
+    @type model: L{gtk.TreeModel}
+    @param path: The path of the row that has changed.
+    @type path: tuple
+    @param iter: The iter of the row that has changed.
+    @type iter: L{gtk.TreeIter}
+    '''
+    if not model[iter][COL_COMPONENT] or not model[iter][COL_DESC]:
+      return
+    combo_gconf_key = self._getComboGConfKey(model[iter][COL_COMPONENT], 
+                                             model[iter][COL_DESC])
+    combo_name = self._keyComboName(model[iter][COL_KEYPRESS], model[iter][COL_MOD])
+    if self.gconf_client.get_string(combo_gconf_key) != combo_name:
+      self.gconf_client.set_string(combo_gconf_key, combo_name)
+  
+  def _getComboGConfKey(self, component, description):
+    '''
+    A convinience method to expand the full gconf path for a specific key combo.
+
+    @param component: The component of the hotkey.
+    @type component: string
+    @param description: The description of the hotkey action
+    @type description: string
+    
+    @return: A full gconf key name
+    @rtype: string
+    '''
+    combo_gconf_key = '%s/%s/%s/key_combo' % \
+        (GCONF_HOTKEYS, gconf.escape_key(component, len(component)),
+         gconf.escape_key(description, len(description)))
+    return combo_gconf_key
+
+  def _keyComboParse(self, combo_string):
+    '''
+    Gets the key symbol and the modifier mask from a human readable string.
+    This convinience method is important because gtk.accelerator_parse ignores the
+    case of the keys.
+
+    @param combo_string: The key combo string, for example, '<Alt>g'.
+    @type combo_string: string
+
+    @return: The key symbol and modifiers mask.
+    @rtype: tuple
+    '''
+    if not combo_string:
+      return (-1, 0)
+    key, modifiers = gtk.accelerator_parse(combo_string)
+    key = gtk.gdk.keyval_from_name(combo_string.split('>')[-1]) or -1
+    return key, modifiers
+
+  def _keyComboName(self, key, modifiers):
+    '''
+    Gets a human readable string from a key symbol and the modifier mask.
+    This convinience method is important because gtk.accelerator_name ignores the
+    case of the keys.
+
+    @param key: A key symbol.
+    @type key: int
+    @param modifiers: Modifiers mask
+    @type modifiers: int
+
+    @return: The key combo string, for example, '<Alt>g'.
+    @rtype: string
+    '''
+    combo_string = gtk.accelerator_name(0, modifiers)
+    combo_string += gtk.gdk.keyval_name(key) or ''
+    return combo_string
 
 class HotkeyTreeView(gtk.TreeView):
   '''

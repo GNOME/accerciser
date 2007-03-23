@@ -61,56 +61,6 @@ class Tools(object):
         return True
     return False
   
-  def loadSettings(self, section=None):
-    '''
-    Load persisted settings.
-
-    @param section: The section we want returned. If no section is given, 
-    the entire settings dictionary is returned.
-    @type section: string
-    @return: If L{section} is given, then only the arbitrary data of that 
-    section is returned. If L{section} is not given, return an entire 
-    dictionary with all the settings.
-    @rtype: dictionary
-    '''
-    config = RawConfigParser()
-    config.read([os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)])
-    rv = {}
-    if section is None:
-      for sec in config.sections():
-        rv[sec] = {}
-        for key, value in config.items(sec):
-          rv[sec][key] = eval(value)
-    elif config.has_section(section):
-      for key, value in config.items(section):
-        rv[key] = eval(value)
-    return rv
-
-  def saveSettings(self, section, items):
-    '''
-    Save settings.
-
-    @param section: The section we want to save the data to. 
-    @type section: string
-    @param items: The arbitrary data we want to save.
-    @type items: dictionary
-    '''
-    filename = os.path.join(self.SETTINGS_PATH, self.SETTINGS_FILE)
-    config = RawConfigParser()
-    config.read([filename])
-    if not config.has_section(section):
-      config.add_section(section)
-    for key, value in items.iteritems():
-      config.set(section, key, value)
-    try:
-      if not os.path.exists(os.path.dirname(filename)):
-        os.mkdir(os.path.dirname(filename))
-      f = open(filename, 'w')
-    except Exception, e:
-      return
-    config.write(f)
-    f.close()
-
 
 class Proxy(object):
   '''
