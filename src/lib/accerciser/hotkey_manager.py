@@ -268,9 +268,22 @@ class HotkeyTreeView(gtk.TreeView):
     '''
     model = gtk.TreeStore(long, str)
     iter = model.append(None, [-1, 'Alphanumeric'])
-    for attr in dir(gtk.keysyms):
-      if len(attr) == 1 or (len(attr) == 2 and attr.startswith('_')):
-        model.append(iter, [getattr(gtk.keysyms, attr), attr.replace('_','')])
+    for keyval in range(48, 58)+range(65, 91)+range(97, 123):
+      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
+    iter = model.append(None, [-1, 'Keypad'])
+    for keyval in range(65408, 65470):
+      if not gtk.gdk.keyval_name(keyval) or \
+            not gtk.gdk.keyval_name(keyval).startswith('KP'):
+        continue
+      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
+    iter = model.append(None, [-1, 'Functions'])
+    for keyval in range(65470, 65505):
+      if not gtk.gdk.keyval_name(keyval): continue
+      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
+    iter = model.append(None, [-1, 'Extras'])
+    for keyval in range(32, 48)+range(58,64)+range(91,97)+range(123,192):
+      if not gtk.gdk.keyval_name(keyval): continue
+      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
     return model
 
   def _keyCellFunc(self, column, cell, model, iter):
