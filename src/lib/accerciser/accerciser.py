@@ -85,6 +85,13 @@ class MainWindow(Tools):
     width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
     height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
     self.window.set_default_size(width, height)
+    for paned_name in ('hpaned', 'vpaned'):
+      if not cl.get(GCONF_GENERAL+'/'+paned_name): continue
+      paned = self.main_xml.get_widget(paned_name)
+      paned_position = cl.get_int(GCONF_GENERAL+'/'+paned_name)
+      paned.set_position(paned_position)
+      paned.set_data('last_position', paned.get_position())
+      
     self.acc_treeview = AccessibleTreeView()
     self.node = self.acc_treeview.node
     self.node.connect('accessible_changed', self._onAccesibleChange)
@@ -104,7 +111,6 @@ class MainWindow(Tools):
     # load plugins
     self.plugin_manager = PluginManager(self.node, self.hotkey_manager,
                                         [self.plugin_view1, self.plugin_view2])
-    self.plugin_manager.loadPlugins()
 
     # connect signal handlers and show the GUI in its initial state
     self.main_xml.signal_autoconnect(self)
@@ -217,6 +223,9 @@ to take effect.')
     cl = gconf.client_get_default()
     cl.set_int(GCONF_GENERAL+'/window_width', self.window.allocation.width)
     cl.set_int(GCONF_GENERAL+'/window_height', self.window.allocation.height)
+    for paned_name in ('hpaned', 'vpaned'):
+      paned = self.main_xml.get_widget(paned_name)
+      cl.set_int(GCONF_GENERAL+'/'+paned_name, paned.get_position())    
     self.event_manager.close()
     self.acc_treeview.destroy()
     self.plugin_manager.close()

@@ -4,6 +4,7 @@
 <glade-interface>
   <widget class="GtkWindow" id="window">
     <property name="title" translatable="yes">accerciser</property>
+    <signal name="key_press_event" handler="_onKeyPress"/>
     <signal name="destroy" handler="_onQuit"/>
     <child>
       <widget class="GtkVBox" id="main_vbox">
@@ -133,13 +134,13 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkVPaned" id="vpaned1">
+          <widget class="GtkVPaned" id="vpaned">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="border_width">5</property>
-            <property name="position">565</property>
+            <property name="position">350</property>
             <child>
-              <widget class="GtkHPaned" id="hpaned1">
+              <widget class="GtkHPaned" id="hpaned">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="position">250</property>

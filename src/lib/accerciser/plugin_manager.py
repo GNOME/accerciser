@@ -15,7 +15,6 @@ import gobject
 import plugin as accerciser_plugin
 from plugin import PluginErrorMessage
 from tools import Tools
-import pyLinAcc
 import os
 import sys
 import imp
@@ -86,11 +85,25 @@ class PluginViewWindow(gtk.Window, Tools):
     width = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width') or 480
     height = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height') or 480
     self.set_default_size(width, height)
-
     self.connect('key_press_event', self._onKeyPress)
+    self.plugin_view.connect('page_removed', self._onPluginRemoved)
     self.set_title(view_name)
     self.set_position(gtk.WIN_POS_MOUSE)
     self.show_all()
+    self.connect('size-allocate', self._onResize)
+
+  def _onResize(self, widget, allocation):
+    view_name = self.plugin_view.view_name
+    key_prefix = '%s/%s' % \
+        (GCONF_PLUGINVIEWS, 
+         gconf.escape_key(view_name, len(view_name)))
+    cl = gconf.client_get_default()
+    cl.set_int(key_prefix+'/width', self.allocation.width)
+    cl.set_int(key_prefix+'/height', self.allocation.height)
+
+  def _onPluginRemoved(self, pluginview, page, page_num):
+    if pluginview.get_n_pages() == 0:
+      self.destroy()
 
   def _onKeyPress(self, widget, event):
     if event.state & gtk.gdk.MOD1_MASK and \
@@ -101,70 +114,81 @@ class PluginViewWindow(gtk.Window, Tools):
       if pages_count >= tab_num:
         self.plugin_view.set_current_page(tab_num - 1)
       
-  
-class PluginManager(gobject.GObject, Tools):
+
+class PluginManager(gtk.ListStore, Tools):
   def __init__(self, node, hotkey_manager, pluginviews_main):
-    gobject.GObject.__init__(self)
+    gtk.ListStore.__init__(self,
+                           str, # Plugin name
+                           str, # Plugin description
+                           object, # View
+                           object, # Plugin instance
+                           str, # Plugin class name
+                           str, # Plugin file name
+                           str) # Plugin path
+    for i, col in enumerate(['NAME', 'DESC', 'VIEW', 'INSTANCE', 
+                             'CLASS', 'FILE', 'PATH']):
+      setattr(self, 'COL_'+col, i)
     self.node = node
     self.gconf_client = gconf.client_get_default()
     self.hotkey_manager = hotkey_manager
     self.pluginviews_main = pluginviews_main
-    self._restorePanedViews(pluginviews_main)
-    self.views_store = gtk.ListStore(PluginView, str)
-    for view in pluginviews_main:
-      self.views_store.append([view, view.view_name])
-    self.plugins_store = gtk.ListStore(str, # Plugin name
-                                       str, # Plugin description
-                                       str, # View name
-                                       object, # Plugin instance
-                                       bool, # Plugin state
-                                       str, # Plugin class name
-                                       str, # Plugin file name
-                                       str) # Plugin path
-    for i, col in enumerate(['NAME', 'DESC', 'VIEW', 'INSTANCE',
-                             'STATE', 'CLASS', 'FILE', 'PATH']):
-      setattr(self.plugins_store, 'COL_'+col, i)
-    self.disabled_plugins = {}
-    self.closed = False
+    for main_view in pluginviews_main:
+      self.append(['', '', main_view, 
+                   None, '', '', ''])
+    self.views_store = self.filter_new()
+    self.views_store.set_visible_func(self._viewStoreVisible)
+    self.views_store.set_modify_func([object, str], self._viewsStoreModify)
+    self.VIEWSTORE_VIEW = 0
+    self.VIEWSTORE_NAME = 1
+    self.plugins_store = self.filter_new()
+    self.plugins_store.set_visible_func(self._pluginStoreVisible)
     self.error_manager = PluginErrorManager(self.pluginviews_main[-1])
+    self._loadPlugins()
+    self.connect('row-changed', self._onPluginRowChanged)
 
   def close(self):
-    self._saveViewDimensions()
-    self._saveLayout()
-    for row in self.plugins_store:
-      plugin = row[self.plugins_store.COL_INSTANCE]
+    for row in self:
+      plugin = row[self.COL_INSTANCE]
       if plugin:
         plugin._close()
-    self.closed = True
 
-  def loadPlugins(self):
+  def _loadPlugins(self):
+    for plugin_dir, plugin_fn in self._getPluginFiles():
+      self._loadPluginFile(plugin_dir, plugin_fn)
+    for view in self._getViewInstances():
+      self._reorderPluginView(view)
+      self._connectSignals(view)
+      view.set_current_page(0)
+      view.show_all()
+    self.error_manager.keepOnTop()
+
+  def _getPluginFiles(self):
+    plugin_file_list = []
     plugin_dir_local = os.path.join(os.environ['HOME'], 
                                     '.accerciser', 'plugins')
     plugin_dir_global = os.path.join(sys.prefix, 'share',
                                      'accerciser', 'plugins')
-    plugin_list = []
     for plugin_dir in (plugin_dir_local, plugin_dir_global):
       if not os.path.isdir(plugin_dir):
         continue
       for fn in os.listdir(plugin_dir):
         if fn.endswith('.py') and not fn.startswith('.'):
-          self._loadPluginFile(plugin_dir, fn[:-3])
-    for view, view_name in self.views_store:
-      for child in view.get_children():
-        if isinstance(child, accerciser_plugin.Plugin):
-          plugin = child
-          key_name = '/%s/tab_order' % gconf.escape_key(plugin.plugin_name,
+          plugin_file_list.append((plugin_dir, fn[:-3]))
+
+    return plugin_file_list
+
+  def _reorderPluginView(self, view):
+    for child in view.get_children():
+      if isinstance(child, accerciser_plugin.Plugin):
+        plugin = child
+        key_name = '/%s/tab_order' % gconf.escape_key(plugin.plugin_name,
                                                       len(plugin.plugin_name))
-          gconf_value = self.gconf_client.get(GCONF_PLUGINS+key_name)
-          if gconf_value is None:
-            tab_order = -1
-          else:
-            tab_order = gconf_value.get_int()
-          view.reorder_child(child, tab_order)
-      self._connectSignals(view)
-      view.set_current_page(0)
-      view.show_all()
-    self.error_manager.keepOnTop()
+        gconf_value = self.gconf_client.get(GCONF_PLUGINS+key_name)
+        if gconf_value is None:
+          tab_order = -1
+        else:
+          tab_order = gconf_value.get_int()
+        view.reorder_child(child, tab_order)
 
   def _getPluginLocals(self, plugin_dir, plugin_fn):
     sys.path.insert(0, plugin_dir)
@@ -199,10 +223,10 @@ class PluginManager(gobject.GObject, Tools):
       if is_plugin:
         view_name = self._getViewNameForPlugin(plugin_locals[symbol].plugin_name)
         try:
-          iter = self.plugins_store.append([plugin_locals[symbol].plugin_name,
-                                            plugin_locals[symbol].plugin_description,
-                                            view_name, None, False, symbol,
-                                            plugin_fn, plugin_dir])
+          iter = self.append([plugin_locals[symbol].plugin_name,
+                              plugin_locals[symbol].plugin_description,
+                              self._getViewByName(view_name),
+                              None, symbol, plugin_fn, plugin_dir])
         except AttributeError, e:
           error_message = self.error_manager.newError(
             traceback.format_exception_only(e.__class__, e)[0].strip(),
@@ -218,49 +242,45 @@ class PluginManager(gobject.GObject, Tools):
           self._enablePlugin(plugin_locals, iter)
 
   def _enablePlugin(self, plugin_locals, iter, set_current=False):
-    plugin_class = plugin_locals.get(
-      self.plugins_store[iter][self.plugins_store.COL_CLASS])
+    plugin_class = plugin_locals.get(self[iter][self.COL_CLASS])
     try:
       plugin_instance = plugin_class(self.node)
       plugin_instance.init()
       plugin_instance.onAccChanged(plugin_instance.node.acc)
       for key_combo in plugin_instance.global_hotkeys:
         self.hotkey_manager.addKeyCombo(
-          self.plugins_store[iter][self.plugins_store.COL_NAME], *key_combo)
+          self[iter][self.COL_NAME], *key_combo)
     except Exception, e:
       error_message = self.error_manager.newError(
         traceback.format_exception_only(e.__class__, e)[0].strip(),
         traceback.format_exc())
       error_message.connect('response', self._onRetryPluginEnable, iter)
       return
-    self.plugins_store[iter][self.plugins_store.COL_STATE] = True
-    self.plugins_store[iter][self.plugins_store.COL_INSTANCE] = plugin_instance
+    self[iter][self.COL_INSTANCE] = plugin_instance
     if isinstance(plugin_instance, gtk.Widget):
-      view_name = self.plugins_store[iter][self.plugins_store.COL_VIEW]
-      pluginview = self._getViewByName(view_name)
+      pluginview = self[iter][self.COL_VIEW]
       plugin_instance.connect('reload-request', self._onReloadRequest)
       self._addPluginToView(pluginview, plugin_instance)
       if set_current:
         pluginview.set_current_page(-1)
 
   def _disablePlugin(self, iter):
-    plugin_instance = self.plugins_store[iter][self.plugins_store.COL_INSTANCE]
+    plugin_instance = self[iter][self.COL_INSTANCE]
     if not plugin_instance: return
     for key_combo in plugin_instance.global_hotkeys:
       self.hotkey_manager.removeKeyCombo(
-        self.plugins_store[iter][self.plugins_store.COL_NAME], *key_combo)
+        self[iter][self.COL_NAME], *key_combo)
     if isinstance(plugin_instance, gtk.Widget):
       plugin_instance.destroy()
     plugin_instance._close()
-    self.plugins_store[iter][self.plugins_store.COL_STATE] = False
-    self.plugins_store[iter][self.plugins_store.COL_INSTANCE] = None
+    self[iter][self.COL_INSTANCE] = None
 
   def _reloadPlugin(self, iter):
-    plugin_fn = self.plugins_store[iter][self.plugins_store.COL_FILE]
-    plugin_dir = self.plugins_store[iter][self.plugins_store.COL_PATH]
+    plugin_fn = self[iter][self.COL_FILE]
+    plugin_dir = self[iter][self.COL_PATH]
     plugin_locals = self._getPluginLocals(plugin_dir, plugin_fn)
     self._enablePlugin(plugin_locals, iter, True)
-    return self.plugins_store[iter][self.plugins_store.COL_INSTANCE]
+    return self[iter][self.COL_INSTANCE]
 
   def _onRetryPluginEnable(self, error_message, response_id, iter):
     if response_id == gtk.RESPONSE_APPLY:
@@ -269,8 +289,8 @@ class PluginManager(gobject.GObject, Tools):
 
   def _onReloadRequest(self, plugin):
     iter = None
-    for row in self.plugins_store:
-      if row[self.plugins_store.COL_INSTANCE] == plugin:
+    for row in self:
+      if row[self.COL_INSTANCE] == plugin:
         iter = row.iter
         break
     if not iter:
@@ -284,12 +304,14 @@ class PluginManager(gobject.GObject, Tools):
     notebook.reorder_child(plugin_instance, tab_index)
 
   def togglePlugin(self, path):
-    if self.plugins_store[path][self.plugins_store.COL_STATE]:
+    filter_iter = self.plugins_store.get_iter(path)
+    iter = self.plugins_store.convert_iter_to_child_iter(filter_iter)
+    if self[iter][self.COL_INSTANCE]:
       # Disable plugin
-      self._disablePlugin(self.plugins_store.get_iter(path))
+      self._disablePlugin(iter)
     else:
       # Enable plugin
-      self._reloadPlugin(self.plugins_store.get_iter(path))
+      self._reloadPlugin(iter)
 
   def _getViewNameForPlugin(self, plugin_name):
     key_name = '/%s/view_name' % gconf.escape_key(plugin_name, len(plugin_name))
@@ -297,26 +319,19 @@ class PluginManager(gobject.GObject, Tools):
         self.pluginviews_main[0].view_name
 
   def _getViewByName(self, view_name):
-    if view_name not in [row[1] for row in self.views_store]:
+    views_dict = self._getViewNameInstanceDict()
+    try:
+      view = views_dict[view_name]
+    except KeyError:
       w = PluginViewWindow(view_name)
       w.connect('delete_event', self._onPluginViewRemoved)
-      self.views_store.append([w.plugin_view, view_name])
-      return w.plugin_view
-    else:
-      for view, view_name2 in self.views_store:
-        if view_name2 == view_name:
-          return view
+      view =  w.plugin_view
+    return view
 
   def _addPluginToView(self, view, plugin):
     view.append_page(plugin)
     plugin.show_all()
     
-  def _connectSignals(self, pluginview):
-    pluginview.connect('new_view', self._onNewPluginView)
-    pluginview.connect('page_added', self._onPluginLayoutChanged)
-    pluginview.connect('page_removed', self._onPluginLayoutChanged)
-    pluginview.connect('page_reordered', self._onPluginLayoutChanged)
-
   def _onNewPluginView(self, view, child):
     view.remove(child)
     self._newViewWithPage(child)
@@ -325,14 +340,11 @@ class PluginManager(gobject.GObject, Tools):
     if not view_name:
       view_name = 'Plugin View'
       view_num = 2
-      while view_name in [row[1] for row in self.views_store]:
+      while view_name in self._getViewNames():
         view_name = 'Plugin View (%d)' % view_num
         view_num += 1
-    w = PluginViewWindow(view_name)
-    w.connect('delete_event', self._onPluginViewRemoved)
-    pluginview = w.plugin_view
+    pluginview = self._getViewByName(view_name)
     self._connectSignals(pluginview)
-    self.views_store.append([pluginview, view_name])
     pluginview.append_page(page)
 
   def _onPluginViewRemoved(self, pluginviewwindow, event):
@@ -341,94 +353,88 @@ class PluginManager(gobject.GObject, Tools):
       pluginview.remove(child)
       self.pluginviews_main[0].append_page(child)
 
-  def _onPluginLayoutChanged(self, pluginview, page, page_num):
-    if self.closed:
-      return
-    iter = self.views_store.get_iter_root()
-    while iter:
-      view = self.views_store[iter][0]
-      if view.get_n_pages() > 0 or view in self.pluginviews_main:
-        iter = self.views_store.iter_next(iter)
-      else:
-        if view.get_n_pages() == 0:
-          self._onPluginViewRemoved(view.parent, None)
-          view.parent.destroy()
-        if not self.views_store.remove(iter): break
-    iter = self.plugins_store.get_iter_root()
-    for row in self.plugins_store:
-      plugin = row[self.plugins_store.COL_INSTANCE]
-      if plugin:
-        view = plugin.parent
-        if view:
-          row[self.plugins_store.COL_VIEW] = view.view_name
-    
-  def _saveLayout(self):
-    # TODO implement better model/controller/view. This is crap.
-    for row in self.plugins_store:
-      view_name = row[self.plugins_store.COL_VIEW]
-      plugin_name = row[self.plugins_store.COL_NAME]
-      plugin_instance = row[self.plugins_store.COL_INSTANCE]
-      state = row[self.plugins_store.COL_STATE]
-      if plugin_instance:
-        tab_order = plugin_instance.parent.page_num(plugin_instance)
-      else:
-        tab_order = -1
-      escaped_name = '/%s' % gconf.escape_key(plugin_name, len(plugin_name))
-      self.gconf_client.set_string(GCONF_PLUGINS+escaped_name+'/view_name', view_name)
-      self.gconf_client.set_int(GCONF_PLUGINS+escaped_name+'/tab_order', tab_order)
-      self.gconf_client.set_bool(GCONF_PLUGINS+escaped_name+'/enabled', state)
-    
-
-  def _saveViewDimensions(self):
-    for view, view_name in self.views_store:
-      escaped_view_name = '/%s' % gconf.escape_key(view_name, len(view_name))
-      child = view
-      while child:
-        if isinstance(child.parent, PluginViewWindow):
-          window = child.parent
-          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width', 
-                                    window.allocation.width)
-          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height', 
-                                    window.allocation.height)
-          break
-        elif isinstance(child.parent, gtk.Paned):
-          paned = child.parent
-          self.gconf_client.set_int(GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position', 
-                                    paned.get_position())
-          break
-        child = child.parent
+  def _getIterFromPlugin(self, plugin):
+    for row in self:
+      if row[self.COL_INSTANCE] == plugin:
+        return row.iter
+    return None
   
-  def _restorePanedViews(self, views):
-    for view in views:
-      escaped_view_name = '/%s' % gconf.escape_key(view.view_name, len(view.view_name))      
-      if not self.gconf_client.get(GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position'):
-        continue
-      child = view
-      while child:
-        if isinstance(child.parent, gtk.Paned):
-          paned = child.parent
-          paned_position = self.gconf_client.get_int(
-            GCONF_PLUGINVIEWS+escaped_view_name+'/paned_position')
-          paned.set_position(paned_position)
-          paned.set_data('last_position', paned.get_position())
-          break
-        child = child.parent
+  def _onAddedPluginToView(self, pluginview, page, page_num):
+    iter = self._getIterFromPlugin(page)
+    if not iter: return
+    self[iter][self.COL_VIEW] = pluginview
+
+  def _onReorderedPluginInView(self, pluginview, page, page_num):
+    self._saveTabOrder(pluginview)
 
   def changeView(self, path, new_text):
-    plugin = self.plugins_store[path][3]
+    plugin = self.plugins_store[path][self.COL_INSTANCE]
+    if not plugin: return
     old_view = plugin.parent
-    view_names = [v[1] for v in self.views_store]
-    try:
-      view = self.views_store[view_names.index(new_text)][0]
-    except ValueError:
-      old_view.remove(plugin)
-      self._newViewWithPage(plugin, new_text)
-    else:
+    views_dict = self._getViewNameInstanceDict()
+    view = views_dict.get(new_text)
+    if view:
       if plugin in view.get_children():
         return
       else:
         old_view.remove(plugin)
-        view.append_page(plugin)    
+        view.append_page(plugin)
+    else:
+      old_view.remove(plugin)
+      self._newViewWithPage(plugin, new_text)
+
+  def _viewStoreVisible(self, model, iter):
+    index = model.get_path(iter)[0]
+    view = model[iter][self.COL_VIEW]
+    views = [row[self.COL_VIEW] for row in model]
+    return views.index(view) == index
+
+  def _pluginStoreVisible(self, model, iter):
+    return bool(model[iter][self.COL_NAME])
+
+  def _connectSignals(self, pluginview):
+    pluginview.connect('new_view', self._onNewPluginView)
+    pluginview.connect('page_added', self._onAddedPluginToView)
+    pluginview.connect('page_reordered', self._onReorderedPluginInView)
+
+  def _saveTabOrder(self, view):
+    for page in view.get_children():
+      if not isinstance(page, accerciser_plugin.Plugin): continue
+      gconf_key = GCONF_PLUGINS+'/%s/tab_order' % \
+          gconf.escape_key(page.plugin_name, len(page.plugin_name))
+      self.gconf_client.set_int(gconf_key, view.page_num(page))
+
+  def _onPluginRowChanged(self, model, path, iter):
+    if not model[iter][self.COL_VIEW]: return
+    plugin_name = model[iter][self.COL_NAME]
+    state = bool(model[iter][self.COL_INSTANCE])
+    view_name = model[iter][self.COL_VIEW].view_name
+    key_prefix = GCONF_PLUGINS+'/%s' % \
+        gconf.escape_key(plugin_name, len(plugin_name))
+    self.gconf_client.set_string(key_prefix+'/view_name', view_name)
+    self.gconf_client.set_bool(key_prefix+'/enabled', state)
+    if not state:
+      self.gconf_client.set_int(key_prefix+'/tab_order', -1)
+    self._saveTabOrder(model[iter][self.COL_VIEW])
+
+  def _viewsStoreModify(self, model, iter, column):
+    child_model_iter = model.convert_iter_to_child_iter(iter)
+    if column == self.VIEWSTORE_VIEW:
+      return self[child_model_iter][self.COL_VIEW]
+    elif column == self.VIEWSTORE_NAME:
+      return getattr(self[child_model_iter][self.COL_VIEW], 'view_name', '')
+
+  def _getViewNames(self):
+    return [row[self.VIEWSTORE_NAME] for row in self.views_store]
+
+  def _getViewInstances(self):
+    return [row[self.VIEWSTORE_VIEW] for row in self.views_store]
+
+  def _getViewNameInstanceDict(self):
+    rv = {}
+    for row in self.views_store:
+      rv[row[self.VIEWSTORE_NAME]] = row[self.VIEWSTORE_VIEW]
+    return rv
 
 class PluginErrorManager(object):
   plugin_name = 'Plugin Errors'
@@ -490,20 +496,27 @@ class PluginTreeView(gtk.TreeView):
     tvc = gtk.TreeViewColumn('Name')
     tvc.pack_start(crc, True)
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    tvc.set_attributes(crc, active=4)
+    tvc.set_attributes(crt, text=plugin_manager.COL_NAME)
+    #tvc.set_attributes(crc, active=plugin_manager.COL_STATE)
+    tvc.set_cell_data_func(crc, self._viewStateDataFunc)
     self.append_column(tvc)
     crc = gtk.CellRendererCombo()
     tvc = gtk.TreeViewColumn('View')
     tvc.pack_start(crc, False)
     tvc.set_expand(False)
-    tvc.set_attributes(crc, text=2)
+    tvc.set_cell_data_func(crc, self._viewNameDataFunc)
     crc.set_property('editable', True)
     crc.set_property('model', self.plugin_manager.views_store)
-    crc.set_property('text-column', 1)
+    crc.set_property('text-column', plugin_manager.VIEWSTORE_NAME)
     crc.set_property('has-entry', True)
     crc.connect('edited', self._onViewChanged)
     self.append_column(tvc)
+
+  def _viewNameDataFunc(self, column, cell, model, iter):
+    cell.set_property('text', getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', ''))
+
+  def _viewStateDataFunc(self, column, cell, model, iter):
+    cell.set_property('active', bool(model[iter][self.plugin_manager.COL_INSTANCE]))
 
   def _onPluginToggled(self, renderer_toggle, path):
     '''
