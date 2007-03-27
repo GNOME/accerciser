@@ -324,7 +324,7 @@ to take effect.')
    @param event: The event that is being handled.
     @type event: L{pyLinAcc.Event}
     '''
-    self.hotkey_manager.hotkeyPress(event.any_data[0], event.any_data[1])
+    self.hotkey_manager.hotkeyPress(event.detail2, event.any_data[1])
 
   def _getChildAccAtCoords(self, parent, x, y):
     '''
