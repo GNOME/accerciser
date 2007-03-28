@@ -326,6 +326,12 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     self.role.set_markup('<span size="large" weight="bold">%s</span>' % role_name)
     
   def _setExpanderChildrenSensitive(self, expander, sensitive):
+    label_text = expander.get_label()
+    if sensitive:
+      label_text = label_text.replace(' (not implemented)', '')
+    elif ' (not implemented)' not in label_text:
+      label_text += ' (not implemented)'
+    expander.set_label(label_text)
     for child in expander.get_children():
       child.set_sensitive(sensitive)
 
