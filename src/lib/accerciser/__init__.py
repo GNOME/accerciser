@@ -1,6 +1,7 @@
 '''
 Configures the path to pyLinAcc. Exposes all other package contents.
 
+@author: Eitan Isaacson
 @author: Peter Parente
 @organization: IBM Corporation
 @copyright: Copyright (c) 2006, 2007 IBM Corporation

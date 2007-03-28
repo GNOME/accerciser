@@ -6,6 +6,8 @@ from re import split
 import pyLinAcc
 
 sleep_time = 0.2
+focus_retry = 5
+focus_retry_time = 0.4
 
 eg = pyLinAcc.Registry.getDeviceEventController()
 
@@ -38,6 +40,9 @@ class Focus:
     self.current_app = None
     self.current_frame = None
     self.node = pyLinAcc.Registry.getDesktop(0)
+    self._getApps()
+
+  def _getApps(self):
     window_list = []
     try_limit = 50
     while not window_list and try_limit:
@@ -48,12 +53,17 @@ class Focus:
     if not try_limit and not self.window_list:
       raise RuntimeError('Could not get window list')
     self.apps = set([w.get_application() for w in window_list])
+
   def application(self, app_name):
-    for app in self.apps:
-      if app.get_name() == app_name:
-        self.current_app = app
-        return True
+    for try_num in xrange(focus_retry):
+      for app in self.apps:
+        if app.get_name() == app_name:
+          self.current_app = app
+          return True
+      sleep(focus_retry_time)
+      self._getApps()
     return False
+
   def frame(self, frame_name):
     if not self.current_app:
       raise Exception('No application was focused')
@@ -64,6 +74,7 @@ class Focus:
         gtk.main_iteration(False)
         return True
     return False
+
   def _findAcc(self, acc_name):
     for child in self.node:
       if child.name == acc_name:
