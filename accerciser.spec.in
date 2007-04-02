@@ -16,6 +16,8 @@ Vendor: IBM Corporation
 Packager: Peter Parente <pparent@us.ibm.com>
 Url: http://live.gnome.org/Accerciser
 
+BuildRequires: gnome-common >= 2.12.0
+Requires: gnome-python2-gconf >= 2.12
 Requires: gnome-python2-libwnck >= 2.14
 Requires: pygtk2 >= 2.8
 Requires: python >= 2.4
@@ -27,7 +29,7 @@ Requires: glib2 >= 2.10
 Requires: gnome-python2-bonobo >= 2.12
 
 %description
-An interactive Python tool for querying accessibility information.
+An interactive Python accessibility explorer.
 
 %prep
 %setup -q
