@@ -1,5 +1,12 @@
 2007-03-02 Peter Parente  <parente@cs.unc.edu>
 
+	* accerciser.desktop.in: Enabled startup notify 
+	* configure.in: Added --without-pyreqs flag as a way to avoid checking
+	for Python modules at build time, moved intltool check after gettext 
+	(seems more robust?)
+	* Makefile.am: reordered subdirs
+	
+	* accerciser.spec.in: Added locals and --without-pyreqs flag
 	* Makefile.am: Added po/
 	* po/LINGUAS: Added per http://live.gnome.org/GnomeGoals/PoLinguas
 	* configure.in: Changed next version number to 0.1.1 to sync with GNOME
