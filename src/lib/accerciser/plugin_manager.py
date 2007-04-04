@@ -21,6 +21,7 @@ import imp
 import pango
 import traceback
 import gconf
+from i18n import _
 
 GCONF_PLUGINS = '/apps/accerciser/plugins'
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
@@ -367,8 +368,7 @@ class PluginManager(gtk.ListStore, Tools):
   def _onReorderedPluginInView(self, pluginview, page, page_num):
     self._saveTabOrder(pluginview)
 
-  def changeView(self, path, new_text):
-    plugin = self.plugins_store[path][self.COL_INSTANCE]
+  def changeView(self, plugin, new_text):
     if not plugin: return
     old_view = plugin.parent
     views_dict = self._getViewNameInstanceDict()
@@ -490,28 +490,37 @@ class PluginTreeView(gtk.TreeView):
     gtk.TreeView.__init__(self)
     self.plugin_manager = plugin_manager
     self.set_model(plugin_manager.plugins_store)
-    crt = gtk.CellRendererText()
+    self.connect('button-press-event', self._onButtonPress)
+
     crc = gtk.CellRendererToggle()
     crc.connect('toggled', self._onPluginToggled)
-    tvc = gtk.TreeViewColumn('Name')
+    tvc = gtk.TreeViewColumn()
     tvc.pack_start(crc, True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=plugin_manager.COL_NAME)
-    #tvc.set_attributes(crc, active=plugin_manager.COL_STATE)
     tvc.set_cell_data_func(crc, self._viewStateDataFunc)
     self.append_column(tvc)
-    crc = gtk.CellRendererCombo()
+
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn('Name')
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=plugin_manager.COL_NAME)
+    self.append_column(tvc)
+
+    crc = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn('View')
     tvc.pack_start(crc, False)
-    tvc.set_expand(False)
     tvc.set_cell_data_func(crc, self._viewNameDataFunc)
     crc.set_property('editable', True)
-    crc.set_property('model', self.plugin_manager.views_store)
-    crc.set_property('text-column', plugin_manager.VIEWSTORE_NAME)
-    crc.set_property('has-entry', True)
     crc.connect('edited', self._onViewChanged)
     self.append_column(tvc)
 
+  def _onButtonPress(self, widget, event):
+    if event.button == 3:
+      path = self.get_path_at_pos(int(event.x), int(event.y))[0]
+      plugin = \
+          self.plugin_manager.plugins_store[path][self.plugin_manager.COL_INSTANCE]
+      menu = PluginViewMenu(self.plugin_manager, plugin, self.get_toplevel())
+      menu.popup(None, None, None, event.button, event.time)
+      
   def _viewNameDataFunc(self, column, cell, model, iter):
     cell.set_property('text', getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', ''))
 
@@ -542,4 +551,64 @@ class PluginTreeView(gtk.TreeView):
     @param new_text: The new text that has been entered in to the combo entry.
     @type new_text: string
     '''
-    self.plugin_manager.changeView(path, new_text)
+    plugin = \
+        self.plugin_manager.plugins_store[path][self.plugin_manager.COL_INSTANCE]
+    self.plugin_manager.changeView(plugin, new_text)
+
+class PluginViewMenu(gtk.Menu):
+  RADIO_GROUP = 13
+  def __init__(self, plugin_manager, context_plugin, transient_window):
+    gtk.Menu.__init__(self)
+    self.plugin_manager = plugin_manager
+    self._buildMenu(context_plugin, transient_window)
+  
+  def _buildMenu(self, context_plugin, transient_window):
+    menu_item = None
+    for view, view_name in self.plugin_manager.views_store:
+      menu_item = gtk.RadioMenuItem(menu_item, view_name)
+      menu_item.connect('toggled', self._onItemToggled, view, context_plugin)
+      menu_item.set_active(view == context_plugin.parent)
+      self.append(menu_item)
+      menu_item.show()
+    menu_item = gtk.SeparatorMenuItem()
+    self.append(menu_item)
+    menu_item.show()
+    menu_item = gtk.MenuItem(_('<i>_New view...</i>'))
+    menu_item.child.set_use_markup(True)
+    menu_item.connect('activate', self._onItemActivated, 
+                      context_plugin, transient_window)
+    self.append(menu_item)
+    menu_item.show()
+      
+  def _onItemToggled(self, menu_item, view, context_plugin):
+    self.plugin_manager.changeView(context_plugin, view.view_name)
+
+  def _onItemActivated(self, menu_item, context_plugin, transient_window):
+    new_view_dialog = PluginNewViewDialog(self.plugin_manager, transient_window)
+    response_id = new_view_dialog.run()
+    plugin_name = new_view_dialog.getEntryText()
+    if response_id == gtk.RESPONSE_OK and plugin_name:
+      self.plugin_manager.changeView(context_plugin, plugin_name)
+    new_view_dialog.destroy()
+
+class PluginNewViewDialog(gtk.Dialog):
+  def __init__(self, plugin_manager, transient_window):
+    self.plugin_manager = plugin_manager
+    gtk.Dialog.__init__(self, _('New View...'), transient_window)
+    self.add_buttons(gtk.STOCK_OK, gtk.RESPONSE_OK,
+                     gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE)
+    self.set_default_response(gtk.RESPONSE_OK)
+    completion = gtk.EntryCompletion()
+    completion.set_model(self.plugin_manager.views_store)
+    completion.set_text_column(self.plugin_manager.VIEWSTORE_NAME)
+    self.entry = gtk.Entry()
+    self.entry.set_completion(completion)
+    self.entry.connect('activate', self._onEntryActivate)
+    self.vbox.add(self.entry)
+    self.entry.show()
+
+  def getEntryText(self):
+    return self.entry.get_text()
+
+  def _onEntryActivate(self, entry):
+    self.response(gtk.RESPONSE_OK)
