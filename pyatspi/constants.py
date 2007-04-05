@@ -45,6 +45,22 @@ del not_interfaces
 DESKTOP_COORDS = 0
 WINDOW_COORDS = 1
 
+# constants used to synthesize mouse events
+MOUSE_B1P = 'b1p'
+MOUSE_B1R = 'b1r'
+MOUSE_B1C = 'b1c'
+MOUSE_B1D = 'b1d'
+MOUSE_B2P = 'b2p'
+MOUSE_B2R = 'b2r'
+MOUSE_B2C = 'b2c'
+MOUSE_B2D = 'b2d'
+MOUSE_B3P = 'b3p'
+MOUSE_B3R = 'b3r'
+MOUSE_B3C = 'b3c'
+MOUSE_B3D = 'b3d'
+MOUSE_ABS = 'abs'
+MOUSE_REL = 'rel'
+
 # dictionary used to correct the bug of not being able to register for all the
 # subevents given only an AT-SPI event class (i.e. first part of the event
 # name) keys are event names having subevents and values are the subevents

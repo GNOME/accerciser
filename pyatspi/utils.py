@@ -36,6 +36,8 @@ def getInterfaceName(cls):
   '''
   return cls.__typecode__.name
 
+# we're importing here to avoid cyclic importants; constants relies on the
+# two functions above
 import constants
 
 def stringToConst(prefix, suffix):
@@ -90,3 +92,9 @@ def relationToString(value):
   @rtype: string
   '''
   return constants.RELATION_VALUE_TO_NAME.get(value)
+
+def allModifiers():
+  mask = 0
+  while mask <= (1 << constants.MODIFIER_NUMLOCK):
+    yield mask
+    mask += 1

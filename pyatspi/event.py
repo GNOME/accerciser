@@ -11,6 +11,8 @@ available under the terms of the BSD license which accompanies
 this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+import constants
+
 class DeviceEvent(object):
   '''
   Wraps an AT-SPI device event with a more Pythonic interface. Primarily adds
@@ -20,8 +22,59 @@ class DeviceEvent(object):
     observers further down the dispatch chain in this process or possibly
     system wide?
   @type consume: boolean
+  @ivar type: Kind of event, KEY_PRESSED_EVENT or KEY_RELEASED_EVENT
+  @type type: Accessibility.EventType
+  @ivar id: Serial identifier for this key event
+  @type id: integer
+  @ivar hw_code: Hardware scan code for the key
+  @type hw_code: integer
+  @ivar modifiers: Modifiers held at the time of the key event
+  @type modifiers: integer
+  @ivar timestamp: Time at which the event occurred relative to some platform
+    dependent starting point (e.g. XWindows start time)
+  @type timestamp: integer
+  @ivar event_string: String describing the key pressed (e.g. keysym)
+  @type event_string: string
+  @ivar is_text: Is the event representative of text to be inserted (True), or 
+    of a control key (False)?
+  @type is_text: boolean
   '''
-  pass
+  def __init__(self, event):
+    '''
+    Attaches event data to this object.
+    
+    @param event: Event object
+    @type event: Accessibility.DeviceEvent
+    '''
+    self.consume = False
+    self.type = event.type
+    self.id = event.id
+    self.hw_code = event.hw_code
+    self.modifiers = event.modifiers
+    self.timestamp = event.timestamp
+    self.event_string = event.event_string
+    self.is_text = event.is_text
+    
+  def __str__(self):
+    '''
+    Builds a human readable representation of the event.
+
+    @return: Event description
+    @rtype: string
+    '''
+    if self.type == constants.KEY_PRESSED_EVENT:
+      kind = 'pressed'
+    elif self.type == constants.KEY_RELEASED_EVENT:
+      kind = 'released'
+    return '''\
+%s
+\thw_code: %d
+\tevent_string: %s
+\tmodifiers: %d
+\tid: %d
+\ttimestamp: %d
+\tis_text: %s''' % (kind, self.hw_code, self.event_string, self.modifiers,
+                    self.id, self.timestamp, self.is_text)
 
 class Event(object):
   '''

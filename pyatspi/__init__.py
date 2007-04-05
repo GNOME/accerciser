@@ -35,7 +35,10 @@ ORBit.load_typelib(TYPELIB_NAME)
 
 # import our modules	
 import registry, accessible, event, utils
+# pull constants and utilities directly into this namespace; rest of code
+# never has to be touched externally
 from constants import *
+from utils import *
 
 # wrap the raw registry object in our convenience singleton
 Registry = registry.Registry(reg)

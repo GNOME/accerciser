@@ -3,7 +3,6 @@ Registry that hides some of the details of registering for AT-SPI events and
 starting and stopping the main program loop.
 
 @todo: PP: when to destroy device listener?
-@todo: PP: convenience methods for common device listener masks
 
 @author: Peter Parente
 @organization: IBM Corporation
@@ -59,23 +58,23 @@ class _Observer(object):
 
   def clientRef(self):
     '''
-    Increments the L{pyLinAcc} reference count on this L{Observer} by one. This
+    Increments the Python reference count on this L{_Observer} by one. This
     method is called when a new client is registered in L{Registry} to receive
-    notification of an event type monitored by this L{Observer}.
+    notification of an event type monitored by this L{_Observer}.
     '''
     self.ref_count += 1
     
   def clientUnref(self):
-    '''
-    Decrements the L{pyLinAcc} reference count on this L{Observer} by one. This
-    method is called when a client is unregistered in L{Registry} to stop 
-    receiving notifications of an event type monitored by this L{Observer}.
+    '''    
+    Decrements the L{pyLinAcc} reference count on this L{_Observer} by one.
+    This method is called when a client is unregistered in L{Registry} to stop
+    receiving notifications of an event type monitored by this L{_Observer}.
     '''
     self.ref_count -= 1
     
   def getClientRefCount(self):
     '''
-    @return: Current L{pyLinAcc} reference count on this L{Observer}
+    @return: Current Python reference count on this L{_Observer}
     @rtype: integer
     '''
     return self.ref_count
@@ -117,13 +116,13 @@ class _DeviceObserver(_Observer, Accessibility__POA.DeviceEventListener):
     @param global_: Watch for events on inaccessible applications too?
     @type global_: boolean
     '''
-    Observer.__init__(self, registry)   
+    _Observer.__init__(self, registry)   
     self.mode = Accessibility.EventListenerMode()
     self.mode.preemptive = preemptive
     self.mode.synchronous = synchronous
-    self.mode._global = global_
-    
-  def register(self, reg, key_set, mask, kind):
+    self.mode._global = global_    
+   
+  def register(self, dc, key_set, mask, kind):
     '''
     Starts keyboard event monitoring.
     
@@ -137,18 +136,18 @@ class _DeviceObserver(_Observer, Accessibility__POA.DeviceEventListener):
     @param kind: Kind of events to monitor
     @type kind: integer
     '''
-    dc = reg.getDeviceEventController()
     try:
       # check if the mask is iterable
       iter(mask)
     except TypeError:
       # register a single integer if not
-      dc.registerKeystrokeListener(self._this(), key_set, m, kind, self.mode)
+      dc.registerKeystrokeListener(self._this(), key_set, mask, kind, 
+                                   self.mode)
     else:
       for m in mask:
         dc.registerKeystrokeListener(self._this(), key_set, m, kind, self.mode)
 
-  def unregister(self, reg, key_set, mask, kind):
+  def unregister(self, dc, key_set, mask, kind):
     '''
     Stops keyboard event monitoring.
     
@@ -162,13 +161,13 @@ class _DeviceObserver(_Observer, Accessibility__POA.DeviceEventListener):
     @param kind: Kind of events to monitor
     @type kind: integer
     '''
-    dc = reg.getDeviceEventController()
     try:
       # check if the mask is iterable
       iter(mask)
     except TypeError:
       # unregister a single integer if not
-      dc.deregisterKeystrokeListener(self._this(), key_set, m, kind, self.mode)
+      dc.deregisterKeystrokeListener(self._this(), key_set, mask, kind, 
+                                     self.mode)
     else:
       for m in mask:
         dc.deregisterKeystrokeListener(self._this(), key_set, m, kind, 
@@ -189,7 +188,7 @@ class _DeviceObserver(_Observer, Accessibility__POA.DeviceEventListener):
     else:
       return None
 
-  def notifyEvent(self, event):
+  def notifyEvent(self, ev):
     '''
     Notifies the L{Registry} that an event has occurred. Wraps the raw event 
     object in our L{Event} class to support automatic ref and unref calls. An
@@ -197,17 +196,16 @@ class _DeviceObserver(_Observer, Accessibility__POA.DeviceEventListener):
     should not be allowed to pass to other AT-SPI observers or the underlying
     application.
     
-    @param event: Keyboard event
-    @type event: Accessibility.DeviceEvent
+    @param ev: Keyboard event
+    @type ev: Accessibility.DeviceEvent
     @return: Should the event be consumed (True) or allowed to pass on to other
       AT-SPI observers (False)?
     @rtype: boolean
     '''
-    try:
-      self.registry.handleDeviceEvent(event)
-    except Exception:
-      pass
-    return event.consume
+    # wrap the device event
+    ev = event.DeviceEvent(ev)
+    self.registry.handleDeviceEvent(ev, self)
+    return ev.consume
 
 class _EventObserver(_Observer, Accessibility__POA.EventListener):
   '''
@@ -256,18 +254,35 @@ class _EventObserver(_Observer, Accessibility__POA.EventListener):
     object in our L{Event} class to support automatic ref and unref calls.
     Aborts on any exception indicating the event could not be wrapped.
     
-    @param event: AT-SPI event signal (anything but keyboard)
-    @type event: Accessibility.Event
+    @param ev: AT-SPI event signal (anything but keyboard)
+    @type ev: Accessibility.Event
     '''
+    # wrap raw event so ref counts are correct before queueing
     ev = event.Event(ev)
-    try:
-      self.registry.handleEvent(ev)
-    except Exception:
-      pass
+    self.registry.handleEvent(ev)
 
 class Registry(object):
   '''
+  Wraps the Accessibility.Registry to provide more Pythonic registration for
+  events. 
   
+  This object should be treated as a singleton, but such treatment is not
+  enforced. You can construct another instance of this object and give it a
+  reference to the Accessibility.Registry singleton. Doing so is harmless and
+  has no point.
+  
+  @ivar async
+  @type async: boolean
+  @ivar reg:
+  @type reg: Accessibility.Registry
+  @ivar dev:
+  @type dev: Accessibility.DeviceEventController
+  @ivar queue:
+  @type queue: Queue.Queue
+  @ivar clients:
+  @type clients: dictionary
+  @ivar observers: 
+  @type observers: dictionary
   '''
   def __init__(self, reg):
     '''
@@ -315,13 +330,17 @@ class Registry(object):
     signal.signal(signal.SIGINT, self.stop)
     signal.signal(signal.SIGTERM, self.stop)
   
-    def releaseGIL():
-      time.sleep(1e-5)
-      return True
-    
-    i = gobject.idle_add(releaseGIL)
+    if gil:
+      def releaseGIL():
+        time.sleep(1e-5)
+        return True
+      i = gobject.idle_add(releaseGIL)
+      
+    # enter the main loop
     bonobo.main()
-    gobject.source_remove(i)
+    
+    if gil:
+      gobject.source_remove(i)
     
   def stop(self, *args):
     '''Quits the main loop.'''
@@ -406,7 +425,9 @@ class Registry(object):
       missed |= self._unregisterClients(client, name)
     return missed
 
-  def registerKeystrokeListener(self, client, key_set=[], mask=None, kind=None,
+  def registerKeystrokeListener(self, client, key_set=[], mask=0, 
+                                kind=(constants.KEY_PRESSED_EVENT, 
+                                      constants.KEY_RELEASED_EVENT),
                                 synchronous=True, preemptive=True, 
                                 global_=False):
     '''
@@ -424,8 +445,9 @@ class Registry(object):
       integer, keys in the key_set will be monitored when any of the modifier
       combinations in the set are held.
     @type mask: integer
-    @param kind: Kind of events to watch, KEY_PRESS or KEY_RELEASE
-    @type kind: integer
+    @param kind: Kind of events to watch, KEY_PRESSED_EVENT or 
+      KEY_RELEASED_EVENT.
+    @type kind: list
     @param synchronous: Should the callback notification be synchronous, giving
       the client the chance to consume the event?
     @type synchronous: boolean
@@ -442,11 +464,15 @@ class Registry(object):
     except KeyError:
       # create a new device observer for this client
       ob = _DeviceObserver(self, synchronous, preemptive, global_)
+      # store the observer to client mapping, and the inverse
+      self.clients[ob] = client
+      self.clients[client] = ob
     # register for new keystrokes on the observer
-    ob.register(self.reg, key_set, mask, kind)
+    ob.register(self.dev, key_set, mask, kind)
 
-  def deregisterKeystrokeListener(self, client, key_set=[], mask=None, 
-                                  kind=None):
+  def deregisterKeystrokeListener(self, client, key_set=[], mask=0, 
+                                  kind=(constants.KEY_PRESSED_EVENT, 
+                                        constants.KEY_RELEASED_EVENT)):
     '''
     Deregisters a listener for key stroke events.
     
@@ -462,14 +488,15 @@ class Registry(object):
       integer, keys in the key_set will be monitored when any of the modifier
       combinations in the set are held.
     @type mask: integer
-    @param kind: Kind of events to stop watching, KEY_PRESS or KEY_RELEASE
-    @type kind: integer
+    @param kind: Kind of events to stop watching, KEY_PRESSED_EVENT or 
+      KEY_RELEASED_EVENT.
+    @type kind: list
     @raise KeyError: When the client isn't already registered for events
     '''
     # see if we already have an observer for this client
     ob = self.clients[client]
     # register for new keystrokes on the observer
-    ob.unregister(self.reg, key_set, mask, kind)
+    ob.unregister(self.dev, key_set, mask, kind)
 
   def generateKeyboardEvent(self, keycode, keysym, kind):
     '''
@@ -493,9 +520,9 @@ class Registry(object):
   def generateMouseEvent(self, x, y, name):
     '''
     Generates a mouse event at the given absolute x and y coordinate. The kind
-    of event generated is specified by the name. Some examples include "b1p"
-    (button 1 press), "b3r" (button 3 release), "abs" (absolute motion),
-    "rel" (relative motion).
+    of event generated is specified by the name. For example, MOUSE_B1P 
+    (button 1 press), MOUSE_REL (relative motion), MOUSE_B3D (butten 3 
+    double-click).
     
     @param x: Horizontal coordinate, usually left-hand oriented
     @type x: integer
@@ -525,21 +552,17 @@ class Registry(object):
     '''
     try:
       # try to get the client registered for this event type
-      clients = self.clients[ob]
+      client = self.clients[ob]
     except KeyError:
       # client may have unregistered recently, ignore event
       return
-    # make the call to each client
-    for client in clients:
-      try:
-        client(event)
-      except Exception:
-        # print the exception, but don't let it stop notification
-        traceback.print_exc()
-      if event.consume:
-        # don't allow further processing if the consume flag is set
-        break
-
+    # make the call to the client
+    try:
+      client(event)
+    except Exception:
+      # print the exception, but don't let it stop notification
+      traceback.print_exc()
+ 
   def handleEvent(self, event):
     '''    
     Handles an AT-SPI event by either queuing it for later dispatch when the
@@ -549,8 +572,10 @@ class Registry(object):
     @type event: L{event.Event}
     '''
     if self.async:
+      # queue for now
       self.queue.put_nowait(event)
     else:
+      # dispatch immediately
       self._dispatchEvent(event)
 
   def _dispatchEvent(self, event):
