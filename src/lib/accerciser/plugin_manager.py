@@ -32,7 +32,12 @@ class PluginView(gtk.Notebook):
   __gsignals__ = {'new_view' : 
                   (gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, 
-                   (gobject.TYPE_OBJECT,))}
+                   (gobject.TYPE_OBJECT,)),
+                  'tab_rightclick' : 
+                  (gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, 
+                   (gobject.TYPE_PYOBJECT,
+                    gobject.TYPE_OBJECT))}
   TARGET_PLUGINVIEW = 0
   TARGET_ROOTWIN = 1
 
@@ -56,6 +61,10 @@ class PluginView(gtk.Notebook):
     child = self.get_nth_page(index)
     self.emit('new_view', child)
 
+  def _onButtonPress(self, notebook, event, plugin):
+    if event.button == 3:
+      self.emit('tab_rightclick', event, plugin)
+
   def insert_page(self, child, tab_label=None, position=-1):
     if tab_label:
       name = tab_label
@@ -63,7 +72,12 @@ class PluginView(gtk.Notebook):
       name = child.plugin_name
     elif child.name:
       name = child.name
-    gtk.Notebook.insert_page(self, child, gtk.Label(name), position=position)
+    label = gtk.Label(name)
+    label.show()
+    ebox = gtk.EventBox()
+    ebox.connect('button-press-event', self._onButtonPress, child)
+    ebox.add(label)
+    gtk.Notebook.insert_page(self, child, ebox, position=position)
     self.set_tab_detachable(child, True)
     self.set_tab_reorderable(child, True)
 
@@ -394,6 +408,7 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _connectSignals(self, pluginview):
     pluginview.connect('new_view', self._onNewPluginView)
+    pluginview.connect('tab_rightclick', self._onTabRightClick)
     pluginview.connect('page_added', self._onAddedPluginToView)
     pluginview.connect('page_reordered', self._onReorderedPluginInView)
 
@@ -403,6 +418,10 @@ class PluginManager(gtk.ListStore, Tools):
       gconf_key = GCONF_PLUGINS+'/%s/tab_order' % \
           gconf.escape_key(page.plugin_name, len(page.plugin_name))
       self.gconf_client.set_int(gconf_key, view.page_num(page))
+
+  def _onTabRightClick(self, view, event, plugin):
+    menu = PluginViewMenu(self, plugin, view.get_toplevel())
+    menu.popup(None, None, None, event.button, event.time)
 
   def _onPluginRowChanged(self, model, path, iter):
     if not model[iter][self.COL_VIEW]: return
