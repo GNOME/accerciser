@@ -207,16 +207,13 @@ class HotkeyTreeView(gtk.TreeView):
     tvc.set_attributes(crt, text=COL_DESC)
     self.append_column(tvc)
 
-    crt = gtk.CellRendererCombo()
+    crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn('Key')
     tvc.set_min_width(64)
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_KEYPRESS)
     tvc.set_cell_data_func(crt, self._keyCellFunc)
     crt.set_property('editable', True)
-    crt.set_property('model', self._buildKeySymsModel())
-    crt.set_property('text-column', 1)
-    crt.set_property('has-entry', True)
     crt.connect('edited', self._onKeyChanged)
     self.append_column(tvc)
 
@@ -241,31 +238,6 @@ class HotkeyTreeView(gtk.TreeView):
     crt.connect('toggled', self._onModToggled, gtk.gdk.SHIFT_MASK)
     self.append_column(tvc)
   
-  def _buildKeySymsModel(self):
-    '''
-    Build a model that represents all the possible keys that could be 
-    configured as hotkeys.
-    '''
-    model = gtk.TreeStore(long, str)
-    iter = model.append(None, [-1, 'Alphanumeric'])
-    for keyval in range(48, 58)+range(65, 91)+range(97, 123):
-      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
-    iter = model.append(None, [-1, 'Keypad'])
-    for keyval in range(65408, 65470):
-      if not gtk.gdk.keyval_name(keyval) or \
-            not gtk.gdk.keyval_name(keyval).startswith('KP'):
-        continue
-      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
-    iter = model.append(None, [-1, 'Functions'])
-    for keyval in range(65470, 65505):
-      if not gtk.gdk.keyval_name(keyval): continue
-      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
-    iter = model.append(None, [-1, 'Extras'])
-    for keyval in range(32, 48)+range(58,64)+range(91,97)+range(123,192):
-      if not gtk.gdk.keyval_name(keyval): continue
-      model.append(iter, [keyval, gtk.gdk.keyval_name(keyval)])
-    return model
-
   def _keyCellFunc(self, column, cell, model, iter):
     '''
     Show the key symbol as a string for easy readability.

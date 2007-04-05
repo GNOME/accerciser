@@ -33,7 +33,7 @@ class PluginView(gtk.Notebook):
                   (gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, 
                    (gobject.TYPE_OBJECT,)),
-                  'tab_rightclick' : 
+                  'tab_popup_menu' : 
                   (gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, 
                    (gobject.TYPE_PYOBJECT,
@@ -61,10 +61,10 @@ class PluginView(gtk.Notebook):
     child = self.get_nth_page(index)
     self.emit('new_view', child)
 
-  def _onButtonPress(self, notebook, event, plugin):
+  def _onButtonPress(self, event_box, event, plugin):
     if event.button == 3:
-      self.emit('tab_rightclick', event, plugin)
-
+      self.emit('tab_popup_menu', event, plugin)
+  
   def insert_page(self, child, tab_label=None, position=-1):
     if tab_label:
       name = tab_label
@@ -408,7 +408,7 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _connectSignals(self, pluginview):
     pluginview.connect('new_view', self._onNewPluginView)
-    pluginview.connect('tab_rightclick', self._onTabRightClick)
+    pluginview.connect('tab_popup_menu', self._onTabPopupMenu)
     pluginview.connect('page_added', self._onAddedPluginToView)
     pluginview.connect('page_reordered', self._onReorderedPluginInView)
 
@@ -419,7 +419,7 @@ class PluginManager(gtk.ListStore, Tools):
           gconf.escape_key(page.plugin_name, len(page.plugin_name))
       self.gconf_client.set_int(gconf_key, view.page_num(page))
 
-  def _onTabRightClick(self, view, event, plugin):
+  def _onTabPopupMenu(self, view, event, plugin):
     menu = PluginViewMenu(self, plugin, view.get_toplevel())
     menu.popup(None, None, None, event.button, event.time)
 
@@ -510,6 +510,7 @@ class PluginTreeView(gtk.TreeView):
     self.plugin_manager = plugin_manager
     self.set_model(plugin_manager.plugins_store)
     self.connect('button-press-event', self._onButtonPress)
+    self.connect('popup-menu', self._onPopupMenu)
 
     crc = gtk.CellRendererToggle()
     crc.connect('toggled', self._onPluginToggled)
@@ -535,16 +536,38 @@ class PluginTreeView(gtk.TreeView):
   def _onButtonPress(self, widget, event):
     if event.button == 3:
       path = self.get_path_at_pos(int(event.x), int(event.y))[0]
-      plugin = \
-          self.plugin_manager.plugins_store[path][self.plugin_manager.COL_INSTANCE]
-      menu = PluginViewMenu(self.plugin_manager, plugin, self.get_toplevel())
-      menu.popup(None, None, None, event.button, event.time)
+      self._showPopup(event.button, event.time, path)
       
+  def _onPopupMenu(self, widget):
+    path, col = self.get_cursor()
+    gdkwindow = self.window
+    x, y = self.allocation.x, self.allocation.y
+    while gdkwindow:
+      window_x, window_y = gdkwindow.get_position()
+      x += window_x
+      y += window_y
+      gdkwindow = gdkwindow.get_parent()
+    rect = self.get_cell_area(path, col)
+    rect.x, rect.y = self.tree_to_widget_coords(rect.x, rect.y)
+    rect.x += x
+    rect.y += y
+    self._showPopup(0, gtk.get_current_event_time(), 
+                    path, lambda m, r: (r.x, r.y, True), rect)
+    return True
+
+
+  def _showPopup(self, button, time, path, pos_func=None, data=None):
+    plugin = \
+        self.plugin_manager.plugins_store[path][self.plugin_manager.COL_INSTANCE]
+    menu = PluginViewMenu(self.plugin_manager, plugin, self.get_toplevel())
+    menu.popup(None, None, pos_func, button, time, data)
+
   def _viewNameDataFunc(self, column, cell, model, iter):
     cell.set_property('text', getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', ''))
 
   def _viewStateDataFunc(self, column, cell, model, iter):
-    cell.set_property('active', bool(model[iter][self.plugin_manager.COL_INSTANCE]))
+    cell.set_property('active', 
+                      bool(model[iter][self.plugin_manager.COL_INSTANCE]))
 
   def _onPluginToggled(self, renderer_toggle, path):
     '''
