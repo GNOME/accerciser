@@ -39,7 +39,7 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
   def init(self):
     self.global_hotkeys = [('Highlight last event entry', 
                             self._onHighlightEvent,
-                            keysyms.L, gdk.MOD1_MASK | gdk.SHIFT_MASK)]
+                            keysyms.l, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
     vpaned = self.main_xml.get_widget('monitor_vpaned')

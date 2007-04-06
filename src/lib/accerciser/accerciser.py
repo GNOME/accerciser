@@ -69,12 +69,12 @@ class MainWindow(Tools):
     self.hotkey_manager = HotkeyManager()
     self.hotkey_manager.addKeyCombo('Core', 'Inspect last focused accessible',
                                     self._inspectLastFocused, 
-                                    gtk.keysyms.question,
-                                    gtk.gdk.SHIFT_MASK | gtk.gdk.MOD1_MASK)
+                                    gtk.keysyms.a,
+                                    gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
     self.hotkey_manager.addKeyCombo('Core', 'Inspect accessible under mouse',
                                     self._inspectUnderMouse, 
-                                    gtk.keysyms.A,
-                                    gtk.gdk.SHIFT_MASK | gtk.gdk.MOD1_MASK)
+                                    gtk.keysyms.question,
+                                    gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
 
     # parse the glade
     self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window', 
