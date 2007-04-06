@@ -1,5 +1,13 @@
 2007-04-06 Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/event_monitor.glade: Put monitor options in paned
+	instead of an expander (bug 425474)
+	* plugins/event_monitor.py: Put save dialog inline with run()
+	instead of a callback.
+	* plugins/ipython_view.py: Made font monospace.
+
+2007-04-06 Eitan Isaacson  <eitan@ascender.com>
+
 	* src/lib/accerciser/plugin_manager.py: Reverted plugin tab popup
 	menus.	It was not impleneted correctly. We will do it better at a
 	later date.

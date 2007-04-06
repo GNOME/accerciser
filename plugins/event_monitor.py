@@ -41,11 +41,10 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
                             self._onHighlightEvent,
                             keysyms.L, gdk.MOD1_MASK | gdk.SHIFT_MASK)]
     self.source_filter = None
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'event_monitor_vbox')
-    vbox = self.main_xml.get_widget('event_monitor_vbox')
-    self.plugin_area.add(vbox)
+    self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
+    vpaned = self.main_xml.get_widget('monitor_vpaned')
+    self.plugin_area.add(vpaned)
     self.event_manager = pyLinAcc.Event.Manager()
-    self.event_manager.addClient(self._onHotKey, 'keyboard:press')
     self._initTreeView()
     self._popEventsModel()
     self._initTextView()
@@ -282,9 +281,16 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
                                         buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
                                                  gtk.STOCK_OK, gtk.RESPONSE_OK))
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.connect('response', self._onSaveResponse)
     save_dialog.set_default_response(gtk.RESPONSE_OK)
+    response = save_dialog.run()
     save_dialog.show_all()
+    if response == gtk.RESPONSE_OK:
+      save_to = open(save_dialog.get_filename(), 'w')
+      save_to.write(
+        self.monitor_buffer.get_text(self.monitor_buffer.get_start_iter(),
+                                     self.monitor_buffer.get_end_iter()))
+      save_to.close()
+    save_dialog.destroy()
   
   def _onSaveResponse(self, filechooser, response):
     if response == gtk.RESPONSE_OK:
@@ -318,9 +324,6 @@ class EventMonitor(accerciser.plugin.ViewportPlugin):
       return event.source == self.acc
     else:
       return True
-
-  def _onHotKey(self, event):
-    pass
   
   def _onHighlightEvent(self):
     self._onFlushQueue()

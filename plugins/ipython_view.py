@@ -16,6 +16,7 @@ import gtk
 import re
 import sys
 import os
+import pango
 from StringIO import StringIO
 
 try:
@@ -151,6 +152,7 @@ class IterableIPShell:
 class ConsoleView(gtk.TextView):
   def __init__(self):
     gtk.TextView.__init__(self)
+    self.modify_font(pango.FontDescription('Mono'))
     self.set_cursor_visible(True)
     self.text_buffer = self.get_buffer()
     self.mark = self.text_buffer.create_mark('scroll_mark', 
