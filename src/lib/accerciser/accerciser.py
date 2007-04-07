@@ -441,6 +441,7 @@ to take effect.')
       if pages_count1 + pages_count2 < tab_num:
         return
       elif pages_count1 >= tab_num:
-        self.plugin_view1.set_current_page(tab_num - 1)
+        self.plugin_view1.focusTab(tab_num - 1)
       else:
-        self.plugin_view2.set_current_page(tab_num - pages_count1 - 1)
+        self.plugin_view2.focusTab(tab_num - pages_count1 - 1)
+      

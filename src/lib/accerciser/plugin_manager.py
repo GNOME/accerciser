@@ -73,7 +73,9 @@ class PluginView(gtk.Notebook):
   def prepend_page(self, child, tab_label=None):
     self.insert_page(child, tab_label, 0)
 
-
+  def focusTab(self, tab_num):
+    self.set_current_page(tab_num)
+    self.grab_focus()
 
 class PluginViewWindow(gtk.Window, Tools):
   def __init__(self, view_name):
@@ -113,7 +115,7 @@ class PluginViewWindow(gtk.Window, Tools):
       tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
       pages_count = self.plugin_view.get_n_pages()
       if pages_count >= tab_num:
-        self.plugin_view.set_current_page(tab_num - 1)
+        self.plugin_view.focusTab(tab_num - 1)
       
 
 class PluginManager(gtk.ListStore, Tools):
