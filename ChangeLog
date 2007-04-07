@@ -1,5 +1,11 @@
 2007-04-06 Eitan Isaacson  <eitan@ascender.com>
 
+	* src/lib/accerciser/accerciser.py: 
+	* src/lib/accerciser/plugin_manager.py: PluginView now grabs focus
+	when alt+<num> is pressed (bug 426744).
+
+2007-04-06 Eitan Isaacson  <eitan@ascender.com>
+
 	* src/lib/accerciser/accerciser.py: Consume event if HotkeyManager
 	handles keypress event (bug 424501).
 	* src/lib/accerciser/hotkey_manager.py: Return true if keypress
