@@ -1,5 +1,12 @@
 2007-04-06 Eitan Isaacson  <eitan@ascender.com>
 
+	* src/lib/accerciser/accerciser.py: Consume event if HotkeyManager
+	handles keypress event (bug 424501).
+	* src/lib/accerciser/hotkey_manager.py: Return true if keypress
+	was handled in hotkeyPress()
+
+2007-04-06 Eitan Isaacson  <eitan@ascender.com>
+
 	* plugins/event_monitor.py: 
 	* src/lib/accerciser/accerciser.py: Changed the default global hotkeys.
 

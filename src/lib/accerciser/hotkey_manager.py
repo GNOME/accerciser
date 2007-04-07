@@ -65,6 +65,7 @@ class HotkeyManager(gtk.ListStore):
     @type modifiers: integer
     '''
     km = gtk.gdk.keymap_get_default()
+    callback = None
     for combo in self:
       entries = km.get_entries_for_keyval(combo[COL_KEYPRESS])
       if not entries: continue
@@ -73,6 +74,7 @@ class HotkeyManager(gtk.ListStore):
         callback = combo[COL_CALLBACK]
         if callback:
           callback()
+    return bool(callback)
   
   def addKeyCombo(self, component, description, callback, keypress, modifiers):
     '''
