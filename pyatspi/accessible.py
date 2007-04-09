@@ -21,6 +21,7 @@ U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import new
 import types
+import ORBit
 import Accessibility
 import constants
 import utils
@@ -67,10 +68,10 @@ def _makeExceptionHandler(func):
     try:
       # try calling the original func
       return func(self, *args, **kwargs)
-    except ORBit.CORBA.NotImplemented, e:
+    except ORBit.CORBA.NO_IMPLEMENT, e:
       # raise Python exception
       raise NotImplementedError(e)
-    except ORBit.CORBA.CORBAException, e:
+    except ORBit.CORBA.Exception, e:
       # raise Python exception
       raise LookupError(e)
   return _inner
@@ -278,7 +279,9 @@ class _AccessibleMixin(object):
   
 # mix the new functions
 _mixClass(Accessibility.Accessible, _AccessibleMixin)
-# then mix queryInterface convenience methods
+# mix queryInterface convenience methods
 _mixInterfaces(Accessibility.Accessible, constants.ALL_INTERFACES)
-# finally mix the exception handlers into all queryable interfaces
+# mix the exception handlers into all queryable interfaces
 map(_mixExceptions, constants.ALL_INTERFACES)
+# mix the exception handlers into other Accessibility objects
+map(_mixExceptions, [Accessibility.StateSet])
