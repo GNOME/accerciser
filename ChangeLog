@@ -1,5 +1,13 @@
 2007-04-09 Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/interface_view.glade: 
+	* plugins/interface_view.py: Make 'show' buttons insensitive when
+	nothing is selected (bug 424462).
+	* src/accerciser.in: Put ~/.accerciser in sys.path for convinient user
+	imports.
+
+2007-04-09 Eitan Isaacson  <eitan@ascender.com>
+
 	* help/C/accerciser.xml: Updated documentation about global
 	hotkeys (bug 424489).
 

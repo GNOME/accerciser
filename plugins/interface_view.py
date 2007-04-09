@@ -137,6 +137,9 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     self.relation_bg = style.base[gtk.STATE_NORMAL]
     selection = treeview.get_selection()
     selection.set_select_function(self._relationSelectFunc, full=True)
+    show_button = self.main_xml.get_widget('button_relation_show')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onRelationSelectionChanged, show_button)
 
     # configure selection tree view
     treeview = self.main_xml.get_widget('treeview_selection')
@@ -152,7 +155,9 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     treeview.append_column(tvc)
     # connect selection changed signal
     selection = treeview.get_selection()
-    selection.connect("changed", self._onSelectionSelected)
+    show_button = self.main_xml.get_widget('button_selection_clear')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect("changed", self._onSelectionSelected, show_button)
 
     # configure states tree view
     treeview = self.main_xml.get_widget('states_view')
@@ -203,6 +208,10 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=5)
     treeview.append_column(tvc)    
+    selection = treeview.get_selection()
+    show_button = self.main_xml.get_widget('button_hypertext_show')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onLinksSelectionChanged, show_button)
 
     # configure actions tree view
     treeview = self.main_xml.get_widget('treeview_action')
@@ -346,6 +355,11 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       return
     pop_func(self.acc)
 
+  def _isSelectedInView(self, selection):
+    model, rows = selection.get_selected_rows()
+    something_is_selected = bool(rows)
+    return something_is_selected
+
 ##############################
 # Accessible Interface
 ##############################
@@ -389,7 +403,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
         relations_model.append(iter, [getIcon(acc), acc.name, acc])
     relations_view.expand_all()
 
-
   def _relationCellDataFunc(self, tvc, cellrenderer, model, iter):
     if len(model.get_path(iter)) == 1:
       cellrenderer.set_property('cell-background-gdk', self.header_bg)
@@ -416,6 +429,9 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       acc = model[iter][2]
       if acc:
         self.node.update(acc)
+  
+  def _onRelationSelectionChanged(self, selection, show_button):
+    show_button.set_sensitive(self._isSelectedInView(selection))
 
   def _accEventState(self, event):
      if self.acc != event.source:
@@ -543,7 +559,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
         if anchor_index == 0:
           links_model[iter][1] = acc_obj.name # Otherwise the link is nameless.
      
-
   def _onLinkShow(self, link_view, *more_args):
     selection = link_view.get_selection()
     model, iter = selection.get_selected()
@@ -551,6 +566,9 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       acc = model[iter][6]
       if acc:
         self.node.update(acc)
+
+  def _onLinksSelectionChanged(self, selection, show_button):
+    show_button.set_sensitive(self._isSelectedInView(selection))
      
 ##############################
 # Image Interface
@@ -598,20 +616,21 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
         if state.contains(pyLinAcc.Constants.STATE_SELECTABLE):
           selection_model.append([getIcon(child),child.name, child])
 
-  def _onSelectionSelected(self, selection):
-     acc = self.acc
-     try:
-        si = pyLinAcc.Interfaces.ISelection(acc)
-     except:
-        return
-     model, paths = selection.get_selected_rows()
-     selected_children = [path[0] for path in paths]
-
-     for child_index in range(len(acc)):
-        if child_index in selected_children:
-           si.selectChild(child_index)
-        else:
-           si.deselectChild(child_index)
+  def _onSelectionSelected(self, selection, show_button):
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    acc = self.acc
+    try:
+      si = pyLinAcc.Interfaces.ISelection(acc)
+    except:
+      return
+    model, paths = selection.get_selected_rows()
+    selected_children = [path[0] for path in paths]
+    
+    for child_index in range(len(acc)):
+      if child_index in selected_children:
+        si.selectChild(child_index)
+      else:
+        si.deselectChild(child_index)
   
   def _onSelectionClear(self, widget):
      acc = self.acc
