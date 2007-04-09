@@ -242,50 +242,65 @@
         <para><xref linkend="accerciser-tree-select"/></para> 
       </listitem> 
       <listitem> 
-        <para><xref linkend="accerciser-last-focus-select"/></para> 
-      </listitem> 
-      <listitem> 
-        <para><xref linkend="accerciser-mouse-select"/></para>
+        <para><xref linkend="accercicer-global-hotkeys"/></para> 
       </listitem> 
     </itemizedlist> 
     </para>
     <!-- ================ Usage Subsection ================================ -->
+
     <sect2 id="accerciser-tree-select"> 
       <title>Select an accessible through the tree view.</title> 
       <para>Use the tree view to navigate the hierarchy of accessible objects       rooted at desktop. Unfolding a tree node reveals its immediate children       while folding it hides them. Each node shows an icon for its associated       application or widget role and its accessible name, if available. The       second column lists how many nodes will be shown if the item is       unfolded.</para>
-
+      
       <warning>
         <para>If you unfold a node with a large number of children (e.g.         hundreds), your desktop may freeze temporarily as &app; tries to build         the tree view.</para>
       </warning>
     </sect2> 
     <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="accerciser-last-focus-select"> 
-      <title>Select last focused accessible</title> 
-      <para>Use the following global key combination to move the tree view       selection to the last widget to receive the focus on the desktop:</para>
-      <para>
-        <keycombo>
-          <keycap>Super</keycap>
-          <keycap>?</keycap>
+    <sect2 id="accercicer-global-hotkeys">
+      <title>Global Hotkey functions</title>
+      <para>&app; provides a few global hotkeys in it's core functionality:</para>
+      <itemizedlist> 
+        <listitem> 
+          <para><xref linkend="accerciser-tree-select"/></para> 
+        </listitem> 
+        <listitem> 
+          <para><xref linkend="accerciser-last-focus-select"/></para> 
+        </listitem> 
+      </itemizedlist> 
+      <sect3 id="accerciser-last-focus-select"> 
+        <title>Select last focused accessible</title> 
+        <para>Use the following global key combination to move the tree view       selection to the last widget to receive the focus on the desktop:</para>
+        <para>
+          <keycombo>
+            <keycap>Control</keycap>
+            <keycap>Alt</keycap>
+            <keycap>a</keycap>
           </keycombo>.
-      </para>
-    </sect2> 
-    <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="accerciser-mouse-select"> 
-      <title>Select accessible with mouse</title> 
-      <para>Use the following key combination to move the tree view selection       to the widget currently under the mouse pointer:</para>
-      <para>
-        <keycombo>
-          <keycap>Super</keycap>
-          <keycap>Shift</keycap>
-          <keycap>A</keycap>
+        </para>
+      </sect3> 
+      <!-- ================ Usage Subsection ================================ -->
+      <sect3 id="accerciser-mouse-select"> 
+        <title>Select accessible with mouse</title> 
+        <para>Use the following key combination to move the tree view selection       to the widget currently under the mouse pointer:</para>
+        <para>
+          <keycombo>
+            <keycap>Control</keycap>
+            <keycap>Alt</keycap>
+            <keycap>?</keycap>
           </keycombo>.
-      </para>
+        </para>
+      </sect3>
+      <tip>
+        <para>You could configure the hotkeys to different bindings, see:
+          <xref linkend="accerciser-hotkey-config"/></para>
+      </tip>
     </sect2>
   </sect1>
 
   <!-- ============= Plugins =================================== -->
   <sect1 id="accerciser-default-plugins"> 
-    <title>Default plugins</title> <para>&app; comes with several default     plugins. These plugins allow you to view a variety of information about the     currently selected accessible in the tree view and its neighbors. The     default plugins available in &appversion; are the following:</para>
+    <title>Default Plugins</title> <para>&app; comes with several default     plugins. These plugins allow you to view a variety of information about the     currently selected accessible in the tree view and its neighbors. The     default plugins available in &appversion; are the following:</para>
     <itemizedlist> 
       <listitem> 
         <para><xref linkend="accerciser-iface-viewer"/></para> 
@@ -340,11 +355,13 @@
       <tip>
         <para>By pressing 
         <keycombo>
-          <keycap>Super</keycap>
-          <keycap>Shift</keycap>
-          <keycap>L</keycap>
+          <keycap>Control</keycap>
+          <keycap>Alt</keycap>
+          <keycap>l</keycap>
           </keycombo> anywhere on the desktop, the last logged event 
-          will be highlighted for later reference.
+          will be highlighted for later reference. See 
+        <xref linkend="accerciser-hotkey-config"/> for how to change
+          this key combination.
         </para>
       </tip>
     </sect2> 
@@ -374,16 +391,50 @@
   <!-- ============= Customization ============================= -->
   <!-- Use this section to describe how to customize the application. -->
   <sect1 id="accerciser-prefs"> 
-    <title>Plugin layout</title> 
-    <para>There are two methods for configuring plugin layout in &app;. First,
-    you may choose
-    <menuchoice> 
-      <guimenu>View</guimenu> 
-      <guimenuitem>Plugins</guimenuitem> 
-    </menuchoice> 
-    to activate the <guilabel>Plugins</guilabel> dialog. This dialog contains a     list of all available plugins. Under the <guilabel>View</guilabel> column     you can choose where a particular plugin should be displayed in the main     window, or create a new plugin view by entering a new name.</para>
-
-    <para>You may bypass the <guilabel>Plugins</guilabel> dialog by using drag     and drop to move plugin tabs. Dragging a plugin tab to the bottom or right     plugin area in the main window will move the plugin. Dragging a tab to the     desktop will create a new plugin window and drop the plugin in it.</para>
+    <title>Preferences</title>
+    <para>There are some elements in &app; that are
+    configurable:</para>
+    <itemizedlist> 
+      <listitem> 
+        <para><xref linkend="accerciser-plugin-layout"/></para> 
+      </listitem>
+    </itemizedlist>
+    <sect2 id="accerciser-plugin-layout">
+      <title>Plugin Layout</title> 
+      <para>There are two methods for configuring plugin layout in &app;. First,
+        you may choose
+        <menuchoice> 
+          <guimenu>Edit</guimenu> 
+          <guimenuitem>Preferences</guimenuitem> 
+        </menuchoice> 
+        to activate the <guilabel>Preferences</guilabel> dialog. 
+        This dialog contains tabs for each section, select the 
+        <guilabel>Plugins</guilabel> tab. Under this section you will
+        find a list view of all the available plugins. Right-click on
+        any of the plugins listed to configure it's view.</para>
+        
+      <para>You may bypass the <guilabel>Preferences</guilabel> dialog by
+        using drag and drop to move plugin tabs. Dragging a plugin tab
+        to the bottom or right plugin area in the main window will
+        move the plugin. Dragging a tab to the desktop will create a
+        new plugin window and drop the plugin in it.</para>
+    </sect2>
+    <sect2 id="accerciser-hotkey-config">
+      <title>Global Hotkey Configuration</title>
+      <para>Some elements in &app; may enable certain functionality
+        via hotkeys. The hotkey combination could be changed via the 
+        <guilabel>Preferences</guilabel> dialog, to do so you may
+        select <menuchoice> 
+          <guimenu>Edit</guimenu> 
+          <guimenuitem>Preferences</guimenuitem> 
+        </menuchoice> 
+        to activate the <guilabel>Preferences</guilabel> dialog. 
+        This dialog contains tabs for each section, select the 
+        <guilabel>Global Hotkeys</guilabel> tab. Under this section you will
+        find a list view of all the available hotkey features. Change
+        the key bindings to you liking.
+      </para>
+    </sect2>
   </sect1>
 <!-- ============= Bugs ================================== -->
 <!-- This section is optional and is commented out by default. 
