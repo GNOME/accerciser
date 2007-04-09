@@ -139,7 +139,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     selection.set_select_function(self._relationSelectFunc, full=True)
     show_button = self.main_xml.get_widget('button_relation_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onRelationSelectionChanged, show_button)
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
 
     # configure selection tree view
     treeview = self.main_xml.get_widget('treeview_selection')
@@ -157,7 +157,8 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     selection = treeview.get_selection()
     show_button = self.main_xml.get_widget('button_selection_clear')
     show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect("changed", self._onSelectionSelected, show_button)
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
+    selection.connect("changed", self._onSelectionSelected)
 
     # configure states tree view
     treeview = self.main_xml.get_widget('states_view')
@@ -211,7 +212,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     selection = treeview.get_selection()
     show_button = self.main_xml.get_widget('button_hypertext_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onLinksSelectionChanged, show_button)
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
 
     # configure actions tree view
     treeview = self.main_xml.get_widget('treeview_action')
@@ -232,6 +233,10 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=3)
     treeview.append_column(tvc)
+    selection = treeview.get_selection()
+    show_button = self.main_xml.get_widget('button_action_do')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
 
     # configure streamable content tree view
     treeview = self.main_xml.get_widget('treeview_streams')
@@ -360,6 +365,10 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     something_is_selected = bool(rows)
     return something_is_selected
 
+  def _onViewSelectionChanged(self, selection, *widgets):
+    for widget in widgets:
+      widget.set_sensitive(self._isSelectedInView(selection))
+
 ##############################
 # Accessible Interface
 ##############################
@@ -430,9 +439,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       if acc:
         self.node.update(acc)
   
-  def _onRelationSelectionChanged(self, selection, show_button):
-    show_button.set_sensitive(self._isSelectedInView(selection))
-
   def _accEventState(self, event):
      if self.acc != event.source:
         return
@@ -462,10 +468,19 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
   def _onActionRowActivated(self, treeview, path, view_column):
      actions_model = treeview.get_model()
      iter = actions_model.get_iter(path)
-     action_num = actions_model.get_value(iter, 0)
+     action_num = actions_model[iter][0]
      acc = self.acc
      ai = pyLinAcc.Interfaces.IAction(acc)
      ai.doAction(action_num)
+
+  def _onActionClicked(self, button):
+    actions_view = self.main_xml.get_widget('treeview_action')
+    selection = actions_view.get_selection()
+    actions_model, iter = selection.get_selected()
+    action_num = actions_model[iter][0]
+    acc = self.acc
+    ai = pyLinAcc.Interfaces.IAction(acc)
+    ai.doAction(action_num)
 
 ##############################
 # Application Interface
@@ -566,9 +581,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       acc = model[iter][6]
       if acc:
         self.node.update(acc)
-
-  def _onLinksSelectionChanged(self, selection, show_button):
-    show_button.set_sensitive(self._isSelectedInView(selection))
      
 ##############################
 # Image Interface
@@ -616,8 +628,7 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
         if state.contains(pyLinAcc.Constants.STATE_SELECTABLE):
           selection_model.append([getIcon(child),child.name, child])
 
-  def _onSelectionSelected(self, selection, show_button):
-    show_button.set_sensitive(self._isSelectedInView(selection))
+  def _onSelectionSelected(self, selection):
     acc = self.acc
     try:
       si = pyLinAcc.Interfaces.ISelection(acc)
