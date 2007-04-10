@@ -33,15 +33,20 @@ if reg is None:
 # generate Python code for the Accessibility module from the IDL
 ORBit.load_typelib(TYPELIB_NAME)
 
-# import our modules	
-import registry, accessible, event, utils
+# import our registry module
+import registry
+# wrap the raw registry object in our convenience singleton
+Registry = registry.Registry(reg)
+# now throw the module away immediately
+del registry
+
+# pull the cache level functions into this namespace, but nothing else
+from accessible import setCacheLevel, getCacheLevel
+
 # pull constants and utilities directly into this namespace; rest of code
 # never has to be touched externally
 from constants import *
 from utils import *
-
-# wrap the raw registry object in our convenience singleton
-Registry = registry.Registry(reg)
 
 # throw away extra references
 del reg

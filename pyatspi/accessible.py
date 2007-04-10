@@ -5,9 +5,11 @@ Accessibility.Accessible base class to make it more Pythonic.
 Based on public domain code originally posted at 
 http://wwwx.cs.unc.edu/~parente/cgi-bin/RuntimeClassMixins.
 
-@todo: PP: also need to mix into methods in StateSet and other objects a client
-  might receive
-@todo: PP: investigate caching; possible hitch with __slots__
+@todo: PP: implement caching for basic attributes
+
+@var _CACHE_LEVEL: Current level of caching enabled. Checked dynamically by
+  L{_AccessibleMixin}
+@type _CACHE_LEVEL: integer
 
 @author: Peter Parente
 @organization: IBM Corporation
@@ -26,12 +28,40 @@ import Accessibility
 import constants
 import utils
 
-def _makeQuery(idl):
+_CACHE_LEVEL = None
+
+def getCacheLevel():
+  '''
+  Gets the current level of caching.
+  
+  @return: None indicating no caching is in effect. 
+    L{constants.CACHE_INTERFACES} indicating all interface query results are
+    cached. L{constants.CACHE_PROPERTIES} indicating all basic accessible
+    properties are cached.
+  @rtype: integer
+  '''
+  return _CACHE_LEVEL
+
+def setCacheLevel(val):
+  '''
+  Sets the desired level of caching for all accessible objects created after
+  this function is invoked.
+  
+  @param val: None indicating no caching is in effect. 
+    L{constants.CACHE_INTERFACES} indicating all interface query results are
+    cached. L{constants.CACHE_PROPERTIES} indicating all basic accessible
+    properties are cached.
+  @type val: integer
+  '''
+  global _CACHE_LEVEL
+  _CACHE_LEVEL = val
+
+def _makeQuery(iid):
   '''
   Builds a function querying to a specific interface and returns it.
   
-  @ivar idl: Interface identifier to use when querying
-  @type idl: string
+  @ivar iid: Interface identifier to use when querying
+  @type iid: string
   @return: Function querying to the given interface
   @rtype: function
   '''
@@ -41,19 +71,32 @@ def _makeQuery(idl):
   
     @return: An object with the desired interface
     @rtype: object
-    @raise NotImplementedError: When the desired interface is not supported
+    @raise NotImplementedError: When the desired interface is not supported    
     '''
     try:
-      i = self.queryInterface(idl)
-    except Exception:
-      raise NotImplementedError
+      return self._cache[iid]
+    except KeyError:
+      # interface not cached
+      caching = True
+    except AttributeError:
+      # not caching at present
+      caching = False
+    
+    try:
+      i = self.queryInterface(iid)
+    except Exception, e:
+      raise LookupError(e)
     if i is None:
       raise NotImplementedError
-    else:
-      # not needed according to ORBit2 spec, but makes Java queries work
-      # more reliably according to Orca experience
-      i._narrow(i.__class__)
+    
+    # not needed according to ORBit2 spec, but makes Java queries work
+    # more reliably according to Orca experience
+    i._narrow(i.__class__)
+    if caching:
+      # cache the narrow'ed result, but only if we're caching for this object
+      self._cache[iid] = i
     return i
+  
   return _inner
 
 def _makeExceptionHandler(func):
@@ -122,11 +165,11 @@ def _mixExceptions(cls):
     elif isinstance(obj, property):
       # wrap the getters and setters
       if obj.fget:
-        getter = _makeExceptionHandler(obj.fget)
+        getter = _makeExceptionHandler(getattr(cls, obj.fget.__name__))
       else:
         getter = None
       if obj.fset:
-        setter = _makeExceptionHandler(obj.fset)
+        setter = _makeExceptionHandler(getattr(cls, obj.fset.__name__))
       else:
         setter = None
       setattr(cls, name, property(getter, setter))
@@ -135,20 +178,22 @@ def _mixClass(cls, new_cls):
   '''  
   Adds the methods in new_cls to cls. After mixing, all instances of cls will
   have the new methods. If there is a method name clash, the method already in
-  cls will be prefixed with an underscore before the new method of the same
-  name is mixed in.
+  cls will be prefixed with '_mix_' before the new method of the same name is 
+  mixed in.
+  
+  @note: _ is not the prefix because if you wind up with __ in front of a 
+  variable, it becomes private and mangled when an instance is created. 
+  Difficult to invoke from the mixin class.
 
   @param cls: Existing class to mix features into
   @type cls: class
   @param new_cls: Class containing features to add
   @type new_cls: class
-  '''       
+  '''
   # loop over all names in the new class
-  for name in new_cls.__dict__.keys():
+  for name, func in new_cls.__dict__.items():
     # get only functions from the new_class
-    if isinstance(new_cls.__dict__[name], types.FunctionType):
-      # get the function from the new_cls
-      func = new_cls.__dict__[name]
+    if (isinstance(func, types.FunctionType)):
       # build a new function that is a clone of the one from new_cls
       method = new.function(func.func_code, func.func_globals, name, 
                             func.func_defaults, func.func_closure)
@@ -159,9 +204,19 @@ def _mixClass(cls, new_cls):
         pass
       else:
         # rename the old method so we can still call it if need be
-        setattr(cls, '_'+name, old_method)
+        setattr(cls, '_mix_'+name, old_method)
       # add the clone to cls
       setattr(cls, name, method)
+    elif isinstance(func, staticmethod):
+      try:
+        # check if a method of the same name already exists in the target
+        old_method = getattr(cls, name)
+      except AttributeError:
+        pass
+      else:
+        # rename the old method so we can still call it if need be
+        setattr(cls, '_mix_'+name, old_method)
+      setattr(cls, name, func)
 
 class _AccessibleMixin(object):
   '''
@@ -169,7 +224,46 @@ class _AccessibleMixin(object):
   features defined here will be added to the Accessible class at run time so
   that all instances of Accessible have them (i.e. there is no need to
   explicitly wrap an Accessible in this class or derive a new class from it.)
+  
+  @cvar SLOTTED_CLASSES: Mapping from raw Accessibility class to a new class
+    having the slots defined by L{SLOTS}
+  @type SLOTTED_CLASSES: dictionary
+  @cvar SLOTS: All slots to create
+  @type SLOTS: tuple
   '''
+  SLOTTED_CLASSES = {}
+  SLOTS = ('_cache', '_cache_level')
+  
+  def __new__(cls):
+    '''
+    Creates a new class mimicking the one requested, but with an extra _cache
+    attribute set in the __slots__ tuple. This field can be set to a dictionary
+    or other object to allow caching to occur.
+    
+    Note that we can't simply mix __slots__ into this class because __slots__
+    has an effect only at class creation time.
+    
+    @param cls: Accessibility object class
+    @type cls: class
+    @return: Instance of the new class
+    @rtype: object
+    '''
+    try:
+      # check if we've already created a new version of the class
+      new_cls = _AccessibleMixin.SLOTTED_CLASSES[cls]
+    except KeyError:
+      # create the new class if not
+      new_cls = type(cls.__name__, (cls,), 
+                     {'__module__' : cls.__module__, 
+                      '__slots__' : _AccessibleMixin.SLOTS})
+      _AccessibleMixin.SLOTTED_CLASSES[cls] = new_cls
+    obj = cls._mix___new__(new_cls)
+    obj._cache_level = _CACHE_LEVEL
+    if obj._cache_level is not None:
+      # be sure to create the cache dictionary, if we're caching
+      obj._cache = {}
+    return obj
+  
   def __del__(self):
     '''
     Decrements the reference count on the accessible object when there are no
@@ -233,7 +327,61 @@ class _AccessibleMixin(object):
     @rtype: integer
     '''
     return self.childCount
+  
+  def _get_name(self):
+    '''
+    Gets the name of the accessible from the cache if it is available, 
+    otherwise, fetches it remotely.
     
+    @return: Name of the accessible
+    @rtype: string
+    '''
+    if self._cache_level != constants.CACHE_PROPERTIES:
+      return self._mix__get_name()
+
+    try:
+      return self._cache['name']
+    except KeyError:
+      name = self._mix__get_name()
+      self._cache['name'] = name
+      return name
+  
+  def getRoleName(self):
+    '''
+    Gets the unlocalized role name of the accessible from the cache if it is 
+    available, otherwise, fetches it remotely.
+    
+    @return: Role name of the accessible
+    @rtype: string
+    '''
+    if self._cache_level != constants.CACHE_PROPERTIES:
+      return self._mix_getRoleName()
+
+    try:
+      return self._cache['rolename']
+    except KeyError:
+      name = self._mix_getRoleName()
+      self._cache['rolename'] = name
+      return name
+  
+  def _get_description(self):
+    '''    
+    Gets the description of the accessible from the cache if it is available,
+    otherwise, fetches it remotely.
+    
+    @return: Description of the accessible
+    @rtype: string
+    '''
+    if self._cache_level != constants.CACHE_PROPERTIES:
+      return self._mix__get_description()
+
+    try:
+      return self._cache['description']
+    except KeyError:
+      name = self._mix__get_description()
+      self._cache['description'] = name
+      return name
+  
   def getIndexInParent(self):
     '''
     Gets the index of this accessible in its parent. Uses the implementation of
@@ -244,7 +392,7 @@ class _AccessibleMixin(object):
     @return: Index of this accessible in its parent
     @rtype: integer
     '''
-    i = self._getIndexInParent()
+    i = self._mix_getIndexInParent()
     try:
       # correct for out-of-bounds index reporting
       return min(self.parent.childCount-1, i)
@@ -264,7 +412,7 @@ class _AccessibleMixin(object):
     @rtype: Accessibility.Application
     '''
     try:
-      return self._getApplication()
+      return self._mix_getApplication()
     except AttributeError:
       pass
     curr = self
@@ -276,7 +424,7 @@ class _AccessibleMixin(object):
       pass
     # return None if the application isn't reachable for any reason
     return None
-  
+
 # mix the new functions
 _mixClass(Accessibility.Accessible, _AccessibleMixin)
 # mix queryInterface convenience methods

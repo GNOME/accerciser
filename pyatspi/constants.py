@@ -23,9 +23,9 @@ acc_dict = vars(Accessibility)
 ALL_INTERFACES = []
 # list of classes that are not queriable interfaces
 not_interfaces = ['RoleSet', 'StateSet', 'DeviceEventListener', 'LoginHelper',
-                  'ContentStream', 'DeviceEventController', 
+                  'ContentStream', 'DeviceEventController', 'Registry'
                   'DeviceEventListener', 'EventListener', 'Relation', 
-                  'CommandListener']
+                  'CommandListener', 'Selector']
 for obj in acc_dict.values():
   try:
     # see if the object has a typecode
@@ -60,6 +60,10 @@ MOUSE_B3C = 'b3c'
 MOUSE_B3D = 'b3d'
 MOUSE_ABS = 'abs'
 MOUSE_REL = 'rel'
+
+# defines levels of caching where if x > y, x caches all of y plus more
+CACHE_INTERFACES = 0
+CACHE_PROPERTIES = 1
 
 # dictionary used to correct the bug of not being able to register for all the
 # subevents given only an AT-SPI event class (i.e. first part of the event

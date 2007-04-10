@@ -306,19 +306,13 @@ class Registry(object):
     '''
     return self
   
-  def start(self, async=False, caching=None, gil=True):
+  def start(self, async=False, gil=True):
     '''
     Enter the main loop to start receiving and dispatching events.
     
     @param async: Should event dispatch be asynchronous (decoupled) from 
       event receiving from the AT-SPI registry?
     @type async: boolean
-    @param caching: Level of caching to use for accessible attributes. When
-      set to None, no attribute caching is provided. When set to 
-      L{constants.CACHE_INTERFACES}, a successful interface query is cached.
-      When set to L{constants.CACHE_BASIC}, both interfaces and basic 
-      accessible attributes are cached (i.e. name, role, application).
-    @type caching: boolean
     @param gil: Add an idle callback which releases the Python GIL for a few
       milliseconds to allow other threads to run? Necessary if other threads
       will be used in this process.
@@ -375,8 +369,8 @@ class Registry(object):
     '''
     try:
       return self.reg.getDesktop(i)
-    except Exception:
-      raise LookupError
+    except Exception, e:
+      raise LookupError(e)
     
   def registerEventListener(self, client, *names):
     '''
