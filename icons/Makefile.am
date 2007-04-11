@@ -1,6 +1,3 @@
-iconsdir = $(datadir)/$(PACKAGE)/icons
-icons_DATA = custom.png
-
 hicolordir = $(datadir)/icons/hicolor
 app_icons =			\
 	accerciser-16.png	\
@@ -40,5 +37,5 @@ install-data-hook:
 		echo "***   $(gtk_update_icon_cache)"; \
 	fi
 
-EXTRA_DIST = $(icons_DATA) $(app_icons) $(noinst_DATA)
+EXTRA_DIST = $(app_icons) $(noinst_DATA)
 

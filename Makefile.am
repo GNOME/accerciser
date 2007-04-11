@@ -1,4 +1,4 @@
-SUBDIRS = help icons plugins po src
+SUBDIRS = help icons plugins po src pixmaps
 
 desktopdir = $(datadir)/applications
 desktop_DATA = accerciser.desktop
