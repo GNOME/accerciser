@@ -39,6 +39,12 @@ install-data-local:
 			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
 		done \
 	fi
+uninstall-local:
+	for p in $(schemas_DATA) ; do \
+		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-uninstall-rule $(srcdir)/$$p ; \
+	done
 else
 install-data-local:
+uninstall-local:
 endif
+
