@@ -21,11 +21,8 @@ from pyLinAcc.Constants import *
 ICONS_PATH = os.path.join(sys.prefix, 'share', 
                           'accerciser', 'pixmaps', 'hicolor', '22x22')
 
-print ICONS_PATH
-#ICONS_PATH = os.path.join(sys.prefix, 'share', 'accerciser', 'icons')
-
 if not os.path.exists(ICONS_PATH):
-   ICONS_PATH = os.path.join(os.path.split(os.getcwd())[0], 'icons')
+   ICONS_PATH = os.path.join(os.path.split(os.getcwd())[0], 'pixmaps')
 
 role_to_icon = {
   ROLE_ACCELERATOR_LABEL : 'acceleratorlabel',

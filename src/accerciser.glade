@@ -218,7 +218,8 @@ See the COPYING and NOTICE files for details.</property>
     <property name="authors">Eitan Isaacson &lt;eitan@ascender.com&gt;
 Peter Parente &lt;pparent@us.ibm.com&gt;</property>
     <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
-    <property name="artists">Eitan Isaacson &lt;eitan@ascender.com&gt;</property>
+    <property name="artists">Eitan Isaacson &lt;eitan@ascender.com&gt;
+James Stipp &lt;James_Stipp@us.ibm.com&gt;</property>
     <property name="logo_icon_name">accerciser</property>
     <property name="wrap_license">True</property>
     <signal name="response" handler="_onAboutResponse"/>
@@ -242,9 +243,10 @@ Peter Parente &lt;pparent@us.ibm.com&gt;</property>
   </widget>
   <widget class="GtkDialog" id="preferences">
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">accercicer Preferences</property>
+    <property name="title" translatable="yes">accerciser Preferences</property>
     <property name="default_width">480</property>
     <property name="default_height">240</property>
+    <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
     <property name="has_separator">False</property>
     <signal name="close" handler="_onPreferencesClose"/>
     <signal name="response" handler="_onPreferencesResponse"/>
@@ -300,7 +302,7 @@ Peter Parente &lt;pparent@us.ibm.com&gt;</property>
             <child>
               <widget class="GtkLabel" id="label2">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Global _Hotkeys</property>
+                <property name="label" translatable="yes">_Global Hotkeys</property>
                 <property name="use_underline">True</property>
               </widget>
               <packing>
