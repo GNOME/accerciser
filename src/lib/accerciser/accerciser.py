@@ -299,7 +299,7 @@ to take effect.')
     window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
     top_window = (None, -1)
     for app in desktop:
-      if not app:
+      if not app or self.isMyApp(app):
         continue
       for frame in app:
         if not frame:
@@ -315,7 +315,6 @@ to take effect.')
     if top_window[0]:
       self.node.update(top_window[0])
 
- 
   def _accEventKeyPressed(self, event):
     '''
     Handle certain key presses globally. Pass on to the hotkey manager the 
