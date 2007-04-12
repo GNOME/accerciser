@@ -45,6 +45,12 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+GCONF_CONFIG_SOURCE=""	gconftool-2 --makefile-install-rule $RPM_INSTALL_PREFIX/etc/gconf/schemas/accerciser.schemas
+
+%preun
+GCONF_CONFIG_SOURCE=""	gconftool-2 --makefile-uninstall-rule $RPM_INSTALL_PREFIX/etc/gconf/schemas/accerciser.schemas
+
 %files
 %defattr(-,root,root)
 %doc AUTHORS README COPYING NEWS ChangeLog
@@ -60,7 +66,10 @@ rm -rf $RPM_BUILD_ROOT
 %{prefix}/share/icons/hicolor/48x48/apps/accerciser.png
 %{prefix}/share/icons/hicolor/scalable/apps/accerciser.svg
 %{prefix}/share/applications/accerciser.desktop
+%{prefix}/etc/gconf/schemas/accerciser.schemas
 %changelog
+* Thu Apr 12 2007 Peter Parente <parente@cs.unc.edu>
+- Added gconf schema install, uninstall, and files
 * Mon Apr 02 2007 Peter Parente <parente@cs.unc.edu>
 - Added without-pyreqs flag to avoid checking for modules at rpmbuild time
 - Added locales to files section
