@@ -12,6 +12,8 @@ available under the terms of the BSD license which accompanies
 this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+import Accessibility__POA
+
 def getInterfaceIID(cls):
   '''
   Gets the ID of an interface class in string format for use in queryInterface.
@@ -269,3 +271,87 @@ def getPath(acc):
     except Exception:
       raise LookupError
     acc = acc.parent
+
+class StateSet(Accessibility__POA.StateSet):
+  '''
+  Convenience implementation of AT-SPI StateSet, for future use with Collection
+  interface.
+  
+  @param states: Set of states
+  @type states: set
+  '''
+  def __init__(self, *states):
+    '''Initializes the state set with the given states.'''
+    self.states = set(states)
+    
+  def contains(self, state):
+    '''
+    Checks if this L{StateSet} contains the given state.
+    
+    @param state: State to check
+    @type state: Accessibility.StateType
+    @return: True if the set contains the given state
+    @rtype: boolean
+    '''
+    return state in self.states
+  
+  def add(self, *state):
+    '''
+    Adds one or more states to this set.
+    
+    @param state: State(s) to add
+    @type state: Accessibility.StateType
+    '''
+    self.states.add(state)
+  
+  def remove(self, *state):
+    '''
+    Removes one or more states from this set.
+    
+    @param state: State(s) to remove
+    @type state: Accessibility.StateType
+    '''
+    self.states.remove(state)
+  
+  def equals(self, state_set):
+    '''
+    Checks if this L{StateSet} contains exactly the same members as the given
+    L{StateSet}.
+    
+    @param state_set: Another set
+    @type state_set: L{StateSet}
+    @return: Are the sets equivalent in terms of their contents?
+    @rtype: boolean
+    '''
+    return self.state_set == self.states
+  
+  def compare(self, state_set):
+    '''
+    Computes the symmetric differences of this L{StateSet} and the given
+    L{StateSet}.
+    
+    @param state_set: Another set
+    @type state_set: L{StateSet}
+    @return: Elements in only one of the two sets
+    @rtype: L{StateSet}
+    '''
+    diff = self.states.symmetric_difference(state_set.states)
+    return StateSet(*diff)
+  
+  def isEmpty(self):
+    '''
+    Checks if this L{StateSet} is empty.
+    
+    @return: Is it empty?
+    @rtype: boolean
+    '''
+    return len(self.states) == 0
+
+  def getStates(self):
+    '''
+    Gets the sequence of all states in this set.
+    
+    @return: List of states
+    @rtype: list
+    '''
+    return list(self.states)
