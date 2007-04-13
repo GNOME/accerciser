@@ -1,3 +1,12 @@
+2007-04-13 Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/event_monitor.glade: Changed 'save as' to 'save' so
+	mnemonics won't overlap.
+	* plugins/interface_view.glade: Added back mnemonics, fixed
+	expanders visibility problem.
+	* plugins/interface_view.py: Don't overwrite label text, it erases 
+	mnemonics.
+
 2007-04-12 Eitan Isaacson  <eitan@ascender.com>
 
 	* debian/changelog: Corrected version.

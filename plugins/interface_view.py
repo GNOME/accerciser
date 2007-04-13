@@ -37,8 +37,8 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
     frame = self.main_xml.get_widget('iface_view_frame')
     self.plugin_area.add(frame)
-
     self.role = self.main_xml.get_widget('role')
+
     self.main_xml.signal_autoconnect(self)
     self._initTreeViews()
 
@@ -297,7 +297,6 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     selected accessible at the time it was selected. Does not automatically
     update when the accessible changes.
     '''
-    
     try:
       name = acc.name
     except:
@@ -340,12 +339,13 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
     self.role.set_markup('<span size="large" weight="bold">%s</span>' % role_name)
     
   def _setExpanderChildrenSensitive(self, expander, sensitive):
-    label_text = expander.get_label()
+    label = expander.get_label_widget()
+    label_text = label.get_label()
     if sensitive:
-      label_text = label_text.replace(' (not implemented)', '')
-    elif ' (not implemented)' not in label_text:
-      label_text += ' (not implemented)'
-    expander.set_label(label_text)
+      label_text = label_text.replace(_(' (not implemented)'), '')
+    elif _(' (not implemented)') not in label_text:
+      label_text += _(' (not implemented)')
+    label.set_label(label_text)
     for child in expander.get_children():
       child.set_sensitive(sensitive)
 
@@ -797,14 +797,16 @@ class InterfaceViewer(accerciser.plugin.ViewportPlugin):
       eti = None
 
     expander = self.main_xml.get_widget('expander_text')
-
+    expander_label = expander.get_label_widget()
+    label_text = expander_label.get_label()
+    label_text.replace(_(' <i>(Editable)</i>'),'')
     if eti:
-      expander.set_label('Text <i>(Editable)</i>')
+      label_text += _(' <i>(Editable)</i>')
       text_view.set_editable(True)
     else:
-      expander.set_label('Text')
       text_view.set_editable(False)
-
+    expander_label(label_text)
+    
   def _attrStringToDict(self, attr_string):
     if not attr_string:
       return {}
