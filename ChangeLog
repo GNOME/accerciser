@@ -1,5 +1,26 @@
 2007-04-14 Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/api_view.py: Enabled plugin name for translation (bug 429797).
+	* plugins/console.py: Enabled plugin name for translation (bug 429797).
+	* plugins/event_monitor.py: Enabled plugin name for translation 
+	(bug 429797).
+	* plugins/interface_view.py: Enabled plugin name for translation 
+	(bug 429797).
+	* plugins/script_recorder.py: Enabled plugin name for translation 
+	(bug 429797).
+	* src/accerciser.glade: Got rid of faulty domain in glade
+	constructor. Made some strings translatable.
+	* src/lib/accerciser/accerciser.py: Made some strings translatable.
+	* src/lib/accerciser/hotkey_manager.py: Made some strings
+	translatable (bug 429801).
+	* src/lib/accerciser/i18n.py.in: Added dummy N_() for later translation.
+	* src/lib/accerciser/plugin_manager.py: Made some strings
+	translatable. Allowed translation when necessary of plugin names 
+	(bug 429797).
+	* po/POTFILES.in: Added all plugin files.
+
+2007-04-14 Eitan Isaacson  <eitan@ascender.com>
+
 	* plugins/api_view.py: Made some text translatable.
 	* src/lib/accerciser/i18n.py.in: Enable i18n in glade files.
 

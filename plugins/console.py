@@ -10,7 +10,9 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import accerciser.plugin
+
+from accerciser.plugin import ViewportPlugin
+from accerciser.i18n import N_
 import os
 import pyLinAcc
 import gtk
@@ -20,9 +22,10 @@ if ipython_view.IPython == None:
   raise RuntimeError('The IPython module is required for the IPython console')
  
 
-class Console(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'IPython Console'
-  plugin_description = 'Interactive console for manipulating currently selected accessible'
+class Console(ViewportPlugin):
+  plugin_name = N_('IPython Console')
+  plugin_description = \
+      N_('Interactive console for manipulating currently selected accessible')
   def init(self):
     sw = gtk.ScrolledWindow()
     self.plugin_area.add(sw)

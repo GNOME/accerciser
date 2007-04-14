@@ -1,18 +1,19 @@
 import os.path
-import accerciser.plugin
+from accerciser.plugin import ViewportPlugin
 import pyLinAcc
 import gtk
 import gtksourceview
 import threading
 import wnck
+from accerciser.i18n import N_
 
 MODIFIERS = ['Control_L', 'Control_R',
              'Alt_L', 'Alt_R',
              'Shift_L', 'Shift_R',]
 
-class ScriptRecorder(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'Script Recorder'
-  plugin_description = 'Creates dogtail style scripts'
+class ScriptRecorder(ViewportPlugin):
+  plugin_name = N_('Script Recorder')
+  plugin_description = N_('Creates dogtail style scripts')
   
   def init(self):
     text_buffer = gtksourceview.SourceBuffer()

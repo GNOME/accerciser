@@ -12,8 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk
 import gobject
-import plugin as accerciser_plugin
-from plugin import PluginErrorMessage
+from plugin import PluginErrorMessage, Plugin
 from tools import Tools
 import os
 import sys
@@ -59,8 +58,8 @@ class PluginView(gtk.Notebook):
   def insert_page(self, child, tab_label=None, position=-1):
     if tab_label:
       name = tab_label
-    elif isinstance(child, accerciser_plugin.Plugin):
-      name = child.plugin_name
+    elif isinstance(child, Plugin):
+      name = _(child.plugin_name)
     elif child.name:
       name = child.name
     gtk.Notebook.insert_page(self, child, gtk.Label(name), position=position)
@@ -182,7 +181,7 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _reorderPluginView(self, view):
     for child in view.get_children():
-      if isinstance(child, accerciser_plugin.Plugin):
+      if isinstance(child, Plugin):
         plugin = child
         key_name = '/%s/tab_order' % gconf.escape_key(plugin.plugin_name,
                                                       len(plugin.plugin_name))
@@ -219,8 +218,9 @@ class PluginManager(gtk.ListStore, Tools):
     # use keys list to avoid size changes during iteration
     for symbol in plugin_locals.keys():
       try:
-        is_plugin = issubclass(plugin_locals[symbol],
-                               accerciser_plugin.Plugin)
+        is_plugin = \
+            issubclass(plugin_locals[symbol], Plugin) and \
+            hasattr(plugin_locals[symbol], 'plugin_name')
       except TypeError:
         continue
       if is_plugin:
@@ -401,7 +401,7 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _saveTabOrder(self, view):
     for page in view.get_children():
-      if not isinstance(page, accerciser_plugin.Plugin): continue
+      if not isinstance(page, Plugin): continue
       gconf_key = GCONF_PLUGINS+'/%s/tab_order' % \
           gconf.escape_key(page.plugin_name, len(page.plugin_name))
       self.gconf_client.set_int(gconf_key, view.page_num(page))
@@ -439,9 +439,6 @@ class PluginManager(gtk.ListStore, Tools):
     return rv
 
 class PluginErrorManager(object):
-  plugin_name = 'Plugin Errors'
-  plugin_description = \
-      'A built-in plugin for displaying errors of other plugins'
   def __init__(self, notebook):
     self.errors = []
     self.notebook = notebook
@@ -454,7 +451,7 @@ class PluginErrorManager(object):
 
   def _newErrorTab(self):
     self.scrolled_window = gtk.ScrolledWindow()
-    self.scrolled_window.set_name('Plugin Errors')
+    self.scrolled_window.set_name(_('Plugin Errors'))
     self.vbox = gtk.VBox()
     self.scrolled_window.add_with_viewport(self.vbox)
     self.notebook.append_page(self.scrolled_window)
@@ -499,17 +496,18 @@ class PluginTreeView(gtk.TreeView):
     crc.connect('toggled', self._onPluginToggled)
     tvc = gtk.TreeViewColumn()
     tvc.pack_start(crc, True)
-    tvc.set_cell_data_func(crc, self._viewStateDataFunc)
+    tvc.set_cell_data_func(crc, self._pluginStateDataFunc)
     self.append_column(tvc)
 
     crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn('Name')
+    tvc = gtk.TreeViewColumn(_('Name'))
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=plugin_manager.COL_NAME)
+    tvc.set_cell_data_func(crt, self._pluginNameDataFunc)
     self.append_column(tvc)
 
     crc = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn('View')
+    tvc = gtk.TreeViewColumn(_('View'))
     tvc.pack_start(crc, False)
     tvc.set_cell_data_func(crc, self._viewNameDataFunc)
     crc.set_property('editable', True)
@@ -548,7 +546,10 @@ class PluginTreeView(gtk.TreeView):
   def _viewNameDataFunc(self, column, cell, model, iter):
     cell.set_property('text', getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', ''))
 
-  def _viewStateDataFunc(self, column, cell, model, iter):
+  def _pluginNameDataFunc(self, column, cell, model, iter):
+    cell.set_property('text', _(model[iter][self.plugin_manager.COL_NAME]))
+
+  def _pluginStateDataFunc(self, column, cell, model, iter):
     cell.set_property('active', 
                       bool(model[iter][self.plugin_manager.COL_INSTANCE]))
 

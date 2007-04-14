@@ -19,7 +19,7 @@ import gtk
 import gobject
 import gtk.glade
 import gtk.gdk
-import gettext, os, sys, locale
+import os, sys, locale
 from icons import getIcon
 import pyLinAcc
 import os
@@ -29,7 +29,7 @@ from accessible_treeview import *
 from node import Node
 from plugin_manager import *
 from tools import Tools
-from i18n import _
+from i18n import _, N_
 import wnck
 from gnome import program_get
 import gconf
@@ -67,20 +67,22 @@ class MainWindow(Tools):
 
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
-    self.hotkey_manager.addKeyCombo('Core', 'Inspect last focused accessible',
+    self.hotkey_manager.addKeyCombo(N_('Core'), 
+                                    N_('Inspect last focused accessible'),
                                     self._inspectLastFocused, 
                                     gtk.keysyms.a,
                                     gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
-    self.hotkey_manager.addKeyCombo('Core', 'Inspect accessible under mouse',
+    self.hotkey_manager.addKeyCombo(N_('Core'),
+                                    N_('Inspect accessible under mouse'),
                                     self._inspectUnderMouse, 
                                     gtk.keysyms.question,
                                     gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
 
     # parse the glade
-    self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window', 
-                                  gettext.textdomain())
+    self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window')
     self.window = self.main_xml.get_widget('window')
     self.window.set_icon_name('accerciser')
+    self.window.set_title('accerciser')            
     cl = gconf.client_get_default()
     width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
     height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
@@ -247,7 +249,7 @@ to take effect.')
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    xml = gtk.glade.XML(GLADE_FILENAME, 'about', gettext.textdomain())
+    xml = gtk.glade.XML(GLADE_FILENAME, 'about')
     about = xml.get_widget('about')
     prog = program_get()
     about.set_version(prog.get_app_version())
@@ -369,9 +371,7 @@ to take effect.')
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    xml = gtk.glade.XML(GLADE_FILENAME, 
-                        'preferences', 
-                        gettext.textdomain())
+    xml = gtk.glade.XML(GLADE_FILENAME, 'preferences')
     xml.signal_autoconnect(self)
 
     sw = xml.get_widget('plugins_sw')

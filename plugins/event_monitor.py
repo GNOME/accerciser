@@ -16,28 +16,29 @@ import gobject
 import os.path
 import gettext, os, sys, locale
 from Queue import Queue, Empty
-import accerciser.plugin
+from accerciser.plugin import ViewportPlugin
 from accerciser.tools import Tools
-from accerciser.i18n import _
+from accerciser.i18n import _, N_
 import pango
 from gtk import keysyms, gdk
 
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
                           'event_monitor.glade')
 
-class EventMonitor(accerciser.plugin.ViewportPlugin):
+class EventMonitor(ViewportPlugin):
   '''
   Class for the monitor viewer.
   '''
-  plugin_name = 'Event Monitor'
-  plugin_description = 'Shows events as they occur from selected types and sources'
+  plugin_name = N_('Event Monitor')
+  plugin_description = \
+      N_('Shows events as they occur from selected types and sources')
   COL_NAME = 0
   COL_FULL_NAME = 1
   COL_TOGGLE = 2
   COL_INCONSISTENT = 3
 
   def init(self):
-    self.global_hotkeys = [('Highlight last event entry', 
+    self.global_hotkeys = [(N_('Highlight last event entry'),
                             self._onHighlightEvent,
                             keysyms.l, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None

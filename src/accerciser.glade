@@ -3,7 +3,6 @@
 <!--*- mode: xml -*-->
 <glade-interface>
   <widget class="GtkWindow" id="window">
-    <property name="title" translatable="yes">accerciser</property>
     <signal name="key_press_event" handler="_onKeyPress"/>
     <signal name="destroy" handler="_onQuit"/>
     <child>
@@ -102,7 +101,7 @@
                     <child>
                       <widget class="GtkImageMenuItem" id="help1">
                         <property name="visible">True</property>
-                        <property name="label">_Contents</property>
+                        <property name="label" translatable="yes">_Contents</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="_onHelp"/>
                         <accelerator key="F1" modifiers="" signal="activate"/>
@@ -217,6 +216,7 @@
 See the COPYING and NOTICE files for details.</property>
     <property name="authors">Eitan Isaacson &lt;eitan@ascender.com&gt;
 Peter Parente &lt;pparent@us.ibm.com&gt;</property>
+    <property name="documenters">Eitan Isaacson &lt;eitan@ascender.com&gt;</property>
     <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
     <property name="artists">Eitan Isaacson &lt;eitan@ascender.com&gt;
 James Stipp &lt;James_Stipp@us.ibm.com&gt;</property>

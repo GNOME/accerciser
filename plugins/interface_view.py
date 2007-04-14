@@ -15,9 +15,9 @@ import pyLinAcc
 import gtk
 import os.path
 import pango
-import accerciser.plugin
+from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
-from accerciser.i18n import _
+from accerciser.i18n import _, N_
 
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
                           'interface_view.glade')
@@ -30,9 +30,9 @@ class CallCache(list):
       else:
          return False
 
-class InterfaceViewer(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'Interface Viewer'
-  plugin_description = 'Allows viewing of various interfac propertiesXS'
+class InterfaceViewer(ViewportPlugin):
+  plugin_name = N_('Interface Viewer')
+  plugin_description = N_('Allows viewing of various interface properties')
   def init(self):
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
     frame = self.main_xml.get_widget('iface_view_frame')

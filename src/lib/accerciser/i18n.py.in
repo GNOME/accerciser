@@ -60,3 +60,5 @@ LOCALE_DIR = os.path.join(sys.prefix, '@DATADIRNAME@', 'locale')
 DOMAIN = '@GETTEXT_PACKAGE@'
 # build a default instance to the LSR domain and locale directory
 _ = bind(DOMAIN, LOCALE_DIR)
+# allow gettext to extract the string, but it should not be translated inline.
+N_ = lambda string: string

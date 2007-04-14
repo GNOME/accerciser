@@ -12,6 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk, gconf
 from pyLinAcc import Constants
+from i18n import _
 
 GCONF_HOTKEYS = '/apps/accerciser/global_hotkeys'
 
@@ -198,19 +199,21 @@ class HotkeyTreeView(gtk.TreeView):
     self.set_model(modelfilter)
     crt = gtk.CellRendererText()
     #crc.connect('toggled', self._onPluginToggled)
-    tvc = gtk.TreeViewColumn('Component')
+    tvc = gtk.TreeViewColumn(_('Component'))
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_COMPONENT)
+    tvc.set_cell_data_func(crt, self._translateDataFunc, COL_COMPONENT)
     self.append_column(tvc)
     
     crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn('Task')
+    tvc = gtk.TreeViewColumn(_('Task'))
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_DESC)
+    tvc.set_cell_data_func(crt, self._translateDataFunc, COL_DESC)
     self.append_column(tvc)
 
     crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn('Key')
+    tvc = gtk.TreeViewColumn(_('Key'))
     tvc.set_min_width(64)
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_KEYPRESS)
@@ -220,26 +223,41 @@ class HotkeyTreeView(gtk.TreeView):
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
-    tvc = gtk.TreeViewColumn('Alt')
+    tvc = gtk.TreeViewColumn(_('Alt'))
     tvc.pack_start(crt, True)
     tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.MOD1_MASK)
     crt.connect('toggled', self._onModToggled, gtk.gdk.MOD1_MASK)
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
-    tvc = gtk.TreeViewColumn('Ctrl')
+    tvc = gtk.TreeViewColumn(_('Ctrl'))
     tvc.pack_start(crt, True)
     tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.CONTROL_MASK)
     crt.connect('toggled', self._onModToggled, gtk.gdk.CONTROL_MASK)
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
-    tvc = gtk.TreeViewColumn('Shift')
+    tvc = gtk.TreeViewColumn(_('Shift'))
     tvc.pack_start(crt, True)
     tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.SHIFT_MASK)
     crt.connect('toggled', self._onModToggled, gtk.gdk.SHIFT_MASK)
     self.append_column(tvc)
   
+  def _translateDataFunc(self, column, cell, model, iter, column_id):
+    '''
+    Show the component name as a translated string.
+
+    @param column: The treeview column of the cell renderer.
+    @type column: L{gtk.TreeViewColumn}
+    @param cell: The cell rendere we need to modify.
+    @type cell: L{gtk.CellRendererText}
+    @param model: The treeview's model.
+    @type model: L{gtk.ListStore}
+    @param iter: The iter of the given cell data.
+    @type iter: L{gtk.TreeIter}
+    '''    
+    cell.set_property('text', _(model[iter][column_id]))
+
   def _keyCellFunc(self, column, cell, model, iter):
     '''
     Show the key symbol as a string for easy readability.

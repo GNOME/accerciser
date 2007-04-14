@@ -11,13 +11,14 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk
-import accerciser.plugin
-from accerciser.i18n import _
+from accerciser.plugin import ViewportPlugin
+from accerciser.i18n import _, N_
 from pyLinAcc import *
 
-class DemoViewport(accerciser.plugin.ViewportPlugin):
-  plugin_name = 'API Browser'
-  plugin_description = 'Browse the various methods of the current accessible'
+class DemoViewport(ViewportPlugin):
+  plugin_name = N_('API Browser')
+  plugin_description = \
+      N_('Browse the various methods of the current accessible')
   def init(self):
     self._buildUI()
     self._initModels()
