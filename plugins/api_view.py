@@ -46,7 +46,7 @@ class DemoViewport(accerciser.plugin.ViewportPlugin):
     top_hbox.pack_start(scrolled_window)
     self.iface_combo = gtk.combo_box_new_text() 
     bottom_hbox.pack_start(self.iface_combo, False)
-    self.private_toggle = gtk.CheckButton('Hide private attributes')
+    self.private_toggle = gtk.CheckButton(_('Hide private attributes'))
     self.private_toggle.set_active(True)
     bottom_hbox.pack_end(self.private_toggle, False)
     self.show_all()

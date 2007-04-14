@@ -23,7 +23,7 @@ available under the terms of the BSD license which accompanies
 this distribution, and is available at 
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import sys, locale, gettext, os.path
+import sys, locale, gettext, os.path, gtk.glade
 
 def bind(domain, locale_dir):
   '''
@@ -43,6 +43,8 @@ def bind(domain, locale_dir):
   @return: Bound method ugettext on the translation object
   @rtype: callable
   '''
+  gtk.glade.bindtextdomain(domain, locale_dir)
+  gtk.glade.textdomain(domain)
   try:
     t = gettext.translation(domain, locale_dir)
     return t.ugettext
