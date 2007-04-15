@@ -6,7 +6,9 @@ INTLTOOL = 			\
 	intltool-update.in
 
 desktopdir = $(datadir)/applications
-desktop_DATA = accerciser.desktop
+desktop_in_files=accerciser.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 schemasdir = $(GCONF_SCHEMA_FILE_DIR)
 schemas_in_files = accerciser.schemas.in
@@ -14,6 +16,7 @@ schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
 EXTRA_DIST =  \
+	$(desktop_in_files) \
 	$(desktop_DATA) \
 	pyreqs.py \
 	accerciser.spec \
@@ -24,7 +27,7 @@ EXTRA_DIST =  \
 
 DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 DISTCLEANFILES = \
-	accerciser.desktop \
+	$(desktop_DATA) \
 	accerciser.spec \
 	intltool-extract \
 	intltool-merge \
