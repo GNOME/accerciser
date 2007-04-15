@@ -101,10 +101,10 @@ class MainWindow(Tools):
     scrolled_window.add(self.acc_treeview)
     
     bin = self.main_xml.get_widget('alignment_topright')
-    self.plugin_view1 = PluginView('Top right')
+    self.plugin_view1 = PluginView(N_('Top right'))
     bin.add(self.plugin_view1)
     bin = self.main_xml.get_widget('alignment_bottom')
-    self.plugin_view2 = PluginView('Bottom panel')
+    self.plugin_view2 = PluginView(N_('Bottom panel'))
     self.plugin_view2.connect('page_added', 
                               self._onBottomPanelChange, 'added')
     self.plugin_view2.connect('page_removed', 

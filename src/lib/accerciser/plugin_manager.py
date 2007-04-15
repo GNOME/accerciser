@@ -20,7 +20,7 @@ import imp
 import pango
 import traceback
 import gconf
-from i18n import _
+from i18n import _, N_
 
 GCONF_PLUGINS = '/apps/accerciser/plugins'
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
@@ -341,10 +341,10 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _newViewWithPage(self, page, view_name=None):
     if not view_name:
-      view_name = 'Plugin View'
+      view_name = _('Plugin View')
       view_num = 2
       while view_name in self._getViewNames():
-        view_name = 'Plugin View (%d)' % view_num
+        view_name = _('Plugin View (%d)') % view_num
         view_num += 1
     pluginview = self._getViewByName(view_name)
     self._connectSignals(pluginview)
@@ -544,7 +544,8 @@ class PluginTreeView(gtk.TreeView):
     menu.popup(None, None, pos_func, button, time, data)
 
   def _viewNameDataFunc(self, column, cell, model, iter):
-    cell.set_property('text', getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', ''))
+    cell.set_property('text', 
+                      _(getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', '')))
 
   def _pluginNameDataFunc(self, column, cell, model, iter):
     cell.set_property('text', _(model[iter][self.plugin_manager.COL_NAME]))
