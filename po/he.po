@@ -6,13 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-14 15:58-0700\n"
+"POT-Creation-Date: 2007-04-14 23:16-0700\n"
 "PO-Revision-Date: 2007-04-14 16:00-0700\n"
 "Last-Translator: Eitan Isaacson <eitan@ascender.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bitPlural-Forms:  nplurals=2; plural=(n != 1);"
+"Content-Transfer-Encoding: 8bitPlural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser Accesibility Explorer"
+msgstr "מגלה נגישות אינטרקטבי Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2
+msgid "Give your application an accessibility workout"
+msgstr "בדוק נגישות של תוכנות"
 
 #: ../accerciser.schemas.in.h:1
 msgid "Plugin enabled"
@@ -518,6 +526,14 @@ msgstr "בחן נגיש אחרון שקיבל מיקוד"
 msgid "Inspect accessible under mouse"
 msgstr "בחן נגיש שמתחת לעכבר"
 
+#: ../src/lib/accerciser/accerciser.py:104
+msgid "Top right"
+msgstr "שמשה עליונה"
+
+#: ../src/lib/accerciser/accerciser.py:107
+msgid "Bottom panel"
+msgstr "שמשה תחתונה"
+
 #: ../src/lib/accerciser/accerciser.py:143
 msgid ""
 "Accerciser could not see the applications on your desktop. You must enable "
@@ -535,6 +551,15 @@ msgstr "נגישות לשולחן העבודה עדיין לא פועל."
 msgid "Note: You must logout for desktop accessibility options to take effect."
 msgstr "עליך לאתחל מחדש את שולחן העבודה בכדי שהנגישות תופעל."
 
+#: ../src/lib/accerciser/plugin_manager.py:344
+msgid "Plugin View"
+msgstr "צג תוספות"
+
+#: ../src/lib/accerciser/plugin_manager.py:347
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "צג תוספות (%d)"
+
 #: ../src/lib/accerciser/plugin_manager.py:454
 msgid "Plugin Errors"
 msgstr "שגיאות בתוספות"
@@ -543,11 +568,11 @@ msgstr "שגיאות בתוספות"
 msgid "View"
 msgstr "צג"
 
-#: ../src/lib/accerciser/plugin_manager.py:602
+#: ../src/lib/accerciser/plugin_manager.py:603
 msgid "<i>_New view...</i>"
 msgstr "<i>...‏_תצוגה חדשה</i>"
 
-#: ../src/lib/accerciser/plugin_manager.py:623
+#: ../src/lib/accerciser/plugin_manager.py:624
 msgid "New View..."
 msgstr "תצוגה חדשה"
 
