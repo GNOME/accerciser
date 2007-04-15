@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-14 18:24+0100\n"
+"POT-Creation-Date: 2007-04-15 14:32+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -15,6 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser Accesibility Explorer"
+msgstr ""
+
+#: ../accerciser.desktop.in.in.h:2
+msgid "Give your application an accessibility workout"
+msgstr ""
 
 #: ../accerciser.schemas.in.h:1
 #, fuzzy
@@ -336,8 +344,7 @@ msgstr "ال_منتقى"
 msgid "_Table"
 msgstr "_جدول"
 
-#: ../plugins/interface_view.glade.h:60
-#: ../plugins/event_monitor.glade.h:8
+#: ../plugins/interface_view.glade.h:60 ../plugins/event_monitor.glade.h:8
 #, fuzzy
 msgid "gtk-clear"
 msgstr "ام_سح التاريخ"
@@ -347,16 +354,23 @@ msgstr "ام_سح التاريخ"
 msgid "name (x,y)"
 msgstr "اسم"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:222
-#: ../plugins/event_monitor.py:82
+#: ../plugins/interface_view.py:34
+msgid "Interface Viewer"
+msgstr ""
+
+#: ../plugins/interface_view.py:35
+msgid "Allows viewing of various interface properties"
+msgstr ""
+
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:222
+#: ../plugins/event_monitor.py:83
 #: ../src/lib/accerciser/accessible_treeview.py:277
+#: ../src/lib/accerciser/plugin_manager.py:503
 #, fuzzy
 msgid "Name"
 msgstr "اسم"
 
-#: ../plugins/interface_view.py:192
-#: ../plugins/interface_view.py:251
+#: ../plugins/interface_view.py:192 ../plugins/interface_view.py:251
 #, fuzzy
 msgid "URI"
 msgstr "URI"
@@ -386,15 +400,13 @@ msgstr "ارتباط المفتاح"
 msgid "Content type"
 msgstr "نوع المحتويات"
 
-#: ../plugins/interface_view.py:345
-#: ../plugins/interface_view.py:346
+#: ../plugins/interface_view.py:345 ../plugins/interface_view.py:346
 #: ../plugins/interface_view.py:347
 #, fuzzy
 msgid " (not implemented)"
 msgstr "لم يطبق."
 
-#: ../plugins/interface_view.py:802
-#: ../plugins/interface_view.py:804
+#: ../plugins/interface_view.py:802 ../plugins/interface_view.py:804
 #, fuzzy
 msgid " <i>(Editable)</i>"
 msgstr "قابل للتّحرير"
@@ -444,30 +456,67 @@ msgstr "لا تحفظ"
 msgid "gtk-select-all"
 msgstr "إنتقاء جميع المراسَلين"
 
-#: ../plugins/event_monitor.py:91
+#: ../plugins/event_monitor.py:32
+#, fuzzy
+msgid "Event Monitor"
+msgstr "مراقب البطارية"
+
+#: ../plugins/event_monitor.py:34
+msgid "Shows events as they occur from selected types and sources"
+msgstr ""
+
+#: ../plugins/event_monitor.py:41
+msgid "Highlight last event entry"
+msgstr ""
+
+#: ../plugins/event_monitor.py:92
 #, fuzzy
 msgid "Full name"
 msgstr "الإ_سم الكامل..."
 
-#: ../plugins/api_view.py:49
+#: ../plugins/api_view.py:19
+msgid "API Browser"
+msgstr ""
+
+#: ../plugins/api_view.py:21
+msgid "Browse the various methods of the current accessible"
+msgstr ""
+
+#: ../plugins/api_view.py:50
 #, fuzzy
 msgid "Hide private attributes"
 msgstr "الخواص عند علامة الإضافة"
 
-#: ../plugins/api_view.py:59
+#: ../plugins/api_view.py:60
 #, fuzzy
 msgid "Method"
 msgstr "الطريقة"
 
-#: ../plugins/api_view.py:68
+#: ../plugins/api_view.py:69
 #, fuzzy
 msgid "Property"
 msgstr "الملكية"
 
-#: ../plugins/api_view.py:73
+#: ../plugins/api_view.py:74
 #, fuzzy
 msgid "Value"
 msgstr "القيمة"
+
+#: ../plugins/console.py:26
+msgid "IPython Console"
+msgstr ""
+
+#: ../plugins/console.py:28
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr ""
+
+#: ../plugins/script_recorder.py:15
+msgid "Script Recorder"
+msgstr ""
+
+#: ../plugins/script_recorder.py:16
+msgid "Creates dogtail style scripts"
+msgstr ""
 
 #: ../src/accerciser.glade.h:1
 msgid "An interactive Python accessibility explorer"
@@ -491,37 +540,38 @@ msgstr "الصفحة الرئيسيّة"
 
 #: ../src/accerciser.glade.h:6
 #, fuzzy
+msgid "_Contents"
+msgstr "نوع المحتويات"
+
+#: ../src/accerciser.glade.h:7
+#, fuzzy
 msgid "_Edit"
 msgstr "_حرّر"
 
-#: ../src/accerciser.glade.h:7
+#: ../src/accerciser.glade.h:8
 #, fuzzy
 msgid "_File"
 msgstr "_ملف"
 
-#: ../src/accerciser.glade.h:8
+#: ../src/accerciser.glade.h:9
 #, fuzzy
 msgid "_Global Hotkeys"
 msgstr "إدارة المفاتيح النشطة"
 
-#: ../src/accerciser.glade.h:9
+#: ../src/accerciser.glade.h:10
 #, fuzzy
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#: ../src/accerciser.glade.h:10
+#: ../src/accerciser.glade.h:11
 #, fuzzy
 msgid "_Plugins"
 msgstr "ملح_قات"
 
-#: ../src/accerciser.glade.h:11
+#: ../src/accerciser.glade.h:12
 #, fuzzy
 msgid "_View"
 msgstr "إ_عرض"
-
-#: ../src/accerciser.glade.h:12
-msgid "accerciser"
-msgstr ""
 
 #: ../src/accerciser.glade.h:13
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
@@ -571,15 +621,94 @@ msgstr "الدّور"
 msgid "Children"
 msgstr "الأطفال"
 
-#: ../src/lib/accerciser/accerciser.py:141
-msgid "Accerciser could not see the applications on your desktop. You must enable desktop accessibility to fix this problem. Do you want to enable it now?"
+#: ../src/lib/accerciser/accerciser.py:70
+#: ../src/lib/accerciser/accerciser.py:75
+#, fuzzy
+msgid "Core"
+msgstr "المصدر"
+
+#: ../src/lib/accerciser/accerciser.py:71
+#, fuzzy
+msgid "Inspect last focused accessible"
+msgstr "اسم ممكن النفاذ إليه"
+
+#: ../src/lib/accerciser/accerciser.py:76
+msgid "Inspect accessible under mouse"
 msgstr ""
 
-#: ../src/lib/accerciser/accerciser.py:147
-msgid "Desktop accessibility is still not functioning although it has been enabled."
+#: ../src/lib/accerciser/accerciser.py:104
+msgid "Top right"
 msgstr ""
 
-#: ../src/lib/accerciser/accerciser.py:150
+#: ../src/lib/accerciser/accerciser.py:107
+msgid "Bottom panel"
+msgstr ""
+
+#: ../src/lib/accerciser/accerciser.py:143
+msgid ""
+"Accerciser could not see the applications on your desktop. You must enable "
+"desktop accessibility to fix this problem. Do you want to enable it now?"
+msgstr ""
+
+#: ../src/lib/accerciser/accerciser.py:149
+msgid ""
+"Desktop accessibility is still not functioning although it has been enabled."
+msgstr ""
+
+#: ../src/lib/accerciser/accerciser.py:152
 msgid "Note: You must logout for desktop accessibility options to take effect."
 msgstr ""
 
+#: ../src/lib/accerciser/plugin_manager.py:344
+#, fuzzy
+msgid "Plugin View"
+msgstr "تلميحات الأدوات مفعلة"
+
+#: ../src/lib/accerciser/plugin_manager.py:347
+#, fuzzy, python-format
+msgid "Plugin View (%d)"
+msgstr "تلميحات الأدوات مفعلة"
+
+#: ../src/lib/accerciser/plugin_manager.py:454
+#, fuzzy
+msgid "Plugin Errors"
+msgstr "ملح_قات"
+
+#: ../src/lib/accerciser/plugin_manager.py:510
+#, fuzzy
+msgid "View"
+msgstr "إ_عرض"
+
+#: ../src/lib/accerciser/plugin_manager.py:603
+msgid "<i>_New view...</i>"
+msgstr ""
+
+#: ../src/lib/accerciser/plugin_manager.py:624
+msgid "New View..."
+msgstr ""
+
+#. crc.connect('toggled', self._onPluginToggled)
+#: ../src/lib/accerciser/hotkey_manager.py:202
+#, fuzzy
+msgid "Component"
+msgstr "اتّ_صل"
+
+#: ../src/lib/accerciser/hotkey_manager.py:209
+msgid "Task"
+msgstr ""
+
+#: ../src/lib/accerciser/hotkey_manager.py:216
+msgid "Key"
+msgstr ""
+
+#: ../src/lib/accerciser/hotkey_manager.py:226
+msgid "Alt"
+msgstr ""
+
+#: ../src/lib/accerciser/hotkey_manager.py:233
+msgid "Ctrl"
+msgstr ""
+
+#: ../src/lib/accerciser/hotkey_manager.py:240
+msgid "Shift"
+msgstr ""
