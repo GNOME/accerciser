@@ -119,7 +119,7 @@ def _makeQuery(iid):
     @raise NotImplementedError: When the desired interface is not supported    
     '''
     try:
-      return self._icache[iid]
+      i = self._icache[iid]
     except KeyError:
       # interface not cached
       caching = True
@@ -129,12 +129,23 @@ def _makeQuery(iid):
       if caching:
         # initialize the cache
         self._icache = {}
-    
+    else:
+      # check if our cached result was an interface, or an indicator that the
+      # interface is not supported
+      if i is None:
+        raise NotImplementedError
+      else:
+        return i
+
     try:
+      # do the query remotely
       i = self.queryInterface(iid)
     except Exception, e:
       raise LookupError(e)
     if i is None:
+      # cache that the interface is not supported
+      if caching:
+        self._icache[iid] = None
       raise NotImplementedError
     
     # not needed according to ORBit2 spec, but makes Java queries work
