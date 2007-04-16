@@ -167,8 +167,7 @@ class ConsoleView(gtk.TextView):
     self.color_pat = re.compile('\x01?\x1b\[(.*?)m\x02?')
     self.line_start = self.text_buffer.create_mark('line_start', 
                                                    self.text_buffer.get_end_iter(), True)
-    #self.connect('move-cursor', self._onCursorMove)
-    self.text_buffer.connect('notify::cursor-position', self._onCursorMove)
+    self.connect('key-press-event', self._onKeypress)
     self.last_cursor_pos = 0
     
   def write(self, text, editable=False):
@@ -221,7 +220,10 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.move_mark(self.line_start,self.text_buffer.get_end_iter())
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
-  def _onCursorMove(self, text_buffer, param_spec):
+
+  def _onKeypress(self, obj, event):
+    if not event.string:
+      return
     cursor_offset = self.text_buffer.get_property('cursor-position')
     if cursor_offset == self.last_cursor_pos:
       return
