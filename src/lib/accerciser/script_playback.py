@@ -144,5 +144,8 @@ def run(cmd, arguments = '', appName=''):
     args = arguments.split(' ')
   else:
     args = []
-  os.spawnlp(os.P_NOWAIT, cmd, cmd, *args)
-  return focus.application(appName or cmd)
+  pid = os.spawnlp(os.P_NOWAIT, cmd, cmd, *args)
+  if focus.application(appName or cmd):
+    return pid
+  else:
+    return -1
