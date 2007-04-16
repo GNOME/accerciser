@@ -3,7 +3,7 @@ Creates functions at import time that are mixed into the
 Accessibility.Accessible base class to make it more Pythonic.
 
 Based on public domain code originally posted at 
-http://wwwx.cs.unc.edu/~parente/cgi-bin/RuntimeClassMixins.
+U{http://wwwx.cs.unc.edu/~parente/cgi-bin/RuntimeClassMixins}.
 
 @var _ACCESSIBLE_CACHE: Pairs hash values for accessible objects to 
   L{_PropertyCache} bags. We do not store actual accessibles in the dictionary
@@ -105,7 +105,7 @@ def _makeQuery(iid):
   '''
   Builds a function querying to a specific interface and returns it.
   
-  @ivar iid: Interface identifier to use when querying
+  @param iid: Interface identifier to use when querying
   @type iid: string
   @return: Function querying to the given interface
   @rtype: function
@@ -340,11 +340,11 @@ class _AccessibleMixin(object):
     return obj
   
   def __del__(self):
-    '''
+    '''    
     Decrements the reference count on the accessible object when there are no
-    Python references to this object. This provides automatic reference 
-    counting for AT-SPI objects. Also removes this object from the 
-    L{_ACCESSIBLE_CACHE} if we're caching properties.
+    Python references to this object. This provides automatic reference
+    counting for AT-SPI objects. Also removes this object from the cache if
+    we're caching properties. 
     '''
     try:
       del _ACCESSIBLE_CACHE[hash(self)]

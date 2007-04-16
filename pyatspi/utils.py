@@ -51,8 +51,8 @@ def stringToConst(prefix, suffix):
     - All alpha characters in the suffix are mapped to their uppercase.
     
   The resulting name is used with getattr to look up a constant with that name
-  in the L{pyLinAcc.Constants} module. If such a constant does not exist, the
-  string suffix is returned instead. 
+  in the L{constants} module. If such a constant does not exist, the string
+  suffix is returned instead.
 
   This method allows strings to be used to refer to roles, relations, etc. 
   without direct access to the constants. It also supports the future expansion
@@ -74,7 +74,7 @@ def stringToConst(prefix, suffix):
 def stateToString(value):
   '''
   Converts a state value to a string based on the name of the state constant in 
-  the L{Constants} module that has the given value.
+  the L{constants} module that has the given value.
   
   @param value: An AT-SPI state
   @type value: Accessibility.StateType
@@ -86,7 +86,7 @@ def stateToString(value):
 def relationToString(value):
   '''
   Converts a relation value to a string based on the name of the state constant
-  in the L{Constants} module that has the given value.
+  in the L{constants} module that has the given value.
   
   @param value: An AT-SPI relation
   @type value: Accessibility.RelationType
@@ -98,7 +98,7 @@ def relationToString(value):
 def allModifiers():
   '''
   Generates all possible keyboard modifiers for use with 
-  L{Registry.Registry.registerKeystrokeListener}.
+  L{registry.Registry.registerKeystrokeListener}.
   '''
   mask = 0
   while mask <= (1 << constants.MODIFIER_NUMLOCK):
@@ -138,9 +138,9 @@ def findDescendant(acc, pred, breadth_first=False):
     if ret is not None: return ret
 
 def _findDescendantBreadth(acc, pred):
-  '''
-  Internal function for locating one descendant. Called by 
-  L{AccessibleMixin.findDescendant} to start the search.
+  '''    
+  Internal function for locating one descendant. Called by L{findDescendant} to
+  start the search.
   
   @param acc: Root accessible of the search
   @type acc: Accessibility.Accessible
@@ -164,8 +164,8 @@ def _findDescendantBreadth(acc, pred):
 
 def _findDescendantDepth(acc, pred):
   '''
-  Internal function for locating one descendant. Called by 
-  L{AccessibleMixin.findDescendant} to start the search.
+  Internal function for locating one descendant. Called by L{findDescendant} to
+  start the search.
 
   @param acc: Root accessible of the search
   @type acc: Accessibility.Accessible
