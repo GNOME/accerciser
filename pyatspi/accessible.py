@@ -5,13 +5,10 @@ Accessibility.Accessible base class to make it more Pythonic.
 Based on public domain code originally posted at 
 http://wwwx.cs.unc.edu/~parente/cgi-bin/RuntimeClassMixins.
 
-@todo: PP: fix CORBA method overwrites for name and description; funkiness
-  having to do with the fact that we're creating new properties; when we
-  register for events, they suddenly change types; doesn't happen to 
-  getRoleName which is a regular method
-
 @var _ACCESSIBLE_CACHE: Pairs hash values for accessible objects to 
-  L{_PropertyCache} bags
+  L{_PropertyCache} bags. We do not store actual accessibles in the dictionary
+  because that would +1 their ref counts and cause __del__ to never be called
+  which is the method we rely on to properly invalidate cache entries.
 @type _ACCESSIBLE_CACHE: dictionary
 @var _CACHE_LEVEL: Current level of caching enabled. Checked dynamically by
   L{_AccessibleMixin}
@@ -57,7 +54,7 @@ def getCacheLevel():
 def setCacheLevel(val):
   '''
   Sets the desired level of caching for all accessible objects created after
-  this function is invoked.
+  this function is invoked. Immediately clears the current accessible cache.
   
   @param val: None indicating no caching is in effect. 
     L{constants.CACHE_INTERFACES} indicating all interface query results are
@@ -79,13 +76,26 @@ def setCacheLevel(val):
   _CACHE_LEVEL = val
   
 def clearCache():
+  '''Forces a clear of the entire cache.'''
   _ACCESSIBLE_CACHE.clear()
   
-def printCache():
-  print _ACCESSIBLE_CACHE
+def printCache(template='%s'):
+  '''
+  Prints the contents of the cache.
+  
+  @param template: Format string to use when printing
+  @type template: string
+  '''
+  print template % _ACCESSIBLE_CACHE
 
 def _updateCache(event):
-  return
+  '''
+  Invalidates an entry in the cache when the hash value of a source of an event
+  matches an entry in the cache.
+  
+  @param event: One of the L{constants.CACHE_EVENTS} event types
+  @type event: L{event.Event}
+  '''
   try:
     del _ACCESSIBLE_CACHE[hash(event.source)]
   except KeyError:
@@ -232,7 +242,8 @@ def _mixClass(cls, new_cls):
   '''
   # loop over all names in the new class
   for name, func in new_cls.__dict__.items():
-    # get only functions from the new_class
+    if name in ['_get_name', '_get_description']:
+      continue
     if isinstance(func, types.FunctionType):
       # build a new function that is a clone of the one from new_cls
       method = new.function(func.func_code, func.func_globals, name, 
@@ -256,6 +267,21 @@ def _mixClass(cls, new_cls):
       else:
         # rename the old method so we can still call it if need be
         setattr(cls, '_mix_'+name, old_method)
+      setattr(cls, name, func)
+    elif isinstance(func, property):
+      try:
+        # check if a method of the same name already exists in the target
+        old_prop = getattr(cls, name)
+      except AttributeError:
+        pass
+      else:
+        # IMPORTANT: We save the old property before overwriting it, even 
+        # though we never end up calling the old prop from our mixin class.
+        # If we don't save the old one, we seem to introduce a Python ref count
+        # problem where the property get/set methods disappear before we can
+        # use them at a later time. This is a minor waste of memory because
+        # a property is a class object and we only overwrite a few of them.
+        setattr(cls, '_mix_'+name, old_prop)
       setattr(cls, name, func)
 
 class _AccessibleMixin(object):
@@ -371,33 +397,35 @@ class _AccessibleMixin(object):
     '''
     return self.childCount
   
-  #def _get_name(self):
-    #'''
-    #Gets the name of the accessible from the cache if it is available, 
-    #otherwise, fetches it remotely.
+  def _get_name(self):
+    '''
+    Gets the name of the accessible from the cache if it is available, 
+    otherwise, fetches it remotely.
     
-    #@return: Name of the accessible
-    #@rtype: string
-    #'''
-    #if _CACHE_LEVEL != constants.CACHE_PROPERTIES:
-      #return self._mix__get_name()
+    @return: Name of the accessible
+    @rtype: string
+    '''
+    if _CACHE_LEVEL != constants.CACHE_PROPERTIES:
+      return self._get_name()
     
-    #cache = _ACCESSIBLE_CACHE
-    #h = hash(self)
-    #try:
-      #return cache[h].name
-    #except KeyError:
-      ## no cached info for this object yet
-      #name = self._mix__get_name()
-      #pc = _PropertyCache()
-      #pc.name = name
-      #cache[h] = pc
-      #return name
-    #except AttributeError:
-      ## no cached name for this object yet
-      #name = self._mix__get_name()
-      #cache[h].name = name
-      #return name
+    cache = _ACCESSIBLE_CACHE
+    h = hash(self)
+    try:
+      return cache[h].name
+    except KeyError:
+      # no cached info for this object yet
+      name = self._get_name()
+      pc = _PropertyCache()
+      pc.name = name
+      cache[h] = pc
+      return name
+    except AttributeError:
+      # no cached name for this object yet
+      name = self._get_name()
+      cache[h].name = name
+      return name
+    
+  name = property(_get_name, Accessibility.Accessible._set_name)
   
   def getRoleName(self):
     '''
@@ -427,33 +455,36 @@ class _AccessibleMixin(object):
       cache[h].rolename = rolename
       return rolename
   
-  #def _get_description(self):
-    #'''    
-    #Gets the description of the accessible from the cache if it is available,
-    #otherwise, fetches it remotely.
+  def _get_description(self):
+    '''    
+    Gets the description of the accessible from the cache if it is available,
+    otherwise, fetches it remotely.
     
-    #@return: Description of the accessible
-    #@rtype: string
-    #'''
-    #if _CACHE_LEVEL != constants.CACHE_PROPERTIES:
-      #return self._mix__get_description()
+    @return: Description of the accessible
+    @rtype: string
+    '''
+    if _CACHE_LEVEL != constants.CACHE_PROPERTIES:
+      return self._get_description()
 
-    #cache = _ACCESSIBLE_CACHE
-    #h = hash(self)
-    #try:
-      #return cache[h].description
-    #except KeyError:
-      ## no cached info for this object yet
-      #description = self._mix__get_description()
-      #pc = _PropertyCache()
-      #pc.description = description
-      #cache[h] = pc
-      #return description
-    #except AttributeError:
-      ## no cached name for this object yet
-      #description = self._mix__get_description()
-      #cache[h].description = description
-      #return description
+    cache = _ACCESSIBLE_CACHE
+    h = hash(self)
+    try:
+      return cache[h].description
+    except KeyError:
+      # no cached info for this object yet
+      description = self._get_description()
+      pc = _PropertyCache()
+      pc.description = description
+      cache[h] = pc
+      return description
+    except AttributeError:
+      # no cached name for this object yet
+      description = self._get_description()
+      cache[h].description = description
+      return description
+    
+  description = property(_get_description, 
+                         Accessibility.Accessible._set_description)
   
   def getIndexInParent(self):
     '''
@@ -498,11 +529,11 @@ class _AccessibleMixin(object):
     # return None if the application isn't reachable for any reason
     return None
 
-# mix the new functions
-_mixClass(Accessibility.Accessible, _AccessibleMixin)
-# mix queryInterface convenience methods
-_mixInterfaces(Accessibility.Accessible, constants.ALL_INTERFACES)
-# mix the exception handlers into all queryable interfaces
+# 1. mix the exception handlers into all queryable interfaces
 map(_mixExceptions, constants.ALL_INTERFACES)
-# mix the exception handlers into other Accessibility objects
+# 2. mix the exception handlers into other Accessibility objects
 map(_mixExceptions, [Accessibility.StateSet])
+# 3. mix the new functions
+_mixClass(Accessibility.Accessible, _AccessibleMixin)
+# 4. mix queryInterface convenience methods
+_mixInterfaces(Accessibility.Accessible, constants.ALL_INTERFACES)
