@@ -165,8 +165,9 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.create_tag('0')
     self.text_buffer.create_tag('notouch', editable=False)
     self.color_pat = re.compile('\x01?\x1b\[(.*?)m\x02?')
-    self.line_start = self.text_buffer.create_mark('line_start', 
-                                                   self.text_buffer.get_end_iter(), True)
+    self.line_start = \
+        self.text_buffer.create_mark('line_start', 
+                                     self.text_buffer.get_end_iter(), True)
     self.connect('key-press-event', self._onKeypress)
     self.last_cursor_pos = 0
     
@@ -210,9 +211,10 @@ class ConsoleView(gtk.TextView):
   def showReturned(self, text):
     iter = self.text_buffer.get_iter_at_mark(self.line_start)
     iter.forward_to_line_end()
-    self.text_buffer.apply_tag_by_name('notouch', 
-                                       self.text_buffer.get_iter_at_mark(self.line_start),
-                                       iter)
+    self.text_buffer.apply_tag_by_name(
+      'notouch', 
+      self.text_buffer.get_iter_at_mark(self.line_start),
+      iter)
     self.write('\n'+text)
     if text:
       self.write('\n')
@@ -229,8 +231,8 @@ class ConsoleView(gtk.TextView):
       return
     start_iter = self.text_buffer.get_iter_at_mark(self.line_start)
     if cursor_offset < start_iter.get_offset():
-      self.text_buffer.place_cursor(start_iter)
-      self.last_cursor_pos = start_iter.get_offset()
+      insert_mark = self.text_buffer.get_insert()
+      self.text_buffer.move_mark(insert_mark, start_iter)
     else:
       self.last_cursor_pos = cursor_offset
      
