@@ -172,7 +172,6 @@ class ConsoleView(gtk.TextView):
     self.last_cursor_pos = 0
     
   def write(self, text, editable=False):
-    print 'writing', text
     segments = self.color_pat.split(text)
     segment = segments.pop(0)
     start_mark = self.text_buffer.create_mark(None, 
@@ -276,7 +275,6 @@ class IPythonView(ConsoleView, IterableIPShell):
       completed, possibilities = self.complete(self.getCurrentLine())
       if len(possibilities) > 1:
         slice = self.getCurrentLine()
-        print 'slice:', slice
         self.write('\n')
         for symbol in possibilities:
           self.write(symbol+'\n')

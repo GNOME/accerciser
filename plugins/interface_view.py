@@ -805,7 +805,7 @@ class InterfaceViewer(ViewportPlugin):
       text_view.set_editable(True)
     else:
       text_view.set_editable(False)
-    expander_label(label_text)
+    expander_label.set_label(label_text)
     
   def _attrStringToDict(self, attr_string):
     if not attr_string:
