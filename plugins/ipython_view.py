@@ -169,7 +169,6 @@ class ConsoleView(gtk.TextView):
         self.text_buffer.create_mark('line_start', 
                                      self.text_buffer.get_end_iter(), True)
     self.connect('key-press-event', self._onKeypress)
-    self.text_buffer.connect('notify::cursor-position', self._onCursorMove)
     self.last_cursor_pos = 0
     
   def write(self, text, editable=False):
@@ -223,17 +222,6 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.move_mark(self.line_start,self.text_buffer.get_end_iter())
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
-  def _onCursorMove(self, text_buffer, param_spec):
-    insert_mark = self.text_buffer.get_insert()
-    insert_iter = self.text_buffer.get_iter_at_mark(insert_mark)
-    start_iter = self.text_buffer.get_iter_at_mark(self.line_start)
-    if start_iter.compare(insert_iter) < 0:
-      self.line_start.set_visible(False)
-      self.set_cursor_visible(True)
-    else:
-      self.line_start.set_visible(True)
-      self.set_cursor_visible(False)
-
   def _onKeypress(self, obj, event):
     if not event.string:
       return
@@ -245,13 +233,13 @@ class ConsoleView(gtk.TextView):
     if start_iter.compare(insert_iter) <= 0 and \
           start_iter.compare(selection_iter) <= 0:
       return
+    elif start_iter.compare(insert_iter) > 0 and \
+          start_iter.compare(selection_iter) > 0:
+      self.text_buffer.place_cursor(start_iter)
     elif insert_iter.compare(selection_iter) < 0:
       self.text_buffer.move_mark(insert_mark, start_iter)
     elif insert_iter.compare(selection_iter) > 0:
-      self.text_buffer.move_mark(selection_mark, start_iter)
-    else:
-      self.text_buffer.place_cursor(start_iter)
-             
+      self.text_buffer.move_mark(selection_mark, start_iter)             
 
 class IPythonView(ConsoleView, IterableIPShell):
   def __init__(self):
