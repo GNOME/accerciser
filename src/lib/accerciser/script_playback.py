@@ -71,10 +71,10 @@ class _WindowManager:
     self.activate_success = False
     self.screen.connect('active-window-changed', 
                         self._onWindowActivated, window)
-    gobject.idle_add(self._onIdleGetApp, window)
+    gobject.idle_add(self._onIdleFocus, window)
     gobject.timeout_add(focus_timeout*1000, self.loop.quit)
     self.loop.run()
-  def _onIdleGetApp(self, window):
+  def _onIdleFocus(self, window):
     if self.screen.get_active_window() == window:
       self.activate_success = True
       self.loop.quit()
@@ -98,6 +98,7 @@ class Focus:
     return success
 
   def frame(self, frame_name):
+    if not self.current_app: return False
     self.current_frame = self.wm.focusFrame(self.current_app, frame_name)
     success = bool(self.current_frame)
     return success
@@ -145,7 +146,5 @@ def run(cmd, arguments = '', appName=''):
   else:
     args = []
   pid = os.spawnlp(os.P_NOWAIT, cmd, cmd, *args)
-  if focus.application(appName or cmd):
-    return pid
-  else:
-    return -1
+  focus.application(appName or cmd)
+  return pid
