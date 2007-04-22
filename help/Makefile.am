@@ -10,3 +10,4 @@ DOC_FIGURES = \
 	figures/event_monitor.png \
 	figures/interface_viewer.png
 DISTCLEANFILES = accerciser-C.omf
+DOC_LINGUAS = sv
