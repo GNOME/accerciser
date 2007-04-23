@@ -14,7 +14,6 @@ import os
 import pickle
 import weakref
 import new
-from ConfigParser import RawConfigParser
 
 class Tools(object):
   '''
@@ -28,11 +27,7 @@ class Tools(object):
   @ivar my_app_id: Unique L{pyLinAcc.Interfaces.IApplication} ID of current 
   instance.
   @type my_app_id: integer
-  '''
-  SETTINGS_PATH = os.path.join(os.environ['HOME'],
-                               '.accerciser')
-  SETTINGS_FILE = 'accerciser.conf'
-  
+  '''  
 
   def isMyApp(self, acc):
     '''
