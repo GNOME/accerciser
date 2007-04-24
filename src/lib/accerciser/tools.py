@@ -14,6 +14,7 @@ import os
 import pickle
 import weakref
 import new
+import gconf
 
 class Tools(object):
   '''
@@ -115,3 +116,50 @@ class Proxy(object):
     Inverse of __eq__.
     '''
     return not self.__eq__(other)
+
+class GConfListWrapper(object):
+  def __init__(self, key):
+    self.gconf_key = key
+    self.wrapped_list = []
+  def __str__(self):
+    return self._wrap('__str__')
+  def __iter__(self):
+    return self._wrap('__iter__')
+  def __repr__(self):
+    return self._wrap('__repr__')
+  def __len__(self):
+    return self._wrap('__len__')
+  def __getitem__(self, key):
+    return self._wrap('__getitem__', key)
+  def __setitem__(self, key, value):
+    return self._wrap('__setitem__', key, value)
+  def __delitem__(self, key):
+    return self._wrap('__delitem__', key)
+  def __getslice__(self, i, j):
+    return self._wrap('__getslice__', i, j)
+  def __setslice__(self, i, j, sequence):
+    return self._wrap('__setslice__', i, j, sequence)
+  def __delslice__(self, i, j):
+    return self._wrap('__delslice__', i, j)
+  def _wrap(self, name, *args, **kwargs):
+    obj = self.CallWrapper(name, self.gconf_key)
+    return obj(*args, **kwargs)
+  def __getattr__(self, name):
+    obj = getattr(self.wrapped_list, name)
+    if callable(obj):
+      return self.CallWrapper(name, self.gconf_key)
+    else:
+      return obj
+    
+  class CallWrapper(object):
+    def __init__ (self, name, gconf_key):
+      self.name = name
+      self.gconf_key = gconf_key
+    def __call__(self, *args, **kwargs):
+      cl = gconf.client_get_default()
+      l = cl.get_list(self.gconf_key, 
+                      gconf.VALUE_STRING)
+      rv = getattr(l, self.name)(*args, **kwargs)
+      cl.set_list(self.gconf_key, 
+                  gconf.VALUE_STRING, l)
+      return rv

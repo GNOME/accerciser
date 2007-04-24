@@ -1,163 +1,36 @@
 <gconfschemafile>
   <schemalist>
-    <!-- Interface Viewer -->    
     <schema>
-	  <key>/schemas/apps/accerciser/plugins/Interface@32@Viewer/view_name</key>	  
-	  <applyto>/apps/accerciser/plugins/Interface@32@Viewer/view_name</applyto>
-	  <type>string</type>
-	  <default>Top right</default>
+	  <key>/schemas/apps/accerciser/pluginviews/Bottom@32@Panel/layout</key>
+	  <applyto>/apps/accerciser/pluginviews/Bottom@32@Panel/layout</applyto>
+	  <type>list</type>
+	  <list_type>string</list_type>
+	  <default>[IPython Console]</default>
       <locale name="C">
-        <short>The default plugin view</short>
-        <long>The default plugin view for this plugin</long>
+        <short>The default plugin layout for the bottom panel</short>
+        <long>The default plugin layout for the bottom panel</long>
       </locale>
     </schema>
     <schema>
-	  <key>/schemas/apps/accerciser/plugins/Interface@32@Viewer/tab_order</key>	  
-	  <applyto>/apps/accerciser/plugins/Interface@32@Viewer/tab_order</applyto>
-	  <type>int</type>
-	  <default>0</default>
+	  <key>/schemas/apps/accerciser/pluginviews/Top@32@Panel/layout</key>
+	  <applyto>/apps/accerciser/pluginviews/Top@32@Panel/layout</applyto>
+	  <type>list</type>
+	  <list_type>string</list_type>
+	  <default>[Interface Viewer,API Browser,Event Monitor,Script Recorder]</default>
       <locale name="C">
-        <short>The default tab position</short>
-        <long>The default tab position for this plugin</long>
+        <short>The default plugin layout for the top panel</short>
+        <long>The default plugin layout for the top panel</long>
       </locale>
     </schema>
     <schema>
-	  <key>/schemas/apps/accerciser/plugins/Interface@32@Viewer/enabled</key>	  
-	  <applyto>/apps/accerciser/plugins/Interface@32@Viewer/enabled</applyto>
-	  <type>bool</type>
-	  <default>true</default>
+	  <key>/schemas/apps/accerciser/disabled_plugins</key>
+	  <applyto>/apps/accerciser/disabled_plugins</applyto>
+	  <type>list</type>
+	  <list_type>string</list_type>
+	  <default>[]</default>
       <locale name="C">
-        <short>Plugin enabled</short>
-        <long>Set to true is plugin is enabled</long>
-      </locale>
-    </schema>
-    
-
-    <!-- Event Monitor -->
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Event@32@Monitor/view_name</key>	  
-	  <applyto>/apps/accerciser/plugins/Event@32@Monitor/view_name</applyto>
-	  <type>string</type>
-	  <default>Top right</default>
-      <locale name="C">
-        <short>The default plugin view</short>
-        <long>The default plugin view for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Event@32@Monitor/tab_order</key>	  
-	  <applyto>/apps/accerciser/plugins/Event@32@Monitor/tab_order</applyto>
-	  <type>int</type>
-	  <default>1</default>
-      <locale name="C">
-        <short>The default tab position</short>
-        <long>The default tab position for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Event@32@Monitor/enabled</key>	  
-	  <applyto>/apps/accerciser/plugins/Event@32@Monitor/enabled</applyto>
-	  <type>bool</type>
-	  <default>true</default>
-      <locale name="C">
-        <short>Plugin enabled</short>
-        <long>Set to true is plugin is enabled</long>
-      </locale>
-    </schema>
-
-    <!-- API Browser -->    
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/API@32@Browser/view_name</key>	  
-	  <applyto>/apps/accerciser/plugins/API@32@Browser/view_name</applyto>
-	  <type>string</type>
-	  <default>Top right</default>
-      <locale name="C">
-        <short>The default plugin view</short>
-        <long>The default plugin view for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/API@32@Browser/tab_order</key>	  
-	  <applyto>/apps/accerciser/plugins/API@32@Browser/tab_order</applyto>
-	  <type>int</type>
-	  <default>2</default>
-      <locale name="C">
-        <short>The default tab position</short>
-        <long>The default tab position for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/API@32@Browser/enabled</key>	  
-	  <applyto>/apps/accerciser/plugins/API@32@Browser/enabled</applyto>
-	  <type>bool</type>
-	  <default>true</default>
-      <locale name="C">
-        <short>Plugin enabled</short>
-        <long>Set to true is plugin is enabled</long>
-      </locale>
-    </schema>
-    
-    <!-- Script Recorder -->    
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Script@32@Recorder/view_name</key>	  
-	  <applyto>/apps/accerciser/plugins/Script@32@Recorder/view_name</applyto>
-	  <type>string</type>
-	  <default>Top right</default>
-      <locale name="C">
-        <short>The default plugin view</short>
-        <long>The default plugin view for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Script@32@Recorder/tab_order</key>	  
-	  <applyto>/apps/accerciser/plugins/Script@32@Recorder/tab_order</applyto>
-	  <type>int</type>
-	  <default>3</default>
-      <locale name="C">
-        <short>The default tab position</short>
-        <long>The default tab position for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/Script@32@Recorder/enabled</key>	  
-	  <applyto>/apps/accerciser/plugins/Script@32@Recorder/enabled</applyto>
-	  <type>bool</type>
-	  <default>false</default>
-      <locale name="C">
-        <short>Plugin enabled</short>
-        <long>Set to true is plugin is enabled</long>
-      </locale>
-    </schema>
-    
-    <!-- IPython Console -->
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/IPython@32@Console/view_name</key>	  
-	  <applyto>/apps/accerciser/plugins/IPython@32@Console/view_name</applyto>
-	  <type>string</type>
-	  <default>Bottom panel</default>
-      <locale name="C">
-        <short>The default plugin view</short>
-        <long>The default plugin view for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/IPython@32@Console/tab_order</key>	  
-	  <applyto>/apps/accerciser/plugins/IPython@32@Console/tab_order</applyto>
-	  <type>int</type>
-	  <default>0</default>
-      <locale name="C">
-        <short>The default tab position</short>
-        <long>The default tab position for this plugin</long>
-      </locale>
-    </schema>
-    <schema>
-	  <key>/schemas/apps/accerciser/plugins/IPython@32@Console/enabled</key>	  
-	  <applyto>/apps/accerciser/plugins/IPython@32@Console/enabled</applyto>
-	  <type>bool</type>
-	  <default>true</default>
-      <locale name="C">
-        <short>Plugin enabled</short>
-        <long>Set to true is plugin is enabled</long>
+        <short>A list of plugins that are disabled by default</short>
+        <long>A list of plugins that are disabled by default</long>
       </locale>
     </schema>
   </schemalist>

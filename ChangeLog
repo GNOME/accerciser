@@ -1,5 +1,13 @@
 2007-04-23  Eitan Isaacson  <eitan@ascender.com>
 
+	* src/lib/accerciser/accerciser.py: Changed "Top right" to "Top Panel".
+	* accerciser.schemas.in: Changed default layout to a list format in 
+	/apps/accerciser/[view name]/layout (bug 432697).
+	* src/lib/accerciser/plugin_manager.py: Changed layout to a list 
+	format in /apps/accerciser/[view name]/layout (bug 432697).
+	* src/lib/accerciser/tools.py: Added a wrapper class for gconf
+	list entries.
+
 	* src/lib/accerciser/tools.py: Removed obsolete constants and
 	import line (bug 432423).
 	

@@ -13,7 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gtk
 import gobject
 from plugin import PluginErrorMessage, Plugin
-from tools import Tools
+from tools import Tools, GConfListWrapper
 import os
 import sys
 import imp
@@ -22,7 +22,7 @@ import traceback
 import gconf
 from i18n import _, N_
 
-GCONF_PLUGINS = '/apps/accerciser/plugins'
+GCONF_PLUGIN_DISABLED = '/apps/accerciser/disabled_plugins'
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
 
 PLUGIN_NOTEBOOK_GROUP = 1
@@ -180,17 +180,19 @@ class PluginManager(gtk.ListStore, Tools):
     return plugin_file_list
 
   def _reorderPluginView(self, view):
+    plugin_layouts = PluginMapping()
+    try:
+      plugin_layout = plugin_layouts[view.view_name]
+    except KeyError:
+      plugin_layouts[view.view_name] = []
+      plugin_layout = plugin_layouts[view.view_name]
+    plugin_dict = {}
     for child in view.get_children():
       if isinstance(child, Plugin):
-        plugin = child
-        key_name = '/%s/tab_order' % gconf.escape_key(plugin.plugin_name,
-                                                      len(plugin.plugin_name))
-        gconf_value = self.gconf_client.get(GCONF_PLUGINS+key_name)
-        if gconf_value is None:
-          tab_order = -1
-        else:
-          tab_order = gconf_value.get_int()
-        view.reorder_child(child, tab_order)
+        plugin_dict[child.plugin_name] = child
+    for plugin_name in reversed(plugin_layout):
+      if plugin_dict.has_key(plugin_name):
+        view.reorder_child(plugin_dict[plugin_name], 0)
 
   def _getPluginLocals(self, plugin_dir, plugin_fn):
     sys.path.insert(0, plugin_dir)
@@ -238,10 +240,9 @@ class PluginManager(gtk.ListStore, Tools):
                                 (plugin_dir, plugin_fn))
           continue
         # if a plugin class is found, initialize
-        key_name = '/%s/enabled' % gconf.escape_key(plugin_locals[symbol].plugin_name,
-                                                    len(plugin_locals[symbol].plugin_name))
-        enabled = self.gconf_client.get(GCONF_PLUGINS+key_name)
-        if enabled is None or enabled.get_bool():
+        enabled = plugin_locals[symbol].plugin_name not in \
+            GConfListWrapper(GCONF_PLUGIN_DISABLED)
+        if enabled:
           self._enablePlugin(plugin_locals, iter)
 
   def _enablePlugin(self, plugin_locals, iter, set_current=False):
@@ -317,9 +318,11 @@ class PluginManager(gtk.ListStore, Tools):
       self._reloadPlugin(iter)
 
   def _getViewNameForPlugin(self, plugin_name):
-    key_name = '/%s/view_name' % gconf.escape_key(plugin_name, len(plugin_name))
-    return self.gconf_client.get_string(GCONF_PLUGINS+key_name) or \
-        self.pluginviews_main[0].view_name
+    plugin_layouts = PluginMapping()
+    for view_name in plugin_layouts:
+      if plugin_name in plugin_layouts[view_name]:
+        return view_name
+    return self.pluginviews_main[0].view_name
 
   def _getViewByName(self, view_name):
     views_dict = self._getViewNameInstanceDict()
@@ -400,24 +403,37 @@ class PluginManager(gtk.ListStore, Tools):
     pluginview.connect('page_reordered', self._onReorderedPluginInView)
 
   def _saveTabOrder(self, view):
-    for page in view.get_children():
-      if not isinstance(page, Plugin): continue
-      gconf_key = GCONF_PLUGINS+'/%s/tab_order' % \
-          gconf.escape_key(page.plugin_name, len(page.plugin_name))
-      self.gconf_client.set_int(gconf_key, view.page_num(page))
+    plugin_layout = []
+    for child in view.get_children():
+      if not isinstance(child, Plugin): continue
+      plugin_layout.append(child.plugin_name)
+    plugin_layouts = PluginMapping()
+    plugin_layouts[view.view_name] = plugin_layout
 
   def _onPluginRowChanged(self, model, path, iter):
     if not model[iter][self.COL_VIEW]: return
     plugin_name = model[iter][self.COL_NAME]
     state = bool(model[iter][self.COL_INSTANCE])
     view_name = model[iter][self.COL_VIEW].view_name
-    key_prefix = GCONF_PLUGINS+'/%s' % \
-        gconf.escape_key(plugin_name, len(plugin_name))
-    self.gconf_client.set_string(key_prefix+'/view_name', view_name)
-    self.gconf_client.set_bool(key_prefix+'/enabled', state)
+    plugin_layouts = PluginMapping()
+    for view_n in plugin_layouts:
+      if plugin_name in plugin_layouts[view_n]:
+        plugin_layouts[view_n].remove(plugin_name)    
+    disabled_list = GConfListWrapper(GCONF_PLUGIN_DISABLED)
     if not state:
-      self.gconf_client.set_int(key_prefix+'/tab_order', -1)
-    self._saveTabOrder(model[iter][self.COL_VIEW])
+      if plugin_name not in disabled_list:
+        disabled_list.append(plugin_name)
+        plugin_layouts[view_name].insert(-1, plugin_name)
+    else:
+      if plugin_name in disabled_list:
+        disabled_list.remove(plugin_name)
+      tab_order = \
+          model[iter][self.COL_VIEW].page_num(model[iter][self.COL_INSTANCE])
+      try:
+        plugin_layouts[view_name].insert(tab_order, plugin_name)
+      except KeyError:
+        plugin_layouts[view_name] = []
+        plugin_layouts[view_name].insert(tab_order, plugin_name)
 
   def _viewsStoreModify(self, model, iter, column):
     child_model_iter = model.convert_iter_to_child_iter(iter)
@@ -483,6 +499,27 @@ class PluginErrorManager(object):
         self.viewport = None
         self.vbox = None
 
+class PluginMapping(object):
+  def __init__(self):
+    self.gconf_client = gconf.client_get_default()
+  def __len__(self):
+    view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
+    return len(view_dirs)
+  def __getitem__(self, key):
+    view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
+    for dir in view_dirs:
+      if key == gconf.unescape_key(dir.split('/')[-1], 
+                                   len(dir.split('/')[-1])):
+        return GConfListWrapper(dir+'/layout')
+    raise KeyError, key
+  def __setitem__(self, key, value):
+    gconf_key = '%s/%s/layout' % \
+        (GCONF_PLUGINVIEWS, gconf.escape_key(key, len(key)))
+    self.gconf_client.set_list(gconf_key, gconf.VALUE_STRING, value)
+  def __iter__(self):
+    view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
+    for dir in view_dirs:
+      yield gconf.unescape_key(dir.split('/')[-1], len(dir.split('/')[-1]))
 
 class PluginTreeView(gtk.TreeView):
   def __init__(self, plugin_manager):
