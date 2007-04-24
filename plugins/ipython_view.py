@@ -42,7 +42,7 @@ ansi_colors =  {'0;30': 'Black',
                 '1;37': 'White'}
 
 class IterableIPShell:
-  def __init__(self,argv=None,user_ns=None,user_global_ns=None, 
+  def __init__(self,argv=[],user_ns=None,user_global_ns=None, 
                cin=None, cout=None,cerr=None, input_func=None):
     if input_func:
       IPython.iplib.raw_input_original = input_func
