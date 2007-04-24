@@ -1,5 +1,17 @@
 2007-04-23  Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/api_view.py: Added localized name (bug 432832).
+	* plugins/console.py: Added localized name (bug 432832).
+	* plugins/event_monitor.py: Added localized name (bug 432832).
+	* plugins/interface_view.py: Added localized name (bug 432832).
+	* plugins/script_recorder.py: Added localized name (bug 432832).
+	* src/lib/accerciser/accerciser.py: Provide localized component
+	name in addHotKey().
+	* src/lib/accerciser/hotkey_manager.py: Provide localized component
+	name in addHotKey().
+	* src/lib/accerciser/plugin_manager.py: Added data column for
+	localized plugin name.
+
 	* src/lib/accerciser/accerciser.py: Changed "Top right" to "Top Panel".
 	* accerciser.schemas.in: Changed default layout to a list format in 
 	/apps/accerciser/[view name]/layout (bug 432697).

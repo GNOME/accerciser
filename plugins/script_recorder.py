@@ -101,6 +101,7 @@ class LDTPFactory(DogtailFactory):
                                                             event.any_data[1]))
 class ScriptRecorder(ViewportPlugin):
   plugin_name = N_('Script Recorder')
+  plugin_name_localized = _(plugin_name)
   plugin_description = N_('Creates dogtail style scripts')
   
   def init(self):

@@ -67,12 +67,12 @@ class MainWindow(Tools):
 
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
-    self.hotkey_manager.addKeyCombo(N_('Core'), 
+    self.hotkey_manager.addKeyCombo('Core',_('Core'),
                                     N_('Inspect last focused accessible'),
                                     self._inspectLastFocused, 
                                     gtk.keysyms.a,
                                     gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
-    self.hotkey_manager.addKeyCombo(N_('Core'),
+    self.hotkey_manager.addKeyCombo('Core',_('Core'),
                                     N_('Inspect accessible under mouse'),
                                     self._inspectUnderMouse, 
                                     gtk.keysyms.question,

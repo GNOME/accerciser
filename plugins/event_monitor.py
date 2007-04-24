@@ -30,6 +30,7 @@ class EventMonitor(ViewportPlugin):
   Class for the monitor viewer.
   '''
   plugin_name = N_('Event Monitor')
+  plugin_name_localized = _(plugin_name)
   plugin_description = \
       N_('Shows events as they occur from selected types and sources')
   COL_NAME = 0

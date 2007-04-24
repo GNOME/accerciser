@@ -59,7 +59,7 @@ class PluginView(gtk.Notebook):
     if tab_label:
       name = tab_label
     elif isinstance(child, Plugin):
-      name = _(child.plugin_name)
+      name = getattr(child,'plugin_name_localized', None) or child.plugin_name
     elif child.name:
       name = child.name
     gtk.Notebook.insert_page(self, child, gtk.Label(name), position=position)
@@ -126,9 +126,10 @@ class PluginManager(gtk.ListStore, Tools):
                            object, # Plugin instance
                            str, # Plugin class name
                            str, # Plugin file name
-                           str) # Plugin path
+                           str, # Plugin path
+                           str) # Plugin translated name
     for i, col in enumerate(['NAME', 'DESC', 'VIEW', 'INSTANCE', 
-                             'CLASS', 'FILE', 'PATH']):
+                             'CLASS', 'FILE', 'PATH', 'LOCALIZED']):
       setattr(self, 'COL_'+col, i)
     self.node = node
     self.gconf_client = gconf.client_get_default()
@@ -136,7 +137,7 @@ class PluginManager(gtk.ListStore, Tools):
     self.pluginviews_main = pluginviews_main
     for main_view in pluginviews_main:
       self.append(['', '', main_view, 
-                   None, '', '', ''])
+                   None, '', '', '',''])
     self.views_store = self.filter_new()
     self.views_store.set_visible_func(self._viewStoreVisible)
     self.views_store.set_modify_func([object, str], self._viewsStoreModify)
@@ -231,7 +232,9 @@ class PluginManager(gtk.ListStore, Tools):
           iter = self.append([plugin_locals[symbol].plugin_name,
                               plugin_locals[symbol].plugin_description,
                               self._getViewByName(view_name),
-                              None, symbol, plugin_fn, plugin_dir])
+                              None, symbol, plugin_fn, plugin_dir,
+                              getattr(plugin_locals[symbol], 
+                                      'plugin_name_localized', None)])
         except AttributeError, e:
           error_message = self.error_manager.newError(
             traceback.format_exception_only(e.__class__, e)[0].strip(),
@@ -253,7 +256,8 @@ class PluginManager(gtk.ListStore, Tools):
       plugin_instance.onAccChanged(plugin_instance.node.acc)
       for key_combo in plugin_instance.global_hotkeys:
         self.hotkey_manager.addKeyCombo(
-          self[iter][self.COL_NAME], *key_combo)
+          self[iter][self.COL_NAME], 
+          self[iter][self.COL_LOCALIZED], *key_combo)
     except Exception, e:
       error_message = self.error_manager.newError(
         traceback.format_exception_only(e.__class__, e)[0].strip(),
@@ -585,7 +589,9 @@ class PluginTreeView(gtk.TreeView):
                       _(getattr(model[iter][self.plugin_manager.COL_VIEW],                                       'view_name', '')))
 
   def _pluginNameDataFunc(self, column, cell, model, iter):
-    cell.set_property('text', _(model[iter][self.plugin_manager.COL_NAME]))
+    localized_name = model[iter][self.plugin_manager.COL_LOCALIZED] or \
+        model[iter][self.plugin_manager.COL_NAME]
+    cell.set_property('text', localized_name)
 
   def _pluginStateDataFunc(self, column, cell, model, iter):
     cell.set_property('active', 

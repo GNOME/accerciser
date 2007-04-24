@@ -21,6 +21,7 @@ COL_DESC = 1
 COL_CALLBACK = 2
 COL_KEYPRESS = 3
 COL_MOD = 4
+COL_LOCALIZED_COMP = 5
 
 def _charToKeySym(key):
   '''
@@ -39,7 +40,6 @@ def _charToKeySym(key):
     rv = getattr(gtk.keysyms, key)
   return rv
 
-
 class HotkeyManager(gtk.ListStore):
   '''
   A model that stores all of the global key bindings. All accerciser components
@@ -50,7 +50,7 @@ class HotkeyManager(gtk.ListStore):
     '''
     Constructor for the L{HotkeyManager}
     '''
-    gtk.ListStore.__init__(self, str, str, object, int, int)
+    gtk.ListStore.__init__(self, str, str, object, int, int, str)
     self.connect('row-changed', self._onComboChanged)
     self.gconf_client = gconf.client_get_default()
     
@@ -77,7 +77,8 @@ class HotkeyManager(gtk.ListStore):
           callback()
     return bool(callback)
   
-  def addKeyCombo(self, component, description, callback, keypress, modifiers):
+  def addKeyCombo(self, component, localized_component, description, 
+                  callback, keypress, modifiers):
     '''
     Adds the given key combination with the appropriate callbacks to 
     the L{HotkeyManager}. If an identical description with the identical 
@@ -112,7 +113,8 @@ class HotkeyManager(gtk.ListStore):
           self.gconf_client.get_string(combo_gconf_key))
       else:
         final_keypress, final_modifiers = keypress, modifiers
-      self.append([component, description, callback, final_keypress, final_modifiers])
+      self.append([component, description, callback, 
+                   final_keypress, final_modifiers, localized_component])
 
   def removeKeyCombo(self, component, description, callback, key, modifiers):
     '''
@@ -202,7 +204,7 @@ class HotkeyTreeView(gtk.TreeView):
     tvc = gtk.TreeViewColumn(_('Component'))
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_COMPONENT)
-    tvc.set_cell_data_func(crt, self._translateDataFunc, COL_COMPONENT)
+    tvc.set_cell_data_func(crt, self._componentDataFunc, COL_COMPONENT)
     self.append_column(tvc)
     
     crt = gtk.CellRendererText()
@@ -257,6 +259,22 @@ class HotkeyTreeView(gtk.TreeView):
     @type iter: L{gtk.TreeIter}
     '''    
     cell.set_property('text', _(model[iter][column_id]))
+
+  def _componentDataFunc(self, column, cell, model, iter, column_id):
+    '''
+    Show the component name as a translated string.
+
+    @param column: The treeview column of the cell renderer.
+    @type column: L{gtk.TreeViewColumn}
+    @param cell: The cell rendere we need to modify.
+    @type cell: L{gtk.CellRendererText}
+    @param model: The treeview's model.
+    @type model: L{gtk.ListStore}
+    @param iter: The iter of the given cell data.
+    @type iter: L{gtk.TreeIter}
+    '''    
+    cell.set_property('text', model[iter][COL_LOCALIZED_COMP] or \
+                        model[iter][COL_COMPONENT])
 
   def _keyCellFunc(self, column, cell, model, iter):
     '''

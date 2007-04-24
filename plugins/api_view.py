@@ -17,6 +17,7 @@ from pyLinAcc import *
 
 class DemoViewport(ViewportPlugin):
   plugin_name = N_('API Browser')
+  plugin_name_localized = _(plugin_name)
   plugin_description = \
       N_('Browse the various methods of the current accessible')
   def init(self):

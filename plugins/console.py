@@ -12,7 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
 from accerciser.plugin import ViewportPlugin
-from accerciser.i18n import N_
+from accerciser.i18n import N_, _
 import os
 import pyLinAcc
 import gtk
@@ -24,6 +24,7 @@ if ipython_view.IPython == None:
 
 class Console(ViewportPlugin):
   plugin_name = N_('IPython Console')
+  plugin_name_localized = _(plugin_name)
   plugin_description = \
       N_('Interactive console for manipulating currently selected accessible')
   def init(self):

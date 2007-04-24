@@ -32,6 +32,7 @@ class CallCache(list):
 
 class InterfaceViewer(ViewportPlugin):
   plugin_name = N_('Interface Viewer')
+  plugin_name_localized = _(plugin_name)
   plugin_description = N_('Allows viewing of various interface properties')
   def init(self):
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
