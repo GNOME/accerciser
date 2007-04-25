@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-22 07:18+0100\n"
-"PO-Revision-Date: 2007-04-22 20:05-0000\n"
+"POT-Creation-Date: 2007-04-25 06:56+0100\n"
+"PO-Revision-Date: 2007-04-25 06:56-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,28 +24,16 @@ msgid "Give your application an accessibility workout"
 msgstr "Give your application an accessibility workout"
 
 #: ../accerciser.schemas.in.h:1
-msgid "Plugin enabled"
-msgstr "Plugin enabled"
+msgid "A list of plugins that are disabled by default"
+msgstr "A list of plugins that are disabled by default"
 
 #: ../accerciser.schemas.in.h:2
-msgid "Set to true is plugin is enabled"
-msgstr "Set to true is plugin is enabled"
+msgid "The default plugin layout for the bottom panel"
+msgstr "The default plugin layout for the bottom panel"
 
 #: ../accerciser.schemas.in.h:3
-msgid "The default plugin view"
-msgstr "The default plugin view"
-
-#: ../accerciser.schemas.in.h:4
-msgid "The default plugin view for this plugin"
-msgstr "The default plugin view for this plugin"
-
-#: ../accerciser.schemas.in.h:5
-msgid "The default tab position"
-msgstr "The default tab position"
-
-#: ../accerciser.schemas.in.h:6
-msgid "The default tab position for this plugin"
-msgstr "The default tab position for this plugin"
+msgid "The default plugin layout for the top panel"
+msgstr "The default plugin layout for the top panel"
 
 #: ../plugins/interface_view.glade.h:1
 msgid "0"
@@ -297,51 +285,51 @@ msgstr "name (x,y)"
 msgid "Interface Viewer"
 msgstr "Interface Viewer"
 
-#: ../plugins/interface_view.py:35
+#: ../plugins/interface_view.py:36
 msgid "Allows viewing of various interface properties"
 msgstr "Allows viewing of various interface properties"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:222
-#: ../plugins/event_monitor.py:83
+#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:223
+#: ../plugins/event_monitor.py:84
 #: ../src/lib/accerciser/accessible_treeview.py:277
-#: ../src/lib/accerciser/plugin_manager.py:503
+#: ../src/lib/accerciser/plugin_manager.py:544
 msgid "Name"
 msgstr "Name"
 
-#: ../plugins/interface_view.py:192
-#: ../plugins/interface_view.py:251
+#: ../plugins/interface_view.py:193
+#: ../plugins/interface_view.py:252
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:199
+#: ../plugins/interface_view.py:200
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:206
+#: ../plugins/interface_view.py:207
 msgid "End"
 msgstr "End"
 
-#: ../plugins/interface_view.py:227
+#: ../plugins/interface_view.py:228
 msgid "Description"
 msgstr "Description"
 
-#: ../plugins/interface_view.py:232
+#: ../plugins/interface_view.py:233
 msgid "Key binding"
 msgstr "Key binding"
 
-#: ../plugins/interface_view.py:246
+#: ../plugins/interface_view.py:247
 msgid "Content type"
 msgstr "Content type"
 
-#: ../plugins/interface_view.py:345
 #: ../plugins/interface_view.py:346
 #: ../plugins/interface_view.py:347
+#: ../plugins/interface_view.py:348
 msgid " (not implemented)"
 msgstr " (not implemented)"
 
-#: ../plugins/interface_view.py:802
-#: ../plugins/interface_view.py:804
+#: ../plugins/interface_view.py:803
+#: ../plugins/interface_view.py:805
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Editable)</i>"
 
@@ -386,15 +374,15 @@ msgstr "gtk-select-all"
 msgid "Event Monitor"
 msgstr "Event Monitor"
 
-#: ../plugins/event_monitor.py:34
+#: ../plugins/event_monitor.py:35
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Shows events as they occur from selected types and sources"
 
-#: ../plugins/event_monitor.py:41
+#: ../plugins/event_monitor.py:42
 msgid "Highlight last event entry"
 msgstr "Highlight last event entry"
 
-#: ../plugins/event_monitor.py:92
+#: ../plugins/event_monitor.py:93
 msgid "Full name"
 msgstr "Full name"
 
@@ -402,23 +390,23 @@ msgstr "Full name"
 msgid "API Browser"
 msgstr "API Browser"
 
-#: ../plugins/api_view.py:21
+#: ../plugins/api_view.py:22
 msgid "Browse the various methods of the current accessible"
 msgstr "Browse the various methods of the current accessible"
 
-#: ../plugins/api_view.py:50
+#: ../plugins/api_view.py:51
 msgid "Hide private attributes"
 msgstr "Hide private attributes"
 
-#: ../plugins/api_view.py:60
+#: ../plugins/api_view.py:61
 msgid "Method"
 msgstr "Method"
 
-#: ../plugins/api_view.py:69
+#: ../plugins/api_view.py:70
 msgid "Property"
 msgstr "Property"
 
-#: ../plugins/api_view.py:74
+#: ../plugins/api_view.py:75
 msgid "Value"
 msgstr "Value"
 
@@ -426,7 +414,7 @@ msgstr "Value"
 msgid "IPython Console"
 msgstr "IPython Console"
 
-#: ../plugins/console.py:28
+#: ../plugins/console.py:29
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interactive console for manipulating currently selected accessible"
 
@@ -434,11 +422,11 @@ msgstr "Interactive console for manipulating currently selected accessible"
 msgid "Script Recorder"
 msgstr "Script Recorder"
 
-#: ../plugins/script_recorder.py:104
+#: ../plugins/script_recorder.py:105
 msgid "Creates dogtail style scripts"
 msgstr "Creates dogtail style scripts"
 
-#: ../plugins/script_recorder.py:198
+#: ../plugins/script_recorder.py:199
 msgid "The current script will be lost."
 msgstr "The current script will be lost."
 
@@ -561,8 +549,8 @@ msgid "Inspect accessible under mouse"
 msgstr "Inspect accessible under mouse"
 
 #: ../src/lib/accerciser/accerciser.py:104
-msgid "Top right"
-msgstr "Top right"
+msgid "Top panel"
+msgstr "Top panel"
 
 #: ../src/lib/accerciser/accerciser.py:107
 msgid "Bottom panel"
@@ -580,53 +568,66 @@ msgstr "Desktop accessibility is still not functioning although it has been enab
 msgid "Note: You must logout for desktop accessibility options to take effect."
 msgstr "Note: You must logout for desktop accessibility options to take effect."
 
-#: ../src/lib/accerciser/plugin_manager.py:344
+#: ../src/lib/accerciser/plugin_manager.py:351
 msgid "Plugin View"
 msgstr "Plugin View"
 
-#: ../src/lib/accerciser/plugin_manager.py:347
+#: ../src/lib/accerciser/plugin_manager.py:354
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Plugin View (%d)"
 
-#: ../src/lib/accerciser/plugin_manager.py:454
+#: ../src/lib/accerciser/plugin_manager.py:474
 msgid "Plugin Errors"
 msgstr "Plugin Errors"
 
-#: ../src/lib/accerciser/plugin_manager.py:510
+#: ../src/lib/accerciser/plugin_manager.py:551
 msgid "View"
 msgstr "View"
 
-#: ../src/lib/accerciser/plugin_manager.py:603
+#: ../src/lib/accerciser/plugin_manager.py:646
 msgid "<i>_New view...</i>"
 msgstr "<i>_New view...</i>"
 
-#: ../src/lib/accerciser/plugin_manager.py:624
+#: ../src/lib/accerciser/plugin_manager.py:667
 msgid "New View..."
 msgstr "New View..."
 
 #. crc.connect('toggled', self._onPluginToggled)
-#: ../src/lib/accerciser/hotkey_manager.py:202
+#: ../src/lib/accerciser/hotkey_manager.py:204
 msgid "Component"
 msgstr "Component"
 
-#: ../src/lib/accerciser/hotkey_manager.py:209
+#: ../src/lib/accerciser/hotkey_manager.py:211
 msgid "Task"
 msgstr "Task"
 
-#: ../src/lib/accerciser/hotkey_manager.py:216
+#: ../src/lib/accerciser/hotkey_manager.py:218
 msgid "Key"
 msgstr "Key"
 
-#: ../src/lib/accerciser/hotkey_manager.py:226
+#: ../src/lib/accerciser/hotkey_manager.py:228
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:233
+#: ../src/lib/accerciser/hotkey_manager.py:235
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:240
+#: ../src/lib/accerciser/hotkey_manager.py:242
 msgid "Shift"
 msgstr "Shift"
+
+#~ msgid "Plugin enabled"
+#~ msgstr "Plugin enabled"
+#~ msgid "Set to true is plugin is enabled"
+#~ msgstr "Set to true is plugin is enabled"
+#~ msgid "The default plugin view"
+#~ msgstr "The default plugin view"
+#~ msgid "The default tab position"
+#~ msgstr "The default tab position"
+#~ msgid "The default tab position for this plugin"
+#~ msgstr "The default tab position for this plugin"
+#~ msgid "Top right"
+#~ msgstr "Top right"
 
