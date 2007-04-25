@@ -223,13 +223,26 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
   def _onKeypress(self, obj, event):
-    if not event.string:
-      return
     insert_mark = self.text_buffer.get_insert()
     insert_iter = self.text_buffer.get_iter_at_mark(insert_mark)
     selection_mark = self.text_buffer.get_selection_bound()
     selection_iter = self.text_buffer.get_iter_at_mark(selection_mark)
     start_iter = self.text_buffer.get_iter_at_mark(self.line_start)
+    if event.keyval == gtk.keysyms.Home:
+      if event.state == 0: 
+        self.text_buffer.place_cursor(start_iter)
+        return True
+      elif event.state == gtk.gdk.SHIFT_MASK:
+        self.text_buffer.move_mark(insert_mark, start_iter)
+        return True
+      return
+    elif event.keyval == gtk.keysyms.Left:
+      insert_iter.backward_cursor_position()
+      if not insert_iter.editable(True):
+        return True
+      return
+    elif not event.string:
+      return
     if start_iter.compare(insert_iter) <= 0 and \
           start_iter.compare(selection_iter) <= 0:
       return
