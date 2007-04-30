@@ -13,11 +13,19 @@ eg = pyLinAcc.Registry.getDeviceEventController()
 
 _keymap = gtk.gdk.keymap_get_default()
 
-ModifierKeyCodes = {
-  'Control_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Control_L)[0][0],
-  'Alt_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Alt_L)[0][0],
-  'Shift_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Shift_L)[0][0]
-  }
+try:
+  ModifierKeyCodes = {
+    'Control_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Control_L)[0][0],
+    'Alt_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Alt_L)[0][0],
+    'Shift_L' : _keymap.get_entries_for_keyval(gtk.keysyms.Shift_L)[0][0]
+    }
+except:
+  # For headless setups
+    ModifierKeyCodes = {
+    'Control_L' : 37,
+    'Alt_L' : 64,
+    'Shift_L' : 50
+    }
 
 keySymAliases = {
     'enter' : 'Return',
