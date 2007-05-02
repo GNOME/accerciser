@@ -11,7 +11,6 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk, gconf
-from pyLinAcc import Constants
 from i18n import _
 
 GCONF_HOTKEYS = '/apps/accerciser/global_hotkeys'

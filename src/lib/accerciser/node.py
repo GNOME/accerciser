@@ -13,7 +13,8 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk
 import gtk.gdk
-import pyLinAcc
+#import pyLinAcc
+import pyatspi
 import gobject
 from tools import Tools
 
@@ -48,9 +49,7 @@ class Node(gobject.GObject, Tools):
                    gobject.TYPE_NONE, 
                    (gobject.TYPE_PYOBJECT,))}
   def __init__(self):
-    self.__dict__.update(pyLinAcc.Interfaces.__dict__)
-    self.__dict__.update(pyLinAcc.Constants.__dict__)
-    self.desktop = pyLinAcc.Registry.getDesktop(0)
+    self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
     self.extents = None
     gobject.GObject.__init__(self)
@@ -68,11 +67,11 @@ class Node(gobject.GObject, Tools):
       return
     self.acc = acc
     try:
-      i = pyLinAcc.Interfaces.IComponent(acc)
+      i = acc.queryComponent()
     except NotImplementedError:
       self.extents = Bag(x=0, y=0, width=0, height=0)
     else:
-      self.extents = i.getExtents(pyLinAcc.Constants.DESKTOP_COORDS)
+      self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.blinkRect()
     self.emit('accessible_changed', acc)
   

@@ -14,7 +14,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 import gtk
 import gobject
-import pyLinAcc
+import pyatspi
 import atk, os
 from icons import getIcon
 from node import Node
@@ -263,7 +263,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     '''
     gtk.TreeView.__init__(self)
 
-    self.desktop = pyLinAcc.Registry.getDesktop(0)
+    self.desktop = pyatspi.Registry.getDesktop(0)
     self.node = Node()
     self.node.update(self.desktop)
     self._changed_handler = self.node.connect('accessible_changed',
@@ -305,16 +305,14 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     selection.connect('changed', self._onSelectionChanged)
     selection.set_select_function(self._selectFunc, full=True)
     self.connect('row-expanded', self._onExpanded)
-    self.event_manager = pyLinAcc.Event.Manager()
-    self.event_manager.addClient(self._accEventChildChanged, 
-                                 'object:children-changed')
+    pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
+                                           'object:children-changed')
 
   def destroy(self):
     '''
     Overrides superclass's destroy method.
     Used for explicitly closing the L{pyLinAcc.Event.Manager} or bad things happen.
     '''
-    self.event_manager.close()
     gtk.TreeView.destroy(self)
 
   def refreshTopLevel(self):

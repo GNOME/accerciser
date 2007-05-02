@@ -11,7 +11,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk
-import pyLinAcc
+import pyatspi
 import gobject
 import os.path
 import gettext, os, sys, locale
@@ -41,12 +41,11 @@ class EventMonitor(ViewportPlugin):
   def init(self):
     self.global_hotkeys = [(N_('Highlight last event entry'),
                             self._onHighlightEvent,
-                            keysyms.l, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
+                            keysyms.e, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
     vpaned = self.main_xml.get_widget('monitor_vpaned')
     self.plugin_area.add(vpaned)
-    self.event_manager = pyLinAcc.Event.Manager()
     self._initTreeView()
     self._popEventsModel()
     self._initTextView()
@@ -61,8 +60,8 @@ class EventMonitor(ViewportPlugin):
     self.show_all()
 
   def _popEventsModel(self):
-    events = pyLinAcc.Constants.event_tree.keys()
-    for sub_events in pyLinAcc.Constants.event_tree.itervalues():
+    events = pyatspi.EVENT_TREE.keys()
+    for sub_events in pyatspi.EVENT_TREE.itervalues():
       events.extend(sub_events)
     events = list(set([event.strip(':') for event in events]))
     events.sort()
@@ -123,10 +122,12 @@ class EventMonitor(ViewportPlugin):
     self._resetClient()
 
   def _resetClient(self):
-    self.event_manager.removeClient(self._handleAccEvent, *self.listen_list)
+    pyatspi.Registry.deregisterEventListener(self._handleAccEvent, 
+                                           *self.listen_list)
     self.listen_list = self._getEnabledEvents(self.events_model.get_iter_root())
     if self.monitor_toggle.get_active():
-      self.event_manager.addClient(self._handleAccEvent, *self.listen_list)
+      pyatspi.Registry.registerEventListener(self._handleAccEvent, 
+                                             *self.listen_list)
 
   def _getEnabledEvents(self, iter):
     listen_for = []
@@ -203,24 +204,15 @@ class EventMonitor(ViewportPlugin):
     return True
 
   def _insertEventIntoBuffer(self, event):
-    if event.source:
-      self._writeText('%s(%s, %s, %s)\n\tsource: ' % \
-                        (event.type.asString(), event.detail1, 
-                         event.detail2, event.any_data))
-      hyperlink = self._createHyperlink(event.source)
-      self._writeText(str(event.source), hyperlink)
-      self._writeText('\n\tapplication: ')
-      try:
-        app = event.source.getApplication()
-      except:
-        app = None
-      hyperlink = self._createHyperlink(app)
-      self._writeText(str(app), hyperlink)
-      self._writeText('\n')
-    else:
-      self.monitor_buffer.insert(
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark),
-        str(event)+'\n')
+    self._writeText('%s(%s, %s, %s)\n\tsource: ' % \
+                      (event.type, event.detail1, 
+                       event.detail2, event.any_data))
+    hyperlink = self._createHyperlink(event.source)
+    self._writeText(str(event.source), hyperlink)
+    self._writeText('\n\tapplication: ')
+    hyperlink = self._createHyperlink(event.host_application)
+    self._writeText(str(event.host_application), hyperlink)
+    self._writeText('\n')
 
   def _writeText(self, text, *tags):
     if tags:
@@ -308,9 +300,11 @@ class EventMonitor(ViewportPlugin):
   
   def _onMonitorToggled(self, monitor_toggle):
     if monitor_toggle.get_active():
-      self.event_manager.addClient(self._handleAccEvent, *self.listen_list)
+      pyatspi.Registry.registerEventListener(self._handleAccEvent, 
+                                             *self.listen_list)
     else:
-      self.event_manager.removeClient(self._handleAccEvent, *self.listen_list)
+      pyatspi.Registry.deregisterEventListener(self._handleAccEvent, 
+                                               *self.listen_list)
 
   def _onSourceToggled(self, radio_button):
     self.source_filter = radio_button.get_name()
@@ -335,4 +329,4 @@ class EventMonitor(ViewportPlugin):
     self.monitor_buffer.apply_tag_by_name('last_log', start_iter, end_iter)
 
   def close(self):
-    self.event_manager.close()
+    pass

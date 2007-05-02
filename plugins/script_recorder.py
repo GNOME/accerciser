@@ -1,6 +1,6 @@
 import os.path
-from accerciser.plugin import ViewportPlugin
-import pyLinAcc
+from accerciser.plugin import ViewportPlugin, PluginMethodWrapper
+import pyatspi
 import gtk
 from gtk import keysyms
 import gtksourceview
@@ -26,9 +26,10 @@ class ScriptFactory(object):
       self.frame_name = ''
 
   def scriptCommand(self, event):
-    if (event.type.klass, event.type.major) == ('window', 'activate'):
+    if isinstance(event, pyatspi.event.Event) and \
+          event.type.name == 'window:activate':
       return self._windowActivate(event)
-    elif (event.type.klass, event.type.major) == ('keyboard', 'press'):
+    elif isinstance(event, pyatspi.event.DeviceEvent):
       return self._keyPress(event)
 
   def _keyPress(self, event):
@@ -47,12 +48,12 @@ class DogtailFactory(ScriptFactory):
     self.typed_text = ''
 
   def _keyPress(self, event):
-    if event.detail1 in self.MODIFIERS or \
-          event.any_data[0].startswith('ISO'):
+    if event.id in self.MODIFIERS or \
+          event.event_string.startswith('ISO'):
       return
-    if event.any_data[1] in (0, gtk.gdk.SHIFT_MASK) and \
-          gtk.gdk.keyval_to_unicode(event.detail1):
-      self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.detail1))
+    if event.modifiers in (0, gtk.gdk.SHIFT_MASK) and \
+          gtk.gdk.keyval_to_unicode(event.id):
+      self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.id))
     else:
       if self.app_name:
         self.commands_queue.put_nowait('focus.application("%s")\n' % \
@@ -67,8 +68,8 @@ class DogtailFactory(ScriptFactory):
                                          self.typed_text)
         self.typed_text = ''
       self.commands_queue.put_nowait('keyCombo("%s")\n' % \
-                                       gtk.accelerator_name(event.detail1,
-                                                            event.any_data[1]))
+                                       gtk.accelerator_name(event.id,
+                                                            event.modifiers))
 
 
 class NativeFactory(DogtailFactory):
@@ -81,12 +82,12 @@ class LDTPFactory(DogtailFactory):
     self.typed_text = ''
 
   def _keyPress(self, event):
-    if event.detail1 in self.MODIFIERS or \
-          event.any_data[0].startswith('ISO'):
+    if event.id in self.MODIFIERS or \
+          event.event_string.startswith('ISO'):
       return
-    if event.any_data[1] in (0, gtk.gdk.SHIFT_MASK) and \
-          gtk.gdk.keyval_to_unicode(event.detail1):
-      self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.detail1))
+    if event.modifiers in (0, gtk.gdk.SHIFT_MASK) and \
+          gtk.gdk.keyval_to_unicode(event.id):
+      self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.id))
     else:
       if self.frame_name:
         self.commands_queue.put_nowait('waittillguiexist("%s")\n' % \
@@ -97,8 +98,8 @@ class LDTPFactory(DogtailFactory):
                                          self.typed_text)
         self.typed_text = ''
       self.commands_queue.put_nowait('generatekeyevent("%s")\n' % \
-                                       gtk.accelerator_name(event.detail1,
-                                                            event.any_data[1]))
+                                       gtk.accelerator_name(event.id,
+                                                            event.modifiers))
 class ScriptRecorder(ViewportPlugin):
   plugin_name = N_('Script Recorder')
   plugin_name_localized = _(plugin_name)
@@ -121,7 +122,6 @@ class ScriptRecorder(ViewportPlugin):
     self.mark = text_buffer.create_mark('scroll_mark', 
                                         text_buffer.get_end_iter(),
                                         False)
-    self.event_manager = pyLinAcc.Event.Manager()
     for radio_name, factory_class in (('radio_native', NativeFactory),
                                       ('radio_dogtail', DogtailFactory),
                                       ('radio_ldtp', LDTPFactory)):
@@ -149,21 +149,45 @@ class ScriptRecorder(ViewportPlugin):
     self.text_view.scroll_mark_onscreen(self.mark)
 
   def close(self):
-    self.event_manager.close()
+    pass
 
   def _onRecord(self, button):
+    print [a.func for a in pyatspi.Registry.clients.keys() if isinstance(a, PluginMethodWrapper)], 
     if button.get_label() == 'gtk-media-record':
       button.set_label(gtk.STOCK_MEDIA_STOP)
-      self.event_manager.addClient(self._onEvent, 
-                                   'keyboard:press', 'window:activate')
+      pyatspi.Registry.registerEventListener(self._onWindowActivate, 
+                                             'window:activate')
+      masks = []
+      mask = 0
+      while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
+        masks.append(mask)
+        mask += 1
+      pyatspi.Registry.registerKeystrokeListener(
+        self._onKeystroke,
+        mask=masks,
+        kind=(pyatspi.KEY_PRESSED_EVENT,))
     elif button.get_label() == 'gtk-media-stop':
       button.set_label(gtk.STOCK_MEDIA_RECORD)
-      self.event_manager.removeClient(self._onEvent, 
-                                      'keyboard:press', 'window:activate')
-
-  def _onEvent(self, event):
-    if event.source and self.isMyApp(event.source):
+      pyatspi.Registry.deregisterEventListener(self._onWindowActivate, 
+                                             'window:activate')
+      masks = []
+      mask = 0
+      while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
+        masks.append(mask)
+        mask += 1
+      pyatspi.Registry.deregisterKeystrokeListener(
+        self._onKeystroke,
+        mask=masks,
+        kind=(pyatspi.KEY_PRESSED_EVENT,))
+    print [a.func for a in pyatspi.Registry.clients.keys() if isinstance(a, PluginMethodWrapper)]
+  def _onWindowActivate(self, event):
+    if self.isMyApp(event.source):
       return
+    self.script_factory.scriptCommand(event)
+    while self.script_factory.commands_queue.qsize():
+      self.appendText(self.script_factory.commands_queue.get_nowait())
+
+  def _onKeystroke(self, event):
     self.script_factory.scriptCommand(event)
     while self.script_factory.commands_queue.qsize():
       self.appendText(self.script_factory.commands_queue.get_nowait())

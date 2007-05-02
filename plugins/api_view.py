@@ -13,7 +13,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gtk
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
-from pyLinAcc import *
 
 class DemoViewport(ViewportPlugin):
   plugin_name = N_('API Browser')
@@ -26,10 +25,6 @@ class DemoViewport(ViewportPlugin):
     self.iface_combo.connect('changed', self._refreshAttribs)
     self.private_toggle.connect('toggled', self._refreshAttribs)
     self.curr_iface = None
-    self.constructors = {}
-    for iface in dir(Interfaces):
-      if iface.startswith('I'):
-        self.constructors[iface[1:].lower()] = getattr(Interfaces, iface)
 
   def _buildUI(self):
     vbox = gtk.VBox()
@@ -88,24 +83,24 @@ class DemoViewport(ViewportPlugin):
 
   def _getInterfaces(self, acc):
     ints = []
-    for func in (f for f in Interfaces.__dict__.values() 
-                 if callable(f) and f.func_name.startswith('I')):
+    for func in [getattr(acc, f) for f in dir(acc) if f.startswith('query')]:
       try:
-        i = func(acc)
-      except Exception:
-        pass
+        func()
+      except:
+        continue
       else:
-        ints.append(func.func_name[1:].lower())
+        ints.append(func.func_name.replace('query', ''))
     ints.sort()
     return ints
   
   def _refreshAttribs(self, widget):
     iface = self.iface_combo.get_active_text()
     try:
-      self.curr_iface = self.constructors[iface](self.acc)
-    except KeyError:
+      query_func = getattr(self.acc, 'query'+iface)
+    except AttributeError:
       pass
     else:
+      self.curr_iface = query_func()
       self._popAttribViews()
 
   def _popAttribViews(self):

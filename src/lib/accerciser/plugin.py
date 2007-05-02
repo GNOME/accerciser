@@ -194,6 +194,10 @@ class PluginMethodWrapper(object):
     except Exception:
       return False
 
+  def __hash__(self):
+    return hash(self.func)
+  
+
 class PluginMessage(gtk.Frame):
   __gsignals__ = {'response' : 
                   (gobject.SIGNAL_RUN_FIRST,
