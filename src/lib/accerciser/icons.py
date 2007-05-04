@@ -38,7 +38,7 @@ role_to_icon = {
   ROLE_CHECK_BOX : 'checkbox', 
   ROLE_CHECK_MENU_ITEM : 'checkbox', # Temporary
   ROLE_COLOR_CHOOSER : 'colorchooser', 
-  ROLE_COLUMN_HEADER : 'column', 
+  ROLE_COLUMN_HEADER : 'columnheader', 
   ROLE_COMBO_BOX : 'combobox', 
   ROLE_DATE_EDITOR : 'calendar', # Temporary
   ROLE_DESKTOP_FRAME : 'desktopframe',
@@ -61,7 +61,7 @@ role_to_icon = {
   ROLE_GLASS_PANE : 'drawingarea', # Temporary
   ROLE_HEADER : 'label', # Temporary
   ROLE_HEADING : 'heading', 
-  ROLE_HTML_CONTAINER : 'filler',
+  ROLE_HTML_CONTAINER : 'htmlcontainer',
   ROLE_ICON : 'imagemap', # Temporary
   ROLE_IMAGE : 'image', 
   ROLE_INTERNAL_FRAME : 'filler', # Temporary
@@ -71,7 +71,7 @@ role_to_icon = {
   ROLE_LIST : 'list',
   ROLE_LIST_ITEM : 'listitem', 
   ROLE_MENU : 'menuitem',  # Temporary
-  ROLE_MENU_BAR : 'menuitem', # Temporary
+  ROLE_MENU_BAR : 'menubar', # Temporary
   ROLE_MENU_ITEM : 'menuitem',
   ROLE_OPTION_PANE : 'filler', # Temporary
   ROLE_PAGE : 'filler', # Temporary
@@ -83,14 +83,14 @@ role_to_icon = {
   ROLE_POPUP_MENU : 'menuitem',  # Temporary  
   ROLE_PROGRESS_BAR : 'progressbar',
   ROLE_PUSH_BUTTON : 'pushbutton', 
-  ROLE_RADIO_BUTTON : 'pushbutton', # Temporary  
-  ROLE_RADIO_MENU_ITEM : 'pushbutton', # Temporary  
+  ROLE_RADIO_BUTTON : 'radiobutton',  
+  ROLE_RADIO_MENU_ITEM : 'radiomenuitem',   
   ROLE_ROOT_PANE : 'filler', # Temporary  
   ROLE_ROW_HEADER : 'row', # Temporary  
   ROLE_RULER : 'ruler', 
   ROLE_SCROLL_BAR : 'scrollbar', 
   ROLE_SCROLL_PANE : 'scrollpane',
-  ROLE_SECTION : '', # Temporary  
+  ROLE_SECTION : 'section',
   ROLE_SEPARATOR: 'seperator',
   ROLE_SLIDER : 'slider', 
   ROLE_SPIN_BUTTON : 'spinbutton', 
@@ -101,8 +101,8 @@ role_to_icon = {
   ROLE_TABLE_COLUMN_HEADER : 'column', # Temporary
   ROLE_TABLE_ROW_HEADER : 'row', # Temporary
   ROLE_TEAROFF_MENU_ITEM : 'menuitem', # Temporary
-  ROLE_TERMINAL : 'character', # Temporary
-  ROLE_TEXT : 'character', # Temporary
+  ROLE_TERMINAL : 'terminal',
+  ROLE_TEXT : 'text', 
   ROLE_TOGGLE_BUTTON : 'checkbox', # Temporary
   ROLE_TOOL_BAR : 'toolbar', 
   ROLE_TOOL_TIP : 'tooltip',
