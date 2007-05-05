@@ -303,7 +303,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     selection = self.get_selection()
     selection.unselect_all()
     selection.connect('changed', self._onSelectionChanged)
-    selection.set_select_function(self._selectFunc, full=True)
+    selection.set_select_function(self._selectFunc)
     self.connect('row-expanded', self._onExpanded)
     self.event_manager = pyLinAcc.Event.Manager()
     self.event_manager.addClient(self._accEventChildChanged, 
@@ -539,23 +539,17 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     else:
       cellrenderer.set_property('sensitive', True)
 
-  def _selectFunc(self, selection, model, path, is_selected):
+  def _selectFunc(self, path):
     '''
     A selection function. Does not allow his application's node to be selected.
 
-    @param selection: The given selection object.
-    @type selection: L{gtk.TreeSelection}
-    @param model:The treeview's data model.
-    @type model: L{AccessibleModel}
     @param path: The path to the selected row.
     @type path: tuple
-    @param is_selected: True if the path is selected.
-    @type is_selected: boolean
 
     @return: True if the row's accessible is not this app.
     @rtype: boolean
     '''
-    acc = model[path][COL_ACC]
+    acc = self.model[path][COL_ACC]
     return not self.isMyApp(acc)
 
   def _onRowActivated(self, treeview, path, view_column):

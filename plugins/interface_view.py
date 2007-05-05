@@ -137,7 +137,7 @@ class InterfaceViewer(ViewportPlugin):
     self.header_bg = style.bg[gtk.STATE_NORMAL]
     self.relation_bg = style.base[gtk.STATE_NORMAL]
     selection = treeview.get_selection()
-    selection.set_select_function(self._relationSelectFunc, full=True)
+    selection.set_select_function(self._relationSelectFunc)
     show_button = self.main_xml.get_widget('button_relation_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
     selection.connect('changed', self._onViewSelectionChanged, show_button)
@@ -429,7 +429,7 @@ class InterfaceViewer(ViewportPlugin):
       elif isinstance(cellrenderer, gtk.CellRendererPixbuf):
         cellrenderer.set_property('visible', True)
 
-  def _relationSelectFunc(self, selection, model, path, is_selected):
+  def _relationSelectFunc(self, path):
     return not len(path) == 1
 
   def _onRelationShow(self, relations_view, *more_args):
