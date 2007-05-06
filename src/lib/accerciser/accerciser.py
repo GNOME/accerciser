@@ -135,7 +135,7 @@ class MainWindow(Tools):
     Runs the app.
     '''
     try:
-      gtk.main()
+      pyatspi.Registry.start()
     except KeyboardInterrupt:
       self._shutDown()
 
@@ -180,7 +180,7 @@ to take effect.')
     if response_id == gtk.RESPONSE_YES:
       cl = gconf.client_get_default()
       cl.set_bool('/desktop/gnome/interface/accessibility', True)
-    gtk.main_quit()
+    pyatspi.Registry.stop()
 
   def _onRefreshAll(self, widget):
     '''
@@ -248,7 +248,7 @@ to take effect.')
     @type widget: L{gtk.Widget}
     '''
     self._shutDown()
-    gtk.main_quit()
+    pyatspi.Registry.stop()
     
   def _onAbout(self, widget):
     '''

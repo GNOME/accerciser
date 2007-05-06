@@ -1,3 +1,11 @@
+2007-05-05  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py: Implemented sections for accessible, 
+	action, application, component, document, hypertext, image,
+	selection and streamable content.
+	* src/lib/accerciser/accerciser.py: Changed gtk.main to 
+	pyatspi.Registry.start()
+
 2007-05-02  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/api_view.py: Migrated to pyatspi.
