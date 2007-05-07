@@ -46,6 +46,15 @@ class InterfaceViewer(ViewportPlugin):
       _SectionText(glade_xml, self.node),
       _SectionValue(glade_xml, self.node)]
 
+    # Mark all expanders with no associated section classes as unimplemented
+    implemented_sections = [obj.interface_name.lower() for obj in self.sections]
+    vbox_ifaces = glade_xml.get_widget('vbox_ifaces')
+    for expander in vbox_ifaces.get_children():
+      iface_name = expander.name.replace('expander_', '')
+      if iface_name not in implemented_sections:
+        section = _InterfaceSection(glade_xml, self.node, iface_name)
+        section.disable()
+
   def _getInterfaces(self, acc):
     interfaces = []
     for func in [getattr(acc, f) for f in dir(acc) if f.startswith('query')]:
@@ -83,7 +92,8 @@ class _InterfaceSection(object):
   @type interface_name: string
   '''
   interface_name = None
-  def __init__(self, glade_xml, node):
+  def __init__(self, glade_xml, node, interface_name=None):
+    self.interface_name = interface_name or self.interface_name
     self.node = node
     self.expander = \
         glade_xml.get_widget('expander_%s' % self.interface_name.lower())
