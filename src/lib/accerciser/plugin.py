@@ -28,7 +28,7 @@ class Plugin(Tools):
   accessible in the main  treeview.
   @type node: L{Node}
   @ivar acc: The curently selected accessible in the main treeview.
-  @type acc: L{pyLinAcc.Accessible}
+  @type acc: L{Accessibility.Accessible}
   @ivar _handler: The handler id for the L{Node}'s 'accessible_changed' signal
   @type _handler: integer
   '''

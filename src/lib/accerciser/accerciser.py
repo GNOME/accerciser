@@ -211,7 +211,7 @@ to take effect.')
     @param node: The node that emitted the signal.
     @type node: L{Node}
     @param acc: The new accessible that is referenced by the node.
-    @type acc: L{pyLinAcc.Accessible}
+    @type acc: L{Accessibility.Accessible}
     '''
     # Update status bar
     statusbar = self.main_xml.get_widget('statusbar')
@@ -291,7 +291,7 @@ to take effect.')
     global hotkey is pressed to select this accessible.
 
     @param event: The event that is being handled.
-    @type event: L{pyLinAcc.Event}
+    @type event: L{pyatspi.event.Event}
     '''
     if not self.isMyApp(event.source):
       self.last_focused = event.source
@@ -331,7 +331,7 @@ to take effect.')
     key combinations pressed for further processing.
     
    @param event: The event that is being handled.
-    @type event: L{pyLinAcc.Event}
+    @type event: L{pyatspi.event.Event}
     '''
     handled = self.hotkey_manager.hotkeyPress(event.hw_code, event.modifiers)
     event.consume = handled
@@ -341,14 +341,14 @@ to take effect.')
     Gets any child accessible that resides under given desktop coordinates.
 
     @param parent: Top-level accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     @param x: X coordinate.
     @type x: integer
     @param y: Y coordinate.
     @type y: integer
 
     @return: Child accessible at given coordinates, or None.
-    @rtype: L{pyLinAcc.Accessible}
+    @rtype: L{Accessibility.Accessible}
     '''
     container = parent
     while True:

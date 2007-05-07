@@ -7,7 +7,7 @@ accerciser_PYTHON = accerciser.py \
 	node.py \
 	plugin_manager.py \
 	plugin.py \
-	pyLinAcc.zip \
+	pyatspi.zip \
 	tools.py \
 	hotkey_manager.py \
 	__init__.py

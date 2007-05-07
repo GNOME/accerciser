@@ -1,5 +1,25 @@
 2007-05-05  Eitan Isaacson  <eitan@ascender.com>
 
+	* NOTICE: Replaced pyLinAcc copyright notice with pyatspi one.
+	* help/C/accerciser.xml: Replaced pyLinAcc with pyatspi.
+	* help/en_GB/en_GB.po: Replaced pyLinAcc with pyatspi.
+	* help/sv/sv.po: Replaced pyLinAcc with pyatspi.
+	* plugins/script_recorder.py: Replaced pyLinAcc with pyatspi.
+	* src/lib/accerciser/Makefile.am: Replaced pyLinAcc.zip with pyatspi.zip.
+	* src/lib/accerciser/__init__.py: Fall back on zipped pyatspi if
+	not in distro.
+	* src/lib/accerciser/accerciser.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/accessible_treeview.py: Removed pyLinAcc from 
+	epydoc.
+	* src/lib/accerciser/node.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/plugin.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/pyLinAcc.zip: Removed.
+	* src/lib/accerciser/pyatspi.zip: Added.
+	* src/lib/accerciser/script_playback.py: Removed pyLinAcc from epydoc. 
+	* src/lib/accerciser/tools.py: Removed pyLinAcc from epydoc.
+
+2007-05-05  Eitan Isaacson  <eitan@ascender.com>
+
 	* plugins/interface_view.py: Implemented text, value and hyperlink
 	sections. Mark unassociated sections as unimplemented.
 	* plugins/interface_view.glade: Added Hyperlink expander.

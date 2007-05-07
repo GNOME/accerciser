@@ -152,7 +152,6 @@ class ScriptRecorder(ViewportPlugin):
     pass
 
   def _onRecord(self, button):
-    print [a.func for a in pyatspi.Registry.clients.keys() if isinstance(a, PluginMethodWrapper)], 
     if button.get_label() == 'gtk-media-record':
       button.set_label(gtk.STOCK_MEDIA_STOP)
       pyatspi.Registry.registerEventListener(self._onWindowActivate, 
@@ -179,7 +178,7 @@ class ScriptRecorder(ViewportPlugin):
         self._onKeystroke,
         mask=masks,
         kind=(pyatspi.KEY_PRESSED_EVENT,))
-    print [a.func for a in pyatspi.Registry.clients.keys() if isinstance(a, PluginMethodWrapper)]
+
   def _onWindowActivate(self, event):
     if self.isMyApp(event.source):
       return

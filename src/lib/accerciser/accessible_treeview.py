@@ -34,9 +34,9 @@ class AccessibleModel(gtk.TreeStore, Tools):
   that are being viewed. This cuts short on a lot of potential overhead.
 
   @ivar desktop: The desktop accessible. It holds references to all the 
-  application L{pyLinAcc.Accessible}s
-  @type desktop: L{pyLinAcc.Accessible}
-  @ivar acc_cache: A list of L{pyLinAcc.Accessible}s that are currently
+  application L{Accessibility.Accessible}s
+  @type desktop: L{Accessibility.Accessible}
+  @ivar acc_cache: A list of L{Accessibility.Accessible}s that are currently
   resident in the model. This helps with faster searching.
   @type acc_cache: list
   '''
@@ -116,10 +116,10 @@ class AccessibleModel(gtk.TreeStore, Tools):
 
   def isInModel(self, acc):
     '''
-    Checks if the given L{pyLinAcc.Accessible} is resident in the model.
+    Checks if the given L{Accessibility.Accessible} is resident in the model.
 
-    @param acc: The L{pyLinAcc.Accessible} to check.
-    @type acc: L{pyLinAcc.Accessible}
+    @param acc: The L{Accessibility.Accessible} to check.
+    @type acc: L{Accessibility.Accessible}
 
     @return: True if it is in the model.
     @rtype: boolean
@@ -147,12 +147,12 @@ class AccessibleModel(gtk.TreeStore, Tools):
 
   def _prepopLevel(self, parent, iter):
     '''
-    Pre-populate a row. If a L{pyLinAcc.Accessible} of the given row has children,
+    Pre-populate a row. If a L{Accessibility.Accessible} of the given row has children,
     we need to add to it one dummy child row so that the expander will show and
     enable the user to expand it. We populate the children rows at expansion time.
 
     @param parent: The given row's accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     @param iter: Th iter of the row that needs to be pre-populated
     @type iter: L{gtk.TreeIter}
     '''
@@ -166,7 +166,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     Populate a row with children rows, according to the row's accessible's children.
 
     @param parent: The given row's accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     @param iter: Th iter of the row that needs to be populated
     @type iter: L{gtk.TreeIter}
     
@@ -193,7 +193,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     I{Note:} The accessible does not necessarily need to be resident in the model.
     
     @param acc: The accessible we want a path of.
-    @type acc: L{pyLinAcc.Accessible}
+    @type acc: L{Accessibility.Accessible}
     
     @return: The path to the accessible.
     @rtype: tuple
@@ -219,7 +219,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     model fields.
 
     @param accessible: Accessible object
-    @type accessible: pyLinAcc.Accessible
+    @type accessible: L{Accessibility.Accessible}
     @param filled: Should the row be considered populated?
     @type filled: boolean
     @param name: Optional name to use as an override for the name gotten from
@@ -247,14 +247,12 @@ class AccessibleTreeView(gtk.TreeView, Tools):
   updates automatically in response to at-spi children change events.
 
   @ivar desktop: The desktop accessible. It holds references to all the 
-  application L{pyLinAcc.Accessible}s
-  @type desktop: L{pyLinAcc.Accessible}
+  application L{Accessibility.Accessible}s
+  @type desktop: L{Accessibility.Accessible}
   @ivar node: An object with a reference to the currently selected accessible.
   @type node: L{Node}
   @ivar model: The data model of this treeview.
   @type model: L{AccessibleModel}
-  @ivar event_manager: The event manager we use for handling at-spi events.
-  @type event_manager: L{pyLinAcc.Event.Manager}
   '''
   def __init__(self):
     '''
@@ -308,12 +306,6 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
                                            'object:children-changed')
 
-  def destroy(self):
-    '''
-    Overrides superclass's destroy method.
-    Used for explicitly closing the L{pyLinAcc.Event.Manager} or bad things happen.
-    '''
-    gtk.TreeView.destroy(self)
 
   def refreshTopLevel(self):
     '''
@@ -362,7 +354,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     Event handler for "object:children-changed". Updates the treeview accordingly.
     
     @param event: The event which triggered this handler.
-    @type event: L{pyLinAcc.Event}
+    @type event: L{pyatspi.event.Event}
     '''
     if self.isMyApp(event.source):
       # Bad karma
@@ -389,7 +381,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param iter: Th iter of the row that needs a child added. 
     @type iter: L{gtk.TreeIter}
     @param parent: The given row's accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     '''
     old_children = set(self.model.getChildrenAccs(iter))
     new_children = set(list(parent))
@@ -416,7 +408,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     takes wnck a while to load an application's icon at application startup.
 
     @param app: The given application's accessible.
-    @type app: L{pyLinAcc.Accessible}
+    @type app: L{Accessibility.Accessible}
     '''
     path = self.model.getAccPath(app)
     try:
@@ -432,7 +424,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param parent_iter: Th iter of the row that needs a child removed. 
     @type parent_iter: L{gtk.TreeIter}
     @param parent: The given row's accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     '''
     if parent_iter:
       iter = self.model.iter_children(parent_iter)
@@ -498,7 +490,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param node: The L{node} that emitted the signal.
     @type node: L{Node}
     @param acc: The new accessible in the node.
-    @type acc: L{pyLinAcc.Accessible}
+    @type acc: L{Accessibility.Accessible}
     '''
     if self.isMyApp(acc):
       # Bad karma

@@ -25,18 +25,18 @@ class Tools(object):
   @cvar SETTINGS_FILE: The file that contains information we with to persist
   across session.
   @type SETTINGS_FILE: string
-  @ivar my_app_id: Unique L{pyLinAcc.Interfaces.IApplication} ID of current 
+  @ivar my_app_id: Unique L{Accessibility.Application} ID of current 
   instance.
   @type my_app_id: integer
   '''  
 
   def isMyApp(self, acc):
     '''
-    Checks if a given L{pyLinAcc.Accessible} belongs to this current
+    Checks if a given L{Accessibility.Accessible} belongs to this current
     app instance. This is useful for avoiding recursion and such.
 
-    @param acc: The given L{pyLinAcc.Accessible} to check.
-    @type acc: L{pyLinAcc.Accessible}
+    @param acc: The given L{Accessibility.Accessible} to check.
+    @type acc: L{Accessibility.Accessible}
     @return: True if L{acc} is a member of current app instance.
     @rtype: boolean
     '''
