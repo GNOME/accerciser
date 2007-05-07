@@ -27,20 +27,24 @@ class InterfaceViewer(ViewportPlugin):
   plugin_name_localized = _(plugin_name)
   plugin_description = N_('Allows viewing of various interface properties')
   def init(self):
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
-    frame = self.main_xml.get_widget('iface_view_frame')
+    glade_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
+    frame = glade_xml.get_widget('iface_view_frame')
+    self.label_role = glade_xml.get_widget('label_role')
     self.plugin_area.add(frame)
-    self.sections = {
-      'Accessible' : _SectionAccessible(self.main_xml, self.node),
-      'Action' : _SectionAction(self.main_xml, self.node),
-      'Application' : _SectionApplication(self.main_xml, self.node),
-      'Component' : _SectionComponent(self.main_xml, self.node),
-      'Document' : _SectionDocument(self.main_xml, self.node),
-      'Hypertext' : _SectionHypertext(self.main_xml, self.node),
-      'Image' : _SectionImage(self.main_xml, self.node),
-      'Selection' : _SectionSelection(self.main_xml, self.node),
-      'StreamableContent' : _SectionStreamableContent(self.main_xml, self.node),
-      'Table' : _SectionTable(self.main_xml, self.node)}
+    self.sections = [
+      _SectionAccessible(glade_xml, self.node),
+      _SectionAction(glade_xml, self.node),
+      _SectionApplication(glade_xml, self.node),
+      _SectionComponent(glade_xml, self.node),
+      _SectionDocument(glade_xml, self.node),
+      _SectionHyperlink(glade_xml, self.node),
+      _SectionHypertext(glade_xml, self.node),
+      _SectionImage(glade_xml, self.node),
+      _SectionSelection(glade_xml, self.node),
+      _SectionStreamableContent(glade_xml, self.node),
+      _SectionTable(glade_xml, self.node),
+      _SectionText(glade_xml, self.node),
+      _SectionValue(glade_xml, self.node)]
 
   def _getInterfaces(self, acc):
     interfaces = []
@@ -55,12 +59,17 @@ class InterfaceViewer(ViewportPlugin):
     return interfaces
 
   def onAccChanged(self, acc):
+    role = acc.getRoleName()
+    name = acc.name
+    if name:
+      role_name = '%s: %s' % (role, name)
+    else:
+      role_name = role
+    self.label_role.set_markup('<b>%s</b>' % role_name)
     interfaces = self._getInterfaces(acc)
-    for interface_name, section_obj in self.sections.iteritems():
+    for section_obj in self.sections:
       section_obj.disable()
-      print interfaces, interface_name
-      if interface_name in interfaces:
-        print 'populating', interface_name
+      if section_obj.interface_name in interfaces:
         section_obj.enable(acc)
 
   def close(self):
@@ -79,8 +88,8 @@ class _InterfaceSection(object):
     self.expander = \
         glade_xml.get_widget('expander_%s' % self.interface_name.lower())
     self._setExpanderChildrenSensitive(self.expander, False)
-    self.init(glade_xml)
     self.event_listeners = []
+    self.init(glade_xml)
 
   def init(self, glade_xml):
     pass
@@ -393,6 +402,9 @@ class _SectionDocument(_InterfaceSection):
     self.attr_model.clear()
     self.label_locale.set_text('')
 
+class _SectionHyperlink(_InterfaceSection):
+  interface_name = 'Hyperlink'
+
 class _SectionHypertext(_InterfaceSection):
   interface_name = 'Hypertext'
   def init(self, glade_xml):
@@ -634,12 +646,12 @@ class _SectionTable(_InterfaceSection):
     self.columns_label.set_text('')
     self.srows_label.set_text('')
     self.scolumns_label.set_text('')
-    self.row_ext.set_text('')
-    self.col_ext.set_text('')
-    self.col_ext.set_text('')
-    self.hrow_button.set_text('')
-    self.hcol_button.set_text('')
-    self.cell_button.set_text('')
+    self.row_ext_label.set_text('')
+    self.col_ext_label.set_text('')
+    self.col_ext_label.set_text('')
+    self.hrow_button.set_label('')
+    self.hcol_button.set_label('')
+    self.cell_button.set_label('')
 
 
   def _accEventTable(self, event):
@@ -673,3 +685,270 @@ class _SectionTable(_InterfaceSection):
         
   def _onTableButtonClicked(self, button):
     self.node.update(button.get_data('acc'))
+
+class _SectionText(_InterfaceSection):
+  interface_name = 'Text'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    # configure text attribute tree view
+    treeview = glade_xml.get_widget('treeview_text_attr')
+    self.attr_model = gtk.ListStore(str, str)
+    treeview.set_model(self.attr_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
+
+    self.offset_spin = glade_xml.get_widget('spinbutton_text_offset')
+    self.text_view = glade_xml.get_widget('textview_text')
+    self.text_buffer = self.text_view.get_buffer()
+    self.toggle_defaults = glade_xml.get_widget('checkbutton_text_defaults')
+    self.label_start = glade_xml.get_widget('label_text_attr_start')
+    self.label_end = glade_xml.get_widget('label_text_attr_end')
+
+    self.text_buffer.connect('mark-set', self._onTextMarkSet)
+
+    mark = self.text_buffer.create_mark('attr_mark', 
+                                        self.text_buffer.get_start_iter(), True)
+    mark.set_visible(True)
+
+    self.text_buffer.create_tag('attr_region', foreground='red')
+
+    self.text_buffer.connect('modified-changed', 
+                             self._onTextModified)
+    self.text_buffer.connect('notify::cursor-position', 
+                             self._onTextCursorMove)
+
+    self.text_buffer.set_modified(False)
+    self._text_insert_handler = self.text_buffer.connect('insert-text', 
+                                                         self._onITextInsert)
+    self._text_delete_handler = self.text_buffer.connect('delete-range', 
+                                                         self._onITextDelete)
+
+    # Initialize fifos to help eliminate the viscous cycle of signals.
+    # It would be nice if we could just block/unblock it like in gtk, but
+    # since it is IPC, asynchronous and not atomic, we are forced to do this.
+    self.outgoing_calls = {'itext_insert': self.CallCache(),
+                           'itext_delete': self.CallCache()}
+
+  def populateUI(self, acc):
+    self.offset_spin.set_value(0)
+
+    ti = acc.queryText()
+
+    text = ti.getText(0, ti.characterCount)
+    for handler_id in (self._text_delete_handler,
+                       self._text_insert_handler):
+      self.text_buffer.handler_block(handler_id)
+    self.text_buffer.set_text(text)
+    for handler_id in (self._text_delete_handler,
+                       self._text_insert_handler):
+      self.text_buffer.handler_unblock(handler_id)
+
+    self.offset_spin.get_adjustment().upper = ti.characterCount
+
+    self.popTextAttr(offset=0)
+
+    try:
+      eti = acc.queryEditableText()
+    except:
+      eti = None
+
+    expander_label = self.expander.get_label_widget()
+    label_text = expander_label.get_label()
+    label_text.replace(_(' <i>(Editable)</i>'),'')
+    if eti:
+      label_text += _(' <i>(Editable)</i>')
+      self.text_view.set_editable(True)
+    else:
+      self.text_view.set_editable(False)
+    expander_label.set_label(label_text)
+
+    self.registerEventListener(self._accEventText, 
+                               'object:text-changed')
+
+  def clearUI(self):
+    self.offset_spin.set_value(0)
+    self.label_start.set_text('')
+    self.label_end.set_text('')
+    self.text_buffer.set_text('')
+    self.attr_model.clear()
+
+  def _attrStringToDict(self, attr_string):
+    if not attr_string:
+      return {}
+    attr_dict = {}
+    for attr_pair in attr_string.split('; '):
+      key, value = attr_pair.split(':')
+      attr_dict[key] = value
+    return attr_dict
+
+  def _onTextModified(self, text_buffer):
+    self.offset_spin.get_adjustment().upper = text_buffer.get_char_count()
+    text_buffer.set_modified(False)
+
+  def _onTextMarkSet(self, text_buffer, iter, text_mark):
+    self.popTextAttr()
+
+  def _onTextSpinnerChanged(self, spinner):
+    iter = self.text_buffer.get_iter_at_offset(int(self.offset_spin.get_value()))
+    self.text_buffer.move_mark_by_name('attr_mark', iter)    
+
+  def _onDefaultsToggled(self, toggle_button):
+    self.popTextAttr()
+
+  def popTextAttr(self, offset=None):
+    try:
+      ti = self.node.acc.queryText()
+    except:
+      return
+
+    if offset is None:
+      mark = self.text_buffer.get_mark('attr_mark')
+      iter = self.text_buffer.get_iter_at_mark(mark)
+      offset = iter.get_offset()
+
+    show_default = self.toggle_defaults.get_active()
+    attr, start, end = ti.getAttributes(offset)
+    if show_default:
+      def_attr = ti.getDefaultAttributes()
+      attr_dict = self._attrStringToDict(def_attr)
+      attr_dict.update(self._attrStringToDict(attr))
+    else:
+      attr_dict = self._attrStringToDict(attr)
+
+    attr_list = attr_dict.keys()
+    attr_list.sort()
+
+    self.attr_model.clear()
+    for attr in attr_list:
+      self.attr_model.append([attr, attr_dict[attr]])
+
+    self.text_buffer.remove_tag_by_name(
+      'attr_region', 
+      self.text_buffer.get_start_iter(),
+      self.text_buffer.get_end_iter())
+    self.text_buffer.apply_tag_by_name(
+      'attr_region',
+      self.text_buffer.get_iter_at_offset(start),
+      self.text_buffer.get_iter_at_offset(end))
+                                  
+    self.label_start.set_markup('<i>Start: %d</i>' % start)
+    self.label_end.set_markup('<i>End: %d</i>' % end)
+
+  def _onTextViewPressed(self, widget, event):
+     if event.button != 1:
+        return
+
+     x, y = event.get_coords()
+     x, y = self.text_view.window_to_buffer_coords(gtk.TEXT_WINDOW_WIDGET,
+                                                   int(x), int(y))
+     iter = self.text_view.get_iter_at_location(x, y)
+     
+     self.offset_spin.set_value(iter.get_offset())
+
+  def _onTextCursorMove(self, text_buffer, param_spec):
+    self.offset_spin.set_value(text_buffer.get_property('cursor-position'))
+
+  def _accEventText(self, event):
+     if self.node.acc != event.source:
+        return
+
+     if event.type.major == 'text-changed':
+        text_iter = self.text_buffer.get_iter_at_offset(event.detail1)
+        if event.type.minor == 'insert':
+           call = (event.detail1, event.any_data, event.detail2)
+           if self.outgoing_calls['itext_insert'].isCached(call):
+              return
+           self.text_buffer.handler_block(self._text_insert_handler)
+           self.text_buffer.insert(text_iter, event.any_data)
+           self.text_buffer.handler_unblock(self._text_insert_handler)
+           
+        elif event.type.minor == 'delete':
+           call = (event.detail1, event.detail2)
+           if self.outgoing_calls['itext_delete'].isCached(call):
+              return
+           text_iter_end = \
+               self.text_buffer.get_iter_at_offset(event.detail1 + event.detail2)
+           self.text_buffer.handler_block(self._text_delete_handler)
+           self.text_buffer.delete(text_iter, text_iter_end)
+           self.text_buffer.handler_unblock(self._text_delete_handler)
+     
+  def _onITextInsert(self, text_buffer, iter, text, length):
+    try:
+      eti = self.node.acc.queryEditableText()
+    except:
+      return
+
+    call = (iter.get_offset(), text, length)
+    
+    self.outgoing_calls['itext_insert'].append(call)
+    eti.insertText(*call)
+
+  def _onITextDelete(self, text_buffer, start, end):
+    try:
+      eti = self.node.acc.queryEditableText()
+    except:
+      return
+
+    call = (start.get_offset(), end.get_offset())
+    
+    self.outgoing_calls['itext_delete'].append(call)
+    eti.deleteText(*call)
+
+  def _onTextFocusChanged(self, text_view, event):
+    mark = self.text_buffer.get_mark('attr_mark')
+    mark.set_visible(not event.in_)
+      
+  class CallCache(list):
+    def isCached(self, obj):
+      if obj in self:
+        self.remove(obj)
+        return True
+      else:
+        return False
+
+class _SectionValue(_InterfaceSection):
+  interface_name = 'Value'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    self.spinbutton = glade_xml.get_widget('spinbutton_value')
+    self.label_max = glade_xml.get_widget('label_value_max')
+    self.label_min = glade_xml.get_widget('label_value_min')
+    self.label_inc = glade_xml.get_widget('label_value_inc')
+    self.registerEventListener(self._accEventValue, 
+                               'object:value-changed')
+    
+  def populateUI(self, acc):
+    vi = acc.queryValue()
+    self.label_max.set_text(str(vi.maximumValue))
+    self.label_min.set_text(str(vi.minimumValue))
+    self.label_inc.set_text(str(vi.minimumIncrement))
+
+    minimumIncrement = vi.minimumIncrement
+    digits = 0
+
+    while minimumIncrement - int(minimumIncrement) != 0:
+      digits += 1
+      minimumIncrement *= 10
+
+    self.spinbutton.set_range(vi.minimumValue, vi.maximumValue)
+    self.spinbutton.set_value(vi.currentValue)
+    self.spinbutton.set_digits(digits)
+   
+  def _onValueSpinnerChange(self, widget):
+    vi = self.node.acc.queryValue()
+    vi.currentValue = widget.get_value()
+
+  def _accEventValue(self, event):
+    if self.node.acc != event.source:
+      return
+    vi = self.node.acc.queryValue()
+    if self.spinbutton.get_value() != vi.currentValue:
+      self.spinbutton.set_value(vi.currentValue)
