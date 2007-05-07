@@ -39,7 +39,8 @@ class InterfaceViewer(ViewportPlugin):
       'Hypertext' : _SectionHypertext(self.main_xml, self.node),
       'Image' : _SectionImage(self.main_xml, self.node),
       'Selection' : _SectionSelection(self.main_xml, self.node),
-      'StreamableContent' : _SectionStreamableContent(self.main_xml, self.node)}
+      'StreamableContent' : _SectionStreamableContent(self.main_xml, self.node),
+      'Table' : _SectionTable(self.main_xml, self.node)}
 
   def _getInterfaces(self, acc):
     interfaces = []
@@ -594,3 +595,81 @@ class _SectionStreamableContent(_InterfaceSection):
   
   def clearUI(self):
     self.streams_model.clear()
+
+class _SectionTable(_InterfaceSection):
+  interface_name = 'Table'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    self.selected_frame = glade_xml.get_widget('selected_cell_frame')
+    self.caption_label = glade_xml.get_widget('table_caption_label')
+    self.summary_label = glade_xml.get_widget('table_summary_label')
+    self.rows_label = glade_xml.get_widget('table_rows_label')
+    self.columns_label = glade_xml.get_widget('table_columns_label')
+    self.srows_label = glade_xml.get_widget('table_srows_label')
+    self.scolumns_label = glade_xml.get_widget('table_scolumns_label')
+    self.row_ext_label = glade_xml.get_widget('table_row_extents')
+    self.col_ext_label = glade_xml.get_widget('table_column_extents')
+    self.col_ext_label = glade_xml.get_widget('table_column_extents')
+    self.hrow_button = glade_xml.get_widget('table_hrow_button')
+    self.hcol_button = glade_xml.get_widget('table_hcol_button')
+    self.cell_button = glade_xml.get_widget('table_cell_button')
+
+  def populateUI(self, acc):
+    ti = acc.queryTable()
+    self.selected_frame.set_sensitive(False)
+    for attr, label in [(ti.caption, self.caption_label),
+                        (ti.summary, self.summary_label),
+                        (ti.nRows, self.rows_label),
+                        (ti.nColumns, self.columns_label),
+                        (ti.nSelectedRows, self.srows_label),
+                        (ti.nSelectedColumns, self.scolumns_label)]:
+      label.set_text(str(attr))
+    self.registerEventListener(self._accEventTable,
+                               'object:active-descendant-changed')
+
+  def clearUI(self):
+    self.caption_label.set_text('')
+    self.summary_label.set_text('')
+    self.rows_label.set_text('')
+    self.columns_label.set_text('')
+    self.srows_label.set_text('')
+    self.scolumns_label.set_text('')
+    self.row_ext.set_text('')
+    self.col_ext.set_text('')
+    self.col_ext.set_text('')
+    self.hrow_button.set_text('')
+    self.hcol_button.set_text('')
+    self.cell_button.set_text('')
+
+
+  def _accEventTable(self, event):
+    if self.node.acc != event.source:
+      return
+
+    acc = event.source
+    ti = acc.queryTable()
+    self.selected_frame.set_sensitive(True)
+    is_cell, row, column, rextents, cextents, selected = \
+        ti.getRowColumnExtentsAtIndex(event.any_data.getIndexInParent())
+
+    for attr, label in [(rextents, self.row_ext_label),
+                             (cextents, self.col_ext_label),
+                             (ti.nSelectedRows, self.srows_label),
+                             (ti.nSelectedColumns, self.scolumns_label)]:
+      label.set_text(str(attr))
+
+    for desc, acc, button in [(ti.getRowDescription(row), 
+                               ti.getRowHeader(row),
+                               self.hrow_button),
+                              (ti.getColumnDescription(column), 
+                               ti.getColumnHeader(column),
+                               self.hcol_button),
+                              ('%s (%s, %s)' % (event.any_data, row, column), 
+                               event.any_data,
+                               self.cell_button)]:
+      button.set_label(str(desc or '<no description>'))
+      button.set_sensitive(bool(acc))
+      button.set_data('acc', acc)
+        
+  def _onTableButtonClicked(self, button):
+    self.node.update(button.get_data('acc'))
