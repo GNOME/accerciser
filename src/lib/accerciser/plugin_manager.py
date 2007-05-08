@@ -31,7 +31,12 @@ class PluginView(gtk.Notebook):
   __gsignals__ = {'new_view' : 
                   (gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, 
-                   (gobject.TYPE_OBJECT,))}
+                   (gobject.TYPE_OBJECT,)),
+                  'tab_popup_menu' : 	 
+                  (gobject.SIGNAL_RUN_FIRST, 	 
+                   gobject.TYPE_NONE, 	 
+                   (gobject.TYPE_PYOBJECT, 	 
+                    gobject.TYPE_OBJECT))}
   TARGET_PLUGINVIEW = 0
   TARGET_ROOTWIN = 1
 
@@ -42,8 +47,42 @@ class PluginView(gtk.Notebook):
     self.set_group_id(PLUGIN_NOTEBOOK_GROUP)
     self.connect('drag_end', self._onDragEnd)
     self.connect('drag_data_get', self._onDragDataGet)
+    self.connect('key-press-event', self._onKeyPress)
+    self.connect('button-press-event', self._onButtonPress)
     self.dest_type = None
     
+  def _onButtonPress(self, nb, event):
+    plugin = self._getClickedPlugin(event.x_root, event.y_root)
+    if plugin and event.button == 3:
+      self.emit('tab_popup_menu', event, plugin)
+
+  def _onKeyPress(self, nb, event):
+    if event.keyval == gtk.keysyms.Menu and \
+          self.get_property('has-focus'):
+      page_num = self.get_current_page()
+      self.emit('tab_popup_menu', event, self.get_nth_page(page_num))
+
+  def _getClickedPlugin(self, event_x, event_y):
+    for child in self.get_children():
+      tab = self.get_tab_label(child)
+      if tab != None and tab.flags() & gtk.MAPPED:
+        x, y, w, h = self.getTabAlloc(tab)
+        if event_x >= x and \
+              event_x <= x + w and \
+              event_y >= y and \
+              event_y <= y + h:
+          return child
+    return None
+
+  def getTabAlloc(self, widget):
+    gdk_window = widget.window
+    origin_x, origin_y = gdk_window.get_origin()
+    x, y, width, height = widget.get_allocation()
+    if widget.flags() & gtk.NO_WINDOW:
+      origin_x += x
+      origin_y += y
+    return origin_x, origin_y, width, height
+
   def _onDragDataGet(self, widget, context, selection_data, info, time):
     self.dest_type = info
     selection_data.set(selection_data.target, 8, '')
@@ -403,8 +442,21 @@ class PluginManager(gtk.ListStore, Tools):
 
   def _connectSignals(self, pluginview):
     pluginview.connect('new_view', self._onNewPluginView)
+    pluginview.connect('tab_popup_menu', self._onTabPopupMenu)
     pluginview.connect('page_added', self._onAddedPluginToView)
     pluginview.connect('page_reordered', self._onReorderedPluginInView)
+
+  def _onTabPopupMenu(self, view, event, plugin): 	 
+    menu = PluginViewMenu(self, plugin, view.get_toplevel())
+    if hasattr(event, 'button'):
+      menu.popup(None, None, None, event.button, event.time)
+    else:
+      tab = view.get_tab_label(plugin)
+      x, y, w, h = view.getTabAlloc(tab)
+      rect = gtk.gdk.Rectangle(x, y, w, h)
+      menu.popup(None, None, 
+                 lambda m, r: (r.x+r.width/2, r.y+r.height/2, True), 
+                 0, event.time, rect)
 
   def _saveTabOrder(self, view):
     plugin_layout = []
