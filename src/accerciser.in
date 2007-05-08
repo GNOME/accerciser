@@ -13,6 +13,8 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, os
+# Load gail module no matter what the desktop-wide settings are.
+os.environ['GTK_MODULES'] = 'gail:atk-bridge'
 # make the ~/.accerciser directory part of the path to aid user imports
 sys.path.append(os.path.join(os.environ['HOME'], '.accerciser'))
 # We can't rely on prefix if we're installed by relocated RPM. Instead, we 

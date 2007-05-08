@@ -58,10 +58,6 @@ class MainWindow(Tools):
     # mark the root of this window with its PID so we can easily identify it
     # as this app
     root_atk = atk.get_root()
-    if not root_atk:
-      # Gail might have been enabled in gconf, but a logout is still needed.
-      self._showNoGailDialog()
-      return
     root_atk.set_description(str(os.getpid()))
 
     # Start hotkey manager
@@ -134,12 +130,14 @@ class MainWindow(Tools):
     '''
     Runs the app.
     '''
+    # Tell user if desktop accessibility is disabled.
+    self._showNoA11yDialog()
     try:
       pyatspi.Registry.start()
     except KeyboardInterrupt:
       self._shutDown()
 
-  def _showNoGailDialog(self):
+  def _showNoA11yDialog(self):
     '''
     Shows a dialog with a relevant message when desktop accessibility seems to
     be disabled. If desktop accessibility is disabled in gconf, prompts the
@@ -147,40 +145,24 @@ class MainWindow(Tools):
     '''
     cl = gconf.client_get_default()
     if not cl.get_bool('/desktop/gnome/interface/accessibility'):
-      message = _('Accerciser could not see the applications on your desktop. \
-You must enable desktop accessibility to fix this problem. \
-Do you want to enable it now?')
-      secondary = 'Note: Changes only take effect after logout.'
-      buttons = gtk.BUTTONS_YES_NO
-    else:
-      message = _('Desktop accessibility is still not functioning \
-although it has been enabled.')
-      secondary = \
-          _('Note: You must logout for desktop accessibility options \
-to take effect.')
-      buttons = gtk.BUTTONS_CLOSE
-    dialog = gtk.MessageDialog(type=gtk.MESSAGE_ERROR,
-                               buttons=buttons, 
-                               message_format=message)
-    dialog.format_secondary_text(secondary)
-    
-    dialog.connect('response', self._onNoGailResponse)
-    dialog.show()
-
-  def _onNoGailResponse(self, dialog, response_id):
-    '''
-    Callback for the 'response' signal emited from the "no gail" dialog.
-    if the response is 'yes', enable accessibility in gconf.
-
-    @param dialog: The dialog that emited the signal.
-    @type dialog: L{gtk.MessageDialog}
-    @param response_id: Response type that was received.
-    @type response_id: integer
-    '''
-    if response_id == gtk.RESPONSE_YES:
-      cl = gconf.client_get_default()
-      cl.set_bool('/desktop/gnome/interface/accessibility', True)
-    pyatspi.Registry.stop()
+      message = _('Accerciser could not see the applications on your desktop.'
+                  'You must enable desktop accessibility to fix this problem.'
+                  'Do you want to enable it now?')
+      dialog = gtk.MessageDialog(self.window,type=gtk.MESSAGE_ERROR,
+                                 buttons=gtk.BUTTONS_YES_NO, 
+                                 message_format=message)
+      response_id = dialog.run()
+      dialog.destroy()
+      if response_id == gtk.RESPONSE_YES:
+        cl = gconf.client_get_default()
+        cl.set_bool('/desktop/gnome/interface/accessibility', True)
+        dialog = gtk.MessageDialog(
+          self.window,
+          type=gtk.MESSAGE_INFO,
+          buttons=gtk.BUTTONS_OK, 
+          message_format=_('Note: Changes only take effect after logout.'))
+        dialog.run()
+        dialog.destroy()
 
   def _onRefreshAll(self, widget):
     '''
