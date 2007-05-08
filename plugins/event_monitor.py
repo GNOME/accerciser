@@ -65,7 +65,7 @@ class EventMonitor(ViewportPlugin):
       events.extend(sub_events)
     events = list(set([event.strip(':') for event in events]))
     events.sort()
-    self._appendChildren(None, '', 0, events)
+    gobject.idle_add(self._appendChildren, None, '', 0, events)
 
   def onAccChanged(self, acc):
     pass
@@ -113,7 +113,8 @@ class EventMonitor(ViewportPlugin):
         iter = self.events_model.append(parent_iter, 
                                         [event.split(':')[-1],
                                          event, False, False])
-        self._appendChildren(iter, event, level + 1, events)
+        gobject.idle_add(self._appendChildren, iter, event, level + 1, events)
+    return False
         
   def _onToggled(self, renderer_toggle, path):
     iter = self.events_model.get_iter(path)
