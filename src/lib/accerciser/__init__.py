@@ -1,5 +1,5 @@
 '''
-Configures the path to pyLinAcc. Exposes all other package contents.
+Configures the path to pyatspi. Exposes all other package contents.
 
 @author: Eitan Isaacson
 @author: Peter Parente
@@ -12,8 +12,11 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, os
-# add pyLinAcc zip file to the path
-sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'pyLinAcc.zip'))
+# If pyatspi not installed seperately, add pyatspi zip file to the path
+try:
+  import pyatspi
+except ImportError:
+  sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'pyatspi.zip'))
 
 def main():
   from accerciser import MainWindow

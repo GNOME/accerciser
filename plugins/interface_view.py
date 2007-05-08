@@ -2,8 +2,8 @@
 AT-SPI interface viewer plugin.
 
 @author: Eitan Isaacson
-@organization: IBM Corporation
-@copyright: Copyright (c) 2007 IBM Corporation
+@organization: Mozilla Foundation
+@copyright: Copyright (c) 2007 Mozilla Foundation
 @license: BSD
 
 All rights reserved. This program and the accompanying materials are made 
@@ -11,7 +11,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import pyLinAcc
+import pyatspi
 import gtk
 import os.path
 import pango
@@ -22,323 +22,104 @@ from accerciser.i18n import _, N_
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
                           'interface_view.glade')
 
-class CallCache(list):
-   def isCached(self, obj):
-      if obj in self:
-         self.remove(obj)
-         return True
-      else:
-         return False
-
 class InterfaceViewer(ViewportPlugin):
   plugin_name = N_('Interface Viewer')
   plugin_name_localized = _(plugin_name)
   plugin_description = N_('Allows viewing of various interface properties')
   def init(self):
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
-    frame = self.main_xml.get_widget('iface_view_frame')
+    glade_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
+    frame = glade_xml.get_widget('iface_view_frame')
+    self.label_role = glade_xml.get_widget('label_role')
     self.plugin_area.add(frame)
-    self.role = self.main_xml.get_widget('role')
+    self.sections = [
+      _SectionAccessible(glade_xml, self.node),
+      _SectionAction(glade_xml, self.node),
+      _SectionApplication(glade_xml, self.node),
+      _SectionComponent(glade_xml, self.node),
+      _SectionDocument(glade_xml, self.node),
+      _SectionHyperlink(glade_xml, self.node),
+      _SectionHypertext(glade_xml, self.node),
+      _SectionImage(glade_xml, self.node),
+      _SectionSelection(glade_xml, self.node),
+      _SectionStreamableContent(glade_xml, self.node),
+      _SectionTable(glade_xml, self.node),
+      _SectionText(glade_xml, self.node),
+      _SectionValue(glade_xml, self.node)]
 
-    self.main_xml.signal_autoconnect(self)
-    self._initTreeViews()
-
-    vbox_expanders = self.main_xml.get_widget('vbox_ifaces')
-    for expander in vbox_expanders.get_children():
-      if isinstance(expander, gtk.Expander):
-        expander.connect('notify::expanded', self._onIfaceExpanded)
-        expander.connect('focus-in-event', self._onScrollToFocus)
-
-    self.event_manager = pyLinAcc.Event.Manager()
-    self.event_manager.addClient(self._accEventText, 
-                                 'object:text-changed')
-    self.event_manager.addClient(self._accEventValue, 
-                                 'object:property-change:accessible-value')
-    self.event_manager.addClient(self._accEventState, 
-                                 'object:state-changed')
-    self.event_manager.addClient(self._accEventComponent, 
-                                 'object:bounds-changed',
-                                 'object:visible-data-changed')
-    self.event_manager.addClient(self._accEventTable,
-                                 'object:active-descendant-changed')
-    # Initialize fifos to help eliminate the viscous cycle of signals.
-    # It would be nice if we could just block/unblock it like in gtk, but
-    # since it is IPC, asynchronous and not atomic, we are forced to do this.
-    self.outgoing_calls = {'itext_insert': CallCache(),
-                           'itext_delete': CallCache()}
-    self._textInit()
-  
-  def close(self):
-    self.event_manager.close()
-
-
-  def _initTreeViews(self):
-    # configure text attribute tree view
-    treeview = self.main_xml.get_widget('treeview_text_attr')
-    model = gtk.ListStore(str, str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-
-    # configure accessible attributes tree view
-    treeview = self.main_xml.get_widget('accattrib_view')
-    model = gtk.ListStore(str, str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-
-    # configure document attributes tree view
-    treeview = self.main_xml.get_widget('docattrib_view')
-    model = gtk.ListStore(str, str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-
-    # configure relations tree view
-    treeview = self.main_xml.get_widget('relations_view')
-    model = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    crp = gtk.CellRendererPixbuf()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crp, False)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crp, pixbuf=0)
-    tvc.set_attributes(crt, text=1)
-    tvc.set_cell_data_func(crt, self._relationCellDataFunc)
-    tvc.set_cell_data_func(crp, self._relationCellDataFunc)
-    treeview.append_column(tvc)
-    # preset the different bg colors
-    style = gtk.Style ()
-    self.header_bg = style.bg[gtk.STATE_NORMAL]
-    self.relation_bg = style.base[gtk.STATE_NORMAL]
-    selection = treeview.get_selection()
-    selection.set_select_function(self._relationSelectFunc)
-    show_button = self.main_xml.get_widget('button_relation_show')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
-
-    # configure selection tree view
-    treeview = self.main_xml.get_widget('treeview_selection')
-    model = gtk.ListStore(gtk.gdk.Pixbuf, str, object)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    crp = gtk.CellRendererPixbuf()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crp, False)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crp, pixbuf=0)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-    # connect selection changed signal
-    selection = treeview.get_selection()
-    show_button = self.main_xml.get_widget('button_selection_clear')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
-    selection.connect("changed", self._onSelectionSelected)
-
-    # configure states tree view
-    treeview = self.main_xml.get_widget('states_view')
-    model = gtk.ListStore(str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-
-    # configure links tree view
-    treeview = self.main_xml.get_widget('treeview_links')
-    # It's a treestore because of potential multiple anchors
-    model = gtk.TreeStore(int, # Link index
-                          str, # Name
-                          str, # Description
-                          str, # URI
-                          int, # Start offset
-                          int, # End offset
-                          object) # Anchor object
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Name'))
-    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
-    tvc.set_resizable(True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('URI'))
-    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
-    tvc.set_resizable(True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=3)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Start'))
-    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
-    tvc.set_resizable(True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=4)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('End'))
-    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
-    tvc.set_resizable(True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=5)
-    treeview.append_column(tvc)    
-    selection = treeview.get_selection()
-    show_button = self.main_xml.get_widget('button_hypertext_show')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
-
-    # configure actions tree view
-    treeview = self.main_xml.get_widget('treeview_action')
-    model = gtk.ListStore(int, str, str, str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Name'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Description'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=2)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Key binding'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=3)
-    treeview.append_column(tvc)
-    selection = treeview.get_selection()
-    show_button = self.main_xml.get_widget('button_action_do')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
-
-    # configure streamable content tree view
-    treeview = self.main_xml.get_widget('treeview_streams')
-    model = gtk.ListStore(str, str)
-    treeview.set_model(model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Content type'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('URI'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
-
-  def _onScrollToFocus(self, widget, event):
-    '''
-    Scrolls a focused widget in a settings panel into view.
-    
-    @param widget: Widget that has the focus
-    @type widget: gtk.Widget
-    @param direction: Direction constant, ignored
-    @type direction: integert
-    '''
-    x, y = widget.translate_coordinates(self.viewport, 0, 0)
-    w, h = widget.size_request()
-    vw, vh = self.allocation.width, self.allocation.height
-
-    adj = self.viewport.get_vadjustment()
-    if y+h > vh:
-      adj.value += min((y+h) - vh + 3, y)
-    elif y < 0:
-      adj.value = max(adj.value + y, adj.lower)
+    # Mark all expanders with no associated section classes as unimplemented
+    implemented_sections = [obj.interface_name.lower() for obj in self.sections]
+    vbox_ifaces = glade_xml.get_widget('vbox_ifaces')
+    for expander in vbox_ifaces.get_children():
+      iface_name = expander.name.replace('expander_', '')
+      if iface_name not in implemented_sections:
+        section = _InterfaceSection(glade_xml, self.node, iface_name)
+        section.disable()
 
   def _getInterfaces(self, acc):
-    ints = []
-    for func in (f for f in pyLinAcc.Interfaces.__dict__.values() 
-                 if callable(f) and f.func_name.startswith('I')):
+    interfaces = []
+    for func in [getattr(acc, f) for f in dir(acc) if f.startswith('query')]:
       try:
-        i = func(acc)
-      except Exception:
-        pass
+        func()
+      except:
+        continue
       else:
-        ints.append(func.func_name[1:].lower())
-    ints.sort()
-    return ints
-
-  def _getAllInterfaces(self):
-     all_ifaces = filter(lambda s: s.startswith('I'),
-                         dir(pyLinAcc.Interfaces))
-     return [iface[1:].lower() for iface in all_ifaces]
-
+        interfaces.append(func.func_name.replace('query', ''))
+    interfaces.sort()
+    return interfaces
 
   def onAccChanged(self, acc):
-    '''
-    Updates all GUI fields with strings representing the properties of the 
-    selected accessible at the time it was selected. Does not automatically
-    update when the accessible changes.
-    '''
-    try:
-      name = acc.name
-    except:
-      name = ''
-    try:
-      role = acc.getRoleName()
-    except Exception:
-      role = ''
-    try:
-      rels = [pyLinAcc.relationToString(r.getRelationType()) 
-              for r in acc.getRelationSet()]
-      rels.sort()
-    except Exception:
-      rels = []
-      
-    available_ifaces = self._getInterfaces(acc)
-    
-    all_ifaces = self._getAllInterfaces()
-
-    for iface in all_ifaces:
-      expander = self.main_xml.get_widget('expander_'+iface)
-      if expander is None:
-        continue
-      if iface in available_ifaces:
-        self._setExpanderChildrenSensitive(expander, True)
-        if expander.get_expanded():
-          try:
-            pop_func = getattr(self, 'popIface'+iface.capitalize())
-          except AttributeError:
-            pass
-          pop_func(acc)
-      else:
-        self._setExpanderChildrenSensitive(expander, False)
-        
+    role = acc.getRoleName()
+    name = acc.name
     if name:
-      role_name = ': '.join((role, name))
+      role_name = '%s: %s' % (role, name)
     else:
       role_name = role
-      
-    self.role.set_markup('<span size="large" weight="bold">%s</span>' % role_name)
-    
+    self.label_role.set_markup('<b>%s</b>' % role_name)
+    interfaces = self._getInterfaces(acc)
+    for section_obj in self.sections:
+      section_obj.disable()
+      if section_obj.interface_name in interfaces:
+        section_obj.enable(acc)
+
+  def close(self):
+    pass
+
+class _InterfaceSection(object):
+  '''
+  An abstract class that defines the interface for interface sections.
+
+  @cvar interface_name: Name of interface this section is for.
+  @type interface_name: string
+  '''
+  interface_name = None
+  def __init__(self, glade_xml, node, interface_name=None):
+    self.interface_name = interface_name or self.interface_name
+    self.node = node
+    self.expander = \
+        glade_xml.get_widget('expander_%s' % self.interface_name.lower())
+    self._setExpanderChildrenSensitive(self.expander, False)
+    self.event_listeners = []
+    self.init(glade_xml)
+
+  def init(self, glade_xml):
+    pass
+
+  def enable(self, acc):
+    self._setExpanderChildrenSensitive(self.expander, True)
+    self.populateUI(acc)
+
+  def populateUI(self, acc):
+    pass
+
+  def disable(self):
+    self._setExpanderChildrenSensitive(self.expander, False)
+    for client, event_names in self.event_listeners:
+      pyatspi.Registry.deregisterEventListener(client, *event_names)
+    self.clearUI()
+
+  def clearUI(self):
+    pass
+
   def _setExpanderChildrenSensitive(self, expander, sensitive):
     label = expander.get_label_widget()
     label_text = label.get_label()
@@ -350,17 +131,6 @@ class InterfaceViewer(ViewportPlugin):
     for child in expander.get_children():
       child.set_sensitive(sensitive)
 
-  def _onIfaceExpanded(self, expander, param_spec):
-    if not expander.get_expanded(): return
-    iface = expander.name.replace('expander_', '')
-    available_ifaces = self._getInterfaces(self.acc)
-    if iface not in available_ifaces: return
-    try:
-      pop_func = getattr(self, 'popIface'+iface.capitalize())
-    except AttributeError:
-      return
-    pop_func(self.acc)
-
   def _isSelectedInView(self, selection):
     model, rows = selection.get_selected_rows()
     something_is_selected = bool(rows)
@@ -369,49 +139,100 @@ class InterfaceViewer(ViewportPlugin):
   def _onViewSelectionChanged(self, selection, *widgets):
     for widget in widgets:
       widget.set_sensitive(self._isSelectedInView(selection))
+      
+  def registerEventListener(self, client, *event_names):
+    pyatspi.Registry.registerEventListener(client, *event_names)
+    self.event_listeners.append((client, event_names))
 
-##############################
-# Accessible Interface
-##############################
+class _SectionAccessible(_InterfaceSection):
+  '''
+  A class that populates an accessible interface section.
+  '''
+  interface_name = 'Accessible'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    # configure states tree view
+    treeview = glade_xml.get_widget('states_view')
+    self.states_model = gtk.ListStore(str)
+    treeview.set_model(self.states_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
 
-  def popIfaceAccessible(self,acc):
-    states_view = self.main_xml.get_widget('states_view')
-    states_model = states_view.get_model()
-    accattrib_view = self.main_xml.get_widget('accattrib_view')
-    attrib_model = accattrib_view.get_model()
-    relations_view = self.main_xml.get_widget('relations_view')
-    relations_model = relations_view.get_model()
+    # configure relations tree view
+    self.relations_view = glade_xml.get_widget('relations_view')
+    self.relations_model = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
+    self.relations_view.set_model(self.relations_model)
+    crt = gtk.CellRendererText()
+    crp = gtk.CellRendererPixbuf()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crp, False)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crp, pixbuf=0)
+    tvc.set_attributes(crt, text=1)
+    tvc.set_cell_data_func(crt, self._relationCellDataFunc)
+    tvc.set_cell_data_func(crp, self._relationCellDataFunc)
+    self.relations_view.append_column(tvc)
+    # preset the different bg colors
+    style = gtk.Style ()
+    self.header_bg = style.bg[gtk.STATE_NORMAL]
+    self.relation_bg = style.base[gtk.STATE_NORMAL]
+    selection = self.relations_view.get_selection()
+    selection.set_select_function(self._relationSelectFunc)
+    show_button = glade_xml.get_widget('button_relation_show')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
 
-    try:
-      states = [pyLinAcc.stateToString(s) for s in acc.getState().getStates()]
-      states.sort()
-    except Exception:
-      states = []
+    # configure accessible attributes tree view
+    treeview = glade_xml.get_widget('accattrib_view')
+    self.attr_model = gtk.ListStore(str, str)
+    treeview.set_model(self.attr_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
 
-    states_model.clear()
-    for state in states:
-      states_model.append([state])
+    pyatspi.Registry.registerEventListener(self._accEventState, 
+                                           'object:state-changed')
+
+  def populateUI(self, acc):
+    states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
+    states.sort()
+    map(self.states_model.append, [[state] for state in states])
     
-    attrib_model.clear()
     try:
       attribs = acc.getAttributes()
     except:
-      attribs = None
-    if attribs:
+      pass
+    else:
       for attr in attribs:
         name, value = attr.split(':', 1)
-        attrib_model.append([name, value])
+        self.attr_model.append([name, value])
 
-    relations_model.clear()
     relations = acc.getRelationSet()
     for relation in relations:
       r_type_name = repr(relation.getRelationType()).replace('RELATION_', '')
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
-      iter = relations_model.append(None, [None, r_type_name, None])
+      iter = self.relations_model.append(None, [None, r_type_name, None])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(0)
-        relations_model.append(iter, [getIcon(acc), acc.name, acc])
-    relations_view.expand_all()
+        self.relations_model.append(iter, [getIcon(acc), acc.name, acc])
+    self.relations_view.expand_all()
+
+    self.registerEventListener(self._accEventState, 'object:state-changed')
+
+  def clearUI(self):
+    self.relations_model.clear()
+    self.states_model.clear()
+    self.attr_model.clear()
 
   def _relationCellDataFunc(self, tvc, cellrenderer, model, iter):
     if len(model.get_path(iter)) == 1:
@@ -441,106 +262,143 @@ class InterfaceViewer(ViewportPlugin):
         self.node.update(acc)
   
   def _accEventState(self, event):
-     if self.acc != event.source:
-        return
-     self.popIfaceAccessible(self.acc)
-     if 'action' in self._getInterfaces(self.acc):
-        self.popIfaceAction(self.acc)
+     if self.node.acc == event.source:
+       self.states_model.clear()
+       states = [pyatspi.stateToString(s) for s in \
+                   self.node.acc.getState().getStates()]
+       states.sort()
+       map(self.states_model.append, [[state] for state in states])        
 
 
+class _SectionAction(_InterfaceSection):
+  interface_name = 'Action'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)    
+    # configure actions tree view
+    treeview = glade_xml.get_widget('treeview_action')
+    self.actions_model = gtk.ListStore(int, str, str, str)
+    treeview.set_model(self.actions_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Name'))
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Description'))
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=2)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Key binding'))
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=3)
+    treeview.append_column(tvc)
+    self.action_selection = treeview.get_selection()
+    show_button = glade_xml.get_widget('button_action_do')
+    show_button.set_sensitive(self._isSelectedInView(self.action_selection))
+    self.action_selection.connect('changed', 
+                                  self._onViewSelectionChanged, show_button)
 
-##############################
-# Action Interface
-##############################
-
-  def popIfaceAction(self, acc):
-    actions_view = self.main_xml.get_widget('treeview_action')
-    actions_model = actions_view.get_model()
-    
-    actions_model.clear()
-
-    ai = pyLinAcc.Interfaces.IAction(acc)
-
+  def populateUI(self, acc):
+    ai = acc.queryAction()
     for i in range(ai.nActions):
-      actions_model.append([i, ai.getName(i),
-                            ai.getDescription(i),
-                            ai.getKeyBinding(i)])
+      self.actions_model.append([i, ai.getName(i),
+                                 ai.getDescription(i),
+                                 ai.getKeyBinding(i)])
+
+  def clearUI(self):
+    self.actions_model.clear()
 
   def _onActionRowActivated(self, treeview, path, view_column):
-     actions_model = treeview.get_model()
-     iter = actions_model.get_iter(path)
-     action_num = actions_model[iter][0]
-     acc = self.acc
-     ai = pyLinAcc.Interfaces.IAction(acc)
-     ai.doAction(action_num)
-
-  def _onActionClicked(self, button):
-    actions_view = self.main_xml.get_widget('treeview_action')
-    selection = actions_view.get_selection()
-    actions_model, iter = selection.get_selected()
-    action_num = actions_model[iter][0]
-    acc = self.acc
-    ai = pyLinAcc.Interfaces.IAction(acc)
+    action_num = self.actions_model[path][0]
+    ai = self.node.acc.queryAction()
     ai.doAction(action_num)
 
-##############################
-# Application Interface
-##############################
+  def _onActionClicked(self, button):
+    actions_model, iter = self.action_selection.get_selected()
+    action_num = actions_model[iter][0]
+    ai = self.node.acc.queryAction()
+    ai.doAction(action_num)
 
-  def popIfaceApplication(self, acc):
-    label_app_id = self.main_xml.get_widget('label_app_id')
-    label_app_tk = self.main_xml.get_widget('label_app_tk')
-    label_app_version = self.main_xml.get_widget('label_app_version')
+class _SectionApplication(_InterfaceSection):
+  interface_name = 'Application'
+  def init(self, glade_xml):
+    self.label_id = glade_xml.get_widget('label_app_id')
+    self.label_tk = glade_xml.get_widget('label_app_tk')
+    self.label_version = glade_xml.get_widget('label_app_version')
+  
+  def populateUI(self, acc):
+    ai = acc.queryApplication()
+    self.label_id.set_text(repr(ai.id))
+    self.label_tk.set_text(ai.toolkitName)
+    self.label_version.set_text(ai.version)
 
-    ai = pyLinAcc.Interfaces.IApplication(acc)
+  def clearUI(self):
+    self.label_id.set_text('')
+    self.label_tk.set_text('')
+    self.label_version.set_text('')
 
-    label_app_id.set_text(repr(ai.id))
-    label_app_tk.set_text(ai.toolkitName)
-    label_app_version.set_text(ai.version)
+class _SectionComponent(_InterfaceSection):
+  interface_name = 'Component'
+  def init(self, glade_xml):
+    self.label_posrel = glade_xml.get_widget('absolute_position_label')
+    self.label_posabs = glade_xml.get_widget('relative_position_label')
+    self.label_size = glade_xml.get_widget('size_label')
+    self.label_layer = glade_xml.get_widget('layer_label')
+    self.label_zorder = glade_xml.get_widget('zorder_label')
+    self.label_alpha = glade_xml.get_widget('alpha_label')
 
-##############################
-# Component Interface
-##############################
-
-  def popIfaceComponent(self, acc):
-    abs_label_pos = self.main_xml.get_widget('absolute_position_label')
-    rel_label_pos = self.main_xml.get_widget('relative_position_label')
-    label_size = self.main_xml.get_widget('size_label')
-    label_layer = self.main_xml.get_widget('layer_label')
-    label_zorder = self.main_xml.get_widget('zorder_label')
-    label_alpha = self.main_xml.get_widget('alpha_label')
-     
-    ci = pyLinAcc.Interfaces.IComponent(acc)
-     
-    bbox = ci.getExtents(pyLinAcc.Constants.DESKTOP_COORDS)
-    abs_label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
-    label_size.set_text('%dx%d' % (bbox.width, bbox.height))
-    bbox = ci.getExtents(pyLinAcc.Constants.WINDOW_COORDS)
-    rel_label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
+  def populateUI(self, acc):
+    ci = acc.queryComponent()
+    bbox = ci.getExtents(pyatspi.DESKTOP_COORDS)
+    self.label_posabs.set_text('%d, %d' % (bbox.x, bbox.y))
+    self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
+    bbox = ci.getExtents(pyatspi.WINDOW_COORDS)
+    self.label_posrel.set_text('%d, %d' % (bbox.x, bbox.y))
     layer = ci.getLayer()
-    label_layer.set_text(repr(ci.getLayer()).replace('LAYER_',''))
-    label_zorder.set_text(repr(ci.getMDIZOrder()))
-    label_alpha.set_text(repr(ci.getAlpha()))
+    self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_',''))
+    self.label_zorder.set_text(repr(ci.getMDIZOrder()))
+    self.label_alpha.set_text(repr(ci.getAlpha()))
+    self.registerEventListener(self._accEventComponent, 
+                               'object:bounds-changed',
+                               'object:visible-data-changed')
+  def clearUI(self):
+    self.label_posrel.set_text('')
+    self.label_posabs.set_text('')
+    self.label_size.set_text('')
+    self.label_layer.set_text('')
+    self.label_zorder.set_text('')
+    self.label_alpha.set_text('')
 
   def _accEventComponent(self, event):
-     if self.acc != event.source:
-        return
-     self.popIfaceComponent(self.acc)
+    if event.source == self.node.acc:
+      self.populateUI(event.source)
 
-##############################
-# Document Interface
-##############################
 
-  def popIfaceDocument(self, acc):
-    docattrib_view = self.main_xml.get_widget('docattrib_view')
-    label_locale = self.main_xml.get_widget('label_doc_locale')
-    attrib_model = docattrib_view.get_model()
+class _SectionDocument(_InterfaceSection):
+  interface_name = 'Document'
+  def init(self, glade_xml):
+    # configure document attributes tree view
+    treeview = glade_xml.get_widget('docattrib_view')
+    self.attr_model = gtk.ListStore(str, str)
+    treeview.set_model(self.attr_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
+    self.label_locale = glade_xml.get_widget('label_doc_locale')
 
-    di = pyLinAcc.Interfaces.IDocument(acc)
+  def populateUI(self, acc):
+    di = acc.queryDocument()
 
-    label_locale.set_text(di.getLocale())
+    self.label_locale.set_text(di.getLocale())
 
-    attrib_model.clear()
     try:
       attribs = di.getAttributes()
     except:
@@ -548,33 +406,88 @@ class InterfaceViewer(ViewportPlugin):
     if attribs:
       for attr in attribs:
         name, value = attr.split(':', 1)
-        attrib_model.append([name, value])
+        self.attr_model.append([name, value])
 
-##############################
-# Hypertext Interface
-##############################
+  def clearUI(self):
+    self.attr_model.clear()
+    self.label_locale.set_text('')
 
-  def popIfaceHypertext(self, acc):
-    links_view = self.main_xml.get_widget('treeview_links')
-    links_model = links_view.get_model()
+class _SectionHyperlink(_InterfaceSection):
+  interface_name = 'Hyperlink'
 
-    hti = pyLinAcc.Interfaces.IHypertext(acc)
+class _SectionHypertext(_InterfaceSection):
+  interface_name = 'Hypertext'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    # configure links tree view
+    treeview = glade_xml.get_widget('treeview_links')
+    # It's a treestore because of potential multiple anchors
+    self.links_model = gtk.TreeStore(int, # Link index
+                          str, # Name
+                          str, # Description
+                          str, # URI
+                          int, # Start offset
+                          int, # End offset
+                          object) # Anchor object
+    treeview.set_model(self.links_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Name'))
+    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('URI'))
+    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=3)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Start'))
+    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=4)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('End'))
+    tvc.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=5)
+    treeview.append_column(tvc)    
+    selection = treeview.get_selection()
+    show_button = glade_xml.get_widget('button_hypertext_show')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
 
-    links_model.clear()
+
+  def populateUI(self, acc):
+    hti = acc.queryHypertext()
+
     for link_index in xrange(hti.getNLinks()):
       link = hti.getLink(link_index)
-      iter = links_model.append(None,
-                                [link_index, '', '', '',
-                                 link.startIndex, link.endIndex, None])
+      iter = self.links_model.append(None,
+                                     [link_index, 
+                                      '', '', '',
+                                      link.startIndex, 
+                                      link.endIndex, None])
       for anchor_index in xrange(link.nAnchors):
         acc_obj = link.getObject(anchor_index)
-        links_model.append(iter,
-                           [link_index, acc_obj.name, acc_obj.description,
-                            link.getURI(anchor_index), 
-                            link.startIndex, link.endIndex, acc_obj])
+        self.links_model.append(iter,
+                                [link_index, acc_obj.name, acc_obj.description,
+                                 link.getURI(anchor_index), 
+                                 link.startIndex, link.endIndex, acc_obj])
         if anchor_index == 0:
-          links_model[iter][1] = acc_obj.name # Otherwise the link is nameless.
-     
+          self.links_model[iter][1] = \
+              acc_obj.name # Otherwise the link is nameless.
+
+
+  def clearUI(self):
+    self.links_model.clear()
+
   def _onLinkShow(self, link_view, *more_args):
     selection = link_view.get_selection()
     model, iter = selection.get_selected()
@@ -582,232 +495,301 @@ class InterfaceViewer(ViewportPlugin):
       acc = model[iter][6]
       if acc:
         self.node.update(acc)
-     
-##############################
-# Image Interface
-##############################
 
-  def popIfaceImage(self, acc):
-    label_pos = self.main_xml.get_widget('img_position_label')
-    label_size = self.main_xml.get_widget('img_size_label')
 
-    ii = pyLinAcc.Interfaces.IImage(acc)
+class _SectionImage(_InterfaceSection):
+  interface_name = 'Image'
 
-    bbox = ii.getImageExtents(pyLinAcc.Constants.DESKTOP_COORDS)
-    label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
-    label_size.set_text('%dx%d' % (bbox.width, bbox.height))
+  def init(self, glade_xml):
+    self.label_pos = glade_xml.get_widget('img_position_label')
+    self.label_size = glade_xml.get_widget('img_size_label')
 
-##############################
-# Selection Interface
-##############################
+  def populateUI(self, acc):
+    ii = acc.queryImage()
 
-  def popIfaceSelection(self, acc):
-    selection_treeview = self.main_xml.get_widget('treeview_selection')
-    button_select_all = self.main_xml.get_widget('button_select_all')
-    selection_model = selection_treeview.get_model()
-    selection_selection = selection_treeview.get_selection()
-    
-    selection_model.clear()
+    bbox = ii.getImageExtents(pyatspi.DESKTOP_COORDS)
+    self.label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
+    self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
 
-    si = pyLinAcc.Interfaces.ISelection(acc)
+  def clearUI(self):
+    self.label_pos.set_text('')
+    self.label_size.set_text('')
+
+class _SectionSelection(_InterfaceSection):
+  interface_name = 'Selection'
+
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    # configure selection tree view
+    treeview = glade_xml.get_widget('treeview_selection')
+    self.sel_model = gtk.ListStore(gtk.gdk.Pixbuf, str, object)
+    treeview.set_model(self.sel_model)
+    crt = gtk.CellRendererText()
+    crp = gtk.CellRendererPixbuf()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crp, False)
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crp, pixbuf=0)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
+    # connect selection changed signal
+    self.sel_selection = treeview.get_selection()
+    show_button = glade_xml.get_widget('button_selection_clear')
+    show_button.set_sensitive(self._isSelectedInView(self.sel_selection))
+    self.sel_selection.connect('changed', 
+                               self._onViewSelectionChanged, show_button)
+    self.sel_selection.connect('changed', 
+                               self._onSelectionSelected)
+    self.button_select_all = glade_xml.get_widget('button_select_all')
+
+  def populateUI(self, acc):
+    si = acc.querySelection()
 
     # I wish there were a better way of knowing if multiple 
     # selections are possible.
     multiple_selections = si.selectAll()
     si.clearSelection
 
-    button_select_all.set_sensitive(multiple_selections)
+    self.button_select_all.set_sensitive(multiple_selections)
 
     if multiple_selections:
-      selection_selection.set_mode = gtk.SELECTION_MULTIPLE
+      self.sel_selection.set_mode = gtk.SELECTION_MULTIPLE
     else:
-      selection_selection.set_mode = gtk.SELECTION_SINGLE
+      self.sel_selection.set_mode = gtk.SELECTION_SINGLE
 
     for child in acc:
       if child is not None:
         state = child.getState()
-        if state.contains(pyLinAcc.Constants.STATE_SELECTABLE):
-          selection_model.append([getIcon(child),child.name, child])
-
+        if state.contains(pyatspi.STATE_SELECTABLE):
+          self.sel_model.append([getIcon(child),child.name, child])
+    
   def _onSelectionSelected(self, selection):
-    acc = self.acc
-    try:
-      si = pyLinAcc.Interfaces.ISelection(acc)
-    except:
-      return
+    si = self.node.acc.querySelection()
+
     model, paths = selection.get_selected_rows()
     selected_children = [path[0] for path in paths]
     
-    for child_index in range(len(acc)):
+    for child_index in range(len(self.node.acc)):
       if child_index in selected_children:
         si.selectChild(child_index)
       else:
         si.deselectChild(child_index)
+
+  def clearUI(self):
+    self.sel_model.clear()
   
   def _onSelectionClear(self, widget):
-     acc = self.acc
-     try:
-        si = pyLinAcc.Interfaces.ISelection(acc)
-     except:
-        return
-     selection_treeview = self.main_xml.get_widget('treeview_selection')
-     selection_selection = selection_treeview.get_selection()
+    si = self.node.acc.querySelection()
 
-     selection_selection.unselect_all()
-     si.clearSelection()
+    self.sel_selection.unselect_all()
+    si.clearSelection()
 
   def _onSelectAll(self, widget):
-     acc = self.acc
-     try:
-        si = pyLinAcc.Interfaces.ISelection(acc)
-     except:
-        return
-     selection_treeview = self.main_xml.get_widget('treeview_selection')
-     selection_selection = selection_treeview.get_selection()
+    si = self.node.acc.querySelection()
 
-     selection_selection.select_all()
-     si.selectAll()
+    self.sel_selection.select_all()
+    si.selectAll()
 
+class _SectionStreamableContent(_InterfaceSection):
+  interface_name = 'StreamableContent'
+  def init(self, glade_xml):
+    # configure streamable content tree view
+    treeview = glade_xml.get_widget('treeview_streams')
+    self.streams_model = gtk.ListStore(str, str)
+    treeview.set_model(self.streams_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Content type'))
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('URI'))
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
 
-##############################
-# Streamable Content Interface
-##############################
-
-  def popIfaceStreamablecontent(self, acc):
-    streams_view = self.main_xml.get_widget('treeview_streams')
-    streams_model = streams_view.get_model()
-
-    streams_model.clear()
-    
-    sci = pyLinAcc.Interfaces.IStreamableContent(acc)
+  def populateUI(self, acc):
+    sci = acc.queryStreamableContent()
 
     for content_type in sci.getContentTypes():
-      streams_model.append([content_type,
-                            sci.getURI(content_type)])
-
-##############################
-# Table Interface
-##############################
-
-  def popIfaceTable(self, acc):
-    ti = pyLinAcc.Interfaces.ITable(acc)
-    frame = self.main_xml.get_widget('selected_cell_frame')
-    frame.set_sensitive(False)
-    for attr, label_name in [(ti.caption, 'table_caption_label'),
-                             (ti.summary, 'table_summary_label'),
-                             (ti.nRows, 'table_rows_label'),
-                             (ti.nColumns, 'table_columns_label'),
-                             (ti.nSelectedRows, 'table_srows_label'),
-                             (ti.nSelectedColumns, 'table_scolumns_label')]:
-      label = self.main_xml.get_widget(label_name)
-      label.set_text(str(attr))
+      self.streams_model.append([content_type,
+                                 sci.getURI(content_type)])
   
+  def clearUI(self):
+    self.streams_model.clear()
+
+class _SectionTable(_InterfaceSection):
+  interface_name = 'Table'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    self.selected_frame = glade_xml.get_widget('selected_cell_frame')
+    self.caption_label = glade_xml.get_widget('table_caption_label')
+    self.summary_label = glade_xml.get_widget('table_summary_label')
+    self.rows_label = glade_xml.get_widget('table_rows_label')
+    self.columns_label = glade_xml.get_widget('table_columns_label')
+    self.srows_label = glade_xml.get_widget('table_srows_label')
+    self.scolumns_label = glade_xml.get_widget('table_scolumns_label')
+    self.row_ext_label = glade_xml.get_widget('table_row_extents')
+    self.col_ext_label = glade_xml.get_widget('table_column_extents')
+    self.col_ext_label = glade_xml.get_widget('table_column_extents')
+    self.hrow_button = glade_xml.get_widget('table_hrow_button')
+    self.hcol_button = glade_xml.get_widget('table_hcol_button')
+    self.cell_button = glade_xml.get_widget('table_cell_button')
+
+  def populateUI(self, acc):
+    ti = acc.queryTable()
+    self.selected_frame.set_sensitive(False)
+    for attr, label in [(ti.caption, self.caption_label),
+                        (ti.summary, self.summary_label),
+                        (ti.nRows, self.rows_label),
+                        (ti.nColumns, self.columns_label),
+                        (ti.nSelectedRows, self.srows_label),
+                        (ti.nSelectedColumns, self.scolumns_label)]:
+      label.set_text(str(attr))
+    self.registerEventListener(self._accEventTable,
+                               'object:active-descendant-changed')
+
+  def clearUI(self):
+    self.caption_label.set_text('')
+    self.summary_label.set_text('')
+    self.rows_label.set_text('')
+    self.columns_label.set_text('')
+    self.srows_label.set_text('')
+    self.scolumns_label.set_text('')
+    self.row_ext_label.set_text('')
+    self.col_ext_label.set_text('')
+    self.col_ext_label.set_text('')
+    self.hrow_button.set_label('')
+    self.hcol_button.set_label('')
+    self.cell_button.set_label('')
+
+
   def _accEventTable(self, event):
-    if self.acc != event.source:
-      return
-    
-    try:
-      ti = pyLinAcc.Interfaces.ITable(self.acc)
-    except:
+    if self.node.acc != event.source:
       return
 
-    frame = self.main_xml.get_widget('selected_cell_frame')
-    frame.set_sensitive(True)
+    acc = event.source
+    ti = acc.queryTable()
+    self.selected_frame.set_sensitive(True)
     is_cell, row, column, rextents, cextents, selected = \
         ti.getRowColumnExtentsAtIndex(event.any_data.getIndexInParent())
-    
-    for attr, label_name in [(rextents, 'table_row_extents'),
-                             (cextents, 'table_column_extents'),
-                             (ti.nSelectedRows, 'table_srows_label'),
-                             (ti.nSelectedColumns, 'table_scolumns_label')]:
-      label = self.main_xml.get_widget(label_name)
-      label.set_text(str(attr))           
-    
-    for desc, acc, button_name in [(ti.getRowDescription(row), 
-                                    ti.getRowHeader(row),
-                                    'table_hrow_button'),
-                                   (ti.getColumnDescription(column), 
-                                    ti.getColumnHeader(column),
-                                    'table_hcol_button'),
-                                   ('%s (%s, %s)' % (event.any_data, row, column), 
-                                    event.any_data,
-                                    'table_cell_button')]:
-      button = self.main_xml.get_widget(button_name)
+
+    for attr, label in [(rextents, self.row_ext_label),
+                             (cextents, self.col_ext_label),
+                             (ti.nSelectedRows, self.srows_label),
+                             (ti.nSelectedColumns, self.scolumns_label)]:
+      label.set_text(str(attr))
+
+    for desc, acc, button in [(ti.getRowDescription(row), 
+                               ti.getRowHeader(row),
+                               self.hrow_button),
+                              (ti.getColumnDescription(column), 
+                               ti.getColumnHeader(column),
+                               self.hcol_button),
+                              ('%s (%s, %s)' % (event.any_data, row, column), 
+                               event.any_data,
+                               self.cell_button)]:
       button.set_label(str(desc or '<no description>'))
       button.set_sensitive(bool(acc))
       button.set_data('acc', acc)
         
   def _onTableButtonClicked(self, button):
     self.node.update(button.get_data('acc'))
-    
-##############################
-# Text Interface
-##############################
 
-  def _textInit(self):
-    spinbutton = self.main_xml.get_widget('spinbutton_text_offset')
-    text_view = self.main_xml.get_widget('textview_text')
-    text_buffer = text_view.get_buffer()
-    checkbutton_defaults = self.main_xml.get_widget('checkbutton_text_defaults')
+class _SectionText(_InterfaceSection):
+  interface_name = 'Text'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    # configure text attribute tree view
+    treeview = glade_xml.get_widget('treeview_text_attr')
+    self.attr_model = gtk.ListStore(str, str)
+    treeview.set_model(self.attr_model)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=0)
+    treeview.append_column(tvc)
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn()
+    tvc.pack_start(crt, True)
+    tvc.set_attributes(crt, text=1)
+    treeview.append_column(tvc)
 
-    text_buffer.connect('mark-set', self._onTextMarkSet)
+    self.offset_spin = glade_xml.get_widget('spinbutton_text_offset')
+    self.text_view = glade_xml.get_widget('textview_text')
+    self.text_buffer = self.text_view.get_buffer()
+    self.toggle_defaults = glade_xml.get_widget('checkbutton_text_defaults')
+    self.label_start = glade_xml.get_widget('label_text_attr_start')
+    self.label_end = glade_xml.get_widget('label_text_attr_end')
 
-    mark = text_buffer.create_mark('attr_mark', 
-                                   text_buffer.get_start_iter(), True)
+    self.text_buffer.connect('mark-set', self._onTextMarkSet)
+
+    mark = self.text_buffer.create_mark('attr_mark', 
+                                        self.text_buffer.get_start_iter(), True)
     mark.set_visible(True)
 
-    text_buffer.create_tag('attr_region', foreground='red')
+    self.text_buffer.create_tag('attr_region', foreground='red')
 
-    text_buffer.connect('modified-changed', 
-                        self._onTextModified, spinbutton)
-    text_buffer.connect('notify::cursor-position', 
-                        self._onTextCursorMove, spinbutton)
+    self.text_buffer.connect('modified-changed', 
+                             self._onTextModified)
+    self.text_buffer.connect('notify::cursor-position', 
+                             self._onTextCursorMove)
 
-    text_buffer.set_modified(False)
-    self._text_insert_handler = text_buffer.connect('insert-text', 
-                                                    self._onITextInsert)
-    self._text_delete_handler = text_buffer.connect('delete-range', 
-                                                    self._onITextDelete)
+    self.text_buffer.set_modified(False)
+    self._text_insert_handler = self.text_buffer.connect('insert-text', 
+                                                         self._onITextInsert)
+    self._text_delete_handler = self.text_buffer.connect('delete-range', 
+                                                         self._onITextDelete)
 
-  def popIfaceText(self, acc):
-    spinbutton = self.main_xml.get_widget('spinbutton_text_offset')
-    text_view = self.main_xml.get_widget('textview_text')
-    checkbutton_defaults = self.main_xml.get_widget('checkbutton_text_defaults')
-    text_buffer = text_view.get_buffer()
-     
-    spinbutton.set_value(0)
+    # Initialize fifos to help eliminate the viscous cycle of signals.
+    # It would be nice if we could just block/unblock it like in gtk, but
+    # since it is IPC, asynchronous and not atomic, we are forced to do this.
+    self.outgoing_calls = {'itext_insert': self.CallCache(),
+                           'itext_delete': self.CallCache()}
 
-    ti = pyLinAcc.Interfaces.IText(acc)
+  def populateUI(self, acc):
+    self.offset_spin.set_value(0)
+
+    ti = acc.queryText()
 
     text = ti.getText(0, ti.characterCount)
     for handler_id in (self._text_delete_handler,
                        self._text_insert_handler):
-      text_buffer.handler_block(handler_id)
-    text_buffer.set_text(text)
+      self.text_buffer.handler_block(handler_id)
+    self.text_buffer.set_text(text)
     for handler_id in (self._text_delete_handler,
                        self._text_insert_handler):
-      text_buffer.handler_unblock(handler_id)
+      self.text_buffer.handler_unblock(handler_id)
 
-    spinbutton.get_adjustment().upper = ti.characterCount
+    self.offset_spin.get_adjustment().upper = ti.characterCount
 
     self.popTextAttr(offset=0)
 
     try:
-      eti = pyLinAcc.Interfaces.IEditableText(acc)
+      eti = acc.queryEditableText()
     except:
       eti = None
 
-    expander = self.main_xml.get_widget('expander_text')
-    expander_label = expander.get_label_widget()
+    expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
     label_text.replace(_(' <i>(Editable)</i>'),'')
     if eti:
       label_text += _(' <i>(Editable)</i>')
-      text_view.set_editable(True)
+      self.text_view.set_editable(True)
     else:
-      text_view.set_editable(False)
+      self.text_view.set_editable(False)
     expander_label.set_label(label_text)
-    
+
+    self.registerEventListener(self._accEventText, 
+                               'object:text-changed')
+
+  def clearUI(self):
+    self.offset_spin.set_value(0)
+    self.label_start.set_text('')
+    self.label_end.set_text('')
+    self.text_buffer.set_text('')
+    self.attr_model.clear()
+
   def _attrStringToDict(self, attr_string):
     if not attr_string:
       return {}
@@ -817,45 +799,32 @@ class InterfaceViewer(ViewportPlugin):
       attr_dict[key] = value
     return attr_dict
 
-  def _onTextModified(self, text_buffer, spinbutton):
-    spinbutton.get_adjustment().upper = text_buffer.get_char_count()
+  def _onTextModified(self, text_buffer):
+    self.offset_spin.get_adjustment().upper = text_buffer.get_char_count()
     text_buffer.set_modified(False)
 
   def _onTextMarkSet(self, text_buffer, iter, text_mark):
     self.popTextAttr()
 
   def _onTextSpinnerChanged(self, spinner):
-    text_view = self.main_xml.get_widget('textview_text')
-    text_buffer = text_view.get_buffer()
-    iter = text_buffer.get_iter_at_offset(int(spinner.get_value()))
-    text_buffer.move_mark_by_name('attr_mark', iter)    
+    iter = self.text_buffer.get_iter_at_offset(int(self.offset_spin.get_value()))
+    self.text_buffer.move_mark_by_name('attr_mark', iter)    
 
   def _onDefaultsToggled(self, toggle_button):
     self.popTextAttr()
 
   def popTextAttr(self, offset=None):
-    text_view = self.main_xml.get_widget('textview_text')
-    text_buffer = text_view.get_buffer()
-    attr_treeview = self.main_xml.get_widget('treeview_text_attr')
-    attr_model = attr_treeview.get_model()
-    label_start = self.main_xml.get_widget('label_text_attr_start')
-    label_end = self.main_xml.get_widget('label_text_attr_end')
-    checkbutton_defaults = self.main_xml.get_widget('checkbutton_text_defaults')
-
     try:
-      ti = pyLinAcc.Interfaces.IText(self.acc)
+      ti = self.node.acc.queryText()
     except:
-      label_start.set_markup('<i>Start: 0</i>')
-      label_end.set_markup('<i>End: 0</i>')
-      attr_model.clear()
       return
 
     if offset is None:
-      mark = text_buffer.get_mark('attr_mark')
-      iter = text_buffer.get_iter_at_mark(mark)
+      mark = self.text_buffer.get_mark('attr_mark')
+      iter = self.text_buffer.get_iter_at_mark(mark)
       offset = iter.get_offset()
 
-    show_default = checkbutton_defaults.get_active()
+    show_default = self.toggle_defaults.get_active()
     attr, start, end = ti.getAttributes(offset)
     if show_default:
       def_attr = ti.getDefaultAttributes()
@@ -867,107 +836,111 @@ class InterfaceViewer(ViewportPlugin):
     attr_list = attr_dict.keys()
     attr_list.sort()
 
-    attr_model.clear()
+    self.attr_model.clear()
     for attr in attr_list:
-      attr_model.append([attr, attr_dict[attr]])
+      self.attr_model.append([attr, attr_dict[attr]])
 
-    text_buffer.remove_tag_by_name('attr_region', 
-                                   text_buffer.get_start_iter(),
-                                   text_buffer.get_end_iter())
-    text_buffer.apply_tag_by_name('attr_region',
-                                  text_buffer.get_iter_at_offset(start),
-                                  text_buffer.get_iter_at_offset(end))
+    self.text_buffer.remove_tag_by_name(
+      'attr_region', 
+      self.text_buffer.get_start_iter(),
+      self.text_buffer.get_end_iter())
+    self.text_buffer.apply_tag_by_name(
+      'attr_region',
+      self.text_buffer.get_iter_at_offset(start),
+      self.text_buffer.get_iter_at_offset(end))
                                   
-    label_start.set_markup('<i>Start: %d</i>' % start)
-    label_end.set_markup('<i>End: %d</i>' % end)
+    self.label_start.set_markup('<i>Start: %d</i>' % start)
+    self.label_end.set_markup('<i>End: %d</i>' % end)
 
   def _onTextViewPressed(self, widget, event):
      if event.button != 1:
         return
 
-     text_view = self.main_xml.get_widget('textview_text')
-     spinbutton = self.main_xml.get_widget('spinbutton_text_offset')
      x, y = event.get_coords()
-     x, y = text_view.window_to_buffer_coords(gtk.TEXT_WINDOW_WIDGET,
-                                              int(x), int(y))
-     iter = text_view.get_iter_at_location(x, y)
+     x, y = self.text_view.window_to_buffer_coords(gtk.TEXT_WINDOW_WIDGET,
+                                                   int(x), int(y))
+     iter = self.text_view.get_iter_at_location(x, y)
      
-     spinbutton.set_value(iter.get_offset())
+     self.offset_spin.set_value(iter.get_offset())
 
-  def _onTextCursorMove(self, text_buffer, param_spec, spinbutton):
-    spinbutton.set_value(text_buffer.get_property('cursor-position'))
+  def _onTextCursorMove(self, text_buffer, param_spec):
+    self.offset_spin.set_value(text_buffer.get_property('cursor-position'))
 
   def _accEventText(self, event):
-     if self.acc != event.source:
+     if self.node.acc != event.source:
         return
 
      if event.type.major == 'text-changed':
-        text_view = self.main_xml.get_widget('textview_text')
-        text_buffer = text_view.get_buffer()
-        text_iter = text_buffer.get_iter_at_offset(event.detail1)
+        text_iter = self.text_buffer.get_iter_at_offset(event.detail1)
         if event.type.minor == 'insert':
            call = (event.detail1, event.any_data, event.detail2)
            if self.outgoing_calls['itext_insert'].isCached(call):
               return
-           text_buffer.handler_block(self._text_insert_handler)
-           text_buffer.insert(text_iter, event.any_data)
-           text_buffer.handler_unblock(self._text_insert_handler)
+           self.text_buffer.handler_block(self._text_insert_handler)
+           self.text_buffer.insert(text_iter, event.any_data)
+           self.text_buffer.handler_unblock(self._text_insert_handler)
            
         elif event.type.minor == 'delete':
            call = (event.detail1, event.detail2)
            if self.outgoing_calls['itext_delete'].isCached(call):
               return
-           text_iter_end = text_buffer.get_iter_at_offset(event.detail1 + event.detail2)
-           text_buffer.handler_block(self._text_delete_handler)
-           text_buffer.delete(text_iter, text_iter_end)
-           text_buffer.handler_unblock(self._text_delete_handler)
+           text_iter_end = \
+               self.text_buffer.get_iter_at_offset(event.detail1 + event.detail2)
+           self.text_buffer.handler_block(self._text_delete_handler)
+           self.text_buffer.delete(text_iter, text_iter_end)
+           self.text_buffer.handler_unblock(self._text_delete_handler)
      
   def _onITextInsert(self, text_buffer, iter, text, length):
-     acc = self.acc
-     try:
-        eti = pyLinAcc.Interfaces.IEditableText(acc)
-     except:
-        return
+    try:
+      eti = self.node.acc.queryEditableText()
+    except:
+      return
 
-     call = (iter.get_offset(), text, length)
-
-     self.outgoing_calls['itext_insert'].append(call)
-     eti.insertText(*call)
+    call = (iter.get_offset(), text, length)
+    
+    self.outgoing_calls['itext_insert'].append(call)
+    eti.insertText(*call)
 
   def _onITextDelete(self, text_buffer, start, end):
-     acc = self.acc
-     try:
-        eti = pyLinAcc.Interfaces.IEditableText(acc)
-     except:
-        return
+    try:
+      eti = self.node.acc.queryEditableText()
+    except:
+      return
 
-     call = (start.get_offset(), end.get_offset())
-
-     self.outgoing_calls['itext_delete'].append(call)
-     eti.deleteText(*call)
+    call = (start.get_offset(), end.get_offset())
+    
+    self.outgoing_calls['itext_delete'].append(call)
+    eti.deleteText(*call)
 
   def _onTextFocusChanged(self, text_view, event):
-    text_buffer = text_view.get_buffer()
-    mark = text_buffer.get_mark('attr_mark')
+    mark = self.text_buffer.get_mark('attr_mark')
     mark.set_visible(not event.in_)
       
+  class CallCache(list):
+    def isCached(self, obj):
+      if obj in self:
+        self.remove(obj)
+        return True
+      else:
+        return False
 
-##############################
-# Value Interface
-##############################
-
-  def popIfaceValue(self, acc):
-    spinbutton = self.main_xml.get_widget('spinbutton_value')
-    label_max = self.main_xml.get_widget('label_value_max')
-    label_min = self.main_xml.get_widget('label_value_min')
-    label_inc = self.main_xml.get_widget('label_value_inc')
-
-    vi = pyLinAcc.Interfaces.IValue(acc)
-     
-    label_max.set_text(str(vi.maximumValue))
-    label_min.set_text(str(vi.minimumValue))
-    label_inc.set_text(str(vi.minimumIncrement))
+class _SectionValue(_InterfaceSection):
+  interface_name = 'Value'
+  def init(self, glade_xml):
+    glade_xml.signal_autoconnect(self)
+    self.spinbutton = glade_xml.get_widget('spinbutton_value')
+    self.label_max = glade_xml.get_widget('label_value_max')
+    self.label_min = glade_xml.get_widget('label_value_min')
+    self.label_inc = glade_xml.get_widget('label_value_inc')
+    self.registerEventListener(self._accEventValue, 
+                               'object:value-changed')
     
+  def populateUI(self, acc):
+    vi = acc.queryValue()
+    self.label_max.set_text(str(vi.maximumValue))
+    self.label_min.set_text(str(vi.minimumValue))
+    self.label_inc.set_text(str(vi.minimumIncrement))
+
     minimumIncrement = vi.minimumIncrement
     digits = 0
 
@@ -975,35 +948,17 @@ class InterfaceViewer(ViewportPlugin):
       digits += 1
       minimumIncrement *= 10
 
-    spinbutton.set_range(vi.minimumValue, vi.maximumValue)
-     #spinbutton.set_increments(vi.minimumIncrement, vi.minimumIncrement)
-    spinbutton.set_value(vi.currentValue)
-    spinbutton.set_digits(digits)
-  
+    self.spinbutton.set_range(vi.minimumValue, vi.maximumValue)
+    self.spinbutton.set_value(vi.currentValue)
+    self.spinbutton.set_digits(digits)
+   
   def _onValueSpinnerChange(self, widget):
-     acc = self.acc
-     try:
-        vi = pyLinAcc.Interfaces.IValue(acc)
-     except:
-        return
-
-     vi.currentValue = widget.get_value()
-
+    vi = self.node.acc.queryValue()
+    vi.currentValue = widget.get_value()
 
   def _accEventValue(self, event):
-     if self.acc != event.source:
-        return
-
-     spinbutton = self.main_xml.get_widget('spinbutton_value')
-     acc = self.acc
-     try:
-        vi = pyLinAcc.Interfaces.IValue(acc)
-     except:
-        return
-     
-     if spinbutton.get_value() != vi.currentValue:
-        spinbutton.set_value(vi.currentValue)
-
-
-  
-
+    if self.node.acc != event.source:
+      return
+    vi = self.node.acc.queryValue()
+    if self.spinbutton.get_value() != vi.currentValue:
+      self.spinbutton.set_value(vi.currentValue)

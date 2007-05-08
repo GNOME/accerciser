@@ -1,9 +1,88 @@
+2007-05-08  Eitan Isaacson  <eitan@ascender.com>
+
+	* ChangeLog:
+	* NOTICE:
+	* help/C/accerciser.xml:
+	* help/en_GB/en_GB.po:
+	* help/es/es.po:
+	* help/sv/sv.po:
+	* plugins/api_view.py:
+	* plugins/console.py:
+	* plugins/event_monitor.py:
+	* plugins/interface_view.glade:
+	* plugins/interface_view.py:
+	* plugins/script_recorder.py:
+	* src/lib/accerciser/Makefile.am:
+	* src/lib/accerciser/__init__.py:
+	* src/lib/accerciser/accerciser.py:
+	* src/lib/accerciser/accessible_treeview.py:
+	* src/lib/accerciser/hotkey_manager.py:
+	* src/lib/accerciser/icons.py:
+	* src/lib/accerciser/node.py:
+	* src/lib/accerciser/plugin.py:
+	* src/lib/accerciser/pyLinAcc.zip:
+	* src/lib/accerciser/pyatspi.zip:
+	* src/lib/accerciser/script_playback.py:
+	* src/lib/accerciser/tools.py: Merged pyatspi branch in to trunk.
+
+2007-05-07  Eitan Isaacson  <eitan@ascender.com>
+
+	* NOTICE: Replaced pyLinAcc copyright notice with pyatspi one.
+	* help/C/accerciser.xml: Replaced pyLinAcc with pyatspi.
+	* help/en_GB/en_GB.po: Replaced pyLinAcc with pyatspi.
+	* help/sv/sv.po: Replaced pyLinAcc with pyatspi.
+	* plugins/script_recorder.py: Replaced pyLinAcc with pyatspi.
+	* src/lib/accerciser/Makefile.am: Replaced pyLinAcc.zip with pyatspi.zip.
+	* src/lib/accerciser/__init__.py: Fall back on zipped pyatspi if
+	not in distro.
+	* src/lib/accerciser/accerciser.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/accessible_treeview.py: Removed pyLinAcc from 
+	epydoc.
+	* src/lib/accerciser/node.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/plugin.py: Removed pyLinAcc from epydoc.
+	* src/lib/accerciser/pyLinAcc.zip: Removed.
+	* src/lib/accerciser/pyatspi.zip: Added.
+	* src/lib/accerciser/script_playback.py: Removed pyLinAcc from epydoc. 
+	* src/lib/accerciser/tools.py: Removed pyLinAcc from epydoc.
+
+2007-05-06  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py: Implemented text, value and hyperlink
+	sections. Mark unassociated sections as unimplemented.
+	* plugins/interface_view.glade: Added Hyperlink expander.
+
+2007-05-05  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py: Implemented table section.
+
+2007-05-05  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py: Implemented sections for accessible, 
+	action, application, component, document, hypertext, image,
+	selection and streamable content.
+	* src/lib/accerciser/accerciser.py: Changed gtk.main to 
+	pyatspi.Registry.start()
+
 2007-05-05  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/interface_view.py: Changed set_select_function() to be
 	pygtk 2.8 compatable.
 	* src/lib/accerciser/accessible_treeview.py: Changed 
 	set_select_function() to be pygtk 2.8 compatable.
+
+2007-05-02  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/api_view.py: Migrated to pyatspi.
+	* plugins/console.py: Migrated to pyatspi.
+	* plugins/event_monitor.py: Migrated to pyatspi.
+	* plugins/interface_view.py: Erased most of file, preparing for a rewrite.
+	* plugins/script_recorder.py: Migrated to pyatspi.
+	* src/lib/accerciser/accerciser.py: Migrated to pyatspi.
+	* src/lib/accerciser/accessible_treeview.py: Migrated to pyatspi.
+	* src/lib/accerciser/hotkey_manager.py: Migrated to pyatspi.
+	* src/lib/accerciser/icons.py: Migrated to pyatspi.
+	* src/lib/accerciser/node.py: Migrated to pyatspi.
+	* src/lib/accerciser/plugin.py: Migrated to pyatspi.
 
 2007-04-24  Eitan Isaacson  <eitan@ascender.com>
 

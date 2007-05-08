@@ -16,7 +16,7 @@ import sys, os, glob
 import gtk
 import gobject
 import wnck
-from pyLinAcc.Constants import *
+from pyatspi.constants import *
 
 ICONS_PATH = os.path.join(sys.prefix, 'share', 
                           'accerciser', 'pixmaps', 'hicolor', '22x22')

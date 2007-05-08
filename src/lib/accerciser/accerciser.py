@@ -21,7 +21,6 @@ import gtk.glade
 import gtk.gdk
 import os, sys, locale
 from icons import getIcon
-import pyLinAcc
 import os
 import atk
 import gnome
@@ -118,9 +117,17 @@ class MainWindow(Tools):
     self.main_xml.signal_autoconnect(self)
     self.window.show_all()
 
-    self.event_manager = pyLinAcc.Event.Manager()
-    self.event_manager.addClient(self._accEventFocusChanged, 'focus')
-    self.event_manager.addClient(self._accEventKeyPressed, 'keyboard:press')
+    pyatspi.Registry.registerEventListener(self._accEventFocusChanged, 
+                                           'focus')
+
+    masks = []
+    mask = 0
+    while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
+      masks.append(mask)
+      mask += 1
+    pyatspi.Registry.registerKeystrokeListener(self._accEventKeyPressed,
+                                               mask=masks,
+                                               kind=(pyatspi.KEY_PRESSED_EVENT,))
     self.last_focused = None
 
   def run(self):
@@ -128,7 +135,7 @@ class MainWindow(Tools):
     Runs the app.
     '''
     try:
-      gtk.main()
+      pyatspi.Registry.start()
     except KeyboardInterrupt:
       self._shutDown()
 
@@ -173,7 +180,7 @@ to take effect.')
     if response_id == gtk.RESPONSE_YES:
       cl = gconf.client_get_default()
       cl.set_bool('/desktop/gnome/interface/accessibility', True)
-    gtk.main_quit()
+    pyatspi.Registry.stop()
 
   def _onRefreshAll(self, widget):
     '''
@@ -204,7 +211,7 @@ to take effect.')
     @param node: The node that emitted the signal.
     @type node: L{Node}
     @param acc: The new accessible that is referenced by the node.
-    @type acc: L{pyLinAcc.Accessible}
+    @type acc: L{Accessibility.Accessible}
     '''
     # Update status bar
     statusbar = self.main_xml.get_widget('statusbar')
@@ -227,8 +234,9 @@ to take effect.')
     cl.set_int(GCONF_GENERAL+'/window_height', self.window.allocation.height)
     for paned_name in ('hpaned', 'vpaned'):
       paned = self.main_xml.get_widget(paned_name)
-      cl.set_int(GCONF_GENERAL+'/'+paned_name, paned.get_position())    
-    self.event_manager.close()
+      cl.set_int(GCONF_GENERAL+'/'+paned_name, paned.get_position())
+    for name, ob in pyatspi.Registry.observers.items():
+      ob.unregister(pyatspi.Registry.reg, name)
     self.acc_treeview.destroy()
     self.plugin_manager.close()
 
@@ -240,7 +248,7 @@ to take effect.')
     @type widget: L{gtk.Widget}
     '''
     self._shutDown()
-    gtk.main_quit()
+    pyatspi.Registry.stop()
     
   def _onAbout(self, widget):
     '''
@@ -283,7 +291,7 @@ to take effect.')
     global hotkey is pressed to select this accessible.
 
     @param event: The event that is being handled.
-    @type event: L{pyLinAcc.Event}
+    @type event: L{pyatspi.event.Event}
     '''
     if not self.isMyApp(event.source):
       self.last_focused = event.source
@@ -296,7 +304,7 @@ to take effect.')
     # Inspect accessible under mouse
     display = gtk.gdk.Display(gtk.gdk.get_display())
     screen, x, y, flags =  display.get_pointer()
-    desktop = pyLinAcc.Registry.getDesktop(0)
+    desktop = pyatspi.Registry.getDesktop(0)
     wnck_screen = wnck.screen_get_default()
     window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
     top_window = (None, -1)
@@ -323,9 +331,9 @@ to take effect.')
     key combinations pressed for further processing.
     
    @param event: The event that is being handled.
-    @type event: L{pyLinAcc.Event}
+    @type event: L{pyatspi.event.Event}
     '''
-    handled = self.hotkey_manager.hotkeyPress(event.detail2, event.any_data[1])
+    handled = self.hotkey_manager.hotkeyPress(event.hw_code, event.modifiers)
     event.consume = handled
 
   def _getChildAccAtCoords(self, parent, x, y):
@@ -333,36 +341,32 @@ to take effect.')
     Gets any child accessible that resides under given desktop coordinates.
 
     @param parent: Top-level accessible.
-    @type parent: L{pyLinAcc.Accessible}
+    @type parent: L{Accessibility.Accessible}
     @param x: X coordinate.
     @type x: integer
     @param y: Y coordinate.
     @type y: integer
 
     @return: Child accessible at given coordinates, or None.
-    @rtype: L{pyLinAcc.Accessible}
+    @rtype: L{Accessibility.Accessible}
     '''
     container = parent
-    while container:
+    while True:
       try:
-        ci = pyLinAcc.Interfaces.IComponent(container)
+        ci = container.queryComponent()
       except:
         return None
-      container =  ci.getAccessibleAtPoint(
-        x, y, pyLinAcc.Constants.DESKTOP_COORDS)
-      if container == pyLinAcc.Interfaces.IAccessible(ci):
+      else:
+        inner_container = container
+      container =  ci.getAccessibleAtPoint(x, y, pyatspi.DESKTOP_COORDS)
+      if not container or container.queryComponent() == ci:
         # The gecko bridge simply has getAccessibleAtPoint return itself
         # if there are no further children
-        container = None
-    if ci:
-      acc = pyLinAcc.Interfaces.IAccessible(ci)
-      if acc == parent:
-        acc = None
-      ci = pyLinAcc.Interfaces.IComponent(parent)
-      z_order = ci.getMDIZOrder()
-      return acc
-    else:
+        break
+    if inner_container == parent:
       return None
+    else:
+      return inner_container
 
   def _onShowPreferences(self, widget):
     '''

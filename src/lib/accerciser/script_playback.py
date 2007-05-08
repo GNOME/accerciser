@@ -3,13 +3,11 @@ from time import sleep, time
 import wnck
 import gobject, gtk
 from re import split
-import pyLinAcc
+import pyatspi
 import os
 
 keystroke_interval = 0.2
 focus_timeout = 5
-
-eg = pyLinAcc.Registry.getDeviceEventController()
 
 _keymap = gtk.gdk.keymap_get_default()
 
@@ -96,7 +94,7 @@ class Focus:
   def __init__(self):
     self.current_app = None
     self.current_frame = None
-    self.node = pyLinAcc.Registry.getDesktop(0)
+    self.node = pyatspi.Registry.getDesktop(0)
     self.wm = _WindowManager()
     self.dialog = self.frame
 
@@ -125,13 +123,15 @@ def pressKeys(keys):
   finalKey = keys[-1]
   for key_code in modifiers:
     sleep(keystroke_interval)
-    eg.generateKeyboardEvent(key_code, '', pyLinAcc.Constants.KEY_PRESS)
+    pyatspi.Registry.generateKeyboardEvent(key_code, None, 
+                                           pyatspi.KEY_PRESS)
   sleep(keystroke_interval)
-  eg.generateKeyboardEvent(_charToKeySym(finalKey), 
-                           '', pyLinAcc.Constants.KEY_SYM)
+  pyatspi.Registry.generateKeyboardEvent(_charToKeySym(finalKey), 
+                                         None, pyatspi.KEY_SYM)
   for key_code in modifiers:
     sleep(keystroke_interval)
-    eg.generateKeyboardEvent(key_code, '', pyLinAcc.Constants.KEY_RELEASE)
+    pyatspi.Registry.generateKeyboardEvent(key_code, None, 
+                                           pyatspi.KEY_RELEASE)
 
 def _charToKeySym(key):
   try:
@@ -144,7 +144,7 @@ def type(text):
   text_syms = map(_charToKeySym, text)
   for key in text_syms:
     sleep(keystroke_interval)
-    eg.generateKeyboardEvent(key, '', pyLinAcc.Constants.KEY_SYM)
+    pyatspi.Registry.generateKeyboardEvent(key, None, pyatspi.KEY_SYM)
     
 focus = Focus()
 

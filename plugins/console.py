@@ -14,7 +14,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import N_, _
 import os
-import pyLinAcc
+import pyatspi
 import gtk
 import ipython_view
 
@@ -32,9 +32,9 @@ class Console(ViewportPlugin):
     self.plugin_area.add(sw)
     self.ipython_view = ipython_view.IPythonView()
     self.ipython_view.updateNamespace({'acc': None})
-    self.ipython_view.updateNamespace(pyLinAcc.__dict__)
-    self.ipython_view.updateNamespace(pyLinAcc.Constants.__dict__)
-    self.ipython_view.updateNamespace(pyLinAcc.Interfaces.__dict__)
+    self.ipython_view.updateNamespace(pyatspi.__dict__)
+    self.ipython_view.updateNamespace({'desktop': 
+                                      pyatspi.Registry.getDesktop(0)})
     self.ipython_view.updateNamespace({'show': self._showAcc})
     sw.add(self.ipython_view)
   

@@ -13,7 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk
 import gtk.gdk
-import pyLinAcc
+import pyatspi
 import gobject
 from tools import Tools
 
@@ -36,10 +36,10 @@ class Node(gobject.GObject, Tools):
   'accessible-changed' signal when L{update} is called with a new accessible.
 
   @ivar desktop: The desktop accessible. It holds references to all the 
-  application L{pyLinAcc.Accessible}s
-  @type desktop: L{pyLinAcc.Accessible}
+  application L{Accessibility.Accessible}s
+  @type desktop: L{Accessibility.Accessible}
   @ivar acc: The currently selected accessible.
-  @type acc: L{pyLinAcc.Accessible}
+  @type acc: L{Accessibility.Accessible}
   @ivar extents: The extents of a given accessible.
   @type extents: L{Bag}
   '''
@@ -48,9 +48,7 @@ class Node(gobject.GObject, Tools):
                    gobject.TYPE_NONE, 
                    (gobject.TYPE_PYOBJECT,))}
   def __init__(self):
-    self.__dict__.update(pyLinAcc.Interfaces.__dict__)
-    self.__dict__.update(pyLinAcc.Constants.__dict__)
-    self.desktop = pyLinAcc.Registry.getDesktop(0)
+    self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
     self.extents = None
     gobject.GObject.__init__(self)
@@ -62,17 +60,17 @@ class Node(gobject.GObject, Tools):
     'accessible-changed' signal.
 
     @param acc: An accessible.
-    @type acc: L{pyLinAcc.Accessible}
+    @type acc: L{Accessibility.Accessible}
     '''
     if not acc or self.isMyApp(acc):
       return
     self.acc = acc
     try:
-      i = pyLinAcc.Interfaces.IComponent(acc)
+      i = acc.queryComponent()
     except NotImplementedError:
       self.extents = Bag(x=0, y=0, width=0, height=0)
     else:
-      self.extents = i.getExtents(pyLinAcc.Constants.DESKTOP_COORDS)
+      self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.blinkRect()
     self.emit('accessible_changed', acc)
   
