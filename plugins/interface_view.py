@@ -55,18 +55,6 @@ class InterfaceViewer(ViewportPlugin):
         section = _InterfaceSection(glade_xml, self.node, iface_name)
         section.disable()
 
-  def _getInterfaces(self, acc):
-    interfaces = []
-    for func in [getattr(acc, f) for f in dir(acc) if f.startswith('query')]:
-      try:
-        func()
-      except:
-        continue
-      else:
-        interfaces.append(func.func_name.replace('query', ''))
-    interfaces.sort()
-    return interfaces
-
   def onAccChanged(self, acc):
     role = acc.getRoleName()
     name = acc.name
@@ -75,7 +63,7 @@ class InterfaceViewer(ViewportPlugin):
     else:
       role_name = role
     self.label_role.set_markup('<b>%s</b>' % role_name)
-    interfaces = self._getInterfaces(acc)
+    interfaces = pyatspi.listInterfaces(acc)
     for section_obj in self.sections:
       section_obj.disable()
       if section_obj.interface_name in interfaces:

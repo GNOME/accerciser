@@ -13,6 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gtk
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
+import pyatspi
 
 class DemoViewport(ViewportPlugin):
   plugin_name = N_('API Browser')
@@ -74,24 +75,12 @@ class DemoViewport(ViewportPlugin):
 
   def onAccChanged(self, acc):
     self.acc = acc
-    ints = self._getInterfaces(acc)
+    ints = pyatspi.listInterfaces(acc)
     model = self.iface_combo.get_model()
     model.clear()
     for iface in ints:
       self.iface_combo.append_text(iface)
     self.iface_combo.set_active(0)
-
-  def _getInterfaces(self, acc):
-    ints = []
-    for func in [getattr(acc, f) for f in dir(acc) if f.startswith('query')]:
-      try:
-        func()
-      except:
-        continue
-      else:
-        ints.append(func.func_name.replace('query', ''))
-    ints.sort()
-    return ints
   
   def _refreshAttribs(self, widget):
     iface = self.iface_combo.get_active_text()

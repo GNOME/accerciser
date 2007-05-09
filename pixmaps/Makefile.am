@@ -4,19 +4,24 @@ pixmaps_DATA = \
 	acceleratorlabel.png \
 	alert.png \
 	animation.png \
+	arrow.png \
 	calendar.png \
 	canvas.png \
 	care.png \
 	character.png \
 	chart.png \
 	checkbox.png \
+	checkmenuitem.png \
 	clock.png \
 	colorchooser.png \
+	columnheader.png \
 	column.png \
 	combobox.png \
 	cursor.png \
+	dateeditor.png \
 	desktopframe.png \
 	desktopicon.png \
+	dialog.png \
 	dial.png \
 	directorypane.png \
 	drawingarea.png \
@@ -25,11 +30,16 @@ pixmaps_DATA = \
 	entry.png \
 	filechooser.png \
 	filler.png \
+	focustraversable.png \
 	fontchooser.png \
 	form.png \
+	frame.png \
+	glasspane.png \
 	grip.png \
 	heading.png \
 	helpballoon.png \
+	htmlcontainer.png \
+	icon.png \
 	imagemap.png \
 	image.png \
 	inputmethodwindow.png \
@@ -38,16 +48,23 @@ pixmaps_DATA = \
 	link.png \
 	listitem.png \
 	list.png \
+	menubar.png \
 	menuitem.png \
+	menu.png \
 	outlineitem.png \
+	pagetablist.png \
 	passwordtext.png \
+	popupmenu.png \
 	progressbar.png \
 	pushbutton.png \
+	radiobutton.png \
+	radiomenuitem.png \
 	row.png \
 	ruler.png \
 	scrollbar.png \
 	scrollpane.png \
-	seperator.png \
+	section.png \
+	separator.png \
 	shape.png \
 	slider.png \
 	sound.png \
@@ -56,9 +73,14 @@ pixmaps_DATA = \
 	statusbar.png \
 	tablecell.png \
 	table.png \
+	tearoffmenuitem.png \
+	terminal.png \
+	text.png \
+	togglebutton.png \
 	toolbar.png \
 	tooltip.png \
 	tree.png \
-	treetable.png
+	treetable.png \
+	window.png
 
 EXTRA_DIST = $(pixmaps_DATA)

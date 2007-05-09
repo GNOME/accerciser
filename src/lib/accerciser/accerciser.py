@@ -217,9 +217,6 @@ class MainWindow(Tools):
     for paned_name in ('hpaned', 'vpaned'):
       paned = self.main_xml.get_widget(paned_name)
       cl.set_int(GCONF_GENERAL+'/'+paned_name, paned.get_position())
-    for name, ob in pyatspi.Registry.observers.items():
-      ob.unregister(pyatspi.Registry.reg, name)
-    self.acc_treeview.destroy()
     self.plugin_manager.close()
 
   def _onQuit(self, widget):

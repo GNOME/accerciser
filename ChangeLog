@@ -1,3 +1,67 @@
+2007-05-09  Eitan Isaacson  <eitan@ascender.com>
+
+	* NOTICE: Added copyright notice for role icons.
+	* pixmaps/Makefile.am: 
+	* pixmaps/acceleratorlabel.png:
+	* pixmaps/arrow.png:
+	* pixmaps/calendar.png:
+	* pixmaps/canvas.png:
+	* pixmaps/chart.png:
+	* pixmaps/checkbox.png:
+	* pixmaps/checkmenuitem.png:
+	* pixmaps/colorchooser.png:
+	* pixmaps/combobox.png:
+	* pixmaps/dateeditor.png:
+	* pixmaps/desktopicon.png:
+	* pixmaps/dialog.png:
+	* pixmaps/drawingarea.png:
+	* pixmaps/entry.png:
+	* pixmaps/filechooser.png:
+	* pixmaps/filler.png:
+	* pixmaps/focustraversable.png:
+	* pixmaps/fontchooser.png:
+	* pixmaps/frame.png:
+	* pixmaps/glasspane.png:
+	* pixmaps/icon.png:
+	* pixmaps/image.png:
+	* pixmaps/list.png:
+	* pixmaps/listitem.png:
+	* pixmaps/menu.png:
+	* pixmaps/menubar.png:
+	* pixmaps/menuitem.png:
+	* pixmaps/pagetablist.png:
+	* pixmaps/popupmenu.png:
+	* pixmaps/progressbar.png:
+	* pixmaps/pushbutton.png:
+	* pixmaps/radiobutton.png:
+	* pixmaps/radiomenuitem.png:
+	* pixmaps/ruler.png:
+	* pixmaps/scrollbar.png:
+	* pixmaps/scrollpane.png:
+	* pixmaps/separator.png:
+	* pixmaps/seperator.png:
+	* pixmaps/slider.png:
+	* pixmaps/spinbutton.png:
+	* pixmaps/splitpane.png:
+	* pixmaps/statusbar.png:
+	* pixmaps/table.png:
+	* pixmaps/tearoffmenuitem.png:
+	* pixmaps/text.png:
+	* pixmaps/togglebutton.png:
+	* pixmaps/toolbar.png:
+	* pixmaps/tree.png:
+	* pixmaps/treetable.png:
+	* pixmaps/window.png: Added/modified icons from glade3 icons (bug
+	431816). Thank you Vincent Geddes!
+	* plugins/api_view.py: Removed custom list interfaces method, use
+	pyatspi one.
+	* plugins/interface_view.py: Removed custom list interfaces
+	method,use pyatspi one.
+	* src/accerciser.glade: Added Vincent Geddes to 'about' dialog.
+	* src/lib/accerciser/accerciser.py: Fixed application quitting.
+	* src/lib/accerciser/icons.py: Removed role->filename mapping.
+	* src/lib/accerciser/pyatspi.zip: Updated to snapshot of revision 922.
+
 2007-05-08  Eitan Isaacson  <eitan@ascender.com>
 	
 	* plugins/event_monitor.py: Made load time extremely faster.
