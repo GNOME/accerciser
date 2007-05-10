@@ -19,7 +19,6 @@ pixmaps_DATA = \
 	combobox.png \
 	cursor.png \
 	dateeditor.png \
-	desktopframe.png \
 	desktopicon.png \
 	dialog.png \
 	dial.png \
@@ -51,8 +50,8 @@ pixmaps_DATA = \
 	menubar.png \
 	menuitem.png \
 	menu.png \
-	outlineitem.png \
 	pagetablist.png \
+	pagetab.png \
 	passwordtext.png \
 	popupmenu.png \
 	progressbar.png \
