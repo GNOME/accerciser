@@ -1,0 +1,52 @@
+AC_INIT(Accerciser, 0.1.2, eitan@ascender.com, accerciser)
+AC_CONFIG_SRCDIR(src/accerciser.in)
+AM_INIT_AUTOMAKE
+AM_MAINTAINER_MODE
+
+GNOME_DOC_INIT
+
+dnl == check for python ==
+AM_PATH_PYTHON(2.4)
+
+dnl == avoid running pyreqs during package building ==
+AC_MSG_CHECKING([whether to run pyreqs.py])
+AC_ARG_WITH(pyreqs,
+    [  --with-pyreqs           Build with Python module checks.],
+    with_pyreqs=$withval,
+    with_pyreqs=yes)
+AC_MSG_RESULT($with_pyreqs)
+if test "$with_pyreqs" = "yes"; then
+  dnl == check for required modules ==
+  AM_CHECK_PYSCRIPT($srcdir/pyreqs.py, , 
+    [AC_MSG_ERROR(Could not find required Python module)])
+fi
+
+dnl == i18n ==
+GETTEXT_PACKAGE=accerciser
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
+AM_GLIB_GNU_GETTEXT
+
+dnl == intltool check ==
+IT_PROG_INTLTOOL([0.35.0])
+
+dnl == gconf config ==
+AC_PATH_PROG(GCONFTOOL, gconftool-2)
+AM_GCONF_SOURCE_2
+
+dnl == generate makefiles ==
+AC_OUTPUT([
+Makefile
+accerciser.spec
+accerciser.desktop.in
+help/Makefile
+icons/Makefile
+pixmaps/Makefile
+plugins/Makefile
+po/Makefile.in
+src/accerciser
+src/Makefile
+src/lib/Makefile
+src/lib/accerciser/i18n.py
+src/lib/accerciser/Makefile
+])

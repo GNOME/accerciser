@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+'''
+Creates an instance of the program GUI and starts the main event loop.
+
+@author: Peter Parente
+@author: Eitan Isaacson
+@organization: IBM Corporation
+@copyright: Copyright (c) 2006 IBM Corporation
+@license: BSD
+
+All rights reserved. This program and the accompanying materials are made 
+available under the terms of the BSD which accompanies this distribution, and 
+is available at U{http://www.opensource.org/licenses/bsd-license.php}
+'''
+import sys, os
+# make the local directory part of the path to aid user imports
+sys.path.insert(0, '.')
+# We can't rely on prefix if we're installed by relocated RPM. Instead, we 
+# use __file__ and for now hope that lib is relative to bin.
+sys.prefix = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
+libs = os.path.join(sys.prefix, 'lib',
+                    'python@PYTHON_VERSION@', 'site-packages')
+# point to the proper site-packages path
+sys.path.insert(1, libs)
+
+import gnome
+# make this program accessible
+props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
+gnome.program_init('accerciser', '@VERSION@', properties=props)
+
+import pygtk
+pygtk.require('2.0')
+import gtk
+# get global icon resources
+it = gtk.IconTheme()
+try:
+  icons = [it.load_icon('@PACKAGE@', size, gtk.ICON_LOOKUP_NO_SVG) 
+           for size in (16, 22, 32)]
+except Exception:
+  # ignore errors, and just don't use the icon
+  pass
+else:
+  gtk.window_set_default_icon_list(*icons)
+  
+import accerciser
+accerciser.main()

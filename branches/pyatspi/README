@@ -1,0 +1,120 @@
+Accerciser 0.1.2
+Just 15 minutes a day for better accessibility!
+
+Description
+===========
+
+  Accerciser is an interactive Python accessibility explorer for the GNOME
+  desktop. It uses AT-SPI to inspect and control widgets, allowing you to check
+  if an application is providing correct information to assistive technologies
+  and automated test frameworks. Accerciser has a simple plugin framework which
+  you can use to create custom views of accessibility information.
+
+  In essence, Accerciser is a next generation at-poke tool.
+
+Features
+========
+
+* ORBit, not cspi, based
+
+Like the modern LSR and Orca screen readers, Accerciser uses pyORBit to talk
+AT-SPI with other applications. The legacy cspi module is avoided.
+
+* Plugin architecture
+
+Create a Python module, drop it in a folder, and have it load as a plugin pane
+with full access to AT-SPI and the selected element in the accessibility tree
+view.
+
+* Interface browser and event monitor plugins
+
+All the features you've come to expect from a poke tool, and then some.
+
+* IPython console plugin
+
+A full, interactive Python shell with access to the accessible object selected
+in the tree view; all AT-SPI interfaces, methods and attributes; and any other
+Python modules. Supports autocompletion and a million other niceties thanks to
+IPython.
+
+* API browser plugin
+  
+Shows the interfaces, methods, and attributes available on the selected
+accessible object.
+
+* Global hotkeys
+
+Move the tree view quickly to the last focused accessible or the one under the
+mouse pointer. Insert a marker into the event monitor log for easy
+identification at a later time.
+
+* Customizable UI layout
+
+Move plugin tabs to different panels or even separate windows to view them
+concurrently.
+
+* Accessibility!
+
+Accerciser does not disable its own accessibility.
+
+* Yelp documentation
+  
+Included in the package.
+
+* Python powered
+
+Brits, not serpents.
+
+
+Requirements
+============
+
+  All of the following can be installed using yum on an Fedora Core machine:
+  
+    gnome-python2-libwnck >= 2.14
+    pygtk2 >= 2.8
+    python >= 2.4
+    pygtk2-libglade >= 2.8
+    pyorbit >= 2.14
+    at-spi >= 1.7
+    gnome-python2 >= 2.12
+    glib2 >= 2.10
+    gnome-python2-bonobo >= 2.12
+	GConf2-devel
+    
+  To use the Python console plugin, install the ipython package. It too can be 
+  installed using yum.
+
+  Make sure accessibility is enabled for your GNOME desktop:
+
+    gconftool-2 -s -t boolean /desktop/gnome/interface/accessibility true
+  
+Installing
+==========
+
+  autogen.sh
+  make
+  sudo make install
+
+Running
+=======
+
+  Type 'accerciser' at the prompt or choose the Accerciser item from the 
+  Programming menu in GNOME.
+  
+Help
+=====
+
+  See the Help menu in the program GUI.
+
+Legal
+=====
+  
+  Copyright (c) 2006, 2007 IBM Corporation
+
+  All rights reserved. This program and the accompanying materials are made
+  available under the terms of the BSD License which accompanies this
+  distribution, and is available at
+  http://www.opensource.org/licenses/bsd-license.php.
+  
+  See COPYING and NOTICE for details.

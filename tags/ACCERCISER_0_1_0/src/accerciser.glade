@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<!--*- mode: xml -*-->
+<glade-interface>
+  <widget class="GtkWindow" id="window">
+    <property name="title" translatable="yes">accerciser</property>
+    <signal name="destroy" handler="_onQuit"/>
+    <child>
+      <widget class="GtkVBox" id="main_vbox">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkMenuBar" id="menubar1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkMenuItem" id="file1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_File</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem1">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">gtk-quit</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="_onQuit"/>
+                        <accelerator key="q" modifiers="GDK_CONTROL_MASK" signal="activate"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="view1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_View</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="view1_menu">
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem2">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">_Plugins...</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="_onShowPlugins"/>
+                        <accelerator key="p" modifiers="GDK_CONTROL_MASK" signal="activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="menu-item-image1">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-disconnect</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                        <property name="visible">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem3">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">gtk-refresh</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="_onRefreshAll"/>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitem4">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Refresh _Current</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="_onRefreshCurrent"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="menu-item-image3">
+                            <property name="visible">True</property>
+                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
+                            <property name="stock">gtk-jump-to</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem4">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <accelerator key="F11" modifiers="" signal="activate"/>
+                <child>
+                  <widget class="GtkMenu" id="menuitem4_menu">
+                    <child>
+                      <widget class="GtkImageMenuItem" id="help1">
+                        <property name="visible">True</property>
+                        <property name="label">_Contents</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="_onHelp"/>
+                        <accelerator key="F1" modifiers="" signal="activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="menu-item-image2">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-help</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="about1">
+                        <property name="visible">True</property>
+                        <property name="label">gtk-about</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="_onAbout"/>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkVPaned" id="vpaned1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="border_width">5</property>
+            <property name="position">565</property>
+            <child>
+              <widget class="GtkHPaned" id="hpaned1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="position">250</property>
+                <child>
+                  <widget class="GtkScrolledWindow" id="scrolled_acc_tree">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                    <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                    <property name="shadow_type">GTK_SHADOW_IN</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="resize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkAlignment" id="alignment_topright">
+                    <property name="visible">True</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="resize">False</property>
+                    <property name="shrink">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="resize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkAlignment" id="alignment_bottom">
+                <property name="visible">True</property>
+                <child>
+                  <placeholder/>
+                </child>
+              </widget>
+              <packing>
+                <property name="resize">False</property>
+                <property name="shrink">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkStatusbar" id="statusbar">
+            <property name="visible">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkAboutDialog" id="about">
+    <property name="visible">True</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <property name="copyright" translatable="yes">accerciser Copyright © 2006, 2007 IBM Corporation (BSD)</property>
+    <property name="comments" translatable="yes">An interactive Python accessibility explorer</property>
+    <property name="website">http://live.gnome.org/Accerciser</property>
+    <property name="website_label" translatable="yes">Wiki page</property>
+    <property name="license" translatable="yes">The New BSD License
+See the COPYING and NOTICE files for details.</property>
+    <property name="authors">Eitan Isaacson &lt;eitan@ascender.com&gt;
+Peter Parente &lt;pparent@us.ibm.com&gt;</property>
+    <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
+    <property name="artists">Eitan Isaacson &lt;eitan@ascender.com&gt;</property>
+    <property name="logo_icon_name">accerciser</property>
+    <property name="wrap_license">True</property>
+    <signal name="response" handler="_onAboutResponse"/>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkDialog" id="help">
+    <property name="width_request">400</property>
+    <property name="height_request">300</property>
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">Help - accerciser</property>
+    <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox2">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkScrolledWindow" id="scrolledwindow6">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
+            <property name="shadow_type">GTK_SHADOW_IN</property>
+            <child>
+              <widget class="GtkTextView" id="textview1">
+                <property name="width_request">374</property>
+                <property name="height_request">986</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="wrap_mode">GTK_WRAP_WORD</property>
+                <property name="left_margin">10</property>
+                <property name="right_margin">10</property>
+                <property name="accepts_tab">False</property>
+                <property name="text" translatable="yes">Browsing the accessibility hierarchy
+
+Use the tree view to navigate the hierarchy of accessible objects rooted at the first desktop. Unfolding a tree node reveals its immediate children while folding it hides them. Each node shows an icon for its associated application or widget role and its accessible name, if available.
+
+accerciser does not automatically update its view of the accessible hierarchy when the contents of the desktop change. To force a refresh of a particular level, select a node in that level and then activate the File-&gt;Refresh menu item (Ctrl-R). To force a refresh of the entire tree, activate the File-&gt;Refresh all menu item (Ctrl-Shift-R).
+
+Getting basic accessible information
+
+Selecting a node in the tree populates the text areas at the bottom of the window. The label on the frame indicates the accessible role and name of the selected node. The text areas list the accessible interfaces, states, attributes, relations, and text. Any or all of this information may be missing for a given accessible.
+
+Using the console
+
+The console text area is a fully-fledged Python console. You may enter and execute any valid Python code.
+
+accerciser defines references to the currently selected accessible in the tree view. The variable 'acc' contains a reference to the accessible object and 'desktop' contains a reference to the root desktop accessible. 
+
+All of functions and constants from the pyLinAcc package are also available as locals in the console. The most important of these are the methods for querying to other accessibility interfaces. For example, to query to the Hypertext interface:
+
+&gt;&gt;&gt; ht = IText(acc)
+
+The Python built-in 'dir' function is quite helpful for inspecting the available methods and attributes of an accessible object or one of its interfaces. For example, 'dir(acc)' lists all available methods and attributes of the at-spi Accessible interface while 'dir(ht)' shows similar information for an accessible queried to the at-spi Hypertext interface. A method or attribute discovered in this manner may be invoked as usual. For instance:
+
+&gt;&gt;&gt; print acc.getApplication()
+gedit
+&gt;&gt;&gt; print IText(acc).getText(0, 10)
+the quick 
+
+Managing the console log
+
+The File-&gt;Clear log option clears the interaction history in the console window. The File-&gt;Save log option (Ctrl-S) shows the standard save-as dialog for saving the console history as a plain text file.
+
+Recording standalone scripts
+
+accerciser can export sessions with the console window as Python scripts. Toggle the Record button (Alt-R) in the main program window to start script record. Toggle the button again to stop recording and show the save file dialog.
+
+Any valid code entered in the console window thereafter will be added to the script. Code containing syntax errors will not be added to the script. The script will properly track the last selected accessible in the tree based on the path to its root application.</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area2">
+            <property name="visible">True</property>
+            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <child>
+              <widget class="GtkButton" id="closebutton1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="has_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
+                <property name="label">gtk-close</property>
+                <property name="use_stock">True</property>
+                <property name="response_id">-7</property>
+                <signal name="clicked" handler="_onCloseDialog"/>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkDialog" id="dialog_plugins">
+    <property name="border_width">5</property>
+    <property name="default_width">360</property>
+    <property name="default_height">240</property>
+    <property name="has_separator">False</property>
+    <signal name="close" handler="_onPluginsClose"/>
+    <signal name="response" handler="_onPluginsResponse"/>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox3">
+        <property name="visible">True</property>
+        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
+        <property name="spacing">2</property>
+        <child>
+          <widget class="GtkScrolledWindow" id="scrolledwindow3">
+            <property name="visible">True</property>
+            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <child>
+              <widget class="GtkTreeView" id="plugins_treeview">
+                <property name="visible">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area3">
+            <property name="visible">True</property>
+            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
+            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <child>
+              <widget class="GtkButton" id="button3">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">gtk-close</property>
+                <property name="use_stock">True</property>
+                <signal name="activate" handler="_onPluginsClose"/>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
