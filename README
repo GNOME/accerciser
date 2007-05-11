@@ -69,8 +69,8 @@ Brits, not serpents.
 Requirements
 ============
 
-  All of the following can be installed using yum on an Fedora Core machine:
-  
+  On a Red Hat based distro:
+
     gnome-python2-libwnck >= 2.14
     pygtk2 >= 2.8
     python >= 2.4
@@ -80,10 +80,20 @@ Requirements
     gnome-python2 >= 2.12
     glib2 >= 2.10
     gnome-python2-bonobo >= 2.12
-	GConf2-devel
+    GConf2-devel
+
+  On a Debian based distro:
+
+    python-gnome2-desktop >= 2.14
+    python-gnome2 >= 2.14
+    python-gtk2 >= 2.8
+    python-glade2 >= 2.8
+    python >= 2.4
+    python-pyorbit >= 2.14
+    at-spi >= 1.7
+    libgconf2-dev
     
-  To use the Python console plugin, install the ipython package. It too can be 
-  installed using yum.
+  To use the Python console plugin, you must hve IPython installed.
 
   Make sure accessibility is enabled for your GNOME desktop:
 
