@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.2.0 on Fri Apr 13 12:59:20 2007 by eitan@lifebook-->
+<!--Generated with glade3 3.2.0 on Tue May 15 10:13:22 2007 by eitan@lifebook-->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
     <child>
@@ -211,7 +211,7 @@
                               <widget class="GtkVBox" id="vbox2">
                                 <property name="visible">True</property>
                                 <child>
-                                  <widget class="GtkRadioButton" id="source_everthing1">
+                                  <widget class="GtkRadioButton" id="source_everthing">
                                     <property name="visible">True</property>
                                     <property name="label" translatable="yes">Everything</property>
                                     <property name="active">True</property>
@@ -223,11 +223,11 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkRadioButton" id="source_app1">
+                                  <widget class="GtkRadioButton" id="source_app">
                                     <property name="visible">True</property>
                                     <property name="label" translatable="yes">Selected application</property>
                                     <property name="draw_indicator">True</property>
-                                    <property name="group">source_everthing1</property>
+                                    <property name="group">source_everthing</property>
                                     <signal name="toggled" handler="_onSourceToggled"/>
                                   </widget>
                                   <packing>
@@ -236,11 +236,11 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkRadioButton" id="source_acc1">
+                                  <widget class="GtkRadioButton" id="source_acc">
                                     <property name="visible">True</property>
                                     <property name="label" translatable="yes">Selected accessible</property>
                                     <property name="draw_indicator">True</property>
-                                    <property name="group">source_everthing1</property>
+                                    <property name="group">source_everthing</property>
                                     <signal name="toggled" handler="_onSourceToggled"/>
                                   </widget>
                                   <packing>

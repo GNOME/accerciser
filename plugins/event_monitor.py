@@ -17,7 +17,6 @@ import os.path
 import gettext, os, sys, locale
 from Queue import Queue, Empty
 from accerciser.plugin import ViewportPlugin
-from accerciser.tools import Tools
 from accerciser.i18n import _, N_
 import pango
 from gtk import keysyms, gdk
@@ -328,6 +327,3 @@ class EventMonitor(ViewportPlugin):
       self.monitor_buffer.get_mark('mark_last_log'))
     end_iter = self.monitor_buffer.get_end_iter()
     self.monitor_buffer.apply_tag_by_name('last_log', start_iter, end_iter)
-
-  def close(self):
-    pass
