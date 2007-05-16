@@ -15,19 +15,38 @@ from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
 import pyatspi
 
-class DemoViewport(ViewportPlugin):
+class APIBrowser(ViewportPlugin):
+  '''
+  Plugin class for API Browser.
+
+  @ivar iface_combo: Combobox that shows available interfaces.
+  @type iface_combo: gtk.ComboBox
+  @ivar method_tree: Tree view with available methods from chosen interface.
+  @type method_tree: gtk.TreeView
+  @ivar property_tree: Tree view with available properties from chosen 
+  interface.
+  @type property_tree: gtk.TreeView
+  @ivar private_toggle: Toggles visibility of private attributes.
+  @type private_toggle: gtk.CheckButton
+  '''
   plugin_name = N_('API Browser')
   plugin_name_localized = _(plugin_name)
   plugin_description = \
       N_('Browse the various methods of the current accessible')
   def init(self):
+    '''
+    Initialize the API browser plugin.
+    '''
     self._buildUI()
-    self._initModels()
+    self._initTreeViews()
     self.iface_combo.connect('changed', self._refreshAttribs)
     self.private_toggle.connect('toggled', self._refreshAttribs)
     self.curr_iface = None
 
   def _buildUI(self):
+    '''
+    Manually build the plugin's UI.
+    '''
     vbox = gtk.VBox()
     self.plugin_area.add(vbox)
     top_hbox = gtk.HBox()
@@ -49,7 +68,10 @@ class DemoViewport(ViewportPlugin):
     bottom_hbox.pack_end(self.private_toggle, False)
     self.show_all()
     
-  def _initModels(self):
+  def _initTreeViews(self):
+    '''
+    Initialize the properties and methods tree views and models.
+    '''
     # method view
     model = gtk.ListStore(str, str)
     self.method_tree.set_model(model)
@@ -74,6 +96,12 @@ class DemoViewport(ViewportPlugin):
     self.property_tree.append_column(tvc)
 
   def onAccChanged(self, acc):
+    '''
+    Update the UI when the selected accessible changes.
+    
+    @param acc: The applications-wide selected accessible.
+    @type acc: Accessibility.Accessible
+    '''
     self.acc = acc
     ints = pyatspi.listInterfaces(acc)
     model = self.iface_combo.get_model()
@@ -83,6 +111,12 @@ class DemoViewport(ViewportPlugin):
     self.iface_combo.set_active(0)
   
   def _refreshAttribs(self, widget):
+    '''
+    Refresh the attributes in the tree views. Could be used as a callback.
+    
+    @param widget: The widget that may have triggered this callback.
+    @type widget: gtk.Widget
+    '''
     iface = self.iface_combo.get_active_text()
     try:
       query_func = getattr(self.acc, 'query'+iface)
@@ -93,6 +127,10 @@ class DemoViewport(ViewportPlugin):
       self._popAttribViews()
 
   def _popAttribViews(self):
+    '''
+    Populate the attribute views with information from currently selected 
+    accessible and interface.
+    '''
     prop_model = self.property_tree.get_model()
     method_model = self.method_tree.get_model()
     prop_model.clear()
