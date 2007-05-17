@@ -13,6 +13,24 @@ GLADE_FILE = os.path.join(os.path.dirname(__file__),
                           'script_recorder.glade')
 
 class ScriptFactory(object):
+  '''
+  Abstract class for a script factory. Classes of specific platforms like
+  dogtail are derived from this.
+
+  @cvar intepreter_line: The top intepreter line
+  @type intepreter_line: string
+  @cvar import_line: The import line for the specific platform
+  @type import_line: strin
+  @cvar MODIFIERS: Key symbols that are considered modifiers.
+  @type MODIFIERS: list
+
+  @ivar commands_queue: The commands that are being produced by the facory.
+  @type commands_queue: Queue.Queue
+  @ivar app_name: The last focused application name
+  @type app_name: string
+  @ivar frame_name: The last focused window frame name.
+  @type frame_name: string.
+  '''
   intepreter_line = '#!/usr/bin/python'
   import_line = ''
   MODIFIERS = [keysyms.Control_L, keysyms.Control_R, 
@@ -21,33 +39,56 @@ class ScriptFactory(object):
                keysyms.Shift_L, keysyms.Shift_R]
                
   def __init__(self):
-      self.commands_queue = Queue()
-      self.app_name = ''
-      self.frame_name = ''
+    '''
+    Initialize the script factory.
+    '''
+    self.commands_queue = Queue()
+    self.app_name = ''
+    self.frame_name = ''
 
-  def scriptCommand(self, event):
-    if isinstance(event, pyatspi.event.Event) and \
-          event.type.name == 'window:activate':
-      return self._windowActivate(event)
-    elif isinstance(event, pyatspi.event.DeviceEvent):
-      return self._keyPress(event)
-
-  def _keyPress(self, event):
+  def keyPressCommand(self, event):
+    '''
+    Processing key presses in to commands
+    
+    @param event: The keypress at-spi event.
+    @type event: Accessibility.DeviceEvent
+    '''
     pass
 
-  def _windowActivate(self, event):
+  def windowActivateCommand(self, event):
+    '''
+    Store the focus event source's application name and frame name.
+    
+    @param event: The at-spi focus event.
+    @type event: Accessibility.Event
+    '''
     app = event.source.getApplication()
     if app:
       self.app_name = app.name
     self.frame_name = event.source.name
 
 class DogtailFactory(ScriptFactory):
+  '''
+  Script factory for dogtail scripts.
+
+  @ivar typed_text: Plain text that has been typed so far.
+  @type typed_text: string
+  '''
   import_line = 'from dogtail.procedural import *'
   def __init__(self):
+    '''
+    Initialize the object.
+    '''
     ScriptFactory.__init__(self)
     self.typed_text = ''
 
-  def _keyPress(self, event):
+  def keyPressCommand(self, event):
+    '''
+    Create command lines for variuos key presses.
+    
+    @param event: Key press at-spi event.
+    @type event: Accessibility.DeviceEvent
+    '''
     if event.id in self.MODIFIERS or \
           event.event_string.startswith('ISO'):
       return
@@ -73,15 +114,34 @@ class DogtailFactory(ScriptFactory):
 
 
 class NativeFactory(DogtailFactory):
+  '''
+  Script factory for native scripts. Besides the import line, 
+  it should be identical to dogtail scripts.
+  '''
   import_line = 'from accerciser.script_playback import *'
 
 class LDTPFactory(DogtailFactory):
+  '''
+  Script factory for LDTP scripts.
+
+  @ivar typed_text: Plain text that has been typed so far.
+  @type typed_text: string
+  '''
   import_line = 'from ldtp import *'
   def __init__(self):
+    '''
+    Initialize the object.
+    '''
     ScriptFactory.__init__(self)
     self.typed_text = ''
 
-  def _keyPress(self, event):
+  def keyPressCommand(self, event):
+    '''
+    Create command lines for variuos key presses.
+    
+    @param event: Key press at-spi event.
+    @type event: Accessibility.DeviceEvent
+    '''
     if event.id in self.MODIFIERS or \
           event.event_string.startswith('ISO'):
       return
@@ -101,11 +161,26 @@ class LDTPFactory(DogtailFactory):
                                        gtk.accelerator_name(event.id,
                                                             event.modifiers))
 class ScriptRecorder(ViewportPlugin):
+  '''
+  Script recorder plugin class.
+
+  @ivar text_view: Script area text view.
+  @type text_view: gtk.TextView
+  @ivar mark: Scroll mark, keeps textview automatically srolling down.
+  @type mark: gtk.TextMark
+  @ivar script_factory: The selected script factory
+  @type script_factory: L{ScriptFactory}
+  @ivar last_active_type_button: The last active script type radio button.
+  @type last_active_type_button: gtk.RadioButton
+  '''
   plugin_name = N_('Script Recorder')
   plugin_name_localized = _(plugin_name)
   plugin_description = N_('Creates dogtail style scripts')
   
   def init(self):
+    '''
+    Initialize the plugin.
+    '''
     text_buffer = gtksourceview.SourceBuffer()
     lm = gtksourceview.SourceLanguagesManager()
     lang = lm.get_language_from_mime_type('text/x-python')
@@ -148,10 +223,14 @@ class ScriptRecorder(ViewportPlugin):
     text_buffer.insert(text_buffer.get_end_iter(), text)
     self.text_view.scroll_mark_onscreen(self.mark)
 
-  def close(self):
-    pass
-
   def _onRecord(self, button):
+    '''
+    Callback for record button clicks. If the plugin is already recording 
+    this callback is for the stop button.
+    
+    @param button: The clicked button.
+    @type button: gtk.Button
+    '''
     if button.get_label() == 'gtk-media-record':
       button.set_label(gtk.STOCK_MEDIA_STOP)
       pyatspi.Registry.registerEventListener(self._onWindowActivate, 
@@ -180,22 +259,50 @@ class ScriptRecorder(ViewportPlugin):
         kind=(pyatspi.KEY_PRESSED_EVENT,))
 
   def _onWindowActivate(self, event):
+    '''
+    Callback for window focus events. Calls the script factory and flushes
+    it's queue.
+    
+    @param event: Focus at-spi event.
+    @type event: Accessibility.Event
+    '''
     if self.isMyApp(event.source):
       return
-    self.script_factory.scriptCommand(event)
+    self.script_factory.windowActivateCommand(event)
     while self.script_factory.commands_queue.qsize():
       self.appendText(self.script_factory.commands_queue.get_nowait())
 
   def _onKeystroke(self, event):
-    self.script_factory.scriptCommand(event)
+    '''
+    Callback for key press events. Calls the script factory and flushes
+    it's queue.
+    
+    @param event: Key press at-spi event.
+    @type event: Accessibility.DeviceEvent
+    '''
+    self.script_factory.keyPressCommand(event)
     while self.script_factory.commands_queue.qsize():
       self.appendText(self.script_factory.commands_queue.get_nowait())
 
   def _onClear(self, button):
+    '''
+    Callback for 'clear' button press.
+    
+    @param button: Button that was clicked.
+    @type button: gtk.Button
+    '''
     if self._askLoseChanges():
       self._clearBuffer()
 
   def _onTypeToggled(self, radio_button, factory_class):
+    '''
+    Callback for script type radio buttons.
+    
+    @param radio_button: Radio button that was toggled.
+    @type radio_button: gtk.RadioButton
+    @param factory_class: Factory class that is associated with this button.
+    @type factory_class: L{ScriptFactory}
+    '''
     if not radio_button.get_active() or \
           radio_button is self.last_active_type_button:
       return
@@ -207,6 +314,9 @@ class ScriptRecorder(ViewportPlugin):
       self.last_active_type_button.set_active(True)
 
   def _clearBuffer(self):
+    '''
+    Clears the script text buffer and inserts the intepreter and import line.
+    '''
     text_buffer = self.text_view.get_buffer()
     text_buffer.set_text('%s\n\n%s\n\n' % \
                            (self.script_factory.intepreter_line,
@@ -214,6 +324,13 @@ class ScriptRecorder(ViewportPlugin):
     text_buffer.set_modified(False)
 
   def _askLoseChanges(self):
+    '''
+    Raises a dialog that asks the user to confirm the loss of the current
+    script in the buffer.
+    
+    @return: True if user confirms.
+    @rtype: boolean
+    '''
     text_buffer = self.text_view.get_buffer()
     if not text_buffer.get_modified():
       return True
@@ -229,20 +346,26 @@ class ScriptRecorder(ViewportPlugin):
     
 
   def _onSave(self, button):
-    save_dialog = gtk.FileChooserDialog('Save recorded script',
-                                        action=gtk.FILE_CHOOSER_ACTION_SAVE,
-                                        buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-                                                 gtk.STOCK_OK, gtk.RESPONSE_OK))
+    '''
+    Callback for 'save' button. Raises file chooser dialog for saving
+    contents of script buffer.
+    
+    @param button: Button that was clicked.
+    @type button: gtk.Button
+    '''
+    save_dialog = gtk.FileChooserDialog(
+      'Save recorded script',
+      action=gtk.FILE_CHOOSER_ACTION_SAVE,
+      buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+               gtk.STOCK_OK, gtk.RESPONSE_OK))
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.connect('response', self._onSaveResponse)
     save_dialog.set_default_response(gtk.RESPONSE_OK)
     save_dialog.show_all()
-
-  def _onSaveResponse(self, filechooser, response):
+    response = save_dialog.run()
     if response == gtk.RESPONSE_OK:
-      save_to = open(filechooser.get_filename(), 'w')
+      save_to = open(save_dialog.get_filename(), 'w')
       text_buffer = self.text_view.get_buffer()
       save_to.write(text_buffer.get_text(text_buffer.get_start_iter(),
                                          text_buffer.get_end_iter()))
       save_to.close()
-    filechooser.destroy()
+    save_dialog.destroy()

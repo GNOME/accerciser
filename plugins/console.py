@@ -23,11 +23,17 @@ if ipython_view.IPython == None:
  
 
 class Console(ViewportPlugin):
+  '''
+  Plugin class for IPython console.
+  '''
   plugin_name = N_('IPython Console')
   plugin_name_localized = _(plugin_name)
   plugin_description = \
       N_('Interactive console for manipulating currently selected accessible')
   def init(self):
+    '''
+    Initialize plugin.
+    '''
     sw = gtk.ScrolledWindow()
     self.plugin_area.add(sw)
     self.ipython_view = ipython_view.IPythonView()
@@ -39,7 +45,21 @@ class Console(ViewportPlugin):
     sw.add(self.ipython_view)
   
   def onAccChanged(self, acc):
+    '''
+    Update 'acc' variable in console namespace with currently 
+    selected accessible.
+    
+    @param acc: The currently selected accessible.
+    @type acc: Accessibility.Accessible
+    '''
     self.ipython_view.updateNamespace({'acc': acc})
 
   def _showAcc(self, acc):
+    '''
+    A method that is exposed in the console's namespace that allows the user 
+    to show a given accessible in the main application.
+    
+    @param acc: Accessible to show.
+    @type acc: Accessibility.Accessible
+    '''
     self.node.update(acc)
