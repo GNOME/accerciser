@@ -57,67 +57,11 @@ class Tools(object):
         return True
     return False
   
-
-class Proxy(object):
-  '''
-  Our own proxy object which enables weak references to bound and unbound
-  methods and arbitrary callables. Pulls information about the function, 
-  class, and instance out of a bound method. Stores a weak reference to the
-  instance to support garbage collection.
-  '''
-  def __init__(self, cb):
-    try:
-      try:
-        self.inst = weakref.ref(cb.im_self)
-      except TypeError:
-        self.inst = None
-      self.func = cb.im_func
-      self.klass = cb.im_class
-    except AttributeError:
-      self.inst = None
-      self.func = cb.im_func
-      self.klass = None
-     
-  def __call__(self, *args, **kwargs):
-    '''
-    Proxy for a call to the weak referenced object. Take arbitrary params to
-    pass to the callable.
-    
-    @raise ReferenceError: When the weak reference refers to a dead object
-    '''
-    if self.inst is not None and self.inst() is None:
-      return None
-    elif self.inst is not None:
-      # build a new instance method with a strong reference to the instance
-      mtd = new.instancemethod(self.func, self.inst(), self.klass)
-    else:
-      # not a bound method, just return the func
-      mtd = self.func
-    # invoke the callable and return the result
-    return mtd(*args, **kwargs)
-  
-  def __eq__(self, other):
-    '''
-    Compare the held function and instance with that held by another proxy.
-    
-    @param other: Another proxy object
-    @type other: L{Proxy}
-    @return: Whether this func/inst pair is equal to the one in the other proxy
-      object or not
-    @rtype: boolean
-    '''
-    try:
-      return self.func == other.func and self.inst() == other.inst()
-    except Exception:
-      return False
-
-  def __ne__(self, other):
-    '''
-    Inverse of __eq__.
-    '''
-    return not self.__eq__(other)
-
 class GConfListWrapper(object):
+  '''
+  Wrapper for gconf list types. It keeps the list stateless, and updates
+  gconf on every list change.
+  '''
   def __init__(self, key):
     self.gconf_key = key
     self.wrapped_list = []
@@ -142,16 +86,19 @@ class GConfListWrapper(object):
   def __delslice__(self, i, j):
     return self._wrap('__delslice__', i, j)
   def _wrap(self, name, *args, **kwargs):
-    obj = self.CallWrapper(name, self.gconf_key)
+    obj = self._CallWrapper(name, self.gconf_key)
     return obj(*args, **kwargs)
   def __getattr__(self, name):
     obj = getattr(self.wrapped_list, name)
     if callable(obj):
-      return self.CallWrapper(name, self.gconf_key)
+      return self._CallWrapper(name, self.gconf_key)
     else:
       return obj
     
-  class CallWrapper(object):
+  class _CallWrapper(object):
+    '''
+    Does the actual wrapping.
+    '''
     def __init__ (self, name, gconf_key):
       self.name = name
       self.gconf_key = gconf_key
