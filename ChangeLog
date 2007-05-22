@@ -1,5 +1,10 @@
 2007-05-22  Eitan Isaacson  <eitan@ascender.com>
 
+	* src/lib/accerciser/accerciser.py: Added forced 
+	refresh after rectangle blinks (bug 433514).
+	* src/lib/accerciser/node.py: Added a signal for when the
+	rectangle stops blinking.
+
 	* plugins/interface_view.py: Fixed bug 440177.
 
 	* plugins/interface_view.glade: 

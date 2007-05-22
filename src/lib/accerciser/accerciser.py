@@ -93,6 +93,7 @@ class MainWindow(Tools):
     self.acc_treeview = AccessibleTreeView()
     self.node = self.acc_treeview.node
     self.node.connect('accessible_changed', self._onAccesibleChange)
+    self.node.connect('blink-done', self._onBlinkDone)
     scrolled_window = self.main_xml.get_widget('scrolled_acc_tree')
     scrolled_window.add(self.acc_treeview)
     
@@ -429,3 +430,5 @@ class MainWindow(Tools):
       else:
         self.plugin_view2.focusTab(tab_num - pages_count1 - 1)
       
+  def _onBlinkDone(self, node):
+    self.window.queue_draw()

@@ -17,7 +17,7 @@ import pyatspi
 import gobject
 from tools import Tools
 
-MAX_BLINKS = 4
+MAX_BLINKS = 6
 
 class Bag(object):
   '''
@@ -43,10 +43,14 @@ class Node(gobject.GObject, Tools):
   @ivar extents: The extents of a given accessible.
   @type extents: L{Bag}
   '''
-  __gsignals__ = {'accessible_changed' : 
+  __gsignals__ = {'accessible-changed' : 
                   (gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, 
-                   (gobject.TYPE_PYOBJECT,))}
+                   (gobject.TYPE_PYOBJECT,)),
+                  'blink-done' : 
+                  (gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, 
+                   ())}
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
@@ -72,7 +76,7 @@ class Node(gobject.GObject, Tools):
     else:
       self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.blinkRect()
-    self.emit('accessible_changed', acc)
+    self.emit('accessible-changed', acc)
   
   def blinkRect(self, times=MAX_BLINKS):
     '''
@@ -116,6 +120,7 @@ class Node(gobject.GObject, Tools):
     if self.blinks >= self.max_blinks:
       self.inv.grab_remove()
       self.inv.destroy()
+      self.emit('blink-done')
       return False
     return True
 
