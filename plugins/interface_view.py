@@ -887,10 +887,11 @@ class _SectionSelection(_InterfaceSection):
     treeview.append_column(tvc)
     # connect selection changed signal
     self.sel_selection = treeview.get_selection()
-    show_button = glade_xml.get_widget('button_selection_clear')
+    show_button = glade_xml.get_widget('button_select_clear')
     show_button.set_sensitive(self._isSelectedInView(self.sel_selection))
     self.sel_selection.connect('changed', 
-                               self._onViewSelectionChanged, show_button)
+                               self._onViewSelectionChanged, 
+                               show_button)
     self.sel_selection.connect('changed', 
                                self._onSelectionSelected)
     self.button_select_all = glade_xml.get_widget('button_select_all')
@@ -903,12 +904,27 @@ class _SectionSelection(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
-    si = acc.querySelection()
+    if acc.childCount > 50:
+      theme = gtk.icon_theme_get_default()
+      self.sel_model.append(
+        [theme.load_icon('gtk-dialog-warning', 24, 
+                         gtk.ICON_LOOKUP_USE_BUILTIN),
+         _('Too many selectable children'), None])
+      # Set section as insensitive, but leave expander label sensitive.
+      section_widgets = self.expander.get_children()
+      section_widgets.remove(self.expander.get_label_widget())
+      for child in section_widgets:
+        child.set_sensitive(False)
+      return
 
-    # I wish there were a better way of knowing if multiple 
-    # selections are possible.
-    multiple_selections = si.selectAll()
-    si.clearSelection
+    for child in acc:
+      if child is not None:
+        state = child.getState()
+        if state.contains(pyatspi.STATE_SELECTABLE):
+          self.sel_model.append([getIcon(child),child.name, child])
+    
+    state = acc.getState()
+    multiple_selections = state.contains(pyatspi.STATE_MULTISELECTABLE)
 
     self.button_select_all.set_sensitive(multiple_selections)
 
@@ -917,12 +933,6 @@ class _SectionSelection(_InterfaceSection):
     else:
       self.sel_selection.set_mode = gtk.SELECTION_SINGLE
 
-    for child in acc:
-      if child is not None:
-        state = child.getState()
-        if state.contains(pyatspi.STATE_SELECTABLE):
-          self.sel_model.append([getIcon(child),child.name, child])
-    
   def _onSelectionSelected(self, selection):
     '''
     Callback for selection change in the selection treeview. Confusing?
@@ -967,8 +977,6 @@ class _SectionSelection(_InterfaceSection):
     @type widget: gtk.Widget
     '''
     si = self.node.acc.querySelection()
-
-    self.sel_selection.select_all()
     si.selectAll()
 
 class _SectionStreamableContent(_InterfaceSection):

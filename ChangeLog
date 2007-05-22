@@ -1,5 +1,9 @@
 2007-05-22  Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/interface_view.glade: 
+	* plugins/interface_view.py: Limit selection view populating to 
+	50 children (bug 440269).
+
 	* src/lib/accerciser/accerciser.py: 
 	* src/lib/accerciser/plugin/view.py: Skip over invisible tabs
 	when focusing with alt-<num>.
