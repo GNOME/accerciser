@@ -420,8 +420,8 @@ class MainWindow(Tools):
           event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
                                  gtk.gdk.keyval_from_name('9')):
       tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
-      pages_count1 = self.plugin_view1.get_n_pages()
-      pages_count2 = self.plugin_view2.get_n_pages()
+      pages_count1 = self.plugin_view1.getNVisiblePages()
+      pages_count2 = self.plugin_view2.getNVisiblePages()
       if pages_count1 + pages_count2 < tab_num:
         return
       elif pages_count1 >= tab_num:

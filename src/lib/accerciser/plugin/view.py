@@ -120,8 +120,19 @@ class PluginView(gtk.Notebook):
     self.insert_page(child, tab_label, 0)
 
   def focusTab(self, tab_num):
-    self.set_current_page(tab_num)
+    children = self.get_children()
+    shown_children = filter(lambda x: x.get_property('visible'), children)
+    try:
+      child = shown_children[tab_num]
+    except IndexError:
+      return
+    self.set_current_page(children.index(child))
     self.grab_focus()
+
+  def getNVisiblePages(self):
+    shown_children = filter(lambda x: x.get_property('visible'), 
+                            self.get_children())
+    return len(shown_children)
 
 class PluginViewWindow(gtk.Window, Tools):
   def __init__(self, view_name):
