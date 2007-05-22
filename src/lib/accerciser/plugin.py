@@ -22,6 +22,15 @@ class Plugin(Tools):
   and finalizing a plugin. It also holds a reference to the main L{Node} and
   listens for 'accessible_changed' events on it.
 
+  @cvar plugin_name: Plugin name.
+  @type plugin_name: string
+  @cvar plugin_name_localized: Translated plugin name.
+  @type plugin_name_localized: string
+  @cvar plugin_description: Plugin description.
+  @type plugin_description: string
+  @cvar plugin_desc_localized: Translated plugin description.
+  @type plugin_desc_localized: string
+
   @ivar global_hotkeys: A list of tuples containing hotkeys and callbacks.
   @type global_hotkeys: list
   @ivar node: An object with a reference to the currently selected 
@@ -32,7 +41,11 @@ class Plugin(Tools):
   @ivar _handler: The handler id for the L{Node}'s 'accessible_changed' signal
   @type _handler: integer
   '''
-  def __init__(self, node):
+  plugin_name = None
+  plugin_name_localized = None
+  plugin_description = None
+  plugin_desc_localized = None
+  def __init__(self, node, message_manager):
     '''
     Connects the L{Node}'s 'accessible_changed' signal to a handler.
     
@@ -41,6 +54,7 @@ class Plugin(Tools):
     @note: L{Plugin} writers should override L{init} to do initialization, not
     this method.
     '''
+    self._message_manager = message_manager
     self.global_hotkeys = []
     self.node = node
     self._handler = self.node.connect('accessible_changed', self._onAccChanged)
@@ -122,20 +136,15 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   @ivar plugin_area: Main frame where plugin resides.
   @type plugin_area: gtk.Frame
   '''
-  __gsignals__ = {'reload-request' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
-                   ())}
-
-  def __init__(self, node):
+  def __init__(self, node, message_manager):
     '''
     Initialize object.
     
     @param node: Main application selected accessible node.
     @type node: L{Node}
     '''
+    Plugin.__init__(self, node, message_manager)
     gtk.ScrolledWindow.__init__(self)
-    Plugin.__init__(self, node)
 
     self.set_policy(gtk.POLICY_AUTOMATIC, 
                     gtk.POLICY_AUTOMATIC)
@@ -164,7 +173,7 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     @type response_id: integer
     '''
     if response_id == gtk.RESPONSE_APPLY:
-      self.emit('reload-request')
+      pass
     elif response_id == gtk.RESPONSE_CLOSE:
       error_message.destroy()
 
@@ -174,14 +183,14 @@ class ConsolePlugin(ViewportPlugin):
   information could be displayed to the user.
   '''
 
-  def __init__(self, node):
+  def __init__(self, node, message_manager):
     '''
     Sets a few predefined settings for the derivative L{gtk.TextView}.
     
     @param node: Application's main accessibility selection.
     @type node: L{Node}
     '''
-    ViewportPlugin.__init__(self, node)
+    ViewportPlugin.__init__(self, node, message_manager)
     self.text_view = gtk.TextView()
     self.text_view.set_editable(False)
     self.text_view.set_cursor_visible(False)
@@ -231,18 +240,14 @@ class PluginMethodWrapper(object):
     try:
       return self.func(*args, **kwargs)
     except Exception, e:
-      if hasattr(self.func, 'im_self') and \
-            isinstance(self.func.im_self, ViewportPlugin) and \
-            self.func.im_self.parent:
-        error_message = PluginErrorMessage(
-          traceback.format_exception_only(e.__class__, e)[0].strip(), 
+      if hasattr(self.func, 'im_self') and hasattr(self.func, 'im_class'):
+        message_manager = getattr(self.func.im_self, '_message_manager', None)
+        if not message_manager:
+          raise e
+        message_manager.newPluginError(
+          self.func.im_self, self.func.im_class,
+          traceback.format_exception_only(e.__class__, e)[0].strip(),
           traceback.format_exc())
-        error_message.add_button(gtk.STOCK_REFRESH, gtk.RESPONSE_APPLY)
-        error_message.connect('response', self.func.im_self._onMessageResponse)
-        self.func.im_self.message_area.pack_start(error_message)
-        error_message.show_all()
-      else:
-        raise e
 
   def __eq__(self, other):
     '''
@@ -264,97 +269,3 @@ class PluginMethodWrapper(object):
     return hash(self.func)
   
 
-class PluginMessage(gtk.Frame):
-  '''
-  Pretty plugin message area that appears either above the plugin if the plugin
-  is realized or in a seperate view.
-
-  @ivar vbox: Main contents container.
-  @type vbox: gtk.VBox
-  @ivar action_area: Area used mainly for response buttons.
-  @type action_area: gtk.VBox
-  @ivar message_style: Tooltip style used for mesages.
-  @type message_style: gtk.Style
-  '''
-  __gsignals__ = {'response' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
-                   (gobject.TYPE_INT,))}
-  def __init__(self):
-    gtk.Frame.__init__(self)
-    self.vbox = gtk.VBox()
-    self.vbox.set_spacing(3)
-    self.action_area = gtk.VBox()
-    self.action_area.set_homogeneous(True)
-    tooltip = gtk.Tooltips()
-    tooltip.force_window()
-    tooltip.tip_window.ensure_style()
-    self.message_style = tooltip.tip_window.rc_get_style()
-    event_box = gtk.EventBox()
-    event_box.set_style(self.message_style)
-    self.add(event_box)
-    hbox = gtk.HBox()
-    event_box.add(hbox)
-    hbox.pack_start(self.vbox, padding=3)
-    hbox.pack_start(self.action_area, False, False, 3)
-
-  def add_button(self, button_text, response_id):
-    '''
-    Add a button to the action area that emits a response when clicked.
-    
-    @param button_text: The button text, or a stock ID.
-    @type button_text: string
-    @param response_id: The response emitted when the button is pressed.
-    @type response_id: integer
-    
-    @return: Return the created button.
-    @rtype: gtk.Button
-    '''
-    button = gtk.Button()
-    button.set_use_stock(True)
-    button.set_label(button_text)
-    button.connect('clicked', self._onActionActivated, response_id)
-    self.action_area.pack_start(button, False, False)
-    return button
-
-  def _onActionActivated(self, button, response_id):
-    '''
-    Callback for button presses that emit the correct response.
-    
-    @param button: The button that was clicked.
-    @type button: gtk.Button
-    @param response_id: The response ID to emit a response with.
-    @type response_id: integer
-    '''
-    self.emit('response', response_id)
-
-class PluginErrorMessage(PluginMessage):
-  def __init__(self, error_message, details):
-    '''
-    Plugin error message.
-    
-    @param error_message: The error message.
-    @type error_message: string
-    @param details: Further details about the error.
-    @type details: string
-    '''
-    PluginMessage.__init__(self)
-    hbox = gtk.HBox()
-    hbox.set_spacing(6)
-    self.vbox.pack_start(hbox, False, False)
-    image = gtk.Image()
-    image.set_from_stock(gtk.STOCK_DIALOG_WARNING,
-                         gtk.ICON_SIZE_SMALL_TOOLBAR)
-    hbox.pack_start(image, False, False)
-    label = gtk.Label()
-    label.set_ellipsize(pango.ELLIPSIZE_END)
-    label.set_selectable(True)
-    label.set_markup('<b>%s</b>' % error_message)
-    hbox.pack_start(label)
-    label = gtk.Label(details)
-    label.set_ellipsize(pango.ELLIPSIZE_END)
-    label.set_selectable(True)
-    self.vbox.add(label)
-    self.add_button(gtk.STOCK_CLEAR, gtk.RESPONSE_CLOSE)
-
-  

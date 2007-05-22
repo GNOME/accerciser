@@ -210,6 +210,7 @@ class ScriptRecorder(ViewportPlugin):
         self.last_active_type_button = button
     self._clearBuffer()
     xml.signal_autoconnect(self)
+    self.plugin_area.show_all()
 
   def appendText(self, text):
     '''

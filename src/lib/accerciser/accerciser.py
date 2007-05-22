@@ -27,6 +27,7 @@ import gnome
 from accessible_treeview import *
 from node import Node
 from plugin_manager import *
+from view_manager import PluginView
 from tools import Tools
 from i18n import _, N_
 import wnck
@@ -106,8 +107,9 @@ class MainWindow(Tools):
                               self._onBottomPanelChange, 'removed')
     bin.add(self.plugin_view2)
     # load plugins
-    self.plugin_manager = PluginManager(self.node, self.hotkey_manager,
-                                        [self.plugin_view1, self.plugin_view2])
+    self.plugin_manager = \
+        PluginManager(self.node, self.hotkey_manager,
+                      self.plugin_view1, self.plugin_view2)
 
     # connect signal handlers and show the GUI in its initial state
     self.main_xml.signal_autoconnect(self)
@@ -358,7 +360,7 @@ class MainWindow(Tools):
     xml.signal_autoconnect(self)
 
     sw = xml.get_widget('plugins_sw')
-    treeview = PluginTreeView(self.plugin_manager)
+    treeview = self.plugin_manager.View()
     sw.add(treeview)
 
     sw = xml.get_widget('hotkeys_sw')
