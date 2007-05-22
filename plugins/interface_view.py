@@ -1226,13 +1226,17 @@ class _SectionText(_InterfaceSection):
     self.label_start = glade_xml.get_widget('label_text_attr_start')
     self.label_end = glade_xml.get_widget('label_text_attr_end')
 
-    self.text_buffer.connect('mark-set', self._onTextMarkSet)
+    self._text_insert_handler = 0
+    self._text_delete_handler = 0
 
     mark = self.text_buffer.create_mark('attr_mark', 
                                         self.text_buffer.get_start_iter(), True)
+    self.text_buffer.create_tag('attr_region', foreground='red')
+
+    self.text_buffer.connect('mark-set', self._onTextMarkSet)
+
     mark.set_visible(True)
 
-    self.text_buffer.create_tag('attr_region', foreground='red')
 
     self.text_buffer.connect('modified-changed', 
                              self._onTextModified)
@@ -1240,10 +1244,6 @@ class _SectionText(_InterfaceSection):
                              self._onTextCursorMove)
 
     self.text_buffer.set_modified(False)
-    self._text_insert_handler = self.text_buffer.connect('insert-text', 
-                                                         self._onITextInsert)
-    self._text_delete_handler = self.text_buffer.connect('delete-range', 
-                                                         self._onITextDelete)
 
     # Initialize fifos to help eliminate the viscous cycle of signals.
     # It would be nice if we could just block/unblock it like in gtk, but
@@ -1264,13 +1264,8 @@ class _SectionText(_InterfaceSection):
     ti = acc.queryText()
 
     text = ti.getText(0, ti.characterCount)
-    for handler_id in (self._text_delete_handler,
-                       self._text_insert_handler):
-      self.text_buffer.handler_block(handler_id)
+    print 'got text', text
     self.text_buffer.set_text(text)
-    for handler_id in (self._text_delete_handler,
-                       self._text_insert_handler):
-      self.text_buffer.handler_unblock(handler_id)
 
     self.offset_spin.get_adjustment().upper = ti.characterCount
 
@@ -1283,13 +1278,18 @@ class _SectionText(_InterfaceSection):
 
     expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
-    label_text.replace(_(' <i>(Editable)</i>'),'')
+    label_text = label_text.replace(_(' <i>(Editable)</i>'),'')
     if eti:
       label_text += _(' <i>(Editable)</i>')
       self.text_view.set_editable(True)
     else:
       self.text_view.set_editable(False)
     expander_label.set_label(label_text)
+
+    self._text_insert_handler = self.text_buffer.connect('insert-text', 
+                                                         self._onITextInsert)
+    self._text_delete_handler = self.text_buffer.connect('delete-range', 
+                                                         self._onITextDelete)
 
     self.registerEventListener(self._accEventText, 
                                'object:text-changed')
@@ -1298,6 +1298,13 @@ class _SectionText(_InterfaceSection):
     '''
     Clear all section-specific data.
     '''
+    if self._text_insert_handler:
+      self.text_buffer.disconnect(self._text_insert_handler)
+      self._text_insert_handler = 0
+    if self._text_delete_handler:
+      self.text_buffer.disconnect(self._text_delete_handler)
+      self._text_delete_handler = 0
+
     self.offset_spin.set_value(0)
     self.label_start.set_text('')
     self.label_end.set_text('')
