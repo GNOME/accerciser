@@ -13,17 +13,14 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 import gtk
 import gobject
-from plugin import Plugin
-from tools import Tools, GConfListWrapper
-from plugin_manager import *
+from base_plugin import Plugin
+from accerciser.tools import Tools, GConfListWrapper
 from message import MessageManager
 import os
 import sys
 import imp
-import pango
-import traceback
+from accerciser.i18n import _, N_
 import gconf
-from i18n import _, N_
 
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
 

@@ -12,7 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
 import gtk, gobject, pango
-from i18n import _
+from accerciser.i18n import _
 
 class MessageManager(gobject.GObject):
   __gsignals__ = {'plugin-reload-request' :
@@ -49,7 +49,7 @@ class MessageManager(gobject.GObject):
       plugin_instance.message_area.pack_start(message)
       message.show_all()
     else:
-      self.message_tab.addMessage(plugin_error_message)
+      self.message_tab.addMessage(message)
     return message
 
   def _onPluginResponseRefresh(self, message, response_id, plugin_class):

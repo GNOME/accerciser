@@ -26,8 +26,8 @@ import atk
 import gnome
 from accessible_treeview import *
 from node import Node
-from plugin_manager import *
-from view_manager import PluginView
+from plugin import PluginManager
+from plugin import PluginView
 from tools import Tools
 from i18n import _, N_
 import wnck

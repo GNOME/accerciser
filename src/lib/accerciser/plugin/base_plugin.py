@@ -12,7 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
 import gtk
-from tools import Tools
+from accerciser.tools import Tools
 import traceback
 import gobject, pango
 
@@ -116,14 +116,75 @@ class Plugin(Tools):
     @param name: Name of attribure we are seeking.
     @type name: string
     
-    @return: Wrap attribut in L{PluginMethodWrapper} if callable
+    @return: Wrap attribut in L{_PluginMethodWrapper} if callable
     @rtype: object
     '''
     obj = super(Plugin, self).__getattribute__(name)
     if callable(obj):
-      return PluginMethodWrapper(obj)
+      method_wrapper = \
+          super(Plugin, self).__getattribute__('_PluginMethodWrapper')
+      return method_wrapper(obj)
     else:
       return obj
+
+  class _PluginMethodWrapper(object):
+    '''
+    Wraps all callable plugin attributes so that a nice message is displayed
+    if an exception is raised.
+    '''
+    def __init__(self, func):
+      '''
+      Initialize wrapper.
+
+      @param func: Callable to wrap.
+      @type func: callable
+      '''
+      self.func = func
+    def __call__(self, *args, **kwargs):
+      '''
+      Involed when instance is called. Mimics the wrapped function.
+
+      @param args: Arguments in call.
+      @type args: list
+      @param kwargs: Key word arguments in call.
+      @type kwargs: dictionary
+
+      @return: Any value that is expected from the method
+      @rtype: object
+      '''
+      try:
+        return self.func(*args, **kwargs)
+      except Exception, e:
+        if hasattr(self.func, 'im_self') and hasattr(self.func, 'im_class'):
+          message_manager = getattr(self.func.im_self, '_message_manager', None)
+          if not message_manager:
+            raise e
+          message_manager.newPluginError(
+            self.func.im_self, self.func.im_class,
+            traceback.format_exception_only(e.__class__, e)[0].strip(),
+            traceback.format_exc())
+
+    def __eq__(self, other):
+      '''
+      Compare the held function and instance with that held by another wrapper.
+
+      @param other: Another wrapper object
+      @type other: L{_PluginMethodWrapper}
+
+      @return: Whether this func/inst pair is equal to the one in the other 
+      wrapper object or not
+      @rtype: boolean
+      '''
+      try:
+        return self.func == other.func
+      except Exception:
+        return False
+
+    def __hash__(self):
+      return hash(self.func)
+  
+
+
 
 class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   '''
@@ -211,61 +272,4 @@ class ConsolePlugin(ViewportPlugin):
     text_buffer = self.text_view.get_buffer()
     text_buffer.insert(text_buffer.get_end_iter(), text)
     self.text_view.scroll_mark_onscreen(self.mark)
-
-class PluginMethodWrapper(object):
-  '''
-  Wraps all callable plugin attributes so that a nice message is displayed
-  if an exception is raised.
-  '''
-  def __init__(self, func):
-    '''
-    Initialize wrapper.
-    
-    @param func: Callable to wrap.
-    @type func: callable
-    '''
-    self.func = func
-  def __call__(self, *args, **kwargs):
-    '''
-    Involed when instance is called. Mimics the wrapped function.
-    
-    @param args: Arguments in call.
-    @type args: list
-    @param kwargs: Key word arguments in call.
-    @type kwargs: dictionary
-    
-    @return: Any value that is expected from the method
-    @rtype: object
-    '''
-    try:
-      return self.func(*args, **kwargs)
-    except Exception, e:
-      if hasattr(self.func, 'im_self') and hasattr(self.func, 'im_class'):
-        message_manager = getattr(self.func.im_self, '_message_manager', None)
-        if not message_manager:
-          raise e
-        message_manager.newPluginError(
-          self.func.im_self, self.func.im_class,
-          traceback.format_exception_only(e.__class__, e)[0].strip(),
-          traceback.format_exc())
-
-  def __eq__(self, other):
-    '''
-    Compare the held function and instance with that held by another wrapper.
-    
-    @param other: Another wrapper object
-    @type other: L{PluginMethodWrapper}
-
-    @return: Whether this func/inst pair is equal to the one in the other 
-    wrapper object or not
-    @rtype: boolean
-    '''
-    try:
-      return self.func == other.func
-    except Exception:
-      return False
-
-  def __hash__(self):
-    return hash(self.func)
-  
 

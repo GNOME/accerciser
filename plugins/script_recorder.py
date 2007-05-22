@@ -1,5 +1,5 @@
 import os.path
-from accerciser.plugin import ViewportPlugin, PluginMethodWrapper
+from accerciser.plugin import ViewportPlugin
 import pyatspi
 import gtk
 from gtk import keysyms

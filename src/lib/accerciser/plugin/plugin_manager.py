@@ -10,19 +10,19 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+
 import gtk
 import gobject
-from plugin import Plugin
-from view_manager import ViewManager
-from tools import Tools, GConfListWrapper
+from base_plugin import Plugin
+from view import ViewManager
+from accerciser.tools import Tools, GConfListWrapper
 from message import MessageManager
 import os
 import sys
 import imp
-import pango
 import traceback
 import gconf
-from i18n import _, N_
+from accerciser.i18n import _, N_
 
 GCONF_PLUGIN_DISABLED = '/apps/accerciser/disabled_plugins'      
 
