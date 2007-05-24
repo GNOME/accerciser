@@ -19,6 +19,9 @@ except ImportError:
   sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'pyatspi.zip'))
 
 def main():
+  '''
+  Run program.
+  '''
   from accerciser import MainWindow
   mw = MainWindow()
   mw.run()

@@ -252,6 +252,9 @@ class PluginMessage(gtk.Frame):
     self.emit('response', response_id)
 
 class PluginErrorMessage(PluginMessage):
+  '''
+  Standard error message.
+  '''
   def __init__(self, error_message, details):
     '''
     Plugin error message.
