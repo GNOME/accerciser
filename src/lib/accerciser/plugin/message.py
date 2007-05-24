@@ -15,6 +15,14 @@ import gtk, gobject, pango
 from accerciser.i18n import _
 
 class MessageManager(gobject.GObject):
+  '''
+  Centralizes all plugin message handling. If the plugin is a visible widget,
+  it displays the message within the plugin. If not it displays the message in
+  a dedicated message tab.
+
+  This manager also could emit module and plugin reload requests from user 
+  responses to messages.
+  '''
   __gsignals__ = {'plugin-reload-request' :
                     (gobject.SIGNAL_RUN_FIRST,
                      gobject.TYPE_NONE, 
@@ -27,23 +35,43 @@ class MessageManager(gobject.GObject):
                       gobject.TYPE_STRING,
                       gobject.TYPE_STRING))}
   def __init__(self):
+    '''
+    Initialize the manager.
+    '''
     gobject.GObject.__init__(self)
     self.message_tab = None
 
   def getMessageTab(self):
+    '''
+    Get the manager's dedicated message tab. Initialize a message tab if 
+    one does not already exist.
+    
+    @return: The message tab.
+    @rtype: L{MessageManager.MessageTab}
+    '''
     if not self.message_tab:
       self.message_tab = self.MessageTab()
     return self.message_tab
 
-  def newError(self, error_message, details):
-    plugin_error_message = PluginErrorMessage(error_message, details)
-    plugin_error_message.add_button(gtk.STOCK_REFRESH, gtk.RESPONSE_APPLY)
-    plugin_error_message.connect('response', self._onResponse)
-    return plugin_error_message
-
   def newPluginError(self, plugin_instance, plugin_class, 
                      error_message, details):
-    message = self.newError(error_message, details)
+    '''
+    Create a new plugin error message, and display it eithe in the plugin 
+    itself or in the error tab.
+    
+    @param plugin_instance: Plugin instance that had the error.
+    @type plugin_instance: L{Plugin}
+    @param plugin_class: Plugin class.
+    @type plugin_class: type
+    @param error_message: Principal error message.
+    @type error_message: string
+    @param details: Detailed error message.
+    @type details: string
+    
+    @return: The newly created error message.
+    @rtype: L{PluginErrorMessage}
+    '''
+    message = PluginErrorMessage(error_message, details)
     message.connect('response', self._onPluginResponseRefresh, plugin_class)
     if getattr(plugin_instance, 'parent', None):
       plugin_instance.message_area.pack_start(message)
@@ -53,25 +81,69 @@ class MessageManager(gobject.GObject):
     return message
 
   def _onPluginResponseRefresh(self, message, response_id, plugin_class):
+    '''
+    Callback for gtk.RESPONSE_APPLY of a plugin error message, emits a plugin 
+    reload request signal.
+    
+    @param message: Error message that emitted response signal.
+    @type message: L{PluginErrorMessage}
+    @param response_id: The response ID.
+    @type response_id: integer
+    @param plugin_class: The plugin class of the failed plugin.
+    @type plugin_class: type
+    '''
     if response_id == gtk.RESPONSE_APPLY:
       self.emit('plugin-reload-request', message, plugin_class)
 
   def newModuleError(self, module, path, error_message, details):
-    message = self.newError(error_message, details)
+    '''
+    Create a new module error dialog. Usually because of a syntax error 
+    in a module. Put error message in message tab.
+    
+    @param module: Failed module name.
+    @type module: string
+    @param path: Failed module's path.
+    @type path: string
+    @param error_message: Principal error message.
+    @type error_message: string
+    @param details: Detailed error message.
+    @type details: string
+    
+    @return: The newly created error message.
+    @rtype: L{PluginErrorMessage}
+    '''
+    message = PluginErrorMessage(error_message, details)
     message.connect('response', self._onModuleResponseRefresh, module, path)
     self.message_tab.addMessage(message)
     return message
 
   def _onModuleResponseRefresh(self, message, response_id, module, path):
+    '''
+    Callback for gtk.RESPONSE_APPLY of a module error message, emits a module 
+    reload request signal.
+
+    
+    @param message: Error message that emitted response signal.
+    @type message: L{PluginErrorMessage}
+    @param response_id: The response ID.
+    @type response_id: integer
+    @param module: Failed module name.
+    @type module: string
+    @param path: Failed module's path.
+    @type path: string
+    '''
     if response_id == gtk.RESPONSE_APPLY:
       self.emit('module-reload-request', message, module, path)
 
-  def _onResponse(self, plugin_message, response_id):
-    if response_id == gtk.RESPONSE_CLOSE:
-      plugin_message.destroy()
-
   class MessageTab(gtk.ScrolledWindow):
+    '''
+    Implements a scrolled window with a vbox for messages that cannot be 
+    displayed in their plugins
+    '''
     def __init__(self):
+      '''
+      Initialize tab.
+      '''
       gtk.ScrolledWindow.__init__(self)
       self.set_name(_('Plugin Errors'))
       self._vbox = gtk.VBox()
@@ -80,14 +152,35 @@ class MessageManager(gobject.GObject):
       self.set_no_show_all(True)
 
     def addMessage(self, message):
+      '''
+      Add a message to the tab.
+      
+      @param message: The message to be added.
+      @type message: L{PluginMessage}
+      '''
       self._vbox.pack_start(message, False)
       self.show()
       self._vbox.show_all()
       
     def removeMessage(self, message):
+      '''
+      Remove a message from the tab. Destroys it.
+      
+      @param message: The message to be removed.
+      @type message: L{PluginMessage}
+      '''
       message.destroy()
 
     def _onMessageRemove(self, vbox, message):
+      '''
+      Callback for removal of children. If there are no messages displayed,
+      hide this widget.
+      
+      @param vbox: Vbox that had a child removed.
+      @type vbox: gtk.VBox
+      @param message: The message that was removed.
+      @type message: L{PluginMessage}
+      '''
       if len(vbox.get_children()) == 0:
         self.hide()
         
@@ -108,6 +201,9 @@ class PluginMessage(gtk.Frame):
                    gobject.TYPE_NONE, 
                    (gobject.TYPE_INT,))}
   def __init__(self):
+    '''
+    Initialize the message object.
+    '''
     gtk.Frame.__init__(self)
     self.vbox = gtk.VBox()
     self.vbox.set_spacing(3)
@@ -183,5 +279,17 @@ class PluginErrorMessage(PluginMessage):
     label.set_selectable(True)
     self.vbox.add(label)
     self.add_button(gtk.STOCK_CLEAR, gtk.RESPONSE_CLOSE)
-
+    self.add_button(gtk.STOCK_REFRESH, gtk.RESPONSE_APPLY)
+    self.connect('response', self._onResponse)
   
+  def _onResponse(self, plugin_message, response_id):
+    '''
+    Destroy the message when the "clear" button is clicked.
+    
+    @param plugin_message: Message that emitted this signal.
+    @type plugin_message: L{PluginErrorMessage}
+    @param response_id: The response ID
+    @type response_id: integer
+    '''
+    if response_id == gtk.RESPONSE_CLOSE:
+      plugin_message.destroy()
