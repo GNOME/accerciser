@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-22 18:53+0200\n"
-"PO-Revision-Date: 2007-04-22 18:53+0100\n"
+"POT-Creation-Date: 2007-05-27 12:29+0200\n"
+"PO-Revision-Date: 2007-05-27 12:29+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -24,28 +24,115 @@ msgid "Give your application an accessibility workout"
 msgstr "Ge ditt program en omgång tillgänglighet"
 
 #: ../accerciser.schemas.in.h:1
-msgid "Plugin enabled"
-msgstr "Insticksmodul aktiverad"
+msgid "A list of plugins that are disabled by default"
+msgstr "En lista över insticksmoduler som är inaktiverade som standard"
 
 #: ../accerciser.schemas.in.h:2
-msgid "Set to true is plugin is enabled"
-msgstr "Ställ in till sant om insticksmodulen är aktiverad"
+msgid "The default plugin layout for the bottom panel"
+msgstr "Standardlayouten för insticksmoduler för nederpanelen"
 
 #: ../accerciser.schemas.in.h:3
-msgid "The default plugin view"
-msgstr "Standardvyn för insticksmoduler"
+msgid "The default plugin layout for the top panel"
+msgstr "Standardlayouten för insticksmoduler för överpanelen"
 
-#: ../accerciser.schemas.in.h:4
-msgid "The default plugin view for this plugin"
-msgstr "Standardvyn för den här insticksmodulen"
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API-bläddrare"
 
-#: ../accerciser.schemas.in.h:5
-msgid "The default tab position"
-msgstr "Standardposition för flik"
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "Bläddra bland de olika metoderna för aktuell tillgänglig"
 
-#: ../accerciser.schemas.in.h:6
-msgid "The default tab position for this plugin"
-msgstr "Standardpositionen för fliken för den här insticksmodulen"
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "Dölj privata attribut"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "Metod"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "Egenskap"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "Värde"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "IPython-konsoll"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "Interaktiv konsoll för manipulering av den för närvarande markerade tillgänglig"
+
+#: ../plugins/event_monitor.glade.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>Händelseövervakare</b>"
+
+#: ../plugins/event_monitor.glade.h:2
+msgid "C_lear Selection"
+msgstr "Tö_m markering"
+
+#: ../plugins/event_monitor.glade.h:3
+msgid "Everything"
+msgstr "Allting"
+
+#: ../plugins/event_monitor.glade.h:4
+msgid "Selected accessible"
+msgstr "Markerad tillgänglig"
+
+#: ../plugins/event_monitor.glade.h:5
+msgid "Selected application"
+msgstr "Markerat program"
+
+#: ../plugins/event_monitor.glade.h:6
+msgid "Source"
+msgstr "Källa"
+
+#: ../plugins/event_monitor.glade.h:7
+msgid "_Monitor Events"
+msgstr "_Övervaka händelser"
+
+#: ../plugins/event_monitor.glade.h:8
+#: ../plugins/interface_view.glade.h:61
+#: ../plugins/script_recorder.glade.h:5
+msgid "gtk-clear"
+msgstr "Töm"
+
+#: ../plugins/event_monitor.glade.h:9
+#: ../plugins/script_recorder.glade.h:7
+msgid "gtk-save"
+msgstr "Spara"
+
+#: ../plugins/event_monitor.glade.h:10
+msgid "gtk-select-all"
+msgstr "Markera allt"
+
+#: ../plugins/event_monitor.py:52
+msgid "Event Monitor"
+msgstr "Händelseövervakare"
+
+#: ../plugins/event_monitor.py:55
+msgid "Shows events as they occur from selected types and sources"
+msgstr "Visar händelser när de inträffar från markerade typer och källor"
+
+#: ../plugins/event_monitor.py:65
+msgid "Highlight last event entry"
+msgstr "Markera senaste händelsepost"
+
+#: ../plugins/event_monitor.py:110
+#: ../plugins/interface_view.py:442
+#: ../plugins/interface_view.py:725
+#: ../src/lib/accerciser/accessible_treeview.py:275
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "Namn"
+
+#: ../plugins/event_monitor.py:119
+msgid "Full name"
+msgstr "Fullständigt namn"
 
 #: ../plugins/interface_view.glade.h:1
 msgid "0"
@@ -160,283 +247,184 @@ msgid "Header:"
 msgstr "Rubrik:"
 
 #: ../plugins/interface_view.glade.h:29
+msgid "Hyperlink"
+msgstr "Hyperlänk"
+
+#: ../plugins/interface_view.glade.h:30
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:30
+#: ../plugins/interface_view.glade.h:31
 msgid "Include defaults"
 msgstr "Inkludera standardvärden"
 
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:32
 msgid "Layer"
 msgstr "Lager"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:33
 msgid "Lo_gin Helper"
 msgstr "Inlo_ggningshjälpare"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:34
 msgid "Locale:"
 msgstr "Lokal:"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:35
 msgid "MDI-Z-order"
 msgstr "MDI-Z-ordning"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:36
 msgid "Maximum value"
 msgstr "Maximalt värde"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:37
 msgid "Minimum increment"
 msgstr "Minimal ökning"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:38
 msgid "Minimum value"
 msgstr "Minimalt värde"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:39
 msgid "Offset"
 msgstr "Offset"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:40
 msgid "Perform action"
 msgstr "Genomför åtgärd"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:41
 msgid "Position"
 msgstr "Position"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:42
 msgid "Relative position"
 msgstr "Relativ position"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:43
 msgid "Row"
 msgstr "Rad"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:44
 msgid "Rows"
 msgstr "Rader"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:45
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:46
 msgid "Selected columns"
 msgstr "Markerade kolumner"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:47
 msgid "Selected rows"
 msgstr "Markerade rader"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:48
 msgid "Show"
 msgstr "Visa"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:49
 msgid "Size"
 msgstr "Storlek"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:50
 msgid "St_reamable Content"
 msgstr "St_römmande innehåll"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:51
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:52
 msgid "Toolkit"
 msgstr "Verktygslåda"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:53
 msgid "Val_ue"
 msgstr "Vä_rde"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:54
 msgid "Version"
 msgstr "Version"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:55
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:56
 msgid "_Accessible"
 msgstr "Å_tkomlig"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:57
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:58
 msgid "_Image"
 msgstr "_Bild"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:59
 msgid "_Selection"
 msgstr "_Markering"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:60
 msgid "_Table"
 msgstr "_Tabell"
 
-#: ../plugins/interface_view.glade.h:60 ../plugins/event_monitor.glade.h:8
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "Töm"
-
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:62
 msgid "name (x,y)"
 msgstr "namn (x,y)"
 
-#: ../plugins/interface_view.py:34
+#: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
 msgstr "Gränssnittsvisare"
 
-#: ../plugins/interface_view.py:35
+#: ../plugins/interface_view.py:37
 msgid "Allows viewing of various interface properties"
 msgstr "Tillåter visning av olika gränssnittsegenskaper"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:222
-#: ../plugins/event_monitor.py:83
-#: ../src/lib/accerciser/accessible_treeview.py:277
-#: ../src/lib/accerciser/plugin_manager.py:503
-msgid "Name"
-msgstr "Namn"
-
-#: ../plugins/interface_view.py:192 ../plugins/interface_view.py:251
-msgid "URI"
-msgstr "URI"
-
-#: ../plugins/interface_view.py:199
-msgid "Start"
-msgstr "Start"
-
-#: ../plugins/interface_view.py:206
-msgid "End"
-msgstr "Slut"
-
-#: ../plugins/interface_view.py:227
-msgid "Description"
-msgstr "Beskrivning"
-
-#: ../plugins/interface_view.py:232
-msgid "Key binding"
-msgstr "Tangentbindning"
-
-#: ../plugins/interface_view.py:246
-msgid "Content type"
-msgstr "Innehållstyp"
-
-#: ../plugins/interface_view.py:345 ../plugins/interface_view.py:346
-#: ../plugins/interface_view.py:347
+#: ../plugins/interface_view.py:185
+#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (inte implementerad)"
 
-#: ../plugins/interface_view.py:802 ../plugins/interface_view.py:804
+#: ../plugins/interface_view.py:447
+msgid "Description"
+msgstr "Beskrivning"
+
+#: ../plugins/interface_view.py:452
+msgid "Key binding"
+msgstr "Tangentbindning"
+
+#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:1009
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.py:739
+msgid "Start"
+msgstr "Start"
+
+#: ../plugins/interface_view.py:746
+msgid "End"
+msgstr "Slut"
+
+#: ../plugins/interface_view.py:912
+msgid "Too many selectable children"
+msgstr "För många valbara barn"
+
+#: ../plugins/interface_view.py:1004
+msgid "Content type"
+msgstr "Innehållstyp"
+
+#: ../plugins/interface_view.py:1281
+#: ../plugins/interface_view.py:1283
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Redigerbar)</i>"
-
-#: ../plugins/event_monitor.glade.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Händelseövervakare</b>"
-
-#: ../plugins/event_monitor.glade.h:2
-msgid "C_lear Selection"
-msgstr "Tö_m markering"
-
-#: ../plugins/event_monitor.glade.h:3
-msgid "Everything"
-msgstr "Allting"
-
-#: ../plugins/event_monitor.glade.h:4
-msgid "Selected accessible"
-msgstr "Markerad tillgänglig"
-
-#: ../plugins/event_monitor.glade.h:5
-msgid "Selected application"
-msgstr "Markerat program"
-
-#: ../plugins/event_monitor.glade.h:6
-msgid "Source"
-msgstr "Källa"
-
-#: ../plugins/event_monitor.glade.h:7
-msgid "_Monitor Events"
-msgstr "_Övervaka händelser"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "Spara"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "Markera allt"
-
-#: ../plugins/event_monitor.py:32
-msgid "Event Monitor"
-msgstr "Händelseövervakare"
-
-#: ../plugins/event_monitor.py:34
-msgid "Shows events as they occur from selected types and sources"
-msgstr "Visar händelser när de inträffar från markerade typer och källor"
-
-#: ../plugins/event_monitor.py:41
-msgid "Highlight last event entry"
-msgstr "Markera senaste händelsepost"
-
-#: ../plugins/event_monitor.py:92
-msgid "Full name"
-msgstr "Fullständigt namn"
-
-#: ../plugins/api_view.py:19
-msgid "API Browser"
-msgstr "API-bläddrare"
-
-#: ../plugins/api_view.py:21
-msgid "Browse the various methods of the current accessible"
-msgstr "Bläddra bland de olika metoderna för aktuell tillgänglig"
-
-#: ../plugins/api_view.py:50
-msgid "Hide private attributes"
-msgstr "Dölj privata attribut"
-
-#: ../plugins/api_view.py:60
-msgid "Method"
-msgstr "Metod"
-
-#: ../plugins/api_view.py:69
-msgid "Property"
-msgstr "Egenskap"
-
-#: ../plugins/api_view.py:74
-msgid "Value"
-msgstr "Värde"
-
-#: ../plugins/console.py:26
-msgid "IPython Console"
-msgstr "IPython-konsoll"
-
-#: ../plugins/console.py:28
-msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Interaktiv konsoll för manipulering av den för närvarande markerade "
-"tillgänglig"
-
-#: ../plugins/script_recorder.py:103
-msgid "Script Recorder"
-msgstr "Skriptinspelare"
-
-#: ../plugins/script_recorder.py:104
-msgid "Creates dogtail style scripts"
-msgstr "Skapar dogtail-liknande skript"
-
-#: ../plugins/script_recorder.py:198
-msgid "The current script will be lost."
-msgstr "Det aktuella skriptet kommer att förloras."
 
 #: ../plugins/script_recorder.glade.h:1
 msgid "Dogtail"
@@ -457,6 +445,18 @@ msgstr "Skripttyp"
 #: ../plugins/script_recorder.glade.h:6
 msgid "gtk-media-record"
 msgstr "Spela in"
+
+#: ../plugins/script_recorder.py:176
+msgid "Script Recorder"
+msgstr "Skriptinspelare"
+
+#: ../plugins/script_recorder.py:178
+msgid "Creates dogtail style scripts"
+msgstr "Skapar dogtail-liknande skript"
+
+#: ../plugins/script_recorder.py:340
+msgid "The current script will be lost."
+msgstr "Det aktuella skriptet kommer att förloras."
 
 #: ../src/accerciser.glade.h:1
 msgid "An interactive Python accessibility explorer"
@@ -539,109 +539,118 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
 
-#: ../src/lib/accerciser/accessible_treeview.py:287
-msgid "Role"
-msgstr "Roll"
-
-#: ../src/lib/accerciser/accessible_treeview.py:294
-msgid "Children"
-msgstr "Barn"
-
-#: ../src/lib/accerciser/accerciser.py:70
-#: ../src/lib/accerciser/accerciser.py:75
+#: ../src/lib/accerciser/accerciser.py:66
+#: ../src/lib/accerciser/accerciser.py:71
 msgid "Core"
 msgstr "Kärna"
 
-#: ../src/lib/accerciser/accerciser.py:71
+#: ../src/lib/accerciser/accerciser.py:67
 msgid "Inspect last focused accessible"
 msgstr "Inspektera senaste fokuserade tillgänglighet"
 
-#: ../src/lib/accerciser/accerciser.py:76
+#: ../src/lib/accerciser/accerciser.py:72
 msgid "Inspect accessible under mouse"
 msgstr "Inspektera tillgänglighet under musen"
 
-#: ../src/lib/accerciser/accerciser.py:104
-msgid "Top right"
-msgstr "Övre högra hörnet"
+#: ../src/lib/accerciser/accerciser.py:101
+msgid "Top panel"
+msgstr "Överpanelen"
 
-#: ../src/lib/accerciser/accerciser.py:107
+#: ../src/lib/accerciser/accerciser.py:104
 msgid "Bottom panel"
 msgstr "Nederpanelen"
 
-#: ../src/lib/accerciser/accerciser.py:143
-msgid ""
-"Accerciser could not see the applications on your desktop. You must enable "
-"desktop accessibility to fix this problem. Do you want to enable it now?"
-msgstr ""
-"Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera "
-"tillgänglighetsfunktioner för skrivbordet för att rätta till det här "
-"problemet. Vill du aktivera dem nu?"
+#: ../src/lib/accerciser/accerciser.py:151
+msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera tillgänglighetsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera dem nu?"
 
-#: ../src/lib/accerciser/accerciser.py:149
-msgid ""
-"Desktop accessibility is still not functioning although it has been enabled."
-msgstr ""
-"Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även om "
-"de har aktiverats."
+#: ../src/lib/accerciser/accerciser.py:166
+msgid "Note: Changes only take effect after logout."
+msgstr "Observera: Eventuella ändringar blir aktiverade efter utloggning."
 
-#: ../src/lib/accerciser/accerciser.py:152
-msgid "Note: You must logout for desktop accessibility options to take effect."
-msgstr ""
-"Observera: Du måste logga ut för att skrivbordsalternativ för tillgänglighet "
-"blir aktiverade."
+#: ../src/lib/accerciser/accessible_treeview.py:285
+msgid "Role"
+msgstr "Roll"
 
-#: ../src/lib/accerciser/plugin_manager.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:292
+msgid "Children"
+msgstr "Barn"
+
+#. crc.connect('toggled', self._onPluginToggled)
+#: ../src/lib/accerciser/hotkey_manager.py:203
+msgid "Component"
+msgstr "Komponent"
+
+#: ../src/lib/accerciser/hotkey_manager.py:210
+msgid "Task"
+msgstr "Uppgift"
+
+#: ../src/lib/accerciser/hotkey_manager.py:217
+msgid "Key"
+msgstr "Tangent"
+
+#: ../src/lib/accerciser/hotkey_manager.py:227
+msgid "Alt"
+msgstr "Alt"
+
+#: ../src/lib/accerciser/hotkey_manager.py:234
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../src/lib/accerciser/hotkey_manager.py:241
+msgid "Shift"
+msgstr "Skift"
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "Fel i insticksmodul"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+msgid "View"
+msgstr "Visa"
+
+#: ../src/lib/accerciser/plugin/view.py:450
 msgid "Plugin View"
 msgstr "Insticksmodulsvy"
 
-#: ../src/lib/accerciser/plugin_manager.py:347
+#: ../src/lib/accerciser/plugin/view.py:453
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Insticksvy (%d)"
 
-#: ../src/lib/accerciser/plugin_manager.py:454
-msgid "Plugin Errors"
-msgstr "Fel i insticksmodul"
-
-#: ../src/lib/accerciser/plugin_manager.py:510
-msgid "View"
-msgstr "Visa"
-
-#: ../src/lib/accerciser/plugin_manager.py:603
+#: ../src/lib/accerciser/plugin/view.py:756
 msgid "<i>_New view...</i>"
 msgstr "<i>_Ny vy...</i>"
 
-#: ../src/lib/accerciser/plugin_manager.py:624
+#: ../src/lib/accerciser/plugin/view.py:812
 msgid "New View..."
 msgstr "Ny vy..."
 
-#. crc.connect('toggled', self._onPluginToggled)
-#: ../src/lib/accerciser/hotkey_manager.py:202
-msgid "Component"
-msgstr "Komponent"
-
-#: ../src/lib/accerciser/hotkey_manager.py:209
-msgid "Task"
-msgstr "Uppgift"
-
-#: ../src/lib/accerciser/hotkey_manager.py:216
-msgid "Key"
-msgstr "Tangent"
-
-#: ../src/lib/accerciser/hotkey_manager.py:226
-msgid "Alt"
-msgstr "Alt"
-
-#: ../src/lib/accerciser/hotkey_manager.py:233
-msgid "Ctrl"
-msgstr "Ctrl"
-
-#: ../src/lib/accerciser/hotkey_manager.py:240
-msgid "Shift"
-msgstr "Skift"
-
+#~ msgid "Plugin enabled"
+#~ msgstr "Insticksmodul aktiverad"
+#~ msgid "Set to true is plugin is enabled"
+#~ msgstr "Ställ in till sant om insticksmodulen är aktiverad"
+#~ msgid "The default plugin view"
+#~ msgstr "Standardvyn för insticksmoduler"
+#~ msgid "The default tab position"
+#~ msgstr "Standardposition för flik"
+#~ msgid "The default tab position for this plugin"
+#~ msgstr "Standardpositionen för fliken för den här insticksmodulen"
+#~ msgid "Top right"
+#~ msgstr "Övre högra hörnet"
+#~ msgid ""
+#~ "Desktop accessibility is still not functioning although it has been "
+#~ "enabled."
+#~ msgstr ""
+#~ "Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även "
+#~ "om de har aktiverats."
+#~ msgid ""
+#~ "Note: You must logout for desktop accessibility options to take effect."
+#~ msgstr ""
+#~ "Observera: Du måste logga ut för att skrivbordsalternativ för "
+#~ "tillgänglighet blir aktiverade."
 #~ msgid "Va_lue"
 #~ msgstr "Vä_rde"
-
 #~ msgid "accerciser"
 #~ msgstr "accerciser"
+
