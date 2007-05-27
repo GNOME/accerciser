@@ -1630,7 +1630,7 @@ class _SectionValue(_InterfaceSection):
     @type spinner: gtk.SpinButton
     '''
     vi = self.node.acc.queryValue()
-    vi.currentValue = widget.get_value()
+    vi.currentValue = spinner.get_value()
 
   def _accEventValue(self, event):
     '''
