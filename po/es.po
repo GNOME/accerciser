@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-10 20:45+0100\n"
-"PO-Revision-Date: 2007-05-15 09:56+0200\n"
+"POT-Creation-Date: 2007-05-27 11:30+0100\n"
+"PO-Revision-Date: 2007-05-28 19:58+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,104 @@ msgstr "El esquema  de complemento predeterminado para el panel inferior"
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
 msgstr "El esquema  de complemento predeterminado para el panel superior"
+
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "Examinador API"
+
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "Examinar los métodos varios del accesible actual"
+
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "Ocultar los atributos privados"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "Método"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "Propiedad"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "Valor"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "Consola IPython"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "Consola interactiva para manipular el accesible actualmente seleccionado"
+
+#: ../plugins/event_monitor.glade.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>Monitor de eventos</b>"
+
+#: ../plugins/event_monitor.glade.h:2
+msgid "C_lear Selection"
+msgstr "_Limpiar la selección"
+
+#: ../plugins/event_monitor.glade.h:3
+msgid "Everything"
+msgstr "Todo"
+
+#: ../plugins/event_monitor.glade.h:4
+msgid "Selected accessible"
+msgstr "Accesible seleccionado"
+
+#: ../plugins/event_monitor.glade.h:5
+msgid "Selected application"
+msgstr "Aplicación seleccionada"
+
+#: ../plugins/event_monitor.glade.h:6
+msgid "Source"
+msgstr "Fuente"
+
+#: ../plugins/event_monitor.glade.h:7
+msgid "_Monitor Events"
+msgstr "_Monitor de eventos"
+
+#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:61
+#: ../plugins/script_recorder.glade.h:5
+msgid "gtk-clear"
+msgstr "gtk-clear"
+
+#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
+msgid "gtk-save"
+msgstr "gtk-save"
+
+#: ../plugins/event_monitor.glade.h:10
+msgid "gtk-select-all"
+msgstr "gtk-select-all"
+
+#: ../plugins/event_monitor.py:52
+msgid "Event Monitor"
+msgstr "Monitor de eventos"
+
+#: ../plugins/event_monitor.py:55
+msgid "Shows events as they occur from selected types and sources"
+msgstr ""
+"Muestra los eventos tal y como ocurren desde los tipos y fuentes "
+"seleccionados"
+
+#: ../plugins/event_monitor.py:65
+msgid "Highlight last event entry"
+msgstr "Resaltar la última entrada de evento"
+
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:442
+#: ../plugins/interface_view.py:725
+#: ../src/lib/accerciser/accessible_treeview.py:275
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "Nombre"
+
+#: ../plugins/event_monitor.py:119
+msgid "Full name"
+msgstr "Nombre completo"
 
 #: ../plugins/interface_view.glade.h:1
 msgid "0"
@@ -277,160 +375,54 @@ msgstr "_Selección"
 msgid "_Table"
 msgstr "_Tabla"
 
-#: ../plugins/interface_view.glade.h:61 ../plugins/event_monitor.glade.h:8
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
 #: ../plugins/interface_view.glade.h:62
 msgid "name (x,y)"
 msgstr "nombre (x,y)"
 
-#: ../plugins/interface_view.py:26
+#: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
 msgstr "Visor de interfaces"
 
-#: ../plugins/interface_view.py:28
+#: ../plugins/interface_view.py:37
 msgid "Allows viewing of various interface properties"
 msgstr "Permite ver varias propiedades del interfaz"
 
-#: ../plugins/interface_view.py:115 ../plugins/interface_view.py:116
-#: ../plugins/interface_view.py:117
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (no implementado)"
 
-#: ../plugins/interface_view.py:270 ../plugins/interface_view.py:422
-#: ../plugins/event_monitor.py:83
-#: ../src/lib/accerciser/accessible_treeview.py:275
-#: ../src/lib/accerciser/plugin_manager.py:596
-msgid "Name"
-msgstr "Nombre"
-
-#: ../plugins/interface_view.py:275
+#: ../plugins/interface_view.py:447
 msgid "Description"
 msgstr "Descripción"
 
-#: ../plugins/interface_view.py:280
+#: ../plugins/interface_view.py:452
 msgid "Key binding"
 msgstr "Atajo de teclado"
 
-#: ../plugins/interface_view.py:429 ../plugins/interface_view.py:594
+#: ../plugins/interface_view.py:732 ../plugins/interface_view.py:1009
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:436
+#: ../plugins/interface_view.py:739
 msgid "Start"
 msgstr "Inicio"
 
-#: ../plugins/interface_view.py:443
+#: ../plugins/interface_view.py:746
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:589
+#: ../plugins/interface_view.py:912
+msgid "Too many selectable children"
+msgstr "Demasiados hijos seleccionables"
+
+#: ../plugins/interface_view.py:1004
 msgid "Content type"
 msgstr "Tipo de contenido"
 
-#: ../plugins/interface_view.py:763 ../plugins/interface_view.py:765
+#: ../plugins/interface_view.py:1281 ../plugins/interface_view.py:1283
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Editable)</i>"
-
-#: ../plugins/event_monitor.glade.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Monitor de eventos</b>"
-
-#: ../plugins/event_monitor.glade.h:2
-msgid "C_lear Selection"
-msgstr "_Limpiar la selección"
-
-#: ../plugins/event_monitor.glade.h:3
-msgid "Everything"
-msgstr "Todo"
-
-#: ../plugins/event_monitor.glade.h:4
-msgid "Selected accessible"
-msgstr "Accesible seleccionado"
-
-#: ../plugins/event_monitor.glade.h:5
-msgid "Selected application"
-msgstr "Aplicación seleccionada"
-
-#: ../plugins/event_monitor.glade.h:6
-msgid "Source"
-msgstr "Fuente"
-
-#: ../plugins/event_monitor.glade.h:7
-msgid "_Monitor Events"
-msgstr "_Monitor de eventos"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
-
-#: ../plugins/event_monitor.py:32
-msgid "Event Monitor"
-msgstr "Monitor de eventos"
-
-#: ../plugins/event_monitor.py:35
-msgid "Shows events as they occur from selected types and sources"
-msgstr ""
-"Muestra los eventos tal y como ocurren desde los tipos y fuentes "
-"seleccionados"
-
-#: ../plugins/event_monitor.py:42
-msgid "Highlight last event entry"
-msgstr "Resaltar la última entrada de evento"
-
-#: ../plugins/event_monitor.py:92
-msgid "Full name"
-msgstr "Nombre completo"
-
-#: ../plugins/api_view.py:19
-msgid "API Browser"
-msgstr "Examinador API"
-
-#: ../plugins/api_view.py:22
-msgid "Browse the various methods of the current accessible"
-msgstr "Examinar los métodos varios del accesible actual"
-
-#: ../plugins/api_view.py:47
-msgid "Hide private attributes"
-msgstr "Ocultar los atributos privados"
-
-#: ../plugins/api_view.py:57
-msgid "Method"
-msgstr "Método"
-
-#: ../plugins/api_view.py:66
-msgid "Property"
-msgstr "Propiedad"
-
-#: ../plugins/api_view.py:71
-msgid "Value"
-msgstr "Valor"
-
-#: ../plugins/console.py:26
-msgid "IPython Console"
-msgstr "Consola IPython"
-
-#: ../plugins/console.py:29
-msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Consola interactiva para manipular el accesible actualmente seleccionado"
-
-#: ../plugins/script_recorder.py:104
-msgid "Script Recorder"
-msgstr "Script grabador"
-
-#: ../plugins/script_recorder.py:106
-msgid "Creates dogtail style scripts"
-msgstr "Crea scripts de estilo para Dogtail"
-
-#: ../plugins/script_recorder.py:222
-msgid "The current script will be lost."
-msgstr "Se perderá el script actual."
 
 #: ../plugins/script_recorder.glade.h:1
 msgid "Dogtail"
@@ -451,6 +443,18 @@ msgstr "Tipo de script"
 #: ../plugins/script_recorder.glade.h:6
 msgid "gtk-media-record"
 msgstr "gtk-media-record"
+
+#: ../plugins/script_recorder.py:176
+msgid "Script Recorder"
+msgstr "Script grabador"
+
+#: ../plugins/script_recorder.py:178
+msgid "Creates dogtail style scripts"
+msgstr "Crea scripts de estilo para Dogtail"
+
+#: ../plugins/script_recorder.py:340
+msgid "The current script will be lost."
+msgstr "Se perderá el script actual."
 
 #: ../src/accerciser.glade.h:1
 msgid "An interactive Python accessibility explorer"
@@ -529,36 +533,28 @@ msgstr "gtk-refresh"
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007"
 
-#: ../src/lib/accerciser/accessible_treeview.py:285
-msgid "Role"
-msgstr "Rol"
-
-#: ../src/lib/accerciser/accessible_treeview.py:292
-msgid "Children"
-msgstr "Hijos"
-
-#: ../src/lib/accerciser/accerciser.py:65
-#: ../src/lib/accerciser/accerciser.py:70
+#: ../src/lib/accerciser/accerciser.py:66
+#: ../src/lib/accerciser/accerciser.py:71
 msgid "Core"
 msgstr "Núcleo"
 
-#: ../src/lib/accerciser/accerciser.py:66
+#: ../src/lib/accerciser/accerciser.py:67
 msgid "Inspect last focused accessible"
 msgstr "Inspeccionar el último accesible que tuvo el foco"
 
-#: ../src/lib/accerciser/accerciser.py:71
+#: ../src/lib/accerciser/accerciser.py:72
 msgid "Inspect accessible under mouse"
 msgstr "Inspeccionar el accesible debajo del ratón"
 
-#: ../src/lib/accerciser/accerciser.py:99
+#: ../src/lib/accerciser/accerciser.py:101
 msgid "Top panel"
 msgstr "Panel superior"
 
-#: ../src/lib/accerciser/accerciser.py:102
+#: ../src/lib/accerciser/accerciser.py:104
 msgid "Bottom panel"
 msgstr "Panel inferior"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:151
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -567,34 +563,17 @@ msgstr ""
 "accesibilidad del escritorio para arreglar este problema. ¿Quiere activarla "
 "ahora?"
 
-#: ../src/lib/accerciser/accerciser.py:163
+#: ../src/lib/accerciser/accerciser.py:166
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: Los cambios tienen efecto después de salir de la sesión."
 
-#: ../src/lib/accerciser/plugin_manager.py:390
-msgid "Plugin View"
-msgstr "Vista del complemento"
+#: ../src/lib/accerciser/accessible_treeview.py:285
+msgid "Role"
+msgstr "Rol"
 
-#: ../src/lib/accerciser/plugin_manager.py:393
-#, python-format
-msgid "Plugin View (%d)"
-msgstr "Vista del complemento (%d)"
-
-#: ../src/lib/accerciser/plugin_manager.py:526
-msgid "Plugin Errors"
-msgstr "Errores del complemento"
-
-#: ../src/lib/accerciser/plugin_manager.py:603
-msgid "View"
-msgstr "Ver"
-
-#: ../src/lib/accerciser/plugin_manager.py:698
-msgid "<i>_New view...</i>"
-msgstr "<i>_Nueva vista...</i>"
-
-#: ../src/lib/accerciser/plugin_manager.py:719
-msgid "New View..."
-msgstr "Nueva vista..."
+#: ../src/lib/accerciser/accessible_treeview.py:292
+msgid "Children"
+msgstr "Hijos"
 
 #. crc.connect('toggled', self._onPluginToggled)
 #: ../src/lib/accerciser/hotkey_manager.py:203
@@ -620,4 +599,29 @@ msgstr "Control"
 #: ../src/lib/accerciser/hotkey_manager.py:241
 msgid "Shift"
 msgstr "Mayús"
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "Errores del complemento"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+msgid "View"
+msgstr "Ver"
+
+#: ../src/lib/accerciser/plugin/view.py:450
+msgid "Plugin View"
+msgstr "Vista del complemento"
+
+#: ../src/lib/accerciser/plugin/view.py:453
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "Vista del complemento (%d)"
+
+#: ../src/lib/accerciser/plugin/view.py:756
+msgid "<i>_New view...</i>"
+msgstr "<i>_Nueva vista...</i>"
+
+#: ../src/lib/accerciser/plugin/view.py:812
+msgid "New View..."
+msgstr "Nueva vista..."
 
