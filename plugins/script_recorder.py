@@ -338,6 +338,7 @@ class ScriptRecorder(ViewportPlugin):
     dialog = gtk.MessageDialog(self.get_toplevel(), 0, gtk.MESSAGE_WARNING,
                                gtk.BUTTONS_OK_CANCEL,
                                _('The current script will be lost.'))
+    dialog.set_title(_('Confirm clear'))
     response_id = dialog.run()
     dialog.destroy()
     if response_id == gtk.RESPONSE_OK:
