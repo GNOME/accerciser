@@ -252,6 +252,10 @@ class _SectionAccessible(_InterfaceSection):
     @type glade_xml: gtk.glade.XML
     '''
     glade_xml.signal_autoconnect(self)
+    # Child count and description labels
+    self.child_count_label = glade_xml.get_widget('label_acc_child count')
+    self.desc_label = glade_xml.get_widget('label_acc_desc')
+
     # configure states tree view
     treeview = glade_xml.get_widget('states_view')
     self.states_model = gtk.ListStore(str)
@@ -309,6 +313,10 @@ class _SectionAccessible(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
+
+    self.child_count_label.set_text(str(acc.childCount))
+    self.desc_label.set_label(acc.description or _('<i>(no description)</i>'))
+
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
     map(self.states_model.append, [[state] for state in states])
@@ -829,6 +837,8 @@ class _SectionImage(_InterfaceSection):
     '''
     self.label_pos = glade_xml.get_widget('img_position_label')
     self.label_size = glade_xml.get_widget('img_size_label')
+    self.label_locale = glade_xml.get_widget('img_locale_label')
+    self.label_desc = glade_xml.get_widget('img_locale_label')
 
   def populateUI(self, acc):
     '''
@@ -843,7 +853,9 @@ class _SectionImage(_InterfaceSection):
     bbox = ii.getImageExtents(pyatspi.DESKTOP_COORDS)
     self.label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
     self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
-
+    self.label_desc.set_label(ii.imageDescription or \
+                                _('<i>(no description)</i>'))
+    self.label_locale.set_text(ii.imageLocale)
   def clearUI(self):
     '''
     Clear all section-specific data.

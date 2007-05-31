@@ -26,6 +26,82 @@
                         <child>
                           <widget class="GtkVBox" id="vbox2">
                             <property name="visible">True</property>
+                            <property name="spacing">2</property>
+                            <child>
+                              <widget class="GtkHBox" id="hbox20">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label56">
+                                    <property name="visible">True</property>
+                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="xpad">5</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Child count&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+									<accessibility>
+									  <atkrelation target="label_acc_child_count" type="label-for"/>
+									</accessibility>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label_acc_child count">
+                                    <property name="visible">True</property>
+                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="label" translatable="yes">0</property>
+									<accessibility>
+									  <atkrelation target="label56" type="labelled-by"/>
+									</accessibility>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                            </child>
+                            <child>
+                              <widget class="GtkFrame" id="frame6">
+                                <property name="visible">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="label_xalign">0</property>
+                                <property name="shadow_type">GTK_SHADOW_NONE</property>
+                                <child>
+                                  <widget class="GtkAlignment" id="alignment22">
+                                    <property name="visible">True</property>
+                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="left_padding">12</property>
+                                    <child>
+                                      <widget class="GtkLabel" id="label_acc_desc">
+                                        <property name="visible">True</property>
+                                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                        <property name="xalign">0</property>
+                                        <property name="label" translatable="yes">&lt;i&gt;(no description)&lt;/i&gt;</property>
+                                        <property name="use_markup">True</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label58">
+                                    <property name="visible">True</property>
+                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;Description&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="type">label_item</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
                             <child>
                               <widget class="GtkHBox" id="hbox6">
                                 <property name="visible">True</property>
@@ -157,6 +233,9 @@
                                   </packing>
                                 </child>
                               </widget>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
                             </child>
                             <child>
                               <widget class="GtkFrame" id="frame8">
@@ -195,7 +274,7 @@
                                 </child>
                               </widget>
                               <packing>
-                                <property name="position">1</property>
+                                <property name="position">3</property>
                               </packing>
                             </child>
                           </widget>
@@ -328,63 +407,19 @@
                             <property name="column_spacing">3</property>
                             <property name="row_spacing">3</property>
                             <child>
-                              <widget class="GtkLabel" id="label23">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">ID</property>
-                                <accessibility>
-                                  <atkrelation target="label_app_id" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label22">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Toolkit</property>
-                                <accessibility>
-                                  <atkrelation target="label_app_tk" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label20">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Version</property>
-                                <accessibility>
-                                  <atkrelation target="label_app_version" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label_app_id">
+                              <widget class="GtkLabel" id="label_app_version">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
-                                  <atkrelation target="label23" type="labelled-by"/>
+                                  <atkrelation target="label20" type="labelled-by"/>
                                 </accessibility>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">2</property>
+                                <property name="top_attach">2</property>
+                                <property name="bottom_attach">3</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
@@ -408,19 +443,63 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label_app_version">
+                              <widget class="GtkLabel" id="label_app_id">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
-                                  <atkrelation target="label20" type="labelled-by"/>
+                                  <atkrelation target="label23" type="labelled-by"/>
                                 </accessibility>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label20">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Version</property>
+                                <accessibility>
+                                  <atkrelation target="label_app_version" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
                                 <property name="top_attach">2</property>
                                 <property name="bottom_attach">3</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label22">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Toolkit</property>
+                                <accessibility>
+                                  <atkrelation target="label_app_tk" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label23">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">ID</property>
+                                <accessibility>
+                                  <atkrelation target="label_app_id" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
@@ -485,135 +564,47 @@
                             <property name="column_spacing">3</property>
                             <property name="row_spacing">3</property>
                             <child>
-                              <widget class="GtkLabel" id="relative_position_label">
+                              <widget class="GtkLabel" id="label13">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Absolute position</property>
+                                <accessibility>
+                                  <atkrelation target="absolute_position_label" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="x_options">GTK_SHRINK | GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="absolute_position_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <property name="label" translatable="yes">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
-                                  <atkrelation target="label33" type="labelled-by"/>
+                                  <atkrelation target="label13" type="labelled-by"/>
                                 </accessibility>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">2</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label33">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Relative position</property>
-                                <accessibility>
-                                  <atkrelation target="relative_position_label" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="size_label">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
-                                <property name="selectable">True</property>
-                                <accessibility>
-                                  <atkrelation target="label14" type="labelled-by"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label14">
+                              <widget class="GtkLabel" id="label19">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Size</property>
+                                <property name="label" translatable="yes">Alpha</property>
                                 <accessibility>
-                                  <atkrelation target="size_label" type="label-for"/>
+                                  <atkrelation target="alpha_label" type="label-for"/>
                                 </accessibility>
                               </widget>
                               <packing>
-                                <property name="top_attach">2</property>
-                                <property name="bottom_attach">3</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="layer_label">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">WIDGET</property>
-                                <property name="selectable">True</property>
-                                <accessibility>
-                                  <atkrelation target="label15" type="labelled-by"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">3</property>
-                                <property name="bottom_attach">4</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label15">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Layer</property>
-                                <accessibility>
-                                  <atkrelation target="layer_label" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">3</property>
-                                <property name="bottom_attach">4</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="zorder_label">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0</property>
-                                <property name="selectable">True</property>
-                                <accessibility>
-                                  <atkrelation target="label16" type="labelled-by"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">4</property>
-                                <property name="bottom_attach">5</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="label16">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">MDI-Z-order</property>
-                                <accessibility>
-                                  <atkrelation target="zorder_label" type="label-for"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="top_attach">4</property>
-                                <property name="bottom_attach">5</property>
+                                <property name="top_attach">5</property>
+                                <property name="bottom_attach">6</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
@@ -637,49 +628,137 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label19">
+                              <widget class="GtkLabel" id="label16">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Alpha</property>
+                                <property name="label" translatable="yes">MDI-Z-order</property>
                                 <accessibility>
-                                  <atkrelation target="alpha_label" type="label-for"/>
+                                  <atkrelation target="zorder_label" type="label-for"/>
                                 </accessibility>
                               </widget>
                               <packing>
-                                <property name="top_attach">5</property>
-                                <property name="bottom_attach">6</property>
+                                <property name="top_attach">4</property>
+                                <property name="bottom_attach">5</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="absolute_position_label">
+                              <widget class="GtkLabel" id="zorder_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label" translatable="yes">0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
-                                  <atkrelation target="label13" type="labelled-by"/>
+                                  <atkrelation target="label16" type="labelled-by"/>
                                 </accessibility>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
                                 <property name="right_attach">2</property>
+                                <property name="top_attach">4</property>
+                                <property name="bottom_attach">5</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="label13">
+                              <widget class="GtkLabel" id="label15">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Absolute position</property>
+                                <property name="label" translatable="yes">Layer</property>
                                 <accessibility>
-                                  <atkrelation target="absolute_position_label" type="label-for"/>
+                                  <atkrelation target="layer_label" type="label-for"/>
                                 </accessibility>
                               </widget>
                               <packing>
-                                <property name="x_options">GTK_SHRINK | GTK_FILL</property>
+                                <property name="top_attach">3</property>
+                                <property name="bottom_attach">4</property>
+                                <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="layer_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">WIDGET</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label15" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">3</property>
+                                <property name="bottom_attach">4</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label14">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Size</property>
+                                <accessibility>
+                                  <atkrelation target="size_label" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="top_attach">2</property>
+                                <property name="bottom_attach">3</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="size_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label14" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">2</property>
+                                <property name="bottom_attach">3</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label33">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Relative position</property>
+                                <accessibility>
+                                  <atkrelation target="relative_position_label" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="relative_position_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label33" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
                               </packing>
                             </child>
                           </widget>
@@ -954,20 +1033,111 @@
                         <child>
                           <widget class="GtkTable" id="table_component2">
                             <property name="visible">True</property>
-                            <property name="n_rows">2</property>
+                            <property name="n_rows">4</property>
                             <property name="n_columns">2</property>
                             <property name="column_spacing">3</property>
                             <property name="row_spacing">3</property>
                             <child>
-                              <widget class="GtkLabel" id="label25">
+                              <widget class="GtkLabel" id="img_locale_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">Position</property>
+                                <property name="label" translatable="yes">C</property>
+                                <property name="selectable">True</property>
                                 <accessibility>
-                                  <atkrelation target="img_position_label" type="label-for"/>
+                                  <atkrelation target="label60" type="labelled-by"/>
                                 </accessibility>
                               </widget>
                               <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">3</property>
+                                <property name="bottom_attach">4</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="img_desc_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">&lt;i&gt;(no description)&lt;/i&gt;</property>
+                                <property name="use_markup">True</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label59" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label60">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Locale</property>
+                                <accessibility>
+                                  <atkrelation target="img_locale_label" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="top_attach">3</property>
+                                <property name="bottom_attach">4</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label59">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">Description</property>
+                                <accessibility>
+                                  <atkrelation target="img_desc_label" type="label-for"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="img_size_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label21" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options">GTK_FILL</property>
+                                <property name="y_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="img_position_label">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="selectable">True</property>
+                                <accessibility>
+                                  <atkrelation target="label25" type="labelled-by"/>
+                                </accessibility>
+                              </widget>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="right_attach">2</property>
+                                <property name="top_attach">2</property>
+                                <property name="bottom_attach">3</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
@@ -989,37 +1159,17 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkLabel" id="img_position_label">
+                              <widget class="GtkLabel" id="label25">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
-                                <property name="selectable">True</property>
+                                <property name="label" translatable="yes">Position</property>
                                 <accessibility>
-                                  <atkrelation target="label25" type="labelled-by"/>
+                                  <atkrelation target="img_position_label" type="label-for"/>
                                 </accessibility>
                               </widget>
                               <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="x_options">GTK_FILL</property>
-                                <property name="y_options">GTK_FILL</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="GtkLabel" id="img_size_label">
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
-                                <property name="selectable">True</property>
-                                <accessibility>
-                                  <atkrelation target="label21" type="labelled-by"/>
-                                </accessibility>
-                              </widget>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
-                                <property name="top_attach">1</property>
-                                <property name="bottom_attach">2</property>
+                                <property name="top_attach">2</property>
+                                <property name="bottom_attach">3</property>
                                 <property name="x_options">GTK_FILL</property>
                                 <property name="y_options">GTK_FILL</property>
                               </packing>
@@ -1293,37 +1443,75 @@
                                                 <property name="n_columns">2</property>
                                                 <property name="column_spacing">6</property>
                                                 <child>
-                                                  <widget class="GtkLabel" id="table_scolumns_label">
+                                                  <widget class="GtkLabel" id="label41">
                                                     <property name="visible">True</property>
                                                     <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">0</property>
+                                                    <property name="label" translatable="yes">Rows</property>
                                                     <accessibility>
-                                                      <atkrelation target="label44" type="labelled-by"/>
+                                                      <atkrelation target="table_rows_label" type="label-for"/>
                                                     </accessibility>
                                                   </widget>
                                                   <packing>
-                                                    <property name="left_attach">1</property>
-                                                    <property name="right_attach">2</property>
-                                                    <property name="top_attach">3</property>
-                                                    <property name="bottom_attach">4</property>
-                                                    <property name="x_options">GTK_FILL</property>
                                                     <property name="y_options">GTK_FILL</property>
                                                   </packing>
                                                 </child>
                                                 <child>
-                                                  <widget class="GtkLabel" id="table_srows_label">
+                                                  <widget class="GtkLabel" id="label42">
+                                                    <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
+                                                    <property name="label" translatable="yes">Columns</property>
+                                                    <accessibility>
+                                                      <atkrelation target="table_columns_label" type="label-for"/>
+                                                    </accessibility>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="top_attach">1</property>
+                                                    <property name="bottom_attach">2</property>
+                                                    <property name="y_options">GTK_FILL</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label43">
+                                                    <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
+                                                    <property name="label" translatable="yes">Selected rows</property>
+                                                    <accessibility>
+                                                      <atkrelation target="table_srows_label" type="label-for"/>
+                                                    </accessibility>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="top_attach">2</property>
+                                                    <property name="bottom_attach">3</property>
+                                                    <property name="y_options">GTK_FILL</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label44">
+                                                    <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
+                                                    <property name="label" translatable="yes">Selected columns</property>
+                                                    <accessibility>
+                                                      <atkrelation target="table_scolumns_label" type="label-for"/>
+                                                    </accessibility>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="top_attach">3</property>
+                                                    <property name="bottom_attach">4</property>
+                                                    <property name="y_options">GTK_FILL</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkLabel" id="table_rows_label">
                                                     <property name="visible">True</property>
                                                     <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <accessibility>
-                                                      <atkrelation target="label43" type="labelled-by"/>
+                                                      <atkrelation target="label41" type="labelled-by"/>
                                                     </accessibility>
                                                   </widget>
                                                   <packing>
                                                     <property name="left_attach">1</property>
                                                     <property name="right_attach">2</property>
-                                                    <property name="top_attach">2</property>
-                                                    <property name="bottom_attach">3</property>
                                                     <property name="x_options">GTK_FILL</property>
                                                     <property name="y_options">GTK_FILL</property>
                                                   </packing>
@@ -1347,76 +1535,38 @@
                                                   </packing>
                                                 </child>
                                                 <child>
-                                                  <widget class="GtkLabel" id="table_rows_label">
+                                                  <widget class="GtkLabel" id="table_srows_label">
                                                     <property name="visible">True</property>
                                                     <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <accessibility>
-                                                      <atkrelation target="label41" type="labelled-by"/>
+                                                      <atkrelation target="label43" type="labelled-by"/>
                                                     </accessibility>
                                                   </widget>
                                                   <packing>
                                                     <property name="left_attach">1</property>
                                                     <property name="right_attach">2</property>
+                                                    <property name="top_attach">2</property>
+                                                    <property name="bottom_attach">3</property>
                                                     <property name="x_options">GTK_FILL</property>
                                                     <property name="y_options">GTK_FILL</property>
                                                   </packing>
                                                 </child>
                                                 <child>
-                                                  <widget class="GtkLabel" id="label44">
+                                                  <widget class="GtkLabel" id="table_scolumns_label">
                                                     <property name="visible">True</property>
                                                     <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">Selected columns</property>
+                                                    <property name="label" translatable="yes">0</property>
                                                     <accessibility>
-                                                      <atkrelation target="table_scolumns_label" type="label-for"/>
+                                                      <atkrelation target="label44" type="labelled-by"/>
                                                     </accessibility>
                                                   </widget>
                                                   <packing>
+                                                    <property name="left_attach">1</property>
+                                                    <property name="right_attach">2</property>
                                                     <property name="top_attach">3</property>
                                                     <property name="bottom_attach">4</property>
-                                                    <property name="y_options">GTK_FILL</property>
-                                                  </packing>
-                                                </child>
-                                                <child>
-                                                  <widget class="GtkLabel" id="label43">
-                                                    <property name="visible">True</property>
-                                                    <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">Selected rows</property>
-                                                    <accessibility>
-                                                      <atkrelation target="table_srows_label" type="label-for"/>
-                                                    </accessibility>
-                                                  </widget>
-                                                  <packing>
-                                                    <property name="top_attach">2</property>
-                                                    <property name="bottom_attach">3</property>
-                                                    <property name="y_options">GTK_FILL</property>
-                                                  </packing>
-                                                </child>
-                                                <child>
-                                                  <widget class="GtkLabel" id="label42">
-                                                    <property name="visible">True</property>
-                                                    <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">Columns</property>
-                                                    <accessibility>
-                                                      <atkrelation target="table_columns_label" type="label-for"/>
-                                                    </accessibility>
-                                                  </widget>
-                                                  <packing>
-                                                    <property name="top_attach">1</property>
-                                                    <property name="bottom_attach">2</property>
-                                                    <property name="y_options">GTK_FILL</property>
-                                                  </packing>
-                                                </child>
-                                                <child>
-                                                  <widget class="GtkLabel" id="label41">
-                                                    <property name="visible">True</property>
-                                                    <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">Rows</property>
-                                                    <accessibility>
-                                                      <atkrelation target="table_rows_label" type="label-for"/>
-                                                    </accessibility>
-                                                  </widget>
-                                                  <packing>
+                                                    <property name="x_options">GTK_FILL</property>
                                                     <property name="y_options">GTK_FILL</property>
                                                   </packing>
                                                 </child>
@@ -1958,46 +2108,62 @@
                                 <property name="column_spacing">3</property>
                                 <property name="homogeneous">True</property>
                                 <child>
-                                  <widget class="GtkSpinButton" id="spinbutton_value">
+                                  <widget class="GtkLabel" id="label34">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="adjustment">0 0 100 1 10 10</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">Minimum value</property>
                                     <accessibility>
-                                      <atkrelation target="label40" type="labelled-by"/>
+                                      <atkrelation target="label_value_min" type="label-for"/>
                                     </accessibility>
-                                    <signal name="value_changed" handler="_onValueSpinnerChange"/>
                                   </widget>
                                   <packing>
-                                    <property name="left_attach">1</property>
-                                    <property name="right_attach">2</property>
-                                    <property name="x_options"></property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkLabel" id="label40">
+                                  <widget class="GtkLabel" id="label35">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">Current value</property>
+                                    <property name="label" translatable="yes">Maximum value</property>
                                     <accessibility>
-                                      <atkrelation target="spinbutton_value" type="label-for"/>
+                                      <atkrelation target="label_value_max" type="label-for"/>
                                     </accessibility>
                                   </widget>
+                                  <packing>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                  </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkLabel" id="label_value_inc">
+                                  <widget class="GtkLabel" id="label36">
+                                    <property name="visible">True</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">Minimum increment</property>
+                                    <accessibility>
+                                      <atkrelation target="label_value_inc" type="label-for"/>
+                                    </accessibility>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label_value_max">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">0</property>
                                     <property name="selectable">True</property>
                                     <accessibility>
-                                      <atkrelation target="label36" type="labelled-by"/>
+                                      <atkrelation target="label34" type="labelled-by"/>
                                     </accessibility>
                                   </widget>
                                   <packing>
                                     <property name="left_attach">1</property>
                                     <property name="right_attach">2</property>
-                                    <property name="top_attach">3</property>
-                                    <property name="bottom_attach">4</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
                                     <property name="x_options"></property>
                                   </packing>
                                 </child>
@@ -2020,63 +2186,47 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkLabel" id="label_value_max">
+                                  <widget class="GtkLabel" id="label_value_inc">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
                                     <property name="label" translatable="yes">0</property>
                                     <property name="selectable">True</property>
                                     <accessibility>
-                                      <atkrelation target="label34" type="labelled-by"/>
+                                      <atkrelation target="label36" type="labelled-by"/>
                                     </accessibility>
                                   </widget>
                                   <packing>
                                     <property name="left_attach">1</property>
                                     <property name="right_attach">2</property>
-                                    <property name="top_attach">2</property>
-                                    <property name="bottom_attach">3</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
                                     <property name="x_options"></property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkLabel" id="label36">
+                                  <widget class="GtkLabel" id="label40">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">Minimum increment</property>
+                                    <property name="label" translatable="yes">Current value</property>
                                     <accessibility>
-                                      <atkrelation target="label_value_inc" type="label-for"/>
+                                      <atkrelation target="spinbutton_value" type="label-for"/>
                                     </accessibility>
                                   </widget>
-                                  <packing>
-                                    <property name="top_attach">3</property>
-                                    <property name="bottom_attach">4</property>
-                                  </packing>
                                 </child>
                                 <child>
-                                  <widget class="GtkLabel" id="label35">
+                                  <widget class="GtkSpinButton" id="spinbutton_value">
                                     <property name="visible">True</property>
-                                    <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">Maximum value</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="adjustment">0 0 100 1 10 10</property>
                                     <accessibility>
-                                      <atkrelation target="label_value_max" type="label-for"/>
+                                      <atkrelation target="label40" type="labelled-by"/>
                                     </accessibility>
+                                    <signal name="value_changed" handler="_onValueSpinnerChange"/>
                                   </widget>
                                   <packing>
-                                    <property name="top_attach">2</property>
-                                    <property name="bottom_attach">3</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <widget class="GtkLabel" id="label34">
-                                    <property name="visible">True</property>
-                                    <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">Minimum value</property>
-                                    <accessibility>
-                                      <atkrelation target="label_value_min" type="label-for"/>
-                                    </accessibility>
-                                  </widget>
-                                  <packing>
-                                    <property name="top_attach">1</property>
-                                    <property name="bottom_attach">2</property>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="x_options"></property>
                                   </packing>
                                 </child>
                               </widget>
