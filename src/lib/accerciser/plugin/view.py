@@ -67,6 +67,7 @@ class PluginView(gtk.Notebook):
     self.connect('drag_data_get', self._onDragDataGet)
     self.connect('key-press-event', self._onKeyPress)
     self.connect('button-press-event', self._onButtonPress)
+
     self.dest_type = None
     
   def _onButtonPress(self, nb, event):
@@ -202,7 +203,9 @@ class PluginView(gtk.Notebook):
       name = getattr(child,'plugin_name_localized', None) or child.plugin_name
     elif child.name:
       name = child.name
-    gtk.Notebook.insert_page(self, child, gtk.Label(name), position=position)
+    gtk.Notebook.append_page(self, child)
+    gtk.Notebook.reorder_child(self, child, position)
+    gtk.Notebook.set_tab_label(self, child, gtk.Label(name))
     make_movable = not isinstance(child, MessageManager.MessageTab)
     self.set_tab_detachable(child, make_movable)
     self.set_tab_reorderable(child, make_movable)

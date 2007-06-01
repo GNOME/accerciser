@@ -178,7 +178,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
       return iters
     for child in parent:
       if child is None:
-        row = self._buildRow(None, False, '<dead>')
+        row = self._buildRow(None, False, _('<dead>'))
         citer = self.append(iter, row)
       else:
         row = self._buildRow(child, False)
@@ -391,7 +391,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     except KeyError:
       return
     if new_child is None:
-      row = self.model._buildRow(new_child, False, name='<dead>')
+      row = self.model._buildRow(new_child, False, name=_('<dead>'))
       self.model.append(iter, row)
       return
     else:

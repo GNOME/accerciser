@@ -1276,7 +1276,6 @@ class _SectionText(_InterfaceSection):
     ti = acc.queryText()
 
     text = ti.getText(0, ti.characterCount)
-    print 'got text', text
     self.text_buffer.set_text(text)
 
     self.offset_spin.get_adjustment().upper = ti.characterCount

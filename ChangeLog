@@ -1,3 +1,11 @@
+2007-06-01  Eitan Isaacson  <eitan@ascender.com>
+
+	* plugins/interface_view.py: Removed print.
+	* src/lib/accerciser/accessible_treeview.py: Made '<dead>' string 
+	localized.
+	* src/lib/accerciser/plugin/view.py: Plugin tabs now accessible
+	(we were getting "None" for pluginview children via at-spi).
+
 2007-05-31  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/interface_view.glade: 
