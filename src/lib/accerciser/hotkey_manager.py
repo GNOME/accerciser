@@ -199,7 +199,6 @@ class HotkeyTreeView(gtk.TreeView):
     modelfilter.set_visible_func(self._rowVisibleFunc)
     self.set_model(modelfilter)
     crt = gtk.CellRendererText()
-    #crc.connect('toggled', self._onPluginToggled)
     tvc = gtk.TreeViewColumn(_('Component'))
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=COL_COMPONENT)

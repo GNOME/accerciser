@@ -1,5 +1,16 @@
 2007-06-05  Eitan Isaacson  <eitan@ascender.com>
 
+	* src/accerciser.glade: Added bookmarks menu.
+	* src/lib/accerciser/Makefile.am: Added bookmarks.py.
+	* src/bookmarks.py: Added support for bookmarks.
+	* src/lib/accerciser/accerciser.py: Added bookmark callbacks.
+	* src/lib/accerciser/accessible_treeview.py: Fixed node selection bug.
+	* src/lib/accerciser/hotkey_manager.py:
+	* src/lib/accerciser/node.py: added tree_path attribute for more 
+	accurate accessible paths.
+
+2007-06-05  Eitan Isaacson  <eitan@ascender.com>
+
 	* src/lib/accerciser/accessible_treeview.py: Decouple children
 	node loading (bug 441013).
 

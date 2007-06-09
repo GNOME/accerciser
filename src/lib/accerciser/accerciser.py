@@ -24,6 +24,7 @@ from icons import getIcon
 import os
 import atk
 import gnome
+from bookmarks import BookmarkStore
 from accessible_treeview import *
 from node import Node
 from plugin import PluginManager
@@ -97,6 +98,10 @@ class MainWindow(Tools):
     scrolled_window = self.main_xml.get_widget('scrolled_acc_tree')
     scrolled_window.add(self.acc_treeview)
     
+
+    bookmarks_menu = self.main_xml.get_widget('bookmarks_menu')
+    self.bookmarks_store = BookmarkStore(bookmarks_menu, self.node)
+
     bin = self.main_xml.get_widget('alignment_topright')
     self.plugin_view1 = PluginView(N_('Top panel'))
     bin.add(self.plugin_view1)
@@ -209,6 +214,14 @@ class MainWindow(Tools):
     statusbar.pop(context_id)
     if len(path) > 1:
       statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
+
+  def _onAddBookmark(self, menuitem):
+    iter = self.bookmarks_store.addBookmark()
+    dialog = self.bookmarks_store.NewBookmarkDialog(self.window, iter)
+
+  def _onEditBookmarks(self, menuitem):
+    dialog = self.bookmarks_store.EditDialog()
+    dialog.show_all()
 
   def _shutDown(self):
     '''

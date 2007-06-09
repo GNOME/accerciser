@@ -228,7 +228,10 @@ class AccessibleModel(gtk.TreeStore, Tools):
       return False
     elif remove_iter:
       already_populated_num -= 1
-    child = parent.getChildAtIndex(already_populated_num)
+    try:
+      child = parent.getChildAtIndex(already_populated_num)
+    except LookupError:
+      child = None
 
     row = self._buildRow(child)
     self.append(iter, row)
@@ -590,6 +593,9 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     self.node.handler_block(self._changed_handler)
     self.node.update(new_acc)
     self.node.handler_unblock(self._changed_handler)
+    if iter:
+      path = model.get_path(iter)
+      self.node.tree_path = list(path[1:])
 
   def _onAccChanged(self, node, acc):
     '''
@@ -608,6 +614,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       return
     if len(path) > 1:
       self.selectNodeAtPath(path)
+      self.node.tree_path = list(path[1:])
 
   def selectNodeAtPath(self, path):
     '''
@@ -617,8 +624,15 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param path: The path to select.
     @type path: tuple
     '''
-    self._path_to_expand = path
-    self.model.popToPath(path)
+    try:
+      dummy = self.model[path][COL_DUMMY]
+    except:
+      dummy = True
+    if dummy:
+      self._path_to_expand = path
+      self.model.popToPath(path)
+    else:
+      self._selectExistingPath(path)
 
   def _onRowFilled(self, model, iter):
     '''
@@ -633,11 +647,21 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     '''
     if iter and self._path_to_expand and \
           self._path_to_expand[:-1] == model.get_path(iter):
-      self.expand_to_path(self._path_to_expand[:-1])
-      self.scroll_to_cell(self._path_to_expand)
-      selection = self.get_selection()
-      selection.select_path(self._path_to_expand)
+      self._selectExistingPath(self._path_to_expand)
       self._path_to_expand = None
+
+  def _selectExistingPath(self, path):
+    '''
+    Select a path that already exists. Expand, scroll, and select.
+    
+    @param path: Path to select.
+    @type path: tuple
+    '''
+    self.expand_to_path(path[:-1])
+    self.scroll_to_cell(path)
+    selection = self.get_selection()
+    selection.select_path(path)
+    
 
   def _onStartPop(self, model):
     '''

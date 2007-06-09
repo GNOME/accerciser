@@ -1,6 +1,7 @@
 SUBDIRS = plugin
 accerciser_PYTHON = accerciser.py \
 	accessible_treeview.py \
+	bookmarks.py \
 	i18n.py \
 	script_playback.py \
 	icons.py \

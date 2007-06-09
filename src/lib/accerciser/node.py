@@ -55,6 +55,7 @@ class Node(gobject.GObject, Tools):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
     self.extents = None
+    self.tree_path = None
     gobject.GObject.__init__(self)
     
   def update(self, acc):
@@ -75,9 +76,32 @@ class Node(gobject.GObject, Tools):
       self.extents = Bag(x=0, y=0, width=0, height=0)
     else:
       self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
+    self.tree_path = None
     self.blinkRect()
     self.emit('accessible-changed', acc)
   
+  def updateToPath(self, app_name, path):
+    '''
+    Update the node with a new accessible by providing a tree path 
+    in an application.
+    
+    @param app_name: Application name.
+    @type app_name: string
+    @param path: The accessible path in the application.
+    @type path: list of integer
+    '''
+    acc = pyatspi.findDescendant(
+      self.desktop, 
+      lambda x: x.name.lower()==app_name.lower(),
+      breadth_first=True)
+    while path:
+      child_index = path.pop(0)
+      try:
+        acc = acc[child_index]
+      except IndexError:
+        return
+    self.update(acc)
+
   def blinkRect(self, times=MAX_BLINKS):
     '''
     Blink a rectangle on the screen using L{extents} for position and size.
