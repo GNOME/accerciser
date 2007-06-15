@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-02 03:16+0100\n"
-"PO-Revision-Date: 2007-06-02 20:48+0200\n"
+"POT-Creation-Date: 2007-06-10 03:21+0100\n"
+"PO-Revision-Date: 2007-06-15 10:32+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -124,9 +124,9 @@ msgstr ""
 msgid "Highlight last event entry"
 msgstr "Resaltar la última entrada de evento"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:275
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:470
+#: ../plugins/interface_view.py:753
+#: ../src/lib/accerciser/accessible_treeview.py:385
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nombre"
@@ -183,8 +183,8 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconocido</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:877
 msgid "<i>(no description)</i>"
 msgstr "<b>(sin descripción)</i>"
 
@@ -252,7 +252,7 @@ msgstr "Valor actual"
 msgid "Des_ktop"
 msgstr "_Escritorio"
 
-#: ../plugins/interface_view.glade.h:30 ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:30 ../plugins/interface_view.py:475
 msgid "Description"
 msgstr "Descripción"
 
@@ -358,7 +358,7 @@ msgstr "Tamaño"
 
 #: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
-msgstr ""
+msgstr "Contenido _reproducible"
 
 #: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
@@ -412,36 +412,36 @@ msgstr "Visor de interfaces"
 msgid "Allows viewing of various interface properties"
 msgstr "Permite ver varias propiedades del interfaz"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
+#: ../plugins/interface_view.py:205 ../plugins/interface_view.py:206
+#: ../plugins/interface_view.py:207
 msgid " (not implemented)"
 msgstr " (no implementado)"
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:480
 msgid "Key binding"
 msgstr "Atajo de teclado"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1021
+#: ../plugins/interface_view.py:760 ../plugins/interface_view.py:1041
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:767
 msgid "Start"
 msgstr "Inicio"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:774
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:944
 msgid "Too many selectable children"
 msgstr "Demasiados hijos seleccionables"
 
-#: ../plugins/interface_view.py:1016
+#: ../plugins/interface_view.py:1036
 msgid "Content type"
 msgstr "Tipo de contenido"
 
-#: ../plugins/interface_view.py:1292 ../plugins/interface_view.py:1294
+#: ../plugins/interface_view.py:1312 ../plugins/interface_view.py:1314
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Editable)</i>"
 
@@ -482,14 +482,26 @@ msgid "Confirm clear"
 msgstr "Confirme la limpieza"
 
 #: ../src/accerciser.glade.h:1
+msgid "Add Bookmark..."
+msgstr "Añadir marcador..."
+
+#: ../src/accerciser.glade.h:2
 msgid "An interactive Python accessibility explorer"
 msgstr "Un examinador de accesibilidad de Python interactivo"
 
-#: ../src/accerciser.glade.h:2
+#: ../src/accerciser.glade.h:3
+msgid "Bookmark currently selected accessible."
+msgstr "Marcar el accesible actualmente seleccionado."
+
+#: ../src/accerciser.glade.h:4
+msgid "Edit Bookmarks..."
+msgstr "Editar los marcadores..."
+
+#: ../src/accerciser.glade.h:5
 msgid "Refresh _Current"
 msgstr "Refrescar _actual"
 
-#: ../src/accerciser.glade.h:3
+#: ../src/accerciser.glade.h:6
 msgid ""
 "The New BSD License\n"
 "See the COPYING and NOTICE files for details."
@@ -497,89 +509,93 @@ msgstr ""
 "La nueva licencia BSD\n"
 "Vea los archivos COPYING y NOTICE para más detalles."
 
-#: ../src/accerciser.glade.h:5
+#: ../src/accerciser.glade.h:8
 msgid "Wiki page"
 msgstr "Página Wiki"
 
-#: ../src/accerciser.glade.h:6
+#: ../src/accerciser.glade.h:9
+msgid "_Bookmarks"
+msgstr "_Marcadores"
+
+#: ../src/accerciser.glade.h:10
 msgid "_Contents"
 msgstr "_Contenido"
 
-#: ../src/accerciser.glade.h:7
+#: ../src/accerciser.glade.h:11
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../src/accerciser.glade.h:8
+#: ../src/accerciser.glade.h:12
 msgid "_File"
 msgstr "_Archivo"
 
-#: ../src/accerciser.glade.h:9
+#: ../src/accerciser.glade.h:13
 msgid "_Global Hotkeys"
 msgstr "Teclas rápidas _globales"
 
-#: ../src/accerciser.glade.h:10
+#: ../src/accerciser.glade.h:14
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../src/accerciser.glade.h:11
+#: ../src/accerciser.glade.h:15
 msgid "_Plugins"
 msgstr "Com_plementos"
 
-#: ../src/accerciser.glade.h:12
+#: ../src/accerciser.glade.h:16
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/accerciser.glade.h:13
+#: ../src/accerciser.glade.h:17
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/accerciser.glade.h:14
+#: ../src/accerciser.glade.h:18
 msgid "accerciser Preferences"
 msgstr "Preferencias de accerciser"
 
-#: ../src/accerciser.glade.h:15
+#: ../src/accerciser.glade.h:19
 msgid "gtk-close"
 msgstr "gtk-close"
 
-#: ../src/accerciser.glade.h:16
+#: ../src/accerciser.glade.h:20
 msgid "gtk-preferences"
 msgstr "gtk-preferences"
 
-#: ../src/accerciser.glade.h:17
+#: ../src/accerciser.glade.h:21
 msgid "gtk-quit"
 msgstr "gtk-quit"
 
-#: ../src/accerciser.glade.h:18
+#: ../src/accerciser.glade.h:22
 msgid "gtk-refresh"
 msgstr "gtk-refresh"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/accerciser.glade.h:20
+#: ../src/accerciser.glade.h:24
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007"
 
-#: ../src/lib/accerciser/accerciser.py:66
-#: ../src/lib/accerciser/accerciser.py:71
+#: ../src/lib/accerciser/accerciser.py:67
+#: ../src/lib/accerciser/accerciser.py:72
 msgid "Core"
 msgstr "Núcleo"
 
-#: ../src/lib/accerciser/accerciser.py:67
+#: ../src/lib/accerciser/accerciser.py:68
 msgid "Inspect last focused accessible"
 msgstr "Inspeccionar el último accesible que tuvo el foco"
 
-#: ../src/lib/accerciser/accerciser.py:72
+#: ../src/lib/accerciser/accerciser.py:73
 msgid "Inspect accessible under mouse"
 msgstr "Inspeccionar el accesible debajo del ratón"
 
-#: ../src/lib/accerciser/accerciser.py:101
+#: ../src/lib/accerciser/accerciser.py:106
 msgid "Top panel"
 msgstr "Panel superior"
 
-#: ../src/lib/accerciser/accerciser.py:104
+#: ../src/lib/accerciser/accerciser.py:109
 msgid "Bottom panel"
 msgstr "Panel inferior"
 
-#: ../src/lib/accerciser/accerciser.py:151
+#: ../src/lib/accerciser/accerciser.py:156
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -588,45 +604,43 @@ msgstr ""
 "accesibilidad del escritorio para arreglar este problema. ¿Quiere activarla "
 "ahora?"
 
-#: ../src/lib/accerciser/accerciser.py:166
+#: ../src/lib/accerciser/accerciser.py:171
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: Los cambios tienen efecto después de salir de la sesión."
 
-#: ../src/lib/accerciser/accessible_treeview.py:181
-#: ../src/lib/accerciser/accessible_treeview.py:394
+#: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
 msgstr "<muerto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:285
+#: ../src/lib/accerciser/accessible_treeview.py:395
 msgid "Role"
 msgstr "Rol"
 
-#: ../src/lib/accerciser/accessible_treeview.py:292
+#: ../src/lib/accerciser/accessible_treeview.py:402
 msgid "Children"
 msgstr "Hijos"
 
-#. crc.connect('toggled', self._onPluginToggled)
-#: ../src/lib/accerciser/hotkey_manager.py:203
+#: ../src/lib/accerciser/hotkey_manager.py:202
 msgid "Component"
 msgstr "Componente"
 
-#: ../src/lib/accerciser/hotkey_manager.py:210
+#: ../src/lib/accerciser/hotkey_manager.py:209
 msgid "Task"
 msgstr "Tarea"
 
-#: ../src/lib/accerciser/hotkey_manager.py:217
+#: ../src/lib/accerciser/hotkey_manager.py:216
 msgid "Key"
 msgstr "Tecla"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:226
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:233
 msgid "Ctrl"
 msgstr "Control"
 
-#: ../src/lib/accerciser/hotkey_manager.py:241
+#: ../src/lib/accerciser/hotkey_manager.py:240
 msgid "Shift"
 msgstr "Mayús"
 
