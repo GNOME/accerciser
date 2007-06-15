@@ -1,11 +1,14 @@
 SUBDIRS = plugin
-accerciser_PYTHON = accerciser.py \
+accerciser_PYTHON = about_dialog.py \
+	accerciser.py \
 	accessible_treeview.py \
 	bookmarks.py \
 	i18n.py \
 	script_playback.py \
 	icons.py \
+	main_window.py \
 	node.py \
+	prefs_dialog.py \
 	pyatspi.zip \
 	tools.py \
 	hotkey_manager.py \

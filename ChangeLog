@@ -1,3 +1,18 @@
+2007-06-15  Eitan Isaacson  <eitan@ascender.com>
+
+	* po/POTFILES.in: Removed glade, added new files.
+	* src/Makefile.am: Removed glade file.
+	* src/accerciser.glade: Removed glade file.
+	* src/lib/accerciser/Makefile.am: Added prefs dialog, about dialog
+	and main window files.
+	* src/lib/accerciser/about_dialog.py: Replaced glade description.
+	* src/lib/accerciser/accerciser.py: Refacotred out all main window 
+	functionality.
+	* src/lib/accerciser/accessible_treeview.py: Manage own action group.
+	* src/lib/accerciser/bookmarks.py: Refactored, use UIManager and actions.
+	* src/lib/accerciser/main_window.py: Replaced glade description.
+	* src/lib/accerciser/prefs_dialog.py: Replaced glade description.
+
 2007-06-05  Eitan Isaacson  <eitan@ascender.com>
 
 	* src/accerciser.glade: Added bookmarks menu.

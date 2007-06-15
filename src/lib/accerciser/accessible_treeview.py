@@ -364,15 +364,18 @@ class AccessibleTreeView(gtk.TreeView, Tools):
   @ivar model: The data model of this treeview.
   @type model: L{AccessibleModel}
   '''
-  def __init__(self):
+  def __init__(self, node):
     '''
     Initialize the treeview. Build the proper columns.
     Connect all of the proper signal handlers and at-spi event handlers.
+    
+    @param node: The main application node.
+    @type node: L{Node}
     '''
     gtk.TreeView.__init__(self)
 
     self.desktop = pyatspi.Registry.getDesktop(0)
-    self.node = Node()
+    self.node = node
     self.node.update(self.desktop)
     self._changed_handler = self.node.connect('accessible_changed',
                                              self._onAccChanged)
@@ -411,7 +414,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     self.model.connect('end-populating', self._onEndPop)
     self._path_to_expand = None
 
-    self.refreshTopLevel()
+    self._refreshTopLevel()
 
     selection = self.get_selection()
     selection.unselect_all()
@@ -421,18 +424,33 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
                                            'object:children-changed')
 
+    self.action_group = gtk.ActionGroup('TreeActions')
+    self.action_group.add_actions([
+        ('RefreshAll', gtk.STOCK_REFRESH, None,
+         None, 'Refresh all', self._refreshTopLevel),
+        ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Current'),
+         None, 'Refresh selected node\'s children', self._refreshCurrentLevel)])  
 
-  def refreshTopLevel(self):
+    self.refresh_current_action = self.action_group.get_action('RefreshCurrent')
+    self.refresh_current_action.set_sensitive(False)
+
+  def _refreshTopLevel(self, action=None):
     '''
     Refreshes the entire tree at the desktop level.
+
+    @param action: Action object that emitted this signal, if any.
+    @type: gtk.Action
     '''
     self.model.clear()
     self.model.popLevel(None)
     # iter over all apps in the desktop too
     
-  def refreshCurrentLevel(self):
+  def _refreshCurrentLevel(self, action):
     '''
     Refreshes the current level. Selects and expands the parent of the level.
+
+    @param action: Action object that emitted this signal, if any.
+    @type: gtk.Action
     '''
     selection = self.get_selection()
     model, iter = selection.get_selected()
@@ -556,7 +574,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @type iter: L{gtk.TreeIter}
     '''
     if not iter:
-      self.refreshTopLevel()
+      self._refreshTopLevel()
       return
     child_iter = self.model.iter_children(iter)
     while child_iter:
@@ -584,10 +602,12 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     '''
     self._path_to_expand = None
     model, iter = selection.get_selected()
-    try:
+    if iter:
       new_acc = model[iter][COL_ACC]
-    except TypeError:
+      self.refresh_current_action.set_sensitive(True)
+    else:
       new_acc = self.desktop
+      self.refresh_current_action.set_sensitive(False)
     if new_acc == self.node.acc:
       return
     self.node.handler_block(self._changed_handler)

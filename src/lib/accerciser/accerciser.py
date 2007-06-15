@@ -36,6 +36,9 @@ from gnome import program_get
 import gconf
 from hotkey_manager import HotkeyManager, HotkeyTreeView
 import gconf
+from about_dialog import AccerciserAboutDialog
+from prefs_dialog import AccerciserPreferencesDialog
+from main_window import AccerciserMainWindow
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
@@ -62,6 +65,11 @@ class MainWindow(Tools):
     root_atk = atk.get_root()
     root_atk.set_description(str(os.getpid()))
 
+    self.node = Node()
+
+    self.window = AccerciserMainWindow(self.node)
+    self.window.connect('destroy', self._onQuit)
+
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
     self.hotkey_manager.addKeyCombo('Core',_('Core'),
@@ -75,50 +83,16 @@ class MainWindow(Tools):
                                     gtk.keysyms.question,
                                     gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)
 
-    # parse the glade
-    self.main_xml = gtk.glade.XML(GLADE_FILENAME, 'window')
-    self.window = self.main_xml.get_widget('window')
-    self.window.set_icon_name('accerciser')
-    self.window.set_title('accerciser')            
-    cl = gconf.client_get_default()
-    width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
-    height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
-    self.window.set_default_size(width, height)
-    for paned_name in ('hpaned', 'vpaned'):
-      if not cl.get(GCONF_GENERAL+'/'+paned_name): continue
-      paned = self.main_xml.get_widget(paned_name)
-      paned_position = cl.get_int(GCONF_GENERAL+'/'+paned_name)
-      paned.set_position(paned_position)
-      paned.set_data('last_position', paned.get_position())
-      
-    self.acc_treeview = AccessibleTreeView()
-    self.node = self.acc_treeview.node
     self.node.connect('accessible_changed', self._onAccesibleChange)
-    self.node.connect('blink-done', self._onBlinkDone)
-    scrolled_window = self.main_xml.get_widget('scrolled_acc_tree')
-    scrolled_window.add(self.acc_treeview)
-    
 
-    bookmarks_menu = self.main_xml.get_widget('bookmarks_menu')
-    self.bookmarks_store = BookmarkStore(bookmarks_menu, self.node)
+    self.bookmarks_store = BookmarkStore(self.node, self.window.uimanager)
 
-    bin = self.main_xml.get_widget('alignment_topright')
-    self.plugin_view1 = PluginView(N_('Top panel'))
-    bin.add(self.plugin_view1)
-    bin = self.main_xml.get_widget('alignment_bottom')
-    self.plugin_view2 = PluginView(N_('Bottom panel'))
-    self.plugin_view2.connect('page_added', 
-                              self._onBottomPanelChange, 'added')
-    self.plugin_view2.connect('page_removed', 
-                              self._onBottomPanelChange, 'removed')
-    bin.add(self.plugin_view2)
     # load plugins
     self.plugin_manager = \
         PluginManager(self.node, self.hotkey_manager,
-                      self.plugin_view1, self.plugin_view2)
+                      self.window.pluginview1, self.window.pluginview2)
 
     # connect signal handlers and show the GUI in its initial state
-    self.main_xml.signal_autoconnect(self)
     self.window.show_all()
 
     pyatspi.Registry.registerEventListener(self._accEventFocusChanged, 
@@ -132,7 +106,16 @@ class MainWindow(Tools):
     pyatspi.Registry.registerKeystrokeListener(self._accEventKeyPressed,
                                                mask=masks,
                                                kind=(pyatspi.KEY_PRESSED_EVENT,))
+
+    for action_name, callback in [('Quit', self._onQuit),
+                                  ('Preferences', self._onShowPreferences),
+                                  ('Contents', self._onHelp),
+                                  ('About', self._onAbout)]:
+      action = self.window.main_actions.get_action(action_name)
+      action.connect('activate', callback)
+
     self.last_focused = None
+    self.window.show_all()
 
   def run(self):
     '''
@@ -172,26 +155,6 @@ class MainWindow(Tools):
         dialog.run()
         dialog.destroy()
 
-  def _onRefreshAll(self, widget):
-    '''
-    Refreshes the entire tree at the desktop level.
-    
-    @param widget: Widget that emited a signal that this callback 
-    caught (if any).
-    @type widget: gtk.Widget
-    '''
-    self.acc_treeview.refreshTopLevel()
-
-  def _onRefreshCurrent(self, widget):
-    '''
-    Refreshes the currently selected level.
-    
-    @param widget: Widget that emited a signal that this callback 
-    caught.
-    @type widget: gtk.Widget
-    '''
-    self.acc_treeview.refreshCurrentLevel()
-
   def _onAccesibleChange(self, node, acc):
     '''
     Callback for "accessible_changed" signal that is emitted by the L{Node}
@@ -204,9 +167,9 @@ class MainWindow(Tools):
     @type acc: L{Accessibility.Accessible}
     '''
     # Update status bar
-    statusbar = self.main_xml.get_widget('statusbar')
+    statusbar = self.window.statusbar
     context_id = statusbar.get_context_id('lineage')
-    selection = self.acc_treeview.get_selection()
+    selection = self.window.treeview.get_selection()
     model, iter = selection.get_selected()
     if not iter:
       return
@@ -215,63 +178,34 @@ class MainWindow(Tools):
     if len(path) > 1:
       statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
 
-  def _onAddBookmark(self, menuitem):
-    iter = self.bookmarks_store.addBookmark()
-    dialog = self.bookmarks_store.NewBookmarkDialog(self.window, iter)
-
-  def _onEditBookmarks(self, menuitem):
-    dialog = self.bookmarks_store.EditDialog()
-    dialog.show_all()
-
   def _shutDown(self):
     '''
     Cleans up any object instances that need explicit shutdown.
     '''
-    cl = gconf.client_get_default()
-    cl.set_int(GCONF_GENERAL+'/window_width', self.window.allocation.width)
-    cl.set_int(GCONF_GENERAL+'/window_height', self.window.allocation.height)
-    for paned_name in ('hpaned', 'vpaned'):
-      paned = self.main_xml.get_widget(paned_name)
-      cl.set_int(GCONF_GENERAL+'/'+paned_name, paned.get_position())
+    self.window.saveState()
     self.plugin_manager.close()
 
-  def _onQuit(self, widget):
+  def _onQuit(self, obj):
     '''
     Quits the app.
 
-    @param widget: The widget that emitted the signal that this callback caught.
-    @type widget: L{gtk.Widget}
+    @param obj: The object that emitted the signal that this callback caught.
+    @type obj: L{gtk.Widget}
     '''
     self._shutDown()
     pyatspi.Registry.stop()
     
-  def _onAbout(self, widget):
+  def _onAbout(self, action):
     '''
     Shows the about dialog.
 
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    xml = gtk.glade.XML(GLADE_FILENAME, 'about')
-    about = xml.get_widget('about')
-    prog = program_get()
-    about.set_version(prog.get_app_version())
-    xml.signal_autoconnect(self)
-
-  def _onAboutResponse(self, dialog, response_id):
-    '''
-    Callback for the 'response' signal emited from the "about" dialog.
-    Close the dialog if the response is 'cancel'.
-
-    @param dialog: The dialog that emited the signal.
-    @type dialog: L{gtk.AboutDialog}
-    @param response_id: Response type that was received.
-    @type response_id: integer
-    '''
-    if response_id == gtk.RESPONSE_CANCEL:
-      dialog.destroy()
+    about = AccerciserAboutDialog()
+    about.show_all()
     
-  def _onHelp(self, widget):
+  def _onHelp(self, action):
     '''
     Shows the help dialog.
 
@@ -292,10 +226,16 @@ class MainWindow(Tools):
       self.last_focused = event.source
 
   def _inspectLastFocused(self):
+    '''
+    Inspect the last focused widget's accessible.
+    '''
     if self.last_focused:
       self.node.update(self.last_focused)
       
   def _inspectUnderMouse(self):
+    '''
+    Inspect accessible of widget under mouse.
+    '''
     # Inspect accessible under mouse
     display = gtk.gdk.Display(gtk.gdk.get_display())
     screen, x, y, flags =  display.get_pointer()
@@ -325,7 +265,7 @@ class MainWindow(Tools):
     Handle certain key presses globally. Pass on to the hotkey manager the 
     key combinations pressed for further processing.
     
-   @param event: The event that is being handled.
+    @param event: The event that is being handled.
     @type event: L{pyatspi.event.Event}
     '''
     handled = self.hotkey_manager.hotkeyPress(event.hw_code, event.modifiers)
@@ -363,85 +303,15 @@ class MainWindow(Tools):
     else:
       return inner_container
 
-  def _onShowPreferences(self, widget):
+  def _onShowPreferences(self, action):
     '''
     Shows the preferences dialog.
 
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    xml = gtk.glade.XML(GLADE_FILENAME, 'preferences')
-    xml.signal_autoconnect(self)
-
-    sw = xml.get_widget('plugins_sw')
-    treeview = self.plugin_manager.View()
-    sw.add(treeview)
-
-    sw = xml.get_widget('hotkeys_sw')
-    treeview = HotkeyTreeView(self.hotkey_manager)
-    sw.add(treeview)
-
-    d = xml.get_widget('preferences')
-    d.show_all()
+    plugins_view = self.plugin_manager.View()
+    hotkeys_view = HotkeyTreeView(self.hotkey_manager)
+    dialog = AccerciserPreferencesDialog(plugins_view, hotkeys_view)
+    dialog.show_all()
     
-  def _onPreferencesResponse(self, dialog, response):
-    '''
-    Callback for the 'response' signal emited from the "about" dialog.
-    Close the dialog if the response is 'cancel'.
-
-    @param dialog: The dialog that emited the signal.
-    @type dialog: L{gtk.AboutDialog}
-    @param response_id: Response type that was received.
-    @type response_id: integer
-    '''
-    dialog.destroy()
-
-  def _onBottomPanelChange(self, pluginview, page, page_num, action):
-    '''
-    Callback for changes to the bottom L{PluginView}'s children. If there are no
-    tabs, shrink the paned.
-
-    @param pluginview: The L{PluginView} that emitted the signal.
-    @type pluginview: L{PluginView}
-    @param page: The child widget affected.
-    @type page: L{gtk.Widget}
-    @param page_num: the new page number for page.
-    @type page_num: integer
-    @param action: The type of event that accured, either "removed" or "added"
-    @type action: string
-    '''
-    paned = self.main_xml.get_widget('vpaned1')
-    if not paned:
-      return
-    elif pluginview.get_n_pages() == 1 and action == 'added':
-      last_pos = paned.get_data('last_position')
-      paned.set_position(last_pos or 350)
-    elif pluginview.get_n_pages() == 0:
-      paned.set_data('last_position', paned.get_position())
-      paned.set_position(paned.allocation.height - 30)
-
-  def _onKeyPress(self, widget, event):
-    '''
-    Callback for a keypress event in the main window.
-    Used for navigating plugin tabs (<alt>+num).
-
-    @param widget: The widget that emitted the event.
-    @type widget: L{gtk.Widget}
-    @param event: The event that accured.
-    @type event: L{gtk.gdk.Event}
-    '''
-    if event.state & gtk.gdk.MOD1_MASK and \
-          event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
-                                 gtk.gdk.keyval_from_name('9')):
-      tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
-      pages_count1 = self.plugin_view1.getNVisiblePages()
-      pages_count2 = self.plugin_view2.getNVisiblePages()
-      if pages_count1 + pages_count2 < tab_num:
-        return
-      elif pages_count1 >= tab_num:
-        self.plugin_view1.focusTab(tab_num - 1)
-      else:
-        self.plugin_view2.focusTab(tab_num - pages_count1 - 1)
-      
-  def _onBlinkDone(self, node):
-    self.window.queue_draw()
