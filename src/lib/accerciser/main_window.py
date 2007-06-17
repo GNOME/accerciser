@@ -78,6 +78,8 @@ class AccerciserMainWindow(gtk.Window):
     self._vpaned.add2(self.pluginview2)
     self._hpaned.add2(self.pluginview1)
     sw = gtk.ScrolledWindow()
+    sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+    sw.set_shadow_type(gtk.SHADOW_IN)
     self.treeview = AccessibleTreeView(node)
     self.uimanager.insert_action_group(self.treeview.action_group, 0)
     for action in self.treeview.action_group.list_actions():

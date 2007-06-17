@@ -635,7 +635,11 @@ class ViewManager(gtk.ListStore, Tools):
       view_name = self.getViewNameForPlugin(plugin.plugin_name)
       view = self._getViewOrNewView(view_name)
       plugin_layouts = self._StoredViewsLayout()
-      plugin_layout = plugin_layouts[view.view_name]
+      try:
+        plugin_layout = plugin_layouts[view.view_name]
+      except KeyError:
+        plugin_layout = []
+        plugin_layouts[view.view_name] = plugin_layout
       index = -1
       if plugin.plugin_name in plugin_layout:
         # The plugins that have a higher index.
