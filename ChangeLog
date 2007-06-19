@@ -1,5 +1,14 @@
 2007-06-19  Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/Makefile.am: Added quick select plugin.
+	* plugins/quick_select.py:  Added quick select plugin.
+	* src/lib/accerciser/accerciser.py: Removed quick select
+	functionality, and put it in a seperate plugin.
+	* src/lib/accerciser/plugin/plugin_manager.py: Made changes to
+	allow plugins that have no visible widget.
+	* src/lib/accerciser/plugin/view.py: Made changes to
+	allow plugins that have no visible widget.
+
 	* README: Bumped to 0.1.5.
 	* configure.in: Bumped to 0.1.5.
 	* debian/changelog: Bumped to 0.1.5.

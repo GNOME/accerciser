@@ -454,8 +454,13 @@ class PluginManager(gtk.ListStore, Tools):
       @type iter: gtk.TreeIter
       '''
       plugin_class = model[iter][self.plugin_manager.COL_CLASS]
-      view_name = \
-          self.view_manager.getViewNameForPlugin(plugin_class.plugin_name)
+      if issubclass(plugin_class, gtk.Widget):
+        view_name = \
+            self.view_manager.getViewNameForPlugin(plugin_class.plugin_name)
+        cell.set_property('sensitive', True)
+      else:
+        view_name = N_('No view')
+        cell.set_property('sensitive', False)
       cell.set_property('text', _(view_name))
 
     def _pluginNameDataFunc(self, column, cell, model, iter):

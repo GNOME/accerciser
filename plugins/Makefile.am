@@ -6,6 +6,7 @@ plugins_DATA = api_view.py \
 	interface_view.glade \
 	interface_view.py \
 	ipython_view.py \
+	quick_select.py \
 	script_recorder.glade \
 	script_recorder.py
 EXTRA_DIST = $(plugins_DATA)

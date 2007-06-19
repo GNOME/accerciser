@@ -689,7 +689,7 @@ class ViewManager(gtk.ListStore, Tools):
     @param new_view_name: New view name.
     @type new_view_name: string
     '''
-    if not plugin: return
+    if not plugin or not isinstance(plugin, gtk.Widget): return
     old_view = plugin.parent
     new_view = self._getViewOrNewView(new_view_name)
     if old_view is not new_view:
@@ -738,7 +738,8 @@ class ViewManager(gtk.ListStore, Tools):
       '''
       gtk.Menu.__init__(self)
       self.view_manager = view_manager
-      self._buildMenu(context_plugin, transient_window)
+      if isinstance(context_plugin, gtk.Widget):
+        self._buildMenu(context_plugin, transient_window)
 
     def _buildMenu(self, context_plugin, transient_window):
       '''
