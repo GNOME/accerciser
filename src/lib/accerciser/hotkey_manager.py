@@ -12,6 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gtk, gconf
 from i18n import _
+import pyatspi
 
 GCONF_HOTKEYS = '/apps/accerciser/global_hotkeys'
 
@@ -52,7 +53,24 @@ class HotkeyManager(gtk.ListStore):
     gtk.ListStore.__init__(self, str, str, object, int, int, str)
     self.connect('row-changed', self._onComboChanged)
     self.gconf_client = gconf.client_get_default()
+
+    masks = [mask for mask in pyatspi.allModifiers()]
+    pyatspi.Registry.registerKeystrokeListener(
+      self._accEventKeyPressed, mask=masks, kind=(pyatspi.KEY_PRESSED_EVENT,))
+
     
+  def _accEventKeyPressed(self, event):
+    '''
+    Handle certain key presses globally. Pass on to the hotkey manager the 
+    key combinations pressed for further processing.
+    
+    @param event: The event that is being handled.
+    @type event: L{pyatspi.event.Event}
+    '''
+    handled = self.hotkeyPress(event.hw_code, event.modifiers)
+    event.consume = handled
+
+
   def hotkeyPress(self, key, modifiers):
     '''
     Call the appropriate callbacks for given key combination. This method 

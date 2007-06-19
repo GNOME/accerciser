@@ -22,6 +22,6 @@ def main():
   '''
   Run program.
   '''
-  from accerciser import MainWindow
-  mw = MainWindow()
-  mw.run()
+  from accerciser import Main
+  main = Main()
+  main.run()

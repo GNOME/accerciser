@@ -47,7 +47,7 @@ if not os.path.exists(GLADE_FILENAME):
   
 GCONF_GENERAL = '/apps/accerciser/general'
 
-class MainWindow(Tools):
+class Main(Tools):
   '''
   Class for the main accerciser window. 
   '''
@@ -97,15 +97,6 @@ class MainWindow(Tools):
 
     pyatspi.Registry.registerEventListener(self._accEventFocusChanged, 
                                            'focus')
-
-    masks = []
-    mask = 0
-    while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
-      masks.append(mask)
-      mask += 1
-    pyatspi.Registry.registerKeystrokeListener(self._accEventKeyPressed,
-                                               mask=masks,
-                                               kind=(pyatspi.KEY_PRESSED_EVENT,))
 
     for action_name, callback in [('Quit', self._onQuit),
                                   ('Preferences', self._onShowPreferences),
@@ -259,17 +250,6 @@ class MainWindow(Tools):
             top_window = (acc, z_order)
     if top_window[0]:
       self.node.update(top_window[0])
-
-  def _accEventKeyPressed(self, event):
-    '''
-    Handle certain key presses globally. Pass on to the hotkey manager the 
-    key combinations pressed for further processing.
-    
-    @param event: The event that is being handled.
-    @type event: L{pyatspi.event.Event}
-    '''
-    handled = self.hotkey_manager.hotkeyPress(event.hw_code, event.modifiers)
-    event.consume = handled
 
   def _getChildAccAtCoords(self, parent, x, y):
     '''
