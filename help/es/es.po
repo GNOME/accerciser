@@ -3,9 +3,9 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: manual_accerciser.HEAD.es\n"
-"POT-Creation-Date: 2007-05-08 17:29+0100\n"
-"PO-Revision-Date: 2007-05-10 21:17+0200\n"
+"Project-Id-Version: help.HEAD.es\n"
+"POT-Creation-Date: 2007-05-15 03:16+0100\n"
+"PO-Revision-Date: 2007-06-25 11:56+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr "@@image: 'figures/event_monitor.png'; md5=2f3490cac599e25bbfad53a91b82b6
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:382(None)
+#: C/accerciser.xml:394(None)
 msgid "@@image: 'figures/api_browser.png'; md5=f2b45df7a8ec22f4caa718c97d87dab6"
 msgstr "@@image: 'figures/api_browser.png'; md5=f2b45df7a8ec22f4caa718c97d87dab6"
 
@@ -139,7 +139,7 @@ msgid ""
 "information to assistive technologies and automated test frameworks. "
 "<application>Accerciser</application> has a simple plugin framework which "
 "you can use to create custom views of accessibility information."
-msgstr ""
+msgstr "<application>Accerciser</application> es un explorador de accesibilidad interactivo escrito en Python para el escritorio GNOME. Usa <ulink url=\"http://directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> para inspeccionar y controlar los widgets, permitiéndole comprobar si una aplicación está proporcionando la información correcta a las tecnologías de asistencia y entornos de trabajo de prueba automáticos. <application>Accerciser</application> tiene un entorno de complementos simple que puede usar para crear sus vistas personalizadas de la información de accesibilidad."
 
 #: C/accerciser.xml:137(para)
 msgid ""
@@ -307,14 +307,14 @@ msgid ""
 "it hides them. Each node shows an icon for its associated application or "
 "widget role and its accessible name, if available. The second column lists "
 "how many nodes will be shown if the item is unfolded."
-msgstr ""
+msgstr "Use la vista en árbol para navegar por la jerarquía de objetos accesibles originarios del escritorio. Desplegar un nodo del árbol revela sus hijos inmediatos mientras que plegarlo los oculta. Cada nodo muestra un icono para su aplicación asociada o el rol del widget y, si está disponible, su nombre accesible. La segunda columna lista el número de nodos que se mostrarán si el elemento de despliega."
 
 #: C/accerciser.xml:256(para)
 msgid ""
 "If you unfold a node with a large number of children (e.g. hundreds), your "
 "desktop may freeze temporarily as <application>Accerciser</application> "
 "tries to build the tree view."
-msgstr ""
+msgstr "Si despliega un nodo con una gran cantidad de hijos (cientos, por ejemplo) puede que su escritorio se ralentice temporalmente, ya que <application>Accerciser</application> tratará de construir la vista en árbol."
 
 #: C/accerciser.xml:261(title)
 msgid "Global Hotkey functions"
@@ -344,7 +344,7 @@ msgstr "Seleccione el último accesible que tuvo el foco"
 msgid ""
 "Use the following global key combination to move the tree view selection to "
 "the last widget to receive the focus on the desktop:"
-msgstr ""
+msgstr "Use la siguiente combinación de teclas global para mover la selección de la vista de árbol al último widget que recibió el foco en el escritorio:"
 
 #: C/accerciser.xml:279(para)
 msgid ""
@@ -362,7 +362,9 @@ msgstr "Seleccione un accesible con el ratón"
 msgid ""
 "Use the following key combination to move the tree view selection to the "
 "widget currently under the mouse pointer:"
-msgstr "Use la siguiente combinación de teclas para mover la selección de la vista de árbol al widget actualmente bajo el puntero del ratón:"
+msgstr ""
+"Use la siguiente combinación de teclas para mover la selección de la vista "
+"de árbol al widget actualmente bajo el puntero del ratón:"
 
 #: C/accerciser.xml:291(para)
 msgid ""
@@ -382,7 +384,12 @@ msgid ""
 "These plugins allow you to view a variety of information about the currently "
 "selected accessible in the tree view and its neighbors. The default plugins "
 "available in 0.1.0 are the following:"
-msgstr "<application>Accerciser</application> viene con varios complementos predeterminados. Estos complementos le permiten ver una variedad de información acerca del accesible actualmente seleccionado en la vista de árbol y sus vecinos. Los complementos predeterminados disponibles en la versión 0.1.0 son los siguientes:"
+msgstr ""
+"<application>Accerciser</application> viene con varios complementos "
+"predeterminados. Estos complementos le permiten ver una variedad de "
+"información acerca del accesible actualmente seleccionado en la vista de "
+"árbol y sus vecinos. Los complementos predeterminados disponibles en la "
+"versión 0.1.0 son los siguientes:"
 
 #: C/accerciser.xml:321(title) C/accerciser.xml:325(title)
 msgid "Interface Viewer"
@@ -394,7 +401,11 @@ msgid ""
 "selected tree view accessible. Unsupported interfaces are grayed out. "
 "Various instruments for viewing and controlling an interface are available "
 "under each expander."
-msgstr "Este complemento muestra información acerca de los interfaces disponibles para el accesible de vista de árbol seleccionado. Los interfaces no soportados se sombrean. Bajo cada expansor hay disponibles varios instrumentos para ver y controlar un interfaz."
+msgstr ""
+"Este complemento muestra información acerca de los interfaces disponibles "
+"para el accesible de vista de árbol seleccionado. Los interfaces no "
+"soportados se sombrean. Bajo cada expansor hay disponibles varios "
+"instrumentos para ver y controlar un interfaz."
 
 #: C/accerciser.xml:333(phrase)
 msgid ""
@@ -413,7 +424,7 @@ msgid ""
 "This plugin monitors the selected types of events from the selected tree "
 "view accessible, from the selected tree view application, or the entire "
 "desktop."
-msgstr ""
+msgstr "Este complemento monitoriza los tipos de eventos seleccionados desde la vista en árbol accesible, desde la aplicación de vista en árbol o de todo el escritorio."
 
 #: C/accerciser.xml:350(phrase)
 msgid ""
@@ -427,7 +438,11 @@ msgid ""
 "keycap></keycombo> anywhere on the desktop, the last logged event will be "
 "highlighted for later reference. See <xref linkend=\"accerciser-hotkey-config"
 "\"/> for how to change this key combination."
-msgstr "Presionando <keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap></keycap> en cualquier parte del escritorio, se resaltará el último evento registrado para una referencia posterior. Vea </keycombo> para saber cómo cambiar esta combinación de teclas."
+msgstr ""
+"Presionando <keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap></"
+"keycap> en cualquier parte del escritorio, se resaltará el último evento "
+"registrado para una referencia posterior. Vea </keycombo> para saber cómo "
+"cambiar esta combinación de teclas."
 
 #: C/accerciser.xml:370(title)
 msgid "IPython Console"
@@ -443,15 +458,16 @@ msgid ""
 "varname> variable. In addition, all functions and constants from the pyatspi "
 "package are available as locals in the console. The most important of these "
 "are the functions for querying to other accessibility interfaces. For "
-"example, to query to the Text interface: <command>t = IText(acc)</command>. "
-"Imports from the current working directory or Python path are also allowed."
-msgstr ""
+"example, to query to the Text interface: <command>t = acc.queryText() </"
+"command>. Imports from the current working directory or Python path are also "
+"allowed."
+msgstr "Este complemento es una consola <ulink url=\"http://ipython.scipy.org/moin/\" type=\"http\">IPythin</ulink> completa. Pulse <keycap>Tab</keycap> para mostrar completo el comando actual. Pulse <keycap>Retorno</keycap> para ejecutar cualquier código Python válido. Los comandos en la consola tienen acceso al accesible actualmente seleccionado en el árbol accesible a través de la variable <varname>acc</varname>. Además, todas las funciones y constantes del paquete pyatspi están disponibles, como locales, en la consola. Lo más importante de esto son las funciones para consultar otros interfaces de accesibilidad. Por ejemplo, para consultar el interfaz de texto: <command>t = acc.queryText() </command>. También se permite importar desde el directorio de trabajo actual o desde ruta Python."
 
-#: C/accerciser.xml:375(title) C/accerciser.xml:378(title)
+#: C/accerciser.xml:387(title) C/accerciser.xml:390(title)
 msgid "API Browser"
 msgstr "Examinador API"
 
-#: C/accerciser.xml:376(para)
+#: C/accerciser.xml:388(para)
 msgid ""
 "This plugin shows the interfaces, methods, and attributes supported by the "
 "accessible selected in the tree view."
@@ -459,15 +475,15 @@ msgstr ""
 "Este complemento muestra las interfaces, métodos y atributos soportados por "
 "el accesible seleccionado en la vista de árbol."
 
-#: C/accerciser.xml:385(phrase)
+#: C/accerciser.xml:397(phrase)
 msgid "The API browser."
 msgstr "El examinador API."
 
-#: C/accerciser.xml:395(title)
+#: C/accerciser.xml:407(title)
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: C/accerciser.xml:396(para)
+#: C/accerciser.xml:408(para)
 msgid ""
 "There are some elements in <application>Accerciser</application> that are "
 "configurable:"
@@ -475,11 +491,11 @@ msgstr ""
 "Hay algunos elementos en <application>Accerciser</application> que son "
 "configurables:"
 
-#: C/accerciser.xml:404(title)
+#: C/accerciser.xml:416(title)
 msgid "Plugin Layout"
-msgstr ""
+msgstr "Disposición de complementos"
 
-#: C/accerciser.xml:405(para)
+#: C/accerciser.xml:417(para)
 msgid ""
 "There are two methods for configuring plugin layout in "
 "<application>Accerciser</application>. First, you may choose "
@@ -489,21 +505,21 @@ msgid ""
 "guilabel> tab. Under this section you will find a list view of all the "
 "available plugins. Right-click on any of the plugins listed to configure "
 "it's view."
-msgstr ""
+msgstr "Hay dos métodos para configurar la disposición de los complementos en <application>Accerciser</application>. Primeramente, debe elegir <menuchoice><guimenu>Editar</guimenu><guimenuitem>Preferencias</guimenuitem></menuchoice> para activar el diálogo <guilabel>Preferencias</guilabel>. Éste diálogo contiene solapas para cada sección, seleccione la solapa <guilabel>Complementos</guilabel>. Bajo esta sección encontrará una lista de todos los complementos disponibles. Pulse con el botón derecho del ratón sobre cualquier de los complementos listados para configurar su vista."
 
-#: C/accerciser.xml:417(para)
+#: C/accerciser.xml:429(para)
 msgid ""
 "You may bypass the <guilabel>Preferences</guilabel> dialog by using drag and "
 "drop to move plugin tabs. Dragging a plugin tab to the bottom or right "
 "plugin area in the main window will move the plugin. Dragging a tab to the "
 "desktop will create a new plugin window and drop the plugin in it."
-msgstr ""
+msgstr "Puede querer evitar el diálogo <guilabel>Preferencias</guilabel> usando arrastrar y soltar para mover las solapas de los complementos. Arrastrar una solapa de un complemento a la parte inferior o derecha del área de los complementos en la ventana principal, moverá el complemento. Arrastrar una solapa al escritorio creará una nueva ventana de complemento y soltará el complemento en ella."
 
-#: C/accerciser.xml:424(title)
+#: C/accerciser.xml:436(title)
 msgid "Global Hotkey Configuration"
 msgstr "Configuración global de teclas rápidas"
 
-#: C/accerciser.xml:425(para)
+#: C/accerciser.xml:437(para)
 msgid ""
 "Some elements in <application>Accerciser</application> may enable certain "
 "functionality via hotkeys. The hotkey combination could be changed via the "
@@ -513,13 +529,13 @@ msgid ""
 "dialog contains tabs for each section, select the <guilabel>Global Hotkeys</"
 "guilabel> tab. Under this section you will find a list view of all the "
 "available hotkey features. Change the key bindings to you liking."
-msgstr ""
+msgstr "Algunos elementos en <application>Accerciser</application> pueden activar cierta funcionalidad a través de las teclas rápidas. La combinación de teclas rápidas puede cambiarse a través del diálogo <guilabel>Preferencias</guilabel>, para hacerlo debe seleccionar <menuchoice><guimenu>Editar</guimenu><guimenuitem>Preferencias</guimenuitem></menuchoice> para activar el menú <guilabel>Preferencias</guilabel>. Éste diálogo contiene solapas para cada sección, seleccione la solapa <guilabel>Teclas rápidas globales</guilabel>. Bajo esta sección encontrará una lista de todas las teclas rápidas disponibles. Cambie la combinación de teclas a su gusto."
 
-#: C/accerciser.xml:458(title)
+#: C/accerciser.xml:470(title)
 msgid "About <application>Accerciser</application>"
 msgstr "Acerca de <application>Accerciser</application>"
 
-#: C/accerciser.xml:459(para)
+#: C/accerciser.xml:471(para)
 msgid ""
 "<application>Accerciser</application> was written by Eitan Isaacson "
 "(<email>eitan@ascender.com</email>). To find more information about "
@@ -533,7 +549,7 @@ msgstr ""
 "gnome.org/Accerciser\" type=\"http\">página de <application>Accerciser</"
 "application>en GNOME Live!</ulink>."
 
-#: C/accerciser.xml:461(para)
+#: C/accerciser.xml:473(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
@@ -543,7 +559,7 @@ msgstr ""
 "aplicación o este manual, siga las indicaciones en este <ulink url=\"ghelp:"
 "gnome-feedback\" type=\"help\">documento</ulink>."
 
-#: C/accerciser.xml:464(para)
+#: C/accerciser.xml:476(para)
 msgid ""
 "Redistribution and use in source and binary forms, with or without "
 "modification, are permitted under the terms of the BSD License."
