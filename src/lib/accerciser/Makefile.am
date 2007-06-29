@@ -11,6 +11,7 @@ accerciser_PYTHON = about_dialog.py \
 	prefs_dialog.py \
 	pyatspi.zip \
 	tools.py \
+	ui_manager.py \
 	hotkey_manager.py \
 	__init__.py
 accerciserdir = $(pkgpythondir)/

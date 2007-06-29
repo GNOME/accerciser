@@ -39,6 +39,7 @@ import gconf
 from about_dialog import AccerciserAboutDialog
 from prefs_dialog import AccerciserPreferencesDialog
 from main_window import AccerciserMainWindow
+import ui_manager
 
 GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
                               'accerciser.glade')
@@ -75,7 +76,7 @@ class Main(Tools):
 
     self.node.connect('accessible_changed', self._onAccesibleChange)
 
-    self.bookmarks_store = BookmarkStore(self.node, self.window.uimanager)
+    self.bookmarks_store = BookmarkStore(self.node)
 
     # load plugins
     self.plugin_manager = \
@@ -85,12 +86,27 @@ class Main(Tools):
     # connect signal handlers and show the GUI in its initial state
     self.window.show_all()
 
-    for action_name, callback in [('Quit', self._onQuit),
-                                  ('Preferences', self._onShowPreferences),
-                                  ('Contents', self._onHelp),
-                                  ('About', self._onAbout)]:
-      action = self.window.main_actions.get_action(action_name)
-      action.connect('activate', callback)
+    main_actions = gtk.ActionGroup('MainActions')
+    ui_manager.uimanager.insert_action_group(main_actions, 0)
+    main_actions.add_actions([
+        ('Quit', gtk.STOCK_QUIT, None, 
+         '<control>q', 'Quit Accerciser', self._onQuit),
+        ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences...'),
+         '<control>p', 'Show preferences', self._onShowPreferences),
+        ('Contents', gtk.STOCK_HELP, _('_Contents'),
+         'F1', 'View contents of manual', self._onHelp),
+        ('About', gtk.STOCK_ABOUT, None,
+         None, 'About Accerciser', self._onAbout)])
+
+    for action_name, menu_path in [('Quit', ui_manager.FILE_MENU_PATH),
+                                  ('Preferences', ui_manager.EDIT_MENU_PATH),
+                                  ('Contents', ui_manager.HELP_MENU_PATH),
+                                  ('About', ui_manager.HELP_MENU_PATH)]:
+      action = main_actions.get_action(action_name)
+      ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(), 
+                                  menu_path, action_name, action_name, 
+                                  gtk.UI_MANAGER_MENUITEM, False)
+
 
     self.last_focused = None
     self.window.show_all()

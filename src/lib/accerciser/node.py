@@ -94,6 +94,7 @@ class Node(gobject.GObject, Tools):
       self.desktop, 
       lambda x: x.name.lower()==app_name.lower(),
       breadth_first=True)
+    if acc is None: return
     while path:
       child_index = path.pop(0)
       try:

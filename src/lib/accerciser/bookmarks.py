@@ -5,6 +5,7 @@ from pyatspi import getPath
 from random import random
 import random
 import gobject
+import ui_manager
 
 COL_NAME = 0
 COL_APP = 1
@@ -21,8 +22,6 @@ class BookmarkStore(gtk.ListStore):
   2. Persists bookmark changes to disk.
   3. Keeps bookmarks submenu up to date.
 
-  @ivar _uimanager: Main application UIManager.
-  @type _uimanager: gtk.UIManager
   @ivar _bookmarks_action_group: Bookmarks' action group.
   @type _bookmarks_action_group: gtk.ActionGroup
   @ivar node: Main application's node.
@@ -30,19 +29,16 @@ class BookmarkStore(gtk.ListStore):
   @ivar _xmldoc: XML documenr object.
   @type _xmldoc: xml.dom.DOMImplementation
   '''
-  def __init__(self, node, uimanager):
+  def __init__(self, node):
     '''
     Initialize bookmark manager. Load saved bookmarks from disk.
     
     @param node: Main application's node.
     @type node: L{Node>
-    @param uimanager: Main application UIManager.
-    @type uimanager: gtk.UIManager
     '''
     gtk.ListStore.__init__(self, object)
-    self._uimanager = uimanager
     self._bookmarks_action_group = gtk.ActionGroup('BookmarkActions')
-    self._uimanager.insert_action_group(self._bookmarks_action_group, 0)
+    ui_manager.uimanager.insert_action_group(self._bookmarks_action_group, 0)
     self._buildMenuUI()
     self.node = node
     bookmarks_fn = os.path.join(BOOKMARKS_PATH, BOOKMARKS_FILE)
@@ -71,16 +67,16 @@ class BookmarkStore(gtk.ListStore):
 
 
     for action in self._bookmarks_action_group.list_actions():
-      merge_id = self._uimanager.new_merge_id()
+      merge_id = ui_manager.uimanager.new_merge_id()
       action_name = action.get_name()
-      self._uimanager.add_ui(merge_id, '/MainMenuBar/Bookmarks', 
+      ui_manager.uimanager.add_ui(merge_id, ui_manager.BOOKMARKS_MENU_PATH, 
                             action_name, action_name, 
                             gtk.UI_MANAGER_MENUITEM, False)
 
-    self._uimanager.add_ui(self._uimanager.new_merge_id(), 
-                           '/MainMenuBar/Bookmarks', 
-                           'sep', None, 
-                           gtk.UI_MANAGER_SEPARATOR, False)
+    ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(), 
+                                ui_manager.BOOKMARKS_MENU_PATH, 
+                                'sep', None, 
+                                gtk.UI_MANAGER_SEPARATOR, False)
 
   def _onAddBookmark(self, action):
     '''
@@ -145,14 +141,14 @@ class BookmarkStore(gtk.ListStore):
     '''
     iter = self.append([None])
     name = 'Bookmark%s' % str(self.get_path(iter)[0])
-    merge_id = self._uimanager.new_merge_id()
+    merge_id = ui_manager.uimanager.new_merge_id()
     bookmark = self._Bookmark(name, title, app, path, merge_id)
     bookmark.connect('activate', self._onBookmarkActivate)
     bookmark.connect('notify', self._onBookmarkChanged)
     self._bookmarks_action_group.add_action(bookmark)
-    self._uimanager.add_ui(merge_id, 
-                           '/MainMenuBar/Bookmarks', name, name, 
-                           gtk.UI_MANAGER_MENUITEM, False)
+    ui_manager.uimanager.add_ui(merge_id, 
+                                '/MainMenuBar/Bookmarks', name, name, 
+                                gtk.UI_MANAGER_MENUITEM, False)
     self[iter][0] = bookmark
     return iter
 
@@ -211,7 +207,7 @@ class BookmarkStore(gtk.ListStore):
     name = 'Bookmark%s' % str(path[0])
     bookmark = self._bookmarks_action_group.get_action(name)
     self._bookmarks_action_group.remove_action(bookmark)
-    self._uimanager.remove_ui(bookmark.merge_id)
+    ui_manager.uimanager.remove_ui(bookmark.merge_id)
     self._xmldoc.documentElement.removeChild(node)
     self._persist()
 

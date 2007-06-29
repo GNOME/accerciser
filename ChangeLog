@@ -1,3 +1,19 @@
+2007-06-29  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accerciser.py: Changed to new UI Manager scheme.
+	* src/lib/accerciser/bookmarks.py: Changed to new UI Manager scheme.
+	* src/lib/accerciser/main_window.py: Removed UI manager stuff.
+	* src/lib/accerciser/node.py: Check if no application accessible
+	was found.
+	* src/lib/accerciser/plugin/view.py: Renamed ViewManager to 
+	MultiViewModel with a ViewModel superclass. This allows more then
+	one kind of view management scheme, like SingleViewModel.
+	* src/lib/accerciser/tools.py: Added Proxy class
+	for wrapping weak referenced callables.
+	* src/lib/accerciser/ui_manager.py: Added. 
+	Creates a singleton UIManager.
+	* src/lib/accerciser/Makefile.am: Added ui_manager.py.
+
 2007-06-19  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/Makefile.am: Added quick select plugin.

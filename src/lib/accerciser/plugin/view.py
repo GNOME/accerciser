@@ -14,15 +14,17 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gtk
 import gobject
 from base_plugin import Plugin
-from accerciser.tools import Tools, GConfListWrapper
+from accerciser.tools import *
 from message import MessageManager
 import os
 import sys
 import imp
 from accerciser.i18n import _, N_
-import gconf
+import gconf, gc
+from accerciser import ui_manager
 
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
+GCONF_LAYOUT_SINGLE = '/apps/accerciser/general/layout_single'
 
 class PluginView(gtk.Notebook):
   '''
@@ -194,9 +196,9 @@ class PluginView(gtk.Notebook):
     @param position: Position to insert child.
     @type position: integer
     '''
-    if position == 0 and  \
+    if position != -1 and  \
           isinstance(self.get_nth_page(0), MessageManager.MessageTab):
-      position = 1
+      position += 1
     if tab_label:
       name = tab_label
     elif isinstance(child, Plugin):
@@ -206,9 +208,6 @@ class PluginView(gtk.Notebook):
     gtk.Notebook.append_page(self, child)
     gtk.Notebook.reorder_child(self, child, position)
     gtk.Notebook.set_tab_label(self, child, gtk.Label(name))
-    make_movable = not isinstance(child, MessageManager.MessageTab)
-    self.set_tab_detachable(child, make_movable)
-    self.set_tab_reorderable(child, make_movable)
 
   def append_page(self, child, tab_label=None):
     '''
@@ -341,7 +340,315 @@ class PluginViewWindow(gtk.Window, Tools):
       if pages_count >= tab_num:
         self.plugin_view.focusTab(tab_num - 1)
 
-class ViewManager(gtk.ListStore, Tools):
+
+class ViewManager(object):
+  '''
+  Manage plugins and their views.
+  '''
+  def __init__(self, *perm_views):
+    '''
+    Initialize view manager.
+    
+    @param perm_views: List of permanent views, at least one is required.
+    @type perm_views: list of {PluginView}
+    '''
+    self._perm_views = perm_views
+    cl = gconf.client_get_default()
+    single = cl.get_bool(GCONF_LAYOUT_SINGLE)
+    self._initViewModel(single)
+    self._setupActions()
+    
+  def _setupActions(self):
+    '''
+    Sets up actions related to plugin layout.
+    '''
+    single = isinstance(self._view_model, SingleViewModel)
+    layout_action_group = gtk.ActionGroup('PluginActions')
+    ui_manager.uimanager.insert_action_group(layout_action_group, 0)
+    layout_action_group.add_toggle_actions(
+      [('SingleViewMode', None, _('Single plugins view'), '<Control>t',
+        None, self._onSingleViewToggled, single)])
+
+    for action in layout_action_group.list_actions():
+      merge_id = ui_manager.uimanager.new_merge_id()
+      action_name = action.get_name()
+      ui_manager.uimanager.add_ui(merge_id, ui_manager.PLUGIN_LAYOUT_PATH, 
+                                  action_name, action_name, 
+                                  gtk.UI_MANAGER_MENUITEM, True)
+
+
+  def _onSingleViewToggled(self, action):
+    '''
+    Callback for single view toggle action.
+    
+    @param action: Action object that emitted callback.
+    @type action: gtk.ToggleAction
+    '''
+    self.setSingleMode(action.get_active())
+
+  def setSingleMode(self, single):
+    '''
+    Toggle single mode on or off.
+    
+    @param single: True if we want single mode.
+    @type single: boolean
+    '''
+    if isinstance(self._view_model, SingleViewModel) == single:
+      return
+    cl = gconf.client_get_default()
+    cl.set_bool(GCONF_LAYOUT_SINGLE, single)
+    plugins = self._view_model.getViewedPlugins()
+    self._view_model.close()
+    del self._view_model
+    for plugin in plugins:
+      if plugin.parent:
+        plugin.parent.remove(plugin)
+    self._initViewModel(single)
+    for plugin in plugins:
+      self._view_model.addElement(plugin)
+  
+  def _initViewModel(self, single):
+    '''
+    Initialize a view model, either multi view or single view.
+    
+    @param single: True if we want single mode.
+    @type single: boolean
+    '''
+    if single:
+      self._view_model = SingleViewModel(*self._perm_views)
+    else:
+      self._view_model = MultiViewModel(*self._perm_views)
+
+  def addElement(self, element):
+    '''
+    Add an element to a plugin view. 
+
+    @param element: The element to be added to a view.
+    @type element: gtk.Widget
+    '''
+    self._view_model.addElement(element)
+
+  def close(self):
+    '''
+    Do cleanup.
+    '''
+    self._view_model.close()
+
+  def initialView(self):
+    '''
+    Do something when view/s are first displayed.
+    '''
+    self._view_model.initialView()
+
+  def giveElementFocus(self, element):
+    '''
+    Give focus to given element (ie. a plugin)
+    
+    @param element: The element to give focus to.
+    @type element: gtk.Widget
+    '''
+    self._view_model.giveElementFocus(element)
+
+  def changeView(self, plugin, new_view_name):
+    '''
+    Put a plugin instance in a different view. 
+    
+    @param plugin: Plugin to move.
+    @type plugin: L{Plugin}
+    @param new_view_name: New view name.
+    @type new_view_name: string
+    '''
+    self._view_model.changeView(plugin, new_view_name)
+
+  def getViewNameForPlugin(self, plugin_name):
+    '''
+    Get the view name for a given plugin name.
+    
+    @param plugin_name: Plugin's name to lookup view for.
+    @type plugin_name: string
+    
+    @return: View name for plugin.
+    @rtype: string
+    '''
+    return self._view_model.getViewNameForPlugin(plugin_name)
+
+  def Menu(self, context_plugin, transient_window):
+    '''
+    Return a context menu for the given plugin with view manipulation options.
+    
+    @param context_plugin: Subject plugin of this menu.
+    @type context_plugin: L{Plugin}
+    @param transient_window: Transient parent window. Used for keeping the
+    new view dialog modal.
+    @type transient_window: gtk.Window
+    
+    @return: A Menu widget
+    @rtype: gtk.Menu
+    '''
+    return self._view_model.Menu(context_plugin, transient_window)
+
+class BaseViewModel(Tools):
+  '''
+  Base class for views model
+
+  @ivar perm_views: List of permanent views.
+  @type perm_views: list of L{PluginView}
+  @ivar main_view: Main view.
+  @type main_view: L{PluginView}
+  '''
+  def __init__(self, *perm_views):
+    '''
+    Initialize view model.
+    
+    @param perm_views: List of permanent views, at least one is required.
+    @type perm_views: list of {PluginView}
+    '''
+    if len(perm_views) == 0:
+      raise TypeError('View model needs at least one permanent view')
+    self.perm_views = perm_views
+    self.main_view = perm_views[0]
+
+  def addElement(self, element):
+    '''
+    Add an element to a plugin view. If the element is a message tab, put it as
+    the first tab in the main view. If the element is a plugin, check if it's 
+    placement is cached in this instance or read it's position from gconf.
+    By default a plugin is appended to the main view.
+    
+    @param element: The element to be added to a view.
+    @type element: gtk.Widget
+    '''
+    if isinstance(element, Plugin):
+      self.addPlugin(element)
+    elif isinstance(element, MessageManager.MessageTab):
+      element.connect('show', Proxy(self._onMessageTabShow))
+      element.hide()
+      self.main_view.insert_page(element, 0)
+      self.main_view.set_tab_detachable(element, False)
+      self.main_view.set_tab_reorderable(element, False)
+
+  def addPlugin(self, plugin):
+    '''
+    Add a plugin to the view. Check if it's placement is cached in this 
+    instance or read it's position from gconf. By default a plugin is 
+    appended to the main view.
+    
+    @param plugin: Plugin to add.
+    @type plugin: L{Plugin}
+    '''
+    pass
+
+  def close(self):
+    '''
+    Do cleanup.
+    '''
+    pass
+
+  def initialView(self):
+    '''
+    Do something when view/s are first displayed.
+    '''
+    pass
+
+  def giveElementFocus(self, element):
+    '''
+    Give focus to given element (ie. a plugin)
+    
+    @param element: The element to give focus to.
+    @type element: gtk.Widget
+    '''
+    if not getattr(element, 'parent', None):
+      return
+    view = element.parent
+    page_num = view.page_num(element)
+    view.set_current_page(page_num)
+    view.set_focus_child(element)
+
+  def _onMessageTabShow(self, message_tab):
+    '''
+    Callback for when a message tab appears. Give it focus.
+    
+    @param message_tab: Message tab that just appeared.
+    @type message_tab: L{MessageManager.MessageTab}
+    '''
+    self.giveElementFocus(message_tab)
+
+  def changeView(self, plugin, new_view_name):
+    '''
+    Put a plugin instance in a different view. 
+    
+    @param plugin: Plugin to move.
+    @type plugin: L{Plugin}
+    @param new_view_name: New view name.
+    @type new_view_name: string
+    '''
+    pass
+
+  def getViewNameForPlugin(self, plugin_name):
+    '''
+    Get the view name for a given plugin name.
+    
+    @param plugin_name: Plugin's name to lookup view for.
+    @type plugin_name: string
+    
+    @return: View name for plugin.
+    @rtype: string
+    '''
+    pass
+
+  def getViewedPlugins(self):
+    '''
+    Get a list of all viewed plugins that are in the managed view/s.
+    '''
+    pass
+
+  def Menu(self, context_plugin, transient_window):
+    '''
+    Return a context menu for the given plugin with view manipulation options.
+    
+    @param context_plugin: Subject plugin of this menu.
+    @type context_plugin: L{Plugin}
+    @param transient_window: Transient parent window. Used for keeping the
+    new view dialog modal.
+    @type transient_window: gtk.Window
+    
+    @return: A Menu widget
+    @rtype: gtk.Menu
+    '''
+    return gtk.Menu()
+
+class SingleViewModel(BaseViewModel):
+  def addPlugin(self, plugin):
+    '''
+    Add a given plugin to our single view in alphabetical order.
+    
+    @param plugin: Plugin to add
+    @type plugin: L{Plugin}
+    '''
+    plugin_names = \
+        [p.plugin_name.lower() for p in self.main_view.getPlugins()]
+    plugin_names.append(plugin.plugin_name.lower())
+    plugin_names.sort()
+    index = plugin_names.index(plugin.plugin_name.lower())
+    self.main_view.insert_page(plugin, position=index)
+    self.main_view.set_tab_detachable(plugin, False)
+    self.main_view.set_tab_reorderable(plugin, False)
+    plugin.show_all()
+  def initialView(self):
+    '''
+    Set tab to first tab.
+    '''
+    self.main_view.set_current_page(0)
+  def getViewedPlugins(self):
+    '''
+    Get all managed plugins.
+    
+    @return: list of all managed plugins.
+    @rtype: list of PLugin
+    '''
+    return self.main_view.getPlugins()
+
+class MultiViewModel(list, BaseViewModel):
   '''
   Manages all plugin views. Implements a gtk.ListStore of all views.
   Persists plugin view placements across sessions.
@@ -374,13 +681,9 @@ class ViewManager(gtk.ListStore, Tools):
     @param perm_views: List of permanent views, at least one is required.
     @type perm_views: list of {PluginView}
     '''
-    if len(perm_views) == 0:
-      raise TypeError('ViewManager needs at least one permanent view')
-    gtk.ListStore.__init__(self, str, object)
-    self.perm_views = perm_views
-    self.main_view = perm_views[0]
+    BaseViewModel.__init__(self, *perm_views)
     for view in self.perm_views:
-      self.append([view.view_name, view])
+      self.append(view)
       self._connectSignals(view)
     self._ignore_insertion = []
     self._placement_cache = {}
@@ -419,9 +722,9 @@ class ViewManager(gtk.ListStore, Tools):
     @return: View instance or None
     @rtype: L{PluginView}
     '''
-    for row in self:
-      if row[self.COL_NAME] == view_name:
-        return row[self.COL_INSTANCE]
+    for view in self:
+      if view.view_name == view_name:
+        return view
     return None
 
   def _onPluginDragEnd(self, view, plugin):
@@ -437,6 +740,8 @@ class ViewManager(gtk.ListStore, Tools):
     new_view = self._newView()
     view.remove(plugin)
     new_view.append_page(plugin)
+    new_view.set_tab_detachable(plugin, True)
+    new_view.set_tab_reorderable(plugin, True)
 
   def _newView(self, view_name=None):
     '''
@@ -458,7 +763,7 @@ class ViewManager(gtk.ListStore, Tools):
     w = PluginViewWindow(view_name)
     view = w.plugin_view
     self._connectSignals(view)
-    self.append([view.view_name, view])
+    self.append(view)
     return view
 
   def _getViewOrNewView(self, view_name):
@@ -499,12 +804,8 @@ class ViewManager(gtk.ListStore, Tools):
     '''
     if view in self.perm_views:
       return
-    iter = self.get_iter_first()
-    while iter:
-      if self[iter][self.COL_INSTANCE] == view:
-        if not self.remove(iter): break
-      else:
-        iter = self.iter_next(iter)
+    if view in self:
+      self.remove(view)
 
   def _onTabPopupMenu(self, view, event, plugin): 	 
     '''
@@ -537,12 +838,12 @@ class ViewManager(gtk.ListStore, Tools):
     @type view: :{PluginView}
     '''
     if isinstance(view.parent, PluginViewWindow):
-      view.parent.connect('delete_event', self._onViewDelete)
-    view.connect('plugin_drag_end', self._onPluginDragEnd)
-    view.connect('tab_popup_menu', self._onTabPopupMenu)
-    view.connect('page_added', self._onViewLayoutChanged, 'added')
-    view.connect('page_removed', self._onViewLayoutChanged, 'removed')
-    view.connect('page_reordered', self._onViewLayoutChanged, 'reordered')
+      view.parent.connect('delete_event', Proxy(self._onViewDelete))
+    view.connect('plugin_drag_end', Proxy(self._onPluginDragEnd))
+    view.connect('tab_popup_menu', Proxy(self._onTabPopupMenu))
+    view.connect('page_added', Proxy(self._onViewLayoutChanged), 'added')
+    view.connect('page_removed', Proxy(self._onViewLayoutChanged), 'removed')
+    view.connect('page_reordered', Proxy(self._onViewLayoutChanged), 'reordered')
 
   def _onViewLayoutChanged(self, view, plugin, page_num, action):
     '''
@@ -578,47 +879,7 @@ class ViewManager(gtk.ListStore, Tools):
     if len(plugin_layout) == 0:
       self._removeView(view)
 
-  def giveElementFocus(self, element):
-    '''
-    Give focus to given element (ie. a plugin)
-    
-    @param element: The element to give focus to.
-    @type element: gtk.Widget
-    '''
-    if not getattr(element, 'parent', None):
-      return
-    view = element.parent
-    page_num = view.page_num(element)
-    view.set_current_page(page_num)
-    view.set_focus_child(element)
-
-  def _onMessageTabShow(self, message_tab):
-    '''
-    Callback for when a message tab appears. Give it focus.
-    
-    @param message_tab: Message tab that just appeared.
-    @type message_tab: L{MessageManager.MessageTab}
-    '''
-    self.giveElementFocus(message_tab)
-
-  def addElement(self, element):
-    '''
-    Add an element to a plugin view. If the element is a message tab, put it as
-    the first tab in the main view. If the element is a plugin, check if it's 
-    placement is cached in this instance or read it's position from gconf.
-    By default a plugin is appended to the main view.
-    
-    @param element: The element to be added to a view.
-    @type element: gtk.Widget
-    '''
-    if isinstance(element, Plugin):
-      self._addPlugin(element)
-    elif isinstance(element, MessageManager.MessageTab):
-      element.connect('show', self._onMessageTabShow)
-      element.hide()
-      self.main_view.insert_page(element, 0)
-
-  def _addPlugin(self, plugin):
+  def addPlugin(self, plugin):
     '''
     Add a plugin to the view. Check if it's placement is cached in this 
     instance or read it's position from gconf. By default a plugin is 
@@ -628,9 +889,8 @@ class ViewManager(gtk.ListStore, Tools):
     @type plugin: L{Plugin}
     '''
     if self._placement_cache.has_key(plugin.plugin_name):
-      view_name, position = self._placement_cache.pop(plugin.plugin_name)
+      view_name, index = self._placement_cache.pop(plugin.plugin_name)
       view = self._getViewOrNewView(view_name)
-      view.insert_page(plugin, position=position)
     else:
       view_name = self.getViewNameForPlugin(plugin.plugin_name)
       view = self._getViewOrNewView(view_name)
@@ -650,7 +910,10 @@ class ViewManager(gtk.ListStore, Tools):
             index = child_index
             break
       self._ignore_insertion.append((view.view_name, plugin.plugin_name))
-      view.insert_page(plugin, position=index)
+
+    view.insert_page(plugin, position=index)
+    view.set_tab_detachable(plugin, True)
+    view.set_tab_reorderable(plugin, True)
     plugin.show_all()
 
   def initialView(self):
@@ -658,17 +921,17 @@ class ViewManager(gtk.ListStore, Tools):
     Set the current tab of all views to be the first one.
     Used when Accercier first starts.
     '''
-    for view in self._getViews():
+    for view in self:
       view.set_current_page(0)
 
-  def _getViews(self):
+  def getViewedPlugins(self):
     '''
-    Get a list of all managed view instances.
-    
-    @return: A list of view instances.
-    @rtype: lis of L{PluginView}
+    Get all plugins from all views.
     '''
-    return [row[self.COL_INSTANCE] for row in self]
+    rv = []
+    for view in self:
+      rv.extend(view.getPlugins())
+    return rv
   
   def _getViewNames(self):
     '''
@@ -677,7 +940,7 @@ class ViewManager(gtk.ListStore, Tools):
     @return: A list of view names.
     @rtype: list of string
     '''
-    return [row[self.COL_NAME] for row in self]
+    return [view.view_name for view in self]
 
   def changeView(self, plugin, new_view_name):
     '''
@@ -695,6 +958,8 @@ class ViewManager(gtk.ListStore, Tools):
     if old_view is not new_view:
       old_view.remove(plugin)
       new_view.append_page(plugin)
+      new_view.set_tab_detachable(plugin, True)
+      new_view.set_tab_reorderable(plugin, True)
 
   def Menu(self, context_plugin, transient_window):
     '''
@@ -752,8 +1017,8 @@ class ViewManager(gtk.ListStore, Tools):
       @type transient_window: gtk.Window
       '''
       menu_item = None
-      for view_name, view in self.view_manager:
-        menu_item = gtk.RadioMenuItem(menu_item, view_name)
+      for view in self.view_manager:
+        menu_item = gtk.RadioMenuItem(menu_item, view.view_name)
         menu_item.connect('toggled', self._onItemToggled, view, context_plugin)
         menu_item.set_active(view == context_plugin.parent)
         self.append(menu_item)

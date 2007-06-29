@@ -2,6 +2,8 @@ import gtk, gconf
 from plugin import PluginView
 from i18n import _, N_
 from accessible_treeview import *
+import ui_manager
+from ui_manager import uimanager
 
 GCONF_GENERAL = '/apps/accerciser/general'
 
@@ -9,8 +11,6 @@ class AccerciserMainWindow(gtk.Window):
   '''
   Main window class.
 
-  @ivar uimanager: Main window's UImanager.
-  @type uimanager: gtk.UIManager
   @ivar statusbar: Main window's status bar.
   @type statusbar: gtk.Statusbar
   @ivar treeview: Main accessible tree view.
@@ -43,9 +43,7 @@ class AccerciserMainWindow(gtk.Window):
     width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
     height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
     self.set_default_size(width, height)
-    self.main_actions = gtk.ActionGroup('MainActions')
-    self.uimanager = gtk.UIManager()
-    self.add_accel_group(self.uimanager.get_accel_group())
+    self.add_accel_group(ui_manager.uimanager.get_accel_group())
     # Populate window
     self._populateUI(node)
 
@@ -57,7 +55,7 @@ class AccerciserMainWindow(gtk.Window):
     @type node: L{Node}
     '''
     main_vbox = gtk.VBox()
-    menu_bar = self._createMenuBar()
+    menu_bar = ui_manager.uimanager.get_widget(ui_manager.MAIN_MENU_PATH)
     main_vbox.pack_start(menu_bar, False)
     self._vpaned = gtk.VPaned()
     self._vpaned.set_position(350)
@@ -75,19 +73,20 @@ class AccerciserMainWindow(gtk.Window):
                               self._onBottomPanelChange, 'added')
     self.pluginview2.connect('page_removed', 
                               self._onBottomPanelChange, 'removed')
+    self.pluginview2.connect_after('realize', self._onBottomPanelRealize)
     self._vpaned.add2(self.pluginview2)
     self._hpaned.add2(self.pluginview1)
     sw = gtk.ScrolledWindow()
     sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
     sw.set_shadow_type(gtk.SHADOW_IN)
     self.treeview = AccessibleTreeView(node)
-    self.uimanager.insert_action_group(self.treeview.action_group, 0)
+    ui_manager.uimanager.insert_action_group(self.treeview.action_group, 0)
     for action in self.treeview.action_group.list_actions():
-      merge_id = self.uimanager.new_merge_id()
+      merge_id = ui_manager.uimanager.new_merge_id()
       action_name = action.get_name()
-      self.uimanager.add_ui(merge_id, '/MainMenuBar/View', 
-                            action_name, action_name, 
-                            gtk.UI_MANAGER_MENUITEM, False)
+      ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH, 
+                                  action_name, action_name, 
+                                  gtk.UI_MANAGER_MENUITEM, False)
 
     sw.add(self.treeview)
     self._hpaned.add1(sw)
@@ -100,54 +99,6 @@ class AccerciserMainWindow(gtk.Window):
       paned.set_data('last_position', paned.get_position())
 
     self.add(main_vbox)
-
-
-  def _createMenuBar(self):
-    '''
-    Create actions and menubar UI.
-    
-    @return: The managed menu bar.
-    @rtype: gtk.Menubar()
-    '''
-    self.main_actions.add_actions([
-        ('File', None, _('_File')),
-        ('Quit', gtk.STOCK_QUIT, None, 
-         '<control>q', 'Quit Accerciser', None),
-        ('Edit', None, _('_Edit')),
-        ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences...'),
-         '<control>p', 'Show preferences', None),
-        ('Bookmarks', None, _('_Bookmarks')),
-        ('View', None, _('_View')),
-        ('Help', None, _('_Help')),
-        ('Contents', gtk.STOCK_HELP, _('_Contents'),
-         'F1', 'View contents of manual', None),
-        ('About', gtk.STOCK_ABOUT, None,
-         None, 'About Accerciser', None)])
-
-    ui = '''
-<ui>
-  <menubar name="MainMenuBar">
-    <menu action="File">
-      <menuitem action="Quit"/>
-    </menu>
-    <menu action="Edit">
-      <menuitem action="Preferences"/>
-    </menu>
-    <menu action="Bookmarks">
-    </menu>
-    <menu action="View">
-    </menu>
-    <menu action="Help">
-      <menuitem action="Contents"/>
-      <menuitem action="About"/>
-    </menu>
-  </menubar>
-</ui>'''
-
-    self.uimanager.insert_action_group(self.main_actions,0)
-    self.uimanager.add_ui_from_string(ui)
-    
-    return self.uimanager.get_widget('/MainMenuBar')
 
   def _onBottomPanelChange(self, pluginview, page, page_num, action):
     '''
@@ -168,6 +119,10 @@ class AccerciserMainWindow(gtk.Window):
       self._vpaned.set_position(last_pos or 350)
     elif pluginview.get_n_pages() == 0:
       self._vpaned.set_data('last_position', self._vpaned.get_position())
+      self._vpaned.set_position(self._vpaned.allocation.height - 30)
+
+  def _onBottomPanelRealize(self, pluginview):
+    if pluginview.get_n_pages() == 0:
       self._vpaned.set_position(self._vpaned.allocation.height - 30)
 
   def _onKeyPress(self, widget, event):
@@ -200,8 +155,12 @@ class AccerciserMainWindow(gtk.Window):
     cl = gconf.client_get_default()
     cl.set_int(GCONF_GENERAL+'/window_width', self.allocation.width)
     cl.set_int(GCONF_GENERAL+'/window_height', self.allocation.height)
-    for paned in (self._hpaned, self._vpaned):
-      cl.set_int(GCONF_GENERAL+'/'+paned.name, paned.get_position())
+    cl.set_int(GCONF_GENERAL+'/hpaned', self._hpaned.get_position())
+    if self.pluginview2.get_n_pages():
+      position = self._vpaned.get_position()
+    else:
+      position = self._vpaned.get_data('last_position')
+    cl.set_int(GCONF_GENERAL+'/vpaned', position)
 
   def _onBlinkDone(self, node):
     '''
