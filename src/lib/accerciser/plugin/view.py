@@ -366,7 +366,7 @@ class ViewManager(object):
     layout_action_group = gtk.ActionGroup('PluginActions')
     ui_manager.uimanager.insert_action_group(layout_action_group, 0)
     layout_action_group.add_toggle_actions(
-      [('SingleViewMode', None, _('Single plugins view'), '<Control>t',
+      [('SingleViewMode', None, _('_Single plugins view'), '<Control>t',
         None, self._onSingleViewToggled, single)])
 
     for action in layout_action_group.list_actions():

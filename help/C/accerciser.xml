@@ -2,9 +2,9 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "0.1.0">
-  <!ENTITY manrevision "0.1.0">
-  <!ENTITY date "2007-02-23">
+  <!ENTITY appversion "0.1.5">
+  <!ENTITY manrevision "0.2.0">
+  <!ENTITY date "2007-06-29">
   <!ENTITY app "<application>Accerciser</application>">
 ]>
 
@@ -190,36 +190,54 @@
             fileref="figures/accerciser.png" format="PNG"/> 
             </imageobject>
             <textobject> 
-              <phrase>Shows &app; main window. Contains title bar, menu bar,
-              accessible tree , left plugin display area, and bottom plugin
-              display area. The menu bar contains File, View, and Help menus.               </phrase> 
+              <phrase>
+				Shows &app; main window. Contains title bar, menu bar,
+				accessible tree , left plugin display area, and bottom plugin
+				display area. The menu bar contains File, Edit, Bookmarks, 
+				View, and Help menus.
+			  </phrase> 
             </textobject> 
           </mediaobject> 
         </screenshot> 
       </figure>
     <!-- ==== End of Figure ==== -->
 
-    <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
-    <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+    <!-- Include any descriptions of the GUI immediately after 
+		 the screenshot of the main UI, -->
+    <!-- for example, the items on the menubar and on the toolbar. 
+		 This section is optional. -->
 
       <para>The main &app; window contains the following elements:</para>
       <variablelist>
         <varlistentry>
           <term>Menubar</term>
           <listitem>
-            <para>The menu bar contains commands for managing plugins,             refreshing the accessible tree view, and accessing this help             system.</para>
+			<para>
+			  The menu bar contains commands for managing plugins, 
+			  managing and using bookmarks, refreshing the accessible 
+			  tree view, and accessing this help system.
+			</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Accessible tree view</term>
           <listitem>
-            <para>The accessible tree view allows to view all of the             accessibles starting at the desktop level. Selecting an accessible             makes it available for further inspection using the loaded plugins. </para>
+			<para>
+			  The accessible tree view allows to view all of the accessibles 
+			  starting at the desktop level. Selecting an accessible makes 
+			  it available for further inspection using the loaded plugins. 
+			</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Right plugin view</term>
           <listitem>
-            <para>This is the default plugin view. When &app; is first run, all             plugins will reside here. You can drag plugin tabs to the bottom             plugin view or to the desktop to show two or more plugins             simultaneously.</para>
+            <para>
+			  This is one of the two default plugin views. 
+			  When &app; is first run, most plugins will reside here. 
+			  You can drag plugin tabs to the bottom plugin view or to 
+			  the desktop to show two or more plugins simultaneously.
+			</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -230,6 +248,27 @@
         </varlistentry>
       </variablelist>
     </sect2>
+	<sect2>
+	  <title>Plugin View Management</title>
+	  <para>
+		&app; has two modes for viewing plugins. The current view mode 
+		could be toggled with 
+        <menuchoice>
+          <guimenu>View</guimenu><guimenuitem>Single plugin view</guimenuitem> 
+        </menuchoice> 
+        or by pressing 
+        <keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. 
+        When single mode is enabled, all plugins will be put in the top 
+        right plugin view and ordered alphabetically, this could be useful 
+        for screen reader users who have no use for &app;'s flexible plugin 
+        spacial layout scheme. When single view mode is disabled plugin tabs 
+        could be dragged and dropped in to different plugin views, 
+        or could be dragged to the desktop to put the given plugin in a 
+        new view. The placement of plugins could also be manipulated with 
+        the plugin context menu that could be brought up either from the 
+        plugin tab, or the plugin preferences dialog.
+	  </para>
+	</sect2>
   </sect1>
 <!-- ================ Usage ================================ -->
 <!-- Use this section to describe how to use the application to perform the tasks for 
@@ -242,7 +281,7 @@
         <para><xref linkend="accerciser-tree-select"/></para> 
       </listitem> 
       <listitem> 
-        <para><xref linkend="accercicer-global-hotkeys"/></para> 
+        <para><xref linkend="accerciser-bookmarks"/></para> 
       </listitem> 
     </itemizedlist> 
     </para>
@@ -250,53 +289,46 @@
 
     <sect2 id="accerciser-tree-select"> 
       <title>Select an accessible through the tree view.</title> 
-      <para>Use the tree view to navigate the hierarchy of accessible objects       rooted at desktop. Unfolding a tree node reveals its immediate children       while folding it hides them. Each node shows an icon for its associated       application or widget role and its accessible name, if available. The       second column lists how many nodes will be shown if the item is       unfolded.</para>
+      <para>
+        Use the tree view to navigate the hierarchy of accessible objects
+        rooted at desktop. Unfolding a tree node reveals its immediate children
+        while folding it hides them. Each node shows an icon for its associated
+        application or widget role and its accessible name, if available. 
+        The second column lists how many nodes will be shown 
+        if the item is unfolded.
+      </para>
       
-      <warning>
-        <para>If you unfold a node with a large number of children (e.g.         hundreds), your desktop may freeze temporarily as &app; tries to build         the tree view.</para>
-      </warning>
     </sect2> 
-    <!-- ================ Usage Subsection ================================ -->
-    <sect2 id="accercicer-global-hotkeys">
-      <title>Global Hotkey functions</title>
-      <para>&app; provides a few global hotkeys in it's core
-      functionality:</para>
-      <tip>
-        <para>You could configure the hotkeys to different bindings, see:
-          <xref linkend="accerciser-hotkey-config"/></para>
-      </tip>
-      <itemizedlist> 
-        <listitem> 
-          <para><xref linkend="accerciser-tree-select"/></para> 
-        </listitem> 
-        <listitem> 
-          <para><xref linkend="accerciser-last-focus-select"/></para> 
-        </listitem> 
-      </itemizedlist> 
-      <sect3 id="accerciser-last-focus-select"> 
-        <title>Select last focused accessible</title> 
-        <para>Use the following global key combination to move the tree view       selection to the last widget to receive the focus on the desktop:</para>
-        <para>
-          <keycombo>
-            <keycap>Control</keycap>
-            <keycap>Alt</keycap>
-            <keycap>a</keycap>
-          </keycombo>.
-        </para>
-      </sect3> 
-      <!-- ================ Usage Subsection ================================ -->
-      <sect3 id="accerciser-mouse-select"> 
-        <title>Select accessible with mouse</title> 
-        <para>Use the following key combination to move the tree view selection       to the widget currently under the mouse pointer:</para>
-        <para>
-          <keycombo>
-            <keycap>Control</keycap>
-            <keycap>Alt</keycap>
-            <keycap>?</keycap>
-          </keycombo>.
-        </para>
-      </sect3>
-    </sect2>
+    <sect2 id="accerciser-bookmarks"> 
+      <title>Using bookmarks</title> 
+      <para>
+        Accerciser allows bookmarking selected accessibles for later examining.
+        This could be helpful if the target application must be restarted, 
+        for example after rebuilding it. To bookmark the currently selected 
+        accessible do 
+        <menuchoice>
+          <guimenu>Bookmarks</guimenu>
+          <guimenuitem>Add Bookmark...</guimenuitem> 
+        </menuchoice> 
+        or press 
+        <keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>.
+      </para>
+      <para>
+        Bookmarks to accessibles in Accerciser are defined by an 
+        application name and a "path" in the application's internal 
+        accessible hierarchy to the bookmarked accessible. When the target 
+        application is in a different state (ie. multiple top level frames) 
+        the path might not be correct.
+      </para>
+      <para>
+        Bookmarks could be managed by accessing the bookmark editing 
+        dialog through 
+        <menuchoice>
+          <guimenu>Bookmarks</guimenu>
+          <guimenuitem>Edit Bookmarks...</guimenuitem> 
+        </menuchoice>. 
+      </para>
+    </sect2> 
   </sect1>
 
   <!-- ============= Plugins =================================== -->
@@ -314,6 +346,12 @@
       </listitem> 
       <listitem> 
         <para><xref linkend="accerciser-api-browser"/></para>
+      </listitem> 
+      <listitem> 
+        <para><xref linkend="accerciser-script-recorder"/></para>
+      </listitem> 
+      <listitem> 
+        <para><xref linkend="accerciser-quick-select"/></para>
       </listitem> 
     </itemizedlist> 
 
@@ -400,6 +438,49 @@
         </screenshot> 
       </figure>
     </sect2> 
+    <sect2 id="accerciser-script-recorder"> 
+      <title>Script recorder</title>
+      <para>
+        &apps;'s script recorder allows users to record keyboard interaction 
+        with other desktop applications for the purpose of authoring UI test 
+        scripts. Currently the plug-in supports the generation of scripts for 
+        three platforms: Dogtail, LDTP, and an Accerciser's built-in API. 
+        Once you press the "Record" button every keyboard interaction will be 
+        recorded in to a script that could be executed later as a stand 
+        alone script.
+      </para>
+      <figure id="script-recorder-fig"> 
+        <title>Script Recorder</title>
+        <screenshot> 
+          <mediaobject> 
+            <imageobject><imagedata
+            fileref="figures/script_recorder.png" format="PNG"/> 
+            </imageobject>
+            <textobject> 
+              <phrase>The script recorder.</phrase> 
+            </textobject> 
+          </mediaobject> 
+        </screenshot> 
+      </figure>
+    </sect2> 
+    <sect2 id="accerciser-quick-select"> 
+      <title>Quick select</title>
+      <para>
+        This plugin provides global hotkeys for allowing quick selection
+        of accessibles through the target application's UI. Pressing 
+        <keycombo>
+          <keycap>Control</keycap><keycap>Alt</keycap>
+          <keycap>a</keycap>
+        </keycombo> 
+        will select the last focused widget's accessible in &app;. Pressing 
+        <keycombo>
+          <keycap>Control</keycap><keycap>Alt</keycap>
+          <keycap>t</keycap>
+        </keycombo>
+        will select the accessible of the widget that is under the pointer.
+      </para>
+    </sect2> 
+
   </sect1>
   <!-- ============= Customization ============================= -->
   <!-- Use this section to describe how to customize the application. -->
@@ -411,10 +492,14 @@
       <listitem> 
         <para><xref linkend="accerciser-plugin-layout"/></para> 
       </listitem>
+      <listitem> 
+        <para><xref linkend="accerciser-hotkey-config"/></para> 
+      </listitem>
     </itemizedlist>
     <sect2 id="accerciser-plugin-layout">
       <title>Plugin Layout</title> 
-      <para>There are two methods for configuring plugin layout in &app;. First,
+      <para>
+        There are two methods for configuring plugin layout in &app;. First
         you may choose
         <menuchoice> 
           <guimenu>Edit</guimenu> 
