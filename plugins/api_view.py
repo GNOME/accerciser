@@ -138,7 +138,11 @@ class APIBrowser(ViewportPlugin):
     for attr in dir(self.curr_iface):
       if self.private_toggle.get_active() and attr[0] == '_':
         continue
-      obj = getattr(self.curr_iface, attr)
+      try:
+        obj = getattr(self.curr_iface, attr)
+      except AttributeError:
+        # Slots seem to raise AttributeError if they were not assigned.
+        continue
       if callable(obj):
         method_model.append([attr, obj.__doc__])
       else:
