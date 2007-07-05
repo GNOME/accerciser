@@ -160,7 +160,8 @@ class AccerciserMainWindow(gtk.Window):
       position = self._vpaned.get_position()
     else:
       position = self._vpaned.get_data('last_position')
-    cl.set_int(GCONF_GENERAL+'/vpaned', position)
+    if position is not None:
+      cl.set_int(GCONF_GENERAL+'/vpaned', position)
 
   def _onBlinkDone(self, node):
     '''

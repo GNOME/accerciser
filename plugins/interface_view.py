@@ -972,7 +972,10 @@ class _SectionSelection(_InterfaceSection):
     @param selection: The treeview's selection object.
     @type selection: gtk.TreeSelection
     '''
-    si = self.node.acc.querySelection()
+    try:
+      si = self.node.acc.querySelection()
+    except NotImplementedError:
+      return
 
     model, paths = selection.get_selected_rows()
     selected_children = [path[0] for path in paths]
