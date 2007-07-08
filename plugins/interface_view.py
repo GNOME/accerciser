@@ -63,7 +63,6 @@ class InterfaceViewer(ViewportPlugin):
     implemented_sections = [obj.interface_name.lower() for obj in self.sections]
     vbox_ifaces = glade_xml.get_widget('vbox_ifaces')
     for expander in vbox_ifaces.get_children():
-      expander.connect('focus-in-event', self._onScrollToFocus)
       iface_name = expander.name.replace('expander_', '')
       if iface_name not in implemented_sections:
         section = _InterfaceSection(glade_xml, self.node, iface_name)
@@ -88,25 +87,6 @@ class InterfaceViewer(ViewportPlugin):
       section_obj.disable()
       if section_obj.interface_name in interfaces:
         section_obj.enable(acc)
-
-  def _onScrollToFocus(self, widget, event):
-    '''
-    Scrolls a focused expander in plugin area into view.
-    
-    @param widget: Widget that has the focus
-    @type widget: gtk.Widget
-    @param event: Event object.
-    @type direction: gtk.gdk.Event
-    '''
-    x, y = widget.translate_coordinates(self.viewport, 0, 0)
-    w, h = widget.size_request()
-    vw, vh = self.allocation.width, self.allocation.height
-
-    adj = self.viewport.get_vadjustment()
-    if y+h > vh:
-      adj.value += min((y+h) - vh + 7, y)
-    elif y < 0:
-      adj.value = max(adj.value + y, adj.lower)
 
 class _InterfaceSection(object):
   '''

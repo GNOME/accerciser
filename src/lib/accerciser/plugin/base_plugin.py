@@ -214,6 +214,7 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     self.viewport = gtk.Viewport()
     vbox = gtk.VBox()
     self.viewport.add(vbox)
+    self.viewport.connect('set-focus-child', self._onScrollToFocus)
     self.add(self.viewport)
     # Message area
     self.message_area = gtk.VBox()
@@ -223,6 +224,31 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     self.plugin_area = gtk.Frame()
     self.plugin_area.set_shadow_type(gtk.SHADOW_NONE)
     vbox.pack_start(self.plugin_area)
+
+  def _onScrollToFocus(self, container, widget):
+    '''
+    Scrolls a focused child widget in viewport into view.
+    
+    @param container: Viewport with child focus change.
+    @type container: gtk.Viewport
+    @param widget: Child widget of container that had a focus change.
+    @type widget: gtk.Widget
+    '''
+    if widget is None: return
+    child = widget
+    while isinstance(child, gtk.Container) and \
+          child.focus_child is not None:
+      child = child.focus_child
+
+    x, y = child.translate_coordinates(self.viewport, 0, 0)
+    w, h = child.allocation.width, child.allocation.height
+    vw, vh = self.viewport.allocation.width, self.viewport.allocation.height
+
+    adj = self.viewport.get_vadjustment()
+    if y+h > vh:
+      adj.value += min((y+h) - vh + 2, y)
+    elif y < 0:
+      adj.value = max(adj.value + y - 2, adj.lower)
 
   def _onMessageResponse(self, error_message, response_id):
     '''
