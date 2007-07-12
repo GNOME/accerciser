@@ -140,8 +140,8 @@ class BookmarkStore(gtk.ListStore):
     @rtype: gtk.TreeIter
     '''
     iter = self.append([None])
-    name = 'Bookmark%s' % str(self.get_path(iter)[0])
     merge_id = ui_manager.uimanager.new_merge_id()
+    name = 'Bookmark%s' % merge_id
     bookmark = self._Bookmark(name, title, app, path, merge_id)
     bookmark.connect('activate', self._onBookmarkActivate)
     bookmark.connect('notify', self._onBookmarkChanged)
@@ -151,6 +151,19 @@ class BookmarkStore(gtk.ListStore):
                                 gtk.UI_MANAGER_MENUITEM, False)
     self[iter][0] = bookmark
     return iter
+
+  def removeBookmark(self, bookmark):
+    '''
+    Remove bookmark from manager.
+    
+    @param bookmark: Bookmark to remove.
+    @type bookmark: BookmarkStore._Bookmark
+    '''
+    self._bookmarks_action_group.remove_action(bookmark)
+    ui_manager.uimanager.remove_ui(bookmark.merge_id)
+    for row in self:
+      if row[0] == bookmark:
+        self.remove(row.iter)
 
   def _onBookmarkChanged(self, bookmark, property):
     '''
@@ -204,10 +217,6 @@ class BookmarkStore(gtk.ListStore):
     @type path: tuple
     '''
     node = self._getElements()[path[0]]
-    name = 'Bookmark%s' % str(path[0])
-    bookmark = self._bookmarks_action_group.get_action(name)
-    self._bookmarks_action_group.remove_action(bookmark)
-    ui_manager.uimanager.remove_ui(bookmark.merge_id)
     self._xmldoc.documentElement.removeChild(node)
     self._persist()
 
@@ -256,8 +265,11 @@ class BookmarkStore(gtk.ListStore):
     @param bookmark: Bookmark to go to. 
     @type bookmark: L{BookmarkStore._Bookmark}
     '''
-    if ''  in (bookmark.app, bookmark.path): return
-    self.node.updateToPath(bookmark.app, map(int, bookmark.path.split(',')))
+    if '' == bookmark.path: 
+      path = ()
+    else: 
+      path = map(int, bookmark.path.split(','))
+    self.node.updateToPath(bookmark.app, path)
 
   def bookmarkCurrent(self):
     '''
@@ -364,8 +376,12 @@ class BookmarkStore(gtk.ListStore):
       '''
       selection = tv.get_selection()
       model, iter = selection.get_selected()
+      path = model.get_path(iter)
       if iter:
-        model.remove(iter)
+        bookmark = model[iter][0]
+        model.removeBookmark(bookmark)
+        selection.select_path(0)
+        
 
     def _onJumpToClicked(self, button, tv):
       '''

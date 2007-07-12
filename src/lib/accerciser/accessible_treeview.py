@@ -632,7 +632,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     path = self.model.getAccPath(acc)
     if not path:
       return
-    if len(path) > 1:
+    if len(path) >= 1:
       self.selectNodeAtPath(path)
       self.node.tree_path = list(path[1:])
 
@@ -677,7 +677,8 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param path: Path to select.
     @type path: tuple
     '''
-    self.expand_to_path(path[:-1])
+    if len(path) > 1:
+      self.expand_to_path(path[:-1])
     self.scroll_to_cell(path)
     selection = self.get_selection()
     selection.select_path(path)
