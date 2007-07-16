@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-23 08:39+0200\n"
+"POT-Creation-Date: 2007-07-16 23:02+0200\n"
 "PO-Revision-Date: 2007-06-23 08:54+0200\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -126,8 +126,8 @@ msgstr ""
 msgid "Highlight last event entry"
 msgstr "Mettre en surbrillance le dernier évènement"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:470
-#: ../plugins/interface_view.py:753
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -185,8 +185,8 @@ msgstr "<b>Texte</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>inconnu</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:877
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
+#: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>(aucune description)</i>"
 
@@ -254,7 +254,7 @@ msgstr "Valeur actuelle"
 msgid "Des_ktop"
 msgstr "_Bureau"
 
-#: ../plugins/interface_view.glade.h:30 ../plugins/interface_view.py:475
+#: ../plugins/interface_view.glade.h:30 ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "Description"
 
@@ -414,36 +414,36 @@ msgstr "Navigateur d'interface"
 msgid "Allows viewing of various interface properties"
 msgstr "Permet de consulter différentes propriétés de l'interface"
 
-#: ../plugins/interface_view.py:205 ../plugins/interface_view.py:206
-#: ../plugins/interface_view.py:207
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (non implémenté)"
 
-#: ../plugins/interface_view.py:480
+#: ../plugins/interface_view.py:460
 msgid "Key binding"
 msgstr "Raccourci clavier"
 
-#: ../plugins/interface_view.py:760 ../plugins/interface_view.py:1041
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:767
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Début"
 
-#: ../plugins/interface_view.py:774
+#: ../plugins/interface_view.py:754
 msgid "End"
 msgstr "Fin"
 
-#: ../plugins/interface_view.py:944
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Trop de fils sélectionnables"
 
-#: ../plugins/interface_view.py:1036
+#: ../plugins/interface_view.py:1019
 msgid "Content type"
 msgstr "Type de contenu"
 
-#: ../plugins/interface_view.py:1312 ../plugins/interface_view.py:1314
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(éditable)</i>"
 
@@ -483,7 +483,15 @@ msgstr "Le script actuel sera perdu."
 msgid "Confirm clear"
 msgstr "Confirmation de la suppression"
 
-#: ../src/lib/accerciser/accerciser.py:117
+#: ../src/lib/accerciser/accerciser.py:94
+msgid "_Preferences..."
+msgstr "_Préférences"
+
+#: ../src/lib/accerciser/accerciser.py:96
+msgid "_Contents"
+msgstr "_Contenu"
+
+#: ../src/lib/accerciser/accerciser.py:133
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -492,7 +500,7 @@ msgstr ""
 "activer l'accessibilité du bureau pour corriger ce problème. Voulez-vous "
 "l'activer maintenant ?"
 
-#: ../src/lib/accerciser/accerciser.py:132
+#: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
 msgstr "Note : les changements prendrons effet à la déconnexion."
 
@@ -536,41 +544,13 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Maj"
 
-#: ../src/lib/accerciser/main_window.py:72
+#: ../src/lib/accerciser/main_window.py:70
 msgid "Top panel"
 msgstr "Panneau supérieur"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:71
 msgid "Bottom panel"
 msgstr "Panneau inférieur"
-
-#: ../src/lib/accerciser/main_window.py:113
-msgid "_File"
-msgstr "_Fichier"
-
-#: ../src/lib/accerciser/main_window.py:116
-msgid "_Edit"
-msgstr "É_dition"
-
-#: ../src/lib/accerciser/main_window.py:117
-msgid "_Preferences..."
-msgstr "_Préférences"
-
-#: ../src/lib/accerciser/main_window.py:119
-msgid "_Bookmarks"
-msgstr "_Marque-pages"
-
-#: ../src/lib/accerciser/main_window.py:120
-msgid "_View"
-msgstr "_Affichage"
-
-#: ../src/lib/accerciser/main_window.py:121
-msgid "_Help"
-msgstr "Aid_e"
-
-#: ../src/lib/accerciser/main_window.py:122
-msgid "_Contents"
-msgstr "_Contenu"
 
 #: ../src/lib/accerciser/prefs_dialog.py:30
 msgid "accerciser Preferences"
@@ -601,57 +581,59 @@ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "La nouvelle licence BSD, voir les fichiers COPYING et NOTICE pour les détails."
+msgstr ""
+"La nouvelle licence BSD, voir les fichiers COPYING et NOTICE pour les "
+"détails."
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "Web site"
 msgstr "Site Web"
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
 msgstr "_Ajouter un marque-page"
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
 msgstr "Marque-page accessible sélectionné."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
 msgstr "É_diter les marque-pages..."
 
-#: ../src/lib/accerciser/bookmarks.py:70
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
 msgstr "Gestion des marque-pages"
 
-#: ../src/lib/accerciser/bookmarks.py:315
+#: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
 msgstr "Éditer les marque-pages..."
 
-#: ../src/lib/accerciser/bookmarks.py:415
+#: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
 msgstr "Titre"
 
-#: ../src/lib/accerciser/bookmarks.py:423
+#: ../src/lib/accerciser/bookmarks.py:435
 msgid "Application"
 msgstr "Application"
 
-#: ../src/lib/accerciser/bookmarks.py:431
+#: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
 msgstr "Chemin"
 
-#: ../src/lib/accerciser/bookmarks.py:500
+#: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
 msgstr "Ajouter un marque-page..."
 
-#: ../src/lib/accerciser/bookmarks.py:513
+#: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
 msgstr "Titre :"
 
-#: ../src/lib/accerciser/bookmarks.py:516
+#: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
 msgstr "Application :"
 
-#: ../src/lib/accerciser/bookmarks.py:519
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
 msgstr "Chemin :"
 
@@ -667,19 +649,23 @@ msgstr "Vue"
 msgid "No view"
 msgstr "Sans vue"
 
-#: ../src/lib/accerciser/plugin/view.py:453
+#: ../src/lib/accerciser/plugin/view.py:369
+msgid "_Single plugins view"
+msgstr "Vue _unique des greffons"
+
+#: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
 msgstr "Vue du greffon"
 
-#: ../src/lib/accerciser/plugin/view.py:456
+#: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Vue du greffon (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:764
+#: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
 msgstr "<i>_Nouvelle vue...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:820
+#: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
 msgstr "Nouvelle vue..."
