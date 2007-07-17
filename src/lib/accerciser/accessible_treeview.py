@@ -490,10 +490,10 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       # Bad karma
       return
     if self.model.isInModel(event.source):
-      path = self.model.getAccPath(event.source)
-      if path:
+      try:
+        path = self.model.getAccPath(event.source)
         iter = self.model.get_iter(path)
-      else:
+      except:
         iter = None
       if (event.source == self.desktop) or \
             (path and self.model[path][COL_FILLED]):

@@ -1087,8 +1087,11 @@ class MultiViewModel(list, BaseViewModel):
                          gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE)
         self.set_default_response(gtk.RESPONSE_OK)
         completion = gtk.EntryCompletion()
-        completion.set_model(self.view_manager)
-        completion.set_text_column(self.view_manager.COL_NAME)
+        complete_model = gtk.ListStore(str)
+        for view in self.view_manager:
+          complete_model.append([view.view_name])
+        completion.set_model(complete_model)
+        completion.set_text_column(0)
         self.entry = gtk.Entry()
         self.entry.set_completion(completion)
         self.entry.connect('activate', self._onEntryActivate)
