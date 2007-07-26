@@ -24,8 +24,14 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
 AM_GLIB_GNU_GETTEXT
 
-dnl == intltool check ==
-IT_PROG_INTLTOOL([0.35.0])
+# [WDW - comment this out for now to allow the accerciser autogen to work.
+# The nesting of autogen directories (this one and the accerciser one above)
+# seems to wreak havoc with intltool.  Since macaroon currently does not
+# have any i18n/l10n, we'll just disable this until we can get macaroon
+# checked in as its own module.]
+#
+#dnl == intltool check ==
+#IT_PROG_INTLTOOL([0.35.0])
 
 dnl == generate makefiles ==
 AC_OUTPUT([
