@@ -1,5 +1,11 @@
 2007-07-26  Willie Walker  <william.walker@sun.com>
 
+	* macaroon/record/script_factory.py: add simple comment
+	before WaitForFocus lines to give us a hint about the
+	name of the object we'd like to get focus.
+
+2007-07-26  Willie Walker  <william.walker@sun.com>
+
 	* configure.in: uncomment out IT_PROG_INTLTOOL([0.35.0]) line
           from before and add in AC_CONFIG_AUX_DIR(./) line.  Seems to
 	  solve the problem nicely (thanks Eitan!).  Also changed

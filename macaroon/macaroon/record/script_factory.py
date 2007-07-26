@@ -119,6 +119,7 @@ class SequenceFactory(ScriptFactory):
       'sequence.append(WaitForWindowActivate("%s",None))\n' % \
         event.source.name)
   def focusCommand(self, event):
+    self.commands_queue.put_nowait('# "%s"\n' % event.source.name)
     self.commands_queue.put_nowait(
       '#sequence.append(WaitForFocus(%s,pyatspi.%s))\n' % \
         (pyatspi.getPath(event.source), repr(event.source.getRole())))
