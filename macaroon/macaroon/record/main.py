@@ -15,6 +15,10 @@ import script_factory
 import gtk, gobject
 import gtksourceview, pango
 from Queue import Queue
+from macaroon.playback.playback_sequence import MacroSequence
+
+MacroSequence.startReally = MacroSequence.start
+MacroSequence.start = lambda x: None
 
 from about import MacaroonAboutDialog
 
@@ -31,13 +35,13 @@ class Main:
     status_icon.connect('activate', self._onActivate)
     status_icon.connect('popup-menu', self._onPopup)
     status_icon.set_tooltip(self.start_tooltip)
-    self.script_buffer = ScriptBuffer()
+    self.ui_manager = self._newUIManager()
+    self.script_buffer = ScriptBuffer(self.ui_manager)
     self.script_buffer.clearBuffer()
     self.script_buffer.connect('notify::recording', 
                                self._onRecordChange, status_icon)
     self.macro_preview = None
-    self.ui_manager = self._newUIManager()
-    gtk.main()
+    pyatspi.Registry.start()
 
   def _onRecordChange(self, gobject, pspec, status_icon):
     is_recording = self.script_buffer.get_property('recording')
@@ -62,11 +66,8 @@ class Main:
     popup_ui = '''
 <ui>
 <popup>
-    <menu action="ScriptType">
-      <menuitem action="NativeScript" />
-      <menuitem action="DogtailScript" />
-      <menuitem action="LDTPScript" />
-     </menu>
+    <placeholder name="ScriptType">
+    </placeholder>
     <separator />
     <menuitem action="About" />
     <separator />
@@ -78,14 +79,9 @@ class Main:
         ('ScriptType', None, 'Script type'),
         ('Quit', gtk.STOCK_QUIT, _('_Quit'), None, None, self._onQuit),
         ('About', gtk.STOCK_ABOUT, _('_About'), None, None, self._onAbout)])
-    # Make it insensitive, for now.
-    action = main_action_group.get_action('ScriptType')
-    action.set_sensitive(False)
     ui_manager = gtk.UIManager()
     ui_manager.add_ui_from_string(popup_ui)
     ui_manager.insert_action_group(main_action_group, 0)
-    ui_manager.insert_action_group(
-      self.script_buffer.script_type_actions, 0)
     return ui_manager
 
   def _onPopup(self, status_icon, button, activate_time):
@@ -94,7 +90,7 @@ class Main:
                button, activate_time, status_icon)
     
   def _onQuit(self, action):
-    gtk.main_quit()
+    pyatspi.Registry.stop()
 
   def _onAbout(self, action):
     '''
@@ -131,7 +127,8 @@ class MacroPreview(gtk.Window):
     bbox.set_layout(gtk.BUTTONBOX_START)
     for label, callback in [(gtk.STOCK_SAVE_AS, self._onSave),
                             (gtk.STOCK_CLEAR, self._onClear),
-                            (gtk.STOCK_MEDIA_RECORD, self._onRecord)]:
+                            (gtk.STOCK_MEDIA_RECORD, self._onRecord),
+                            (gtk.STOCK_MEDIA_PLAY, self._onPlay)]:
       button = gtk.Button(label)
       button.set_use_stock(True)
       button.connect('clicked', callback)
@@ -141,6 +138,15 @@ class MacroPreview(gtk.Window):
                                    self._onRecordChange, button)
     vbox.pack_start(bbox, False)
     self.add(vbox)
+
+  def _onPlay(self, button):
+    script = self.script_buffer.get_text(self.script_buffer.get_start_iter(),
+                                         self.script_buffer.get_end_iter())
+    script_scope = {}
+    exec(script, script_scope)
+    sequence = script_scope.get('sequence')
+    if sequence:
+      sequence.startReally(False)
 
   def _onRecordChange(self, gobject, pspec, button):
     is_recording = self.script_buffer.get_property('recording')
@@ -225,20 +231,36 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
                   'Is recording', 
                   'True if script buffer is recording',
                   False, gobject.PARAM_READWRITE)}
-  def __init__(self):
+  factory_mapping = {'Level1' : script_factory.Level1SequenceFactory,
+                     'Level2' : script_factory.Level2SequenceFactory}
+  def __init__(self, uimanager):
     gtksourceview.SourceBuffer.__init__(self)
     lm = gtksourceview.SourceLanguagesManager()
     lang = lm.get_language_from_mime_type('text/x-python')
     self.set_language(lang)
     self.set_highlight(True)
+    self.script_factory = self.factory_mapping['Level1']()
+    self._recording = False
+    self._uimanager = uimanager
+    self._addToUIManager()
+
+  def _addToUIManager(self):
     self.script_type_actions = gtk.ActionGroup('ScriptTypes')
     self.script_type_actions.add_radio_actions(
-        (('NativeScript', None, 'Native format', None, None),
-         ('DogtailScript', None, 'Dogtail format', None, None),
-         ('LDTPScript', None, 'LDTP format', None, None)),
-        0, self._onChange)
-    self.script_factory = script_factory.SequenceFactory()
-    self._recording = False
+        (('Level1', None, 'Level 1', None, None),
+         ('Level2', None, 'Level 2', None, None)),
+        1, self._onChange)
+    script_type_ui = '''
+<ui>
+<popup>
+    <placeholder name="ScriptType">
+      <menuitem action="Level1" />
+      <menuitem action="Level2" />
+     </placeholder>
+</popup>
+</ui>'''
+    self._uimanager.add_ui_from_string(script_type_ui)
+    self._uimanager.insert_action_group(self.script_type_actions, 0)
 
   def startRecord(self):
     pyatspi.Registry.registerEventListener(self._onWindowActivate, 
@@ -257,7 +279,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     self.set_property('recording', True)
 
   def stopRecord(self):
-    pyatspi.Registry.deregisterEventListener(self._onWindowActivate, 
+    pyatspi.Registry.deregisterEventListener(self._onWindowActivate,
                                              'window:activate')
     pyatspi.Registry.deregisterEventListener(self._onFocus, 
                                              'focus')
@@ -341,5 +363,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
       return self._recording
 
   def _onChange(self, action, current):
-    print 'changed', action, current
-
+    factory = self.factory_mapping.get(current.get_name(), 
+                                       script_factory.Level1SequenceFactory)
+    print 'using', factory
+    self.script_factory = factory()

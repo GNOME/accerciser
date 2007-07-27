@@ -73,7 +73,7 @@ class MacaroonAboutDialog(gtk.AboutDialog):
     Callback for dialog responses, always destroy it.
     
     @param dialog: This dialog.
-    @type dialog: L{AccerciserAboutDialog}
+    @type dialog: L{MacaroonAboutDialog}
     @param response_id: Response ID recieved.
     @type response_id: integer
     '''

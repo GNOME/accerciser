@@ -1,5 +1,21 @@
 2007-07-27  Eitan Isaacson  <eitan@ascender.com>
 
+	* macaroon/playback/keypress_mimic.py: Added smarter sequence
+	steps for key combos and string typing.
+	* macaroon/playback/playback_sequence.py: Sequence steps now
+	inform the sequence object that they finished with a signal. Added
+	event caching in the sequence class so a focus event could be
+	anticipated by the sequence step before it.
+	* macaroon/record/about.py: s/Accerciser/Macaroon/
+	* macaroon/record/main.py: Added playback capability, not
+	perfect. Added capability to switch between "level 1" and "level
+	2" recording, level 1 means recording each descreet 	
+	key press and release, level 2 tries to make compound steps out of
+	key presses.
+	* macaroon/record/script_factory.py: Added "level 2" scripts.
+
+2007-07-27  Eitan Isaacson  <eitan@ascender.com>
+
 	* macaroon/playback/keyboard_mimic.py: Increased default timout
 	in WaitForWindowActivate to 30 seconds.
 

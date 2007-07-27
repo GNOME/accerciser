@@ -89,7 +89,7 @@ class ScriptFactory(object):
 
 class SequenceFactory(ScriptFactory):
   import_line = \
-      'from macaroon.playback.keypress_mimic import *\n\nsequence = MacroSequence(True)'
+      'from macaroon.playback.keypress_mimic import *\n\nsequence = MacroSequence()'
   terminate_line = 'sequence.start()'
   def __init__(self):
     '''
@@ -97,13 +97,56 @@ class SequenceFactory(ScriptFactory):
     '''
     ScriptFactory.__init__(self)
     self._time = 0
-    self._km = gtk.gdk.keymap_get_default()
   def _getDelta(self):
     current_time = time()
     delta = current_time - self._time
     self._time = current_time
     if delta == current_time: delta = 0
     return int(delta*1000)
+
+class Level2SequenceFactory(SequenceFactory):
+  def __init__(self):
+    SequenceFactory.__init__(self)
+    self.typed_text = ''
+    self.last_focused = None
+    self.frame_name = ''
+
+  def keyPressCommand(self, event):
+    if event.id in self.MODIFIERS or \
+          event.event_string.startswith('ISO'):
+      return
+    if event.modifiers in (0, gtk.gdk.SHIFT_MASK) and \
+          gtk.gdk.keyval_to_unicode(event.id):
+      self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.id))
+    else:
+      if self.frame_name:
+        self.commands_queue.put_nowait(
+          'sequence.append(WaitForWindowActivate("%s",None))\n' % \
+            self.frame_name)
+        self.frame_name = ''
+      if self.last_focused:
+        self.commands_queue.put_nowait('# "%s"\n' % self.last_focused.name)
+        self.commands_queue.put_nowait(
+          '#sequence.append(WaitForFocus        (%s, pyatspi.%s))\n' % \
+            (pyatspi.getPath(self.last_focused), 
+             repr(self.last_focused.getRole())))
+        self.last_focused = None
+      if self.typed_text:
+        self.commands_queue.put_nowait(
+          'sequence.append(TypeAction           ("%s"))\n' % \
+                                         self.typed_text)
+        self.typed_text = ''
+      self.commands_queue.put_nowait(
+        'sequence.append(KeyComboAction         ("%s"))\n' % \
+          gtk.accelerator_name(event.id, event.modifiers))
+
+  def focusCommand(self, event):
+    self.last_focused = event.source
+
+  def windowActivateCommand(self, event):
+    self.frame_name = event.source.name
+
+class Level1SequenceFactory(SequenceFactory):
   def keyPressCommand(self, event):
     delta = self._getDelta()
     self.commands_queue.put_nowait(

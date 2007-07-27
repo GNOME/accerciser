@@ -15,6 +15,8 @@ import pyatspi
 import gtk
 from playback_sequence import *
 
+# Highest granularity, define timing for every single press and release
+
 # Minimum time before a key press
 press_min = 300
 # Maximum time before a key release
@@ -26,6 +28,7 @@ class KeyPressAction(AtomicAction):
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
   def _keyPress(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_PRESS)
+    self.stepDone()
 
 class KeyReleaseAction(AtomicAction):
   def __init__(self, delta_time, key_code):
@@ -33,29 +36,80 @@ class KeyReleaseAction(AtomicAction):
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
   def _keyRelease(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_RELEASE)
+    self.stepDone()
+
+
+# A bit smarter about common interactions.
+
+keystroke_interval = 200
+mod_key_code_mappings = {
+  'GDK_CONTROL_MASK' : 37,
+  'GDK_MOD1_MASK' : 64,
+  'GDK_LOCK_MASK' : 66,
+  'GDK_SHIFT_MASK' : 50
+  }
+
+class KeyComboAction(AtomicAction):
+  def __init__(self, key_combo, delta_time=0):    
+    keyval, modifiers = gtk.accelerator_parse(key_combo)
+    AtomicAction.__init__(self, delta_time, self._doCombo, keyval, modifiers)
+  def _doCombo(self, keyval, modifiers):
+    interval = 0
+    mod_hw_codes = map(mod_key_code_mappings.get, modifiers.value_names)
+    for mod_hw_code in mod_hw_codes:
+      gobject.timeout_add(interval, self._keyPress, mod_hw_code)
+      interval += keystroke_interval
+    gobject.timeout_add(interval, self._keyPressRelease, keyval)
+    interval += keystroke_interval
+    mod_hw_codes.reverse()
+    for mod_hw_code in mod_hw_codes:
+      gobject.timeout_add(interval, self._keyRelease, mod_hw_code)
+      interval += keystroke_interval
+    gobject.timeout_add(interval, self.stepDone)
+  def _keyPress(self, hw_code):
+    pyatspi.Registry.generateKeyboardEvent(hw_code, None, pyatspi.KEY_PRESS)
+    return False
+  def _keyRelease(self, hw_code):
+    pyatspi.Registry.generateKeyboardEvent(hw_code, None, pyatspi.KEY_RELEASE)
+    return False
+  def _keyPressRelease(self, keyval):
+    pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
+    return False
+
+class TypeAction(AtomicAction):
+  def __init__(self, string_to_type, delta_time=0):    
+    AtomicAction.__init__(self, delta_time, self._doType, string_to_type)
+  def _doType(self, string_to_type):
+    interval = 0
+    for char in string_to_type:
+      keyval = gtk.gdk.unicode_to_keyval(ord(char))
+      gobject.timeout_add(interval, self._charType, keyval)
+      interval += keystroke_interval
+    gobject.timeout_add(interval, self.stepDone)
+  def _charType(self, keyval):
+    pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
+    return False
+
+# Things we might want to wait for.
 
 class WaitForWindowActivate(WaitAction):
   def __init__(self, frame_re, application_re, timeout=30000):
     WaitAction.__init__(self, timeout)
     self._frame_re = frame_re
     self._application_re = application_re
-  def listenFor(self):
-    pyatspi.Registry.registerEventListener(self._onWindowActivate, 
-                                           'window:activate')
-  def _onWindowActivate(self, event):
+    self.wait_for = ['window:activate']
+  def onEvent(self, event):
     if event.source.name == self._frame_re:
-      self.endWait()
+      self.stepDone()
 
 class WaitForFocus(WaitAction):
   def __init__(self, acc_path, acc_role, timeout=5000):
     WaitAction.__init__(self, timeout)
     self._acc_path = acc_path
     self._acc_role = acc_role
-  def listenFor(self):
-    pyatspi.Registry.registerEventListener(self._onFocus, 
-                                           'focus')
-  def _onFocus(self, event):
+    self.wait_for = ['focus']
+  def onEvent(self, event):
     if (self._acc_path is None or 
         self._acc_path == pyatspi.getPath(event.source)) and \
         (self._acc_role is None or self._acc_role == event.source.getRole()):
-      self.endWait()
+      self.stepDone()
