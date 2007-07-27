@@ -35,7 +35,7 @@ class KeyReleaseAction(AtomicAction):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_RELEASE)
 
 class WaitForWindowActivate(WaitAction):
-  def __init__(self, frame_re, application_re, timeout=5000):
+  def __init__(self, frame_re, application_re, timeout=30000):
     WaitAction.__init__(self, timeout)
     self._frame_re = frame_re
     self._application_re = application_re
