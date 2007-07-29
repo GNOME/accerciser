@@ -14,13 +14,13 @@
 import gobject, pyatspi
 
 class SequenceStep(gobject.GObject):
-  __gsignals__ = {'step-done' : (gobject.SIGNAL_RUN_FIRST, 
+  __gsignals__ = {'done' : (gobject.SIGNAL_RUN_FIRST, 
                                  gobject.TYPE_NONE, ())}
   delta_time = 0
   def __init__(self):
     self.__gobject_init__()
   def stepDone(self):
-    self.emit('step-done')
+    self.emit('done')
     return False
 
 class AtomicAction(SequenceStep):
@@ -52,28 +52,36 @@ class WaitAction(SequenceStep):
     return False
   def onEvent(self, event):
     self.stepDone()
+  def __str__(self):
+    return 'Wait for', ','.join(self.wait_for)
 
-class MacroSequence(list):
+class MacroSequence(gobject.GObject):
+  __gsignals__ = {'step-done' : (gobject.SIGNAL_RUN_FIRST, 
+                                 gobject.TYPE_NONE, (gobject.TYPE_INT,))} 
   def __init__(self):
+    self.__gobject_init__()
     self._loop = None
     self._current_step = 0
     self._current_handler = 0
+    self.steps = []
     self._anticipated_event_types = []
     self._anticipated_events = []
+  def append(self, step):
+    self.steps.append(step)
   def start(self, embedded_loop=True):
     self._iterAction()
     if embedded_loop:
       self._loop = gobject.MainLoop()
       self._loop.run()
   def _iterAction(self):
-    if len(self) <= self._current_step:
+    if len(self.steps) <= self._current_step:
       if self._loop is not None:
         self._loop.quit()
       return
-    action = self[self._current_step]
+    action = self.steps[self._current_step]
 
     try:
-      next_action = self[self._current_step + 1]
+      next_action = self.steps[self._current_step + 1]
     except IndexError:
       next_action = None
 
@@ -85,13 +93,14 @@ class MacroSequence(list):
       self._anticipated_event_types = []
     pyatspi.Registry.registerEventListener(self._onAnticipatedEvent,
                                            *self._anticipated_event_types)
-    self._current_handler = action.connect('step-done', self._onStepDone)
+    self._current_handler = action.connect('done', self._onStepDone)
 
     gobject.timeout_add(action.delta_time, self._doAction, action)
   def _onAnticipatedEvent(self, event):
     self._anticipated_events.append(event)
   def _onStepDone(self, action):
     action.disconnect(self._current_handler)
+    self.emit('step-done', self._current_step)
     self._current_step += 1
     self._iterAction()
   def _doAction(self, action):

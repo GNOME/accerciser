@@ -14,6 +14,7 @@
 import pyatspi
 import gtk
 from playback_sequence import *
+_ = lambda x: x
 
 # Highest granularity, define timing for every single press and release
 
@@ -23,20 +24,26 @@ press_min = 300
 release_max = 400
 
 class KeyPressAction(AtomicAction):
-  def __init__(self, delta_time, key_code):
+  def __init__(self, delta_time, key_code, key_name=None):
     if delta_time < press_min: delta_time = press_min
+    self._key_name = key_name
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
   def _keyPress(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_PRESS)
     self.stepDone()
+  def __str__(self):
+    return _('Key press %s') % self._key_name or 'a key'
 
 class KeyReleaseAction(AtomicAction):
-  def __init__(self, delta_time, key_code):
+  def __init__(self, delta_time, key_code, key_name=None):
     if delta_time > release_max: delta_time = release_max
+    self._key_name = key_name
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
   def _keyRelease(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_RELEASE)
     self.stepDone()
+  def __str__(self):
+    return _('Key release %s') % self._key_name or 'a key'
 
 
 # A bit smarter about common interactions.
@@ -52,6 +59,7 @@ mod_key_code_mappings = {
 class KeyComboAction(AtomicAction):
   def __init__(self, key_combo, delta_time=0):    
     keyval, modifiers = gtk.accelerator_parse(key_combo)
+    self._key_combo = key_combo
     AtomicAction.__init__(self, delta_time, self._doCombo, keyval, modifiers)
   def _doCombo(self, keyval, modifiers):
     interval = 0
@@ -75,9 +83,12 @@ class KeyComboAction(AtomicAction):
   def _keyPressRelease(self, keyval):
     pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
     return False
+  def __str__(self):
+    return _('Press %s') % self._key_combo
 
 class TypeAction(AtomicAction):
   def __init__(self, string_to_type, delta_time=0):    
+    self._string_to_type = string_to_type
     AtomicAction.__init__(self, delta_time, self._doType, string_to_type)
   def _doType(self, string_to_type):
     interval = 0
@@ -89,6 +100,8 @@ class TypeAction(AtomicAction):
   def _charType(self, keyval):
     pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
     return False
+  def __str__(self):
+    return _('Type %s') % self._string_to_type
 
 # Things we might want to wait for.
 
@@ -101,6 +114,8 @@ class WaitForWindowActivate(WaitAction):
   def onEvent(self, event):
     if event.source.name == self._frame_re:
       self.stepDone()
+  def __str__(self):
+    return _('Wait for window %s to be focused') % self._frame_re
 
 class WaitForFocus(WaitAction):
   def __init__(self, acc_path, acc_role, timeout=5000):
@@ -113,3 +128,5 @@ class WaitForFocus(WaitAction):
         self._acc_path == pyatspi.getPath(event.source)) and \
         (self._acc_role is None or self._acc_role == event.source.getRole()):
       self.stepDone()
+  def __str__(self):
+    return _('Wait for %s to be focused') % self._acc_role

@@ -150,13 +150,13 @@ class Level1SequenceFactory(SequenceFactory):
   def keyPressCommand(self, event):
     delta = self._getDelta()
     self.commands_queue.put_nowait(
-      'sequence.append(KeyPressAction       (%5d,%4d)) # Press %s\n' % \
-        (delta, event.hw_code, event.event_string))
+      'sequence.append(KeyPressAction       (%5d,%4d,"%s")) # Press %s\n' % \
+        (delta, event.hw_code, event.event_string, event.event_string))
   def keyReleaseCommand(self, event):
     delta = self._getDelta()
     self.commands_queue.put_nowait(
-      'sequence.append(KeyReleaseAction     (%5d,%4d)) # Release %s\n' % \
-        (delta, event.hw_code, event.event_string))
+      'sequence.append(KeyReleaseAction     (%5d,%4d,"%s")) # Release %s\n' % \
+        (delta, event.hw_code, event.event_string, event.event_string))
   def windowActivateCommand(self, event):
     self.commands_queue.put_nowait(
       'sequence.append(WaitForWindowActivate("%s",None))\n' % \

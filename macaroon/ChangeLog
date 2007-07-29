@@ -1,3 +1,14 @@
+2007-07-29  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/keypress_mimic.py: Added English strings to
+	represent each action.
+	* macaroon/playback/playback_sequence.py: Sequence object now
+	emits a signal on each complete step.
+	* macaroon/record/main.py: Added progress bar with useful
+	messages on script playback.
+	* macaroon/record/script_factory.py: Key names are now in the
+	actual constructor for key press and release actions.
+
 2007-07-27  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/playback/keypress_mimic.py: Added smarter sequence

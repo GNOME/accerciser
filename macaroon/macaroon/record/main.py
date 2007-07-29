@@ -137,6 +137,8 @@ class MacroPreview(gtk.Window):
         self.script_buffer.connect('notify::recording', 
                                    self._onRecordChange, button)
     vbox.pack_start(bbox, False)
+    self.progress_bar = gtk.ProgressBar()
+    vbox.pack_start(self.progress_bar, False)
     self.add(vbox)
 
   def _onPlay(self, button):
@@ -145,8 +147,23 @@ class MacroPreview(gtk.Window):
     script_scope = {}
     exec(script, script_scope)
     sequence = script_scope.get('sequence')
-    if sequence:
+    sequence.connect('step-done', self._onSeqStepDone, button)
+    if sequence and len(sequence.steps) > 0:
+      button.set_sensitive(False)
+      first_action = sequence.steps[0]
+      self.progress_bar.set_fraction(0.0)
+      self.progress_bar.set_text(str(first_action))
       sequence.startReally(False)
+
+  def _onSeqStepDone(self, sequence, step, button):
+    fraction = float(step + 1)/len(sequence.steps)
+    self.progress_bar.set_fraction(fraction)
+    if fraction >= 1.0:
+      button.set_sensitive(True)
+      self.progress_bar.set_text(_('Done'))
+    else:
+      action = sequence.steps[step + 1]
+      self.progress_bar.set_text(str(action))
 
   def _onRecordChange(self, gobject, pspec, button):
     is_recording = self.script_buffer.get_property('recording')
