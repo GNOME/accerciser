@@ -19,14 +19,15 @@ _ = lambda x: x
 
 # Highest granularity, define timing for every single press and release
 
-# Minimum time before a key press
-press_min = 300
+# Minimum delta time
+min_delta = 50
+
 # Maximum time before a key release
 release_max = 400
 
 class KeyPressAction(AtomicAction):
   def __init__(self, delta_time, key_code, key_name=None):
-    if delta_time < press_min: delta_time = press_min
+    if delta_time < min_delta: delta_time = min_delta
     self._key_name = key_name
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
   def _keyPress(self, key_code):
@@ -61,6 +62,7 @@ class KeyComboAction(AtomicAction):
   def __init__(self, key_combo, delta_time=0):    
     keyval, modifiers = gtk.accelerator_parse(key_combo)
     self._key_combo = key_combo
+    if delta_time < min_delta: delta_time = min_delta
     AtomicAction.__init__(self, delta_time, self._doCombo, keyval, modifiers)
   def _doCombo(self, keyval, modifiers):
     interval = 0
@@ -94,6 +96,7 @@ class TypeAction(AtomicAction):
       self.interval = interval
     else:
       self.interval = keystroke_interval
+    if delta_time < min_delta: delta_time = min_delta
     AtomicAction.__init__(self, delta_time, self._doType, string_to_type)
   def _doType(self, string_to_type):
     interval = 0
