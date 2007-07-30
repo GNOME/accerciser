@@ -87,15 +87,19 @@ class KeyComboAction(AtomicAction):
     return _('Press %s') % self._key_combo
 
 class TypeAction(AtomicAction):
-  def __init__(self, string_to_type, delta_time=0):    
+  def __init__(self, string_to_type, delta_time=0, interval=None):    
     self._string_to_type = string_to_type
+    if interval:
+      self.interval = interval
+    else:
+      self.interval = keystroke_interval
     AtomicAction.__init__(self, delta_time, self._doType, string_to_type)
   def _doType(self, string_to_type):
     interval = 0
     for char in string_to_type:
       keyval = gtk.gdk.unicode_to_keyval(ord(char))
       gobject.timeout_add(interval, self._charType, keyval)
-      interval += keystroke_interval
+      interval += self.interval 
     gobject.timeout_add(interval, self.stepDone)
   def _charType(self, keyval):
     pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
