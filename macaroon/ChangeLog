@@ -1,3 +1,14 @@
+2007-07-30  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/Makefile.am: Added utils.py.
+	* macaroon/playback/keypress_mimic.py: Look for pre-existing
+	active window before waiting.
+	* macaroon/playback/playback_sequence.py: Small refactor to allow
+	wait actions to override current state check.
+	* macaroon/playback/utils.py: Function for finding active window.
+	* macaroon/record/script_factory.py: Silly exception for
+	<Shift>Tab in sequnce level 2 recording.
+
 2007-07-30  Willie Walker  <william.walker@sun.com>
 
         * macaraoon/playback/keypress_mimic.py: add "interval" parameter

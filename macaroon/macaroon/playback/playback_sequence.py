@@ -19,8 +19,11 @@ class SequenceStep(gobject.GObject):
   delta_time = 0
   def __init__(self):
     self.__gobject_init__()
+    self.done = False
   def stepDone(self):
-    self.emit('done')
+    if not self.done:
+      self.done = True
+      self.emit('done')
     return False
 
 class AtomicAction(SequenceStep):
@@ -43,15 +46,24 @@ class WaitAction(SequenceStep):
     self._timeout = timeout
   def __call__(self, cached_events):
     if self.wait_for == []: return
-    for event in cached_events:
-      self.onEvent(event)
+    self._cached_events = cached_events
+    if self.checkExistingState(): return
     pyatspi.Registry.registerEventListener(self.onEvent, *self.wait_for)
     gobject.timeout_add(self._timeout, self._onTimeout)
+  def checkExistingState(self):
+    if not self.done:
+      for event in self._cached_events:
+        self.onEvent(event)
+    return self.done
   def _onTimeout(self):
     self.stepDone()
     return False
   def onEvent(self, event):
     self.stepDone()
+  def stepDone(self):
+    if not self.done:
+      pyatspi.Registry.deregisterEventListener(self.onEvent, *self.wait_for)
+    return SequenceStep.stepDone(self)
   def __str__(self):
     return 'Wait for', ','.join(self.wait_for)
 

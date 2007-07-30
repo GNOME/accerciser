@@ -14,6 +14,7 @@
 import pyatspi
 import gtk
 from playback_sequence import *
+import utils
 _ = lambda x: x
 
 # Highest granularity, define timing for every single press and release
@@ -115,9 +116,16 @@ class WaitForWindowActivate(WaitAction):
     self._frame_re = frame_re
     self._application_re = application_re
     self.wait_for = ['window:activate']
-  def onEvent(self, event):
-    if event.source.name == self._frame_re:
+  def checkExistingState(self):
+    active_frame = utils.getActiveFrame()
+    if self.isRightFrame(active_frame):
       self.stepDone()
+    return WaitAction.checkExistingState(self)
+  def onEvent(self, event):
+    if self.isRightFrame(event.source):
+      self.stepDone()
+  def isRightFrame(self, acc):
+    return acc is not None and acc.name == self._frame_re
   def __str__(self):
     return _('Wait for window %s to be focused') % self._frame_re
 
@@ -128,9 +136,10 @@ class WaitForFocus(WaitAction):
     self._acc_role = acc_role
     self.wait_for = ['focus']
   def onEvent(self, event):
-    if (self._acc_path is None or 
-        self._acc_path == pyatspi.getPath(event.source)) and \
-        (self._acc_role is None or self._acc_role == event.source.getRole()):
+    if (self._acc_path is None or \
+          self._acc_path == pyatspi.getPath(event.source)) and \
+          (self._acc_role is None or self._acc_role == event.source.getRole()):
       self.stepDone()
   def __str__(self):
     return _('Wait for %s to be focused') % self._acc_role
+

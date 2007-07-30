@@ -113,7 +113,8 @@ class Level2SequenceFactory(SequenceFactory):
 
   def keyPressCommand(self, event):
     if event.id in self.MODIFIERS or \
-          event.event_string.startswith('ISO'):
+          (event.event_string.startswith('ISO') and \
+             event.event_string != 'ISO_Left_Tab'):
       return
     if event.modifiers in (0, gtk.gdk.SHIFT_MASK) and \
           gtk.gdk.keyval_to_unicode(event.id):
