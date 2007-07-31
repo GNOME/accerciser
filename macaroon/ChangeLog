@@ -1,3 +1,11 @@
+2007-07-31  Willie Walker  <william.walker@sun.com>
+
+	* macaroon/playback/keypress_mimic.py, 
+	macaroon/playback/playback_sequence.py: add event, acc_name,
+	acc_path, and acc_role parameters to WaitAction and extend
+	its onEventMethod to check these.  Modify WaitForWindowActivate
+	and WaitForFocus classes to use the new WaitAction superclass.
+
 2007-07-30  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/playback/keypress_mimic.py: Renamed press_min to min_delta.

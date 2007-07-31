@@ -40,9 +40,12 @@ class CallableAction(AtomicAction):
     AtomicAction.__init__(self, 0, func, *args, **kwargs)
 
 class WaitAction(SequenceStep):
-  wait_for = []
-  def __init__(self, timeout):
+  def __init__(self, event, acc_name, acc_path, acc_role, timeout):
     SequenceStep.__init__(self)
+    self.wait_for = [event]
+    self._acc_name = acc_name
+    self._acc_path = acc_path
+    self._acc_role = acc_role
     self._timeout = timeout
   def __call__(self, cached_events):
     if self.wait_for == []: return
@@ -59,7 +62,13 @@ class WaitAction(SequenceStep):
     self.stepDone()
     return False
   def onEvent(self, event):
-    self.stepDone()
+    if (self._acc_name is None or \
+          self._acc_name == event.source.name) and \
+       (self._acc_path is None or \
+          self._acc_path == pyatspi.getPath(event.source)) and \
+       (self._acc_role is None or \
+          self._acc_role == event.source.getRole()):
+      self.stepDone()
   def stepDone(self):
     if not self.done:
       pyatspi.Registry.deregisterEventListener(self.onEvent, *self.wait_for)

@@ -114,11 +114,10 @@ class TypeAction(AtomicAction):
 # Things we might want to wait for.
 
 class WaitForWindowActivate(WaitAction):
-  def __init__(self, frame_re, application_re, timeout=30000):
-    WaitAction.__init__(self, timeout)
+  def __init__(self, frame_re, application_re=None, timeout=30000):
+    WaitAction.__init__(self, "window:activate", None, None, None, timeout)
     self._frame_re = frame_re
     self._application_re = application_re
-    self.wait_for = ['window:activate']
   def checkExistingState(self):
     active_frame = utils.getActiveFrame()
     if self.isRightFrame(active_frame):
@@ -133,16 +132,11 @@ class WaitForWindowActivate(WaitAction):
     return _('Wait for window %s to be focused') % self._frame_re
 
 class WaitForFocus(WaitAction):
-  def __init__(self, acc_path, acc_role, timeout=5000):
-    WaitAction.__init__(self, timeout)
-    self._acc_path = acc_path
-    self._acc_role = acc_role
-    self.wait_for = ['focus']
-  def onEvent(self, event):
-    if (self._acc_path is None or \
-          self._acc_path == pyatspi.getPath(event.source)) and \
-          (self._acc_role is None or self._acc_role == event.source.getRole()):
-      self.stepDone()
+  def __init__(self,
+               acc_name=None,
+               acc_path=None,
+               acc_role=None,
+               timeout=5000):
+    WaitAction.__init__(self, "focus:", acc_name, acc_path, acc_role, timeout)
   def __str__(self):
     return _('Wait for %s to be focused') % self._acc_role
-
