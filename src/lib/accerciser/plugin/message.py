@@ -211,8 +211,12 @@ class PluginMessage(gtk.Frame):
     self.action_area.set_homogeneous(True)
     tooltip = gtk.Tooltips()
     tooltip.force_window()
-    tooltip.tip_window.ensure_style()
-    self.message_style = tooltip.tip_window.rc_get_style()
+    # A temporary measure for bug #460071.
+    if tooltip.tip_window is not None:
+      tooltip.tip_window.ensure_style()
+      self.message_style = tooltip.tip_window.rc_get_style()
+    else:
+      self.message_style = self.rc_get_style()
     event_box = gtk.EventBox()
     event_box.set_style(self.message_style)
     self.add(event_box)
