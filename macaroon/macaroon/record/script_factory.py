@@ -112,6 +112,7 @@ class Level2SequenceFactory(SequenceFactory):
     self.frame_name = ''
 
   def keyPressCommand(self, event):
+    print event.event_string
     if event.id in self.MODIFIERS or \
           (event.event_string.startswith('ISO') and \
              event.event_string != 'ISO_Left_Tab'):
@@ -126,10 +127,10 @@ class Level2SequenceFactory(SequenceFactory):
             self.frame_name)
         self.frame_name = ''
       if self.last_focused:
-        self.commands_queue.put_nowait('# "%s"\n' % self.last_focused.name)
         self.commands_queue.put_nowait(
-          '#sequence.append(WaitForFocus        (%s, pyatspi.%s))\n' % \
-            (pyatspi.getPath(self.last_focused), 
+          '#sequence.append(WaitForFocus        ("%s", %s, pyatspi.%s))\n' % \
+            (self.last_focused.name,
+             pyatspi.getPath(self.last_focused), 
              repr(self.last_focused.getRole())))
         self.last_focused = None
       if self.typed_text:
@@ -163,10 +164,10 @@ class Level1SequenceFactory(SequenceFactory):
       'sequence.append(WaitForWindowActivate("%s",None))\n' % \
         event.source.name)
   def focusCommand(self, event):
-    self.commands_queue.put_nowait('# "%s"\n' % event.source.name)
     self.commands_queue.put_nowait(
-      '#sequence.append(WaitForFocus(%s,pyatspi.%s))\n' % \
-        (pyatspi.getPath(event.source), repr(event.source.getRole())))
+      '#sequence.append(WaitForFocus("%s", %s,pyatspi.%s))\n' % \
+        (event.source.name, pyatspi.getPath(event.source), 
+         repr(event.source.getRole())))
 
 class DogtailFactory(ScriptFactory):
   '''

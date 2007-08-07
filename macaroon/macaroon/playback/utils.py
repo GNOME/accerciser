@@ -17,7 +17,9 @@ def getActiveFrame():
   desktop = pyatspi.Registry.getDesktop(0)
   active_frame = None
   for app in desktop:
+    if app is None: continue
     for acc in app:
+      if acc is None: continue
       if acc.getRole() == pyatspi.ROLE_FRAME:
         state_set = acc.getState()
         if state_set.contains(pyatspi.STATE_ACTIVE):

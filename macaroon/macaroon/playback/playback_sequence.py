@@ -35,6 +35,16 @@ class AtomicAction(SequenceStep):
   def __call__(self):
     self._func(*self._args)
 
+class DebugAction(AtomicAction):
+  def __init__(self, debug_msg, delta_time=0):
+    self._debug_msg = debug_msg
+    AtomicAction.__init__(self, 0, self._printDebugMsg)
+  def _printDebugMsg(self):
+    print self._debug_msg
+    self.stepDone()
+  def __str__(self):
+    return 'Debug message: %s' % self._debug_msg
+
 class CallableAction(AtomicAction):
   def __init__(self, func, *args, **kwargs):
     AtomicAction.__init__(self, 0, func, *args, **kwargs)
