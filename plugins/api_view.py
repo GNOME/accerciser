@@ -119,7 +119,7 @@ class APIBrowser(ViewportPlugin):
     '''
     iface = self.iface_combo.get_active_text()
     try:
-      query_func = getattr(self.acc, 'query'+iface)
+      query_func = getattr(self.acc, 'query%s' % iface)
     except AttributeError:
       pass
     else:
