@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-06 16:25+0300\n"
+"POT-Creation-Date: 2007-08-13 17:33+0300\n"
 "PO-Revision-Date: 2006-09-15 11:04+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -29,11 +29,11 @@ msgstr "Luettelo liitännäisistä, jotka ovat oletuksena pois päältä"
 
 #: ../accerciser.schemas.in.h:2
 msgid "The default plugin layout for the bottom panel"
-msgstr ""
+msgstr "Alapaneelin liitännäisten oletusasettelu"
 
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
-msgstr ""
+msgstr "Yläpaneelin liitännäisten oletusasettelu"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -114,7 +114,8 @@ msgstr "Tapahtumamonitori"
 
 #: ../plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr "Näyttää tapahtumat valituista tyypeistä ja lähteistä niiden tapahtuessa"
+msgstr ""
+"Näyttää tapahtumat valituista tyypeistä ja lähteistä niiden tapahtuessa"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
@@ -439,7 +440,7 @@ msgstr "<i>(Muokattavissa</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
-msgstr ""
+msgstr "Pikavalinta"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
@@ -455,19 +456,19 @@ msgstr ""
 
 #: ../plugins/script_recorder.glade.h:1
 msgid "Dogtail"
-msgstr ""
+msgstr "Dogtail"
 
 #: ../plugins/script_recorder.glade.h:2
 msgid "LDTP"
-msgstr ""
+msgstr "LDTP"
 
 #: ../plugins/script_recorder.glade.h:3
 msgid "Native"
-msgstr ""
+msgstr "Oma muoto"
 
 #: ../plugins/script_recorder.glade.h:4
 msgid "Script Type"
-msgstr ""
+msgstr "Skriptin tyyppi"
 
 #: ../plugins/script_recorder.glade.h:6
 msgid "gtk-media-record"
@@ -502,10 +503,12 @@ msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr ""
+"Accerciser ei voinut nähdä työpöytäsi sovelluksi. Työpöydän esteettömyys "
+"täytyy olla käytössä ohjelman käyttämiseksi. Haluatko ottaa sen nyt käyttöön?"
 
 #: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
-msgstr ""
+msgstr "Huomautus: muutos tulee voimaan uudelleenkirjautumisen jälkeen."
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
@@ -545,7 +548,7 @@ msgstr "Ctrl"
 
 #: ../src/lib/accerciser/hotkey_manager.py:258
 msgid "Shift"
-msgstr ""
+msgstr "Vaihto"
 
 #: ../src/lib/accerciser/main_window.py:70
 msgid "Top panel"
@@ -576,15 +579,15 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:51
 msgid "An interactive Python accessibility explorer"
-msgstr ""
+msgstr "Interaktiivinen Python-esteettömyys-selain"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr ""
+msgstr "accerciser tekijänoikeudet © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
+msgstr "Uusi BSD-lisenssi, katso lisätietoja tiedostoista COPYING ja NOTICE."
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "Web site"
@@ -640,7 +643,7 @@ msgstr "Polku:"
 
 #: ../src/lib/accerciser/plugin/message.py:148
 msgid "Plugin Errors"
-msgstr ""
+msgstr "Liitännäisen virheet"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:375
 msgid "View"
@@ -652,16 +655,16 @@ msgstr "Ei näkymää"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "_Yhden liitännäisen näkymä"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr ""
+msgstr "Liitännäisnäkymä"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr ""
+msgstr "Liitännäisnäkymä (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
