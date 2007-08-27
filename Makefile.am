@@ -1,4 +1,4 @@
-SUBDIRS = help icons plugins po src pixmaps
+SUBDIRS = doc help icons plugins po src pixmaps
 
 INTLTOOL = 			\
 	intltool-extract.in 	\
