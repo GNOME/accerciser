@@ -1339,7 +1339,7 @@ class _SectionText(_InterfaceSection):
       return {}
     attr_dict = {}
     for attr_pair in attr_string.split('; '):
-      key, value = attr_pair.split(':')
+      key, value = attr_pair.split(':', 1)
       attr_dict[key] = value
     return attr_dict
 
