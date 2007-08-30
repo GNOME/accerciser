@@ -1,3 +1,10 @@
+2007-08-30  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/keypress_mimic.py: Override __call__ to remove 
+	stepDone().
+	* macaroon/playback/playback_sequence.py: Added stepDone() to the
+	end of the AtomicAction __call__ method.
+	
 2007-08-07  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/playback/playback_sequence.py: Added a DebugAction for 

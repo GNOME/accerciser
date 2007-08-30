@@ -32,7 +32,6 @@ class KeyPressAction(AtomicAction):
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
   def _keyPress(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_PRESS)
-    self.stepDone()
   def __str__(self):
     return _('Key press %s') % self._key_name or 'a key'
 
@@ -43,7 +42,6 @@ class KeyReleaseAction(AtomicAction):
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
   def _keyRelease(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_RELEASE)
-    self.stepDone()
   def __str__(self):
     return _('Key release %s') % self._key_name or 'a key'
 
@@ -64,6 +62,8 @@ class KeyComboAction(AtomicAction):
     self._key_combo = key_combo
     if delta_time < min_delta: delta_time = min_delta
     AtomicAction.__init__(self, delta_time, self._doCombo, keyval, modifiers)
+  def __call__(self):
+    self._func(*self._args)
   def _doCombo(self, keyval, modifiers):
     interval = 0
     mod_hw_codes = map(mod_key_code_mappings.get, modifiers.value_names)
@@ -98,6 +98,8 @@ class TypeAction(AtomicAction):
       self.interval = keystroke_interval
     if delta_time < min_delta: delta_time = min_delta
     AtomicAction.__init__(self, delta_time, self._doType, string_to_type)
+  def __call__(self):
+    self._func(*self._args)
   def _doType(self, string_to_type):
     interval = 0
     for char in string_to_type:
