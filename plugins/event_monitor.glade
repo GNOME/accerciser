@@ -102,7 +102,7 @@
                 <child>
                   <widget class="GtkButton" id="button1">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">gtk-save</property>
+                    <property name="label">gtk-save</property>
                     <property name="use_stock">True</property>
                     <signal name="clicked" handler="_onSave"/>
                   </widget>
@@ -115,7 +115,7 @@
                 <child>
                   <widget class="GtkButton" id="button2">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">gtk-clear</property>
+                    <property name="label">gtk-clear</property>
                     <property name="use_stock">True</property>
                     <signal name="clicked" handler="_onClear"/>
                   </widget>
@@ -150,7 +150,7 @@
                     <child>
                       <widget class="GtkButton" id="button3">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">gtk-select-all</property>
+                        <property name="label">gtk-select-all</property>
                         <property name="use_stock">True</property>
                         <signal name="clicked" handler="_onSelectAll"/>
                       </widget>
