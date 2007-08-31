@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-20 19:18+0100\n"
-"PO-Revision-Date: 2007-08-20 23:30+0200\n"
+"POT-Creation-Date: 2007-08-30 21:12+0100\n"
+"PO-Revision-Date: 2007-08-31 22:51+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../plugins/api_view.py:79
 msgid "Method"
-msgstr ""
+msgstr "Metòde"
 
 #: ../plugins/api_view.py:88
 msgid "Property"
@@ -96,19 +96,6 @@ msgstr "Sorga"
 #: ../plugins/event_monitor.glade.h:7
 msgid "_Monitor Events"
 msgstr ""
-
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
 
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
@@ -184,7 +171,7 @@ msgstr "<b>desconegut</b>"
 #: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
-msgstr ""
+msgstr "<i>(pas cap de descripcion)</i>"
 
 #: ../plugins/interface_view.glade.h:14
 msgid "<i>Caption:</i>"
@@ -208,7 +195,7 @@ msgstr "<pas de descripcion>"
 
 #: ../plugins/interface_view.glade.h:19
 msgid "Absolute position"
-msgstr ""
+msgstr "Posicion absoluta"
 
 #: ../plugins/interface_view.glade.h:20
 msgid "Acti_on"
@@ -250,153 +237,154 @@ msgstr "Bu_rèu"
 msgid "Description"
 msgstr "Descripcion"
 
-#: ../plugins/interface_view.glade.h:30
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:31
-msgid "H_ypertext"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:32
+msgid "H_ypertext"
+msgstr "_Ipertèxt"
+
+#: ../plugins/interface_view.glade.h:33
 msgid "Header:"
 msgstr "Encap :"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:34
 msgid "Hyperlink"
 msgstr "Iperligam"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:35
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:36
 msgid "Include defaults"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:37
 msgid "Layer"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:39
 msgid "Locale"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:40
 msgid "Locale:"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:45
 msgid "Offset"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:46
 msgid "Perform action"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:47
 msgid "Position"
 msgstr "Posicion"
 
-#: ../plugins/interface_view.glade.h:47
-msgid "Relative position"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:48
+msgid "Relative position"
+msgstr "Posicion relativa"
+
+#: ../plugins/interface_view.glade.h:49
 msgid "Row"
 msgstr "Linha"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:50
 msgid "Rows"
 msgstr "Linhas"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:51
 msgid "Select All"
 msgstr "Tot seleccionar"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:52
 msgid "Selected columns"
 msgstr "Colomnas seleccionadas"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:53
 msgid "Selected rows"
 msgstr "Linhas seleccionadas"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:54
 msgid "Show"
 msgstr "Visualizacion"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:55
 msgid "Size"
 msgstr "Talha"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
 msgstr "Tè_xt"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
 msgstr "Val_or"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:60
 msgid "Version"
 msgstr "Version"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:61
 msgid "WIDGET"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:62
 msgid "_Accessible"
 msgstr "_Accessible"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:63
 msgid "_Document"
 msgstr "_Document"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:64
 msgid "_Image"
 msgstr "_Imatge"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:65
 msgid "_Selection"
 msgstr "_Seleccion"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:66
 msgid "_Table"
 msgstr "_Taula"
 
 #: ../plugins/interface_view.glade.h:67
 msgid "name (x,y)"
-msgstr ""
+msgstr "nom (x,y)"
 
 #: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
@@ -455,25 +443,24 @@ msgstr ""
 msgid "Inspect accessible under mouse"
 msgstr ""
 
-#: ../plugins/script_recorder.glade.h:1
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr ""
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr ""
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr ""
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
-msgstr ""
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-media-record"
+msgstr "Tipe d'escript"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -571,7 +558,9 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:50
 msgid "translator-credits"
-msgstr "La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
+msgstr ""
+"La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu."
+"com"
 
 #: ../src/lib/accerciser/about_dialog.py:51
 msgid "An interactive Python accessibility explorer"
@@ -591,7 +580,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr ""
+msgstr "_Apondre un favorit..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
@@ -607,7 +596,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr ""
+msgstr "Modificar de favorits..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
@@ -623,7 +612,7 @@ msgstr "Camin"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr ""
+msgstr "Apondre un favorit..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
@@ -631,7 +620,7 @@ msgstr "Titol:"
 
 #: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
-msgstr ""
+msgstr "Aplicacion :"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
@@ -689,6 +678,18 @@ msgstr "_Visualizacion"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Ajuda"
+
+#~ msgid "gtk-clear"
+#~ msgstr "gtk-clear"
+
+#~ msgid "gtk-save"
+#~ msgstr "gtk-save"
+
+#~ msgid "gtk-select-all"
+#~ msgstr "gtk-select-all"
+
+#~ msgid "gtk-media-record"
+#~ msgstr "gtk-media-record"
 
 #~ msgid "Wiki page"
 #~ msgstr "Pagina wiki"
