@@ -3,18 +3,18 @@
 # Clytie Siddall <clytie@riverland.net.au>, 2007
 #
 msgid ""
-""
-msgstr "Project-Id-Version: accerciser TRUNK\n"
+msgstr ""
+"Project-Id-Version: accerciser TRUNK\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-30 03:16+0100\n"
-"PO-Revision-Date: 2007-06-16 16:39+0930\n"
+"POT-Creation-Date: 2007-08-30 21:12+0100\n"
+"PO-Revision-Date: 2007-09-03 23:26+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6.3b1\n"
+"X-Generator: LocFactoryEditor 1.7b1\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
@@ -64,7 +64,6 @@ msgstr "Giá trị"
 msgid "IPython Console"
 msgstr "Bàn giao tiếp IPython"
 
-#, fuzzy
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Bàn giao tiếp tương tác để thao tác điều truy cập được chọn hiện thời"
@@ -97,21 +96,6 @@ msgstr "Nguồn"
 msgid "_Monitor Events"
 msgstr "Th_eo dõi sự kiện"
 
-#: ../plugins/event_monitor.glade.h:8
-#: ../plugins/interface_view.glade.h:67
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
-#: ../plugins/event_monitor.glade.h:9
-#: ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
-
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Bộ theo dõi sự kiện"
@@ -125,8 +109,8 @@ msgid "Highlight last event entry"
 msgstr "Tô sáng mục sự kiện cuối"
 
 #: ../plugins/event_monitor.py:110
-#: ../plugins/interface_view.py:470
-#: ../plugins/interface_view.py:753
+#: ../plugins/interface_view.py:450
+#: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -185,8 +169,8 @@ msgid "<b>unknown</b>"
 msgstr "<b>không rõ</b>"
 
 #: ../plugins/interface_view.glade.h:13
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:877
+#: ../plugins/interface_view.py:318
+#: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>không mô tả</i>"
 
@@ -227,39 +211,36 @@ msgid "Ap_plication"
 msgstr "Ứng _dụng"
 
 #: ../plugins/interface_view.glade.h:23
-msgid "C"
-msgstr "C"
-
-#: ../plugins/interface_view.glade.h:24
 msgid "Co_mponent"
 msgstr "Thành _phần"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:24
 msgid "Col_lection"
 msgstr "Tậ_p hợp"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:25
 msgid "Column"
 msgstr "Cột"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:26
 msgid "Columns"
 msgstr "Cột"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:27
 msgid "Current value"
 msgstr "Giá trị hiện có"
 
-#: ../plugins/interface_view.glade.h:29
+#: ../plugins/interface_view.glade.h:28
 msgid "Des_ktop"
 msgstr "_Màn hình nền"
 
-#: ../plugins/interface_view.glade.h:30
-#: ../plugins/interface_view.py:475
+#: ../plugins/interface_view.glade.h:29
+#: ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "Mô tả"
 
 #: ../plugins/interface_view.glade.h:31
+#. How many columns the cell spans.
 msgid "Extents:"
 msgstr "Chừng mực:"
 
@@ -403,7 +384,7 @@ msgstr "_Vùng chọn"
 msgid "_Table"
 msgstr "_Bảng"
 
-#: ../plugins/interface_view.glade.h:68
+#: ../plugins/interface_view.glade.h:67
 msgid "name (x,y)"
 msgstr "tên (x,y)"
 
@@ -415,61 +396,76 @@ msgstr "Bộ xem giao diện"
 msgid "Allows viewing of various interface properties"
 msgstr "Cho phép xem các thuộc tính giao diện khác nhau"
 
-#: ../plugins/interface_view.py:205
-#: ../plugins/interface_view.py:206
-#: ../plugins/interface_view.py:207
+#: ../plugins/interface_view.py:185
+#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (chưa được thi hành)"
 
-#: ../plugins/interface_view.py:480
+#: ../plugins/interface_view.py:460
 msgid "Key binding"
 msgstr "Tổ hợp phím"
 
-#: ../plugins/interface_view.py:760
-#: ../plugins/interface_view.py:1041
+#: ../plugins/interface_view.py:740
+#: ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:767
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Đầu"
 
-#: ../plugins/interface_view.py:774
+#: ../plugins/interface_view.py:754
 msgid "End"
 msgstr "Cuối"
 
-#: ../plugins/interface_view.py:944
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Quá nhiều con chọn được"
 
-#: ../plugins/interface_view.py:1036
+#: ../plugins/interface_view.py:1019
 msgid "Content type"
 msgstr "Kiểu nội dung"
 
-#: ../plugins/interface_view.py:1312
-#: ../plugins/interface_view.py:1314
+#: ../plugins/interface_view.py:1295
+#: ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Sửa được)</i>"
 
-#: ../plugins/script_recorder.glade.h:1
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "Chọn nhanh"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "Phần bổ sung cung cấp các phương pháp khác nhau truy cập nhanh các điều truy cập."
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "Xem xét điều truy cập có tiêu điểm cuối cùng"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "Xem xét điều truy cập dưới con chuột"
+
+#: ../plugins/script_recorder.glade.h:2
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#: ../plugins/script_recorder.glade.h:4
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#: ../plugins/script_recorder.glade.h:6
+#. A native script format.
 msgid "Native"
 msgstr "Sở hữu"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
 msgstr "Kiểu văn lệnh"
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-media-record"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -499,7 +495,10 @@ msgstr "_Nội dung"
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn cần phải hiệu lực khả năng truy cập màn hình nền để sửa chữa vấn đề này. Bạn có muốn hiệu lực nó ngay bây giờ không?"
+msgstr ""
+"Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn "
+"cần phải hiệu lực khả năng truy cập màn hình nền để sửa chữa vấn đề này. Bạn "
+"có muốn hiệu lực nó ngay bây giờ không?"
 
 #: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
@@ -579,7 +578,9 @@ msgstr "accerciser Tác quyền © năm 2006, 2007 của IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm chi tiết."
+msgstr ""
+"Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm "
+"chi tiết."
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "Web site"
@@ -601,35 +602,35 @@ msgstr "_Sửa liên kết lưu..."
 msgid "Manage bookmarks."
 msgstr "Quản lý liên kết lưu"
 
-#: ../src/lib/accerciser/bookmarks.py:311
+#: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
 msgstr "Sửa liên kết lưu..."
 
-#: ../src/lib/accerciser/bookmarks.py:411
+#: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
 msgstr "Tựa"
 
-#: ../src/lib/accerciser/bookmarks.py:419
+#: ../src/lib/accerciser/bookmarks.py:435
 msgid "Application"
 msgstr "Ứng dụng"
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
 msgstr "Đường dẫn"
 
-#: ../src/lib/accerciser/bookmarks.py:496
+#: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
 msgstr "Thêm liên kết lưu..."
 
-#: ../src/lib/accerciser/bookmarks.py:509
+#: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
 msgstr "Tựa:"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
 msgstr "Ứng dụng:"
 
-#: ../src/lib/accerciser/bookmarks.py:515
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
 msgstr "Đường dẫn:"
 
@@ -646,8 +647,8 @@ msgid "No view"
 msgstr "Không xem"
 
 #: ../src/lib/accerciser/plugin/view.py:369
-msgid "Single plugins view"
-msgstr "Xem bổ sung đơn"
+msgid "_Single plugins view"
+msgstr "Xem phần _bổ sung đơn"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -665,3 +666,38 @@ msgstr "<i>Ô xem mớ_i...</i>"
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
 msgstr "Ô xem mới..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "_Tập tin"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "_Sửa"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgid "_Bookmarks"
+msgstr "_Liên kết lưu"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgid "_View"
+msgstr "_Xem"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "Trợ g_iúp"
+
+#~ msgid "gtk-clear"
+#~ msgstr "gtk-clear"
+
+#~ msgid "gtk-save"
+#~ msgstr "gtk-save"
+
+#~ msgid "gtk-select-all"
+#~ msgstr "gtk-select-all"
+
+#~ msgid "C"
+#~ msgstr "C"
+
+#~ msgid "gtk-media-record"
+#~ msgstr "gtk-media-record"
