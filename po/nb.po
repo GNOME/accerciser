@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acceriser 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-14 09:29+0200\n"
-"PO-Revision-Date: 2007-08-14 09:37+0200\n"
+"POT-Creation-Date: 2007-09-06 13:43+0200\n"
+"PO-Revision-Date: 2007-09-06 13:51+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -21,27 +21,27 @@ msgstr "Acceriser tilgjengelighetsutforsker"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr ""
+msgstr "Sjekk støtte for hjelpeteknologi i ditt program"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr ""
+msgstr "En liste med tillegg som er deaktivert som forvalg"
 
 #: ../accerciser.schemas.in.h:2
 msgid "The default plugin layout for the bottom panel"
-msgstr ""
+msgstr "Forvalgt utforming for tillegg for bunnpanelet"
 
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
-msgstr ""
+msgstr "Forvalgt utforming for tillegg på det øverste panelet"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
-msgstr ""
+msgstr "API-leser"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr ""
+msgstr "Bla gjennom forskjellige metoder for aktiv komponent"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -65,15 +65,15 @@ msgstr "IPython-konsoll"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
+msgstr "Interaktivt konsoll for å manipulere valgt tilgjengelig komponent"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
-msgstr ""
+msgstr "<b>Hendelsesovervåking</b>"
 
 #: ../plugins/event_monitor.glade.h:2
 msgid "C_lear Selection"
-msgstr ""
+msgstr "_Tøm utvalg"
 
 #: ../plugins/event_monitor.glade.h:3
 msgid "Everything"
@@ -81,7 +81,7 @@ msgstr "Alt"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr ""
+msgstr "Valgt komponent"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
@@ -93,32 +93,19 @@ msgstr "Kilde"
 
 #: ../plugins/event_monitor.glade.h:7
 msgid "_Monitor Events"
-msgstr ""
-
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr ""
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr ""
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr ""
+msgstr "_Overvåk hendelser"
 
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
-msgstr ""
+msgstr "Hendelsesovervåking"
 
 #: ../plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr ""
+msgstr "Viser hendelser fra valgte typer og kilder etter som de inntreffer"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
-msgstr ""
+msgstr "Uthev siste hendelsesoppføring"
 
 #: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
@@ -149,7 +136,7 @@ msgstr "<b>Attributter</b>"
 
 #: ../plugins/interface_view.glade.h:5
 msgid "<b>Child count</b>"
-msgstr ""
+msgstr "<b>Antall barn</b>"
 
 #: ../plugins/interface_view.glade.h:6
 msgid "<b>Description</b>"
@@ -214,7 +201,7 @@ msgstr "Hand_ling"
 
 #: ../plugins/interface_view.glade.h:21
 msgid "Alpha"
-msgstr ""
+msgstr "Alpha"
 
 #: ../plugins/interface_view.glade.h:22
 msgid "Ap_plication"
@@ -248,161 +235,162 @@ msgstr "S_krivebord"
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: ../plugins/interface_view.glade.h:30
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
 msgstr "H_ypertekst"
 
-#: ../plugins/interface_view.glade.h:32
-msgid "Header:"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:33
+msgid "Header:"
+msgstr "Topptekst:"
+
+#: ../plugins/interface_view.glade.h:34
 msgid "Hyperlink"
 msgstr "Hyperlenke"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:35
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:35
-msgid "Include defaults"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:36
+msgid "Include defaults"
+msgstr "Ta med forvalg"
+
+#: ../plugins/interface_view.glade.h:37
 msgid "Layer"
 msgstr "Lag"
 
-#: ../plugins/interface_view.glade.h:37
-msgid "Lo_gin Helper"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:38
-msgid "Locale"
-msgstr ""
+msgid "Lo_gin Helper"
+msgstr "Hjelp til pålo_gging"
 
 #: ../plugins/interface_view.glade.h:39
-msgid "Locale:"
-msgstr ""
+msgid "Locale"
+msgstr "Locale"
 
 #: ../plugins/interface_view.glade.h:40
-msgid "MDI-Z-order"
-msgstr ""
+msgid "Locale:"
+msgstr "Locale:"
 
 #: ../plugins/interface_view.glade.h:41
+msgid "MDI-Z-order"
+msgstr "MDI-Z-rekkefølge"
+
+#: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
 msgstr "Maksimumsverdi"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
 msgstr "Minste steg"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
 msgstr "Minimumsverdi"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:45
 msgid "Offset"
 msgstr "Avstand"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:46
 msgid "Perform action"
 msgstr "Utfør handling"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:47
 msgid "Position"
 msgstr "Posisjon"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:48
 msgid "Relative position"
 msgstr "Relativ posisjon"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:49
 msgid "Row"
 msgstr "Rad"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:50
 msgid "Rows"
 msgstr "Rader"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:51
 msgid "Select All"
 msgstr "Velg alle"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:52
 msgid "Selected columns"
 msgstr "Valgte kolonner"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:53
 msgid "Selected rows"
 msgstr "Valgte rader"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:54
 msgid "Show"
 msgstr "Vis"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:55
 msgid "Size"
 msgstr "Størrelse"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
 msgstr "Te_kst"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
 msgstr "Verktøysett"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
 msgstr "Ver_di"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:60
 msgid "Version"
 msgstr "Versjon"
 
-#: ../plugins/interface_view.glade.h:60
-msgid "WIDGET"
-msgstr ""
-
 #: ../plugins/interface_view.glade.h:61
-msgid "_Accessible"
-msgstr ""
+msgid "WIDGET"
+msgstr "KOMPONENT"
 
 #: ../plugins/interface_view.glade.h:62
+msgid "_Accessible"
+msgstr "_Tilgjengelig komponent"
+
+#: ../plugins/interface_view.glade.h:63
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:64
 msgid "_Image"
 msgstr "B_ilde"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:65
 msgid "_Selection"
 msgstr "_Utvalg"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:66
 msgid "_Table"
 msgstr "_Tabell"
 
 #: ../plugins/interface_view.glade.h:67
 msgid "name (x,y)"
-msgstr ""
+msgstr "navn (x,y)"
 
 #: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
-msgstr ""
+msgstr "Grensesnittvisning"
 
 #: ../plugins/interface_view.py:37
 msgid "Allows viewing of various interface properties"
-msgstr ""
+msgstr "Lar deg se på forskjellige egenskaper for et grensesnitt"
 
 #: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
@@ -427,7 +415,7 @@ msgstr "Slutt"
 
 #: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
-msgstr ""
+msgstr "For mange valgte underkomponenter"
 
 #: ../plugins/interface_view.py:1019
 msgid "Content type"
@@ -435,59 +423,58 @@ msgstr "Innholdstype"
 
 #: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
-msgstr ""
+msgstr "<i>(Redigerbar)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
-msgstr ""
+msgstr "Hurtigvalg"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
+msgstr "Tillegg med forskjellige metoder for å velge tilgjengelige komponenter raskt."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr ""
+msgstr "Inspiser sist fokusert tilgjengelig komponent"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr ""
+msgstr "Inspiser tilgjengelig komponent under musen"
 
-#: ../plugins/script_recorder.glade.h:1
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
-msgstr ""
+msgstr "Innebygget"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
 msgstr "Type skript"
 
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr ""
-
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
-msgstr ""
+msgstr "Skriptopptaker"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr ""
+msgstr "Lager skript for dogtail"
 
 #: ../plugins/script_recorder.py:340
 msgid "The current script will be lost."
-msgstr ""
+msgstr "Aktivt skript vil gå tapt."
 
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
-msgstr ""
+msgstr "Bekreft tøm"
 
 #: ../src/lib/accerciser/accerciser.py:94
 msgid "_Preferences..."
@@ -505,11 +492,11 @@ msgstr ""
 
 #: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
-msgstr ""
+msgstr "Merk: Endringer trer først i kraft etter at du har logget ut."
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
-msgstr ""
+msgstr "<død>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:398
 msgid "Role"
@@ -517,11 +504,11 @@ msgstr "Rolle"
 
 #: ../src/lib/accerciser/accessible_treeview.py:405
 msgid "Children"
-msgstr ""
+msgstr "Underkomponenter"
 
 #: ../src/lib/accerciser/accessible_treeview.py:431
 msgid "Refresh _Current"
-msgstr ""
+msgstr "Oppdater _nåværende"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -565,7 +552,7 @@ msgstr "Tillegg"
 
 #: ../src/lib/accerciser/prefs_dialog.py:37
 msgid "Global Hotkeys"
-msgstr ""
+msgstr "Globale hurtigtaster"
 
 #: ../src/lib/accerciser/about_dialog.py:50
 msgid "translator-credits"
@@ -593,7 +580,7 @@ msgstr "_Legg til bokmerke..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr ""
+msgstr "Lag bokmerke for valgt tilgjengelig komponent."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -653,12 +640,12 @@ msgstr ""
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr ""
+msgstr "Tilleggsvisning"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr ""
+msgstr "Tilleggsvisning (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
