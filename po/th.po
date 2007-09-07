@@ -1,0 +1,682 @@
+# Thai translation of accerciser
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the accerciser package.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser 0.1.92\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-07 13:16+0700\n"
+"PO-Revision-Date: 2007-09-07 14:45+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser Accesibility Explorer"
+msgstr "Accerciser: เครื่องมือสำรวจสิ่งอำนวยความสะดวก"
+
+#: ../accerciser.desktop.in.in.h:2
+msgid "Give your application an accessibility workout"
+msgstr "ช่วยพัฒนาสิ่งอำนวยความสะดวกในโปรแกรมของคุณ"
+
+#: ../accerciser.schemas.in.h:1
+msgid "A list of plugins that are disabled by default"
+msgstr "รายการปลั๊กอินที่ปิดโดยปริยาย"
+
+#: ../accerciser.schemas.in.h:2
+msgid "The default plugin layout for the bottom panel"
+msgstr "การจัดวางปลั๊กอินสำหรับช่องด้านล่าง"
+
+#: ../accerciser.schemas.in.h:3
+msgid "The default plugin layout for the top panel"
+msgstr "การจัดวางปลั๊กอินสำหรับช่องด้านบน"
+
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "รายการ API"
+
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "ดูรายการเมธอตด่างๆ ของสิ่งอำนวยความสะดวกปัจจุบัน"
+
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "ซ่อนแอตทริบิวต์ภายใน"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "เมธอด"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "คุณสมบัติ"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "ค่า"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "คอนโซล IPython"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "คอนโซลโต้ตอบสำหรับจัดการสิ่งอำนวยความสะดวกที่เลือกอยู่"
+
+#: ../plugins/event_monitor.glade.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>ติดตามเหตุการณ์</b>"
+
+#: ../plugins/event_monitor.glade.h:2
+msgid "C_lear Selection"
+msgstr "_ล้างสิ่งที่เลือก"
+
+#: ../plugins/event_monitor.glade.h:3
+msgid "Everything"
+msgstr "ทุกอย่าง"
+
+#: ../plugins/event_monitor.glade.h:4
+msgid "Selected accessible"
+msgstr "สิ่งอำนวยความสะดวกที่เลือก"
+
+#: ../plugins/event_monitor.glade.h:5
+msgid "Selected application"
+msgstr "โปรแกรมที่เลือก"
+
+#: ../plugins/event_monitor.glade.h:6
+msgid "Source"
+msgstr "แหล่ง"
+
+#: ../plugins/event_monitor.glade.h:7
+msgid "_Monitor Events"
+msgstr "_ติดตามเหตุการณ์"
+
+#: ../plugins/event_monitor.py:52
+msgid "Event Monitor"
+msgstr "ติดตามเหตุการณ์"
+
+#: ../plugins/event_monitor.py:55
+msgid "Shows events as they occur from selected types and sources"
+msgstr "แสดงเหตุการณ์ต่างๆ ที่เป็นชนิดและเกิดจากแหล่งที่กำหนด"
+
+#: ../plugins/event_monitor.py:65
+msgid "Highlight last event entry"
+msgstr "เน้นรายการเหตุการณ์ล่าสุด"
+
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/interface_view.py:733
+#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "ชื่อ"
+
+#: ../plugins/event_monitor.py:119
+msgid "Full name"
+msgstr "ชื่อเต็ม"
+
+#: ../plugins/interface_view.glade.h:1
+msgid "0"
+msgstr "0"
+
+#: ../plugins/interface_view.glade.h:2
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.glade.h:3
+msgid "1.0"
+msgstr "1.0"
+
+#: ../plugins/interface_view.glade.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>แอตทริบิวต์</b>"
+
+#: ../plugins/interface_view.glade.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>จำนวนรายการลูก</b>"
+
+#: ../plugins/interface_view.glade.h:6
+msgid "<b>Description</b>"
+msgstr "<b>คำบรรยาย</b>"
+
+#: ../plugins/interface_view.glade.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>ความสัมพันธ์</b>"
+
+#: ../plugins/interface_view.glade.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>ช่องที่เลือก</b>"
+
+#: ../plugins/interface_view.glade.h:9
+msgid "<b>States</b>"
+msgstr "<b>สถานะ</b>"
+
+#: ../plugins/interface_view.glade.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>ข้อมูลตาราง</b>"
+
+#: ../plugins/interface_view.glade.h:11
+msgid "<b>Text</b>"
+msgstr "<b>ข้อความ</b>"
+
+#: ../plugins/interface_view.glade.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>ไม่ทราบ</b>"
+
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
+#: ../plugins/interface_view.py:857
+msgid "<i>(no description)</i>"
+msgstr "<i>(ไม่มีคำบรรยาย)</i>"
+
+#: ../plugins/interface_view.glade.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>ชื่อตาราง:</i>"
+
+#: ../plugins/interface_view.glade.h:15
+msgid "<i>End: 0</i>"
+msgstr "<i>จบ: 0</i>"
+
+#: ../plugins/interface_view.glade.h:16
+msgid "<i>Start: 0</i>"
+msgstr "<i>เริ่ม: 0</i>"
+
+#: ../plugins/interface_view.glade.h:17
+msgid "<i>Summary:</i>"
+msgstr "<i>สรุป:</i>"
+
+#: ../plugins/interface_view.glade.h:18
+msgid "<no description>"
+msgstr "<ไม่มีคำบรรยาย>"
+
+#: ../plugins/interface_view.glade.h:19
+msgid "Absolute position"
+msgstr "ตำแหน่งสัมบูรณ์"
+
+#: ../plugins/interface_view.glade.h:20
+msgid "Acti_on"
+msgstr "การกระ_ทำ"
+
+#: ../plugins/interface_view.glade.h:21
+msgid "Alpha"
+msgstr "แอลฟา"
+
+#: ../plugins/interface_view.glade.h:22
+msgid "Ap_plication"
+msgstr "โ_ปรแกรม"
+
+#: ../plugins/interface_view.glade.h:23
+msgid "Co_mponent"
+msgstr "_องค์ประกอบ"
+
+#: ../plugins/interface_view.glade.h:24
+msgid "Col_lection"
+msgstr "_ชุด"
+
+#: ../plugins/interface_view.glade.h:25
+msgid "Column"
+msgstr "คอลัมน์"
+
+#: ../plugins/interface_view.glade.h:26
+msgid "Columns"
+msgstr "จำนวนคอลัมน์"
+
+#: ../plugins/interface_view.glade.h:27
+msgid "Current value"
+msgstr "ค่าปัจจุบัน"
+
+#: ../plugins/interface_view.glade.h:28
+msgid "Des_ktop"
+msgstr "_พื้นโต๊ะ"
+
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+msgid "Description"
+msgstr "คำบรรยาย"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
+msgid "Extents:"
+msgstr "ขอบเขต:"
+
+#: ../plugins/interface_view.glade.h:32
+msgid "H_ypertext"
+msgstr "ไฮเ_พอร์เท็กซ์"
+
+#: ../plugins/interface_view.glade.h:33
+msgid "Header:"
+msgstr "หัวตาราง:"
+
+#: ../plugins/interface_view.glade.h:34
+msgid "Hyperlink"
+msgstr "ไฮเพอร์ลิงก์"
+
+#: ../plugins/interface_view.glade.h:35
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.glade.h:36
+msgid "Include defaults"
+msgstr "แสดงค่าปริยายด้วย"
+
+#: ../plugins/interface_view.glade.h:37
+msgid "Layer"
+msgstr "ชั้น"
+
+#: ../plugins/interface_view.glade.h:38
+msgid "Lo_gin Helper"
+msgstr "เครื่องมือช่วยเ_ข้าระบบ"
+
+#: ../plugins/interface_view.glade.h:39
+msgid "Locale"
+msgstr "ท้องถิ่น"
+
+#: ../plugins/interface_view.glade.h:40
+msgid "Locale:"
+msgstr "ท้องถิ่น:"
+
+#: ../plugins/interface_view.glade.h:41
+msgid "MDI-Z-order"
+msgstr "MDI-Z-order"
+
+#: ../plugins/interface_view.glade.h:42
+msgid "Maximum value"
+msgstr "ค่าสูงสุด"
+
+#: ../plugins/interface_view.glade.h:43
+msgid "Minimum increment"
+msgstr "ขั้นต่ำสุดของการเพิ่มค่า"
+
+#: ../plugins/interface_view.glade.h:44
+msgid "Minimum value"
+msgstr "ค่าต่ำสุด"
+
+#: ../plugins/interface_view.glade.h:45
+msgid "Offset"
+msgstr "ออฟเซ็ต"
+
+#: ../plugins/interface_view.glade.h:46
+msgid "Perform action"
+msgstr "กระทำ"
+
+#: ../plugins/interface_view.glade.h:47
+msgid "Position"
+msgstr "ตำแหน่ง"
+
+#: ../plugins/interface_view.glade.h:48
+msgid "Relative position"
+msgstr "ตำแหน่งสัมพัทธ์"
+
+#: ../plugins/interface_view.glade.h:49
+msgid "Row"
+msgstr "แถว"
+
+#: ../plugins/interface_view.glade.h:50
+msgid "Rows"
+msgstr "จำนวนแถว"
+
+#: ../plugins/interface_view.glade.h:51
+msgid "Select All"
+msgstr "เลือกทั้งหมด"
+
+#: ../plugins/interface_view.glade.h:52
+msgid "Selected columns"
+msgstr "จำนวนคอลัมน์ที่เลือก"
+
+#: ../plugins/interface_view.glade.h:53
+msgid "Selected rows"
+msgstr "จำนวนแถวที่เลือก"
+
+#: ../plugins/interface_view.glade.h:54
+msgid "Show"
+msgstr "แสดง"
+
+#: ../plugins/interface_view.glade.h:55
+msgid "Size"
+msgstr "ขนาด"
+
+#: ../plugins/interface_view.glade.h:56
+msgid "St_reamable Content"
+msgstr "เนื้อหาที่ทำสตรีมได้"
+
+#: ../plugins/interface_view.glade.h:57
+msgid "Te_xt"
+msgstr "ข้อ_ความ"
+
+#: ../plugins/interface_view.glade.h:58
+msgid "Toolkit"
+msgstr "ทูลคิต"
+
+#: ../plugins/interface_view.glade.h:59
+msgid "Val_ue"
+msgstr "ค่_า"
+
+#: ../plugins/interface_view.glade.h:60
+msgid "Version"
+msgstr "รุ่น"
+
+#: ../plugins/interface_view.glade.h:61
+msgid "WIDGET"
+msgstr "วิดเจ็ต"
+
+#: ../plugins/interface_view.glade.h:62
+msgid "_Accessible"
+msgstr "_สิ่งอำนวยความสะดวก"
+
+#: ../plugins/interface_view.glade.h:63
+msgid "_Document"
+msgstr "เ_อกสาร"
+
+#: ../plugins/interface_view.glade.h:64
+msgid "_Image"
+msgstr "_ภาพ"
+
+#: ../plugins/interface_view.glade.h:65
+msgid "_Selection"
+msgstr "สิ่งที่เ_ลือก"
+
+#: ../plugins/interface_view.glade.h:66
+msgid "_Table"
+msgstr "_ตาราง"
+
+#: ../plugins/interface_view.glade.h:67
+msgid "name (x,y)"
+msgstr "ชื่อ (x,y)"
+
+#: ../plugins/interface_view.py:35
+msgid "Interface Viewer"
+msgstr "แสดงส่วนติดต่อ"
+
+#: ../plugins/interface_view.py:37
+msgid "Allows viewing of various interface properties"
+msgstr "แสดงคุณสมบัติต่างๆ ของส่วนติดต่อผู้ใช้"
+
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
+msgid " (not implemented)"
+msgstr " (ยังไม่ทำ)"
+
+#: ../plugins/interface_view.py:460
+msgid "Key binding"
+msgstr "ปุ่มเรียก"
+
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.py:747
+msgid "Start"
+msgstr "เริ่ม"
+
+#: ../plugins/interface_view.py:754
+msgid "End"
+msgstr "จบ"
+
+#: ../plugins/interface_view.py:924
+msgid "Too many selectable children"
+msgstr "มีรายการลูกที่เลือกได้มากเกินไป"
+
+#: ../plugins/interface_view.py:1019
+msgid "Content type"
+msgstr "ชนิดเนื้อหา"
+
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+msgid " <i>(Editable)</i>"
+msgstr "<i>(แก้ไขได้)</i>"
+
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "เลือกอย่างเร็ว"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "ปลั๊กอินที่มีวิธีต่างๆ ในการเลือกสิ่งอำนวยความสะดวกอย่างเร็ว"
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "เลือกสิ่งอำนวยความสะดวกสุดท้ายที่ได้รับโฟกัส"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "เฝ้ามองสิ่งอำนวยความสะดวกที่อยู่ใต้เมาส์"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
+msgid "Dogtail"
+msgstr "Dogtail"
+
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
+msgid "LDTP"
+msgstr "LDTP"
+
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
+msgid "Native"
+msgstr "ดิบๆ"
+
+#: ../plugins/script_recorder.glade.h:7
+msgid "Script Type"
+msgstr "ชนิดสคริปต์"
+
+#: ../plugins/script_recorder.py:176
+msgid "Script Recorder"
+msgstr "บันทึกสคริปต์"
+
+#: ../plugins/script_recorder.py:178
+msgid "Creates dogtail style scripts"
+msgstr "สร้างสคริปต์แบบ dogtail"
+
+#: ../plugins/script_recorder.py:340
+msgid "The current script will be lost."
+msgstr "สคริปต์ปัจจุบันจะสูญหาย"
+
+#: ../plugins/script_recorder.py:341
+msgid "Confirm clear"
+msgstr "ยืนยันการล้าง"
+
+#: ../src/lib/accerciser/accerciser.py:94
+msgid "_Preferences..."
+msgstr "_ปรับแต่ง..."
+
+#: ../src/lib/accerciser/accerciser.py:96
+msgid "_Contents"
+msgstr "เนื้อ_หา"
+
+#: ../src/lib/accerciser/accerciser.py:133
+msgid ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr ""
+"accerciser ไม่สามารถมองเห็นโปรแกรมต่างๆ บนเดสก์ท็อปของคุณได้ "
+"คุณต้องเปิดใช้เทคโนโลยีสิ่งอำนวยความสะดวกเพื่อแก้ปัญหานี้ จะเปิดใช้เลยหรือไม่?"
+
+#: ../src/lib/accerciser/accerciser.py:148
+msgid "Note: Changes only take effect after logout."
+msgstr "สังเกต: การเปลี่ยนแปลงจะมีผลหลังจากเข้าระบบใหม่เท่านั้น"
+
+#: ../src/lib/accerciser/accessible_treeview.py:344
+msgid "<dead>"
+msgstr "<ตาย>"
+
+#: ../src/lib/accerciser/accessible_treeview.py:398
+msgid "Role"
+msgstr "บทบาท"
+
+#: ../src/lib/accerciser/accessible_treeview.py:405
+msgid "Children"
+msgstr "ลูก"
+
+#: ../src/lib/accerciser/accessible_treeview.py:431
+msgid "Refresh _Current"
+msgstr "แสดงรายการ_ปัจจุบันใหม่"
+
+#: ../src/lib/accerciser/hotkey_manager.py:220
+msgid "Component"
+msgstr "องค์ประกอบ"
+
+#: ../src/lib/accerciser/hotkey_manager.py:227
+msgid "Task"
+msgstr "งาน"
+
+#: ../src/lib/accerciser/hotkey_manager.py:234
+msgid "Key"
+msgstr "ปุ่ม"
+
+#: ../src/lib/accerciser/hotkey_manager.py:244
+msgid "Alt"
+msgstr "Alt"
+
+#: ../src/lib/accerciser/hotkey_manager.py:251
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../src/lib/accerciser/hotkey_manager.py:258
+msgid "Shift"
+msgstr "Shift"
+
+#: ../src/lib/accerciser/main_window.py:70
+msgid "Top panel"
+msgstr "ช่องด้านบน"
+
+#: ../src/lib/accerciser/main_window.py:71
+msgid "Bottom panel"
+msgstr "ช่องด้านล่าง"
+
+#: ../src/lib/accerciser/prefs_dialog.py:30
+msgid "accerciser Preferences"
+msgstr "ปรับแต่ง accerciser"
+
+#: ../src/lib/accerciser/prefs_dialog.py:36
+msgid "Plugins"
+msgstr "ปลั๊กอิน"
+
+#: ../src/lib/accerciser/prefs_dialog.py:37
+msgid "Global Hotkeys"
+msgstr "คีย์ด่วนทั่วไป"
+
+#: ../src/lib/accerciser/about_dialog.py:50
+msgid "translator-credits"
+msgstr ""
+"เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>\n"
+"\n"
+"ถ้ามีเวลาโปรดมาช่วยกันแปล :-)\n"
+"http://gnome-th.sourceforge.net"
+
+#: ../src/lib/accerciser/about_dialog.py:51
+msgid "An interactive Python accessibility explorer"
+msgstr "เครื่องมือสำรวจสิ่งอำนวยความสะดวกแบบโต้ตอบเขียนด้วยไพธอน"
+
+#: ../src/lib/accerciser/about_dialog.py:52
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser สงวนลิขสิทธิ์ © 2549, 2550 ไอบีเอ็ม คอร์ปอเรชัน (BSD)"
+
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "สัญญาอนุญาต BSD ฉบับใหม่ ดูรายละเอียดในแฟ้ม COPYING และ NOTICE"
+
+#: ../src/lib/accerciser/about_dialog.py:56
+msgid "Web site"
+msgstr "เว็บไซต์"
+
+#: ../src/lib/accerciser/bookmarks.py:62
+msgid "_Add Bookmark..."
+msgstr "เ_พิ่มที่คั่นหน้า..."
+
+#: ../src/lib/accerciser/bookmarks.py:63
+msgid "Bookmark selected accessible."
+msgstr "เพิ่มที่คั่นหน้าสำหรับสิ่งอำนวยความสะดวกที่เลือก"
+
+#: ../src/lib/accerciser/bookmarks.py:65
+msgid "_Edit Bookmarks..."
+msgstr "แ_ก้ไขที่คั่นหน้า..."
+
+#: ../src/lib/accerciser/bookmarks.py:66
+msgid "Manage bookmarks."
+msgstr "จัดการที่คั่นหน้า"
+
+#: ../src/lib/accerciser/bookmarks.py:323
+msgid "Edit Bookmarks..."
+msgstr "แก้ไขที่คั่นหน้า..."
+
+#: ../src/lib/accerciser/bookmarks.py:427
+msgid "Title"
+msgstr "ชื่อ"
+
+#: ../src/lib/accerciser/bookmarks.py:435
+msgid "Application"
+msgstr "โปรแกรม"
+
+#: ../src/lib/accerciser/bookmarks.py:443
+msgid "Path"
+msgstr "พาธ"
+
+#: ../src/lib/accerciser/bookmarks.py:512
+msgid "Add Bookmark..."
+msgstr "เพิ่มที่คั่นหน้า..."
+
+#: ../src/lib/accerciser/bookmarks.py:525
+msgid "Title:"
+msgstr "ชื่อ:"
+
+#: ../src/lib/accerciser/bookmarks.py:528
+msgid "Application:"
+msgstr "โปรแกรม:"
+
+#: ../src/lib/accerciser/bookmarks.py:531
+msgid "Path:"
+msgstr "พาธ:"
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "ข้อผิดพลาดปลั๊กอิน"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+msgid "View"
+msgstr "แสดง"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+msgid "No view"
+msgstr "ไม่แสดง"
+
+#: ../src/lib/accerciser/plugin/view.py:369
+msgid "_Single plugins view"
+msgstr "แสดงปลั๊กอินเ_ดียว"
+
+#: ../src/lib/accerciser/plugin/view.py:758
+msgid "Plugin View"
+msgstr "มุมมองปลั๊กอิน"
+
+#: ../src/lib/accerciser/plugin/view.py:761
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "มุมมองปลั๊กอิน (%d)"
+
+#: ../src/lib/accerciser/plugin/view.py:1029
+msgid "<i>_New view...</i>"
+msgstr "<i>มุมมองใ_หม่...</i>"
+
+#: ../src/lib/accerciser/plugin/view.py:1085
+msgid "New View..."
+msgstr "มุมมองใหม่..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "แ_ฟ้ม"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "แ_ก้ไข"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgid "_Bookmarks"
+msgstr "_ที่คั่นหน้า"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgid "_View"
+msgstr "มุ_มมอง"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "_วิธีใช้"
