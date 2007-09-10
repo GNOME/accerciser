@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-16 23:02+0200\n"
-"PO-Revision-Date: 2007-06-23 08:54+0200\n"
+"POT-Creation-Date: 2007-09-10 23:26+0200\n"
+"PO-Revision-Date: 2007-09-10 21:56+0200\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
-msgstr "Un explorateur d'accessibilité Accerciser"
+msgstr "Explorateur d'accessibilité Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
@@ -100,19 +100,6 @@ msgstr "Source"
 msgid "_Monitor Events"
 msgstr "_Détecteur d'événements"
 
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:67
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
-
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Détecteur d'événements"
@@ -175,7 +162,7 @@ msgstr "<b>États</b>"
 
 #: ../plugins/interface_view.glade.h:10
 msgid "<b>Table Information</b>"
-msgstr "<b>Informations sur la table</b>"
+msgstr "<b>Informations sur le tableau</b>"
 
 #: ../plugins/interface_view.glade.h:11
 msgid "<b>Text</b>"
@@ -227,37 +214,34 @@ msgid "Ap_plication"
 msgstr "Ap_plication"
 
 #: ../plugins/interface_view.glade.h:23
-msgid "C"
-msgstr "C"
-
-#: ../plugins/interface_view.glade.h:24
 msgid "Co_mponent"
 msgstr "Co_mposant"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:24
 msgid "Col_lection"
 msgstr "Col_lection"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:25
 msgid "Column"
 msgstr "Colonne"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:26
 msgid "Columns"
 msgstr "Colonnes"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:27
 msgid "Current value"
 msgstr "Valeur actuelle"
 
-#: ../plugins/interface_view.glade.h:29
+#: ../plugins/interface_view.glade.h:28
 msgid "Des_ktop"
 msgstr "_Bureau"
 
-#: ../plugins/interface_view.glade.h:30 ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "Description"
 
+#. How many columns the cell spans.
 #: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
 msgstr "Extensions :"
@@ -402,7 +386,7 @@ msgstr "_Sélection"
 msgid "_Table"
 msgstr "_Tableau"
 
-#: ../plugins/interface_view.glade.h:68
+#: ../plugins/interface_view.glade.h:67
 msgid "name (x,y)"
 msgstr "nom (x,y)"
 
@@ -447,25 +431,42 @@ msgstr "Type de contenu"
 msgid " <i>(Editable)</i>"
 msgstr " <i>(éditable)</i>"
 
-#: ../plugins/script_recorder.glade.h:1
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "Sélection rapide"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr ""
+"Greffon offrant différentes méthodes de sélection rapide des éléments "
+"accessibles."
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "Inspecter le dernier élément accessible sélectionné"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "Inspecter l'élément accessible sous la souris"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr "Natif"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
 msgstr "Type de script"
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-media-record"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -502,7 +503,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
-msgstr "Note : les changements prendrons effet à la déconnexion."
+msgstr "Note : les changements prendront effet à la déconnexion."
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
@@ -591,23 +592,23 @@ msgstr "Site Web"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr "_Ajouter un marque-page"
+msgstr "_Ajouter un signet..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr "Marque-page accessible sélectionné."
+msgstr "Signet accessible sélectionné."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr "É_diter les marque-pages..."
+msgstr "É_diter les signets..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
-msgstr "Gestion des marque-pages"
+msgstr "Gestion des signets"
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr "Éditer les marque-pages..."
+msgstr "Éditer les signets..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
@@ -623,7 +624,7 @@ msgstr "Chemin"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr "Ajouter un marque-page..."
+msgstr "Ajouter un signet..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
@@ -669,3 +670,27 @@ msgstr "<i>_Nouvelle vue...</i>"
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
 msgstr "Nouvelle vue..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "É_dition"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgid "_Bookmarks"
+msgstr "_Signets"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgid "_View"
+msgstr "_Affichage"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "Aid_e"
+
+# This one is to fake the buggy DL stats
+#~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+#~ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
