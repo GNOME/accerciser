@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-09 23:37+0200\n"
+"POT-Creation-Date: 2007-09-12 11:20+0200\n"
 "PO-Revision-Date: 2007-09-09 23:38+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -65,7 +65,8 @@ msgstr "IPython-konsoll"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Interaktiv konsoll för manipulering av aktuellt markerade tillgänglighet"
+msgstr ""
+"Interaktiv konsoll för manipulering av aktuellt markerade tillgänglighet"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -107,8 +108,7 @@ msgstr "Visar händelser när de inträffar från markerade typer och källor"
 msgid "Highlight last event entry"
 msgstr "Markera senaste händelsepost"
 
-#: ../plugins/event_monitor.py:110
-#: ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
@@ -167,8 +167,7 @@ msgstr "<b>Text</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>okänd</b>"
 
-#: ../plugins/interface_view.glade.h:13
-#: ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivning)</i>"
@@ -233,8 +232,7 @@ msgstr "Aktuellt värde"
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: ../plugins/interface_view.glade.h:29
-#: ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -395,8 +393,7 @@ msgstr "Gränssnittsvisare"
 msgid "Allows viewing of various interface properties"
 msgstr "Tillåter visning av olika gränssnittsegenskaper"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (inte implementerad)"
@@ -405,8 +402,7 @@ msgstr " (inte implementerad)"
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: ../plugins/interface_view.py:740
-#: ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -426,8 +422,7 @@ msgstr "För många valbara barn"
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: ../plugins/interface_view.py:1295
-#: ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Redigerbar)</i>"
 
@@ -491,8 +486,13 @@ msgid "_Contents"
 msgstr "_Innehåll"
 
 #: ../src/lib/accerciser/accerciser.py:133
-msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera tillgänglighetsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera dem nu?"
+msgid ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr ""
+"Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera "
+"tillgänglighetsfunktioner för skrivbordet för att rätta till det här "
+"problemet. Vill du aktivera dem nu?"
 
 #: ../src/lib/accerciser/accerciser.py:148
 msgid "Note: Changes only take effect after logout."
@@ -685,45 +685,61 @@ msgstr "_Hjälp"
 
 #~ msgid "gtk-clear"
 #~ msgstr "Töm"
+
 #~ msgid "gtk-save"
 #~ msgstr "Spara"
+
 #~ msgid "gtk-select-all"
 #~ msgstr "Markera allt"
+
 #~ msgid "gtk-media-record"
 #~ msgstr "Spela in"
+
 #~ msgid "Wiki page"
 #~ msgstr "Wiki-sida"
+
 #~ msgid "gtk-close"
 #~ msgstr "Stäng"
+
 #~ msgid "gtk-quit"
 #~ msgstr "Avsluta"
+
 #~ msgid "gtk-refresh"
 #~ msgstr "Uppdatera"
+
 #~ msgid "Core"
 #~ msgstr "Kärna"
+
 #~ msgid "Plugin enabled"
 #~ msgstr "Insticksmodul aktiverad"
+
 #~ msgid "Set to true is plugin is enabled"
 #~ msgstr "Ställ in till sant om insticksmodulen är aktiverad"
+
 #~ msgid "The default tab position"
 #~ msgstr "Standardposition för flik"
+
 #~ msgid "The default tab position for this plugin"
 #~ msgstr "Standardpositionen för fliken för den här insticksmodulen"
+
 #~ msgid "Top right"
 #~ msgstr "Övre högra hörnet"
+
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr ""
 #~ "Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även "
 #~ "om de har aktiverats."
+
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr ""
 #~ "Observera: Du måste logga ut för att skrivbordsalternativ för "
 #~ "tillgänglighet blir aktiverade."
+
 #~ msgid "Va_lue"
 #~ msgstr "Vä_rde"
+
 #~ msgid "accerciser"
 #~ msgstr "accerciser"
-
