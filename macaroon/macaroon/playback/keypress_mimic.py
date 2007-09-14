@@ -25,10 +25,21 @@ min_delta = 50
 # Maximum time before a key release
 release_max = 400
 
+keymap = gtk.gdk.keymap_get_default()
+
 class KeyPressAction(AtomicAction):
-  def __init__(self, delta_time, key_code, key_name=None):
-    if delta_time < min_delta: delta_time = min_delta
+  def __init__(self, delta_time, key_code=None, key_name=None):
+    if (None, None) == (key_name, key_code):
+      raise TypeError("Need either a key code or a key name")
+    if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
+    if key_code is None:
+      global keymap
+      entry = keymap.get_entries_for_keyval(gtk.gdk.keyval_from_name(key_name))
+      if not entry:
+        raise TypeError("Invalid key name")
+      else:
+        key_code = entry[0][0]
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
   def _keyPress(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_PRESS)
@@ -36,9 +47,18 @@ class KeyPressAction(AtomicAction):
     return _('Key press %s') % self._key_name or 'a key'
 
 class KeyReleaseAction(AtomicAction):
-  def __init__(self, delta_time, key_code, key_name=None):
+  def __init__(self, delta_time, key_code=None, key_name=None):
+    if (None, None) == (key_name, key_code):
+      raise TypeError("Need either a key code or a key name")
     if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
+    if key_code is None:
+      global keymap
+      entry = keymap.get_entries_for_keyval(gtk.gdk.keyval_from_name(key_name))
+      if not entry:
+        raise TypeError("Invalid key name")
+      else:
+        key_code = entry[0][0]
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
   def _keyRelease(self, key_code):
     pyatspi.Registry.generateKeyboardEvent(key_code, None, pyatspi.KEY_RELEASE)
@@ -142,3 +162,10 @@ class WaitForFocus(WaitAction):
     WaitAction.__init__(self, "focus:", acc_name, acc_path, acc_role, timeout)
   def __str__(self):
     return _('Wait for %s to be focused') % self._acc_role
+
+class WaitForDocLoad(WaitAction):
+  def __init__(self):
+    WaitAction.__init__(self, 'document:load-complete', 
+                        None, None, None, 30000)
+  def __str__(self):
+    return 'Wait for document to load'

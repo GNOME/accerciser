@@ -17,6 +17,8 @@ import gtksourceview, pango
 from Queue import Queue
 from macaroon.playback.playback_sequence import MacroSequence
 
+APP_ID = None
+
 MacroSequence.startReally = MacroSequence.start
 MacroSequence.start = lambda x: None
 
@@ -41,6 +43,13 @@ class Main:
     self.script_buffer.connect('notify::recording', 
                                self._onRecordChange, status_icon)
     self.macro_preview = None
+    # Get program ID
+    global APP_ID
+    from gnome import program_get
+    _prog = program_get()
+    if _prog is not None:
+      APP_ID = _prog.get_app_id()
+
     pyatspi.Registry.start()
 
   def _onRecordChange(self, gobject, pspec, status_icon):
@@ -106,9 +115,8 @@ class Main:
 class MacroPreview(gtk.Window):
   def __init__(self, script_buffer):
     gtk.Window.__init__(self)
-    print 'new window!'
     self.set_title(_('Macro preview'))
-    self.set_default_size(480, 640)
+    self.set_default_size(480, 720)
     self.set_border_width(6)
     self.connect('delete-event', self._onDelete)
     self.script_buffer = script_buffer
@@ -256,7 +264,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     lang = lm.get_language_from_mime_type('text/x-python')
     self.set_language(lang)
     self.set_highlight(True)
-    self.script_factory = self.factory_mapping['Level1']()
+    self.script_factory = self.factory_mapping['Level2'](False)
     self._recording = False
     self._uimanager = uimanager
     self._addToUIManager()
@@ -264,15 +272,23 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
   def _addToUIManager(self):
     self.script_type_actions = gtk.ActionGroup('ScriptTypes')
     self.script_type_actions.add_radio_actions(
-        (('Level1', None, 'Level 1', None, None),
-         ('Level2', None, 'Level 2', None, None)),
-        1, self._onChange)
+        (('Level1', None, 'Level 1', None, None, 1),
+         ('Level2', None, 'Level 2', None, None, 2)),
+        2, self._onChange)
+    self._wait_for_focus_toggle = gtk.ToggleAction('WaitForFocus', 
+                                                   'Record focus events',
+                                                   None, None)
+    self._wait_for_focus_toggle.set_active(False)
+    self._wait_for_focus_toggle.connect('toggled', self._onWaitForFocusToggled)
+    self.script_type_actions.add_action(self._wait_for_focus_toggle)
     script_type_ui = '''
 <ui>
 <popup>
     <placeholder name="ScriptType">
       <menuitem action="Level1" />
       <menuitem action="Level2" />
+      <separator />
+      <menuitem action="WaitForFocus" />
      </placeholder>
 </popup>
 </ui>'''
@@ -284,6 +300,8 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
                                            'window:activate')
     pyatspi.Registry.registerEventListener(self._onFocus, 
                                            'focus')
+    pyatspi.Registry.registerEventListener(self._onDocLoad, 
+                                           'document:load-complete')
     masks = []
     mask = 0
     while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
@@ -300,6 +318,8 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
                                              'window:activate')
     pyatspi.Registry.deregisterEventListener(self._onFocus, 
                                              'focus')
+    pyatspi.Registry.deregisterEventListener(self._onDocLoad, 
+                                             'document:load-complete')
     masks = []
     mask = 0
     while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
@@ -309,8 +329,9 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
       self._onKeystroke,
       mask=masks,
       kind=(pyatspi.KEY_PRESSED_EVENT, pyatspi.KEY_RELEASED_EVENT))
-    if self.script_factory.terminate_line != '':
-      self._appendText('\n'+self.script_factory.terminate_line+'\n')
+    self.script_factory.terminateScript()
+    while self.script_factory.commands_queue.qsize():
+      self._appendText(self.script_factory.commands_queue.get_nowait())
     self.set_property('recording', False)
 
   def clearBuffer(self):
@@ -333,8 +354,6 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     if self._isMyApp(event.source):
       return
     self.script_factory.windowActivateCommand(event)
-    while self.script_factory.commands_queue.qsize():
-      self._appendText(self.script_factory.commands_queue.get_nowait())
 
   def _onFocus(self, event):
     '''
@@ -346,7 +365,30 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     '''
     if self._isMyApp(event.source):
       return
+    app = event.source.getApplication()
+    triggering_hotkey = None
+    if app.name == 'gnome-panel':
+      if event.source.getRole() == pyatspi.ROLE_MENU and \
+            event.source.parent.getRole() == pyatspi.ROLE_MENU_BAR:
+        # A wild assumption that this was triggered with <Alt>F1
+        triggering_hotkey = '<Alt>F1'
+      if event.source.getRole() == pyatspi.ROLE_COMBO_BOX:
+        triggering_hotkey = '<Alt>F2'
+    elif app.name == 'gnome-screenshot' and \
+          event.source.getRole() == pyatspi.ROLE_TEXT and \
+          pyatspi.getPath(event.source) == [0, 0, 0, 0, 1, 1]:
+      triggering_hotkey = 'Print'
+
+    if triggering_hotkey is not None:
+      fake_event = _FakeDeviceEvent(triggering_hotkey, pyatspi.KEY_PRESSED_EVENT)
+      self._onKeystroke(fake_event)
+
     self.script_factory.focusCommand(event)
+
+    if triggering_hotkey is not None:
+      fake_event = _FakeDeviceEvent(triggering_hotkey, pyatspi.KEY_RELEASED_EVENT)
+      self._onKeystroke(fake_event)
+        
     while self.script_factory.commands_queue.qsize():
       self._appendText(self.script_factory.commands_queue.get_nowait())
 
@@ -365,8 +407,18 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     while self.script_factory.commands_queue.qsize():
       self._appendText(self.script_factory.commands_queue.get_nowait())
 
+  def _onDocLoad(self, event):
+    self.script_factory.docLoadCommand()
+    while self.script_factory.commands_queue.qsize():
+      self._appendText(self.script_factory.commands_queue.get_nowait())
+
   def _isMyApp(self, acc):
-    return False
+    global APP_ID
+    if APP_ID is not None:
+      app = acc.getApplication()
+      return app.name == APP_ID
+    else:
+      return False
 
   def _appendText(self, text):
     self.insert(self.get_end_iter(), text)
@@ -382,5 +434,25 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
   def _onChange(self, action, current):
     factory = self.factory_mapping.get(current.get_name(), 
                                        script_factory.Level1SequenceFactory)
-    print 'using', factory
-    self.script_factory = factory()
+    self.script_factory = factory(self._wait_for_focus_toggle.get_active())
+   
+  def _onWaitForFocusToggled(self, action):
+    factory = self.script_factory.__class__
+    self.script_factory = factory(self._wait_for_focus_toggle.get_active())
+
+class _FakeDeviceEvent(object):
+  def __init__(self, key_combo, type):
+    id = gtk.gdk.keyval_from_name(key_combo)
+    if gtk.gdk.keyval_from_name(key_combo):
+      modifiers = 0
+    else:
+      id, modifiers = gtk.accelerator_parse(key_combo)
+    keymap = gtk.gdk.keymap_get_default()
+    map_entry = keymap.get_entries_for_keyval(65471)
+    self.type = type
+    self.id = id
+    self.hw_code = map_entry[0][0]
+    self.modifiers = int(modifiers)
+    self.timestamp = 0
+    self.event_string = gtk.gdk.keyval_name(id)
+    self.is_text = True

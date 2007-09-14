@@ -1,3 +1,13 @@
+2007-09-14  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/keypress_mimic.py: Added WaitForDocLoad. Made
+	key_code arguments optional in key press and release
+	classes. Useful for cross platform.
+	* macaroon/record/script_factory.py: Prepend contextual waitfors
+	when a keypress comes out of the blue. Got rid of silly whitespaces.
+	* macaroon/record/main.py: Put Level 2 as default. Toggle focus
+	waiting. Attempt to predict consumed WM hotkeys.
+	
 2007-08-30  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/playback/keypress_mimic.py: Override __call__ to remove 

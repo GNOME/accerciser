@@ -17,6 +17,14 @@ from Queue import Queue
 from time import time
 import pyatspi
 
+class _CommandsQueue(Queue):
+  def __init__(self):
+    Queue.__init__(self)
+    self.virgin = True
+  def put(self, item, block=True, timeout=None):
+    Queue.put(self, item, block, timeout)
+    self.virgin = False
+
 class ScriptFactory(object):
   '''
   Abstract class for a script factory. Classes of specific platforms like
@@ -26,8 +34,6 @@ class ScriptFactory(object):
   @type intepreter_line: string
   @cvar import_line: The import line for the specific platform
   @type import_line: strin
-  @cvar terminate_line: A line that terminates a certain segment of a script.
-  @type terminate_line: strin
   @cvar MODIFIERS: Key symbols that are considered modifiers.
   @type MODIFIERS: list
 
@@ -40,7 +46,6 @@ class ScriptFactory(object):
   '''
   intepreter_line = '#!/usr/bin/python'
   import_line = ''
-  terminate_line = ''
   MODIFIERS = [keysyms.Control_L, keysyms.Control_R, 
                keysyms.Alt_L, keysyms.Alt_R, 
                keysyms.Super_L, keysyms.Super_R,
@@ -50,7 +55,7 @@ class ScriptFactory(object):
     '''
     Initialize the script factory.
     '''
-    self.commands_queue = Queue()
+    self.commands_queue = _CommandsQueue()
     self.app_name = ''
     self.frame_name = ''
 
@@ -87,86 +92,145 @@ class ScriptFactory(object):
   def focusCommand(self):
     pass
 
+  def docLoadCommand(self):
+    pass
+
+  def terminateScript(self):
+    self.commands_queue.virgin = True
+
 class SequenceFactory(ScriptFactory):
   import_line = \
       'from macaroon.playback.keypress_mimic import *\n\nsequence = MacroSequence()'
-  terminate_line = 'sequence.start()'
-  def __init__(self):
+  def __init__(self, wait_for_focus=False):
     '''
     Initialize the object.
     '''
     ScriptFactory.__init__(self)
     self._time = 0
+    if wait_for_focus:
+      self._focus_comment = ''
+    else:
+      self._focus_comment = '#'
   def _getDelta(self):
     current_time = time()
     delta = current_time - self._time
     self._time = current_time
     if delta == current_time: delta = 0
     return int(delta*1000)
+  def terminateScript(self):
+    self.commands_queue.put_nowait('\nsequence.start()\n')
+    ScriptFactory.terminateScript(self)
 
 class Level2SequenceFactory(SequenceFactory):
-  def __init__(self):
-    SequenceFactory.__init__(self)
+  def __init__(self, wait_for_focus=False):
+    SequenceFactory.__init__(self, wait_for_focus)
     self.typed_text = ''
     self.last_focused = None
     self.frame_name = ''
+    self._last_app = None
 
   def keyPressCommand(self, event):
-    print event.event_string
     if event.id in self.MODIFIERS or \
           (event.event_string.startswith('ISO') and \
              event.event_string != 'ISO_Left_Tab'):
       return
+    if isinstance(event, pyatspi.event.DeviceEvent):
+      # If it's a fake one, then it is a global WM hotkey, no need for context.
+      self._prependContext()
     if event.modifiers in (0, gtk.gdk.SHIFT_MASK) and \
           gtk.gdk.keyval_to_unicode(event.id):
       self.typed_text += unichr(gtk.gdk.keyval_to_unicode(event.id))
     else:
       if self.frame_name:
-        self.commands_queue.put_nowait(
-          'sequence.append(WaitForWindowActivate("%s",None))\n' % \
-            self.frame_name)
+        if isinstance(event, pyatspi.event.DeviceEvent):
+          self.commands_queue.put_nowait(
+            'sequence.append(WaitForWindowActivate("%s", None))\n' % \
+              self.frame_name.replace('"','\"'))
         self.frame_name = ''
       if self.last_focused:
+        name, path, role = self.last_focused
         self.commands_queue.put_nowait(
-          '#sequence.append(WaitForFocus        ("%s", %s, pyatspi.%s))\n' % \
-            (self.last_focused.name,
-             pyatspi.getPath(self.last_focused), 
-             repr(self.last_focused.getRole())))
+            '%ssequence.append(WaitForFocus("%s", acc_role=pyatspi.%s))\n' % \
+            (self._focus_comment, name.replace('"','\"'), repr(role)))
         self.last_focused = None
       if self.typed_text:
         self.commands_queue.put_nowait(
-          'sequence.append(TypeAction           ("%s"))\n' % \
-                                         self.typed_text)
+          'sequence.append(TypeAction("%s"))\n' % \
+            self.typed_text.replace('"','\"'))
         self.typed_text = ''
       self.commands_queue.put_nowait(
-        'sequence.append(KeyComboAction         ("%s"))\n' % \
+        'sequence.append(KeyComboAction("%s"))\n' % \
           gtk.accelerator_name(event.id, event.modifiers))
 
   def focusCommand(self, event):
-    self.last_focused = event.source
+    self.last_focused = (event.source.name, 
+                         pyatspi.getPath(event.source), 
+                         event.source.getRole())
 
   def windowActivateCommand(self, event):
+    app = event.source.getApplication()
+    if self._last_app == app.name:
+      return
+    else:
+      self._last_app = app.name
     self.frame_name = event.source.name
+
+  def docLoadCommand(self):
+    print 'factory thing'
+    self.commands_queue.put_nowait(
+      'sequence.append(WaitForDocLoad())\n')
+
+  def _prependContext(self):
+    if not self.frame_name and self.commands_queue.virgin:
+      self.frame_name = self._getActiveFrameName()
+    if self.frame_name:
+      self.commands_queue.put_nowait(
+        'sequence.append(WaitForWindowActivate("%s",None))\n' % \
+          self.frame_name)
+      self.frame_name = ''
+    
+
+  def _getActiveFrameName(self):
+    desktop = pyatspi.Registry.getDesktop(0)
+    active_frame = None
+    for app in desktop:
+      for acc in app:
+        if acc is None: continue
+        if acc.getRole() == pyatspi.ROLE_FRAME:
+          state_set = acc.getState()
+          if state_set.contains(pyatspi.STATE_ACTIVE):
+            active_frame = acc
+          state_set.unref()
+          if active_frame is not None:
+            return active_frame.name
+    return ''
+
+  def terminateScript(self):
+    if self.typed_text:
+      self._prependContext()
+      self.commands_queue.put_nowait(
+        'sequence.append(TypeAction           ("%s"))\n' % self.typed_text)
+    SequenceFactory.terminateScript(self)
 
 class Level1SequenceFactory(SequenceFactory):
   def keyPressCommand(self, event):
     delta = self._getDelta()
     self.commands_queue.put_nowait(
-      'sequence.append(KeyPressAction       (%5d,%4d,"%s")) # Press %s\n' % \
+      'sequence.append(KeyPressAction(%d, %d, "%s")) # Press %s\n' % \
         (delta, event.hw_code, event.event_string, event.event_string))
   def keyReleaseCommand(self, event):
     delta = self._getDelta()
     self.commands_queue.put_nowait(
-      'sequence.append(KeyReleaseAction     (%5d,%4d,"%s")) # Release %s\n' % \
+      'sequence.append(KeyReleaseAction(%d, %d, "%s")) # Release %s\n' % \
         (delta, event.hw_code, event.event_string, event.event_string))
   def windowActivateCommand(self, event):
     self.commands_queue.put_nowait(
-      'sequence.append(WaitForWindowActivate("%s",None))\n' % \
+      'sequence.append(WaitForWindowActivate("%s", None))\n' % \
         event.source.name)
   def focusCommand(self, event):
     self.commands_queue.put_nowait(
-      '#sequence.append(WaitForFocus("%s", %s,pyatspi.%s))\n' % \
-        (event.source.name, pyatspi.getPath(event.source), 
+      '%ssequence.append(WaitForFocus("%s", acc_role=pyatspi.%s))\n' % \
+        (self._focus_comment, event.source.name,
          repr(event.source.getRole())))
 
 class DogtailFactory(ScriptFactory):
