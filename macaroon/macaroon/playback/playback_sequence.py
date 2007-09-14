@@ -11,7 +11,7 @@
 
 # Headers in this file shall remain intact.
 
-import gobject, pyatspi
+import gobject, pyatspi, sys
 
 class SequenceStep(gobject.GObject):
   __gsignals__ = {'done' : (gobject.SIGNAL_RUN_FIRST, 
@@ -69,6 +69,8 @@ class WaitAction(SequenceStep):
         self.onEvent(event)
     return self.done
   def _onTimeout(self):
+    if not self.done:
+      sys.stderr.write('Macaroon timeout: %s\n' % self)
     self.stepDone()
     return False
   def onEvent(self, event):

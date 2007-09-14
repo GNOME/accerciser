@@ -1,5 +1,12 @@
 2007-09-14  Eitan Isaacson  <eitan@ascender.com>
 
+	* macaroon/record/script_factory.py: Protect against None objects
+	in desktop accessible when iterating throu applications.
+	* macaroon/playback/keypress_mimic.py: Make wait for focus
+	actions strings more readable.
+	* macaroon/playback/playback_sequence.py: Make a wait action print
+	to stderr when it times out.
+
 	* macaroon/playback/keypress_mimic.py: Added WaitForDocLoad. Made
 	key_code arguments optional in key press and release
 	classes. Useful for cross platform.

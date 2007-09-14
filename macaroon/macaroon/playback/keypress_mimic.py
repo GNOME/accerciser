@@ -151,7 +151,7 @@ class WaitForWindowActivate(WaitAction):
   def isRightFrame(self, acc):
     return acc is not None and acc.name == self._frame_re
   def __str__(self):
-    return _('Wait for window %s to be focused') % self._frame_re
+    return _('Wait for window %s to get activated') % self._frame_re
 
 class WaitForFocus(WaitAction):
   def __init__(self,
@@ -161,7 +161,20 @@ class WaitForFocus(WaitAction):
                timeout=5000):
     WaitAction.__init__(self, "focus:", acc_name, acc_path, acc_role, timeout)
   def __str__(self):
-    return _('Wait for %s to be focused') % self._acc_role
+    if self._acc_name and self._acc_role:
+      identifier = '%s called "%s"' % \
+          (repr(self._acc_role).replace('ROLE_','').lower().replace('_',' '), 
+           self._acc_name)
+    elif self._acc_name:
+      identifier = self._acc_name
+    elif self._acc_role:
+      identifier = \
+          repr(self._acc_role).replace('ROLE_','').lower().replace('_',' ')
+    elif self._acc_path:
+      identifier = 'componenet at %s' % self._acc_path
+    else:
+      identifier = 'anything'
+    return _('Wait for %s to be focused') % identifier
 
 class WaitForDocLoad(WaitAction):
   def __init__(self):
