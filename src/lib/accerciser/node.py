@@ -70,12 +70,14 @@ class Node(gobject.GObject, Tools):
     if not acc or self.isMyApp(acc):
       return
     self.acc = acc
+    self.extents = Bag(x=0, y=0, width=0, height=0)
     try:
       i = acc.queryComponent()
     except NotImplementedError:
-      self.extents = Bag(x=0, y=0, width=0, height=0)
+      pass
     else:
-      self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
+      if isinstance(i, pyatspi.Accessibility.Component):
+        self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.tree_path = None
     self.blinkRect()
     self.emit('accessible-changed', acc)
