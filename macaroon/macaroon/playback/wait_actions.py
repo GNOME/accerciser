@@ -122,7 +122,7 @@ class WaitAction(SequenceStep):
     @return: String representation of instance.
     @rtype: string
     '''
-    return 'Wait for', ','.join(self.wait_for)
+    return 'Wait for %s' % ','.join(self.wait_for)
 
 class WaitForWindowActivate(WaitAction):
   '''

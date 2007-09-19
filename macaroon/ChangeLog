@@ -1,5 +1,8 @@
 2007-09-19  Eitan Isaacson  <eitan@ascender.com>
 
+	* macaroon/playback/wait_actions.py (WaitAction.__str__): Fixed
+	TypeError, thanks Willie Walker!
+
 	* macaroon/playback/sequence.py: Added "verbose" argument to 
 	MacroSequence.start(). Could also be set to verbose with 
 	MACAROON_VERBOSE environment variable.
