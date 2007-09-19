@@ -17,6 +17,8 @@ Headers in this file shall remain intact.
 
 import gobject, pyatspi, sys
 from wait_actions import WaitAction
+from os import environ
+_ = lambda x: x
 
 class MacroSequence(gobject.GObject):
   '''
@@ -27,6 +29,8 @@ class MacroSequence(gobject.GObject):
 
   @ivar _loop: Loop instance if the main loop should be embedded.
   @type _loop: gobject.MainLoop
+  @ivar _verbose: Print to standard output the current step the sequence is in.
+  @type _verbose: boolean
   @ivar _current_step: The index of the currently performed step.
   @type _current_step: integer
   @ivar _current_handler: Event handler ID of currently performed step.
@@ -48,6 +52,7 @@ class MacroSequence(gobject.GObject):
     '''
     self.__gobject_init__()
     self._loop = None
+    self._verbose = False
     self._current_step = 0
     self._current_handler = 0
     self.steps = []
@@ -63,7 +68,7 @@ class MacroSequence(gobject.GObject):
     '''
     self.steps.append(step)
 
-  def start(self, embedded_loop=True):
+  def start(self, embedded_loop=True, verbose=False):
     '''
     Start sequence.
     
@@ -71,6 +76,7 @@ class MacroSequence(gobject.GObject):
     outside of a main loop.
     @type embedded_loop: boolean
     '''
+    self._verbose = bool(verbose or environ.get('MACAROON_VERBOSE', 0))
     self._iterAction()
     if embedded_loop:
       self._loop = gobject.MainLoop()
@@ -85,6 +91,8 @@ class MacroSequence(gobject.GObject):
         self._loop.quit()
       return
     action = self.steps[self._current_step]
+    if self._verbose:
+      print _('SEQUENCE: %s') % action
 
     try:
       next_action = self.steps[self._current_step + 1]

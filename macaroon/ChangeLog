@@ -1,3 +1,11 @@
+2007-09-19  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/sequence.py: Added "verbose" argument to 
+	MacroSequence.start(). Could also be set to verbose with 
+	MACAROON_VERBOSE environment variable.
+	* macaroon/playback/sequence_step.py: Added PauseAction.
+	* macaroon/main.py: Fixed import line.
+
 2007-09-18  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/playback/Makefile.am: Added new files, removed old

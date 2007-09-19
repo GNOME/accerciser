@@ -120,6 +120,29 @@ class DebugAction(AtomicAction):
     '''
     return 'Debug message: %s' % self._debug_msg
 
+class PauseAction(AtomicAction):
+  '''
+  A simple pause for a given amount of time.
+  '''
+  def __init__(self, delta_time):
+    '''
+    Initialize a L{PauseAction}.
+    
+    @param delta_time: Duration of pause in milliseconds.
+    @type delta_time: integer
+    '''
+    AtomicAction.__init__(self, delta_time, lambda args, kwargs: None, [], {})
+
+  def __str__(self):
+    '''
+    String representation of instance.
+    
+    @return: String representation of instance.
+    @rtype: string
+    '''
+    return 'Pause for %d milliseconds' % self.delta_time
+
+
 class CallableAction(AtomicAction):
   '''
   A simplified L{AtomicAction} that makes it easy for simply calling a function.

@@ -15,7 +15,7 @@ import script_factory
 import gtk, gobject
 import gtksourceview, pango
 from Queue import Queue
-from macaroon.playback.playback_sequence import MacroSequence
+from macaroon.playback import MacroSequence
 
 APP_ID = None
 
