@@ -100,7 +100,7 @@ class ScriptFactory(object):
 
 class SequenceFactory(ScriptFactory):
   import_line = \
-      'from macaroon.playback.keypress_mimic import *\n\nsequence = MacroSequence()'
+      'from macaroon.playback import *\n\nsequence = MacroSequence()'
   def __init__(self, wait_for_focus=False):
     '''
     Initialize the object.
@@ -169,6 +169,9 @@ class Level2SequenceFactory(SequenceFactory):
 
   def windowActivateCommand(self, event):
     app = event.source.getApplication()
+    if app is None:
+      self.frame_name = event.source.name
+      return
     if self._last_app == app.name:
       return
     else:

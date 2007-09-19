@@ -264,7 +264,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     lang = lm.get_language_from_mime_type('text/x-python')
     self.set_language(lang)
     self.set_highlight(True)
-    self.script_factory = self.factory_mapping['Level2'](False)
+    self.script_factory = self.factory_mapping['Level2'](True)
     self._recording = False
     self._uimanager = uimanager
     self._addToUIManager()
@@ -278,7 +278,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     self._wait_for_focus_toggle = gtk.ToggleAction('WaitForFocus', 
                                                    'Record focus events',
                                                    None, None)
-    self._wait_for_focus_toggle.set_active(False)
+    self._wait_for_focus_toggle.set_active(True)
     self._wait_for_focus_toggle.connect('toggled', self._onWaitForFocusToggled)
     self.script_type_actions.add_action(self._wait_for_focus_toggle)
     script_type_ui = '''
@@ -367,14 +367,14 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
       return
     app = event.source.getApplication()
     triggering_hotkey = None
-    if app.name == 'gnome-panel':
+    if getattr(app, 'name', None) == 'gnome-panel':
       if event.source.getRole() == pyatspi.ROLE_MENU and \
             event.source.parent.getRole() == pyatspi.ROLE_MENU_BAR:
         # A wild assumption that this was triggered with <Alt>F1
         triggering_hotkey = '<Alt>F1'
       if event.source.getRole() == pyatspi.ROLE_COMBO_BOX:
         triggering_hotkey = '<Alt>F2'
-    elif app.name == 'gnome-screenshot' and \
+    elif getattr(app, 'name', None) == 'gnome-screenshot' and \
           event.source.getRole() == pyatspi.ROLE_TEXT and \
           pyatspi.getPath(event.source) == [0, 0, 0, 0, 1, 1]:
       triggering_hotkey = 'Print'
@@ -416,7 +416,7 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     global APP_ID
     if APP_ID is not None:
       app = acc.getApplication()
-      return app.name == APP_ID
+      return getattr(app, 'name', None) == APP_ID
     else:
       return False
 

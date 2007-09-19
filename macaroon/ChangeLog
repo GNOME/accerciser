@@ -1,3 +1,23 @@
+2007-09-18  Eitan Isaacson  <eitan@ascender.com>
+
+	* macaroon/playback/Makefile.am: Added new files, removed old
+	ones.
+	* macaroon/playback/__init__.py: Import package into namesapce.
+	* macaroon/playback/keypress_actions.py: New home of all keypress 
+	actions.
+	* macaroon/playback/keypress_mimic.py: Keeping around for backward 
+	compatability.
+	* macaroon/playback/playback_sequence.py: Removed.
+	* macaroon/playback/sequence.py: New home of MacroSequence.
+	* macaroon/playback/sequence_step.py: New home of SequenceStep and
+	a few basic actions.
+	* macaroon/playback/wait_actions.py: Home of WaitAction and derivatives.
+	* macaroon/record/main.py: Enable focus recording by default. Be
+	more careful when getApplication() returns None.
+	* macaroon/record/script_factory.py: Be more careful when 
+	getApplication() returns None. Change sequence import line
+	according to new refactor.
+
 2007-09-14  Eitan Isaacson  <eitan@ascender.com>
 
 	* macaroon/record/script_factory.py: Protect against None objects
