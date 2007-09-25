@@ -50,7 +50,10 @@ class WaitAction(SequenceStep):
     @type timeout: integer
     '''
     SequenceStep.__init__(self)
-    self.wait_for = [event]
+    if isinstance(event, list):
+      self.wait_for = event
+    else:
+      self.wait_for = [event]
     self._acc_name = acc_name
     self._acc_path = acc_path
     self._acc_role = acc_role
@@ -149,7 +152,10 @@ class WaitForWindowActivate(WaitAction):
     @param timeout: Time to wait in milliseconds before timing out.
     @type timeout: integer
     '''
-    WaitAction.__init__(self, "window:activate", None, None, None, timeout)
+    WaitAction.__init__(self, 
+                        ['window:activate', 
+                         'object:property-change:accessible-name'], 
+                        None, None, None, timeout)
     self._frame_re = frame_re
     self._application_re = application_re
 
@@ -160,8 +166,8 @@ class WaitForWindowActivate(WaitAction):
     @return: True if window is already activated.
     @rtype: boolean
     '''
-    active_frame = utils.getActiveFrame()
-    if self.isRightFrame(active_frame):
+    self._active_frame = utils.getActiveFrame()
+    if self.isRightFrame(self._active_frame):
       self.stepDone()
     return WaitAction.checkExistingState(self)
 
@@ -170,8 +176,12 @@ class WaitForWindowActivate(WaitAction):
     Event callback. Check if this is the fame we are looking for and 
     move to the next step.
     '''
-    if self.isRightFrame(event.source):
-      self.stepDone()
+    if event.type == 'window:activate' or \
+          (event.type == 'object:property-change:accessible-name' and \
+             event.source == self._active_frame):
+      self._active_frame = event.source
+      if self.isRightFrame(self._active_frame):
+        self.stepDone()      
 
   def isRightFrame(self, acc):
     '''
@@ -199,7 +209,7 @@ class WaitForFocus(WaitAction):
   Wait for a focus event.
   '''
   def __init__(self, acc_name=None, 
-               acc_path=None, acc_role=None, timeout=5000):
+               acc_path=None, acc_role=None, timeout=10000):
     '''
     Initialize a L{WaitForFocus}
     
