@@ -209,14 +209,13 @@ class PluginMessage(gtk.Frame):
     self.vbox.set_spacing(3)
     self.action_area = gtk.VBox()
     self.action_area.set_homogeneous(True)
-    tooltip = gtk.Tooltips()
-    tooltip.force_window()
-    # A temporary measure for bug #460071.
-    if tooltip.tip_window is not None:
-      tooltip.tip_window.ensure_style()
-      self.message_style = tooltip.tip_window.rc_get_style()
-    else:
-      self.message_style = self.rc_get_style()
+
+    # Get the tooltip style, for use with the message background color.
+    w = gtk.Window()
+    w.set_name('gtk-tooltip')
+    w.ensure_style()
+    self.message_style = w.rc_get_style()
+
     event_box = gtk.EventBox()
     event_box.set_style(self.message_style)
     self.add(event_box)

@@ -73,9 +73,6 @@ class Main(Tools):
 
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
-
-    self.node.connect('accessible_changed', self._onAccesibleChange)
-
     self.bookmarks_store = BookmarkStore(self.node)
 
     # load plugins
@@ -148,29 +145,6 @@ class Main(Tools):
           message_format=_('Note: Changes only take effect after logout.'))
         dialog.run()
         dialog.destroy()
-
-  def _onAccesibleChange(self, node, acc):
-    '''
-    Callback for "accessible_changed" signal that is emitted by the L{Node}
-    referenced as an instance variable.
-    Updates the status bar with the path to the selected accessible.
-
-    @param node: The node that emitted the signal.
-    @type node: L{Node}
-    @param acc: The new accessible that is referenced by the node.
-    @type acc: L{Accessibility.Accessible}
-    '''
-    # Update status bar
-    statusbar = self.window.statusbar
-    context_id = statusbar.get_context_id('lineage')
-    selection = self.window.treeview.get_selection()
-    model, iter = selection.get_selected()
-    if not iter:
-      return
-    path = map(str, model.get_path(iter))
-    statusbar.pop(context_id)
-    if len(path) > 1:
-      statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
 
   def _shutDown(self):
     '''

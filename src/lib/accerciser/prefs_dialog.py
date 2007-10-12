@@ -51,4 +51,4 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     @param response_id: Response ID recieved.
     @type response_id: integer
     '''
-    self.destroy()
+    dialog.destroy()

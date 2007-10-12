@@ -1,3 +1,15 @@
+2007-10-12  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/lib/accerciser/accerciser.py: Removed _onAccChanged
+	callback, and put in a more general selection changed callback in
+	main_window.py (bug #484843).
+	* src/lib/accerciser/main_window.py: Put in a selection changed
+	callback to update the status bar with the current path (bug #484843).
+	* src/lib/accerciser/plugin/message.py: Fixed tooltip style issue
+	(bug #460071).
+	* src/lib/accerciser/prefs_dialog.py: Fixed bug that would not
+	alow preferences window to be closed (bug #481176).
+
 2007-10-05  Eitan Isaacson  <eitan@ascender.com>
 
 	* configure.in:

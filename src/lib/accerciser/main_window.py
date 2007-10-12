@@ -47,6 +47,9 @@ class AccerciserMainWindow(gtk.Window):
     # Populate window
     self._populateUI(node)
 
+    selection = self.treeview.get_selection()
+    selection.connect('changed', self._onSelectionChanged)
+
   def _populateUI(self, node):
     '''
     Populate the top level window widget.
@@ -171,3 +174,20 @@ class AccerciserMainWindow(gtk.Window):
     @type node: 
     '''
     self.queue_draw()
+
+  def _onSelectionChanged(self, selection):
+    '''
+    Callback for selection "changed" of the main treeview selection.
+    Updates the status bar with the path to the selected accessible.
+
+    @param selection: The main tree view's selection object.
+    @type node: gtk.TreeSelection
+    '''
+    model, iter = selection.get_selected()
+    context_id = self.statusbar.get_context_id('lineage')
+    if not iter:
+      return
+    path = map(str, model.get_path(iter))
+    self.statusbar.pop(context_id)
+    if len(path) > 1:
+      self.statusbar.push(context_id, 'Path: '+' '.join(path[1:]))
