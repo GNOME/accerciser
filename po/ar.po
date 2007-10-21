@@ -10,15 +10,14 @@ msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-21 20:05+0100\n"
-"PO-Revision-Date: 2007-09-08 12:34-0000\n"
-"Last-Translator: Youssef Chahibi <chahibi@gmail.com>\n"
+"PO-Revision-Date: 2007-10-21 20:26+0100\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
@@ -112,7 +111,8 @@ msgstr "اظهر الأحداث كما تحدث من الأنواع و المص�
 msgid "Highlight last event entry"
 msgstr "اظهر الحدث الأخير"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:110
+#: ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
@@ -171,7 +171,8 @@ msgstr "<b>نص</b>"
 msgid "<b>unknown</b>"
 msgstr "<i>مجهول</i>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:13
+#: ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>لا وصفا</i>"
@@ -236,7 +237,8 @@ msgstr "القيمة الحالية"
 msgid "Des_ktop"
 msgstr "س_طح المكتب"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29
+#: ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "الوصف"
 
@@ -397,7 +399,8 @@ msgstr "عارض الواجهة"
 msgid "Allows viewing of various interface properties"
 msgstr "اسمح برؤية خصائص مختلفة للواجهة "
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185
+#: ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr "(غير مطبق)"
@@ -406,7 +409,8 @@ msgstr "(غير مطبق)"
 msgid "Key binding"
 msgstr "ارتباط المفتاح"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740
+#: ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -426,7 +430,8 @@ msgstr "توجد فروع كثيرة يمكن انتقاؤها"
 msgid "Content type"
 msgstr "نوع المحتويات"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295
+#: ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr "<i>قابل للتحرير</i>"
 
@@ -490,12 +495,8 @@ msgid "_Contents"
 msgstr "_محتويات"
 
 #: ../src/lib/accerciser/accerciser.py:130
-msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr ""
-"لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يحب تفعيل إتاحة سطح المكتب "
-"لتصحيح المشكل. هل تريد تفعيله الآن؟"
+msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr "لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يحب تفعيل إتاحة سطح المكتب لتصحيح المشكل. هل تريد تفعيله الآن؟"
 
 #: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
@@ -572,9 +573,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "مستكشف تفاعلي الاتاحة لبايثون "
 
 #: ../src/lib/accerciser/about_dialog.py:52
-#, fuzzy
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة IBM  © 2006, 2007 (BSD)"
+msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة IBM  © 2006، 2007 (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -654,9 +654,9 @@ msgstr "عرض الملحق"
 
 # fuzzy , python-format
 #: ../src/lib/accerciser/plugin/view.py:761
-#, fuzzy, python-format
+#, python-format
 msgid "Plugin View (%d)"
-msgstr "عرض الملحق (%Id)"
+msgstr "عرض الملحق (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
@@ -688,36 +688,27 @@ msgstr "م_ساعدة"
 
 #~ msgid "gtk-clear"
 #~ msgstr "مسح"
-
 #~ msgid "gtk-save"
 #~ msgstr "gtk-save"
-
 #~ msgid "gtk-select-all"
 #~ msgstr "اختيار الكل"
-
 #~ msgid "gtk-media-record"
 #~ msgstr "gtk-media-record"
-
 #~ msgid "Wiki page"
 #~ msgstr "صفحة ويكي"
-
 #~ msgid "gtk-close"
 #~ msgstr "gtk-close"
-
 #~ msgid "gtk-quit"
 #~ msgstr "إنهاء"
-
 #~ msgid "gtk-refresh"
 #~ msgstr "اعادة تحميل"
-
 #~ msgid "Core"
 #~ msgstr "اللبّ"
-
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr "الاتاحة لا تعمل رغم انه تم تفعيلها"
-
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr "ملاحظة: يجب تسجيل الخروج لتفعيل خيارات الإتاحة"
+
