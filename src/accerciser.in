@@ -33,6 +33,8 @@ gnome.program_init('accerciser', '@VERSION@', properties=props)
 import pygtk
 pygtk.require('2.0')
 import gtk
+# initialize threads
+gtk.gdk.threads_init()
 # get global icon resources
 it = gtk.IconTheme()
 try:

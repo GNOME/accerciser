@@ -12,12 +12,13 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
+import gtk, gobject
 import re
 import sys
 import os
 import pango
 from StringIO import StringIO
+import thread
 
 try:
   import IPython
@@ -273,9 +274,12 @@ class ConsoleView(gtk.TextView):
     self.line_start = \
         self.text_buffer.create_mark('line_start', 
                                      self.text_buffer.get_end_iter(), True)
-    self.connect('key-press-event', self._onKeypress)
+    self.connect('key-press-event', self.onKeyPress)
     
   def write(self, text, editable=False):
+    gobject.idle_add(self._write, text, editable)
+
+  def _write(self, text, editable=False):
     '''
     Write given text to buffer.
     
@@ -305,17 +309,25 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.delete_mark(start_mark)
     self.scroll_mark_onscreen(self.mark)
 
+
   def showPrompt(self, prompt):
+    gobject.idle_add(self._showPrompt, prompt)
+
+  def _showPrompt(self, prompt):
     '''
     Prints prompt at start of line.
     
     @param prompt: Prompt to print.
     @type prompt: string
     '''
-    self.write(prompt)
-    self.text_buffer.move_mark(self.line_start,self.text_buffer.get_end_iter())
+    self._write(prompt)
+    self.text_buffer.move_mark(self.line_start,
+                               self.text_buffer.get_end_iter())
 
   def changeLine(self, text):
+    gobject.idle_add(self._changeLine, text)
+
+  def _changeLine(self, text):
     '''
     Replace currently entered command line with given text.
     
@@ -325,7 +337,7 @@ class ConsoleView(gtk.TextView):
     iter = self.text_buffer.get_iter_at_mark(self.line_start)
     iter.forward_to_line_end()
     self.text_buffer.delete(self.text_buffer.get_iter_at_mark(self.line_start), iter)
-    self.write(text, True)
+    self._write(text, True)
 
   def getCurrentLine(self):
     '''
@@ -340,6 +352,9 @@ class ConsoleView(gtk.TextView):
     return rv
 
   def showReturned(self, text):
+    gobject.idle_add(self._showReturned, text)
+
+  def _showReturned(self, text):
     '''
     Show returned text from last command and print new prompt.
     
@@ -352,14 +367,14 @@ class ConsoleView(gtk.TextView):
       'notouch', 
       self.text_buffer.get_iter_at_mark(self.line_start),
       iter)
-    self.write('\n'+text)
+    self._write('\n'+text)
     if text:
-      self.write('\n')
-    self.showPrompt(self.prompt)
+      self._write('\n')
+    self._showPrompt(self.prompt)
     self.text_buffer.move_mark(self.line_start,self.text_buffer.get_end_iter())
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
-  def _onKeypress(self, widget, event):
+  def onKeyPress(self, widget, event):
     '''
     Key press callback used for correcting behavior for console-like 
     interfaces. For example 'home' should go to prompt, not to begining of
@@ -417,7 +432,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     self.cout = StringIO()
     IterableIPShell.__init__(self, cout=self.cout,cerr=self.cout, 
                              input_func=self.raw_input)
-    self.connect('key_press_event', self.keyPress)
+#    self.connect('key_press_event', self.keyPress)
     self.execute()
     self.cout.truncate(0)
     self.showPrompt(self.prompt)
@@ -438,7 +453,7 @@ class IPythonView(ConsoleView, IterableIPShell):
       raise KeyboardInterrupt
     return self.getCurrentLine()
 
-  def keyPress(self, widget, event):
+  def onKeyPress(self, widget, event):
     '''
     Key press callback with plenty of shell goodness, like history, 
     autocompletions, etc.
@@ -451,6 +466,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     @return: True if event should not trickle.
     @rtype: boolean
     '''
+    ConsoleView.onKeyPress(self, widget, event)
     if event.state & gtk.gdk.CONTROL_MASK and event.keyval == 99:
       self.interrupt = True
       self._processLine()

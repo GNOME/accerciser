@@ -1,3 +1,14 @@
+2007-11-03  Eitan Isaacson  <eitan@ascender.com>
+
+	* src/accerciser.in: Initialized GDK threading, IPython 0.8.* is
+	forcing us to do this because it imports ctypes which enables
+	Python threading (bug #469427).
+	* plugins/ipython_view.py (ConsoleView): De-coupled all caret
+	movement and text manipulation in the ConsoleView from the input
+	event handling. Without decoupling we get a lockup if threading
+	is enabled when a GAIL callback tries to acquire the lock during a 
+	GDK event dispatch.
+
 2007-10-29  Eitan Isaacson  <eitan@ascender.com>
 
 	* NEWS: 
