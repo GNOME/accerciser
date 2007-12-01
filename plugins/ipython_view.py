@@ -400,17 +400,15 @@ class ConsoleView(gtk.TextView):
       elif event.state == gtk.gdk.SHIFT_MASK:
         self.text_buffer.move_mark(insert_mark, start_iter)
         return True
-      return
     elif event.keyval == gtk.keysyms.Left:
       insert_iter.backward_cursor_position()
       if not insert_iter.editable(True):
         return True
-      return
     elif not event.string:
-      return
-    if start_iter.compare(insert_iter) <= 0 and \
+      pass
+    elif start_iter.compare(insert_iter) <= 0 and \
           start_iter.compare(selection_iter) <= 0:
-      return
+      pass
     elif start_iter.compare(insert_iter) > 0 and \
           start_iter.compare(selection_iter) > 0:
       self.text_buffer.place_cursor(start_iter)
@@ -418,6 +416,14 @@ class ConsoleView(gtk.TextView):
       self.text_buffer.move_mark(insert_mark, start_iter)
     elif insert_iter.compare(selection_iter) > 0:
       self.text_buffer.move_mark(selection_mark, start_iter)             
+
+    return self.onKeyPressExtend(event)
+
+  def onKeyPressExtend(self, event):
+    '''
+    For some reason we can't extend onKeyPress directly (bug #500900).
+    '''
+    pass
 
 class IPythonView(ConsoleView, IterableIPShell):
   '''
@@ -437,6 +443,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     self.cout.truncate(0)
     self.showPrompt(self.prompt)
     self.interrupt = False
+    print self, issubclass(self.__class__, ConsoleView)
 
   def raw_input(self, prompt=''):
     '''
@@ -453,7 +460,7 @@ class IPythonView(ConsoleView, IterableIPShell):
       raise KeyboardInterrupt
     return self.getCurrentLine()
 
-  def onKeyPress(self, widget, event):
+  def onKeyPressExtend(self, event):
     '''
     Key press callback with plenty of shell goodness, like history, 
     autocompletions, etc.
@@ -466,7 +473,6 @@ class IPythonView(ConsoleView, IterableIPShell):
     @return: True if event should not trickle.
     @rtype: boolean
     '''
-    ConsoleView.onKeyPress(self, widget, event)
     if event.state & gtk.gdk.CONTROL_MASK and event.keyval == 99:
       self.interrupt = True
       self._processLine()
