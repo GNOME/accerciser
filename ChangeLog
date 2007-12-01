@@ -1,9 +1,11 @@
 2007-12-01  Eitan Isaacson  <eitan@ascender.com>
 
+	* plugins/ipython_view.py (IPythonView.__init__): Removed a "print".
+
 	* plugins/ipython_view.py (ConsoleView.onKeyPressExtend): Fixed
 	strange bug when trying to extend a superclass's method through a 
 	callback (bug #500900).
-
+	
 2007-11-13  Eitan Isaacson  <eitan@ascender.com>
 
 	* NEWS: 

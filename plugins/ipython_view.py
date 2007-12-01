@@ -443,7 +443,6 @@ class IPythonView(ConsoleView, IterableIPShell):
     self.cout.truncate(0)
     self.showPrompt(self.prompt)
     self.interrupt = False
-    print self, issubclass(self.__class__, ConsoleView)
 
   def raw_input(self, prompt=''):
     '''
