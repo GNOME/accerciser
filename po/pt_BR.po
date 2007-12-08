@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the accerciser package.
 # Washington Lins <washington-lins@uol.com.br>, 2007.
 # Luiz Armesto <luiz.armesto@gmail.com>, 2007.
+# Og Maciel <ogmaciel@gnome.org>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-22 12:32+0100\n"
-"PO-Revision-Date: 2007-08-24 19:30-0300\n"
-"Last-Translator: Luiz Armesto <luiz.armesto@gmail.com>\n"
+"POT-Creation-Date: 2007-12-08 00:39-0200\n"
+"PO-Revision-Date: 2007-12-08 00:39-0200\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,7 +68,9 @@ msgstr "Console IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Console interativo para manipulação das acessibilidades atualmente selecionadas"
+msgstr ""
+"Console interativo para manipulação das acessibilidades atualmente "
+"selecionadas"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -97,35 +100,20 @@ msgstr "Fonte"
 msgid "_Monitor Events"
 msgstr "_Monitor de Eventos"
 
-#: ../plugins/event_monitor.glade.h:8
-#: ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
-#: ../plugins/event_monitor.glade.h:9
-#: ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
-
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Monitor de Eventos"
 
 #: ../plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr "Mostra os eventos ao ocorrerem a partir dos tipos e fontes selecionados"
+msgstr ""
+"Mostra os eventos ao ocorrerem a partir dos tipos e fontes selecionados"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Destacar último registro de evento"
 
-#: ../plugins/event_monitor.py:110
-#: ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
@@ -184,8 +172,7 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconhecido</b>"
 
-#: ../plugins/interface_view.glade.h:13
-#: ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>(sem descrição)</i>"
@@ -250,152 +237,152 @@ msgstr "Valor atual"
 msgid "Des_ktop"
 msgstr "Área de _Trabalho"
 
-#: ../plugins/interface_view.glade.h:29
-#: ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
 msgid "Description"
 msgstr "Descrição"
 
-#: ../plugins/interface_view.glade.h:30
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
 msgstr "Extensões:"
 
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
 msgstr "H_ipertexto"
 
-#: ../plugins/interface_view.glade.h:32
-msgid "Header:"
-msgstr "Cabeçalho: "
-
 #: ../plugins/interface_view.glade.h:33
+msgid "Header:"
+msgstr "Cabeçalho:"
+
+#: ../plugins/interface_view.glade.h:34
 msgid "Hyperlink"
 msgstr "Hiperligação"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:35
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:36
 msgid "Include defaults"
 msgstr "Incluir padrões"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:37
 msgid "Layer"
 msgstr "Camada"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
 msgstr "Assistente de Lo_gin"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:39
 msgid "Locale"
 msgstr "Localização"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:40
 msgid "Locale:"
 msgstr "Localização:"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
 msgstr "MDI-Z-order"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
 msgstr "Valor máximo"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
 msgstr "Incremento mínimo"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
 msgstr "Valor mínimo"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:45
 msgid "Offset"
 msgstr "Deslocamento"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:46
 msgid "Perform action"
 msgstr "Executar ação"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:47
 msgid "Position"
 msgstr "Posição"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:48
 msgid "Relative position"
 msgstr "Posição relativa"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:49
 msgid "Row"
 msgstr "Linha"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:50
 msgid "Rows"
 msgstr "Linhas"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:51
 msgid "Select All"
 msgstr "Selecionar Todos"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:52
 msgid "Selected columns"
 msgstr "Colunas selecionadas"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:53
 msgid "Selected rows"
 msgstr "Linhas selecionadas"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:54
 msgid "Show"
 msgstr "Mostrar"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:55
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
 msgstr "Conteúdo _reprodutível"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
 msgstr "Te_xto"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
 msgstr "Caixa de Ferramentas"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
 msgstr "Val_or"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:60
 msgid "Version"
 msgstr "Versão"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:61
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:62
 msgid "_Accessible"
 msgstr "_Acessível"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:63
 msgid "_Document"
 msgstr "_Documnto"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:64
 msgid "_Image"
 msgstr "_Imagem"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:65
 msgid "_Selection"
 msgstr "_Seleção"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:66
 msgid "_Table"
 msgstr "_Tabela"
 
@@ -411,8 +398,7 @@ msgstr "Interface de Visualização"
 msgid "Allows viewing of various interface properties"
 msgstr "Permitir visualizar uma variedade de propriedades de interface"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (não implementado)"
@@ -421,8 +407,7 @@ msgstr " (não implementado)"
 msgid "Key binding"
 msgstr "Atalho do teclado"
 
-#: ../plugins/interface_view.py:740
-#: ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -442,8 +427,7 @@ msgstr "Muitos filhos selecionáveis"
 msgid "Content type"
 msgstr "Tipo de conteúdo"
 
-#: ../plugins/interface_view.py:1295
-#: ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Editável)</i>"
 
@@ -463,25 +447,24 @@ msgstr "Inspecionar a última acessibilidade posta em foco"
 msgid "Inspect accessible under mouse"
 msgstr "Inspecionar acessibilidade abaixo do mouse"
 
-#: ../plugins/script_recorder.glade.h:1
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr "Nativo"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
 msgstr "Tipo de Script"
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-media-record"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -499,19 +482,24 @@ msgstr "O script atual será perdido."
 msgid "Confirm clear"
 msgstr "Confirmar limpeza"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Preferências..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Conteúdo"
 
-#: ../src/lib/accerciser/accerciser.py:133
-msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Accerciser não pode encontrar as aplicações no sua área de trabalho. Você deve habilitar o acesso à área de trabalho para resolver este problema. Você deseja habilita-lo agora?"
+#: ../src/lib/accerciser/accerciser.py:130
+msgid ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr ""
+"Accerciser não pode encontrar as aplicações no sua área de trabalho. Você "
+"deve habilitar o acesso à área de trabalho para resolver este problema. Você "
+"deseja habilitá-lo agora?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: As alterações só terão efeito após fechar a sessão."
 
@@ -555,11 +543,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Painel superior"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Painel inferior"
 
@@ -579,14 +567,15 @@ msgstr "Teclas de atalho globais"
 msgid "translator-credits"
 msgstr ""
 "Washington Lins <washington-lins@uol.com.br>\n"
-"Luiz Armesto <luiz.armesto@gmail.com>"
+"Luiz Armesto <luiz.armesto@gmail.com>\n"
+"Og Maciel <ogmaciel@gnome.org>"
 
 #: ../src/lib/accerciser/about_dialog.py:51
 msgid "An interactive Python accessibility explorer"
 msgstr "Um explorador de acessibilidade interativo em Python"
 
 #: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
@@ -698,3 +687,14 @@ msgstr "_Ver"
 msgid "_Help"
 msgstr "Aj_uda"
 
+#~ msgid "gtk-clear"
+#~ msgstr "gtk-clear"
+
+#~ msgid "gtk-save"
+#~ msgstr "gtk-save"
+
+#~ msgid "gtk-select-all"
+#~ msgstr "gtk-select-all"
+
+#~ msgid "gtk-media-record"
+#~ msgstr "gtk-media-record"
