@@ -1,16 +1,16 @@
-# translation of accerciser.HEAD.es.po to Spanish
+# translation of accerciser.HEAD.po to Español
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser.HEAD.es\n"
+"Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 03:18+0000\n"
-"PO-Revision-Date: 2007-11-28 13:54+0100\n"
+"POT-Creation-Date: 2008-01-11 10:37+0000\n"
+"PO-Revision-Date: 2008-01-11 15:03+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"Language-Team: Español <<gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -236,6 +236,7 @@ msgid "Des_ktop"
 msgstr "_Escritorio"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:206
 msgid "Description"
 msgstr "Descripción"
 
@@ -479,6 +480,139 @@ msgstr "Se perderá el script actual."
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
 msgstr "Confirme la limpieza"
+
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:280
+msgid "Idle"
+msgstr "Inactivo"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Esque_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "V_alidar"
+
+#: ../plugins/validate.glade.h:4
+msgid "gtk-help"
+msgstr "gtk-help"
+
+#: ../plugins/validate.glade.h:5
+msgid "gtk-save-as"
+msgstr "gtk-save-as"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Sin descripción"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Validador AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Valida la accesibilidad de una aplicación"
+
+#. log level column
+#: ../plugins/validate.py:199
+msgid "Level"
+msgstr "Nivel"
+
+#: ../plugins/validate.py:263
+msgid "Validating"
+msgstr "Validando"
+
+#: ../plugins/validate.py:416
+msgid "EXCEPT"
+msgstr ""
+
+#: ../plugins/validate.py:423
+msgid "ERROR"
+msgstr "ERROR"
+
+#: ../plugins/validate.py:430
+msgid "WARN"
+msgstr "ADVERTENCIA"
+
+#: ../plugins/validate.py:436
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:442
+msgid "DEBUG"
+msgstr "DEPURAR"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Básico"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Comprueba la accesibilidad fundamental del IGU de una aplicación"
+
+#: ../plugindata/validate/basic.py:20
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "el accionable %s no puede tener el foco o ser seleccionado"
+
+#: ../plugindata/validate/basic.py:34
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "el interactivo %s no es accionable"
+
+#: ../plugindata/validate/basic.py:44
+msgid "more than one focused widget"
+msgstr "hay más de un widget con el foco"
+
+#: ../plugindata/validate/basic.py:65
+#, python-format
+msgid "%s has no text interface"
+msgstr "la interfaz de %s no tiene texto"
+
+#: ../plugindata/validate/basic.py:77
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:118
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Falta el recíproco para la relación %s"
+
+#: ../plugindata/validate/basic.py:160
+#, python-format
+msgid "%s missing name or label"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:172
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "la interfaz de la tabla %s que puede tener el foco no tiene interfaz de selección"
+
+#: ../plugindata/validate/basic.py:191
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s tiene un estado %s sin tener %s"
+
+#: ../plugindata/validate/basic.py:209
+#, python-format
+msgid "%s does not belong to a set"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:234
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:254
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:276
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s no tiene nombre o descripción"
 
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
