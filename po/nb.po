@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acceriser 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-02 13:51+0100\n"
-"PO-Revision-Date: 2007-11-02 13:52+0100\n"
+"POT-Creation-Date: 2008-01-11 11:35+0100\n"
+"PO-Revision-Date: 2008-01-11 11:37+0100\n"
 "Last-Translator: Espen A. Stefansen <espens@cvs.gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -232,6 +232,7 @@ msgid "Des_ktop"
 msgstr "S_krivebord"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:206
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -476,6 +477,139 @@ msgstr "Aktivt skript vil gå tapt."
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
 msgstr "Bekreft tøm"
+
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:280
+msgid "Idle"
+msgstr "Ledig"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Sche_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "V_alider"
+
+#: ../plugins/validate.glade.h:4
+msgid "gtk-help"
+msgstr ""
+
+#: ../plugins/validate.glade.h:5
+msgid "gtk-save-as"
+msgstr ""
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Ingen beskrivelse"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI validering"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Sjekker støtte for hjelpeteknologi i ditt program"
+
+#. log level column
+#: ../plugins/validate.py:199
+msgid "Level"
+msgstr "Nivå"
+
+#: ../plugins/validate.py:263
+msgid "Validating"
+msgstr "Validerer"
+
+#: ../plugins/validate.py:416
+msgid "EXCEPT"
+msgstr "UNNTATT"
+
+#: ../plugins/validate.py:423
+msgid "ERROR"
+msgstr "FEIL"
+
+#: ../plugins/validate.py:430
+msgid "WARN"
+msgstr "ADVAR"
+
+#: ../plugins/validate.py:436
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:442
+msgid "DEBUG"
+msgstr "FEILSØK"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Grunnleggende"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Sjekker grunnleggende støtte for hjelpeteknologi"
+
+#: ../plugindata/validate/basic.py:20
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:34
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:44
+msgid "more than one focused widget"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:65
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s har ikke et tekstgrensesnitt"
+
+#: ../plugindata/validate/basic.py:77
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:118
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:160
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s mangler navn eller etikett"
+
+#: ../plugindata/validate/basic.py:172
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:191
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:209
+#, python-format
+msgid "%s does not belong to a set"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:234
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:254
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr ""
+
+#: ../plugindata/validate/basic.py:276
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s har ikke navn eller beskrivelse"
 
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
