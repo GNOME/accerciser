@@ -25,7 +25,7 @@ import pyatspi
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 'validate.glade')
 USER_SCHEMA_PATH = os.path.join(os.environ['HOME'], '.accerciser', 
                                 'plugindata', 'validate')
-SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'accerciser', 
+SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser', 
                                'plugindata', 'validate')
 VALIDATORS = {}
 SCHEMA_METADATA = {}
@@ -176,13 +176,14 @@ class ValidatorViewport(ViewportPlugin):
     self.schema = self.main_xml.get_widget('schema combo')
 
     # model for the combobox
-    model = gtk.ListStore(gobject.TYPE_STRING)
+    model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
     self.schema.set_model(model)
 
     # append all schema names/descriptions
     vm = ValidatorManager
-    for d in [vm.getSchemaMetadata(name) for name in vm.listSchemas()]:
-      model.append(['%s - %s' % (d['name'], d['description'])])
+    for name in vm.listSchemas():
+      d = vm.getSchemaMetadata(name)
+      model.append(['%s - %s' % (d['name'], d['description']), name])
     self.schema.set_active(0)
     
     # model for the report
@@ -250,7 +251,9 @@ class ValidatorViewport(ViewportPlugin):
     # clear the report
     self.report.get_model().clear()
     # get the validators
-    self.vals = ValidatorManager.getValidators('basic')
+    index = self.schema.get_active()
+    row = self.schema.get_model()[index]
+    self.vals = ValidatorManager.getValidators(row[1])
     # build a new state dict
     state = {}
     # build our walk generator
