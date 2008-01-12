@@ -64,7 +64,13 @@ class EventMonitor(ViewportPlugin):
     '''
     self.global_hotkeys = [(N_('Highlight last event entry'),
                             self._onHighlightEvent,
-                            keysyms.e, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
+                            keysyms.e, gdk.MOD1_MASK | gdk.CONTROL_MASK),
+                           (N_('Start/stop event recording'),
+                            self._onStartStop,
+                            keysyms.r, gdk.MOD1_MASK | gdk.CONTROL_MASK),
+                           (N_('Clear event log'),
+                            self._onClearlog,
+                            keysyms.t, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
     self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
     vpaned = self.main_xml.get_widget('monitor_vpaned')
@@ -81,6 +87,13 @@ class EventMonitor(ViewportPlugin):
 
     self.main_xml.signal_autoconnect(self)
     self.show_all()
+
+  def _onStartStop(self):
+    active = self.monitor_toggle.get_active()
+    self.monitor_toggle.set_active(not active)
+
+  def _onClearlog(self):
+    self.monitor_buffer.set_text('')
 
   def _popEventsModel(self):
     '''

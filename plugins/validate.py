@@ -171,7 +171,6 @@ class ValidatorViewport(ViewportPlugin):
     self.report = self.main_xml.get_widget('report table')
     self.progress = self.main_xml.get_widget('progress bar')
     self.validate = self.main_xml.get_widget('validate button')
-    self.save = self.main_xml.get_widget('save button')
     self.help = self.main_xml.get_widget('help button')
     self.schema = self.main_xml.get_widget('schema combo')
 
@@ -263,7 +262,6 @@ class ValidatorViewport(ViewportPlugin):
     self.progress.set_text(_('Validating'))
     # disable controls
     self.schema.set_sensitive(False)
-    self.save.set_sensitive(False)
     self.help.set_sensitive(False)
 
   def _stopValidate(self):
@@ -282,7 +280,6 @@ class ValidatorViewport(ViewportPlugin):
     self.validate.set_active(False)
     # enable other controls
     self.schema.set_sensitive(True)
-    self.save.set_sensitive(True)
      
   def _onIdle(self):
     '''
