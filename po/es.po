@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-11 10:37+0000\n"
-"PO-Revision-Date: 2008-01-11 15:03+0100\n"
+"POT-Creation-Date: 2008-01-12 01:17+0000\n"
+"PO-Revision-Date: 2008-01-12 09:23+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <<gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -111,14 +111,22 @@ msgstr ""
 msgid "Highlight last event entry"
 msgstr "Resaltar la última entrada de evento"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Iniciar/parar el registro de eventos"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "Limpiar el registro de eventos"
+
+#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nombre"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:132
 msgid "Full name"
 msgstr "Nombre completo"
 
@@ -236,7 +244,7 @@ msgid "Des_ktop"
 msgstr "_Escritorio"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Descripción"
 
@@ -481,7 +489,7 @@ msgstr "Se perderá el script actual."
 msgid "Confirm clear"
 msgstr "Confirme la limpieza"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:280
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
 msgid "Idle"
 msgstr "Inactivo"
 
@@ -492,14 +500,6 @@ msgstr "Esque_ma:"
 #: ../plugins/validate.glade.h:3
 msgid "V_alidate"
 msgstr "V_alidar"
-
-#: ../plugins/validate.glade.h:4
-msgid "gtk-help"
-msgstr "gtk-help"
-
-#: ../plugins/validate.glade.h:5
-msgid "gtk-save-as"
-msgstr "gtk-save-as"
 
 #: ../plugins/validate.py:64
 msgid "No description"
@@ -514,31 +514,31 @@ msgid "Validates application accessibility"
 msgstr "Valida la accesibilidad de una aplicación"
 
 #. log level column
-#: ../plugins/validate.py:199
+#: ../plugins/validate.py:198
 msgid "Level"
 msgstr "Nivel"
 
-#: ../plugins/validate.py:263
+#: ../plugins/validate.py:262
 msgid "Validating"
 msgstr "Validando"
 
-#: ../plugins/validate.py:416
+#: ../plugins/validate.py:413
 msgid "EXCEPT"
-msgstr ""
+msgstr "EXCEPTO"
 
-#: ../plugins/validate.py:423
+#: ../plugins/validate.py:420
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:430
+#: ../plugins/validate.py:427
 msgid "WARN"
 msgstr "ADVERTENCIA"
 
-#: ../plugins/validate.py:436
+#: ../plugins/validate.py:433
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:442
+#: ../plugins/validate.py:439
 msgid "DEBUG"
 msgstr "DEPURAR"
 
@@ -587,7 +587,9 @@ msgstr ""
 #: ../plugindata/validate/basic.py:172
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr "la interfaz de la tabla %s que puede tener el foco no tiene interfaz de selección"
+msgstr ""
+"la interfaz de la tabla %s que puede tener el foco no tiene interfaz de "
+"selección"
 
 #: ../plugindata/validate/basic.py:191
 #, python-format
