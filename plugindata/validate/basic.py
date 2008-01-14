@@ -74,6 +74,9 @@ class ParentChildIndexMatch(Validator):
     pi = acc.getIndexInParent()
     child = acc.parent.getChildAtIndex(pi)
     if acc != child:
+      # Translators: The first variable is the role name of the object that has an
+      # index mismatch.
+      # 
       view.error(_('%s index in parent does not match child index') %
                  acc.getLocalizedRoleName(), acc)
 
@@ -157,6 +160,9 @@ class HasLabelName(Validator):
         target = rel.getTarget(i)
         if self._checkForReadable(target):
           return
+    # Translators: The first variable is the role name of the object that is missing
+    # the name or label.
+    # 
     view.error(_('%s missing name or label') % acc.getLocalizedRoleName(), acc,
                self.URL)
     
@@ -206,6 +212,9 @@ class RadioInSet(Validator):
     for rel in rels:
       if rel.getRelationType() == RELATION_MEMBER_OF:
         return
+    # Translators: The radio button does not belong to a set, thus it is useless.
+    # The first variable is the object's role name.
+    # 
     view.error(_('%s does not belong to a set') % acc.getLocalizedRoleName(),
                acc)
 
@@ -231,6 +240,11 @@ class TableRowColIndex(Validator):
       ir = t.getRowAtIndex(i)
       ic = t.getColumnAtIndex(i)
       if r != ir or c != ic:
+        # Translators: The row or column number retrieved from a table child's object
+        # at a certain index is wrong.
+        # The first variable is the role name of the object, the second is the
+        # given index.
+        # 
         view.error(_('%s index %d does not match row and column') %
                    (acc.getLocalizedRoleName(), i), acc)
         return
@@ -251,6 +265,12 @@ class TableRowColParentIndex(Validator):
       ip = child.getIndexInParent()
       i = t.getIndexAt(r, c)
       if i != ip:
+        # Translators: The "parent index" is the order of the child in the parent.
+        # the "row and column index" should be the same value retrieved by the
+        # object's location in the table.
+        # The first variable is the object's role name, the second and third variables
+        # are index numbers.
+        #
         view.error(_('%s parent index %d does not match row and column index %d') %
                    (acc.getLocalizedRoleName(), ip, i), acc)
         return
