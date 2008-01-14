@@ -26,6 +26,7 @@
     <copyright> 
       <year>2006</year> 
       <year>2007</year> 
+      <year>2008</year> 
       <holder>IBM Corporation</holder> 
     </copyright> 
 
@@ -353,6 +354,9 @@
       <listitem> 
         <para><xref linkend="accerciser-quick-select"/></para>
       </listitem> 
+      <listitem> 
+        <para><xref linkend="accerciser-validate"/></para>
+      </listitem> 
     </itemizedlist> 
 
     <sect2 id="accerciser-iface-viewer"> 
@@ -480,6 +484,33 @@
         will select the accessible of the widget that is under the pointer.
       </para>
     </sect2> 
+
+    <sect2 id="accerciser-validate"> 
+      <title>Validation</title>
+      <para>
+        This plugin checks applications for accessibility problems and
+        generates a report including the severity and description of the
+        problems. The report links errors to documentation about how to remedy
+        common problems. The plugin is extensible with test schemas that define
+        rules for validation.
+      </para>
+
+      <para>
+        To run the validator, first select an item in the accessibility
+        tree. The plugin will test the selected accessible and all of its
+        descendants. Next select a schema to use for the test. Then click the 
+        <guibutton>Validate</guibutton> button to start the test. While the test
+        is running, click the button again to cancel it.
+      </para>
+
+      <para>
+        When the test completes, the report table shows the severity and
+        description of all errors. Double click a row in the table to show the
+        associated accessible in the tree. With an item selected, click the 
+        <guibutton>Help</guibutton> to get information about how to resolve
+        the problem.
+      </para>
+    </sect2>
 
   </sect1>
   <!-- ============= Customization ============================= -->
