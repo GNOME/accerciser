@@ -1,14 +1,14 @@
 # Swedish translation for accerciser.
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Daniel Nylander <po@danielnylander.se>, 2007.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-17 22:43+0200\n"
-"PO-Revision-Date: 2007-09-09 23:38+0100\n"
+"POT-Creation-Date: 2008-01-15 00:46+0100\n"
+"PO-Revision-Date: 2008-01-15 00:54+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -65,8 +65,7 @@ msgstr "IPython-konsoll"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Interaktiv konsoll för manipulering av aktuellt markerade tillgänglighet"
+msgstr "Interaktiv konsoll för manipulering av aktuellt markerade tillgänglighet"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -108,14 +107,23 @@ msgstr "Visar händelser när de inträffar från markerade typer och källor"
 msgid "Highlight last event entry"
 msgstr "Markera senaste händelsepost"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Starta/stoppa händelseinspelning"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "Töm händelselogg"
+
+#: ../plugins/event_monitor.py:123
+#: ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Namn"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:132
 msgid "Full name"
 msgstr "Fullständigt namn"
 
@@ -167,7 +175,8 @@ msgstr "<b>Text</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>okänd</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:13
+#: ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivning)</i>"
@@ -232,7 +241,9 @@ msgstr "Aktuellt värde"
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29
+#: ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -393,7 +404,8 @@ msgstr "Gränssnittsvisare"
 msgid "Allows viewing of various interface properties"
 msgstr "Tillåter visning av olika gränssnittsegenskaper"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185
+#: ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (inte implementerad)"
@@ -402,7 +414,8 @@ msgstr " (inte implementerad)"
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740
+#: ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -422,7 +435,8 @@ msgstr "För många valbara barn"
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295
+#: ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Redigerbar)</i>"
 
@@ -477,24 +491,165 @@ msgstr "Det aktuella skriptet kommer att förloras."
 msgid "Confirm clear"
 msgstr "Bekräfta tömning"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1
+#: ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Overksam"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Sche_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "V_alidera"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Ingen beskrivning"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI-validerare"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Validerar tillgänglighet i program"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Nivå"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Validerar"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "UNDANTAG"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "FEL"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "VARNING"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "FELSÖKNING"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Grundläggande"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Testar grundläggande tillgänglig i grafiska program"
+
+#: ../plugindata/validate/basic.py:20
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "åtgärdningsbara %s är inte fokusbar eller valbar"
+
+#: ../plugindata/validate/basic.py:34
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "interaktiva %s är inte åtgärdningsbar"
+
+#: ../plugindata/validate/basic.py:44
+msgid "more than one focused widget"
+msgstr "fler än en fokuserad widget"
+
+#: ../plugindata/validate/basic.py:65
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s har inget textgränssnitt"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:80
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s index i förälder matchar inte barnindex"
+
+#: ../plugindata/validate/basic.py:121
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Saknar mottagare för %s-förhållande"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:166
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s saknar namn eller etikett"
+
+#: ../plugindata/validate/basic.py:178
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "fokusbar %s har tabellgränssnitt, inget valgränssnitt"
+
+#: ../plugindata/validate/basic.py:197
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s har tillståndet %s utan tillståndet %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:218
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s tillhör inte en uppsättning"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:248
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s index %d matchar inte rad och kolumn"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:274
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s föräldraindex %d matchar inte rad- och kolumnindex %d"
+
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s har inget namn eller beskrivning"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Inställningar..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../src/lib/accerciser/accerciser.py:133
-msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr ""
-"Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera "
-"tillgänglighetsfunktioner för skrivbordet för att rätta till det här "
-"problemet. Vill du aktivera dem nu?"
+#: ../src/lib/accerciser/accerciser.py:130
+msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera tillgänglighetsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera dem nu?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Observera: Eventuella ändringar blir aktiverade efter utloggning."
 
@@ -538,11 +693,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Skift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Överpanelen"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Nederpanelen"
 
@@ -572,10 +727,6 @@ msgstr "En interaktiv tillgänglighetsutforskare skriven i Python"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
@@ -687,63 +838,49 @@ msgstr "_Visa"
 msgid "_Help"
 msgstr "_Hjälp"
 
+#~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+#~ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 #~ msgid "gtk-clear"
 #~ msgstr "Töm"
-
 #~ msgid "gtk-save"
 #~ msgstr "Spara"
-
 #~ msgid "gtk-select-all"
 #~ msgstr "Markera allt"
-
 #~ msgid "gtk-media-record"
 #~ msgstr "Spela in"
-
 #~ msgid "Wiki page"
 #~ msgstr "Wiki-sida"
-
 #~ msgid "gtk-close"
 #~ msgstr "Stäng"
-
 #~ msgid "gtk-quit"
 #~ msgstr "Avsluta"
-
 #~ msgid "gtk-refresh"
 #~ msgstr "Uppdatera"
-
 #~ msgid "Core"
 #~ msgstr "Kärna"
-
 #~ msgid "Plugin enabled"
 #~ msgstr "Insticksmodul aktiverad"
-
 #~ msgid "Set to true is plugin is enabled"
 #~ msgstr "Ställ in till sant om insticksmodulen är aktiverad"
-
 #~ msgid "The default tab position"
 #~ msgstr "Standardposition för flik"
-
 #~ msgid "The default tab position for this plugin"
 #~ msgstr "Standardpositionen för fliken för den här insticksmodulen"
-
 #~ msgid "Top right"
 #~ msgstr "Övre högra hörnet"
-
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr ""
 #~ "Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även "
 #~ "om de har aktiverats."
-
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr ""
 #~ "Observera: Du måste logga ut för att skrivbordsalternativ för "
 #~ "tillgänglighet blir aktiverade."
-
 #~ msgid "Va_lue"
 #~ msgstr "Vä_rde"
-
 #~ msgid "accerciser"
 #~ msgstr "accerciser"
+
