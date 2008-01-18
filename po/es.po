@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-12 08:37+0000\n"
-"PO-Revision-Date: 2008-01-15 08:45+0100\n"
+"POT-Creation-Date: 2008-01-15 07:46+0000\n"
+"PO-Revision-Date: 2008-01-18 11:59+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <<gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -569,49 +569,69 @@ msgstr "hay más de un widget con el foco"
 msgid "%s has no text interface"
 msgstr "la interfaz de %s no tiene texto"
 
-#: ../plugindata/validate/basic.py:77
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:80
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
+msgstr "El índice en el padre no coincide con el índice del hijo en %s"
 
-#: ../plugindata/validate/basic.py:118
+#: ../plugindata/validate/basic.py:121
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Falta el recíproco para la relación %s"
 
-#: ../plugindata/validate/basic.py:160
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:166
 #, python-format
 msgid "%s missing name or label"
-msgstr ""
+msgstr "falta el nombre o la etiqueta de %s"
 
-#: ../plugindata/validate/basic.py:172
+#: ../plugindata/validate/basic.py:178
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
 msgstr ""
 "la interfaz de la tabla %s que puede tener el foco no tiene interfaz de "
 "selección"
 
-#: ../plugindata/validate/basic.py:191
+#: ../plugindata/validate/basic.py:197
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s tiene un estado %s sin tener %s"
 
-#: ../plugindata/validate/basic.py:209
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:218
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s no pertenece al conjunto"
 
-#: ../plugindata/validate/basic.py:234
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:248
 #, python-format
 msgid "%s index %d does not match row and column"
-msgstr ""
+msgstr "El índice de %s, número %d, no coincide con la fila y columna"
 
-#: ../plugindata/validate/basic.py:254
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:274
 #, python-format
 msgid "%s parent index %d does not match row and column index %d"
-msgstr ""
+msgstr "El índice padre de %s, número %d, no coincide con la fila y columna del índice %d"
 
-#: ../plugindata/validate/basic.py:276
+#: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s no tiene nombre o descripción"
