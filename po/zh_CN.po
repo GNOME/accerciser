@@ -1,0 +1,833 @@
+# Accerciser Simplified Chinese translation file.
+#
+# Copyright (C) 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Accerciser package.
+#
+# Liu Yubao <yubao.liu@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-20 04:05+0000\n"
+"PO-Revision-Date: 2008-01-22 16:05+0800\n"
+"Last-Translator: Liu Yubao <yubao.liu@gmail.com>\n"
+"Language-Team: i18-zh <i18n-zh@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser Accesibility Explorer"
+msgstr "Accerciser 可操作性浏览器"
+
+#: ../accerciser.desktop.in.in.h:2
+msgid "Give your application an accessibility workout"
+msgstr "为你的应用提供可操作性测试"
+
+#: ../accerciser.schemas.in.h:1
+msgid "A list of plugins that are disabled by default"
+msgstr "默认禁用插件的列表"
+
+#: ../accerciser.schemas.in.h:2
+msgid "The default plugin layout for the bottom panel"
+msgstr "置底面板的缺省插件布局"
+
+#: ../accerciser.schemas.in.h:3
+msgid "The default plugin layout for the top panel"
+msgstr "置顶面板的缺省插件布局"
+
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API 浏览器"
+
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "浏览当前控件的各种方法"
+
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "隐藏私有属性"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "方法"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "属性"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "值"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "IPython 控制台"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "操作当前选中控件的交互控制台"
+
+#: ../plugins/event_monitor.glade.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>事件监视器</b>"
+
+#: ../plugins/event_monitor.glade.h:2
+msgid "C_lear Selection"
+msgstr "清除选择(_l)"
+
+#: ../plugins/event_monitor.glade.h:3
+msgid "Everything"
+msgstr "所有"
+
+#: ../plugins/event_monitor.glade.h:4
+msgid "Selected accessible"
+msgstr "选择的控件"
+
+#: ../plugins/event_monitor.glade.h:5
+msgid "Selected application"
+msgstr "选择的应用"
+
+#: ../plugins/event_monitor.glade.h:6
+msgid "Source"
+msgstr "来源"
+
+#: ../plugins/event_monitor.glade.h:7
+msgid "_Monitor Events"
+msgstr "监视器事件(_M)"
+
+#: ../plugins/event_monitor.py:52
+msgid "Event Monitor"
+msgstr "事件监视器"
+
+#: ../plugins/event_monitor.py:55
+msgid "Shows events as they occur from selected types and sources"
+msgstr "显示选定类型以及来源的事件"
+
+#: ../plugins/event_monitor.py:65
+msgid "Highlight last event entry"
+msgstr "高亮最后一个事件"
+
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "开始/停止记录事件"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "清除事件日志"
+
+#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
+#: ../plugins/interface_view.py:733
+#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "名字"
+
+#: ../plugins/event_monitor.py:132
+msgid "Full name"
+msgstr "全名"
+
+#: ../plugins/interface_view.glade.h:1
+msgid "0"
+msgstr "0"
+
+#: ../plugins/interface_view.glade.h:2
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.glade.h:3
+msgid "1.0"
+msgstr "1.0"
+
+#: ../plugins/interface_view.glade.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>属性</b>"
+
+#: ../plugins/interface_view.glade.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>子节点数</b>"
+
+#: ../plugins/interface_view.glade.h:6
+msgid "<b>Description</b>"
+msgstr "描述"
+
+#: ../plugins/interface_view.glade.h:7
+msgid "<b>Relations</b>"
+msgstr "关系"
+
+#: ../plugins/interface_view.glade.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "选中的单元"
+
+#: ../plugins/interface_view.glade.h:9
+msgid "<b>States</b>"
+msgstr "状态"
+
+#: ../plugins/interface_view.glade.h:10
+msgid "<b>Table Information</b>"
+msgstr "表格信息"
+
+#: ../plugins/interface_view.glade.h:11
+msgid "<b>Text</b>"
+msgstr "<b>文本</b>"
+
+#: ../plugins/interface_view.glade.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>未知</b>"
+
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
+#: ../plugins/interface_view.py:857
+msgid "<i>(no description)</i>"
+msgstr "<i>(没有描述)</i>"
+
+#: ../plugins/interface_view.glade.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>标题：</i>"
+
+#: ../plugins/interface_view.glade.h:15
+msgid "<i>End: 0</i>"
+msgstr "<i>结束：0</i>"
+
+#: ../plugins/interface_view.glade.h:16
+msgid "<i>Start: 0</i>"
+msgstr "<i>开始：0</i>"
+
+#: ../plugins/interface_view.glade.h:17
+msgid "<i>Summary:</i>"
+msgstr "<i>总结：<i>"
+
+#: ../plugins/interface_view.glade.h:18
+msgid "<no description>"
+msgstr "<没有描述>"
+
+#: ../plugins/interface_view.glade.h:19
+msgid "Absolute position"
+msgstr "绝对位置"
+
+#: ../plugins/interface_view.glade.h:20
+msgid "Acti_on"
+msgstr "动作(_o)"
+
+#: ../plugins/interface_view.glade.h:21
+msgid "Alpha"
+msgstr "字母"
+
+#: ../plugins/interface_view.glade.h:22
+msgid "Ap_plication"
+msgstr "应用(_p)"
+
+#: ../plugins/interface_view.glade.h:23
+msgid "Co_mponent"
+msgstr "组件(_m)"
+
+#: ../plugins/interface_view.glade.h:24
+msgid "Col_lection"
+msgstr "集合(_l)"
+
+#: ../plugins/interface_view.glade.h:25
+msgid "Column"
+msgstr "列"
+
+#: ../plugins/interface_view.glade.h:26
+msgid "Columns"
+msgstr "列"
+
+#: ../plugins/interface_view.glade.h:27
+msgid "Current value"
+msgstr "当前值"
+
+#: ../plugins/interface_view.glade.h:28
+msgid "Des_ktop"
+msgstr "桌面(_k)"
+
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
+msgid "Description"
+msgstr "描述"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
+msgid "Extents:"
+msgstr "范围："
+
+#: ../plugins/interface_view.glade.h:32
+msgid "H_ypertext"
+msgstr "超文本(_y)"
+
+#: ../plugins/interface_view.glade.h:33
+msgid "Header:"
+msgstr "头部："
+
+#: ../plugins/interface_view.glade.h:34
+msgid "Hyperlink"
+msgstr "超链接"
+
+#: ../plugins/interface_view.glade.h:35
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.glade.h:36
+msgid "Include defaults"
+msgstr "包含缺省值"
+
+#: ../plugins/interface_view.glade.h:37
+msgid "Layer"
+msgstr "层"
+
+#: ../plugins/interface_view.glade.h:38
+msgid "Lo_gin Helper"
+msgstr "登录辅助工具(_g)"
+
+#: ../plugins/interface_view.glade.h:39
+msgid "Locale"
+msgstr "地域"
+
+#: ../plugins/interface_view.glade.h:40
+msgid "Locale:"
+msgstr "地域："
+
+#: ../plugins/interface_view.glade.h:41
+msgid "MDI-Z-order"
+msgstr "MDI Z 序"
+
+#: ../plugins/interface_view.glade.h:42
+msgid "Maximum value"
+msgstr "最大值"
+
+#: ../plugins/interface_view.glade.h:43
+msgid "Minimum increment"
+msgstr "最小增量"
+
+#: ../plugins/interface_view.glade.h:44
+msgid "Minimum value"
+msgstr "最小值"
+
+#: ../plugins/interface_view.glade.h:45
+msgid "Offset"
+msgstr "偏移"
+
+#: ../plugins/interface_view.glade.h:46
+msgid "Perform action"
+msgstr "执行动作"
+
+#: ../plugins/interface_view.glade.h:47
+msgid "Position"
+msgstr "位置"
+
+#: ../plugins/interface_view.glade.h:48
+msgid "Relative position"
+msgstr "相对位置"
+
+#: ../plugins/interface_view.glade.h:49
+msgid "Row"
+msgstr "行"
+
+#: ../plugins/interface_view.glade.h:50
+msgid "Rows"
+msgstr "行"
+
+#: ../plugins/interface_view.glade.h:51
+msgid "Select All"
+msgstr "选择全部"
+
+#: ../plugins/interface_view.glade.h:52
+msgid "Selected columns"
+msgstr "选中列"
+
+#: ../plugins/interface_view.glade.h:53
+msgid "Selected rows"
+msgstr "选中行"
+
+#: ../plugins/interface_view.glade.h:54
+msgid "Show"
+msgstr "显示"
+
+#: ../plugins/interface_view.glade.h:55
+msgid "Size"
+msgstr "大小"
+
+#: ../plugins/interface_view.glade.h:56
+msgid "St_reamable Content"
+msgstr "流式内容(_r)"
+
+#: ../plugins/interface_view.glade.h:57
+msgid "Te_xt"
+msgstr "文本(_x)"
+
+#: ../plugins/interface_view.glade.h:58
+msgid "Toolkit"
+msgstr "工具箱"
+
+#: ../plugins/interface_view.glade.h:59
+msgid "Val_ue"
+msgstr "值(_u)"
+
+#: ../plugins/interface_view.glade.h:60
+msgid "Version"
+msgstr "版本"
+
+#: ../plugins/interface_view.glade.h:61
+msgid "WIDGET"
+msgstr "控件"
+
+# 意译，待商榷
+#: ../plugins/interface_view.glade.h:62
+msgid "_Accessible"
+msgstr "控件"
+
+#: ../plugins/interface_view.glade.h:63
+msgid "_Document"
+msgstr "文档(_D)"
+
+#: ../plugins/interface_view.glade.h:64
+msgid "_Image"
+msgstr "图像(_I)"
+
+#: ../plugins/interface_view.glade.h:65
+msgid "_Selection"
+msgstr "选择(_S)"
+
+#: ../plugins/interface_view.glade.h:66
+msgid "_Table"
+msgstr "表格(_T)"
+
+#: ../plugins/interface_view.glade.h:67
+msgid "name (x,y)"
+msgstr "名字 (x,y)"
+
+#: ../plugins/interface_view.py:35
+msgid "Interface Viewer"
+msgstr "接口查看器"
+
+#: ../plugins/interface_view.py:37
+msgid "Allows viewing of various interface properties"
+msgstr "允许查看各种接口属性"
+
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:187
+msgid " (not implemented)"
+msgstr " (未实现)"
+
+#: ../plugins/interface_view.py:460
+msgid "Key binding"
+msgstr "键绑定"
+
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.py:747
+msgid "Start"
+msgstr "开始"
+
+#: ../plugins/interface_view.py:754
+msgid "End"
+msgstr "结束"
+
+#: ../plugins/interface_view.py:924
+msgid "Too many selectable children"
+msgstr "太多可选择的子节点"
+
+#: ../plugins/interface_view.py:1019
+msgid "Content type"
+msgstr "内容类型"
+
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+msgid " <i>(Editable)</i>"
+msgstr "<i>(可编辑的)</i>"
+
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "快速选择"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "快速选择各种控件的插件"
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "检查最近聚焦的控件"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "检查鼠标下面的控件"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
+msgid "Dogtail"
+msgstr "Dogtail"
+
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
+msgid "LDTP"
+msgstr "LDTP"
+
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
+msgid "Native"
+msgstr "Native"
+
+#: ../plugins/script_recorder.glade.h:7
+msgid "Script Type"
+msgstr "脚本类型"
+
+#: ../plugins/script_recorder.py:176
+msgid "Script Recorder"
+msgstr "脚本录制器"
+
+#: ../plugins/script_recorder.py:178
+msgid "Creates dogtail style scripts"
+msgstr "创建 dogtail 格式的脚本"
+
+#: ../plugins/script_recorder.py:340
+msgid "The current script will be lost."
+msgstr "当前脚本将丢失。"
+
+#: ../plugins/script_recorder.py:341
+msgid "Confirm clear"
+msgstr "确认清除"
+
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "空闲"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Sche_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "校验(_a)"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "没有描述"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI 校验器"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "校验应用的可操作性"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "级别"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "校验中"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "异常"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "错误"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "警告"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "信息"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "调试"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "基本"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "基本的 GUI 应用可操作性测试"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "控件 %s 不能获得焦点也不能被选中"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "控件 %s 不能交互"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "多于一个聚焦的控件"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s 没有文本界面"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s 的父节点和子节点索引值不匹配"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "关系 %s 丢失双向性"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s 丢失名字或标签"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "可聚焦的 %s 有表格接口，没有选择接口"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s 有 %s 状态，没有 %s 状态"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s 不属于一个单选按钮集"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s 的索引 %d 跟其行、列不匹配"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s 的父节点索引 %d 不匹配其行、列索引 %d"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s 没有名字或描述"
+
+#: ../src/lib/accerciser/accerciser.py:91
+msgid "_Preferences..."
+msgstr "配置(_P)..."
+
+#: ../src/lib/accerciser/accerciser.py:93
+msgid "_Contents"
+msgstr "内容(_C)"
+
+#: ../src/lib/accerciser/accerciser.py:130
+msgid ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr "Accerciser 找不到你桌面上的应用，你必须激活桌面辅助特性以修正这个问题。你想现在激活它吗？"
+
+#: ../src/lib/accerciser/accerciser.py:145
+msgid "Note: Changes only take effect after logout."
+msgstr "注意：下次登录时更改才生效"
+
+#: ../src/lib/accerciser/accessible_treeview.py:344
+msgid "<dead>"
+msgstr "<dead>"
+
+#: ../src/lib/accerciser/accessible_treeview.py:398
+msgid "Role"
+msgstr "角色"
+
+#: ../src/lib/accerciser/accessible_treeview.py:405
+msgid "Children"
+msgstr "子节点"
+
+#: ../src/lib/accerciser/accessible_treeview.py:431
+msgid "Refresh _Current"
+msgstr "刷新当前节点(_C)"
+
+#: ../src/lib/accerciser/hotkey_manager.py:220
+msgid "Component"
+msgstr "组件"
+
+#: ../src/lib/accerciser/hotkey_manager.py:227
+msgid "Task"
+msgstr "任务"
+
+#: ../src/lib/accerciser/hotkey_manager.py:234
+msgid "Key"
+msgstr "键"
+
+#: ../src/lib/accerciser/hotkey_manager.py:244
+msgid "Alt"
+msgstr "Alt"
+
+#: ../src/lib/accerciser/hotkey_manager.py:251
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../src/lib/accerciser/hotkey_manager.py:258
+msgid "Shift"
+msgstr "Shift"
+
+#: ../src/lib/accerciser/main_window.py:73
+msgid "Top panel"
+msgstr "置顶面板"
+
+#: ../src/lib/accerciser/main_window.py:74
+msgid "Bottom panel"
+msgstr "置底面板"
+
+#: ../src/lib/accerciser/prefs_dialog.py:30
+msgid "accerciser Preferences"
+msgstr "accerciser 配置"
+
+#: ../src/lib/accerciser/prefs_dialog.py:36
+msgid "Plugins"
+msgstr "插件"
+
+#: ../src/lib/accerciser/prefs_dialog.py:37
+msgid "Global Hotkeys"
+msgstr "全局热键"
+
+#: ../src/lib/accerciser/about_dialog.py:50
+msgid "translator-credits"
+msgstr "翻译者贡献"
+
+#: ../src/lib/accerciser/about_dialog.py:51
+msgid "An interactive Python accessibility explorer"
+msgstr "一个用 Python 编写的交互式时可操作性浏览器"
+
+#: ../src/lib/accerciser/about_dialog.py:52
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser 版权所有 © 2006, 2007 IBM Corporation (BSD)"
+
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "新 BSD 许可证的细节请查看 COPYING 和 NOTICE。"
+
+#: ../src/lib/accerciser/about_dialog.py:56
+msgid "Web site"
+msgstr "网站"
+
+#: ../src/lib/accerciser/bookmarks.py:62
+msgid "_Add Bookmark..."
+msgstr "增加书签(_A)..."
+
+#: ../src/lib/accerciser/bookmarks.py:63
+msgid "Bookmark selected accessible."
+msgstr "将选中控件加入书签"
+
+#: ../src/lib/accerciser/bookmarks.py:65
+msgid "_Edit Bookmarks..."
+msgstr "编辑书签(_E)..."
+
+#: ../src/lib/accerciser/bookmarks.py:66
+msgid "Manage bookmarks."
+msgstr "管理书签。"
+
+#: ../src/lib/accerciser/bookmarks.py:323
+msgid "Edit Bookmarks..."
+msgstr "编辑书签..."
+
+#: ../src/lib/accerciser/bookmarks.py:427
+msgid "Title"
+msgstr "标题"
+
+#: ../src/lib/accerciser/bookmarks.py:435
+msgid "Application"
+msgstr "应用"
+
+#: ../src/lib/accerciser/bookmarks.py:443
+msgid "Path"
+msgstr "路径"
+
+#: ../src/lib/accerciser/bookmarks.py:512
+msgid "Add Bookmark..."
+msgstr "增加书签..."
+
+#: ../src/lib/accerciser/bookmarks.py:525
+msgid "Title:"
+msgstr "标题："
+
+#: ../src/lib/accerciser/bookmarks.py:528
+msgid "Application:"
+msgstr "应用："
+
+#: ../src/lib/accerciser/bookmarks.py:531
+msgid "Path:"
+msgstr "路径："
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "插件错误"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+msgid "View"
+msgstr "视图"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+msgid "No view"
+msgstr "没有视图"
+
+#: ../src/lib/accerciser/plugin/view.py:369
+msgid "_Single plugins view"
+msgstr "单插件视图(_S)"
+
+#: ../src/lib/accerciser/plugin/view.py:758
+msgid "Plugin View"
+msgstr "插件视图"
+
+#: ../src/lib/accerciser/plugin/view.py:761
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "插件视图(%d)"
+
+#: ../src/lib/accerciser/plugin/view.py:1029
+msgid "<i>_New view...</i>"
+msgstr "<i>新视图(_N)...</i>"
+
+#: ../src/lib/accerciser/plugin/view.py:1085
+msgid "New View..."
+msgstr "新视图..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgid "_Bookmarks"
+msgstr "书签(_B)"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgid "_View"
+msgstr "视图(_V)"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "帮助(_H)"
