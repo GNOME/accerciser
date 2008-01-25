@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 18:50+0400\n"
-"PO-Revision-Date: 2006-02-27 11:44+0200\n"
+"POT-Creation-Date: 2008-01-25 13:04+0200\n"
+"PO-Revision-Date: 2008-01-25 11:44+0200\n"
 "Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,20 +102,28 @@ msgstr "Монітор подій"
 
 #: ../plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr "Показує події, що виникають у виділених об'єектах та джерелах"
+msgstr "Показує події, що виникають у виділених об'єктах та джерелах"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Виділяти кольором останню подію"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Запустити/зупинити запис подій"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "Очистити журнал подій"
+
+#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Назва"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:132
 msgid "Full name"
 msgstr "Повна назва"
 
@@ -233,6 +241,7 @@ msgid "Des_ktop"
 msgstr "_Робочий стіл"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Опис"
 
@@ -477,15 +486,160 @@ msgstr "Поточний сценарій буде втрачений."
 msgid "Confirm clear"
 msgstr "Підтвердити очищення"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Бездіяльний"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "С_хема"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "_Перевірити"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Без опису"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Перевірка AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Перевірка можливостей доступності"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Рівень"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Перевірка"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "ВИКЛЮЧЕННЯ"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "ПОМИЛКА"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "ПОПЕРЕДЖЕННЯ"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "ІНФО"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "НАЛАГОДЖЕННЯ"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Основне"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Перевірка можливостей доступності графічної програми"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "діючий елемент %s не може мати фокус чи бути виділеним"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "інтерактивний %s не може бути діючим"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "більше ніж один віджет має фокус"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s не підтримує текстовий інтерфейс"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s індекс у батьківському елементі не відповідає індексу дочірнього"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Відсутній зворотний для відношення %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s відсутня назва чи позначка"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "елемент з фокусом %s має табличний інтерфейсу, але відсутній інтерфейс для виділення"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s має %s стан без стану %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s не входить до набору"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s індекс %d не відповідає рядку та стовпчику"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s індекс батьківського елементу %d не відповідає індексу рядка та стовпчика %d"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s не має назви чи опису"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Параметри..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Зміст"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -493,7 +647,7 @@ msgstr ""
 "Не вдається отримати доступ до програм робочого середовища з Accerciser. "
 "Необхідно увімкнути підтримку допоміжних технологій. Увімкнути її зараз?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Зміни наберуть сили лише після повторного входу у систему."
 
@@ -537,11 +691,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Верхня панель"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Нижня панель"
 
@@ -563,9 +717,7 @@ msgstr "Максим Дзюманенко <dziumanenko@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:51
 msgid "An interactive Python accessibility explorer"
-msgstr ""
-"Інтерактивний оглядач підтримки допоміжних технологій на мові "
-"Python"
+msgstr "Інтерактивний оглядач підтримки допоміжних технологій написаний на Python"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
