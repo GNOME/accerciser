@@ -133,19 +133,22 @@ class Main(Tools):
       dialog = gtk.MessageDialog(self.window,type=gtk.MESSAGE_ERROR,
                                  buttons=gtk.BUTTONS_YES_NO, 
                                  message_format=message)
-      response_id = dialog.run()
-      dialog.destroy()
-      if response_id == gtk.RESPONSE_YES:
-        cl = gconf.client_get_default()
-        cl.set_bool('/desktop/gnome/interface/accessibility', True)
-        dialog = gtk.MessageDialog(
-          self.window,
-          type=gtk.MESSAGE_INFO,
-          buttons=gtk.BUTTONS_OK, 
-          message_format=_('Note: Changes only take effect after logout.'))
-        dialog.run()
-        dialog.destroy()
+      dialog.connect('response', self._onNoA11yResponse)
+      dialog.show_all()
 
+  def _onNoA11yResponse(self, dialog, response_id):
+    dialog.destroy()
+    if response_id == gtk.RESPONSE_YES:
+      cl = gconf.client_get_default()
+      cl.set_bool('/desktop/gnome/interface/accessibility', True)
+      dialog = gtk.MessageDialog(
+        self.window,
+        type=gtk.MESSAGE_INFO,
+        buttons=gtk.BUTTONS_OK, 
+        message_format=_('Note: Changes only take effect after logout.'))
+      dialog.connect('response', lambda dia, resp: dia.destroy())
+      dialog.show_all()
+  
   def _shutDown(self):
     '''
     Cleans up any object instances that need explicit shutdown.
