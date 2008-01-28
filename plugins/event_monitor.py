@@ -15,7 +15,6 @@ import pyatspi
 import gobject
 import os.path
 import gettext, os, sys, locale
-from Queue import Queue, Empty
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
 import pango
@@ -39,9 +38,6 @@ class EventMonitor(ViewportPlugin):
   @ivar listen_list: List of at-spi events the monitor is currently listening
   to.
   @type listen_list: list
-  @ivar event_queue: A queue to store events before they a flushe to the
-  text buffer.
-  @type event_queue: Queue.Queue
   @ivar events_model: Data model of all at-spi event types.
   @type events_model: gtk.TreeStore
   @ivar textview_monitor: Text view of eent monitor.
@@ -82,8 +78,6 @@ class EventMonitor(ViewportPlugin):
     self.monitor_toggle = self.main_xml.get_widget('monitor_toggle')
 
     self.listen_list = []
-    gobject.timeout_add(100, self._onFlushQueue)
-    self.event_queue = Queue()
 
     self.main_xml.signal_autoconnect(self)
     self.show_all()
@@ -309,31 +303,24 @@ class EventMonitor(ViewportPlugin):
       iter = self.events_model.iter_next(iter)
     self._resetClient()
 
-  def _onFlushQueue(self):
+  def _logEvent(self, event):
     '''
-    Timeout function for flushing the event monitor queue in to the 
-    text buffer.
+    Log the given event.
     
-    @return: Always true so the timeout function repeats
-    @rtype: boolean
+    @param event: The event to log.
+    @type event: Accessibility.Event
     '''
-    while True:
-      try:
-        event = self.event_queue.get_nowait()
-      except Empty:
-        break
-      iter = self.monitor_buffer.get_iter_at_mark(self.monitor_mark)
-      self.monitor_buffer.move_mark_by_name(
-        'mark_last_log', 
-        self.monitor_buffer.get_iter_at_mark(self.monitor_mark))
-      self._insertEventIntoBuffer(event)
-      self.textview_monitor.scroll_mark_onscreen(self.monitor_mark)
-    return True
+    iter = self.monitor_buffer.get_iter_at_mark(self.monitor_mark)
+    self.monitor_buffer.move_mark_by_name(
+      'mark_last_log', 
+      self.monitor_buffer.get_iter_at_mark(self.monitor_mark))
+    self._insertEventIntoBuffer(event)
+    self.textview_monitor.scroll_mark_onscreen(self.monitor_mark)
 
   def _insertEventIntoBuffer(self, event):
     '''
     Inserts given event in to text buffer. Creates hyperlinks for
-    the event's context accessibles.
+    the events context accessibles.
     
     @param event: The at-spi event we are inserting.
     @type event: Accessibility.Event
@@ -389,7 +376,7 @@ class EventMonitor(ViewportPlugin):
 
   def _onLinkClicked(self, tag, widget, event, iter):
     '''
-    Callback for doulbe clicked link. Select link's accessible in main
+    Callback for doulbe clicked link. Select links accessible in main
     application.
     
     @param tag: Tag that was double clicked.
@@ -430,7 +417,7 @@ class EventMonitor(ViewportPlugin):
     '''
     Change mouse cursor shape when hovering over a link.
     
-    @param textview: Monitor's text view.
+    @param textview: Monitors text view.
     @type textview: gtk.TextView
     @param event: Event object
     @type event: gtk.gdk.Event
@@ -452,15 +439,14 @@ class EventMonitor(ViewportPlugin):
 
   def _handleAccEvent(self, event):
     '''
-    Main at-spi event client. If event passes filtering requirements queue
-    it to be flushed to the text buffer.
+    Main at-spi event client. If event passes filtering requirements, log it.
     
     @param event: The at-spi event recieved.
     @type event: Accessibility.Event
     '''
     if self.isMyApp(event.source) or not self._eventFilter(event):
       return
-    self.event_queue.put(event)
+    self._logEvent(event)
 
   def _onSave(self, button):
     '''
@@ -546,7 +532,6 @@ class EventMonitor(ViewportPlugin):
     A callback fom a global key binding. Makes the last event in the textview
     bold.
     '''
-    self._onFlushQueue()
     start_iter = self.monitor_buffer.get_iter_at_mark(
       self.monitor_buffer.get_mark('mark_last_log'))
     end_iter = self.monitor_buffer.get_end_iter()
