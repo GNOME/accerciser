@@ -1,14 +1,14 @@
 # Thai translation of accerciser
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Copyright (C) 2007-2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 13:16+0700\n"
-"PO-Revision-Date: 2007-09-07 14:45+0700\n"
+"POT-Creation-Date: 2008-01-29 14:27+0700\n"
+"PO-Revision-Date: 2008-01-29 15:19+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -95,26 +95,34 @@ msgstr "แหล่ง"
 msgid "_Monitor Events"
 msgstr "_ติดตามเหตุการณ์"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "ติดตามเหตุการณ์"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "แสดงเหตุการณ์ต่างๆ ที่เป็นชนิดและเกิดจากแหล่งที่กำหนด"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "เน้นรายการเหตุการณ์ล่าสุด"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "เริ่ม/หยุดบันทึกเหตุการณ์"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "ล้างบันทึกเหตุการณ์"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "ชื่อเต็ม"
 
@@ -232,6 +240,7 @@ msgid "Des_ktop"
 msgstr "_พื้นโต๊ะ"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "คำบรรยาย"
 
@@ -476,15 +485,160 @@ msgstr "สคริปต์ปัจจุบันจะสูญหาย"
 msgid "Confirm clear"
 msgstr "ยืนยันการล้าง"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "ไม่มีกิจกรรม"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "_การตรวจ:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "_ตรวจสอบ"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "ไม่มีคำบรรยาย"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "เครื่องมือตรวจสอบ AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "ตรวจสอบสิ่งอำนวยความสะดวกในโปรแกรม"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "ระดับ"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "กำลังตรวจสอบ"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "EXCEPT"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "ERROR"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "WARN"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "พื้นฐาน"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "ทดสอบสิ่งอำนวยความสะดวกเกี่ยวกับ GUI พื้นฐานในโปรแกรม"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "อุปกรณ์สำหรับกระทำการ %s ไม่สามารถโฟกัสหรือเลือกได้"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "อุปกรณ์โต้ตอบ %s ไม่สามารถกระทำการได้"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "มีวิดเจ็ตที่ได้รับโฟกัสมากกว่าหนึ่งตัว"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s ไม่มีส่วนติดต่อแบบข้อความ"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "หมายเลขของ %s ในวิดเจ็ตแม่ ไม่ตรงกับหมายเลขที่วิดเจ็ตลูกอ้าง"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "ไม่มีการชี้กลับสำหรับความสัมพันธ์ %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s ไม่มีชื่อหรือป้ายชื่อ"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "สิ่งมีโฟกัส %s มีส่วนติดต่อแบบตาราง แต่ไม่มีส่วนติดต่อสำหรับเลือก"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s มีสถานะ %s โดยไม่มีสถานะ %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s ไม่อยู่ในกลุ่ม"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s หมายเลข %d มีหมายเลขแถวและคอลัมน์ไม่ตรงกับของตาราง"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s มีหมายเลขในวิดเจ็ตแม่ %d ไม่ตรงกับหมายเลข %d ที่อ่านตามแถวและคอลัมน์"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s ไม่มีชื่อหรือคำบรรยาย"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_ปรับแต่ง..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "เนื้อ_หา"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -492,7 +646,7 @@ msgstr ""
 "accerciser ไม่สามารถมองเห็นโปรแกรมต่างๆ บนเดสก์ท็อปของคุณได้ "
 "คุณต้องเปิดใช้เทคโนโลยีสิ่งอำนวยความสะดวกเพื่อแก้ปัญหานี้ จะเปิดใช้เลยหรือไม่?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "สังเกต: การเปลี่ยนแปลงจะมีผลหลังจากเข้าระบบใหม่เท่านั้น"
 
@@ -536,11 +690,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "ช่องด้านบน"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "ช่องด้านล่าง"
 
