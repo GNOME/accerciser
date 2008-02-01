@@ -1,48 +1,47 @@
-# translation of accerciser.HEAD.po to Arabic
+# translation of accerciser.HEAD.ar.po to Arabic
 # Automatically generated, 2007.
 # Djihed Afifi <djihed@gmail.com>, 2007.
-# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2007, 2008.
 # Arabic translations for THIS package.
 # Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as THIS package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Arabic\n"
+"Project-Id-Version: accerciser.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-31 08:06+0000\n"
-"PO-Revision-Date: 2007-10-21 20:26+0100\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"PO-Revision-Date: 2008-02-01 22:50+0200\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
-msgstr "معاين الإتاحة أكسرسايزر"
+msgstr "مستكشف الإتاحة أكسرسايزر"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "تحقق من اتاحة برنامجك"
+msgstr "تحقق من إتاحة برنامجك"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr "قائمة للملحقات المعطلة افتراضيا"
+msgstr "قائمة بالملحقات المعطلة مبدئيا"
 
 #: ../accerciser.schemas.in.h:2
 msgid "The default plugin layout for the bottom panel"
-msgstr "التخطيط الإفتراضي للشريط السفلي"
+msgstr "التخطيط المبدئي للشريط السفلي"
 
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
-msgstr "التخطيط الإفتراضي للشريط العلوي"
+msgstr "التخطيط المبدئي للشريط العلوي"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
-msgstr "متصفح API"
+msgstr "متصفح واجهة التطبيق البرمجية (API)"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
@@ -50,15 +49,15 @@ msgstr "تصفح الوظائف المختلفة للمتاح الحالي"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
-msgstr "اخف الخواص الخاصة"
+msgstr "اخفِ الخواص الخاصة"
 
 #: ../plugins/api_view.py:79
 msgid "Method"
-msgstr "وظيفة"
+msgstr "الطريقة"
 
 #: ../plugins/api_view.py:88
 msgid "Property"
-msgstr "خاصية"
+msgstr "الخاصية"
 
 #: ../plugins/api_view.py:93
 msgid "Value"
@@ -66,11 +65,11 @@ msgstr "القيمة"
 
 #: ../plugins/console.py:29
 msgid "IPython Console"
-msgstr "كونسول بيثون"
+msgstr "مِعراض آي‌بيثون (IPython)"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "كونسول تفاعلي لمعالجة المتاح المختار حاليا"
+msgstr "مِعراض تفاعلي لمعالجة المتاح المختار حاليا"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -78,7 +77,7 @@ msgstr "<b>مراقب الأحداث</b>"
 
 #: ../plugins/event_monitor.glade.h:2
 msgid "C_lear Selection"
-msgstr "ال_غاء المنتقى"
+msgstr "ا_مسح التحديد"
 
 #: ../plugins/event_monitor.glade.h:3
 msgid "Everything"
@@ -86,11 +85,11 @@ msgstr "كل شيء"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr "المتاح المنتقى"
+msgstr "المتاح المختار"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
-msgstr "التطبيق المنتقى"
+msgstr "التطبيق المختار"
 
 #: ../plugins/event_monitor.glade.h:6
 msgid "Source"
@@ -106,20 +105,19 @@ msgstr "مراقب الأحداث"
 
 #: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
-msgstr "اظهر الأحداث كما تحدث من الأنواع و المصادر المختارة"
+msgstr "أظهر الأحداث كما تحدث من الأنواع و المصادر المختارة"
 
 #: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
-msgstr "اظهر الحدث الأخير"
+msgstr "أظهر الحدث الأخير"
 
 #: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
-msgstr ""
+msgstr "ابدأ/أوقف تسجيل الأحداث"
 
 #: ../plugins/event_monitor.py:67
-#, fuzzy
 msgid "Clear event log"
-msgstr "ال_غاء المنتقى"
+msgstr "امسح سجل الأحداث"
 
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
@@ -150,7 +148,7 @@ msgstr "<b>الخواص</b>"
 
 #: ../plugins/interface_view.glade.h:5
 msgid "<b>Child count</b>"
-msgstr "<b>إحصاء الفروع</b>"
+msgstr "<b>عدد الفروع</b>"
 
 #: ../plugins/interface_view.glade.h:6
 msgid "<b>Description</b>"
@@ -162,7 +160,7 @@ msgstr "<b>العلاقات</b>"
 
 #: ../plugins/interface_view.glade.h:8
 msgid "<b>Selected Cell</b>"
-msgstr "<b>الخلية المنتقاة</b>"
+msgstr "<b>الخلية المحددة</b>"
 
 #: ../plugins/interface_view.glade.h:9
 msgid "<b>States</b>"
@@ -183,7 +181,7 @@ msgstr "<i>مجهول</i>"
 #: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
-msgstr "<i>لا وصفا</i>"
+msgstr "<i>(لا وصف)</i>"
 
 #: ../plugins/interface_view.glade.h:14
 msgid "<i>Caption:</i>"
@@ -211,7 +209,7 @@ msgstr "الموقع المطلق"
 
 #: ../plugins/interface_view.glade.h:20
 msgid "Acti_on"
-msgstr "_فعل"
+msgstr "إ_جراء"
 
 #: ../plugins/interface_view.glade.h:21
 msgid "Alpha"
@@ -223,7 +221,7 @@ msgstr "ت_طبيق"
 
 #: ../plugins/interface_view.glade.h:23
 msgid "Co_mponent"
-msgstr "م_ركب"
+msgstr "مُ_كوّن"
 
 #: ../plugins/interface_view.glade.h:24
 msgid "Col_lection"
@@ -253,11 +251,11 @@ msgstr "الوصف"
 #. How many columns the cell spans.
 #: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
-msgstr "المدى"
+msgstr "المدى:"
 
 #: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
-msgstr "هايبر نص"
+msgstr "_نص فائق"
 
 #: ../plugins/interface_view.glade.h:33
 msgid "Header:"
@@ -269,11 +267,11 @@ msgstr "وصلة فائقة"
 
 #: ../plugins/interface_view.glade.h:35
 msgid "ID"
-msgstr "ID"
+msgstr "هوية"
 
 #: ../plugins/interface_view.glade.h:36
 msgid "Include defaults"
-msgstr "ضمّن الافتراضية"
+msgstr "ضمّن المبدئيات"
 
 #: ../plugins/interface_view.glade.h:37
 msgid "Layer"
@@ -281,15 +279,15 @@ msgstr "طبقة"
 
 #: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
-msgstr "مساعد ت_سجيل الدخول"
+msgstr "مساعد ال_ولوج"
 
 #: ../plugins/interface_view.glade.h:39
 msgid "Locale"
-msgstr "المحلية:"
+msgstr "المحلية"
 
 #: ../plugins/interface_view.glade.h:40
 msgid "Locale:"
-msgstr "الموقع:"
+msgstr "المحلّية:"
 
 #: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
@@ -297,15 +295,15 @@ msgstr "MDI-Z-order"
 
 #: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
-msgstr "الزيادة القصوى"
+msgstr "أقصى قيمة"
 
 #: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
-msgstr "الزيادة الدنيا"
+msgstr "أدنى زيادة"
 
 #: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
-msgstr "القيمة الدنيا"
+msgstr "أدنى قيمة"
 
 #: ../plugins/interface_view.glade.h:45
 msgid "Offset"
@@ -313,15 +311,15 @@ msgstr "إزاحة"
 
 #: ../plugins/interface_view.glade.h:46
 msgid "Perform action"
-msgstr "قم بعمل"
+msgstr "قم بإجراء"
 
 #: ../plugins/interface_view.glade.h:47
 msgid "Position"
-msgstr "الموقع"
+msgstr "الموضع"
 
 #: ../plugins/interface_view.glade.h:48
 msgid "Relative position"
-msgstr "الموقع النسبي"
+msgstr "الموضع النسبي"
 
 #: ../plugins/interface_view.glade.h:49
 msgid "Row"
@@ -337,11 +335,11 @@ msgstr "اختر الكل"
 
 #: ../plugins/interface_view.glade.h:52
 msgid "Selected columns"
-msgstr "الأعمدة المُنتقاة"
+msgstr "الأعمدة المُحددة"
 
 #: ../plugins/interface_view.glade.h:53
 msgid "Selected rows"
-msgstr "الصفوف المُنتقاة"
+msgstr "الصفوف المُحددة"
 
 #: ../plugins/interface_view.glade.h:54
 msgid "Show"
@@ -353,7 +351,7 @@ msgstr "الحجم"
 
 #: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
-msgstr "محتوى قابل للتدفق"
+msgstr "محتوى _قابل للتدفق"
 
 #: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
@@ -361,23 +359,23 @@ msgstr "_نص"
 
 #: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
-msgstr "مجموعة ادوات"
+msgstr "عُدّة أدوات"
 
 #: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
-msgstr "القيمة"
+msgstr "ال_قيمة"
 
 #: ../plugins/interface_view.glade.h:60
 msgid "Version"
-msgstr "الإصدار"
+msgstr "الإصدارة"
 
 #: ../plugins/interface_view.glade.h:61
 msgid "WIDGET"
-msgstr "WIDGET"
+msgstr "ودجة"
 
 #: ../plugins/interface_view.glade.h:62
 msgid "_Accessible"
-msgstr "م_تاح"
+msgstr "مُ_تاح"
 
 #: ../plugins/interface_view.glade.h:63
 msgid "_Document"
@@ -389,7 +387,7 @@ msgstr "_صورة"
 
 #: ../plugins/interface_view.glade.h:65
 msgid "_Selection"
-msgstr "الإ_نتقاء"
+msgstr "الا_ختيار"
 
 #: ../plugins/interface_view.glade.h:66
 msgid "_Table"
@@ -397,7 +395,7 @@ msgstr "_جدول"
 
 #: ../plugins/interface_view.glade.h:67
 msgid "name (x,y)"
-msgstr "الاسم (س،ع)"
+msgstr "الاسم (س،ص)"
 
 #: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
@@ -405,12 +403,12 @@ msgstr "عارض الواجهة"
 
 #: ../plugins/interface_view.py:37
 msgid "Allows viewing of various interface properties"
-msgstr "اسمح برؤية خصائص مختلفة للواجهة "
+msgstr "يسمح برؤية مختلف خصائص الواجهة "
 
 #: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
-msgstr "(غير مطبق)"
+msgstr " (غير مطبق)"
 
 #: ../plugins/interface_view.py:460
 msgid "Key binding"
@@ -418,7 +416,7 @@ msgstr "ارتباط المفتاح"
 
 #: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
-msgstr "URI"
+msgstr "مسار"
 
 #: ../plugins/interface_view.py:747
 msgid "Start"
@@ -430,27 +428,27 @@ msgstr "النهاية"
 
 #: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
-msgstr "توجد فروع كثيرة يمكن انتقاؤها"
+msgstr "توجد فروع كثيرة يمكن اختيارها"
 
 #: ../plugins/interface_view.py:1019
 msgid "Content type"
-msgstr "نوع المحتويات"
+msgstr "نوع المحتوى"
 
 #: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
-msgstr "<i>قابل للتحرير</i>"
+msgstr "<i>(قابل للتحرير)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
-msgstr "انتقاء سريع"
+msgstr "اختيار سريع"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "ملحقات بطرائق مختلفة لانتقاء المتاحات بسرعة."
+msgstr "ملحقات بمختلف طرق اختيار المُتاحات بسرعة."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr "عاين المتاح المركز اخيرا"
+msgstr "عاين المتاح المركز آخرا"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
@@ -469,91 +467,88 @@ msgstr "LDTP"
 #. A native script format.
 #: ../plugins/script_recorder.glade.h:6
 msgid "Native"
-msgstr "محلّيّ"
+msgstr "محلّي"
 
 #: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
-msgstr "نوع البرنامج"
+msgstr "نوع المخطوط"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
-msgstr "مسجل البرنامج"
+msgstr "مسجل المخطوط"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr "انشئ برنامج بنمط dogtail"
+msgstr "أنشئ برنامج بنمط dogtail"
 
 #: ../plugins/script_recorder.py:340
 msgid "The current script will be lost."
-msgstr "سيضيع البرنامج الحالي"
+msgstr "سيضيع البرنامج الحالي."
 
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
-msgstr "أكّد المحو"
+msgstr "أكّد المسح"
 
 #: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
 msgid "Idle"
-msgstr ""
+msgstr "ساكن"
 
 #: ../plugins/validate.glade.h:2
 msgid "Sche_ma:"
-msgstr ""
+msgstr "م_خطط:"
 
 #: ../plugins/validate.glade.h:3
 msgid "V_alidate"
-msgstr ""
+msgstr "ت_حقق"
 
 #: ../plugins/validate.py:64
-#, fuzzy
 msgid "No description"
-msgstr "<لا وصف>"
+msgstr "لا وصف"
 
 #: ../plugins/validate.py:152
 msgid "AT-SPI Validator"
-msgstr ""
+msgstr "مُصادِق AT-SPI"
 
 #: ../plugins/validate.py:153
-#, fuzzy
 msgid "Validates application accessibility"
-msgstr "تحقق من اتاحة برنامجك"
+msgstr "يُصادق على إتاحة التطبيق"
 
 #. log level column
 #: ../plugins/validate.py:198
 msgid "Level"
-msgstr ""
+msgstr "المستوى"
 
 #: ../plugins/validate.py:262
 msgid "Validating"
-msgstr ""
+msgstr "المُصادقة"
 
 #: ../plugins/validate.py:413
 msgid "EXCEPT"
-msgstr ""
+msgstr "استثناء"
 
 #: ../plugins/validate.py:420
 msgid "ERROR"
-msgstr ""
+msgstr "خطأ"
 
 #: ../plugins/validate.py:427
 msgid "WARN"
-msgstr ""
+msgstr "تحذير"
 
 #: ../plugins/validate.py:433
 msgid "INFO"
-msgstr ""
+msgstr "معلومات"
 
 #: ../plugins/validate.py:439
 msgid "DEBUG"
-msgstr ""
+msgstr "تنقيح"
 
 #: ../plugindata/validate/basic.py:8
 msgid "Basic"
-msgstr ""
+msgstr "أساسي"
 
 #: ../plugindata/validate/basic.py:9
-#, fuzzy
 msgid "Tests fundamental GUI application accessibility"
-msgstr "تحقق من اتاحة برنامجك"
+msgstr "يختبر الإتاحة الأساسية للبرامج الرسومية"
 
 #: ../plugindata/validate/basic.py:24
 #, python-format
@@ -567,12 +562,12 @@ msgstr ""
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
-msgstr ""
+msgstr "أكثر من ودجة مُنشّطة"
 
 #: ../plugindata/validate/basic.py:81
 #, python-format
 msgid "%s has no text interface"
-msgstr ""
+msgstr "ليس لـ %s واجهة نصّية"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
@@ -580,12 +575,12 @@ msgstr ""
 #: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
+msgstr "فهرس %s في الأصل لا يطابق فهرس الفرع"
 
 #: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr ""
+msgstr "لا مُقابل في العلاقة %s"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
@@ -593,7 +588,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:194
 #, python-format
 msgid "%s missing name or label"
-msgstr ""
+msgstr "يفتقد %s اسما أو تسمية"
 
 #: ../plugindata/validate/basic.py:210
 #, python-format
@@ -603,7 +598,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:233
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr ""
+msgstr "لـ %s حالة %s بدون حالة %s"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -611,7 +606,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:258
 #, python-format
 msgid "%s does not belong to a set"
-msgstr ""
+msgstr "لا ينتمي %s إلى طاقم"
 
 #. Translators: The row or column number retrieved from a table child's object
 #. at a certain index is wrong.
@@ -621,7 +616,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:292
 #, python-format
 msgid "%s index %d does not match row and column"
-msgstr ""
+msgstr "فهرس ‪%s‬ ‪%d‬ لا يُطابق الصف والعمود"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -632,28 +627,28 @@ msgstr ""
 #: ../plugindata/validate/basic.py:322
 #, python-format
 msgid "%s parent index %d does not match row and column index %d"
-msgstr ""
+msgstr "فهرس أصل  ‪%s‬ ‪%d‬ لا يُطابق صف وعمود الفهرس %d"
 
 #: ../plugindata/validate/basic.py:348
-#, fuzzy, python-format
+#, python-format
 msgid "%s has no name or description"
-msgstr "<لا وصف>"
+msgstr "ليس لـ %s اسما أو وصفا"
 
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
-msgstr "ت_فضيلات..."
+msgstr "الت_فضيلات..."
 
 #: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
-msgstr "_محتويات"
+msgstr "ال_محتويات"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr ""
-"لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يحب تفعيل إتاحة سطح المكتب "
-"لتصحيح المشكل. هل تريد تفعيله الآن؟"
+"لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يجب تفعيل إتاحة سطح المكتب "
+"لتصحيح المشكل. هل تريد تفعيلها الآن؟"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -661,7 +656,7 @@ msgstr "ملاحظة: لن تطبق التغييرات إلا بعد الخرو�
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
-msgstr "<ميت>"
+msgstr "<ميّت>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:398
 msgid "Role"
@@ -669,11 +664,11 @@ msgstr "الدّور"
 
 #: ../src/lib/accerciser/accessible_treeview.py:405
 msgid "Children"
-msgstr "أبناء"
+msgstr "فروع"
 
 #: ../src/lib/accerciser/accessible_treeview.py:431
 msgid "Refresh _Current"
-msgstr "اعادة تحميل ال_حالي"
+msgstr "أعِد تحميل ال_حالي"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -717,21 +712,22 @@ msgstr "ملحقات"
 
 #: ../src/lib/accerciser/prefs_dialog.py:37
 msgid "Global Hotkeys"
-msgstr "المفاتيح الساخنة الشاملة"
+msgstr "مفاتيح الاختصارات العامّة"
 
 #: ../src/lib/accerciser/about_dialog.py:50
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org :\n"
-"جهاد عفيفي\t<djihed@gmail.com>"
+"جهاد عفيفي\t<djihed@gmail.com>\n"
+"خالد حسني\t<khaledhosny@eglug.org>"
 
 #: ../src/lib/accerciser/about_dialog.py:51
 msgid "An interactive Python accessibility explorer"
-msgstr "مستكشف تفاعلي الاتاحة لبايثون "
+msgstr "مستكشف تفاعلي لإتاحة بيثون "
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة IBM  © 2006، 2007 (BSD)"
+msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة‪IBM‬  © 2006، 2007 (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -739,15 +735,15 @@ msgstr "رخصة بي أس دي الجديدة. تفاصيل أكثر في ال�
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "Web site"
-msgstr "موقع الوب"
+msgstr "موقع الوِب"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr "أ_ضف علامة..."
+msgstr "_ضِف علامة..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr "العلامة المنتقاة متاحة."
+msgstr "العلامة المختارة متاحة."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -771,11 +767,11 @@ msgstr "تطبيق"
 
 #: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
-msgstr "المسار"
+msgstr "مسار"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr "أضف علامة..."
+msgstr "ضِف علامة..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
@@ -783,7 +779,7 @@ msgstr "العنوان:"
 
 #: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
-msgstr "تطبيق:"
+msgstr "التطبيق:"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
@@ -795,11 +791,11 @@ msgstr "أخطاء الملحق"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:375
 msgid "View"
-msgstr "عرض"
+msgstr "مشهد"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:462
 msgid "No view"
-msgstr "لا مشهدا"
+msgstr "لا مشهد"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
@@ -807,21 +803,21 @@ msgstr "مشهد ملحقات من_فردة"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr "عرض الملحق"
+msgstr "مشهد الملحقات"
 
 # fuzzy , python-format
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "عرض الملحق (%d)"
+msgstr "مشهد الملحقات (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>ع_رض جديد...</i>"
+msgstr "<i>_مشهد جديد...</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
-msgstr "عرض جديد..."
+msgstr "مشهد جديد..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
@@ -843,41 +839,3 @@ msgstr "_عرض"
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
-#~ msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة IBM  © 2006، 2007 (BSD)"
-
-#~ msgid "gtk-clear"
-#~ msgstr "مسح"
-
-#~ msgid "gtk-save"
-#~ msgstr "gtk-save"
-
-#~ msgid "gtk-select-all"
-#~ msgstr "اختيار الكل"
-
-#~ msgid "gtk-media-record"
-#~ msgstr "gtk-media-record"
-
-#~ msgid "Wiki page"
-#~ msgstr "صفحة ويكي"
-
-#~ msgid "gtk-close"
-#~ msgstr "gtk-close"
-
-#~ msgid "gtk-quit"
-#~ msgstr "إنهاء"
-
-#~ msgid "gtk-refresh"
-#~ msgstr "اعادة تحميل"
-
-#~ msgid "Core"
-#~ msgstr "اللبّ"
-
-#~ msgid ""
-#~ "Desktop accessibility is still not functioning although it has been "
-#~ "enabled."
-#~ msgstr "الاتاحة لا تعمل رغم انه تم تفعيلها"
-
-#~ msgid ""
-#~ "Note: You must logout for desktop accessibility options to take effect."
-#~ msgstr "ملاحظة: يجب تسجيل الخروج لتفعيل خيارات الإتاحة"
