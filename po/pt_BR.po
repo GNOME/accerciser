@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the accerciser package.
 # Washington Lins <washington-lins@uol.com.br>, 2007.
 # Luiz Armesto <luiz.armesto@gmail.com>, 2007.
-# Og Maciel <ogmaciel@gnome.org>, 2007.
+# Og Maciel <ogmaciel@gnome.org>, 2007-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-08 00:39-0200\n"
-"PO-Revision-Date: 2007-12-08 00:39-0200\n"
+"POT-Creation-Date: 2008-02-03 23:29-0200\n"
+"PO-Revision-Date: 2008-02-03 23:30-0200\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -100,27 +100,35 @@ msgstr "Fonte"
 msgid "_Monitor Events"
 msgstr "_Monitor de Eventos"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Monitor de Eventos"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Mostra os eventos ao ocorrerem a partir dos tipos e fontes selecionados"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Destacar último registro de evento"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Iniciar/parar gravação do evento"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Limpar registro de eventos"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nome"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Nome completo"
 
@@ -238,6 +246,7 @@ msgid "Des_ktop"
 msgstr "Área de _Trabalho"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Descrição"
 
@@ -482,6 +491,151 @@ msgstr "O script atual será perdido."
 msgid "Confirm clear"
 msgstr "Confirmar limpeza"
 
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Ocioso"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Esque_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "V_alidar"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Sem descrição"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Validador de AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Valida acessibilidade da aplicação"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Nível"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Validando"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "EXCEÇÃO"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "ERRO"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "AVISO"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFORMAÇÃO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "DEPURAÇÃO"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Básico"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Testa acessibilidade fundamental de GUI de aplicação"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "acionável %s não é focalizável ou selecionável"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "interativo %s não é acionável"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "mais de um componente em foco"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s não possui interface de texto"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "índice %s no parente não corresponde ao índice do filho"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Faltando recíproco para a relação %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "faltando nome ou rótulo de %s"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "focalizável %s possui uma interface de tabela, e interface de seleção"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s possui estado %s sem estado %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s não pertence a um grupo"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s índice %d não corresponde à linha e coluna"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s índice parente %d não corresponde ao índice %d da linha e coluna"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s não possui nome ou descrição"
+
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Preferências..."
@@ -490,16 +644,16 @@ msgstr "_Preferências..."
 msgid "_Contents"
 msgstr "_Conteúdo"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr ""
-"Accerciser não pode encontrar as aplicações no sua área de trabalho. Você "
-"deve habilitar o acesso à área de trabalho para resolver este problema. Você "
-"deseja habilitá-lo agora?"
+"Accerciser não pôde encontrar as aplicações na sua área de trabalho. Você "
+"deve habilitar acessibilidade na área de trabalho para resolver este "
+"problema. Você deseja habilitá-la agora?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: As alterações só terão efeito após fechar a sessão."
 
