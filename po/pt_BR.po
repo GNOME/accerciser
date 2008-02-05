@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-03 23:29-0200\n"
-"PO-Revision-Date: 2008-02-03 23:30-0200\n"
+"POT-Creation-Date: 2008-02-05 20:43-0200\n"
+"PO-Revision-Date: 2008-02-02 21:44-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Explorador de Acessibilidade Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "Fornece a sua aplicação a capacidade de ser acessível"
+msgstr "Faça um exercício de acessibilidade em sua aplicação"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -44,7 +44,7 @@ msgstr "Navegador de APIs"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "Navegar nos vários métodos de acessibilidade atual"
+msgstr "Navegar pelos vários métodos do objeto acessível atual"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -69,8 +69,7 @@ msgstr "Console IPython"
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
-"Console interativo para manipulação das acessibilidades atualmente "
-"selecionadas"
+"Console interativo para manipular o objeto acessível atualmente selecionado"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -86,7 +85,7 @@ msgstr "Tudo"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr "Acessibilidade selecionada"
+msgstr "Objeto acessível selecionado"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
@@ -98,7 +97,7 @@ msgstr "Fonte"
 
 #: ../plugins/event_monitor.glade.h:7
 msgid "_Monitor Events"
-msgstr "_Monitor de Eventos"
+msgstr "_Monitorar Eventos"
 
 #: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
@@ -111,15 +110,15 @@ msgstr ""
 
 #: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
-msgstr "Destacar último registro de evento"
+msgstr "Destaca último registro de evento"
 
 #: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
-msgstr "Iniciar/parar gravação do evento"
+msgstr "Inicia/pára gravação do evento"
 
 #: ../plugins/event_monitor.py:67
 msgid "Clear event log"
-msgstr "Limpar registro de eventos"
+msgstr "Limpa registro de eventos"
 
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
@@ -150,7 +149,7 @@ msgstr "<b>Atributos</b>"
 
 #: ../plugins/interface_view.glade.h:5
 msgid "<b>Child count</b>"
-msgstr "<b>Contagem de filhos</b>"
+msgstr "<b>Número de filhos</b>"
 
 #: ../plugins/interface_view.glade.h:6
 msgid "<b>Description</b>"
@@ -253,7 +252,7 @@ msgstr "Descrição"
 #. How many columns the cell spans.
 #: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
-msgstr "Extensões:"
+msgstr "Estende-se:"
 
 #: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
@@ -265,7 +264,7 @@ msgstr "Cabeçalho:"
 
 #: ../plugins/interface_view.glade.h:34
 msgid "Hyperlink"
-msgstr "Hiperligação"
+msgstr "Hiperlink"
 
 #: ../plugins/interface_view.glade.h:35
 msgid "ID"
@@ -285,11 +284,11 @@ msgstr "Assistente de Lo_gin"
 
 #: ../plugins/interface_view.glade.h:39
 msgid "Locale"
-msgstr "Localização"
+msgstr "Localidade"
 
 #: ../plugins/interface_view.glade.h:40
 msgid "Locale:"
-msgstr "Localização:"
+msgstr "Localidade:"
 
 #: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
@@ -353,7 +352,7 @@ msgstr "Tamanho"
 
 #: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
-msgstr "Conteúdo _reprodutível"
+msgstr "Conteúdo em flu_xo"
 
 #: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
@@ -381,7 +380,7 @@ msgstr "_Acessível"
 
 #: ../plugins/interface_view.glade.h:63
 msgid "_Document"
-msgstr "_Documnto"
+msgstr "_Documento"
 
 #: ../plugins/interface_view.glade.h:64
 msgid "_Image"
@@ -401,11 +400,11 @@ msgstr "nome (x,y)"
 
 #: ../plugins/interface_view.py:35
 msgid "Interface Viewer"
-msgstr "Interface de Visualização"
+msgstr "Visão de Interface"
 
 #: ../plugins/interface_view.py:37
 msgid "Allows viewing of various interface properties"
-msgstr "Permitir visualizar uma variedade de propriedades de interface"
+msgstr "Permite visualizar uma variedade de propriedades de interface"
 
 #: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
@@ -446,15 +445,16 @@ msgstr "Seleção Rápida"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Plug-ins com vários métodos se acessibilidade rápida selecionada."
+msgstr ""
+"Plug-in com vários métodos para selecionar objetos acessíveis rapidamente."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr "Inspecionar a última acessibilidade posta em foco"
+msgstr "Inspeciona o último objeto acessível em foco"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr "Inspecionar acessibilidade abaixo do mouse"
+msgstr "Inspeciona objeto acessível abaixo do mouse"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 #: ../plugins/script_recorder.glade.h:2
@@ -481,7 +481,7 @@ msgstr "Gravador de Script"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr "Criar scripts de estilo para o Dogtail"
+msgstr "Criar scripts estilo \"dogtail\""
 
 #: ../plugins/script_recorder.py:340
 msgid "The current script will be lost."
@@ -555,7 +555,7 @@ msgstr "Testa acessibilidade fundamental de GUI de aplicação"
 #: ../plugindata/validate/basic.py:24
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr "acionável %s não é focalizável ou selecionável"
+msgstr "Acionável %s não é focalizável ou selecionável"
 
 #: ../plugindata/validate/basic.py:42
 #, python-format
@@ -582,7 +582,7 @@ msgstr "índice %s no parente não corresponde ao índice do filho"
 #: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr "Faltando recíproco para a relação %s"
+msgstr "Faltando recíproco da relação %s"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
@@ -650,12 +650,12 @@ msgid ""
 "desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr ""
 "Accerciser não pôde encontrar as aplicações na sua área de trabalho. Você "
-"deve habilitar acessibilidade na área de trabalho para resolver este "
-"problema. Você deseja habilitá-la agora?"
+"deve habilitar a acessibilidade na área de trabalho para resolver esse "
+"problema. Deseja habilitá-la agora?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
-msgstr "Nota: As alterações só terão efeito após fechar a sessão."
+msgstr "Nota: As alterações só terão efeito depois de efetuar logout."
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
@@ -663,7 +663,7 @@ msgstr "<morto>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:398
 msgid "Role"
-msgstr "Regra"
+msgstr "Função"
 
 #: ../src/lib/accerciser/accessible_treeview.py:405
 msgid "Children"
@@ -746,7 +746,7 @@ msgstr "_Adicionar Marcador..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr "Marcar a acessibilidade selecionada."
+msgstr "Marcar o objeto acessível selecionado."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -802,16 +802,16 @@ msgstr "Nenhuma visão"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr "Visualização de plug-in_s individualizada"
+msgstr "_Visão unificada de plug-ins"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr "Plug-in de visualização"
+msgstr "Visão do Plug-in"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "Plug-in de visualização (%d)"
+msgstr "Visão do Plug-in (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
