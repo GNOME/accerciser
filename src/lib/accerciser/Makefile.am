@@ -9,7 +9,6 @@ accerciser_PYTHON = about_dialog.py \
 	main_window.py \
 	node.py \
 	prefs_dialog.py \
-	pyatspi.zip \
 	tools.py \
 	ui_manager.py \
 	hotkey_manager.py \
