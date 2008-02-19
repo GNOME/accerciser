@@ -1,13 +1,13 @@
 # This file is distributed under the same license as the accerciser package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2007.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-15 12:18+0100\n"
-"PO-Revision-Date: 2007-12-20 15:45+0100\n"
+"POT-Creation-Date: 2008-01-12 01:17+0000\n"
+"PO-Revision-Date: 2008-02-19 13:07+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,15 @@ msgstr "Pokaže dogodke, kot se ti pojavijo preko izbranih vrsti in virov"
 msgid "Highlight last event entry"
 msgstr "Označi zadnji vnos dogodka"
 
-#: ../plugins/event_monitor.py:110
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Začni/ustavi snemanje dogodkov"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "_Počisti beleženje dogodkov"
+
+#: ../plugins/event_monitor.py:123
 #: ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
@@ -118,9 +126,9 @@ msgstr "Označi zadnji vnos dogodka"
 msgid "Name"
 msgstr "Ime"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:132
 msgid "Full name"
-msgstr "Polno Ime"
+msgstr "Polno ime"
 
 #: ../plugins/interface_view.glade.h:1
 msgid "0"
@@ -238,6 +246,7 @@ msgstr "_Namizje"
 
 #: ../plugins/interface_view.glade.h:29
 #: ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Opis"
 
@@ -484,6 +493,132 @@ msgstr "Trenutni skript bo izgubljen"
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
 msgstr "Potrditev čiščenja"
+
+#: ../plugins/validate.glade.h:1
+#: ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Nedejavno"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "She_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "Določi _veljavnost"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Brez opisa"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI določanje veljavnosti"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Določi veljavnost dostopnosti programa"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Raven"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Določanje veljavnosti"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "IZJEMA"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "NAPAKA"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "OPOZORI"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Osnovno"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Določevanje dostopnosti grafičnega vmesnika programa"
+
+#: ../plugindata/validate/basic.py:20
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "udejanjenega %s ni mogoče izbrati ali označiti"
+
+#: ../plugindata/validate/basic.py:34
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "interaktivnega %s ni mogoče udejanjiti"
+
+#: ../plugindata/validate/basic.py:44
+msgid "more than one focused widget"
+msgstr "več kot en označen gradnik"
+
+#: ../plugindata/validate/basic.py:65
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s je brez besedilnega vmesnika"
+
+#: ../plugindata/validate/basic.py:77
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "indeks %s ni v skladu z indeksom podrejenega procesa"
+
+#: ../plugindata/validate/basic.py:118
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Manjka recipročnost za %s povezavo"
+
+#: ../plugindata/validate/basic.py:160
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s manjka ime ali oznaka"
+
+#: ../plugindata/validate/basic.py:172
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "označeni %s ima predelni vmesnik, ni izbirnega vmesnika"
+
+#: ../plugindata/validate/basic.py:191
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s vključuje %s stanje brez %s stanja"
+
+#: ../plugindata/validate/basic.py:209
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s ne pripada skupini"
+
+#: ../plugindata/validate/basic.py:234
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "%s indeks %d ne sovpada s stolpci in z vrsticami"
+
+#: ../plugindata/validate/basic.py:254
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s nadrejeni indeks %d ne sovpada s stolpci in z vrsticami indeksa %d "
+
+#: ../plugindata/validate/basic.py:276
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s nima imena ali opisa"
 
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
