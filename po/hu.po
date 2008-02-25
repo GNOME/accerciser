@@ -2,15 +2,15 @@
 # Copyright (C) 2007, The Free Software Foundation, inc.
 # This file is distributed under the same license as the accerciser package.
 #
-# Gabor Kelemen <kelemeng@gnome.hu>, 2007.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: head\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-26 03:17+0100\n"
-"PO-Revision-Date: 2007-08-27 00:42+0200\n"
+"POT-Creation-Date: 2008-01-12 01:17+0000\n"
+"PO-Revision-Date: 2008-02-26 00:42+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
-"Language-Team: Hungarian <gnome@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,39 +97,36 @@ msgstr "Forrás"
 msgid "_Monitor Events"
 msgstr "_Események figyelése"
 
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr ""
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr ""
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr ""
-
 #: ../plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Eseményfigyelő"
 
 #: ../plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr "A kiválasztott típusú és forrású eseményeket a bekövetkezésük sorrendjében jeleníti meg"
+msgstr ""
+"A kiválasztott típusú és forrású eseményeket a bekövetkezésük sorrendjében "
+"jeleníti meg"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Utolsó eseménybejegyzés kiemelése"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Eseményrögzítés indítása/leállítása"
+
+#: ../plugins/event_monitor.py:71
+msgid "Clear event log"
+msgstr "Eseménynapló törlése"
+
+#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Név"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:132
 msgid "Full name"
 msgstr "Teljes név"
 
@@ -247,150 +244,152 @@ msgid "Des_ktop"
 msgstr "M_unkaasztal"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Leírás"
 
-#: ../plugins/interface_view.glade.h:30
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
 msgstr "Kiterjedések:"
 
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
 msgstr "_Hiperszöveg"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:33
 msgid "Header:"
 msgstr "Fejléc:"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:34
 msgid "Hyperlink"
 msgstr "Hiperlink"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:35
 msgid "ID"
 msgstr "Azonosító"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:36
 msgid "Include defaults"
 msgstr "Alapértelmezések felvétele"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:37
 msgid "Layer"
 msgstr "Réteg"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
 msgstr "Bejelentkezéssegé_d"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:39
 msgid "Locale"
 msgstr "Területi beállítás"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:40
 msgid "Locale:"
 msgstr "Területi beállítás:"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
 msgstr "MDI-Z sorrend"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
 msgstr "Maximális érték"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
 msgstr "Minimális növekmény"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
 msgstr "Minimális érték"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:45
 msgid "Offset"
 msgstr "Eltolás"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:46
 msgid "Perform action"
 msgstr "Művelet végrehajtása"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:47
 msgid "Position"
 msgstr "Pozíció"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:48
 msgid "Relative position"
 msgstr "Relatív pozíció"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:49
 msgid "Row"
 msgstr "Sor"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:50
 msgid "Rows"
 msgstr "Sorok"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:51
 msgid "Select All"
 msgstr "Mindent kijelöl"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:52
 msgid "Selected columns"
 msgstr "Kijelölt oszlopok"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:53
 msgid "Selected rows"
 msgstr "Kijelölt sorok"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:54
 msgid "Show"
 msgstr "Megjelenítés"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:55
 msgid "Size"
 msgstr "Méret"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:56
 msgid "St_reamable Content"
 msgstr "S_ugározható tartalom"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
 msgstr "Szöve_g"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
 msgstr "Eszközkészlet"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
 msgstr "É_rték"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:60
 msgid "Version"
 msgstr "Verzió"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:61
 msgid "WIDGET"
 msgstr "GRAFIKAI ELEM"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:62
 msgid "_Accessible"
 msgstr "_Akadálymentes"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:63
 msgid "_Document"
 msgstr "_Dokumentum"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:64
 msgid "_Image"
 msgstr "_Kép"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:65
 msgid "_Selection"
 msgstr "_Kijelölés"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:66
 msgid "_Table"
 msgstr "_Táblázat"
 
@@ -445,7 +444,9 @@ msgstr "Gyorskiválasztás"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Bővítmény az akadálymentesek gyors kiválasztására szolgáló különböző metódusokkal."
+msgstr ""
+"Bővítmény az akadálymentesek gyors kiválasztására szolgáló különböző "
+"metódusokkal."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -455,25 +456,24 @@ msgstr "Utoljára fókuszban lévő akadálymentes vizsgálata"
 msgid "Inspect accessible under mouse"
 msgstr "Az egér alatti akadálymentes vizsgálata"
 
-#: ../plugins/script_recorder.glade.h:1
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr "Natív"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
 msgstr "Parancsfájl típusa"
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr ""
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -491,21 +491,149 @@ msgstr "A jelenlegi parancsfájl el fog veszni."
 msgid "Confirm clear"
 msgstr "Törlés megerősítése"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Üresjárat"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Sé_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "_Ellenőrzés"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Nincs leírás"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI ellenőrző"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Alkalmazások akadálymentesítésének ellenőrzése"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Szint"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Ellenőrzés"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "KIVÉTEL"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "HIBA"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "FIGY"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "HIBAKERESÉS"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Alap"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Alkalmazások alapvető GUI akadálymentesítésének tesztelése"
+
+#: ../plugindata/validate/basic.py:20
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "a(z) %s műveletvégző nem fókuszálható vagy kiválasztható"
+
+#: ../plugindata/validate/basic.py:34
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "az interaktív %s nem végezhet műveletet"
+
+#: ../plugindata/validate/basic.py:44
+msgid "more than one focused widget"
+msgstr "több fókuszban lévő felületi elem"
+
+#: ../plugindata/validate/basic.py:65
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s nem rendelkezik szöveges felülettel"
+
+#: ../plugindata/validate/basic.py:77
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s index a szülőben nem egyezik a gyermek indexszel"
+
+#: ../plugindata/validate/basic.py:118
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "A(z) %s kapcsolat ellentéte hiányzik"
+
+#: ../plugindata/validate/basic.py:160
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s név vagy címke hiányzik"
+
+#: ../plugindata/validate/basic.py:172
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "a(z) %s fókuszba hozható elem tábla- és nem kiválasztási felülettel rendelkezik"
+
+#: ../plugindata/validate/basic.py:191
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "a(z) %s rendelkezik %s állapottal és nem rendelkezik %s állapottal"
+
+#: ../plugindata/validate/basic.py:209
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s nem tartozik halmazhoz"
+
+#: ../plugindata/validate/basic.py:234
+#, python-format
+msgid "%s index %d does not match row and column"
+msgstr "a(z) %s %d indexe nem illeszkedik sorra és oszlopra"
+
+#: ../plugindata/validate/basic.py:254
+#, python-format
+msgid "%s parent index %d does not match row and column index %d"
+msgstr "%s %d szülőindexe nem illeszkedik a(z) %d sor- és oszlopindexre"
+
+#: ../plugindata/validate/basic.py:276
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s nem rendelkezik névvel vagy leírással"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "B_eállítások..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Tartalom"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Az Accerciser nem látja a környezetében található alkalmazásokat. A probléma javítása érdekében engedélyeznie kell az akadálymentesítési szolgáltatást. Engedélyezi most?"
+msgstr ""
+"Az Accerciser nem látja a környezetében található alkalmazásokat. A probléma "
+"javítása érdekében engedélyeznie kell az akadálymentesítési szolgáltatást. "
+"Engedélyezi most?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Megjegyzés: a változások csak kijelentkezés után lépnek életbe."
 
@@ -549,11 +677,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Felső panel"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Alsó panel"
 
@@ -578,8 +706,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Interaktív Python akadálymentesítés-felderítő"
 
 #: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
