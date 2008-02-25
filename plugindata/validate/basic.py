@@ -289,8 +289,8 @@ class TableRowColIndex(Validator):
         # The first variable is the role name of the object, the second is the
         # given index.
         # 
-        view.error(_('%s index %d does not match row and column') %
-                   (acc.getLocalizedRoleName(), i), acc)
+        view.error(_('%(rolename)s index %(num)d does not match row and column') %
+                   {'rolename':acc.getLocalizedRoleName(), 'num':i}, acc)
         return
 
 class TableRowColParentIndex(Validator):
@@ -319,8 +319,8 @@ class TableRowColParentIndex(Validator):
         # The first variable is the object's role name, the second and third variables
         # are index numbers.
         #
-        view.error(_('%s parent index %d does not match row and column index %d') %
-                   (acc.getLocalizedRoleName(), ip, i), acc)
+        view.error(_('%(rolename)s parent index %(num1)d does not match row and column index %(num2)d') %
+                   {'rolename':acc.getLocalizedRoleName(), 'num1':ip, 'num2':i}, acc)
         return
 
 class ImageHasName(Validator):
