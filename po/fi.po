@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-14 07:30+0300\n"
+"POT-Creation-Date: 2008-02-26 11:12+0300\n"
 "PO-Revision-Date: 2006-09-15 11:04+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -612,8 +612,8 @@ msgstr "%s ei kuulu joukkoon"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s indeksi %d ei vastaa riviä ja saraketta"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s indeksi %(num)d ei vastaa riviä ja saraketta"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -622,9 +622,12 @@ msgstr "%s indeksi %d ei vastaa riviä ja saraketta"
 #. are index numbers.
 #.
 #: ../plugindata/validate/basic.py:322
-#, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s vanhemman indeksi %d ei vastaa riviä ja saraketta indeksissä %d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s vanhemman indeksi %(num)d ei vastaa rivin ja sarakkeen "
+"indeksiä %(num2)d"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -711,26 +714,26 @@ msgstr "Liitännäiset"
 msgid "Global Hotkeys"
 msgstr "Yhteiset pikanäppäimet"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Ilkka Tuohela, 2007.\n"
 "\n"
 "http://www.gnome.fi/"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Interaktiivinen Python-esteettömyys-selain"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser tekijänoikeudet © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Uusi BSD-lisenssi, katso lisätietoja tiedostoista COPYING ja NOTICE."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "WWW-sivusto"
 
