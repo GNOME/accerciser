@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-05 20:43-0200\n"
-"PO-Revision-Date: 2008-02-02 21:44-0500\n"
+"POT-Creation-Date: 2008-02-26 18:38-0300\n"
+"PO-Revision-Date: 2008-02-26 18:40-0300\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -617,8 +617,8 @@ msgstr "%s não pertence a um grupo"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s índice %d não corresponde à linha e coluna"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s índice %(num)d não corresponde à linha e coluna"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -628,8 +628,10 @@ msgstr "%s índice %d não corresponde à linha e coluna"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s índice parente %d não corresponde ao índice %d da linha e coluna"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%(rolename)s índice parente %(num1)d não corresponde ao índice %(num2)d da linha e coluna"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -717,26 +719,26 @@ msgstr "Plug-ins"
 msgid "Global Hotkeys"
 msgstr "Teclas de atalho globais"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Washington Lins <washington-lins@uol.com.br>\n"
 "Luiz Armesto <luiz.armesto@gmail.com>\n"
 "Og Maciel <ogmaciel@gnome.org>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Um explorador de acessibilidade interativo em Python"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "A nova Licença BSD, veja os arquivos COPYING e NOTICE para detalhes."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Site da web"
 
