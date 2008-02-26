@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-31 08:06+0000\n"
-"PO-Revision-Date: 2008-02-17 11:49+0100\n"
+"POT-Creation-Date: 2008-02-26 16:20+0000\n"
+"PO-Revision-Date: 2008-02-26 16:28+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
@@ -622,8 +622,8 @@ msgstr "لا ينتمي %s إلى طاقم"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "فهرس ‪%s‬ ‪%d‬ لا يُطابق الصف والعمود"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "فهرس ‪%(rolename)s‬ ‪%(num)d‬ لا يُطابق الصف والعمود"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -633,8 +633,8 @@ msgstr "فهرس ‪%s‬ ‪%d‬ لا يُطابق الصف والعمود"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "فهرس أصل  ‪%s‬ ‪%d‬ لا يُطابق صف وعمود الفهرس %d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "فهرس أصل %(rolename)s %(num1)d ‬ لا يُطابق صف وعمود الفهرس %(num2)d"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -717,26 +717,26 @@ msgstr "ملحقات"
 msgid "Global Hotkeys"
 msgstr "مفاتيح الاختصارات العامّة"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "فريق عربآيز للترجمة http://www.arabeyes.org :\n"
 "جهاد عفيفي\t<djihed@gmail.com>\n"
 "خالد حسني\t<khaledhosny@eglug.org>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "مستكشف تفاعلي لإتاحة بيثون "
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "أكسرسايزر - جميع الحقوق محفوظة لشركة‪IBM‬  © 2006، 2007 (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "رخصة بي أس دي الجديدة. تفاصيل أكثر في الملفين COPYING و NOTICE."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "موقع الوِب"
 
