@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-15 00:46+0100\n"
-"PO-Revision-Date: 2008-01-15 00:54+0100\n"
+"POT-Creation-Date: 2008-02-26 08:52+0100\n"
+"PO-Revision-Date: 2008-02-26 08:53+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -95,27 +95,27 @@ msgstr "Källa"
 msgid "_Monitor Events"
 msgstr "_Övervaka händelser"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Händelseövervakare"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Visar händelser när de inträffar från markerade typer och källor"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Markera senaste händelsepost"
 
-#: ../plugins/event_monitor.py:68
+#: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
 msgstr "Starta/stoppa händelseinspelning"
 
-#: ../plugins/event_monitor.py:71
+#: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr "Töm händelselogg"
 
-#: ../plugins/event_monitor.py:123
+#: ../plugins/event_monitor.py:117
 #: ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
@@ -123,7 +123,7 @@ msgstr "Töm händelselogg"
 msgid "Name"
 msgstr "Namn"
 
-#: ../plugins/event_monitor.py:132
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Fullständigt namn"
 
@@ -553,21 +553,21 @@ msgstr "Grundläggande"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Testar grundläggande tillgänglig i grafiska program"
 
-#: ../plugindata/validate/basic.py:20
+#: ../plugindata/validate/basic.py:24
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "åtgärdningsbara %s är inte fokusbar eller valbar"
 
-#: ../plugindata/validate/basic.py:34
+#: ../plugindata/validate/basic.py:42
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "interaktiva %s är inte åtgärdningsbar"
 
-#: ../plugindata/validate/basic.py:44
+#: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
 msgstr "fler än en fokuserad widget"
 
-#: ../plugindata/validate/basic.py:65
+#: ../plugindata/validate/basic.py:81
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s har inget textgränssnitt"
@@ -575,12 +575,12 @@ msgstr "%s har inget textgränssnitt"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:80
+#: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s index i förälder matchar inte barnindex"
 
-#: ../plugindata/validate/basic.py:121
+#: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Saknar mottagare för %s-förhållande"
@@ -588,17 +588,17 @@ msgstr "Saknar mottagare för %s-förhållande"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:166
+#: ../plugindata/validate/basic.py:194
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s saknar namn eller etikett"
 
-#: ../plugindata/validate/basic.py:178
+#: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
 msgstr "fokusbar %s har tabellgränssnitt, inget valgränssnitt"
 
-#: ../plugindata/validate/basic.py:197
+#: ../plugindata/validate/basic.py:233
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s har tillståndet %s utan tillståndet %s"
@@ -606,7 +606,7 @@ msgstr "%s har tillståndet %s utan tillståndet %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:218
+#: ../plugindata/validate/basic.py:258
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s tillhör inte en uppsättning"
@@ -616,10 +616,10 @@ msgstr "%s tillhör inte en uppsättning"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:248
+#: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s index %d matchar inte rad och kolumn"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s index %(num)d matchar inte rad och kolumn"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -627,12 +627,12 @@ msgstr "%s index %d matchar inte rad och kolumn"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:274
+#: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s föräldraindex %d matchar inte rad- och kolumnindex %d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "%(rolename)s föräldraindex %(num1)d matchar inte rad- och kolumnindex %(num2)d"
 
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:348
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s har inget namn eller beskrivning"
@@ -645,11 +645,11 @@ msgstr "_Inställningar..."
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera tillgänglighetsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera dem nu?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Observera: Eventuella ändringar blir aktiverade efter utloggning."
 
@@ -713,7 +713,7 @@ msgstr "Insticksmoduler"
 msgid "Global Hotkeys"
 msgstr "Allmänna snabbtangenter"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -721,19 +721,19 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "En interaktiv tillgänglighetsutforskare skriven i Python"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Den nya BSD-licensen. Se filerna COPYING och NOTICE för detaljer."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Webbplats"
 
