@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-12 01:17+0000\n"
-"PO-Revision-Date: 2008-02-19 13:07+0100\n"
+"PO-Revision-Date: 2008-02-26 15:15+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -98,27 +98,27 @@ msgstr "Vir"
 msgid "_Monitor Events"
 msgstr "_Nadzor dogodkov"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Nadzornik dogajanja"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Pokaže dogodke, kot se ti pojavijo preko izbranih vrsti in virov"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Označi zadnji vnos dogodka"
 
-#: ../plugins/event_monitor.py:68
+#: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
 msgstr "Začni/ustavi snemanje dogodkov"
 
-#: ../plugins/event_monitor.py:71
+#: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr "_Počisti beleženje dogodkov"
 
-#: ../plugins/event_monitor.py:123
+#: ../plugins/event_monitor.py:117
 #: ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
@@ -126,7 +126,7 @@ msgstr "_Počisti beleženje dogodkov"
 msgid "Name"
 msgstr "Ime"
 
-#: ../plugins/event_monitor.py:132
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Polno ime"
 
@@ -556,66 +556,86 @@ msgstr "Osnovno"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Določevanje dostopnosti grafičnega vmesnika programa"
 
-#: ../plugindata/validate/basic.py:20
+#: ../plugindata/validate/basic.py:24
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "udejanjenega %s ni mogoče izbrati ali označiti"
 
-#: ../plugindata/validate/basic.py:34
+#: ../plugindata/validate/basic.py:42
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "interaktivnega %s ni mogoče udejanjiti"
 
-#: ../plugindata/validate/basic.py:44
+#: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
 msgstr "več kot en označen gradnik"
 
-#: ../plugindata/validate/basic.py:65
+#: ../plugindata/validate/basic.py:81
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s je brez besedilnega vmesnika"
 
-#: ../plugindata/validate/basic.py:77
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "indeks %s ni v skladu z indeksom podrejenega procesa"
 
-#: ../plugindata/validate/basic.py:118
+#: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Manjka recipročnost za %s povezavo"
 
-#: ../plugindata/validate/basic.py:160
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s manjka ime ali oznaka"
 
-#: ../plugindata/validate/basic.py:172
+#: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
 msgstr "označeni %s ima predelni vmesnik, ni izbirnega vmesnika"
 
-#: ../plugindata/validate/basic.py:191
+#: ../plugindata/validate/basic.py:233
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s vključuje %s stanje brez %s stanja"
 
-#: ../plugindata/validate/basic.py:209
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s ne pripada skupini"
 
-#: ../plugindata/validate/basic.py:234
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s indeks %d ne sovpada s stolpci in z vrsticami"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s indeks %(num)d ne sovpada s stolpci in z vrsticami"
 
-#: ../plugindata/validate/basic.py:254
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s nadrejeni indeks %d ne sovpada s stolpci in z vrsticami indeksa %d "
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "%(rolename)s nadrejeni indeks %(num1)d ne sovpada s stolpci in z vrsticami indeksa %(num2)d "
 
-#: ../plugindata/validate/basic.py:276
+#: ../plugindata/validate/basic.py:348
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s nima imena ali opisa"
@@ -628,11 +648,11 @@ msgstr "_Lastnosti ..."
 msgid "_Contents"
 msgstr "_Vsebina"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
 msgstr "Program Accerciser ne zazna programa na namizju. Omogočena mora biti enota namizne dostopnosti za rešitev težav. Ali želite enoto omogočiti takoj?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Opomba: Spremembe bodo stopile v veljavo ob naslednji prijavi."
 
@@ -696,23 +716,23 @@ msgstr "Vstavki"
 msgid "Global Hotkeys"
 msgstr "Splošne tipkovne bližnjice"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Matej Urbančič"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Interaktivni raziskovalec python dostopnosti"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "Avtorske pravice © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Nova BSD licenca. Za več podrobnosti si oglejte datoteki COPYING in NOTICE."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Spletna stran"
 
