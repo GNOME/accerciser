@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-29 14:27+0700\n"
-"PO-Revision-Date: 2008-01-29 15:19+0700\n"
+"POT-Creation-Date: 2008-02-26 17:34+0700\n"
+"PO-Revision-Date: 2008-02-26 17:36+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -611,8 +611,8 @@ msgstr "%s ไม่อยู่ในกลุ่ม"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s หมายเลข %d มีหมายเลขแถวและคอลัมน์ไม่ตรงกับของตาราง"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s หมายเลข %(num)d มีหมายเลขแถวและคอลัมน์ไม่ตรงกับของตาราง"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -622,8 +622,12 @@ msgstr "%s หมายเลข %d มีหมายเลขแถวแล�
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s มีหมายเลขในวิดเจ็ตแม่ %d ไม่ตรงกับหมายเลข %d ที่อ่านตามแถวและคอลัมน์"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s มีหมายเลขในวิดเจ็ตแม่ %(num1)d ไม่ตรงกับหมายเลข %(num2)d "
+"ที่อ่านตามแถวและคอลัมน์"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -710,7 +714,7 @@ msgstr "ปลั๊กอิน"
 msgid "Global Hotkeys"
 msgstr "คีย์ด่วนทั่วไป"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>\n"
@@ -718,19 +722,19 @@ msgstr ""
 "ถ้ามีเวลาโปรดมาช่วยกันแปล :-)\n"
 "http://gnome-th.sourceforge.net"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "เครื่องมือสำรวจสิ่งอำนวยความสะดวกแบบโต้ตอบเขียนด้วยไพธอน"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser สงวนลิขสิทธิ์ © 2549, 2550 ไอบีเอ็ม คอร์ปอเรชัน (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "สัญญาอนุญาต BSD ฉบับใหม่ ดูรายละเอียดในแฟ้ม COPYING และ NOTICE"
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "เว็บไซต์"
 
