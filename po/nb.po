@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acceriser 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-21 19:48+0100\n"
-"PO-Revision-Date: 2008-01-21 19:52+0100\n"
-"Last-Translator: Espen A. Stefansen <espens@cvs.gnome.org>\n"
+"POT-Creation-Date: 2008-02-26 18:00+0100\n"
+"PO-Revision-Date: 2008-02-26 18:01+0100\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,34 +95,34 @@ msgstr "Kilde"
 msgid "_Monitor Events"
 msgstr "_Overvåk hendelser"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Hendelsesovervåking"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Viser hendelser fra valgte typer og kilder etter som de inntreffer"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Uthev siste hendelsesoppføring"
 
-#: ../plugins/event_monitor.py:68
+#: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
 msgstr "Start/stopp sporing av hendelser"
 
-#: ../plugins/event_monitor.py:71
+#: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr "Tøm hendelseslogg"
 
-#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Navn"
 
-#: ../plugins/event_monitor.py:132
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Fullt navn"
 
@@ -590,7 +590,8 @@ msgstr "%s mangler navn eller etikett"
 #: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr "fokuserbar komponent %s har tabellgrensesnitt. ingen utvalgsgrensesnitt"
+msgstr ""
+"fokuserbar komponent %s har tabellgrensesnitt. ingen utvalgsgrensesnitt"
 
 #: ../plugindata/validate/basic.py:233
 #, python-format
@@ -612,8 +613,8 @@ msgstr "%s hører ikke til et sett"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s indeks %d er har ingen treff på rad og kolonne"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s indeks %(num)d er har ingen treff på rad og kolonne"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -623,8 +624,10 @@ msgstr "%s indeks %d er har ingen treff på rad og kolonne"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s opphavsindeks %d har ikke treff på rad og kolonneindeks %d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%(rolename)s opphavsindeks %(num1)d har ikke treff på rad og kolonneindeks %d"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -639,7 +642,7 @@ msgstr "_Brukervalg..."
 msgid "_Contents"
 msgstr "_Innhold"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -648,7 +651,7 @@ msgstr ""
 "tilgjengelighetsfunksjoner for skrivebordet, for å løse dette problemet. Vil "
 "du aktivere det nå?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Merk: Endringer trer først i kraft etter at du har logget ut."
 
@@ -712,25 +715,25 @@ msgstr "Tillegg"
 msgid "Global Hotkeys"
 msgstr "Globale hurtigtaster"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <espens@svn.gnome.org>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "En interaktiv tilgjengelighetsutforsker skrevet i Python."
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Den nye BSD-lisensen. Se COPYING- og NOTICE-filen for detaljer."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Nettsted"
 
