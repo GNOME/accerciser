@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-20 04:05+0000\n"
-"PO-Revision-Date: 2008-01-22 16:05+0800\n"
+"POT-Creation-Date: 2008-02-25 22:27+0000\n"
+"PO-Revision-Date: 2008-02-26 18:50+0800\n"
 "Last-Translator: Liu Yubao <yubao.liu@gmail.com>\n"
 "Language-Team: i18-zh <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,34 +97,34 @@ msgstr "来源"
 msgid "_Monitor Events"
 msgstr "监视器事件(_M)"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "事件监视器"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "显示选定类型以及来源的事件"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "高亮最后一个事件"
 
-#: ../plugins/event_monitor.py:68
+#: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
 msgstr "开始/停止记录事件"
 
-#: ../plugins/event_monitor.py:71
+#: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr "清除事件日志"
 
-#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "名字"
 
-#: ../plugins/event_monitor.py:132
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "全名"
 
@@ -614,8 +614,8 @@ msgstr "%s 不属于一个单选按钮集"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s 的索引 %d 跟其行、列不匹配"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s 的索引 %(num)d 跟其行、列不匹配"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -625,8 +625,10 @@ msgstr "%s 的索引 %d 跟其行、列不匹配"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s 的父节点索引 %d 不匹配其行、列索引 %d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%(rolename)s 的父节点索引 %(num1)d 不匹配其行、列索引 %(num2)d"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -641,13 +643,15 @@ msgstr "配置(_P)..."
 msgid "_Contents"
 msgstr "内容(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Accerciser 找不到你桌面上的应用，你必须激活桌面辅助特性以修正这个问题。你想现在激活它吗？"
+msgstr ""
+"Accerciser 找不到你桌面上的应用，你必须激活桌面辅助特性以修正这个问题。你想现"
+"在激活它吗？"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "注意：下次登录时更改才生效"
 
@@ -711,23 +715,23 @@ msgstr "插件"
 msgid "Global Hotkeys"
 msgstr "全局热键"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "翻译者贡献"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "一个用 Python 编写的交互式时可操作性浏览器"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser 版权所有 © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "新 BSD 许可证的细节请查看 COPYING 和 NOTICE。"
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "网站"
 
