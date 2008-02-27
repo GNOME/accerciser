@@ -2,17 +2,17 @@
 # Copyright (c) 2006, 2007 IBM Corporation (BSD)
 # This file is distributed under the same license as the accerciser package.
 #
-# Claude Paroz <claude@2xlibre.net>, 2007.
-# Robert-André Mauchin <zebob.m@gmail.com>, 2007.
+# Claude Paroz <claude@2xlibre.net>, 2007-2008.
+# Robert-André Mauchin <zebob.m@pengzone.org>, 2007-2008.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-10 23:26+0200\n"
-"PO-Revision-Date: 2007-09-10 21:56+0200\n"
-"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
+"POT-Creation-Date: 2008-02-27 19:06+0100\n"
+"PO-Revision-Date: 2008-02-23 16:27+0100\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,27 +100,35 @@ msgstr "Source"
 msgid "_Monitor Events"
 msgstr "_Détecteur d'événements"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Détecteur d'événements"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Affiche les évènements qui surviennent de sources et de types particuliers"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Mettre en surbrillance le dernier évènement"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Démarrer/arrêter l'enregistrement des événements"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Effacer le journal des événements"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nom"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Nom complet"
 
@@ -238,6 +246,7 @@ msgid "Des_ktop"
 msgstr "_Bureau"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Description"
 
@@ -292,7 +301,7 @@ msgstr "Valeur maximale"
 
 #: ../plugins/interface_view.glade.h:43
 msgid "Minimum increment"
-msgstr "Incrémentation minimale"
+msgstr "Incrément minimal"
 
 #: ../plugins/interface_view.glade.h:44
 msgid "Minimum value"
@@ -484,15 +493,170 @@ msgstr "Le script actuel sera perdu."
 msgid "Confirm clear"
 msgstr "Confirmation de la suppression"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Inactif"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Sché_ma :"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "V_alider"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Aucune description"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Validateur AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Valide l'accessibilité d'une application"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Niveau"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Validation"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "EXCEPTION"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "ERREUR"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "AVERTISSEMENT"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "DÉBOGAGE"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Basique"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr ""
+"Teste l'accessibilité élémentaire de l'interface graphique d'une application"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr ""
+"l'élément actionnable %s n'est pas sélectionnable ou ne peut obtenir le focus"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "l'élément interactif %s n'est pas actionnable"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "il y a plus d'un widget ayant le focus"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s n'a pas d'interface texte"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "l'index %s dans le parent ne correspond pas à l'index fils"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "La réciprocité est manquante pour la relation %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "l'élement %s n'a pas de nom ou d'étiquette"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr ""
+"l'élément %s pouvant obtenir le focus a une interface de tableau, mais pas "
+"d'interface de sélection"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "l'élément %s a l'état %s sans l'état %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "l'élément %s n'appartient pas à un ensemble"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr ""
+"l'index %(num)d de l'élément %(rolename)s ne correspond ni à une ligne, ni à "
+"une colonne"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"l'index parent %(num1)d de l'élément %(rolename)s ne correspond pas à "
+"l'index de ligne et de colonne %(num2)d"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "l'élément %s n'a pas de nom ou n'a pas de description"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Préférences"
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
-msgstr "_Contenu"
+msgstr "_Sommaire"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -501,7 +665,7 @@ msgstr ""
 "activer l'accessibilité du bureau pour corriger ce problème. Voulez-vous "
 "l'activer maintenant ?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Note : les changements prendront effet à la déconnexion."
 
@@ -545,11 +709,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Maj"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Panneau supérieur"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Panneau inférieur"
 
@@ -565,28 +729,28 @@ msgstr "Greffons"
 msgid "Global Hotkeys"
 msgstr "Raccourcis généraux"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Claude Paroz <claude@2xlibre.net>\n"
-"Robert-André Mauchin <zebob.m@gmail.com>\n"
+"Robert-André Mauchin <zebob.m@pengzone.org>\n"
 "Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Un explorateur d'accessibilité interactif en Python"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr ""
 "La nouvelle licence BSD, voir les fichiers COPYING et NOTICE pour les "
 "détails."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Site Web"
 
