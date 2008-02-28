@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-14 20:07+0000\n"
-"PO-Revision-Date: 2008-02-07 23:31+0100\n"
+"POT-Creation-Date: 2008-02-28 12:12+0100\n"
+"PO-Revision-Date: 2008-02-28 12:19+0100\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,35 +15,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: C/legal.xml:2(para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the"
+msgstr ""
+
+#: C/legal.xml:1(legalnotice)
+msgid ""
+"<placeholder-1/>=\"http://www.opensource.org/licenses/bsd-license.php\" type="
+"\"http\"&gt;New BSD License. See the COPYING and NOTICE files included with "
+"the source for details."
+msgstr ""
+
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/accerciser.xml:191(None)
 msgid "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
-msgstr "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+msgstr ""
+"@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/accerciser.xml:372(None)
-msgid "@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
-msgstr "@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+msgid ""
+"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+msgstr ""
+"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/accerciser.xml:389(None)
-msgid "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
-msgstr "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+msgid ""
+"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+msgstr ""
+"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/accerciser.xml:436(None)
-msgid "@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
-msgstr "@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
+msgid ""
+"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
+msgstr ""
+"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/accerciser.xml:461(None)
-msgid "@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
-msgstr "@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
+msgid ""
+"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
+msgstr ""
+"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
 
 #: C/accerciser.xml:24(title)
 msgid "<application>Accerciser</application> Manual v0.2.0"
@@ -102,10 +124,6 @@ msgstr "pparent@us.ibm.com"
 msgid "Accerciser Manual v0.2.0"
 msgstr "Manual de l'Accerciser v0.2.0"
 
-#: C/accerciser.xml:103(date)
-msgid "2007-06-29"
-msgstr "2007-06-29"
-
 #: C/accerciser.xml:105(para)
 msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
 msgstr "Eitan Isaacson <email>eitan@ascender.com</email>"
@@ -133,7 +151,7 @@ msgstr ""
 "indicacions en la <ulink url=\"ghelp:gnome-feedback\" type=\"help\">Pàgina "
 "de comentaris del GNOME</ulink>."
 
-#: C/accerciser.xml:126(primary) C/accerciser.xml:0(application)
+#: C/accerciser.xml:126(primary)
 msgid "Accerciser"
 msgstr "Accerciser"
 
@@ -230,10 +248,12 @@ msgid "<application>Accerciser</application> Main Window"
 msgstr "Finestra principal de l'<application>Accerciser</application>"
 
 #: C/accerciser.xml:194(phrase)
+#, fuzzy
 msgid ""
-"Shows <placeholder-1/> main window. Contains title bar, menu bar, accessible "
-"tree , left plugin display area, and bottom plugin display area. The menu "
-"bar contains File, Edit, Bookmarks, View, and Help menus."
+"Shows <application>Accerciser</application> main window. Contains title bar, "
+"menu bar, accessible tree , left plugin display area, and bottom plugin "
+"display area. The menu bar contains File, Edit, Bookmarks, View, and Help "
+"menus."
 msgstr ""
 "Mostra la finestra principal <placeholder-1/>. Conté la barra de títol, la "
 "barra de menú, l'arbre de l'accessible, l'àrea dreta de visualització del "
@@ -600,7 +620,7 @@ msgstr ""
 
 #: C/accerciser.xml:489(title)
 msgid "Validation"
-msgstr ""
+msgstr "Validació"
 
 #: C/accerciser.xml:490(para)
 msgid ""
@@ -609,6 +629,11 @@ msgid ""
 "links errors to documentation about how to remedy common problems. The "
 "plugin is extensible with test schemas that define rules for validation."
 msgstr ""
+"Aquest connector comprova els problemes d'accessibilitat de les aplicacions "
+"i genera un informe on inclou la gravetat i la descripció dels problemes. "
+"L'informe enllaça els errors amb la documentació sobre com solucionar els "
+"problemes comuns. El connector és extensible amb esquemes de prova que "
+"defineixen regles de validació."
 
 #: C/accerciser.xml:498(para)
 msgid ""
@@ -618,6 +643,12 @@ msgid ""
 "guibutton> button to start the test. While the test is running, click the "
 "button again to cancel it."
 msgstr ""
+"Per a executar la validació, primer seleccioneu un element de l'arbre "
+"d'accessibilitat. El connector comprovarà l'accessible seleccionat i tots "
+"els seus descendents. Després seleccioneu un esquema a utilitzar per a la "
+"comprovació. Llavors feu clic al botó <guibutton>Validar</guibutton> per a "
+"iniciar la comprovació. Feu un altre cop clic al botó, mentre s'està "
+"executant la comprovació, per a cancel·lar-la."
 
 #: C/accerciser.xml:506(para)
 msgid ""
@@ -626,6 +657,11 @@ msgid ""
 "accessible in the tree. With an item selected, click the <guibutton>Help</"
 "guibutton> to get information about how to resolve the problem."
 msgstr ""
+"En acabar la comprovació, la taula d'informe mostrarà la gravetat i la "
+"descripció de tots els errors. Feu un doble clic a una fila de la taula per "
+"a visualitzar l'accessible associat en l'arbre. Amb un element seleccionat, "
+"feu clic a <guibutton>Ajuda</guibutton> per a aconseguir informació sobre "
+"com resoldre el problema."
 
 #: C/accerciser.xml:519(title)
 msgid "Preferences"
@@ -744,6 +780,9 @@ msgstr ""
 #: C/accerciser.xml:0(None)
 msgid "translator-credits"
 msgstr "Joan Duran <jodufi@gmail.com>, 2007"
+
+#~ msgid "2007-06-29"
+#~ msgstr "2007-06-29"
 
 #~ msgid ""
 #~ "If you unfold a node with a large number of children (e.g. hundreds), "
