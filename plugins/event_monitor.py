@@ -356,8 +356,8 @@ class EventMonitor(ViewportPlugin):
 
   def _createHyperlink(self, acc):
     '''
-    Create a hyperlink tag for a given accessible. When the link is clicked
-    the accessible is selected in the main program.
+    Create a hyperlink tag for a given accessible. When the link is double 
+    clicked the accessible is selected in the main program.
     
     @param acc: The accessible to create the tag for.
     @type acc: Accessibility.Accessible
@@ -376,9 +376,10 @@ class EventMonitor(ViewportPlugin):
 
   def _onLinkClicked(self, tag, widget, event, iter):
     '''
-    Callback for clicked link. Select links accessible in main application.
+    Callback for doulbe clicked link. Select links accessible in main
+    application.
     
-    @param tag: Tag that was clicked.
+    @param tag: Tag that was double clicked.
     @type tag: gtk.TextTag
     @param widget: The widget that received event.
     @type widget: gtk.Widget
@@ -387,8 +388,7 @@ class EventMonitor(ViewportPlugin):
     @param iter: The text iter that was clicked.
     @type iter: gtk.TextIter
     '''
-    if event.type == gtk.gdk.BUTTON_RELEASE and \
-           event.button == 1 and not self.monitor_buffer.get_has_selection():
+    if event.type == gtk.gdk._2BUTTON_PRESS and event.button == 1:
       self.node.update(tag.get_data('acc'))
 
   def _onLinkKeyPress(self, textview, event):

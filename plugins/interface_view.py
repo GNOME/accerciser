@@ -583,8 +583,8 @@ class _SectionComponent(_InterfaceSection):
     @param glade_xml: Interface viewer glade xml.
     @type glade_xml: gtk.glade.XML
     '''
-    self.label_posabs = glade_xml.get_widget('absolute_position_label')
-    self.label_posrel = glade_xml.get_widget('relative_position_label')
+    self.label_posrel = glade_xml.get_widget('absolute_position_label')
+    self.label_posabs = glade_xml.get_widget('relative_position_label')
     self.label_size = glade_xml.get_widget('size_label')
     self.label_layer = glade_xml.get_widget('layer_label')
     self.label_zorder = glade_xml.get_widget('zorder_label')
