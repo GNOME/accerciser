@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-17 09:27+0000\n"
+"POT-Creation-Date: 2008-03-03 18:56+0000\n"
 "PO-Revision-Date: 2008-02-17 09:28-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
@@ -115,8 +115,7 @@ msgstr "Start/stop event recording"
 msgid "Clear event log"
 msgstr "Clear event log"
 
-#: ../plugins/event_monitor.py:117
-#: ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
@@ -175,8 +174,7 @@ msgstr "<b>Text</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>unknown</b>"
 
-#: ../plugins/interface_view.glade.h:13
-#: ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>(no description)</i>"
@@ -241,8 +239,7 @@ msgstr "Current value"
 msgid "Des_ktop"
 msgstr "Des_ktop"
 
-#: ../plugins/interface_view.glade.h:29
-#: ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
 #: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Description"
@@ -404,8 +401,7 @@ msgstr "Interface Viewer"
 msgid "Allows viewing of various interface properties"
 msgstr "Allows viewing of various interface properties"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
 msgstr " (not implemented)"
@@ -414,8 +410,7 @@ msgstr " (not implemented)"
 msgid "Key binding"
 msgstr "Key binding"
 
-#: ../plugins/interface_view.py:740
-#: ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -435,8 +430,7 @@ msgstr "Too many selectable children"
 msgid "Content type"
 msgstr "Content type"
 
-#: ../plugins/interface_view.py:1295
-#: ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Editable)</i>"
 
@@ -491,8 +485,7 @@ msgstr "The current script will be lost."
 msgid "Confirm clear"
 msgstr "Confirm clear"
 
-#: ../plugins/validate.glade.h:1
-#: ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
 msgid "Idle"
 msgstr "Idle"
 
@@ -618,8 +611,8 @@ msgstr "%s does not belong to a set"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s index %d does not match row and column"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s index %(num)d does not match row and column"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -629,8 +622,12 @@ msgstr "%s index %d does not match row and column"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr "%s parent index %d does not match row and column index %d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -646,8 +643,12 @@ msgid "_Contents"
 msgstr "_Contents"
 
 #: ../src/lib/accerciser/accerciser.py:135
-msgid "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Accerciser could not see the applications on your desktop.You must enable desktop accessibility to fix this problem. Do you want to enable it now?"
+msgid ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem.Do you want to enable it now?"
+msgstr ""
+"Accerciser could not see the applications on your desktop.You must enable "
+"desktop accessibility to fix this problem. Do you want to enable it now?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -713,23 +714,23 @@ msgstr "Plugins"
 msgid "Global Hotkeys"
 msgstr "Global Hotkeys"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "David Lodge <dave@cirt.net>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "An interactive Python accessibility explorer"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "The New BSD Licence See the COPYING and NOTICE files for details."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Web site"
 
@@ -836,40 +837,54 @@ msgstr "_Help"
 
 #~ msgid "gtk-clear"
 #~ msgstr "gtk-clear"
+
 #~ msgid "gtk-save"
 #~ msgstr "gtk-save"
+
 #~ msgid "gtk-select-all"
 #~ msgstr "gtk-select-all"
+
 #~ msgid "gtk-media-record"
 #~ msgstr "gtk-media-record"
+
 #~ msgid "Wiki page"
 #~ msgstr "Wiki page"
+
 #~ msgid "gtk-close"
 #~ msgstr "gtk-close"
+
 #~ msgid "gtk-quit"
 #~ msgstr "gtk-quit"
+
 #~ msgid "gtk-refresh"
 #~ msgstr "gtk-refresh"
+
 #~ msgid "Core"
 #~ msgstr "Core"
+
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
+
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
+
 #~ msgid "Plugin enabled"
 #~ msgstr "Plugin enabled"
+
 #~ msgid "Set to true is plugin is enabled"
 #~ msgstr "Set to true is plugin is enabled"
+
 #~ msgid "The default tab position"
 #~ msgstr "The default tab position"
+
 #~ msgid "The default tab position for this plugin"
 #~ msgstr "The default tab position for this plugin"
+
 #~ msgid "Top right"
 #~ msgstr "Top right"
-
