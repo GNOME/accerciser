@@ -1,14 +1,15 @@
-# translation of accesciser.pot to Russian
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# translation of accerciser to Russian
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 #
+# Yuri Kozlov <kozlov.y@gmail.com>, 2008.
 # Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 15:58+0100\n"
-"PO-Revision-Date: 2006-02-27 11:44+0200\n"
-"Last-Translator: Nickolay V. Shmyrev <nshmyrev@yandex.ru>\n"
+"POT-Creation-Date: 2008-03-03 23:52+0300\n"
+"PO-Revision-Date: 2008-03-02 18:59+0300\n"
+"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +31,7 @@ msgstr "Список модулей, выключенных по умолчан�
 
 #: ../accerciser.schemas.in.h:2
 msgid "The default plugin layout for the bottom panel"
-msgstr "Расположнеие модулей внизу рабочей области по умолчанию"
+msgstr "Расположение модулей внизу рабочей области по умолчанию"
 
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
@@ -96,26 +97,34 @@ msgstr "Источник"
 msgid "_Monitor Events"
 msgstr "_Следить за событиями"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Монитор событий"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Показывает возникающие в выделенных объектах и источниках события"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Подсвечивать последнее событие"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Начать/остановить запись событий"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Очистить журнал событий"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Название"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Полное название"
 
@@ -233,6 +242,7 @@ msgid "Des_ktop"
 msgstr "Рабочий _стол"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Описание"
 
@@ -477,15 +487,164 @@ msgstr "Текущий сценарий будет потерян."
 msgid "Confirm clear"
 msgstr "Подтвердить очистку"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Простаивает"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Схема:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "Проверить"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Нет описания"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Проверка с AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Проверка доступности приложения"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Уровень"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Идёт проверка"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "ИСКЛЮЧЕНИЕ"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "ОШИБКА"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "ПРЕДУПР"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "ИНФО"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "ОТЛАД"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Простая"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Тестирование основ графического интерфейса доступности приложения"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "у действия %s нет фокуса или выделения"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "у интерактивного %s нет действия"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "более одного виджета имеют фокус"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s не имеет текстового интерфейса"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "индекс %s у родителя не совпадает с индексом у потомка"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Отсутствует обратная величина для отношения %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "у %s отсутствует имя или метка"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "фокусируемая %s имеет табличный интерфейс, но нет интерфейса выделения"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s имеет состояние %s без состояния %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s не принадлежит набору"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "индекс %(num)d у %(rolename)s не совпадает по строке и столбцу"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"индекс родителя %(num1)d у %(rolename)s не совпадает со строкой и столбцом "
+"по индексу %(num2)d"
+
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "у %s отсутствует имя или описание"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Параметры..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Содержание"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -493,7 +652,7 @@ msgstr ""
 "Не удалось получить доступ к приложениям рабочей среды из Accerciser. "
 "Необходимо включить поддержку вспомогательных технологий. Включить её сейчас?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Изменения вступят в силу только после повторного входа в систему."
 
@@ -537,11 +696,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Верхняя панель"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Нижняя панель"
 
@@ -557,27 +716,25 @@ msgstr "Модули"
 msgid "Global Hotkeys"
 msgstr "Глобальные быстрые клавиши"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Nickolay V. Shmyrev <nshmyrev@yandex.ru>, 2007"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr ""
 "Интерактивный обозреватель поддержки вспомогательных технологий на языке "
 "Python"
 
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
-msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
-"Новая лицензия BSD. Смотрите файлы COPYING и NOTICE для дальнейшей "
-"информации."
-
 #: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "Новая лицензия BSD. Подробности смотрите в файлах COPYING и NOTICE."
+
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Веб-сайт"
 
