@@ -2,14 +2,14 @@
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
-# Hendrik Richter <hendrikr@gnome.org>, 2007.
+# Hendrik Richter <hendrikr@gnome.org>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-24 22:29+0100\n"
-"PO-Revision-Date: 2008-02-24 22:29+0100\n"
+"POT-Creation-Date: 2008-03-04 10:20+0100\n"
+"PO-Revision-Date: 2008-03-04 19:48+0100\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -616,8 +616,8 @@ msgstr "%s gehört nicht zu einer Gruppe"
 #.
 #: ../plugindata/validate/basic.py:292
 #, python-format
-msgid "%s index %d does not match row and column"
-msgstr "%s Index %d stimmt nicht mit Zeile und Spalte überein"
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s Index %(num)d stimmt nicht mit Zeile und Spalte überein"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -627,9 +627,12 @@ msgstr "%s Index %d stimmt nicht mit Zeile und Spalte überein"
 #.
 #: ../plugindata/validate/basic.py:322
 #, python-format
-msgid "%s parent index %d does not match row and column index %d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr ""
-"%s Elternindex %d stimmt nicht mit Zeile und Spalte mit Index %s überein"
+"%(rolename)s Elternindex %(num1)d stimmt nicht mit Zeile und Spalte mit "
+"Index %(num2)d überein"
 
 #: ../plugindata/validate/basic.py:348
 #, python-format
@@ -717,24 +720,24 @@ msgstr "Plugins"
 msgid "Global Hotkeys"
 msgstr "Globale Tastenkürzel"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Hendrik Richter <hendrikr@gnome.org>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr ""
 "Ein in Python geschriebenes Programm zur Untersuchung der Barrierfreiheit"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "The New BSD License See the COPYING and NOTICE files for details."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Website"
 
