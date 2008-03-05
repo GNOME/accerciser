@@ -372,6 +372,9 @@ class PluginManager(gtk.ListStore, Tools):
       self.append_column(tvc)
 
       crc = gtk.CellRendererText()
+      # Translators: This is the viewport in which the plugin appears,
+      # it is a noun.
+      # 
       tvc = gtk.TreeViewColumn(_('View'))
       tvc.pack_start(crc, False)
       tvc.set_cell_data_func(crc, self._viewNameDataFunc)
