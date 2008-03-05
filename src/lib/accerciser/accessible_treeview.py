@@ -428,6 +428,8 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     self.action_group.add_actions([
         ('RefreshAll', gtk.STOCK_REFRESH, None,
          None, 'Refresh all', self._refreshTopLevel),
+        # Translators: Refresh current tree node's children.
+        #
         ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Current'),
          None, 'Refresh selected node\'s children', self._refreshCurrentLevel)])  
 

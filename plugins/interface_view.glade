@@ -566,7 +566,8 @@
                               <widget class="GtkLabel" id="relative_position_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label"
+                                translatable="yes" comments="Screen coordinates">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label33" type="labelled-by"/>
@@ -598,7 +599,9 @@
                               <widget class="GtkLabel" id="size_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label"
+                                translatable="yes" comments="Component
+                                size in pixels">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label14" type="labelled-by"/>
@@ -700,7 +703,7 @@
                               <widget class="GtkLabel" id="alpha_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">1.0</property>
+                                <property name="label" translatable="no">1.0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label19" type="labelled-by"/>
@@ -734,7 +737,8 @@
                               <widget class="GtkLabel" id="absolute_position_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label"
+                                translatable="yes" comments="Screen coordinates">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label13" type="labelled-by"/>
@@ -1072,7 +1076,8 @@
                               <widget class="GtkLabel" id="img_position_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label"
+                                translatable="yes" comments="Screen coordinates">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label25" type="labelled-by"/>
@@ -1091,7 +1096,9 @@
                               <widget class="GtkLabel" id="img_size_label">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">0, 0</property>
+                                <property name="label"
+                                translatable="yes" comments="Component
+                                size">0, 0</property>
                                 <property name="selectable">True</property>
                                 <accessibility>
                                   <atkrelation target="label21" type="labelled-by"/>
@@ -1445,7 +1452,7 @@
                                                   <widget class="GtkLabel" id="table_scolumns_label">
                                                     <property name="visible">True</property>
                                                     <property name="xalign">0</property>
-                                                    <property name="label" translatable="yes">0</property>
+                                                    <property name="label" translatable="no">0</property>
                                                     <accessibility>
                                                       <atkrelation target="label44" type="labelled-by"/>
                                                     </accessibility>
@@ -1996,7 +2003,9 @@
                                               <widget class="GtkLabel" id="label_text_attr_start">
                                                 <property name="visible">True</property>
                                                 <property name="xalign">0</property>
-                                                <property name="label" translatable="yes">&lt;i&gt;Start: 0&lt;/i&gt;</property>
+                                                <property name="label"
+                                                translatable="yes"
+                                                comments="Start character offset of text attributes span">&lt;i&gt;Start: 0&lt;/i&gt;</property>
                                                 <property name="use_markup">True</property>
                                                 <property name="wrap_mode">PANGO_WRAP_WORD_CHAR</property>
                                                 <property name="selectable">True</property>
@@ -2006,7 +2015,10 @@
                                               <widget class="GtkLabel" id="label_text_attr_end">
                                                 <property name="visible">True</property>
                                                 <property name="xalign">0</property>
-                                                <property name="label" translatable="yes">&lt;i&gt;End: 0&lt;/i&gt;</property>
+                                                <property name="label"
+                                                translatable="yes"
+                                                comments="End chaacter
+                                                offset of text attributes span">&lt;i&gt;End: 0&lt;/i&gt;</property>
                                                 <property name="use_markup">True</property>
                                                 <property name="wrap_mode">PANGO_WRAP_WORD_CHAR</property>
                                                 <property name="selectable">True</property>
