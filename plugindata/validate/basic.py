@@ -230,6 +230,10 @@ class StateWithAbility(Validator):
     ss = acc.getState()
     able_state = self.STATE_MAP[self.test_state]
     if not ss.contains(able_state):
+      # Translators: First variable is an accessible role name, the next two
+      # variables are accessible state names.
+      # For example: "button has focused state without focusable state".
+      #
       view.error(_('%s has %s state without %s state') % (
         acc.getLocalizedRoleName(),
         stateToString(self.test_state),
@@ -284,8 +288,8 @@ class TableRowColIndex(Validator):
       ir = t.getRowAtIndex(i)
       ic = t.getColumnAtIndex(i)
       if r != ir or c != ic:
-        # Translators: The row or column number retrieved from a table child's object
-        # at a certain index is wrong.
+        # Translators: The row or column number retrieved from a table child's
+        # object at a certain index is wrong.
         # The first variable is the role name of the object, the second is the
         # given index.
         # 
