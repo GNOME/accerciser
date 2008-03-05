@@ -175,16 +175,17 @@ class _InterfaceSection(object):
     
     @param sensitive: True for sensitive.
     @type sensitive: boolean
-    @param expander: Expander widget. Uses instance's expander by default.
+    @param expander: Expander widget. Uses instances expander by default.
     @type expander: gtk.Expander
     '''
     expander = expander or self.expander
     label = expander.get_label_widget()
     label_text = label.get_label()
     if sensitive:
-      label_text = label_text.replace(_(' (not implemented)'), '')
-    elif _(' (not implemented)') not in label_text:
-      label_text += _(' (not implemented)')
+      label_text = label_text.replace(_('(not implemented)'), '')
+      label_text = label_text.strip(' ')
+    elif _('(not implemented)') not in label_text:
+      label_text += ' ' + _('(not implemented)')
     label.set_label(label_text)
     for child in expander.get_children():
       child.set_sensitive(sensitive)
@@ -1292,9 +1293,10 @@ class _SectionText(_InterfaceSection):
 
     expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
-    label_text = label_text.replace(_(' <i>(Editable)</i>'),'')
+    label_text = label_text.replace(_('<i>(Editable)</i>'),'')
+    label_text = label_text.strip(' ')
     if eti:
-      label_text += _(' <i>(Editable)</i>')
+      label_text += ' ' + _('<i>(Editable)</i>')
       self.text_view.set_editable(True)
     else:
       self.text_view.set_editable(False)
