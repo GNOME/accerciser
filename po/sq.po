@@ -1,14 +1,14 @@
-# Përkthimi i accerciser në shqip.
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Përkthimi i accerciser.gnome-2-22 në shqip.
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
-# Laurent Dhima <laurenti@alblinux.net>, 2007.
+# Laurent Dhima <laurenti@alblinux.net>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser HEAD\n"
+"Project-Id-Version: accerciser.gnome-2-22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-21 18:22+0200\n"
-"PO-Revision-Date: 2007-09-21 18:18+0200\n"
+"POT-Creation-Date: 2008-03-05 20:01+0100\n"
+"PO-Revision-Date: 2008-03-06 10:49+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,12 +18,11 @@ msgstr ""
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
-msgstr "Accerciser, eksploruesi i açesibilitetit"
+msgstr "Accerciser - Eksploruesi i açesibilitetit"
 
 #: ../accerciser.desktop.in.in.h:2
-#, fuzzy
 msgid "Give your application an accessibility workout"
-msgstr "aplikativ"
+msgstr "Verifikimi i açesibilitetit të aplikativëve të krijuar"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -67,8 +66,7 @@ msgstr "Konsola IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
+msgstr "Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -98,26 +96,35 @@ msgstr "Burimi"
 msgid "_Monitor Events"
 msgstr "_Monitoro aktivitetet"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Monitori i aktiviteteve"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Shfaq aktivitetet sipas llojeve dhe burimeve të zgjedhur"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Vër në dukje e zërin e aktivitetit të fundit"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Nis/Ndalo regjistrimin e eventeve"
+
+# (pofilter) accelerators: accelerator _ does not occur in original and should not be in translation
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Pastron mesazhet e eventit"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Emri"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Emri i plotë"
 
@@ -235,13 +242,14 @@ msgid "Des_ktop"
 msgstr "Hapësira e _punës"
 
 #: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Përshkrimi"
 
 #. How many columns the cell spans.
 #: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
-msgstr ""
+msgstr "Prapashtesa:"
 
 #: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
@@ -265,7 +273,7 @@ msgstr "Përfshi të prezgjedhur"
 
 #: ../plugins/interface_view.glade.h:37
 msgid "Layer"
-msgstr ""
+msgstr "Niveli"
 
 #: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
@@ -281,7 +289,7 @@ msgstr "Gjuha:"
 
 #: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
-msgstr ""
+msgstr "Renditja MDI-Z"
 
 #: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
@@ -340,9 +348,8 @@ msgid "Size"
 msgstr "Madhësia"
 
 #: ../plugins/interface_view.glade.h:56
-#, fuzzy
 msgid "St_reamable Content"
-msgstr "Pë_rmbajtja"
+msgstr "Pë_rmbajtje e lëvizëshme"
 
 #: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
@@ -435,8 +442,7 @@ msgstr "Zgjedhje e shpejtë"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
+msgstr "Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -481,15 +487,169 @@ msgstr "Script-i aktual do të humbasë."
 msgid "Confirm clear"
 msgstr "Konfermo anullimin"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "E fshehur"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Ske_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "Vleftësimi"
+
+# (pofilter) xmltags: checks that XML/HTML tags have not been translated
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Asnjë përshkrim"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Vleftësuesi AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Vleftësimi i açesibilitetit të aplikativit"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Niveli"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Vleftësimi"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "PËRJASHTIM"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "GABIM"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "PARALAJMËRIM"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Bazë"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Kontrolli i açesibilitetit të aplikativit GUI"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "I pamundur fokusimi apo zgjedhja e të veprueshmes %s"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "I pamundur aksionimi i %s"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "është vënë në fokus më shumë se një widget"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s nuk ka interfaqe teksti"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "Treguesi %s prind nuk korrispondon me treguesin bir"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Mungon reciprokiteti për relazionin %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "Mungon emri apo etiketa për %s"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "Elementi i fokusimit %s ka një interfaqe tabelore e jo zgjedhjeje"
+
+#: ../plugindata/validate/basic.py:233
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s ka një gjendje %s pa gjendjen %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:258
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s nuk i takon një grupi"
+
+#. Translators: The row or column number retrieved from a table child's object
+#. at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:292
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr ""
+"%(rolename)s treguesi %(num)d nuk korrispondon me asnjë rresht apo "
+"kollonë"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:322
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s treguesi prind %(num1)d nuk korrispondon me asnjë rresht "
+"apo kollonë treguesi %(num2)d"
+
+# (pofilter) variables: do not translate: %s
+# (pofilter) xmltags: checks that XML/HTML tags have not been translated
+#: ../plugindata/validate/basic.py:348
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s nuk përmban as emër e as përshkrim"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Preferime..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Përmbajtja"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -497,7 +657,7 @@ msgstr ""
 "Accerciser nuk arrin të shohë aplikativët në hapësirën tuaj të punës. Duhet "
 "të aktivoni açesibilitetitin për të korrigjuar këtë problem. Aktivon tani?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Shënim: Ndryshimet do të kenë efekt vetëm mbas daljes."
 
@@ -541,11 +701,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Paneli i sipërm"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Paneli i poshtëm"
 
@@ -561,23 +721,23 @@ msgstr "Plugin"
 msgid "Global Hotkeys"
 msgstr "Pulsantë të shpejtë globalë"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Laurent Dhima <laurenti@alblinux.net>, 2007"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Një eksplorues alternativ açesibiliteti në Python"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser, Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Liçenca e re BSD Shiko file COPYING dhe NOTICE për detaje."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Siti web"
 
@@ -631,19 +791,19 @@ msgstr "Pozicioni:"
 
 #: ../src/lib/accerciser/plugin/message.py:148
 msgid "Plugin Errors"
-msgstr "Gabimet e plugin"
+msgstr "Gabime të plugin"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:375
 msgid "View"
-msgstr "Shfaq"
+msgstr "Paraqitja"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:462
 msgid "No view"
-msgstr "Mos shfaq"
+msgstr "Asnjë paraqitje"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "Paraqitje plugin më _vete"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -681,3 +841,4 @@ msgstr "_Shfaq"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Ndihmë"
+
