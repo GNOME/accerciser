@@ -32,8 +32,10 @@ class InterfaceViewer(ViewportPlugin):
   @ivar sections: List of L{_InterfaceSection} instances.
   @type sections: list  
   '''
+  # Translators: this is a plugin name
   plugin_name = N_('Interface Viewer')
   plugin_name_localized = _(plugin_name)
+  # Translators: this is a plugin description
   plugin_description = N_('Allows viewing of various interface properties')
 
   def init(self):
