@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-27 14:37+0000\n"
-"PO-Revision-Date: 2008-02-28 23:38+0100\n"
+"PO-Revision-Date: 2008-03-07 20:42+0100\n"
 "Last-Translator: Lorenzo Travaglio <ltrav02@yahoo.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0
 
 #: C/accerciser.xml:24(title)
 msgid "<application>Accerciser</application> Manual v0.2.0"
-msgstr "Manuale <application>Accerciser</application>"
+msgstr "Manuale di <application>Accerciser</application> v0.2.0"
 
 #: C/accerciser.xml:27(year)
 msgid "2006"
@@ -102,11 +102,11 @@ msgstr "pparent@us.ibm.com"
 
 #: C/accerciser.xml:102(revnumber)
 msgid "Accerciser Manual v0.2.0"
-msgstr "Manuale Accerciser v0.2.0"
+msgstr "Manuale di Accerciser v0.2.0"
 
 #: C/accerciser.xml:103(date)
 msgid "2007-06-29"
-msgstr "2007-06-29"
+msgstr "29/06/2007"
 
 #: C/accerciser.xml:105(para)
 msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
@@ -129,7 +129,7 @@ msgid ""
 "To report a bug or make a suggestion regarding the <application>Accerciser</"
 "application> application or this manual, follow the directions in the <ulink "
 "url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr "Per segnalare un problema o inviare suggerimenti riguardanti <application>Accerciser</application> o questo manuale, seguire le istruzioni presenti sulla <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr "Per segnalare un problema o inviare suggerimenti riguardanti <application>Accerciser</application> o questo manuale, seguire le istruzioni presenti nella <ulink url=\"ghelp:gnome-feedback\" type=\"help\">Pagina dei commenti di GNOME</ulink>."
 
 #: C/accerciser.xml:126(primary) C/accerciser.xml:0(application)
 msgid "Accerciser"
@@ -139,7 +139,10 @@ msgstr "Accerciser"
 msgid "Introduction"
 msgstr "Introduzione"
 
+# Chiedere a Cristina "se un'applicazione fornisca" o
+# "se un'applicazione fornisce" le corrette informazioni
 #: C/accerciser.xml:136(para)
+#, fuzzy
 msgid ""
 "<application>Accerciser</application> is an interactive Python accessibility "
 "explorer for the GNOME desktop. It uses <ulink url=\"http://directory.fsf."
@@ -148,14 +151,14 @@ msgid ""
 "information to assistive technologies and automated test frameworks. "
 "<application>Accerciser</application> has a simple plugin framework which "
 "you can use to create custom views of accessibility information."
-msgstr "<application>Accerciser</application> è un esploratore interattivo Python di accessibilità per l'ambiente grafico GNOME. Usa <ulink url=\"http://directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> per ispezionare e controllare i widgets, premettendo di controllare se la propria applicazione fornisce le corrette informazioni di tecnologia assistiva e framework di test automatici. <application>Accerciser</application> usa un semplice framework di plugin con i quali si possono creare viste personalizzate delle informazioni di accessibilità."
+msgstr "<application>Accerciser</application> è un esploratore interattivo di accessibilità per l'ambiente grafico GNOME scritto in Python. Usa <ulink url=\"http://directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> per ispezionare e controllare i widget, premettendo di controllare se un'applicazione fornisca le corrette informazioni di tecnologia assistiva e framework di test automatici. <application>Accerciser</application> usa un semplice framework di plugin con i quali è possibile creare viste personalizzate delle informazioni di accessibilità."
 
 #: C/accerciser.xml:138(para)
 msgid ""
 "In essence, <application>Accerciser</application> is a next generation "
 "<ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</"
 "ulink> tool."
-msgstr "Essenzialmente, <application>Accerciser</application> è uno strumento di ultima generazione <ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</ulink>."
+msgstr "Essenzialmente, <application>Accerciser</application> è uno strumento at-poke di ultima generazione <ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</ulink>."
 
 #: C/accerciser.xml:152(title)
 msgid "Getting Started"
@@ -213,7 +216,7 @@ msgid ""
 "Shows <placeholder-1/> main window. Contains title bar, menu bar, accessible "
 "tree , left plugin display area, and bottom plugin display area. The menu "
 "bar contains File, Edit, Bookmarks, View, and Help menus."
-msgstr "Visualizza la finestra principale <placeholder-1/>. Essa contiene le barre del titolo e dei menù, l'albero degli elementi di accessibilità e le aree sinistra ed inferiore dei plugin. La barra dei menù contiene a sua volta i menù File, Modifica, Segnalibri, Vista ed Aiuto."
+msgstr "Visualizza la finestra principale <placeholder-1/>. Essa contiene le barre del titolo e dei menù, l'albero degli elementi di accessibilità e le aree sinistra ed inferiore dei plugin. La barra dei menù contiene a sua volta i menù File, Modifica, Segnalibri, Visualizza ed Aiuto."
 
 #. for example, the items on the menubar and on the toolbar. 
 #. 		 This section is optional.
@@ -255,11 +258,11 @@ msgid ""
 "application> is first run, most plugins will reside here. You can drag "
 "plugin tabs to the bottom plugin view or to the desktop to show two or more "
 "plugins simultaneously."
-msgstr "Questa è una delle due viste predefinite dei plugin. Quando <application>Accerciser</application> viene avviato per la prima volta, molti plugin risiedono qui. È possibile trascinare le linguette dei plugin sulla vista inferiore dei plugin o sul desktop per visualizzare due o più plugin contemporaneamente."
+msgstr "Questa è una delle due viste predefinite dei plugin. Quando <application>Accerciser</application> viene avviato per la prima volta, molti plugin risiedono qui. È possibile trascinare le schede dei plugin sulla vista inferiore dei plugin o sulla scrivania per visualizzare due o più plugin contemporaneamente."
 
 #: C/accerciser.xml:245(term)
 msgid "Bottom plugin view"
-msgstr "Pannello inferiore plugin"
+msgstr "Pannello inferiore visualizzazione plugin"
 
 #: C/accerciser.xml:247(para)
 msgid ""
@@ -284,7 +287,7 @@ msgid ""
 "dragged to the desktop to put the given plugin in a new view. The placement "
 "of plugins could also be manipulated with the plugin context menu that could "
 "be brought up either from the plugin tab, or the plugin preferences dialog."
-msgstr ""
+msgstr "<application>Accerciser</application> dispone di due modalità per la visualizzazione dei plugin. La modalità corrente può essere scambiata mediante il menù <menuchoice><guimenu>Vista</guimenu><guimenuitem>Vista singolo plugin</guimenuitem></menuchoice> o premendo <keycombo><keycap>Ctrl</keycap><keycap>t</keycap></keycombo>. In modalità singola, tutti i plugin saranno posti, ordinati alfabeticamente nella finestra di visualizzazione in alto a destra, ciò può risultare utile per gli utenti che non abbiano dimestichezza con la disposizione spaziale a livelli dei plugin di <application>Accerciser</application>. Quando la modalità singola è disabilitata le linguette dei plugin possono essere trascinate verso differenti visualizzazioni o sul desktop per spostare il plugin desiderato in una nuova visualizzazione. Il posizionamento dei plugin può anche essere manipolato mediante il menù contestuale dei plugin, che può essere attivato tanto dalle linguette dei plugin quanto dalla porzione «plugin» della finestra di dialogo delle Preferenze."
 
 #: C/accerciser.xml:278(title)
 msgid "Usage"
@@ -296,11 +299,11 @@ msgid ""
 "widget shown in the tree view using the available plugins. The first step is "
 "to select an accessible to inspect using one of the following methods: "
 "<placeholder-1/>"
-msgstr ""
+msgstr "È possibile usare <application>Accerciser</application> per analizzare ogni widget di accessibili contenuto nella vista ad albero usando i plugin disponibili. Per prima cosa occorre selezionare un elemento accessibile da ispezionare usando uno dei seguenti metodi: <placeholder-1/>"
 
 #: C/accerciser.xml:292(title)
 msgid "Select an accessible through the tree view."
-msgstr ""
+msgstr "Selezionare un elemento accessibile mediante la vista ad albero."
 
 #: C/accerciser.xml:293(para)
 msgid ""
@@ -309,11 +312,11 @@ msgid ""
 "it hides them. Each node shows an icon for its associated application or "
 "widget role and its accessible name, if available. The second column lists "
 "how many nodes will be shown if the item is unfolded."
-msgstr ""
+msgstr "Usare la visualizzazione ad albero per esplorare la gerarchia degli oggetti accessibili con radice sul desktop. Quando viene aperto, un nodo rivela i suoi figli, viceversa chiudendolo li nasconde. Ogni nodo mostra un'icona per ogni applicazione associata o ruoli widget ed ogni nome di accessibile, qualora disponibile. La seconda colonna mostra la quantità di nodi che verranno visualizzati all'apertura dell'elemento."
 
 #: C/accerciser.xml:304(title)
 msgid "Using bookmarks"
-msgstr "Gestisce i segnalibri."
+msgstr "Gestire i segnalibri."
 
 #: C/accerciser.xml:305(para)
 msgid ""
@@ -323,7 +326,7 @@ msgid ""
 "<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark...</"
 "guimenuitem></menuchoice> or press <keycombo><keycap>Control</"
 "keycap><keycap>d</keycap></keycombo>."
-msgstr ""
+msgstr "Accerciser consente di allocare nei segnalibri gli elementi accessibili selezionati per un successivo esame. Ciò può essere utile qualora l'applicazione dovesse essere fatta ripartire, per esempio in seguito ad una nuova generazione. Per inserire l'elemento attualmente selezionato scegliere <menuchoice><guimenu>Segnalibri</guimenu><guimenuitem>Aggiungi segnalibro...</guimenuitem></menuchoice> o premere <keycombo><keycap>Ctrl</keycap><keycap>d</keycap></keycombo>."
 
 #: C/accerciser.xml:317(para)
 msgid ""
@@ -331,14 +334,14 @@ msgid ""
 "and a \"path\" in the application's internal accessible hierarchy to the "
 "bookmarked accessible. When the target application is in a different state "
 "(ie. multiple top level frames) the path might not be correct."
-msgstr ""
+msgstr "I segnalibri agli elementi accessibili in Accerciser sono definiti mediante un nome di applicazione ed un «percorso» nella gerarchia interna dell'applicazione verso l'accessibile marcato. Quando l'applicazione è in uno stato differente (ad esempio frame multiple a livello alto) il percorso potrebbe risultare errato."
 
 #: C/accerciser.xml:324(para)
 msgid ""
 "Bookmarks could be managed by accessing the bookmark editing dialog through "
 "<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit Bookmarks...</"
 "guimenuitem></menuchoice>."
-msgstr ""
+msgstr "I segnalibri possono essere modificati tramite la finestra di gestione segnalibri, raggiungibile mediante <menuchoice><guimenu>Segnalibri</guimenu><guimenuitem>Modifica segnalibri...</Guimenuitem></Menuchoice>."
 
 #: C/accerciser.xml:337(title)
 msgid "Default Plugins"
@@ -350,7 +353,7 @@ msgid ""
 "These plugins allow you to view a variety of information about the currently "
 "selected accessible in the tree view and its neighbors. The default plugins "
 "available in 0.1.5 are the following:"
-msgstr ""
+msgstr "<application>Accerciser</application> contiene diversi plugin predefiniti. Questi permettono di visualizzare molteplici informazioni sull'elemento accessibile correntemente selezionato nell'albero di visualizzazione, nonché sui suoi vicini. I plugin predefiniti disponibili nella versione 0.1.5 sono i seguenti:"
 
 #: C/accerciser.xml:363(title) C/accerciser.xml:367(title)
 msgid "Interface Viewer"
@@ -362,13 +365,13 @@ msgid ""
 "selected tree view accessible. Unsupported interfaces are grayed out. "
 "Various instruments for viewing and controlling an interface are available "
 "under each expander."
-msgstr ""
+msgstr "Questo plugin visualizza informazioni sulle interfacce disponibili per l'accessibile selezionato nell'albero di visualizzazione. Le interfacce non supportate sono visualizzate in grigio. Gli strumenti per visualizzare e controllare le interfacce sono disponibili mediante gli espansori."
 
 #: C/accerciser.xml:375(phrase)
 msgid ""
 "Interfaces that are supported by the selected accessible are shown as "
 "sensitive."
-msgstr ""
+msgstr "Le interfacce supportate dell'accessibile selezionato sono visualizzate come sensibili."
 
 #: C/accerciser.xml:382(title) C/accerciser.xml:385(title)
 msgid "Event Monitor"
@@ -379,13 +382,13 @@ msgid ""
 "This plugin monitors the selected types of events from the selected tree "
 "view accessible, from the selected tree view application, or the entire "
 "desktop."
-msgstr ""
+msgstr "Questo plugin visualizza gli eventi selezionati dall'albero degli accessibili, dalla finestra ad albero delle applicazioni o dal desktop intero."
 
 #: C/accerciser.xml:392(phrase)
 msgid ""
 "The bottom part of the event monitor window allows you to pick the type and "
 "source of events."
-msgstr ""
+msgstr "La parte inferiore della finestra di monitor degli eventi permette di prelevare il tipo e la sorgente degli eventi."
 
 #: C/accerciser.xml:399(para)
 msgid ""
@@ -393,7 +396,7 @@ msgid ""
 "keycap></keycombo> anywhere on the desktop, the last logged event will be "
 "highlighted for later reference. See <xref linkend=\"accerciser-hotkey-config"
 "\"/> for how to change this key combination."
-msgstr ""
+msgstr "Mediante <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>l</keycap></keycombo> in qualsiasi parte del desktop, verrà evidenziato l'ultimo evento registrato, per una successiva analisi. Per modificare questa combinazione di tasti, consultare <xref linkend=\"accerciser-hotkey-config\"/>."
 
 #: C/accerciser.xml:412(title)
 msgid "IPython Console"
@@ -412,7 +415,7 @@ msgid ""
 "example, to query to the Text interface: <command>t = acc.queryText() </"
 "command>. Imports from the current working directory or Python path are also "
 "allowed."
-msgstr ""
+msgstr "Questo plugin rappresenta una console <ulink url=\"http://ipython.scipy.org/moin/\" type=\"http\">IPython</ulink> completa. Premere <keycap>Tab</keycap> per visualizzare i possibili completamenti per il comando attuale. Premendo <keycap>Invio</keycap> verrà eseguito ogni comando Python valido. I comandi alla console hanno accesso all'accessibile attualmente selezionato nell'albero degli accessibili mediante la variabile <varname>acc</varname>. In aggiunta, tutte le funzioni e le costanti dal pacchetto «pyatspi» sono disponibili come locali nella console. Le più importanti fra di esse sono le funzioni di interrogazione verso altre interfacce di accessibili; ad esempio per l'interrogazione di interfacce di testo: <command>t = acc.queryText() </command>. È anche possibile l'importazione dalla directory di lavoro o da un percorso Python."
 
 #: C/accerciser.xml:429(title) C/accerciser.xml:432(title)
 msgid "API Browser"
@@ -422,11 +425,11 @@ msgstr "Esploratore API"
 msgid ""
 "This plugin shows the interfaces, methods, and attributes supported by the "
 "accessible selected in the tree view."
-msgstr ""
+msgstr "Questo plugin visualizza le interfacce, i metodi e gli attributi supportati dall'accessibile selezionato nella visualizzazione ad albero."
 
 #: C/accerciser.xml:439(phrase)
 msgid "The API browser."
-msgstr "Esploratore API"
+msgstr "Esploratore API."
 
 #: C/accerciser.xml:446(title)
 msgid "Script recorder"
@@ -440,7 +443,7 @@ msgid ""
 "of scripts for three platforms: Dogtail, LDTP, and an Accerciser's built-in "
 "API. Once you press the \"Record\" button every keyboard interaction will be "
 "recorded in to a script that could be executed later as a stand alone script."
-msgstr ""
+msgstr "Il registratore di script di <application>Accerciser</application> permette la memorizzazione delle interazioni da tastiera con altre applicazioni desktop allo scopo di costruire gli script di test per l'interfaccia utente. Attualmente il plugin consente la generazione di script per tre piattaforme: Dogtail, LDTP ed una API interna di Accerciser. Una volta premuto il pulsante «Registra» ogni interazione da tastiera verrà registrata in uno script che potrà essere eseguito in seguito come uno script a sé stante."
 
 #: C/accerciser.xml:457(title)
 msgid "Script Recorder"
@@ -448,7 +451,7 @@ msgstr "Registratore di script"
 
 #: C/accerciser.xml:464(phrase)
 msgid "The script recorder."
-msgstr "Registratore di script"
+msgstr "Il registratore di script"
 
 #: C/accerciser.xml:471(title)
 msgid "Quick select"
@@ -463,7 +466,7 @@ msgid ""
 "<application>Accerciser</application>. Pressing <keycombo><keycap>Control</"
 "keycap><keycap>Alt</keycap><keycap>t</keycap></keycombo> will select the "
 "accessible of the widget that is under the pointer."
-msgstr ""
+msgstr "Questo plugin fornisce le scorciatoie globali da tastiera per la selezione veloce degli accessibili tramite l'interfaccia utente dell'applicazione. Premendo <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>a</keycap></keycombo> verrà selezionato l'ultimo widget dell'accessibile selezionato in <application>Accerciser</application>. Premendo <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><keycap>t</keycap></keycombo> verrà selezionato l'accessibile del widget che si trova sotto al puntatore."
 
 #: C/accerciser.xml:489(title)
 msgid "Validation"
@@ -475,7 +478,7 @@ msgid ""
 "report including the severity and description of the problems. The report "
 "links errors to documentation about how to remedy common problems. The "
 "plugin is extensible with test schemas that define rules for validation."
-msgstr ""
+msgstr "Questo plugin verifica le applicazioni in merito ai problemi di accessibilità e genera un report includendone la gravità e la descrizione dei problemi. Il report collega gli errori alla documentazione riguardante i rimedi ai problemi più comuni. Il plugin è estensibile con schemi di test che definiscano le regole di validazione."
 
 #: C/accerciser.xml:498(para)
 msgid ""
@@ -484,7 +487,7 @@ msgid ""
 "select a schema to use for the test. Then click the <guibutton>Validate</"
 "guibutton> button to start the test. While the test is running, click the "
 "button again to cancel it."
-msgstr ""
+msgstr "Per lanciare il validatore occorre anzitutto selezionare un elemento nell'albero degli accessibili. Il plugin verificherà l'accessibile selezionato e tutti i suoi discendenti. Occorre quindi selezionare uno schema di test. Premere quindi il pulsante <guibutton>Validazione</guibutton> per avviare il test. Un'ulteriore pressione del pulsante arresterà l'esecuzione del test."
 
 #: C/accerciser.xml:506(para)
 msgid ""
@@ -492,21 +495,21 @@ msgid ""
 "of all errors. Double click a row in the table to show the associated "
 "accessible in the tree. With an item selected, click the <guibutton>Help</"
 "guibutton> to get information about how to resolve the problem."
-msgstr ""
+msgstr "Al termine del test, la tabella dei risultati visualizzerà gravità e descrizione di tutti gli errori. Un doppio clic su una riga della tabella mostrerà il relativo accessibile nell'albero. Con l'elemento selezionato, fare clic su <guibutton>Aiuto</guibutton> per ottenere le informazioni sulla possibile soluzione del problema."
 
 #: C/accerciser.xml:519(title)
 msgid "Preferences"
-msgstr "_Preferenze..."
+msgstr "Preferenze"
 
 #: C/accerciser.xml:520(para)
 msgid ""
 "There are some elements in <application>Accerciser</application> that are "
 "configurable:"
-msgstr ""
+msgstr "Alcuni elementi di <application>Accerciser</application> sono configurabili:"
 
 #: C/accerciser.xml:531(title)
 msgid "Plugin Layout"
-msgstr "Livello dei plugin"
+msgstr "Disposizione dei plugin"
 
 #: C/accerciser.xml:532(para)
 msgid ""
@@ -518,7 +521,7 @@ msgid ""
 "guilabel> tab. Under this section you will find a list view of all the "
 "available plugins. Right-click on any of the plugins listed to configure "
 "it's view."
-msgstr ""
+msgstr "Esistono due metodi per configurare la disposizione dei plugin di <application>Accerciser</application>. Anzitutto occorre selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Preferenze</guimenuitem></menuchoice> per attivare la finestra di dialogo delle <guilabel>Preferenze</guilabel>. Questa finestra contiene schede per ogni sezione, selezionare quindi la scheda <guilabel>Plugin</guilabel>. In questa sezione è contenuto un elenco di tutti i plugin disponibili. Fare clic con il tasto destro su qualsiasi plugin per configurarne la visualizzazione."
 
 #: C/accerciser.xml:545(para)
 msgid ""
@@ -526,7 +529,7 @@ msgid ""
 "drop to move plugin tabs. Dragging a plugin tab to the bottom or right "
 "plugin area in the main window will move the plugin. Dragging a tab to the "
 "desktop will create a new plugin window and drop the plugin in it."
-msgstr ""
+msgstr "È possibile ignorare la finestra <guilabel>Preferenze</guilabel> usando il trascinamento per muovere le schede dei plugin. Trascinare una scheda di plugin dall'area dei plugin inferiore o superiore nella finestra principale per spostare il plugin. Trascinando una scheda sul desktop verrà creata una nuova finestra al cui interno verrà depositato il plugin."
 
 #: C/accerciser.xml:552(title)
 msgid "Global Hotkey Configuration"
@@ -542,7 +545,7 @@ msgid ""
 "dialog contains tabs for each section, select the <guilabel>Global Hotkeys</"
 "guilabel> tab. Under this section you will find a list view of all the "
 "available hotkey features. Change the key bindings to you liking."
-msgstr ""
+msgstr "Alcuni elementi di <application>Accerciser</application> possono abilitare determinate funzionalità mediante scorciatoie. Le combinazioni dei tasti possono essere modificate mediante la finestra delle <guilabel>Preferenze</guilabel>, per farlo occorre selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Preferenze</guimenuitem></menuchoice> per attivare la finestra delle <guilabel>Preferenze</guilabel>. Selezionare quindi la scheda <guilabel>Scorciatoie generali</guilabel>. All'interno di questa scheda è contenuto un elenco di tutte le combinazioni di tasti disponibili. A questo punto è possibile modificare a piacimento le combinazioni di tasti."
 
 #: C/accerciser.xml:586(title)
 msgid "About <application>Accerciser</application>"
@@ -555,20 +558,20 @@ msgid ""
 "<application>Accerciser</application>, please visit the <ulink url=\"http://"
 "live.gnome.org/Accerciser\" type=\"http\"><application>Accerciser</"
 "application> GNOME Live! page</ulink>."
-msgstr ""
+msgstr "<application>Accerciser</application> è stato scritto da Eitan Isaacson (<email>eitan@ascender.com</email>). Per ulteriori informazioni su <application>Accerciser</application> occorre visitare la pagina <ulink url=\"http://live.gnome.org/Accerciser\" type=\"http\"><application>Accerciser</application> GNOME Live! page</ulink>."
 
 #: C/accerciser.xml:589(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
 "type=\"help\">document</ulink>."
-msgstr ""
+msgstr "Per segnalare un problema o un suggerimento riguardante quest'applicazione, seguire le istruzioni contenute in questo <ulink url=\"ghelp:gnome-feedback\" type=\"help\">documento</ulink>."
 
 #: C/accerciser.xml:592(para)
 msgid ""
 "Redistribution and use in source and binary forms, with or without "
 "modification, are permitted under the terms of the BSD License."
-msgstr ""
+msgstr "La redistribuzione e l'uso di sorgenti ed eseguibili, con o senza modificazioni, sono permessi secondo i termini della licenza BSD."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/accerciser.xml:0(None)
