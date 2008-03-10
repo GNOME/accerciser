@@ -1,14 +1,14 @@
 # Përkthimi i accerciser në shqip.
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
-# Laurent Dhima <laurenti@alblinux.net>, 2007.
+# Laurent Dhima <laurenti@alblinux.net>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser HEAD\n"
+"Project-Id-Version: accerciser gnome-2-20\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-21 18:22+0200\n"
-"PO-Revision-Date: 2007-09-21 18:18+0200\n"
+"POT-Creation-Date: 2008-03-10 17:31+0100\n"
+"PO-Revision-Date: 2008-03-10 17:38+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,8 @@ msgid "Accerciser Accesibility Explorer"
 msgstr "Accerciser, eksploruesi i açesibilitetit"
 
 #: ../accerciser.desktop.in.in.h:2
-#, fuzzy
 msgid "Give your application an accessibility workout"
-msgstr "aplikativ"
+msgstr "Verifikimi i açesibilitetit të aplikativëve të krijuar"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -67,8 +66,7 @@ msgstr "Konsola IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
+msgstr "Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -241,7 +239,7 @@ msgstr "Përshkrimi"
 #. How many columns the cell spans.
 #: ../plugins/interface_view.glade.h:31
 msgid "Extents:"
-msgstr ""
+msgstr "Prapashtesa:"
 
 #: ../plugins/interface_view.glade.h:32
 msgid "H_ypertext"
@@ -265,7 +263,7 @@ msgstr "Përfshi të prezgjedhur"
 
 #: ../plugins/interface_view.glade.h:37
 msgid "Layer"
-msgstr ""
+msgstr "Niveli"
 
 #: ../plugins/interface_view.glade.h:38
 msgid "Lo_gin Helper"
@@ -281,7 +279,7 @@ msgstr "Gjuha:"
 
 #: ../plugins/interface_view.glade.h:41
 msgid "MDI-Z-order"
-msgstr ""
+msgstr "Renditja MDI-Z"
 
 #: ../plugins/interface_view.glade.h:42
 msgid "Maximum value"
@@ -340,9 +338,8 @@ msgid "Size"
 msgstr "Madhësia"
 
 #: ../plugins/interface_view.glade.h:56
-#, fuzzy
 msgid "St_reamable Content"
-msgstr "Pë_rmbajtja"
+msgstr "Pë_rmbajtje e lëvizëshme"
 
 #: ../plugins/interface_view.glade.h:57
 msgid "Te_xt"
@@ -435,8 +432,7 @@ msgstr "Zgjedhje e shpejtë"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
+msgstr "Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -481,15 +477,15 @@ msgstr "Script-i aktual do të humbasë."
 msgid "Confirm clear"
 msgstr "Konfermo anullimin"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Preferime..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "_Përmbajtja"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -497,7 +493,7 @@ msgstr ""
 "Accerciser nuk arrin të shohë aplikativët në hapësirën tuaj të punës. Duhet "
 "të aktivoni açesibilitetitin për të korrigjuar këtë problem. Aktivon tani?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Shënim: Ndryshimet do të kenë efekt vetëm mbas daljes."
 
@@ -541,11 +537,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Paneli i sipërm"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Paneli i poshtëm"
 
@@ -643,7 +639,7 @@ msgstr "Mos shfaq"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "Paraqitje plugin më _vete"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -681,3 +677,4 @@ msgstr "_Shfaq"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Ndihmë"
+
