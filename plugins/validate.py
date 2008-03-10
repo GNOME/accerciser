@@ -150,6 +150,7 @@ class ValidatorViewport(ViewportPlugin):
   @ivar walk: Generator for the current validation walk through the hierarchy
   '''
   plugin_name = N_('AT-SPI Validator')
+  plugin_name_localized = _(plugin_name)
   plugin_description = N_('Validates application accessibility')
   
   def init(self):
