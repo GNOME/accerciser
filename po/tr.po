@@ -7,12 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-17 21:38+0300\n"
-"PO-Revision-Date: 2007-09-15 21:55+0200\n"
+"POT-Creation-Date: 2008-03-10 13:38+0200\n"
+"PO-Revision-Date: 2008-03-08 15:24+0200\n"
 "Last-Translator: Deniz Koçak <deniz.kocak@linux.org.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type:  text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -95,26 +95,34 @@ msgstr "Kaynak"
 msgid "_Monitor Events"
 msgstr "Olayları İ_zle"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Olay İzleyici"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Seçili türlerden ve kaynaklardan oluşan olayları göster"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Son olay girdisini"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Olay kaydetmeyi başlat/durdur"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Olay kaydını temizle"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:452
+#: ../plugins/interface_view.py:735
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "İsim"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Tam isim"
 
@@ -122,306 +130,310 @@ msgstr "Tam isim"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.glade.h:2
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
+#: ../plugins/interface_view.glade.h:5
 msgid "<b>Attributes</b>"
 msgstr "<b>Öznitelikler</b>"
 
-#: ../plugins/interface_view.glade.h:5
+#: ../plugins/interface_view.glade.h:6
 msgid "<b>Child count</b>"
 msgstr "<b>Çocuk sayısı</b>"
 
-#: ../plugins/interface_view.glade.h:6
+#: ../plugins/interface_view.glade.h:7
 msgid "<b>Description</b>"
 msgstr "<b>Tanım</b>"
 
-#: ../plugins/interface_view.glade.h:7
+#: ../plugins/interface_view.glade.h:8
 msgid "<b>Relations</b>"
 msgstr "<b>İlişkiler</b>"
 
-#: ../plugins/interface_view.glade.h:8
+#: ../plugins/interface_view.glade.h:9
 msgid "<b>Selected Cell</b>"
 msgstr "<b>Seçilmiş Hücre</b>"
 
-#: ../plugins/interface_view.glade.h:9
+#: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
 msgstr "<b>Durumlar</b>"
 
-#: ../plugins/interface_view.glade.h:10
+#: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
 msgstr "<b>Tablo bilgisi</b>"
 
-#: ../plugins/interface_view.glade.h:11
+#: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
 msgstr "<b>Metin</b>"
 
-#: ../plugins/interface_view.glade.h:12
+#: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
 msgstr "<b>bilinmiyor</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:320
+#: ../plugins/interface_view.py:859
 msgid "<i>(no description)</i>"
 msgstr "<i>(tanım yok)</i>"
 
-#: ../plugins/interface_view.glade.h:14
+#: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
 msgstr "<i>Başlık:</i>"
 
-#: ../plugins/interface_view.glade.h:15
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>Son: 0</i>"
 
-#: ../plugins/interface_view.glade.h:16
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>Başlangıç: 0</i>"
 
-#: ../plugins/interface_view.glade.h:17
+#: ../plugins/interface_view.glade.h:21
 msgid "<i>Summary:</i>"
 msgstr "<i>Özet:</i>"
 
-#: ../plugins/interface_view.glade.h:18
+#: ../plugins/interface_view.glade.h:22
 msgid "<no description>"
 msgstr "<tanım yok>"
 
-#: ../plugins/interface_view.glade.h:19
+#: ../plugins/interface_view.glade.h:23
 msgid "Absolute position"
 msgstr "Mutlak konum"
 
-#: ../plugins/interface_view.glade.h:20
+#: ../plugins/interface_view.glade.h:24
 msgid "Acti_on"
 msgstr "E_ylem"
 
-#: ../plugins/interface_view.glade.h:21
+#: ../plugins/interface_view.glade.h:25
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.glade.h:22
+#: ../plugins/interface_view.glade.h:26
 msgid "Ap_plication"
 msgstr "_Uygulama"
 
-#: ../plugins/interface_view.glade.h:23
+#: ../plugins/interface_view.glade.h:27
 msgid "Co_mponent"
 msgstr "_Bileşen"
 
-#: ../plugins/interface_view.glade.h:24
+#: ../plugins/interface_view.glade.h:28
 msgid "Col_lection"
 msgstr "Kol_leksiyon"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:29
 msgid "Column"
 msgstr "Sütun"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:30
 msgid "Columns"
 msgstr "Sütunlar"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:31
 msgid "Current value"
 msgstr "Şimdiki değer"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
 msgstr "_Masaüstü"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:457
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Tanım"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "Kapsar:"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:36
 msgid "H_ypertext"
 msgstr "_Hipermetin"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:37
 msgid "Header:"
 msgstr "Başlık:"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:38
 msgid "Hyperlink"
 msgstr "Hiper bağ"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:39
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
 msgstr "Öntanımlıları kapsa"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:41
 msgid "Layer"
 msgstr "Katman"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
 msgstr "_Giriş Yardımcısı"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:43
 msgid "Locale"
 msgstr "Yerel"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:44
 msgid "Locale:"
 msgstr "Yereller:"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:45
 msgid "MDI-Z-order"
 msgstr "MDI-Z-sırası"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:46
 msgid "Maximum value"
 msgstr "En fazla değer"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:47
 msgid "Minimum increment"
 msgstr "En az artış"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:48
 msgid "Minimum value"
 msgstr "En az değer"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:49
 msgid "Offset"
 msgstr "Ofset"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
 msgstr "Eylemi gerçekleştir"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:51
 msgid "Position"
 msgstr "Konum"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:52
 msgid "Relative position"
 msgstr "Göreceli konum"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:53
 msgid "Row"
 msgstr "Satır"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:54
 msgid "Rows"
 msgstr "Satırlar"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:55
 msgid "Select All"
 msgstr "Hepsini Seç"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:56
 msgid "Selected columns"
 msgstr "Seçilmiş sütunlar"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:57
 msgid "Selected rows"
 msgstr "Seçilmiş satırlar"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:58
 msgid "Show"
 msgstr "Göster"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:59
 msgid "Size"
 msgstr "Boyut"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
 msgstr "Akışkan İçe_rik"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
 msgstr "_Metin"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
 msgstr "Araç takımı"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:63
 msgid "Val_ue"
 msgstr "Değe_r"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:64
 msgid "Version"
 msgstr "Sürüm"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:65
 msgid "WIDGET"
 msgstr "PARÇA"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
 msgstr "_Erişilebilirlik"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:67
 msgid "_Document"
 msgstr "_Döküman"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:68
 msgid "_Image"
 msgstr "_Görüntü"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:69
 msgid "_Selection"
 msgstr "_Seçim"
 
-#: ../plugins/interface_view.glade.h:66
+#: ../plugins/interface_view.glade.h:70
 msgid "_Table"
 msgstr "_Tablo"
 
-#: ../plugins/interface_view.glade.h:67
+#: ../plugins/interface_view.glade.h:71
 msgid "name (x,y)"
 msgstr "isim (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
 msgid "Interface Viewer"
 msgstr "Arayüz Gösterici"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
 msgid "Allows viewing of various interface properties"
 msgstr "Çeşitli arayüz özelliklerini görüntülemeye izin verir"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:188
+#: ../plugins/interface_view.py:189
 msgid " (not implemented)"
-msgstr " (gerçeklenmemiş)"
+msgstr " (uygulanmamış)"
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:462
 msgid "Key binding"
 msgstr "Anahtar bağı"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:742 ../plugins/interface_view.py:1026
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:749
 msgid "Start"
 msgstr "Başla"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:756
 msgid "End"
 msgstr "Son"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:926
 msgid "Too many selectable children"
 msgstr "Çok fazla seçilebilir çocuk"
 
-#: ../plugins/interface_view.py:1019
+#: ../plugins/interface_view.py:1021
 msgid "Content type"
 msgstr "İçerik türü"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1297 ../plugins/interface_view.py:1299
 msgid " <i>(Editable)</i>"
 msgstr " <i>(Düzenlenebilir)</i>"
 
@@ -477,15 +489,168 @@ msgstr "Şimdiki betik kaybolacak."
 msgid "Confirm clear"
 msgstr "Silmeyi onayla"
 
-#: ../src/lib/accerciser/accerciser.py:94
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Beklemede"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "Şe_ma:"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "Doğrul_a"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Tanım yok"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI Doğrulayıcı"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Uygulama erişilebilirliğini doğrular"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Seviye"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Doğrulanıyor"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "HARİÇ"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "HATA"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "UYARI"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "BİLGİ"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "HATA AYIKLAMA"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Temel"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Temel GUI uygulama erişilebilirliğini test eder"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "sorgulanabilir %s odaklanılabilir ya da seçilebilir değil"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "etkileşimli %s sorgulanabilir değil"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "birden fazla odaklanılmış parça"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s has no text interface"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "Asıl içindeki %s indeksi alt indeks ile uyuşmuyor"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "%s ilişkisi için kayıp karşılık"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s eksik isim veya etiket"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "odaklanabilir %s için tablo arayüzü var, seçim arayüzü yok"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%1s %3s durumu hariç %2s durumunda"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s bir kümeye ait değil"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s indeks %(num)d satır ve sütun ile uyuşmuyor"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s ana indeksi %(num1)d satır ve sütun indeksi %(num2)d ile "
+"uyuşmuyor"
+
+#: ../plugindata/validate/basic.py:352
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s için bir isim veya tanım yok"
+
+#: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "_Tercihler..."
 
-#: ../src/lib/accerciser/accerciser.py:96
+#: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "İçeri_k"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
@@ -494,7 +659,7 @@ msgstr ""
 "masaüstü erişilebilirliğini etkinleştirmelisiniz.Şimdi etkinleştirmek ister "
 "misiniz?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Not: Değişiklikler sadece çıkış yaptıktan sonra etkinleşecektir."
 
@@ -510,7 +675,9 @@ msgstr "Rol"
 msgid "Children"
 msgstr "Çocuklar"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
 msgid "Refresh _Current"
 msgstr "Şimdikini Gün_celle"
 
@@ -538,11 +705,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Üstkarakter"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "Üst panel"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "Alt panel"
 
@@ -558,23 +725,23 @@ msgstr "Eklentiler"
 msgid "Global Hotkeys"
 msgstr "Genel kısayollar"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Deniz Koçak <deniz.kocak@linux.org.tr>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Bir interaktif Piton erişilebilirlik gezgini"
 
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Telif Hakkı Â© 2006, 2007 IBM Şirketi (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "Yeni BSD Lisansı detaylar için COPYING ve README dosyalarına bakın."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Web sitesi"
 
@@ -630,11 +797,14 @@ msgstr "Yol:"
 msgid "Plugin Errors"
 msgstr "Eklenti Hataları"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgid "View"
 msgstr "Görünüm"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:465
 msgid "No view"
 msgstr "Görünüm yok"
 
@@ -678,6 +848,9 @@ msgstr "_Görünüm"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Ya_rdım"
+
+#~ msgid "1.0"
+#~ msgstr "1.0"
 
 #, fuzzy
 #~ msgid "gtk-clear"
