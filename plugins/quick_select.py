@@ -27,9 +27,13 @@ class QuickSelect(Plugin):
                             gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
 
     pyatspi.Registry.registerEventListener(self._accEventFocusChanged, 
-                                           'focus')
+                               'object:state-changed')
+
+    pyatspi.Registry.registerEventListener(self._accEventSelectionChanged, 
+                               'object:selection-changed')
 
     self.last_focused = None
+    self.last_selected = None
 
   def _accEventFocusChanged(self, event):
     '''
@@ -42,6 +46,17 @@ class QuickSelect(Plugin):
     if not self.isMyApp(event.source):
       self.last_focused = event.source      
 
+  def _accEventSelectionChanged(self, event):
+    '''
+    Hold a reference for the last parent of a selected accessible. 
+    This will be useful if we want to find an accessible at certain coords.
+
+    @param event: The event that is being handled.
+    @type event: L{pyatspi.event.Event}
+    '''
+    if not self.isMyApp(event.source):
+      self.last_selected = event.source
+
   def _inspectLastFocused(self):
     '''
     Inspect the last focused widget's accessible.
@@ -53,9 +68,18 @@ class QuickSelect(Plugin):
     '''
     Inspect accessible of widget under mouse.
     '''
-    # Inspect accessible under mouse
     display = gtk.gdk.Display(gtk.gdk.get_display())
     screen, x, y, flags =  display.get_pointer()
+
+    # First check if the currently selected accessible has the pointer over it.
+    # This is an optimization: Instead of searching for 
+    # STATE_SELECTED and ROLE_MENU and LAYER_POPUP in the entire tree.
+    item = self._getPopupItem(x,y)
+    if item:
+      self.node.update(item)
+      return
+          
+    # Inspect accessible under mouse
     desktop = pyatspi.Registry.getDesktop(0)
     wnck_screen = wnck.screen_get_default()
     window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
@@ -66,18 +90,56 @@ class QuickSelect(Plugin):
       for frame in app:
         if not frame:
           continue
-        acc = self._getChildAccAtCoords(frame, x, y)
+        acc = self._getComponentAtCoords(frame, x, y)
         if acc:
           try:
             z_order = window_order.index(frame.name)
           except ValueError:
-            continue
-          if z_order > top_window[1]:
-            top_window = (acc, z_order)
+            # It's possibly a popup menu, so it would not be in our frame name
+            # list. And if it is, it is probably the top-most component.
+            try:
+              if acc.queryComponent().getLayer() == pyatspi.LAYER_POPUP:
+                self.node.update(acc)
+                return
+            except:
+              pass
+          else:
+            if z_order > top_window[1]:
+              top_window = (acc, z_order)
     if top_window[0]:
       self.node.update(top_window[0])
 
-  def _getChildAccAtCoords(self, parent, x, y):
+  def _getPopupItem(self, x, y):
+    suspect_children = []
+    # First check if the currently selected accessible has the pointer over it.
+    # This is an optimization: Instead of searching for 
+    # STATE_SELECTED and ROLE_MENU and LAYER_POPUP in the entire tree.
+    if self.last_selected and \
+          self.last_selected.getRole() == pyatspi.ROLE_MENU and \
+          self.last_selected.getState().contains(pyatspi.STATE_SELECTED):
+      try:
+        si = self.last_selected.querySelection()
+      except NotImplementedError:
+        return None
+
+      if si.nSelectedChildren > 0:
+        suspect_children = [si.getSelectedChild(0)]
+      else:
+        suspect_children = self.last_selected
+
+      for child in suspect_children:
+        try:
+          ci = child.queryComponent()
+        except NotImplementedError:
+          continue
+
+        if ci.contains(x,y, pyatspi.DESKTOP_COORDS) and \
+              ci.getLayer() == pyatspi.LAYER_POPUP:
+          return child
+
+      return None
+
+  def _getComponentAtCoords(self, parent, x, y):
     '''
     Gets any child accessible that resides under given desktop coordinates.
 
@@ -93,10 +155,17 @@ class QuickSelect(Plugin):
     '''
     container = parent
     while True:
+      container_role = container.getRole()
+      if container_role == pyatspi.ROLE_PAGE_TAB_LIST:
+        try:
+          si = container.querySelection()
+          container = si.getSelectedChild(0)[0]
+        except NotImplementedError:
+          pass
       try:
         ci = container.queryComponent()
       except:
-        return None
+        break
       else:
         inner_container = container
       container =  ci.getAccessibleAtPoint(x, y, pyatspi.DESKTOP_COORDS)
@@ -108,3 +177,4 @@ class QuickSelect(Plugin):
       return None
     else:
       return inner_container
+    
