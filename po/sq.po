@@ -1,14 +1,14 @@
-# Përkthimi i accerciser.gnome-2-22 në shqip.
+# Përkthimi i accerciser në shqip.
 # Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
 # Laurent Dhima <laurenti@alblinux.net>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser.gnome-2-22\n"
+"Project-Id-Version: accerciser gnome-2-22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-06 09:58+0000\n"
-"PO-Revision-Date: 2008-03-06 10:49+0100\n"
+"POT-Creation-Date: 2008-03-20 10:10+0100\n"
+"PO-Revision-Date: 2008-03-20 11:40+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -66,8 +66,7 @@ msgstr "Konsola IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
+msgstr "Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -118,8 +117,8 @@ msgstr "Nis/Ndalo regjistrimin e eventeve"
 msgid "Clear event log"
 msgstr "Pastron mesazhet e eventit"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:452
+#: ../plugins/interface_view.py:735
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -175,8 +174,8 @@ msgstr "<b>Teksti</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nuk njihet</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:320
+#: ../plugins/interface_view.py:859
 msgid "<i>(no description)</i>"
 msgstr "<i>(asnjë përshkrim)</i>"
 
@@ -243,8 +242,8 @@ msgstr "Vlera aktuale"
 msgid "Des_ktop"
 msgstr "Hapësira e _punës"
 
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:455
-#: ../plugins/validate.py:205
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:457
+#: ../plugins/validate.py:206
 msgid "Description"
 msgstr "Përshkrimi"
 
@@ -397,46 +396,48 @@ msgstr "_Tabela"
 msgid "name (x,y)"
 msgstr "emri (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
 msgid "Interface Viewer"
 msgstr "Shikuesi i interfaqes"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
 msgid "Allows viewing of various interface properties"
 msgstr "Mundëson shfaqjen e pronësive të ndryshme të interfaqes"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:188
+#: ../plugins/interface_view.py:189
 msgid " (not implemented)"
 msgstr " (akoma pa përfunduar)"
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:462
 msgid "Key binding"
 msgstr "Taste përshpejtues"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:742 ../plugins/interface_view.py:1026
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:749
 msgid "Start"
 msgstr "Nisja"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:756
 msgid "End"
-msgstr "Mbarimi"
+msgstr "Fundi"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:926
 msgid "Too many selectable children"
 msgstr "Shumë bij të zgjedhshëm"
 
-#: ../plugins/interface_view.py:1019
+#: ../plugins/interface_view.py:1021
 msgid "Content type"
 msgstr "Lloji i përmbajtjes"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1297 ../plugins/interface_view.py:1299
 msgid " <i>(Editable)</i>"
-msgstr "<i>(E ndryshueshme)</i>"
+msgstr "<i>(E shkruajtshme)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -444,8 +445,7 @@ msgstr "Zgjedhje e shpejtë"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
+msgstr "Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -490,7 +490,7 @@ msgstr "Script-i aktual do të humbasë."
 msgid "Confirm clear"
 msgstr "Konfermo anullimin"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
 msgid "Idle"
 msgstr "E fshehur"
 
@@ -512,36 +512,36 @@ msgstr "Asnjë përshkrim"
 msgid "AT-SPI Validator"
 msgstr "Vleftësuesi AT-SPI"
 
-#: ../plugins/validate.py:153
+#: ../plugins/validate.py:154
 msgid "Validates application accessibility"
 msgstr "Vleftësimi i açesibilitetit të aplikativit"
 
 #. log level column
-#: ../plugins/validate.py:198
+#: ../plugins/validate.py:199
 msgid "Level"
 msgstr "Niveli"
 
-#: ../plugins/validate.py:262
+#: ../plugins/validate.py:263
 msgid "Validating"
 msgstr "Vleftësimi"
 
-#: ../plugins/validate.py:413
+#: ../plugins/validate.py:414
 msgid "EXCEPT"
 msgstr "PËRJASHTIM"
 
-#: ../plugins/validate.py:420
+#: ../plugins/validate.py:421
 msgid "ERROR"
 msgstr "GABIM"
 
-#: ../plugins/validate.py:427
+#: ../plugins/validate.py:428
 msgid "WARN"
 msgstr "PARALAJMËRIM"
 
-#: ../plugins/validate.py:433
+#: ../plugins/validate.py:434
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:439
+#: ../plugins/validate.py:440
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -623,8 +623,7 @@ msgstr "%s nuk i takon një grupi"
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
-"%(rolename)s treguesi %(num)d nuk korrispondon me asnjë rresht apo kollonë"
+msgstr "%(rolename)s treguesi %(num)d nuk korrispondon me asnjë rresht apo kollonë"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -696,7 +695,7 @@ msgstr "Aktiviteti"
 
 #: ../src/lib/accerciser/hotkey_manager.py:234
 msgid "Key"
-msgstr "Kyçi"
+msgstr "Pulsanti"
 
 #: ../src/lib/accerciser/hotkey_manager.py:244
 msgid "Alt"
@@ -854,5 +853,3 @@ msgstr "_Shfaq"
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#~ msgid "1.0"
-#~ msgstr "1.0"
