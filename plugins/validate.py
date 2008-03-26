@@ -152,7 +152,10 @@ class ValidatorViewport(ViewportPlugin):
   plugin_name = N_('AT-SPI Validator')
   plugin_name_localized = _(plugin_name)
   plugin_description = N_('Validates application accessibility')
-  
+
+  # keep track of when a file is being written
+  write_in_progress = False
+
   def init(self):
     '''
     Loads the glade UI definition and initializes it.
@@ -173,7 +176,10 @@ class ValidatorViewport(ViewportPlugin):
     self.progress = self.main_xml.get_widget('progress bar')
     self.validate = self.main_xml.get_widget('validate button')
     self.help = self.main_xml.get_widget('help button')
+    self.save = self.main_xml.get_widget('save button')
+    self.clear = self.main_xml.get_widget('clear button')
     self.schema = self.main_xml.get_widget('schema combo')
+    self.validator_buffer = gtk.TextBuffer()
 
     # model for the combobox
     model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
@@ -232,8 +238,83 @@ class ValidatorViewport(ViewportPlugin):
     else:
       self._stopValidate()
 
-  def _onSaveAs(self, button):
-    pass
+  def _writeFile(self):
+    '''
+    Save the report from the report model to disk in a temporary location.
+    Close the file when finished.
+    '''
+    if self.write_in_progress:
+      # if we have finished writing to the file
+      if self.curr_file_row == self.n_report_rows:
+        self.save_to.close()
+        self._stopSave()
+        return False
+    else:
+      # set up the file to be written
+      self._startSave()
+      self.save.set_sensitive(False)
+      report_store = self.report.get_model()
+      # create list of lists containing column values
+      self.row_values = [[row[0],row[1],row[2],row[3]] for row in report_store]
+      self.n_report_rows = len(self.row_values)
+      return True
+
+    remaining_rows = self.n_report_rows - self.curr_file_row
+    n_rows_to_write = 5
+    if n_rows_to_write > remaining_rows:
+      n_rows_to_write = remaining_rows
+  
+    file_str_list = [] # list to store strings to be written to file
+    start = self.curr_file_row
+    end = (self.curr_file_row + n_rows_to_write)
+    for i in range(start, end):
+      val = self.row_values[i]
+      # add level to buffer
+      file_str_list.append("%s: %s\n" % (_('Level'), val[0]))
+      # add description to buffer
+      file_str_list.append("%s: %s\n" % (_('Description'), val[1]))
+      # add accessible's name to buffer
+      file_str_list.append("%s: %s\n" % (_('Name'), val[2].name))
+      # add accessible's role to buffer
+      file_str_list.append("%s: %s\n" % (_('Role'), val[2].getRoleName()))
+      # add url role to buffer
+      file_str_list.append("%s: %s\n\n" % (_('Hyperlink'), val[3]))
+      self.curr_file_row += 1
+  
+    self.save_to.write(''.join(file_str_list))
+
+    return True
+
+  def _onSave(self, button):
+    '''
+    Save the report from the report model to disk
+
+    @param button: Save button
+    '''
+    save_dialog = gtk.FileChooserDialog(
+      'Save validator output',
+      action=gtk.FILE_CHOOSER_ACTION_SAVE,
+      buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+               gtk.STOCK_OK, gtk.RESPONSE_OK))
+    #save_dialog.connect("response", self._savedDiagResponse)
+    save_dialog.set_do_overwrite_confirmation(True)
+    save_dialog.set_default_response(gtk.RESPONSE_OK)
+    response = save_dialog.run()
+    if response == gtk.RESPONSE_OK:
+      self.save_to = open(save_dialog.get_filename(), 'w')
+      gobject.idle_add(self._writeFile)
+    save_dialog.destroy()
+
+  def _onClear(self, button):
+    '''
+    Clear the report from the report model
+
+    @param button: Clear button
+    '''
+    self.report.get_model().clear()
+    self.validator_buffer.set_text('')
+    self.save.set_sensitive(False)
+    self.clear.set_sensitive(False)
 
   def _onHelp(self, button):
     '''
@@ -242,6 +323,54 @@ class ValidatorViewport(ViewportPlugin):
     @param button: Help button
     '''
     webbrowser.open(self.url)
+
+  def _onSaveIdle(self):
+    '''
+    Move the progress bar
+    '''
+    self.progress.pulse()
+    return True
+
+  def _startSave(self):
+    '''
+    Starts a save by settting up an idle callback after initializing progress
+    bar.
+    '''
+    # set variables for writing report to file
+    self.write_in_progress = True
+    self._setDefaultSaveVars()
+    # register an idle callback
+    self.idle_save_id = gobject.idle_add(self._onSaveIdle)
+    self.progress.set_text(_('Saving'))
+    # disable controls
+    self.validate.set_sensitive(False)
+    self.save.set_sensitive(False)
+
+  def _stopSave(self):
+    '''
+    Stops a save by disabling the idle callback and restoring the various UI
+    components to their enabled states.
+    '''
+    # stop callbacks
+    gobject.source_remove(self.idle_save_id)
+    # reset progress
+    self.progress.set_fraction(0.0)
+    self.progress.set_text(_('Idle'))
+    # enable other controls
+    self.validate.set_sensitive(True)
+    self.save.set_sensitive(True)
+    self.save.set_sensitive(True)
+    # reset variables for writing report to file
+    self._setDefaultSaveVars()
+    self.write_in_progress = False
+
+  def _setDefaultSaveVars(self):
+    '''
+    Ready appropriate variables for a save
+    '''
+    self.curr_file_row = 0
+    self.n_report_rows = 0 
+    self.row_values = [] 
 
   def _startValidate(self):
     '''
@@ -259,11 +388,13 @@ class ValidatorViewport(ViewportPlugin):
     # build our walk generator
     self.walk = self._traverse(self.acc, state)
     # register an idle callback
-    self.idle_id = gobject.idle_add(self._onIdle)
+    self.idle_validate_id = gobject.idle_add(self._onValidateIdle)
     self.progress.set_text(_('Validating'))
     # disable controls
     self.schema.set_sensitive(False)
     self.help.set_sensitive(False)
+    self.save.set_sensitive(False)
+    self.clear.set_sensitive(False)
 
   def _stopValidate(self):
     '''
@@ -271,7 +402,7 @@ class ValidatorViewport(ViewportPlugin):
     various UI components to their enabled states.
     '''
     # stop callbacks
-    gobject.source_remove(self.idle_id)
+    gobject.source_remove(self.idle_validate_id)
     # destroy generator
     self.walk = None
     # reset progress
@@ -281,8 +412,11 @@ class ValidatorViewport(ViewportPlugin):
     self.validate.set_active(False)
     # enable other controls
     self.schema.set_sensitive(True)
+    self.help.set_sensitive(True)
+    self.save.set_sensitive(True)
+    self.clear.set_sensitive(True)
      
-  def _onIdle(self):
+  def _onValidateIdle(self):
     '''
     Tests one accessible at a time on each idle callback by advancing the
     walk generator.
@@ -411,30 +545,46 @@ class ValidatorViewport(ViewportPlugin):
     '''
     info = traceback.extract_tb(sys.exc_info()[2])
     text = '%s (%d): %s' % (os.path.basename(info[-1][0]), info[-1][1], ex)
-    self.report.get_model().append([_('EXCEPT'), text, acc])
-    
+    self.report.get_model().append([_('EXCEPT'), text, acc, ''])
+
   def error(self, text, acc, url=''):
     '''
     Used by validators to log messages for accessibility problems that have to
     be fixed.
     '''
-    self.report.get_model().append([_('ERROR'), text, acc, url])
+    level = _('ERROR')
+    self.report.get_model().append([level, text, acc, url])
     
   def warn(self, text, acc, url=''):
     '''
     Used by validators to log warning messages for accessibility problems that
     should be fixed, but are not critical.
     '''
-    self.report.get_model().append([_('WARN'), text, acc, url])
+    level = _('WARN')
+    self.report.get_model().append([level, text, acc, url])
   
   def info(self, text, acc, url=''):
     '''
     Used by validators to log informational messages.
     '''
-    self.report.get_model().append([_('INFO'), text, acc, url])
+    level = _('INFO')
+    self.report.get_model().append([level, text, acc, url])
     
   def debug(self, text, acc, url=''):
     '''
     Used by validators to log debug messages.
     '''
-    self.report.get_model().append([_('DEBUG'), text, acc, url])
+    level = _('DEBUG')
+    self.report.get_model().append([level, text, acc, url])
+
+  def close(self):
+    '''
+    Things to do before the plugin closes.
+    '''
+    # don't close the plugin until we have finished writing
+    while True:
+      if not self.write_in_progress:
+        break
+      gtk.main_iteration_do(True)
+
+
