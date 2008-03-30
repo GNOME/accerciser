@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-05 19:30+0000\n"
-"PO-Revision-Date: 2008-03-16 14:50+0100\n"
+"POT-Creation-Date: 2008-03-26 21:04+0000\n"
+"PO-Revision-Date: 2008-03-30 10:43+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -119,8 +119,9 @@ msgstr "Iniciar/parar el registro de eventos"
 msgid "Clear event log"
 msgstr "Limpiar el registro de eventos"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:451
-#: ../plugins/interface_view.py:734
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -176,8 +177,8 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconocido</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:319
-#: ../plugins/interface_view.py:858
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
+#: ../plugins/interface_view.py:860
 msgid "<i>(no description)</i>"
 msgstr "<i>(sin descripción)</i>"
 
@@ -244,8 +245,9 @@ msgstr "Valor actual"
 msgid "Des_ktop"
 msgstr "_Escritorio"
 
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:456
-#: ../plugins/validate.py:205
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Descripción"
 
@@ -262,7 +264,8 @@ msgstr "H_ipertexto"
 msgid "Header:"
 msgstr "Cabecera:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hiperenelace"
 
@@ -398,44 +401,46 @@ msgstr "_Tabla"
 msgid "name (x,y)"
 msgstr "nombre (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
 msgid "Interface Viewer"
 msgstr "Visor de interfaces"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
 msgid "Allows viewing of various interface properties"
 msgstr "Permite ver varias propiedades del interfaz"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:187
-#: ../plugins/interface_view.py:188
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:190
 msgid "(not implemented)"
 msgstr "(no implementado)"
 
-#: ../plugins/interface_view.py:461
+#: ../plugins/interface_view.py:463
 msgid "Key binding"
 msgstr "Atajo de teclado"
 
-#: ../plugins/interface_view.py:741 ../plugins/interface_view.py:1025
+#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:748
+#: ../plugins/interface_view.py:750
 msgid "Start"
 msgstr "Inicio"
 
-#: ../plugins/interface_view.py:755
+#: ../plugins/interface_view.py:757
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:925
+#: ../plugins/interface_view.py:927
 msgid "Too many selectable children"
 msgstr "Demasiados hijos seleccionables"
 
-#: ../plugins/interface_view.py:1020
+#: ../plugins/interface_view.py:1022
 msgid "Content type"
 msgstr "Tipo de contenido"
 
-#: ../plugins/interface_view.py:1296 ../plugins/interface_view.py:1299
+#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editable)</i>"
 
@@ -490,7 +495,8 @@ msgstr "Se perderá el script actual."
 msgid "Confirm clear"
 msgstr "Confirme la limpieza"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Inactivo"
 
@@ -510,36 +516,46 @@ msgstr "Sin descripción"
 msgid "AT-SPI Validator"
 msgstr "Validador AT-SPI"
 
-#: ../plugins/validate.py:153
+#: ../plugins/validate.py:154
 msgid "Validates application accessibility"
 msgstr "Valida la accesibilidad de una aplicación"
 
 #. log level column
-#: ../plugins/validate.py:198
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Nivel"
 
-#: ../plugins/validate.py:262
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+msgid "Role"
+msgstr "Rol"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Guardado"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Validando"
 
-#: ../plugins/validate.py:413
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "EXCEPTO"
 
-#: ../plugins/validate.py:420
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:427
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "ADVERTENCIA"
 
-#: ../plugins/validate.py:433
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:439
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEPURAR"
 
@@ -670,10 +686,6 @@ msgstr "Nota: Los cambios tienen efecto después de salir de la sesión."
 msgid "<dead>"
 msgstr "<muerto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Rol"
-
 #: ../src/lib/accerciser/accessible_treeview.py:405
 msgid "Children"
 msgstr "Hijos"
@@ -800,11 +812,14 @@ msgstr "Ruta:"
 msgid "Plugin Errors"
 msgstr "Errores del complemento"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgid "View"
 msgstr "Ver"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:465
 msgid "No view"
 msgstr "Sin vista"
 
