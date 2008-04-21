@@ -42,16 +42,14 @@ for name in modules:
     m.require('2.0')
   elif name == 'gtk':
     m.check_version(*GTK_VERSION)
+print
 
-# test for CORBA modules
-corba = ['Accessibility']
-import bonobo
-import ORBit
-for name in corba:
-  try:
-    ORBit.load_typelib(name)
-    print name,
-  except Exception:
-    print name, '*MISSING*'
-    sys.exit(1)
-sys.exit(0)
+# Check pyatspi.
+# TODO: This should be done by comparing versions, for now we
+# will just check the API.
+import pyatspi
+try:
+  pyatspi.Registry.pumpQueuedEvents
+except AttributeError:
+  print 'Newer version of pyatspi required (>= 1.22.0)'
+  sys.exit(1)
