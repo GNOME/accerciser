@@ -132,8 +132,8 @@ class Main(Tools):
     '''
     cl = gconf.client_get_default()
     if not cl.get_bool('/desktop/gnome/interface/accessibility'):
-      message = _('Accerciser could not see the applications on your desktop.'
-                  'You must enable desktop accessibility to fix this problem.'
+      message = _('Accerciser could not see the applications on your desktop.  '
+                  'You must enable desktop accessibility to fix this problem.  '
                   'Do you want to enable it now?')
       dialog = gtk.MessageDialog(self.window,type=gtk.MESSAGE_ERROR,
                                  buttons=gtk.BUTTONS_YES_NO, 
