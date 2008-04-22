@@ -394,11 +394,13 @@ class ConsoleView(gtk.TextView):
     selection_iter = self.text_buffer.get_iter_at_mark(selection_mark)
     start_iter = self.text_buffer.get_iter_at_mark(self.line_start)
     if event.keyval == gtk.keysyms.Home:
-      if event.state == 0: 
-        self.text_buffer.place_cursor(start_iter)
-        return True
-      elif event.state == gtk.gdk.SHIFT_MASK:
+      if event.state & gtk.gdk.CONTROL_MASK or event.state & gtk.gdk.MOD1_MASK:
+        pass
+      elif event.state & gtk.gdk.SHIFT_MASK:
         self.text_buffer.move_mark(insert_mark, start_iter)
+        return True
+      else:
+        self.text_buffer.place_cursor(start_iter)
         return True
     elif event.keyval == gtk.keysyms.Left:
       insert_iter.backward_cursor_position()
