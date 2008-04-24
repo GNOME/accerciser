@@ -15,6 +15,8 @@ See "COPYING" in the source distribution for more information.
 Headers in this file shall remain intact.
 '''
 
+import re
+
 from sequence_step import SequenceStep
 import utils, pyatspi, gobject, sys
 _ = lambda x: x
@@ -193,7 +195,9 @@ class WaitForWindowActivate(WaitAction):
     @return: True if this is the right frame.
     @rtype: boolean
     '''
-    return acc is not None and acc.name == self._frame_re
+    return acc is not None and \
+      (acc.name == self._frame_re or \
+      re.compile(self._frame_re and self._frame_re or "").match(acc.name))
 
   def __str__(self):
     '''
