@@ -11,7 +11,17 @@
 
 # Headers in this file shall remain intact.
 
-import pyatspi
+import pyatspi, gtk
+
+keymap = gtk.gdk.keymap_get_default()
+
+def getKeyCodeFromVal(keyval):
+  global keymap
+  entry = keymap.get_entries_for_keyval(keyval)
+  if not entry:
+    raise TypeError("Invalid key name")
+  else:
+    return entry[0][0]
 
 def getActiveFrame():
   desktop = pyatspi.Registry.getDesktop(0)

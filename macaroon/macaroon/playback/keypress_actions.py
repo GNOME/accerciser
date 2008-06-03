@@ -53,12 +53,7 @@ class KeyPressAction(AtomicAction):
     if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
     if key_code is None:
-      global keymap
-      entry = keymap.get_entries_for_keyval(gtk.gdk.keyval_from_name(key_name))
-      if not entry:
-        raise TypeError("Invalid key name")
-      else:
-        key_code = entry[0][0]
+      key_code = utils.getKeyCodeFromVal(gtk.gdk.keyval_from_name(key_name))
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
 
   def _keyPress(self, key_code):
@@ -100,12 +95,7 @@ class KeyReleaseAction(AtomicAction):
     if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
     if key_code is None:
-      global keymap
-      entry = keymap.get_entries_for_keyval(gtk.gdk.keyval_from_name(key_name))
-      if not entry:
-        raise TypeError("Invalid key name")
-      else:
-        key_code = entry[0][0]
+      key_code = utils.getKeyCodeFromVal(gtk.gdk.keyval_from_name(key_name))
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
 
   def _keyRelease(self, key_code):
@@ -154,9 +144,10 @@ class KeyComboAction(AtomicAction):
     @type delta_time: integer
     '''
     keyval, modifiers = gtk.accelerator_parse(key_combo)
+    key_code = utils.getKeyCodeFromVal(keyval)
     self._key_combo = key_combo
     if delta_time < min_delta: delta_time = min_delta
-    AtomicAction.__init__(self, delta_time, self._doCombo, keyval, modifiers)
+    AtomicAction.__init__(self, delta_time, self._doCombo, key_code, modifiers)
 
   def __call__(self):
     '''
@@ -164,12 +155,12 @@ class KeyComboAction(AtomicAction):
     '''
     self._func(*self._args)
 
-  def _doCombo(self, keyval, modifiers):
+  def _doCombo(self, key_code, modifiers):
     '''
     Perform combo operation.
     
-    @param keyval: Key symbol to press.
-    @type keyval: integer
+    @param key_code: Key code to press.
+    @type key_code: integer
     @param modifiers: Modifier mask to press with.
     @type modifiers: integer
     '''
@@ -178,7 +169,7 @@ class KeyComboAction(AtomicAction):
     for mod_hw_code in mod_hw_codes:
       gobject.timeout_add(interval, self._keyPress, mod_hw_code)
       interval += keystroke_interval
-    gobject.timeout_add(interval, self._keyPressRelease, keyval)
+    gobject.timeout_add(interval, self._keyPressRelease, key_code)
     interval += keystroke_interval
     mod_hw_codes.reverse()
     for mod_hw_code in mod_hw_codes:
@@ -210,10 +201,11 @@ class KeyComboAction(AtomicAction):
     '''
     Press and release non-modifier key.
     
-    @param keyval: Key symbol.
-    @type keyval: integer
+    @param key_code: Key code.
+    @type key_code: integer
     '''
-    pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
+    pyatspi.Registry.generateKeyboardEvent(keyval, None, 
+                                           pyatspi.KEY_PRESSRELEASE)
     return False
 
   def __str__(self):
@@ -263,19 +255,20 @@ class TypeAction(AtomicAction):
     '''
     interval = 0
     for char in string_to_type:
-      keyval = gtk.gdk.unicode_to_keyval(ord(char))
-      gobject.timeout_add(interval, self._charType, keyval)
+      key_code = utils.getKeyCodeFromVal(gtk.gdk.unicode_to_keyval(ord(char)))
+      gobject.timeout_add(interval, self._charType, key_code)
       interval += self.interval 
     gobject.timeout_add(interval, self.stepDone)
 
-  def _charType(self, keyval):
+  def _charType(self, key_code):
     '''
     Type a single character.
     
-    @param keyval: Key symbol to type.
-    @type keyval: intger
+    @param key_code: Key code to type.
+    @type key_code: intger
     '''
-    pyatspi.Registry.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
+    pyatspi.Registry.generateKeyboardEvent(key_code, None, 
+                                           pyatspi.KEY_PRESSRELEASE)
     return False
 
   def __str__(self):
