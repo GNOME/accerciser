@@ -1,20 +1,20 @@
 # Vietnamese translation for Accerciser.
 # Copyright © 2008 GNOME i18n Project for Vietnamese.
 # Clytie Siddall <clytie@riverland.net.au>, 2007-2008.
-# 
+#
 msgid ""
-""
-msgstr "Project-Id-Version: accerciser TRUNK\n"
+msgstr ""
+"Project-Id-Version: accerciser GNOME 2.22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-27 03:18+0000\n"
-"PO-Revision-Date: 2008-01-04 18:52+1030\n"
+"POT-Creation-Date: 2008-03-05 19:16+0000\n"
+"PO-Revision-Date: 2008-06-05 23:46+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.7b1\n"
+"X-Generator: LocFactoryEditor 1.7b3\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accesibility Explorer"
@@ -96,27 +96,34 @@ msgstr "Nguồn"
 msgid "_Monitor Events"
 msgstr "Th_eo dõi sự kiện"
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "Bộ theo dõi sự kiện"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Hiển thị sự kiện đang xảy ra, từ các kiểu và nguồn đã chọn"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "Tô sáng mục sự kiện cuối"
 
-#: ../plugins/event_monitor.py:110
-#: ../plugins/interface_view.py:450
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Bắt đầu/dừng thu sự kiện"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Dọn sổ theo dõi sự kiện"
+
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
 #: ../plugins/interface_view.py:733
 #: ../src/lib/accerciser/accessible_treeview.py:388
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Tên"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:126
 msgid "Full name"
 msgstr "Họ tên"
 
@@ -124,267 +131,267 @@ msgstr "Họ tên"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.glade.h:2
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
+#: ../plugins/interface_view.glade.h:5
 msgid "<b>Attributes</b>"
 msgstr "<b>Thuộc tính</b>"
 
-#: ../plugins/interface_view.glade.h:5
+#: ../plugins/interface_view.glade.h:6
 msgid "<b>Child count</b>"
 msgstr "<b>Số đếm con</b>"
 
-#: ../plugins/interface_view.glade.h:6
+#: ../plugins/interface_view.glade.h:7
 msgid "<b>Description</b>"
 msgstr "<b>Mô tả</b>"
 
-#: ../plugins/interface_view.glade.h:7
+#: ../plugins/interface_view.glade.h:8
 msgid "<b>Relations</b>"
 msgstr "<b>Quan hệ</b>"
 
-#: ../plugins/interface_view.glade.h:8
+#: ../plugins/interface_view.glade.h:9
 msgid "<b>Selected Cell</b>"
 msgstr "<b>Ô đã chọn</b>"
 
-#: ../plugins/interface_view.glade.h:9
+#: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
 msgstr "<b>Tình trạng</b>"
 
-#: ../plugins/interface_view.glade.h:10
+#: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
 msgstr "<b>Thông tin bảng</b>"
 
-#: ../plugins/interface_view.glade.h:11
+#: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
 msgstr "<b>Văn bản</b>"
 
-#: ../plugins/interface_view.glade.h:12
+#: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
 msgstr "<b>không rõ</b>"
 
-#: ../plugins/interface_view.glade.h:13
-#: ../plugins/interface_view.py:318
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:318
 #: ../plugins/interface_view.py:857
 msgid "<i>(no description)</i>"
 msgstr "<i>không mô tả</i>"
 
-#: ../plugins/interface_view.glade.h:14
+#: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
 msgstr "<i>Phụ đề</i>"
 
-#: ../plugins/interface_view.glade.h:15
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>Cuối: 0</i>"
 
-#: ../plugins/interface_view.glade.h:16
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>Đầu : 0</i>"
 
-#: ../plugins/interface_view.glade.h:17
+#: ../plugins/interface_view.glade.h:21
 msgid "<i>Summary:</i>"
 msgstr "<i>Tóm tắt:</i>"
 
-#: ../plugins/interface_view.glade.h:18
+#: ../plugins/interface_view.glade.h:22
 msgid "<no description>"
 msgstr "<không mô tả>"
 
-#: ../plugins/interface_view.glade.h:19
+#: ../plugins/interface_view.glade.h:23
 msgid "Absolute position"
 msgstr "Vị trí tuyệt đối"
 
-#: ../plugins/interface_view.glade.h:20
+#: ../plugins/interface_view.glade.h:24
 msgid "Acti_on"
 msgstr "_Hành động"
 
-#: ../plugins/interface_view.glade.h:21
+#: ../plugins/interface_view.glade.h:25
 msgid "Alpha"
 msgstr "Anfa"
 
-#: ../plugins/interface_view.glade.h:22
+#: ../plugins/interface_view.glade.h:26
 msgid "Ap_plication"
 msgstr "Ứng _dụng"
 
-#: ../plugins/interface_view.glade.h:23
+#: ../plugins/interface_view.glade.h:27
 msgid "Co_mponent"
 msgstr "Thành _phần"
 
-#: ../plugins/interface_view.glade.h:24
+#: ../plugins/interface_view.glade.h:28
 msgid "Col_lection"
 msgstr "Tậ_p hợp"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:29
 msgid "Column"
 msgstr "Cột"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:30
 msgid "Columns"
 msgstr "Cột"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:31
 msgid "Current value"
 msgstr "Giá trị hiện có"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
 msgstr "_Màn hình nền"
 
-#: ../plugins/interface_view.glade.h:29
-#: ../plugins/interface_view.py:455
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:455
+#: ../plugins/validate.py:205
 msgid "Description"
 msgstr "Mô tả"
 
-#.How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:31
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "Chừng mực:"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:36
 msgid "H_ypertext"
 msgstr "_Siêu văn bản"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:37
 msgid "Header:"
 msgstr "Đầu trang:"
 
-#: ../plugins/interface_view.glade.h:34
+#: ../plugins/interface_view.glade.h:38
 msgid "Hyperlink"
 msgstr "Siêu liên kết"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:39
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
 msgstr "Gồm mặc định"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:41
 msgid "Layer"
 msgstr "Lớp"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
 msgstr "Bổ trợ đăn_g xuất"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:43
 msgid "Locale"
 msgstr "Miền địa phương"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:44
 msgid "Locale:"
 msgstr "Miền địa phương:"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:45
 msgid "MDI-Z-order"
 msgstr "Thứ tự MDI-Z"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:46
 msgid "Maximum value"
 msgstr "Giá trị tối đa"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:47
 msgid "Minimum increment"
 msgstr "Tăng dần tối thiểu"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:48
 msgid "Minimum value"
 msgstr "Giá trị tối thiểu"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:49
 msgid "Offset"
 msgstr "Hiệu"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
 msgstr "Thực hiện hành động"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:51
 msgid "Position"
 msgstr "Vị trí"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:52
 msgid "Relative position"
 msgstr "Vị trí tương đối"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:53
 msgid "Row"
 msgstr "Hàng"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:54
 msgid "Rows"
 msgstr "Hàng"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:55
 msgid "Select All"
 msgstr "Chọn tất cả"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:56
 msgid "Selected columns"
 msgstr "Cột đã chọn"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:57
 msgid "Selected rows"
 msgstr "Hàng đã chọn"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:58
 msgid "Show"
 msgstr "Hiện"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:59
 msgid "Size"
 msgstr "Cỡ"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
 msgstr "Nội dung _luồng được"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
 msgstr "_Văn bản"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
 msgstr "Bộ công cụ"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:63
 msgid "Val_ue"
 msgstr "_Giá trị"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:64
 msgid "Version"
 msgstr "Phiên bản"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:65
 msgid "WIDGET"
 msgstr "Ô ĐIỀU KHIỂN"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
 msgstr "T_ruy cập được"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:67
 msgid "_Document"
 msgstr "_Tài liệu"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:68
 msgid "_Image"
 msgstr "Ả_nh"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:69
 msgid "_Selection"
 msgstr "_Vùng chọn"
 
-#: ../plugins/interface_view.glade.h:66
+#: ../plugins/interface_view.glade.h:70
 msgid "_Table"
 msgstr "_Bảng"
 
-#: ../plugins/interface_view.glade.h:67
+#: ../plugins/interface_view.glade.h:71
 msgid "name (x,y)"
 msgstr "tên (x,y)"
 
@@ -396,18 +403,16 @@ msgstr "Bộ xem giao diện"
 msgid "Allows viewing of various interface properties"
 msgstr "Cho phép xem các thuộc tính giao diện khác nhau"
 
-#: ../plugins/interface_view.py:185
-#: ../plugins/interface_view.py:186
+#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
 #: ../plugins/interface_view.py:187
 msgid " (not implemented)"
-msgstr " (chưa được thi hành)"
+msgstr "(chưa được thi hành)"
 
 #: ../plugins/interface_view.py:460
 msgid "Key binding"
 msgstr "Tổ hợp phím"
 
-#: ../plugins/interface_view.py:740
-#: ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
 msgid "URI"
 msgstr "URI"
 
@@ -427,10 +432,9 @@ msgstr "Quá nhiều con chọn được"
 msgid "Content type"
 msgstr "Kiểu nội dung"
 
-#: ../plugins/interface_view.py:1295
-#: ../plugins/interface_view.py:1297
+#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
 msgid " <i>(Editable)</i>"
-msgstr " <i>(Sửa được)</i>"
+msgstr "<i>(Sửa được)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -438,7 +442,8 @@ msgstr "Chọn nhanh"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Phần bổ sung cung cấp các phương pháp khác nhau truy cập nhanh các điều truy "
+msgstr ""
+"Phần bổ sung cung cấp các phương pháp khác nhau truy cập nhanh các điều truy "
 "cập."
 
 #: ../plugins/quick_select.py:20
@@ -449,17 +454,17 @@ msgstr "Xem xét điều truy cập có tiêu điểm cuối cùng"
 msgid "Inspect accessible under mouse"
 msgstr "Xem xét điều truy cập dưới con chuột"
 
-#.A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 #: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#.An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
 #: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#.A native script format.
+#. A native script format.
 #: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr "Sở hữu"
@@ -484,6 +489,160 @@ msgstr "Văn lệnh hiện thời sẽ bị mất."
 msgid "Confirm clear"
 msgstr "Xác nhận xoá"
 
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+msgid "Idle"
+msgstr "Nghỉ"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "_Giản đồ :"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "Thầm tr_a"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Không mô tả"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "Bộ thẩm tra AT-SPI"
+
+#: ../plugins/validate.py:153
+msgid "Validates application accessibility"
+msgstr "Thẩm tra khả năng truy cập của ứng dụng"
+
+#. log level column
+#: ../plugins/validate.py:198
+msgid "Level"
+msgstr "Cấp"
+
+#: ../plugins/validate.py:262
+msgid "Validating"
+msgstr "Đang thẩm tra"
+
+#: ../plugins/validate.py:413
+msgid "EXCEPT"
+msgstr "NGOẠI LỆ"
+
+#: ../plugins/validate.py:420
+msgid "ERROR"
+msgstr "LỖI"
+
+#: ../plugins/validate.py:427
+msgid "WARN"
+msgstr "BÁO"
+
+#: ../plugins/validate.py:433
+msgid "INFO"
+msgstr "TIN"
+
+#: ../plugins/validate.py:439
+msgid "DEBUG"
+msgstr "GỠ LỖI"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Cơ bản"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Thử ra khả năng truy cập cơ bản của ứng dụng GUI"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "%s có thể hoạt động mà không thể nhận tiêu điểm hay được lựa chọn"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "%s tương tác không thể hoạt động"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "nhiều hơn một ô điều khiển có tiêu điểm"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s không có giao diện văn bản"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "chỉ mục %s trong đồ cha không tương ứng với chỉ mục con"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Thiếu đảo nghịch cho quan hệ %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s thiếu tên hay nhãn"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr ""
+"%s có thể nhận tiêu điểm và có giao diện bảng, không phải giao diện lựa chọn"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s có tình trạng %s mà không có tình trạng %s"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s không thuộc về một tập hợp"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "chỉ mục %(rolename)s %(num)d không tương ứng với hàng và cột"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"chỉ mục cha %(rolename)s %(num1)d không tương ứng với chỉ mục hàng và cột %"
+"(num2)d"
+
+#: ../plugindata/validate/basic.py:352
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s không có tên hay mô tả"
+
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
 msgstr "Tù_y thích..."
@@ -492,17 +651,18 @@ msgstr "Tù_y thích..."
 msgid "_Contents"
 msgstr "_Nội dung"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
 "Accerciser could not see the applications on your desktop.You must enable "
 "desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr "Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn "
-"cần phải hiệu lực khả năng truy cập màn hình nền để sửa chữa vấn đề này. Bạn "
-"có muốn hiệu lực nó ngay bây giờ không?"
+msgstr ""
+"Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn "
+"cần phải hiệu lực khả năng truy cập đến màn hình nền để sửa chữa vấn đề này. "
+"Bạn có muốn hiệu lực nó ngay bây giờ không?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
-msgstr "Ghi chú : thay đổi có tác động chỉ sau khi đăng xuất"
+msgstr "Ghi chú : thay đổi có tác động chỉ sau khi đăng xuất."
 
 #: ../src/lib/accerciser/accessible_treeview.py:344
 msgid "<dead>"
@@ -516,7 +676,9 @@ msgstr "Nhiệm vụ"
 msgid "Children"
 msgstr "Con"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
 msgid "Refresh _Current"
 msgstr "_Cập nhật hiện thời"
 
@@ -558,30 +720,32 @@ msgstr "Tùy thích accerciser"
 
 #: ../src/lib/accerciser/prefs_dialog.py:36
 msgid "Plugins"
-msgstr "Bổ sung"
+msgstr "Phần bổ sung"
 
 #: ../src/lib/accerciser/prefs_dialog.py:37
 msgid "Global Hotkeys"
 msgstr "Phím tắt toàn cục"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Nhóm Việt hoá GNOME (http://gnomevi.sourceforge.net)"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Một bộ thám hiểm khả năng truy cập Python tương tác"
 
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Tác quyền © năm 2006, 2007 của công ty IBM Corporation (BSD)"
-
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm "
-"chi tiết."
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr ""
+"accerciser Tác quyền © năm 2006, 2007 của công ty IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr ""
+"Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm "
+"chi tiết."
+
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Chỗ Mạng"
 
@@ -686,17 +850,20 @@ msgstr "_Xem"
 msgid "_Help"
 msgstr "Trợ g_iúp"
 
-#~ msgid "gtk-clear"
-#~ msgstr "gtk-clear"
+msgid "1.0"
+msgstr "1.0"
 
-#~ msgid "gtk-save"
-#~ msgstr "gtk-save"
+msgid "gtk-clear"
+msgstr "gtk-clear"
 
-#~ msgid "gtk-select-all"
-#~ msgstr "gtk-select-all"
+msgid "gtk-save"
+msgstr "gtk-save"
 
-#~ msgid "C"
-#~ msgstr "C"
+msgid "gtk-select-all"
+msgstr "gtk-select-all"
 
-#~ msgid "gtk-media-record"
-#~ msgstr "gtk-media-record"
+msgid "C"
+msgstr "C"
+
+msgid "gtk-media-record"
+msgstr "gtk-media-record"
