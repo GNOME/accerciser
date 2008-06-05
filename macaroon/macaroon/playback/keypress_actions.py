@@ -255,26 +255,25 @@ class TypeAction(AtomicAction):
     '''
     interval = 0
     for char in string_to_type:
-      key_code = utils.getKeyCodeFromVal(gtk.gdk.unicode_to_keyval(ord(char)))
-      gobject.timeout_add(interval, self._charType, key_code, char.isupper())
+      gobject.timeout_add(interval, self._charType, 
+                          gtk.gdk.unicode_to_keyval(ord(char)))
       interval += self.interval 
     gobject.timeout_add(interval, self.stepDone)
 
-  def _charType(self, key_code, upper):
+  def _charType(self, keyval):
     '''
     Type a single character.
     
-    @param key_code: Key code to type.
-    @type key_code: intger
-    @param upper: Is the character uppercase?
-    @type upper: 
+    @param keyval: Key code to type.
+    @type keyval: intger
     '''
-    if upper:
+    key_code, group, level = utils.keymap.get_entries_for_keyval(keyval)[0]
+    if level == 1:
         pyatspi.Registry.generateKeyboardEvent(50, None, 
                                                pyatspi.KEY_PRESS)
     pyatspi.Registry.generateKeyboardEvent(key_code, None, 
                                            pyatspi.KEY_PRESSRELEASE)
-    if upper:
+    if level == 1:
         pyatspi.Registry.generateKeyboardEvent(50, None, 
                                                pyatspi.KEY_RELEASE)
     return False
