@@ -256,19 +256,27 @@ class TypeAction(AtomicAction):
     interval = 0
     for char in string_to_type:
       key_code = utils.getKeyCodeFromVal(gtk.gdk.unicode_to_keyval(ord(char)))
-      gobject.timeout_add(interval, self._charType, key_code)
+      gobject.timeout_add(interval, self._charType, key_code, char.isupper())
       interval += self.interval 
     gobject.timeout_add(interval, self.stepDone)
 
-  def _charType(self, key_code):
+  def _charType(self, key_code, upper):
     '''
     Type a single character.
     
     @param key_code: Key code to type.
     @type key_code: intger
+    @param upper: Is the character uppercase?
+    @type upper: 
     '''
+    if upper:
+        pyatspi.Registry.generateKeyboardEvent(50, None, 
+                                               pyatspi.KEY_PRESS)
     pyatspi.Registry.generateKeyboardEvent(key_code, None, 
                                            pyatspi.KEY_PRESSRELEASE)
+    if upper:
+        pyatspi.Registry.generateKeyboardEvent(50, None, 
+                                               pyatspi.KEY_RELEASE)
     return False
 
   def __str__(self):
