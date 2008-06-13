@@ -11,7 +11,7 @@ available under the terms of the BSD License which accompanies
 this distribution, and is available at 
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import sys, os
+import sys, os, imp
 
 PYGTK_REQ = '2.0'
 GTK_VERSION = (2, 8, 0)
@@ -47,9 +47,17 @@ print
 # Check pyatspi.
 # TODO: This should be done by comparing versions, for now we
 # will just check the API.
-import pyatspi
 try:
-  pyatspi.Registry.pumpQueuedEvents
-except AttributeError:
+  pyatspi_path = imp.find_module('pyatspi')[1]
+  sys.path.insert(0, pyatspi_path)
+  import ORBit
+  ORBit.load_typelib('Accessibility')
+  import registry
+  sys.path.pop(0)
+except ImportError:
+  print 'Error importing pyatspi registry module'
+  sys.exit(1)
+
+if not hasattr(registry.Registry, 'pumpQueuedEvents'):
   print 'Newer version of pyatspi required (>= 1.22.0)'
   sys.exit(1)
