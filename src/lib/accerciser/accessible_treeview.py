@@ -497,6 +497,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
         iter = self.model.get_iter(path)
       except:
         iter = None
+        path = None
       if (event.source == self.desktop) or \
             (path and self.model[path][COL_FILLED]):
         if event.type.minor == 'add':
