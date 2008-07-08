@@ -170,6 +170,19 @@ class Proxy(object):
     '''
     return not self.__eq__(other)
 
+def parseColorString(color_string):
+  '''
+  Parse a string representation of a 24-bit color, and a 8 bit alpha mask.
+
+  @param color_string: String in the format: #rrbbggaa.
+  @type color_string: string
+
+  @return: A color string in the format of #rrggbb, and an opacity value 
+  of 0.0 to 1.0
+  @rtype: tuple of string and float.
+  '''
+  return color_string[:-2], long(color_string[-2:], 16)/255.0
+
 def getTreePathBoundingBox(treeview, path, col):
   '''
   Get bounding box of given tree path.
@@ -186,4 +199,3 @@ def getTreePathBoundingBox(treeview, path, col):
   rect.x += x
   rect.y += y
   return rect
-

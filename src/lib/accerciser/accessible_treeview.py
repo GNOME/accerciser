@@ -798,4 +798,4 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param view_column: The column in the activated row.
     @type view_column: L{gtk.TreeViewColumn}
     '''
-    self.node.blinkRect()
+    self.node.highlight()

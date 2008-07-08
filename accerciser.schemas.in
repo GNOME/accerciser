@@ -33,5 +33,36 @@
         <long>A list of plugins that are disabled by default</long>
       </locale>
     </schema>
+    <schema>
+	  <key>/schemas/apps/accerciser/highlight_duration</key>
+	  <applyto>/apps/accerciser/highlight_duration</applyto>
+	  <type>float</type>
+	  <default>0.5</default>
+      <locale name="C">
+        <short>Highlight duration</short>
+        <long>The duration of the highlight box when selecting
+  accessible nodes</long>
+      </locale>
+    </schema>
+    <schema>
+	  <key>/schemas/apps/accerciser/highlight_border</key>
+	  <applyto>/apps/accerciser/highlight_border</applyto>
+	  <type>string</type>
+	  <default>0xff0000ff</default>
+      <locale name="C">
+        <short>Highlight border color</short>
+        <long>The color and opacity of the highlight border.</long>
+      </locale>
+    </schema>
+    <schema>
+	  <key>/schemas/apps/accerciser/highlight_fill</key>
+	  <applyto>/apps/accerciser/highlight_fill</applyto>
+	  <type>string</type>
+	  <default>0xff00006f</default>
+      <locale name="C">
+        <short>Highlight fill color</short>
+        <long>The color and opacity of the highlight fill.</long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>

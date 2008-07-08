@@ -15,9 +15,22 @@ import gtk
 import gtk.gdk
 import pyatspi
 import gobject
-from tools import Tools
+import string
+import rsvg
+import cairo
+from tools import Tools, parseColorString
+import gconf
 
 MAX_BLINKS = 6
+
+cl = gconf.client_get_default()
+BORDER_COLOR, BORDER_ALPHA = parseColorString(
+  cl.get_string('/apps/accerciser/highlight_border'))
+
+FILL_COLOR, FILL_ALPHA  = parseColorString(
+  cl.get_string('/apps/accerciser/highlight_fill'))
+
+HL_DURATION = int(cl.get_float('/apps/accerciser/highlight_duration')*1000)
 
 class Bag(object):
   '''
@@ -79,7 +92,7 @@ class Node(gobject.GObject, Tools):
       if isinstance(i, pyatspi.Accessibility.Component):
         self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.tree_path = None
-    self.blinkRect()
+    self.highlight()
     self.emit('accessible-changed', acc)
   
   def updateToPath(self, app_name, path):
@@ -104,6 +117,17 @@ class Node(gobject.GObject, Tools):
       except IndexError:
         return
     self.update(acc)
+
+  def highlight(self):
+    if self.extents is None or \
+          0 in (self.extents.width, self.extents.height) or \
+          -0x80000000 in (self.extents.x, self.extents.y):
+      return
+    ah = _HighLight(self.extents.x, self.extents.y, 
+                    self.extents.width, self.extents.height, 
+                    FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
+                    2.0, 0)
+    ah.highlight(HL_DURATION)
 
   def blinkRect(self, times=MAX_BLINKS):
     '''
@@ -151,3 +175,99 @@ class Node(gobject.GObject, Tools):
       return False
     return True
 
+class _HighLight(gtk.Window):
+  '''
+  Highlight box class. Uses compositing when available. When not, it does
+  transparency client-side.
+  '''
+  _svg = r"""
+<svg width="100%" height="100%" version="1.1"
+  xmlns="http://www.w3.org/2000/svg">
+  <rect x="$x" y="$y" width="$width" height="$height"
+      style="fill:$fill;stroke-width:$stroke_width;stroke:$stroke;
+      fill-opacity:$fill_opacity;stroke-opacity:$stroke_opacity"
+      rx="2" ry="2"
+      />
+</svg>
+"""
+  def __init__(self, x, y, w, h, 
+               fill_color, fill_alpha,
+               stroke_color, stroke_alpha, 
+               stroke_width, padding=0):
+
+    # Initialize window.
+    gtk.Window.__init__(self, gtk.WINDOW_POPUP)
+
+    # Normalize position for stroke and padding.
+    self.x, self.y = x - padding, y - padding
+    self.w, self.h = w + padding*2, h + padding*2
+
+    # Determine if we are compositing.
+    self._composited = self.is_composited()
+    if False:
+      # Prepare window for transparency.
+      screen = self.get_screen()
+      colormap = screen.get_rgba_colormap()
+      self.set_colormap(colormap)
+    else:
+      # Take a screenshot for compositing on the client side.
+      self.root = gtk.gdk.get_default_root_window().get_image(
+        self.x, self.y, self.w, self.h)
+
+    # Place window, and resize it, and set proper properties.
+    self.set_app_paintable(True)
+    self.set_decorated(False)
+    self.set_keep_above(True)
+    self.move(self.x, self.y)
+    self.resize(self.w, self.h)
+    self.set_accept_focus(False)
+    self.set_sensitive(False)
+
+    # Create SVG with given parameters.
+    offset = stroke_width/2.0
+    self.svg = string.Template(self._svg).substitute(
+      x=offset, y=offset,
+      width=int(self.w - stroke_width), height=int(self.h - stroke_width),
+      fill=fill_color, 
+      stroke_width=stroke_width,
+      stroke=stroke_color,
+      fill_opacity=fill_alpha,
+      stroke_opacity=stroke_alpha)
+
+    # Connect "expose" event.
+    self.connect("expose-event", self._onExpose)
+    
+  def highlight(self, duration=0):
+    if duration > 0:
+      gobject.timeout_add(duration, lambda w: w.destroy(), self)
+    self.show_all()
+    
+
+  def _onExpose(self, widget, event):
+    svgh = rsvg.Handle()
+    try:
+      svgh.write(self.svg)
+    except (gobject.GError, KeyError, ValueError), ex:
+      print 'Error reading SVG for display: %s\r\n%s', ex, self.svg
+      svgh.close()
+      return
+    finally:
+      svgh.close()
+      
+    if not self._composited:
+      # Draw the screengrab of the underlaying window, and set the drawing
+      # operator to OVER.
+      self.window.draw_image(self.style.black_gc, self.root, 
+                             event.area.x,event.area.y, 
+                             event.area.x, event.area.y, 
+                             event.area.width, event.area.height)
+      cairo_operator = cairo.OPERATOR_OVER
+    else:
+      cairo_operator = cairo.OPERATOR_SOURCE
+    cr = self.window.cairo_create()
+    cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
+    cr.set_operator(cairo_operator)
+    cr.paint()
+
+    svgh.render_cairo( cr )
+    del svgh
