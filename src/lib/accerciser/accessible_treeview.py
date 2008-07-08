@@ -16,9 +16,10 @@ import gtk
 import gobject
 import pyatspi
 import atk, os
+import ui_manager
 from icons import getIcon
 from node import Node
-from tools import Tools
+from tools import Tools, getTreePathBoundingBox
 from i18n import _
 
 COL_ICON = 0
@@ -426,15 +427,61 @@ class AccessibleTreeView(gtk.TreeView, Tools):
 
     self.action_group = gtk.ActionGroup('TreeActions')
     self.action_group.add_actions([
-        ('RefreshAll', gtk.STOCK_REFRESH, None,
-         None, 'Refresh all', self._refreshTopLevel),
+        ('RefreshAll', gtk.STOCK_REFRESH, _('_Refresh Registry'),
+        # Translators: Appears as tooltip
+        #
+         None, _('Refresh all'), self._refreshTopLevel),
         # Translators: Refresh current tree node's children.
         #
-        ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Current'),
-         None, 'Refresh selected node\'s children', self._refreshCurrentLevel)])  
+        ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Node'),
+        # Translators: Appears as tooltip
+        #
+         None, _('Refresh selected node\'s children'), 
+         self._refreshCurrentLevel)])  
 
     self.refresh_current_action = self.action_group.get_action('RefreshCurrent')
     self.refresh_current_action.set_sensitive(False)
+
+    self.connect('popup-menu', self._onPopup)
+    self.connect('button-press-event', self._onPopup)
+
+    self.connect('cursor-changed', self._onCursorChanged)
+
+  def _onCursorChanged(self, tree):
+    '''
+    Set sensitivity of refresh function only if the tree cursor is 
+    on an accessible.
+    '''
+    path = self.get_cursor()[0]
+    self.refresh_current_action.set_sensitive(path is not None)      
+
+  def _onPopup(self, w, event=None):
+    '''
+    Callback for popup button or right mouse button. Brings up a context
+    menu.
+    '''
+    if event:
+      if event.button != 3:
+        return False
+      path = self.get_path_at_pos(int(event.x), int(event.y))[0]
+      selection = self.get_selection()
+      selection.set_mode(gtk.SELECTION_NONE)
+      self.set_cursor(path)
+      selection.set_mode(gtk.SELECTION_SINGLE)      
+      time = event.time
+      button = event.button
+      func = None
+      extra_data = None
+    else:
+      path, col= self.get_cursor()
+      time = gtk.get_current_event_time()
+      button = 0
+      extra_data = getTreePathBoundingBox(self, path, col)
+      func = lambda m, b: (b.x, b.y + (b.height/2), True)
+      
+    menu = ui_manager.uimanager.get_widget(ui_manager.POPUP_MENU_PATH)
+    menu.popup(None, None, func, button, time, extra_data)
+    return True
 
   def _refreshTopLevel(self, action=None):
     '''
@@ -454,13 +501,12 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param action: Action object that emitted this signal, if any.
     @type: gtk.Action
     '''
-    selection = self.get_selection()
-    model, iter = selection.get_selected()
-    is_expanded = self.row_expanded(self.model.get_path(iter))
-    self._refreshChildren(iter)
+    path = self.get_cursor()[0]
+    is_expanded = self.row_expanded(path)
+    self._refreshChildren(self.model.get_iter(path))
     if is_expanded:
-      self.expand_row(self.model.get_path(iter), False)
-      self._onExpanded(self, iter, self.model.get_path(iter))
+      self.expand_row(path, False)
+      self._onExpanded(self, self.model.get_iter(path), path)
 
   def _onExpanded(self, treeview, iter, path):
     '''
@@ -607,10 +653,8 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     model, iter = selection.get_selected()
     if iter:
       new_acc = model[iter][COL_ACC]
-      self.refresh_current_action.set_sensitive(True)
     else:
       new_acc = self.desktop
-      self.refresh_current_action.set_sensitive(False)
     if new_acc == self.node.acc:
       return
     self.node.handler_block(self._changed_handler)

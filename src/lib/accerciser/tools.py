@@ -169,3 +169,21 @@ class Proxy(object):
     Inverse of __eq__.
     '''
     return not self.__eq__(other)
+
+def getTreePathBoundingBox(treeview, path, col):
+  '''
+  Get bounding box of given tree path.
+  '''
+  gdkwindow = treeview.window
+  x, y = treeview.allocation.x, treeview.allocation.y
+  while gdkwindow:
+    window_x, window_y = gdkwindow.get_position()
+    x += window_x
+    y += window_y
+    gdkwindow = gdkwindow.get_parent()
+  rect = treeview.get_cell_area(path, col)
+  rect.x, rect.y = treeview.tree_to_widget_coords(rect.x, rect.y)
+  rect.x += x
+  rect.y += y
+  return rect
+

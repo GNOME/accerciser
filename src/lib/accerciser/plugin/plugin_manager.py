@@ -15,7 +15,7 @@ import gtk
 import gobject
 from base_plugin import Plugin
 from view import ViewManager
-from accerciser.tools import Tools, GConfListWrapper
+from accerciser.tools import Tools, GConfListWrapper, getTreePathBoundingBox
 from message import MessageManager
 import os
 import sys
@@ -407,17 +407,7 @@ class PluginManager(gtk.ListStore, Tools):
       @rtype: boolean
       '''
       path, col = self.get_cursor()
-      gdkwindow = self.window
-      x, y = self.allocation.x, self.allocation.y
-      while gdkwindow:
-        window_x, window_y = gdkwindow.get_position()
-        x += window_x
-        y += window_y
-        gdkwindow = gdkwindow.get_parent()
-      rect = self.get_cell_area(path, col)
-      rect.x, rect.y = self.tree_to_widget_coords(rect.x, rect.y)
-      rect.x += x
-      rect.y += y
+      rect = getTreePathBoundingBox(self, path, col)
       self._showPopup(0, gtk.get_current_event_time(), 
                       path, lambda m, r: (r.x, r.y, True), rect)
       return True

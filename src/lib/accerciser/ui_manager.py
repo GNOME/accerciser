@@ -42,6 +42,8 @@ ui_xml = '''
     <menu action="Help">
     </menu>
   </menubar>
+  <popup name="AccTreePopup">
+  </popup>
 </ui>
 '''
 
@@ -53,6 +55,7 @@ VIEW_MENU_PATH = MAIN_MENU_PATH+'/View'
 PLUGIN_LAYOUT_PATH = VIEW_MENU_PATH+'/PluginLayout'
 TREE_ACTIONS_PATH = VIEW_MENU_PATH+'/TreeActions'
 HELP_MENU_PATH = MAIN_MENU_PATH+'/Help'
+POPUP_MENU_PATH = '/AccTreePopup'
 
 uimanager = gtk.UIManager()
 uimanager.insert_action_group(menu_actions, 0)

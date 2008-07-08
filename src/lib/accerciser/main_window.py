@@ -90,6 +90,12 @@ class AccerciserMainWindow(gtk.Window):
       ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH, 
                                   action_name, action_name, 
                                   gtk.UI_MANAGER_MENUITEM, False)
+    
+    merge_id = ui_manager.uimanager.new_merge_id()
+    action_name = self.treeview.refresh_current_action.get_name()
+    ui_manager.uimanager.add_ui(merge_id, ui_manager.POPUP_MENU_PATH,
+                                 action_name, action_name,
+                                 gtk.UI_MANAGER_MENUITEM, False)
 
     sw.add(self.treeview)
     self._hpaned.add1(sw)
