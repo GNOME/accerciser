@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-04 16:57+0700\n"
-"PO-Revision-Date: 2008-07-04 17:00+0700\n"
+"POT-Creation-Date: 2008-07-10 19:37+0700\n"
+"PO-Revision-Date: 2008-07-10 19:48+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "รายการปลั๊กอินที่ปิดโดยปริยาย"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "สีของเส้นขอบกล่องเน้น"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "ระยะเวลาการเน้น"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "สีเติมกล่องเน้น"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "สีและความทึบแสงของเส้นขอบกล่องเน้น"
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "สีและความทึบแสงสำหรับเติมในกล่องเน้น"
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "การจัดวางปลั๊กอินสำหรับช่องด้านล่าง"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "การจัดวางปลั๊กอินสำหรับช่องด้านบน"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "ระยะเวลาของการเน้นด้วยกล่องเมื่อเลือกโหนดที่มีสิ่งอำนวยความสะดวก"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -118,7 +142,7 @@ msgstr "ล้างบันทึกเหตุการณ์"
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736 ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ชื่อ"
@@ -523,7 +547,7 @@ msgid "Level"
 msgstr "ระดับ"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "บทบาท"
 
@@ -675,19 +699,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "สังเกต: การเปลี่ยนแปลงจะมีผลหลังจากเข้าระบบใหม่เท่านั้น"
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<ตาย>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "ลูก"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "ปรับแสดงเ_รจิสตรี"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "แสดงรายการ_ปัจจุบันใหม่"
+msgid "Refresh all"
+msgstr "ปรับแสดงทั้งหมด"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "ปรับแสดงโห_นด"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "ปรับแสดงโหนดลูกต่างๆ ของโหนดที่เลือก"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -721,17 +761,41 @@ msgstr "ช่องด้านบน"
 msgid "Bottom panel"
 msgstr "ช่องด้านล่าง"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "ปรับแต่ง accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "ปลั๊กอิน"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "คีย์ด่วนทั่วไป"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "การเน้น"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "ระยะเวลาการเน้น:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "สีเส้นขอบ"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "สีเส้นขอบของกล่องเน้น"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "สีเติม:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "สีที่เติมในกล่องเน้น"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -816,7 +880,7 @@ msgstr "ข้อผิดพลาดปลั๊กอิน"
 msgid "View"
 msgstr "แสดง"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "ไม่แสดง"
 
