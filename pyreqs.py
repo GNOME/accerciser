@@ -14,6 +14,7 @@ U{http://www.opensource.org/licenses/bsd-license.php}
 import sys, os, imp
 
 PYGTK_REQ = '2.0'
+PYATSPI_REQ = (2,23,3)
 GTK_VERSION = (2, 8, 0)
 
 try:
@@ -24,7 +25,8 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['bonobo', 'ORBit', 'pygtk', 'gtk', 'gtk.glade', 'gtk.gdk', 'wnck']
+modules = ['bonobo', 'ORBit', 'pygtk', 'gtk', 
+           'gtk.glade', 'gtk.gdk', 'wnck', 'pyatspi']
 for name in modules:
   try:
     m = __import__(name)
@@ -42,22 +44,15 @@ for name in modules:
     m.require('2.0')
   elif name == 'gtk':
     m.check_version(*GTK_VERSION)
+  elif name =='pyatspi':
+    try:
+      compared = map(lambda x: cmp(*x),  zip(PYATSPI_REQ, m.__version__))
+    except AttributeError:
+      # Installed pyatspi does not support __version__, too old.
+      compared = [-1, 0, 0]
+    if -1 in compared and 1 not in compared[:compared.index(-1)]:
+      # A -1 without a 1 preceding it means an older version.
+      print
+      print "Need pyatspi 1.23.4 or higher (or SVN trunk)"
+      sys.exit(1)
 print
-
-# Check pyatspi.
-# TODO: This should be done by comparing versions, for now we
-# will just check the API.
-try:
-  pyatspi_path = imp.find_module('pyatspi')[1]
-  sys.path.insert(0, pyatspi_path)
-  import ORBit
-  ORBit.load_typelib('Accessibility')
-  import registry
-  sys.path.pop(0)
-except ImportError:
-  print 'Error importing pyatspi registry module'
-  sys.exit(1)
-
-if not hasattr(registry.Registry, 'pumpQueuedEvents'):
-  print 'Newer version of pyatspi required (>= 1.22.0)'
-  sys.exit(1)
