@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acceriser 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 21:04+0200\n"
-"PO-Revision-Date: 2008-04-22 21:10+0200\n"
+"POT-Creation-Date: 2008-07-28 20:34+0200\n"
+"PO-Revision-Date: 2008-07-28 20:37+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "En liste med tillegg som er deaktivert som forvalg"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr ""
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr ""
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Forvalgt utforming for tillegg for bunnpanelet"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Forvalgt utforming for tillegg på det øverste panelet"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr ""
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -118,7 +142,7 @@ msgstr "Tøm hendelseslogg"
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736 ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Navn"
@@ -524,7 +548,7 @@ msgid "Level"
 msgstr "Nivå"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Rolle"
 
@@ -669,25 +693,44 @@ msgstr "_Innhold"
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser kunne ikke se programmene på skrivebordet ditt. Du må aktivere tilgjengelighetsfunksjoner for skrivebordet for å løse dette problemet. Vil du aktivere det nå?"
+msgstr ""
+"Accerciser kunne ikke se programmene på skrivebordet ditt. Du må aktivere "
+"tilgjengelighetsfunksjoner for skrivebordet for å løse dette problemet. Vil "
+"du aktivere det nå?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Merk: Endringer trer først i kraft etter at du har logget ut."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<død>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Underkomponenter"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Oppdater _register"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Oppdater _nåværende"
+msgid "Refresh all"
+msgstr "Oppdater alle"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Oppdater _node"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Oppdater valgte nodes barn"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -721,17 +764,41 @@ msgstr "Toppanel"
 msgid "Bottom panel"
 msgstr "Bunnpanel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Brukervalg for accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Tillegg"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Globale hurtigtaster"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Utheving"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Varighet for utheving:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Farge på kant:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Kantfarge for uthevingsboks"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Farge på fyll:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Fyllfarge for uthevingsboks"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -814,7 +881,7 @@ msgstr "Feil i tillegg"
 msgid "View"
 msgstr "Visning"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Ingen visning"
 
