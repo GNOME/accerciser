@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.22\n"
+"Project-Id-Version: 2.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-03 00:39+0000\n"
-"PO-Revision-Date: 2008-03-03 00:40+0000\n"
+"POT-Creation-Date: 2008-07-31 12:35+0100\n"
+"PO-Revision-Date: 2008-07-31 12:40+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Uma lista de plugins que estão desactivados por omissão"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Cor de realce de margem"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Duração do realce"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Cor de realce do enchimento"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "A cor e opacidade da margem de realce."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "A cor e opacidade do enchimento de realce."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "A disposição por omissão dos plugins no painel inferior"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "A disposição por omissão dos plugins no painel superior"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "A duração da caixa de realce ao seleccionar nós acessíveis"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -118,9 +142,10 @@ msgstr "Iniciar/parar a gravação de eventos"
 msgid "Clear event log"
 msgstr "Limpar o registo de eventos"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nome"
@@ -133,309 +158,314 @@ msgstr "Nome completo"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.glade.h:2
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
+#: ../plugins/interface_view.glade.h:5
 msgid "<b>Attributes</b>"
 msgstr "<b>Atributos</b>"
 
-#: ../plugins/interface_view.glade.h:5
+#: ../plugins/interface_view.glade.h:6
 msgid "<b>Child count</b>"
 msgstr "<b>Número de filhos</b>"
 
-#: ../plugins/interface_view.glade.h:6
+#: ../plugins/interface_view.glade.h:7
 msgid "<b>Description</b>"
 msgstr "<b>Descrição</b>"
 
-#: ../plugins/interface_view.glade.h:7
+#: ../plugins/interface_view.glade.h:8
 msgid "<b>Relations</b>"
 msgstr "<b>Relações</b>"
 
-#: ../plugins/interface_view.glade.h:8
+#: ../plugins/interface_view.glade.h:9
 msgid "<b>Selected Cell</b>"
 msgstr "<b>Célula Seleccionada</b>"
 
-#: ../plugins/interface_view.glade.h:9
+#: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
 msgstr "<b>Estados</b>"
 
-#: ../plugins/interface_view.glade.h:10
+#: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
 msgstr "<b>Informação de Tabela</b>"
 
-#: ../plugins/interface_view.glade.h:11
+#: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
 msgstr "<b>Texto</b>"
 
-#: ../plugins/interface_view.glade.h:12
+#: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
 msgstr "<b>desconhecido</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
+#: ../plugins/interface_view.py:860
 msgid "<i>(no description)</i>"
 msgstr "<i>(sem descrição)</i>"
 
-#: ../plugins/interface_view.glade.h:14
+#: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
 msgstr "<i>Legenda:</i>"
 
-#: ../plugins/interface_view.glade.h:15
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>Fim: 0</i>"
 
-#: ../plugins/interface_view.glade.h:16
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>Início: 0</i>"
 
-#: ../plugins/interface_view.glade.h:17
+#: ../plugins/interface_view.glade.h:21
 msgid "<i>Summary:</i>"
 msgstr "<i>Resumo:</i>"
 
-#: ../plugins/interface_view.glade.h:18
+#: ../plugins/interface_view.glade.h:22
 msgid "<no description>"
 msgstr "<sem descrição>"
 
-#: ../plugins/interface_view.glade.h:19
+#: ../plugins/interface_view.glade.h:23
 msgid "Absolute position"
 msgstr "Posição absoluta"
 
-#: ../plugins/interface_view.glade.h:20
+#: ../plugins/interface_view.glade.h:24
 msgid "Acti_on"
 msgstr "Acçã_o"
 
-#: ../plugins/interface_view.glade.h:21
+#: ../plugins/interface_view.glade.h:25
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.glade.h:22
+#: ../plugins/interface_view.glade.h:26
 msgid "Ap_plication"
 msgstr "A_plicação"
 
-#: ../plugins/interface_view.glade.h:23
+#: ../plugins/interface_view.glade.h:27
 msgid "Co_mponent"
 msgstr "Co_mponente"
 
-#: ../plugins/interface_view.glade.h:24
+#: ../plugins/interface_view.glade.h:28
 msgid "Col_lection"
 msgstr "Catá_logo"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:29
 msgid "Column"
 msgstr "Coluna"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:30
 msgid "Columns"
 msgstr "Colunas"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:31
 msgid "Current value"
 msgstr "Valor actual"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
 msgstr "Am_biente de Trabalho"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
-#: ../plugins/validate.py:205
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Descrição"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "Extende-se:"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:36
 msgid "H_ypertext"
 msgstr "H_ipertexto"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:37
 msgid "Header:"
 msgstr "Cabeçalho:"
 
-#: ../plugins/interface_view.glade.h:34
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hiperligação"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:39
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
 msgstr "Incluir valores por omissão"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:41
 msgid "Layer"
 msgstr "Camada"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
 msgstr "Assistente de Início de _Sessão"
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:43
 msgid "Locale"
 msgstr "Configuração Regional"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:44
 msgid "Locale:"
 msgstr "Configuração Regional:"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:45
 msgid "MDI-Z-order"
 msgstr "Ordem-Z-MDI"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:46
 msgid "Maximum value"
 msgstr "Valor máximo"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:47
 msgid "Minimum increment"
 msgstr "Incremento mínimo"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:48
 msgid "Minimum value"
 msgstr "Valor mínimo"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:49
 msgid "Offset"
 msgstr "Deslocamento"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
 msgstr "Realizar acção"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:51
 msgid "Position"
 msgstr "Posição"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:52
 msgid "Relative position"
 msgstr "Posição relativa"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:53
 msgid "Row"
 msgstr "Linha"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:54
 msgid "Rows"
 msgstr "Linhas"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:55
 msgid "Select All"
 msgstr "Seleccionar Tudo"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:56
 msgid "Selected columns"
 msgstr "Colunas seleccionadas"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:57
 msgid "Selected rows"
 msgstr "Linhas seleccionadas"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:58
 msgid "Show"
 msgstr "Apresentar"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:59
 msgid "Size"
 msgstr "Tamanho"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
 msgstr "Conteúdo em Flu_xo"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
 msgstr "Te_xto"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
 msgstr "Caixa de Ferramentas"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:63
 msgid "Val_ue"
 msgstr "Val_or"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:64
 msgid "Version"
 msgstr "Versão"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:65
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
 msgstr "_Acessível"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:67
 msgid "_Document"
 msgstr "_Documento"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:68
 msgid "_Image"
 msgstr "_Imagem"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:69
 msgid "_Selection"
 msgstr "_Selecção"
 
-#: ../plugins/interface_view.glade.h:66
+#: ../plugins/interface_view.glade.h:70
 msgid "_Table"
 msgstr "_Tabela"
 
-#: ../plugins/interface_view.glade.h:67
+#: ../plugins/interface_view.glade.h:71
 msgid "name (x,y)"
 msgstr "nome (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
 msgid "Interface Viewer"
 msgstr "Visualizador de Interface"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
 msgid "Allows viewing of various interface properties"
 msgstr "Permite a visualização de várias propriedades do interface"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
-msgid " (not implemented)"
-msgstr " (não implementado)"
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:190
+msgid "(not implemented)"
+msgstr "(não implementado)"
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:463
 msgid "Key binding"
 msgstr "Associação de teclas"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:750
 msgid "Start"
 msgstr "Iniciar"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:757
 msgid "End"
 msgstr "Fim"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:927
 msgid "Too many selectable children"
 msgstr "Demasiados filhos seleccionáveis"
 
-#: ../plugins/interface_view.py:1019
+#: ../plugins/interface_view.py:1022
 msgid "Content type"
 msgstr "Tipo de conteúdo"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
-msgid " <i>(Editable)</i>"
-msgstr " <i>(Editável)</i>"
+#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+msgid "<i>(Editable)</i>"
+msgstr "<i>(Editável)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -488,7 +518,8 @@ msgstr "O script actual será perdido."
 msgid "Confirm clear"
 msgstr "Confirmar o limpar"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Inactivo"
 
@@ -508,36 +539,46 @@ msgstr "Sem descrição"
 msgid "AT-SPI Validator"
 msgstr "Validador AT-SPI"
 
-#: ../plugins/validate.py:153
+#: ../plugins/validate.py:154
 msgid "Validates application accessibility"
 msgstr "Valida o suporte de acessibilidade de aplicações"
 
 #. log level column
-#: ../plugins/validate.py:198
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Nível"
 
-#: ../plugins/validate.py:262
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Papel"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "A gravar"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "A validar"
 
-#: ../plugins/validate.py:413
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "EXCEPÇÃO"
 
-#: ../plugins/validate.py:420
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "ERRO"
 
-#: ../plugins/validate.py:427
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "AVISO"
 
-#: ../plugins/validate.py:433
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:439
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEPURAÇÃO"
 
@@ -595,7 +636,11 @@ msgstr "%s não tem nome ou etiqueta"
 msgid "focusable %s has table interface, no selection interface"
 msgstr "focável %s possui interface de tabela, nenhum interface de selecção"
 
-#: ../plugindata/validate/basic.py:233
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s possui o estado %s sem o estado %s"
@@ -603,17 +648,17 @@ msgstr "%s possui o estado %s sem o estado %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:258
+#: ../plugindata/validate/basic.py:262
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s não pertence a um conjunto"
 
-#. Translators: The row or column number retrieved from a table child's object
-#. at a certain index is wrong.
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:292
+#: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "o índice %(num)d de %(rolename)s não coincide com a linha e coluna"
@@ -624,15 +669,16 @@ msgstr "o índice %(num)d de %(rolename)s não coincide com a linha e coluna"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:322
+#: ../plugindata/validate/basic.py:326
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
 "(num2)d"
 msgstr ""
-"o índice de pai %(num1)d de %(rolename)s não coincide com o índice de linha e coluna %(num2)d"
+"o índice de pai %(num1)d de %(rolename)s não coincide com o índice de linha "
+"e coluna %(num2)d"
 
-#: ../plugindata/validate/basic.py:348
+#: ../plugindata/validate/basic.py:352
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s não possui nome nem descrição"
@@ -647,8 +693,8 @@ msgstr "_Conteúdo"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "O Accerciser foi incapaz de visualizar as aplicações na sua área de "
 "trabalho. Tem de activar a acessibilidade do ambiente de trabalho para "
@@ -658,21 +704,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: As alterações apenas terão efeito após reiniciar a sessão."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<morto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Papel"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Filhos"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
-msgid "Refresh _Current"
-msgstr "Actualizar _Actual"
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Actualizar o _Registo"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
+msgid "Refresh all"
+msgstr "Actualizar tudo"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Actualizar _Nó"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Actualizar os filhos do nó seleccionado"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -706,17 +766,41 @@ msgstr "Painel superior"
 msgid "Bottom panel"
 msgstr "Painel inferior"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Preferências do Accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Plugins"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Atalhos de Teclado Globais"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Realce"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Duração do realce:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Cor da margem:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "A cor da margem da caixa de realce"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Cor de enchimento:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "A cor de enchimento da caixa de realce"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -791,11 +875,14 @@ msgstr "Caminho:"
 msgid "Plugin Errors"
 msgstr "Erros de Plugin"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgid "View"
 msgstr "Ver"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Sem vista"
 
@@ -839,6 +926,9 @@ msgstr "_Ver"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Ajuda"
+
+#~ msgid "1.0"
+#~ msgstr "1.0"
 
 #~ msgid "gtk-clear"
 #~ msgstr "gtk-clear"
