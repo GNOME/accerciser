@@ -25,10 +25,10 @@ MAX_BLINKS = 6
 
 cl = gconf.client_get_default()
 BORDER_COLOR, BORDER_ALPHA = parseColorString(
-  cl.get_string('/apps/accerciser/highlight_border'))
+  cl.get_string('/apps/accerciser/highlight_border') or '#ff0000ff') 
 
 FILL_COLOR, FILL_ALPHA  = parseColorString(
-  cl.get_string('/apps/accerciser/highlight_fill'))
+  cl.get_string('/apps/accerciser/highlight_fill') or '#ff00006f')
 
 HL_DURATION = int(cl.get_float('/apps/accerciser/highlight_duration')*1000)
 
@@ -251,8 +251,7 @@ class _HighLight(gtk.Window):
       print 'Error reading SVG for display: %s\r\n%s', ex, self.svg
       svgh.close()
       return
-    finally:
-      svgh.close()
+    svgh.close()
       
     if not self._composited:
       # Draw the screengrab of the underlaying window, and set the drawing
