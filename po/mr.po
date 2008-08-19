@@ -1,0 +1,921 @@
+# translation of accerciser.HEAD.po to marathi
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-15 03:58+0000\n"
+"PO-Revision-Date: 2008-08-19 16:25+0530\n"
+"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser Accessibility Explorer"
+msgstr "Accerciser प्रवेशीय शोधकर्ता"
+
+#: ../accerciser.desktop.in.in.h:2
+msgid "Give your application an accessibility workout"
+msgstr "अनुप्रयोगास प्रवेशीय कार्य करीता कार्यान्वीत करा"
+
+#: ../accerciser.schemas.in.h:1
+msgid "A list of plugins that are disabled by default"
+msgstr "मुलभूतरित्या प्लगईनची यादी अकार्यान्वीत करा"
+
+#: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "किनार रंग ठळक करा"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "कालवधी ठळक करा"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "रंग भराव ठळक करा"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "ठळक किनारचे रंग व अपारदर्शियता."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "ठळक भरावाचे रंग व अपारदर्शियता."
+
+#: ../accerciser.schemas.in.h:7
+msgid "The default plugin layout for the bottom panel"
+msgstr "तळावरील पटल करीता मुलभूत प्लगइन मांडणी"
+
+#: ../accerciser.schemas.in.h:8
+msgid "The default plugin layout for the top panel"
+msgstr "शिर्ष पटल करीता मुलभूत प्लगइन मांडणी"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "प्रवेशीय नोड निवडतेवेळी चौकोन ठळकरित्या दर्शविण्याकरीता कालावधी"
+
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API ब्राऊजर"
+
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "वर्तमान प्रवेशीयचे विविध कार्यपद्धतीचे संचारन करा"
+
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "व्यक्तिगत गुणधर्म लपवा"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "कार्यपद्धती"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "गुणविशेष"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "मुल्य"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "IPython कंसोल"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "वर्तमान निवडलेले प्रवेशीय घटकाचे बदल करीता परस्पर कंसोल"
+
+#: ../plugins/event_monitor.glade.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>घटना नियंत्रक</b>"
+
+#: ../plugins/event_monitor.glade.h:2
+msgid "C_lear Selection"
+msgstr "निवड पुसून टाका (_l)"
+
+#: ../plugins/event_monitor.glade.h:3
+msgid "Everything"
+msgstr "सगळे"
+
+#: ../plugins/event_monitor.glade.h:4
+msgid "Selected accessible"
+msgstr "प्रवेशीय निवडले"
+
+#: ../plugins/event_monitor.glade.h:5
+msgid "Selected application"
+msgstr "अनुप्रयोग निवडले"
+
+#: ../plugins/event_monitor.glade.h:6
+msgid "Source"
+msgstr "स्त्रोत"
+
+#: ../plugins/event_monitor.glade.h:7
+msgid "_Monitor Events"
+msgstr "घटना नियंत्रण (_M)"
+
+#: ../plugins/event_monitor.py:48
+msgid "Event Monitor"
+msgstr "घटना नियंत्रण (_M)"
+
+#: ../plugins/event_monitor.py:51
+msgid "Shows events as they occur from selected types and sources"
+msgstr "निवडलेले प्रकार व स्त्रोत पासून घटना ज्यानुरूप घडते त्यानुरूप दर्शवा"
+
+#: ../plugins/event_monitor.py:61
+msgid "Highlight last event entry"
+msgstr "शेवटची घटना नोंदणी ठळक करा"
+
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "घटना रेकॉर्डींग सुरू करा/ बंद करा"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "घटना लॉग पुसून टाका"
+
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "नाव"
+
+#: ../plugins/event_monitor.py:126
+msgid "Full name"
+msgstr "पूर्ण नाव"
+
+#: ../plugins/interface_view.glade.h:1
+msgid "0"
+msgstr "0"
+
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.glade.h:5
+msgid "<b>Attributes</b>"
+msgstr "<b>गुणधर्म</b>"
+
+#: ../plugins/interface_view.glade.h:6
+msgid "<b>Child count</b>"
+msgstr "<b>उपघटकाची संख्या</b>"
+
+#: ../plugins/interface_view.glade.h:7
+msgid "<b>Description</b>"
+msgstr "<b>वर्णन</b>"
+
+#: ../plugins/interface_view.glade.h:8
+msgid "<b>Relations</b>"
+msgstr "<b>संबंध</b>"
+
+#: ../plugins/interface_view.glade.h:9
+msgid "<b>Selected Cell</b>"
+msgstr "<b>निवडलेले कक्ष</b>"
+
+#: ../plugins/interface_view.glade.h:10
+msgid "<b>States</b>"
+msgstr "<b>स्तर</b>"
+
+#: ../plugins/interface_view.glade.h:11
+msgid "<b>Table Information</b>"
+msgstr "<b>तक्ताविषयी माहिती</b>"
+
+#: ../plugins/interface_view.glade.h:12
+msgid "<b>Text</b>"
+msgstr "<b>पाठ्य</b>"
+
+#: ../plugins/interface_view.glade.h:13
+msgid "<b>unknown</b>"
+msgstr "<b>अपरिचीत</b>"
+
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
+#: ../plugins/interface_view.py:860
+msgid "<i>(no description)</i>"
+msgstr "<i>(वर्णन उपलब्ध नाही)</i>"
+
+#: ../plugins/interface_view.glade.h:15
+msgid "<i>Caption:</i>"
+msgstr "<i>टोपन:</i>"
+
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
+msgid "<i>End: 0</i>"
+msgstr "<i>समाप्त: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
+msgid "<i>Start: 0</i>"
+msgstr "<i>प्रारंभ: 0</i>"
+
+#: ../plugins/interface_view.glade.h:21
+msgid "<i>Summary:</i>"
+msgstr "<i>सारांश:</i>"
+
+#: ../plugins/interface_view.glade.h:22
+msgid "<no description>"
+msgstr "<वर्णन उपलब्ध नाही>"
+
+#: ../plugins/interface_view.glade.h:23
+msgid "Absolute position"
+msgstr "पूर्णतया स्थान"
+
+#: ../plugins/interface_view.glade.h:24
+msgid "Acti_on"
+msgstr "क्रिया (_o))"
+
+#: ../plugins/interface_view.glade.h:25
+msgid "Alpha"
+msgstr "अल्फा"
+
+#: ../plugins/interface_view.glade.h:26
+msgid "Ap_plication"
+msgstr "अनुप्रयोग (_p)"
+
+#: ../plugins/interface_view.glade.h:27
+msgid "Co_mponent"
+msgstr "घटक (_m)"
+
+#: ../plugins/interface_view.glade.h:28
+msgid "Col_lection"
+msgstr "संग्रह (_l)"
+
+#: ../plugins/interface_view.glade.h:29
+msgid "Column"
+msgstr "स्तंभ"
+
+#: ../plugins/interface_view.glade.h:30
+msgid "Columns"
+msgstr "स्तंभ"
+
+#: ../plugins/interface_view.glade.h:31
+msgid "Current value"
+msgstr "वर्तमान मुल्य"
+
+#: ../plugins/interface_view.glade.h:32
+msgid "Des_ktop"
+msgstr "डेस्कटॉप (_k)"
+
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
+msgid "Description"
+msgstr "वर्णन"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:35
+msgid "Extents:"
+msgstr "विस्तार:"
+
+#: ../plugins/interface_view.glade.h:36
+msgid "H_ypertext"
+msgstr "हायपरपाठ्य (_y)"
+
+#: ../plugins/interface_view.glade.h:37
+msgid "Header:"
+msgstr "शिर्षक:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
+msgid "Hyperlink"
+msgstr "हायपरलिंक"
+
+#: ../plugins/interface_view.glade.h:39
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.glade.h:40
+msgid "Include defaults"
+msgstr "मुलभूत अंतर्भूत करा"
+
+#: ../plugins/interface_view.glade.h:41
+msgid "Layer"
+msgstr "स्तर"
+
+#: ../plugins/interface_view.glade.h:42
+msgid "Lo_gin Helper"
+msgstr "दाखलन मदतकर्ता (_g)"
+
+#: ../plugins/interface_view.glade.h:43
+msgid "Locale"
+msgstr "लोकेल"
+
+#: ../plugins/interface_view.glade.h:44
+msgid "Locale:"
+msgstr "लोकेल:"
+
+#: ../plugins/interface_view.glade.h:45
+msgid "MDI-Z-order"
+msgstr "MDI-Z-क्रमवारी"
+
+#: ../plugins/interface_view.glade.h:46
+msgid "Maximum value"
+msgstr "कमाल मुल्य"
+
+#: ../plugins/interface_view.glade.h:47
+msgid "Minimum increment"
+msgstr "किमान वाढ"
+
+#: ../plugins/interface_view.glade.h:48
+msgid "Minimum value"
+msgstr "किमान मुल्य"
+
+#: ../plugins/interface_view.glade.h:49
+msgid "Offset"
+msgstr "ऑफसेट"
+
+#: ../plugins/interface_view.glade.h:50
+msgid "Perform action"
+msgstr "क्रिया लागू करा"
+
+#: ../plugins/interface_view.glade.h:51
+msgid "Position"
+msgstr "स्थान"
+
+#: ../plugins/interface_view.glade.h:52
+msgid "Relative position"
+msgstr "संबंधित स्थान"
+
+#: ../plugins/interface_view.glade.h:53
+msgid "Row"
+msgstr "ओळ"
+
+#: ../plugins/interface_view.glade.h:54
+msgid "Rows"
+msgstr "ओळ"
+
+#: ../plugins/interface_view.glade.h:55
+msgid "Select All"
+msgstr "सर्व निवडा"
+
+#: ../plugins/interface_view.glade.h:56
+msgid "Selected columns"
+msgstr "निवडलेले स्तंभ"
+
+#: ../plugins/interface_view.glade.h:57
+msgid "Selected rows"
+msgstr "निवडलेले ओळ"
+
+#: ../plugins/interface_view.glade.h:58
+msgid "Show"
+msgstr "दर्शवा"
+
+#: ../plugins/interface_view.glade.h:59
+msgid "Size"
+msgstr "आकार"
+
+#: ../plugins/interface_view.glade.h:60
+msgid "St_reamable Content"
+msgstr "स्ट्रीमजोगी अनुक्रम (_r)"
+
+#: ../plugins/interface_view.glade.h:61
+msgid "Te_xt"
+msgstr "पाठ्य (_x)"
+
+#: ../plugins/interface_view.glade.h:62
+msgid "Toolkit"
+msgstr "साधनपट्टी"
+
+#: ../plugins/interface_view.glade.h:63
+msgid "Val_ue"
+msgstr "मुल्य (_u)"
+
+#: ../plugins/interface_view.glade.h:64
+msgid "Version"
+msgstr "आवृत्ती"
+
+#: ../plugins/interface_view.glade.h:65
+msgid "WIDGET"
+msgstr "WIDGET"
+
+#: ../plugins/interface_view.glade.h:66
+msgid "_Accessible"
+msgstr "प्रवेशीय (_A)"
+
+#: ../plugins/interface_view.glade.h:67
+msgid "_Document"
+msgstr "दस्तऐवज (_D)"
+
+#: ../plugins/interface_view.glade.h:68
+msgid "_Image"
+msgstr "प्रतिमा (_I)"
+
+#: ../plugins/interface_view.glade.h:69
+msgid "_Selection"
+msgstr "निवड (_S)"
+
+#: ../plugins/interface_view.glade.h:70
+msgid "_Table"
+msgstr "तक्ता (_T)"
+
+#: ../plugins/interface_view.glade.h:71
+msgid "name (x,y)"
+msgstr "नाव (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
+msgid "Interface Viewer"
+msgstr "संवाद प्रदर्शक"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
+msgid "Allows viewing of various interface properties"
+msgstr "विविध संवाद गुणधर्म पहाण्याकरीता सहमती देतो"
+
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:190
+msgid "(not implemented)"
+msgstr "(लागू केले नाही)"
+
+#: ../plugins/interface_view.py:463
+msgid "Key binding"
+msgstr "कि बांधणी"
+
+#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.py:750
+msgid "Start"
+msgstr "सुरू करा"
+
+#: ../plugins/interface_view.py:757
+msgid "End"
+msgstr "समाप्त"
+
+#: ../plugins/interface_view.py:927
+msgid "Too many selectable children"
+msgstr "निवडण्याजोगी उपघटक खूपच आहे"
+
+#: ../plugins/interface_view.py:1022
+msgid "Content type"
+msgstr "पाठ्य प्रकार"
+
+#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+msgid "<i>(Editable)</i>"
+msgstr "<i>(संपादनजोगी)</i>"
+
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "पटकन निवडा"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "प्रवेशीय पटकन निवडण्यासाठी विविध कार्यपद्धती करीताचे प्लगईन."
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "शेवटचे घटक प्रवेशीय तपासणी"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "माऊस अंतर्गत प्रवेशीय तपासणी"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
+msgid "Dogtail"
+msgstr "Dogtail"
+
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
+msgid "LDTP"
+msgstr "LDTP"
+
+#. A native script format.
+#: ../plugins/script_recorder.glade.h:6
+msgid "Native"
+msgstr "मुळ"
+
+#: ../plugins/script_recorder.glade.h:7
+msgid "Script Type"
+msgstr "स्क्रीप्ट प्रकार"
+
+#: ../plugins/script_recorder.py:176
+msgid "Script Recorder"
+msgstr "स्क्रीप्ट रेकॉर्डर"
+
+#: ../plugins/script_recorder.py:178
+msgid "Creates dogtail style scripts"
+msgstr "डॉगटेल नुरूप स्क्रीप्ट बनवितो"
+
+#: ../plugins/script_recorder.py:340
+msgid "The current script will be lost."
+msgstr "वर्तमान स्क्रीप्ट आढळणार नाही."
+
+#: ../plugins/script_recorder.py:341
+msgid "Confirm clear"
+msgstr "पुसून टाकणे निश्चित"
+
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
+msgid "Idle"
+msgstr "रिकाम"
+
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "मांडणी (_m):"
+
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "प्रमाणीत करा (_a)"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "वर्णन नाही"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI प्रमाणकर्ता"
+
+#: ../plugins/validate.py:154
+msgid "Validates application accessibility"
+msgstr "अनुप्रयोगाची प्रवेशीयता प्रमाणीत करते"
+
+#. log level column
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
+msgid "Level"
+msgstr "स्तर"
+
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "भुमिका"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "संचयन"
+
+#: ../plugins/validate.py:392
+msgid "Validating"
+msgstr "प्रमाणीत करत आहे"
+
+#: ../plugins/validate.py:548
+msgid "EXCEPT"
+msgstr "वगळून"
+
+#: ../plugins/validate.py:555
+msgid "ERROR"
+msgstr "त्रुटी"
+
+#: ../plugins/validate.py:563
+msgid "WARN"
+msgstr "सावधानता"
+
+#: ../plugins/validate.py:570
+msgid "INFO"
+msgstr "माहिती"
+
+#: ../plugins/validate.py:577
+msgid "DEBUG"
+msgstr "डीबग"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "मुलभूत"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "मुलभूत GUI अनुप्रयोग प्रवेशीय चाचणी"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "क्रिया %s केंद्रजोगी किंवा निवडण्याजोगी नाही"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "परस्पर %s क्रियाजोगी नाही"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "एकापेक्षा जास्त केंद्रीत विजेट"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s वरील पाठ्य संवाद आढळले नाही"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "मुख्य मधील %s इन्डेक्स् उपघटकाच्या इन्डेक्स्सह जुळत नाही"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "%s संबंध करीता रिसीप्रक्ल् आढळला नाही"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s नाव किंवा लेबल आढळले नाही"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "केंद्रजोगी %s वरील तक्ता संवाद आढळले, निवड संवाद आढळले नाही"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s कडे विना %s स्तरचे %s स्तर आहे"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s संचाचे मालकीचे नाही"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s इन्डेक्स् %(num)d ओळ व स्तंभशी जुळत नाही"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%(rolename)s मुख्य इन्डेक्स् %(num1)d ओळ व स्तंभ इन्डेक्स %(num2)d शी जुळत नाही"
+
+#: ../plugindata/validate/basic.py:352
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s वरील नाव किंवा वर्णन आढळले नाही"
+
+#: ../src/lib/accerciser/accerciser.py:91
+msgid "_Preferences..."
+msgstr "प्राधान्यता (_P)..."
+
+#: ../src/lib/accerciser/accerciser.py:93
+msgid "_Contents"
+msgstr "विषयसूची (_C)"
+
+#: ../src/lib/accerciser/accerciser.py:135
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "Accerciser डेस्कटॉपवरील अनुप्रयोग पाहू शकले नाही.  या त्रुटीचे निर्धारण करीता तुम्ही डेस्कटॉप प्रवेशीय कार्यान्वीत केले पाहिजे.  तुम्हाला आता कार्यान्वीत करायचे?"
+
+#: ../src/lib/accerciser/accerciser.py:153
+msgid "Note: Changes only take effect after logout."
+msgstr "टिप: बदल फक्त लॉगआऊट केल्यावरच प्रभावी ठरते."
+
+#: ../src/lib/accerciser/accessible_treeview.py:345
+msgid "<dead>"
+msgstr "<मृत>"
+
+#: ../src/lib/accerciser/accessible_treeview.py:406
+msgid "Children"
+msgstr "उपघटक"
+
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "रेजीस्ट्री पुन्हदाखलन (_R)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
+msgid "Refresh all"
+msgstr "सर्व पुन्हदाखल करा"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "नोड पुन्हदाखलन (_N)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "निवडलेल्या नोडचे उपघटक पुन्ह दाखल करा"
+
+#: ../src/lib/accerciser/hotkey_manager.py:220
+msgid "Component"
+msgstr "घटक"
+
+#: ../src/lib/accerciser/hotkey_manager.py:227
+msgid "Task"
+msgstr "कार्य"
+
+#: ../src/lib/accerciser/hotkey_manager.py:234
+msgid "Key"
+msgstr "कि"
+
+#: ../src/lib/accerciser/hotkey_manager.py:244
+msgid "Alt"
+msgstr "Alt"
+
+#: ../src/lib/accerciser/hotkey_manager.py:251
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../src/lib/accerciser/hotkey_manager.py:258
+msgid "Shift"
+msgstr "Shift"
+
+#: ../src/lib/accerciser/main_window.py:73
+msgid "Top panel"
+msgstr "शिर्ष पटल"
+
+#: ../src/lib/accerciser/main_window.py:74
+msgid "Bottom panel"
+msgstr "तळ पटल"
+
+#: ../src/lib/accerciser/prefs_dialog.py:34
+msgid "accerciser Preferences"
+msgstr "accerciser प्राधान्यता"
+
+#: ../src/lib/accerciser/prefs_dialog.py:40
+msgid "Plugins"
+msgstr "प्लगईन"
+
+#: ../src/lib/accerciser/prefs_dialog.py:41
+msgid "Global Hotkeys"
+msgstr "जागतिक हॉटकि"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "ठळक करीत आहे"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "कालावधी ठळक करा:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "किनार रंग:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "ठळक चौकोनचे किनार रंग"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "रंग भरा:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "ठळक चौकोनचे भरीव रंग"
+
+#: ../src/lib/accerciser/about_dialog.py:52
+msgid "translator-credits"
+msgstr "संदिप शेडमाके <sandeep.shedmake@gmail.com>, 2008."
+
+#: ../src/lib/accerciser/about_dialog.py:53
+msgid "An interactive Python accessibility explorer"
+msgstr "परस्पर Python प्रवेशीय शोधकर्ता"
+
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+
+#: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "नविन BSD परवाना तपशील माहिती करीता COPYING व NOTICE फाइल पहा."
+
+#: ../src/lib/accerciser/about_dialog.py:58
+msgid "Web site"
+msgstr "संकेत स्थळ"
+
+#: ../src/lib/accerciser/bookmarks.py:62
+msgid "_Add Bookmark..."
+msgstr "ओळखचिन्ह जोडा (_A)..."
+
+#: ../src/lib/accerciser/bookmarks.py:63
+msgid "Bookmark selected accessible."
+msgstr "निवडलेले प्रवेशीय ओळचिन्ह."
+
+#: ../src/lib/accerciser/bookmarks.py:65
+msgid "_Edit Bookmarks..."
+msgstr "ओळखचिन्ह संपादीत करा (_E)..."
+
+#: ../src/lib/accerciser/bookmarks.py:66
+msgid "Manage bookmarks."
+msgstr "ओळखचिन्ह व्यवस्थापीत करा."
+
+#: ../src/lib/accerciser/bookmarks.py:323
+msgid "Edit Bookmarks..."
+msgstr "ओळखचिन्ह संपादन..."
+
+#: ../src/lib/accerciser/bookmarks.py:427
+msgid "Title"
+msgstr "शिर्षक"
+
+#: ../src/lib/accerciser/bookmarks.py:435
+msgid "Application"
+msgstr "अनुप्रयोग"
+
+#: ../src/lib/accerciser/bookmarks.py:443
+msgid "Path"
+msgstr "मार्ग"
+
+#: ../src/lib/accerciser/bookmarks.py:512
+msgid "Add Bookmark..."
+msgstr "ओळखचिन्ह जोडा..."
+
+#: ../src/lib/accerciser/bookmarks.py:525
+msgid "Title:"
+msgstr "शिर्षक:"
+
+#: ../src/lib/accerciser/bookmarks.py:528
+msgid "Application:"
+msgstr "अनुप्रयोग:"
+
+#: ../src/lib/accerciser/bookmarks.py:531
+msgid "Path:"
+msgstr "मार्ग:"
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "प्लगइन त्रुटी"
+
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgid "View"
+msgstr "दृश्य"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+msgid "No view"
+msgstr "दृश्य नाही"
+
+#: ../src/lib/accerciser/plugin/view.py:369
+msgid "_Single plugins view"
+msgstr "एकमेव प्लगइन दृश्य (_S)"
+
+#: ../src/lib/accerciser/plugin/view.py:758
+msgid "Plugin View"
+msgstr "प्लगइन दृश्य"
+
+#: ../src/lib/accerciser/plugin/view.py:761
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "प्लगइन दृश्य (%d)"
+
+#: ../src/lib/accerciser/plugin/view.py:1029
+msgid "<i>_New view...</i>"
+msgstr "<i>नविन दृश्य (_N)...</i>"
+
+#: ../src/lib/accerciser/plugin/view.py:1085
+msgid "New View..."
+msgstr "नविन दृश्य..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "फाइल(_F)"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "संपादन (_E)"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgid "_Bookmarks"
+msgstr "ओळखचिन्ह(_B)"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgid "_View"
+msgstr "दृश्य (_V)"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "मदत (_H)"
+
