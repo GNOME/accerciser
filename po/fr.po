@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-05 20:44+0100\n"
-"PO-Revision-Date: 2008-03-05 20:46+0100\n"
-"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
+"POT-Creation-Date: 2008-08-30 23:16+0200\n"
+"PO-Revision-Date: 2008-08-21 19:06+0200\n"
+"Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +31,38 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Une liste de greffons qui sont désactivés par défaut"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Couleur de la bordure de surbrillance"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Durée de la surbrillance"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Couleur de remplissage de la surbrillance"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "La couleur et l'opacité de la bordure de surbrillance."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "La couleur et l'opacité du remplissage de la surbrillance."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "La disposition de greffon par défaut pour le panneau inférieur"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "La disposition de greffon par défaut pour le panneau supérieur"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr ""
+"La durée de la boîte de surbrillance pendant la sélection de nœuds "
+"accessibles"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -121,9 +147,10 @@ msgstr "Démarrer/arrêter l'enregistrement des événements"
 msgid "Clear event log"
 msgstr "Effacer le journal des événements"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:451
-#: ../plugins/interface_view.py:734
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nom"
@@ -178,8 +205,8 @@ msgstr "<b>Texte</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>inconnu</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:319
-#: ../plugins/interface_view.py:858
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
+#: ../plugins/interface_view.py:860
 msgid "<i>(no description)</i>"
 msgstr "<i>(aucune description)</i>"
 
@@ -246,8 +273,9 @@ msgstr "Valeur actuelle"
 msgid "Des_ktop"
 msgstr "_Bureau"
 
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:456
-#: ../plugins/validate.py:205
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Description"
 
@@ -264,7 +292,8 @@ msgstr "H_ypertexte"
 msgid "Header:"
 msgstr "En-tête :"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hyperlien"
 
@@ -400,44 +429,46 @@ msgstr "_Tableau"
 msgid "name (x,y)"
 msgstr "nom (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:36
 msgid "Interface Viewer"
 msgstr "Navigateur d'interface"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:39
 msgid "Allows viewing of various interface properties"
 msgstr "Permet de consulter différentes propriétés de l'interface"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:187
-#: ../plugins/interface_view.py:188
+#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:190
 msgid "(not implemented)"
 msgstr "(non implémenté)"
 
-#: ../plugins/interface_view.py:461
+#: ../plugins/interface_view.py:463
 msgid "Key binding"
 msgstr "Raccourci clavier"
 
-#: ../plugins/interface_view.py:741 ../plugins/interface_view.py:1025
+#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:748
+#: ../plugins/interface_view.py:750
 msgid "Start"
 msgstr "Début"
 
-#: ../plugins/interface_view.py:755
+#: ../plugins/interface_view.py:757
 msgid "End"
 msgstr "Fin"
 
-#: ../plugins/interface_view.py:925
+#: ../plugins/interface_view.py:927
 msgid "Too many selectable children"
 msgstr "Trop de fils sélectionnables"
 
-#: ../plugins/interface_view.py:1020
+#: ../plugins/interface_view.py:1022
 msgid "Content type"
 msgstr "Type de contenu"
 
-#: ../plugins/interface_view.py:1296 ../plugins/interface_view.py:1299
+#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
 msgid "<i>(Editable)</i>"
 msgstr "<i>(éditable)</i>"
 
@@ -494,7 +525,8 @@ msgstr "Le script actuel sera perdu."
 msgid "Confirm clear"
 msgstr "Confirmation de la suppression"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Inactif"
 
@@ -514,36 +546,46 @@ msgstr "Aucune description"
 msgid "AT-SPI Validator"
 msgstr "Validateur AT-SPI"
 
-#: ../plugins/validate.py:153
+#: ../plugins/validate.py:154
 msgid "Validates application accessibility"
 msgstr "Valide l'accessibilité d'une application"
 
 #. log level column
-#: ../plugins/validate.py:198
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Niveau"
 
-#: ../plugins/validate.py:262
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Rôle"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Enregistrement"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Validation"
 
-#: ../plugins/validate.py:413
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "EXCEPTION"
 
-#: ../plugins/validate.py:420
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "ERREUR"
 
-#: ../plugins/validate.py:427
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "AVERTISSEMENT"
 
-#: ../plugins/validate.py:433
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:439
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DÉBOGAGE"
 
@@ -663,8 +705,8 @@ msgstr "_Sommaire"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "Accerciser ne peut pas voir les applications sur votre bureau. Vous devez "
 "activer l'accessibilité du bureau pour corriger ce problème. Voulez-vous "
@@ -674,23 +716,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Note : les changements prendront effet à la déconnexion."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<mort>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Rôle"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Fils"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Actualiser le _registre"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Actualiser la vue a_ctuelle"
+msgid "Refresh all"
+msgstr "Tout actualiser"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Actualiser le _nœud"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Actualiser les fils du nœud sélectionné"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -724,17 +778,41 @@ msgstr "Panneau supérieur"
 msgid "Bottom panel"
 msgstr "Panneau inférieur"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Préférences d'Accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Greffons"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Raccourcis généraux"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Surbrillance"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Durée de la surbrillance :"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Couleur de la bordure :"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "La couleur de la bordure de la boîte de surbrillance"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Couleur de remplissage :"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "La couleur de remplissage de la boîte de surbrillance"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -771,7 +849,7 @@ msgstr "Signet accessible sélectionné."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr "É_diter les signets..."
+msgstr "Mo_difier les signets..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
@@ -779,7 +857,7 @@ msgstr "Gestion des signets"
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr "Éditer les signets..."
+msgstr "Modifie les signets..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
@@ -813,11 +891,14 @@ msgstr "Chemin :"
 msgid "Plugin Errors"
 msgstr "Erreurs des greffons"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgid "View"
 msgstr "Vue"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Sans vue"
 
@@ -861,9 +942,6 @@ msgstr "_Affichage"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Aid_e"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
 
 # This one is to fake the buggy DL stats
 #~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
