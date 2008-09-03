@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-15 18:33+0100\n"
+"POT-Creation-Date: 2008-09-03 22:57+0100\n"
 "PO-Revision-Date: 2008-02-17 09:28-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
@@ -28,12 +28,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "A list of plugins that are disabled by default"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Highlight border colour"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Highlight duration"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Highlight fill colour"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "The colour and opacity of the highlight border."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "The colour and opacity of the highlight fill."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "The default plugin layout for the bottom panel"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "The default plugin layout for the top panel"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "The duration of the highlight box when selecting accessible nodes"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -118,7 +142,7 @@ msgstr "Clear event log"
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736 ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Name"
@@ -523,7 +547,7 @@ msgid "Level"
 msgstr "Level"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Role"
 
@@ -665,29 +689,45 @@ msgstr "_Contents"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser could not see the applications on your desktop. You must enable "
-"desktop accessibility to fix this problem. Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Note: Changes only take effect after logout."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Children"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Refresh Registry"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Refresh _Current"
+msgid "Refresh all"
+msgstr "Refresh all"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Refresh _Node"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Refresh selected node's children"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -721,17 +761,41 @@ msgstr "Top panel"
 msgid "Bottom panel"
 msgstr "Bottom panel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "accerciser Preferences"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Plugins"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Global Hotkeys"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Highlighting"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Highlight duration:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Border colour:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "The border colour of the highlight box"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Fill colour:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "The fill colour of the highlight box"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -812,7 +876,7 @@ msgstr "Plugin Errors"
 msgid "View"
 msgstr "View"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "No view"
 
