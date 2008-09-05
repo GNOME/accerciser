@@ -1,4 +1,4 @@
-# Përkthimi i accerciser në shqip.
+# Përkthimi i mesazheve të accerciser në shqip.
 # Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-20 10:10+0100\n"
-"PO-Revision-Date: 2008-03-20 11:41+0100\n"
+"POT-Creation-Date: 2008-07-08 18:46+0000\n"
+"PO-Revision-Date: 2008-09-05 23:31+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
-"Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,15 +26,39 @@ msgstr "Verifikimi i açesibilitetit të aplikativëve të krijuar"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr "Një listë me plugin të çaktivuar në menyrë të prezgjedhur"
+msgstr "Një listë me plugin të çaktivizuar në menyrë të paracaktuar"
 
 #: ../accerciser.schemas.in.h:2
-msgid "The default plugin layout for the bottom panel"
-msgstr "Struktura e plugin të prezgjedhur për panelin e poshtëm"
+msgid "Highlight border color"
+msgstr "Vë në dukje ngjyrën e bordit"
 
 #: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Vë në dukje kohëzgjatjen"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Vë në dukje ngjyrën e mbushjes"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Ngjyra dhe tejdukshmëria e vënies në dukje të kornizës."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Ngjyra dhe tejdukshmëria e vënies në dukje të mbushjes"
+
+#: ../accerciser.schemas.in.h:7
+msgid "The default plugin layout for the bottom panel"
+msgstr "Struktura e plugin të paracaktuar për panelin e poshtëm"
+
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
-msgstr "Struktura e plugin të prezgjedhur për panelin e sipërm"
+msgstr "Struktura e plugin të paracaktuar për panelin e sipërm"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Kohëzgjatja e kutisë së vënë në dukje kur zgjidhen nyje açesibël"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -112,14 +136,14 @@ msgstr "Vër në dukje e zërin e aktivitetit të fundit"
 msgid "Start/stop event recording"
 msgstr "Nis/Ndalo regjistrimin e eventeve"
 
-# (pofilter) accelerators: accelerator _ does not occur in original and should not be in translation
 #: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr "Pastron mesazhet e eventit"
 
+#. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Emri"
@@ -228,7 +252,7 @@ msgstr "Ko_leksioni"
 
 #: ../plugins/interface_view.glade.h:29
 msgid "Column"
-msgstr "Kollona"
+msgstr "Kollonë"
 
 #: ../plugins/interface_view.glade.h:30
 msgid "Columns"
@@ -242,8 +266,9 @@ msgstr "Vlera aktuale"
 msgid "Des_ktop"
 msgstr "Hapësira e _punës"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Përshkrimi"
 
@@ -260,7 +285,8 @@ msgstr "H_ipertext"
 msgid "Header:"
 msgstr "Header:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Ndërlidhje"
 
@@ -270,11 +296,11 @@ msgstr "ID"
 
 #: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
-msgstr "Përfshi të prezgjedhur"
+msgstr "Përfshi të paracaktuar"
 
 #: ../plugins/interface_view.glade.h:41
 msgid "Layer"
-msgstr "Niveli"
+msgstr "Nivel"
 
 #: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
@@ -322,7 +348,7 @@ msgstr "Pozicioni relativ"
 
 #: ../plugins/interface_view.glade.h:53
 msgid "Row"
-msgstr "Rreshti"
+msgstr "Rresht"
 
 #: ../plugins/interface_view.glade.h:54
 msgid "Rows"
@@ -354,7 +380,7 @@ msgstr "Pë_rmbajtje e lëvizëshme"
 
 #: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
-msgstr "Te_ksti"
+msgstr "Te_kst"
 
 #: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
@@ -421,11 +447,11 @@ msgstr "URI"
 
 #: ../plugins/interface_view.py:750
 msgid "Start"
-msgstr "Nisja"
+msgstr "Fillimi"
 
 #: ../plugins/interface_view.py:757
 msgid "End"
-msgstr "Fundi"
+msgstr "Mbarimi"
 
 #: ../plugins/interface_view.py:927
 msgid "Too many selectable children"
@@ -490,20 +516,19 @@ msgstr "Script-i aktual do të humbasë."
 msgid "Confirm clear"
 msgstr "Konfermo anullimin"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
-msgstr "E fshehur"
+msgstr "Joaktiv"
 
 #: ../plugins/validate.glade.h:2
 msgid "Sche_ma:"
 msgstr "Ske_ma:"
 
-# (pofilter) accelerators: accelerator _ is missing from translation
 #: ../plugins/validate.glade.h:3
 msgid "V_alidate"
 msgstr "Vl_eftësimi"
 
-# (pofilter) xmltags: checks that XML/HTML tags have not been translated
 #: ../plugins/validate.py:64
 msgid "No description"
 msgstr "Asnjë përshkrim"
@@ -517,31 +542,41 @@ msgid "Validates application accessibility"
 msgstr "Vleftësimi i açesibilitetit të aplikativit"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
-msgstr "Niveli"
+msgstr "Etiketa"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Roli"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Ruajtja"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Vleftësimi"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "PËRJASHTIM"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "GABIM"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "PARALAJMËRIM"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -640,8 +675,6 @@ msgstr ""
 "%(rolename)s treguesi prind %(num1)d nuk korrispondon me asnjë rresht apo "
 "kollonë treguesi %(num2)d"
 
-# (pofilter) variables: do not translate: %s
-# (pofilter) xmltags: checks that XML/HTML tags have not been translated
 #: ../plugindata/validate/basic.py:352
 #, python-format
 msgid "%s has no name or description"
@@ -657,33 +690,46 @@ msgstr "_Përmbajtja"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser nuk arrin të shohë aplikativët në hapësirën tuaj të punës. Duhet "
-"të aktivoni açesibilitetitin për të korrigjuar këtë problem. Aktivon tani?"
+"Accerciser nuk arrin të shohë aplikativët në hapësirën e punës. Duhet të "
+"aktivizoni açesibilitetin e desktop për të korrigjuar këtë problem. "
+"Aktivizon tani?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Shënim: Ndryshimet do të kenë efekt vetëm mbas daljes."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Roli"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Bij"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Rifresko regjistrin"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Rifresko _aktualin"
+msgid "Refresh all"
+msgstr "Rifresko gjithçka"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Rifresko _nyjen"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Rifresko birin e nyjës së zgjedhur"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -695,7 +741,7 @@ msgstr "Aktiviteti"
 
 #: ../src/lib/accerciser/hotkey_manager.py:234
 msgid "Key"
-msgstr "Pulsanti"
+msgstr "Kyçi"
 
 #: ../src/lib/accerciser/hotkey_manager.py:244
 msgid "Alt"
@@ -717,21 +763,45 @@ msgstr "Paneli i sipërm"
 msgid "Bottom panel"
 msgstr "Paneli i poshtëm"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Preferimet e accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
-msgstr "Plugin"
+msgstr "Plugins"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Pulsantë të shpejtë globalë"
 
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Vënia në dukje"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Kohëzgjatja e vënies në dukje:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Ngjyra e kornizës:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Ngjyra e kornizës së kutisë së vënies në dukje"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Ngjyra mbushëse:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Ngjyra ngjyrosëse e kutisë së vënies në dukje"
+
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Laurent Dhima <laurenti@alblinux.net>, 2007"
+msgstr "Laurent Dhima <laurenti@alblinux.net>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -775,7 +845,7 @@ msgstr "Titulli"
 
 #: ../src/lib/accerciser/bookmarks.py:435
 msgid "Application"
-msgstr "Aplikativi"
+msgstr "Aplikativ"
 
 #: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
@@ -791,7 +861,7 @@ msgstr "Titulli:"
 
 #: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
-msgstr "Aplikativi:"
+msgstr "Programi:"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
@@ -806,9 +876,9 @@ msgstr "Gabime të plugin"
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgid "View"
-msgstr "Paraqitja"
+msgstr "Shfaq"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Asnjë paraqitje"
 
