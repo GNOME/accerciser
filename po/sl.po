@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-12 01:17+0000\n"
-"PO-Revision-Date: 2008-04-27 09:26+0100\n"
+"POT-Creation-Date: 2008-07-08 18:46+0000\n"
+"PO-Revision-Date: 2008-09-05 12:18+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -31,12 +31,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Seznam vstavkov, ki so privzeto onemogočeni"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "barva okvira označevanja"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Trajanje označevanja"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Barva polnila označevanja"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Barva in prosojnost okvirja označevanja."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Barva in prosojnost polnila označevanja."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Privzeti nabor vstavkov za spodnji pladenj"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Privzeti nabor vstavkov za zgornji pladenj"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Trajanje označevanja ob izbiri dostopnih vozlišč"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -123,7 +147,7 @@ msgstr "_Počisti beleženje dogodkov"
 #: ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736
 #: ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Ime"
@@ -538,7 +562,7 @@ msgstr "Raven"
 
 #. add accessible's role to buffer
 #: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:398
+#: ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Vloga"
 
@@ -682,19 +706,35 @@ msgstr "Program Accerciser ne zazna programa na namizju. Omogočena mora biti en
 msgid "Note: Changes only take effect after logout."
 msgstr "Opomba: Spremembe bodo stopile v veljavo ob naslednji prijavi."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<nedejavno>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Podrejeno"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Osveži _register"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Osveži _trenutno"
+msgid "Refresh all"
+msgstr "Osveži _vse"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Osveži _vozlišče"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Osveži podrejene predmete vozlišča"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -728,17 +768,41 @@ msgstr "Zgornji pladenj"
 msgid "Bottom panel"
 msgstr "Spodnji pladenj"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Lastnosti programa"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Vstavki"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Splošne tipkovne bližnjice"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Označevanje"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Trajanje označevanja:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Barva okvirja:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Barva okvirja označevanja"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Barva polnila:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Barva polnila označevanja"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -819,7 +883,7 @@ msgstr "Napake vstavkov"
 msgid "View"
 msgstr "Pogled"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Brez pogleda"
 
