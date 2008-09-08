@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-07 16:19+0100\n"
-"PO-Revision-Date: 2008-03-07 16:19+0100\n"
+"POT-Creation-Date: 2008-09-08 12:08+0200\n"
+"PO-Revision-Date: 2008-09-08 12:12+0200\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,12 +37,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Lijst van standaard uitgeschakelde plugins"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Randkleur oplichten"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Duur van oplichten"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Vulkleur voor oplichten"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "De randkleur (en -doorzichtigheid) voor oplichten."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "De vulkleur (en -doorzichtigheid) voor oplichten."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "De standaardplugin voor het onderpaneel"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "De standaardplugin voor het bovenpaneel"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "De duur van het oplichtende vlak wanneer toegankelijke nodes geselecteerd worden"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -127,9 +151,10 @@ msgstr "Opname van gebeurtenissen starten/stoppen"
 msgid "Clear event log"
 msgstr "Gebeurtenislogboek wissen"
 
+#. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Naam"
@@ -252,8 +277,9 @@ msgstr "Huidige waarde"
 msgid "Des_ktop"
 msgstr "_Bureaublad"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Beschrijving"
 
@@ -270,7 +296,8 @@ msgstr "H_ypertext"
 msgid "Header:"
 msgstr "Koptekst:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hyperlink"
 
@@ -504,7 +531,8 @@ msgstr "Het huidige scripts zal verloren gaan."
 msgid "Confirm clear"
 msgstr "Wissen bevestigen"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Inactief"
 
@@ -529,31 +557,41 @@ msgid "Validates application accessibility"
 msgstr "Toepassingstoegankelijkheid valideren"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Niveau"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Rol"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Opslaan"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Valideren"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "BEHALVE"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "FOUT"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "WAARSCHUWING"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -667,8 +705,8 @@ msgstr "In_houd"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "Accerciser kon de toepassingen in uw werkomgeving niet zien. U dient "
 "toegankelijkheid in te schakelen om dit te verhelpen. Wilt u "
@@ -679,23 +717,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Let op: wijzingen worden pas van kracht na opnieuw aanmelden"
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<dood>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Rol"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Kinderen"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Register _verversen"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Huidige verversen"
+msgid "Refresh all"
+msgstr "Alle verversen"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "_Node verversen"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Kinderen van geselecteerde node verversen"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -729,17 +779,41 @@ msgstr "Bovenpaneel"
 msgid "Bottom panel"
 msgstr "Onderpaneel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Accerciser-voorkeuren"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Plugins"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Globale sneltoetsen"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Oplichten"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Duur van oplichten:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Randkleur:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "De randkleur van het oplichtende vlak"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Vulkleur:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "De vulkleur van het oplichtende vlak"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -826,7 +900,7 @@ msgstr "Pluginfouten"
 msgid "View"
 msgstr "Weergave"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Geen weergave"
 
