@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-28 20:41+0300\n"
-"PO-Revision-Date: 2008-06-28 20:34+0300\n"
+"POT-Creation-Date: 2008-09-12 10:20+0300\n"
+"PO-Revision-Date: 2008-09-12 10:20+0300\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,38 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Списък с приставки, които стандартно са изключени"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Цвят на канта на оцветения правоъгълник"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Продължителност на оцветяването"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Цвят за запълване на оцветеното"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Цвят и непрозрачност на контура на оцветеното."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Цвят и непрозрачност на оцветеното."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Стандартната подредба на приставките в долния подпрозорец"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Стандартната подредба на приставките в горния подпрозорец"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr ""
+"Продължителност на появата на оцветения правоъгълник при избиране на "
+"достъпни възли"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -119,7 +145,7 @@ msgstr "Изчистване на журнала"
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736 ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Име"
@@ -411,7 +437,7 @@ msgstr "Позволява разглеждането на различни св
 #: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
 #: ../plugins/interface_view.py:190
 msgid "(not implemented)"
-msgstr " (не е реализирано)"
+msgstr "(не е реализирано)"
 
 #: ../plugins/interface_view.py:463
 msgid "Key binding"
@@ -524,7 +550,7 @@ msgid "Level"
 msgstr "Ниво"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Роля"
 
@@ -679,19 +705,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Бележка: Промените влизат в сила след излизане от системата."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<мъртъв>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Деца"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Обновяване на регистъра"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Обновяване на _текущия"
+msgid "Refresh all"
+msgstr "Обновяване на всичко"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Обновяване на _възела"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Обновяване на децата на избрания възел"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -725,17 +767,41 @@ msgstr "Горен подпрозорец"
 msgid "Bottom panel"
 msgstr "Долен подпрозорец"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Настройки на accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Приставки"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Глобални клавишни комбинации"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Оцветяване"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Продължителност на оцветяването:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Цвят на контура:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Цветът на контура на оцветения правоъгълник:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Цвят за запълване:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Цветът за запълване на оцветения правоъгълник:"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -821,7 +887,7 @@ msgstr "Грешки от приставката"
 msgid "View"
 msgstr "Изглед"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Няма изглед"
 
@@ -844,7 +910,7 @@ msgstr "<i>_Нов изглед…</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
-msgstr "Нов изглед..."
+msgstr "Нов изглед…"
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
