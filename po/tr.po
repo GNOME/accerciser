@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# Turkish translation of accerciser
+# Copyright (C) 2007
+# This file is distributed under the same license as the accerciser package.
+#
+# Baris Cicek <baris@teamforce.name.tr>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-10 13:31+0200\n"
-"PO-Revision-Date: 2008-03-08 15:24+0200\n"
-"Last-Translator: Deniz Koçak <deniz.kocak@linux.org.tr>\n"
+"POT-Creation-Date: 2008-09-13 07:25+0300\n"
+"PO-Revision-Date: 2008-09-13 07:31+0300\n"
+"Last-Translator: Baris Cicek <baris@teamforce.name.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type:  text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -28,12 +28,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Öntanımlı olarak etkisizleştirilmiş eklentilerin bir listesi"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Vurgulama kenarlık rengi"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Vurgulama süresi"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Vurgulama doldurma rengi"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Vurgulama kenarlığının rengi ve matlığı."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Vurgulama doldurmasının rengi ve matlığı."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Alt panel için öntanımlı eklenti yerleşimi"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Üst panel için öntanımlı eklenti yerleşimi"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Erişilebilir düğümler seçilirken vurgulama kutusunun süresi"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -115,9 +139,10 @@ msgstr "Olay kaydetmeyi başlat/durdur"
 msgid "Clear event log"
 msgstr "Olay kaydını temizle"
 
+#. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "İsim"
@@ -240,8 +265,9 @@ msgstr "Şimdiki değer"
 msgid "Des_ktop"
 msgstr "_Masaüstü"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Tanım"
 
@@ -258,7 +284,8 @@ msgstr "_Hipermetin"
 msgid "Header:"
 msgstr "Başlık:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hiper bağ"
 
@@ -489,7 +516,8 @@ msgstr "Şimdiki betik kaybolacak."
 msgid "Confirm clear"
 msgstr "Silmeyi onayla"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Beklemede"
 
@@ -514,31 +542,41 @@ msgid "Validates application accessibility"
 msgstr "Uygulama erişilebilirliğini doğrular"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Seviye"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Rol"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Kaydediliyor"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Doğrulanıyor"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "HARİÇ"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "HATA"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "UYARI"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "BİLGİ"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "HATA AYIKLAMA"
 
@@ -652,34 +690,46 @@ msgstr "İçeri_k"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser masaüstünüzdeki uygulamaları göremedi.Bu sorunu çözmek için "
-"masaüstü erişilebilirliğini etkinleştirmelisiniz.Şimdi etkinleştirmek ister "
+"Accerciser masaüstünüzdeki uygulamaları göremedi. Bu sorunu çözmek için "
+"masaüstü erişilebilirliğini etkinleştirmelisiniz. Şimdi etkinleştirmek ister "
 "misiniz?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Not: Değişiklikler sadece çıkış yaptıktan sonra etkinleşecektir."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<ölü>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Rol"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Çocuklar"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Kaydı Güncelle"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Şimdikini Gün_celle"
+msgid "Refresh all"
+msgstr "Tümünü Güncelle"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "_Düğümü Güncelle"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Seçilen düğümün altını güncelle"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -713,21 +763,47 @@ msgstr "Üst panel"
 msgid "Bottom panel"
 msgstr "Alt panel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "accerciser Tercihleri"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Genel kısayollar"
 
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Vurgulama"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Vurgulama süresi:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Kenarlık rengi:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Vurgulama kutusunun kenarlık rengi"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Doldurma rengi:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Vurgulama kutusunun doldurma rengi"
+
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Deniz Koçak <deniz.kocak@linux.org.tr>"
+msgstr ""
+"Deniz Koçak <deniz.kocak@linux.org.tr>\n"
+"Barış Çiçek <baris@teamforce.name.tr>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -804,7 +880,7 @@ msgstr "Eklenti Hataları"
 msgid "View"
 msgstr "Görünüm"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Görünüm yok"
 
