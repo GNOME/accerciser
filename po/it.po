@@ -1,12 +1,15 @@
-# Traduzione di accerciser
-# Lorenzo Travaglio <ltrav02@yahoo.it>, 2008
+# Italian translation of acceciser
+# Copyright (C) 2007, 2008 Free Software Foundation
+# This file is distributed under the same license as the accerciser package
+#
+# Lorenzo Travaglio <ltrav02@yahoo.it>, 
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 13:52+0200\n"
-"PO-Revision-Date: 2008-02-28 23:15+0100\n"
+"POT-Creation-Date: 2008-09-14 04:01+0000\n"
+"PO-Revision-Date: 2008-09-15 04:33+0200\n"
 "Last-Translator: Lorenzo Travaglio <ltrav02@yahoo.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +29,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Un elenco dei plugin disabilitati in modo predefinito"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Evidenzia il colore del bordo"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Evidenzia la durata"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Evidenzia il colore di riempimento"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Colore e opacità del bordo in evidenza."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Colore e opacità del riempimento."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Plugin predefinito per il pannello inferiore"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Plugin predefinito per il pannello superiore"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Durata della casella evidenziata quando si selezionano nodi accessibili"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -43,7 +70,7 @@ msgstr "Esplora i vari metodi per l'attuale elemento accessibile"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
-msgstr "Nasconde attributi privati"
+msgstr "Nasconde gli attributi privati"
 
 #: ../plugins/api_view.py:79
 msgid "Method"
@@ -118,7 +145,7 @@ msgstr "Pulisce selezione"
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
 #: ../plugins/interface_view.py:736 ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nome"
@@ -409,7 +436,6 @@ msgstr "Consente la visualizzazione di alcune proprietà delle interfacce"
 
 #: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
 #: ../plugins/interface_view.py:190
-#, fuzzy
 msgid "(not implemented)"
 msgstr " (non implementato)"
 
@@ -438,7 +464,6 @@ msgid "Content type"
 msgstr "Tipo di contenuto"
 
 #: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
-#, fuzzy
 msgid "<i>(Editable)</i>"
 msgstr " <i>(modificabile)</i>"
 
@@ -525,13 +550,13 @@ msgid "Level"
 msgstr "Livello"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Ruolo"
 
 #: ../plugins/validate.py:344
 msgid "Saving"
-msgstr ""
+msgstr "Salvataggio"
 
 #: ../plugins/validate.py:392
 msgid "Validating"
@@ -656,7 +681,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:352
 #, python-format
 msgid "%s has no name or description"
-msgstr "%s non contiene nome né descrizione"
+msgstr "%s non contiene nome o descrizione"
 
 #: ../src/lib/accerciser/accerciser.py:91
 msgid "_Preferences..."
@@ -667,32 +692,44 @@ msgid "_Contents"
 msgstr "_Sommario"
 
 #: ../src/lib/accerciser/accerciser.py:135
-#, fuzzy
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser non riesce a trovare l'applicazione sull'ambiente grafico. È "
-"necessario abilitare l'accessibilità dell'ambiente grafico per risolvere "
-"questo problema. Abilitarla adesso?"
+msgstr "Accerciser non riesce a trovare l'applicazione sulla scrivania. È necessario abilitare l'accessibilità della scrivania per risolvere questo problema. Abilitarla adesso?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: i cambiamenti avranno effetto al prossimo accesso."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<morto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Figli"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "A_ggiorna Registro"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Aggiorna _corrente"
+msgid "Refresh all"
+msgstr "Aggiorna tutti"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Aggiorna _nodo"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Aggiorna i figli del nodo selezionato"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -726,17 +763,41 @@ msgstr "Pannello superiore"
 msgid "Bottom panel"
 msgstr "Pannello inferiore"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
-msgstr "Preferenze di Accerciser"
+msgstr "Preferenze di accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Plugin"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Scorciatoie generali"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Evidenziazione"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Durata dell'evidenziazione:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Colore del bordo:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Colore del bordo della casella di evidenziazione"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Colore di riempimento:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Colore di riempimento della casella di evidenziazione"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -758,7 +819,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
-msgstr "Sito Web"
+msgstr "Sito web"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
@@ -819,7 +880,7 @@ msgstr "Errori di plugin"
 msgid "View"
 msgstr "Vista"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Nessuna visualizzazione"
 
@@ -864,5 +925,37 @@ msgstr "_Visualizza"
 msgid "_Help"
 msgstr "A_iuto"
 
-#~ msgid "1.0"
-#~ msgstr "1.0"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
