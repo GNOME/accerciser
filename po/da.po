@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-10 23:38+0100\n"
-"PO-Revision-Date: 2008-03-09 22:29+0100\n"
+"POT-Creation-Date: 2008-09-20 22:10+0200\n"
+"PO-Revision-Date: 2008-09-14 17:22+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -37,12 +37,37 @@ msgid "A list of plugins that are disabled by default"
 msgstr "En liste af udvidelsesmoduler der fra starten af er slået fra"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Fremhævningskantfarve"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Fremhævningsvarighed"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Fremhævningsfyldefarve"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Farven og uigennemsigtigheden af fremhævningskanten."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Farven og uigennemsigtigheden af fremhævningsudfyldning."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Forvalgt udvidelsesmodul-layout for bundpanelet"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Forvalgt udvidelsesmodul-layout for toppanelet"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr ""
+"Varigheden af fremhævningsboksen når der vælges tilgængelighedselementer"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -125,9 +150,10 @@ msgstr "Start/stop optagelse af handlinger"
 msgid "Clear event log"
 msgstr "Ryd handlingslog"
 
+#. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Navn"
@@ -250,8 +276,9 @@ msgstr "Aktuelle værdi"
 msgid "Des_ktop"
 msgstr "Skrive_bord"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Beskrivelse"
 
@@ -268,7 +295,8 @@ msgstr "H_ypertekst"
 msgid "Header:"
 msgstr "Overskrift:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hyperlænke"
 
@@ -416,9 +444,8 @@ msgstr "Muliggør visning af diverse grænsefladeegenskaber"
 
 #: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
 #: ../plugins/interface_view.py:190
-#, fuzzy
 msgid "(not implemented)"
-msgstr " (ikke implementeret)"
+msgstr "(ikke implementeret)"
 
 #: ../plugins/interface_view.py:463
 msgid "Key binding"
@@ -445,9 +472,8 @@ msgid "Content type"
 msgstr "Indholdstype"
 
 #: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
-#, fuzzy
 msgid "<i>(Editable)</i>"
-msgstr " <i>(Redigérbar)</i>"
+msgstr "<i>(Redigérbar)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -503,7 +529,8 @@ msgstr "Det nuværende skript vil gå tabt."
 msgid "Confirm clear"
 msgstr "Bekræft rydning"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Inaktiv"
 
@@ -528,31 +555,41 @@ msgid "Validates application accessibility"
 msgstr "Validerer programmets tilgængelighed"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Niveau"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Rolle"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Gemmer"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Validerer"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "UNDT"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "FEJL"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "ADV"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "FEJLFIND"
 
@@ -666,33 +703,47 @@ msgstr "_Indhold"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser kunne ikke se programmerne på dit skrivebord. Du skal aktivere "
-"skrivebordstilgængelighed for at rette dette problem. Vil du aktivere det nu?"
+"Accerciser kunne ikke se programmerne på dit skrivebord.  Du skal aktivere "
+"skrivebordstilgængelighed for at rette dette problem.  Vil du aktivere det "
+"nu?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Bemærk: Ændringer træder først i kraft efter der logges ud."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<død>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Rolle"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Underelementer"
 
-#. Translators: Refresh current tree node's children.
+# Der er ingen andre referencer til registry, så vi kan evt. bare kalde det database
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Opdatér database"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Opdatér _aktuelle"
+msgid "Refresh all"
+msgstr "Opdatér alle"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Opdatér _træelement"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Opdatér det valgte træelements underelementer"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -726,17 +777,41 @@ msgstr "Toppanel"
 msgid "Bottom panel"
 msgstr "Bundpanel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Indstillinger for accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Udvidelsesmoduler"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Globale genvejstaster"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Fremhævning"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Fremhævningsvarighed:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Kantfarve:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Kantfarven af fremhævningsboksen"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Udfyldningsfarve:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Udfyldningsfarven af fremhævningsboksen"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -827,7 +902,7 @@ msgid "View"
 msgstr "Visning"
 
 # Bemærk at denne streng befinder sig 100 linjer væk i kildekoden fra strengen "View"
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Ingen visning"
 
