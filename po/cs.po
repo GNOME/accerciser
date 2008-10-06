@@ -1,5 +1,5 @@
 # Czech translation of accerciser.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008 the author(s) of accerciser.
 # This file is distributed under the same license as the accerciser package.
 # Lucas Lommer <llommer@svn.gnome.org>, 2008.
 # Petr Kovar <pknbe@volny.cz>, 2008.
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-08 01:57+0100\n"
-"PO-Revision-Date: 2008-03-07 23:48+0100\n"
+"POT-Creation-Date: 2008-10-06 03:08+0200\n"
+"PO-Revision-Date: 2008-10-06 02:57+0200\n"
 "Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,12 +30,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Seznam implicitně zakázaných zásuvných modulů"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Barva zvýraznění okraje"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Trvání zvýraznění"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Barva zvýraznění výplně"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Barva a průsvitnost zvýraznění okraje."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Barva a průsvitnost zvýraznění výplně."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Výchozí rozložení zásuvného modulu na spodním panelu"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Výchozí rozložení zásuvného modulu na horním panelu"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Trvání zvýraznění rámečku při výběru objektu přístupnosti"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -43,7 +67,7 @@ msgstr "Prohlížeč API"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "Procházet různé metody zvoleného zpřístupnění"
+msgstr "Procházet různé metody zvoleného objektu přístupnosti"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -67,7 +91,7 @@ msgstr "Konzola IPythonu"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Interaktivní konzola pro úpravu zvoleného zpřístupnění"
+msgstr "Interaktivní konzola pro úpravu zvoleného objektu přístupnosti"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -83,7 +107,7 @@ msgstr "Vše"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr "Zvolené zpřístupnění"
+msgstr "Zvolený objekt přístupnosti"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
@@ -104,10 +128,12 @@ msgstr "Monitor událostí"
 #: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
+"Zobrazovat události v pořadí, v jakém se objevují ve vybraných zdrojích a "
+"typech"
 
 #: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
-msgstr "Zvýrazni posledná záznam události"
+msgstr "Zvýraznit poslední záznam události"
 
 #: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
@@ -117,9 +143,10 @@ msgstr "Začít/ukončit záznam událostí"
 msgid "Clear event log"
 msgstr "Vymazat záznam událostí"
 
+#. add accessible's name to buffer
 #: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Jméno"
@@ -160,11 +187,11 @@ msgstr "<b>Zvolená buňka</b>"
 
 #: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
-msgstr ""
+msgstr "<b>Stavy</b>"
 
 #: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
-msgstr ""
+msgstr "<b>Informace o tabulce</b>"
 
 #: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
@@ -172,7 +199,7 @@ msgstr "<b>Text</b>"
 
 #: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
-msgstr "<b>Neznáno</b>"
+msgstr "<b>Neznámé</b>"
 
 #: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
 #: ../plugins/interface_view.py:860
@@ -181,7 +208,7 @@ msgstr "<i>(bez popisu)</i>"
 
 #: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
-msgstr ""
+msgstr "<i>Titulek:</i>"
 
 #. End chaacter
 #. offset of text attributes span
@@ -240,10 +267,11 @@ msgstr "Aktuální hodnota"
 
 #: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
-msgstr ""
+msgstr "Pra_covní plocha"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Popis"
 
@@ -260,7 +288,8 @@ msgstr "_Hypertext"
 msgid "Header:"
 msgstr "Hlavička:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Odkaz"
 
@@ -310,7 +339,7 @@ msgstr "Posun"
 
 #: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
-msgstr ""
+msgstr "Provést akci"
 
 #: ../plugins/interface_view.glade.h:51
 msgid "Position"
@@ -350,7 +379,7 @@ msgstr "Velikost"
 
 #: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
-msgstr ""
+msgstr "Obsah je st_reamovatelný"
 
 #: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
@@ -374,7 +403,7 @@ msgstr "WIDGET"
 
 #: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
-msgstr "_Přístupnost"
+msgstr "Objekt _přístupnosti"
 
 #: ../plugins/interface_view.glade.h:67
 msgid "_Document"
@@ -386,7 +415,7 @@ msgstr "_Obrázek"
 
 #: ../plugins/interface_view.glade.h:69
 msgid "_Selection"
-msgstr ""
+msgstr "_Výběr"
 
 #: ../plugins/interface_view.glade.h:70
 msgid "_Table"
@@ -429,7 +458,7 @@ msgstr "Konec"
 
 #: ../plugins/interface_view.py:927
 msgid "Too many selectable children"
-msgstr "Příliš mnoho vybratelných potomků"
+msgstr "Příliš mnoho zvolitelných potomků"
 
 #: ../plugins/interface_view.py:1022
 msgid "Content type"
@@ -445,15 +474,15 @@ msgstr "Rychlý výběr"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
+msgstr "Zásuvný modul umožňující rychlý výběr objektu přístupnosti."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr ""
+msgstr "Zkontrolovat poslední zaměřený objekt přístupnosti"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr ""
+msgstr "Zkontrolovat objekt přístupnosti při použití myši"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 #: ../plugins/script_recorder.glade.h:2
@@ -476,7 +505,7 @@ msgstr "Typ skriptu"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
-msgstr ""
+msgstr "Záznamník skriptů"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
@@ -490,13 +519,14 @@ msgstr "Aktuální skript bude ztracen."
 msgid "Confirm clear"
 msgstr "Potvrdit vymazání"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
-msgstr ""
+msgstr "Nečinný"
 
 #: ../plugins/validate.glade.h:2
 msgid "Sche_ma:"
-msgstr "Shé_ma:"
+msgstr "Sché_ma:"
 
 #: ../plugins/validate.glade.h:3
 msgid "V_alidate"
@@ -515,31 +545,41 @@ msgid "Validates application accessibility"
 msgstr "Ověřuje přístupnost aplikace"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Úroveň"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Úloha"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Ukládá se"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Validování"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "VYJMA"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "CHYBA"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "POZOR"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -555,11 +595,12 @@ msgstr "Testuje základní přístupnost aplikace s GUI"
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr ""
+"objekt %s, se kterým lze provádět akce, není zaměřitelný ani zvolitelný"
 
 #: ../plugindata/validate/basic.py:42
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr ""
+msgstr "s interaktivním objektem %s nelze provádět akce"
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
@@ -576,7 +617,7 @@ msgstr "%s nemá žádné textové rozhraní"
 #: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
+msgstr "rodičovský index objektu %s neodpovídá indexu potomka"
 
 #: ../plugindata/validate/basic.py:145
 #, python-format
@@ -594,7 +635,7 @@ msgstr "%s postrádá jméno nebo popisek"
 #: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr ""
+msgstr "zaměřitelný objekt %s má tabulkové rozhraní, žádné rozhraní výběru"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -603,7 +644,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr ""
+msgstr "%s má stav %s, aniž má možnost stav %s získat"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -622,6 +663,7 @@ msgstr "%s nenáleží sadě"
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
+"index objektu %(rolename)s s hodnotou %(num)d neodpovídá řádce ani sloupci"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -635,6 +677,8 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
 "(num2)d"
 msgstr ""
+"index rodiče %(rolename)s s hodnotou %(num1)d neodpovídá řádce ani sloupci s "
+"indexem %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -651,33 +695,45 @@ msgstr "_Obsah"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser nevidí vaše aplikace. Pro odstranění problému musíte povolit "
-"zpřístupnění pracovní plochy. Chcete nyní zpřístupnění povolit?"
+"Accerciser nevidí aplikace vaší pracovní plochy. Problém odstraníte "
+"povolením zpřístupnění pracovní plochy. Chcete zpřístupnění povolit?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Poznámka: Změny se projeví až po odhlášení."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<mrtvý>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Úloha"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Potomek"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Aktualizovat _registr"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "A_ktualizovat aktuální"
+msgid "Refresh all"
+msgstr "Obnovit vše"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Aktualizovat aktuál_ní objekt"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Obnovit potomka zvoleného objektu"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -711,17 +767,41 @@ msgstr "Horní panel"
 msgid "Bottom panel"
 msgstr "Spodní panel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Nastavení programu"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Zásuvné moduly"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Globální klávesové zkratky"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Zvýrazňování"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Trvání zvýraznění:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Barva okraje:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Barva okraje zvýrazněného rámečku"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Barva výplně:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Barva výplně zvýrazněného rámečku"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -729,7 +809,7 @@ msgstr "Lucas Lommer <llommer@svn.gnome.org>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr ""
+msgstr "Interaktivní průzkumník přístupnosti v Pythonu"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
@@ -750,7 +830,7 @@ msgstr "Přid_at záložku..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr ""
+msgstr "Uložit zvolený objekt přístupnosti."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -803,22 +883,22 @@ msgstr "Chyby zásuvných modulů"
 msgid "View"
 msgstr "Zobrazit"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Žádné zobrazení"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "Jednoduché zobrazení zá_suvných modulů"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr ""
+msgstr "Zobrazení zásuvných modulů"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr ""
+msgstr "Zobrazení zásuvných modulů (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
@@ -847,6 +927,3 @@ msgstr "_Zobrazit"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Nápověda"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
