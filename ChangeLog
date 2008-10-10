@@ -1,3 +1,27 @@
+2008-10-10  Eitan Isaacson  <eitan@ascender.com>
+
+    * src/lib/accerciser/i18n.py.in:
+    * src/lib/accerciser/plugin/plugin_manager.py:
+    * src/lib/accerciser/ui_manager.py: Added proper context to the term
+    'View' with the Q_ thing. Thanks Wouter Bolsterlee! Bug #520296.
+
+    * src/lib/accerciser/node.py: When a node is updated to desktop, don't
+    highlight the entire desktop, it get's annoying.
+
+    * plugins/event_monitor.py: Disable event monitoring if the event we
+    are listening for disappears.
+
+    * plugins/interface_view.py: Catch exceptions when getting states
+    during state changes, they could be defunct state, which means the
+    object is dead.
+
+    * src/accerciser.in: Set process name to 'accerciser'. Bug #555416.
+
+    * configure.in: Bumped version to 1.5.1
+
+    * help/C/accerciser.xml: Changed "left plugin display area" to "right
+    plugin display area". Bug #555108. Thanks Lucas Lommer!
+
 2008-09-22  Eitan Isaacson  <eitan@ascender.com>
 
 	* NEWS:

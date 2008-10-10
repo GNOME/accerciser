@@ -420,8 +420,12 @@ class _SectionAccessible(_InterfaceSection):
     '''
     if self.node.acc == event.source:
       self.states_model.clear()
-      states = [pyatspi.stateToString(s) for s in \
-                  self.node.acc.getState().getStates()]
+      try:
+        states = [pyatspi.stateToString(s) for s in \
+                    self.node.acc.getState().getStates()]
+      except LookupError:
+        # Maybe we got a defunct state, in which case the object is diseased.
+        states = []
       states.sort()
       map(self.states_model.append, [[state] for state in states])        
 

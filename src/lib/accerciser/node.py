@@ -92,9 +92,11 @@ class Node(gobject.GObject, Tools):
       if isinstance(i, pyatspi.Accessibility.Component):
         self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.tree_path = None
-    self.highlight()
-    self.emit('accessible-changed', acc)
-  
+    if acc != self.desktop:
+        # Don't highlight the entire desktop, it gets annoying.
+        self.highlight()
+    self.emit('accessible-changed', acc)  
+
   def updateToPath(self, app_name, path):
     '''
     Update the node with a new accessible by providing a tree path 

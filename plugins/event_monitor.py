@@ -79,6 +79,8 @@ class EventMonitor(ViewportPlugin):
 
     self.listen_list = []
 
+    self.node.connect('accessible-changed', self._onNodeUpdated)
+
     self.main_xml.signal_autoconnect(self)
     self.show_all()
 
@@ -88,6 +90,11 @@ class EventMonitor(ViewportPlugin):
 
   def _onClearlog(self):
     self.monitor_buffer.set_text('')
+
+  def _onNodeUpdated(self, node, acc):
+    if acc == node.desktop and \
+          self.source_filter in ('source_app', 'source_acc'):
+      self.monitor_toggle.set_active(False)
 
   def _popEventsModel(self):
     '''
@@ -517,10 +524,9 @@ class EventMonitor(ViewportPlugin):
     @rtype: boolean
     '''
     if self.source_filter == 'source_app':
-      if (hasattr(event.source, 'getApplication') and
-          hasattr(self.acc, 'getApplication')):
+      try:
         return event.source.getApplication() == self.acc.getApplication()
-      else:
+      except:
         return False
     elif self.source_filter == 'source_acc':
       return event.source == self.acc

@@ -12,7 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
 import gtk
-from i18n import _, N_
+from i18n import _, N_, Q_
 
 menu_actions = gtk.ActionGroup('MenuActions')
 
@@ -20,7 +20,7 @@ menu_actions.add_actions([
     ('File', None, _('_File')),
     ('Edit', None, _('_Edit')),
     ('Bookmarks', None, _('_Bookmarks')),
-    ('View', None, _('_View')),
+    ('View', None, Q_('menu|_View')),
     ('Help', None, _('_Help'))])
 
 ui_xml = '''

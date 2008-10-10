@@ -31,7 +31,8 @@ pygtk.require('2.0')
 import gnome
 # make this program accessible
 props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
-gnome.program_init('accerciser', '@VERSION@', properties=props)
+gnome.program_init('accerciser', '@VERSION@', 
+                   properties=props, argv=['accerciser'] + sys.argv[1:])
 
 import gtk
 # initialize threads

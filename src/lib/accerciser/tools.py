@@ -46,14 +46,16 @@ class Tools(object):
       app = acc.getApplication()
     except Exception, e:
       return False
-    if not app or not hasattr(app, 'id'):
+    try:
+      app_id = app.id
+    except:
       return False
     if hasattr(self,'my_app_id'):
-      if self.my_app_id == app.id:
+      if self.my_app_id == app_id:
         return True
     else:
       if app.description == str(os.getpid()):
-        self.my_app_id = app.id
+        self.my_app_id = app_id
         return True
     return False
   
