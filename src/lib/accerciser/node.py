@@ -239,10 +239,12 @@ class _HighLight(gtk.Window):
     # Connect "expose" event.
     self.connect("expose-event", self._onExpose)
     
-  def highlight(self, duration=0):
+  def highlight(self, duration=500):
     if duration > 0:
       gobject.timeout_add(duration, lambda w: w.destroy(), self)
-    self.show_all()
+      self.show_all()
+    else:
+      self.destroy()
     
 
   def _onExpose(self, widget, event):
