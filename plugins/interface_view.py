@@ -339,7 +339,7 @@ class _SectionAccessible(_InterfaceSection):
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
       iter = self.relations_model.append(None, [None, r_type_name, None])
       for i in range(relation.getNTargets()):
-        acc = relation.getTarget(0)
+        acc = relation.getTarget(i)
         self.relations_model.append(iter, [getIcon(acc), acc.name, acc])
     self.relations_view.expand_all()
 
