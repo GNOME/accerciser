@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 00:33+0200\n"
-"PO-Revision-Date: 2008-08-28 00:37+0100\n"
+"POT-Creation-Date: 2008-12-01 21:34+0100\n"
+"PO-Revision-Date: 2008-12-01 21:35+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -140,16 +140,16 @@ msgid "Clear event log"
 msgstr "Töm händelselogg"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117
-#: ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
+#: ../plugins/event_monitor.py:124
+#: ../plugins/interface_view.py:457
+#: ../plugins/interface_view.py:740
 #: ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Namn"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Fullständigt namn"
 
@@ -201,7 +201,7 @@ msgstr "<b>okänd</b>"
 
 #: ../plugins/interface_view.glade.h:14
 #: ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.py:864
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivning)</i>"
 
@@ -270,7 +270,7 @@ msgstr "S_krivbord"
 
 #. add description to buffer
 #: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:462
 #: ../plugins/validate.py:212
 #: ../plugins/validate.py:275
 msgid "Description"
@@ -443,33 +443,33 @@ msgstr "Tillåter visning av olika gränssnittsegenskaper"
 msgid "(not implemented)"
 msgstr "(inte implementerad)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:467
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: ../plugins/interface_view.py:743
-#: ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:1031
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:761
 msgid "End"
 msgstr "Slut"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:931
 msgid "Too many selectable children"
 msgstr "För många valbara barn"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1026
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: ../plugins/interface_view.py:1298
-#: ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1302
+#: ../plugins/interface_view.py:1305
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redigerbar)</i>"
 
@@ -881,8 +881,8 @@ msgstr "Fel i insticksmodul"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
-msgid "View"
-msgstr "Visa"
+msgid "viewport|View"
+msgstr "Vy"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
@@ -922,13 +922,15 @@ msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
 #: ../src/lib/accerciser/ui_manager.py:23
-msgid "_View"
+msgid "menu|_View"
 msgstr "_Visa"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Hjälp"
 
+#~ msgid "View"
+#~ msgstr "Visa"
 #~ msgid "1.0"
 #~ msgstr "1.0"
 #~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
