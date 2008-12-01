@@ -1,4 +1,33 @@
 =============
+Version 1.5.2
+=============
+
+What's New
+==========
+
+- Updated translations.
+- Added proper context to the term 'View' for i18n (bug #520296).
+  Thanks Wouter Bolsterlee!
+- No longer highlight the entire desktop when a node is updated to
+  the desktop.
+- Disable event monitoring if the event being listened for
+  disappears.
+- Catch exceptions when getting states during state changes.
+- Do not highlight an accessible on the desktop if the duration it
+  is selected is 0.
+- Fixed bug #555416.  Set process name to 'accerciser'.
+- Fixed bug #555108.  Changed "left plugin display area" to "right
+  plugin display area".  Thanks Lucas Lommer!
+- Fixed bug #561598.  Display each target of a relation instead of
+  displaying the first target repeatedly.
+
+New And Updated Translations
+============================
+- Petr Kovar (cs)
+- Jorge González (es)
+- Kjartan Maraas (nb)
+
+=============
 Version 1.4.0
 =============
 
