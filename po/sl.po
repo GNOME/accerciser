@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 18:46+0000\n"
-"PO-Revision-Date: 2008-09-05 12:18+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&amp;component=general\n"
+"POT-Creation-Date: 2008-12-05 06:30+0000\n"
+"PO-Revision-Date: 2008-12-09 11:45+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -143,16 +143,16 @@ msgid "Clear event log"
 msgstr "_Počisti beleženje dogodkov"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117
-#: ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
+#: ../plugins/event_monitor.py:124
+#: ../plugins/interface_view.py:457
+#: ../plugins/interface_view.py:740
 #: ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Ime"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Polno ime"
 
@@ -204,7 +204,7 @@ msgstr "<b>neznano</b>"
 
 #: ../plugins/interface_view.glade.h:14
 #: ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.py:864
 msgid "<i>(no description)</i>"
 msgstr "<i>(brez opisa)</i>"
 
@@ -273,7 +273,7 @@ msgstr "_Namizje"
 
 #. add description to buffer
 #: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:462
 #: ../plugins/validate.py:212
 #: ../plugins/validate.py:275
 msgid "Description"
@@ -446,33 +446,33 @@ msgstr "Omogoča prikaz različnih lastnosti vmesnikov"
 msgid "(not implemented)"
 msgstr "(ni del programa)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:467
 msgid "Key binding"
 msgstr "Tipkovna bližnjica"
 
-#: ../plugins/interface_view.py:743
-#: ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:1031
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Začetek"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:761
 msgid "End"
 msgstr "Konec"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:931
 msgid "Too many selectable children"
 msgstr "Preveč izbirnih podrejenih procesov"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1026
 msgid "Content type"
 msgstr "Vrsta vsebine"
 
-#: ../plugins/interface_view.py:1298
-#: ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1302
+#: ../plugins/interface_view.py:1305
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Uredljivo)</i>"
 
@@ -880,8 +880,8 @@ msgstr "Napake vstavkov"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
-msgid "View"
-msgstr "Pogled"
+msgid "viewport|View"
+msgstr "viewport|Pogled"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
@@ -921,10 +921,13 @@ msgid "_Bookmarks"
 msgstr "_Zaznamki"
 
 #: ../src/lib/accerciser/ui_manager.py:23
-msgid "_View"
-msgstr "_Pogled"
+msgid "menu|_View"
+msgstr "menu|_Pogled"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Pomoč"
+
+#~ msgid "View"
+#~ msgstr "Pogled"
 
