@@ -15,6 +15,7 @@ import pyatspi
 import gtk
 import os.path
 import pango
+from glib import markup_escape_text
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
 from accerciser.i18n import _, N_
@@ -83,7 +84,7 @@ class InterfaceViewer(ViewportPlugin):
       role_name = '%s: %s' % (role, name)
     else:
       role_name = role
-    self.label_role.set_markup('<b>%s</b>' % role_name)
+    self.label_role.set_markup('<b>%s</b>' % markup_escape_text(role_name))
     interfaces = pyatspi.listInterfaces(acc)
     for section_obj in self.sections:
       section_obj.disable()
