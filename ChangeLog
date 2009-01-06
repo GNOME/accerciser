@@ -1,3 +1,8 @@
+2008-01-05  Brian G. Merrell <bgmerrell@novell.com>
+
+	* plugins/interface_view.py: Import markup_escape_text from gobject
+	instead of glib.  This seems to work more consistently across distros.
+
 2008-12-18  Eitan Isaacson  <eitan@ascender.com>
 
 	* plugins/interface_view.py (InterfaceViewer.onAccChanged): Escape 

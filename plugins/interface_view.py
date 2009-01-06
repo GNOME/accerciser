@@ -15,7 +15,7 @@ import pyatspi
 import gtk
 import os.path
 import pango
-from glib import markup_escape_text
+from gobject import markup_escape_text
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
 from accerciser.i18n import _, N_
