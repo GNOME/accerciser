@@ -1499,7 +1499,7 @@ class _SectionText(_InterfaceSection):
         self.text_buffer.handler_unblock(self._text_insert_handler)
            
       elif event.type.minor == 'delete':
-        call = (event.detail1, event.detail2)
+        call = (event.detail1, event.detail1 + event.detail2)
         if self.outgoing_calls['itext_delete'].isCached(call):
           return
         text_iter_end = \
