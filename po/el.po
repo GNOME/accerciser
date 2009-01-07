@@ -1,17 +1,18 @@
-# Greek translation of accerciser
-# Copyright © 2007 Free Software Foundation, Inc.
+# translation of accerciser.HEAD.el.po to Greek
+# Copyright © 2007, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 # Initial translation through translation memory: GNOME
+#
 # Simos Xenitellis <simos@gnome.org>, 2007.
 # Giannis Katsampirhs <giannis1_86@hotmail.com>, 2008.
-#
+# Marios Zindilis <m.zindilis@dmajor.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser\n"
+"Project-Id-Version: accerciser.HEAD.el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-09 18:03+0200\n"
-"PO-Revision-Date: 2008-03-09 16:06+0200\n"
-"Last-Translator: Giannis Katsampirhs <giannis1_86@hotmail.com>\n"
+"POT-Creation-Date: 2009-01-07 17:59+0000\n"
+"PO-Revision-Date: 2009-01-06 19:37+0200\n"
+"Last-Translator: Marios Zindilis <m.zindilis@dmajor.org>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accessibility Explorer"
@@ -34,14 +36,38 @@ msgstr ""
 "Μια λίστα με πρόσθετες λειτουργίες που είναι προεπιλεγμένα απενεργοποιημένες"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Χρώμα περιγράμματος επισήμανσης"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Διάρκεια επισήμανσης"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Χρώμα γεμίσματος επισήμανσης"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Το χρώμα και η διαφάνεια του περιγράμματος επισήμανσης."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Το χρώμα και η διαφάνεια του γεμίσματος της επισήμανσης."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr ""
 "Η προκαθορισμένη διάταξη πρόσθετης λειτουργίας του κάτω πίνακα εφαρμογών"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr ""
 "Η προκαθορισμένη διάταξη πρόσθετης λειτουργίας του πάνω πίνακα εφαρμογών"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Η διάρκεια του κουτιού επισήμανσης όταν επιλέγονται προσβάσιμοι κόμβοι"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -126,14 +152,15 @@ msgstr "Εκκίνηση/Διακοπή της ηχογράφησης γεγον
 msgid "Clear event log"
 msgstr "Καθαρισμός καταγραφής γεγονότων"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Πλήρες όνομα"
 
@@ -183,8 +210,8 @@ msgstr "<b>Κείμενο</b> "
 msgid "<b>unknown</b>"
 msgstr "<b>άγνωστο</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>χωρίς περιγραφή</i>"
 
@@ -252,8 +279,9 @@ msgstr "Τρέχουσα τιμή"
 msgid "Des_ktop"
 msgstr "Επιφάνεια _εργασίας"
 
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -270,7 +298,8 @@ msgstr "Υπε_ρκείμενο"
 msgid "Header:"
 msgstr "Κεφαλίδα:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Υπερσύνδεσμος"
 
@@ -409,45 +438,45 @@ msgid "name (x,y)"
 msgstr "όνομα (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Προβολέας διεπαφής"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Επιτρέπει την προβολή διάφορων ιδιοτήτων διεπαφής"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(δεν έχει υλοποιηθεί)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Συνδυασμός κωδικών"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Έναρξη"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Τέλος"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Πάρα πολλά καθορισμένα θυγατρικά"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Τύπος περιεχομένου"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Επεξεργάσιμο)</i>"
 
@@ -502,7 +531,8 @@ msgstr "Η τρέχουσα δέσμη ενεργειών θα χαθεί."
 msgid "Confirm clear"
 msgstr "Επιβεβαίωση απαλοιφής"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Αδρανής"
 
@@ -527,31 +557,41 @@ msgid "Validates application accessibility"
 msgstr "Επαληθεύει την προσιτότητα των εφαρμογών"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Επίπεδο"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Ρόλος"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Γίνεται αποθήκευση"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Γίνεται επικύρωση"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "Εξαίρεση"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "Σφάλμα"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "Προειδοποίηση"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "Πληροφορίες"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "Αποσφαλμάτωση"
 
@@ -633,7 +673,7 @@ msgstr "Το %s δεν ανήκει σε καμία ομάδα"
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
+msgstr "Το %(rolename)s με δείκτη %(num)d δεν ταιριάζει με γραμμή και στήλη"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -647,6 +687,8 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
 "(num2)d"
 msgstr ""
+"Το %(rolename)s με γονικό δείκτη %(num1)d δεν ταιριάζει με δείκτη γραμμής και στήλης %"
+"(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -658,16 +700,14 @@ msgid "_Preferences..."
 msgstr "_Προτιμήσεις..."
 
 # #-#-#-#-#  ekiga.gnome-2-14.el.po (el)  #-#-#-#-#
-#
 #: ../src/lib/accerciser/accerciser.py:93
-#, fuzzy
 msgid "_Contents"
 msgstr "_Περιεχόμενα"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "Το accerciser δεν μπορούσε να διακρίνει τις εφαρμογές στην επιφάνεια "
 "εργασίας σας. Πρέπει να ενεργοποιήσετε την προσπελασιμότητα για να "
@@ -678,23 +718,35 @@ msgid "Note: Changes only take effect after logout."
 msgstr ""
 "Σημείωση: Οι αλλαγές θα εφαρμοστούν μετά την επανεκκίνηση του συστήματος."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Ρόλος"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Θυγατρικά"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "Ανανέωση _μητρώου"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Ανανέωση _τρέχοντος:"
+msgid "Refresh all"
+msgstr "Ανανέωση όλων"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Ανανέωση _κόμβου"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Ανανέωση των παιδιών του επιλεγμένου κόμβου"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -728,17 +780,41 @@ msgstr "Κάτω πίνακας εφαρμογών"
 msgid "Bottom panel"
 msgstr "Κάτω εργαλειοθήκη"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Προτιμήσεις accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Πρόσθετες λειτουργίες"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Καθολικές συντομεύσεις πληκτρολογίου"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Επισήμανση"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Διάρκεια επισήμανσης:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Χρώμα περιγράμματος:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Το χρώμα του περιγράμματος του κουτιού επισήμανσης"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Χρώμα γεμίσματος:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Το χρώμα με το οποίο γεμίζει το κουτί επισήμανσης"
 
 # #-#-#-#-#  gnome-power-manager.HEAD.el.po (el)  #-#-#-#-#
 # #-#-#-#-#  nautilus.HEAD.el.po (el)  #-#-#-#-#
@@ -829,28 +905,14 @@ msgstr "Διαδρομή:"
 msgid "Plugin Errors"
 msgstr "Σφάλματα πρόσθετων λειτουργιών"
 
-# #-#-#-#-#  gnome-terminal.HEAD.el.po (el)  #-#-#-#-#
-# #-#-#-#-#  memory.el.po (abiword 1.0)  #-#-#-#-#
-# #-#-#-#-#  anjuta-el.po (anjuta 0.1.9)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-db-el.po (gnome-db 0.0.91)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
-#
-# #-#-#-#-#  libgda-el.po (gnome-db 0.0.91)  #-#-#-#-#
-#
-# #-#-#-#-#  toutdoux-el.po (toutdoux 1.0)  #-#-#-#-#
-#
-# #-#-#-#-#  screem-el.po (screem 1.0)  #-#-#-#-#
-#
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
-msgid "View"
-msgstr "Προβολή"
+msgid "viewport|View"
+msgstr "viewport|Άποψη"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Χωρίς προβολή"
 
@@ -890,37 +952,15 @@ msgstr "_Σελιδοδείκτες"
 # #-#-#-#-#  gnome-terminal.HEAD.el.po (el)  #-#-#-#-#
 # #-#-#-#-#  memory.el.po (abiword 1.0)  #-#-#-#-#
 # #-#-#-#-#  anjuta-el.po (anjuta 0.1.9)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-db-el.po (gnome-db 0.0.91)  #-#-#-#-#
-#
-# #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
-#
-# #-#-#-#-#  libgda-el.po (gnome-db 0.0.91)  #-#-#-#-#
-#
-# #-#-#-#-#  toutdoux-el.po (toutdoux 1.0)  #-#-#-#-#
-#
-# #-#-#-#-#  screem-el.po (screem 1.0)  #-#-#-#-#
-#
+# #-#-#-#-#  gnome-db-el.po (gnome-db 0.0.91)  #-#-#-#-##
+# #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-##
+# #-#-#-#-#  libgda-el.po (gnome-db 0.0.91)  #-#-#-#-##
+# #-#-#-#-#  toutdoux-el.po (toutdoux 1.0)  #-#-#-#-##
+# #-#-#-#-#  screem-el.po (screem 1.0)  #-#-#-#-##
 #: ../src/lib/accerciser/ui_manager.py:23
-msgid "_View"
+msgid "menu|_View"
 msgstr "_Προβολή"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Βοήθεια"
-
-#~ msgid "gtk-clear"
-#~ msgstr "gtk-clear"
-
-#~ msgid "gtk-save"
-#~ msgstr "gtk-save"
-
-#~ msgid "gtk-select-all"
-#~ msgstr "gtk-select-all"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
-
-#, fuzzy
-#~ msgid "gtk-media-record"
-#~ msgstr "Ε_γγραφή"
