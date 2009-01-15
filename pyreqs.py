@@ -25,7 +25,7 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['bonobo', 'ORBit', 'pygtk', 'gtk', 
+modules = ['pygtk', 'bonobo', 'ORBit', 'gtk', 
            'gtk.glade', 'gtk.gdk', 'wnck', 'pyatspi']
 for name in modules:
   try:
