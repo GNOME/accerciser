@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-05 20:38+0200\n"
-"PO-Revision-Date: 2008-09-04 23:05+0100\n"
+"POT-Creation-Date: 2009-01-18 23:18+0100\n"
+"PO-Revision-Date: 2009-01-18 23:19+0100\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -144,14 +144,14 @@ msgid "Clear event log"
 msgstr "Neteja el registre d'esdeveniments"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nom"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Nom complet"
 
@@ -201,8 +201,8 @@ msgstr "<b>Text</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconegut</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(sense descripció)</i>"
 
@@ -270,7 +270,7 @@ msgid "Des_ktop"
 msgstr "_Escriptori"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Descripció"
@@ -426,45 +426,45 @@ msgid "name (x,y)"
 msgstr "nom (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Visualitzador d'interfícies"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Permet veure varies propietats d'interfície"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(no està implementat)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Assignació de tecles"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Inici"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Massa fills seleccionables"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Tipus de contingut"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editable)</i>"
 
@@ -701,8 +701,7 @@ msgid ""
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "L'Accerciser no pot veure les aplicacions de l'escriptori. Heu d'activar "
-"l'accessibilitat de l'escriptori per a solucionar-ho. Voleu activar-"
-"la ara?"
+"l'accessibilitat de l'escriptori per a solucionar-ho. Voleu activar-la ara?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -883,8 +882,8 @@ msgstr "Errors del connector"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
-msgid "View"
-msgstr "Visualitza"
+msgid "viewport|View"
+msgstr "Visualització"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
@@ -924,12 +923,15 @@ msgid "_Bookmarks"
 msgstr "_Adreces d'interès"
 
 #: ../src/lib/accerciser/ui_manager.py:23
-msgid "_View"
+msgid "menu|_View"
 msgstr "_Visualitza"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "A_juda"
+
+#~ msgid "View"
+#~ msgstr "Visualitza"
 
 #~ msgid "1.0"
 #~ msgstr "1.0"
