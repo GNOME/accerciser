@@ -19,7 +19,7 @@ menu_actions = gtk.ActionGroup('MenuActions')
 menu_actions.add_actions([
     ('File', None, _('_File')),
     ('Edit', None, _('_Edit')),
-    ('Bookmarks', None, _('_Bookmarks')),
+    ('Bookmarks', None, Q_('menu|_Bookmarks')),
     ('View', None, Q_('menu|_View')),
     ('Help', None, _('_Help'))])
 
