@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-10 23:13+0000\n"
-"PO-Revision-Date: 2008-10-12 22:19+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-26 14:31+0000\n"
+"PO-Revision-Date: 2009-01-27 08:13+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -145,8 +146,8 @@ msgid "Clear event log"
 msgstr "Limpiar el registro de eventos"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:457
-#: ../plugins/interface_view.py:740 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -202,8 +203,8 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconocido</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:864
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(sin descripción)</i>"
 
@@ -271,7 +272,7 @@ msgid "Des_ktop"
 msgstr "_Escritorio"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:462
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Descripción"
@@ -427,45 +428,45 @@ msgid "name (x,y)"
 msgstr "nombre (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Visor de interfaces"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Permite ver varias propiedades del interfaz"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(no implementado)"
 
-#: ../plugins/interface_view.py:467
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Atajo de teclado"
 
-#: ../plugins/interface_view.py:747 ../plugins/interface_view.py:1031
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Inicio"
 
-#: ../plugins/interface_view.py:761
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:931
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Demasiados hijos seleccionables"
 
-#: ../plugins/interface_view.py:1026
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Tipo de contenido"
 
-#: ../plugins/interface_view.py:1302 ../plugins/interface_view.py:1305
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editable)</i>"
 
@@ -809,7 +810,7 @@ msgstr "El color de relleno de la caja resaltada"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2008"
+msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -921,7 +922,8 @@ msgid "_Edit"
 msgstr "_Editar"
 
 #: ../src/lib/accerciser/ui_manager.py:22
-msgid "_Bookmarks"
+#| msgid "_Bookmarks"
+msgid "menu|_Bookmarks"
 msgstr "_Marcadores"
 
 #: ../src/lib/accerciser/ui_manager.py:23
