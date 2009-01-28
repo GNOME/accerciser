@@ -22,7 +22,7 @@ import sys
 import imp
 import traceback
 import gconf
-from accerciser.i18n import _, N_, Q_
+from accerciser.i18n import _, N_, C_
 
 GCONF_PLUGIN_DISABLED = '/apps/accerciser/disabled_plugins'      
 
@@ -375,7 +375,7 @@ class PluginManager(gtk.ListStore, Tools):
       # Translators: This is the viewport in which the plugin appears,
       # it is a noun.
       # 
-      tvc = gtk.TreeViewColumn(Q_('viewport|View'))
+      tvc = gtk.TreeViewColumn(C_('viewport', 'View'))
       tvc.pack_start(crc, False)
       tvc.set_cell_data_func(crc, self._viewNameDataFunc)
       crc.set_property('editable', True)
