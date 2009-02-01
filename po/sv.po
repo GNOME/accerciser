@@ -1,14 +1,14 @@
 # Swedish translation for accerciser.
-# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-01 21:34+0100\n"
-"PO-Revision-Date: 2008-12-01 21:35+0100\n"
+"POT-Creation-Date: 2009-02-01 12:13+0100\n"
+"PO-Revision-Date: 2009-02-01 12:16+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accessibility Explorer"
-msgstr "Tillgänglighetsutforskaren Accerciser"
+msgstr "Hjälpmedelsutforskaren Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "Ge ditt program en omgång tillgänglighet"
+msgstr "Ge ditt program en omgång hjälpmedelsfunktioner"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -57,7 +57,7 @@ msgstr "Standardlayouten för insticksmoduler för överpanelen"
 
 #: ../accerciser.schemas.in.h:9
 msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Längden för markeringsrutan när tillgängliga noder markeras"
+msgstr "Längden för markeringsrutan när hjälpmedelsnoder markeras"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -65,7 +65,7 @@ msgstr "API-bläddrare"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "Bläddra bland de olika metoderna för aktuell tillgänglighet"
+msgstr "Bläddra bland olika metoder för aktuell hjälpmedelsfunktion"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -89,7 +89,7 @@ msgstr "IPython-konsoll"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Interaktiv konsoll för manipulering av aktuellt markerade tillgänglighet"
+msgstr "Interaktiv konsoll för manipulering av aktuell markerad hjälpmedelsfunktion"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -105,7 +105,7 @@ msgstr "Allting"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr "Markerad tillgänglighet"
+msgstr "Markerad hjälpmedelsfunktion"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
@@ -141,8 +141,8 @@ msgstr "Töm händelselogg"
 
 #. add accessible's name to buffer
 #: ../plugins/event_monitor.py:124
-#: ../plugins/interface_view.py:457
-#: ../plugins/interface_view.py:740
+#: ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741
 #: ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
@@ -200,8 +200,8 @@ msgid "<b>unknown</b>"
 msgstr "<b>okänd</b>"
 
 #: ../plugins/interface_view.glade.h:14
-#: ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:864
+#: ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivning)</i>"
 
@@ -270,7 +270,7 @@ msgstr "S_krivbord"
 
 #. add description to buffer
 #: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:462
+#: ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212
 #: ../plugins/validate.py:275
 msgid "Description"
@@ -405,7 +405,7 @@ msgstr "WIDGET"
 
 #: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
-msgstr "_Tillgänglighet"
+msgstr "_Hjälpmedelsfunktion"
 
 #: ../plugins/interface_view.glade.h:67
 msgid "_Document"
@@ -428,48 +428,48 @@ msgid "name (x,y)"
 msgstr "namn (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Gränssnittsvisare"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Tillåter visning av olika gränssnittsegenskaper"
 
-#: ../plugins/interface_view.py:187
-#: ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:188
 #: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(inte implementerad)"
 
-#: ../plugins/interface_view.py:467
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: ../plugins/interface_view.py:747
-#: ../plugins/interface_view.py:1031
+#: ../plugins/interface_view.py:748
+#: ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:761
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Slut"
 
-#: ../plugins/interface_view.py:931
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "För många valbara barn"
 
-#: ../plugins/interface_view.py:1026
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: ../plugins/interface_view.py:1302
-#: ../plugins/interface_view.py:1305
+#: ../plugins/interface_view.py:1303
+#: ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redigerbar)</i>"
 
@@ -479,15 +479,15 @@ msgstr "Snabbväljare"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Insticksmodul med olika metoder för att välja tillgängligheter snabbt."
+msgstr "Insticksmodul med olika metoder för att välja hjälpmedelsfunktioner snabbt."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr "Inspektera senaste fokuserade tillgänglighet"
+msgstr "Inspektera senaste fokuserad hjälpmedelsfunktion"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr "Inspektera tillgänglighet under musen"
+msgstr "Inspektera hjälpmedelsfunktion under muspekare"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 #: ../plugins/script_recorder.glade.h:2
@@ -548,7 +548,7 @@ msgstr "AT-SPI-validerare"
 
 #: ../plugins/validate.py:154
 msgid "Validates application accessibility"
-msgstr "Validerar tillgänglighet i program"
+msgstr "Validerar hjälpmedel i program"
 
 #. log level column
 #. add level to buffer
@@ -597,7 +597,7 @@ msgstr "Grundläggande"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "Testar grundläggande tillgänglig i grafiska program"
+msgstr "Testar grundläggande hjälpmedel i grafiska program"
 
 #: ../plugindata/validate/basic.py:24
 #, python-format
@@ -697,7 +697,7 @@ msgstr "_Innehåll"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera tillgänglighetsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera den nu?"
+msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera hjälpmedelsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera den nu?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -811,7 +811,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "En interaktiv tillgänglighetsutforskare skriven i Python"
+msgstr "En interaktiv hjälpmedelsutforskare skriven i Python"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
@@ -831,7 +831,7 @@ msgstr "_Lägg till bokmärke..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr "Bokmärke markerad som tillgänglighet."
+msgstr "Bokmärk markerad hjälpmedelsfunktion."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -919,6 +919,7 @@ msgid "_Edit"
 msgstr "R_edigera"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
