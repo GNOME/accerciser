@@ -24,6 +24,7 @@ this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, locale, gettext, os.path, gtk.glade
+from gettext import gettext as translate_func
 
 def bind(domain, locale_dir):
   '''
@@ -66,7 +67,7 @@ def C_(ctx, s):
   more than one string in another locale.  We provide a convention to
   provide contextual information for the string so that translators can
   do the right thing.'''
-  translated = _('%s\x04%s' % (ctx, s))
+  translated = translate_func('%s\x04%s' % (ctx, s))
   if '\x04' in translated:
     # no translation found, return input string
     return s
