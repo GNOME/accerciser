@@ -2,7 +2,7 @@
 #
 # This file is distributed under the same license as the accerciser package.
 #
-# Wouter Bolsterlee <wbolster@gnome.org>, 2008
+# Wouter Bolsterlee <wbolster@gnome.org>, 2008–2009
 #
 # Enkele als zelfstandig naamwoord gebruikte werkwoorden:
 # - accessible        toegankelijke
@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-08 12:08+0200\n"
-"PO-Revision-Date: 2008-09-08 12:12+0200\n"
+"POT-Creation-Date: 2009-02-04 16:23+0100\n"
+"PO-Revision-Date: 2009-02-04 16:23+0100\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,7 +66,9 @@ msgstr "De standaardplugin voor het bovenpaneel"
 
 #: ../accerciser.schemas.in.h:9
 msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "De duur van het oplichtende vlak wanneer toegankelijke nodes geselecteerd worden"
+msgstr ""
+"De duur van het oplichtende vlak wanneer toegankelijke nodes geselecteerd "
+"worden"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -152,14 +154,14 @@ msgid "Clear event log"
 msgstr "Gebeurtenislogboek wissen"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Naam"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Volledige naam"
 
@@ -209,8 +211,8 @@ msgstr "<b>Tekst</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>onbekend</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(geen beschrijving)</i>"
 
@@ -278,7 +280,7 @@ msgid "Des_ktop"
 msgstr "_Bureaublad"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Beschrijving"
@@ -436,46 +438,46 @@ msgstr "naam (x,y)"
 
 # FIXME: Iemand een beter idee? (Wouter Bolsterlee)
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Interfaceviewer"
 
 # Vrij vertaald (Wouter Bolsterlee)
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Diverse interface-eigenschappen bekijken"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(niet geïmplementeerd)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Sneltoets"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Einde"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Te veel selecteerbare kinderen"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Inhoudstype"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Bewerkbaar)</i>"
 
@@ -892,15 +894,14 @@ msgstr "Pad:"
 msgid "Plugin Errors"
 msgstr "Pluginfouten"
 
-# Geen context, zie http://bugzilla.gnome.org/show_bug.cgi?id=520296 (Wouter Bolsterlee)
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
-#.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:377
+msgctxt "viewport"
 msgid "View"
 msgstr "Weergave"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:454
 msgid "No view"
 msgstr "Geen weergave"
 
@@ -934,17 +935,15 @@ msgid "_Edit"
 msgstr "Be_werken"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "Bl_adwijzers"
 
-# Geen context, zie http://bugzilla.gnome.org/show_bug.cgi?id=520296 (Wouter Bolsterlee)
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
-msgstr "_Beeld"
+msgstr "Beel_d"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Hulp"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
