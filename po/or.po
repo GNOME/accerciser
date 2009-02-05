@@ -1,27 +1,26 @@
-# translation of accerciser.HEAD.or.po to Oriya
+# translation of or.po to Oriya
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Subhransu Behera <arya_subhransu@yahoo.co.in>, 2007.
-# Manoj Kumar Giri <mgiri@redhat.com>, 2008.
+# Manoj Kumar Giri <mgiri@redhat.com>, 2008, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser.HEAD.or\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-21 04:00+0000\n"
-"PO-Revision-Date: 2008-08-20 17:31+0530\n"
+"Project-Id-Version: or\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-28 12:31+0000\n"
+"PO-Revision-Date: 2009-02-05 18:16+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
-"Language-Team: Oriya\n"
+"Language-Team: Oriya <oriya-it@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1)\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
 #: ../accerciser.desktop.in.in.h:1
-#, fuzzy
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser ଅଭିଗମ୍ଯତା ଅନ୍ବେଷକ"
 
@@ -35,23 +34,23 @@ msgstr "ପ୍ଲଗ-ଇନ ମାନଙ୍କର ଗୋଟିଏ ତାଲି�
 
 #: ../accerciser.schemas.in.h:2
 msgid "Highlight border color"
-msgstr ""
+msgstr "ଧାର ରଙ୍ଗକୁ ଆଲୋକିତ କରନ୍ତୁ"
 
 #: ../accerciser.schemas.in.h:3
 msgid "Highlight duration"
-msgstr ""
+msgstr "ଆଲୋକିତ କରିବା ଅବଧି"
 
 #: ../accerciser.schemas.in.h:4
 msgid "Highlight fill color"
-msgstr ""
+msgstr "ଆଲୋକିତ ପୁରଣ ରଙ୍ଗ"
 
 #: ../accerciser.schemas.in.h:5
 msgid "The color and opacity of the highlight border."
-msgstr ""
+msgstr "ଆଲୋକିତ ଧାରର ରଙ୍ଗ ଏବଂ opacity।"
 
 #: ../accerciser.schemas.in.h:6
 msgid "The color and opacity of the highlight fill."
-msgstr ""
+msgstr "ଆଲୋକିତ ପୁରଣର ରଙ୍ଗ ଏବଂ opacity।"
 
 #: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
@@ -63,7 +62,7 @@ msgstr "ଉପର ଫଳକ ପାଇଁ ପୂର୍ବନିର୍ଦ୍ଧା
 
 #: ../accerciser.schemas.in.h:9
 msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr ""
+msgstr "ଅଭିଗମ୍ୟ ଶାଖାଗୁଡ଼ିକୁ ବାଛିବା ସମୟରେ ଆଲୋକିତ ବାକ୍ସର ଅବଧି"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -146,14 +145,14 @@ msgid "Clear event log"
 msgstr "ଘଟଣା ଲଗକୁ ସଫାକରନ୍ତୁ"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ନାମ"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "ପୂରା ନାମ"
 
@@ -203,8 +202,8 @@ msgstr "<b>ପାଠ୍ଯ</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>ଅଜଣା</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(କୌଣସି ବର୍ଣ୍ଣନା ନାହିଁ)</i>"
 
@@ -272,7 +271,7 @@ msgid "Des_ktop"
 msgstr "ଡେସ୍କଟପ (_k)"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "ବର୍ଣ୍ଣନା"
@@ -428,45 +427,45 @@ msgid "name (x,y)"
 msgstr "ନାମ (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "ଅନ୍ତରାପୃଷ୍ଠ ପ୍ରଦର୍ଶକ"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "ବିଭିନ୍ନ ଅନ୍ତରାପୃଷ୍ଠ ଗୁଣଧର୍ମ ମାନଙ୍କର ପ୍ରଦର୍ଶନକୁ ସ୍ବୀକାର କରିଥାଏ"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(ନିଷ୍ପାଦନ କରାଯାଇ ନାହିଁ)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "ଚାବି ବାଇଣ୍ଡିଙ୍ଗ"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "ୟୁ.ଆର.ଆଇ."
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "ଆରମ୍ଭ"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "ସମାପ୍ତ"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "ଅତ୍ଯଧିକ ବଛାଯୋଗ୍ୟ ପିଲା"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "ବିଷୟବସ୍ତୁ ପ୍ରକାର"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(ସମ୍ପାଦନ ଯୋଗ୍ଯ)</i>"
 
@@ -596,21 +595,21 @@ msgstr "ମୌଳିକ GUI ପ୍ରୟୋଗ ଅଭିଗମ୍ୟତାକୁ
 #: ../plugindata/validate/basic.py:24
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr ""
+msgstr "କାର୍ଯ୍ୟକ୍ଷମ %s କୁ ଲକ୍ଷ୍ୟ କରାଯାଇପାରିବ ନାହିଁ କିମ୍ବା ବଛାଯାଇପାରିବ ନାହିଁ"
 
 #: ../plugindata/validate/basic.py:42
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr ""
+msgstr "ପାରସ୍ପରିକ କ୍ରିୟା %s ଟି କାର୍ଯ୍ୟକ୍ଷମ ନୁହଁ"
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
-msgstr ""
+msgstr "ଗୋଟିଏରୁ ଅଧିକ ଲକ୍ଷ୍ୟ ୱିଜେଟ"
 
 #: ../plugindata/validate/basic.py:81
 #, python-format
 msgid "%s has no text interface"
-msgstr ""
+msgstr "%s ରେ ପାଠ୍ୟ ଅନ୍ତରାପୃଷ୍ଠ ନାହିଁ"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
@@ -618,12 +617,12 @@ msgstr ""
 #: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
+msgstr "ଉପର ସ୍ତରର %s ଅନୁକ୍ରମଣିକା ତଳ ସ୍ତରର ଅନୁକ୍ରମଣିକା ସହିତ ମେଳ ଖାଉ ନାହିଁ"
 
 #: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr ""
+msgstr "%s ସମ୍ପର୍କ ପାଇଁ ଅନୁପସ୍ଥିତ ପାରସ୍ପରିକ ସମ୍ପର୍କ"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
@@ -631,12 +630,12 @@ msgstr ""
 #: ../plugindata/validate/basic.py:194
 #, python-format
 msgid "%s missing name or label"
-msgstr ""
+msgstr "%s ଅନୁପସ୍ଥିତ ନାମ ଏବଂ ନାମପଟି"
 
 #: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr ""
+msgstr "ଲକ୍ଷ୍ୟଯୋଗ୍ୟ %s ରେ ସାରଣୀ ଅନ୍ତରାପୃଷ୍ଠ ଅଛି, କୌଣସି ଅନ୍ତରାପୃଷ୍ଠ ଚୟନ ନାହିଁ"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -645,7 +644,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr ""
+msgstr "%s ରେ %s ଅବସ୍ଥା ବିନା %s ଅବସ୍ଥା ଅଛି"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -653,7 +652,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:262
 #, python-format
 msgid "%s does not belong to a set"
-msgstr ""
+msgstr "%s କୌଣସି ଶ୍ରେଣୀ ଅନ୍ତର୍ଗତ ନୁହଁ"
 
 #. Translators: The row or column number retrieved from a table child's
 #. object at a certain index is wrong.
@@ -663,7 +662,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
+msgstr "%(rolename)s ଅନୁକ୍ରମଣିକା %(num)d ଧାଡ଼ି ଏବଂ ସ୍ତମ୍ଭ ସହିତ ମେଳ ଖାଉନାହିଁ"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -677,29 +676,29 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
 "(num2)d"
 msgstr ""
+"%(rolename)s ଉପର ସ୍ତର ଅନୁକ୍ରମଣିକା %(num1)d ଧାଡ଼ି ଏବଂ ସ୍ତମ୍ଭ ଅନୁକ୍ରମଣିକା %"
+"(num2)d ସହିତ ମେଳ ଖାଉନାହିଁ"
 
 #: ../plugindata/validate/basic.py:352
-#, fuzzy, python-format
+#, python-format
 msgid "%s has no name or description"
-msgstr "<କୌଣସି ବର୍ଣ୍ଣନା ନାହିଁ>"
+msgstr "%s ରେ କୌଣସି ନାମ କିମ୍ବା ବର୍ଣ୍ଣନା ନାହିଁ"
 
 #: ../src/lib/accerciser/accerciser.py:91
-#, fuzzy
 msgid "_Preferences..."
-msgstr "gtk-preferences"
+msgstr "ପସନ୍ଦଗୁଡ଼ିକ (_P)..."
 
 #: ../src/lib/accerciser/accerciser.py:93
 msgid "_Contents"
 msgstr "ସୂଚୀପତ୍ର (_C)"
 
 #: ../src/lib/accerciser/accerciser.py:135
-#, fuzzy
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser ଆପଣଙ୍କ ଡେସ୍କଟପରେ ଥିବା ପ୍ରୟୋଗ ମାନଙ୍କୁ ଦେଖିପାରିଲା ନାହିଁ। ଏହି ସମସ୍ଯାକୁ ସମାଧାନ "
-"କରିବା ପାଇଁ ଆପଣ ଡେସ୍କଟପ ଅଭିଗମ୍ଯତାକୁ ସକ୍ରିୟ କରିବା ଉଚିତ। ଆପଣ ବର୍ତ୍ତମାନ ଏହାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ "
+"Accerciser ଆପଣଙ୍କ ଡେସ୍କଟପରେ ଥିବା ପ୍ରୟୋଗ ମାନଙ୍କୁ ଦେଖିପାରିଲା ନାହିଁ।  ଏହି ସମସ୍ଯାକୁ ସମାଧାନ "
+"କରିବା ପାଇଁ ଆପଣ ଡେସ୍କଟପ ଅଭିଗମ୍ଯତାକୁ ସକ୍ରିୟ କରିବା ଉଚିତ।  ଆପଣ ବର୍ତ୍ତମାନ ଏହାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ "
 "ଚାହୁଁଛନ୍ତି କି?"
 
 #: ../src/lib/accerciser/accerciser.py:153
@@ -708,35 +707,33 @@ msgstr "ଟିପ୍ପଣୀ: ପରିବର୍ତ୍ତନ ଗୁଡିକ �
 
 #: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
-msgstr ""
+msgstr "<ନିର୍ଜୀବ>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "ନିର୍ଭରକ"
 
 #: ../src/lib/accerciser/accessible_treeview.py:430
-#, fuzzy
 msgid "_Refresh Registry"
-msgstr "ବର୍ତ୍ତମାନ ଅନ୍ବେଷକକୁ ସତେଜନ କରନ୍ତୁ (_C)"
+msgstr "ନଥିପତ୍ର ଭଣ୍ଡାରକୁ ସତେଜନ କରନ୍ତୁ (_R)"
 
 #. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
 msgid "Refresh all"
-msgstr ""
+msgstr "ସମସ୍ତଙ୍କୁ ସତେଜ କରନ୍ତୁ"
 
 #. Translators: Refresh current tree node's children.
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:436
-#, fuzzy
 msgid "Refresh _Node"
-msgstr "ବର୍ତ୍ତମାନ ଅନ୍ବେଷକକୁ ସତେଜନ କରନ୍ତୁ (_C)"
+msgstr "ନୋଡକୁ ସତେଜନ କରନ୍ତୁ (_N)"
 
 #. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:439
 msgid "Refresh selected node's children"
-msgstr ""
+msgstr "ବଚ୍ଛିତ ନୋଡର ନିମ୍ନ ସ୍ତରକୁ ସତେଜ କରନ୍ତୁ"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -775,38 +772,36 @@ msgid "accerciser Preferences"
 msgstr "accerciser ପସନ୍ଦ"
 
 #: ../src/lib/accerciser/prefs_dialog.py:40
-#, fuzzy
 msgid "Plugins"
-msgstr "ପ୍ଲଗ-ଇନ୍ସ (_P)"
+msgstr "ପ୍ଲଗଇନଗୁଡ଼ିକ"
 
 #: ../src/lib/accerciser/prefs_dialog.py:41
-#, fuzzy
 msgid "Global Hotkeys"
-msgstr "ସାମଗ୍ରିକ ହଟ-କି (_G)"
+msgstr "ଜାଗତିକ ହଟ-କିଗୁଡ଼ିକ"
 
 #: ../src/lib/accerciser/prefs_dialog.py:49
 msgid "Highlighting"
-msgstr ""
+msgstr "ଆଲୋକିତ କରୁଅଛି"
 
 #: ../src/lib/accerciser/prefs_dialog.py:81
 msgid "Highlight duration:"
-msgstr ""
+msgstr "ଆଲୋକିତ ଅବଧି:"
 
 #: ../src/lib/accerciser/prefs_dialog.py:89
 msgid "Border color:"
-msgstr ""
+msgstr "ଧାରର ରଙ୍ଗ:"
 
 #: ../src/lib/accerciser/prefs_dialog.py:93
 msgid "The border color of the highlight box"
-msgstr ""
+msgstr "ଆଲୋକିତ ବାକ୍ସର ଧାର ରଙ୍ଗ"
 
 #: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Fill color:"
-msgstr ""
+msgstr "ରଙ୍ଗ ପୁରଣ କରନ୍ତୁ:"
 
 #: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "The fill color of the highlight box"
-msgstr ""
+msgstr "ଆଲୋକିତ ବାକ୍ସର ରଙ୍ଗ ପୁରଣ କରନ୍ତୁ"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -821,67 +816,60 @@ msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
-#, fuzzy
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
-"ନୂତନ BSD ଲାଇସେନ୍ସ\n"
-"ବିସ୍ତୃତ ବିବରଣୀ ପାଇଁ COPYING ଏବଂ NOTICE ଫାଇଲ ମାନଙ୍କୁ ଦେଖନ୍ତୁ।"
+msgstr "ନୂତନ BSD ଲାଇସେନ୍ସ ବିସ୍ତୃତ ବିବରଣୀ ପାଇଁ COPYING ଏବଂ NOTICE ଫାଇଲ ମାନଙ୍କୁ ଦେଖନ୍ତୁ।"
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
-msgstr ""
+msgstr "ୱେବ ସାଇଟ"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନ ଯୋଗକରନ୍ତୁ (_A)..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
-#, fuzzy
 msgid "Bookmark selected accessible."
-msgstr "ଚୟିତ ଅଭିଗମ୍ଯ"
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନ ବଚ୍ଛିତ ଅଭିଗମ୍ଯ।"
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନଗୁଡ଼ିକୁ ସମ୍ପାଦନ କରନ୍ତୁ (_E)..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନଗୁଡ଼ିକୁ ପରିଚାଳନା କରନ୍ତୁ।"
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନଗୁଡ଼ିକୁ ସମ୍ପାଦନ କରନ୍ତୁ..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
-#, fuzzy
 msgid "Title"
-msgstr "ଫାଇଲ (_F)"
+msgstr "ଶୀର୍ଷକ"
 
 #: ../src/lib/accerciser/bookmarks.py:435
-#, fuzzy
 msgid "Application"
-msgstr "ପ୍ରୟୋଗ (_p)"
+msgstr "ପ୍ରୟୋଗ"
 
 #: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
-msgstr ""
+msgstr "ପଥ"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନଗୁଡ଼ିକୁ ଯୋଗ କରନ୍ତୁ..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
-msgstr ""
+msgstr "ଶୀର୍ଷକ:"
 
 #: ../src/lib/accerciser/bookmarks.py:528
-#, fuzzy
 msgid "Application:"
-msgstr "ପ୍ରୟୋଗ (_p)"
+msgstr "ପ୍ରୟୋଗ:"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
-msgstr ""
+msgstr "ପଥ:"
 
 #: ../src/lib/accerciser/plugin/message.py:148
 msgid "Plugin Errors"
@@ -891,16 +879,18 @@ msgstr "ପ୍ଲଗ-ଇନ ତୃଟି"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#| msgid "View"
+msgctxt "viewport"
 msgid "View"
 msgstr "ଦୃଶ୍ଯ"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
-msgstr ""
+msgstr "କୌଣସି ଦୃଶ୍ୟ ନାହିଁ"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "ଗୋଟିଏ ପ୍ଲଗଇନ ଦୃଶ୍ୟ (_S)"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -928,13 +918,17 @@ msgid "_Edit"
 msgstr "ସମ୍ପାଦନ କରନ୍ତୁ (_E)"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
-msgstr ""
+msgstr "ଚିହ୍ନିତ ସ୍ଥାନଗୁଡ଼ିକ (_B)"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
 msgstr "ଦୃଶ୍ଯ (_V)"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "ସହାୟତା (_H)"
+
