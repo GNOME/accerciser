@@ -1,14 +1,14 @@
 # Thai translation of accerciser
-# Copyright (C) 2007-2008 Free Software Foundation, Inc.
+# Copyright (C) 2007-2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007-2008.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 19:37+0700\n"
-"PO-Revision-Date: 2008-07-10 19:48+0700\n"
+"POT-Creation-Date: 2009-02-05 22:55+0700\n"
+"PO-Revision-Date: 2009-02-05 23:17+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -140,14 +140,14 @@ msgid "Clear event log"
 msgstr "ล้างบันทึกเหตุการณ์"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "ชื่อเต็ม"
 
@@ -197,8 +197,8 @@ msgstr "<b>ข้อความ</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>ไม่ทราบ</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(ไม่มีคำบรรยาย)</i>"
 
@@ -266,7 +266,7 @@ msgid "Des_ktop"
 msgstr "_พื้นโต๊ะ"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "คำบรรยาย"
@@ -422,45 +422,45 @@ msgid "name (x,y)"
 msgstr "ชื่อ (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "แสดงส่วนติดต่อ"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "แสดงคุณสมบัติต่างๆ ของส่วนติดต่อผู้ใช้"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(ยังไม่ทำ)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "ปุ่มเรียก"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "เริ่ม"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "จบ"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "มีรายการลูกที่เลือกได้มากเกินไป"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "ชนิดเนื้อหา"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(แก้ไขได้)</i>"
 
@@ -877,6 +877,7 @@ msgstr "ข้อผิดพลาดปลั๊กอิน"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
 msgstr "แสดง"
 
@@ -914,10 +915,12 @@ msgid "_Edit"
 msgstr "แ_ก้ไข"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_ที่คั่นหน้า"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
 msgstr "มุ_มมอง"
 
