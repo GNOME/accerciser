@@ -1,20 +1,20 @@
 # Vietnamese translation for Accerciser.
-# Copyright © 2008 GNOME i18n Project for Vietnamese.
-# Clytie Siddall <clytie@riverland.net.au>, 2007-2008.
-# 
+# Copyright © 2009 GNOME i18n Project for Vietnamese.
+# Clytie Siddall <clytie@riverland.net.au>, 2007-2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser TRUNK\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-21 22:05+0000\n"
-"PO-Revision-Date: 2008-05-24 22:59+0930\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-28 12:31+0000\n"
+"PO-Revision-Date: 2009-02-07 19:07+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.7b3\n"
+"X-Generator: LocFactoryEditor 1.8\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accessibility Explorer"
@@ -29,12 +29,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Danh sách các bổ sung bị tắt theo mặc định"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Màu viền tô sáng"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Khoảng thời gian tô sáng"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Màu điền vùng tô sáng"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Màu và độ mờ đục của viền tô sáng."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Màu và độ mờ đục của vùng điền tô sáng."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Bố trí bổ sung mặc định cho Bảng bên dưới"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Bố trí bổ sung mặc định cho Bảng bên trên"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Khoảng thời gian trong đó hộp tô sáng còn lại trên màn hình khi chọn nút có thể truy cập được"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -116,17 +140,17 @@ msgstr "Bắt đầu/dừng thu sự kiện"
 msgid "Clear event log"
 msgstr "Dọn sổ theo dõi sự kiện"
 
-#: ../plugins/event_monitor.py:117
-#: ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../plugins/validate.py:277
-#: ../src/lib/accerciser/accessible_treeview.py:388
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
 #. add accessible's name to buffer
+#: ../plugins/event_monitor.py:124
+#: ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741
+#: ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Tên"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Họ tên"
 
@@ -134,9 +158,9 @@ msgstr "Họ tên"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.glade.h:4
 #. Component
 #. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "0, 0"
 
@@ -177,8 +201,8 @@ msgid "<b>unknown</b>"
 msgstr "<b>không rõ</b>"
 
 #: ../plugins/interface_view.glade.h:14
-#: ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>không mô tả</i>"
 
@@ -186,14 +210,14 @@ msgstr "<i>không mô tả</i>"
 msgid "<i>Caption:</i>"
 msgstr "<i>Phụ đề</i>"
 
-#: ../plugins/interface_view.glade.h:18
 #. End chaacter
 #. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>Cuối: 0</i>"
 
-#: ../plugins/interface_view.glade.h:20
 #. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>Đầu : 0</i>"
 
@@ -245,16 +269,16 @@ msgstr "Giá trị hiện có"
 msgid "Des_ktop"
 msgstr "_Màn hình nền"
 
+#. add description to buffer
 #: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212
 #: ../plugins/validate.py:275
-#. add description to buffer
 msgid "Description"
 msgstr "Mô tả"
 
-#: ../plugins/interface_view.glade.h:35
 #. How many columns the cell spans.
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "Chừng mực:"
 
@@ -266,9 +290,9 @@ msgstr "_Siêu văn bản"
 msgid "Header:"
 msgstr "Đầu trang:"
 
+#. add url role to buffer
 #: ../plugins/interface_view.glade.h:38
 #: ../plugins/validate.py:281
-#. add url role to buffer
 msgid "Hyperlink"
 msgstr "Siêu liên kết"
 
@@ -404,49 +428,49 @@ msgstr "_Bảng"
 msgid "name (x,y)"
 msgstr "tên (x,y)"
 
-#: ../plugins/interface_view.py:36
 #. Translators: this is a plugin name
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Bộ xem giao diện"
 
-#: ../plugins/interface_view.py:39
 #. Translators: this is a plugin description
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Cho phép xem các thuộc tính giao diện khác nhau"
 
-#: ../plugins/interface_view.py:187
-#: ../plugins/interface_view.py:189
+#: ../plugins/interface_view.py:188
 #: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(chưa được thi hành)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Tổ hợp phím"
 
-#: ../plugins/interface_view.py:743
-#: ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748
+#: ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Đầu"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Cuối"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Quá nhiều con chọn được"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Kiểu nội dung"
 
-#: ../plugins/interface_view.py:1298
-#: ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303
+#: ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Sửa được)</i>"
 
@@ -456,9 +480,7 @@ msgstr "Chọn nhanh"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"Phần bổ sung cung cấp các phương pháp khác nhau truy cập nhanh các điều truy "
-"cập."
+msgstr "Phần bổ sung cung cấp các phương pháp khác nhau truy cập nhanh các điều truy cập."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -468,18 +490,18 @@ msgstr "Xem xét điều truy cập có tiêu điểm cuối cùng"
 msgid "Inspect accessible under mouse"
 msgstr "Xem xét điều truy cập dưới con chuột"
 
-#: ../plugins/script_recorder.glade.h:2
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.glade.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:4
 #. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.glade.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:6
 #. A native script format.
+#: ../plugins/script_recorder.glade.h:6
 msgid "Native"
 msgstr "Sở hữu"
 
@@ -529,16 +551,16 @@ msgstr "Bộ thẩm tra AT-SPI"
 msgid "Validates application accessibility"
 msgstr "Thẩm tra khả năng truy cập của ứng dụng"
 
-#: ../plugins/validate.py:205
-#: ../plugins/validate.py:273
 #. log level column
 #. add level to buffer
+#: ../plugins/validate.py:205
+#: ../plugins/validate.py:273
 msgid "Level"
 msgstr "Cấp"
 
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:398
 #. add accessible's role to buffer
+#: ../plugins/validate.py:279
+#: ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Nhiệm vụ"
 
@@ -597,11 +619,11 @@ msgstr "nhiều hơn một ô điều khiển có tiêu điểm"
 msgid "%s has no text interface"
 msgstr "%s không có giao diện văn bản"
 
-#: ../plugindata/validate/basic.py:100
-#, python-format
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
+#: ../plugindata/validate/basic.py:100
+#, python-format
 msgid "%s index in parent does not match child index"
 msgstr "chỉ mục %s trong đồ cha không tương ứng với chỉ mục con"
 
@@ -610,11 +632,11 @@ msgstr "chỉ mục %s trong đồ cha không tương ứng với chỉ mục co
 msgid "Missing reciprocal for %s relation"
 msgstr "Thiếu đảo nghịch cho quan hệ %s"
 
-#: ../plugindata/validate/basic.py:194
-#, python-format
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
+#: ../plugindata/validate/basic.py:194
+#, python-format
 msgid "%s missing name or label"
 msgstr "%s thiếu tên hay nhãn"
 
@@ -623,46 +645,43 @@ msgstr "%s thiếu tên hay nhãn"
 msgid "focusable %s has table interface, no selection interface"
 msgstr "%s có thể nhận tiêu điểm và có giao diện bảng, không phải giao diện lựa chọn"
 
-#: ../plugindata/validate/basic.py:237
-#, python-format
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
+#: ../plugindata/validate/basic.py:237
+#, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s có tình trạng %s mà không có tình trạng %s"
 
-#: ../plugindata/validate/basic.py:262
-#, python-format
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
+#: ../plugindata/validate/basic.py:262
+#, python-format
 msgid "%s does not belong to a set"
 msgstr "%s không thuộc về một tập hợp"
 
-#: ../plugindata/validate/basic.py:296
-#, python-format
 #. Translators: The row or column number retrieved from a table child's
 #. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
+#: ../plugindata/validate/basic.py:296
+#, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "chỉ mục %(rolename)s %(num)d không tương ứng với hàng và cột"
 
-#: ../plugindata/validate/basic.py:326
-#, python-format
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
 #. object's location in the table.
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
-msgstr "chỉ mục cha %(rolename)s %(num1)d không tương ứng với chỉ mục hàng và cột %"
-"(num2)d"
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "chỉ mục cha %(rolename)s %(num1)d không tương ứng với chỉ mục hàng và cột %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -678,31 +697,44 @@ msgid "_Contents"
 msgstr "_Nội dung"
 
 #: ../src/lib/accerciser/accerciser.py:135
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn "
-"cần phải hiệu lực khả năng truy cập đến màn hình nền để sửa chữa vấn đề này. Bạn "
-"có muốn hiệu lực nó ngay bây giờ không?"
+msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "Trình Accerciser không tìm thấy các ứng dụng trên màn hình nền của bạn. Bạn cần phải hiệu lực khả năng truy cập đến màn hình nền để sửa chữa vấn đề này. Bạn có muốn hiệu lực nó ngay bây giờ không?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr "Ghi chú : thay đổi có tác động chỉ sau khi đăng xuất."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<chết>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Con"
 
+#: ../src/lib/accerciser/accessible_treeview.py:430
+#| msgid "Refresh _Current"
+msgid "_Refresh Registry"
+msgstr "_Cập nhật sồ đăng ký"
+
+#. Translators: Appears as tooltip
+#.
 #: ../src/lib/accerciser/accessible_treeview.py:433
+msgid "Refresh all"
+msgstr "Cập nhật tất cả"
+
 #. Translators: Refresh current tree node's children.
 #.
-msgid "Refresh _Current"
-msgstr "_Cập nhật hiện thời"
+#: ../src/lib/accerciser/accessible_treeview.py:436
+#| msgid "Refresh _Current"
+msgid "Refresh _Node"
+msgstr "Cập nhật _Nút"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Cập nhật các con của nút đã chọn"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -736,17 +768,41 @@ msgstr "Bảng trên"
 msgid "Bottom panel"
 msgstr "Bảng dưới"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "Tùy thích accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Phần bổ sung"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Phím tắt toàn cục"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Tô sáng"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Khoảng thời gian tô sáng:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Màu viền:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "Màu viền của hộp tô sáng"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "Màu điền:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "Màu điền vào hộp tô sáng"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -758,14 +814,11 @@ msgstr "Một bộ thám hiểm khả năng truy cập Python tương tác"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr ""
-"accerciser Tác quyền © năm 2006, 2007 của công ty IBM Corporation (BSD)"
+msgstr "accerciser Tác quyền © năm 2006, 2007 của công ty IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
-"Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm "
-"chi tiết."
+msgstr "Giấy phép BDS mới. Xem tập tin COPYING (chép) và NOTICE (thông báo) để tìm chi tiết."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
@@ -823,14 +876,16 @@ msgstr "Đường dẫn:"
 msgid "Plugin Errors"
 msgstr "Lỗi bổ sung"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#| msgid "View"
+msgctxt "viewport"
 msgid "View"
 msgstr "Xem"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Không xem"
 
@@ -864,13 +919,18 @@ msgid "_Edit"
 msgstr "_Sửa"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+#| msgid "_Bookmarks"
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Liên kết lưu"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
 msgstr "_Xem"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Trợ g_iúp"
+
