@@ -1,16 +1,16 @@
-# Përkthimi i mesazheve të accerciser në shqip.
-# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+# Përkthimi i accerciser në shqip.
+# Copyright (C) 2007 - 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 #
-# Laurent Dhima <laurenti@alblinux.net>, 2007, 2008.
+# Laurent Dhima <laurenti@alblinux.net>, 2007 - 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-08 18:46+0000\n"
-"PO-Revision-Date: 2008-09-05 23:31+0200\n"
+"POT-Creation-Date: 2009-02-13 17:24+0100\n"
+"PO-Revision-Date: 2009-02-13 17:23+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
-"Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,7 +90,8 @@ msgstr "Konsola IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
+msgstr ""
+"Konsolë interaktive për të manipuluar açesibilitetin aktual të zgjedhur"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -141,14 +142,14 @@ msgid "Clear event log"
 msgstr "Pastron mesazhet e eventit"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Emri"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Emri i plotë"
 
@@ -198,8 +199,8 @@ msgstr "<b>Teksti</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nuk njihet</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(asnjë përshkrim)</i>"
 
@@ -267,7 +268,7 @@ msgid "Des_ktop"
 msgstr "Hapësira e _punës"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Përshkrimi"
@@ -423,45 +424,45 @@ msgid "name (x,y)"
 msgstr "emri (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Shikuesi i interfaqes"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Mundëson shfaqjen e pronësive të ndryshme të interfaqes"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(akoma pa përfunduar)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Taste përshpejtues"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Fillimi"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Mbarimi"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Shumë bij të zgjedhshëm"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Lloji i përmbajtjes"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(E shkruajtshme)</i>"
 
@@ -471,7 +472,8 @@ msgstr "Zgjedhje e shpejtë"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
+msgstr ""
+"Plugin me metoda të ndryshme për zgjedhjen me lehtësi të açesibilitetit."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -658,7 +660,8 @@ msgstr "%s nuk i takon një grupi"
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr "%(rolename)s treguesi %(num)d nuk korrispondon me asnjë rresht apo kollonë"
+msgstr ""
+"%(rolename)s treguesi %(num)d nuk korrispondon me asnjë rresht apo kollonë"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -875,33 +878,34 @@ msgstr "Gabime të plugin"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
-msgstr "Shfaq"
+msgstr "Shfaqja"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
-msgstr "Asnjë paraqitje"
+msgstr "Asnjë shfaqje"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr "Paraqitje plugin më _vete"
+msgstr "Shfaqje plugin më _vete"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr "Paraqitja e plugin"
+msgstr "Shfaqja e plugin"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "Paraqitja e plugin (%d)"
+msgstr "Shfaqja e plugin (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>Paraqitje e _re...</i>"
+msgstr "<i>Shfaqje e _re...</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
-msgstr "Paraqitje e re..."
+msgstr "Shfaqje e re..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
@@ -912,14 +916,15 @@ msgid "_Edit"
 msgstr "_Ndrysho"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Libërshënues"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
 msgstr "_Shfaq"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Ndihmë"
-
