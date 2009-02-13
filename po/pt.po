@@ -1,14 +1,15 @@
 # accerciser's Portuguese translation.
-# Copyright © 2007, 2008 accerciser
+# Copyright © 2007, 2008, 2009 accerciser
 # This file is distributed under the same license as the accerciser package.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2007, 2008.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.24\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-31 12:35+0100\n"
-"PO-Revision-Date: 2008-07-31 12:40+0000\n"
+"Project-Id-Version: 2.26\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-28 12:31+0000\n"
+"PO-Revision-Date: 2009-02-13 21:40+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -143,14 +144,14 @@ msgid "Clear event log"
 msgstr "Limpar o registo de eventos"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nome"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Nome completo"
 
@@ -200,8 +201,8 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconhecido</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(sem descrição)</i>"
 
@@ -269,7 +270,7 @@ msgid "Des_ktop"
 msgstr "Am_biente de Trabalho"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Descrição"
@@ -425,45 +426,45 @@ msgid "name (x,y)"
 msgstr "nome (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Visualizador de Interface"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Permite a visualização de várias propriedades do interface"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(não implementado)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Associação de teclas"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Iniciar"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Fim"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Demasiados filhos seleccionáveis"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Tipo de conteúdo"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editável)</i>"
 
@@ -879,8 +880,10 @@ msgstr "Erros de Plugin"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#| msgid "View"
+msgctxt "viewport"
 msgid "View"
-msgstr "Ver"
+msgstr "Vista"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
@@ -916,10 +919,14 @@ msgid "_Edit"
 msgstr "_Editar"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+#| msgid "_Bookmarks"
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
 msgstr "_Ver"
 
