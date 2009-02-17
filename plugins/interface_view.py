@@ -1641,7 +1641,12 @@ class _SectionValue(_InterfaceSection):
       digits += 1
       minimumIncrement *= 10
 
+    # Calling set_range will clamp the value of spinbutton to the allowable
+    # range, causing us to try to set the value of the accessible when we
+    # really shouldn't.
+    self.ignore_value_changes = True
     self.spinbutton.set_range(vi.minimumValue, vi.maximumValue)
+    self.ignore_value_changes = False
     self.spinbutton.set_value(vi.currentValue)
     self.spinbutton.set_digits(digits)
    
@@ -1652,6 +1657,7 @@ class _SectionValue(_InterfaceSection):
     @param spinner: The Value spinner
     @type spinner: gtk.SpinButton
     '''
+    if self.ignore_value_changes: return
     vi = self.node.acc.queryValue()
     vi.currentValue = spinner.get_value()
 
