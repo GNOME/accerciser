@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-15 19:02+0100\n"
-"PO-Revision-Date: 2009-02-15 19:09+0100\n"
-"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
+"POT-Creation-Date: 2009-03-03 22:42+0100\n"
+"PO-Revision-Date: 2009-03-03 22:40+0100\n"
+"Last-Translator: wadim dziedzic <wdziedzic@aviary,pl>\n"
 "Language-Team: Polish <gnome-l10n@lists.aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr "Przeglądarka dostępności Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "Przegląd funkcji dostępności programów"
+msgstr "Ćwiczenia z dostępności dla programów"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -144,10 +144,8 @@ msgid "Clear event log"
 msgstr "Wyczyść dziennik zdarzeń"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:124
-#: ../plugins/interface_view.py:458
-#: ../plugins/interface_view.py:741
-#: ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -203,8 +201,7 @@ msgstr "<b>Tekst</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nieznane</b>"
 
-#: ../plugins/interface_view.glade.h:14
-#: ../plugins/interface_view.py:322
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
 #: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(brak opisu)</i>"
@@ -273,10 +270,8 @@ msgid "Des_ktop"
 msgstr "_Pulpit"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:463
-#: ../plugins/validate.py:212
-#: ../plugins/validate.py:275
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Opis"
 
@@ -294,8 +289,7 @@ msgid "Header:"
 msgstr "Nagłówek:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.glade.h:38
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Hiperłącze"
 
@@ -441,8 +435,7 @@ msgstr "Widok interfejsu"
 msgid "Allows viewing of various interface properties"
 msgstr "Umożliwia podgląd różnych właściwości interfejsu"
 
-#: ../plugins/interface_view.py:188
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
 #: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(niezaimplementowane)"
@@ -451,8 +444,7 @@ msgstr "(niezaimplementowane)"
 msgid "Key binding"
 msgstr "Skrót klawiszowy"
 
-#: ../plugins/interface_view.py:748
-#: ../plugins/interface_view.py:1032
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
@@ -472,8 +464,7 @@ msgstr "Zbyt wielu zaznaczalnych potomków"
 msgid "Content type"
 msgstr "Typ zawartości"
 
-#: ../plugins/interface_view.py:1303
-#: ../plugins/interface_view.py:1306
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Element modyfikowalny)</i>"
 
@@ -528,8 +519,7 @@ msgstr "Bieżący skrypt zostanie utracony."
 msgid "Confirm clear"
 msgstr "Potwierdzanie czyszczenia"
 
-#: ../plugins/validate.glade.h:1
-#: ../plugins/validate.py:358
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
 #: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Bezczynny"
@@ -556,14 +546,12 @@ msgstr "Sprawdza program pod kątem dostępności"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:205
-#: ../plugins/validate.py:273
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Poziom"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Rola"
 
@@ -611,7 +599,7 @@ msgstr "elementu %s nie można zaznaczyć ani aktywować"
 #: ../plugindata/validate/basic.py:42
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr ""
+msgstr "element interaktywny %s nie jest podmiotem działań"
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
@@ -633,7 +621,7 @@ msgstr "indeks rodzica %s nie odpowiada ineksowi potomka"
 #: ../plugindata/validate/basic.py:145
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr ""
+msgstr "Brak elementu odwrotnego dla relacji %s"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
@@ -646,7 +634,7 @@ msgstr "brak nazwy lub etykiety %s "
 #: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr ""
+msgstr "element %s posiada interfejs tabeli bez interfejsu wybierania"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -655,7 +643,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr ""
+msgstr "rola %s posiada stan %s bez stanu %s"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -673,7 +661,7 @@ msgstr "%s nie należy do zestawu"
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
+msgstr "Indeks %(rolename)s numer %(num)d nie pasuje do wiersza i kolumny"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -683,8 +671,12 @@ msgstr ""
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr ""
+"Indeks %(rolename)s numer %(num1)d nie pasuje do indeksu wiersza i kolumny %"
+"(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -700,8 +692,13 @@ msgid "_Contents"
 msgstr "_Zawartość"
 
 #: ../src/lib/accerciser/accerciser.py:135
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Nie można pobrać informacji o programach na pulpicie. Do poprawnej pracy tego programu wymagane jest włączenie technologii wspierających. Czy uruchomić je teraz?"
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Nie można pobrać informacji o programach na pulpicie. Do poprawnej pracy "
+"tego programu wymagane jest włączenie technologii wspierających. Czy "
+"uruchomić je teraz?"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -878,14 +875,6 @@ msgstr "Ścieżka:"
 msgid "Plugin Errors"
 msgstr "Błędy wtyczki"
 
-#. Translators: This is the viewport in which the plugin appears,
-#. it is a noun.
-#.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
-msgctxt "viewport"
-msgid "View"
-msgstr "Widok"
-
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Bez wyświetlania"
@@ -919,20 +908,21 @@ msgstr "_Plik"
 msgid "_Edit"
 msgstr "_Edycja"
 
-#: ../src/lib/accerciser/ui_manager.py:22
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "_Zakładki"
-
-#: ../src/lib/accerciser/ui_manager.py:23
-msgctxt "menu"
-msgid "_View"
-msgstr "_Widok"
-
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Pomo_c"
 
+#~ msgctxt "viewport"
+#~ msgid "View"
+#~ msgstr "Widok"
+
+#~ msgctxt "menu"
+#~ msgid "_Bookmarks"
+#~ msgstr "_Zakładki"
+
+#~ msgctxt "menu"
+#~ msgid "_View"
+#~ msgstr "_Widok"
+
 #~ msgid "1.0"
 #~ msgstr "1.0"
-
