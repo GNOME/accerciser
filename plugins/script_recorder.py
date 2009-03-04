@@ -3,7 +3,7 @@ from accerciser.plugin import ViewportPlugin
 import pyatspi
 import gtk
 from gtk import keysyms
-import gtksourceview
+import gtksourceview2
 import threading
 import wnck
 from accerciser.i18n import N_, _
@@ -181,12 +181,12 @@ class ScriptRecorder(ViewportPlugin):
     '''
     Initialize the plugin.
     '''
-    text_buffer = gtksourceview.SourceBuffer()
-    lm = gtksourceview.SourceLanguagesManager()
-    lang = lm.get_language_from_mime_type('text/x-python')
+    text_buffer = gtksourceview2.Buffer()
+    lm = gtksourceview2.LanguageManager()
+    lang = lm.get_language('python')
     text_buffer.set_language(lang)
-    text_buffer.set_highlight(True)
-    self.text_view = gtksourceview.SourceView(text_buffer)
+    text_buffer.set_highlight_syntax(True)
+    self.text_view = gtksourceview2.View(text_buffer)
     self.text_view.set_editable(True)
     self.text_view.set_cursor_visible(True)
     xml = gtk.glade.XML(GLADE_FILE, 'main_vbox')

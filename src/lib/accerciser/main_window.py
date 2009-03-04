@@ -36,7 +36,7 @@ class AccerciserMainWindow(gtk.Window):
     '''
     gtk.Window.__init__(self)
     self.set_icon_name('accerciser')
-    self.set_title('accerciser')
+    self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
     node.connect('blink-done', self._onBlinkDone)    
     cl = gconf.client_get_default()

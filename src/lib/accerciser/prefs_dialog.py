@@ -65,7 +65,7 @@ class _HighlighterView(gtk.Alignment):
   '''
   def __init__(self):
     gtk.Alignment.__init__(self)
-    self.set_padding(0, 0, 20, 0)
+    self.set_padding(12, 12, 18, 12)
     self.gconf_cl = gconf.client_get_default()
     self._buildUI()
 
