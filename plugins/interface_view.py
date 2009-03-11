@@ -966,7 +966,7 @@ class _SectionSelection(_InterfaceSection):
       return
 
     model, paths = selection.get_selected_rows()
-    selected_children = [path[0] for path in paths]
+    selected_children = [model.get_value(model.get_iter(path), 2).getIndexInParent() for path in paths]
     
     for child_index in range(len(self.node.acc)):
       if child_index in selected_children:
