@@ -1,16 +1,16 @@
-# translation of accerciser.HEAD.po to Malayalam
+# translation of accerciser.HEAD.ml.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Ani Peter <apeter@redhat.com>, 2007.
+# Ani Peter <apeter@redhat.com>, 2007, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 03:18+0100\n"
-"PO-Revision-Date: 2007-09-05 13:12+0530\n"
+"Project-Id-Version: accerciser.HEAD.ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-28 12:31+0000\n"
+"PO-Revision-Date: 2009-03-12 19:56+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
-"Language-Team: Malayalam\n"
+"Language-Team:  Swathanthra Malayalam Computing|സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ് <smc-discuss@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,31 +18,55 @@ msgstr ""
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser Accessibility Explorer"
-msgstr ""
+msgstr "Accerciser ആക്സസിബിളിറ്റി എക്സ്പ്ലോറര്‍"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr ""
+msgstr "നിങ്ങളുടെ പ്രയോഗത്തിനു് ഒരു ആക്സസിബിളിറ്റി അഭ്യാസം ലഭ്യമാക്കുക"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "സ്വതവേ സജ്ജമല്ലാത്ത പ്ളഗ്ഗിനുകളുടെ പട്ടിക"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "അതിരിനുള്ള നിറം എടുത്തു കാണിക്കുക"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "സമയം എടുത്തുകാണിക്കുക"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "നിറയ്ക്കുന്ന നിറം എടുത്തുകാണിക്കുക"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "എടുത്തുകാണിക്കുന്ന അതിരിന്റെ നിറവും ഒപേസിറ്റിയും"
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "എടുത്തുകാണിക്കുന്ന നിറയ്ക്കുന്ന നിറവും ഒപേസിറ്റിയും"
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "താഴെ ഭാഗത്തുള്ള പാനലിന്റെ സ്വതവേയുള്ള പ്ളഗ്ഗിന്‍ ലേയൌട്ട്"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "മുകള്‍ ഭാഗത്തുള്ള പാനലിന്റെ സ്വതവേയുള്ള പ്ളഗ്ഗിന്‍ ലേയൌട്ട്"
 
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "ലഭ്യമാക്കുന്ന നോഡുകള്‍ തെരഞ്ഞെടുക്കുമ്പോള്‍ എടുത്തുകാണിക്കുന്ന ബോക്സിന്റെ സമയം"
+
 #: ../plugins/api_view.py:32
 msgid "API Browser"
-msgstr "API ബ്റൌസറ്‍"
+msgstr "API ബ്രൌസര്‍"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr ""
+msgstr "നിലവില്‍ ലഭ്യമായവയുടെ പല മാര്‍ഗ്ഗങ്ങള്‍ തെരയുക"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -66,7 +90,7 @@ msgstr "IPython കണ്‍സോള്‍"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
+msgstr "നിലവില്‍ തെരഞ്ഞെടുത്ത ആക്സസിബിള്‍ കൈകാര്യം ചെയ്യുന്നതിനുള്ള കണ്‍സോള്‍"
 
 #: ../plugins/event_monitor.glade.h:1
 msgid "<b>Event monitor</b>"
@@ -74,7 +98,7 @@ msgstr "<b>ഈവന്റ് നിരീക്ഷകന്‍</b>"
 
 #: ../plugins/event_monitor.glade.h:2
 msgid "C_lear Selection"
-msgstr "തിരഞ്ഞെടുത്തത് വേണ്ടന്ന് വയ്ക്കുക (_l)"
+msgstr "തെരഞ്ഞെടുത്തത് _വേണ്ടന്ന് വയ്ക്കുക"
 
 #: ../plugins/event_monitor.glade.h:3
 msgid "Everything"
@@ -82,11 +106,11 @@ msgstr "എല്ലാം"
 
 #: ../plugins/event_monitor.glade.h:4
 msgid "Selected accessible"
-msgstr ""
+msgstr "തെരഞ്ഞെടുത്ത ആക്സെസിബിള്‍"
 
 #: ../plugins/event_monitor.glade.h:5
 msgid "Selected application"
-msgstr "തിരഞ്ഞെടുത്ത പ്റയോഗം"
+msgstr "തിരഞ്ഞെടുത്ത പ്രയോഗം"
 
 #: ../plugins/event_monitor.glade.h:6
 msgid "Source"
@@ -94,28 +118,40 @@ msgstr "ഉറവിടം"
 
 #: ../plugins/event_monitor.glade.h:7
 msgid "_Monitor Events"
-msgstr "ഈവന്റുകള്‍ നിരീക്ഷിക്കുക (_M)"
+msgstr "ഈവന്റുകള്‍ _നിരീക്ഷിക്കുക "
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "ഈവന്റ് നിരീക്ഷകന്‍"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
+"തെരഞ്ഞെടുത്ത തരങ്ങള്‍, ഉറവിടങ്ങള്‍ എന്നിവയില്‍ നിന്നും ഉണ്ടാകുന്നതനുസരിച്ചു് "
+"ഇവന്റുകള്‍ കാണിക്കുക"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "അവസാനമുള്ള ഇവന്റ് എന്‍ട്രി തിരഞ്ഞെടുക്കുക"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "ഇവന്റ് റിക്കോര്‍ഡിങ് ആരംങിക്കുക/നിര്‍ത്തുക"
+
+#: ../plugins/event_monitor.py:67
+#| msgid "C_lear Selection"
+msgid "Clear event log"
+msgstr "ഇവന്റ് ലോഗ് വെടിപ്പാക്കുക"
+
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "പേര്"
 
-#: ../plugins/event_monitor.py:119
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "മുഴുവന്‍ പേര്"
 
@@ -123,324 +159,331 @@ msgstr "മുഴുവന്‍ പേര്"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.glade.h:2
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
+#: ../plugins/interface_view.glade.h:5
 msgid "<b>Attributes</b>"
 msgstr "<b>വിശേഷതകള്‍</b>"
 
-#: ../plugins/interface_view.glade.h:5
+#: ../plugins/interface_view.glade.h:6
 msgid "<b>Child count</b>"
 msgstr "<b>ചൈള്‍ഡ് കൌണ്ട്</b>"
 
-#: ../plugins/interface_view.glade.h:6
+#: ../plugins/interface_view.glade.h:7
 msgid "<b>Description</b>"
 msgstr "<b>വിവരണം</b>"
 
-#: ../plugins/interface_view.glade.h:7
+#: ../plugins/interface_view.glade.h:8
 msgid "<b>Relations</b>"
 msgstr "<b>ബന്ധങ്ങള്‍</b>"
 
-#: ../plugins/interface_view.glade.h:8
+#: ../plugins/interface_view.glade.h:9
 msgid "<b>Selected Cell</b>"
 msgstr "<b>തിരഞ്ഞെടുത്ത കളം</b>"
 
-#: ../plugins/interface_view.glade.h:9
+#: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
 msgstr "<b>അവസ്ഥകള്‍</b>"
 
-#: ../plugins/interface_view.glade.h:10
+#: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
 msgstr "<b>ടേബിള്‍ സംബന്ധിച്ചുള്ള വിവരം</b>"
 
-#: ../plugins/interface_view.glade.h:11
+#: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
 msgstr "<b>ടെക്സ്റ്റ്</b>"
 
-#: ../plugins/interface_view.glade.h:12
+#: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
 msgstr "<b>അജ്ഞാതം</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(വിവരണം ലഭ്യമല്ല)</i>"
 
-#: ../plugins/interface_view.glade.h:14
+#: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
 msgstr "<i>തലക്കെട്ട്:</i>"
 
-#: ../plugins/interface_view.glade.h:15
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>അവസാനം: 0</i>"
 
-#: ../plugins/interface_view.glade.h:16
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>തുടക്കം: 0</i>"
 
-#: ../plugins/interface_view.glade.h:17
+#: ../plugins/interface_view.glade.h:21
 msgid "<i>Summary:</i>"
 msgstr "<i>ചുരുക്കത്തില്‍:</i>"
 
-#: ../plugins/interface_view.glade.h:18
+#: ../plugins/interface_view.glade.h:22
 msgid "<no description>"
 msgstr "<no description>"
 
-#: ../plugins/interface_view.glade.h:19
+#: ../plugins/interface_view.glade.h:23
 msgid "Absolute position"
-msgstr ""
+msgstr "ആബ്സല്യൂട്ട് സ്ഥാനം"
 
-#: ../plugins/interface_view.glade.h:20
+#: ../plugins/interface_view.glade.h:24
 msgid "Acti_on"
-msgstr "പ്റവറ്‍ത്തി (_i)"
+msgstr "_പ്രവര്‍ത്തി"
 
-#: ../plugins/interface_view.glade.h:21
+#: ../plugins/interface_view.glade.h:25
 msgid "Alpha"
 msgstr "ആല്‍ഫാ"
 
-#: ../plugins/interface_view.glade.h:22
+#: ../plugins/interface_view.glade.h:26
 msgid "Ap_plication"
-msgstr "പ്റയോഗം (_p)"
+msgstr "_പ്രയോഗം"
 
-#: ../plugins/interface_view.glade.h:23
+#: ../plugins/interface_view.glade.h:27
 msgid "Co_mponent"
-msgstr "ഘടകം (_m)"
+msgstr "_ഘടകം"
 
-#: ../plugins/interface_view.glade.h:24
+#: ../plugins/interface_view.glade.h:28
 msgid "Col_lection"
-msgstr "ശേഖരം (_l)"
+msgstr "_ശേഖരം"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:29
 msgid "Column"
 msgstr "നിര"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:30
 msgid "Columns"
 msgstr "നിരകള്‍"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:31
 msgid "Current value"
 msgstr "നിലവിലുള്ള മൂല്ല്യം"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
-msgstr "ഡസ്ക്ടോപ്പ് (_k)"
+msgstr "_പണിയിടം"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "വിവരണം"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "എക്സ്റ്റെന്റുകള്‍:"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:36
 msgid "H_ypertext"
-msgstr "ഹൈപ്പറ്‍ടെക്സ്റ്റ് (_y)"
+msgstr "_ഹൈപ്പര്‍ടെക്സ്റ്റ്"
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:37
 msgid "Header:"
 msgstr "ഹെഡറ്‍:"
 
-#: ../plugins/interface_view.glade.h:34
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "ഹൈപ്പറ്‍ലിങ്ക്"
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:39
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
 msgstr "സ്വതവേയുള്ളവ ഉള്‍പ്പെടുത്തുക"
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:41
 msgid "Layer"
 msgstr "ലെയറ്‍"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
-msgstr "ലോഗിനുള്ള സഹായി (_g)"
+msgstr "_ലോഗിന്‍ ചെയ്യുന്നതിനുള്ള സഹായി "
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:43
 msgid "Locale"
 msgstr "ലൊക്കെയില്‍"
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:44
 msgid "Locale:"
 msgstr "ലൊക്കെയില്‍:"
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:45
 msgid "MDI-Z-order"
 msgstr "MDI-Z-order"
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:46
 msgid "Maximum value"
 msgstr "ഏറ്റവും കൂടുതലായ മൂല്ല്യം"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:47
 msgid "Minimum increment"
-msgstr ""
+msgstr "ഏറ്റവും കുറഞ്ഞ വര്‍ദ്ധന"
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:48
 msgid "Minimum value"
 msgstr "ഏറ്റവും കുറഞ്ഞ മൂല്ല്യം"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:49
 msgid "Offset"
 msgstr "ഓഫ്സെറ്റ്"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
-msgstr "പ്റവറ്‍ത്തിക്കുക"
+msgstr "പ്രവര്‍ത്തിക്കുക"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:51
 msgid "Position"
 msgstr "സ്ഥാനം"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:52
 msgid "Relative position"
-msgstr ""
+msgstr "റിലേറ്റീവ് സ്ഥാനം"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:53
 msgid "Row"
 msgstr "വരി"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:54
 msgid "Rows"
 msgstr "വരികള്‍"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:55
 msgid "Select All"
 msgstr "എല്ലാം തിരഞ്ഞെടുക്കുക"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:56
 msgid "Selected columns"
 msgstr "തിരഞ്ഞെടുത്ത നിരകള്‍"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:57
 msgid "Selected rows"
 msgstr "തിരഞ്ഞെടുത്ത വരികള്‍"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:58
 msgid "Show"
 msgstr "കാണിക്കുക"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:59
 msgid "Size"
 msgstr "വ്യാപ്തി"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
-msgstr ""
+msgstr "_സ്ട്രീം ചെയ്യുവാന്‍ സാധിക്കുന്ന ഉള്ളടക്കം"
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
-msgstr "ടെക്സ്റ്റ് (_x)"
+msgstr "_വാചകം"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
 msgstr "ടൂള്‍കിറ്റ്"
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:63
 msgid "Val_ue"
-msgstr "മൂല്ല്യം (_u)"
+msgstr "_മൂല്ല്യം"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:64
 msgid "Version"
 msgstr "ലക്കം"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:65
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.glade.h:62
-msgid "_Accessible"
-msgstr ""
-
-#: ../plugins/interface_view.glade.h:63
-msgid "_Document"
-msgstr "രേഖ (_D)"
-
-#: ../plugins/interface_view.glade.h:64
-msgid "_Image"
-msgstr "ഇമേജ് (_I)"
-
-#: ../plugins/interface_view.glade.h:65
-msgid "_Selection"
-msgstr "തിരഞ്ഞെടുക്കല്‍ (_S)"
-
 #: ../plugins/interface_view.glade.h:66
-msgid "_Table"
-msgstr "ടേബിള്‍ (_T)"
+msgid "_Accessible"
+msgstr "_ആക്സസിബിള്‍"
 
 #: ../plugins/interface_view.glade.h:67
+msgid "_Document"
+msgstr "_രേഖ"
+
+#: ../plugins/interface_view.glade.h:68
+msgid "_Image"
+msgstr "_ചിത്രം"
+
+#: ../plugins/interface_view.glade.h:69
+msgid "_Selection"
+msgstr "_തെരഞ്ഞെടുക്കല്‍"
+
+#: ../plugins/interface_view.glade.h:70
+msgid "_Table"
+msgstr "_പട്ടിക"
+
+#: ../plugins/interface_view.glade.h:71
 msgid "name (x,y)"
 msgstr "പേര് (x,y)"
 
-#: ../plugins/interface_view.py:35
-msgid "Interface Viewer"
-msgstr ""
-
+#. Translators: this is a plugin name
 #: ../plugins/interface_view.py:37
+msgid "Interface Viewer"
+msgstr "ഇന്റര്‍ഫെയിസ് വ്യൂവര്‍"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
-msgstr ""
+msgstr "അനവധി ഇന്റര്‍ഫെയിസ് വിശേഷതകളുടെ കാഴ്ച അനുവദിക്കുന്നു"
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
-msgid " (not implemented)"
-msgstr ""
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
+msgid "(not implemented)"
+msgstr "(ലഭ്യമാക്കിയിട്ടില്ല)"
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
-msgstr ""
+msgstr "കീ ബൈന്‍ഡിങ്"
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "ആരംഭിക്കുക"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "അവസാനിപ്പിക്കുക"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
-msgstr ""
+msgstr "തെരഞ്ഞെടുക്കുവാന്‍ സാധിക്കുന്ന വളരെ അധികം ചിള്‍ഡ്രന്‍"
 
-#: ../plugins/interface_view.py:1019
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
-msgstr ""
+msgstr "ഉള്ളടക്കത്തിന്റെ തരം"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
-msgid " <i>(Editable)</i>"
-msgstr " <i>(മാറ്റം വരുത്തുവാന്‍ സാധിക്കുന്ന)</i>"
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
+#| msgid " <i>(Editable)</i>"
+msgid "<i>(Editable)</i>"
+msgstr " <i>(ചിട്ടപ്പെടുത്തുവാന്‍ സാധിക്കുന്ന)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
-msgstr ""
+msgstr "പെട്ടെന്നു് തെരഞ്ഞെടുക്കുക"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
+msgstr "ആക്സസിബിളുകള്‍ പെട്ടെന്നു് തെരഞ്ഞെടുക്കുന്നതിനുള്ള അനവധി മാര്‍ഗ്ഗങ്ങള്‍ ഉള്ള പ്ലഗിന്‍."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
-msgstr ""
+msgstr "അവസാനം കേന്ദ്രീകരിച്ച ആക്സസിബിള്‍ പരിശോധിക്കുക"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr ""
+msgstr "മൌസിലുള്ള ആക്സസിബിള്‍ പരിശോധിക്കുക"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
 #: ../plugins/script_recorder.glade.h:2
@@ -455,73 +498,258 @@ msgstr "LDTP"
 #. A native script format.
 #: ../plugins/script_recorder.glade.h:6
 msgid "Native"
-msgstr ""
+msgstr "നേറ്റീവ്"
 
 #: ../plugins/script_recorder.glade.h:7
 msgid "Script Type"
-msgstr ""
+msgstr "സ്ക്രിപ്റ്റ് തരം"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
-msgstr ""
+msgstr "സ്ക്രിപ്റ്റ് റിക്കോര്‍ഡര്‍"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr ""
+msgstr "dogtail രീതിയിലുള്ള സ്ക്രിപ്റ്റുകള്‍ ഉണ്ടാക്കുന്നു"
 
 #: ../plugins/script_recorder.py:340
 msgid "The current script will be lost."
-msgstr ""
+msgstr "നിലവിലുള്ള സ്ക്രിപ്റ്റ് നഷ്ടപ്പെടുന്നു."
 
 #: ../plugins/script_recorder.py:341
 msgid "Confirm clear"
-msgstr ""
+msgstr "വെടിപ്പാക്കുന്നതു് ഉറപ്പാക്കുക"
 
-#: ../src/lib/accerciser/accerciser.py:94
-msgid "_Preferences..."
-msgstr ""
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
+msgid "Idle"
+msgstr "വ്യര്‍ത്ഥസമയം"
 
-#: ../src/lib/accerciser/accerciser.py:96
-msgid "_Contents"
-msgstr ""
+#: ../plugins/validate.glade.h:2
+msgid "Sche_ma:"
+msgstr "_സ്കീമാ:"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../plugins/validate.glade.h:3
+msgid "V_alidate"
+msgstr "_പരിശോധന"
+
+#: ../plugins/validate.py:64
+#| msgid "<no description>"
+msgid "No description"
+msgstr "വിവരണം ലഭ്യമല്ല"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI വാലിഡേറ്റര്‍"
+
+#: ../plugins/validate.py:154
+msgid "Validates application accessibility"
+msgstr "പ്രയോഗത്തിനുള്ള ആക്സസിബിളിറ്റി പരിശോധിക്കുന്നു"
+
+#. log level column
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
+msgid "Level"
+msgstr "ലവല്‍"
+
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "റോള്‍"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "സൂക്ഷിക്കുന്നു"
+
+#: ../plugins/validate.py:392
+msgid "Validating"
+msgstr "പരിശോധിക്കുന്നു"
+
+#: ../plugins/validate.py:548
+msgid "EXCEPT"
+msgstr "EXCEPT"
+
+#: ../plugins/validate.py:555
+msgid "ERROR"
+msgstr "ERROR"
+
+#: ../plugins/validate.py:563
+msgid "WARN"
+msgstr "WARN"
+
+#: ../plugins/validate.py:570
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:577
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "അടിസ്ഥാനം"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "അടിസ്ഥാന GUI പ്രയോഗത്തിനുള്ള ആക്സസിബിളിറ്റി പരിശോധിക്കുന്നു"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "പ്രവര്‍ത്തിക്കുവാന്‍ സാധിക്കുന്ന %s തെരഞ്ഞെടുക്കുവാന്‍ സാധ്യമല്ല"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "%s പ്രവര്‍ത്തിക്കുവാന്‍ സാധ്യമല്ല"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "ഒന്നിലധികം കേന്ദ്രീകരിക്കുന്ന വിഡ്ജറ്റ്"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s-നു് ടെക്സ്റ്റ് ഇന്റര്‍ഫെയിസ് ലഭ്യമല്ല"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "പേരന്റിലുള്ള %s സൂചിക ചൈള്‍ഡ് സൂചികയുമായി പൊരുത്തപ്പെടുന്നില്ല"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "%s റിലേഷനുള്ള റെസിപ്രോക്കല്‍ ലഭ്യമല്ല"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "ലഭ്യമല്ലാത്ത പേരു് അല്ലെങ്കില്‍ ലേബല്‍ %s "
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr ""
+"കേന്ദ്രീകരിക്കുവാന്‍ സാധിക്കുന്ന %s-നു് ടേബിള്‍ ഇന്റര്‍ഫെയിസ് ലഭ്യമാണു്, "
+"തെരഞ്ഞെടുക്കല്‍ സാധിക്കുന്ന ഇന്റര്‍ഫെയിസ് ലഭ്യമല്ല"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s-നു് %s അവസ്ഥ, %s അവസ്ഥ ലഭ്യമല്ല"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "വസ്തുവിനു് ചേരുന്നതല്ല %s "
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s -നുള്ള സൂചന %(num)d നിരയും വരിയുമായി ചേരുന്നില്ല"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr ""
+"%(rolename)s -നുള്ള പേരന്റ് സൂചന %(num1)d %(num2)d എന്ന നിരയുടെയും വരിയുടെയും "
+"സൂചനയുമായി ചേരുന്നില്ല"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../plugindata/validate/basic.py:352
+#, python-format
+#| msgid "<no description>"
+msgid "%s has no name or description"
+msgstr "%s-നു് പേരു് അല്ലെങ്കില്‍ വിവരണം ലഭ്യമല്ല"
+
+#: ../src/lib/accerciser/accerciser.py:91
+msgid "_Preferences..."
+msgstr "_മുന്‍ഗണനകള്‍..."
+
+#: ../src/lib/accerciser/accerciser.py:93
+msgid "_Contents"
+msgstr "_ഉള്ളടക്കം"
+
+#: ../src/lib/accerciser/accerciser.py:135
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"നിങ്ങളുടെ പണിയിടത്തിലുള്ള പ്രയോഗങ്ങള്‍ Accerciser-നു് ലഭ്യമായില്ല.  പണിയിടത്തിലുള്ള "
+"പ്രശ്നം പരിഹരിക്കുന്നതിനായി നിങ്ങള്‍ ആക്സസിബിളിറ്റി സജ്ജമാക്കേണ്ടതാണു്.  "
+"നിങ്ങള്‍ക്കു് ഉടന്‍ സജ്ജമാക്കണമോ?"
+
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
-msgstr ""
+msgstr "കുറിപ്പു്: പുറത്തിറങ്ങിയ ശേഷം മാത്രമേ മാറ്റങ്ങള്‍ പ്രാഭല്യത്തില്‍ വരുകയൂള്ളൂ."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr ""
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
-msgstr ""
+msgstr "ചിള്‍ഡ്രന്‍"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
-msgid "Refresh _Current"
-msgstr ""
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "ര‍ജിസ്ട്രി _പുതുക്കുക"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
+msgid "Refresh all"
+msgstr "എല്ലാം പുതുക്കുക"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "_നോഡ് പുതുക്കുന്നു"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "തെരഞ്ഞെടുത്ത നോഡിന്റെ ചിള്‍ഡ്രനെ പുതുക്കുന്നു"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
-msgstr ""
+msgstr "ഘടകം"
 
 #: ../src/lib/accerciser/hotkey_manager.py:227
 msgid "Task"
-msgstr ""
+msgstr "ജോലി"
 
 #: ../src/lib/accerciser/hotkey_manager.py:234
 msgid "Key"
-msgstr ""
+msgstr "കീ"
 
 #: ../src/lib/accerciser/hotkey_manager.py:244
 msgid "Alt"
@@ -535,109 +763,138 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
-msgstr ""
+msgstr "മുകളിലുള്ള പാനല്‍"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
-msgstr ""
+msgstr "താഴെയുള്ള പാനല്‍"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
-msgstr ""
+msgstr "accerciser മുന്‍ഗണനകള്‍"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
-msgstr ""
+msgstr "പ്ലഗിനുകള്‍"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
-msgstr ""
+msgstr "ഗ്ലോബല്‍ ഹോട്ട്കീകള്‍"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "എടുത്തുകാണിക്കുന്നു"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "എടുത്തുകാണിക്കുന്ന സമയം:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "അതിരിനുള്ള നിറം:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr "എടുത്തുകാണിക്കുന്ന ബോക്സിന്റെ അതിരിനുള്ള നിറം"
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr "നിറം നിറയ്ക്കുക:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
+msgstr "എടുത്തുകാണിക്കുന്ന ബോക്സില്‍ നിറയ്ക്കുന്ന നിറം"
+
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "അനി പീറ്ററ്‍ <peter.ani@gmail.com>"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr ""
-
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
-msgstr ""
+msgstr "ഇന്ററാക്ടീവ് പൈഥണ്‍ ആക്സസിബിളിറ്റി എക്സ്പ്ലോറര്‍"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "പുതിയ BSD ലൈസന്‍സ്. വിശദവിവരങ്ങള്‍ക്കായി COPYING, NOTICE ഫയലുകള്‍ കാണുക."
+
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
-msgstr ""
+msgstr "വെബ് സൈറ്റ്"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr ""
+msgstr "അടയാളക്കുറിപ്പുകള്‍ _ചേര്‍ക്കുക..."
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr ""
+msgstr "Bookmark selected accessible."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr ""
+msgstr "അടയാളക്കുറിപ്പുകള്‍ _ചിട്ടപ്പെടുത്തുക..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
-msgstr ""
+msgstr "അടയാളക്കുറിപ്പുകള്‍ കൈകാര്യം ചെയ്യുക."
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr ""
+msgstr "അടയാളക്കുറിപ്പുകള്‍ ചിട്ടപ്പെടുത്തുക..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
-msgstr ""
+msgstr "ശീര്‍ഷകം"
 
 #: ../src/lib/accerciser/bookmarks.py:435
 msgid "Application"
-msgstr ""
+msgstr "പ്രയോഗം"
 
 #: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
-msgstr ""
+msgstr "പാഥ്"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr ""
+msgstr "അടയാളക്കുറിപ്പ് ചേര്‍ക്കുക..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
-msgstr ""
+msgstr "ശീര്‍ഷകം:"
 
 #: ../src/lib/accerciser/bookmarks.py:528
 msgid "Application:"
-msgstr ""
+msgstr "പ്രയോഗം:"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
-msgstr ""
+msgstr "പാഥ്:"
 
 #: ../src/lib/accerciser/plugin/message.py:148
 msgid "Plugin Errors"
-msgstr ""
+msgstr "പ്ലഗിന്‍ പിശകുകള്‍"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#| msgid "_View"
+msgctxt "viewport"
 msgid "View"
-msgstr ""
+msgstr "കാഴ്ച"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
-msgstr ""
+msgstr "കാണുവാന്‍ സാധ്യമല്ല"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr ""
+msgstr "_ഓരോ പ്ലഗിന്‍ കാഴ്ചകള്‍"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -650,7 +907,7 @@ msgstr "പ്ളഗിന്‍ വ്യൂ (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>പുതിയ കാഴ്ച...(_N)</i>"
+msgstr "<i>_പുതിയ കാഴ്ച...</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
@@ -658,21 +915,25 @@ msgstr "പുതിയ കാഴ്ച..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
-msgstr "ഫയല്‍ (_F)"
+msgstr "_ഫയല്‍"
 
 #: ../src/lib/accerciser/ui_manager.py:21
 msgid "_Edit"
-msgstr "മാറ്റം വരുത്തുക (_E)"
+msgstr "_ചിട്ടപ്പെടുത്തുക"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+#| msgid "_Bookmarks"
+msgctxt "menu"
 msgid "_Bookmarks"
-msgstr "ബുക്ക് മാറ്‍ക്ക് (_B)"
+msgstr "_അടയാളക്കുറിപ്പുകള്‍"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
-msgstr "കാഴ്ച (_V)"
+msgstr "_കാഴ്ച"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
-msgstr "സഹായം (_H)"
+msgstr "_സഹായം"
 
