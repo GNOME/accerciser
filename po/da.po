@@ -16,15 +16,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-20 22:10+0200\n"
-"PO-Revision-Date: 2008-09-14 17:22+0200\n"
+"POT-Creation-Date: 2009-03-14 04:38+0100\n"
+"PO-Revision-Date: 2009-03-13 21:12+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser tilgængelighedsnavigatør"
 
@@ -151,14 +151,14 @@ msgid "Clear event log"
 msgstr "Ryd handlingslog"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736 ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Navn"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Fulde navn"
 
@@ -208,8 +208,8 @@ msgstr "<b>Tekst</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>ukendt</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivelse)</i>"
 
@@ -277,7 +277,7 @@ msgid "Des_ktop"
 msgstr "Skrive_bord"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
 #: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Beskrivelse"
@@ -433,45 +433,45 @@ msgid "name (x,y)"
 msgstr "navn (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Grænsefladeviser"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Muliggør visning af diverse grænsefladeegenskaber"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(ikke implementeret)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Tastetildeling"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Slut"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "For mange markerbare underelementer"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Indholdstype"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redigérbar)</i>"
 
@@ -889,17 +889,13 @@ msgstr "Sti:"
 msgid "Plugin Errors"
 msgstr "Modulfejl"
 
-# Linjen af kode er pt: tvc = gtk.TreeViewColumn(_('View'))
-#
-# api-doc: "Creates a new gtk.TreeViewColumn with the header string specified by title and ..."
-#
-# View er altså titlen på en treeviewcolumn. Nu er der så en anden kolonne med titlen "Name". Jeg gætter på at det skal oversættes til "Visning", da et verbum i imperativ ikke er så logisk set i denne sammenhæng
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
-msgstr "Visning"
+msgstr "Panel"
 
 # Bemærk at denne streng befinder sig 100 linjer væk i kildekoden fra strengen "View"
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
@@ -937,10 +933,12 @@ msgid "_Edit"
 msgstr "_Redigér"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Bogmærker"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
 msgstr "_Vis"
 
