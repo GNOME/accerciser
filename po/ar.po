@@ -1,25 +1,27 @@
 # translation of accerciser.HEAD.ar.po to Arabic
-# Automatically generated, 2007.
-# Djihed Afifi <djihed@gmail.com>, 2007.
-# Khaled Hosny <khaledhosny@eglug.org>, 2007, 2008.
 # Arabic translations for THIS package.
 # Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as THIS package.
+# Automatically generated, 2007.
+# Djihed Afifi <djihed@gmail.com>, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.ar\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 02:07+0100\n"
-"PO-Revision-Date: 2008-08-03 21:48-0000\n"
-"Last-Translator: Youssef Chahibi <chahibi@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-03-16 09:51+0000\n"
+"PO-Revision-Date: 2009-02-11 22:57+0300\n"
+"Last-Translator: Osama Khalid <osamak.wfm@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "مستكشف الإتاحة أكسرسايزر"
 
@@ -144,16 +146,14 @@ msgid "Clear event log"
 msgstr "امسح سجل الأحداث"
 
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:117
-#: ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../plugins/validate.py:277
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "الاسم"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "الاسم الكامل"
 
@@ -203,9 +203,8 @@ msgstr "<b>نص</b>"
 msgid "<b>unknown</b>"
 msgstr "<i>مجهول</i>"
 
-#: ../plugins/interface_view.glade.h:14
-#: ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(لا وصف)</i>"
 
@@ -273,10 +272,8 @@ msgid "Des_ktop"
 msgstr "س_طح المكتب"
 
 #. add description to buffer
-#: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:458
-#: ../plugins/validate.py:212
-#: ../plugins/validate.py:275
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "الوصف"
 
@@ -294,8 +291,7 @@ msgid "Header:"
 msgstr "ترويسة:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.glade.h:38
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "وصلة فائقة"
 
@@ -432,48 +428,45 @@ msgid "name (x,y)"
 msgstr "الاسم (س،ص)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "عارض الواجهة"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "يسمح برؤية مختلف خصائص الواجهة "
 
-#: ../plugins/interface_view.py:187
-#: ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr " (غير مطبق)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "ارتباط المفتاح"
 
-#: ../plugins/interface_view.py:743
-#: ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "مسار"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "البداية"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "النهاية"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "توجد فروع كثيرة يمكن اختيارها"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "نوع المحتوى"
 
-#: ../plugins/interface_view.py:1298
-#: ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(يحرّر)</i>"
 
@@ -528,8 +521,7 @@ msgstr "سيضيع البرنامج الحالي."
 msgid "Confirm clear"
 msgstr "أكّد المسح"
 
-#: ../plugins/validate.glade.h:1
-#: ../plugins/validate.py:358
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
 #: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "ساكن"
@@ -556,14 +548,12 @@ msgstr "يُصادق على إتاحة التطبيق"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:205
-#: ../plugins/validate.py:273
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "المستوى"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "الدّور"
 
@@ -683,7 +673,9 @@ msgstr "فهرس ‪%(rolename)s‬ ‪%(num)d‬ لا يُطابق الصف و�
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr "فهرس أصل %(rolename)s %(num1)d ‬ لا يُطابق صف وعمود الفهرس %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
@@ -700,8 +692,12 @@ msgid "_Contents"
 msgstr "ال_محتويات"
 
 #: ../src/lib/accerciser/accerciser.py:135
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يجب تفعيل إتاحة سطح المكتب لتصحيح المشكل. هل تريد تفعيلها الآن؟"
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"لا يمكن لأكسرسايزر رؤية تطبيقاتك على سطح المكتب. يجب تفعيل إتاحة سطح المكتب "
+"لتصحيح المشكل. هل تريد تفعيلها الآن؟"
 
 #: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
@@ -884,34 +880,35 @@ msgstr "أخطاء الملحق"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
-msgstr "مشهد"
+msgstr "منظور"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
-msgstr "لا مشهد"
+msgstr "لا منظور"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr "مشهد ملحقات من_فردة"
+msgstr "منظور ملحقات من_فردة"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr "مشهد الملحقات"
+msgstr "منظور الملحقات"
 
 # fuzzy , python-format
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "مشهد الملحقات (%d)"
+msgstr "منظور الملحقات (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>_مشهد جديد...</i>"
+msgstr "<i>_منظور جديد...</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
-msgstr "مشهد جديد..."
+msgstr "منظور جديد..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
@@ -922,10 +919,12 @@ msgid "_Edit"
 msgstr "_تحرير"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_علامات"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
 msgstr "_عرض"
 
@@ -935,4 +934,3 @@ msgstr "م_ساعدة"
 
 #~ msgid "1.0"
 #~ msgstr "1.0"
-
