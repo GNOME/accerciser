@@ -182,14 +182,17 @@ class _HighLight(gtk.Window):
   Highlight box class. Uses compositing when available. When not, it does
   transparency client-side.
   '''
-  _svg = r"""
-<svg width="100%" height="100%" version="1.1"
-  xmlns="http://www.w3.org/2000/svg">
-  <rect x="$x" y="$y" width="$width" height="$height"
-      style="fill:$fill;stroke-width:$stroke_width;stroke:$stroke;
-      fill-opacity:$fill_opacity;stroke-opacity:$stroke_opacity"
-      rx="2" ry="2"
-      />
+  _svg = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"> 
+  <rect
+       style="fill:$fill;fill-opacity:$fill_opacity;fill-rule:evenodd;stroke:$stroke;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:$stroke_opacity"
+       id="highlight"
+       width="$width"
+       height="$height"
+       x="$x"
+       y="$y"
+       rx="2"
+       ry="2" />
 </svg>
 """
   def __init__(self, x, y, w, h, 
@@ -246,7 +249,6 @@ class _HighLight(gtk.Window):
     else:
       self.destroy()
     
-
   def _onExpose(self, widget, event):
     svgh = rsvg.Handle()
     try:
@@ -274,3 +276,10 @@ class _HighLight(gtk.Window):
 
     svgh.render_cairo( cr )
     del svgh
+
+if __name__ == "__main__":
+    hl = _HighLight(200, 200, 200, 200, '#ff0000', 
+                    0.5, '#ff0000', 0.996108949416, 8.0, 0)
+    hl.highlight(2000)
+    gtk.main()
+

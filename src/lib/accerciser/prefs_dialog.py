@@ -87,13 +87,11 @@ class _HighlighterView(gtk.Alignment):
     controls[0].set_increments(0.01, 0.1)
     controls[0].connect('value-changed', self._onDurationChanged)
     labels[1] = gtk.Label(_('Border color:'))
-    controls[1] = self._ColorButton(
-      self.gconf_cl.get_string('/apps/accerciser/highlight_border'))
+    controls[1] = self._ColorButton(node.BORDER_COLOR, node.BORDER_ALPHA)
     controls[1].connect('color-set', self._onColorSet, 'highlight_border')
     controls[1].set_tooltip_text(_('The border color of the highlight box'))
     labels[2] = gtk.Label(_('Fill color:'))
-    controls[2] = self._ColorButton(
-      self.gconf_cl.get_string('/apps/accerciser/highlight_fill'))
+    controls[2] = self._ColorButton(node.FILL_COLOR, node.FILL_ALPHA)
     controls[2].connect('color-set', self._onColorSet, 'highlight_fill')
     controls[2].set_tooltip_text(_('The fill color of the highlight box'))
 
@@ -144,10 +142,10 @@ class _HighlighterView(gtk.Alignment):
     '''
     ColorButton derivative with useful methods for us.
     '''
-    def __init__(self, color_string):
-      gtk.ColorButton.__init__(self, gtk.gdk.color_parse(color_string[:-2]))
+    def __init__(self, color, alpha):
+      gtk.ColorButton.__init__(self, gtk.gdk.color_parse(color))
       self.set_use_alpha(True)
-      self.set_alpha(int(color_string[-2:], 16) << 8)
+      self.set_alpha(int(alpha*0xffff))
                                
     def get_rgba_string(self):
       '''
