@@ -7,11 +7,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
-"Report-Msgid-Bugs-To: debian-l10n-kannada@lists.debian.org\n"
-"POT-Creation-Date: 2008-01-23 04:21+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-01-28 12:31+0000\n"
 "PO-Revision-Date: 2008-06-02 17:45+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
-"Language-Team: Kannada <en@li.org>\n"
+"Language-Team: debian-l10n-kannada@lists.debian.org\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
-msgid "Accerciser Accesibility Explorer"
+msgid "Accerciser Accessibility Explorer"
 msgstr ""
 
 #: ../accerciser.desktop.in.in.h:2
@@ -31,11 +32,35 @@ msgid "A list of plugins that are disabled by default"
 msgstr ""
 
 #: ../accerciser.schemas.in.h:2
-msgid "The default plugin layout for the bottom panel"
+msgid "Highlight border color"
 msgstr ""
 
 #: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr ""
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr ""
+
+#: ../accerciser.schemas.in.h:7
+msgid "The default plugin layout for the bottom panel"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
+msgstr ""
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
 msgstr ""
 
 #: ../plugins/api_view.py:32
@@ -98,34 +123,35 @@ msgstr "ಮೂಲ"
 msgid "_Monitor Events"
 msgstr ""
 
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr ""
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr ""
 
-#: ../plugins/event_monitor.py:68
+#: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
 msgstr ""
 
-#: ../plugins/event_monitor.py:71
+#: ../plugins/event_monitor.py:67
 msgid "Clear event log"
 msgstr ""
 
-#: ../plugins/event_monitor.py:123 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ಹೆಸರು"
 
-#: ../plugins/event_monitor.py:132
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "ಪೂರ್ಣ ಹೆಸರು"
 
@@ -133,308 +159,315 @@ msgstr "ಪೂರ್ಣ ಹೆಸರು"
 msgid "0"
 msgstr "೦"
 
-#: ../plugins/interface_view.glade.h:2
+#. Component
+#. size
+#: ../plugins/interface_view.glade.h:4
 msgid "0, 0"
 msgstr "೦,೦"
 
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "೧.೦"
-
-#: ../plugins/interface_view.glade.h:4
+#: ../plugins/interface_view.glade.h:5
 msgid "<b>Attributes</b>"
 msgstr "<b>ವೈಶಿಷ್ಟ್ಯಗಳು</b>"
 
-#: ../plugins/interface_view.glade.h:5
+#: ../plugins/interface_view.glade.h:6
 msgid "<b>Child count</b>"
 msgstr "<b>ಉಪ ಎಣಿಕೆ</b>"
 
-#: ../plugins/interface_view.glade.h:6
+#: ../plugins/interface_view.glade.h:7
 msgid "<b>Description</b>"
 msgstr "<b>ವಿವರಣೆ</b>"
 
-#: ../plugins/interface_view.glade.h:7
+#: ../plugins/interface_view.glade.h:8
 msgid "<b>Relations</b>"
 msgstr "<b>ಸಂಬಂಧಿಗಳು</b>"
 
-#: ../plugins/interface_view.glade.h:8
+#: ../plugins/interface_view.glade.h:9
 msgid "<b>Selected Cell</b>"
 msgstr "<b>ಆರಿಸಲಾದ ಕೋಶ</b>"
 
-#: ../plugins/interface_view.glade.h:9
+#: ../plugins/interface_view.glade.h:10
 msgid "<b>States</b>"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:10
+#: ../plugins/interface_view.glade.h:11
 msgid "<b>Table Information</b>"
 msgstr "<b>ಪಟ್ಟಿ ಮಾಹಿತಿ</b>"
 
-#: ../plugins/interface_view.glade.h:11
+#: ../plugins/interface_view.glade.h:12
 msgid "<b>Text</b>"
 msgstr "<b>ಪಠ್ಯ</b>"
 
-#: ../plugins/interface_view.glade.h:12
+#: ../plugins/interface_view.glade.h:13
 msgid "<b>unknown</b>"
 msgstr "<b>ಗೊತ್ತಾಗದ</b>"
 
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>(ವಿವರಣೆಯಿಲ್ಲದೆ)</i>"
 
-#: ../plugins/interface_view.glade.h:14
+#: ../plugins/interface_view.glade.h:15
 msgid "<i>Caption:</i>"
 msgstr "<i>ಶೀರ್ಷಿಕೆ:</i>"
 
-#: ../plugins/interface_view.glade.h:15
+#. End chaacter
+#. offset of text attributes span
+#: ../plugins/interface_view.glade.h:18
 msgid "<i>End: 0</i>"
 msgstr "<i>ಕೊನೆ: 0</i>"
 
-#: ../plugins/interface_view.glade.h:16
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.glade.h:20
 msgid "<i>Start: 0</i>"
 msgstr "<i>ಆರಂಭ: 0</i>"
 
-#: ../plugins/interface_view.glade.h:17
+#: ../plugins/interface_view.glade.h:21
 msgid "<i>Summary:</i>"
 msgstr "<i>ಸಾರಾಂಶ:</i>"
 
-#: ../plugins/interface_view.glade.h:18
+#: ../plugins/interface_view.glade.h:22
 msgid "<no description>"
 msgstr "<ವಿವರಣೆಯಿಲ್ಲದೆ>"
 
-#: ../plugins/interface_view.glade.h:19
+#: ../plugins/interface_view.glade.h:23
 msgid "Absolute position"
 msgstr "ಸಂಪೂರ್ಣ ಸ್ಥಳ"
 
-#: ../plugins/interface_view.glade.h:20
+#: ../plugins/interface_view.glade.h:24
 msgid "Acti_on"
 msgstr "ಕ್ರಿಯೆ(_o)"
 
-#: ../plugins/interface_view.glade.h:21
+#: ../plugins/interface_view.glade.h:25
 msgid "Alpha"
 msgstr "ಆಲ್ಫಾ"
 
-#: ../plugins/interface_view.glade.h:22
+#: ../plugins/interface_view.glade.h:26
 msgid "Ap_plication"
 msgstr "ಅನ್ವಯ(_p)"
 
-#: ../plugins/interface_view.glade.h:23
+#: ../plugins/interface_view.glade.h:27
 msgid "Co_mponent"
 msgstr "ಅಂಗ(_m)"
 
-#: ../plugins/interface_view.glade.h:24
+#: ../plugins/interface_view.glade.h:28
 msgid "Col_lection"
 msgstr "ಸಂಗ್ರಹ(_l)"
 
-#: ../plugins/interface_view.glade.h:25
+#: ../plugins/interface_view.glade.h:29
 msgid "Column"
 msgstr "ಕಾಲಂ"
 
-#: ../plugins/interface_view.glade.h:26
+#: ../plugins/interface_view.glade.h:30
 msgid "Columns"
 msgstr "ಕಾಲಂಗಳು"
 
-#: ../plugins/interface_view.glade.h:27
+#: ../plugins/interface_view.glade.h:31
 msgid "Current value"
 msgstr "ಈಗಿನ ಮೌಲ್ಯ"
 
-#: ../plugins/interface_view.glade.h:28
+#: ../plugins/interface_view.glade.h:32
 msgid "Des_ktop"
 msgstr "ಗಣಕತೆರೆ(_k)"
 
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
-#: ../plugins/validate.py:205
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "ವಿವರಣೆ"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:31
+#: ../plugins/interface_view.glade.h:35
 msgid "Extents:"
 msgstr "ಎಕ್ಸ್‍ಟೆಂಟ್‍ಗಳು:"
 
-#: ../plugins/interface_view.glade.h:32
+#: ../plugins/interface_view.glade.h:36
 msgid "H_ypertext"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:33
+#: ../plugins/interface_view.glade.h:37
 msgid "Header:"
 msgstr "ಹೆಡರ್:"
 
-#: ../plugins/interface_view.glade.h:34
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:35
+#: ../plugins/interface_view.glade.h:39
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.glade.h:36
+#: ../plugins/interface_view.glade.h:40
 msgid "Include defaults"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:37
+#: ../plugins/interface_view.glade.h:41
 msgid "Layer"
 msgstr "ಪದರ"
 
-#: ../plugins/interface_view.glade.h:38
+#: ../plugins/interface_view.glade.h:42
 msgid "Lo_gin Helper"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:39
+#: ../plugins/interface_view.glade.h:43
 msgid "Locale"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:40
+#: ../plugins/interface_view.glade.h:44
 msgid "Locale:"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:41
+#: ../plugins/interface_view.glade.h:45
 msgid "MDI-Z-order"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:42
+#: ../plugins/interface_view.glade.h:46
 msgid "Maximum value"
 msgstr "ಗರಿಷ್ಠ ಮೌಲ್ಯ"
 
-#: ../plugins/interface_view.glade.h:43
+#: ../plugins/interface_view.glade.h:47
 msgid "Minimum increment"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:44
+#: ../plugins/interface_view.glade.h:48
 msgid "Minimum value"
 msgstr "ಕನಿಷ್ಟ ಮೌಲ್ಯ"
 
-#: ../plugins/interface_view.glade.h:45
+#: ../plugins/interface_view.glade.h:49
 msgid "Offset"
 msgstr "ಆಫ್‍ಸೆಟ್"
 
-#: ../plugins/interface_view.glade.h:46
+#: ../plugins/interface_view.glade.h:50
 msgid "Perform action"
 msgstr "ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸು"
 
-#: ../plugins/interface_view.glade.h:47
+#: ../plugins/interface_view.glade.h:51
 msgid "Position"
 msgstr "ಸ್ಥಾನ"
 
-#: ../plugins/interface_view.glade.h:48
+#: ../plugins/interface_view.glade.h:52
 msgid "Relative position"
 msgstr "ಪ್ರಸಕ್ತ ಸ್ಥಳ"
 
-#: ../plugins/interface_view.glade.h:49
+#: ../plugins/interface_view.glade.h:53
 msgid "Row"
 msgstr "ಸಾಲು"
 
-#: ../plugins/interface_view.glade.h:50
+#: ../plugins/interface_view.glade.h:54
 msgid "Rows"
 msgstr "ಅಡ್ಡಸಾಲುಗಳು"
 
-#: ../plugins/interface_view.glade.h:51
+#: ../plugins/interface_view.glade.h:55
 msgid "Select All"
 msgstr "ಎಲ್ಲ ಅಯ್ಕೆಮಾಡು"
 
-#: ../plugins/interface_view.glade.h:52
+#: ../plugins/interface_view.glade.h:56
 msgid "Selected columns"
 msgstr "ಆರಿಸಲಾದ ಕಾಲಂಗಳು"
 
-#: ../plugins/interface_view.glade.h:53
+#: ../plugins/interface_view.glade.h:57
 msgid "Selected rows"
 msgstr "ಆರಿಸಲಾದ ಅಡ್ಡಸಾಲುಗಳು"
 
-#: ../plugins/interface_view.glade.h:54
+#: ../plugins/interface_view.glade.h:58
 msgid "Show"
 msgstr "ತೋರಿಸು"
 
-#: ../plugins/interface_view.glade.h:55
+#: ../plugins/interface_view.glade.h:59
 msgid "Size"
 msgstr "ಗಾತ್ರ"
 
-#: ../plugins/interface_view.glade.h:56
+#: ../plugins/interface_view.glade.h:60
 msgid "St_reamable Content"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:57
+#: ../plugins/interface_view.glade.h:61
 msgid "Te_xt"
 msgstr "ಪಠ್ಯ(_x)"
 
-#: ../plugins/interface_view.glade.h:58
+#: ../plugins/interface_view.glade.h:62
 msgid "Toolkit"
 msgstr ""
 
-#: ../plugins/interface_view.glade.h:59
+#: ../plugins/interface_view.glade.h:63
 msgid "Val_ue"
 msgstr "ಮೌಲ್ಯ(_u)"
 
-#: ../plugins/interface_view.glade.h:60
+#: ../plugins/interface_view.glade.h:64
 msgid "Version"
 msgstr "ಆವೃತ್ತಿ"
 
-#: ../plugins/interface_view.glade.h:61
+#: ../plugins/interface_view.glade.h:65
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.glade.h:62
+#: ../plugins/interface_view.glade.h:66
 msgid "_Accessible"
 msgstr "ನಿಲುಕಬಲ್ಲ(_A)"
 
-#: ../plugins/interface_view.glade.h:63
+#: ../plugins/interface_view.glade.h:67
 msgid "_Document"
 msgstr "ದಸ್ತಾವೇಜು(_D)"
 
-#: ../plugins/interface_view.glade.h:64
+#: ../plugins/interface_view.glade.h:68
 msgid "_Image"
 msgstr "ಚಿತ್ರ(_I)"
 
-#: ../plugins/interface_view.glade.h:65
+#: ../plugins/interface_view.glade.h:69
 msgid "_Selection"
 msgstr "ಆಯ್ಕೆ(_S)"
 
-#: ../plugins/interface_view.glade.h:66
+#: ../plugins/interface_view.glade.h:70
 msgid "_Table"
 msgstr "ಪಟ್ಟಿ(_T)"
 
-#: ../plugins/interface_view.glade.h:67
+#: ../plugins/interface_view.glade.h:71
 msgid "name (x,y)"
 msgstr "ಹೆಸರು (x,y)"
 
-#: ../plugins/interface_view.py:35
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "ಸಂಪರ್ಕ ವೀಕ್ಷಕ"
 
-#: ../plugins/interface_view.py:37
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr ""
 
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
-msgid " (not implemented)"
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
+msgid "(not implemented)"
 msgstr ""
 
-#: ../plugins/interface_view.py:460
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr ""
 
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "ಆರಂಭ"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "ಕೊನೆ"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr ""
 
-#: ../plugins/interface_view.py:1019
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "ವಿಷಯದ ಬಗೆ"
 
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
-msgid " <i>(Editable)</i>"
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
+#, fuzzy
+#| msgid " <i>(Editable)</i>"
+msgid "<i>(Editable)</i>"
 msgstr "<i>(ಸಂಪಾದಿಸ ಬಹುದಾದ)</i>"
 
 #: ../plugins/quick_select.py:11
@@ -488,7 +521,8 @@ msgstr ""
 msgid "Confirm clear"
 msgstr "ತೆರವುಗೊಳಿಸಲು ದೃಢಪಡಿಸು"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:278
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "ಸ್ಥಗಿತ"
 
@@ -508,36 +542,46 @@ msgstr "ವಿವರಣೆಯಿಲ್ಲದ"
 msgid "AT-SPI Validator"
 msgstr ""
 
-#: ../plugins/validate.py:153
+#: ../plugins/validate.py:154
 msgid "Validates application accessibility"
 msgstr ""
 
 #. log level column
-#: ../plugins/validate.py:198
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr ""
 
-#: ../plugins/validate.py:262
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "ಪಾತ್ರ"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr ""
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr ""
 
-#: ../plugins/validate.py:413
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: ../plugins/validate.py:420
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:427
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "WARN"
 
-#: ../plugins/validate.py:433
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:439
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -594,7 +638,11 @@ msgstr "%s ಹೆಸರು ಅಥವಾ ಶೀರ್ಷಿಕೆ ಇಲ್ಲ"
 msgid "focusable %s has table interface, no selection interface"
 msgstr ""
 
-#: ../plugindata/validate/basic.py:233
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s ಯು %s ಸ್ಥಿತಿಯನ್ನು ಹೊಂದಿದೆ (%s ಸ್ಥಿತಿಯಿಲ್ಲದೆ)"
@@ -602,23 +650,20 @@ msgstr "%s ಯು %s ಸ್ಥಿತಿಯನ್ನು ಹೊಂದಿದೆ (%s
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:258
+#: ../plugindata/validate/basic.py:262
 #, python-format
 msgid "%s does not belong to a set"
 msgstr ""
 
-#. Translators: The row or column number retrieved from a table child's object
-#. at a certain index is wrong.
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:292
-#, python-format
-#, fuzzy
-msgid "%s index %d does not match row and column"
-msgstr ""
-"%s ಸೂಚಿ %d ಯಾವ ಅಡ್ಡಸಾಲಿಗೆ ಮತ್ತು "
-"ಲಂಬಸಾಲಿಗೆ ಸಮಾನವಿಲ್ಲಾ"
+#: ../plugindata/validate/basic.py:296
+#, fuzzy, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%s ಸೂಚಿ %d ಯಾವ ಅಡ್ಡಸಾಲಿಗೆ ಮತ್ತು ಲಂಬಸಾಲಿಗೆ ಸಮಾನವಿಲ್ಲಾ"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -626,12 +671,14 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:322
-#, python-format
-msgid "%s parent index %d does not match row and column index %d"
-msgstr ""
+#: ../plugindata/validate/basic.py:326
+#, fuzzy, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%s ಸೂಚಿ %d ಯಾವ ಅಡ್ಡಸಾಲಿಗೆ ಮತ್ತು ಲಂಬಸಾಲಿಗೆ ಸಮಾನವಿಲ್ಲಾ"
 
-#: ../plugindata/validate/basic.py:348
+#: ../plugindata/validate/basic.py:352
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s ಗೆ ಹೆಸರು ಅಥವಾ ವಿವರಣೆ ಇಲ್ಲ"
@@ -644,33 +691,51 @@ msgstr "ಆದ್ಯತೆಗಳು(_P)..."
 msgid "_Contents"
 msgstr "ವಿಷಯಗಳು(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:153
 msgid "Note: Changes only take effect after logout."
 msgstr ""
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 #, fuzzy
 msgid "<dead>"
 msgstr "<ಸತ್ತ>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "ಪಾತ್ರ"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 #, fuzzy
 msgid "Children"
 msgstr "ಮಕ್ಕಳು"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
-msgid "Refresh _Current"
+#: ../src/lib/accerciser/accessible_treeview.py:430
+#, fuzzy
+#| msgid "Refresh _Current"
+msgid "_Refresh Registry"
 msgstr "ಈಗಿರುವುದನ್ನು(_C) ಪುನಶ್ಚೇತನಗೊಳಿಸು"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:433
+msgid "Refresh all"
+msgstr ""
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+#, fuzzy
+#| msgid "Refresh _Current"
+msgid "Refresh _Node"
+msgstr "ಈಗಿರುವುದನ್ನು(_C) ಪುನಶ್ಚೇತನಗೊಳಿಸು"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr ""
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -704,35 +769,59 @@ msgstr "ಮೇಲಿನ ಫಲಕ"
 msgid "Bottom panel"
 msgstr "ಕೆಳಗಿನ ಫಲಕ"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr ""
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "ಪ್ಲಗ್-ಇನ್‍ಗಳು(plugins)"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr ""
 
-#: ../src/lib/accerciser/about_dialog.py:50
-msgid "translator-credits"
-msgstr "ವಿಕ್ರಂ ವಿನ್ಸೆಂಟ್, ಶಂಕರ್ ಪ್ರಸಾದ್"
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr ""
 
-#: ../src/lib/accerciser/about_dialog.py:51
-msgid "An interactive Python accessibility explorer"
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr ""
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr ""
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "The border color of the highlight box"
+msgstr ""
+
+#: ../src/lib/accerciser/prefs_dialog.py:94
+msgid "Fill color:"
+msgstr ""
+
+#: ../src/lib/accerciser/prefs_dialog.py:98
+msgid "The fill color of the highlight box"
 msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "translator-credits"
+msgstr "ವಿಕ್ರಂ ವಿನ್ಸೆಂಟ್, ಶಂಕರ್ ಪ್ರಸಾದ್"
+
+#: ../src/lib/accerciser/about_dialog.py:53
+msgid "An interactive Python accessibility explorer"
 msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr ""
+
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "ಜಾಲ ತಾಣ"
 
@@ -743,9 +832,7 @@ msgstr "ಬುಕ್‍ಮಾರ್ಕ ಅನ್ನು ಸೇರಿಸು(_A)...
 #: ../src/lib/accerciser/bookmarks.py:63
 #, fuzzy
 msgid "Bookmark selected accessible."
-msgstr ""
-"ಆರಿಸಲಾದ ಪುಟದ ಗುರುತು "
-"ಸುಲಭವಾಗಿ ನೋಡಬಹುದು."
+msgstr "ಆರಿಸಲಾದ ಪುಟದ ಗುರುತು ಸುಲಭವಾಗಿ ನೋಡಬಹುದು."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
@@ -791,11 +878,17 @@ msgstr "ಮಾರ್ಗ:"
 msgid "Plugin Errors"
 msgstr "ಪ್ಲಗ್ಇನ್ ದೋಷಗಳು"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#, fuzzy
+#| msgid "View"
+msgctxt "viewport"
 msgid "View"
 msgstr "ನೋಟ"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "ಯಾವುದೆ ನೋಟ ಇಲ್ಲ"
 
@@ -829,10 +922,16 @@ msgid "_Edit"
 msgstr "ಸಂಪಾದಿಸು(_E)"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+#, fuzzy
+#| msgid "_Bookmarks"
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "ಬುಕ್‍ಮಾರ್ಕುಗಳು(_B)"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#, fuzzy
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
 msgstr "ನೋಟ(_V)"
 
@@ -840,3 +939,5 @@ msgstr "ನೋಟ(_V)"
 msgid "_Help"
 msgstr "ಸಹಾಯ(_H)"
 
+#~ msgid "1.0"
+#~ msgstr "೧.೦"
