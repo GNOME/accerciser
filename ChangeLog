@@ -1,3 +1,9 @@
+2009-04-13 Brian G. Merrell <bgmerrell@novell.com>
+
+	* NEWS:
+	* README:
+	* configure.in: Prepared 1.6.1 release.
+
 2009-04-05  Eitan Isaacson  <eitan@ascender.com>
 
 	* src/lib/accerciser/prefs_dialog.py: 
@@ -39,13 +45,13 @@
 	* autogen.sh: Provide a $srcdir (bug #570332). 
 	Thanks Theppitak Karoonboonyanan!
 
-2008-02-02 Brian G. Merrell <bgmerrell@novell.com>
+2009-02-02 Brian G. Merrell <bgmerrell@novell.com>
 
 	* src/lib/accerciser/i18n.py.in: Use gettext.gettext (imported as
 	translate_func) instead of _ in C_ to avoid distcheck failure.  This
 	is part of the 1.5.9 release.
 
-2008-02-02 Brian G. Merrell <bgmerrell@novell.com>
+2009-02-02 Brian G. Merrell <bgmerrell@novell.com>
 
 	* NEWS:
 	* README:
@@ -82,20 +88,20 @@
 
 	* pyreqs.py: Put pygtk as the first required module (bug #547778).
 
-2008-01-07  Brian G. Merrell <bgmerrell@novell.com>
+2009-01-07  Brian G. Merrell <bgmerrell@novell.com>
 
 	* plugins/interface_view.py: Correctly calculate the range of
 	characters to be deleted, so that it would match the range of
 	characters to be deleted in the outgoing calls cache when
 	appropriate (bug #563284)
 
-2008-01-05  Brian G. Merrell <bgmerrell@novell.com>
+2009-01-05  Brian G. Merrell <bgmerrell@novell.com>
 
 	* NEWS:
 	* README:
 	* configure.in: Prepared 1.5.4 release.
 
-2008-01-05  Brian G. Merrell <bgmerrell@novell.com>
+2009-01-05  Brian G. Merrell <bgmerrell@novell.com>
 
 	* plugins/interface_view.py: Import markup_escape_text from gobject
 	instead of glib.  This seems to work more consistently across distros.
