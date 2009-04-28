@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-08 01:04+0200\n"
-"PO-Revision-Date: 2008-03-25 11:44+0200\n"
+"POT-Creation-Date: 2009-04-28 17:27+0300\n"
+"PO-Revision-Date: 2009-04-28 11:44+0200\n"
 "Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Дослідження доступності програм Accerciser"
 
@@ -29,12 +29,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "Список модулів, що типово увімкнені"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Колір рамки підсвічення"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Тривалість підсвічення"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Колір заливки підсвічення"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Колір та прозорість рамки підсвічення."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Колір та прозорість заливки підсвічення."
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "Типове розташування модулів внизу робочої області"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "Типове розташування модулів згори робочої області"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Тривалість показу рамки підсвічення виділеного елементу"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -116,14 +140,15 @@ msgstr "Запустити/зупинити запис подій"
 msgid "Clear event log"
 msgstr "Очистити журнал подій"
 
-#: ../plugins/event_monitor.py:117 ../plugins/interface_view.py:453
-#: ../plugins/interface_view.py:736
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
+#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Назва"
 
-#: ../plugins/event_monitor.py:126
+#: ../plugins/event_monitor.py:133
 msgid "Full name"
 msgstr "Повна назва"
 
@@ -173,8 +198,8 @@ msgstr "<b>Текст</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>Невідомо</b>"
 
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:321
-#: ../plugins/interface_view.py:860
+#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
+#: ../plugins/interface_view.py:865
 msgid "<i>(no description)</i>"
 msgstr "<i>опис відсутній</i>"
 
@@ -241,8 +266,9 @@ msgstr "Поточне значення"
 msgid "Des_ktop"
 msgstr "_Робочий стіл"
 
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:458
-#: ../plugins/validate.py:206
+#. add description to buffer
+#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
+#: ../plugins/validate.py:212 ../plugins/validate.py:275
 msgid "Description"
 msgstr "Опис"
 
@@ -259,7 +285,8 @@ msgstr "_Гіпертекст"
 msgid "Header:"
 msgstr "Заголовок:"
 
-#: ../plugins/interface_view.glade.h:38
+#. add url role to buffer
+#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
 msgid "Hyperlink"
 msgstr "Гіперпосилання"
 
@@ -396,45 +423,45 @@ msgid "name (x,y)"
 msgstr "назва (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:36
+#: ../plugins/interface_view.py:37
 msgid "Interface Viewer"
 msgstr "Перегляд інтерфейсу"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:39
+#: ../plugins/interface_view.py:40
 msgid "Allows viewing of various interface properties"
 msgstr "Дозволяє вивчати різні властивості інтерфейсу користувача"
 
-#: ../plugins/interface_view.py:187 ../plugins/interface_view.py:189
-#: ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
+#: ../plugins/interface_view.py:191
 msgid "(not implemented)"
 msgstr "(не реалізовано)"
 
-#: ../plugins/interface_view.py:463
+#: ../plugins/interface_view.py:468
 msgid "Key binding"
 msgstr "Комбінація клавіш"
 
-#: ../plugins/interface_view.py:743 ../plugins/interface_view.py:1027
+#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:750
+#: ../plugins/interface_view.py:755
 msgid "Start"
 msgstr "Початок"
 
-#: ../plugins/interface_view.py:757
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Кінець"
 
-#: ../plugins/interface_view.py:927
+#: ../plugins/interface_view.py:932
 msgid "Too many selectable children"
 msgstr "Надто багато виділених дочірніх об'єктів"
 
-#: ../plugins/interface_view.py:1022
+#: ../plugins/interface_view.py:1027
 msgid "Content type"
 msgstr "Тип змісту"
 
-#: ../plugins/interface_view.py:1298 ../plugins/interface_view.py:1301
+#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
 msgid "<i>(Editable)</i>"
 msgstr "<i>(змінюване)</i>"
 
@@ -489,7 +516,8 @@ msgstr "Поточний сценарій буде втрачений."
 msgid "Confirm clear"
 msgstr "Підтвердити очищення"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:279
+#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
+#: ../plugins/validate.py:410
 msgid "Idle"
 msgstr "Бездіяльний"
 
@@ -514,31 +542,41 @@ msgid "Validates application accessibility"
 msgstr "Перевірка можливостей доступності"
 
 #. log level column
-#: ../plugins/validate.py:199
+#. add level to buffer
+#: ../plugins/validate.py:205 ../plugins/validate.py:273
 msgid "Level"
 msgstr "Рівень"
 
-#: ../plugins/validate.py:263
+#. add accessible's role to buffer
+#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Роль"
+
+#: ../plugins/validate.py:344
+msgid "Saving"
+msgstr "Збереження"
+
+#: ../plugins/validate.py:392
 msgid "Validating"
 msgstr "Перевірка"
 
-#: ../plugins/validate.py:414
+#: ../plugins/validate.py:548
 msgid "EXCEPT"
 msgstr "ВИКЛЮЧЕННЯ"
 
-#: ../plugins/validate.py:421
+#: ../plugins/validate.py:555
 msgid "ERROR"
 msgstr "ПОМИЛКА"
 
-#: ../plugins/validate.py:428
+#: ../plugins/validate.py:563
 msgid "WARN"
 msgstr "ПОПЕРЕДЖЕННЯ"
 
-#: ../plugins/validate.py:434
+#: ../plugins/validate.py:570
 msgid "INFO"
 msgstr "ІНФО"
 
-#: ../plugins/validate.py:440
+#: ../plugins/validate.py:577
 msgid "DEBUG"
 msgstr "НАЛАГОДЖЕННЯ"
 
@@ -636,8 +674,8 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
 "(num2)d"
 msgstr ""
-"індекс батьківського елементу %(num1)d у %(rolename)s не відповідає індексу рядка та стовпчика "
-"%(num2)d"
+"індекс батьківського елементу %(num1)d у %(rolename)s не відповідає індексу "
+"рядка та стовпчика %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -654,8 +692,8 @@ msgstr "_Зміст"
 
 #: ../src/lib/accerciser/accerciser.py:135
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "Не вдається отримати доступ до програм робочого середовища з Accerciser. "
 "Необхідно увімкнути підтримку допоміжних технологій. Увімкнути її зараз?"
@@ -664,23 +702,35 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Зміни наберуть сили лише після повторного входу у систему."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<застарілий>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "Роль"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "Дочірні елементи"
 
-#. Translators: Refresh current tree node's children.
+#: ../src/lib/accerciser/accessible_treeview.py:430
+msgid "_Refresh Registry"
+msgstr "_Оновити реєстр"
+
+#. Translators: Appears as tooltip
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:433
-msgid "Refresh _Current"
-msgstr "Оновити _поточний"
+msgid "Refresh all"
+msgstr "Оновити все"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:436
+msgid "Refresh _Node"
+msgstr "Оновити _піддерево"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:439
+msgid "Refresh selected node's children"
+msgstr "Оновити піддерево виділеної верхівки"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -714,17 +764,41 @@ msgstr "Верхня панель"
 msgid "Bottom panel"
 msgstr "Нижня панель"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "параметри accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "Модулі"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "Глобальні швидкі клавіші"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Підсвічення"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Тривалість підсвічення:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Колір рамки:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:92
+msgid "The border color of the highlight box"
+msgstr "Колір рамки прямокутника підсвічення"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "Fill color:"
+msgstr "Колір заповнення:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:96
+msgid "The fill color of the highlight box"
+msgstr "Колір заповнення прямокутника підсвічення"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
@@ -804,10 +878,11 @@ msgstr "Помилки модуля"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
 msgstr "Область"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:465
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Без області"
 
@@ -841,10 +916,12 @@ msgid "_Edit"
 msgstr "_Правка"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
 msgid "_View"
 msgstr "_Вигляд"
 
@@ -852,5 +929,4 @@ msgstr "_Вигляд"
 msgid "_Help"
 msgstr "_Довідка"
 
-#~ msgid "1.0"
-#~ msgstr "1.0"
+
