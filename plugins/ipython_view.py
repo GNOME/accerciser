@@ -134,6 +134,8 @@ class IterableIPShell:
     @rtype: string
     '''
     self.history_level -= 1
+    if not self._getHistory():
+      self.history_level +=1
     return self._getHistory()
   
   def historyForward(self):
@@ -143,7 +145,8 @@ class IterableIPShell:
     @return: The command string.
     @rtype: string
     '''
-    self.history_level += 1
+    if self.history_level < 0:
+      self.history_level += 1
     return self._getHistory()
   
   def _getHistory(self):
@@ -156,7 +159,6 @@ class IterableIPShell:
     try:
       rv = self.IP.user_ns['In'][self.history_level].strip('\n')
     except IndexError:
-      self.history_level = 0
       rv = ''
     return rv
 
@@ -510,4 +512,12 @@ class IPythonView(ConsoleView, IterableIPShell):
     if rv: rv = rv.strip('\n')
     self.showReturned(rv)
     self.cout.truncate(0)
+    
+if __name__ == "__main__":
+  window = gtk.Window()
+  window.set_default_size(640, 320)
+  window.connect('delete-event', lambda x, y: gtk.main_quit())
+  window.add(IPythonView())
+  window.show_all()
+  gtk.main()
     
