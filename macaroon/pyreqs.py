@@ -43,15 +43,4 @@ for name in modules:
   elif name == 'gtk':
     m.check_version(*GTK_VERSION)
 
-# test for CORBA modules
-corba = ['Accessibility']
-import bonobo
-import ORBit
-for name in corba:
-  try:
-    ORBit.load_typelib(name)
-    print name,
-  except Exception:
-    print name, '*MISSING*'
-    sys.exit(1)
 sys.exit(0)
