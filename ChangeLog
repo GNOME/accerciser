@@ -1,5 +1,9 @@
 2009-05-04  Eitan Isaacson  <eitan@ascender.com>
 
+	* NEWS:
+	* README:
+	* configure.in: Bumped to version 1.7.1.
+
 	* src/lib/accerciser/accerciser.py (Main.run): Minimize CPU usage
 	and wakeups by setting gil to False, and pumping events with a
 	timeout as opposed to an idle callback (bug #576954).
