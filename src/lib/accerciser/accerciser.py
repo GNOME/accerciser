@@ -114,9 +114,9 @@ class Main(Tools):
     '''
     # Tell user if desktop accessibility is disabled.
     self._showNoA11yDialog()
-    gobject.idle_add(self._pumpEvents)
+    gobject.timeout_add(200, self._pumpEvents)
     try:
-      pyatspi.Registry.start(async=True)
+      pyatspi.Registry.start(async=True, gil=False)
     except KeyboardInterrupt:
       self._shutDown()
 
