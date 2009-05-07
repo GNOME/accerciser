@@ -19,9 +19,10 @@ from gobject import markup_escape_text
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
 from accerciser.i18n import _, N_
+from xml.dom import minidom
 
-GLADE_FILE = os.path.join(os.path.dirname(__file__), 
-                          'interface_view.glade')
+UI_FILE = os.path.join(os.path.dirname(__file__), 
+                       'interface_view.ui')
 
 class InterfaceViewer(ViewportPlugin):
   '''
@@ -43,32 +44,48 @@ class InterfaceViewer(ViewportPlugin):
     '''
     Intialize plugin.
     '''
-    glade_xml = gtk.glade.XML(GLADE_FILE, 'iface_view_frame')
-    frame = glade_xml.get_widget('iface_view_frame')
-    self.label_role = glade_xml.get_widget('label_role')
+    # HACK: Put all the callbacks in this class.
+    dom = minidom.parse(UI_FILE)
+    callbacks= set([signal.getAttribute('handler') \
+                      for signal in dom.getElementsByTagName('signal')])
+    del dom
+
+    ui_xml = gtk.Builder()
+    ui_xml.add_from_file(UI_FILE)
+    frame = ui_xml.get_object('iface_view_frame')
+    self.label_role = ui_xml.get_object('label_role')
     self.plugin_area.add(frame)
     self.sections = [
-      _SectionAccessible(glade_xml, self.node),
-      _SectionAction(glade_xml, self.node),
-      _SectionApplication(glade_xml, self.node),
-      _SectionComponent(glade_xml, self.node),
-      _SectionDocument(glade_xml, self.node),
-      _SectionHyperlink(glade_xml, self.node),
-      _SectionHypertext(glade_xml, self.node),
-      _SectionImage(glade_xml, self.node),
-      _SectionSelection(glade_xml, self.node),
-      _SectionStreamableContent(glade_xml, self.node),
-      _SectionTable(glade_xml, self.node),
-      _SectionText(glade_xml, self.node),
-      _SectionValue(glade_xml, self.node)]
+      _SectionAccessible(ui_xml, self.node),
+      _SectionAction(ui_xml, self.node),
+      _SectionApplication(ui_xml, self.node),
+      _SectionComponent(ui_xml, self.node),
+      _SectionDocument(ui_xml, self.node),
+      _SectionHyperlink(ui_xml, self.node),
+      _SectionHypertext(ui_xml, self.node),
+      _SectionImage(ui_xml, self.node),
+      _SectionSelection(ui_xml, self.node),
+      _SectionStreamableContent(ui_xml, self.node),
+      _SectionTable(ui_xml, self.node),
+      _SectionText(ui_xml, self.node),
+      _SectionValue(ui_xml, self.node)]
+
+    # HACK: Add callbacks to this class. 
+    for cb in callbacks:
+      for section in self.sections:
+        method = getattr(section, cb, None)
+        if not method: continue
+        setattr(self, cb, method)
+
+    ui_xml.connect_signals(self)    
 
     # Mark all expanders with no associated section classes as unimplemented
     implemented_sections = [obj.interface_name.lower() for obj in self.sections]
-    vbox_ifaces = glade_xml.get_widget('vbox_ifaces')
+    vbox_ifaces = ui_xml.get_object('vbox_ifaces')
     for expander in vbox_ifaces.get_children():
       iface_name = expander.name.replace('expander_', '')
       if iface_name not in implemented_sections:
-        section = _InterfaceSection(glade_xml, self.node, iface_name)
+        section = _InterfaceSection(ui_xml, self.node, iface_name)
         section.disable()
 
   def onAccChanged(self, acc):
@@ -108,12 +125,12 @@ class _InterfaceSection(object):
   @type event_listeners: list
   '''
   interface_name = None
-  def __init__(self, glade_xml, node, interface_name=None):
+  def __init__(self, ui_xml, node, interface_name=None):
     '''
     Initialize section object. and call init() for derived classes.
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     @param node: Application-wide node of selected accessible.
     @type node: L{Node}
     @param interface_name: Override default interface name.
@@ -122,17 +139,17 @@ class _InterfaceSection(object):
     self.interface_name = interface_name or self.interface_name
     self.node = node
     self.expander = \
-        glade_xml.get_widget('expander_%s' % self.interface_name.lower())
+        ui_xml.get_object('expander_%s' % self.interface_name.lower())
     self._setExpanderChildrenSensitive(False)
     self.event_listeners = []
-    self.init(glade_xml)
+    self.init(ui_xml)
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Abtract method for initializing section-specific code.
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
     pass
 
@@ -247,21 +264,20 @@ class _SectionAccessible(_InterfaceSection):
 
   interface_name = 'Accessible'
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Accessible interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
     # Child count and description labels
-    self.child_count_label = glade_xml.get_widget('label_acc_child count')
-    self.desc_label = glade_xml.get_widget('label_acc_desc')
+    self.child_count_label = ui_xml.get_object('label_acc_child count')
+    self.desc_label = ui_xml.get_object('label_acc_desc')
 
     # configure states tree view
-    treeview = glade_xml.get_widget('states_view')
+    treeview = ui_xml.get_object('states_view')
     self.states_model = gtk.ListStore(str)
     treeview.set_model(self.states_model)
     crt = gtk.CellRendererText()
@@ -271,7 +287,7 @@ class _SectionAccessible(_InterfaceSection):
     treeview.append_column(tvc)
 
     # configure relations tree view
-    self.relations_view = glade_xml.get_widget('relations_view')
+    self.relations_view = ui_xml.get_object('relations_view')
     self.relations_model = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
     self.relations_view.set_model(self.relations_model)
     crt = gtk.CellRendererText()
@@ -290,12 +306,12 @@ class _SectionAccessible(_InterfaceSection):
     self.relation_bg = style.base[gtk.STATE_NORMAL]
     selection = self.relations_view.get_selection()
     selection.set_select_function(self._relationSelectFunc)
-    show_button = glade_xml.get_widget('button_relation_show')
+    show_button = ui_xml.get_object('button_relation_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
     selection.connect('changed', self._onViewSelectionChanged, show_button)
 
     # configure accessible attributes tree view
-    treeview = glade_xml.get_widget('accattrib_view')
+    treeview = ui_xml.get_object('accattrib_view')
     self.attr_model = gtk.ListStore(str, str)
     treeview.set_model(self.attr_model)
     crt = gtk.CellRendererText()
@@ -441,17 +457,16 @@ class _SectionAction(_InterfaceSection):
   @type action_selection: gtk.TreeSelection  
   '''
   interface_name = 'Action'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Action interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)    
     # configure actions tree view
-    treeview = glade_xml.get_widget('treeview_action')
+    treeview = ui_xml.get_object('treeview_action')
     self.actions_model = gtk.ListStore(int, str, str, str)
     treeview.set_model(self.actions_model)
     crt = gtk.CellRendererText()
@@ -470,7 +485,7 @@ class _SectionAction(_InterfaceSection):
     tvc.set_attributes(crt, text=3)
     treeview.append_column(tvc)
     self.action_selection = treeview.get_selection()
-    show_button = glade_xml.get_widget('button_action_do')
+    show_button = ui_xml.get_object('button_action_do')
     show_button.set_sensitive(self._isSelectedInView(self.action_selection))
     self.action_selection.connect('changed', 
                                   self._onViewSelectionChanged, show_button)
@@ -534,17 +549,17 @@ class _SectionApplication(_InterfaceSection):
   @type label_version: gtk.Label
   '''
   interface_name = 'Application'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Application interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    self.label_id = glade_xml.get_widget('label_app_id')
-    self.label_tk = glade_xml.get_widget('label_app_tk')
-    self.label_version = glade_xml.get_widget('label_app_version')
+    self.label_id = ui_xml.get_object('label_app_id')
+    self.label_tk = ui_xml.get_object('label_app_tk')
+    self.label_version = ui_xml.get_object('label_app_version')
   
   def populateUI(self, acc):
     '''
@@ -583,20 +598,20 @@ class _SectionComponent(_InterfaceSection):
   @type label_alpha: gtk.Label
   '''
   interface_name = 'Component'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Component interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    self.label_posabs = glade_xml.get_widget('absolute_position_label')
-    self.label_posrel = glade_xml.get_widget('relative_position_label')
-    self.label_size = glade_xml.get_widget('size_label')
-    self.label_layer = glade_xml.get_widget('layer_label')
-    self.label_zorder = glade_xml.get_widget('zorder_label')
-    self.label_alpha = glade_xml.get_widget('alpha_label')
+    self.label_posabs = ui_xml.get_object('absolute_position_label')
+    self.label_posrel = ui_xml.get_object('relative_position_label')
+    self.label_size = ui_xml.get_object('size_label')
+    self.label_layer = ui_xml.get_object('layer_label')
+    self.label_zorder = ui_xml.get_object('zorder_label')
+    self.label_alpha = ui_xml.get_object('alpha_label')
 
   def populateUI(self, acc):
     '''
@@ -651,16 +666,16 @@ class _SectionDocument(_InterfaceSection):
   @type label_locale: gtk.Label
   '''
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Document interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
     # configure document attributes tree view
-    treeview = glade_xml.get_widget('docattrib_view')
+    treeview = ui_xml.get_object('docattrib_view')
     self.attr_model = gtk.ListStore(str, str)
     treeview.set_model(self.attr_model)
     crt = gtk.CellRendererText()
@@ -673,7 +688,7 @@ class _SectionDocument(_InterfaceSection):
     tvc.pack_start(crt, True)
     tvc.set_attributes(crt, text=1)
     treeview.append_column(tvc)
-    self.label_locale = glade_xml.get_widget('label_doc_locale')
+    self.label_locale = ui_xml.get_object('label_doc_locale')
 
   def populateUI(self, acc):
     '''
@@ -717,17 +732,16 @@ class _SectionHypertext(_InterfaceSection):
   @type links_model: gtk.ListStore
   '''
   interface_name = 'Hypertext'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Hypertext interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
     # configure links tree view
-    treeview = glade_xml.get_widget('treeview_links')
+    treeview = ui_xml.get_object('treeview_links')
     # It's a treestore because of potential multiple anchors
     self.links_model = gtk.TreeStore(int, # Link index
                           str, # Name
@@ -766,7 +780,7 @@ class _SectionHypertext(_InterfaceSection):
     tvc.set_attributes(crt, text=5)
     treeview.append_column(tvc)    
     selection = treeview.get_selection()
-    show_button = glade_xml.get_widget('button_hypertext_show')
+    show_button = ui_xml.get_object('button_hypertext_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
     selection.connect('changed', self._onViewSelectionChanged, show_button)
 
@@ -835,18 +849,18 @@ class _SectionImage(_InterfaceSection):
   '''
   interface_name = 'Image'
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Image interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    self.label_pos = glade_xml.get_widget('img_position_label')
-    self.label_size = glade_xml.get_widget('img_size_label')
-    self.label_locale = glade_xml.get_widget('img_locale_label')
-    self.label_desc = glade_xml.get_widget('img_locale_label')
+    self.label_pos = ui_xml.get_object('img_position_label')
+    self.label_size = ui_xml.get_object('img_size_label')
+    self.label_locale = ui_xml.get_object('img_locale_label')
+    self.label_desc = ui_xml.get_object('img_locale_label')
 
   def populateUI(self, acc):
     '''
@@ -884,17 +898,16 @@ class _SectionSelection(_InterfaceSection):
   '''
   interface_name = 'Selection'
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Selection interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
     # configure selection tree view
-    treeview = glade_xml.get_widget('treeview_selection')
+    treeview = ui_xml.get_object('treeview_selection')
     self.sel_model = gtk.ListStore(gtk.gdk.Pixbuf, str, object)
     treeview.set_model(self.sel_model)
     crt = gtk.CellRendererText()
@@ -907,14 +920,14 @@ class _SectionSelection(_InterfaceSection):
     treeview.append_column(tvc)
     # connect selection changed signal
     self.sel_selection = treeview.get_selection()
-    show_button = glade_xml.get_widget('button_select_clear')
+    show_button = ui_xml.get_object('button_select_clear')
     show_button.set_sensitive(self._isSelectedInView(self.sel_selection))
     self.sel_selection.connect('changed', 
                                self._onViewSelectionChanged, 
                                show_button)
     self.sel_selection.connect('changed', 
                                self._onSelectionSelected)
-    self.button_select_all = glade_xml.get_widget('button_select_all')
+    self.button_select_all = ui_xml.get_object('button_select_all')
 
   def populateUI(self, acc):
     '''
@@ -1011,16 +1024,16 @@ class _SectionStreamableContent(_InterfaceSection):
   '''
   interface_name = 'StreamableContent'
 
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the StreamableContent interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
     # configure streamable content tree view
-    treeview = glade_xml.get_widget('treeview_streams')
+    treeview = ui_xml.get_object('treeview_streams')
     self.streams_model = gtk.ListStore(str, str)
     treeview.set_model(self.streams_model)
     crt = gtk.CellRendererText()
@@ -1084,28 +1097,27 @@ class _SectionTable(_InterfaceSection):
   @type cell_button: gtk.Button
   '''
   interface_name = 'Table'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Table interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
-    self.selected_frame = glade_xml.get_widget('selected_cell_frame')
-    self.caption_label = glade_xml.get_widget('table_caption_label')
-    self.summary_label = glade_xml.get_widget('table_summary_label')
-    self.rows_label = glade_xml.get_widget('table_rows_label')
-    self.columns_label = glade_xml.get_widget('table_columns_label')
-    self.srows_label = glade_xml.get_widget('table_srows_label')
-    self.scolumns_label = glade_xml.get_widget('table_scolumns_label')
-    self.row_ext_label = glade_xml.get_widget('table_row_extents')
-    self.col_ext_label = glade_xml.get_widget('table_column_extents')
-    self.col_ext_label = glade_xml.get_widget('table_column_extents')
-    self.hrow_button = glade_xml.get_widget('table_hrow_button')
-    self.hcol_button = glade_xml.get_widget('table_hcol_button')
-    self.cell_button = glade_xml.get_widget('table_cell_button')
+    self.selected_frame = ui_xml.get_object('selected_cell_frame')
+    self.caption_label = ui_xml.get_object('table_caption_label')
+    self.summary_label = ui_xml.get_object('table_summary_label')
+    self.rows_label = ui_xml.get_object('table_rows_label')
+    self.columns_label = ui_xml.get_object('table_columns_label')
+    self.srows_label = ui_xml.get_object('table_srows_label')
+    self.scolumns_label = ui_xml.get_object('table_scolumns_label')
+    self.row_ext_label = ui_xml.get_object('table_row_extents')
+    self.col_ext_label = ui_xml.get_object('table_column_extents')
+    self.col_ext_label = ui_xml.get_object('table_column_extents')
+    self.hrow_button = ui_xml.get_object('table_hrow_button')
+    self.hcol_button = ui_xml.get_object('table_hcol_button')
+    self.cell_button = ui_xml.get_object('table_cell_button')
 
   def populateUI(self, acc):
     '''
@@ -1218,17 +1230,16 @@ class _SectionText(_InterfaceSection):
   @type outgoing_calls: dictionary
   '''
   interface_name = 'Text'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Text interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
     # configure text attribute tree view
-    treeview = glade_xml.get_widget('treeview_text_attr')
+    treeview = ui_xml.get_object('treeview_text_attr')
     self.attr_model = gtk.ListStore(str, str)
     treeview.set_model(self.attr_model)
     crt = gtk.CellRendererText()
@@ -1242,12 +1253,12 @@ class _SectionText(_InterfaceSection):
     tvc.set_attributes(crt, text=1)
     treeview.append_column(tvc)
 
-    self.offset_spin = glade_xml.get_widget('spinbutton_text_offset')
-    self.text_view = glade_xml.get_widget('textview_text')
+    self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
+    self.text_view = ui_xml.get_object('textview_text')
     self.text_buffer = self.text_view.get_buffer()
-    self.toggle_defaults = glade_xml.get_widget('checkbutton_text_defaults')
-    self.label_start = glade_xml.get_widget('label_text_attr_start')
-    self.label_end = glade_xml.get_widget('label_text_attr_end')
+    self.toggle_defaults = ui_xml.get_object('checkbutton_text_defaults')
+    self.label_start = ui_xml.get_object('label_text_attr_start')
+    self.label_end = ui_xml.get_object('label_text_attr_end')
 
     self._text_insert_handler = 0
     self._text_delete_handler = 0
@@ -1605,19 +1616,18 @@ class _SectionValue(_InterfaceSection):
   @type label_inc: gtk.Label
   '''
   interface_name = 'Value'
-  def init(self, glade_xml):
+  def init(self, ui_xml):
     '''
     Initialization that is specific to the Value interface 
     (construct data models, connect signals to callbacks, etc.)
     
-    @param glade_xml: Interface viewer glade xml.
-    @type glade_xml: gtk.glade.XML
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
     '''
-    glade_xml.signal_autoconnect(self)
-    self.spinbutton = glade_xml.get_widget('spinbutton_value')
-    self.label_max = glade_xml.get_widget('label_value_max')
-    self.label_min = glade_xml.get_widget('label_value_min')
-    self.label_inc = glade_xml.get_widget('label_value_inc')
+    self.spinbutton = ui_xml.get_object('spinbutton_value')
+    self.label_max = ui_xml.get_object('label_value_max')
+    self.label_min = ui_xml.get_object('label_value_min')
+    self.label_inc = ui_xml.get_object('label_value_inc')
     self.registerEventListener(self._accEventValue, 
                                'object:value-changed')
     

@@ -3,7 +3,7 @@ plugins_DATA = api_view.py \
 	console.py \
 	event_monitor.glade \
 	event_monitor.py \
-	interface_view.glade \
+	interface_view.ui \
 	interface_view.py \
 	ipython_view.py \
 	quick_select.py \
