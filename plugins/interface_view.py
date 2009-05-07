@@ -277,14 +277,7 @@ class _SectionAccessible(_InterfaceSection):
     self.desc_label = ui_xml.get_object('label_acc_desc')
 
     # configure states tree view
-    treeview = ui_xml.get_object('states_view')
-    self.states_model = gtk.ListStore(str)
-    treeview.set_model(self.states_model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
+    self.states_model = ui_xml.get_object('states_liststore')
 
     # configure relations tree view
     self.relations_view = ui_xml.get_object('relations_view')
