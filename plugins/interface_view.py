@@ -281,24 +281,20 @@ class _SectionAccessible(_InterfaceSection):
 
     # configure relations tree view
     self.relations_view = ui_xml.get_object('relations_view')
-    self.relations_model = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
-    self.relations_view.set_model(self.relations_model)
-    crt = gtk.CellRendererText()
-    crp = gtk.CellRendererPixbuf()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crp, False)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crp, pixbuf=0)
-    tvc.set_attributes(crt, text=1)
-    tvc.set_cell_data_func(crt, self._relationCellDataFunc)
-    tvc.set_cell_data_func(crp, self._relationCellDataFunc)
-    self.relations_view.append_column(tvc)
+    self.relations_model = ui_xml.get_object('relations_treestore')
+    tvc = ui_xml.get_object('treeviewcolumn2')
+    tvc.set_cell_data_func(
+      ui_xml.get_object('cellrendererpixbuf1'), self._relationCellDataFunc)
+    tvc.set_cell_data_func(
+      ui_xml.get_object('cellrenderertext2'), self._relationCellDataFunc)
     # preset the different bg colors
     style = gtk.Style ()
     self.header_bg = style.bg[gtk.STATE_NORMAL]
     self.relation_bg = style.base[gtk.STATE_NORMAL]
+
     selection = self.relations_view.get_selection()
     selection.set_select_function(self._relationSelectFunc)
+
     show_button = ui_xml.get_object('button_relation_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
     selection.connect('changed', self._onViewSelectionChanged, show_button)
@@ -347,10 +343,10 @@ class _SectionAccessible(_InterfaceSection):
     for relation in relations:
       r_type_name = repr(relation.getRelationType()).replace('RELATION_', '')
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
-      iter = self.relations_model.append(None, [None, r_type_name, None])
+      iter = self.relations_model.append(None, [None, r_type_name, -1])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
-        self.relations_model.append(iter, [getIcon(acc), acc.name, acc])
+        self.relations_model.append(iter, [getIcon(acc), acc.name, i])
     self.relations_view.expand_all()
 
     self.registerEventListener(self._accEventState, 'object:state-changed')
@@ -417,7 +413,9 @@ class _SectionAccessible(_InterfaceSection):
     selection = relations_view.get_selection()
     model, iter = selection.get_selected()
     if iter:
-      acc = model[iter][2]
+      path = model.get_path(iter)
+      relations = self.node.acc.getRelationSet()
+      acc = relations[path[0]].getTarget(model[iter][2])
       if acc:
         self.node.update(acc)
   
