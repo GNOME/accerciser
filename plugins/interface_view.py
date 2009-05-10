@@ -282,15 +282,10 @@ class _SectionAccessible(_InterfaceSection):
     # configure relations tree view
     self.relations_view = ui_xml.get_object('relations_view')
     self.relations_model = ui_xml.get_object('relations_treestore')
-    tvc = ui_xml.get_object('treeviewcolumn2')
-    tvc.set_cell_data_func(
-      ui_xml.get_object('cellrendererpixbuf1'), self._relationCellDataFunc)
-    tvc.set_cell_data_func(
-      ui_xml.get_object('cellrenderertext2'), self._relationCellDataFunc)
     # preset the different bg colors
     style = gtk.Style ()
-    self.header_bg = style.bg[gtk.STATE_NORMAL]
-    self.relation_bg = style.base[gtk.STATE_NORMAL]
+    self.header_bg = style.bg[gtk.STATE_NORMAL].to_string()
+    self.relation_bg = style.base[gtk.STATE_NORMAL].to_string()
 
     selection = self.relations_view.get_selection()
     selection.set_select_function(self._relationSelectFunc)
@@ -331,10 +326,16 @@ class _SectionAccessible(_InterfaceSection):
     for relation in relations:
       r_type_name = repr(relation.getRelationType()).replace('RELATION_', '')
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
-      iter = self.relations_model.append(None, [None, r_type_name, -1])
+      iter = self.relations_model.append(
+          None, [None, 
+                 '<i>'+markup_escape_text(r_type_name)+'</i>', -1, 
+                 self.header_bg, False])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
-        self.relations_model.append(iter, [getIcon(acc), acc.name, i])
+        self.relations_model.append(
+            iter, [getIcon(acc), 
+                   markup_escape_text(acc.name), i, 
+                   self.relation_bg, True])
     self.relations_view.expand_all()
 
     self.registerEventListener(self._accEventState, 'object:state-changed')
@@ -346,34 +347,6 @@ class _SectionAccessible(_InterfaceSection):
     self.relations_model.clear()
     self.states_model.clear()
     self.attr_model.clear()
-
-  def _relationCellDataFunc(self, tvc, cellrenderer, model, iter):
-    '''
-    Make relation-type headers distinguishable by tweaking the visible styling.
-    
-    @param tvc: The given tree view column
-    @type tvc: gtk.TreeViewColumn
-    @param cellrenderer: The given cell renderer.
-    @type cellrenderer: gtk.CellRenderer
-    @param model: The relations data model.
-    @type model: gtk.TreeStore
-    @param iter: The current iter.
-    @type iter: gtk.TreeIter
-    '''
-    if len(model.get_path(iter)) == 1:
-      cellrenderer.set_property('cell-background-gdk', self.header_bg)
-      cellrenderer.set_property('mode', gtk.CELL_RENDERER_MODE_INERT)
-      if isinstance(cellrenderer, gtk.CellRendererText):
-        cellrenderer.set_property('style', pango.STYLE_ITALIC)
-      elif isinstance(cellrenderer, gtk.CellRendererPixbuf):
-        cellrenderer.set_property('visible', False)
-    else:
-      cellrenderer.set_property('cell-background-gdk', self.relation_bg)
-      cellrenderer.set_property('mode', gtk.CELL_RENDERER_MODE_ACTIVATABLE)
-      if isinstance(cellrenderer, gtk.CellRendererText):
-        cellrenderer.set_property('style', pango.STYLE_NORMAL)
-      elif isinstance(cellrenderer, gtk.CellRendererPixbuf):
-        cellrenderer.set_property('visible', True)
 
   def _relationSelectFunc(self, path):
     '''

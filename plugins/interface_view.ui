@@ -8,16 +8,6 @@
       <column type="gchararray"/>
     </columns>
   </object>
-  <object class="GtkTreeStore" id="relations_treestore">
-    <columns>
-      <!-- column-name role_icon -->
-      <column type="GdkPixbuf"/>
-      <!-- column-name name -->
-      <column type="gchararray"/>
-      <!-- column-name index -->
-      <column type="gint"/>
-    </columns>
-  </object>
   <object class="GtkListStore" id="accattrib_liststore">
     <columns>
       <!-- column-name gchararray1 -->
@@ -60,6 +50,20 @@
       <column type="gchararray"/>
       <!-- column-name gchararray2 -->
       <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkTreeStore" id="relations_treestore">
+    <columns>
+      <!-- column-name role_icon -->
+      <column type="GdkPixbuf"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+      <!-- column-name index -->
+      <column type="gint"/>
+      <!-- column-name bg_color -->
+      <column type="gchararray"/>
+      <!-- column-name visible -->
+      <column type="gboolean"/>
     </columns>
   </object>
   <object class="GtkFrame" id="iface_view_frame">
@@ -254,13 +258,17 @@
                                                     <child>
                                                       <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf1"/>
                                                       <attributes>
+                                                        <attribute name="cell-background-gdk">3</attribute>
+                                                        <attribute name="visible">4</attribute>
                                                         <attribute name="pixbuf">0</attribute>
                                                       </attributes>
                                                     </child>
                                                     <child>
                                                       <object class="GtkCellRendererText" id="cellrenderertext2"/>
                                                       <attributes>
-                                                        <attribute name="text">1</attribute>
+                                                        <attribute name="cell-background-gdk">3</attribute>
+                                                        <attribute name="background">3</attribute>
+                                                        <attribute name="markup">1</attribute>
                                                       </attributes>
                                                     </child>
                                                   </object>
