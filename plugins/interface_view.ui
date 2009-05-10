@@ -18,6 +18,14 @@
       <column type="gint"/>
     </columns>
   </object>
+  <object class="GtkListStore" id="accattrib_liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+      <!-- column-name gchararray2 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkFrame" id="iface_view_frame">
     <property name="visible">True</property>
     <property name="label_xalign">0</property>
@@ -313,7 +321,30 @@
                                       <object class="GtkTreeView" id="accattrib_view">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
+                                        <property name="model">accattrib_liststore</property>
                                         <property name="headers_visible">False</property>
+                                        <child>
+                                          <object class="GtkTreeViewColumn" id="treeviewcolumn3">
+                                            <property name="title">column</property>
+                                            <child>
+                                              <object class="GtkCellRendererText" id="cellrenderertext3"/>
+                                              <attributes>
+                                                <attribute name="text">0</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkTreeViewColumn" id="treeviewcolumn4">
+                                            <property name="title">column</property>
+                                            <child>
+                                              <object class="GtkCellRendererText" id="cellrenderertext4"/>
+                                              <attributes>
+                                                <attribute name="text">1</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                        </child>
                                       </object>
                                     </child>
                                   </object>

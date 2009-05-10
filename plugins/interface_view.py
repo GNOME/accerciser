@@ -300,19 +300,7 @@ class _SectionAccessible(_InterfaceSection):
     selection.connect('changed', self._onViewSelectionChanged, show_button)
 
     # configure accessible attributes tree view
-    treeview = ui_xml.get_object('accattrib_view')
-    self.attr_model = gtk.ListStore(str, str)
-    treeview.set_model(self.attr_model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
+    self.attr_model = ui_xml.get_object('accattrib_liststore')
 
   def populateUI(self, acc):
     '''
