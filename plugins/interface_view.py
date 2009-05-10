@@ -638,19 +638,7 @@ class _SectionDocument(_InterfaceSection):
     @type ui_xml: gtk.glade.XML
     '''
     # configure document attributes tree view
-    treeview = ui_xml.get_object('docattrib_view')
-    self.attr_model = gtk.ListStore(str, str)
-    treeview.set_model(self.attr_model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
+    self.attr_model = ui_xml.get_object('docattrib_liststore')
     self.label_locale = ui_xml.get_object('label_doc_locale')
 
   def populateUI(self, acc):
