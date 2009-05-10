@@ -976,19 +976,7 @@ class _SectionStreamableContent(_InterfaceSection):
     @type ui_xml: gtk.glade.XML
     '''
     # configure streamable content tree view
-    treeview = ui_xml.get_object('treeview_streams')
-    self.streams_model = gtk.ListStore(str, str)
-    treeview.set_model(self.streams_model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Content type'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('URI'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
+    self.streams_model = ui_xml.get_object('streams_liststore')
 
   def populateUI(self, acc):
     '''
