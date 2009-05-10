@@ -1170,19 +1170,7 @@ class _SectionText(_InterfaceSection):
     @type ui_xml: gtk.glade.XML
     '''
     # configure text attribute tree view
-    treeview = ui_xml.get_object('treeview_text_attr')
-    self.attr_model = gtk.ListStore(str, str)
-    treeview.set_model(self.attr_model)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
-    treeview.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn()
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
-    treeview.append_column(tvc)
+    self.attr_model = ui_xml.get_object('textattrib_liststore')
 
     self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
     self.text_view = ui_xml.get_object('textview_text')
