@@ -9,8 +9,8 @@ import wnck
 from accerciser.i18n import N_, _
 from Queue import Queue
 
-GLADE_FILE = os.path.join(os.path.dirname(__file__), 
-                          'script_recorder.glade')
+UI_FILE = os.path.join(os.path.dirname(__file__), 
+                          'script_recorder.ui')
 
 class ScriptFactory(object):
   '''
@@ -189,9 +189,10 @@ class ScriptRecorder(ViewportPlugin):
     self.text_view = gtksourceview2.View(text_buffer)
     self.text_view.set_editable(True)
     self.text_view.set_cursor_visible(True)
-    xml = gtk.glade.XML(GLADE_FILE, 'main_vbox')
-    vbox = xml.get_widget('main_vbox')
-    sw =  xml.get_widget('textview_sw')
+    xml = gtk.Builder()
+    xml.add_from_file(UI_FILE)
+    vbox = xml.get_object('main_vbox')
+    sw =  xml.get_object('textview_sw')
     sw.add(self.text_view)
     self.plugin_area.add(vbox)
     self.mark = text_buffer.create_mark('scroll_mark', 
@@ -200,7 +201,7 @@ class ScriptRecorder(ViewportPlugin):
     for radio_name, factory_class in (('radio_native', NativeFactory),
                                       ('radio_dogtail', DogtailFactory),
                                       ('radio_ldtp', LDTPFactory)):
-      button = xml.get_widget(radio_name)
+      button = xml.get_object(radio_name)
       handler_id = button.connect('toggled', 
                                   self._onTypeToggled, 
                                   factory_class)
@@ -209,7 +210,7 @@ class ScriptRecorder(ViewportPlugin):
         self.script_factory = factory_class()
         self.last_active_type_button = button
     self._clearBuffer()
-    xml.signal_autoconnect(self)
+    xml.connect_signals(self)
     self.plugin_area.show_all()
 
   def appendText(self, text):
