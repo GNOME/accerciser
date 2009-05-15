@@ -9,6 +9,6 @@ plugins_DATA = api_view.py \
 	quick_select.py \
 	script_recorder.ui \
 	script_recorder.py \
-	validate.glade \
+	validate.ui \
 	validate.py
 EXTRA_DIST = $(plugins_DATA)
