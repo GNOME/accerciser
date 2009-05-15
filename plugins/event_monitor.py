@@ -20,8 +20,8 @@ from accerciser.i18n import _, N_
 import pango
 from gtk import keysyms, gdk
 
-GLADE_FILE = os.path.join(os.path.dirname(__file__), 
-                          'event_monitor.glade')
+UI_FILE = os.path.join(os.path.dirname(__file__), 
+                       'event_monitor.ui')
 
 class EventMonitor(ViewportPlugin):
   '''
@@ -31,8 +31,8 @@ class EventMonitor(ViewportPlugin):
   Either source_app and source_acc for selected applications and accessibles 
   respectively. Or everything.
   @type source_filter: string
-  @ivar main_xml: The main event monitor glade file.
-  @type main_xml: gtk.glade.XML
+  @ivar main_xml: The main event monitor gtkbuilder file.
+  @type main_xml: gtk.GtkBuilder
   @ivar monitor_toggle: Toggle button for turining monitoring on and off.
   @type monitor_toggle: gtk.ToggleButton
   @ivar listen_list: List of at-spi events the monitor is currently listening
@@ -68,20 +68,21 @@ class EventMonitor(ViewportPlugin):
                             self._onClearlog,
                             keysyms.t, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
-    vpaned = self.main_xml.get_widget('monitor_vpaned')
+    self.main_xml = gtk.Builder()
+    self.main_xml.add_from_file(UI_FILE)
+    vpaned = self.main_xml.get_object('monitor_vpaned')
     self.plugin_area.add(vpaned)
-    self._initTreeView()
+    self.events_model = self.main_xml.get_object('events_treestore')
     self._popEventsModel()
     self._initTextView()
 
-    self.monitor_toggle = self.main_xml.get_widget('monitor_toggle')
+    self.monitor_toggle = self.main_xml.get_object('monitor_toggle')
 
     self.listen_list = []
 
     self.node.connect('accessible-changed', self._onNodeUpdated)
 
-    self.main_xml.signal_autoconnect(self)
+    self.main_xml.connect_signals(self)
     self.show_all()
 
   def _onStartStop(self):
@@ -108,38 +109,11 @@ class EventMonitor(ViewportPlugin):
     events.sort()
     gobject.idle_add(self._appendChildren, None, '', 0, events)
 
-  def _initTreeView(self):
-    '''
-    Construct the data model and tree view columns for the event types tree.
-    '''
-    self.events_model = gtk.TreeStore(str,  # COL_NAME
-                                      str, # COL_FULL_NAME
-                                      bool, # COL_TOGGLE  
-                                      bool) # COL_INCONSISTENT
-    event_tree = self.main_xml.get_widget('treeview_events')
-    event_tree.set_model(self.events_model)
-    crt = gtk.CellRendererText()
-    crc = gtk.CellRendererToggle()
-    crc.connect('toggled', self._onToggled)
-    tvc = gtk.TreeViewColumn(_('Name'))
-    tvc.pack_start(crc, True)
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crc, 
-                       active=self.COL_TOGGLE,
-                       inconsistent=self.COL_INCONSISTENT)
-    tvc.set_attributes(crt, text=self.COL_NAME)
-    event_tree.append_column(tvc)
-    crt = gtk.CellRendererText()
-    tvc = gtk.TreeViewColumn(_('Full name'))
-    tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=self.COL_FULL_NAME)
-    event_tree.append_column(tvc)
-
   def _initTextView(self):
     '''
     Initialize text view in monitor plugin.
     '''
-    self.textview_monitor = self.main_xml.get_widget('textview_monitor')
+    self.textview_monitor = self.main_xml.get_object('textview_monitor')
     
     self.monitor_buffer = self.textview_monitor.get_buffer()
     self.monitor_mark = \

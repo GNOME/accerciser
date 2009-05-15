@@ -22,7 +22,7 @@ from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
 import pyatspi
 
-GLADE_FILE = os.path.join(os.path.dirname(__file__), 'validate.glade')
+UI_FILE = os.path.join(os.path.dirname(__file__), 'validate.ui')
 USER_SCHEMA_PATH = os.path.join(os.environ['HOME'], '.accerciser', 
                                 'plugindata', 'validate')
 SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser', 
@@ -140,7 +140,7 @@ class ValidatorViewport(ViewportPlugin):
   Validator UI. Key feature is a table showing the results of a validation
   run on some accessible and its descendants.
 
-  @ivar main_xml: glade parsed XML definition
+  @ivar main_xml: gtk builder parsed XML definition
   @ivar report: Report table
   @ivar progress: Activity bar
   @ivar validate: Validation button
@@ -169,16 +169,17 @@ class ValidatorViewport(ViewportPlugin):
     # help url for last selected
     self.url = None
 
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'main vbox')
-    frame = self.main_xml.get_widget('main vbox')
+    self.main_xml = gtk.Builder()
+    self.main_xml.add_from_file(UI_FILE)
+    frame = self.main_xml.get_object('main vbox')
     self.plugin_area.add(frame)
-    self.report = self.main_xml.get_widget('report table')
-    self.progress = self.main_xml.get_widget('progress bar')
-    self.validate = self.main_xml.get_widget('validate button')
-    self.help = self.main_xml.get_widget('help button')
-    self.save = self.main_xml.get_widget('save button')
-    self.clear = self.main_xml.get_widget('clear button')
-    self.schema = self.main_xml.get_widget('schema combo')
+    self.report = self.main_xml.get_object('report table')
+    self.progress = self.main_xml.get_object('progress bar')
+    self.validate = self.main_xml.get_object('validate button')
+    self.help = self.main_xml.get_object('help button')
+    self.save = self.main_xml.get_object('save button')
+    self.clear = self.main_xml.get_object('clear button')
+    self.schema = self.main_xml.get_object('schema combo')
     self.validator_buffer = gtk.TextBuffer()
 
     # model for the combobox
@@ -215,7 +216,7 @@ class ValidatorViewport(ViewportPlugin):
     # set progress bar to zero initially
     self.progress.set_fraction(0.0)
         
-    self.main_xml.signal_autoconnect(self)
+    self.main_xml.connect_signals(self)
     self.show_all()
     
   def onAccChanged(self, acc):
