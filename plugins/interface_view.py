@@ -1205,7 +1205,7 @@ class _SectionText(_InterfaceSection):
     label_text = expander_label.get_label()
     label_text = label_text.replace(_('<i>(Editable)</i>'),'')
     label_text = label_text.strip(' ')
-    if eti:
+    if eti and acc.getState().contains(pyatspi.STATE_EDITABLE):
       label_text += ' ' + _('<i>(Editable)</i>')
       self.text_view.set_editable(True)
     else:
