@@ -1,7 +1,7 @@
 pluginsdir = $(datadir)/$(PACKAGE)/plugins
 plugins_DATA = api_view.py \
 	console.py \
-	event_monitor.glade \
+	event_monitor.ui \
 	event_monitor.py \
 	interface_view.ui \
 	interface_view.py \

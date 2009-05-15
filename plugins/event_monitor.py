@@ -21,7 +21,7 @@ import pango
 from gtk import keysyms, gdk
 
 GLADE_FILE = os.path.join(os.path.dirname(__file__), 
-                          'event_monitor.glade')
+                          'event_monitor.ui')
 
 class EventMonitor(ViewportPlugin):
   '''
@@ -68,20 +68,22 @@ class EventMonitor(ViewportPlugin):
                             self._onClearlog,
                             keysyms.t, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
-    self.main_xml = gtk.glade.XML(GLADE_FILE, 'monitor_vpaned')
-    vpaned = self.main_xml.get_widget('monitor_vpaned')
+    self.main_xml = gtk.Builder()
+    self.main_xml.add_from_file(GLADE_FILE)
+    vpaned = self.main_xml.get_object('monitor_vpaned')
     self.plugin_area.add(vpaned)
-    self._initTreeView()
+    #self._initTreeView()
+    self.events_model = self.main_xml.get_object('events_treestore')
     self._popEventsModel()
     self._initTextView()
 
-    self.monitor_toggle = self.main_xml.get_widget('monitor_toggle')
+    self.monitor_toggle = self.main_xml.get_object('monitor_toggle')
 
     self.listen_list = []
 
     self.node.connect('accessible-changed', self._onNodeUpdated)
 
-    self.main_xml.signal_autoconnect(self)
+    self.main_xml.connect_signals(self)
     self.show_all()
 
   def _onStartStop(self):
@@ -116,7 +118,7 @@ class EventMonitor(ViewportPlugin):
                                       str, # COL_FULL_NAME
                                       bool, # COL_TOGGLE  
                                       bool) # COL_INCONSISTENT
-    event_tree = self.main_xml.get_widget('treeview_events')
+    event_tree = self.main_xml.get_object('treeview_events')
     event_tree.set_model(self.events_model)
     crt = gtk.CellRendererText()
     crc = gtk.CellRendererToggle()
@@ -139,7 +141,7 @@ class EventMonitor(ViewportPlugin):
     '''
     Initialize text view in monitor plugin.
     '''
-    self.textview_monitor = self.main_xml.get_widget('textview_monitor')
+    self.textview_monitor = self.main_xml.get_object('textview_monitor')
     
     self.monitor_buffer = self.textview_monitor.get_buffer()
     self.monitor_mark = \
