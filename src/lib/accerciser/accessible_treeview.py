@@ -422,8 +422,13 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     selection.connect('changed', self._onSelectionChanged)
     selection.set_select_function(self._selectFunc)
     self.connect('row-expanded', self._onExpanded)
+
     pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
                                            'object:children-changed')
+
+    pyatspi.Registry.registerEventListener(
+        self._accEventNameChanged, 
+        'object:property-change:accessible-name')
 
     self.action_group = gtk.ActionGroup('TreeActions')
     self.action_group.add_actions([
@@ -526,6 +531,26 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     acc = self.model[iter][COL_ACC]
     # populate this level
     self.model.popLevel(iter)
+
+  def _accEventNameChanged(self, event):
+    '''
+    Event handler for "object:property-change:accessible-name". 
+    Updates the treeview accordingly.
+    
+    @param event: The event which triggered this handler.
+    @type event: L{pyatspi.event.Event}
+    '''
+    if self.isMyApp(event.source) or event.source == self.desktop:
+      # Bad karma
+      return
+    if self.model.isInModel(event.source):
+      try:
+        path = self.model.getAccPath(event.source)
+        iter = self.model.get_iter(path)
+      except:
+          pass
+      else:
+          self.model[iter][COL_NAME] = event.source.name
 
   def _accEventChildChanged(self, event):
     '''

@@ -88,6 +88,27 @@ class InterfaceViewer(ViewportPlugin):
         section = _InterfaceSection(ui_xml, self.node, iface_name)
         section.disable()
 
+    pyatspi.Registry.registerEventListener(
+        self.onAccNameChanged, 'object:property-change:accessible-name')
+
+  def onAccNameChanged(self, event):
+    '''
+    Listener for accessible name changes, if it is ours, change the name.
+
+    @param event: 'object:property-change:accessible-name' event.
+    @type acc: Accessibility.Event
+    '''
+    if event.source != self.node.acc: 
+      return
+
+    role = self.node.acc.getRoleName()
+    name = self.node.acc.name
+    if name:
+      role_name = '%s: %s' % (role, name)
+    else:
+      role_name = role
+    self.label_role.set_markup('<b>%s</b>' % markup_escape_text(role_name))
+      
   def onAccChanged(self, acc):
     '''
     Method that is invoked when the main accessible selection s changed.
