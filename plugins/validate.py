@@ -19,7 +19,7 @@ import glob
 import imp
 import webbrowser
 from accerciser.plugin import ViewportPlugin
-from accerciser.i18n import _, N_
+from accerciser.i18n import _, N_, DOMAIN
 import pyatspi
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 'validate.ui')
@@ -170,6 +170,7 @@ class ValidatorViewport(ViewportPlugin):
     self.url = None
 
     self.main_xml = gtk.Builder()
+    self.main_xml.set_translation_domain(DOMAIN)
     self.main_xml.add_from_file(UI_FILE)
     frame = self.main_xml.get_object('main vbox')
     self.plugin_area.add(frame)

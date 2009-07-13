@@ -6,7 +6,7 @@ from gtk import keysyms
 import gtksourceview2
 import threading
 import wnck
-from accerciser.i18n import N_, _
+from accerciser.i18n import N_, _, DOMAIN
 from Queue import Queue
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 
@@ -190,6 +190,7 @@ class ScriptRecorder(ViewportPlugin):
     self.text_view.set_editable(True)
     self.text_view.set_cursor_visible(True)
     xml = gtk.Builder()
+    xml.set_translation_domain(DOMAIN)
     xml.add_from_file(UI_FILE)
     vbox = xml.get_object('main_vbox')
     sw =  xml.get_object('textview_sw')

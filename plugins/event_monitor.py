@@ -16,7 +16,7 @@ import gobject
 import os.path
 import gettext, os, sys, locale
 from accerciser.plugin import ViewportPlugin
-from accerciser.i18n import _, N_
+from accerciser.i18n import _, N_, DOMAIN
 import pango
 from gtk import keysyms, gdk
 
@@ -69,6 +69,7 @@ class EventMonitor(ViewportPlugin):
                             keysyms.t, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
     self.source_filter = None
     self.main_xml = gtk.Builder()
+    self.main_xml.set_translation_domain(DOMAIN)
     self.main_xml.add_from_file(UI_FILE)
     vpaned = self.main_xml.get_object('monitor_vpaned')
     self.plugin_area.add(vpaned)

@@ -18,7 +18,7 @@ import pango
 from gobject import markup_escape_text
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
-from accerciser.i18n import _, N_
+from accerciser.i18n import _, N_, DOMAIN
 from xml.dom import minidom
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 
@@ -51,6 +51,7 @@ class InterfaceViewer(ViewportPlugin):
     del dom
 
     ui_xml = gtk.Builder()
+    ui_xml.set_translation_domain(DOMAIN)
     ui_xml.add_from_file(UI_FILE)
     frame = ui_xml.get_object('iface_view_frame')
     self.label_role = ui_xml.get_object('label_role')

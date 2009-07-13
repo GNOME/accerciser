@@ -17,7 +17,6 @@ import pygtk
 pygtk.require('2.0')
 import gtk
 import gobject
-import gtk.glade
 import gtk.gdk
 import os, sys, locale
 from icons import getIcon
@@ -41,11 +40,6 @@ from prefs_dialog import AccerciserPreferencesDialog
 from main_window import AccerciserMainWindow
 import ui_manager
 
-GLADE_FILENAME = os.path.join(sys.prefix, 'share', 'accerciser', 'glade', 
-                              'accerciser.glade')
-if not os.path.exists(GLADE_FILENAME):
-  GLADE_FILENAME = os.path.join(os.getcwd(), 'accerciser.glade')
-  
 GCONF_GENERAL = '/apps/accerciser/general'
 
 class Main(Tools):
