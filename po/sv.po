@@ -7,19 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-07 12:09+0200\n"
-"PO-Revision-Date: 2009-02-01 12:16+0100\n"
+"POT-Creation-Date: 2009-08-26 05:53+0200\n"
+"PO-Revision-Date: 2009-08-26 05:53+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2
+#: ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Hjälpmedelsutforskaren Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "Ge ditt program en omgång hjälpmedelsfunktioner"
 
@@ -89,8 +94,7 @@ msgstr "IPython-konsoll"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Interaktiv konsoll för manipulering av aktuell markerad hjälpmedelsfunktion"
+msgstr "Interaktiv konsoll för manipulering av aktuell markerad hjälpmedelsfunktion"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
@@ -185,8 +189,9 @@ msgstr "<b>Text</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>okänd</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:331
-#: ../plugins/interface_view.py:824
+#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.py:332
+#: ../plugins/interface_view.py:825
 msgid "<i>(no description)</i>"
 msgstr "<i>(ingen beskrivning)</i>"
 
@@ -253,8 +258,9 @@ msgid "Des_ktop"
 msgstr "S_krivbord"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:213
-#: ../plugins/validate.py:276
+#: ../plugins/interface_view.ui.h:31
+#: ../plugins/validate.py:214
+#: ../plugins/validate.py:277
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -272,7 +278,8 @@ msgid "Header:"
 msgstr "Rubrik:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:282
+#: ../plugins/interface_view.ui.h:36
+#: ../plugins/validate.py:283
 msgid "Hyperlink"
 msgstr "Hyperlänk"
 
@@ -418,35 +425,38 @@ msgstr "Gränssnittsvisare"
 msgid "Allows viewing of various interface properties"
 msgstr "Tillåter visning av olika gränssnittsegenskaper"
 
-#: ../plugins/interface_view.py:226 ../plugins/interface_view.py:228
+#: ../plugins/interface_view.py:227
 #: ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:230
 msgid "(not implemented)"
 msgstr "(inte implementerad)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:700 ../plugins/validate.py:278
+#: ../plugins/interface_view.py:701
+#: ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Namn"
 
-#: ../plugins/interface_view.py:707
+#: ../plugins/interface_view.py:708
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:714
+#: ../plugins/interface_view.py:715
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:721
+#: ../plugins/interface_view.py:722
 msgid "End"
 msgstr "Slut"
 
-#: ../plugins/interface_view.py:882
+#: ../plugins/interface_view.py:883
 msgid "Too many selectable children"
 msgstr "För många valbara barn"
 
-#: ../plugins/interface_view.py:1227 ../plugins/interface_view.py:1230
+#: ../plugins/interface_view.py:1228
+#: ../plugins/interface_view.py:1231
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redigerbar)</i>"
 
@@ -456,8 +466,7 @@ msgstr "Snabbväljare"
 
 #: ../plugins/quick_select.py:14
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"Insticksmodul med olika metoder för att välja hjälpmedelsfunktioner snabbt."
+msgstr "Insticksmodul med olika metoder för att välja hjälpmedelsfunktioner snabbt."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -494,16 +503,17 @@ msgstr "Skriptinspelare"
 msgid "Creates dogtail style scripts"
 msgstr "Skapar dogtail-liknande skript"
 
-#: ../plugins/script_recorder.py:341
+#: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
 msgstr "Det aktuella skriptet kommer att förloras."
 
-#: ../plugins/script_recorder.py:342
+#: ../plugins/script_recorder.py:343
 msgid "Confirm clear"
 msgstr "Bekräfta tömning"
 
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:359
-#: ../plugins/validate.py:411
+#: ../plugins/validate.ui.h:1
+#: ../plugins/validate.py:360
+#: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "Overksam"
 
@@ -529,40 +539,42 @@ msgstr "Validerar hjälpmedel i program"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:206 ../plugins/validate.py:274
+#: ../plugins/validate.py:207
+#: ../plugins/validate.py:275
 msgid "Level"
 msgstr "Nivå"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:280 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281
+#: ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Roll"
 
-#: ../plugins/validate.py:345
+#: ../plugins/validate.py:346
 msgid "Saving"
 msgstr "Sparar"
 
-#: ../plugins/validate.py:393
+#: ../plugins/validate.py:394
 msgid "Validating"
 msgstr "Validerar"
 
-#: ../plugins/validate.py:549
+#: ../plugins/validate.py:550
 msgid "EXCEPT"
 msgstr "UNDANTAG"
 
-#: ../plugins/validate.py:556
+#: ../plugins/validate.py:557
 msgid "ERROR"
 msgstr "FEL"
 
-#: ../plugins/validate.py:564
+#: ../plugins/validate.py:565
 msgid "WARN"
 msgstr "VARNING"
 
-#: ../plugins/validate.py:571
+#: ../plugins/validate.py:572
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:578
+#: ../plugins/validate.py:579
 msgid "DEBUG"
 msgstr "FELSÖKNING"
 
@@ -654,36 +666,27 @@ msgstr "%(rolename)s index %(num)d matchar inte rad och kolumn"
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
-msgstr ""
-"%(rolename)s föräldraindex %(num1)d matchar inte rad- och kolumnindex %(num2)"
-"d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "%(rolename)s föräldraindex %(num1)d matchar inte rad- och kolumnindex %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s har inget namn eller beskrivning"
 
-#: ../src/lib/accerciser/accerciser.py:91
+#: ../src/lib/accerciser/accerciser.py:85
 msgid "_Preferences..."
 msgstr "_Inställningar..."
 
-#: ../src/lib/accerciser/accerciser.py:93
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../src/lib/accerciser/accerciser.py:135
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera "
-"hjälpmedelsfunktioner för skrivbordet för att rätta till det här problemet. "
-"Vill du aktivera den nu?"
+#: ../src/lib/accerciser/accerciser.py:129
+msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera hjälpmedelsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera den nu?"
 
-#: ../src/lib/accerciser/accerciser.py:153
+#: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
 msgstr "Observera: Eventuella ändringar blir aktiverade efter utloggning."
 
@@ -918,79 +921,55 @@ msgstr "_Hjälp"
 
 #~ msgid "Full name"
 #~ msgstr "Fullständigt namn"
-
 #~ msgid "Key binding"
 #~ msgstr "Tangentbindning"
-
 #~ msgid "Content type"
 #~ msgstr "Innehållstyp"
-
 #~ msgid "View"
 #~ msgstr "Visa"
-
 #~ msgid "1.0"
 #~ msgstr "1.0"
-
 #~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
 #~ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-
 #~ msgid "gtk-clear"
 #~ msgstr "Töm"
-
 #~ msgid "gtk-save"
 #~ msgstr "Spara"
-
 #~ msgid "gtk-select-all"
 #~ msgstr "Markera allt"
-
 #~ msgid "gtk-media-record"
 #~ msgstr "Spela in"
-
 #~ msgid "Wiki page"
 #~ msgstr "Wiki-sida"
-
 #~ msgid "gtk-close"
 #~ msgstr "Stäng"
-
 #~ msgid "gtk-quit"
 #~ msgstr "Avsluta"
-
 #~ msgid "gtk-refresh"
 #~ msgstr "Uppdatera"
-
 #~ msgid "Core"
 #~ msgstr "Kärna"
-
 #~ msgid "Plugin enabled"
 #~ msgstr "Insticksmodul aktiverad"
-
 #~ msgid "Set to true is plugin is enabled"
 #~ msgstr "Ställ in till sant om insticksmodulen är aktiverad"
-
 #~ msgid "The default tab position"
 #~ msgstr "Standardposition för flik"
-
 #~ msgid "The default tab position for this plugin"
 #~ msgstr "Standardpositionen för fliken för den här insticksmodulen"
-
 #~ msgid "Top right"
 #~ msgstr "Övre högra hörnet"
-
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr ""
 #~ "Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även "
 #~ "om de har aktiverats."
-
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr ""
 #~ "Observera: Du måste logga ut för att skrivbordsalternativ för "
 #~ "tillgänglighet blir aktiverade."
-
 #~ msgid "Va_lue"
 #~ msgstr "Vä_rde"
 
-#~ msgid "accerciser"
-#~ msgstr "accerciser"
