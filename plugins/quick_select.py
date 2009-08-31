@@ -70,6 +70,7 @@ class QuickSelect(Plugin):
     '''
     display = gtk.gdk.Display(gtk.gdk.get_display())
     screen, x, y, flags =  display.get_pointer()
+    del screen # A workaround http://bugzilla.gnome.org/show_bug.cgi?id=593732
 
     # First check if the currently selected accessible has the pointer over it.
     # This is an optimization: Instead of searching for 
@@ -106,6 +107,7 @@ class QuickSelect(Plugin):
           else:
             if z_order > top_window[1]:
               top_window = (acc, z_order)
+
     if top_window[0]:
       self.node.update(top_window[0])
 
