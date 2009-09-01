@@ -5,21 +5,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2009-07-13 15:46+0000\n"
-"PO-Revision-Date: 2009-07-17 18:03+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-08-24 17:41+0000\n"
+"PO-Revision-Date: 2009-09-02 01:38+0200\n"
+"Last-Translator: Mark Krapivner <mark125@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "מגלה נגישות"
+
+#: ../accerciser.desktop.in.in.h:2
+#: ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "מגלה נגישות אינטרקטבי Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "בדוק נגישות של תוכנות"
 
@@ -184,7 +188,8 @@ msgstr "<b>טקסט</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>לא ידוע</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
+#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.py:332
 #: ../plugins/interface_view.py:825
 msgid "<i>(no description)</i>"
 msgstr "(אין תיאור)"
@@ -252,7 +257,8 @@ msgid "Des_ktop"
 msgstr "_שולחן עבודה"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/interface_view.ui.h:31
+#: ../plugins/validate.py:214
 #: ../plugins/validate.py:277
 msgid "Description"
 msgstr "תיאור"
@@ -271,7 +277,8 @@ msgid "Header:"
 msgstr "כותרת עליונה:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36
+#: ../plugins/validate.py:283
 msgid "Hyperlink"
 msgstr "קישורית"
 
@@ -417,13 +424,15 @@ msgstr "צג ממשקים"
 msgid "Allows viewing of various interface properties"
 msgstr "מאפשר הצגה ושליטה במאפייני ממשקים"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:227
+#: ../plugins/interface_view.py:229
 #: ../plugins/interface_view.py:230
 msgid "(not implemented)"
 msgstr " (לא ממומש)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:701
+#: ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -445,7 +454,8 @@ msgstr "סוף"
 msgid "Too many selectable children"
 msgstr "יש יותר מדי ילדים שאפשר לבחור"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1228
+#: ../plugins/interface_view.py:1231
 msgid "<i>(Editable)</i>"
 msgstr "‏<i>(ניתן לעריכה)</i>"
 
@@ -500,7 +510,8 @@ msgstr "התסריט הנוכחי יימחק."
 msgid "Confirm clear"
 msgstr "אשר ניקוי"
 
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.ui.h:1
+#: ../plugins/validate.py:360
 #: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "ממתין"
@@ -527,12 +538,14 @@ msgstr "בדוק נגישות יישום"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:207
+#: ../plugins/validate.py:275
 msgid "Level"
 msgstr "רמה"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281
+#: ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "תפקיד"
 
@@ -652,12 +665,8 @@ msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה 
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
-msgstr ""
-"האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה %"
-"(num2)d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -673,12 +682,8 @@ msgid "_Contents"
 msgstr "‏_תכנים"
 
 #: ../src/lib/accerciser/accerciser.py:129
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן "
-"עבודה. האם ברצונך לאפשר זאת כעת?"
+msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן עבודה. האם ברצונך לאפשר זאת כעת?"
 
 #: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
@@ -911,36 +916,27 @@ msgstr "_עזרה"
 
 #~ msgid "Full name"
 #~ msgstr "שם מלא"
-
 #~ msgid "Key binding"
 #~ msgstr "תחביר קלידים"
-
 #~ msgid "Content type"
 #~ msgstr "סוג תוכן"
-
 #~ msgid "1.0"
 #~ msgstr "1.0"
-
 #~ msgid "Wiki page"
 #~ msgstr "עמוד ויקי"
-
 #~ msgid "Core"
 #~ msgstr "ליבה"
-
 #~ msgid "Plugin enabled"
 #~ msgstr "אפשר תוסף"
-
 #~ msgid "Top right"
 #~ msgstr "שמשה עליונה"
-
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr "נגישות לשולחן העבודה עדיין לא פועל."
-
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr "עליך לאתחל מחדש את שולחן העבודה בכדי שהנגישות תופעל."
-
 #~ msgid "Va_lue"
 #~ msgstr "_ערך"
+
