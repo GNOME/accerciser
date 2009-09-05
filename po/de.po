@@ -8,21 +8,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 15:12+0200\n"
-"PO-Revision-Date: 2009-03-10 09:38+0100\n"
-"Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-08-24 17:41+0000\n"
+"PO-Revision-Date: 2009-09-05 13:32+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser Barrierfreiheit-Untersucher"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "Gestalten Sie Ihre Anwendungen barrierefrei"
 
@@ -68,7 +73,7 @@ msgstr "API-Browser"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "Durch die verschiedenen Methoden des momentan Accessible browsen"
+msgstr "Durch die verschiedenen Methoden des momentanen Accessible browsen"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -92,8 +97,7 @@ msgstr "IPython-Konsole"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Interaktive Konsole um das momentan gewählte Accessible zu manipulieren"
+msgstr "Interaktive Konsole, um das momentan gewählte Accessible zu manipulieren"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
@@ -435,7 +439,7 @@ msgstr "Name"
 
 #: ../plugins/interface_view.py:708
 msgid "URI"
-msgstr "URI"
+msgstr "Adresse"
 
 #: ../plugins/interface_view.py:715
 msgid "Start"
@@ -495,7 +499,7 @@ msgstr "Script-Aufzeichner"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr "Dogtail-Scripte erstellte"
+msgstr "Erstellt Dogtail-Scripte"
 
 #: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
@@ -580,7 +584,7 @@ msgstr "Testen Sie Ihre Anwendungen auf Barrierefreiheit"
 #: ../plugindata/validate/basic.py:24
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr "Auslöser %s ist nicht fokusierbar oder auswählbar"
+msgstr "Auslöser %s ist nicht fokussierbar oder auswählbar"
 
 #: ../plugindata/validate/basic.py:42
 #, python-format
@@ -621,7 +625,7 @@ msgstr "%s besitzt keinen Namen und keine Bezeichnung"
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
 msgstr ""
-"Fokusobjekt %s hat eine Tabellenschnittstelle keine Auswahlschnittstelle"
+"Fokusobjekt %s hat eine Tabellenschnittstelle, keine Auswahlschnittstelle"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -659,11 +663,11 @@ msgstr "%(rolename)s Index %(num)d stimmt nicht mit Zeile und Spalte überein"
 #: ../plugindata/validate/basic.py:326
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index %(num2)"
+"d"
 msgstr ""
-"%(rolename)s Elternindex %(num1)d stimmt nicht mit Zeile und Spalte mit "
-"Index %(num2)d überein"
+"%(rolename)s Elternindex %(num1)d stimmt nicht mit Zeile und Spalte mit Index "
+"%(num2)d überein"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -755,7 +759,7 @@ msgstr "Untere Leiste"
 
 #: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
-msgstr "accerciser-Einstellungen"
+msgstr "Accerciser-Einstellungen"
 
 #: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
@@ -791,7 +795,9 @@ msgstr "Die Füllfarbe der hervorhebenden Box"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Hendrik Richter <hendrikr@gnome.org>"
+msgstr ""
+"Hendrik Richter <hendrikr@gnome.org>\n"
+"Christian Kirbach <Christian.Kirbach@googlemail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -816,7 +822,7 @@ msgstr "Lesezeichen _hinzufügen …"
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
-msgstr "Ausgewähltes Accessible den Lesezeichen hinzufügen."
+msgstr "Ausgewähltes Accessible zu den Lesezeichen hinzufügen."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
