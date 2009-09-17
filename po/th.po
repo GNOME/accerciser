@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-05 22:55+0700\n"
-"PO-Revision-Date: 2009-02-05 23:17+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-08-24 17:41+0000\n"
+"PO-Revision-Date: 2009-09-17 14:51+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,10 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser: เครื่องมือสำรวจสิ่งอำนวยความสะดวก"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "ช่วยพัฒนาสิ่งอำนวยความสะดวกในโปรแกรมของคุณ"
 
@@ -91,31 +96,31 @@ msgstr "คอนโซล IPython"
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "คอนโซลโต้ตอบสำหรับจัดการสิ่งอำนวยความสะดวกที่เลือกอยู่"
 
-#: ../plugins/event_monitor.glade.h:1
+#: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
 msgstr "<b>ติดตามเหตุการณ์</b>"
 
-#: ../plugins/event_monitor.glade.h:2
+#: ../plugins/event_monitor.ui.h:2
 msgid "C_lear Selection"
 msgstr "_ล้างสิ่งที่เลือก"
 
-#: ../plugins/event_monitor.glade.h:3
+#: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
 msgstr "ทุกอย่าง"
 
-#: ../plugins/event_monitor.glade.h:4
+#: ../plugins/event_monitor.ui.h:4
 msgid "Selected accessible"
 msgstr "สิ่งอำนวยความสะดวกที่เลือก"
 
-#: ../plugins/event_monitor.glade.h:5
+#: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "โปรแกรมที่เลือก"
 
-#: ../plugins/event_monitor.glade.h:6
+#: ../plugins/event_monitor.ui.h:6
 msgid "Source"
 msgstr "แหล่ง"
 
-#: ../plugins/event_monitor.glade.h:7
+#: ../plugins/event_monitor.ui.h:7
 msgid "_Monitor Events"
 msgstr "_ติดตามเหตุการณ์"
 
@@ -139,328 +144,313 @@ msgstr "เริ่ม/หยุดบันทึกเหตุการณ�
 msgid "Clear event log"
 msgstr "ล้างบันทึกเหตุการณ์"
 
+#: ../plugins/interface_view.ui.h:1
+msgid "0"
+msgstr "0"
+
+#. Component                                 size
+#: ../plugins/interface_view.ui.h:3
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>แอตทริบิวต์</b>"
+
+#: ../plugins/interface_view.ui.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>จำนวนรายการลูก</b>"
+
+#: ../plugins/interface_view.ui.h:6
+msgid "<b>Description</b>"
+msgstr "<b>คำบรรยาย</b>"
+
+#: ../plugins/interface_view.ui.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>ความสัมพันธ์</b>"
+
+#: ../plugins/interface_view.ui.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>ช่องที่เลือก</b>"
+
+#: ../plugins/interface_view.ui.h:9
+msgid "<b>States</b>"
+msgstr "<b>สถานะ</b>"
+
+#: ../plugins/interface_view.ui.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>ข้อมูลตาราง</b>"
+
+#: ../plugins/interface_view.ui.h:11
+msgid "<b>Text</b>"
+msgstr "<b>ข้อความ</b>"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>ไม่ทราบ</b>"
+
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
+#: ../plugins/interface_view.py:825
+msgid "<i>(no description)</i>"
+msgstr "<i>(ไม่มีคำบรรยาย)</i>"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>ชื่อตาราง:</i>"
+
+#. End chaacter                                                 offset of text attributes span
+#: ../plugins/interface_view.ui.h:16
+msgid "<i>End: 0</i>"
+msgstr "<i>จบ: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:18
+msgid "<i>Start: 0</i>"
+msgstr "<i>เริ่ม: 0</i>"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "<i>Summary:</i>"
+msgstr "<i>สรุป:</i>"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "<no description>"
+msgstr "<ไม่มีคำบรรยาย>"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "Absolute position"
+msgstr "ตำแหน่งสัมบูรณ์"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "การกระ_ทำ"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "Alpha"
+msgstr "แอลฟา"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "โ_ปรแกรม"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "_องค์ประกอบ"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "_ชุด"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Column"
+msgstr "คอลัมน์"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Columns"
+msgstr "จำนวนคอลัมน์"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "Current value"
+msgstr "ค่าปัจจุบัน"
+
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "_พื้นโต๊ะ"
+
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/validate.py:277
+msgid "Description"
+msgstr "คำบรรยาย"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "ขอบเขต:"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "ไฮเ_พอร์เท็กซ์"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Header:"
+msgstr "หัวตาราง:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+msgid "Hyperlink"
+msgstr "ไฮเพอร์ลิงก์"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "Include defaults"
+msgstr "แสดงค่าปริยายด้วย"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Layer"
+msgstr "ชั้น"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "เครื่องมือช่วยเ_ข้าระบบ"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Locale"
+msgstr "ท้องถิ่น"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Locale:"
+msgstr "ท้องถิ่น:"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-Z-order"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Maximum value"
+msgstr "ค่าสูงสุด"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Minimum increment"
+msgstr "ขั้นต่ำสุดของการเพิ่มค่า"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "Minimum value"
+msgstr "ค่าต่ำสุด"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Offset"
+msgstr "ออฟเซ็ต"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "Perform action"
+msgstr "กระทำ"
+
+#: ../plugins/interface_view.ui.h:49
+msgid "Position"
+msgstr "ตำแหน่ง"
+
+#: ../plugins/interface_view.ui.h:50
+msgid "Relative position"
+msgstr "ตำแหน่งสัมพัทธ์"
+
+#: ../plugins/interface_view.ui.h:51
+msgid "Row"
+msgstr "แถว"
+
+#: ../plugins/interface_view.ui.h:52
+msgid "Rows"
+msgstr "จำนวนแถว"
+
+#: ../plugins/interface_view.ui.h:53
+msgid "Select All"
+msgstr "เลือกทั้งหมด"
+
+#: ../plugins/interface_view.ui.h:54
+msgid "Selected columns"
+msgstr "จำนวนคอลัมน์ที่เลือก"
+
+#: ../plugins/interface_view.ui.h:55
+msgid "Selected rows"
+msgstr "จำนวนแถวที่เลือก"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Show"
+msgstr "แสดง"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Size"
+msgstr "ขนาด"
+
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "เนื้อหาที่ทำสตรีมได้"
+
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "ข้อ_ความ"
+
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "ทูลคิต"
+
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "ค่_า"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Version"
+msgstr "รุ่น"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "WIDGET"
+msgstr "วิดเจ็ต"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "_Accessible"
+msgstr "_สิ่งอำนวยความสะดวก"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "_Document"
+msgstr "เ_อกสาร"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "_Image"
+msgstr "_ภาพ"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "_Selection"
+msgstr "สิ่งที่เ_ลือก"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "_Table"
+msgstr "_ตาราง"
+
+#: ../plugins/interface_view.ui.h:69
+msgid "name (x,y)"
+msgstr "ชื่อ (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:38
+msgid "Interface Viewer"
+msgstr "แสดงส่วนติดต่อ"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:41
+msgid "Allows viewing of various interface properties"
+msgstr "แสดงคุณสมบัติต่างๆ ของส่วนติดต่อผู้ใช้"
+
+#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:230
+msgid "(not implemented)"
+msgstr "(ยังไม่ทำ)"
+
 #. add accessible's name to buffer
-#: ../plugins/event_monitor.py:124 ../plugins/interface_view.py:458
-#: ../plugins/interface_view.py:741 ../plugins/validate.py:277
+#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../plugins/event_monitor.py:133
-msgid "Full name"
-msgstr "ชื่อเต็ม"
-
-#: ../plugins/interface_view.glade.h:1
-msgid "0"
-msgstr "0"
-
-#. Component
-#. size
-#: ../plugins/interface_view.glade.h:4
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.glade.h:5
-msgid "<b>Attributes</b>"
-msgstr "<b>แอตทริบิวต์</b>"
-
-#: ../plugins/interface_view.glade.h:6
-msgid "<b>Child count</b>"
-msgstr "<b>จำนวนรายการลูก</b>"
-
-#: ../plugins/interface_view.glade.h:7
-msgid "<b>Description</b>"
-msgstr "<b>คำบรรยาย</b>"
-
-#: ../plugins/interface_view.glade.h:8
-msgid "<b>Relations</b>"
-msgstr "<b>ความสัมพันธ์</b>"
-
-#: ../plugins/interface_view.glade.h:9
-msgid "<b>Selected Cell</b>"
-msgstr "<b>ช่องที่เลือก</b>"
-
-#: ../plugins/interface_view.glade.h:10
-msgid "<b>States</b>"
-msgstr "<b>สถานะ</b>"
-
-#: ../plugins/interface_view.glade.h:11
-msgid "<b>Table Information</b>"
-msgstr "<b>ข้อมูลตาราง</b>"
-
-#: ../plugins/interface_view.glade.h:12
-msgid "<b>Text</b>"
-msgstr "<b>ข้อความ</b>"
-
-#: ../plugins/interface_view.glade.h:13
-msgid "<b>unknown</b>"
-msgstr "<b>ไม่ทราบ</b>"
-
-#: ../plugins/interface_view.glade.h:14 ../plugins/interface_view.py:322
-#: ../plugins/interface_view.py:865
-msgid "<i>(no description)</i>"
-msgstr "<i>(ไม่มีคำบรรยาย)</i>"
-
-#: ../plugins/interface_view.glade.h:15
-msgid "<i>Caption:</i>"
-msgstr "<i>ชื่อตาราง:</i>"
-
-#. End chaacter
-#. offset of text attributes span
-#: ../plugins/interface_view.glade.h:18
-msgid "<i>End: 0</i>"
-msgstr "<i>จบ: 0</i>"
-
-#. Start character offset of text attributes span
-#: ../plugins/interface_view.glade.h:20
-msgid "<i>Start: 0</i>"
-msgstr "<i>เริ่ม: 0</i>"
-
-#: ../plugins/interface_view.glade.h:21
-msgid "<i>Summary:</i>"
-msgstr "<i>สรุป:</i>"
-
-#: ../plugins/interface_view.glade.h:22
-msgid "<no description>"
-msgstr "<ไม่มีคำบรรยาย>"
-
-#: ../plugins/interface_view.glade.h:23
-msgid "Absolute position"
-msgstr "ตำแหน่งสัมบูรณ์"
-
-#: ../plugins/interface_view.glade.h:24
-msgid "Acti_on"
-msgstr "การกระ_ทำ"
-
-#: ../plugins/interface_view.glade.h:25
-msgid "Alpha"
-msgstr "แอลฟา"
-
-#: ../plugins/interface_view.glade.h:26
-msgid "Ap_plication"
-msgstr "โ_ปรแกรม"
-
-#: ../plugins/interface_view.glade.h:27
-msgid "Co_mponent"
-msgstr "_องค์ประกอบ"
-
-#: ../plugins/interface_view.glade.h:28
-msgid "Col_lection"
-msgstr "_ชุด"
-
-#: ../plugins/interface_view.glade.h:29
-msgid "Column"
-msgstr "คอลัมน์"
-
-#: ../plugins/interface_view.glade.h:30
-msgid "Columns"
-msgstr "จำนวนคอลัมน์"
-
-#: ../plugins/interface_view.glade.h:31
-msgid "Current value"
-msgstr "ค่าปัจจุบัน"
-
-#: ../plugins/interface_view.glade.h:32
-msgid "Des_ktop"
-msgstr "_พื้นโต๊ะ"
-
-#. add description to buffer
-#: ../plugins/interface_view.glade.h:33 ../plugins/interface_view.py:463
-#: ../plugins/validate.py:212 ../plugins/validate.py:275
-msgid "Description"
-msgstr "คำบรรยาย"
-
-#. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:35
-msgid "Extents:"
-msgstr "ขอบเขต:"
-
-#: ../plugins/interface_view.glade.h:36
-msgid "H_ypertext"
-msgstr "ไฮเ_พอร์เท็กซ์"
-
-#: ../plugins/interface_view.glade.h:37
-msgid "Header:"
-msgstr "หัวตาราง:"
-
-#. add url role to buffer
-#: ../plugins/interface_view.glade.h:38 ../plugins/validate.py:281
-msgid "Hyperlink"
-msgstr "ไฮเพอร์ลิงก์"
-
-#: ../plugins/interface_view.glade.h:39
-msgid "ID"
-msgstr "ID"
-
-#: ../plugins/interface_view.glade.h:40
-msgid "Include defaults"
-msgstr "แสดงค่าปริยายด้วย"
-
-#: ../plugins/interface_view.glade.h:41
-msgid "Layer"
-msgstr "ชั้น"
-
-#: ../plugins/interface_view.glade.h:42
-msgid "Lo_gin Helper"
-msgstr "เครื่องมือช่วยเ_ข้าระบบ"
-
-#: ../plugins/interface_view.glade.h:43
-msgid "Locale"
-msgstr "ท้องถิ่น"
-
-#: ../plugins/interface_view.glade.h:44
-msgid "Locale:"
-msgstr "ท้องถิ่น:"
-
-#: ../plugins/interface_view.glade.h:45
-msgid "MDI-Z-order"
-msgstr "MDI-Z-order"
-
-#: ../plugins/interface_view.glade.h:46
-msgid "Maximum value"
-msgstr "ค่าสูงสุด"
-
-#: ../plugins/interface_view.glade.h:47
-msgid "Minimum increment"
-msgstr "ขั้นต่ำสุดของการเพิ่มค่า"
-
-#: ../plugins/interface_view.glade.h:48
-msgid "Minimum value"
-msgstr "ค่าต่ำสุด"
-
-#: ../plugins/interface_view.glade.h:49
-msgid "Offset"
-msgstr "ออฟเซ็ต"
-
-#: ../plugins/interface_view.glade.h:50
-msgid "Perform action"
-msgstr "กระทำ"
-
-#: ../plugins/interface_view.glade.h:51
-msgid "Position"
-msgstr "ตำแหน่ง"
-
-#: ../plugins/interface_view.glade.h:52
-msgid "Relative position"
-msgstr "ตำแหน่งสัมพัทธ์"
-
-#: ../plugins/interface_view.glade.h:53
-msgid "Row"
-msgstr "แถว"
-
-#: ../plugins/interface_view.glade.h:54
-msgid "Rows"
-msgstr "จำนวนแถว"
-
-#: ../plugins/interface_view.glade.h:55
-msgid "Select All"
-msgstr "เลือกทั้งหมด"
-
-#: ../plugins/interface_view.glade.h:56
-msgid "Selected columns"
-msgstr "จำนวนคอลัมน์ที่เลือก"
-
-#: ../plugins/interface_view.glade.h:57
-msgid "Selected rows"
-msgstr "จำนวนแถวที่เลือก"
-
-#: ../plugins/interface_view.glade.h:58
-msgid "Show"
-msgstr "แสดง"
-
-#: ../plugins/interface_view.glade.h:59
-msgid "Size"
-msgstr "ขนาด"
-
-#: ../plugins/interface_view.glade.h:60
-msgid "St_reamable Content"
-msgstr "เนื้อหาที่ทำสตรีมได้"
-
-#: ../plugins/interface_view.glade.h:61
-msgid "Te_xt"
-msgstr "ข้อ_ความ"
-
-#: ../plugins/interface_view.glade.h:62
-msgid "Toolkit"
-msgstr "ทูลคิต"
-
-#: ../plugins/interface_view.glade.h:63
-msgid "Val_ue"
-msgstr "ค่_า"
-
-#: ../plugins/interface_view.glade.h:64
-msgid "Version"
-msgstr "รุ่น"
-
-#: ../plugins/interface_view.glade.h:65
-msgid "WIDGET"
-msgstr "วิดเจ็ต"
-
-#: ../plugins/interface_view.glade.h:66
-msgid "_Accessible"
-msgstr "_สิ่งอำนวยความสะดวก"
-
-#: ../plugins/interface_view.glade.h:67
-msgid "_Document"
-msgstr "เ_อกสาร"
-
-#: ../plugins/interface_view.glade.h:68
-msgid "_Image"
-msgstr "_ภาพ"
-
-#: ../plugins/interface_view.glade.h:69
-msgid "_Selection"
-msgstr "สิ่งที่เ_ลือก"
-
-#: ../plugins/interface_view.glade.h:70
-msgid "_Table"
-msgstr "_ตาราง"
-
-#: ../plugins/interface_view.glade.h:71
-msgid "name (x,y)"
-msgstr "ชื่อ (x,y)"
-
-#. Translators: this is a plugin name
-#: ../plugins/interface_view.py:37
-msgid "Interface Viewer"
-msgstr "แสดงส่วนติดต่อ"
-
-#. Translators: this is a plugin description
-#: ../plugins/interface_view.py:40
-msgid "Allows viewing of various interface properties"
-msgstr "แสดงคุณสมบัติต่างๆ ของส่วนติดต่อผู้ใช้"
-
-#: ../plugins/interface_view.py:188 ../plugins/interface_view.py:190
-#: ../plugins/interface_view.py:191
-msgid "(not implemented)"
-msgstr "(ยังไม่ทำ)"
-
-#: ../plugins/interface_view.py:468
-msgid "Key binding"
-msgstr "ปุ่มเรียก"
-
-#: ../plugins/interface_view.py:748 ../plugins/interface_view.py:1032
+#: ../plugins/interface_view.py:708
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:755
+#: ../plugins/interface_view.py:715
 msgid "Start"
 msgstr "เริ่ม"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:722
 msgid "End"
 msgstr "จบ"
 
-#: ../plugins/interface_view.py:932
+#: ../plugins/interface_view.py:883
 msgid "Too many selectable children"
 msgstr "มีรายการลูกที่เลือกได้มากเกินไป"
 
-#: ../plugins/interface_view.py:1027
-msgid "Content type"
-msgstr "ชนิดเนื้อหา"
-
-#: ../plugins/interface_view.py:1303 ../plugins/interface_view.py:1306
+#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
 msgid "<i>(Editable)</i>"
 msgstr "<i>(แก้ไขได้)</i>"
 
@@ -481,21 +471,21 @@ msgid "Inspect accessible under mouse"
 msgstr "เฝ้ามองสิ่งอำนวยความสะดวกที่อยู่ใต้เมาส์"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.glade.h:2
+#: ../plugins/script_recorder.ui.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
 #. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.ui.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
 #. A native script format.
-#: ../plugins/script_recorder.glade.h:6
+#: ../plugins/script_recorder.ui.h:6
 msgid "Native"
 msgstr "ดิบๆ"
 
-#: ../plugins/script_recorder.glade.h:7
+#: ../plugins/script_recorder.ui.h:7
 msgid "Script Type"
 msgstr "ชนิดสคริปต์"
 
@@ -507,24 +497,24 @@ msgstr "บันทึกสคริปต์"
 msgid "Creates dogtail style scripts"
 msgstr "สร้างสคริปต์แบบ dogtail"
 
-#: ../plugins/script_recorder.py:340
+#: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
 msgstr "สคริปต์ปัจจุบันจะสูญหาย"
 
-#: ../plugins/script_recorder.py:341
+#: ../plugins/script_recorder.py:343
 msgid "Confirm clear"
 msgstr "ยืนยันการล้าง"
 
-#: ../plugins/validate.glade.h:1 ../plugins/validate.py:358
-#: ../plugins/validate.py:410
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "ไม่มีกิจกรรม"
 
-#: ../plugins/validate.glade.h:2
+#: ../plugins/validate.ui.h:2
 msgid "Sche_ma:"
 msgstr "_การตรวจ:"
 
-#: ../plugins/validate.glade.h:3
+#: ../plugins/validate.ui.h:3
 msgid "V_alidate"
 msgstr "_ตรวจสอบ"
 
@@ -542,40 +532,40 @@ msgstr "ตรวจสอบสิ่งอำนวยความสะดว
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:205 ../plugins/validate.py:273
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
 msgid "Level"
 msgstr "ระดับ"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "บทบาท"
 
-#: ../plugins/validate.py:344
+#: ../plugins/validate.py:346
 msgid "Saving"
 msgstr "กำลังบันทึก"
 
-#: ../plugins/validate.py:392
+#: ../plugins/validate.py:394
 msgid "Validating"
 msgstr "กำลังตรวจสอบ"
 
-#: ../plugins/validate.py:548
+#: ../plugins/validate.py:550
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: ../plugins/validate.py:555
+#: ../plugins/validate.py:557
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:563
+#: ../plugins/validate.py:565
 msgid "WARN"
 msgstr "WARN"
 
-#: ../plugins/validate.py:570
+#: ../plugins/validate.py:572
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:577
+#: ../plugins/validate.py:579
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -679,15 +669,15 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s ไม่มีชื่อหรือคำบรรยาย"
 
-#: ../src/lib/accerciser/accerciser.py:91
+#: ../src/lib/accerciser/accerciser.py:85
 msgid "_Preferences..."
 msgstr "_ปรับแต่ง..."
 
-#: ../src/lib/accerciser/accerciser.py:93
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Contents"
 msgstr "เนื้อ_หา"
 
-#: ../src/lib/accerciser/accerciser.py:135
+#: ../src/lib/accerciser/accerciser.py:129
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -695,7 +685,7 @@ msgstr ""
 "accerciser ไม่สามารถมองเห็นโปรแกรมต่างๆ บนเดสก์ท็อปของคุณได้ "
 "คุณต้องเปิดใช้เทคโนโลยีสิ่งอำนวยความสะดวกเพื่อแก้ปัญหานี้ จะเปิดใช้เลยหรือไม่?"
 
-#: ../src/lib/accerciser/accerciser.py:153
+#: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
 msgstr "สังเกต: การเปลี่ยนแปลงจะมีผลหลังจากเข้าระบบใหม่เท่านั้น"
 
@@ -707,25 +697,25 @@ msgstr "<ตาย>"
 msgid "Children"
 msgstr "ลูก"
 
-#: ../src/lib/accerciser/accessible_treeview.py:430
+#: ../src/lib/accerciser/accessible_treeview.py:435
 msgid "_Refresh Registry"
 msgstr "ปรับแสดงเ_รจิสตรี"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:433
+#: ../src/lib/accerciser/accessible_treeview.py:438
 msgid "Refresh all"
 msgstr "ปรับแสดงทั้งหมด"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:436
+#: ../src/lib/accerciser/accessible_treeview.py:441
 msgid "Refresh _Node"
 msgstr "ปรับแสดงโห_นด"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:439
+#: ../src/lib/accerciser/accessible_treeview.py:444
 msgid "Refresh selected node's children"
 msgstr "ปรับแสดงโหนดลูกต่างๆ ของโหนดที่เลือก"
 
@@ -785,15 +775,15 @@ msgstr "ระยะเวลาการเน้น:"
 msgid "Border color:"
 msgstr "สีเส้นขอบ"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:92
 msgid "The border color of the highlight box"
 msgstr "สีเส้นขอบของกล่องเน้น"
 
-#: ../src/lib/accerciser/prefs_dialog.py:94
+#: ../src/lib/accerciser/prefs_dialog.py:93
 msgid "Fill color:"
 msgstr "สีเติม:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:98
+#: ../src/lib/accerciser/prefs_dialog.py:96
 msgid "The fill color of the highlight box"
 msgstr "สีที่เติมในกล่องเน้น"
 
@@ -927,6 +917,15 @@ msgstr "มุ_มมอง"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_วิธีใช้"
+
+#~ msgid "Full name"
+#~ msgstr "ชื่อเต็ม"
+
+#~ msgid "Key binding"
+#~ msgstr "ปุ่มเรียก"
+
+#~ msgid "Content type"
+#~ msgstr "ชนิดเนื้อหา"
 
 #~ msgid "1.0"
 #~ msgstr "1.0"
