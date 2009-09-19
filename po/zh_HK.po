@@ -3,10 +3,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser 1.5.5\n"
+"Project-Id-Version: accerciser 1.7.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-29 22:48+0800\n"
-"PO-Revision-Date: 2009-01-30 06:44+0800\n"
+"POT-Creation-Date: 2009-09-19 20:38+0800\n"
+"PO-Revision-Date: 2009-09-19 20:39+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,10 +14,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser 無障礙功能瀏覽器"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "為你的應用提供無障礙功能測試"
 
@@ -89,31 +93,31 @@ msgstr "IPython 主控台"
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "操作目前選定無障礙元件的互動式主控台"
 
-#: ../plugins/event_monitor.glade.h:1
+#: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
 msgstr "<b>事件監視器</b>"
 
-#: ../plugins/event_monitor.glade.h:2
+#: ../plugins/event_monitor.ui.h:2
 msgid "C_lear Selection"
 msgstr "清除選取區(_L)"
 
-#: ../plugins/event_monitor.glade.h:3
+#: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
 msgstr "每一樣"
 
-#: ../plugins/event_monitor.glade.h:4
+#: ../plugins/event_monitor.ui.h:4
 msgid "Selected accessible"
 msgstr "選定的無障礙元件"
 
-#: ../plugins/event_monitor.glade.h:5
+#: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "選定的應用程式"
 
-#: ../plugins/event_monitor.glade.h:6
+#: ../plugins/event_monitor.ui.h:6
 msgid "Source"
 msgstr "來源"
 
-#: ../plugins/event_monitor.glade.h:7
+#: ../plugins/event_monitor.ui.h:7
 msgid "_Monitor Events"
 msgstr "監視事件(_M)"
 
@@ -137,337 +141,313 @@ msgstr "開始/停止錄製事件"
 msgid "Clear event log"
 msgstr "清除事件紀錄"
 
-#. add accessible's name to buffer
-#: ../plugins/event_monitor.py:124
-#: ../plugins/interface_view.py:458
-#: ../plugins/interface_view.py:741
+#: ../plugins/interface_view.ui.h:1
+msgid "0"
+msgstr "0"
+
+#. Component                                 size
+#: ../plugins/interface_view.ui.h:3
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>屬性</b>"
+
+#: ../plugins/interface_view.ui.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>子節點數</b>"
+
+#: ../plugins/interface_view.ui.h:6
+msgid "<b>Description</b>"
+msgstr "<b>描述</b>"
+
+#: ../plugins/interface_view.ui.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>關係</b>"
+
+#: ../plugins/interface_view.ui.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>選定的儲存格</b>"
+
+#: ../plugins/interface_view.ui.h:9
+msgid "<b>States</b>"
+msgstr "<b>狀態</b>"
+
+#: ../plugins/interface_view.ui.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>表格端資訊</b>"
+
+#: ../plugins/interface_view.ui.h:11
+msgid "<b>Text</b>"
+msgstr "<b>文字</b>"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>未知</b>"
+
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
+#: ../plugins/interface_view.py:825
+msgid "<i>(no description)</i>"
+msgstr "<i>(沒有描述)</i>"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>標題:</i>"
+
+#. End chaacter                                                 offset of text attributes span
+#: ../plugins/interface_view.ui.h:16
+msgid "<i>End: 0</i>"
+msgstr "<i>結束: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:18
+msgid "<i>Start: 0</i>"
+msgstr "<i>開始: 0</i>"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "<i>Summary:</i>"
+msgstr "<i>摘要:</i>"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "<no description>"
+msgstr "<沒有描述>"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "Absolute position"
+msgstr "絕對位置"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "動作(_O)"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "Alpha"
+msgstr "Alpha"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "應用程式(_P)"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "元件(_M)"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "集合(_L)"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Column"
+msgstr "欄"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Columns"
+msgstr "欄"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "Current value"
+msgstr "目前的數值"
+
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "桌面(_K)"
+
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
 #: ../plugins/validate.py:277
+msgid "Description"
+msgstr "描述"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "延伸:"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "超文件(_Y)"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Header:"
+msgstr "檔頭:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+msgid "Hyperlink"
+msgstr "超連結"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "Include defaults"
+msgstr "包含預設值"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Layer"
+msgstr "層次"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "登入協助(_G)"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Locale"
+msgstr "地區"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Locale:"
+msgstr "地區:"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-Z-順序"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Maximum value"
+msgstr "最大值"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Minimum increment"
+msgstr "最小增量"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "Minimum value"
+msgstr "最小值"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Offset"
+msgstr "位移"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "Perform action"
+msgstr "進行動作"
+
+#: ../plugins/interface_view.ui.h:49
+msgid "Position"
+msgstr "位置"
+
+#: ../plugins/interface_view.ui.h:50
+msgid "Relative position"
+msgstr "相對位置"
+
+#: ../plugins/interface_view.ui.h:51
+msgid "Row"
+msgstr "列"
+
+#: ../plugins/interface_view.ui.h:52
+msgid "Rows"
+msgstr "列"
+
+#: ../plugins/interface_view.ui.h:53
+msgid "Select All"
+msgstr "全選"
+
+#: ../plugins/interface_view.ui.h:54
+msgid "Selected columns"
+msgstr "選定的欄"
+
+#: ../plugins/interface_view.ui.h:55
+msgid "Selected rows"
+msgstr "選定的列"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Show"
+msgstr "顯示"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Size"
+msgstr "大小"
+
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "串流式內容(_R)"
+
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "文字(_X)"
+
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "工具箱"
+
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "數值(_U)"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Version"
+msgstr "版本"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "WIDGET"
+msgstr "視窗元件"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "_Accessible"
+msgstr "無障礙元件(_A)"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "_Document"
+msgstr "文件(_D)"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "_Image"
+msgstr "圖片(_I)"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "_Selection"
+msgstr "選取區(_S)"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "_Table"
+msgstr "表格(_T)"
+
+#: ../plugins/interface_view.ui.h:69
+msgid "name (x,y)"
+msgstr "名稱 (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:38
+msgid "Interface Viewer"
+msgstr "介面檢視程式"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:41
+msgid "Allows viewing of various interface properties"
+msgstr "允許檢視各種介面屬性"
+
+#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:230
+msgid "(not implemented)"
+msgstr "(未實作)"
+
+#. add accessible's name to buffer
+#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "名稱"
 
-#: ../plugins/event_monitor.py:133
-msgid "Full name"
-msgstr "全名"
-
-#: ../plugins/interface_view.glade.h:1
-msgid "0"
-msgstr "0"
-
-#. Component
-#. size
-#: ../plugins/interface_view.glade.h:4
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.glade.h:5
-msgid "<b>Attributes</b>"
-msgstr "<b>屬性</b>"
-
-#: ../plugins/interface_view.glade.h:6
-msgid "<b>Child count</b>"
-msgstr "<b>子節點數</b>"
-
-#: ../plugins/interface_view.glade.h:7
-msgid "<b>Description</b>"
-msgstr "<b>描述</b>"
-
-#: ../plugins/interface_view.glade.h:8
-msgid "<b>Relations</b>"
-msgstr "<b>關係</b>"
-
-#: ../plugins/interface_view.glade.h:9
-msgid "<b>Selected Cell</b>"
-msgstr "<b>選定的儲存格</b>"
-
-#: ../plugins/interface_view.glade.h:10
-msgid "<b>States</b>"
-msgstr "<b>狀態</b>"
-
-#: ../plugins/interface_view.glade.h:11
-msgid "<b>Table Information</b>"
-msgstr "<b>表格端資訊</b>"
-
-#: ../plugins/interface_view.glade.h:12
-msgid "<b>Text</b>"
-msgstr "<b>文字</b>"
-
-#: ../plugins/interface_view.glade.h:13
-msgid "<b>unknown</b>"
-msgstr "<b>未知</b>"
-
-#: ../plugins/interface_view.glade.h:14
-#: ../plugins/interface_view.py:322
-#: ../plugins/interface_view.py:865
-msgid "<i>(no description)</i>"
-msgstr "<i>(沒有描述)</i>"
-
-#: ../plugins/interface_view.glade.h:15
-msgid "<i>Caption:</i>"
-msgstr "<i>標題:</i>"
-
-#. End chaacter
-#. offset of text attributes span
-#: ../plugins/interface_view.glade.h:18
-msgid "<i>End: 0</i>"
-msgstr "<i>結束: 0</i>"
-
-#. Start character offset of text attributes span
-#: ../plugins/interface_view.glade.h:20
-msgid "<i>Start: 0</i>"
-msgstr "<i>開始: 0</i>"
-
-#: ../plugins/interface_view.glade.h:21
-msgid "<i>Summary:</i>"
-msgstr "<i>摘要:</i>"
-
-#: ../plugins/interface_view.glade.h:22
-msgid "<no description>"
-msgstr "<沒有描述>"
-
-#: ../plugins/interface_view.glade.h:23
-msgid "Absolute position"
-msgstr "絕對位置"
-
-#: ../plugins/interface_view.glade.h:24
-msgid "Acti_on"
-msgstr "動作(_O)"
-
-#: ../plugins/interface_view.glade.h:25
-msgid "Alpha"
-msgstr "Alpha"
-
-#: ../plugins/interface_view.glade.h:26
-msgid "Ap_plication"
-msgstr "應用程式(_P)"
-
-#: ../plugins/interface_view.glade.h:27
-msgid "Co_mponent"
-msgstr "元件(_M)"
-
-#: ../plugins/interface_view.glade.h:28
-msgid "Col_lection"
-msgstr "集合(_L)"
-
-#: ../plugins/interface_view.glade.h:29
-msgid "Column"
-msgstr "欄"
-
-#: ../plugins/interface_view.glade.h:30
-msgid "Columns"
-msgstr "欄"
-
-#: ../plugins/interface_view.glade.h:31
-msgid "Current value"
-msgstr "目前的數值"
-
-#: ../plugins/interface_view.glade.h:32
-msgid "Des_ktop"
-msgstr "桌面(_K)"
-
-#. add description to buffer
-#: ../plugins/interface_view.glade.h:33
-#: ../plugins/interface_view.py:463
-#: ../plugins/validate.py:212
-#: ../plugins/validate.py:275
-msgid "Description"
-msgstr "描述"
-
-#. How many columns the cell spans.
-#: ../plugins/interface_view.glade.h:35
-msgid "Extents:"
-msgstr "延伸:"
-
-#: ../plugins/interface_view.glade.h:36
-msgid "H_ypertext"
-msgstr "超文件(_Y)"
-
-#: ../plugins/interface_view.glade.h:37
-msgid "Header:"
-msgstr "檔頭:"
-
-#. add url role to buffer
-#: ../plugins/interface_view.glade.h:38
-#: ../plugins/validate.py:281
-msgid "Hyperlink"
-msgstr "超連結"
-
-#: ../plugins/interface_view.glade.h:39
-msgid "ID"
-msgstr "ID"
-
-#: ../plugins/interface_view.glade.h:40
-msgid "Include defaults"
-msgstr "包含預設值"
-
-#: ../plugins/interface_view.glade.h:41
-msgid "Layer"
-msgstr "層次"
-
-#: ../plugins/interface_view.glade.h:42
-msgid "Lo_gin Helper"
-msgstr "登入協助(_G)"
-
-#: ../plugins/interface_view.glade.h:43
-msgid "Locale"
-msgstr "地區"
-
-#: ../plugins/interface_view.glade.h:44
-msgid "Locale:"
-msgstr "地區:"
-
-#: ../plugins/interface_view.glade.h:45
-msgid "MDI-Z-order"
-msgstr "MDI-Z-順序"
-
-#: ../plugins/interface_view.glade.h:46
-msgid "Maximum value"
-msgstr "最大值"
-
-#: ../plugins/interface_view.glade.h:47
-msgid "Minimum increment"
-msgstr "最小增量"
-
-#: ../plugins/interface_view.glade.h:48
-msgid "Minimum value"
-msgstr "最小值"
-
-#: ../plugins/interface_view.glade.h:49
-msgid "Offset"
-msgstr "位移"
-
-#: ../plugins/interface_view.glade.h:50
-msgid "Perform action"
-msgstr "進行動作"
-
-#: ../plugins/interface_view.glade.h:51
-msgid "Position"
-msgstr "位置"
-
-#: ../plugins/interface_view.glade.h:52
-msgid "Relative position"
-msgstr "相對位置"
-
-#: ../plugins/interface_view.glade.h:53
-msgid "Row"
-msgstr "列"
-
-#: ../plugins/interface_view.glade.h:54
-msgid "Rows"
-msgstr "列"
-
-#: ../plugins/interface_view.glade.h:55
-msgid "Select All"
-msgstr "全選"
-
-#: ../plugins/interface_view.glade.h:56
-msgid "Selected columns"
-msgstr "選定的欄"
-
-#: ../plugins/interface_view.glade.h:57
-msgid "Selected rows"
-msgstr "選定的列"
-
-#: ../plugins/interface_view.glade.h:58
-msgid "Show"
-msgstr "顯示"
-
-#: ../plugins/interface_view.glade.h:59
-msgid "Size"
-msgstr "大小"
-
-#: ../plugins/interface_view.glade.h:60
-msgid "St_reamable Content"
-msgstr "串流式內容(_R)"
-
-#: ../plugins/interface_view.glade.h:61
-msgid "Te_xt"
-msgstr "文字(_X)"
-
-#: ../plugins/interface_view.glade.h:62
-msgid "Toolkit"
-msgstr "工具箱"
-
-#: ../plugins/interface_view.glade.h:63
-msgid "Val_ue"
-msgstr "數值(_U)"
-
-#: ../plugins/interface_view.glade.h:64
-msgid "Version"
-msgstr "版本"
-
-#: ../plugins/interface_view.glade.h:65
-msgid "WIDGET"
-msgstr "視窗元件"
-
-#: ../plugins/interface_view.glade.h:66
-msgid "_Accessible"
-msgstr "無障礙元件(_A)"
-
-#: ../plugins/interface_view.glade.h:67
-msgid "_Document"
-msgstr "文件(_D)"
-
-#: ../plugins/interface_view.glade.h:68
-msgid "_Image"
-msgstr "圖片(_I)"
-
-#: ../plugins/interface_view.glade.h:69
-msgid "_Selection"
-msgstr "選取區(_S)"
-
-#: ../plugins/interface_view.glade.h:70
-msgid "_Table"
-msgstr "表格(_T)"
-
-#: ../plugins/interface_view.glade.h:71
-msgid "name (x,y)"
-msgstr "名稱 (x,y)"
-
-#. Translators: this is a plugin name
-#: ../plugins/interface_view.py:37
-msgid "Interface Viewer"
-msgstr "介面檢視程式"
-
-#. Translators: this is a plugin description
-#: ../plugins/interface_view.py:40
-msgid "Allows viewing of various interface properties"
-msgstr "允許檢視各種介面屬性"
-
-#: ../plugins/interface_view.py:188
-#: ../plugins/interface_view.py:190
-#: ../plugins/interface_view.py:191
-msgid "(not implemented)"
-msgstr "(未實作)"
-
-#: ../plugins/interface_view.py:468
-msgid "Key binding"
-msgstr "組合鍵"
-
-#: ../plugins/interface_view.py:748
-#: ../plugins/interface_view.py:1032
+#: ../plugins/interface_view.py:708
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:755
+#: ../plugins/interface_view.py:715
 msgid "Start"
 msgstr "開始"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:722
 msgid "End"
 msgstr "結束"
 
-#: ../plugins/interface_view.py:932
+#: ../plugins/interface_view.py:883
 msgid "Too many selectable children"
 msgstr "有太多的可選擇子節點"
 
-#: ../plugins/interface_view.py:1027
-msgid "Content type"
-msgstr "內容類型"
-
-#: ../plugins/interface_view.py:1303
-#: ../plugins/interface_view.py:1306
+#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
 msgid "<i>(Editable)</i>"
 msgstr "<i>(可編輯的)</i>"
 
@@ -488,21 +468,21 @@ msgid "Inspect accessible under mouse"
 msgstr "檢查在滑鼠下的無障礙元件"
 
 #. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.glade.h:2
+#: ../plugins/script_recorder.ui.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
 #. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.ui.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
 #. A native script format.
-#: ../plugins/script_recorder.glade.h:6
+#: ../plugins/script_recorder.ui.h:6
 msgid "Native"
 msgstr "原生"
 
-#: ../plugins/script_recorder.glade.h:7
+#: ../plugins/script_recorder.ui.h:7
 msgid "Script Type"
 msgstr "命令稿類型"
 
@@ -514,25 +494,24 @@ msgstr "命令稿錄製程式"
 msgid "Creates dogtail style scripts"
 msgstr "建立 dogtail 風格的命令稿"
 
-#: ../plugins/script_recorder.py:340
+#: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
 msgstr "目前的命令稿將會消失。"
 
-#: ../plugins/script_recorder.py:341
+#: ../plugins/script_recorder.py:343
 msgid "Confirm clear"
 msgstr "確認清除"
 
-#: ../plugins/validate.glade.h:1
-#: ../plugins/validate.py:358
-#: ../plugins/validate.py:410
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "閒置"
 
-#: ../plugins/validate.glade.h:2
+#: ../plugins/validate.ui.h:2
 msgid "Sche_ma:"
 msgstr "基模(_M):"
 
-#: ../plugins/validate.glade.h:3
+#: ../plugins/validate.ui.h:3
 msgid "V_alidate"
 msgstr "驗證(_A)"
 
@@ -550,42 +529,40 @@ msgstr "驗證應用程式無障礙功能"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:205
-#: ../plugins/validate.py:273
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
 msgid "Level"
 msgstr "等級"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "角色"
 
-#: ../plugins/validate.py:344
+#: ../plugins/validate.py:346
 msgid "Saving"
 msgstr "正在儲存"
 
-#: ../plugins/validate.py:392
+#: ../plugins/validate.py:394
 msgid "Validating"
 msgstr "正在驗證..."
 
-#: ../plugins/validate.py:548
+#: ../plugins/validate.py:550
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: ../plugins/validate.py:555
+#: ../plugins/validate.py:557
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:563
+#: ../plugins/validate.py:565
 msgid "WARN"
 msgstr "WARN"
 
-#: ../plugins/validate.py:570
+#: ../plugins/validate.py:572
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:577
+#: ../plugins/validate.py:579
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -677,7 +654,9 @@ msgstr "%(rolename)s 的索引 %(num)d 跟其列、欄不符"
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr "%(rolename)s 的父項索引 %(num1)d 跟其列、欄索引 %(num2)d 不符"
 
 #: ../plugindata/validate/basic.py:352
@@ -685,19 +664,21 @@ msgstr "%(rolename)s 的父項索引 %(num1)d 跟其列、欄索引 %(num2)d 不
 msgid "%s has no name or description"
 msgstr "%s 沒有名稱或描述"
 
-#: ../src/lib/accerciser/accerciser.py:91
+#: ../src/lib/accerciser/accerciser.py:85
 msgid "_Preferences..."
 msgstr "偏好設定(_P)..."
 
-#: ../src/lib/accerciser/accerciser.py:93
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Contents"
 msgstr "內容(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:135
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+#: ../src/lib/accerciser/accerciser.py:129
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr "Accerciser 無法在你的桌面上看到應用程式。你必須啟用桌面無障礙功能才能修正這個問題。是否要立刻啟用它？"
 
-#: ../src/lib/accerciser/accerciser.py:153
+#: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
 msgstr "注意：更改只有在登出後才會生效。"
 
@@ -709,25 +690,25 @@ msgstr "<dead>"
 msgid "Children"
 msgstr "子節點"
 
-#: ../src/lib/accerciser/accessible_treeview.py:430
+#: ../src/lib/accerciser/accessible_treeview.py:435
 msgid "_Refresh Registry"
 msgstr "重整註冊表(_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:433
+#: ../src/lib/accerciser/accessible_treeview.py:438
 msgid "Refresh all"
 msgstr "全部重新整理"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:436
+#: ../src/lib/accerciser/accessible_treeview.py:441
 msgid "Refresh _Node"
 msgstr "重整節點(_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:439
+#: ../src/lib/accerciser/accessible_treeview.py:444
 msgid "Refresh selected node's children"
 msgstr "重整選取的子節點"
 
@@ -787,15 +768,15 @@ msgstr "突顯期間:"
 msgid "Border color:"
 msgstr "框線顏色:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:92
 msgid "The border color of the highlight box"
 msgstr "突顯方塊的框線顏色"
 
-#: ../src/lib/accerciser/prefs_dialog.py:94
+#: ../src/lib/accerciser/prefs_dialog.py:93
 msgid "Fill color:"
 msgstr "填充色彩:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:98
+#: ../src/lib/accerciser/prefs_dialog.py:96
 msgid "The fill color of the highlight box"
 msgstr "突顯方塊的填充顏色"
 
@@ -926,3 +907,11 @@ msgstr "檢視(_V)"
 msgid "_Help"
 msgstr "求助(_H)"
 
+#~ msgid "Full name"
+#~ msgstr "全名"
+
+#~ msgid "Key binding"
+#~ msgstr "組合鍵"
+
+#~ msgid "Content type"
+#~ msgstr "內容類型"
