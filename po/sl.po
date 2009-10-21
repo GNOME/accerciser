@@ -1,23 +1,19 @@
-# Copyright (C) 2005-2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the program package.
+# This file is distributed under the same license as the accerciser package.
 #
-# Slovenian maintainer: Matej Urbančič <matej.urban@gmail.com>.
-#
-# Translators:
-# Matej Urbančič <matej.urban@gmail.com>, 2007.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-15 12:18+0100\n"
-"PO-Revision-Date: 2007-10-24 13:13+0100\n"
-"Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-04-16 16:41+0000\n"
+"PO-Revision-Date: 2009-10-19 08:32+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -36,11 +32,11 @@ msgstr "Seznam vstavkov, ki so privzeto onemogočeni"
 
 #: ../accerciser.schemas.in.h:2
 msgid "The default plugin layout for the bottom panel"
-msgstr "Privzeti nabor vstavkov za spodnji pladenj"
+msgstr "Privzeti nabor vstavkov za spodnji pult"
 
 #: ../accerciser.schemas.in.h:3
 msgid "The default plugin layout for the top panel"
-msgstr "Privzeti nabor vstavkov za zgornji pladenj"
+msgstr "Privzeti nabor vstavkov za zgornji pult"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -112,7 +108,7 @@ msgstr "Pokaže dogodke, kot se ti pojavijo preko izbranih vrsti in virov"
 
 #: ../plugins/event_monitor.py:65
 msgid "Highlight last event entry"
-msgstr "Označi zadnji vnos dogodka"
+msgstr "Poudari zadnji vnos dogodka"
 
 #: ../plugins/event_monitor.py:110
 #: ../plugins/interface_view.py:450
@@ -124,7 +120,7 @@ msgstr "Ime"
 
 #: ../plugins/event_monitor.py:119
 msgid "Full name"
-msgstr "Polno Ime"
+msgstr "Polno ime"
 
 #: ../plugins/interface_view.glade.h:1
 msgid "0"
@@ -356,7 +352,7 @@ msgstr "_Besedilo"
 
 #: ../plugins/interface_view.glade.h:58
 msgid "Toolkit"
-msgstr "Orodjarna"
+msgstr "Zbirka orodij"
 
 #: ../plugins/interface_view.glade.h:59
 msgid "Val_ue"
@@ -547,11 +543,11 @@ msgstr "Shift"
 
 #: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
-msgstr "Zgornji pladenj"
+msgstr "Zgornji pult"
 
 #: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
-msgstr "Spodnji pladenj"
+msgstr "Spodnji pult"
 
 #: ../src/lib/accerciser/prefs_dialog.py:30
 msgid "accerciser Preferences"
@@ -574,8 +570,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Interaktivni raziskovalec python dostopnosti"
 
 #: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
-msgstr "Accerciser Avtorske pravice © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "Avtorske pravice © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -685,4 +681,107 @@ msgstr "_Pogled"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Pomoč"
+
+#~ msgid "Accerciser"
+#~ msgstr "Accerciser"
+#~ msgid "Highlight border color"
+#~ msgstr "barva okvira poudarjanja"
+#~ msgid "Highlight duration"
+#~ msgstr "Trajanje poudarjanja"
+#~ msgid "Highlight fill color"
+#~ msgstr "Barva polnila poudarjanja"
+#~ msgid "The color and opacity of the highlight border."
+#~ msgstr "Barva in prosojnost okvirja poudarjanja."
+#~ msgid "The color and opacity of the highlight fill."
+#~ msgstr "Barva in prosojnost polnila poudarjanja."
+#~ msgid "The duration of the highlight box when selecting accessible nodes"
+#~ msgstr "Trajanje poudarjanja ob izbiri dostopnih vozlišč"
+#~ msgid "Start/stop event recording"
+#~ msgstr "Začni/ustavi snemanje dogodkov"
+#~ msgid "Clear event log"
+#~ msgstr "_Počisti beleženje dogodkov"
+#~ msgid "Idle"
+#~ msgstr "Nedejavno"
+#~ msgid "Sche_ma:"
+#~ msgstr "She_ma:"
+#~ msgid "V_alidate"
+#~ msgstr "Določi _veljavnost"
+#~ msgid "No description"
+#~ msgstr "Brez opisa"
+#~ msgid "AT-SPI Validator"
+#~ msgstr "AT-SPI določanje veljavnosti"
+#~ msgid "Validates application accessibility"
+#~ msgstr "Določi veljavnost dostopnosti programa"
+#~ msgid "Level"
+#~ msgstr "Raven"
+#~ msgid "Saving"
+#~ msgstr "Shranjevanje"
+#~ msgid "Validating"
+#~ msgstr "Določanje veljavnosti"
+#~ msgid "EXCEPT"
+#~ msgstr "IZJEMA"
+#~ msgid "ERROR"
+#~ msgstr "NAPAKA"
+#~ msgid "WARN"
+#~ msgstr "OPOZORI"
+#~ msgid "INFO"
+#~ msgstr "INFO"
+#~ msgid "DEBUG"
+#~ msgstr "DEBUG"
+#~ msgid "Basic"
+#~ msgstr "Osnovno"
+#~ msgid "Tests fundamental GUI application accessibility"
+#~ msgstr "Določevanje dostopnosti grafičnega vmesnika programa"
+#~ msgid "actionable %s is not focusable or selectable"
+#~ msgstr "udejanjenega %s ni mogoče izbrati ali označiti"
+#~ msgid "interactive %s is not actionable"
+#~ msgstr "interaktivnega %s ni mogoče udejanjiti"
+#~ msgid "more than one focused widget"
+#~ msgstr "več kot en označen gradnik"
+#~ msgid "%s has no text interface"
+#~ msgstr "%s je brez besedilnega vmesnika"
+#~ msgid "%s index in parent does not match child index"
+#~ msgstr "indeks %s ni v skladu z indeksom podrejenega procesa"
+#~ msgid "Missing reciprocal for %s relation"
+#~ msgstr "Manjka recipročnost za %s povezavo"
+#~ msgid "%s missing name or label"
+#~ msgstr "%s manjka ime ali oznaka"
+#~ msgid "focusable %s has table interface, no selection interface"
+#~ msgstr "označeni %s ima predelni vmesnik, ni izbirnega vmesnika"
+#~ msgid "%s has %s state without %s state"
+#~ msgstr "%s vključuje %s stanje brez %s stanja"
+#~ msgid "%s does not belong to a set"
+#~ msgstr "%s ne pripada skupini"
+#~ msgid "%(rolename)s index %(num)d does not match row and column"
+#~ msgstr "%(rolename)s indeks %(num)d ne sovpada s stolpci in z vrsticami"
+#~ msgid ""
+#~ "%(rolename)s parent index %(num1)d does not match row and column index %"
+#~ "(num2)d"
+#~ msgstr ""
+#~ "%(rolename)s nadrejeni indeks %(num1)d ne sovpada s stolpci in z "
+#~ "vrsticami indeksa %(num2)d "
+#~ msgid "%s has no name or description"
+#~ msgstr "%s nima imena ali opisa"
+#~ msgid "_Refresh Registry"
+#~ msgstr "Osveži _register"
+#~ msgid "Refresh all"
+#~ msgstr "Osveži _vse"
+#~ msgid "Refresh selected node's children"
+#~ msgstr "Osveži podrejene predmete vozlišča"
+#~ msgid "Highlighting"
+#~ msgstr "Poudarjanje"
+#~ msgid "Highlight duration:"
+#~ msgstr "Trajanje poudarjanja:"
+#~ msgid "Border color:"
+#~ msgstr "Barva okvirja:"
+#~ msgid "The border color of the highlight box"
+#~ msgstr "Barva okvirja poudarjanja"
+#~ msgid "Fill color:"
+#~ msgstr "Barva polnila:"
+#~ msgid "The fill color of the highlight box"
+#~ msgstr "Barva polnila poudarjanja"
+#~ msgid "viewport|View"
+#~ msgstr "viewport|Pogled"
+#~ msgid "menu|_View"
+#~ msgstr "menu|_Pogled"
 
