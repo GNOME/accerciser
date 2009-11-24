@@ -11,4 +11,4 @@ DOC_FIGURES = \
 	figures/interface_viewer.png \
 	figures/script_recorder.png
 DISTCLEANFILES = accerciser-C.omf
-DOC_LINGUAS = ca cs de el en_GB es fr oc pt_BR sv
+DOC_LINGUAS = ca cs de el en_GB es fr oc pt_BR sv zh_CN
