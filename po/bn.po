@@ -1,16 +1,19 @@
-# Translation of Bengali (updated from bn_IN)
+# Bengali Translation of accerciser
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Runa Bhattacharjee <runabh@gmail.com>, 2007.
+# Runa Bhattacharjee <runabh@gmail.com>, 2007
+# Loba Yeasmeen <loba@ankur.org.bd>, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 18:24+0100\n"
-"PO-Revision-Date: 2007-08-30 18:15+0530\n"
-"Last-Translator: Runa Bhattacharjee <runabh@gmail.com>\n"
-"Language-Team: Bengali INDIA\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2009-12-14 15:27+0000\n"
+"PO-Revision-Date: 2010-01-21 18:15+0600\n"
+"Last-Translator: Loba Yeasmeen <loba@ankur.org.bd>\n"
+"Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,10 +21,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser বিশেষ প্রয়োগব্যবস্থার এক্সপ্লোরার"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "আপনার অ্যাপ্লিকেশনে বিশেষ ব্যবহারের ক্ষমতা উপলব্ধ করুন"
 
@@ -30,12 +37,38 @@ msgid "A list of plugins that are disabled by default"
 msgstr "ডিফল্টরূপে নিষ্ক্রিয় প্লাগ-ইনের তালিকা"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "সীমানার রং হাইলাইট করা হবে"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "সময়কাল হাইলাইট করা হবে"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "ভরাটের রং হাইলাইট করা হবে"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "হাইলাইট করার সীমানার রং এবং অস্বচ্ছতা।"
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "ভরাট হাইলাইট করার রং এবং অস্বচ্ছতা।"
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "নিম্নবর্তী প্যানেলের জন্য ডিফল্ট প্লাগ-ইনের বিন্যাস"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "উপরের প্যানেলের জন্য ডিফল্ট প্লাগ-ইনের বিন্যাস"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr ""
+"প্রবেশযোগ্য নোডসমূহ নির্বাচন করার জন্য হাইলাইটকরণের বাক্স বিদ্যমান থাকার "
+"সময়কাল"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -67,377 +100,369 @@ msgstr "IPython কনসোল"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "বর্তমানে নির্বাচিত বিশেষ ব্যবহারপ্রণালীর বৈশিষ্ট্য পরিবর্তনের জন্য ইন্টারেক্টিভ কনসোল"
+msgstr ""
+"বর্তমানে নির্বাচিত বিশেষ ব্যবহারপ্রণালীর বৈশিষ্ট্য পরিবর্তনের জন্য ইন্টারেক্টিভ কনসোল"
 
-#: ../plugins/event_monitor.glade.h:1
+#: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
 msgstr "<b>ইভেন্ট নিরীক্ষণ ব্যবস্থা</b>"
 
-#: ../plugins/event_monitor.glade.h:2
+#: ../plugins/event_monitor.ui.h:2
 msgid "C_lear Selection"
-msgstr "নির্বাচিত মান বাতিল করা হবে (_l)"
+msgstr "নির্বাচন বাতিল করা হবে (_C)"
 
-#: ../plugins/event_monitor.glade.h:3
+#: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
 msgstr "সমগ্র"
 
-#: ../plugins/event_monitor.glade.h:4
+#: ../plugins/event_monitor.ui.h:4
 msgid "Selected accessible"
 msgstr "নির্বাচিত বিশেষ ব্যবহারপ্রণালী"
 
-#: ../plugins/event_monitor.glade.h:5
+#: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "নির্বাচিত অ্যাপ্লিকেশন"
 
-#: ../plugins/event_monitor.glade.h:6
+#: ../plugins/event_monitor.ui.h:6
 msgid "Source"
 msgstr "উৎস"
 
-#: ../plugins/event_monitor.glade.h:7
+#: ../plugins/event_monitor.ui.h:7
 msgid "_Monitor Events"
 msgstr "ইভেন্ট নিরীক্ষণ (_M)"
 
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-clear"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-save"
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-select-all"
-
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "ইভেন্ট নিরীক্ষণ ব্যবস্থা"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "নির্বাচিত ধরন ও উৎসস্থল থেকে উৎপন্ন ইভেন্ট প্রদর্শন করা হয়"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "সর্বশেষ ইভেন্ট সংক্রান্ত এন্ট্রি উজ্জ্বল করা হবে"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "শুরু/সমাপ্ত করার ইভেন্ট রেকর্ড করা হচ্ছে"
+
+#: ../plugins/event_monitor.py:67
+#| msgid "C_lear Selection"
+msgid "Clear event log"
+msgstr "ইভেন্টের লগ মুছে ফেলা হবে"
+
+#: ../plugins/interface_view.ui.h:1
+msgid "0"
+msgstr "0"
+
+#. Component                                 size
+#: ../plugins/interface_view.ui.h:3
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>বৈশিষ্ট্য</b>"
+
+#: ../plugins/interface_view.ui.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>চাইল্ডের সংখ্যা</b>"
+
+#: ../plugins/interface_view.ui.h:6
+msgid "<b>Description</b>"
+msgstr "<b>বিবরণ</b>"
+
+#: ../plugins/interface_view.ui.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>সম্পর্ক</b>"
+
+#: ../plugins/interface_view.ui.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>নির্বাচিত সেল</b>"
+
+#: ../plugins/interface_view.ui.h:9
+msgid "<b>States</b>"
+msgstr "<b>অবস্থা</b>"
+
+#: ../plugins/interface_view.ui.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>টেবিল সংক্রান্ত তথ্য</b>"
+
+#: ../plugins/interface_view.ui.h:11
+msgid "<b>Text</b>"
+msgstr "<b>টেক্সট</b>"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>অজানা</b>"
+
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
+#: ../plugins/interface_view.py:825
+msgid "<i>(no description)</i>"
+msgstr "<i>(কোনো বিবরণ নেই)</i>"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>শিরোনাম:</i>"
+
+#. End chaacter                                                 offset of text attributes span
+#: ../plugins/interface_view.ui.h:16
+msgid "<i>End: 0</i>"
+msgstr "<i>সমাপ্তি: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:18
+msgid "<i>Start: 0</i>"
+msgstr "<i>আরম্ভ: 0</i>"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "<i>Summary:</i>"
+msgstr "<i>সার সংক্ষেপ:</i>"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "<no description>"
+msgstr "<no description>"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "Absolute position"
+msgstr "সুনির্দিষ্ট অবস্থান"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "কর্ম (_o)"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "Alpha"
+msgstr "আলফা"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "অ্যাপ্লিকেশন (_p)"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "অংশ (_m)"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "সংকলন (_l)"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Column"
+msgstr "কলাম"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Columns"
+msgstr "কলাম"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "Current value"
+msgstr "বর্তমান মান"
+
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "ডেস্কটপ (_k)"
+
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/validate.py:277
+msgid "Description"
+msgstr "বিবরণ"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "এক্সটেন্ট:"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "হাইপার-টেক্সট (_y)"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Header:"
+msgstr "শীর্ষচরণ:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+msgid "Hyperlink"
+msgstr "হাইপার-লিঙ্ক"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "Include defaults"
+msgstr "ডিফল্ট মান অন্তর্ভুক্ত করা হবে"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Layer"
+msgstr "স্তর"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "লগ-ইন সহায়তা (_g)"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Locale"
+msgstr "লোক্যাল"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Locale:"
+msgstr "লোক্যাল:"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-Z-ক্রম"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Maximum value"
+msgstr "সর্বোচ্চ মান"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Minimum increment"
+msgstr "সর্বনিম্ন বৃদ্ধি"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "Minimum value"
+msgstr "সর্বনিম্ন মান"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Offset"
+msgstr "অফ-সেট"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "Perform action"
+msgstr "কর্ম সঞ্চালন"
+
+#: ../plugins/interface_view.ui.h:49
+msgid "Position"
+msgstr "অবস্থান"
+
+#: ../plugins/interface_view.ui.h:50
+msgid "Relative position"
+msgstr "আপেক্ষিক অবস্থান"
+
+#: ../plugins/interface_view.ui.h:51
+msgid "Row"
+msgstr "সারি"
+
+#: ../plugins/interface_view.ui.h:52
+msgid "Rows"
+msgstr "সারি"
+
+#: ../plugins/interface_view.ui.h:53
+msgid "Select All"
+msgstr "সমগ্র নির্বাচন"
+
+#: ../plugins/interface_view.ui.h:54
+msgid "Selected columns"
+msgstr "নির্বাচিত কলাম"
+
+#: ../plugins/interface_view.ui.h:55
+msgid "Selected rows"
+msgstr "নির্বাচিত সারি"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Show"
+msgstr "প্রদর্শন"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Size"
+msgstr "মাপ"
+
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "স্ট্রিম করার যোগ্য বিষয়বস্তু (_r)"
+
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "পাঠ্য (_x)"
+
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "টুল-কিট"
+
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "মান (_u)"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Version"
+msgstr "সংস্করণ"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "WIDGET"
+msgstr "WIDGET"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "_Accessible"
+msgstr "বিশেষ ব্যবহার প্রণালী (_A)"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "_Document"
+msgstr "নথিপত্র (_D)"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "_Image"
+msgstr "ছবি (_I)"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "_Selection"
+msgstr "নির্বাচন (_S)"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "_Table"
+msgstr "টেবিল (_T)"
+
+#: ../plugins/interface_view.ui.h:69
+msgid "name (x,y)"
+msgstr "name (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:38
+msgid "Interface Viewer"
+msgstr "ইন্টারফেস প্রদর্শন ব্যবস্থা"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:41
+msgid "Allows viewing of various interface properties"
+msgstr "ইন্টারফেসের বিভিন্ন বৈশিষ্ট্য প্রদর্শনের সুবিধা উপলব্ধ করা হয়"
+
+#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:230
+#| msgid " (not implemented)"
+msgid "(not implemented)"
+msgstr "(কার্যকরী নয়)"
+
+#. add accessible's name to buffer
+#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "নাম"
 
-#: ../plugins/event_monitor.py:119
-msgid "Full name"
-msgstr "সম্পূর্ণ নাম"
-
-#: ../plugins/interface_view.glade.h:1
-msgid "0"
-msgstr "0"
-
-#: ../plugins/interface_view.glade.h:2
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
-msgid "<b>Attributes</b>"
-msgstr "<b>বৈশিষ্ট্য</b>"
-
-#: ../plugins/interface_view.glade.h:5
-msgid "<b>Child count</b>"
-msgstr "<b>চাইল্ডের সংখ্যা</b>"
-
-#: ../plugins/interface_view.glade.h:6
-msgid "<b>Description</b>"
-msgstr "<b>বিবরণ</b>"
-
-#: ../plugins/interface_view.glade.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>সম্পর্ক</b>"
-
-#: ../plugins/interface_view.glade.h:8
-msgid "<b>Selected Cell</b>"
-msgstr "<b>নির্বাচিত সেল</b>"
-
-#: ../plugins/interface_view.glade.h:9
-msgid "<b>States</b>"
-msgstr "<b>অবস্থা</b>"
-
-#: ../plugins/interface_view.glade.h:10
-msgid "<b>Table Information</b>"
-msgstr "<b>টেবিল সংক্রান্ত তথ্য</b>"
-
-#: ../plugins/interface_view.glade.h:11
-msgid "<b>Text</b>"
-msgstr "<b>টেক্সট</b>"
-
-#: ../plugins/interface_view.glade.h:12
-msgid "<b>unknown</b>"
-msgstr "<b>অজানা</b>"
-
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
-msgid "<i>(no description)</i>"
-msgstr "<i>(কোনো বিবরণ নেই)</i>"
-
-#: ../plugins/interface_view.glade.h:14
-msgid "<i>Caption:</i>"
-msgstr "<i>শিরোনাম:</i>"
-
-#: ../plugins/interface_view.glade.h:15
-msgid "<i>End: 0</i>"
-msgstr "<i>সমাপ্তি: 0</i>"
-
-#: ../plugins/interface_view.glade.h:16
-msgid "<i>Start: 0</i>"
-msgstr "<i>আরম্ভ: 0</i>"
-
-#: ../plugins/interface_view.glade.h:17
-msgid "<i>Summary:</i>"
-msgstr "<i>সার সংক্ষেপ:</i>"
-
-#: ../plugins/interface_view.glade.h:18
-msgid "<no description>"
-msgstr "<no description>"
-
-#: ../plugins/interface_view.glade.h:19
-msgid "Absolute position"
-msgstr "সুনির্দিষ্ট অবস্থান"
-
-#: ../plugins/interface_view.glade.h:20
-msgid "Acti_on"
-msgstr "কর্ম (_o)"
-
-#: ../plugins/interface_view.glade.h:21
-msgid "Alpha"
-msgstr "আলফা"
-
-#: ../plugins/interface_view.glade.h:22
-msgid "Ap_plication"
-msgstr "অ্যাপ্লিকেশন (_p)"
-
-#: ../plugins/interface_view.glade.h:23
-msgid "Co_mponent"
-msgstr "অংশ (_m)"
-
-#: ../plugins/interface_view.glade.h:24
-msgid "Col_lection"
-msgstr "সংকলন (_l)"
-
-#: ../plugins/interface_view.glade.h:25
-msgid "Column"
-msgstr "কলাম"
-
-#: ../plugins/interface_view.glade.h:26
-msgid "Columns"
-msgstr "কলাম"
-
-#: ../plugins/interface_view.glade.h:27
-msgid "Current value"
-msgstr "বর্তমান মান"
-
-#: ../plugins/interface_view.glade.h:28
-msgid "Des_ktop"
-msgstr "ডেস্কটপ (_k)"
-
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
-msgid "Description"
-msgstr "বিবরণ"
-
-#: ../plugins/interface_view.glade.h:30
-msgid "Extents:"
-msgstr "এক্সটেন্ট:"
-
-#: ../plugins/interface_view.glade.h:31
-msgid "H_ypertext"
-msgstr "হাইপার-টেক্সট (_y)"
-
-#: ../plugins/interface_view.glade.h:32
-msgid "Header:"
-msgstr "হেডার:"
-
-#: ../plugins/interface_view.glade.h:33
-msgid "Hyperlink"
-msgstr "হাইপার-লিঙ্ক"
-
-#: ../plugins/interface_view.glade.h:34
-msgid "ID"
-msgstr "ID"
-
-#: ../plugins/interface_view.glade.h:35
-msgid "Include defaults"
-msgstr "ডিফল্ট মান অন্তর্ভুক্ত করা হবে"
-
-#: ../plugins/interface_view.glade.h:36
-msgid "Layer"
-msgstr "স্তর"
-
-#: ../plugins/interface_view.glade.h:37
-msgid "Lo_gin Helper"
-msgstr "লগ-ইন সহায়তা (_g)"
-
-#: ../plugins/interface_view.glade.h:38
-msgid "Locale"
-msgstr "লোকেইল"
-
-#: ../plugins/interface_view.glade.h:39
-msgid "Locale:"
-msgstr "লোকেইল:"
-
-#: ../plugins/interface_view.glade.h:40
-msgid "MDI-Z-order"
-msgstr "MDI-Z-order"
-
-#: ../plugins/interface_view.glade.h:41
-msgid "Maximum value"
-msgstr "সর্বোচ্চ মান"
-
-#: ../plugins/interface_view.glade.h:42
-msgid "Minimum increment"
-msgstr "সর্বনিম্ন বৃদ্ধি"
-
-#: ../plugins/interface_view.glade.h:43
-msgid "Minimum value"
-msgstr "সর্বনিম্ন মান"
-
-#: ../plugins/interface_view.glade.h:44
-msgid "Offset"
-msgstr "অফ-সেট"
-
-#: ../plugins/interface_view.glade.h:45
-msgid "Perform action"
-msgstr "কর্ম সঞ্চালন"
-
-#: ../plugins/interface_view.glade.h:46
-msgid "Position"
-msgstr "অবস্থান"
-
-#: ../plugins/interface_view.glade.h:47
-msgid "Relative position"
-msgstr "আপেক্ষিক অবস্থান"
-
-#: ../plugins/interface_view.glade.h:48
-msgid "Row"
-msgstr "সারি"
-
-#: ../plugins/interface_view.glade.h:49
-msgid "Rows"
-msgstr "সারি"
-
-#: ../plugins/interface_view.glade.h:50
-msgid "Select All"
-msgstr "সমগ্র নির্বাচন"
-
-#: ../plugins/interface_view.glade.h:51
-msgid "Selected columns"
-msgstr "নির্বাচিত কলাম"
-
-#: ../plugins/interface_view.glade.h:52
-msgid "Selected rows"
-msgstr "নির্বাচিত সারি"
-
-#: ../plugins/interface_view.glade.h:53
-msgid "Show"
-msgstr "প্রদর্শন"
-
-#: ../plugins/interface_view.glade.h:54
-msgid "Size"
-msgstr "মাপ"
-
-#: ../plugins/interface_view.glade.h:55
-msgid "St_reamable Content"
-msgstr "স্ট্রিম করার যোগ্য বিষয়বস্তু (_r)"
-
-#: ../plugins/interface_view.glade.h:56
-msgid "Te_xt"
-msgstr "টেক্সট (_x)"
-
-#: ../plugins/interface_view.glade.h:57
-msgid "Toolkit"
-msgstr "টুল-কিট"
-
-#: ../plugins/interface_view.glade.h:58
-msgid "Val_ue"
-msgstr "মান (_u)"
-
-#: ../plugins/interface_view.glade.h:59
-msgid "Version"
-msgstr "সংস্করণ"
-
-#: ../plugins/interface_view.glade.h:60
-msgid "WIDGET"
-msgstr "WIDGET"
-
-#: ../plugins/interface_view.glade.h:61
-msgid "_Accessible"
-msgstr "বিশেষ ব্যবহার প্রণালী (_A)"
-
-#: ../plugins/interface_view.glade.h:62
-msgid "_Document"
-msgstr "নথিপত্র (_D)"
-
-#: ../plugins/interface_view.glade.h:63
-msgid "_Image"
-msgstr "ছবি (_I)"
-
-#: ../plugins/interface_view.glade.h:64
-msgid "_Selection"
-msgstr "নির্বাচন (_S)"
-
-#: ../plugins/interface_view.glade.h:65
-msgid "_Table"
-msgstr "টেবিল (_T)"
-
-#: ../plugins/interface_view.glade.h:67
-msgid "name (x,y)"
-msgstr "name (x,y)"
-
-#: ../plugins/interface_view.py:35
-msgid "Interface Viewer"
-msgstr "ইন্টারফেস প্রদর্শন ব্যবস্থা"
-
-#: ../plugins/interface_view.py:37
-msgid "Allows viewing of various interface properties"
-msgstr "ইন্টারফেসের বিভিন্ন বৈশিষ্ট্য প্রদর্শনের সুবিধা উপলব্ধ করা হয়"
-
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
-msgid " (not implemented)"
-msgstr " (কার্যকরী নয়)"
-
-#: ../plugins/interface_view.py:460
-msgid "Key binding"
-msgstr "কি-বাইন্ডিং"
-
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:708
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:715
 msgid "Start"
 msgstr "আরম্ভ"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:722
 msgid "End"
 msgstr "সমাপ্তি"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:883
 msgid "Too many selectable children"
 msgstr "নির্বাচনযোগ্য অত্যাধিক চাইল্ড"
 
-#: ../plugins/interface_view.py:1019
-msgid "Content type"
-msgstr "বিষয়বস্তুর ধরন"
-
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
-msgid " <i>(Editable)</i>"
-msgstr " <i>(সম্পাদনযোগ্য)</i>"
+#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#| msgid " <i>(Editable)</i>"
+msgid "<i>(Editable)</i>"
+msgstr "<i>(সম্পাদনযোগ্য)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -455,25 +480,24 @@ msgstr "সর্বশেষ ব্যবহৃত বিশেষ ব্যব
 msgid "Inspect accessible under mouse"
 msgstr "মাউসের অধীন বিশেষ ব্যবহারপ্রণালী পরীক্ষণ"
 
-#: ../plugins/script_recorder.glade.h:1
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.ui.h:2
 msgid "Dogtail"
 msgstr "Dogtail"
 
-#: ../plugins/script_recorder.glade.h:2
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.ui.h:4
 msgid "LDTP"
 msgstr "LDTP"
 
-#: ../plugins/script_recorder.glade.h:3
+#. A native script format.
+#: ../plugins/script_recorder.ui.h:6
 msgid "Native"
 msgstr "নেটিভ"
 
-#: ../plugins/script_recorder.glade.h:4
+#: ../plugins/script_recorder.ui.h:7
 msgid "Script Type"
 msgstr "স্ক্রিপ্টের ধরন"
-
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-media-record"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -483,50 +507,236 @@ msgstr "স্ক্রিপ্ট রেকর্ড ব্যবস্থা"
 msgid "Creates dogtail style scripts"
 msgstr "dogtail-র অনুরূপ স্ক্রিপ্ট নির্মাণ করতে সহায়ক"
 
-#: ../plugins/script_recorder.py:340
+#: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
 msgstr "বর্তমান স্ক্রিপ্ট মুছে যাবে।"
 
-#: ../plugins/script_recorder.py:341
+#: ../plugins/script_recorder.py:343
 msgid "Confirm clear"
 msgstr "মুছে ফেলার প্রক্রিয় নিশ্চিত করুন"
 
-#: ../src/lib/accerciser/accerciser.py:94
-msgid "_Preferences..."
-msgstr "পছন্দ...(_P)"
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.py:412
+msgid "Idle"
+msgstr "নিষ্ক্রিয়"
 
-#: ../src/lib/accerciser/accerciser.py:96
-msgid "_Contents"
-msgstr "বিষয়বস্তু (_C)"
+#: ../plugins/validate.ui.h:2
+msgid "Sche_ma:"
+msgstr "স্কিম: (_m)"
 
-#: ../src/lib/accerciser/accerciser.py:133
-msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
-msgstr ""
-"Accerciser, আপনার ডেস্কটপের মধ্যে অ্যাপ্লিকেশনগুলি সনাক্ত করতে সক্ষম হয়নি।  এই "
-"সমস্যা সমাধানের জন্য ডেস্কটপে বিশেষ ব্যবহার সক্রিয় করা আবশ্যক। এই মুহূর্তে সক্রিয় করা "
-"হবে কি?"
+#: ../plugins/validate.ui.h:3
+msgid "V_alidate"
+msgstr "বৈধতা যাচাই (_a)"
 
-#: ../src/lib/accerciser/accerciser.py:148
-msgid "Note: Changes only take effect after logout."
-msgstr "উল্লেখ্য: লগ-আউট করার পরে পরিবর্তনগুলি প্রয়োগ করা হবে।"
+#: ../plugins/validate.py:64
+#| msgid "<no description>"
+msgid "No description"
+msgstr "কোন বর্ণনা নেই"
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
-msgid "<dead>"
-msgstr "<dead>"
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT-SPI বৈধতা যাচাইকারক"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
+#: ../plugins/validate.py:154
+#| msgid "Give your application an accessibility workout"
+msgid "Validates application accessibility"
+msgstr "অ্যাপ্লিকেশন ব্যবহারের বৈধতা যাচাই করা হয়"
+
+#. log level column
+#. add level to buffer
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
+msgid "Level"
+msgstr "স্তর"
+
+#. add accessible's role to buffer
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "ভূমিকা"
 
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../plugins/validate.py:346
+msgid "Saving"
+msgstr "সংরক্ষণ করা হচ্ছে"
+
+#: ../plugins/validate.py:394
+msgid "Validating"
+msgstr "বৈধতা যাচাই করা হচ্ছে"
+
+#: ../plugins/validate.py:550
+msgid "EXCEPT"
+msgstr "EXCEPT"
+
+#: ../plugins/validate.py:557
+msgid "ERROR"
+msgstr "ERROR"
+
+#: ../plugins/validate.py:565
+msgid "WARN"
+msgstr "WARN"
+
+#: ../plugins/validate.py:572
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:579
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "মৌলিক"
+
+#: ../plugindata/validate/basic.py:9
+#| msgid "Give your application an accessibility workout"
+msgid "Tests fundamental GUI application accessibility"
+msgstr "মৌলিক GUI অ্যপ্লিকেশনের ব্যবহারযোগ্যতা পরীক্ষা করা হয়"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "কার্যকর %s ফোকাস অথবা নির্বাচনযোগ্য নয়"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "মিথস্ক্রিয় %s কার্যকর নয়"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "একাধিক ফোকাসকৃত উইজেড"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s কোন পাঠ্য ইন্টারফেস নেই"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "অভিভাবকে বিদ্যমান %s ইনডেক্সের সাথে চাইল্ড ইনডেক্স মিলেনা"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "%s অন্বয়ের জন্য পাস্পরিক সম্পর্ক অনুপস্থিত"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s অনুপস্থিত নাম অথবা লেবেল"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "ফাকাসকৃত %s এর টেবিল ইন্টারফেস রয়েছে, কোন নির্বাচন ইন্টারফেস নেই"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%1s এর %3s স্টেট ব্যতিত %2s স্টেট রয়েছে  "
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s সেটের অন্তর্ভুক্ত নয়"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s ইনডেক্স %(num)d সারি এবং কলামের সাথে মিলেনা"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"%(rolename)s অভিভাবক ইনডেক্স %(num1)d সারি এবং কলাম ইনডেক্স %(num2)d এর সাথে "
+"মিলে না"
+
+#: ../plugindata/validate/basic.py:352
+#| msgid "<no description>"
+msgid "%s has no name or description"
+msgstr "%s এর কোন নাম অথবা বর্ণনা নাই"
+
+#: ../src/lib/accerciser/accerciser.py:85
+msgid "_Preferences..."
+msgstr "পছন্দ...(_P)"
+
+#: ../src/lib/accerciser/accerciser.py:87
+msgid "_Contents"
+msgstr "বিষয়বস্তু (_C)"
+
+#: ../src/lib/accerciser/accerciser.py:129
+#| msgid ""
+#| "Accerciser could not see the applications on your desktop.You must enable "
+#| "desktop accessibility to fix this problem.Do you want to enable it now?"
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Accerciser, আপনার ডেস্কটপের মধ্যে অ্যাপ্লিকেশনগুলি সনাক্ত করতে সক্ষম হয়নি।  "
+"এই সমস্যা সমাধানের জন্য আপনাকে অবশ্যই ডেস্কটপের ব্যবহারযোগ্যতা সক্রিয় করতে "
+"হবে।  আপনি কি এই মুহূর্তে সক্রিয় করতে চান?"
+
+#: ../src/lib/accerciser/accerciser.py:147
+msgid "Note: Changes only take effect after logout."
+msgstr "উল্লেখ্য: লগ-আউট করার পরে পরিবর্তনগুলি প্রয়োগ করা হবে।"
+
+#: ../src/lib/accerciser/accessible_treeview.py:345
+msgid "<dead>"
+msgstr "<dead>"
+
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
 msgstr "চাইল্ড সংখ্যা"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
-msgid "Refresh _Current"
-msgstr "বর্তমান নির্বাচন নতুন করে প্রদর্শন করা হবে (_C)"
+#: ../src/lib/accerciser/accessible_treeview.py:435
+#| msgid "Refresh _Current"
+msgid "_Refresh Registry"
+msgstr "বর্তমান নির্বাচন নতুন করে প্রদর্শন করা হবে (_R)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:438
+msgid "Refresh all"
+msgstr "সমস্ত রিফ্রেশ করা হবে"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:441
+#| msgid "Refresh _Current"
+msgid "Refresh _Node"
+msgstr "বর্তমান নির্বাচন নতুন করে প্রদর্শন করা হবে (_N)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:444
+msgid "Refresh selected node's children"
+msgstr "নির্বাচিত নোডের চিল্ডরেন রিফ্রেশ করা হবে"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -538,7 +748,7 @@ msgstr "কর্ম"
 
 #: ../src/lib/accerciser/hotkey_manager.py:234
 msgid "Key"
-msgstr "কি"
+msgstr "কী"
 
 #: ../src/lib/accerciser/hotkey_manager.py:244
 msgid "Alt"
@@ -552,43 +762,68 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "উপরের প্যানেল"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "নিম্নস্থিত প্যানেল"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
 msgstr "accerciser সংক্রান্ত পছন্দ"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "প্লাগ-ইন"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
-msgstr "গ্লোবাল হট-কি"
+msgstr "গ্লোবাল হট-কী"
 
-#: ../src/lib/accerciser/about_dialog.py:50
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "হাইলাইট করা হচ্ছে"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "সময়কাল হাইলাইট করা হবে:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "সীমানার রং:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:92
+msgid "The border color of the highlight box"
+msgstr "হাইলাইটকরণ বাক্সের সীমানার রং"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "Fill color:"
+msgstr "ভরাটের রং:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:96
+msgid "The fill color of the highlight box"
+msgstr "হাইলাইটকরণ বাক্স ভরাটের রং"
+
+#: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "রুণা ভট্টাচার্য্য (runabh@gmail.com)"
 
-#: ../src/lib/accerciser/about_dialog.py:51
+#: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "বিশেষ ব্যবহারপ্রণালীর ইন্টারেক্টিভ Python এক্সপ্লোরার"
 
-#: ../src/lib/accerciser/about_dialog.py:52
-msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser স্বত্বাধিকার Â© ২০০৬, ২০০৭ IBM Corporation (BSD)"
-
 #: ../src/lib/accerciser/about_dialog.py:54
+#| msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "নতুন BSD লাইসেন্স। অধিক বিবরণের জন্য COPYING ও NOTICE শীর্ষক ফাইলগুলি পড়ুন।"
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "ওয়েব-সাইট"
 
@@ -644,11 +879,16 @@ msgstr "পাথ:"
 msgid "Plugin Errors"
 msgstr "প্লাগ-ইন সংক্রান্ত সমস্যা"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#| msgid "View"
+msgctxt "viewport"
 msgid "View"
-msgstr "প্রদর্শন"
+msgstr "ভিউ"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "প্রদর্শন উপলব্ধ নেই"
 
@@ -682,14 +922,41 @@ msgid "_Edit"
 msgstr "সম্পাদনা (_E)"
 
 #: ../src/lib/accerciser/ui_manager.py:22
+#| msgid "_Bookmarks"
+msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "বুকমার্ক (_B)"
 
 #: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_View"
+msgctxt "menu"
 msgid "_View"
-msgstr "প্রদর্শন (_V)"
+msgstr "ভিউ (_V)"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "সাহায্য (_H)"
 
+#~ msgid "gtk-clear"
+#~ msgstr "gtk-clear"
+
+#~ msgid "gtk-save"
+#~ msgstr "gtk-save"
+
+#~ msgid "gtk-select-all"
+#~ msgstr "gtk-select-all"
+
+#~ msgid "Full name"
+#~ msgstr "সম্পূর্ণ নাম"
+
+#~ msgid "1.0"
+#~ msgstr "1.0"
+
+#~ msgid "Key binding"
+#~ msgstr "কি-বাইন্ডিং"
+
+#~ msgid "Content type"
+#~ msgstr "বিষয়বস্তুর ধরন"
+
+#~ msgid "gtk-media-record"
+#~ msgstr "gtk-media-record"
