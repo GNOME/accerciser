@@ -1,30 +1,30 @@
-# translation of accerciser to Polish 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Aviary.pl
 # Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Andrzej Polatyński <andrzej@datatel.net.pl>, 2007.
-# Aviary.pl <gnomepl@aviary.pl>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-25 14:55+0200\n"
-"PO-Revision-Date: 2009-08-25 14:55+0100\n"
-"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
-"Language-Team: Polish <gnome-l10n@lists.aviary.pl>\n"
+"POT-Creation-Date: 2010-02-25 02:01+0100\n"
+"PO-Revision-Date: 2010-02-24 23:40+0100\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2
-#: ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Przeglądarka dostępności Accerciser"
 
@@ -193,8 +193,7 @@ msgstr "<b>Tekst</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nieznane</b>"
 
-#: ../plugins/interface_view.ui.h:13
-#: ../plugins/interface_view.py:332
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
 #: ../plugins/interface_view.py:825
 msgid "<i>(no description)</i>"
 msgstr "<i>(brak opisu)</i>"
@@ -223,7 +222,7 @@ msgstr "<brak opisu>"
 
 #: ../plugins/interface_view.ui.h:21
 msgid "Absolute position"
-msgstr "Pozycja absolutna"
+msgstr "Pozycja bezwzględna"
 
 #: ../plugins/interface_view.ui.h:22
 msgid "Acti_on"
@@ -239,7 +238,7 @@ msgstr "_Program"
 
 #: ../plugins/interface_view.ui.h:25
 msgid "Co_mponent"
-msgstr "K_omponent"
+msgstr "_Składnik"
 
 #: ../plugins/interface_view.ui.h:26
 msgid "Col_lection"
@@ -255,15 +254,14 @@ msgstr "Kolumny"
 
 #: ../plugins/interface_view.ui.h:29
 msgid "Current value"
-msgstr "Wartość bieżąca"
+msgstr "Bieżąca wartość"
 
 #: ../plugins/interface_view.ui.h:30
 msgid "Des_ktop"
 msgstr "_Pulpit"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31
-#: ../plugins/validate.py:214
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
 #: ../plugins/validate.py:277
 msgid "Description"
 msgstr "Opis"
@@ -282,14 +280,13 @@ msgid "Header:"
 msgstr "Nagłówek:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36
-#: ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
 msgid "Hyperlink"
 msgstr "Hiperłącze"
 
 #: ../plugins/interface_view.ui.h:37
 msgid "ID"
-msgstr "ID"
+msgstr "Identyfikator"
 
 #: ../plugins/interface_view.ui.h:38
 msgid "Include defaults"
@@ -393,7 +390,7 @@ msgstr "Wersja"
 
 #: ../plugins/interface_view.ui.h:63
 msgid "WIDGET"
-msgstr "WIDGET"
+msgstr "WIDŻET"
 
 #: ../plugins/interface_view.ui.h:64
 msgid "_Accessible"
@@ -429,15 +426,13 @@ msgstr "Widok interfejsu"
 msgid "Allows viewing of various interface properties"
 msgstr "Umożliwia podgląd różnych właściwości interfejsu"
 
-#: ../plugins/interface_view.py:227
-#: ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
 #: ../plugins/interface_view.py:230
 msgid "(not implemented)"
 msgstr "(niezaimplementowane)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701
-#: ../plugins/validate.py:279
+#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
@@ -457,10 +452,9 @@ msgstr "Koniec"
 
 #: ../plugins/interface_view.py:883
 msgid "Too many selectable children"
-msgstr "Zbyt wielu zaznaczalnych potomków"
+msgstr "Zbyt wielu potomków możliwych do zaznaczenia"
 
-#: ../plugins/interface_view.py:1228
-#: ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Element modyfikowalny)</i>"
 
@@ -497,7 +491,7 @@ msgstr "Natywny"
 
 #: ../plugins/script_recorder.ui.h:7
 msgid "Script Type"
-msgstr "Rodzaj skryptu"
+msgstr "Typ skryptu"
 
 #: ../plugins/script_recorder.py:176
 msgid "Script Recorder"
@@ -505,7 +499,7 @@ msgstr "Rejestrator skryptów"
 
 #: ../plugins/script_recorder.py:178
 msgid "Creates dogtail style scripts"
-msgstr "Tworzy skrypty w stylu dogtail"
+msgstr "Tworzy skrypty w stylu programu Dogtail"
 
 #: ../plugins/script_recorder.py:342
 msgid "The current script will be lost."
@@ -515,8 +509,7 @@ msgstr "Bieżący skrypt zostanie utracony."
 msgid "Confirm clear"
 msgstr "Potwierdzanie czyszczenia"
 
-#: ../plugins/validate.ui.h:1
-#: ../plugins/validate.py:360
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "Bezczynny"
@@ -543,14 +536,12 @@ msgstr "Sprawdza program pod kątem dostępności"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207
-#: ../plugins/validate.py:275
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
 msgid "Level"
 msgstr "Poziom"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Rola"
 
@@ -588,7 +579,7 @@ msgstr "Podstawowy"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "Sprawdza dostępność interfejsu programów okienkowych"
+msgstr "Sprawdza dostępność interfejsu programów graficznych"
 
 #: ../plugindata/validate/basic.py:24
 #, python-format
@@ -602,12 +593,12 @@ msgstr "element interaktywny %s nie jest podmiotem działań"
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
-msgstr "więcej niż jeden określony widget"
+msgstr "więcej niż jeden aktywny widżet"
 
 #: ../plugindata/validate/basic.py:81
 #, python-format
 msgid "%s has no text interface"
-msgstr "%s nie ma interfejsu tekstowego"
+msgstr "%s nie posiada interfejsu tekstowego"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
@@ -615,7 +606,7 @@ msgstr "%s nie ma interfejsu tekstowego"
 #: ../plugindata/validate/basic.py:100
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr "indeks rodzica %s nie odpowiada ineksowi potomka"
+msgstr "indeks rodzica %s nie odpowiada indeksowi potomka"
 
 #: ../plugindata/validate/basic.py:145
 #, python-format
@@ -670,8 +661,12 @@ msgstr "Indeks %(rolename)s numer %(num)d nie pasuje do wiersza i kolumny"
 #.
 #: ../plugindata/validate/basic.py:326
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "Indeks %(rolename)s numer %(num1)d nie pasuje do indeksu wiersza i kolumny %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"Indeks %(rolename)s numer %(num1)d nie pasuje do indeksu wiersza i kolumny %"
+"(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -684,15 +679,20 @@ msgstr "_Preferencje..."
 
 #: ../src/lib/accerciser/accerciser.py:87
 msgid "_Contents"
-msgstr "_Zawartość"
+msgstr "_Spis treści"
 
 #: ../src/lib/accerciser/accerciser.py:129
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Nie można pobrać informacji o programach na pulpicie. Do poprawnej pracy tego programu wymagane jest włączenie technologii wspierających. Czy uruchomić je teraz?"
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Nie można pobrać informacji o programach na pulpicie. Do poprawnej pracy "
+"tego programu wymagane jest włączenie technologii wspierających. Włączyć je "
+"teraz?"
 
 #: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
-msgstr "Uwaga: Zmiany zostaną wprowadzone po wylogowaniu."
+msgstr "Uwaga: zmiany zostaną uwzględnione po wylogowaniu."
 
 #: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
@@ -726,7 +726,7 @@ msgstr "Odświeża elementy potomne zaznaczonego węzła"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
-msgstr "Komponent"
+msgstr "Składnik"
 
 #: ../src/lib/accerciser/hotkey_manager.py:227
 msgid "Task"
@@ -795,7 +795,7 @@ msgstr "Kolor wypełnienia obszaru wyróżnienia"
 # Hubert Stachurski <...>, 2008
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009."
+msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009, 2010"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -823,7 +823,7 @@ msgstr "Dodaje zakładkę do zaznaczonego elementu."
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr "_Modyfikuj zakładki..."
+msgstr "Z_modyfikuj zakładki..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
@@ -831,7 +831,7 @@ msgstr "Zarządza zakładkami."
 
 #: ../src/lib/accerciser/bookmarks.py:323
 msgid "Edit Bookmarks..."
-msgstr "Modyfikuj zakładki..."
+msgstr "Zmodyfikuj zakładki..."
 
 #: ../src/lib/accerciser/bookmarks.py:427
 msgid "Title"
@@ -919,13 +919,3 @@ msgstr "_Widok"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Pomo_c"
-
-#~ msgid "Full name"
-#~ msgstr "Pełna nazwa"
-#~ msgid "Key binding"
-#~ msgstr "Skrót klawiszowy"
-#~ msgid "Content type"
-#~ msgstr "Typ zawartości"
-#~ msgid "1.0"
-#~ msgstr "1.0"
-
