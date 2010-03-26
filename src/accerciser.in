@@ -36,7 +36,6 @@ gnome.program_init('accerciser', '@VERSION@',
 
 import gtk
 # initialize threads
-gtk.gdk.threads_init()
 # get global icon resources
 it = gtk.IconTheme()
 try:

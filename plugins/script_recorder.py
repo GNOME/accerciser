@@ -4,7 +4,6 @@ import pyatspi
 import gtk
 from gtk import keysyms
 import gtksourceview2
-import threading
 import wnck
 from accerciser.i18n import N_, _, DOMAIN
 from Queue import Queue
