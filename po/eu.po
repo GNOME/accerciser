@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-22 11:21+0100\n"
-"PO-Revision-Date: 2010-03-27 11:49+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2010-03-22 10:25+0000\n"
+"PO-Revision-Date: 2010-03-27 11:51+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -864,6 +864,14 @@ msgstr "Bidea:"
 msgid "Plugin Errors"
 msgstr "Plugin erroreak"
 
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
+msgid "View"
+msgstr "Leihatila"
+
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "Ikuspegirik ez"
@@ -896,6 +904,18 @@ msgstr "_Fitxategia"
 #: ../src/lib/accerciser/ui_manager.py:21
 msgid "_Edit"
 msgstr "_Editatu"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+#| msgid "_Edit Bookmarks..."
+msgctxt "menu"
+msgid "_Bookmarks"
+msgstr "Laster-_markak"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+#| msgid "_File"
+msgctxt "menu"
+msgid "_View"
+msgstr "_Ikusi"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
