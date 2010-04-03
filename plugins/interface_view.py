@@ -81,11 +81,13 @@ class InterfaceViewer(ViewportPlugin):
     ui_xml.connect_signals(self)    
 
     # Mark all expanders with no associated section classes as unimplemented
-    implemented_sections = [obj.interface_name.lower() for obj in self.sections]
+    implemented_expanders = [s.expander for s in self.sections]
     vbox_ifaces = ui_xml.get_object('vbox_ifaces')
+
     for expander in vbox_ifaces.get_children():
-      iface_name = expander.name.replace('expander_', '')
-      if iface_name not in implemented_sections:
+      if expander not in implemented_expanders:
+        iface_name = \
+          expander.get_label().lower().replace(' ', '').replace('_', '')
         section = _InterfaceSection(ui_xml, self.node, iface_name)
         section.disable()
 
