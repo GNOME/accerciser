@@ -4,13 +4,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2009-11-06 19:17+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
+"POT-Creation-Date: 2010-05-10 16:21+0000\n"
+"PO-Revision-Date: 2010-05-12 18:35 -0400\n"
 "Last-Translator: Thomas Thurman <tthurman@gnome.org>\n"
-"Language-Team: Shavian <ubuntu-l10n-en-shaw@lists.launchpad.net>\n"
+"Language-Team: Shavian <ubuntu-l10n-en-shaw@launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+
+#, fuzzy
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#, fuzzy
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+msgid "Accerciser Accessibility Explorer"
+msgstr "Accerciser 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑦𐑤𐑦𐑑𐑰 𐑦𐑒𐑕𐑐𐑤𐑹𐑼"
 
 #: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
@@ -52,6 +64,11 @@ msgstr "𐑞 𐑛𐑦𐑓𐑷𐑤𐑑 𐑐𐑤𐑳𐑜𐑦𐑯 𐑤𐑱𐑬𐑑 
 msgid "The duration of the highlight box when selecting accessible nodes"
 msgstr "𐑞 𐑛𐑫𐑮𐑱𐑖𐑩𐑯 𐑝 𐑞 𐑣𐑲𐑤𐑲𐑑 𐑚𐑪𐑒𐑕 𐑢𐑧𐑯 𐑕𐑩𐑤𐑧𐑒𐑑𐑦𐑙 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑩𐑤 𐑯𐑴𐑛𐑟"
 
+#, fuzzy
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API 𐑚𐑮𐑬𐑟𐑼"
+
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
 msgstr "𐑚𐑮𐑬𐑟 𐑞 𐑝𐑺𐑦𐑩𐑕 𐑥𐑧𐑔𐑩𐑛𐑟 𐑝 𐑞 𐑒𐑳𐑮𐑩𐑯𐑑 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑩𐑤"
@@ -72,6 +89,11 @@ msgstr "𐑐𐑮𐑪𐑐𐑼𐑑𐑦"
 msgid "Value"
 msgstr "𐑝𐑨𐑤𐑿"
 
+#, fuzzy
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "IPython 𐑒𐑩𐑯𐑕𐑴𐑤"
+
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 𐑒𐑩𐑯𐑕𐑴𐑤 𐑓𐑹 𐑥𐑩𐑯𐑦𐑐𐑘𐑩𐑤𐑱𐑑𐑦𐑙 𐑒𐑳𐑮𐑩𐑯𐑑𐑤𐑦 𐑕𐑩𐑤𐑧𐑒𐑑𐑩𐑛 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑩𐑤"
@@ -79,6 +101,11 @@ msgstr "𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 𐑒𐑩𐑯𐑕𐑴𐑤 𐑓𐑹 �
 #: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
 msgstr "<b>𐑦𐑝𐑧𐑯𐑑 𐑥𐑪𐑯𐑦𐑑𐑼</b>"
+
+#, fuzzy
+#: ../plugins/event_monitor.ui.h:2
+msgid "C_lear Selection"
+msgstr "C_lear 𐑕𐑦𐑤𐑧𐑒𐑖𐑩𐑯"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
@@ -165,8 +192,8 @@ msgstr "<b>𐑑𐑧𐑒𐑕𐑑</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>𐑳𐑯𐑴𐑯</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(𐑯𐑴 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯)</i>"
 
@@ -196,9 +223,29 @@ msgstr "<𐑯𐑴 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯>"
 msgid "Absolute position"
 msgstr "𐑨𐑚𐑕𐑴𐑤𐑵𐑑 𐑐𐑩𐑟𐑦𐑖𐑩𐑯"
 
+#, fuzzy
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "Acti_on"
+
 #: ../plugins/interface_view.ui.h:23
 msgid "Alpha"
 msgstr "𐑨𐑤𐑓𐑩"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "Ap_plication"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "Co_mponent"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "Col_lection"
 
 #: ../plugins/interface_view.ui.h:27
 msgid "Column"
@@ -212,11 +259,27 @@ msgstr "𐑒𐑪𐑤𐑩𐑥𐑟"
 msgid "Current value"
 msgstr "𐑒𐑳𐑮𐑩𐑯𐑑 𐑝𐑨𐑤𐑿"
 
+#, fuzzy
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "Des_ktop"
+
 #. add description to buffer
 #: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
 #: ../plugins/validate.py:277
 msgid "Description"
 msgstr "𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
+
+#. How many columns the cell spans.
+#, fuzzy
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "Extents:"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "H_ypertext"
 
 #: ../plugins/interface_view.ui.h:35
 msgid "Header:"
@@ -239,6 +302,11 @@ msgstr "𐑦𐑯𐑒𐑤𐑵𐑛 𐑛𐑦𐑓𐑷𐑤𐑑𐑕"
 msgid "Layer"
 msgstr "𐑤𐑱𐑼"
 
+#, fuzzy
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "Lo_gin 𐑣𐑧𐑤𐑐𐑼"
+
 #: ../plugins/interface_view.ui.h:41
 msgid "Locale"
 msgstr "𐑤𐑴𐑒𐑨𐑤"
@@ -246,6 +314,11 @@ msgstr "𐑤𐑴𐑒𐑨𐑤"
 #: ../plugins/interface_view.ui.h:42
 msgid "Locale:"
 msgstr "𐑤𐑴𐑒𐑭𐑤:"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-𐑟𐑰-𐑹𐑛𐑼"
 
 #: ../plugins/interface_view.ui.h:44
 msgid "Maximum value"
@@ -303,6 +376,26 @@ msgstr "𐑖𐑴"
 msgid "Size"
 msgstr "𐑕𐑲𐑟"
 
+#, fuzzy
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "St_reamable 𐑒𐑪𐑯𐑑𐑧𐑯𐑑"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "Te_xt"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "Toolkit"
+
+#, fuzzy
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "Val_ue"
+
 #: ../plugins/interface_view.ui.h:62
 msgid "Version"
 msgstr "𐑝𐑻𐑠𐑩𐑯"
@@ -345,41 +438,46 @@ msgstr "𐑦𐑯𐑑𐑼𐑓𐑱𐑕 𐑝𐑿𐑼"
 msgid "Allows viewing of various interface properties"
 msgstr "𐑩𐑤𐑬𐑟 𐑝𐑿𐑦𐑙 𐑝 𐑝𐑺𐑦𐑩𐑕 𐑦𐑯𐑑𐑼𐑓𐑱𐑕 𐑐𐑮𐑪𐑐𐑼𐑑𐑦𐑟"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(𐑯𐑪𐑑 𐑦𐑥𐑐𐑤𐑩𐑥𐑧𐑯𐑑𐑩𐑛)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "𐑯𐑱𐑥"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "𐑕𐑑𐑸𐑑"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "𐑧𐑯𐑛"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "𐑑𐑵 𐑥𐑧𐑯𐑦 𐑕𐑩𐑤𐑧𐑒𐑑𐑩𐑚𐑩𐑤 𐑗𐑦𐑤𐑛𐑮𐑩𐑯"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr "<i>(𐑧𐑛𐑦𐑑𐑩𐑚𐑩𐑤)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
 msgstr "𐑒𐑢𐑦𐑒 𐑕𐑩𐑤𐑧𐑒𐑑"
+
+#, fuzzy
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "𐑐𐑤𐑳𐑜𐑦𐑯 𐑢𐑦𐑞 𐑝𐑺𐑦𐑩𐑕 𐑥𐑧𐑔𐑩𐑛𐑟 𐑝 𐑕𐑩𐑤𐑧𐑒𐑑𐑦𐑙 accessibles 𐑒𐑢𐑦𐑒𐑤𐑦."
 
 #: ../plugins/quick_select.py:20
 msgid "Inspect last focused accessible"
@@ -388,6 +486,18 @@ msgstr "𐑦𐑯𐑕𐑐𐑧𐑒𐑑 𐑤𐑭𐑕𐑑 𐑓𐑴𐑒𐑩𐑕𐑑 �
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
 msgstr "𐑦𐑯𐑕𐑐𐑧𐑒𐑑 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑩𐑤 𐑳𐑯𐑛𐑼 𐑥𐑬𐑕"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#, fuzzy
+#: ../plugins/script_recorder.ui.h:2
+msgid "Dogtail"
+msgstr "Dogtail"
+
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#, fuzzy
+#: ../plugins/script_recorder.ui.h:4
+msgid "LDTP"
+msgstr "LDTP"
 
 #. A native script format.
 #: ../plugins/script_recorder.ui.h:6
@@ -398,15 +508,20 @@ msgstr "𐑯𐑱𐑑𐑦𐑝"
 msgid "Script Type"
 msgstr "𐑕𐑒𐑮𐑦𐑐𐑑 𐑑𐑲𐑐"
 
-#: ../plugins/script_recorder.py:176
+#: ../plugins/script_recorder.py:175
 msgid "Script Recorder"
 msgstr "𐑕𐑒𐑮𐑦𐑐𐑑 𐑮𐑦𐑒𐑪𐑮𐑛𐑻"
 
-#: ../plugins/script_recorder.py:342
+#, fuzzy
+#: ../plugins/script_recorder.py:177
+msgid "Creates dogtail style scripts"
+msgstr "𐑒𐑮𐑦𐑱𐑑𐑕 dogtail 𐑕𐑑𐑲𐑤 𐑕𐑒𐑮𐑦𐑐𐑑𐑕"
+
+#: ../plugins/script_recorder.py:341
 msgid "The current script will be lost."
 msgstr "𐑞 𐑒𐑳𐑮𐑩𐑯𐑑 𐑕𐑒𐑮𐑦𐑐𐑑 𐑢𐑦𐑤 𐑚𐑰 𐑤𐑪𐑕𐑑."
 
-#: ../plugins/script_recorder.py:343
+#: ../plugins/script_recorder.py:342
 msgid "Confirm clear"
 msgstr "𐑒𐑪𐑯𐑓𐑻𐑥 𐑒𐑤𐑽"
 
@@ -415,9 +530,24 @@ msgstr "𐑒𐑪𐑯𐑓𐑻𐑥 𐑒𐑤𐑽"
 msgid "Idle"
 msgstr "𐑲𐑛𐑩𐑤"
 
+#, fuzzy
+#: ../plugins/validate.ui.h:2
+msgid "Sche_ma:"
+msgstr "Sche_ma:"
+
+#, fuzzy
+#: ../plugins/validate.ui.h:3
+msgid "V_alidate"
+msgstr "V_alidate"
+
 #: ../plugins/validate.py:64
 msgid "No description"
 msgstr "𐑯𐑴 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
+
+#, fuzzy
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "𐑨𐑑-SPI Validator"
 
 #: ../plugins/validate.py:154
 msgid "Validates application accessibility"
@@ -470,8 +600,13 @@ msgstr "𐑚𐑱𐑕𐑦𐑒"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "𐑑𐑧𐑕𐑑𐑕 𐑓𐑳𐑯𐑛𐑩𐑥𐑧𐑯𐑑𐑩𐑤 GUI 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑦𐑤𐑦𐑑𐑰"
 
-#: ../plugindata/validate/basic.py:42
+#, fuzzy, python-format
+#: ../plugindata/validate/basic.py:24
+msgid "actionable %s is not focusable or selectable"
+msgstr "𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 %s 𐑦𐑟 𐑯𐑪𐑑 𐑨𐑒𐑖𐑩𐑯𐑩𐑚𐑩𐑤"
+
 #, python-format
+#: ../plugindata/validate/basic.py:42
 msgid "interactive %s is not actionable"
 msgstr "𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 %s 𐑦𐑟 𐑯𐑪𐑑 𐑨𐑒𐑖𐑩𐑯𐑩𐑚𐑩𐑤"
 
@@ -479,51 +614,83 @@ msgstr "𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 %s 𐑦𐑟 𐑯𐑪𐑑 𐑨𐑒�
 msgid "more than one focused widget"
 msgstr "𐑥𐑹 𐑞𐑨𐑯 𐑢𐑳𐑯 𐑓𐑴𐑒𐑩𐑕𐑑 𐑢𐑦𐑡𐑩𐑑"
 
-#: ../plugindata/validate/basic.py:81
 #, python-format
+#: ../plugindata/validate/basic.py:81
 msgid "%s has no text interface"
 msgstr "%s 𐑣𐑨𐑟 𐑯𐑴 𐑑𐑧𐑒𐑕𐑑 𐑦𐑯𐑑𐑼𐑓𐑱𐑕"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
 #, python-format
+#: ../plugindata/validate/basic.py:100
 msgid "%s index in parent does not match child index"
 msgstr "%s 𐑦𐑯𐑛𐑧𐑒𐑕 𐑦𐑯 𐑐𐑺𐑩𐑯𐑑 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑥𐑨𐑗 𐑗𐑲𐑤𐑛 𐑦𐑯𐑛𐑧𐑒𐑕"
 
-#: ../plugindata/validate/basic.py:145
 #, python-format
+#: ../plugindata/validate/basic.py:145
 msgid "Missing reciprocal for %s relation"
 msgstr "𐑥𐑦𐑕𐑦𐑙 𐑮𐑩𐑕𐑦𐑐𐑮𐑩𐑒𐑩𐑤 𐑓𐑹 %s 𐑮𐑦𐑤𐑱𐑖𐑩𐑯"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
 #, python-format
+#: ../plugindata/validate/basic.py:194
 msgid "%s missing name or label"
 msgstr "%s 𐑥𐑦𐑕𐑦𐑙 𐑯𐑱𐑥 𐑹 𐑤𐑱𐑚𐑩𐑤"
+
+#, fuzzy
+#, python-format
+#: ../plugindata/validate/basic.py:210
+msgid "focusable %s has table interface, no selection interface"
+msgstr "focusable %s 𐑣𐑨𐑟 𐑑𐑱𐑚𐑩𐑤 𐑦𐑯𐑑𐑼𐑓𐑱𐑕, 𐑯𐑴 𐑕𐑦𐑤𐑧𐑒𐑖𐑩𐑯 𐑦𐑯𐑑𐑼𐑓𐑱𐑕"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
 #, python-format
+#: ../plugindata/validate/basic.py:237
 msgid "%s has %s state without %s state"
 msgstr "%s 𐑣𐑨𐑟 %s 𐑕𐑑𐑱𐑑 𐑢𐑦𐑞𐑬𐑑 %s 𐑕𐑑𐑱𐑑"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
 #, python-format
+#: ../plugindata/validate/basic.py:262
 msgid "%s does not belong to a set"
 msgstr "%s 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑚𐑦𐑤𐑪𐑙 𐑑 𐑩 𐑕𐑧𐑑"
 
-#: ../plugindata/validate/basic.py:352
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#, fuzzy
 #, python-format
+#: ../plugindata/validate/basic.py:296
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s 𐑦𐑯𐑛𐑧𐑒𐑕 %(num)d 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑥𐑨𐑗 𐑮𐑴 𐑯 𐑒𐑪𐑤𐑩𐑥"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#, fuzzy
+#, python-format
+#: ../plugindata/validate/basic.py:326
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"%(rolename)s 𐑐𐑺𐑩𐑯𐑑 𐑦𐑯𐑛𐑧𐑒𐑕 %(num1)d 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑥𐑨𐑗 𐑮𐑴 𐑯 𐑒𐑪𐑤𐑩𐑥 𐑦𐑯𐑛𐑧𐑒𐑕 %(num2)d"
+
+#, python-format
+#: ../plugindata/validate/basic.py:352
 msgid "%s has no name or description"
 msgstr "%s 𐑣𐑨𐑟 𐑯𐑴 𐑯𐑱𐑥 𐑹 𐑛𐑦𐑕𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
 
@@ -534,6 +701,20 @@ msgstr "_𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟..."
 #: ../src/lib/accerciser/accerciser.py:87
 msgid "_Contents"
 msgstr "_𐑒𐑪𐑯𐑑𐑩𐑯𐑑𐑕"
+
+#, fuzzy
+#: ../src/lib/accerciser/accerciser.py:129
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Accerciser 𐑒𐑫𐑛 𐑯𐑪𐑑 𐑕𐑰 𐑞 𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯𐑟 𐑪𐑯 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐.  𐑿 𐑥𐑳𐑕𐑑 𐑦𐑯𐑱𐑚𐑩𐑤 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 "
+"𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑦𐑤𐑦𐑑𐑰 𐑑 𐑓𐑦𐑒𐑕 𐑞𐑦𐑕 𐑐𐑮𐑪𐑚𐑤𐑩𐑥.  𐑛𐑵 𐑿 𐑢𐑪𐑯𐑑 𐑑 𐑦𐑯𐑱𐑚𐑩𐑤 𐑦𐑑 𐑯𐑬?"
+
+#, fuzzy
+#: ../src/lib/accerciser/accerciser.py:147
+msgid "Note: Changes only take effect after logout."
+msgstr "𐑯𐑴𐑑: 𐑗𐑱𐑯𐑡𐑩𐑟 𐑴𐑯𐑤𐑦 𐑑𐑱𐑒 𐑦𐑓𐑧𐑒𐑑 𐑭𐑓𐑑𐑼 logout."
 
 #: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
@@ -597,9 +778,19 @@ msgstr "𐑑𐑪𐑐 𐑐𐑨𐑯𐑩𐑤"
 msgid "Bottom panel"
 msgstr "𐑚𐑪𐑑𐑫𐑥 𐑐𐑨𐑯𐑩𐑤"
 
+#, fuzzy
+#: ../src/lib/accerciser/prefs_dialog.py:34
+msgid "accerciser Preferences"
+msgstr "accerciser 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟"
+
 #: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "𐑐𐑤𐑳𐑜𐑦𐑯𐑟"
+
+#, fuzzy
+#: ../src/lib/accerciser/prefs_dialog.py:41
+msgid "Global Hotkeys"
+msgstr "𐑜𐑤𐑴𐑚𐑩𐑤 Hotkeys"
 
 #: ../src/lib/accerciser/prefs_dialog.py:49
 msgid "Highlighting"
@@ -632,6 +823,16 @@ msgstr "𐑑𐑮𐑩𐑯𐑕𐑤𐑱𐑑𐑼-𐑒𐑮𐑧𐑛𐑦𐑑𐑕"
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "𐑩𐑯 𐑦𐑯𐑑𐑻𐑨𐑒𐑑𐑦𐑝 𐑐𐑲𐑔𐑭𐑯 𐑨𐑒𐑕𐑧𐑕𐑩𐑚𐑦𐑤𐑦𐑑𐑰 𐑦𐑒𐑕𐑐𐑤𐑹𐑼"
+
+#, fuzzy
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser 𐑒𐑪𐑐𐑦𐑮𐑲𐑑 © 2006, 2007 IBM 𐑒𐑪𐑮𐑐𐑻𐑱𐑖𐑩𐑯 (BSD)"
+
+#, fuzzy
+#: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "𐑞 𐑯𐑿 BSD 𐑤𐑲𐑕𐑩𐑯𐑕 𐑕𐑰 𐑞 𐑒𐑪𐑐𐑦𐑦𐑙 𐑯 𐑯𐑴𐑑𐑦𐑕 𐑓𐑲𐑤𐑟 𐑓𐑹 𐑛𐑰𐑑𐑱𐑤𐑟."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
@@ -709,8 +910,8 @@ msgstr "_𐑕𐑦𐑙𐑜𐑩𐑤 𐑐𐑤𐑳𐑜𐑦𐑯𐑟 𐑝𐑿"
 msgid "Plugin View"
 msgstr "𐑐𐑤𐑳𐑜𐑦𐑯 𐑝𐑿"
 
-#: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
+#: ../src/lib/accerciser/plugin/view.py:761
 msgid "Plugin View (%d)"
 msgstr "𐑐𐑤𐑳𐑜𐑦𐑯 𐑝𐑿 (%d)"
 
@@ -743,3 +944,4 @@ msgstr "_𐑝𐑿"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_𐑣𐑧𐑤𐑐"
+
