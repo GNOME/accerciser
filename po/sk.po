@@ -1,0 +1,921 @@
+# Slovak translation for accerciser.
+# Copyright (C) 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the accerciser package.
+# Roman Mátyus <romanmatyus@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&component=general\n"
+"POT-Creation-Date: 2010-07-24 09:54+0000\n"
+"PO-Revision-Date: 2010-07-26 20:00+0200\n"
+"Last-Translator: Roman Mátyus <romanmatyus@gmail.com>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
+
+#: ../accerciser.desktop.in.in.h:1
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+msgid "Accerciser Accessibility Explorer"
+msgstr "Accerciser - prieskumník prístupnosti"
+
+#: ../accerciser.desktop.in.in.h:3
+msgid "Give your application an accessibility workout"
+msgstr "Sprístupní vašu aplikáciu"
+
+#: ../accerciser.schemas.in.h:1
+msgid "A list of plugins that are disabled by default"
+msgstr "Zoznam zásuvných modulov, ktoré sú predvolene zakázané"
+
+#: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "Farba zvýrazňujúceho okraja"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "Trvanie zvýraznenia"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "Farba zvýrazňujúcej výplne"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "Farba a priesvitnosť zvýrazňujúceho okraja."
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "Farba a priesvitnosť zvýrazňujúcej výplne."
+
+#: ../accerciser.schemas.in.h:7
+msgid "The default plugin layout for the bottom panel"
+msgstr "Predvolené rozloženie zásuvného modulu na spodnom paneli"
+
+#: ../accerciser.schemas.in.h:8
+msgid "The default plugin layout for the top panel"
+msgstr "Predvolené rozloženie zásuvného modulu na hornom paneli"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "Trvanie zvýrazňujúcich rámčekov pri výbere prístupových uzlov"
+
+#: ../plugins/api_view.py:32
+msgid "API Browser"
+msgstr "Prehliadač API"
+
+#: ../plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "Prechádzať rôzne metódy zvoleného objektu prístupnosti"
+
+#: ../plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "Skryť súkromné atribúty"
+
+#: ../plugins/api_view.py:79
+msgid "Method"
+msgstr "Metóda"
+
+#: ../plugins/api_view.py:88
+msgid "Property"
+msgstr "Vlastnosť"
+
+#: ../plugins/api_view.py:93
+msgid "Value"
+msgstr "Hodnota"
+
+#: ../plugins/console.py:29
+msgid "IPython Console"
+msgstr "Konzola programu IPython"
+
+#: ../plugins/console.py:32
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "Interaktívna konzola pre úpravu vybraného objektu prístupnosti"
+
+#: ../plugins/event_monitor.ui.h:1
+msgid "<b>Event monitor</b>"
+msgstr "<b>Monitor udalostí</b>"
+
+#: ../plugins/event_monitor.ui.h:2
+msgid "C_lear Selection"
+msgstr "_Zrušiť výber"
+
+#: ../plugins/event_monitor.ui.h:3
+msgid "Everything"
+msgstr "Všetko"
+
+#: ../plugins/event_monitor.ui.h:4
+msgid "Selected accessible"
+msgstr "Zvolený objekt prístupnosti"
+
+#: ../plugins/event_monitor.ui.h:5
+msgid "Selected application"
+msgstr "Zvolená aplikácia"
+
+#: ../plugins/event_monitor.ui.h:6
+msgid "Source"
+msgstr "Zdroj"
+
+#: ../plugins/event_monitor.ui.h:7
+msgid "_Monitor Events"
+msgstr "_Monitorovať udalosti"
+
+#: ../plugins/event_monitor.py:48
+msgid "Event Monitor"
+msgstr "Monitor udalostí"
+
+#: ../plugins/event_monitor.py:51
+msgid "Shows events as they occur from selected types and sources"
+msgstr ""
+"Zobrazuje udalosti v poradí, ako k nim dochádza vo vybraných typoch a "
+"zdrojoch"
+
+#: ../plugins/event_monitor.py:61
+msgid "Highlight last event entry"
+msgstr "Zvýrazňuje posledný záznam udalostí"
+
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "Spustí/ukončí záznam udalostí"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "Vymaže záznam udalostí"
+
+#: ../plugins/interface_view.ui.h:1
+msgid "0"
+msgstr "0"
+
+#. Component                                 size
+#: ../plugins/interface_view.ui.h:3
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>Atribúty</b>"
+
+#: ../plugins/interface_view.ui.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>Počet potomkov</b>"
+
+#: ../plugins/interface_view.ui.h:6
+msgid "<b>Description</b>"
+msgstr "<b>Popis</b>"
+
+#: ../plugins/interface_view.ui.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>Vzťahy</b>"
+
+#: ../plugins/interface_view.ui.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>Zvolená bunka</b>"
+
+#: ../plugins/interface_view.ui.h:9
+msgid "<b>States</b>"
+msgstr "<b>Stavy</b>"
+
+#: ../plugins/interface_view.ui.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>Informácie o tabuľke</b>"
+
+#: ../plugins/interface_view.ui.h:11
+msgid "<b>Text</b>"
+msgstr "<b>Text</b>"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>neznáme</b>"
+
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
+msgid "<i>(no description)</i>"
+msgstr "<i>(bez popisu)</i>"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>Titulok:</i>"
+
+#. End chaacter                                                 offset of text attributes span
+#: ../plugins/interface_view.ui.h:16
+msgid "<i>End: 0</i>"
+msgstr "<i>Koniec: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:18
+msgid "<i>Start: 0</i>"
+msgstr "<i>Začiatok: 0</b>"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "<i>Summary:</i>"
+msgstr "<i>Zhrnutie:</i>"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "<no description>"
+msgstr "<bez popisu>"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "Absolute position"
+msgstr "Absolútna pozícia"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "_Akcia"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "Alpha"
+msgstr "Priehľadnosť"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "A_plikácia"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "Ko_mponent"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "_Kolekcia"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Column"
+msgstr "Stĺpec"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Columns"
+msgstr "Stĺpce"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "Current value"
+msgstr "Aktuálna hodnota"
+
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "Pra_covná plocha"
+
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/validate.py:277
+msgid "Description"
+msgstr "Popis"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "Zaberá:"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "H_ypertext"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Header:"
+msgstr "Hlavička:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+msgid "Hyperlink"
+msgstr "Odkaz"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "Include defaults"
+msgstr "Vrátane predvolených"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Layer"
+msgstr "Vrstva"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "Pomoc_ník pri prihlásení"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Locale"
+msgstr "Lokalizácia"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Locale:"
+msgstr "Lokalizácia:"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-Z-order"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Maximum value"
+msgstr "Maximálna hodnota"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Minimum increment"
+msgstr "Minimálny prírastok"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "Minimum value"
+msgstr "Minimálna hodnota"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Offset"
+msgstr "Posun"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "Perform action"
+msgstr "Vykonať akciu"
+
+#: ../plugins/interface_view.ui.h:49
+msgid "Position"
+msgstr "Pozícia"
+
+#: ../plugins/interface_view.ui.h:50
+msgid "Relative position"
+msgstr "Relatívna pozícia"
+
+#: ../plugins/interface_view.ui.h:51
+msgid "Row"
+msgstr "Riadok"
+
+#: ../plugins/interface_view.ui.h:52
+msgid "Rows"
+msgstr "Riadky"
+
+#: ../plugins/interface_view.ui.h:53
+msgid "Select All"
+msgstr "Vybrať všetko"
+
+#: ../plugins/interface_view.ui.h:54
+msgid "Selected columns"
+msgstr "Vybrané stĺpce"
+
+#: ../plugins/interface_view.ui.h:55
+msgid "Selected rows"
+msgstr "Vybrané riadky"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Show"
+msgstr "Zobraziť"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Size"
+msgstr "Veľkosť"
+
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "St_reamovateľný obsah"
+
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "Te_xt"
+
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "Nástroje"
+
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "Hodno_ta"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Version"
+msgstr "Verzia"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "WIDGET"
+msgstr "PRVOK"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "_Accessible"
+msgstr "Objekt _prístupnosti"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "_Document"
+msgstr "_Dokument"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "_Image"
+msgstr "_Obrázok"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "_Selection"
+msgstr "_Výber"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "_Table"
+msgstr "_Tabuľka"
+
+#: ../plugins/interface_view.ui.h:69
+msgid "name (x,y)"
+msgstr "názov (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:38
+msgid "Interface Viewer"
+msgstr "Prehliadač rozhrania"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:41
+msgid "Allows viewing of various interface properties"
+msgstr "Umožňuje prehliadanie rôznych vlastností rozhrania"
+
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
+msgid "(not implemented)"
+msgstr "(neimplementované)"
+
+#. add accessible's name to buffer
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
+#: ../src/lib/accerciser/accessible_treeview.py:389
+#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+msgid "Name"
+msgstr "Názov"
+
+#: ../plugins/interface_view.py:710
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.py:717
+msgid "Start"
+msgstr "Začiatok"
+
+#: ../plugins/interface_view.py:724
+msgid "End"
+msgstr "Koniec"
+
+#: ../plugins/interface_view.py:885
+msgid "Too many selectable children"
+msgstr "Príliš mnoho zvoliteľných potomkov"
+
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
+msgid "<i>(Editable)</i>"
+msgstr "<i>(Upraviteľné)</i>"
+
+#: ../plugins/quick_select.py:11
+msgid "Quick Select"
+msgstr "Rýchly výber"
+
+#: ../plugins/quick_select.py:14
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr "Zásuvný modul umožňujúci rýchly výber objektov prístupnosti"
+
+#: ../plugins/quick_select.py:20
+msgid "Inspect last focused accessible"
+msgstr "Skontrolovať posledný zameraný objekt prístupnosti"
+
+#: ../plugins/quick_select.py:24
+msgid "Inspect accessible under mouse"
+msgstr "Skontrolovať objekt prístupnosti pod kurzorom"
+
+#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
+#: ../plugins/script_recorder.ui.h:2
+msgid "Dogtail"
+msgstr "Dogtail"
+
+#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
+#: ../plugins/script_recorder.ui.h:4
+msgid "LDTP"
+msgstr "LDTP"
+
+#. A native script format.
+#: ../plugins/script_recorder.ui.h:6
+msgid "Native"
+msgstr "Natívny"
+
+#: ../plugins/script_recorder.ui.h:7
+msgid "Script Type"
+msgstr "Typ skriptu"
+
+#: ../plugins/script_recorder.py:175
+msgid "Script Recorder"
+msgstr "Záznamník skriptu"
+
+#: ../plugins/script_recorder.py:177
+msgid "Creates dogtail style scripts"
+msgstr "Vytváranie skriptov v štýle dogtail"
+
+#: ../plugins/script_recorder.py:341
+msgid "The current script will be lost."
+msgstr "Aktuálny skript bude stratený."
+
+#: ../plugins/script_recorder.py:342
+msgid "Confirm clear"
+msgstr "Potvrdiť vymazanie"
+
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.py:412
+msgid "Idle"
+msgstr "Nečinný"
+
+#: ../plugins/validate.ui.h:2
+msgid "Sche_ma:"
+msgstr "Sché_ma:"
+
+#: ../plugins/validate.ui.h:3
+msgid "V_alidate"
+msgstr "_Overiť"
+
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "Bez popisu"
+
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "AT_SPI overovač"
+
+#: ../plugins/validate.py:154
+msgid "Validates application accessibility"
+msgstr "Overuje prístupnosť aplikácie"
+
+#. log level column
+#. add level to buffer
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
+msgid "Level"
+msgstr "Úroveň"
+
+#. add accessible's role to buffer
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "Úloha"
+
+#: ../plugins/validate.py:346
+msgid "Saving"
+msgstr "Ukladanie"
+
+#: ../plugins/validate.py:394
+msgid "Validating"
+msgstr "Overovanie"
+
+#: ../plugins/validate.py:550
+msgid "EXCEPT"
+msgstr "VÝNIMKA"
+
+#: ../plugins/validate.py:557
+msgid "ERROR"
+msgstr "CHYBA"
+
+#: ../plugins/validate.py:565
+msgid "WARN"
+msgstr "VAROVANIE"
+
+#: ../plugins/validate.py:572
+msgid "INFO"
+msgstr "INFO"
+
+#: ../plugins/validate.py:579
+msgid "DEBUG"
+msgstr "LADENIE"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Základný"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Testuje základnú prístupnosť aplikácie s grafickým rozhraním"
+
+#: ../plugindata/validate/basic.py:24
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "akcieschopný objekt %s nie je zamerateľný ani zvoliteľný"
+
+#: ../plugindata/validate/basic.py:42
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "interaktívny objekt %s nie je akcieschopný"
+
+#: ../plugindata/validate/basic.py:56
+msgid "more than one focused widget"
+msgstr "viac ako jeden aktivovaný prvok"
+
+#: ../plugindata/validate/basic.py:81
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s nemá textové rozhranie"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:100
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "rodičovský index objektu %s neodpovedá indexu potomka"
+
+#: ../plugindata/validate/basic.py:145
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "Chýba prevrátený prvok vzťahu %s"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:194
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s nemá názov alebo popisok"
+
+#: ../plugindata/validate/basic.py:210
+#, python-format
+msgid "focusable %s has table interface, no selection interface"
+msgstr "zamerateľný %s má tabuľkové rozhranie, žiadne rozhranie výberu"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:237
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s má stav %s, bez toho aby mal možnosť stav %s získať"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:262
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s nepatrí do sady"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:296
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr ""
+"index objektu %(rolename)s s hodnotou %(num)d nezodpovedá riadku ani stĺpcu"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:326
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"index rodiča %(rolename)s s hodnotou %(num1)d nezodpovedá riadku ani stĺpcu "
+"s indexom %(num2)d"
+
+#: ../plugindata/validate/basic.py:352
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s nemá žiaden názov ani popis"
+
+#: ../src/lib/accerciser/accerciser.py:85
+msgid "_Preferences..."
+msgstr "Nas_tavenia..."
+
+#: ../src/lib/accerciser/accerciser.py:87
+msgid "_Contents"
+msgstr "Ob_sah"
+
+#: ../src/lib/accerciser/accerciser.py:129
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Accerciser nevidí aplikácie vášho pracovného prostredia. Problém odstránite "
+"povolením sprístupnenia pracovného prostredia. Chcete sprístupnenie povoliť?"
+
+#: ../src/lib/accerciser/accerciser.py:147
+msgid "Note: Changes only take effect after logout."
+msgstr "Poznámka: Zmeny sa prejavia po odhlásení."
+
+#: ../src/lib/accerciser/accessible_treeview.py:345
+msgid "<dead>"
+msgstr "<mŕtvy>"
+
+#: ../src/lib/accerciser/accessible_treeview.py:406
+msgid "Children"
+msgstr "Potomok"
+
+#: ../src/lib/accerciser/accessible_treeview.py:435
+msgid "_Refresh Registry"
+msgstr "_Aktualizovať register"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:438
+msgid "Refresh all"
+msgstr "Obnoviť všetko"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:441
+msgid "Refresh _Node"
+msgstr "Aktualizovať aktuálny _objekt"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:444
+msgid "Refresh selected node's children"
+msgstr "Obnoviť potomka zvoleného objektu"
+
+#: ../src/lib/accerciser/hotkey_manager.py:220
+msgid "Component"
+msgstr "Komponent"
+
+#: ../src/lib/accerciser/hotkey_manager.py:227
+msgid "Task"
+msgstr "Úloha"
+
+#: ../src/lib/accerciser/hotkey_manager.py:234
+msgid "Key"
+msgstr "Kľúč"
+
+#: ../src/lib/accerciser/hotkey_manager.py:244
+msgid "Alt"
+msgstr "Alt"
+
+#: ../src/lib/accerciser/hotkey_manager.py:251
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../src/lib/accerciser/hotkey_manager.py:258
+msgid "Shift"
+msgstr "Shift"
+
+#: ../src/lib/accerciser/main_window.py:73
+msgid "Top panel"
+msgstr "Horný panel"
+
+#: ../src/lib/accerciser/main_window.py:74
+msgid "Bottom panel"
+msgstr "Dolný panel"
+
+#: ../src/lib/accerciser/prefs_dialog.py:34
+msgid "accerciser Preferences"
+msgstr "Nastavenia pre accerciser"
+
+#: ../src/lib/accerciser/prefs_dialog.py:40
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+#: ../src/lib/accerciser/prefs_dialog.py:41
+msgid "Global Hotkeys"
+msgstr "Globálne klávesové skratky"
+
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "Zvýrazňovanie"
+
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "Trvanie zvýrazňovania:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "Farba okraja:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:92
+msgid "The border color of the highlight box"
+msgstr "Farba okraja zvýrazňujúceho rámčeka"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "Fill color:"
+msgstr "Farba výplne:"
+
+#: ../src/lib/accerciser/prefs_dialog.py:96
+msgid "The fill color of the highlight box"
+msgstr "Farba výplne zvýrazujúceho rámčeka"
+
+#: ../src/lib/accerciser/about_dialog.py:52
+msgid "translator-credits"
+msgstr "Roman Mátyus <romanmatyus@gmail.com>"
+
+#: ../src/lib/accerciser/about_dialog.py:53
+msgid "An interactive Python accessibility explorer"
+msgstr "Interaktívny prieskumník prístupnosti v Pythone"
+
+#: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "Accerciser © 2006, 2007 IBM Corporation (BSD)"
+
+#: ../src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License See the COPYING and NOTICE files for details."
+msgstr "Nová licencia BSD. Podrobnosti nájdete v súboroch COPYING a NOTICE."
+
+#: ../src/lib/accerciser/about_dialog.py:58
+msgid "Web site"
+msgstr "WWW stránka"
+
+#: ../src/lib/accerciser/bookmarks.py:62
+msgid "_Add Bookmark..."
+msgstr "Prid_ať záložku..."
+
+#: ../src/lib/accerciser/bookmarks.py:63
+msgid "Bookmark selected accessible."
+msgstr "Uloží zvolený objekt prístupnosti medzi záložky."
+
+#: ../src/lib/accerciser/bookmarks.py:65
+msgid "_Edit Bookmarks..."
+msgstr "_Upraviť záložky..."
+
+#: ../src/lib/accerciser/bookmarks.py:66
+msgid "Manage bookmarks."
+msgstr "Spravuje záložky."
+
+#: ../src/lib/accerciser/bookmarks.py:323
+msgid "Edit Bookmarks..."
+msgstr "Upraviť záložky..."
+
+#: ../src/lib/accerciser/bookmarks.py:427
+msgid "Title"
+msgstr "Nadpis"
+
+#: ../src/lib/accerciser/bookmarks.py:435
+msgid "Application"
+msgstr "Aplikácia"
+
+#: ../src/lib/accerciser/bookmarks.py:443
+msgid "Path"
+msgstr "Cesta"
+
+#: ../src/lib/accerciser/bookmarks.py:512
+msgid "Add Bookmark..."
+msgstr "Pridať záložku..."
+
+#: ../src/lib/accerciser/bookmarks.py:525
+msgid "Title:"
+msgstr "Nadpis:"
+
+#: ../src/lib/accerciser/bookmarks.py:528
+msgid "Application:"
+msgstr "Aplikácia:"
+
+#: ../src/lib/accerciser/bookmarks.py:531
+msgid "Path:"
+msgstr "Cesta:"
+
+#: ../src/lib/accerciser/plugin/message.py:148
+msgid "Plugin Errors"
+msgstr "Chyby zásuvných modulov"
+
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
+msgid "View"
+msgstr "Zobrazenie"
+
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+msgid "No view"
+msgstr "Žiadne zobrazenie"
+
+#: ../src/lib/accerciser/plugin/view.py:369
+msgid "_Single plugins view"
+msgstr "_Jednoduché zobrazenie zásuvných modulov"
+
+#: ../src/lib/accerciser/plugin/view.py:758
+msgid "Plugin View"
+msgstr "Zobrazenie zásuvného modulu"
+
+#: ../src/lib/accerciser/plugin/view.py:761
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "Zobrazenie zásuvného modulu (%d)"
+
+#: ../src/lib/accerciser/plugin/view.py:1029
+msgid "<i>_New view...</i>"
+msgstr "<i>_Nové zobrazenie</i>"
+
+#: ../src/lib/accerciser/plugin/view.py:1085
+msgid "New View..."
+msgstr "Nové zobrazenie..."
+
+#: ../src/lib/accerciser/ui_manager.py:20
+msgid "_File"
+msgstr "_Súbor"
+
+#: ../src/lib/accerciser/ui_manager.py:21
+msgid "_Edit"
+msgstr "_Upraviť"
+
+#: ../src/lib/accerciser/ui_manager.py:22
+msgctxt "menu"
+msgid "_Bookmarks"
+msgstr "Zá_ložky"
+
+#: ../src/lib/accerciser/ui_manager.py:23
+msgctxt "menu"
+msgid "_View"
+msgstr "_Zobraziť"
+
+#: ../src/lib/accerciser/ui_manager.py:24
+msgid "_Help"
+msgstr "_Pomocník"
