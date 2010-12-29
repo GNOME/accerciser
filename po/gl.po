@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser-master-po-gl-1951\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 08:41+0200\n"
-"PO-Revision-Date: 2010-07-23 16:06+0200\n"
+"POT-Creation-Date: 2010-12-29 13:32+0100\n"
+"PO-Revision-Date: 2010-12-29 15:34+0100\n"
 "Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
 "Language-Team: Galician <gnome-gl-list@gnome.org>\n"
 "Language: gl\n"
@@ -140,7 +140,7 @@ msgstr "Monitor de eventos"
 #: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
-"Mostra os eventos a medida que se producen dende unha fonte e un tipo "
+"Mostra os eventos tal e como se producen dende unha fonte e un tipo "
 "seleccionados"
 
 #: ../plugins/event_monitor.py:61
@@ -149,7 +149,7 @@ msgstr "Realzar a última entrada de evento"
 
 #: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
-msgstr "Iniciar/deter a gravación de eventos"
+msgstr "Iniciar/deter o rexistro de eventos"
 
 #: ../plugins/event_monitor.py:67
 msgid "Clear event log"
@@ -276,7 +276,7 @@ msgstr "Descrición"
 #. How many columns the cell spans.
 #: ../plugins/interface_view.ui.h:33
 msgid "Extents:"
-msgstr "Esténdese:"
+msgstr "Amplitude:"
 
 #: ../plugins/interface_view.ui.h:34
 msgid "H_ypertext"
@@ -297,7 +297,7 @@ msgstr "ID"
 
 #: ../plugins/interface_view.ui.h:38
 msgid "Include defaults"
-msgstr "Incluír predefinidos"
+msgstr "Incluír predeterminados"
 
 #: ../plugins/interface_view.ui.h:39
 msgid "Layer"
@@ -426,12 +426,12 @@ msgstr "nome (x,y)"
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:38
 msgid "Interface Viewer"
-msgstr "Visualizador de interface"
+msgstr "Visor de interface"
 
 #. Translators: this is a plugin description
 #: ../plugins/interface_view.py:41
 msgid "Allows viewing of various interface properties"
-msgstr "Permite a visualización de diferentes propiedades da interface"
+msgstr "Permite ver varias propiedades da interface"
 
 #: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
 #: ../plugins/interface_view.py:232
@@ -506,7 +506,7 @@ msgstr "Gravadora de script"
 
 #: ../plugins/script_recorder.py:177
 msgid "Creates dogtail style scripts"
-msgstr "Crear scripts de estilo dogtail"
+msgstr "Crear scripts de estilo para Dogtail"
 
 #: ../plugins/script_recorder.py:341
 msgid "The current script will be lost."
@@ -539,7 +539,7 @@ msgstr "Validador AT-SPI"
 
 #: ../plugins/validate.py:154
 msgid "Validates application accessibility"
-msgstr "Valida a accesibilidade do aplicativo"
+msgstr "Valida a accesibilidade dun aplicativo"
 
 #. log level column
 #. add level to buffer
@@ -562,7 +562,7 @@ msgstr "Validando"
 
 #: ../plugins/validate.py:550
 msgid "EXCEPT"
-msgstr "EXCEPCIÓN"
+msgstr "EXCEPTO"
 
 #: ../plugins/validate.py:557
 msgid "ERROR"
@@ -600,7 +600,7 @@ msgstr "o interactivo %s non é accionábel"
 
 #: ../plugindata/validate/basic.py:56
 msgid "more than one focused widget"
-msgstr "máis dun widget enfocado"
+msgstr "hai máis dun widget enfocado"
 
 #: ../plugindata/validate/basic.py:81
 #, python-format
@@ -631,7 +631,8 @@ msgstr "falta o nome ou a etiqueta de %s"
 #: ../plugindata/validate/basic.py:210
 #, python-format
 msgid "focusable %s has table interface, no selection interface"
-msgstr "o enfocábel %s ten unha interface de táboa, non de selección"
+msgstr ""
+"a interface da táboa %s que pode ter o foco non ten interface de selección"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -640,7 +641,7 @@ msgstr "o enfocábel %s ten unha interface de táboa, non de selección"
 #: ../plugindata/validate/basic.py:237
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr "%s ten un estado %s sen estado %s"
+msgstr "%s ten un estado %s sen ter %s"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -658,7 +659,8 @@ msgstr "%s non pertence a un conxunto"
 #: ../plugindata/validate/basic.py:296
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr "O índice %(num)d de %(rolename)s non coincide coa liña e a columna"
+msgstr ""
+"O índice %(num)d do elemento %(rolename)s non coincide coa fila e a columna"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -672,8 +674,8 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
 "%(num2)d"
 msgstr ""
-"o índice pai %(num1)d do %(rolename)s non coincide co índice %(num2)d de "
-"fila e columna"
+"O índice pai %(num1)d do elemento %(rolename)s non coincide co índice coa "
+"fila e columna do índice %(num2)d"
 
 #: ../plugindata/validate/basic.py:352
 #, python-format
@@ -693,8 +695,8 @@ msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
-"Accerciser non pode ver os aplicativos do seu escritorio. Debe activar a "
-"accesibilidade de escritorio para arranxar este problema. Desexa activala "
+"Accerciser non pode ver os aplicativos do seu escritorio.  Debe activar a "
+"accesibilidade do escritorio para arranxar este problema.  Desexa activala "
 "agora?"
 
 #: ../src/lib/accerciser/accerciser.py:147
@@ -707,11 +709,11 @@ msgstr "<morto>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
-msgstr "Fillo"
+msgstr "Fillos"
 
 #: ../src/lib/accerciser/accessible_treeview.py:435
 msgid "_Refresh Registry"
-msgstr "Actualiza_r o rexistro"
+msgstr "Actualiza_r rexistro"
 
 #. Translators: Appears as tooltip
 #.
@@ -723,7 +725,7 @@ msgstr "Actualizar todo"
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:441
 msgid "Refresh _Node"
-msgstr "Actualizar o _nodo"
+msgstr "Actualizar _nodo"
 
 #. Translators: Appears as tooltip
 #.
@@ -823,8 +825,8 @@ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr ""
-"A nova licenza BSD. Consulte os ficheiros COPYING e NOTICE para obter máis "
-"detalles."
+"A nova licenza BSD, consulte os ficheiros COPYING e NOTICE para obter máis "
+"información."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
@@ -860,11 +862,11 @@ msgstr "Aplicativo"
 
 #: ../src/lib/accerciser/bookmarks.py:443
 msgid "Path"
-msgstr "Camiño"
+msgstr "Ruta"
 
 #: ../src/lib/accerciser/bookmarks.py:512
 msgid "Add Bookmark..."
-msgstr "Engadir un marcador..."
+msgstr "Engadir marcador..."
 
 #: ../src/lib/accerciser/bookmarks.py:525
 msgid "Title:"
@@ -876,11 +878,11 @@ msgstr "Aplicativo:"
 
 #: ../src/lib/accerciser/bookmarks.py:531
 msgid "Path:"
-msgstr "Camiño:"
+msgstr "Ruta:"
 
 #: ../src/lib/accerciser/plugin/message.py:148
 msgid "Plugin Errors"
-msgstr "Erros de engadido"
+msgstr "Erros do engadido"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
@@ -888,32 +890,32 @@ msgstr "Erros de engadido"
 #: ../src/lib/accerciser/plugin/plugin_manager.py:378
 msgctxt "viewport"
 msgid "View"
-msgstr "Visualización"
+msgstr "Ver"
 
 #: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
-msgstr "Sen visualización"
+msgstr "Sen vista"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr "Visualización de engadido ú_nica"
+msgstr "Visualización _individual de engadido"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
-msgstr "Visualización de engadido"
+msgstr "Vista do engadido"
 
 #: ../src/lib/accerciser/plugin/view.py:761
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "Visualización de engadido (%d)"
+msgstr "Vista do engadido (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>Visualización _nova...</i>"
+msgstr "<i>_Nova vista...</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
-msgstr "Visualización nova..."
+msgstr "Nova vista..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
 msgid "_File"
