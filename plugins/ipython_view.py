@@ -89,6 +89,8 @@ class IterableIPShell:
     self.iter_more = 0
     self.history_level = 0
     self.complete_sep =  re.compile('[\s\{\}\[\]\(\)]')
+    self.updateNamespace({'exit':lambda:None})
+    self.updateNamespace({'quit':lambda:None})
 
   def execute(self):
     '''
