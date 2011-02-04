@@ -655,7 +655,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       if not self.model.remove(child_iter):
         break
     acc = self.model[iter][COL_ACC]
-    self.model[iter][COL_CHILDCOUNT] = acc.childCount
+    self.model[iter][COL_CHILDCOUNT] = str(acc.childCount)
     self.model[iter][COL_FILLED] = False
 
   def refreshSelected(self):
