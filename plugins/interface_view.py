@@ -1274,8 +1274,10 @@ class _SectionText(_InterfaceSection):
     if not attr_string:
       return {}
     attr_dict = {}
-    for attr_pair in attr_string.split('; '):
+    for attr_pair in attr_string.split(';'):
       key, value = attr_pair.split(':', 1)
+      if ((key[0]==' ') and (len(key) > 0)): #at-spi 1
+        key = key[1:]
       attr_dict[key] = value
     return attr_dict
 
