@@ -67,7 +67,7 @@ class EventMonitor(ViewportPlugin):
                            (N_('Clear event log'),
                             self._onClearlog,
                             keysyms.t, gdk.MOD1_MASK | gdk.CONTROL_MASK)]
-    self.source_filter = None
+
     self.main_xml = gtk.Builder()
     self.main_xml.set_translation_domain(DOMAIN)
     self.main_xml.add_from_file(UI_FILE)
@@ -78,6 +78,13 @@ class EventMonitor(ViewportPlugin):
     self._initTextView()
 
     self.monitor_toggle = self.main_xml.get_object('monitor_toggle')
+
+    self.source_filter = None
+    self.sources_dict = { \
+        self.main_xml.get_object('source_everthing') : 'source_everthing', \
+        self.main_xml.get_object('source_app') : 'source_app', \
+        self.main_xml.get_object('source_acc') : 'source_acc' \
+    }
 
     self.listen_list = []
 
@@ -486,7 +493,7 @@ class EventMonitor(ViewportPlugin):
     @param radio_button: Radio button that was selected.
     @type radio_button: gtk.RadioButton
     '''
-    self.source_filter = radio_button.get_name()
+    self.source_filter = self.sources_dict[radio_button]
 
   def _eventFilter(self, event):
     '''
