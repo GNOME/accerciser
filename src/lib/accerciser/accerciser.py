@@ -13,6 +13,10 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+
+from gi.repository.Gio import Settings
+a11yAppSettings = Settings('org.gnome.desktop.interface')
+
 import pygtk
 pygtk.require('2.0')
 import gtk
@@ -32,9 +36,7 @@ from tools import Tools
 from i18n import _, N_
 import wnck
 from gnome import program_get
-import gconf
 from hotkey_manager import HotkeyManager, HotkeyTreeView
-import gconf
 from about_dialog import AccerciserAboutDialog
 from prefs_dialog import AccerciserPreferencesDialog
 from main_window import AccerciserMainWindow
@@ -121,11 +123,10 @@ class Main(Tools):
   def _showNoA11yDialog(self):
     '''
     Shows a dialog with a relevant message when desktop accessibility seems to
-    be disabled. If desktop accessibility is disabled in gconf, prompts the
+    be disabled. If desktop accessibility is disabled in gsettings, prompts the
     user to enable it.
     '''
-    cl = gconf.client_get_default()
-    if not cl.get_bool('/desktop/gnome/interface/accessibility'):
+    if not a11yAppSettings.get_boolean('toolkit-accessibility'):
       message = _('Accerciser could not see the applications on your desktop.  '
                   'You must enable desktop accessibility to fix this problem.  '
                   'Do you want to enable it now?')
@@ -138,8 +139,7 @@ class Main(Tools):
   def _onNoA11yResponse(self, dialog, response_id):
     dialog.destroy()
     if response_id == gtk.RESPONSE_YES:
-      cl = gconf.client_get_default()
-      cl.set_bool('/desktop/gnome/interface/accessibility', True)
+      a11yAppSettings.set_boolean('toolkit-accessibility', True)
       dialog = gtk.MessageDialog(
         self.window,
         type=gtk.MESSAGE_INFO,

@@ -25,27 +25,31 @@ libs = os.path.join(sys.prefix, 'lib',
 # point to the proper site-packages path
 sys.path.insert(1, libs)
 
-import pygtk
-pygtk.require('2.0')
-
-import gnome
-# make this program accessible
-props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
-gnome.program_init('accerciser', '@VERSION@', 
-                   properties=props, argv=['accerciser'] + sys.argv[1:])
-
-import gtk
-# initialize threads
-# get global icon resources
-it = gtk.IconTheme()
-try:
-  icons = [it.load_icon('@PACKAGE@', size, gtk.ICON_LOOKUP_NO_SVG) 
-           for size in (16, 22, 32)]
-except Exception:
-  # ignore errors, and just don't use the icon
-  pass
-else:
-  gtk.window_set_default_icon_list(*icons)
+# TODO: Remove unnecessary stuff here
+# We're commenting lines below for a sanity check
+# regarding gsettings calls.
+#
+#import pygtk
+#pygtk.require('2.0')
+#
+#import gnome
+## make this program accessible
+#props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
+#gnome.program_init('accerciser', '@VERSION@', 
+#                   properties=props, argv=['accerciser'] + sys.argv[1:])
+#
+#import gtk
+## initialize threads
+## get global icon resources
+#it = gtk.IconTheme()
+#try:
+#  icons = [it.load_icon('@PACKAGE@', size, gtk.ICON_LOOKUP_NO_SVG) 
+#           for size in (16, 22, 32)]
+#except Exception:
+#  # ignore errors, and just don't use the icon
+#  pass
+#else:
+#  gtk.window_set_default_icon_list(*icons)
   
 import accerciser
 accerciser.main()
