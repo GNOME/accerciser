@@ -13,7 +13,7 @@ class ActionIsInteractive(Validator):
   Any item that supports the action interface should also be focusable or 
   selectable so the user may interact with it via the keyboard.
   '''
-  URL = 'http://live.gnome.org/Accerciser/Validate#1'
+  URL = 'http://live.gnome.org/Accerciser/Validate#A1'
   def condition(self, acc):
     return acc.queryAction()
 
@@ -29,7 +29,7 @@ class WidgetHasAction(Validator):
   Any widget with a role listed in condition should support the action 
   interface.
   '''
-  URL = 'http://live.gnome.org/Accerciser/Validate#2'
+  URL = 'http://live.gnome.org/Accerciser/Validate#A2'
   def condition(self, acc):
     return acc.getRole() in [ROLE_PUSH_BUTTON, ROLE_MENU, ROLE_MENU_ITEM,
                              ROLE_CHECK_MENU_ITEM, ROLE_RADIO_MENU_ITEM,
@@ -47,19 +47,21 @@ class OneFocus(Validator):
   The application should have on and only one accessible with state focused
   at any one time.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A3'
   def before(self, acc, state, view):
     s = acc.getState()
     if s.contains(STATE_FOCUSED):
       if not state.has_key('focus'):
         state['focus'] = acc
       else:
-        view.error(_('more than one focused widget'), acc)
+        view.error(_('more than one focused widget'), acc, self.URL)
 
 class WidgetHasText(Validator):
   '''
   Any widget with a role listed in condition should support the text interface
   since they all support stylized text.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A4'
   def condition(self, acc):
     return acc.getRole() in [ROLE_PUSH_BUTTON, ROLE_MENU, ROLE_MENU_ITEM,
                              ROLE_CHECK_MENU_ITEM, ROLE_RADIO_MENU_ITEM,
@@ -78,13 +80,14 @@ class WidgetHasText(Validator):
     try:
       acc.queryText()
     except NotImplementedError:
-      view.error(_('%s has no text interface') % acc.getLocalizedRoleName(), acc)
+      view.error(_('%s has no text interface') % acc.getLocalizedRoleName(), acc, self.URL)
 
 class ParentChildIndexMatch(Validator):
   '''
   The index returned by acc.getIndexInParent should return acc when provided
   to getChildAtIndex.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A5'
   def condition(self, acc):
     # don't test applications
     acc.queryApplication()
@@ -98,13 +101,14 @@ class ParentChildIndexMatch(Validator):
       # index mismatch.
       # 
       view.error(_('%s index in parent does not match child index') %
-                 acc.getLocalizedRoleName(), acc)
+                 acc.getLocalizedRoleName(), acc, self.URL)
 
 class ReciprocalRelations(Validator):
   '''
   Any relation in the map should point to an accessible having the reciprocal
   relation.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A6'
   REL_MAP = {RELATION_LABEL_FOR : RELATION_LABELLED_BY,
              RELATION_CONTROLLER_FOR : RELATION_CONTROLLED_BY,
              RELATION_MEMBER_OF : RELATION_MEMBER_OF,
@@ -143,14 +147,14 @@ class ReciprocalRelations(Validator):
         rec = self._getReciprocal(kind)
         if not self._hasRelationTarget(ts, rec, acc):
           view.error(_('Missing reciprocal for %s relation') %
-                     rel.getRelationTypeName(), acc)
+                     rel.getRelationTypeName(), acc, self.URL)
     
 class HasLabelName(Validator):
   '''
   Any accessible with one of the roles listed below should have an accessible
   name, a labelled by relationship, or both.
   '''
-  URL = 'http://live.gnome.org/Accerciser/Validate#4'
+  URL = 'http://live.gnome.org/Accerciser/Validate#A7'
   TEXT_CANNOT_LABEL = [ROLE_SPIN_BUTTON, ROLE_SLIDER, ROLE_PASSWORD_TEXT,
                        ROLE_TEXT, ROLE_ENTRY, ROLE_TERMINAL]
                    
@@ -199,6 +203,7 @@ class TableHasSelection(Validator):
   A focusable accessible with a table interface should also support the 
   selection interface.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A8'
   def condition(self, acc):
     acc.queryTable()
     return acc.getState().contains(STATE_FOCUSABLE)
@@ -207,14 +212,15 @@ class TableHasSelection(Validator):
     try:
       acc.querySelection()
     except NotImplementedError:
-      view.error(_('focusable %s has table interface, no selection interface') %
-                 acc.getLocalizedRoleName(), acc)
+      view.error(_('focusable %s has a table interface, but not a selection interface') %
+                 acc.getLocalizedRoleName(), acc, self.URL)
                  
 class StateWithAbility(Validator):
   '''
   Any accessible with one of the ephemeral states in state map should have the
   corresponding -able state.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A9'
   STATE_MAP = {STATE_EXPANDED : STATE_EXPANDABLE,
                STATE_COLLAPSED : STATE_EXPANDABLE,
                STATE_FOCUSED : STATE_FOCUSABLE,
@@ -237,13 +243,14 @@ class StateWithAbility(Validator):
       view.error(_('%s has %s state without %s state') % (
         acc.getLocalizedRoleName(),
         stateToString(self.test_state),
-        stateToString(able_state)), acc)
+        stateToString(able_state)), acc, self.URL)
 
 class RadioInSet(Validator):
   '''
   An accessible with a radio button role should be a member of a set as 
   indicated by a relation or appropriate object property.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A10'
   def condition(self, acc):
     return self.getRole() in [ROLE_RADIO_BUTTON, ROLE_RADIO_MENU_ITEM]
 
@@ -260,7 +267,7 @@ class RadioInSet(Validator):
     # The first variable is the object's role name.
     # 
     view.error(_('%s does not belong to a set') % acc.getLocalizedRoleName(),
-               acc)
+               acc, self.URL)
 
 def _randomRowCol(table):
   rows, cols = table.nRows, table.nColumns
@@ -273,6 +280,7 @@ class TableRowColIndex(Validator):
   The index returned by getIndexAt(row, col) should result in getRowAtIndex
   and getColumnAtIndex returning the original row and col.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A11'
   MAX_SAMPLES = 100
   def condition(self, acc):
     t = acc.queryTable()
@@ -294,7 +302,7 @@ class TableRowColIndex(Validator):
         # given index.
         # 
         view.error(_('%(rolename)s index %(num)d does not match row and column') %
-                   {'rolename':acc.getLocalizedRoleName(), 'num':i}, acc)
+                   {'rolename':acc.getLocalizedRoleName(), 'num':i}, acc, self.URL)
         return
 
 class TableRowColParentIndex(Validator):
@@ -302,6 +310,7 @@ class TableRowColParentIndex(Validator):
   The accessible returned by table.getAccessibleAt should return 
   acc.getIndexInParent matching acc.getIndexAt.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A12'
   MAX_SAMPLES = 100
   def condition(self, acc):
     t = acc.queryTable()
@@ -324,7 +333,7 @@ class TableRowColParentIndex(Validator):
         # are index numbers.
         #
         view.error(_('%(rolename)s parent index %(num1)d does not match row and column index %(num2)d') %
-                   {'rolename':acc.getLocalizedRoleName(), 'num1':ip, 'num2':i}, acc)
+                   {'rolename':acc.getLocalizedRoleName(), 'num1':ip, 'num2':i}, acc, self.URL)
         return
 
 class ImageHasName(Validator):
@@ -332,6 +341,7 @@ class ImageHasName(Validator):
   Any accessible with an image role or image interface should have either a
   name, description, or image description.
   '''
+  URL = 'http://live.gnome.org/Accerciser/Validate#A13'
   def condition(self, acc):
     if acc.getRole() in [ROLE_DESKTOP_ICON, ROLE_ICON, ROLE_ANIMATION,
                          ROLE_IMAGE]:
@@ -350,4 +360,4 @@ class ImageHasName(Validator):
       ni = True
     if ni or im.imageDescription is None or not im.imageDescription.strip():
       view.error(_('%s has no name or description') % 
-                 acc.getLocalizedRoleName(), acc)
+                 acc.getLocalizedRoleName(), acc, self.URL)
