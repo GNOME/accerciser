@@ -7,8 +7,6 @@ plugins_DATA = api_view.py \
 	interface_view.py \
 	ipython_view.py \
 	quick_select.py \
-	script_recorder.ui \
-	script_recorder.py \
 	validate.ui \
 	validate.py
 EXTRA_DIST = $(plugins_DATA)
