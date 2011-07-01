@@ -97,8 +97,13 @@ class IterableIPShell:
     Executes the current line provided by the shell object.
     '''
     self.history_level = 0
+
     orig_stdout = sys.stdout
     sys.stdout = IPython.Shell.Term.cout
+
+    orig_stdin = sys.stdin
+    sys.stdin = StringIO()
+
     try:
       line = self.IP.raw_input(None, self.iter_more)
       if self.IP.autoindent:
@@ -125,7 +130,9 @@ class IterableIPShell:
         self.IP.readline_startup_hook(self.IP.pre_readline)
     else:
       self.prompt = str(self.IP.outputcache.prompt1).strip()
+
     sys.stdout = orig_stdout
+    sys.stdin = orig_stdin
 
   def historyBack(self):
     '''
@@ -477,6 +484,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     @return: True if event should not trickle.
     @rtype: boolean
     '''
+
     if event.state & gtk.gdk.CONTROL_MASK and event.keyval == 99:
       self.interrupt = True
       self._processLine()
