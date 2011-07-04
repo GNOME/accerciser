@@ -8,21 +8,21 @@
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en <http://trasno.net>
-# Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010.
+# Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser-master-po-gl-1951\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 13:32+0100\n"
-"PO-Revision-Date: 2010-12-29 15:34+0100\n"
-"Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
-"Language-Team: Galician <gnome-gl-list@gnome.org>\n"
+"POT-Creation-Date: 2011-07-04 21:15+0200\n"
+"PO-Revision-Date: 2011-07-04 21:15+0200\n"
+"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
+"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -481,41 +481,6 @@ msgstr "Inspeccionar o último accesíbel enfocado"
 msgid "Inspect accessible under mouse"
 msgstr "Inspeccionar o accesíbel baixo o rato"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Nativo"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Tipo de script"
-
-#: ../plugins/script_recorder.py:175
-msgid "Script Recorder"
-msgstr "Gravadora de script"
-
-#: ../plugins/script_recorder.py:177
-msgid "Creates dogtail style scripts"
-msgstr "Crear scripts de estilo para Dogtail"
-
-#: ../plugins/script_recorder.py:341
-msgid "The current script will be lost."
-msgstr "Perderase o script actual."
-
-#: ../plugins/script_recorder.py:342
-msgid "Confirm clear"
-msgstr "Confirmar a limpeza"
-
 #: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
 msgid "Idle"
@@ -588,21 +553,21 @@ msgstr "Básico"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Proba a accesibilidade fundamental da GUI do aplicativo"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "o accionábel %s non é enfocábel nin seleccionábel"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "o interactivo %s non é accionábel"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "hai máis dun widget enfocado"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s non ten interface de texto"
@@ -610,12 +575,12 @@ msgstr "%s non ten interface de texto"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "o índice %s do pai non coincide co índice do fillo"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Falta o recíproco na relación %s"
@@ -623,22 +588,23 @@ msgstr "Falta o recíproco na relación %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "falta o nome ou a etiqueta de %s"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"a interface da táboa %s que pode ter o foco non ten interface de selección"
+"o elemento enfocábel %s ten unha interface de táboa, porén non ten interface "
+"de selección"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s ten un estado %s sen ter %s"
@@ -646,7 +612,7 @@ msgstr "%s ten un estado %s sen ter %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s non pertence a un conxunto"
@@ -656,7 +622,7 @@ msgstr "%s non pertence a un conxunto"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
@@ -668,7 +634,7 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
@@ -677,20 +643,20 @@ msgstr ""
 "O índice pai %(num1)d do elemento %(rolename)s non coincide co índice coa "
 "fila e columna do índice %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s non ten nome ou descrición"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Preferences..."
 msgstr "_Preferencias..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:89
 msgid "_Contents"
 msgstr "_Contido"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -938,3 +904,27 @@ msgstr "_Ver"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "A_xuda"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Nativo"
+
+#~ msgid "Script Type"
+#~ msgstr "Tipo de script"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Gravadora de script"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Crear scripts de estilo para Dogtail"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Perderase o script actual."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Confirmar a limpeza"
