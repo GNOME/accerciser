@@ -1,22 +1,22 @@
 # translation of accerciser.HEAD.po to Español
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2011.
 #
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2009-08-24 17:41+0000\n"
-"PO-Revision-Date: 2009-08-26 07:56+0200\n"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-07-04 12:27+0000\n"
+"PO-Revision-Date: 2011-07-05 16:35+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -194,8 +194,8 @@ msgstr "<b>Texto</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>desconocido</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(sin descripción)</i>"
 
@@ -427,35 +427,35 @@ msgstr "Visor de interfaces"
 msgid "Allows viewing of various interface properties"
 msgstr "Permite ver varias propiedades del interfaz"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(no implementado)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nombre"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "Inicio"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "Demasiados hijos seleccionables"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editable)</i>"
 
@@ -475,41 +475,6 @@ msgstr "Inspeccionar el último accesible que tuvo el foco"
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
 msgstr "Inspeccionar el accesible bajo el ratón"
-
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Nativo"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Tipo de script"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Script grabador"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Crea scripts de estilo para Dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Se perderá el script actual."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Confirme la limpieza"
 
 #: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
@@ -583,21 +548,21 @@ msgstr "Básico"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Comprueba la accesibilidad fundamental del IGU de una aplicación"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "el accionable %s no puede tener el foco o ser seleccionado"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "el interactivo %s no es accionable"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "hay más de un widget con el foco"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "la interfaz de %s no tiene texto"
@@ -605,12 +570,12 @@ msgstr "la interfaz de %s no tiene texto"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "El índice en el padre no coincide con el índice del hijo en %s"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Falta el recíproco para la relación %s"
@@ -618,23 +583,24 @@ msgstr "Falta el recíproco para la relación %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "falta el nombre o la etiqueta de %s"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
+#| msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"la interfaz de la tabla %s que puede tener el foco no tiene interfaz de "
-"selección"
+"el objeto %s que puede tener el foco tiene una interfaz de tabla, pero no "
+"una interfaz de selección"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s tiene un estado %s sin tener %s"
@@ -642,7 +608,7 @@ msgstr "%s tiene un estado %s sin tener %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s no pertenece al conjunto"
@@ -652,7 +618,7 @@ msgstr "%s no pertenece al conjunto"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
@@ -664,29 +630,29 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "El índice padre %(num1)d del elemento %(rolename)s no coincide con la fila y "
 "columna del índice %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s no tiene nombre o descripción"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Preferences..."
 msgstr "Prefere_ncias..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:89
 msgid "_Contents"
 msgstr "_Contenido"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -924,6 +890,30 @@ msgstr "_Ver"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "Ay_uda"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Nativo"
+
+#~ msgid "Script Type"
+#~ msgstr "Tipo de script"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Script grabador"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Crea scripts de estilo para Dogtail"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Se perderá el script actual."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Confirme la limpieza"
 
 #~ msgid "Full name"
 #~ msgstr "Nombre completo"
