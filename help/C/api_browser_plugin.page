@@ -1,0 +1,65 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin">
+  <info>
+    <link type="guide" xref="index#advanced" />
+    <title type="sort">1. API Browser Plugin</title>
+    <link type="next" xref="ipython_plugin" />
+    <desc>
+      Verifying interfaces, methods, and properties
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title> API Browser Plugin</title>
+  <p>
+    Given an accessible widget selected in the <link xref="desktop_tree_view">Application Tree View</link>,
+    the API Browser Plugin shows its implemented AT-SPI interfaces along with its methods and properties.
+  </p>
+
+  <figure>
+    <title>API Browser Plugin</title>
+    <desc>
+      The API Browser Plugin allows you to verify interfaces, methods, and properties of a
+      target accessible widget in an application. 
+    </desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>
+       The API Browser Plugin allows you to verify interfaces, methods, and properties of a
+       target accessible widget in an application.
+      </p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Running the API Browser Plugin</title>
+    <p>
+      To run the API Browser Plugin, select an accessible widget
+      in the Application Tree View. Double-clicking a widget highlights it in the
+      application's interface, so you can be sure whether a certain widget were the
+      one you were looking for. 
+    </p>
+    <p>
+      After that, select one of the widget's interfaces in the combobox.
+      All public methods of the selected interface will be
+      listed in the plugin's leftmost column. All public properties, with their 
+      corresponding values, will be listed in the plugin's rightmost column.
+    </p>  
+    <p>
+      By default, the API Browser Plugin hides private methods and properties. To see
+      them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. To hide
+      them again, re-select this checkbox.
+    </p>
+  </section>
+</page>

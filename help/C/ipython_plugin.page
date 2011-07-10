@@ -1,0 +1,72 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin">
+  <info>
+    <link type="guide" xref="index#advanced" />
+    <title type="sort">2. IPython Plugin</title>
+    <link type="next" xref="howto_write_a_plugin" />
+    <desc>
+      When all else fails
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title> IPython Console Plugin</title>
+  <p>
+    The IPython Console Plugin allows real-time interaction with a selected item in the <link xref="desktop_tree_view">
+    Application Tree View</link>. Since the IPython Console Plugin is an interactive Python shell, you can import any Python
+    modules you want.
+  </p>
+
+  <note style="tip">
+    <p>
+      Make sure you have the standalone package IPython installed in your system. Otherwise, the IPython Console Plugin will
+      not work properly.
+    </p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Running the IPython Console Plugin</title>
+    <p>
+      To run the IPython Console Plugin, select one of the accessible items
+      listed in the Application Tree View - either an application or a widget. In the plugin, the
+      selected item will correspond to the variable 'acc'. 
+    </p>
+    <p>     
+      Pressing <key>Tab</key> shows completions for the current command in the console,
+      what can be useful for discovering pyatspi methods.
+    </p>  
+
+  <figure>
+    <title>Investigating selected items with the IPython Console Plugin</title>
+    <desc>
+      The IPython Console Plugin lets you investigate methods, constants, and properties
+      related to a selected item in the Application Tree View. 
+    </desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>
+       The IPython Console Plugin lets you investigate methods, constants, and properties
+       related to a selected item in the Application Tree View. 
+      </p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>
+      Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful documentation
+      about the corresponding selected accessible item.
+    </p>
+  </note>
+  </section>
+</page>

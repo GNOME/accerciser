@@ -1,0 +1,139 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer">
+  <info>
+    <link type="guide" xref="index#examining_a11y" />
+    <title type="sort">2. Interface Viewer Plugin</title>
+    <link type="next" xref="validator_plugin" />
+    <desc>
+      Examining your accessibility implementation
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Interface Viewer Plugin</title>
+
+  <p>
+    The Interface Viewer Plugin shows the information and controls provided by the AT-SPI interfaces
+    present in each accessible item from the <link xref="desktop_tree_view">Application Tree View</link>. After
+    selecting an item, you can use this plugin to quickly review its supported interfaces, to retrieve 
+    each interface's information, and to manipulate the item through all the interface’s methods.
+  </p>
+
+  <figure>
+    <title>Examining a Menu with the Interface Viewer Plugin</title>
+    <desc>
+      Given a selected item in the Application Tree View, all of its AT-SPI interfaces will be shown as sensitive
+      in the Interface Viewer Plugin. Those unsupported will appear grayed out, such as the Application
+      and Collection interfaces in the figure above.
+    </desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Given a selected item in the Application Tree View, all of its AT-SPI interfaces will be shown as sensitive
+      in the Interface Viewer Plugin. Those unsupported will appear grayed out, such as the Application and Collection
+      interfaces in the figure above.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Running the Interface Viewer Plugin</title>
+    <p>
+      The first step to run the Interface Viewer Plugin is to select an item in the <link xref="desktop_tree_view">
+      Application Tree View</link>. After that, all AT-SPI interfaces covered by the plugin will be listed in the
+      plugin's panel. The interfaces implemented by the selected item will be sensitive, so you can click each one of
+      them to either retrieve their provided information or to interact with available methods. The following interfaces 
+      can be explored in <app>Accerciser</app>, assuming the selected item implements them:
+    </p>
+    <list>
+      <item>
+        <p>
+          Accessible - This interface shows the selected item's child count (number of child widgets), description, states,
+          relations, and attributes.
+        </p>
+      </item>
+      <item>
+        <p>
+          Action - This interface shows all the actions that can be performed by the selected item. For each interface,
+          you will see its name, such as "press" or "click", followed by a description and a key binding, if there are
+          any. If you select an action, a "Perform action" button will become sensitive. Press this button to see the
+          item performing the selected action. 
+        </p>
+      </item>
+      <item>
+        <p>
+          Application - This interface can be implemented by items with role "application". It is worth to point out that
+          items with role "application" not necessarily implement this interface. If the selected item implements it, the interface
+          will show its ID and, if there are any, its toolkit and version.
+        </p>
+      </item>
+      <item>
+        <p>
+          Component - This interface shows the selected item's absolute position (with respect to the desktop coordinate system), relative           position (with respect to the window coordinate system), size, layer type, MDI-Z-order (a short integer indicating the
+          stacking order of the component in the MDI layer), and alpha (if alpha blending is used).
+        </p>
+      </item>
+      <item>
+        <p>
+          Document - This interface shows the selected item's document attributes and locale description, if there is one. 
+        </p>
+      </item>
+      <item>
+        <p>
+          Hypertext - This interface shows a list with all the selected item's hypertext hyperlinks. For each hyperlink, the interface
+          provides its name, URI, start (the index in the hypertext at which the hyperlink begins) and end (the index in the hypertext
+          at which this hyperlink ends).
+        </p>
+      </item>
+      <item>
+        <p>
+          Image - This interface shows the selected item's description (or "no description" if unspecified), size, position
+          (with respect to the desktop coordinate system), and locale, if there is one. 
+        </p>
+      </item>
+      <item>
+        <p>
+          Selection - This interface shows all selectable child items of the selected item. If the selected item is a menu bar
+          with options "File", "Edit", "View", and "Help", and all of them are selectable, then they will be listed in this
+          interface. If you click a listed option - "File", for example - and want to clear it, just press the "Clear" button
+          below the list. 
+        </p>
+      </item>
+      <item>
+        <p> 
+          Streamable Content - This interface shows the selected item's content types and their corresponding URIs.
+        </p>
+      </item>
+      <item>
+        <p>
+          Table - This interface shows the selected item's caption and summary, rows (number of rows), columns (number of columns),
+          selected rows (number of selected rows), and selected columns (number of selected columns). For a selected cell, the 
+          interface shows its row's and column's header and extents.
+        </p>
+      </item>
+      <item>
+        <p>
+          Text - This interface shows the selected item's text content, that can be editable, and its attributes. The basic 
+          attributes are offset (the number of characters the text has) and justification. To see possible CSS attributes, 
+          click the "Include defaults" check box.
+        </p>
+      </item>
+      <item>
+        <p>
+          Value - This interface shows the selected item's current value, minimum allowed value, maximum allowed value, and
+          the minimum increment by which the value may be changed (or zero if this value cannot be determined). The current
+          value can be manually changed via a spin button.
+        </p>
+      </item> 
+    </list>
+  </section>
+</page>

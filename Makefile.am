@@ -25,7 +25,9 @@ EXTRA_DIST =  \
 	$(schemas_in_files) \
 	$(schemas_DATA)
 
-DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
+DISTCHECK_CONFIGURE_FLAGS = \
+	--disable-scrollkeeper \
+	--enable-pydoc
 DISTCLEANFILES = \
 	$(desktop_DATA) \
 	accerciser.spec \

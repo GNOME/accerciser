@@ -1,0 +1,73 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin">
+  <info>
+    <link type="guide" xref="index#examining_a11y" />
+    <title type="sort">3. Validator Default Plugin</title>
+    <link type="next" xref="event_monitor_plugin" />
+    <desc>
+      Testing an application for accessibility
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title> AT-SPI Validator Plugin</title>
+  <p>
+    The AT-SPI Validator Plugin generates a report with accessibility
+    issues related to a target application. For each error, the report
+    includes the severity level and a brief description.
+  </p>
+   <figure>
+    <title>AT-SPI Validator Plugin</title>
+    <desc>
+      The AT-SPI Validator Plugin generates useful reports for verifying the accessibility of
+      a target application.
+    </desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>
+        The AT-SPI Validator Plugin generates useful reports for verifying the accessibility of
+        a target application.
+      </p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Running the AT-SPI Validator Plugin</title>
+      <p>
+        To run the AT-SPI Validator Plugin, select an item in the Application Tree View.
+        The validator will generate the report with respect to the selected
+        item and all of its descendant widgets in the tree hierarchy.
+      </p>
+
+      <p>
+        After selecting an item, choose a validation schema in the combobox and press the <cmd>Validate</cmd>
+        button to start generating the report. If you want to cancel the execution, just press the <cmd>Validate</cmd>
+        button again.
+      </p>
+
+      <p>
+        The generated report is interactive. Therefore, you can double-click any error found to check which of the target
+        application widgets is causing it. The corresponding widget will then appear selected in the <link xref="desktop_tree_view">
+        Application Tree View</link> and highlighted in the target application.  
+      </p>  
+      <p>
+        If you want to save the generated report in your system, just click the <cmd>Save</cmd> button.
+        To clear the validation screen, press the <cmd>Clear</cmd> button.
+      </p>
+      <p>
+        To get more information about an error in the generated report, make sure the corresponding item is
+        selected and press the <cmd>Help</cmd> button. It will open a Help Page in your default browser.
+      </p>        
+  </section>
+</page>

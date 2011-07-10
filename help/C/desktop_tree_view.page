@@ -1,0 +1,76 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view">
+  <info>
+    <link type="guide" xref="index#examining_a11y" />
+    <title type="sort">1. Application Tree View</title>
+    <link type="next" xref="interface_viewer" />
+    <desc>
+      Exploring the accessible hierarchy of the desktop
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title>Application Tree View</title>
+
+  <p>
+    <app>Accerciser</app>'s interface contains a tree view, namely Application Tree View, that covers all
+    accessible applications currently running on the desktop. To create this tree view, <app>Accerciser</app>  
+    uses the AT-SPI's registry daemon. This daemon is responsible for keeping track of all the accessible 
+    applications on the desktop and forwarding X events over the AT-SPI D-Bus. After getting all accessible
+    applications, <app>Accerciser</app> represents each one of them as a hierarchical structure with expanding
+    nodes. 
+  </p>
+
+  <figure>
+    <title>Application Tree View</title>
+    <desc>
+      <app>Accerciser</app>'s Application Tree View represents the interface of each accessible application
+      running on the desktop as a widget hierarchical structure. 
+    </desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p><app>Accerciser</app>'s Application Tree View represents the interface of each accessible application
+      running on the desktop as a widget hierarchical structure.</p>
+    </media>
+  </figure>
+
+
+  <p>
+    The first node of each application represented in this tree view is the application itself. When you expand a node, you
+    can see all of its child widgets, which allows a hierarchical view of the application's interface. For each node, 
+    <app>Accerciser</app> provides some basic information, such as its name, role and number of children. 
+  </p>
+
+  <note style="caution">
+    <p>
+      Be aware that nodes with many children take a long time to expand.
+    </p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Bookmarking items in the Application Tree View</title>
+    <p>
+      <app>Accerciser</app> allows bookmarking items in the Application Tree View for later examining. This is helpful when
+      the target application must be restarted - after rebuilding it, for example. To bookmark an item, select it and do
+      <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press <key>Ctrl</key>+<key>d</key>. 
+    </p>
+    <p>
+      Bookmarks to accessible items in <app>Accerciser</app> are defined by an application name and a "path" in the
+      application's internal accessible hierarchy to the bookmarked accessible. When the target application is in a
+      different state - i.e. multiple top level frames -, the path might not be correct. Bookmarks could be managed
+      by accessing the bookmark editing dialog through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>.
+    </p>
+  </section>
+
+</page>

@@ -1,0 +1,236 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin">
+  <info>
+    <link type="guide" xref="index#advanced" />
+    <title type="sort">3. Writing New Plugins</title>
+    <link type="next" xref="preferences_setting" />
+    <desc>
+      Extending <app>Accerciser</app> with your desired functionalities
+    </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+  <title> Writing Plugins for <app>Accerciser</app></title>
+  <p>
+    Extending <app>Accerciser</app> with new plugins became much simpler
+    since <link href="http://live.gnome.org/Accerciser/PluginTutorial">this tutorial</link>
+    was written. Given that it provides a very detailed explanation about the topic,
+    this section consists basically of its original content - only simple editions
+    and updates were done.
+  </p>
+  <p>
+    <app>Accerciser</app> supports three basic types of plugins:
+  </p>
+  <list>
+    <item>
+      <p>
+        Base plugins - These plugins are derived from the Plugin base class. They do not provide
+        a visible interface, but could provide additional functionality to <app>Accerciser</app>.
+      </p>
+    </item>
+    <item>
+      <p>
+        Console plugins - These plugins provide simple console output into a text area in a plugin
+        tab. Not to be confused with the packaged <link xref="ipython_plugin">IPython Console Plugin</link>.
+      </p>
+    </item>
+    <item>
+      <p>
+        Viewport plugins - The majority of <app>Accerciser</app> default plugins. 
+        They provide a custom graphical interface in a tab. 
+      </p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Creating a Base Plugin</title>
+    <p>
+      We will create a simplified version of the <link xref="quick_select_plugin">Quick Select Plugin</link>. 
+      This plugin will select the last focused accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>.
+    </p>
+    <p>
+      First off, the import lines we will use are: 
+    </p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>
+      Next we will derive a new class from the Plugin base class, 
+      and assign some mandatory class attributes: 
+    </p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>
+      We will now override the init method, in which we will set a global key
+      action for selecting the last focused accessible item, register an event
+      listener for the "focus" event, and set the <cmd>last_focused</cmd> instance
+      variable to <cmd>None</cmd>. 
+    </p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>
+      Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of
+      tuples. Each tuple is a global hotkey action, composed by an action description,
+      a desired method to call, a key symbol of keypress, and a key modifier mask.
+    </p>
+    <p>
+      In the "focus" event callback, we assign the <cmd>last_focused</cmd> instance
+      variable with the accessible item that has just emitted the "focus" event. 
+    </p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>
+       In the hotkey action callback, we update the application wide node with the
+       last focused accessible item, if we have recorded it:
+    </p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Creating a Console Plugin</title>
+    <p>
+      We will create a console plugin to display focus changes emitted by an accessible
+      item with a "push button" role - remember that it is easy to check what is the role
+      of any item with <app>Accerciser</app>; you can verify it in the <link xref="desktop_tree_view">Application Tree View</link>,
+      for example. 
+    </p>
+    <p>
+      The needed import lines are:
+    </p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>
+      Then we add a class definition, with a plugin name and description: 
+    </p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>
+      We override the init method adding a register listener: 
+    </p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>
+      In the callback method, all push button events are printed. 
+    </p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Creating a Viewport Plugin</title>
+    <p>
+      We will create a viewport plugin that allows quick testing of the
+      "click" action in accessible items that support the AT-SPI Action interface
+      and have an action named "click". It will be a simple button that, once
+      clicked, does the "click" action in the accessible. 
+    </p>
+    <p>
+      First off, some mandatory import lines:
+    </p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>
+      Next, a class definition, with a name and description: 
+    </p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>
+      We override the init method with some UI building, and connecting a callback
+      to a signal for the button. We use the alignment container to allow the button
+      to be centered in the plugin tab, and not monstrously take up the entire plugin
+      space. Notice that the <cmd>plugin_area</cmd> instance variable contains a gtk.Frame
+      that could be populated with all the plugin's widgets. 
+    </p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>
+       We also created a convenience method that returns a list of supported actions
+       of the currently selected accessible item - if it does not support the Action
+       interface, it returns an empty list: 
+    </p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>
+      The base plugin class has a method call onAccChanged that is called everytime the
+      target application's selected accessible item changes. We will override it setting
+      the button to be sensitive only when the current accessible item has the "click" action: 
+    </p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>
+      The callback method for button "clicked" performs the "click" action on the accessible item. 
+      Since this callback could only be called when the button is sensitive, we don't need to worry 
+      about checking if the current accessible has the "click" action?
+    </p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>
