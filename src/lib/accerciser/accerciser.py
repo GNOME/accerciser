@@ -26,7 +26,6 @@ import os, sys, locale
 from icons import getIcon
 import os
 import atk
-import gnome
 from bookmarks import BookmarkStore
 from accessible_treeview import *
 from node import Node
@@ -35,7 +34,6 @@ from plugin import PluginView
 from tools import Tools
 from i18n import _, N_
 import wnck
-from gnome import program_get
 from hotkey_manager import HotkeyManager, HotkeyTreeView
 from about_dialog import AccerciserAboutDialog
 from prefs_dialog import AccerciserPreferencesDialog
@@ -175,14 +173,20 @@ class Main(Tools):
     about = AccerciserAboutDialog()
     about.show_all()
     
-  def _onHelp(self, action):
+  def _onHelp(self, action, page=""):
     '''
     Shows the help dialog.
 
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    gnome.help_display('accerciser.xml')
+    uri = "ghelp:accerciser"
+    if page:
+        uri += "?%s" % page
+    gtk.show_uri(gtk.gdk.screen_get_default(),
+                 uri,
+                 gtk.get_current_event_time())
+    return True
          
   def _onShowPreferences(self, action):
     '''
