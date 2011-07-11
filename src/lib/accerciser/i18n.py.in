@@ -59,6 +59,8 @@ LOCALE_DIR = os.path.join(sys.prefix, '@DATADIRNAME@', 'locale')
 DOMAIN = '@GETTEXT_PACKAGE@'
 # build a default instance to the LSR domain and locale directory
 _ = bind(DOMAIN, LOCALE_DIR)
+gettext.bindtextdomain (DOMAIN, LOCALE_DIR)
+gettext.textdomain(DOMAIN)
 
 def C_(ctx, s):
   '''Provide qualified translatable strings.  Some strings translate to
