@@ -7,25 +7,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2010-02-17 11:13+0000\n"
-"PO-Revision-Date: 2010-02-23 23:06+0300\n"
-"Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-07-04 12:27+0000\n"
+"PO-Revision-Date: 2011-07-12 15:51+0300\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.5.2\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2
+#: ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser prieinamumo žvalgas"
 
@@ -194,8 +193,9 @@ msgstr "<b>Tekstas</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nežinoma</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(be aprašo)</i>"
 
@@ -262,7 +262,8 @@ msgid "Des_ktop"
 msgstr "Dar_bastalis"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/interface_view.ui.h:31
+#: ../plugins/validate.py:214
 #: ../plugins/validate.py:277
 msgid "Description"
 msgstr "Apibūdinimas"
@@ -281,7 +282,8 @@ msgid "Header:"
 msgstr "Antraštė:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36
+#: ../plugins/validate.py:283
 msgid "Hyperlink"
 msgstr "Hipernuoroda"
 
@@ -427,35 +429,38 @@ msgstr "Sąsajos žiūriklis"
 msgid "Allows viewing of various interface properties"
 msgstr "Leidžia peržvelgti įvairias sąsajos savybes"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229
+#: ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(nerealizuota)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703
+#: ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "Pradžia"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "Pabaiga"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "Per daug pasirenkamųjų antrinių procesų"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230
+#: ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redaguojamas)</i>"
 
@@ -475,42 +480,8 @@ msgstr "Patikrinti paskutinį išskirtą pasirinkimą"
 msgid "Inspect accessible under mouse"
 msgstr "Patikrinti pasirinkimą po pelės žymekliu"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Native"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Scenarijaus tipas"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Scenarijaus įrašiklis"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Kuria dogtail stiliaus scenarijus"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Dabartinis scenarijus bus prarastas."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Patvirtinti išvalymą"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.ui.h:1
+#: ../plugins/validate.py:360
 #: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "Neveiklus"
@@ -537,12 +508,14 @@ msgstr "Patikrina programos prieinamumą"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:207
+#: ../plugins/validate.py:275
 msgid "Level"
 msgstr "Lygis"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281
+#: ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "Rolė"
 
@@ -582,21 +555,21 @@ msgstr "Pagrindas"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Išbando esminį GUI programos prieinamumą"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "veiksmas %s nefokusuojamas arba neišrenkamas"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "interaktyvusis %s neturi veiksmo"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "daugiau nei vienas fokusuotas valdiklis "
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s neturi teksto sąsajos"
@@ -604,12 +577,12 @@ msgstr "%s neturi teksto sąsajos"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Sukūrėjo indeksas %s neatitiinka sukurtųjų indeksų"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Santykiui %s nėra atvirkštinio"
@@ -617,21 +590,22 @@ msgstr "Santykiui %s nėra atvirkštinio"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s trūksta pavadinimo ar žymės"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "fokusuojamasis %s turi lentelės sąsają, neturi išrinkimo sąsajos"
+#| msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "fokusuojamasis %s turi lentelės sąsają, bet neturi išrinkimo sąsajos"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s turi būseną %s be būsenos %s"
@@ -639,7 +613,7 @@ msgstr "%s turi būseną %s be būsenos %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nepriklauso rinkiniui"
@@ -649,7 +623,7 @@ msgstr "%s nepriklauso rinkiniui"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeksas %(num)d neatitinka eilutės ir stulpelio"
@@ -660,35 +634,27 @@ msgstr "%(rolename)s indeksas %(num)d neatitinka eilutės ir stulpelio"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
-msgstr ""
-"%(rolename)s sukūrėjo indekas %(num1)d neatitinka eilučių ir stulpelių "
-"indekso %(num2)d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "%(rolename)s sukūrėjo indekas %(num1)d neatitinka eilučių ir stulpelių indekso %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s neturi pavadinimo ar aprašo"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Preferences..."
 msgstr "_Nustatymai…"
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:89
 msgid "_Contents"
 msgstr "_Turinys"
 
-#: ../src/lib/accerciser/accerciser.py:129
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio "
-"prieinamumą. Ar norite dabar jį įjungti?"
+#: ../src/lib/accerciser/accerciser.py:130
+msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio prieinamumą. Ar norite dabar jį įjungti?"
 
 #: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
@@ -802,8 +768,7 @@ msgstr "Interaktyvus Python prieinamumo žvalgas"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr ""
-"accerciser autorinės teisės priklauso © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser autorinės teisės priklauso © 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -921,6 +886,30 @@ msgstr "_Rodymas"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_Žinynas"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Native"
+
+#~ msgid "Script Type"
+#~ msgstr "Scenarijaus tipas"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Scenarijaus įrašiklis"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Kuria dogtail stiliaus scenarijus"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Dabartinis scenarijus bus prarastas."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Patvirtinti išvalymą"
 
 #~ msgid "Full name"
 #~ msgstr "Pilnas pavadinimas"
