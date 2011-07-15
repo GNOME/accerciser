@@ -5,11 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
-"POT-Creation-Date: 2009-08-24 17:41+0000\n"
-"PO-Revision-Date: 2009-09-02 01:38+0200\n"
-"Last-Translator: Mark Krapivner <mark125@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-15 10:24+0300\n"
+"PO-Revision-Date: 2011-07-15 10:26+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,18 +19,17 @@ msgstr ""
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2
-#: ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
 msgstr "מגלה נגישות אינטרקטבי Accerciser"
 
 #: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
-msgstr "בדוק נגישות של תוכנות"
+msgstr "בדיקת נגישות של תוכנות"
 
 #: ../accerciser.schemas.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr "רשימת תוספות שאינם פועלים כברירת מחדל"
+msgstr "רשימת תוספות שאינם פועלים כבררת מחדל"
 
 #: ../accerciser.schemas.in.h:2
 msgid "Highlight border color"
@@ -57,7 +57,7 @@ msgstr "סידור התוספות בשמשה התחתונה"
 
 #: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
-msgstr "ברירת מחדל של חלון התוסף העליון"
+msgstr "בררת מחדל של חלון התוסף העליון"
 
 #: ../accerciser.schemas.in.h:9
 msgid "The duration of the highlight box when selecting accessible nodes"
@@ -73,7 +73,7 @@ msgstr "עיין במתודות של הנגיש הנבחר"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
-msgstr "הסתר מאפיינים פרטיים"
+msgstr "הסתרת תכונות פרטיות"
 
 #: ../plugins/api_view.py:79
 msgid "Method"
@@ -93,7 +93,7 @@ msgstr "מסוף IPython"
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "מסוף אינטרקטיבי המאפשר גישה לנגיש הנבחר"
+msgstr "מסוף אינטראקטיבי המאפשר גישה לנגיש הנבחר"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
@@ -101,7 +101,7 @@ msgstr "<b>צג אירועים</b>"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "C_lear Selection"
-msgstr "_רוקן בחירה"
+msgstr "_פינוי הבחירה"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
@@ -133,15 +133,15 @@ msgstr "מציג אירועי AT-SPI בזמן התרחשותם"
 
 #: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
-msgstr "הדגש אירוע אחרון"
+msgstr "הדגשת האירוע האחרון"
 
 #: ../plugins/event_monitor.py:64
 msgid "Start/stop event recording"
-msgstr "התחל/הפסק הקלטת אירועים"
+msgstr "התחלה/הפסקה של הקלטת אירועים"
 
 #: ../plugins/event_monitor.py:67
 msgid "Clear event log"
-msgstr "נקה יומן אירועים"
+msgstr "ניקוי יומן האירועים"
 
 #: ../plugins/interface_view.ui.h:1
 msgid "0"
@@ -158,7 +158,7 @@ msgstr "<b>מאפיינים</b>"
 
 #: ../plugins/interface_view.ui.h:5
 msgid "<b>Child count</b>"
-msgstr "<b>מספר ילדים</b>"
+msgstr "<b>מספר צאצאים</b>"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "<b>Description</b>"
@@ -188,9 +188,8 @@ msgstr "<b>טקסט</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>לא ידוע</b>"
 
-#: ../plugins/interface_view.ui.h:13
-#: ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "(אין תיאור)"
 
@@ -257,8 +256,7 @@ msgid "Des_ktop"
 msgstr "_שולחן עבודה"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31
-#: ../plugins/validate.py:214
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
 #: ../plugins/validate.py:277
 msgid "Description"
 msgstr "תיאור"
@@ -277,8 +275,7 @@ msgid "Header:"
 msgstr "כותרת עליונה:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36
-#: ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
 msgid "Hyperlink"
 msgstr "קישורית"
 
@@ -348,7 +345,7 @@ msgstr "שורות"
 
 #: ../plugins/interface_view.ui.h:53
 msgid "Select All"
-msgstr "בחר הכל"
+msgstr "בחירת הכול"
 
 #: ../plugins/interface_view.ui.h:54
 msgid "Selected columns"
@@ -417,47 +414,44 @@ msgstr "שם·(x,y)"
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:38
 msgid "Interface Viewer"
-msgstr "צג ממשקים"
+msgstr "צג מנשקים"
 
 #. Translators: this is a plugin description
 #: ../plugins/interface_view.py:41
 msgid "Allows viewing of various interface properties"
 msgstr "מאפשר הצגה ושליטה במאפייני ממשקים"
 
-#: ../plugins/interface_view.py:227
-#: ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr " (לא ממומש)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701
-#: ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "שם"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "כתובת"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "תחילה"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "סוף"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "יש יותר מדי ילדים שאפשר לבחור"
 
-#: ../plugins/interface_view.py:1228
-#: ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
-msgstr "‏<i>(ניתן לעריכה)</i>"
+msgstr ">(ניתן לעריכה)"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
@@ -475,43 +469,7 @@ msgstr "בחן נגיש אחרון שקיבל מיקוד"
 msgid "Inspect accessible under mouse"
 msgstr "בחן נגיש שמתחת לעכבר"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "מקורי"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "סוג תסריטים"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "מקליט תסריטים"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "צור תסריט דוגטייל"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "התסריט הנוכחי יימחק."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "אשר ניקוי"
-
-#: ../plugins/validate.ui.h:1
-#: ../plugins/validate.py:360
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
 msgid "Idle"
 msgstr "ממתין"
@@ -538,14 +496,12 @@ msgstr "בדוק נגישות יישום"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207
-#: ../plugins/validate.py:275
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
 msgid "Level"
 msgstr "רמה"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
 msgid "Role"
 msgstr "תפקיד"
 
@@ -585,34 +541,34 @@ msgstr "בסיסי"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "בדוק נגישות מנשק המשתמש הבסיסי של יישום"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "%s הניתן להפעלה אינו ניתן להתמקדות או לבחירה"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "ה־%s האינטרקטיבי איני ניתן להפעלה"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
-msgstr "יותר מווידג'ט אחד במיקוד"
+msgstr "יותר מווידג׳ט אחד במיקוד"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
-msgstr "ל-%s אין מנשק טקסט"
+msgstr "ל־%s אין מנשק טקסט"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "האינדקס %s אצל ההורה אינו תואם לאינדקס הצאצא"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "חסר יחס הופכי עבור היחס %s"
@@ -620,21 +576,21 @@ msgstr "חסר יחס הופכי עבור היחס %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
-msgstr "ל-%s אין שם או תוית"
+msgstr "ל־%s אין שם או תווית"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "ל־%s הניתן להתמקדות יש מנשק טבלה, אין מנשק בחירה"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "ל־%s הניתן להתמקדות יש מנשק טבלה אך אין מנשק בחירה"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s הוא במצב %s ללא מצב %s"
@@ -642,7 +598,7 @@ msgstr "%s הוא במצב %s ללא מצב %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s אינו שייך לערכה"
@@ -652,7 +608,7 @@ msgstr "%s אינו שייך לערכה"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה ולעמודה"
@@ -663,12 +619,16 @@ msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה 
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה "
+"%(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "ל-%s אין שם ותיאור"
@@ -681,11 +641,15 @@ msgstr "העד_פות..."
 msgid "_Contents"
 msgstr "‏_תכנים"
 
-#: ../src/lib/accerciser/accerciser.py:129
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן עבודה. האם ברצונך לאפשר זאת כעת?"
+#: ../src/lib/accerciser/accerciser.py:128
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן "
+"עבודה. האם ברצונך לאפשר זאת כעת?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "הערה: השינויים רק יחלו באיתחול מחודש של השולחן עבודה"
 
@@ -914,29 +878,62 @@ msgstr "_תצוגה"
 msgid "_Help"
 msgstr "_עזרה"
 
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "מקורי"
+
+#~ msgid "Script Type"
+#~ msgstr "סוג תסריטים"
+
+#~ msgid "Script Recorder"
+#~ msgstr "מקליט תסריטים"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "צור תסריט דוגטייל"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "התסריט הנוכחי יימחק."
+
+#~ msgid "Confirm clear"
+#~ msgstr "אשר ניקוי"
+
 #~ msgid "Full name"
 #~ msgstr "שם מלא"
+
 #~ msgid "Key binding"
 #~ msgstr "תחביר קלידים"
+
 #~ msgid "Content type"
 #~ msgstr "סוג תוכן"
+
 #~ msgid "1.0"
 #~ msgstr "1.0"
+
 #~ msgid "Wiki page"
 #~ msgstr "עמוד ויקי"
+
 #~ msgid "Core"
 #~ msgstr "ליבה"
+
 #~ msgid "Plugin enabled"
 #~ msgstr "אפשר תוסף"
+
 #~ msgid "Top right"
 #~ msgstr "שמשה עליונה"
+
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr "נגישות לשולחן העבודה עדיין לא פועל."
+
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr "עליך לאתחל מחדש את שולחן העבודה בכדי שהנגישות תופעל."
+
 #~ msgid "Va_lue"
 #~ msgstr "_ערך"
-
