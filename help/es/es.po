@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-07-16 09:14+0000\n"
-"PO-Revision-Date: 2011-07-17 12:12+0200\n"
+"POT-Creation-Date: 2011-07-17 10:14+0000\n"
+"PO-Revision-Date: 2011-07-17 16:07+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -470,7 +470,6 @@ msgid "<app>Accerciser</app>'s default interface."
 msgstr "Interfaz predeterminada de <app>Accerciser</app>."
 
 #: C/introduction.page:63(title)
-#| msgid "<application>Accerciser</application> Main Window"
 msgid "<app>Accerciser</app>'s intended audience"
 msgstr "Público objetivo de <app>AccerciserI"
 
@@ -600,7 +599,6 @@ msgstr ""
 "md5=c83c4113369ff2adc756dfd8614a48ed"
 
 #: C/interface_viewer_plugin.page:4(title)
-#| msgid "Interface Viewer"
 msgid "2. Interface Viewer Plugin"
 msgstr "2. Complemento Visor de interfaces"
 
@@ -609,7 +607,6 @@ msgid "Examining your accessibility implementation"
 msgstr ""
 
 #: C/interface_viewer_plugin.page:25(title)
-#| msgid "Interface Viewer"
 msgid "Interface Viewer Plugin"
 msgstr "Complemento Visor de interfaces"
 
@@ -637,7 +634,6 @@ msgid ""
 msgstr ""
 
 #: C/interface_viewer_plugin.page:49(title)
-#| msgid "Interface Viewer"
 msgid "Running the Interface Viewer Plugin"
 msgstr "Ejecutar el complemento Visor de interfaces"
 
@@ -1047,7 +1043,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:159(title)
 msgid "Creating a Viewport Plugin"
-msgstr ""
+msgstr "Crear un complemento de punto de vista"
 
 #: C/howto_write_a_plugin.page:160(p)
 msgid ""
@@ -1087,6 +1083,11 @@ msgid ""
 "        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
 "    "
 msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
 
 #: C/howto_write_a_plugin.page:181(p)
 msgid ""
@@ -1308,7 +1309,6 @@ msgstr ""
 "md5=1ee2a1d281deefa5b401244b49ed9654"
 
 #: C/event_monitor_plugin.page:4(title)
-#| msgid "Event Monitor"
 msgid "4. Event Monitor Plugin"
 msgstr "4. Complemento Monitor de eventos"
 
@@ -1317,7 +1317,6 @@ msgid "Monitoring accessible events as they occur"
 msgstr "Monitorizar eventos accesibles cuando ocurren"
 
 #: C/event_monitor_plugin.page:25(title) C/event_monitor_plugin.page:35(title)
-#| msgid "Event Monitor"
 msgid "Event Monitor Plugin"
 msgstr "Complemento Monitor de eventos"
 
@@ -1349,6 +1348,9 @@ msgid ""
 "When you open the Event Monitor Plugin, you see a list of checkboxes "
 "representing all the different AT-SPI event classes covered by the plugin:"
 msgstr ""
+"Cuando abre el complemento del Monitor de eventos, verá una lista de "
+"casillas de verificación representando todas las clases diferentes de AT-SPI "
+"que el complemento cubre:"
 
 #: C/event_monitor_plugin.page:58(p)
 msgid "document"
@@ -1393,6 +1395,8 @@ msgstr ""
 msgid ""
 "Selecting only a few event types per monitoring gives you a clearer output."
 msgstr ""
+"Seleccionar sólo unos pocos tipos de eventos para monitorizar proporciona "
+"una salida más limpia."
 
 #: C/event_monitor_plugin.page:107(p)
 msgid ""
@@ -1421,6 +1425,9 @@ msgid ""
 "the application. Activating the link for either of these items will cause it "
 "to become selected in the Application Tree View."
 msgstr ""
+"Para cada evento entrante, el complemento del Monitor de eventos indica la "
+"fuente y la aplicación. Activar el enlace para alguno de esos elementos hará "
+"que se seleccione en la vista de árbol de la aplicación."
 
 #: C/event_monitor_plugin.page:128(p)
 msgid ""
@@ -1428,6 +1435,9 @@ msgid ""
 "press the <cmd>Save</cmd> button. To clear the output screen, you just need "
 "to click the <cmd>Clear</cmd> button."
 msgstr ""
+"Si quiere guardar la salida generada por el complemento de Monitor de "
+"eventos, simplemente pulse el botón <cmd>Guardar</cmd>. Para limpiar la "
+"salida de la pantalla, simplemente pulse el botón <cmd>Limpiar</cmd>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1441,7 +1451,7 @@ msgstr ""
 
 #: C/desktop_tree_view.page:4(title)
 msgid "1. Application Tree View"
-msgstr ""
+msgstr "1. Vista en árbol de la aplicación"
 
 #: C/desktop_tree_view.page:6(desc)
 msgid "Exploring the accessible hierarchy of the desktop"
@@ -1449,7 +1459,7 @@ msgstr "Explorar la jerarquía accesible del escritorio"
 
 #: C/desktop_tree_view.page:25(title) C/desktop_tree_view.page:37(title)
 msgid "Application Tree View"
-msgstr ""
+msgstr "Vista en árbol de la aplicación"
 
 #: C/desktop_tree_view.page:27(p)
 msgid ""
@@ -1468,6 +1478,9 @@ msgid ""
 "each accessible application running on the desktop as a widget hierarchical "
 "structure."
 msgstr ""
+"La vista en árbol de la aplicación de <app>Accerciser</app> representa la "
+"interfaz de cada aplicación accesible en ejecución en el escritorio como una "
+"estructura jerárquica de widget."
 
 #: C/desktop_tree_view.page:49(p)
 msgid ""
@@ -1485,16 +1498,9 @@ msgstr ""
 
 #: C/desktop_tree_view.page:62(title)
 msgid "Bookmarking items in the Application Tree View"
-msgstr ""
+msgstr "Marcar elementos en la vista de árbol de la aplicación"
 
 #: C/desktop_tree_view.page:63(p)
-#| msgid ""
-#| "Accerciser allows bookmarking selected accessibles for later examining. "
-#| "This could be helpful if the target application must be restarted, for "
-#| "example after rebuilding it. To bookmark the currently selected "
-#| "accessible do <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add "
-#| "Bookmark...</guimenuitem></menuchoice> or press "
-#| "<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
 msgid ""
 "<app>Accerciser</app> allows bookmarking items in the Application Tree View "
 "for later examining. This is helpful when the target application must be "
@@ -1509,11 +1515,6 @@ msgstr ""
 "gui><gui>Añadir marcador</gui></guiseq> o pulse <key>Ctrl</key>+<key>d</key>."
 
 #: C/desktop_tree_view.page:68(p)
-#| msgid ""
-#| "Bookmarks to accessibles in Accerciser are defined by an application name "
-#| "and a \"path\" in the application's internal accessible hierarchy to the "
-#| "bookmarked accessible. When the target application is in a different "
-#| "state (ie. multiple top level frames) the path might not be correct."
 msgid ""
 "Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
 "application name and a \"path\" in the application's internal accessible "
@@ -1539,7 +1540,6 @@ msgstr ""
 "@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
 
 #: C/api_browser_plugin.page:4(title)
-#| msgid "API Browser"
 msgid "1. API Browser Plugin"
 msgstr "1. Complemento Examinador API"
 
@@ -1548,7 +1548,6 @@ msgid "Verifying interfaces, methods, and properties"
 msgstr "Verificar interfaces, métodos y propiedades"
 
 #: C/api_browser_plugin.page:25(title) C/api_browser_plugin.page:32(title)
-#| msgid "API Browser"
 msgid "API Browser Plugin"
 msgstr "Complemento Examinador API"
 
@@ -1560,9 +1559,6 @@ msgid ""
 msgstr ""
 
 #: C/api_browser_plugin.page:33(desc) C/api_browser_plugin.page:38(p)
-#| msgid ""
-#| "This plugin shows the interfaces, methods, and attributes supported by "
-#| "the accessible selected in the tree view."
 msgid ""
 "The API Browser Plugin allows you to verify interfaces, methods, and "
 "properties of a target accessible widget in an application."
