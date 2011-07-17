@@ -1,20 +1,20 @@
 # translation of accerciser.help.gnome-2-22.po to Español
 # translation of accerciser manual to Spanish
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-07-14 08:30+0000\n"
-"PO-Revision-Date: 2011-07-16 11:05+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-07-16 09:14+0000\n"
+"PO-Revision-Date: 2011-07-17 12:12+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -426,15 +426,6 @@ msgid "What is <app>Accerciser</app>?"
 msgstr "¿Qué es <app>Accerciser</app>?"
 
 #: C/introduction.page:26(p)
-#| msgid ""
-#| "<application>Accerciser</application> is an interactive Python "
-#| "accessibility explorer for the GNOME desktop. It uses <ulink url=\"http://"
-#| "directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect "
-#| "and control widgets, allowing you to check if an application is providing "
-#| "correct information to assistive technologies and automated test "
-#| "frameworks. <application>Accerciser</application> has a simple plugin "
-#| "framework which you can use to create custom views of accessibility "
-#| "information."
 msgid ""
 "<app>Accerciser</app> is an interactive Python accessibility explorer. It "
 "uses the AT-SPI library to inspect, examine, and interact with widgets, "
@@ -479,10 +470,9 @@ msgid "<app>Accerciser</app>'s default interface."
 msgstr "Interfaz predeterminada de <app>Accerciser</app>."
 
 #: C/introduction.page:63(title)
-#, fuzzy
 #| msgid "<application>Accerciser</application> Main Window"
 msgid "<app>Accerciser</app>'s intended audience"
-msgstr "Ventana principal de <application>Accerciser</application>"
+msgstr "Público objetivo de <app>AccerciserI"
 
 #: C/introduction.page:64(p)
 msgid ""
@@ -610,20 +600,18 @@ msgstr ""
 "md5=c83c4113369ff2adc756dfd8614a48ed"
 
 #: C/interface_viewer_plugin.page:4(title)
-#, fuzzy
 #| msgid "Interface Viewer"
 msgid "2. Interface Viewer Plugin"
-msgstr "Visor de interfaces"
+msgstr "2. Complemento Visor de interfaces"
 
 #: C/interface_viewer_plugin.page:6(desc)
 msgid "Examining your accessibility implementation"
 msgstr ""
 
 #: C/interface_viewer_plugin.page:25(title)
-#, fuzzy
 #| msgid "Interface Viewer"
 msgid "Interface Viewer Plugin"
-msgstr "Visor de interfaces"
+msgstr "Complemento Visor de interfaces"
 
 #: C/interface_viewer_plugin.page:27(p)
 msgid ""
@@ -649,10 +637,9 @@ msgid ""
 msgstr ""
 
 #: C/interface_viewer_plugin.page:49(title)
-#, fuzzy
 #| msgid "Interface Viewer"
 msgid "Running the Interface Viewer Plugin"
-msgstr "Visor de interfaces"
+msgstr "Ejecutar el complemento Visor de interfaces"
 
 #: C/interface_viewer_plugin.page:50(p)
 msgid ""
@@ -800,14 +787,13 @@ msgstr "Temas avanzados"
 
 #: C/howto_write_a_plugin.page:4(title)
 msgid "3. Writing New Plugins"
-msgstr ""
+msgstr "3. Escribir complementos nuevos"
 
 #: C/howto_write_a_plugin.page:6(desc)
 msgid "Extending <app>Accerciser</app> with your desired functionalities"
 msgstr "Ampliar <app>Accerciser</app> con nuevas funcionalidades"
 
 #: C/howto_write_a_plugin.page:25(title)
-#| msgid "When You Start <application>Accerciser</application>"
 msgid "Writing Plugins for <app>Accerciser</app>"
 msgstr "Escribir complementos para <application>Accerciser</application>"
 
@@ -822,7 +808,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:33(p)
 msgid "<app>Accerciser</app> supports three basic types of plugins:"
-msgstr ""
+msgstr "<app>Accerciser</app> soporta tres tipos de complementos básicos:"
 
 #: C/howto_write_a_plugin.page:38(p)
 msgid ""
@@ -846,7 +832,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:58(title)
 msgid "Creating a Base Plugin"
-msgstr ""
+msgstr "Crear un complemento base"
 
 #: C/howto_write_a_plugin.page:59(p)
 msgid ""
@@ -857,7 +843,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:63(p)
 msgid "First off, the import lines we will use are:"
-msgstr ""
+msgstr "Lo primero, las líneas de importación que se usarán son:"
 
 #: C/howto_write_a_plugin.page:66(code)
 #, no-wrap
@@ -879,6 +865,8 @@ msgid ""
 "Next we will derive a new class from the Plugin base class, and assign some "
 "mandatory class attributes:"
 msgstr ""
+"Lo siguiente, será derivar una clase nueva de la clase base de complementos, "
+"y asignar algunos atributos obligatorios de clase:"
 
 #: C/howto_write_a_plugin.page:75(code)
 #, no-wrap
@@ -1223,7 +1211,6 @@ msgstr "2. Cómo instalar y configurar <app>Accerciser</app>"
 
 #: C/howto_setting_up_accerciser.page:6(title)
 #: C/howto_setting_up_accerciser.page:26(title)
-#| msgid "To Start <application>Accerciser</application>"
 msgid "Setting up <app>Accerciser</app>"
 msgstr "Configurar <app>Accerciser</app>"
 
@@ -1260,9 +1247,6 @@ msgstr ""
 "<app>Accerciser</app> no es compatible con su entorno."
 
 #: C/howto_setting_up_accerciser.page:50(p)
-#| msgid ""
-#| "The main <application>Accerciser</application> window contains the "
-#| "following elements:"
 msgid ""
 "After getting <app>Accerciser</app>, install it using the following commands:"
 msgstr ""
@@ -1324,20 +1308,18 @@ msgstr ""
 "md5=1ee2a1d281deefa5b401244b49ed9654"
 
 #: C/event_monitor_plugin.page:4(title)
-#, fuzzy
 #| msgid "Event Monitor"
 msgid "4. Event Monitor Plugin"
-msgstr "Monitor de eventos"
+msgstr "4. Complemento Monitor de eventos"
 
 #: C/event_monitor_plugin.page:6(desc)
 msgid "Monitoring accessible events as they occur"
-msgstr ""
+msgstr "Monitorizar eventos accesibles cuando ocurren"
 
 #: C/event_monitor_plugin.page:25(title) C/event_monitor_plugin.page:35(title)
-#, fuzzy
 #| msgid "Event Monitor"
 msgid "Event Monitor Plugin"
-msgstr "Monitor de eventos"
+msgstr "Complemento Monitor de eventos"
 
 #: C/event_monitor_plugin.page:26(p)
 msgid ""
@@ -1355,10 +1337,12 @@ msgid ""
 "The Event Monitor Plugin allows you to view AT-SPI events and match them "
 "with accessible widgets."
 msgstr ""
+"El complemento Monitor de eventos le permite ver los eventos AT-SPI y "
+"asociarlos con widgets accesibles."
 
 #: C/event_monitor_plugin.page:49(title)
 msgid "Running the Event Monitor Plugin"
-msgstr ""
+msgstr "Ejecutar el complemento Monitor de eventos"
 
 #: C/event_monitor_plugin.page:50(p)
 msgid ""
@@ -1368,27 +1352,27 @@ msgstr ""
 
 #: C/event_monitor_plugin.page:58(p)
 msgid "document"
-msgstr ""
+msgstr "documento"
 
 #: C/event_monitor_plugin.page:63(p)
 msgid "focus"
-msgstr ""
+msgstr "foco"
 
 #: C/event_monitor_plugin.page:68(p)
 msgid "mouse"
-msgstr ""
+msgstr "ratón"
 
 #: C/event_monitor_plugin.page:73(p)
 msgid "object"
-msgstr ""
+msgstr "objeto"
 
 #: C/event_monitor_plugin.page:78(p)
 msgid "terminal"
-msgstr ""
+msgstr "terminal"
 
 #: C/event_monitor_plugin.page:83(p)
 msgid "window"
-msgstr ""
+msgstr "ventana"
 
 #: C/event_monitor_plugin.page:89(p)
 msgid ""
@@ -1504,7 +1488,6 @@ msgid "Bookmarking items in the Application Tree View"
 msgstr ""
 
 #: C/desktop_tree_view.page:63(p)
-#, fuzzy
 #| msgid ""
 #| "Accerciser allows bookmarking selected accessibles for later examining. "
 #| "This could be helpful if the target application must be restarted, for "
@@ -1519,15 +1502,13 @@ msgid ""
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
 "<key>Ctrl</key>+<key>d</key>."
 msgstr ""
-"Accerciser permite marcar los accesibles seleccionados para examinarlos "
-"posteriormente. Esto puede ser útil si la aplicación objetivo debe "
-"reiniciarse, por ejemplo, después de reconstruirla. Para marcar el accesible "
-"seleccionado actualmente pulse <menuchoice><guimenu>Marcadores</"
-"guimenu><guimenuitem>Añadir marcador...</guimenuitem></menuchoice> o pulse "
-"<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
+"<app>Accerciser</app> permite marcar elementos en la vista de árbol de la "
+"aplicación, para examinarlos posteriormente. Esto puede ser útil si la "
+"aplicación objetivo debe reiniciarse, por ejemplo, después de reconstruirla. "
+"Para marcar un elemento, selecciónelo y pulse <guiseq><gui>Marcadores</"
+"gui><gui>Añadir marcador</gui></guiseq> o pulse <key>Ctrl</key>+<key>d</key>."
 
 #: C/desktop_tree_view.page:68(p)
-#, fuzzy
 #| msgid ""
 #| "Bookmarks to accessibles in Accerciser are defined by an application name "
 #| "and a \"path\" in the application's internal accessible hierarchy to the "
@@ -1541,11 +1522,13 @@ msgid ""
 "correct. Bookmarks could be managed by accessing the bookmark editing dialog "
 "through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
-"Los marcadores a accesibles en Accerciser están definidos por el nombre de "
-"la aplicación y una «ruta» en la jerarquía interna del accesible de la "
-"aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
-"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
-"no sea correcta."
+"Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
+"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible "
+"de la aplicación al accesible marcado. Cuando la aplicación objetivo está en "
+"un estado diferente (ej. múltiples marcos de nivel superior) puede que la "
+"ruta no sea correcta. Se pueden gestionar los marcadores accediendo al "
+"diálogo de edición de marcadores a través de <guiseq><gui>Marcadores</"
+"gui><gui>Editar marcadores</gui></guiseq>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1556,20 +1539,18 @@ msgstr ""
 "@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
 
 #: C/api_browser_plugin.page:4(title)
-#, fuzzy
 #| msgid "API Browser"
 msgid "1. API Browser Plugin"
-msgstr "Examinador API"
+msgstr "1. Complemento Examinador API"
 
 #: C/api_browser_plugin.page:6(desc)
 msgid "Verifying interfaces, methods, and properties"
 msgstr "Verificar interfaces, métodos y propiedades"
 
 #: C/api_browser_plugin.page:25(title) C/api_browser_plugin.page:32(title)
-#, fuzzy
 #| msgid "API Browser"
 msgid "API Browser Plugin"
-msgstr "Examinador API"
+msgstr "Complemento Examinador API"
 
 #: C/api_browser_plugin.page:26(p)
 msgid ""
@@ -1579,7 +1560,6 @@ msgid ""
 msgstr ""
 
 #: C/api_browser_plugin.page:33(desc) C/api_browser_plugin.page:38(p)
-#, fuzzy
 #| msgid ""
 #| "This plugin shows the interfaces, methods, and attributes supported by "
 #| "the accessible selected in the tree view."
@@ -1587,12 +1567,12 @@ msgid ""
 "The API Browser Plugin allows you to verify interfaces, methods, and "
 "properties of a target accessible widget in an application."
 msgstr ""
-"Este complemento muestra las interfaces, métodos y atributos soportados por "
-"el accesible seleccionado en la vista de árbol."
+"El complemento Examinador API le permite verificar interfaces, métodos y "
+"propiedades soportados por el widget accesible objetivo en la aplicación."
 
 #: C/api_browser_plugin.page:46(title)
 msgid "Running the API Browser Plugin"
-msgstr ""
+msgstr "Ejecutar el complemento Examinador API"
 
 #: C/api_browser_plugin.page:47(p)
 msgid ""
@@ -1622,7 +1602,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007-2010"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2011"
 
 #~ msgid "<application>Accerciser</application> Manual v0.2.0"
 #~ msgstr "Manual de <application>Accerciser</application> v0.2.0"
