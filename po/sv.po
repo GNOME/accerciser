@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-27 18:02+0100\n"
-"PO-Revision-Date: 2011-02-27 18:03+0100\n"
+"POT-Creation-Date: 2011-07-18 22:09+0200\n"
+"PO-Revision-Date: 2011-07-18 22:10+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -477,41 +477,6 @@ msgstr "Inspektera senaste fokuserad hjälpmedelsfunktion"
 msgid "Inspect accessible under mouse"
 msgstr "Inspektera hjälpmedelsfunktion under muspekare"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Original"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Skripttyp"
-
-#: ../plugins/script_recorder.py:175
-msgid "Script Recorder"
-msgstr "Skriptinspelare"
-
-#: ../plugins/script_recorder.py:177
-msgid "Creates dogtail style scripts"
-msgstr "Skapar dogtail-liknande skript"
-
-#: ../plugins/script_recorder.py:341
-msgid "The current script will be lost."
-msgstr "Det aktuella skriptet kommer att förloras."
-
-#: ../plugins/script_recorder.py:342
-msgid "Confirm clear"
-msgstr "Bekräfta tömning"
-
 #: ../plugins/validate.ui.h:1
 #: ../plugins/validate.py:360
 #: ../plugins/validate.py:412
@@ -587,21 +552,21 @@ msgstr "Grundläggande"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Testar grundläggande hjälpmedel i grafiska program"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "åtgärdningsbara %s är inte fokusbar eller valbar"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "interaktiva %s är inte åtgärdningsbar"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "fler än en fokuserad widget"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s har inget textgränssnitt"
@@ -609,12 +574,12 @@ msgstr "%s har inget textgränssnitt"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s index i förälder matchar inte barnindex"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Saknar mottagare för %s-förhållande"
@@ -622,21 +587,21 @@ msgstr "Saknar mottagare för %s-förhållande"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s saknar namn eller etikett"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "fokusbar %s har tabellgränssnitt, inget valgränssnitt"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "fokusbar %s har ett tabellgränssnitt, men inte ett valgränssnitt"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s har tillståndet %s utan tillståndet %s"
@@ -644,7 +609,7 @@ msgstr "%s har tillståndet %s utan tillståndet %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s tillhör inte en uppsättning"
@@ -654,7 +619,7 @@ msgstr "%s tillhör inte en uppsättning"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s index %(num)d matchar inte rad och kolumn"
@@ -665,12 +630,12 @@ msgstr "%(rolename)s index %(num)d matchar inte rad och kolumn"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
 msgstr "%(rolename)s föräldraindex %(num1)d matchar inte rad- och kolumnindex %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s har inget namn eller beskrivning"
@@ -683,11 +648,11 @@ msgstr "_Inställningar..."
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:128
 msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr "Accerciser kunde inte se programmen på ditt skrivbord. Du måste aktivera hjälpmedelsfunktioner för skrivbordet för att rätta till det här problemet. Vill du aktivera den nu?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Observera: Eventuella ändringar blir aktiverade efter utloggning."
 
@@ -920,57 +885,102 @@ msgstr "_Visa"
 msgid "_Help"
 msgstr "_Hjälp"
 
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Original"
+
+#~ msgid "Script Type"
+#~ msgstr "Skripttyp"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Skriptinspelare"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Skapar dogtail-liknande skript"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Det aktuella skriptet kommer att förloras."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Bekräfta tömning"
+
 #~ msgid "Full name"
 #~ msgstr "Fullständigt namn"
+
 #~ msgid "Key binding"
 #~ msgstr "Tangentbindning"
+
 #~ msgid "Content type"
 #~ msgstr "Innehållstyp"
+
 #~ msgid "View"
 #~ msgstr "Visa"
+
 #~ msgid "1.0"
 #~ msgstr "1.0"
+
 #~ msgid "accerciser Copyright Â© 2006, 2007 IBM Corporation (BSD)"
 #~ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+
 #~ msgid "gtk-clear"
 #~ msgstr "Töm"
+
 #~ msgid "gtk-save"
 #~ msgstr "Spara"
+
 #~ msgid "gtk-select-all"
 #~ msgstr "Markera allt"
+
 #~ msgid "gtk-media-record"
 #~ msgstr "Spela in"
+
 #~ msgid "Wiki page"
 #~ msgstr "Wiki-sida"
+
 #~ msgid "gtk-close"
 #~ msgstr "Stäng"
+
 #~ msgid "gtk-quit"
 #~ msgstr "Avsluta"
+
 #~ msgid "gtk-refresh"
 #~ msgstr "Uppdatera"
+
 #~ msgid "Core"
 #~ msgstr "Kärna"
+
 #~ msgid "Plugin enabled"
 #~ msgstr "Insticksmodul aktiverad"
+
 #~ msgid "Set to true is plugin is enabled"
 #~ msgstr "Ställ in till sant om insticksmodulen är aktiverad"
+
 #~ msgid "The default tab position"
 #~ msgstr "Standardposition för flik"
+
 #~ msgid "The default tab position for this plugin"
 #~ msgstr "Standardpositionen för fliken för den här insticksmodulen"
+
 #~ msgid "Top right"
 #~ msgstr "Övre högra hörnet"
+
 #~ msgid ""
 #~ "Desktop accessibility is still not functioning although it has been "
 #~ "enabled."
 #~ msgstr ""
 #~ "Tillgänglighetsfunktioner för skrivbordet fungerar fortfarande inte även "
 #~ "om de har aktiverats."
+
 #~ msgid ""
 #~ "Note: You must logout for desktop accessibility options to take effect."
 #~ msgstr ""
 #~ "Observera: Du måste logga ut för att skrivbordsalternativ för "
 #~ "tillgänglighet blir aktiverade."
+
 #~ msgid "Va_lue"
 #~ msgstr "Vä_rde"
-
