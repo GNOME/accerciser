@@ -1,20 +1,20 @@
 # translation of accerciser.help.gnome-2-22.po to Español
 # translation of accerciser manual to Spanish
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-07-17 10:14+0000\n"
-"PO-Revision-Date: 2011-07-17 16:07+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-07-17 14:08+0000\n"
+"PO-Revision-Date: 2011-07-21 16:16+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -111,16 +111,21 @@ msgid ""
 "related to a target application. For each error, the report includes the "
 "severity level and a brief description."
 msgstr ""
+"El complemento de validación AT-SPI genera un informe con los errores de "
+"accesibilidad de una aplicación objetivo. El informe incluye el nivel de "
+"gravedad y una breve descripción para cada error."
 
 #: C/validator_plugin.page:33(desc) C/validator_plugin.page:38(p)
 msgid ""
 "The AT-SPI Validator Plugin generates useful reports for verifying the "
 "accessibility of a target application."
 msgstr ""
+"El complemento de validación AT-SPI genera informes útiles para verificar la "
+"accesibilidad de una aplicación objetivo."
 
 #: C/validator_plugin.page:46(title)
 msgid "Running the AT-SPI Validator Plugin"
-msgstr ""
+msgstr "Ejecutar el complemento de validación AT-SPI"
 
 #: C/validator_plugin.page:47(p)
 msgid ""
@@ -128,6 +133,10 @@ msgid ""
 "View. The validator will generate the report with respect to the selected "
 "item and all of its descendant widgets in the tree hierarchy."
 msgstr ""
+"Para ejecutar el complemento de validación AT-SPI seleccione un elemento en "
+"la vista en árbol de la aplicación. El validador generará el informe "
+"correspondiente al elemento seleccionado y de todos sus widgets hijos en la "
+"jerarquía del árbol."
 
 #: C/validator_plugin.page:53(p)
 msgid ""
@@ -136,6 +145,10 @@ msgid ""
 "want to cancel the execution, just press the <cmd>Validate</cmd> button "
 "again."
 msgstr ""
+"Después de seleccionar un elemento, elija un esquema de validación en la "
+"caja combinada y pulse el botón <cmd>Validar</cmd> para empezar a generar el "
+"informe. Si quiere cancelar la ejecución, simplemente pulse el botón "
+"<cmd>Validar</cmd> otra vez."
 
 #: C/validator_plugin.page:59(p)
 msgid ""
@@ -145,6 +158,11 @@ msgid ""
 "\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
 "target application."
 msgstr ""
+"El informe generado es interactivo. Por lo tanto, puede hacer una doble "
+"pulsación en cualquier error encontrado para comprobar qué aplicación "
+"objetivo lo está causando. El widget correspondiente aparecerá seleccionado "
+"en la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</"
+"link> y resaltado en la aplicación objetivo."
 
 #: C/validator_plugin.page:64(p)
 msgid ""
@@ -152,6 +170,9 @@ msgid ""
 "<cmd>Save</cmd> button. To clear the validation screen, press the "
 "<cmd>Clear</cmd> button."
 msgstr ""
+"Si quiere guardar en informe generado en su equipo, simplemente pulse el "
+"botón <cmd>Guardar</cmd>. Para limpiar la pantalla de validación, pulse el "
+"botón <cmd>Limpiar</cmd>."
 
 #: C/validator_plugin.page:68(p)
 msgid ""
@@ -159,6 +180,10 @@ msgid ""
 "the corresponding item is selected and press the <cmd>Help</cmd> button. It "
 "will open a Help Page in your default browser."
 msgstr ""
+"Para obtener más información sobre un error en el informe generado, "
+"asegúrese de que el elemento correspondiente está seleccionado y pulse el "
+"botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador "
+"predeterminado."
 
 #: C/quick_select_plugin.page:4(title)
 msgid "5. Quick Select Plugin"
@@ -242,6 +267,9 @@ msgid ""
 "+<key>p</key> or <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> to "
 "open a dialog."
 msgstr ""
+"Para configurar los complementos, las teclas rápidas y el resaltado, pulse "
+"<key>ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</"
+"gui></guiseq> para abrir un diálogo."
 
 #: C/preferences.page:32(title)
 msgid "<app>Accerciser</app> preferences"
@@ -252,6 +280,8 @@ msgid ""
 "<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
 "widget's highlighting."
 msgstr ""
+"<app>Accerciser</app> le permite configurar los complementos, las teclas "
+"rápidas globales y el resaltado de widgets."
 
 #: C/preferences.page:44(title)
 msgid "Configuring plugins"
@@ -264,6 +294,11 @@ msgid ""
 "or disable a plugin, toggle its checkbox. Only active plugins can be "
 "accessed via <app>Accerciser</app>'s interface."
 msgstr ""
+"Después de abrir el diálogo de preferencias, encontrará una lista de "
+"complementos disponibles, con sus correspondientes casillas, en la pestaña "
+"«Complementos». Para activar o desactivar un complemento, conmute su casilla. "
+"Sólo se puede acceder a los complementos activos a través de la interfaz de "
+"<app>Accerciser</app>."
 
 #: C/preferences.page:50(p)
 msgid ""
@@ -271,6 +306,9 @@ msgid ""
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
 "a new window for the plugin."
 msgstr ""
+"Una pulsación con el botón derecho sobre un complemento dado le permite "
+"elegir su ubicación: «Panel superior», «Panel inferior» y «Nueva vista». Al "
+"seleccionar «Nueva vista» se crea una ventana nueva para el complemento."
 
 #: C/preferences.page:57(title)
 msgid "Configuring plugins' preferences"
@@ -279,6 +317,8 @@ msgstr "Configurar las preferencias de los complementos"
 #: C/preferences.page:58(desc) C/preferences.page:62(p)
 msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
 msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus "
+"complementos."
 
 #: C/preferences.page:69(p)
 msgid ""
@@ -310,10 +350,14 @@ msgstr "Configurarlas preferencias de las teclas rápidas globales"
 #: C/preferences.page:87(desc)
 msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
 msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus teclas "
+"rápidas."
 
 #: C/preferences.page:91(p)
 msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
 msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus "
+"complementos."
 
 #: C/preferences.page:99(title)
 msgid "Configuring widget's highlighting"
@@ -327,6 +371,11 @@ msgid ""
 "color can be customized via the Preferences dialog, under the \"Highlighting"
 "\" tab."
 msgstr ""
+"Algunos elementos de <app>Accerciser</app>, como la tecla rápida global "
+"<key>ctrl</key>+<key>alt</key>+<key>/</key>, resaltan un widget específico "
+"en la aplicación objetivo. La duración del resaltado, el color del borde y "
+"el color de relleno se pueden personalizar en el diálogo de preferencias, en "
+"la pestaña «Resaltado»."
 
 #: C/preferences.page:107(title)
 msgid "Configuring highlighting preferences"
@@ -348,7 +397,7 @@ msgstr ""
 
 #: C/ipython_plugin.page:4(title)
 msgid "2. IPython Plugin"
-msgstr ""
+msgstr "2. Complemento IPython"
 
 #: C/ipython_plugin.page:6(desc)
 msgid "When all else fails"
@@ -392,18 +441,25 @@ msgstr ""
 #: C/ipython_plugin.page:52(title)
 msgid "Investigating selected items with the IPython Console Plugin"
 msgstr ""
+"Investigar elementos seleccionados con el complemento de la consola IPython"
 
 #: C/ipython_plugin.page:53(desc) C/ipython_plugin.page:58(p)
 msgid ""
 "The IPython Console Plugin lets you investigate methods, constants, and "
 "properties related to a selected item in the Application Tree View."
 msgstr ""
+"El complemento de la consola IPython le permite investigar métodos, "
+"constantes y propiedades relativas a un elemento seleccionado en la vista en "
+"árbol de la aplicación."
 
 #: C/ipython_plugin.page:66(p)
 msgid ""
 "Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
 "documentation about the corresponding selected accessible item."
 msgstr ""
+"Escribir <cmd>help(acc)</cmd> en el complemento de la consola de IPython "
+"muestra cierta documentación útil sobre el correspondiente elemento "
+"accesible seleccionado."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -459,6 +515,8 @@ msgid ""
 "Make sure that accessibility suport is enabled in your desktop - otherwise, "
 "<app>Accerciser</app> will not work as expected."
 msgstr ""
+"Asegúrese de que el soporte de accesibilidad está activado en su escritorio; "
+"si no lo está, <app>Accerciser</app> no funcionará como se espera."
 
 #: C/introduction.page:51(app) C/index.page:3(title) C/index.page:23(app)
 #: C/index.page:25(app)
@@ -471,7 +529,7 @@ msgstr "Interfaz predeterminada de <app>Accerciser</app>."
 
 #: C/introduction.page:63(title)
 msgid "<app>Accerciser</app>'s intended audience"
-msgstr "Público objetivo de <app>AccerciserI"
+msgstr "Público objetivo de <app>Accerciser</app>"
 
 #: C/introduction.page:64(p)
 msgid ""
@@ -485,7 +543,7 @@ msgstr ""
 
 #: C/introduction.page:74(title)
 msgid "<app>Accerciser</app>'s plugin architecture"
-msgstr ""
+msgstr "Arquitectura de complementos de <app>Accerciser</app>"
 
 #: C/introduction.page:75(p)
 msgid ""
@@ -499,6 +557,9 @@ msgid ""
 "you explore the AT-SPI interfaces provided by each accessible widget of a "
 "target application."
 msgstr ""
+"<link xref=\"interface_viewer\">Visor de interfaces</link>: un complemento "
+"que le permite explorar las interfaces AT-SPI proporcionadas por cada widget "
+"accesible en una aplicación objetivo."
 
 #: C/introduction.page:88(p)
 msgid ""
@@ -604,7 +665,7 @@ msgstr "2. Complemento Visor de interfaces"
 
 #: C/interface_viewer_plugin.page:6(desc)
 msgid "Examining your accessibility implementation"
-msgstr ""
+msgstr "Examinar su implementación de accesibilidad"
 
 #: C/interface_viewer_plugin.page:25(title)
 msgid "Interface Viewer Plugin"
@@ -622,7 +683,7 @@ msgstr ""
 
 #: C/interface_viewer_plugin.page:35(title)
 msgid "Examining a Menu with the Interface Viewer Plugin"
-msgstr ""
+msgstr "Examinar un menú con el complemento «Visor de interfaces»"
 
 #: C/interface_viewer_plugin.page:36(desc)
 #: C/interface_viewer_plugin.page:42(p)
@@ -861,7 +922,7 @@ msgid ""
 "Next we will derive a new class from the Plugin base class, and assign some "
 "mandatory class attributes:"
 msgstr ""
-"Lo siguiente, será derivar una clase nueva de la clase base de complementos, "
+"Lo siguiente será derivar una clase nueva de la clase base de complementos, "
 "y asignar algunos atributos obligatorios de clase:"
 
 #: C/howto_write_a_plugin.page:75(code)
@@ -1427,7 +1488,7 @@ msgid ""
 msgstr ""
 "Para cada evento entrante, el complemento del Monitor de eventos indica la "
 "fuente y la aplicación. Activar el enlace para alguno de esos elementos hará "
-"que se seleccione en la vista de árbol de la aplicación."
+"que se seleccione en la vista en árbol de la aplicación."
 
 #: C/event_monitor_plugin.page:128(p)
 msgid ""
@@ -1498,7 +1559,7 @@ msgstr ""
 
 #: C/desktop_tree_view.page:62(title)
 msgid "Bookmarking items in the Application Tree View"
-msgstr "Marcar elementos en la vista de árbol de la aplicación"
+msgstr "Marcar elementos en la vista en árbol de la aplicación"
 
 #: C/desktop_tree_view.page:63(p)
 msgid ""
@@ -1508,7 +1569,7 @@ msgid ""
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
 "<key>Ctrl</key>+<key>d</key>."
 msgstr ""
-"<app>Accerciser</app> permite marcar elementos en la vista de árbol de la "
+"<app>Accerciser</app> permite marcar elementos en la vista en árbol de la "
 "aplicación, para examinarlos posteriormente. Esto puede ser útil si la "
 "aplicación objetivo debe reiniciarse, por ejemplo, después de reconstruirla. "
 "Para marcar un elemento, selecciónelo y pulse <guiseq><gui>Marcadores</"
@@ -1524,12 +1585,12 @@ msgid ""
 "through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
 "Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
-"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible "
-"de la aplicación al accesible marcado. Cuando la aplicación objetivo está en "
-"un estado diferente (ej. múltiples marcos de nivel superior) puede que la "
-"ruta no sea correcta. Se pueden gestionar los marcadores accediendo al "
-"diálogo de edición de marcadores a través de <guiseq><gui>Marcadores</"
-"gui><gui>Editar marcadores</gui></guiseq>."
+"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de "
+"la aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
+"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
+"no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de "
+"edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar "
+"marcadores</gui></guiseq>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
