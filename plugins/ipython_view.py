@@ -12,7 +12,12 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk, gobject
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import GObject
+
 import re
 import sys
 import os
@@ -287,7 +292,7 @@ class ConsoleView(gtk.TextView):
     self.connect('key-press-event', self.onKeyPress)
     
   def write(self, text, editable=False):
-    gobject.idle_add(self._write, text, editable)
+    GObject.idle_add(self._write, text, editable)
 
   def _write(self, text, editable=False):
     '''
@@ -321,7 +326,7 @@ class ConsoleView(gtk.TextView):
 
 
   def showPrompt(self, prompt):
-    gobject.idle_add(self._showPrompt, prompt)
+    GObject.idle_add(self._showPrompt, prompt)
 
   def _showPrompt(self, prompt):
     '''
@@ -335,7 +340,7 @@ class ConsoleView(gtk.TextView):
                                self.text_buffer.get_end_iter())
 
   def changeLine(self, text):
-    gobject.idle_add(self._changeLine, text)
+    GObject.idle_add(self._changeLine, text)
 
   def _changeLine(self, text):
     '''
@@ -362,7 +367,7 @@ class ConsoleView(gtk.TextView):
     return rv
 
   def showReturned(self, text):
-    gobject.idle_add(self._showReturned, text)
+    GObject.idle_add(self._showReturned, text)
 
   def _showReturned(self, text):
     '''
@@ -403,16 +408,17 @@ class ConsoleView(gtk.TextView):
     selection_mark = self.text_buffer.get_selection_bound()
     selection_iter = self.text_buffer.get_iter_at_mark(selection_mark)
     start_iter = self.text_buffer.get_iter_at_mark(self.line_start)
-    if event.keyval == gtk.keysyms.Home:
-      if event.state & gtk.gdk.CONTROL_MASK or event.state & gtk.gdk.MOD1_MASK:
+    if event.keyval == gdk.KEY_Home:
+      if event.state & gdk.ModifierType.CONTROL_MASK or \
+              event.state & gdk.ModifierType.MOD1_MASK:
         pass
-      elif event.state & gtk.gdk.SHIFT_MASK:
+      elif event.state & gdk.ModifierType.SHIFT_MASK:
         self.text_buffer.move_mark(insert_mark, start_iter)
         return True
       else:
         self.text_buffer.place_cursor(start_iter)
         return True
-    elif event.keyval == gtk.keysyms.Left:
+    elif event.keyval == gdk.KEY_Left:
       insert_iter.backward_cursor_position()
       if not insert_iter.editable(True):
         return True
@@ -484,21 +490,20 @@ class IPythonView(ConsoleView, IterableIPShell):
     @return: True if event should not trickle.
     @rtype: boolean
     '''
-
-    if event.state & gtk.gdk.CONTROL_MASK and event.keyval == 99:
+    if event.state & gdk.ModifierType.CONTROL_MASK and event.keyval == 99:
       self.interrupt = True
       self._processLine()
       return True
-    elif event.keyval == gtk.keysyms.Return:
+    elif event.keyval == gdk.KEY_Return:
       self._processLine()
       return True
-    elif event.keyval == gtk.keysyms.Up:
+    elif event.keyval == gdk.KEY_Up:
       self.changeLine(self.historyBack())
       return True
-    elif event.keyval == gtk.keysyms.Down:
+    elif event.keyval == gdk.KEY_Down:
       self.changeLine(self.historyForward())
       return True
-    elif event.keyval == gtk.keysyms.Tab:
+    elif event.keyval == gdk.KEY_Tab:
       if not self.getCurrentLine().strip():
         return False
       completed, possibilities = self.complete(self.getCurrentLine())

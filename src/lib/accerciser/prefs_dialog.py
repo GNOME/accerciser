@@ -11,10 +11,14 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import Atk as atk
+from gi.repository import GConf as gconf
+
 from i18n import _
-import atk
-import gconf
 import node
 from tools import parseColorString
 
@@ -32,17 +36,19 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     @type hotkeys_view: L{HotkeyTreeView}
     '''
     gtk.Dialog.__init__(self, _('accerciser Preferences'), 
-                        buttons=(gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE))
+                        buttons=(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE))
     self.connect('response', self._onResponse)
     self.set_default_size(500,250)
     notebook = gtk.Notebook()
-    self.vbox.add(notebook)
+    vbox = self.get_children()[0]
+    vbox.add(notebook)
     for view, section in [(plugins_view, _('Plugins')),
                           (hotkeys_view, _('Global Hotkeys'))]:
       if view is not None:
         sw = gtk.ScrolledWindow()
-        sw.set_shadow_type(gtk.SHADOW_IN)
-        sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        sw.set_shadow_type(gtk.ShadowType.IN)
+        sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
+        sw.set_size_request(500, 150)
         sw.add(view)
         notebook.append_page(sw, gtk.Label(section))
     
@@ -66,7 +72,7 @@ class _HighlighterView(gtk.Alignment):
   def __init__(self):
     gtk.Alignment.__init__(self)
     self.set_padding(12, 12, 18, 12)
-    self.gconf_cl = gconf.client_get_default()
+    self.gconf_cl = gconf.Client.get_default()
     self._buildUI()
 
   def _buildUI(self):
@@ -97,13 +103,13 @@ class _HighlighterView(gtk.Alignment):
 
     for label, control, row in zip(labels, controls, range(3)):
       label.set_alignment(0, 0.5)
-      table.attach(label, 0, 1, row, row + 1, gtk.FILL)
-      table.attach(control, 1, 2, row, row + 1, gtk.FILL)
+      table.attach(label, 0, 1, row, row + 1, gtk.AttachOptions.FILL)
+      table.attach(control, 1, 2, row, row + 1, gtk.AttachOptions.FILL)
 
     for label, control in zip(map(lambda x: x.get_accessible(),labels),
                               map(lambda x: x.get_accessible(),controls)):
-      label.add_relationship(atk.RELATION_LABEL_FOR, control)
-      control.add_relationship(atk.RELATION_LABELLED_BY, label)
+      label.add_relationship(atk.RelationType.LABEL_FOR, control)
+      control.add_relationship(atk.RelationType.LABELLED_BY, label)
 
   def _onDurationChanged(self, spin_button):
     '''
@@ -143,9 +149,11 @@ class _HighlighterView(gtk.Alignment):
     ColorButton derivative with useful methods for us.
     '''
     def __init__(self, color, alpha):
-      gtk.ColorButton.__init__(self, gtk.gdk.color_parse(color))
+      color = gdk.color_parse(color)[1]
+      gtk.ColorButton.__init__(self)
       self.set_use_alpha(True)
       self.set_alpha(int(alpha*0xffff))
+      self.set_color(color)
                                
     def get_rgba_string(self):
       '''

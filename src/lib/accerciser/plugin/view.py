@@ -10,9 +10,11 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import GConf as gconf
+from gi.repository import GObject
 
-import gtk
-import gobject
 from base_plugin import Plugin
 from accerciser.tools import *
 from message import MessageManager
@@ -20,7 +22,7 @@ import os
 import sys
 import imp
 from accerciser.i18n import _, N_
-import gconf, gc
+import gc
 from accerciser import ui_manager
 
 GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
@@ -42,14 +44,14 @@ class PluginView(gtk.Notebook):
   '''
 
   __gsignals__ = {'plugin_drag_end' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
-                   (gobject.TYPE_OBJECT,)),
+                  (GObject.SignalFlags.RUN_FIRST,
+                   None, 
+                   (GObject.TYPE_OBJECT,)),
                   'tab_popup_menu' : 	 
-                  (gobject.SIGNAL_RUN_FIRST, 	 
-                   gobject.TYPE_NONE, 	 
-                   (gobject.TYPE_PYOBJECT, 	 
-                    gobject.TYPE_OBJECT))}
+                  (GObject.SignalFlags.RUN_FIRST, 	 
+                   None, 	 
+                   (GObject.TYPE_PYOBJECT, 	 
+                    GObject.TYPE_OBJECT))}
   TARGET_PLUGINVIEW = 0
   TARGET_ROOTWIN = 1
   NOTEBOOK_GROUP = 1
@@ -64,7 +66,7 @@ class PluginView(gtk.Notebook):
     gtk.Notebook.__init__(self)
     self.view_name = view_name
     self.set_scrollable(True)
-    self.set_group_id(self.NOTEBOOK_GROUP)
+    #self.set_group_id(self.NOTEBOOK_GROUP)
     self.connect('drag_end', self._onDragEnd)
     self.connect('drag_data_get', self._onDragDataGet)
     self.connect('key-press-event', self._onKeyPress)
@@ -94,7 +96,7 @@ class PluginView(gtk.Notebook):
     @param event: Event object.
     @type event: gtk.dk.Event
     '''
-    if event.keyval == gtk.keysyms.Menu and \
+    if event.keyval == gdk.KEY_Menu and \
           self.get_property('has-focus'):
       page_num = self.get_current_page()
       child = self.get_nth_page(page_num)
@@ -115,7 +117,8 @@ class PluginView(gtk.Notebook):
     '''
     for child in self.getPlugins():
       tab = self.get_tab_label(child)
-      if tab != None and tab.flags() & gtk.MAPPED:
+      # TODO-JH: Don't really know if this is correct
+      if tab != None and tab.get_state_flags() & tab.get_mapped():
         x, y, w, h = self.getTabAlloc(tab)
         if event_x >= x and \
               event_x <= x + w and \
@@ -134,10 +137,14 @@ class PluginView(gtk.Notebook):
     @return: X, Y, width any height coordinates.
     @rtype: tuple
     '''
-    gdk_window = widget.window
-    origin_x, origin_y = gdk_window.get_origin()
-    x, y, width, height = widget.get_allocation()
-    if widget.flags() & gtk.NO_WINDOW:
+    gdk_window = widget.get_window()
+    origin_z, origin_x, origin_y = gdk_window.get_origin()
+    alloc = widget.get_allocation()
+    x, y, width, height = \
+        alloc.x, alloc.y, alloc.width, alloc.height
+    # TODO-JH: Review this conversion
+    has_window = not(widget.get_has_window())
+    if bool(widget.get_state_flags().value_names) & has_window:
       origin_x += x
       origin_y += y
     return origin_x, origin_y, width, height
@@ -203,9 +210,9 @@ class PluginView(gtk.Notebook):
       name = tab_label
     elif isinstance(child, Plugin):
       name = getattr(child,'plugin_name_localized', None) or child.plugin_name
-    elif child.name:
-      name = child.name
-    gtk.Notebook.append_page(self, child)
+    elif child.get_name():
+      name = child.get_name()
+    gtk.Notebook.append_page(self, child, None)
     gtk.Notebook.reorder_child(self, child, position)
     gtk.Notebook.set_tab_label(self, child, gtk.Label(name))
 
@@ -278,7 +285,7 @@ class PluginViewWindow(gtk.Window, Tools):
     self.plugin_view = PluginView(view_name)
     self.add(self.plugin_view)
 
-    cl = gconf.client_get_default()
+    cl = gconf.Client.get_default()
     escaped_view_name = '/%s' % gconf.escape_key(view_name, len(view_name))
     width = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width') or 480
     height = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height') or 480
@@ -286,7 +293,7 @@ class PluginViewWindow(gtk.Window, Tools):
     self.connect('key_press_event', self._onKeyPress)
     self.plugin_view.connect_after('page_removed', self._onPluginRemoved)
     self.set_title(view_name)
-    self.set_position(gtk.WIN_POS_MOUSE)
+    self.set_position(gtk.WindowPosition.MOUSE)
     self.show_all()
     self.connect('size-allocate', self._onResize)
 
@@ -304,9 +311,9 @@ class PluginViewWindow(gtk.Window, Tools):
     key_prefix = '%s/%s' % \
         (GCONF_PLUGINVIEWS, 
          gconf.escape_key(view_name, len(view_name)))
-    cl = gconf.client_get_default()
-    cl.set_int(key_prefix+'/width', self.allocation.width)
-    cl.set_int(key_prefix+'/height', self.allocation.height)
+    cl = gconf.Client.get_default()
+    cl.set_int(key_prefix+'/width', self.get_allocated_width())
+    cl.set_int(key_prefix+'/height', self.get_allocated_height())
 
   def _onPluginRemoved(self, pluginview, page, page_num):
     '''
@@ -332,10 +339,10 @@ class PluginViewWindow(gtk.Window, Tools):
     @param event: Event object
     @type event: gtk.gdk.Event
     '''
-    if event.state & gtk.gdk.MOD1_MASK and \
-          event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
-                                 gtk.gdk.keyval_from_name('9')):
-      tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
+    if event.state & gdk.ModifierType.MOD1_MASK and \
+          event.keyval in xrange(gdk.keyval_from_name('0'), 
+                                 gdk.keyval_from_name('9')):
+      tab_num = event.keyval - gdk.keyval_from_name('0') or 10
       pages_count = self.plugin_view.get_n_pages()
       if pages_count >= tab_num:
         self.plugin_view.focusTab(tab_num - 1)
@@ -353,7 +360,7 @@ class ViewManager(object):
     @type perm_views: list of {PluginView}
     '''
     self._perm_views = perm_views
-    cl = gconf.client_get_default()
+    cl = gconf.Client.get_default()
     single = cl.get_bool(GCONF_LAYOUT_SINGLE)
     self._initViewModel(single)
     self._setupActions()
@@ -374,10 +381,10 @@ class ViewManager(object):
       action_name = action.get_name()
       ui_manager.uimanager.add_ui(merge_id, ui_manager.PLUGIN_LAYOUT_PATH, 
                                   action_name, action_name, 
-                                  gtk.UI_MANAGER_MENUITEM, True)
+                                  gtk.UIManagerItemType.MENUITEM, True)
 
 
-  def _onSingleViewToggled(self, action):
+  def _onSingleViewToggled(self, action, data=None):
     '''
     Callback for single view toggle action.
     
@@ -395,14 +402,14 @@ class ViewManager(object):
     '''
     if isinstance(self._view_model, SingleViewModel) == single:
       return
-    cl = gconf.client_get_default()
+    cl = gconf.Client.get_default()
     cl.set_bool(GCONF_LAYOUT_SINGLE, single)
     plugins = self._view_model.getViewedPlugins()
     self._view_model.close()
     del self._view_model
     for plugin in plugins:
-      if plugin.parent:
-        plugin.parent.remove(plugin)
+      if plugin.get_parent():
+        plugin.get_parent().remove(plugin)
     self._initViewModel(single)
     for plugin in plugins:
       self._view_model.addElement(plugin)
@@ -821,14 +828,14 @@ class MultiViewModel(list, BaseViewModel):
     '''
     menu = self.Menu(plugin, view.get_toplevel())
     if hasattr(event, 'button'):
-      menu.popup(None, None, None, event.button, event.time)
+      menu.popup(None, None, None, None, event.button, event.time)
     else:
       tab = view.get_tab_label(plugin)
       x, y, w, h = view.getTabAlloc(tab)
-      rect = gtk.gdk.Rectangle(x, y, w, h)
+      rect = gdk.Rectangle(x, y, w, h)
       menu.popup(None, None, 
                  lambda m, r: (r.x+r.width/2, r.y+r.height/2, True), 
-                 0, event.time, rect)
+                 rect, 0, event.time)
   
   def _connectSignals(self, view):
     '''
@@ -837,8 +844,8 @@ class MultiViewModel(list, BaseViewModel):
     @param view: Plugin view to connect.
     @type view: :{PluginView}
     '''
-    if isinstance(view.parent, PluginViewWindow):
-      view.parent.connect('delete_event', Proxy(self._onViewDelete))
+    if isinstance(view.get_parent(), PluginViewWindow):
+      view.get_parent().connect('delete_event', Proxy(self._onViewDelete))
     view.connect('plugin_drag_end', Proxy(self._onPluginDragEnd))
     view.connect('tab_popup_menu', Proxy(self._onTabPopupMenu))
     view.connect('page_added', Proxy(self._onViewLayoutChanged), 'added')
@@ -953,7 +960,7 @@ class MultiViewModel(list, BaseViewModel):
     @type new_view_name: string
     '''
     if not plugin or not isinstance(plugin, gtk.Widget): return
-    old_view = plugin.parent
+    old_view = plugin.get_parent()
     new_view = self._getViewOrNewView(new_view_name)
     if old_view is not new_view:
       old_view.remove(plugin)
@@ -1018,16 +1025,17 @@ class MultiViewModel(list, BaseViewModel):
       '''
       menu_item = None
       for view in self.view_manager:
-        menu_item = gtk.RadioMenuItem(menu_item, view.view_name)
+        menu_item = gtk.RadioMenuItem(label = view.view_name)
+        menu_item.set_name(view.view_name)
         menu_item.connect('toggled', self._onItemToggled, view, context_plugin)
-        menu_item.set_active(view == context_plugin.parent)
+        menu_item.set_active(view == context_plugin.get_parent())
         self.append(menu_item)
         menu_item.show()
       menu_item = gtk.SeparatorMenuItem()
       self.append(menu_item)
       menu_item.show()
-      menu_item = gtk.MenuItem(_('<i>_New view...</i>'))
-      menu_item.child.set_use_markup(True)
+      menu_item = gtk.MenuItem(label=_('<i>_New view...</i>'))
+      menu_item.get_child().set_use_markup(True)
       menu_item.connect('activate', self._onItemActivated, 
                         context_plugin, transient_window)
       self.append(menu_item)
@@ -1063,7 +1071,7 @@ class MultiViewModel(list, BaseViewModel):
           self._NewViewDialog(self.view_manager, transient_window)
       response_id = new_view_dialog.run()
       plugin_name = new_view_dialog.getEntryText()
-      if response_id == gtk.RESPONSE_OK and plugin_name:
+      if response_id == gtk.ResponseType.OK and plugin_name:
         self.view_manager.changeView(context_plugin, plugin_name)
       new_view_dialog.destroy()
 
@@ -1083,9 +1091,9 @@ class MultiViewModel(list, BaseViewModel):
         '''
         self.view_manager = view_manager
         gtk.Dialog.__init__(self, _('New View...'), transient_window)
-        self.add_buttons(gtk.STOCK_OK, gtk.RESPONSE_OK,
-                         gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE)
-        self.set_default_response(gtk.RESPONSE_OK)
+        self.add_buttons(gtk.STOCK_OK, gtk.ResponseType.OK,
+                         gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
+        self.set_default_response(gtk.ResponseType.OK)
         completion = gtk.EntryCompletion()
         complete_model = gtk.ListStore(str)
         for view in self.view_manager:
@@ -1095,6 +1103,7 @@ class MultiViewModel(list, BaseViewModel):
         self.entry = gtk.Entry()
         self.entry.set_completion(completion)
         self.entry.connect('activate', self._onEntryActivate)
+        self.vbox = self.get_children()[0]
         self.vbox.add(self.entry)
         self.entry.show()
 
@@ -1114,7 +1123,7 @@ class MultiViewModel(list, BaseViewModel):
         @param entry: Entry box that was activated.
         @type entry: gtk.Entry
         '''
-        self.response(gtk.RESPONSE_OK)
+        self.response(gtk.ResponseType.OK)
 
   class _StoredViewsLayout(object):
     '''
@@ -1122,7 +1131,7 @@ class MultiViewModel(list, BaseViewModel):
     view layout lists.
     '''
     def __init__(self):
-      self.gconf_client = gconf.client_get_default()
+      self.gconf_client = gconf.Client.get_default()
     def __len__(self):
       view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
       return len(view_dirs)
@@ -1136,7 +1145,7 @@ class MultiViewModel(list, BaseViewModel):
     def __setitem__(self, key, value):
       gconf_key = '%s/%s/layout' % \
           (GCONF_PLUGINVIEWS, gconf.escape_key(key, len(key)))
-      self.gconf_client.set_list(gconf_key, gconf.VALUE_STRING, value)
+      self.gconf_client.set_list(gconf_key, gconf.ValueType.STRING, value)
     def __iter__(self):
       view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
       for dir in view_dirs:

@@ -11,10 +11,12 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
+import gi
+
+from gi.repository import Gtk as gtk
 from accerciser.tools import Tools
 import traceback
-import gobject, pango
+import pango
 
 class Plugin(Tools):
   '''
@@ -207,10 +209,10 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     Plugin.__init__(self, node, message_manager)
     gtk.ScrolledWindow.__init__(self)
 
-    self.set_policy(gtk.POLICY_AUTOMATIC, 
-                    gtk.POLICY_AUTOMATIC)
+    self.set_policy(gtk.PolicyType.AUTOMATIC, 
+                    gtk.PolicyType.AUTOMATIC)
     self.set_border_width(3)
-    self.set_shadow_type(gtk.SHADOW_NONE)
+    self.set_shadow_type(gtk.ShadowType.NONE)
     self.viewport = gtk.Viewport()
     vbox = gtk.VBox()
     self.viewport.add(vbox)
@@ -218,12 +220,12 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     self.add(self.viewport)
     # Message area
     self.message_area = gtk.VBox()
-    vbox.pack_start(self.message_area, False, False)
+    vbox.pack_start(self.message_area, False, False, 0)
 
     # Plugin area
     self.plugin_area = gtk.Frame()
-    self.plugin_area.set_shadow_type(gtk.SHADOW_NONE)
-    vbox.pack_start(self.plugin_area)
+    self.plugin_area.set_shadow_type(gtk.ShadowType.NONE)
+    vbox.pack_start(self.plugin_area, True, True, 0)
 
   def _onScrollToFocus(self, container, widget):
     '''
@@ -237,18 +239,19 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     if widget is None: return
     child = widget
     while isinstance(child, gtk.Container) and \
-          child.focus_child is not None:
-      child = child.focus_child
+          child.get_focus_child() is not None:
+      child = child.get_focus_child()
 
     x, y = child.translate_coordinates(self.viewport, 0, 0)
-    w, h = child.allocation.width, child.allocation.height
-    vw, vh = self.viewport.allocation.width, self.viewport.allocation.height
+    w, h = child.get_allocation().width, child.get_allocation().height
+    vw, vh = self.viewport.get_allocation().width, self.viewport.get_allocation().height
 
     adj = self.viewport.get_vadjustment()
     if y+h > vh:
-      adj.value += min((y+h) - vh + 2, y)
+      value = adj.get_value() + min((y+h) - vh + 2, y)
+      adj.set_value(value)
     elif y < 0:
-      adj.value = max(adj.value + y - 2, adj.lower)
+      adj.set_value(max(adj.get_value() + y - 2, adj.get_lower()))
 
   def _onMessageResponse(self, error_message, response_id):
     '''
@@ -259,9 +262,9 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     @param response_id: response ID
     @type response_id: integer
     '''
-    if response_id == gtk.RESPONSE_APPLY:
+    if response_id == gtk.ResponseType.APPLY:
       pass
-    elif response_id == gtk.RESPONSE_CLOSE:
+    elif response_id == gtk.ResponseType.CLOSE:
       error_message.destroy()
 
 class ConsolePlugin(ViewportPlugin):

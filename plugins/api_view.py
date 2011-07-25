@@ -10,7 +10,7 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import gtk
+from gi.repository import Gtk as gtk
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_
 import pyatspi
@@ -51,21 +51,21 @@ class APIBrowser(ViewportPlugin):
     self.plugin_area.add(vbox)
     top_hbox = gtk.HBox()
     bottom_hbox = gtk.HBox()
-    vbox.pack_start(top_hbox, False)
-    vbox.pack_start(bottom_hbox)
+    vbox.pack_start(top_hbox, False, True, 0)
+    vbox.pack_start(bottom_hbox, True, True, 0)
     self.method_tree = gtk.TreeView()
     scrolled_window = gtk.ScrolledWindow()
     scrolled_window.add(self.method_tree)
-    bottom_hbox.pack_start(scrolled_window)
+    bottom_hbox.pack_start(scrolled_window, True, True, 0)
     self.property_tree = gtk.TreeView()
     scrolled_window = gtk.ScrolledWindow()
     scrolled_window.add(self.property_tree)
-    bottom_hbox.pack_start(scrolled_window)
-    self.iface_combo = gtk.combo_box_new_text() 
-    top_hbox.pack_start(self.iface_combo, False)
+    bottom_hbox.pack_start(scrolled_window, True, True, 0)
+    self.iface_combo = gtk.ComboBoxText.new() 
+    top_hbox.pack_start(self.iface_combo, False, True, 0)
     self.private_toggle = gtk.CheckButton(_('Hide private attributes'))
     self.private_toggle.set_active(True)
-    top_hbox.pack_end(self.private_toggle, False)
+    top_hbox.pack_end(self.private_toggle, False, True, 0)
     self.show_all()
     
   def _initTreeViews(self):
@@ -78,7 +78,7 @@ class APIBrowser(ViewportPlugin):
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Method'))
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
+    tvc.add_attribute(crt, 'text', 0)
     self.method_tree.append_column(tvc)
     
     # property view
@@ -87,12 +87,12 @@ class APIBrowser(ViewportPlugin):
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Property'))
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=0)
+    tvc.add_attribute(crt, 'text', 0)
     self.property_tree.append_column(tvc)
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Value'))
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=1)
+    tvc.add_attribute(crt, 'text', 1)
     self.property_tree.append_column(tvc)
 
   def onAccChanged(self, acc):
@@ -118,6 +118,7 @@ class APIBrowser(ViewportPlugin):
     @type widget: gtk.Widget
     '''
     iface = self.iface_combo.get_active_text()
+
     try:
       query_func = getattr(self.acc, 'query%s' % iface)
     except AttributeError:

@@ -1,0 +1,25 @@
+README - pygi branch
+--------------------
+
+This branch is focused on 'pygtk to pygi' migration.
+Most of this work was done by Javier Hernández, and he's driving the accerciser's
+migration process. Feel free to ask him for reporting bugs, contributing code, etc by 
+irc (jhernandez at GIMPNet/freenode) or by email (jhernandez@emergya.es) ;)
+
+It is recommended to test this new code using jhbuild.
+
+At this moment, we have known issues but the code is almost stable.
+
+Known issues
+------------
+- General
+ - some warnings - All of them need work ;)
+
+- There are some problems with plugins system
+ - Plugins aren't disabling properly
+ - Drag&Drop for plugins isn't working
+
+- Global hotkeys
+ - Segfault - pygobject issue fixed in master. Needs testing
+ - New keys can't be added
+

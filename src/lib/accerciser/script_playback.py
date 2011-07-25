@@ -1,6 +1,9 @@
+import gi
+
+from gi.repository import Wnck as wnck
+
 import sys
 from time import sleep, time
-import wnck
 import gobject, gtk
 from re import split
 import pyatspi
@@ -44,7 +47,7 @@ keySymAliases = {
 class _WindowManager:
   def __init__(self):
     self.loop = None
-    self.screen = wnck.screen_get_default()
+    self.screen = wnck.Screen.get_default()
   def getApp(self, app_name):
     self.loop = gobject.MainLoop()
     self.returned_app = None

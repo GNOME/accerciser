@@ -13,12 +13,11 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
+import gi
+
+from gi.repository import Gtk as gtk
 from gnome import program_get, url_show
 from i18n import _
-
-gtk.about_dialog_set_url_hook(lambda dialog, url, data: url_show(url), None)
-
 
 class AccerciserAboutDialog(gtk.AboutDialog):
   '''
@@ -63,6 +62,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     program = program_get()
     gtk.AboutDialog.__init__(self)
     self.connect('response', self._onResponse)
+    self.connect('activate-link', lambda dialog, url, data: url_show(url), None)
     gtk.AboutDialog.set_authors(self, self.AUTHORS)
     gtk.AboutDialog.set_artists(self, self.ARTISTS)
     gtk.AboutDialog.set_documenters(self, self.DOCUMENTERS)

@@ -10,11 +10,12 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+from gi.repository import GConf as gconf
+
 import os
 import pickle
 import weakref
 import new
-import gconf
 
 class Tools(object):
   '''
@@ -105,12 +106,16 @@ class GConfListWrapper(object):
       self.name = name
       self.gconf_key = gconf_key
     def __call__(self, *args, **kwargs):
-      cl = gconf.client_get_default()
-      l = cl.get_list(self.gconf_key, 
-                      gconf.VALUE_STRING)
+      cl = gconf.Client.get_default()
+      # pygtk-pygi ISSUE
+      # get_list instrospectio mark isn't properly done?
+      #
+      #l = cl.get_list(self.gconf_key, 
+      #                gconf.VALUE_STRING)
+      l = cl.get(self.gconf_key).get_list()
       rv = getattr(l, self.name)(*args, **kwargs)
       cl.set_list(self.gconf_key, 
-                  gconf.VALUE_STRING, l)
+                  gconf.ValueType.STRING, l)
       return rv
 
 class Proxy(object):

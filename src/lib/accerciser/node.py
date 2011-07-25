@@ -11,19 +11,22 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import gtk
-import gtk.gdk
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import GObject
+from gi.repository import GConf as gconf
+
 import pyatspi
-import gobject
 import string
 import rsvg
 import cairo
 from tools import Tools, parseColorString
-import gconf
 
 MAX_BLINKS = 6
 
-cl = gconf.client_get_default()
+cl = gconf.Client.get_default()
 BORDER_COLOR, BORDER_ALPHA = parseColorString(
   cl.get_string('/apps/accerciser/highlight_border') or '#ff0000ff') 
 
@@ -42,7 +45,7 @@ class Bag(object):
   def __str__(self):
     return ', '.join(vars(self).keys())
 
-class Node(gobject.GObject, Tools):
+class Node(GObject.GObject, Tools):
   '''
   Node class that contains convient references to accessibility information 
   for the currently selected node. A L{Node} instance will emit an 
@@ -57,19 +60,19 @@ class Node(gobject.GObject, Tools):
   @type extents: L{Bag}
   '''
   __gsignals__ = {'accessible-changed' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
-                   (gobject.TYPE_PYOBJECT,)),
+                  (GObject.SignalFlags.RUN_FIRST,
+                   None, 
+                   (GObject.TYPE_PYOBJECT,)),
                   'blink-done' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
+                  (GObject.SignalFlags.RUN_FIRST,
+                   None, 
                    ())}
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
     self.extents = None
     self.tree_path = None
-    gobject.GObject.__init__(self)
+    GObject.GObject.__init__(self)
     
   def update(self, acc):
     '''
@@ -144,17 +147,17 @@ class Node(gobject.GObject, Tools):
     self.max_blinks = times
     self.blinks = 0
     # get info for drawing higlight rectangles
-    display = gtk.gdk.display_get_default()
+    display = gdk.Display.get_default()
     screen = display.get_default_screen()
     self.root = screen.get_root_window()
     self.gc = self.root.new_gc()
-    self.gc.set_subwindow(gtk.gdk.INCLUDE_INFERIORS)
-    self.gc.set_function(gtk.gdk.INVERT)
-    self.gc.set_line_attributes(3, gtk.gdk.LINE_ON_OFF_DASH, gtk.gdk.CAP_BUTT, 
-                                gtk.gdk.JOIN_MITER)
+    self.gc.set_subwindow(gdk.SubwindowMode.INCLUDE_INFERIORS)
+    self.gc.set_function(gdk.Function.INVERT)
+    self.gc.set_line_attributes(3, gdk.LineStyle.ON_OFF_DASH, \
+                                gdk.CapStyle.BUTT, gdk.JoinStyle.MITER)
     self.inv = gtk.Invisible()
     self.inv.set_screen(screen)
-    gobject.timeout_add(30, self._drawRectangle)
+    GObject.timeout_add(30, self._drawRectangle)
 
   def _drawRectangle(self):
     '''
@@ -201,7 +204,8 @@ class _HighLight(gtk.Window):
                stroke_width, padding=0):
 
     # Initialize window.
-    gtk.Window.__init__(self, gtk.WINDOW_POPUP)
+    #gtk.Window.__init__(self, gtk.WindowType.POPUP)
+    gtk.Window.__init__(self)
 
     # Normalize position for stroke and padding.
     self.x, self.y = x - padding, y - padding
@@ -212,11 +216,11 @@ class _HighLight(gtk.Window):
     if self._composited:
       # Prepare window for transparency.
       screen = self.get_screen()
-      colormap = screen.get_rgba_colormap()
-      self.set_colormap(colormap)
+      visual = screen.get_rgba_visual()
+      self.set_visual(visual)
     else:
       # Take a screenshot for compositing on the client side.
-      self.root = gtk.gdk.get_default_root_window().get_image(
+      self.root = gdk.get_default_root_window().get_image(
         self.x, self.y, self.w, self.h)
 
     # Place window, and resize it, and set proper properties.
@@ -239,12 +243,12 @@ class _HighLight(gtk.Window):
       fill_opacity=fill_alpha,
       stroke_opacity=stroke_alpha)
 
-    # Connect "expose" event.
-    self.connect("expose-event", self._onExpose)
+    # Connect "draw"
+    self.connect("draw", self._onExpose)
     
   def highlight(self, duration=500):
     if duration > 0:
-      gobject.timeout_add(duration, lambda w: w.destroy(), self)
+      GObject.timeout_add(duration, lambda w: w.destroy(), self)
       self.show_all()
     else:
       self.destroy()
@@ -253,7 +257,7 @@ class _HighLight(gtk.Window):
     svgh = rsvg.Handle()
     try:
       svgh.write(self.svg)
-    except (gobject.GError, KeyError, ValueError), ex:
+    except (GObject.GError, KeyError, ValueError), ex:
       print 'Error reading SVG for display: %s\r\n%s', ex, self.svg
       svgh.close()
       return
@@ -269,7 +273,8 @@ class _HighLight(gtk.Window):
       cairo_operator = cairo.OPERATOR_OVER
     else:
       cairo_operator = cairo.OPERATOR_SOURCE
-    cr = self.window.cairo_create()
+    window = self.get_window()
+    cr = window.cairo_create()
     cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
     cr.set_operator(cairo_operator)
     cr.paint()

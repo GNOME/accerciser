@@ -10,7 +10,10 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import gtk, gconf
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import GConf as gconf
+
 from i18n import _
 import pyatspi
 
@@ -35,9 +38,9 @@ def _charToKeySym(key):
   @rtype: long
   '''
   try:
-    rv = gtk.gdk.unicode_to_keyval(ord(key))
+    rv = gdk.unicode_to_keyval(ord(key))
   except:
-    rv = getattr(gtk.keysyms, key)
+    rv = getattr(gdk, 'KEY_%s' % key)
   return rv
 
 class HotkeyManager(gtk.ListStore):
@@ -52,7 +55,7 @@ class HotkeyManager(gtk.ListStore):
     '''
     gtk.ListStore.__init__(self, str, str, object, int, int, str)
     self.connect('row-changed', self._onComboChanged)
-    self.gconf_client = gconf.client_get_default()
+    self.gconf_client = gconf.Client.get_default()
 
     masks = [mask for mask in pyatspi.allModifiers()]
     pyatspi.Registry.registerKeystrokeListener(
@@ -82,12 +85,14 @@ class HotkeyManager(gtk.ListStore):
     @param modifiers: The modifiers that were depressed during the keystroke.
     @type modifiers: integer
     '''
-    km = gtk.gdk.keymap_get_default()
+    km = gdk.Keymap.get_default()
+    
     callback = None
+
     for combo in self:
-      entries = km.get_entries_for_keyval(combo[COL_KEYPRESS])
-      if not entries: continue
-      if key in  [keycode[0] for keycode in entries] and \
+      success, entries = km.get_entries_for_keyval(combo[COL_KEYPRESS])
+      if not success: continue
+      if key in [int(entry.keycode) for entry in entries] and \
             modifiers & combo[COL_MOD] == combo[COL_MOD]:
         callback = combo[COL_CALLBACK]
         if callback:
@@ -131,7 +136,7 @@ class HotkeyManager(gtk.ListStore):
       else:
         final_keypress, final_modifiers = keypress, modifiers
       self.append([component, description, callback, 
-                   final_keypress, final_modifiers, localized_component])
+                   int(final_keypress), final_modifiers, localized_component])
 
   def removeKeyCombo(self, component, description, callback, key, modifiers):
     '''
@@ -152,7 +157,7 @@ class HotkeyManager(gtk.ListStore):
     be perfomed.
     @type modifiers: int
     '''
-    iter = self.get_iter_root()
+    iter = self.get_iter_first()
     while iter:
       if self[iter][COL_CALLBACK] == callback:
         # We never really remove it, just set the callback to None
@@ -175,7 +180,8 @@ class HotkeyManager(gtk.ListStore):
     combo_gconf_key = self._getComboGConfKey(model[iter][COL_COMPONENT], 
                                              model[iter][COL_DESC])
     combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS], 
-                                      model[iter][COL_MOD])
+                                      gdk.ModifierType(model[iter][COL_MOD]))
+
     if self.gconf_client.get_string(combo_gconf_key) != combo_name:
       self.gconf_client.set_string(combo_gconf_key, combo_name)
   
@@ -213,20 +219,20 @@ class HotkeyTreeView(gtk.TreeView):
     '''
     gtk.TreeView.__init__(self)
     self.hotkey_manager = hotkey_manager
-    modelfilter = self.hotkey_manager.filter_new()
-    modelfilter.set_visible_func(self._rowVisibleFunc)
+    modelfilter = self.hotkey_manager.filter_new(None)
+    modelfilter.set_visible_func(self._rowVisibleFunc, None)
     self.set_model(modelfilter)
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Component'))
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=COL_COMPONENT)
+    tvc.add_attribute(crt, 'text', COL_COMPONENT)
     tvc.set_cell_data_func(crt, self._componentDataFunc, COL_COMPONENT)
     self.append_column(tvc)
     
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Task'))
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=COL_DESC)
+    tvc.add_attribute(crt, 'text', COL_DESC)
     tvc.set_cell_data_func(crt, self._translateDataFunc, COL_DESC)
     self.append_column(tvc)
 
@@ -234,31 +240,32 @@ class HotkeyTreeView(gtk.TreeView):
     tvc = gtk.TreeViewColumn(_('Key'))
     tvc.set_min_width(64)
     tvc.pack_start(crt, True)
-    tvc.set_attributes(crt, text=COL_KEYPRESS)
+    crt.props.editable = True
+    tvc.add_attribute(crt, 'text', COL_KEYPRESS)
     tvc.set_cell_data_func(crt, self._keyCellFunc)
-    crt.set_property('editable', True)
     crt.connect('edited', self._onKeyChanged)
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
     tvc = gtk.TreeViewColumn(_('Alt'))
     tvc.pack_start(crt, True)
-    tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.MOD1_MASK)
-    crt.connect('toggled', self._onModToggled, gtk.gdk.MOD1_MASK)
+    tvc.set_cell_data_func(crt, self._modCellFunc, gdk.ModifierType.MOD1_MASK)
+    crt.connect('toggled', self._onModToggled, gdk.ModifierType.MOD1_MASK)
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
     tvc = gtk.TreeViewColumn(_('Ctrl'))
     tvc.pack_start(crt, True)
-    tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.CONTROL_MASK)
-    crt.connect('toggled', self._onModToggled, gtk.gdk.CONTROL_MASK)
+    tvc.set_cell_data_func(crt, self._modCellFunc, \
+                           gdk.ModifierType.CONTROL_MASK)
+    crt.connect('toggled', self._onModToggled, gdk.ModifierType.CONTROL_MASK)
     self.append_column(tvc)
 
     crt = gtk.CellRendererToggle()
     tvc = gtk.TreeViewColumn(_('Shift'))
     tvc.pack_start(crt, True)
-    tvc.set_cell_data_func(crt, self._modCellFunc, gtk.gdk.SHIFT_MASK)
-    crt.connect('toggled', self._onModToggled, gtk.gdk.SHIFT_MASK)
+    tvc.set_cell_data_func(crt, self._modCellFunc, gdk.ModifierType.SHIFT_MASK)
+    crt.connect('toggled', self._onModToggled, gdk.ModifierType.SHIFT_MASK)
     self.append_column(tvc)
   
   def _translateDataFunc(self, column, cell, model, iter, column_id):
@@ -292,7 +299,7 @@ class HotkeyTreeView(gtk.TreeView):
     cell.set_property('text', model[iter][COL_LOCALIZED_COMP] or \
                         model[iter][COL_COMPONENT])
 
-  def _keyCellFunc(self, column, cell, model, iter):
+  def _keyCellFunc(self, column, cell, model, iter, foo=None):
     '''
     Show the key symbol as a string for easy readability.
 
@@ -307,7 +314,7 @@ class HotkeyTreeView(gtk.TreeView):
     '''
     if model[iter][COL_KEYPRESS] > 0:
       cell.set_property('text', 
-                        gtk.gdk.keyval_name(model[iter][COL_KEYPRESS]))
+                        gdk.keyval_name(model[iter][COL_KEYPRESS]))
       cell.set_property('sensitive', True)
     else:
       cell.set_property('text', '<select key>')
@@ -364,7 +371,7 @@ class HotkeyTreeView(gtk.TreeView):
     '''
     self.hotkey_manager[path][COL_MOD] ^= mask
 
-  def _rowVisibleFunc(self, model, iter):
+  def _rowVisibleFunc(self, model, iter, foo=None):
     '''
     A filter function to hide the rows that do not contain valid callbacks.
     This is usually the case when a plugin is disabled.
