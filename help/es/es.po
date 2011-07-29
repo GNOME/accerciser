@@ -1,20 +1,20 @@
 # translation of accerciser.help.gnome-2-22.po to Español
 # translation of accerciser manual to Spanish
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-07-24 20:50+0000\n"
-"PO-Revision-Date: 2011-07-25 21:35+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-07-25 19:36+0000\n"
+"PO-Revision-Date: 2011-07-29 10:33+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -206,6 +206,13 @@ msgid ""
 "<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
 "later."
 msgstr ""
+"El complemento de selección rápida no proporciona una interfaz visible coma "
+"la de los otros complementos de <app>Accerciser</app>; en su lugar, añade "
+"características para seleccionar elementos rápidamente en la <link xref="
+"\"desktop_tree_view\">vista de árbol de la aplicación</link> mediante teclas "
+"rápidas globales. Originalmente, estas teclas rápidas formaban parte del "
+"núcleo del código de <app>Accerciser</app>, pero posteriormente se pasaron "
+"al complemento de selección rápida."
 
 #: C/quick_select_plugin.page:32(p)
 msgid ""
@@ -215,6 +222,12 @@ msgid ""
 "key> selects the accessible widget under the pointer in the Application Tree "
 "View and highlights it in the target application."
 msgstr ""
+"El complemento de selección rápida proporciona dos teclas rápidas globales. "
+"Pulsar <key>Ctrl</key>+<key>Alt</key>+<key>a</key> selecciona el último "
+"widget accesible con el foco en la vista de árbol de la aplicación. Pulsar "
+"<key>Ctrl</key>+<key>alt</key>+<key>/</key> seleccione el widget accesible "
+"debajo del puntero en la vista de árbol de la aplicación y lo resalta en la "
+"aplicación objetivo."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -296,9 +309,9 @@ msgid ""
 msgstr ""
 "Después de abrir el diálogo de preferencias, encontrará una lista de "
 "complementos disponibles, con sus correspondientes casillas, en la pestaña "
-"«Complementos». Para activar o desactivar un complemento, conmute su "
-"casilla. Sólo se puede acceder a los complementos activos a través de la "
-"interfaz de <app>Accerciser</app>."
+"«Complementos». Para activar o desactivar un complemento, conmute su casilla. "
+"Sólo se puede acceder a los complementos activos a través de la interfaz de "
+"<app>Accerciser</app>."
 
 #: C/preferences.page:50(p)
 msgid ""
@@ -342,6 +355,15 @@ msgid ""
 "configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
 "checkboxes to enable or disable these modifiers."
 msgstr ""
+"Algunos elementos en <app>Accerciser</app> puede activar ciertas "
+"funcionalidades mediante teclas rápidas. Un ejemplo es el <link xref="
+"\"quick_select_plugin\">complemento de selección rápida</link>. La "
+"combinación de teclas rápidas para cada funcionalidad se puede cambiar en el "
+"diálogo de preferencias, en la pestaña «Teclas rápidas globales». En esta "
+"pestaña encontrará una lista de todas las características para las que se "
+"pueden configurar las teclas rápidas. Use las casillas <cmd>Ctrl</cmd>, "
+"<cmd>Alt</cmd>, y <cmd>Mayús</cmd> para activar o desactivar estos "
+"modificadores."
 
 #: C/preferences.page:86(title)
 msgid "Configuring global hotkeys' preferences"
@@ -1630,12 +1652,12 @@ msgid ""
 "through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
 "Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
-"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible "
-"de la aplicación al accesible marcado. Cuando la aplicación objetivo está en "
-"un estado diferente (ej. múltiples marcos de nivel superior) puede que la "
-"ruta no sea correcta. Se pueden gestionar los marcadores accediendo al "
-"diálogo de edición de marcadores a través de <guiseq><gui>Marcadores</"
-"gui><gui>Editar marcadores</gui></guiseq>."
+"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de "
+"la aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
+"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
+"no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de "
+"edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar "
+"marcadores</gui></guiseq>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
