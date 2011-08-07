@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-07-25 19:36+0000\n"
-"PO-Revision-Date: 2011-07-29 10:33+0200\n"
+"POT-Creation-Date: 2011-07-29 17:58+0000\n"
+"PO-Revision-Date: 2011-08-07 18:08+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -309,9 +309,9 @@ msgid ""
 msgstr ""
 "Después de abrir el diálogo de preferencias, encontrará una lista de "
 "complementos disponibles, con sus correspondientes casillas, en la pestaña "
-"«Complementos». Para activar o desactivar un complemento, conmute su casilla. "
-"Sólo se puede acceder a los complementos activos a través de la interfaz de "
-"<app>Accerciser</app>."
+"«Complementos». Para activar o desactivar un complemento, conmute su "
+"casilla. Sólo se puede acceder a los complementos activos a través de la "
+"interfaz de <app>Accerciser</app>."
 
 #: C/preferences.page:50(p)
 msgid ""
@@ -545,6 +545,14 @@ msgid ""
 "<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
 "<key>ctrl</key>+<key>t</key> again."
 msgstr ""
+"De manera predeterminada, la interfaz principal de <app>Accerciser</app> se "
+"compone de tres seccione: una vista en árbol de la jerarquía completa de "
+"accesibles del escritorio, llamada <link xref=\"desktop_tree_view\"> vista "
+"en árbol de la aplicación</link>, y dos áreas de complementos. Si prefiere "
+"ver todos los complementos en una única área, divida la interfaz de "
+"<app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>ctrl "
+"</key>+<key>t</key>. Para volver a dividirla en tres secciones, simplemente "
+"pulse <key>ctrl </key>+<key>t</key> otra vez."
 
 #: C/introduction.page:44(p)
 msgid ""
@@ -576,6 +584,14 @@ msgid ""
 "test developers find <app>Accerciser</app> beneficial since it exposes "
 "different events that could be expected from their target application."
 msgstr ""
+"<app>Accerciser</app> se ajusta a las necesidades de diferentes públicos "
+"objetivo. Los desarrolladores de interfaces de usuario lo usan para "
+"asegurarse de que sus aplicaciones proporcionan todas sus características a "
+"través de At-SPI. Los desarrolladores de tecnologías de asistencia pueden "
+"ver qué proporciona AT-SPI a sus aplicaciones. Los desarrolladores de "
+"pruebas de IU automatizadas encuentra beneficioso a <app>Accerciser</app> ya "
+"que expone diferentes eventos que se podrían esperar de su aplicación "
+"objetivo."
 
 #: C/introduction.page:74(title)
 msgid "<app>Accerciser</app>'s plugin architecture"
@@ -623,6 +639,9 @@ msgid ""
 "provides global hotkeys for quickly selecting accessible widgets in "
 "<app>Accerciser</app>'s Application Tree View."
 msgstr ""
+"<link xref=\"quick_select_plugin\">Selección rápida</link>: Un complemento "
+"que proporciona teclas rápidas globales para seleccionar rápidamente widgets "
+"accesibles en la vista en árbol de la aplicación de <app>Accerciser</app>."
 
 #: C/introduction.page:106(p)
 msgid ""
@@ -682,6 +701,10 @@ msgid ""
 "\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
 "in how the GNOME Desktop supports the needs of users with disabilities."
 msgstr ""
+"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
+"\">Guía de accesibilidad del escritorio GNOME</link>: una guía para "
+"cualquiera que esté interesado en cómo soporta el escritorio GNOME las "
+"necesidades de usuarios con discapacidades."
 
 #: C/introduction.page:153(p)
 msgid ""
@@ -690,6 +713,10 @@ msgid ""
 "want to ensure their applications are accessible to the widest audience of "
 "users."
 msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">Guía de accesibilidad para desarrolladores </link>: una guía para "
+"desarrolladores que quieren asegurarse de que sus aplicaciones son "
+"accesibles para la mayor parte del público usuario."
 
 #: C/introduction.page:159(p)
 msgid ""
@@ -698,6 +725,10 @@ msgid ""
 "above along with many other useful links for users, developers and system "
 "administrators."
 msgstr ""
+"<link href=\"http://projects.gnome.org/accessibility/\">Proyecto de "
+"accesibilidad de GNOME</link>: el proyecto de accesibilidad de GNOME incluye "
+"las guías mencionadas anteriormente junto con muchos otros enlaces útiles "
+"para usuarios, desarrolladores y administradores de sistemas."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -743,9 +774,9 @@ msgid ""
 "unsupported will appear grayed out, such as the Application and Collection "
 "interfaces in the figure above."
 msgstr ""
-"Dado un elemento seleccionado en la vista de en árbol de la aplicación, se "
-"mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento del "
-"Visor de interfaces. Aquellas no soportadas aparecerán en gris, tales como "
+"Dado un elemento seleccionado en la vista en árbol de la aplicación, se "
+"mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento de "
+"«Visor de interfaces». Aquellas no soportadas aparecerán en gris, tales como "
 "las interfaces de aplicación de recolección en la figura superior."
 
 #: C/interface_viewer_plugin.page:49(title)
@@ -841,6 +872,8 @@ msgid ""
 "Streamable Content - This interface shows the selected item's content types "
 "and their corresponding URIs."
 msgstr ""
+"Contenido secuenciable: esta interfaz muestra el tipo de contenido de los "
+"elementos seleccionados y sus URI correspondientes."
 
 #: C/interface_viewer_plugin.page:117(p)
 msgid ""
@@ -948,6 +981,8 @@ msgid ""
 "Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
 "They provide a custom graphical interface in a tab."
 msgstr ""
+"Complementos visuales: la mayoría de los complementos predeterminados de "
+"<app>Accerciser</app>. Proporcionan una interfaz gráfica en una pestaña."
 
 #: C/howto_write_a_plugin.page:58(title)
 msgid "Creating a Base Plugin"
@@ -959,6 +994,10 @@ msgid ""
 "\">Quick Select Plugin</link>. This plugin will select the last focused "
 "accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
 msgstr ""
+"Se creará una versión simplificada del <link xref=\"quick_select_plugin"
+"\">complemento de selección rápida</link>. este complemento seleccionará el "
+"último accesible con el foco al pulsar <key>ctrl</key>+<key>alt</key>"
+"+<key>e</key>."
 
 #: C/howto_write_a_plugin.page:63(p)
 msgid "First off, the import lines we will use are:"
@@ -1086,7 +1125,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:120(title)
 msgid "Creating a Console Plugin"
-msgstr ""
+msgstr "Crear un complemento de consola"
 
 #: C/howto_write_a_plugin.page:121(p)
 msgid ""
@@ -1099,7 +1138,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:127(p)
 msgid "The needed import lines are:"
-msgstr ""
+msgstr "Las líneas de importaciones necesarias son:"
 
 #: C/howto_write_a_plugin.page:130(code)
 #, no-wrap
@@ -1117,6 +1156,8 @@ msgstr ""
 #: C/howto_write_a_plugin.page:134(p)
 msgid "Then we add a class definition, with a plugin name and description:"
 msgstr ""
+"Se añade entonces una definición de clase, con un nombre para el complemento "
+"y una descripción:"
 
 #: C/howto_write_a_plugin.page:137(code)
 #, no-wrap
@@ -1183,7 +1224,7 @@ msgstr ""
 
 #: C/howto_write_a_plugin.page:166(p)
 msgid "First off, some mandatory import lines:"
-msgstr ""
+msgstr "En primer lugar, algunas líneas de importación obligatorias:"
 
 #: C/howto_write_a_plugin.page:169(code)
 #, no-wrap
@@ -1201,6 +1242,7 @@ msgstr ""
 #: C/howto_write_a_plugin.page:173(p)
 msgid "Next, a class definition, with a name and description:"
 msgstr ""
+"Lo siguiente es una definición de clase, con un nombre y una descripción:"
 
 #: C/howto_write_a_plugin.page:176(code)
 #, no-wrap
@@ -1353,6 +1395,9 @@ msgid ""
 "this is the case, you can install it via its package manager. Otherwise, you "
 "can follow the section below to install <app>Accerciser</app> manually."
 msgstr ""
+"Compruebe si su distribución tiene <app>Accerciser</app> ya empaquetado. En "
+"este caso, puede instalarlo mediante su gestor de paquetes. Si no, puede "
+"leer la siguiente sección para instalar <app>Accerciser</app> manualmente."
 
 #: C/howto_setting_up_accerciser.page:35(title)
 msgid "Installing <app>Accerciser</app> manually"
@@ -1366,6 +1411,11 @@ msgid ""
 "org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
 "accerciser\">the gnome.org GIT repository</link>."
 msgstr ""
+"Para instalar <app>Accerciser</app> manualmente, primero deberá descargarlo. "
+"El código fuente de <app>Accerciser</app> se puede descargar desde el <link "
+"href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">sitio FTP de "
+"gnome.org</link> o clonarse desde el <link href=\"http://git.gnome.org/"
+"browse/accerciser\">repositorio GIT de gnome.org</link>."
 
 #: C/howto_setting_up_accerciser.page:43(p)
 msgid ""
@@ -1405,6 +1455,11 @@ msgid ""
 "\"https://live.gnome.org/Accerciser/#Requirements\"><app>Accerciser</app>'s "
 "wiki</link> to make sure you have all dependencies properly installed."
 msgstr ""
+"Si tiene problemas al instalar <app>Accerciser</app> en su sistema, es "
+"posible que falte alguna de sus dependencias. Compruebe el <link href="
+"\"https://live.gnome.org/Accerciser/#Requirements\">wiki de <app>Accerciser</"
+"app></link> para asegurarse de que tiene todas las dependencias instaladas "
+"correctamente."
 
 #: C/howto_setting_up_accerciser.page:67(title)
 msgid "Running <app>Accerciser</app>"
@@ -1425,6 +1480,11 @@ msgid ""
 "hierarchy. Select an item and investigate it using one of <app>Accerciser</"
 "app>'s plugins."
 msgstr ""
+"Después de esto puede usar <app>Accerciser</app> para inspeccionar un "
+"elemento accesible mostrado en la jerarquía de la <link xref="
+"\"desktop_tree_view\">vista en árbol de la aplicación.</link>. Seleccione un "
+"elemento e investíguelo usando uno de los complementos de <app>Accerciser</"
+"app>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1458,6 +1518,13 @@ msgid ""
 "application's interface and verify which accessible widgets are related to "
 "which AT-SPI events."
 msgstr ""
+"El complemento «Monitor de eventos» le permite ver los <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">eventos AT-SPI</link> a medida que suceden en la aplicación expuesta en "
+"la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</link> "
+"de <app>Accerciser</app>. El complemento es útil para explorar la dinámica "
+"de la interfaz de una aplicación y verificar qué widgets accesibles están "
+"relacionados con eventos de AT-SPI."
 
 #: C/event_monitor_plugin.page:36(desc) C/event_monitor_plugin.page:41(p)
 msgid ""
@@ -1652,12 +1719,12 @@ msgid ""
 "through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
 "Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
-"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de "
-"la aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
-"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
-"no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de "
-"edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar "
-"marcadores</gui></guiseq>."
+"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible "
+"de la aplicación al accesible marcado. Cuando la aplicación objetivo está en "
+"un estado diferente (ej. múltiples marcos de nivel superior) puede que la "
+"ruta no sea correcta. Se pueden gestionar los marcadores accediendo al "
+"diálogo de edición de marcadores a través de <guiseq><gui>Marcadores</"
+"gui><gui>Editar marcadores</gui></guiseq>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1720,6 +1787,10 @@ msgid ""
 "see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
 "To hide them again, re-select this checkbox."
 msgstr ""
+"De manera predeterminada, el complemento «Examinador API» oculta los métodos "
+"y las propiedades privadas. Para listarlos, desmarque la casilla "
+"<cmd>Ocultar los atributos privados</cmd>. Para volver a ocultarlos, "
+"selecciona esta casilla de nuevo."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
