@@ -1,16 +1,17 @@
 # Bulgarian translation of accerciser po-file.
-# Copyright (C) 2007, 2008, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008, 2009, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Alexander Shopov <ash@contact.bg> 2007, 2008, 2009.
+# Alexander Shopov <ash@kambanaria.org> 2007, 2008, 2009, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-24 22:57+0300\n"
-"PO-Revision-Date: 2009-08-24 22:57+0300\n"
-"Last-Translator: Alexander Shopov <ash@contact.bg>\n"
+"POT-Creation-Date: 2011-08-10 23:24+0300\n"
+"PO-Revision-Date: 2011-08-10 23:23+0300\n"
+"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +23,7 @@ msgstr "Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
 msgid "Accerciser Accessibility Explorer"
-msgstr "Разглеждане на достъпността с accerciser"
+msgstr "Разглеждане на достъпността с Accerciser"
 
 #: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
@@ -191,8 +192,8 @@ msgstr "<b>Текст</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>непознато</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(без описание)</i>"
 
@@ -424,35 +425,35 @@ msgstr "Програма за разглеждане на графичен ин�
 msgid "Allows viewing of various interface properties"
 msgstr "Позволява разглеждането на различни свойства на интерфейса"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(не е реализирано)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Име"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "Адрес"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "Начало"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "Край"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "Прекалено много избрани деца"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr " <i>(Редактируем)</i>"
 
@@ -471,41 +472,6 @@ msgstr "Разглеждане на последния фокусиран дос
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
 msgstr "Разглеждане на достъпния обект под мишката"
-
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Собствени"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Вид на скрипта"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Програма за запис на скрипт"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Създаване на скриптове на dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Текущият скрипт ще бъде изгубен."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Потвърждаване на изчистването"
 
 #: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
@@ -573,27 +539,27 @@ msgstr "ИЗЧИСТВАНЕ"
 
 #: ../plugindata/validate/basic.py:8
 msgid "Basic"
-msgstr "Основно"
+msgstr "Основен интерфейс"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Проверка на основния потребителски интерфейс на програма за достъпност"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "обектът с действие %s не може да се фокусира или избере"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "взаимодействащият обект %s не притежава действие"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "повече от един фокусиран графичен обект"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s не притежава текстов интерфейс"
@@ -601,12 +567,12 @@ msgstr "%s не притежава текстов интерфейс"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s индексът на вложеност на родителя не съвпада с този на детето"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Липсва съответствие за връзката %s"
@@ -614,14 +580,14 @@ msgstr "Липсва съответствие за връзката %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s е без име или етикет"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
 "фокусируемият обект %s е с табличен интерфейс, а не с такъв за избиране"
 
@@ -629,15 +595,15 @@ msgstr ""
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr "обект %s притежава състояние %s без състояние %s"
+msgstr "Обектът %s притежава състояние %s без състояние %s"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s не принадлежи на група"
@@ -647,11 +613,11 @@ msgstr "%s не принадлежи на група"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
-"индексът на вложеност на %(rolename)s — %(num)d не съвпада с реда и колоната"
+"Индексът на вложеност на %(rolename)s — %(num)d не съвпада с реда и колоната"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -659,16 +625,16 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
-"индексът на вложеност на %(rolename)s — %(num1)d не съвпада с индекса на ред "
+"Индексът на вложеност на %(rolename)s — %(num1)d не съвпада с индекса на ред "
 "и колона %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s няма име или описание"
@@ -681,7 +647,7 @@ msgstr "_Настройки…"
 msgid "_Contents"
 msgstr "_Съдържание"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:128
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -690,7 +656,7 @@ msgstr ""
 "включите достъпността на средата, за да решите този проблем. Искате ли да "
 "направите това сега?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Бележка: Промените влизат в сила след излизане от системата."
 
@@ -758,7 +724,7 @@ msgstr "Долен подпрозорец"
 
 #: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
-msgstr "Настройки на accerciser"
+msgstr "Настройки на Accerciser"
 
 #: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
@@ -795,7 +761,7 @@ msgstr "Цветът за запълване на оцветения право�
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Александър Шопов <ash@contact.bg>\n"
+"Александър Шопов <ash@kambanaria.org>\n"
 "\n"
 "Проектът за превод на GNOME има нужда от подкрепа.\n"
 "Научете повече за нас на http://gnome.cult.bg\n"
