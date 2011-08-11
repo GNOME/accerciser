@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-25 02:01+0100\n"
-"PO-Revision-Date: 2010-02-24 23:40+0100\n"
+"POT-Creation-Date: 2011-08-11 21:55+0200\n"
+"PO-Revision-Date: 2011-08-11 21:56+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -193,8 +194,8 @@ msgstr "<b>Tekst</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>nieznane</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(brak opisu)</i>"
 
@@ -426,35 +427,35 @@ msgstr "Widok interfejsu"
 msgid "Allows viewing of various interface properties"
 msgstr "Umożliwia podgląd różnych właściwości interfejsu"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(niezaimplementowane)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "Początek"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "Koniec"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "Zbyt wielu potomków możliwych do zaznaczenia"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Element modyfikowalny)</i>"
 
@@ -473,41 +474,6 @@ msgstr "Podgląd ostatnio aktywnego elementu"
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
 msgstr "Podgląd funkcji dostępności wskazanej myszką"
-
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Natywny"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Typ skryptu"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Rejestrator skryptów"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Tworzy skrypty w stylu programu Dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Bieżący skrypt zostanie utracony."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Potwierdzanie czyszczenia"
 
 #: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
@@ -581,21 +547,21 @@ msgstr "Podstawowy"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Sprawdza dostępność interfejsu programów graficznych"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "elementu %s nie można zaznaczyć ani aktywować"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "element interaktywny %s nie jest podmiotem działań"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "więcej niż jeden aktywny widżet"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s nie posiada interfejsu tekstowego"
@@ -603,12 +569,12 @@ msgstr "%s nie posiada interfejsu tekstowego"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "indeks rodzica %s nie odpowiada indeksowi potomka"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Brak elementu odwrotnego dla relacji %s"
@@ -616,21 +582,21 @@ msgstr "Brak elementu odwrotnego dla relacji %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "brak nazwy lub etykiety %s "
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "element %s posiada interfejs tabeli bez interfejsu wybierania"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "element %s posiada interfejs tabeli, ale bez interfejsu wybierania"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "rola %s posiada stan %s bez stanu %s"
@@ -638,7 +604,7 @@ msgstr "rola %s posiada stan %s bez stanu %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nie należy do zestawu"
@@ -648,7 +614,7 @@ msgstr "%s nie należy do zestawu"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "Indeks %(rolename)s numer %(num)d nie pasuje do wiersza i kolumny"
@@ -659,16 +625,16 @@ msgstr "Indeks %(rolename)s numer %(num)d nie pasuje do wiersza i kolumny"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
-"Indeks %(rolename)s numer %(num1)d nie pasuje do indeksu wiersza i kolumny %"
-"(num2)d"
+"Indeks %(rolename)s numer %(num1)d nie pasuje do indeksu wiersza i kolumny "
+"%(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s nie ma nazwy ani opisu"
@@ -681,7 +647,7 @@ msgstr "_Preferencje..."
 msgid "_Contents"
 msgstr "_Spis treści"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:128
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -690,7 +656,7 @@ msgstr ""
 "tego programu wymagane jest włączenie technologii wspierających. Włączyć je "
 "teraz?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:145
 msgid "Note: Changes only take effect after logout."
 msgstr "Uwaga: zmiany zostaną uwzględnione po wylogowaniu."
 
