@@ -1,15 +1,15 @@
 # Thai translation of accerciser
-# Copyright (C) 2007-2009 Free Software Foundation, Inc.
+# Copyright (C) 2007-2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007-2009.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2007-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 0.1.92\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2009-08-24 17:41+0000\n"
-"PO-Revision-Date: 2009-09-17 14:51+0700\n"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-07-04 12:27+0000\n"
+"PO-Revision-Date: 2011-08-13 17:07+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -189,8 +189,8 @@ msgstr "<b>ข้อความ</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>ไม่ทราบ</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
 msgid "<i>(no description)</i>"
 msgstr "<i>(ไม่มีคำบรรยาย)</i>"
 
@@ -422,35 +422,35 @@ msgstr "แสดงส่วนติดต่อ"
 msgid "Allows viewing of various interface properties"
 msgstr "แสดงคุณสมบัติต่างๆ ของส่วนติดต่อผู้ใช้"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
 msgid "(not implemented)"
 msgstr "(ยังไม่ทำ)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
 #: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "เริ่ม"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "จบ"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "มีรายการลูกที่เลือกได้มากเกินไป"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
 msgid "<i>(Editable)</i>"
 msgstr "<i>(แก้ไขได้)</i>"
 
@@ -469,41 +469,6 @@ msgstr "เลือกสิ่งอำนวยความสะดวกส
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
 msgstr "เฝ้ามองสิ่งอำนวยความสะดวกที่อยู่ใต้เมาส์"
-
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "ดิบๆ"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "ชนิดสคริปต์"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "บันทึกสคริปต์"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "สร้างสคริปต์แบบ dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "สคริปต์ปัจจุบันจะสูญหาย"
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "ยืนยันการล้าง"
 
 #: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
 #: ../plugins/validate.py:412
@@ -577,21 +542,21 @@ msgstr "พื้นฐาน"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "ทดสอบสิ่งอำนวยความสะดวกเกี่ยวกับ GUI พื้นฐานในโปรแกรม"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "อุปกรณ์สำหรับกระทำการ %s ไม่สามารถโฟกัสหรือเลือกได้"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "อุปกรณ์โต้ตอบ %s ไม่สามารถกระทำการได้"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "มีวิดเจ็ตที่ได้รับโฟกัสมากกว่าหนึ่งตัว"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s ไม่มีส่วนติดต่อแบบข้อความ"
@@ -599,12 +564,12 @@ msgstr "%s ไม่มีส่วนติดต่อแบบข้อคว
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "หมายเลขของ %s ในวิดเจ็ตแม่ ไม่ตรงกับหมายเลขที่วิดเจ็ตลูกอ้าง"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "ไม่มีการชี้กลับสำหรับความสัมพันธ์ %s"
@@ -612,21 +577,21 @@ msgstr "ไม่มีการชี้กลับสำหรับควา
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s ไม่มีชื่อหรือป้ายชื่อ"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "สิ่งมีโฟกัส %s มีส่วนติดต่อแบบตาราง แต่ไม่มีส่วนติดต่อสำหรับเลือก"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s มีสถานะ %s โดยไม่มีสถานะ %s"
@@ -634,7 +599,7 @@ msgstr "%s มีสถานะ %s โดยไม่มีสถานะ %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s ไม่อยู่ในกลุ่ม"
@@ -644,7 +609,7 @@ msgstr "%s ไม่อยู่ในกลุ่ม"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s หมายเลข %(num)d มีหมายเลขแถวและคอลัมน์ไม่ตรงกับของตาราง"
@@ -655,7 +620,7 @@ msgstr "%(rolename)s หมายเลข %(num)d มีหมายเลข�
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
@@ -664,20 +629,20 @@ msgstr ""
 "%(rolename)s มีหมายเลขในวิดเจ็ตแม่ %(num1)d ไม่ตรงกับหมายเลข %(num2)d "
 "ที่อ่านตามแถวและคอลัมน์"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s ไม่มีชื่อหรือคำบรรยาย"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:87
 msgid "_Preferences..."
 msgstr "_ปรับแต่ง..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:89
 msgid "_Contents"
 msgstr "เนื้อ_หา"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:130
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -917,6 +882,30 @@ msgstr "มุ_มมอง"
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
 msgstr "_วิธีใช้"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "ดิบๆ"
+
+#~ msgid "Script Type"
+#~ msgstr "ชนิดสคริปต์"
+
+#~ msgid "Script Recorder"
+#~ msgstr "บันทึกสคริปต์"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "สร้างสคริปต์แบบ dogtail"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "สคริปต์ปัจจุบันจะสูญหาย"
+
+#~ msgid "Confirm clear"
+#~ msgstr "ยืนยันการล้าง"
 
 #~ msgid "Full name"
 #~ msgstr "ชื่อเต็ม"
