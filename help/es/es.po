@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.gnome-2-22\n"
-"POT-Creation-Date: 2011-08-13 10:09+0000\n"
-"PO-Revision-Date: 2011-08-13 17:33+0200\n"
+"POT-Creation-Date: 2011-08-13 15:35+0000\n"
+"PO-Revision-Date: 2011-08-14 17:43+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -873,6 +873,11 @@ msgid ""
 "integer indicating the stacking order of the component in the MDI layer), "
 "and alpha (if alpha blending is used)."
 msgstr ""
+"Componente: esta interfaz muestra la posición absoluta del elemento "
+"seleccionado (respecto del sistema de coordenadas del escritorio), posición "
+"relativa (respecto del sistema de coordenadas de la ventana), tamaño, tipo "
+"de capa, orden MDI-Z (un entero corto que indica el orden de apilamiento del "
+"componente en la capa MDI) y alfa (si se usa alfa)."
 
 #: C/interface_viewer_plugin.page:86(p)
 msgid ""
@@ -889,6 +894,11 @@ msgid ""
 "URI, start (the index in the hypertext at which the hyperlink begins) and "
 "end (the index in the hypertext at which this hyperlink ends)."
 msgstr ""
+"Hipertexto: esta interfaz muestra una lista de todos los hiperenlaces de "
+"hipertexto de los elementos seleccionados. Para cada hiperenlace la interfaz "
+"proporciona su nombre, URI, inicio (el índice en el hipertexto en el que "
+"comienza el hiperenlace) y el final (el índice en el hipertexto en el que "
+"finaliza el hiperenlace)."
 
 #: C/interface_viewer_plugin.page:98(p)
 msgid ""
@@ -909,6 +919,12 @@ msgid ""
 "example - and want to clear it, just press the \"Clear\" button below the "
 "list."
 msgstr ""
+"Selección: esta interfaz muestra todos los elementos hijos seleccionables "
+"del elemento seleccionado. Si el elemento seleccionado es una barra de menú "
+"con las opciones «Archivo», «Editar», «Ver» y «Ayuda» y todas ellas se "
+"pueden seleccionar, entonces se listarán en esta interfaz. Si pulsa sobre "
+"una opción listada —«Archivo», por ejemplo— y quiere limpiarla, simplemente "
+"pulse el botón «Limpiar» en la lista de abajo."
 
 #: C/interface_viewer_plugin.page:112(p)
 msgid ""
@@ -925,6 +941,11 @@ msgid ""
 "selected rows), and selected columns (number of selected columns). For a "
 "selected cell, the interface shows its row's and column's header and extents."
 msgstr ""
+"Tabla: esta interfaz muestra el título y el resumen del elemento "
+"seleccionado, filas (número de filas), columnas (número de columnas), filas "
+"seleccionadas (número de filas seleccionadas) y columnas seleccionadas "
+"(número de columnas seleccionadas). Para una celda seleccionada, la interfaz "
+"muestra la cabecera y extensión de sus filas y columnas."
 
 #: C/interface_viewer_plugin.page:124(p)
 msgid ""
@@ -1106,12 +1127,17 @@ msgstr ""
 "    "
 
 #: C/howto_write_a_plugin.page:80(p)
+#, fuzzy
 msgid ""
 "We will now override the init method, in which we will set a global key "
 "action for selecting the last focused accessible item, register an event "
 "listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
 "instance variable to <cmd>None</cmd>."
 msgstr ""
+"No se sobreescribirá el método «init», en el que se establecerá una acción "
+"de clave global para seleccionar el último elemento accesible con el foco, "
+"registrar un escuchador de eventos para el evento «focus», y establecer la "
+"variable de instancia <cmd>last_focused</cmd> a <cmd>None</cmd>."
 
 #: C/howto_write_a_plugin.page:86(code)
 #, no-wrap
