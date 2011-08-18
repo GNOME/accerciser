@@ -222,7 +222,8 @@ class PluginManager(gtk.ListStore, Tools):
     if isinstance(plugin_instance, gtk.Widget):
       plugin_instance.destroy()
     plugin_instance._close()
-    self[iter][self.COL_INSTANCE] = None
+    
+    self[iter][self.COL_INSTANCE] = False
 
   def _reloadPlugin(self, iter):
     '''
@@ -304,7 +305,7 @@ class PluginManager(gtk.ListStore, Tools):
       self._disablePlugin(iter)
     else:
       self._reloadPlugin(iter)
-  
+
   def _onPluginRowChanged(self, model, path, iter):
     '''
     Callback for model row changes. Persists plugins state (enabled/disabled)
@@ -363,10 +364,10 @@ class PluginManager(gtk.ListStore, Tools):
       self.connect('popup-menu', self._onPopupMenu)
 
       crc = gtk.CellRendererToggle()
-      crc.connect('toggled', self._onPluginToggled)
       tvc = gtk.TreeViewColumn()
       tvc.pack_start(crc, True)
       tvc.set_cell_data_func(crc, self._pluginStateDataFunc)
+      crc.connect('toggled', self._onPluginToggled)
       self.append_column(tvc)
 
       crt = gtk.CellRendererText()
