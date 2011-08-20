@@ -1,19 +1,19 @@
 # translation of accerciser manual to Spanish
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.master\n"
-"POT-Creation-Date: 2011-08-14 15:44+0000\n"
-"PO-Revision-Date: 2011-08-16 12:12+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-08-16 10:13+0000\n"
+"PO-Revision-Date: 2011-08-20 12:18+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -1327,6 +1327,10 @@ msgid ""
 "an action named \"click\". It will be a simple button that, once clicked, "
 "does the \"click\" action in the accessible."
 msgstr ""
+"Se creará un complemento de puerto de vista que permite una prueba rápida de "
+"la acción de pulsación sobre elementos accesibles que soportan la interfaz "
+"AT-SPI Action y tienen una acción llamada «click». Será un botón simple que, "
+"una vez pulsado, realiza la acción de pulsación sobre el accesible."
 
 #: C/howto_write_a_plugin.page:166(p)
 msgid "First off, some mandatory import lines:"
@@ -1374,6 +1378,12 @@ msgid ""
 "variable contains a gtk.Frame that could be populated with all the plugin's "
 "widgets."
 msgstr ""
+"Se sobreescribirá el método «init» con una construcción de IU y conectando "
+"el retorno de la llamada a una señal para el botón. Se usará el contenedor "
+"de alineamiento para permitir que el botón esté centrado en la pestaña del "
+"complemento, y que no ocupe monstruosamente todo el espacio disponible. Note "
+"que la variable de instancia <cmd>plugin_area</cmd> gontiene un gtk.Frame "
+"que se puede llenar con todos los widgets del complemento."
 
 #: C/howto_write_a_plugin.page:188(code)
 #, no-wrap
@@ -1408,6 +1418,9 @@ msgid ""
 "actions of the currently selected accessible item - if it does not support "
 "the Action interface, it returns an empty list:"
 msgstr ""
+"También se ha creado un método de conveniencia que devuelve una lista de las "
+"acciones soportadas por el elemento accesible actualmente seleccionado; si "
+"no soporta la acción de la interfaz, entonces devuelve una lista vacía:"
 
 #: C/howto_write_a_plugin.page:204(code)
 #, no-wrap
@@ -1441,6 +1454,10 @@ msgid ""
 "override it setting the button to be sensitive only when the current "
 "accessible item has the \"click\" action:"
 msgstr ""
+"Esta clase de complemento base tiene una llamada de método onAccChanged a la "
+"que se llama cada vez que el elemento accesible seleccionado de la "
+"aplicación objetivo cambia. Se sobreescribirá ajustando el botón para ser "
+"sensible sólo cuando el elemento accesible actual tiene la acción «click»."
 
 #: C/howto_write_a_plugin.page:219(code)
 #, no-wrap
@@ -1464,6 +1481,10 @@ msgid ""
 "button is sensitive, we don't need to worry about checking if the current "
 "accessible has the \"click\" action?"
 msgstr ""
+"El método del retorno de llamada para el botón pulsado realiza la acción de "
+"pulsación en el elemento accesible. Ya que a este retorno de llamada sólo se "
+"le puede llamar cuando el botón es sensible, no se debe preocupar acerca de "
+"comprobar si el accesible actual tiene la acción «cick»."
 
 #: C/howto_write_a_plugin.page:229(code)
 #, no-wrap
@@ -1695,6 +1716,10 @@ msgid ""
 "<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
 "selected event types, press the <cmd>Clear Selection</cmd> button."
 msgstr ""
+"Si quiere monitorizar todos los tipos posibles de eventos AT-SPI, pulse el "
+"botón <cmd>Seleccionar todos</cmd>. De forma similar, si quiere limpiar "
+"todos los tipos de eventos actualmente seleccionados, pulse el botón "
+"<cmd>Limpiar selección</cmd>."
 
 #: C/event_monitor_plugin.page:102(p)
 msgid ""
@@ -1714,6 +1739,15 @@ msgid ""
 "select it in the Application Tree View and click the Source radio button "
 "<cmd>Selected accessible</cmd>."
 msgstr ""
+"Otra forma de refinar la monitorización de eventos es a través del origen "
+"del evento. De forma predeterminada la opción <cmd>Todo</cmd>, como fuente, "
+"está seleccionada, indicando que se monitorizarán todos los eventos AT-SPI "
+"de todas las aplicaciones. Si quiere investigar una sola aplicación, "
+"selecciónela en la vista de árbol de la aplicación y pulse en el botón de "
+"radio Fuente <cmd>Aplicación seleccionada</cmd>. De la misma forma, si "
+"quiere monitorizar un solo widget accesible y sus correspondientes "
+"descendientes, selecciónelo en la vista de árbol de la aplicación y pulse en "
+"el botón de radio Fuente <cmd>Accesible seleccionado</cmd>."
 
 #: C/event_monitor_plugin.page:116(p)
 msgid ""
@@ -1723,6 +1757,12 @@ msgid ""
 "stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
 "monitoring, press this button again."
 msgstr ""
+"Después de seleccionar los tipos de evento y especificar una opción para la "
+"fuente, el complemento de monitorización de eventos comienza automáticamente "
+"a monitorizar los eventos AT-SPI, ya que el botón <cmd>Monitorizar eventos</"
+"cmd> está pulsado de forma predeterminada. Cuando quiera dejar de "
+"monitorizar eventos, pulse el botón <cmd>Monitorizar eventos</cmd>. Pulse el "
+"botón de nuevo para reiniciar la monitorización."
 
 #: C/event_monitor_plugin.page:123(p)
 msgid ""
@@ -1776,6 +1816,15 @@ msgid ""
 "SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
 "represents each one of them as a hierarchical structure with expanding nodes."
 msgstr ""
+"La interfaz de <app>Accerciser</app> contiene una vista de árbol llamada "
+"vista de árbol de la aplicación, que cubre todas las aplicaciones accesibles "
+"actualmente en ejecución en el escritorio. Para crear esta vista de árbol "
+"<app>Accerciser</app> usa el demonio de registro de AT-SPI. Este demonio es "
+"el responsable de mantener el seguimiento de todas las aplicaciones "
+"accesibles en el escritorio y reenviar los eventos X sobre el D-Bus de AT-"
+"SPI. Después de obtener todas las aplicaciones accesibles, <app>Accerciser</"
+"app> representa cada una de ellas en una estructura jerárquica con nodos "
+"expandidos."
 
 #: C/desktop_tree_view.page:38(desc) C/desktop_tree_view.page:43(p)
 msgid ""
@@ -1795,6 +1844,11 @@ msgid ""
 "For each node, <app>Accerciser</app> provides some basic information, such "
 "as its name, role and number of children."
 msgstr ""
+"El primer nodo de cada aplicación representada en esta vista de árbol es la "
+"aplicación en sí. Cuando expande un nodo puede ver todos sus widgets hijos, "
+"lo que permite una vista jerárquica de la interfaz de la aplicación. Para "
+"cada nodo, <app>Accerciser</app> proporciona alguna información básica, tal "
+"como su nombre, rol y número de hijos."
 
 #: C/desktop_tree_view.page:56(p)
 msgid "Be aware that nodes with many children take a long time to expand."
