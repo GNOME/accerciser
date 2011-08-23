@@ -37,7 +37,7 @@ class PluginView(gtk.Notebook):
   @cvar TARGET_ROOTWIN: Drag and drop target ID for root window.
   @type TARGET_ROOTWIN: integer
   @ivar NOTEBOOK_GROUP: Group ID for detachable tabs.
-  @type NOTEBOOK_GROUP: integer
+  @type NOTEBOOK_GROUP: string
 
   @ivar view_name: Name of view.
   @type view_name: string
@@ -54,7 +54,7 @@ class PluginView(gtk.Notebook):
                     GObject.TYPE_OBJECT))}
   TARGET_PLUGINVIEW = 0
   TARGET_ROOTWIN = 1
-  NOTEBOOK_GROUP = 1
+  NOTEBOOK_GROUP = 'NOTEBOOK_GROUP'
 
   def __init__(self, view_name):
     '''
@@ -66,9 +66,9 @@ class PluginView(gtk.Notebook):
     gtk.Notebook.__init__(self)
     self.view_name = view_name
     self.set_scrollable(True)
-    #self.set_group_id(self.NOTEBOOK_GROUP)
-    self.connect('drag_end', self._onDragEnd)
-    self.connect('drag_data_get', self._onDragDataGet)
+    self.set_group_name(self.NOTEBOOK_GROUP)
+    self.connect('drag-end', self._onDragEnd)
+    self.connect('drag-data-get', self._onDragDataGet)
     self.connect('key-press-event', self._onKeyPress)
     self.connect('button-press-event', self._onButtonPress)
 
@@ -165,7 +165,7 @@ class PluginView(gtk.Notebook):
     @type time: float
     '''
     self.dest_type = info
-    selection_data.set(selection_data.target, 8, '')
+    selection_data.set(selection_data.get_target(), 8, '')
 
   def _onDragEnd(self, widget, drag_context):
     '''
