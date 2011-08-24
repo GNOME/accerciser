@@ -25,25 +25,18 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['pygtk', 'gtk', 'gtk.gdk', 'wnck', 'pyatspi']
+modules = ['pyatspi']
 for name in modules:
   try:
     m = __import__(name)
     print name, 
   except ImportError, e:
-    if name == 'wnck' and e.args[0].find('gtk') > -1:
-      # just no display, continue
-      continue
     print name, '*MISSING*'
     sys.exit(1)
   except RuntimeError:
     # ignore other errors which might be from lack of a display
     continue
-  if name == 'pygtk':
-    m.require('2.0')
-  elif name == 'gtk':
-    m.check_version(*GTK_VERSION)
-  elif name =='pyatspi':
+  if name =='pyatspi':
     try:
       compared = map(lambda x: cmp(*x),  zip(PYATSPI_REQ, m.__version__))
     except AttributeError:
