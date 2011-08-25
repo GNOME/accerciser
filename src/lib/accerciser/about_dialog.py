@@ -50,7 +50,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   DOCUMENTERS = ['Eitan Isaacson <eitan@ascender.com>']
   TRANSLATORS = _('translator-credits')
   COMMENTS = _('An interactive Python accessibility explorer')
-  COPYRIGHT =  _('accerciser Copyright © 2006, 2007 IBM Corporation (BSD)')
+  COPYRIGHT =  _('accerciser Copyright 2006, 2007 IBM Corporation (BSD)')
   LICENSE = \
       _('The New BSD License See the COPYING and NOTICE files for details.')
   WEB_URL = 'http://live.gnome.org/Accerciser'
