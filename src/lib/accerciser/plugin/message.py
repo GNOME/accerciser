@@ -15,8 +15,8 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import GObject
+from gi.repository import Pango
 
-import pango
 from accerciser.i18n import _
 
 class MessageManager(GObject.GObject):
@@ -282,12 +282,12 @@ class PluginErrorMessage(PluginMessage):
                          gtk.IconSize.SMALL_TOOLBAR)
     hbox.pack_start(image, False, False, 0)
     label = gtk.Label()
-    label.set_ellipsize(pango.ELLIPSIZE_END)
+    label.set_ellipsize(Pango.EllipsizeMode.END)
     label.set_selectable(True)
     label.set_markup('<b>%s</b>' % error_message)
     hbox.pack_start(label, True, True, 0)
     label = gtk.Label(details)
-    label.set_ellipsize(pango.ELLIPSIZE_END)
+    label.set_ellipsize(Pango.EllipsizeMode.END)
     label.set_selectable(True)
     self.vbox.add(label)
     self.add_button(gtk.STOCK_CLEAR, gtk.ResponseType.CLOSE)

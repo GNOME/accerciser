@@ -19,7 +19,7 @@ from gi.repository.GLib import markup_escape_text
 
 import pyatspi
 import os.path
-import pango
+
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
 from accerciser.i18n import _, N_, DOMAIN

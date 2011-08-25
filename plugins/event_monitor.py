@@ -15,13 +15,13 @@ import gi
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GObject
+from gi.repository import Pango
 
 import pyatspi
 import os.path
 import gettext, os, sys, locale
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_, DOMAIN
-import pango
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 
                        'event_monitor.ui')
@@ -364,7 +364,7 @@ class EventMonitor(ViewportPlugin):
     hyperlink = self.monitor_buffer.create_tag(
       None, 
       foreground='blue',
-      underline=pango.UNDERLINE_SINGLE)
+      underline=Pango.Underline.SINGLE)
     hyperlink.connect('event', self._onLinkClicked)
     hyperlink.set_data('acc', acc)
     hyperlink.set_data('islink', True)

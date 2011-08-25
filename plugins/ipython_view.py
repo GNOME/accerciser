@@ -17,11 +17,12 @@ import gi
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GObject
+from gi.repository import Pango
 
 import re
 import sys
 import os
-import pango
+
 from StringIO import StringIO
 
 try:
@@ -273,7 +274,7 @@ class ConsoleView(gtk.TextView):
     Initialize console view.
     '''
     gtk.TextView.__init__(self)
-    self.modify_font(pango.FontDescription('Mono'))
+    self.modify_font(Pango.FontDescription('Mono'))
     self.set_cursor_visible(True)
     self.text_buffer = self.get_buffer()
     self.mark = self.text_buffer.create_mark('scroll_mark', 
