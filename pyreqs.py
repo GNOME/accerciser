@@ -25,7 +25,11 @@ except KeyError:
   pass
 
 # test for python modules
-modules = ['pyatspi']
+modules = ['pyatspi', 'cairo', 'rsvg', 'gi', 'gi.repository.Gtk', \
+          'gi.repository.GConf', 'gi.repository.Gdk', 'gi.repository.Atk', \
+          'gi.repository.GObject', 'gi.repository.GdkPixbuf', \
+          'gi.repository.Wnck', 'gi.repository.Gio']
+
 for name in modules:
   try:
     m = __import__(name)
