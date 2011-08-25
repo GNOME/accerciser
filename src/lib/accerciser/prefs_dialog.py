@@ -149,7 +149,7 @@ class _HighlighterView(gtk.Alignment):
     ColorButton derivative with useful methods for us.
     '''
     def __init__(self, color, alpha):
-      color = gdk.color_parse(color)[1]
+      color = gdk.color_parse(color)
       gtk.ColorButton.__init__(self)
       self.set_use_alpha(True)
       self.set_alpha(int(alpha*0xffff))
