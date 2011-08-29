@@ -171,7 +171,7 @@ class Main(Tools):
     @type widget: L{gtk.Widget}
     '''
     about = AccerciserAboutDialog()
-    about.show_all()
+    about.run()
     
   def _onHelp(self, action, page=""):
     '''
