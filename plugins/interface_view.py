@@ -311,7 +311,7 @@ class _SectionAccessible(_InterfaceSection):
     self.relations_view = ui_xml.get_object('relations_view')
     self.relations_model = ui_xml.get_object('relations_treestore')
     # preset the different bg colors
-    style = gtk.StyleContext()
+    style = self.relations_view.get_style_context()
     self.header_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
     self.relation_bg = style.get_color(gtk.StateFlags.NORMAL).to_string()
 
