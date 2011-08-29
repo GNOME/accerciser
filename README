@@ -68,30 +68,35 @@ Brits, not serpents.
 Requirements
 ============
 
+As Accerciser uses pygobject, you'll need to have the following libraries:
+
+    gobject-introspection
+    python-gobject >= 2.90.3
+    gtk+3 >= 3.1.13
+
   On a Red Hat based distro:
 
-    gnome-python2-libwnck >= 2.14
-    pygtk2 >= 2.8
     python >= 2.4
-    pyatspi >= 0.3.3
-    at-spi2-core >= 0.3.3
+    pyatspi >= 1.9.0
+    at-spi2-core >= 2.1.5
     glib2 >= 2.10
     GConf2-devel
+    pygobject
 
   On a Debian based distro:
 
-    python-gnome2-desktop >= 2.14
-    python-gtk2 >= 2.8
     python >= 2.4
-    python-pyatspi >= 1.30
-    at-spi >= 1.30
+    python-pyatspi >= 1.9.0
+    at-spi2 >= 2.1.5
     libgconf2-dev
+    python-gobject
     
   To use the Python console plugin, you must hve IPython installed.
 
   Make sure accessibility is enabled for your GNOME desktop:
 
-    gconftool-2 -s -t boolean /desktop/gnome/interface/accessibility true
+    gsettings get org.gnome.desktop.interface toolkit-accessibility
+
   
 Installing
 ==========
