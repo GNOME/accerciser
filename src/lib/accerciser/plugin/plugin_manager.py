@@ -11,8 +11,11 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
-import gobject
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import GConf as gconf
+
 from base_plugin import Plugin
 from view import ViewManager
 from accerciser.tools import Tools, GConfListWrapper, getTreePathBoundingBox
@@ -21,7 +24,6 @@ import os
 import sys
 import imp
 import traceback
-import gconf
 from accerciser.i18n import _, N_, C_
 
 GCONF_PLUGIN_DISABLED = '/apps/accerciser/disabled_plugins'      
@@ -92,6 +94,7 @@ class PluginManager(gtk.ListStore, Tools):
     '''
     Load all plugins in global and local plugin paths.
     '''
+    # AQUI PETAA
     for plugin_dir, plugin_fn in self._getPluginFiles():
       self._loadPluginFile(plugin_dir, plugin_fn)
     self.view_manager.initialView()
@@ -162,14 +165,15 @@ class PluginManager(gtk.ListStore, Tools):
         continue
       if is_plugin:
         self.handler_block(self._row_changed_handler)
-        iter = self.append([None, plugin_locals[symbol], plugin_dir])
+
+        iter_id = self.append([None, plugin_locals[symbol], plugin_dir])
         self.handler_unblock(self._row_changed_handler)
         # if a plugin class is found, initialize
         enabled = plugin_locals[symbol].plugin_name not in \
             GConfListWrapper(GCONF_PLUGIN_DISABLED)
         if enabled:
-          self._enablePlugin(iter)
-        self.row_changed(self.get_path(iter), iter)
+          self._enablePlugin(iter_id)
+        self.row_changed(self.get_path(iter_id), iter_id)
 
   def _enablePlugin(self, iter):
     '''
@@ -218,7 +222,8 @@ class PluginManager(gtk.ListStore, Tools):
     if isinstance(plugin_instance, gtk.Widget):
       plugin_instance.destroy()
     plugin_instance._close()
-    self[iter][self.COL_INSTANCE] = None
+    
+    self[iter][self.COL_INSTANCE] = False
 
   def _reloadPlugin(self, iter):
     '''
@@ -300,7 +305,7 @@ class PluginManager(gtk.ListStore, Tools):
       self._disablePlugin(iter)
     else:
       self._reloadPlugin(iter)
-  
+
   def _onPluginRowChanged(self, model, path, iter):
     '''
     Callback for model row changes. Persists plugins state (enabled/disabled)
@@ -359,10 +364,10 @@ class PluginManager(gtk.ListStore, Tools):
       self.connect('popup-menu', self._onPopupMenu)
 
       crc = gtk.CellRendererToggle()
-      crc.connect('toggled', self._onPluginToggled)
       tvc = gtk.TreeViewColumn()
       tvc.pack_start(crc, True)
       tvc.set_cell_data_func(crc, self._pluginStateDataFunc)
+      crc.connect('toggled', self._onPluginToggled)
       self.append_column(tvc)
 
       crt = gtk.CellRendererText()
@@ -433,7 +438,7 @@ class PluginManager(gtk.ListStore, Tools):
       menu = self.view_manager.Menu(plugin, self.get_toplevel())
       menu.popup(None, None, pos_func, button, time, data)
 
-    def _viewNameDataFunc(self, column, cell, model, iter):
+    def _viewNameDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed data in the tree's view column.
       
@@ -456,7 +461,7 @@ class PluginManager(gtk.ListStore, Tools):
         cell.set_property('sensitive', False)
       cell.set_property('text', _(view_name))
 
-    def _pluginNameDataFunc(self, column, cell, model, iter):
+    def _pluginNameDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed data in the tree's plugin column.
       
@@ -473,7 +478,7 @@ class PluginManager(gtk.ListStore, Tools):
       cell.set_property('text', plugin_class.plugin_name_localized or \
                           plugin_class.plugin_name)
 
-    def _pluginStateDataFunc(self, column, cell, model, iter):
+    def _pluginStateDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed state of the plugin's checkbox.
       

@@ -12,10 +12,15 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import GdkPixbuf
+from gi.repository import Wnck as wnck
+from gi.repository import GObject
+
 import sys, os, glob
-import gtk
-import gobject
-import wnck
+
 from pyatspi.constants import *
 
 ICONS_PATH = os.path.join(sys.prefix, 'share', 
@@ -30,18 +35,18 @@ def getIcon(acc):
   the current theme or wnck to get application icons. Uses icons from 
   at-poke for widgets.
   '''
-  theme = gtk.icon_theme_get_default()
+  theme = gtk.IconTheme.get_default()
   try:
     role_name = acc.getRoleName()
     role = acc.getRole()
     if role_name == 'application':
       # try the theme first
       try:
-        return theme.load_icon(acc.name, 24, gtk.ICON_LOOKUP_USE_BUILTIN)
-      except gobject.GError:
+        return theme.load_icon(acc.name, 24, gtk.IconLookupFlags.USE_BUILTIN)
+      except GObject.GError:
         pass
       # then try wnck
-      s = wnck.screen_get_default()
+      s = wnck.Screen.get_default()
       s.force_update()
       for win in s.get_windows():
         wname = win.get_name()
@@ -53,10 +58,10 @@ def getIcon(acc):
       name = role_name.replace(' ', '')
       try:
         fn = os.path.join(ICONS_PATH, '%s.png' % name)
-        return gtk.gdk.pixbuf_new_from_file(fn)
-      except gobject.GError:
+        return GdkPixbuf.Pixbuf.new_from_file(fn)
+      except GObject.GError:
         pass
   except Exception, e:
     pass
   fn = os.path.join(ICONS_PATH, 'filler.png')
-  return gtk.gdk.pixbuf_new_from_file(fn)
+  return GdkPixbuf.Pixbuf.new_from_file(fn)

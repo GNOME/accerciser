@@ -1,4 +1,7 @@
-import gtk, gconf
+from gi.repository import Gtk as gtk
+from gi.repository import Gdk as gdk
+from gi.repository import GConf as gconf
+
 from plugin import PluginView
 from i18n import _, N_
 from accessible_treeview import *
@@ -39,7 +42,7 @@ class AccerciserMainWindow(gtk.Window):
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
     node.connect('blink-done', self._onBlinkDone)    
-    cl = gconf.client_get_default()
+    cl = gconf.Client.get_default()
     width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
     height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
     self.set_default_size(width, height)
@@ -59,13 +62,13 @@ class AccerciserMainWindow(gtk.Window):
     '''
     main_vbox = gtk.VBox()
     menu_bar = ui_manager.uimanager.get_widget(ui_manager.MAIN_MENU_PATH)
-    main_vbox.pack_start(menu_bar, False)
+    main_vbox.pack_start(menu_bar, False, True, 0)
     self._vpaned = gtk.VPaned()
     self._vpaned.set_position(350)
     self._vpaned.set_name('vpaned')
-    main_vbox.pack_start(self._vpaned)
+    main_vbox.pack_start(self._vpaned, True, True, 0)
     self.statusbar = gtk.Statusbar()
-    main_vbox.pack_start(self.statusbar, False)
+    main_vbox.pack_start(self.statusbar, False, True, 0)
     self._hpaned = gtk.HPaned()
     self._hpaned.set_position(250)
     self._hpaned.set_name('hpaned')
@@ -80,8 +83,8 @@ class AccerciserMainWindow(gtk.Window):
     self._vpaned.add2(self.pluginview2)
     self._hpaned.add2(self.pluginview1)
     sw = gtk.ScrolledWindow()
-    sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-    sw.set_shadow_type(gtk.SHADOW_IN)
+    sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
+    sw.set_shadow_type(gtk.ShadowType.IN)
     self.treeview = AccessibleTreeView(node)
     ui_manager.uimanager.insert_action_group(self.treeview.action_group, 0)
     for action in self.treeview.action_group.list_actions():
@@ -89,21 +92,21 @@ class AccerciserMainWindow(gtk.Window):
       action_name = action.get_name()
       ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH, 
                                   action_name, action_name, 
-                                  gtk.UI_MANAGER_MENUITEM, False)
+                                  gtk.UIManagerItemType.MENUITEM, False)
     
     merge_id = ui_manager.uimanager.new_merge_id()
     action_name = self.treeview.refresh_current_action.get_name()
     ui_manager.uimanager.add_ui(merge_id, ui_manager.POPUP_MENU_PATH,
                                  action_name, action_name,
-                                 gtk.UI_MANAGER_MENUITEM, False)
+                                 gtk.UIManagerItemType.MENUITEM, False)
 
     sw.add(self.treeview)
     self._hpaned.add1(sw)
 
-    cl = gconf.client_get_default()
+    cl = gconf.Client.get_default()
     for paned in (self._vpaned, self._hpaned):
-      if not cl.get(GCONF_GENERAL+'/'+paned.name): continue
-      paned_position = cl.get_int(GCONF_GENERAL+'/'+paned.name)
+      if not cl.get(GCONF_GENERAL+'/'+paned.get_name()): continue
+      paned_position = cl.get_int(GCONF_GENERAL+'/'+paned.get_name())
       paned.set_position(paned_position)
       paned.set_data('last_position', paned.get_position())
 
@@ -128,11 +131,11 @@ class AccerciserMainWindow(gtk.Window):
       self._vpaned.set_position(last_pos or 350)
     elif pluginview.get_n_pages() == 0:
       self._vpaned.set_data('last_position', self._vpaned.get_position())
-      self._vpaned.set_position(self._vpaned.allocation.height - 30)
+      self._vpaned.set_position(self._vpaned.get_allocated_height() - 30)
 
   def _onBottomPanelRealize(self, pluginview):
     if pluginview.get_n_pages() == 0:
-      self._vpaned.set_position(self._vpaned.allocation.height - 30)
+      self._vpaned.set_position(self._vpaned.get_allocated_height() - 30)
 
   def _onKeyPress(self, widget, event):
     '''
@@ -144,10 +147,10 @@ class AccerciserMainWindow(gtk.Window):
     @param event: The event that accured.
     @type event: L{gtk.gdk.Event}
     '''
-    if event.state & gtk.gdk.MOD1_MASK and \
-          event.keyval in xrange(gtk.gdk.keyval_from_name('0'), 
-                                 gtk.gdk.keyval_from_name('9')):
-      tab_num = event.keyval - gtk.gdk.keyval_from_name('0') or 10
+    if event.state & gdk.ModifierType.MOD1_MASK and \
+          event.keyval in xrange(gdk.keyval_from_name('0'), 
+                                 gdk.keyval_from_name('9')):
+      tab_num = event.keyval - gdk.keyval_from_name('0') or 10
       pages_count1 = self.pluginview1.getNVisiblePages()
       pages_count2 = self.pluginview2.getNVisiblePages()
       if pages_count1 + pages_count2 < tab_num:
@@ -161,9 +164,9 @@ class AccerciserMainWindow(gtk.Window):
     '''
     Save the dimensions of the main window, and the position of the panes.
     '''
-    cl = gconf.client_get_default()
-    cl.set_int(GCONF_GENERAL+'/window_width', self.allocation.width)
-    cl.set_int(GCONF_GENERAL+'/window_height', self.allocation.height)
+    cl = gconf.Client.get_default()
+    cl.set_int(GCONF_GENERAL+'/window_width', self.get_allocated_width())
+    cl.set_int(GCONF_GENERAL+'/window_height', self.get_allocated_height())
     cl.set_int(GCONF_GENERAL+'/hpaned', self._hpaned.get_position())
     if self.pluginview2.get_n_pages():
       position = self._vpaned.get_position()
@@ -193,7 +196,10 @@ class AccerciserMainWindow(gtk.Window):
     context_id = self.statusbar.get_context_id('lineage')
     if not iter:
       return
-    path = map(str, model.get_path(iter))
+    tree_path = model.get_path(iter)
+    path_tuple = tuple(tree_path.get_indices())
+
+    path = map(str, path_tuple)
     self.statusbar.pop(context_id)
     if len(path) > 1:
       self.statusbar.push(context_id, 'Path: '+' '.join(path[1:]))

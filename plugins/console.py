@@ -11,11 +11,14 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+import gi
+
+from gi.repository import Gtk as gtk
+
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import N_, _
 import os
 import pyatspi
-import gtk
 import ipython_view
 
 if ipython_view.IPython == None:

@@ -11,7 +11,10 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
+import gi
+
+from gi.repository import Gtk as gtk
+
 from i18n import _, N_, C_
 
 menu_actions = gtk.ActionGroup('MenuActions')

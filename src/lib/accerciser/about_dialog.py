@@ -13,12 +13,10 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk
-from gnome import program_get, url_show
+import gi
+
+from gi.repository import Gtk as gtk
 from i18n import _
-
-gtk.about_dialog_set_url_hook(lambda dialog, url, data: url_show(url), None)
-
 
 class AccerciserAboutDialog(gtk.AboutDialog):
   '''
@@ -44,14 +42,16 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   @type WEB_LABEL: string
   '''
   AUTHORS = ['Eitan Isaacson <eitan@ascender.com>',
-             'Peter Parente <pparente@us.ibm.com>']
+             'Peter Parente <pparente@us.ibm.com>',
+             'Brian Nitz <brian.nitz@oracle.com>',
+             'Javier Hernández <jhernandez@emergya.es>']
   ARTISTS = ['Eitan Isaacson <eitan@ascender.com>',
              'James Stipp <James_Stipp@us.ibm.com>',
-             'Vincent Geddes <vincent.geddes@gmail.com']
+             'Vincent Geddes <vincent.geddes@gmail.com>']
   DOCUMENTERS = ['Eitan Isaacson <eitan@ascender.com>']
   TRANSLATORS = _('translator-credits')
   COMMENTS = _('An interactive Python accessibility explorer')
-  COPYRIGHT =  _('accerciser Copyright © 2006, 2007 IBM Corporation (BSD)')
+  COPYRIGHT =  _('accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)')
   LICENSE = \
       _('The New BSD License See the COPYING and NOTICE files for details.')
   WEB_URL = 'http://live.gnome.org/Accerciser'
@@ -60,7 +60,6 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     '''
     Initialize dialog.
     '''
-    program = program_get()
     gtk.AboutDialog.__init__(self)
     self.connect('response', self._onResponse)
     gtk.AboutDialog.set_authors(self, self.AUTHORS)
@@ -70,7 +69,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     gtk.AboutDialog.set_copyright(self, self.COPYRIGHT)
     gtk.AboutDialog.set_license(self, self.LICENSE)
     gtk.AboutDialog.set_logo_icon_name(self, 'accerciser')
-    gtk.AboutDialog.set_version(self, program.get_app_version())
+#    gtk.AboutDialog.set_version(self, program.get_app_version())
     gtk.AboutDialog.set_website(self, self.WEB_URL)
     gtk.AboutDialog.set_website_label(self, self.WEB_LABEL)
 
@@ -83,4 +82,5 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     @param response_id: Response ID recieved.
     @type response_id: integer
     '''
-    self.destroy()  
+    self.destroy()
+

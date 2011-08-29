@@ -10,11 +10,12 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+from gi.repository import GConf as gconf
+
 import os
 import pickle
 import weakref
 import new
-import gconf
 
 class Tools(object):
   '''
@@ -87,6 +88,9 @@ class GConfListWrapper(object):
     return self._wrap('__setslice__', i, j, sequence)
   def __delslice__(self, i, j):
     return self._wrap('__delslice__', i, j)
+  def __contains__(self, i):
+    l = [x.type for x in self]#if x.type == gconf.ValueType.STRING]
+    return self.wrapped_list.__contains__(i)
   def _wrap(self, name, *args, **kwargs):
     obj = self._CallWrapper(name, self.gconf_key)
     return obj(*args, **kwargs)
@@ -105,12 +109,11 @@ class GConfListWrapper(object):
       self.name = name
       self.gconf_key = gconf_key
     def __call__(self, *args, **kwargs):
-      cl = gconf.client_get_default()
-      l = cl.get_list(self.gconf_key, 
-                      gconf.VALUE_STRING)
+      cl = gconf.Client.get_default()
+      gcval = cl.get(self.gconf_key)
+      l = gcval.get_list()
       rv = getattr(l, self.name)(*args, **kwargs)
-      cl.set_list(self.gconf_key, 
-                  gconf.VALUE_STRING, l)
+      cl.set_list(self.gconf_key, gconf.ValueType.STRING, l)
       return rv
 
 class Proxy(object):

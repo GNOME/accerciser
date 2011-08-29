@@ -10,8 +10,11 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import gtk
-import gobject
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import GObject
+
 import os
 import traceback
 import sys
@@ -184,7 +187,7 @@ class ValidatorViewport(ViewportPlugin):
     self.validator_buffer = gtk.TextBuffer()
 
     # model for the combobox
-    model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
+    model = gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING)
     self.schema.set_model(model)
 
     # append all schema names/descriptions
@@ -207,7 +210,7 @@ class ValidatorViewport(ViewportPlugin):
     col = gtk.TreeViewColumn(_('Level'))
     rend = gtk.CellRendererText()
     col.pack_start(rend, True)
-    col.set_attributes(rend, text=0)
+    col.add_attribute(rend, 'text', 0)
     self.report.append_column(col)
     # description column
     rend = gtk.CellRendererText()
@@ -295,16 +298,16 @@ class ValidatorViewport(ViewportPlugin):
     '''
     save_dialog = gtk.FileChooserDialog(
       'Save validator output',
-      action=gtk.FILE_CHOOSER_ACTION_SAVE,
-      buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-               gtk.STOCK_OK, gtk.RESPONSE_OK))
+      action=gtk.FileChooserAction.SAVE,
+      buttons=(gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL,
+               gtk.STOCK_OK, gtk.ResponseType.OK))
     #save_dialog.connect("response", self._savedDiagResponse)
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.set_default_response(gtk.RESPONSE_OK)
+    save_dialog.set_default_response(gtk.ResponseType.OK)
     response = save_dialog.run()
-    if response == gtk.RESPONSE_OK:
+    if response == gtk.ResponseType.OK:
       self.save_to = open(save_dialog.get_filename(), 'w')
-      gobject.idle_add(self._writeFile)
+      GObject.idle_add(self._writeFile)
     save_dialog.destroy()
 
   def _onClear(self, button):
@@ -342,7 +345,7 @@ class ValidatorViewport(ViewportPlugin):
     self.write_in_progress = True
     self._setDefaultSaveVars()
     # register an idle callback
-    self.idle_save_id = gobject.idle_add(self._onSaveIdle)
+    self.idle_save_id = GObject.idle_add(self._onSaveIdle)
     self.progress.set_text(_('Saving'))
     # disable controls
     self.validate.set_sensitive(False)
@@ -354,7 +357,7 @@ class ValidatorViewport(ViewportPlugin):
     components to their enabled states.
     '''
     # stop callbacks
-    gobject.source_remove(self.idle_save_id)
+    GObject.source_remove(self.idle_save_id)
     # reset progress
     self.progress.set_fraction(0.0)
     self.progress.set_text(_('Idle'))
@@ -390,7 +393,7 @@ class ValidatorViewport(ViewportPlugin):
     # build our walk generator
     self.walk = self._traverse(self.acc, state)
     # register an idle callback
-    self.idle_validate_id = gobject.idle_add(self._onValidateIdle)
+    self.idle_validate_id = GObject.idle_add(self._onValidateIdle)
     self.progress.set_text(_('Validating'))
     # disable controls
     self.schema.set_sensitive(False)
@@ -404,7 +407,7 @@ class ValidatorViewport(ViewportPlugin):
     various UI components to their enabled states.
     '''
     # stop callbacks
-    gobject.source_remove(self.idle_validate_id)
+    GObject.source_remove(self.idle_validate_id)
     # destroy generator
     self.walk = None
     # reset progress

@@ -11,10 +11,15 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-import gtk, gobject, pango
+import gi
+
+from gi.repository import Gtk as gtk
+from gi.repository import GObject
+from gi.repository import Pango
+
 from accerciser.i18n import _
 
-class MessageManager(gobject.GObject):
+class MessageManager(GObject.GObject):
   '''
   Centralizes all plugin message handling. If the plugin is a visible widget,
   it displays the message within the plugin. If not it displays the message in
@@ -24,21 +29,21 @@ class MessageManager(gobject.GObject):
   responses to messages.
   '''
   __gsignals__ = {'plugin-reload-request' :
-                    (gobject.SIGNAL_RUN_FIRST,
-                     gobject.TYPE_NONE, 
-                     (gobject.TYPE_PYOBJECT,
-                      gobject.TYPE_PYOBJECT)),
+                    (GObject.SignalFlags.RUN_FIRST,
+                     None, 
+                     (GObject.TYPE_PYOBJECT,
+                      GObject.TYPE_PYOBJECT)),
                   'module-reload-request' :
-                    (gobject.SIGNAL_RUN_FIRST,
-                     gobject.TYPE_NONE, 
-                     (gobject.TYPE_PYOBJECT,
-                      gobject.TYPE_STRING,
-                      gobject.TYPE_STRING))}
+                    (GObject.SignalFlags.RUN_FIRST,
+                     None, 
+                     (GObject.TYPE_PYOBJECT,
+                      GObject.TYPE_STRING,
+                      GObject.TYPE_STRING))}
   def __init__(self):
     '''
     Initialize the manager.
     '''
-    gobject.GObject.__init__(self)
+    GObject.GObject.__init__(self)
     self.message_tab = None
 
   def getMessageTab(self):
@@ -74,7 +79,7 @@ class MessageManager(gobject.GObject):
     message = PluginErrorMessage(error_message, details)
     message.connect('response', self._onPluginResponseRefresh, plugin_class)
     if getattr(plugin_instance, 'parent', None):
-      plugin_instance.message_area.pack_start(message)
+      plugin_instance.message_area.pack_start(message, True, True, 0)
       message.show_all()
     else:
       self.message_tab.addMessage(message)
@@ -92,7 +97,7 @@ class MessageManager(gobject.GObject):
     @param plugin_class: The plugin class of the failed plugin.
     @type plugin_class: type
     '''
-    if response_id == gtk.RESPONSE_APPLY:
+    if response_id == gtk.ResponseType.APPLY:
       self.emit('plugin-reload-request', message, plugin_class)
 
   def newModuleError(self, module, path, error_message, details):
@@ -132,7 +137,7 @@ class MessageManager(gobject.GObject):
     @param path: Failed module's path.
     @type path: string
     '''
-    if response_id == gtk.RESPONSE_APPLY:
+    if response_id == gtk.ResponseType.APPLY:
       self.emit('module-reload-request', message, module, path)
 
   class MessageTab(gtk.ScrolledWindow):
@@ -158,7 +163,7 @@ class MessageManager(gobject.GObject):
       @param message: The message to be added.
       @type message: L{PluginMessage}
       '''
-      self._vbox.pack_start(message, False)
+      self._vbox.pack_start(message, False, True, 0)
       self.show()
       self._vbox.show_all()
       
@@ -197,9 +202,9 @@ class PluginMessage(gtk.Frame):
   @type message_style: gtk.Style
   '''
   __gsignals__ = {'response' : 
-                  (gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, 
-                   (gobject.TYPE_INT,))}
+                  (GObject.SignalFlags.RUN_FIRST,
+                   None, 
+                   (GObject.TYPE_INT,))}
   def __init__(self):
     '''
     Initialize the message object.
@@ -214,14 +219,15 @@ class PluginMessage(gtk.Frame):
     w = gtk.Window()
     w.set_name('gtk-tooltip')
     w.ensure_style()
-    self.message_style = w.rc_get_style()
+    #self.message_style = w.rc_get_style()
+    self.message_style = gtk.rc_get_style(w)
 
     event_box = gtk.EventBox()
     event_box.set_style(self.message_style)
     self.add(event_box)
     hbox = gtk.HBox()
     event_box.add(hbox)
-    hbox.pack_start(self.vbox, padding=3)
+    hbox.pack_start(self.vbox, True, True, 3)
     hbox.pack_start(self.action_area, False, False, 3)
 
   def add_button(self, button_text, response_id):
@@ -240,7 +246,7 @@ class PluginMessage(gtk.Frame):
     button.set_use_stock(True)
     button.set_label(button_text)
     button.connect('clicked', self._onActionActivated, response_id)
-    self.action_area.pack_start(button, False, False)
+    self.action_area.pack_start(button, False, False, 0)
     return button
 
   def _onActionActivated(self, button, response_id):
@@ -270,22 +276,22 @@ class PluginErrorMessage(PluginMessage):
     PluginMessage.__init__(self)
     hbox = gtk.HBox()
     hbox.set_spacing(6)
-    self.vbox.pack_start(hbox, False, False)
+    self.vbox.pack_start(hbox, False, False, 0)
     image = gtk.Image()
     image.set_from_stock(gtk.STOCK_DIALOG_WARNING,
-                         gtk.ICON_SIZE_SMALL_TOOLBAR)
-    hbox.pack_start(image, False, False)
+                         gtk.IconSize.SMALL_TOOLBAR)
+    hbox.pack_start(image, False, False, 0)
     label = gtk.Label()
-    label.set_ellipsize(pango.ELLIPSIZE_END)
+    label.set_ellipsize(Pango.EllipsizeMode.END)
     label.set_selectable(True)
     label.set_markup('<b>%s</b>' % error_message)
-    hbox.pack_start(label)
+    hbox.pack_start(label, True, True, 0)
     label = gtk.Label(details)
-    label.set_ellipsize(pango.ELLIPSIZE_END)
+    label.set_ellipsize(Pango.EllipsizeMode.END)
     label.set_selectable(True)
     self.vbox.add(label)
-    self.add_button(gtk.STOCK_CLEAR, gtk.RESPONSE_CLOSE)
-    self.add_button(gtk.STOCK_REFRESH, gtk.RESPONSE_APPLY)
+    self.add_button(gtk.STOCK_CLEAR, gtk.ResponseType.CLOSE)
+    self.add_button(gtk.STOCK_REFRESH, gtk.ResponseType.APPLY)
     self.connect('response', self._onResponse)
   
   def _onResponse(self, plugin_message, response_id):
@@ -297,5 +303,5 @@ class PluginErrorMessage(PluginMessage):
     @param response_id: The response ID
     @type response_id: integer
     '''
-    if response_id == gtk.RESPONSE_CLOSE:
+    if response_id == gtk.ResponseType.CLOSE:
       plugin_message.destroy()
