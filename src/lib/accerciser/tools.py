@@ -88,6 +88,9 @@ class GConfListWrapper(object):
     return self._wrap('__setslice__', i, j, sequence)
   def __delslice__(self, i, j):
     return self._wrap('__delslice__', i, j)
+  def __contains__(self, i):
+    l = [x.type for x in self]#if x.type == gconf.ValueType.STRING]
+    return self.wrapped_list.__contains__(i)
   def _wrap(self, name, *args, **kwargs):
     obj = self._CallWrapper(name, self.gconf_key)
     return obj(*args, **kwargs)
@@ -107,15 +110,10 @@ class GConfListWrapper(object):
       self.gconf_key = gconf_key
     def __call__(self, *args, **kwargs):
       cl = gconf.Client.get_default()
-      # pygtk-pygi ISSUE
-      # get_list instrospectio mark isn't properly done?
-      #
-      #l = cl.get_list(self.gconf_key, 
-      #                gconf.VALUE_STRING)
-      l = cl.get(self.gconf_key).get_list()
+      gcval = cl.get(self.gconf_key)
+      l = gcval.get_list()
       rv = getattr(l, self.name)(*args, **kwargs)
-      cl.set_list(self.gconf_key, 
-                  gconf.ValueType.STRING, l)
+      cl.set_list(self.gconf_key, gconf.ValueType.STRING, l)
       return rv
 
 class Proxy(object):
