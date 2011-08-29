@@ -42,10 +42,12 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   @type WEB_LABEL: string
   '''
   AUTHORS = ['Eitan Isaacson <eitan@ascender.com>',
-             'Peter Parente <pparente@us.ibm.com>']
+             'Peter Parente <pparente@us.ibm.com>',
+             'Brian Nitz <bnitz@gmail.com>',
+             'Javier Hernández <jhernandez@emergya.es>']
   ARTISTS = ['Eitan Isaacson <eitan@ascender.com>',
              'James Stipp <James_Stipp@us.ibm.com>',
-             'Vincent Geddes <vincent.geddes@gmail.com']
+             'Vincent Geddes <vincent.geddes@gmail.com>']
   DOCUMENTERS = ['Eitan Isaacson <eitan@ascender.com>']
   TRANSLATORS = _('translator-credits')
   COMMENTS = _('An interactive Python accessibility explorer')
@@ -60,7 +62,6 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     '''
     gtk.AboutDialog.__init__(self)
     self.connect('response', self._onResponse)
-#    self.connect('activate-link', lambda dialog, url, data: url_show(url), None)
     gtk.AboutDialog.set_authors(self, self.AUTHORS)
     gtk.AboutDialog.set_artists(self, self.ARTISTS)
     gtk.AboutDialog.set_documenters(self, self.DOCUMENTERS)
@@ -81,4 +82,5 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     @param response_id: Response ID recieved.
     @type response_id: integer
     '''
-    self.destroy()  
+    self.destroy()
+
