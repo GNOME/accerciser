@@ -16,7 +16,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gi
 
 from gi.repository import Gtk as gtk
-from gnome import program_get, url_show
 from i18n import _
 
 class AccerciserAboutDialog(gtk.AboutDialog):
@@ -59,10 +58,9 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     '''
     Initialize dialog.
     '''
-    program = program_get()
     gtk.AboutDialog.__init__(self)
     self.connect('response', self._onResponse)
-    self.connect('activate-link', lambda dialog, url, data: url_show(url), None)
+#    self.connect('activate-link', lambda dialog, url, data: url_show(url), None)
     gtk.AboutDialog.set_authors(self, self.AUTHORS)
     gtk.AboutDialog.set_artists(self, self.ARTISTS)
     gtk.AboutDialog.set_documenters(self, self.DOCUMENTERS)
@@ -70,7 +68,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     gtk.AboutDialog.set_copyright(self, self.COPYRIGHT)
     gtk.AboutDialog.set_license(self, self.LICENSE)
     gtk.AboutDialog.set_logo_icon_name(self, 'accerciser')
-    gtk.AboutDialog.set_version(self, program.get_app_version())
+#    gtk.AboutDialog.set_version(self, program.get_app_version())
     gtk.AboutDialog.set_website(self, self.WEB_URL)
     gtk.AboutDialog.set_website_label(self, self.WEB_LABEL)
 
