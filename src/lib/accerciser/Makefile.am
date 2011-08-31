@@ -4,7 +4,6 @@ accerciser_PYTHON = about_dialog.py \
 	accessible_treeview.py \
 	bookmarks.py \
 	i18n.py \
-	script_playback.py \
 	icons.py \
 	main_window.py \
 	node.py \
