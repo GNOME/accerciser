@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-04 12:27+0000\n"
-"PO-Revision-Date: 2011-07-12 15:51+0300\n"
+"POT-Creation-Date: 2011-09-04 03:29+0000\n"
+"PO-Revision-Date: 2011-09-04 18:12+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -24,49 +24,13 @@ msgid "Accerciser"
 msgstr "Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
-#: ../src/lib/accerciser/main_window.py:39
+#: ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser prieinamumo žvalgas"
 
 #: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "Ištestuokite savo programos prieinamumo palaikymą"
-
-#: ../accerciser.schemas.in.h:1
-msgid "A list of plugins that are disabled by default"
-msgstr "Standartiškai išjungtų priedų sąrašas"
-
-#: ../accerciser.schemas.in.h:2
-msgid "Highlight border color"
-msgstr "Paryškinimo rėmelio spalva"
-
-#: ../accerciser.schemas.in.h:3
-msgid "Highlight duration"
-msgstr "Paryškinimo trukmė"
-
-#: ../accerciser.schemas.in.h:4
-msgid "Highlight fill color"
-msgstr "Paryškinimo užpildo spalva"
-
-#: ../accerciser.schemas.in.h:5
-msgid "The color and opacity of the highlight border."
-msgstr "Paryškinimo rėmelio spalva ir skaidrumas."
-
-#: ../accerciser.schemas.in.h:6
-msgid "The color and opacity of the highlight fill."
-msgstr "Paryškinimo užpildo spalva ir skaidrumas"
-
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "Standartinis priedų išdėstymas apatiniame skydelyje"
-
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
-msgstr "Standartinis priedų išdėstymas viršutiniame skydelyje"
-
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Paryškinimo rėmelio spalva ir skaidrumas"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -92,11 +56,11 @@ msgstr "Savybė"
 msgid "Value"
 msgstr "Reikšmė"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "IPython konsolė"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktyvi konsolė parinkčių valdymui prieinama"
 
@@ -128,23 +92,23 @@ msgstr "Šaltinis"
 msgid "_Monitor Events"
 msgstr "_Stebėti įvykius"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Įvykių stebėtuvas"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Rodyti pasirinkto tipo ir šaltinio įvykius"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Paryškinti paskutinį įvykį"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Pradėti/stabdyti įvykių registravimą"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Išvalyti įvykių žurnalą"
 
@@ -194,8 +158,8 @@ msgid "<b>unknown</b>"
 msgstr "<b>nežinoma</b>"
 
 #: ../plugins/interface_view.ui.h:13
-#: ../plugins/interface_view.py:334
-#: ../plugins/interface_view.py:827
+#: ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>(be aprašo)</i>"
 
@@ -263,8 +227,8 @@ msgstr "Dar_bastalis"
 
 #. add description to buffer
 #: ../plugins/interface_view.ui.h:31
-#: ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "Apibūdinimas"
 
@@ -283,7 +247,7 @@ msgstr "Antraštė:"
 
 #. add url role to buffer
 #: ../plugins/interface_view.ui.h:36
-#: ../plugins/validate.py:283
+#: ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "Hipernuoroda"
 
@@ -420,69 +384,69 @@ msgid "name (x,y)"
 msgstr "pavadinimas (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Sąsajos žiūriklis"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Leidžia peržvelgti įvairias sąsajos savybes"
 
-#: ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:231
-#: ../plugins/interface_view.py:232
+#: ../plugins/interface_view.py:233
+#: ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(nerealizuota)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:703
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708
+#: ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: ../plugins/interface_view.py:710
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:717
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "Pradžia"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "Pabaiga"
 
-#: ../plugins/interface_view.py:885
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "Per daug pasirenkamųjų antrinių procesų"
 
-#: ../plugins/interface_view.py:1230
-#: ../plugins/interface_view.py:1233
+#: ../plugins/interface_view.py:1239
+#: ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Redaguojamas)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Spartus Pasirinkimas"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Įskiepis įvairiems greito pasirinkimo metodams."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Patikrinti paskutinį išskirtą pasirinkimą"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Patikrinti pasirinkimą po pelės žymekliu"
 
 #: ../plugins/validate.ui.h:1
-#: ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "Neveiklus"
 
@@ -494,56 +458,56 @@ msgstr "Sche_ma:"
 msgid "V_alidate"
 msgstr "P_atikrinti"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "Aprašymo nėra"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "Patikrinimas su AT-SPI"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "Patikrina programos prieinamumą"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207
-#: ../plugins/validate.py:275
+#: ../plugins/validate.py:210
+#: ../plugins/validate.py:278
 msgid "Level"
 msgstr "Lygis"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284
+#: ../src/lib/accerciser/accessible_treeview.py:409
 msgid "Role"
 msgstr "Rolė"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "Įrašoma"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "Tikrinama"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "IŠIMT"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "KLAIDA"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "ĮSPĖJIMAS"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "DERINIMAS"
 
@@ -597,7 +561,6 @@ msgstr "%s trūksta pavadinimo ar žymės"
 
 #: ../plugindata/validate/basic.py:220
 #, python-format
-#| msgid "focusable %s has table interface, no selection interface"
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "fokusuojamasis %s turi lentelės sąsają, bet neturi išrinkimo sąsajos"
 
@@ -644,117 +607,117 @@ msgstr "%(rolename)s sukūrėjo indekas %(num1)d neatitinka eilučių ir stulpel
 msgid "%s has no name or description"
 msgstr "%s neturi pavadinimo ar aprašo"
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "_Nustatymai…"
 
-#: ../src/lib/accerciser/accerciser.py:89
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "_Turinys"
 
-#: ../src/lib/accerciser/accerciser.py:130
+#: ../src/lib/accerciser/accerciser.py:125
 msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr "Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio prieinamumą. Ar norite dabar jį įjungti?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "Pastaba: pakeitimai įsigalios tik paleidus programą iš naujo."
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:355
 msgid "<dead>"
 msgstr "<baigtas>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:416
 msgid "Children"
 msgstr "Antrinis procesas"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:445
 msgid "_Refresh Registry"
 msgstr "Atnaujinti _registrą"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:448
 msgid "Refresh all"
 msgstr "Atnaujinti viską"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:451
 msgid "Refresh _Node"
 msgstr "At_naujinti mazgą"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:454
 msgid "Refresh selected node's children"
 msgstr "Atnaujinti pasirinktojo mazgo sukurtuosius"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Komponentas"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Užduotis"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Klavišas"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Vald"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Lyg2"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "Viršutinis skydelis"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "Apatinis skydelis"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "accerciser nustatymai"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Įskiepiai"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Bendri karštieji klavišai"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Paryškinama"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Paryškinimo trukmė:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Rėmelio spalva:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Paryškinto langelio rėmelio spalva"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Užpildo spalva:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Paryškinto langelio užpildo spalva"
 
@@ -767,8 +730,9 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Interaktyvus Python prieinamumo žvalgas"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser autorinės teisės priklauso © 2006, 2007 IBM Corporation (BSD)"
+#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser autorinės teisės priklauso (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -780,112 +744,139 @@ msgstr ""
 msgid "Web site"
 msgstr "Tinklalapis"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "_Pridėti žymelę…"
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "Žymėti pasirinktus prieinamus objektus"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "_Keisti žymeles…"
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "Tvarkyti žymeles"
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Keisti žymeles…"
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Programa"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Kelias"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Pridėti žymelę…"
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Pavadinimas:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Programa:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Kelias:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Įskiepio klaidos"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "Peržiūrėti"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "Nėra vaizdo"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
 msgstr "_Standartinis įskiepio vaizdas"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "Įskiepio vaizdas"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Įskiepio vaizdas (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>_Naujas vaizdas…</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "Naujas vaizdas…"
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Failas"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Keisti"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "Ž_ymelės"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Rodymas"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Žinynas"
+
+#~ msgid "A list of plugins that are disabled by default"
+#~ msgstr "Standartiškai išjungtų priedų sąrašas"
+
+#~ msgid "Highlight border color"
+#~ msgstr "Paryškinimo rėmelio spalva"
+
+#~ msgid "Highlight duration"
+#~ msgstr "Paryškinimo trukmė"
+
+#~ msgid "Highlight fill color"
+#~ msgstr "Paryškinimo užpildo spalva"
+
+#~ msgid "The color and opacity of the highlight border."
+#~ msgstr "Paryškinimo rėmelio spalva ir skaidrumas."
+
+#~ msgid "The color and opacity of the highlight fill."
+#~ msgstr "Paryškinimo užpildo spalva ir skaidrumas"
+
+#~ msgid "The default plugin layout for the bottom panel"
+#~ msgstr "Standartinis priedų išdėstymas apatiniame skydelyje"
+
+#~ msgid "The default plugin layout for the top panel"
+#~ msgstr "Standartinis priedų išdėstymas viršutiniame skydelyje"
+
+#~ msgid "The duration of the highlight box when selecting accessible nodes"
+#~ msgstr "Paryškinimo rėmelio spalva ir skaidrumas"
 
 #~ msgid "Dogtail"
 #~ msgstr "Dogtail"
