@@ -486,7 +486,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       time = event.time
       button = event.button
       func = None
-      extra_data = int()
+      extra_data = None
     else:
       path, col= self.get_cursor()
       time = gtk.get_current_event_time()
@@ -495,7 +495,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       func = lambda m, b: (b.x, b.y + (b.height/2), True)
       
     menu = ui_manager.uimanager.get_widget(ui_manager.POPUP_MENU_PATH)
-    menu.popup(None, None, func, button, time, extra_data)
+    menu.popup(None, None, func, extra_data, button, time)
     return True
 
   def _refreshTopLevel(self, action=None, data=None):
