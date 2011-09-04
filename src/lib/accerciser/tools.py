@@ -10,8 +10,6 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and 
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-from gi.repository import GConf as gconf
-
 import os
 import pickle
 import weakref
@@ -60,61 +58,6 @@ class Tools(object):
         return True
     return False
   
-class GConfListWrapper(object):
-  '''
-  Wrapper for gconf list types. It keeps the list stateless, and updates
-  gconf on every list change.
-  '''
-  def __init__(self, key):
-    self.gconf_key = key
-    self.wrapped_list = []
-  def __str__(self):
-    return self._wrap('__str__')
-  def __iter__(self):
-    return self._wrap('__iter__')
-  def __repr__(self):
-    return self._wrap('__repr__')
-  def __len__(self):
-    return self._wrap('__len__')
-  def __getitem__(self, key):
-    return self._wrap('__getitem__', key)
-  def __setitem__(self, key, value):
-    return self._wrap('__setitem__', key, value)
-  def __delitem__(self, key):
-    return self._wrap('__delitem__', key)
-  def __getslice__(self, i, j):
-    return self._wrap('__getslice__', i, j)
-  def __setslice__(self, i, j, sequence):
-    return self._wrap('__setslice__', i, j, sequence)
-  def __delslice__(self, i, j):
-    return self._wrap('__delslice__', i, j)
-  def __contains__(self, i):
-    l = [x.type for x in self]#if x.type == gconf.ValueType.STRING]
-    return self.wrapped_list.__contains__(i)
-  def _wrap(self, name, *args, **kwargs):
-    obj = self._CallWrapper(name, self.gconf_key)
-    return obj(*args, **kwargs)
-  def __getattr__(self, name):
-    obj = getattr(self.wrapped_list, name)
-    if callable(obj):
-      return self._CallWrapper(name, self.gconf_key)
-    else:
-      return obj
-    
-  class _CallWrapper(object):
-    '''
-    Does the actual wrapping.
-    '''
-    def __init__ (self, name, gconf_key):
-      self.name = name
-      self.gconf_key = gconf_key
-    def __call__(self, *args, **kwargs):
-      cl = gconf.Client.get_default()
-      gcval = cl.get(self.gconf_key)
-      l = gcval.get_list()
-      rv = getattr(l, self.name)(*args, **kwargs)
-      cl.set_list(self.gconf_key, gconf.ValueType.STRING, l)
-      return rv
 
 class Proxy(object):
   '''

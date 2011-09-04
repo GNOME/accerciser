@@ -12,7 +12,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 from gi.repository import GObject
 
 from base_plugin import Plugin
@@ -25,8 +25,12 @@ from accerciser.i18n import _, N_
 import gc
 from accerciser import ui_manager
 
-GCONF_PLUGINVIEWS = '/apps/accerciser/pluginviews'
-GCONF_LAYOUT_SINGLE = '/apps/accerciser/general/layout_single'
+
+GSCHEMA = 'org.a11y.Accerciser'
+PLUGVIEWS_GSCHEMA = 'org.a11y.Accerciser.pluginviews'
+NEWPLUGVIEWS_GSCHEMA = 'org.a11y.Accerciser.newpluginviews'
+NEWPLUGVIEWS_PATH = '/apps/accerciser/newpluginviews/'
+
 
 class PluginView(gtk.Notebook):
   '''
@@ -269,7 +273,7 @@ class PluginView(gtk.Notebook):
 
 class PluginViewWindow(gtk.Window, Tools):
   '''
-  Standalone window with a plugn view.
+  Standalone window with a plugin view.
 
   @ivar plugin_view: Embedded plugin view.
   @type plugin_view: L{PluginView}
@@ -285,10 +289,10 @@ class PluginViewWindow(gtk.Window, Tools):
     self.plugin_view = PluginView(view_name)
     self.add(self.plugin_view)
 
-    cl = gconf.Client.get_default()
-    escaped_view_name = '/%s' % gconf.escape_key(view_name, len(view_name))
-    width = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/width') or 480
-    height = cl.get_int(GCONF_PLUGINVIEWS+escaped_view_name+'/height') or 480
+    gspath = NEWPLUGVIEWS_PATH + view_name.lower().replace(' ', '-') + '/'
+    gsettings = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+    width = gsettings.get_int('width')
+    height = gsettings.get_int('height')
     self.set_default_size(width, height)
     self.connect('key_press_event', self._onKeyPress)
     self.plugin_view.connect_after('page_removed', self._onPluginRemoved)
@@ -308,12 +312,10 @@ class PluginViewWindow(gtk.Window, Tools):
     @type allocation: gtk.gdk.Rectangle
     '''
     view_name = self.plugin_view.view_name
-    key_prefix = '%s/%s' % \
-        (GCONF_PLUGINVIEWS, 
-         gconf.escape_key(view_name, len(view_name)))
-    cl = gconf.Client.get_default()
-    cl.set_int(key_prefix+'/width', self.get_allocated_width())
-    cl.set_int(key_prefix+'/height', self.get_allocated_height())
+    gspath = NEWPLUGVIEWS_PATH + view_name.lower().replace(' ', '-') + '/'
+    gsettings = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+    gsettings.set_int('width', self.get_allocated_width())
+    gsettings.set_int('height', self.get_allocated_height())
 
   def _onPluginRemoved(self, pluginview, page, page_num):
     '''
@@ -360,8 +362,8 @@ class ViewManager(object):
     @type perm_views: list of {PluginView}
     '''
     self._perm_views = perm_views
-    cl = gconf.Client.get_default()
-    single = cl.get_bool(GCONF_LAYOUT_SINGLE)
+    gsettings = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    single = gsettings.get_boolean('layout-single')
     self._initViewModel(single)
     self._setupActions()
     
@@ -402,8 +404,8 @@ class ViewManager(object):
     '''
     if isinstance(self._view_model, SingleViewModel) == single:
       return
-    cl = gconf.Client.get_default()
-    cl.set_bool(GCONF_LAYOUT_SINGLE, single)
+    gsettings = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    gsettings.set_boolean('layout-single', single)
     plugins = self._view_model.getViewedPlugins()
     self._view_model.close()
     del self._view_model
@@ -519,7 +521,7 @@ class BaseViewModel(Tools):
     '''
     Add an element to a plugin view. If the element is a message tab, put it as
     the first tab in the main view. If the element is a plugin, check if it's 
-    placement is cached in this instance or read it's position from gconf.
+    placement is cached in this instance or read it's position from gsettings.
     By default a plugin is appended to the main view.
     
     @param element: The element to be added to a view.
@@ -537,7 +539,7 @@ class BaseViewModel(Tools):
   def addPlugin(self, plugin):
     '''
     Add a plugin to the view. Check if it's placement is cached in this 
-    instance or read it's position from gconf. By default a plugin is 
+    instance or read it's position from gsettings. By default a plugin is 
     appended to the main view.
     
     @param plugin: Plugin to add.
@@ -670,13 +672,13 @@ class MultiViewModel(list, BaseViewModel):
   @ivar main_view: Main view.
   @type main_view: L{PluginView}
   @ivar _ignore_insertion: A list of tuples with view and plugin names that
-  should be ignored and not go in to gconf. This is to avoid recursive gconf
-  modification.
+  should be ignored and not go in to gsettings. This is to avoid recursive
+  gsettings modification.
   @type _ignore_insertion: list of tuples
   @ivar _placement_cache: A cache of recently disabled plugins with their 
   placement. allowsthem to be enabled in to the same position.
   @type _placement_cache: dictionary
-  @ivar _closed: Indicator to stop writing plugin remove events to gconf.
+  @ivar _closed: Indicator to stop writing plugin remove events to gsettings.
   @type _closed: boolean
   '''
   COL_NAME = 0
@@ -698,13 +700,13 @@ class MultiViewModel(list, BaseViewModel):
 
   def close(self):
     '''
-    Stops gconf maniputaion.
+    Stops gsettings maniputaion.
     '''
     self._closed = True
 
   def getViewNameForPlugin(self, plugin_name):
     '''
-    Get the view name for a given plugin name as defined in gconf. 
+    Get the view name for a given plugin name as defined in gsettings. 
     Or return name of main view.
     
     @param plugin_name: Plugin's name to lookup view for.
@@ -713,7 +715,7 @@ class MultiViewModel(list, BaseViewModel):
     @return: View name for plugin.
     @rtype: string
     '''
-    plugin_layouts = self._StoredViewsLayout()
+    plugin_layouts = self._getPluginLayouts()
     for view_name in plugin_layouts:
       if plugin_name in plugin_layouts[view_name]:
         return view_name
@@ -845,16 +847,16 @@ class MultiViewModel(list, BaseViewModel):
     @type view: :{PluginView}
     '''
     if isinstance(view.get_parent(), PluginViewWindow):
-      view.get_parent().connect('delete_event', Proxy(self._onViewDelete))
-    view.connect('plugin_drag_end', Proxy(self._onPluginDragEnd))
-    view.connect('tab_popup_menu', Proxy(self._onTabPopupMenu))
-    view.connect('page_added', Proxy(self._onViewLayoutChanged), 'added')
-    view.connect('page_removed', Proxy(self._onViewLayoutChanged), 'removed')
-    view.connect('page_reordered', Proxy(self._onViewLayoutChanged), 'reordered')
+      view.get_parent().connect('delete-event', Proxy(self._onViewDelete))
+    view.connect('plugin-drag-end', Proxy(self._onPluginDragEnd))
+    view.connect('tab-popup-menu', Proxy(self._onTabPopupMenu))
+    view.connect('page-added', Proxy(self._onViewLayoutChanged), 'added')
+    view.connect('page-removed', Proxy(self._onViewLayoutChanged), 'removed')
+    view.connect('page-reordered', Proxy(self._onViewLayoutChanged), 'reordered')
 
   def _onViewLayoutChanged(self, view, plugin, page_num, action):
     '''
-    Callback for all layout changes. Updates gconf.
+    Callback for all layout changes. Updates gsettings.
     
     @param view: View that emitted the signal.
     @type view: L{PluginView}
@@ -864,14 +866,15 @@ class MultiViewModel(list, BaseViewModel):
     @type page_num: integer
     @param action: Action that triggered this event.
     @type action: string    
-    '''
+    ''' 
     if self._closed or not isinstance(plugin, Plugin): return
     if (view.view_name, plugin.plugin_name) in self._ignore_insertion:
       self._ignore_insertion.remove((view.view_name, plugin.plugin_name))
       return
     if self._placement_cache.has_key(plugin.plugin_name):
       self._placement_cache.pop(plugin.plugin_name)
-    plugin_layouts = self._StoredViewsLayout()
+
+    plugin_layouts = self._getPluginLayouts()
     try:
       plugin_layout = plugin_layouts[view.view_name]
     except KeyError:
@@ -886,10 +889,44 @@ class MultiViewModel(list, BaseViewModel):
     if len(plugin_layout) == 0:
       self._removeView(view)
 
+    self._setPluginLayouts(plugin_layouts)
+
+  def _setPluginLayouts(self, plugin_layouts):
+    self.plugviews = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    self.plugviews.set_strv('top-panel-layout', plugin_layouts.pop('Top panel'))
+    self.plugviews.set_strv('bottom-panel-layout', plugin_layouts.pop('Bottom panel'))
+
+    for plugview in plugin_layouts.keys():
+      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ','-') + '/'
+      newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+      newview.set_strv('layout', plugin_layouts[plugview])
+      l = self.plugviews.get_strv('available-newviews')
+      l.append(plugview)
+      self.plugviews.set_strv('available-newviews', l)
+
+  def _getPluginLayouts(self):
+    plugin_layouts= {}
+    self.plugviews = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    plugin_layouts['Top panel'] = self.plugviews.get_strv('top-panel-layout')
+    plugin_layouts['Bottom panel'] = self.plugviews.get_strv('bottom-panel-layout')
+
+    for plugview in self.plugviews.get_strv('available-newviews'):
+      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ','-') + '/'
+      newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+      layout = newview.get_strv('layout')
+      if layout:
+        plugin_layouts[plugview] = layout
+      else:
+        l = self.plugviews.get_strv('available-newviews')
+        l.remove(plugview)
+        self.plugviews.set_strv('available-newviews', l)
+    return plugin_layouts
+
+
   def addPlugin(self, plugin):
     '''
     Add a plugin to the view. Check if it's placement is cached in this 
-    instance or read it's position from gconf. By default a plugin is 
+    instance or read it's position from gsettings. By default a plugin is 
     appended to the main view.
     
     @param plugin: Plugin to add.
@@ -901,7 +938,7 @@ class MultiViewModel(list, BaseViewModel):
     else:
       view_name = self.getViewNameForPlugin(plugin.plugin_name)
       view = self._getViewOrNewView(view_name)
-      plugin_layouts = self._StoredViewsLayout()
+      plugin_layouts = self._getPluginLayouts()
       try:
         plugin_layout = plugin_layouts[view.view_name]
       except KeyError:
@@ -917,6 +954,7 @@ class MultiViewModel(list, BaseViewModel):
             index = child_index
             break
       self._ignore_insertion.append((view.view_name, plugin.plugin_name))
+      self._setPluginLayouts(plugin_layouts)
 
     view.insert_page(plugin, position=index)
     view.set_tab_detachable(plugin, True)
@@ -1103,8 +1141,8 @@ class MultiViewModel(list, BaseViewModel):
         self.entry = gtk.Entry()
         self.entry.set_completion(completion)
         self.entry.connect('activate', self._onEntryActivate)
-        self.vbox = self.get_children()[0]
-        self.vbox.add(self.entry)
+        self.box = self.get_children()[0]
+        self.box.add(self.entry)
         self.entry.show()
 
       def getEntryText(self):
@@ -1125,28 +1163,3 @@ class MultiViewModel(list, BaseViewModel):
         '''
         self.response(gtk.ResponseType.OK)
 
-  class _StoredViewsLayout(object):
-    '''
-    Convenience class for emulating a dictionary of all plugin 
-    view layout lists.
-    '''
-    def __init__(self):
-      self.gconf_client = gconf.Client.get_default()
-    def __len__(self):
-      view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
-      return len(view_dirs)
-    def __getitem__(self, key):
-      view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
-      for dir in view_dirs:
-        if key == gconf.unescape_key(dir.split('/')[-1], 
-                                     len(dir.split('/')[-1])):
-          return GConfListWrapper(dir+'/layout')
-      raise KeyError, key
-    def __setitem__(self, key, value):
-      gconf_key = '%s/%s/layout' % \
-          (GCONF_PLUGINVIEWS, gconf.escape_key(key, len(key)))
-      self.gconf_client.set_list(gconf_key, gconf.ValueType.STRING, value)
-    def __iter__(self):
-      view_dirs = self.gconf_client.all_dirs(GCONF_PLUGINVIEWS)
-      for dir in view_dirs:
-        yield gconf.unescape_key(dir.split('/')[-1], len(dir.split('/')[-1]))

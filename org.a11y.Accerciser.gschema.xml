@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/apps/accerciser/" id="org.a11y.Accerciser" gettext-domain="accerciser">
+    <key type="as" name="disabled-plugins">
+      <default>[]</default>
+      <summary>A list of plugins that are disabled by default</summary>
+      <description>A list of plugins that are disabled by default.</description>
+    </key>
+    <key type="d" name="highlight-duration">
+      <default>0.5</default>
+      <summary>Highlight duration</summary>
+      <description>The duration of the highlight box when selecting accessible nodes.</description>
+    </key>
+    <key type="s" name="highlight-fill">
+      <default>"#ff00006f"</default>
+      <summary>Highlight fill color</summary>
+      <description>The color and opacity of the highlight fill.</description>
+    </key>
+    <key type="s" name="highlight-border">
+      <default>"#ff0000ff"</default>
+      <summary>Highlight border color</summary>
+      <description>The color and opacity of the highlight border.</description>
+    </key>
+    <key type="i" name="hpaned">
+      <default>250</default>
+      <summary>hpaned value</summary>
+      <description>The hpaned value for the main window.</description>
+    </key>
+    <key type="i" name="vpaned">
+      <default>350</default>
+      <summary>vpaned value</summary>
+      <description>The vpaned value for the main window.</description>
+    </key>
+    <key type="i" name="window-height">
+      <default>600</default>
+      <summary>Default window height</summary>
+      <description>The window height value.</description>
+    </key>
+    <key type="i" name="window-width">
+      <default>800</default>
+      <summary>Default window width</summary>
+      <description>The window width value.</description>
+    </key>
+    <child schema="org.a11y.Accerciser.pluginviews" name="pluginviews"/>
+    <child schema="org.a11y.Accerciser.newpluginviews" name="newpluginviews"/>
+    <child schema="org.a11y.Accerciser.hotkeys" name="hotkeys"/>
+  </schema>
+  <schema path="/apps/accerciser/pluginviews/" id="org.a11y.Accerciser.pluginviews" gettext-domain="accerciser">
+    <key type="as" name="bottom-panel-layout">
+      <default>["IPython Console"]</default>
+      <summary>The layout for the bottom panel</summary>
+      <description>The layout for the bottom panel pluginview.</description>
+    </key>
+    <key type="as" name="top-panel-layout">
+      <default>["Interface Viewer", "API Browser", "Event Monitor", "Script Recorder"]</default>
+      <summary>The layout for the top panel</summary>
+      <description>The layout for the top panel pluginview.</description>
+    </key>
+    <key type="b" name="layout-single">
+      <default>false</default>
+      <summary>Single layout view</summary>
+      <description>View plugins in a single layout.</description>
+    </key>
+    <key type="as" name="available-newviews">
+      <default>[]</default>
+      <summary>Available new pluginviews</summary>
+      <description>This list contains all the new available pluginviews</description>
+    </key>
+   </schema>
+  <schema id="org.a11y.Accerciser.newpluginviews" gettext-domain="accerciser">
+   <key type="as" name="layout">
+      <default>[]</default>
+      <summary>The pluginview layout</summary>
+      <description>The default plugin layout for the top panel.</description>
+    </key>
+    <key type="i" name="height">
+      <default>480</default>
+      <summary>Window height</summary>
+      <description>Window height value.</description>
+    </key>
+    <key type="i" name="width">
+      <default>480</default>
+      <summary>Window width</summary>
+      <description>Window width value.</description>
+    </key>
+  </schema>
+  <schema id="org.a11y.Accerciser.hotkeys" gettext-domain="accerciser">
+    <key type="s" name="hotkey-combo">
+      <default>""</default>
+      <summary>Hotkey combination</summary>
+      <description>Hotkey combination for related action.</description>
+    </key>
+  </schema>
+</schemalist>

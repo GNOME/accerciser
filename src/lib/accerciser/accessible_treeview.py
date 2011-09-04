@@ -517,6 +517,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @type: gtk.Action
     '''
     path = self.get_cursor()[0]
+    if path == None: return
     is_expanded = self.row_expanded(path)
     self._refreshChildren(self.model.get_iter(path))
     if is_expanded:

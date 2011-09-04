@@ -12,12 +12,13 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 
 from i18n import _
 import pyatspi
 
-GCONF_HOTKEYS = '/apps/accerciser/global_hotkeys'
+HOTKEYS_GSCHEMA = 'org.a11y.Accerciser.hotkeys'
+HOTKEYS_BASEPATH = '/apps/accerciser/hotkeys/'
 
 COL_COMPONENT = 0
 COL_DESC = 1
@@ -55,7 +56,6 @@ class HotkeyManager(gtk.ListStore):
     '''
     gtk.ListStore.__init__(self, str, str, object, int, int, str)
     self.connect('row-changed', self._onComboChanged)
-    self.gconf_client = gconf.Client.get_default()
 
     masks = [mask for mask in pyatspi.allModifiers()]
     pyatspi.Registry.registerKeystrokeListener(
@@ -129,10 +129,11 @@ class HotkeyManager(gtk.ListStore):
       path = component_desc_pairs.index((component, description))
       self[path][COL_CALLBACK] = callback
     else:
-      combo_gconf_key = self._getComboGConfKey(component, description)
-      if self.gconf_client.get(combo_gconf_key):
+      gspath = self._getComboGSettingsPath(component, description)
+      gsettings = GSettings(schema=HOTKEYS_GSCHEMA , path=gspath)
+      if gsettings.get_string('hotkey-combo'):
         final_keypress, final_modifiers = gtk.accelerator_parse(
-          self.gconf_client.get_string(combo_gconf_key))
+          gsettings.get_string('hotkey-combo'))
       else:
         final_keypress, final_modifiers = keypress, modifiers
       self.append([component, description, callback, 
@@ -161,12 +162,12 @@ class HotkeyManager(gtk.ListStore):
     while iter:
       if self[iter][COL_CALLBACK] == callback:
         # We never really remove it, just set the callback to None
-        self[iter][COL_CALLBACK] = None
+        self[iter][COL_CALLBACK] = ''
       iter = self.iter_next(iter)
     
   def _onComboChanged(self, model, path, iter):
     '''
-    Callback for row changes. Copies the changed key combos over to gconf.
+    Callback for row changes. Copies the changed key combos over to gsettings.
 
     @param model: The model that emitted the signal. Should be this class instance.
     @type model: L{gtk.TreeModel}
@@ -177,30 +178,50 @@ class HotkeyManager(gtk.ListStore):
     '''
     if not model[iter][COL_COMPONENT] or not model[iter][COL_DESC]:
       return
-    combo_gconf_key = self._getComboGConfKey(model[iter][COL_COMPONENT], 
-                                             model[iter][COL_DESC])
+
+    gspath = self._getComboGSettingsPath(model[iter][COL_COMPONENT], 
+                                         model[iter][COL_DESC])
+    gsettings = GSettings(schema=HOTKEYS_GSCHEMA , path=gspath)
     combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS], 
                                       gdk.ModifierType(model[iter][COL_MOD]))
 
-    if self.gconf_client.get_string(combo_gconf_key) != combo_name:
-      self.gconf_client.set_string(combo_gconf_key, combo_name)
+    key = gsettings.get_string('hotkey-combo')
+    
+    if key != combo_name and key != '/':
+      gsettings.set_string('hotkey-combo', combo_name)
   
-  def _getComboGConfKey(self, component, description):
+
+  def _getComboGSettingsPath(self, component, description):
     '''
-    A convinience method to expand the full gconf path for a specific key combo.
+    Useful method that build and returns a gsettings path for a key combo.
 
     @param component: The component of the hotkey.
     @type component: string
     @param description: The description of the hotkey action
     @type description: string
     
-    @return: A full gconf key name
+    @return: A full gsettings path
     @rtype: string
     '''
-    combo_gconf_key = '%s/%s/%s/key_combo' % \
-        (GCONF_HOTKEYS, gconf.escape_key(component, len(component)),
-         gconf.escape_key(description, len(description)))
-    return combo_gconf_key
+    dash_component = self.__dasherize(component)
+    dash_description = self.__dasherize(description)
+
+    path = '/'.join([dash_component, dash_description])
+
+    return HOTKEYS_BASEPATH + path + '/'
+
+
+  def __dasherize(self, item):
+    '''
+    This method dasherize and decapitalize a given string.
+
+    @param component: The given string
+    @type component: string
+    
+    @return: A dasherized and decapitalized string
+    @rtype: string
+    '''
+    return item.lower().replace(' ', '-')
 
 class HotkeyTreeView(gtk.TreeView):
   '''
@@ -355,7 +376,7 @@ class HotkeyTreeView(gtk.TreeView):
         keysym = _charToKeySym(new_text)
       except:
         keysym = _charToKeySym(new_text[0])
-    self.hotkey_manager[path][COL_KEYPRESS] = keysym
+    self.hotkey_manager[path][COL_KEYPRESS] = int(keysym)
   
   def _onModToggled(self, renderer_toggle, path, mask):
     '''

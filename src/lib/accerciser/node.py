@@ -16,7 +16,7 @@ import gi
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GObject
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 #from gi.repository import cairo
 import cairo
 import pyatspi
@@ -25,14 +25,14 @@ from tools import Tools, parseColorString
 
 MAX_BLINKS = 6
 
-cl = gconf.Client.get_default()
+gsettings = GSettings(schema='org.a11y.Accerciser')
 BORDER_COLOR, BORDER_ALPHA = parseColorString(
-  cl.get_string('/apps/accerciser/highlight_border') or '#ff0000ff') 
+  gsettings.get_string('highlight-border'))
 
 FILL_COLOR, FILL_ALPHA  = parseColorString(
-  cl.get_string('/apps/accerciser/highlight_fill') or '#ff00006f')
+  gsettings.get_string('highlight-fill'))
 
-HL_DURATION = int(cl.get_float('/apps/accerciser/highlight_duration')*1000)
+HL_DURATION = int(gsettings.get_double('highlight-duration')*1000)
 
 class Bag(object):
   '''

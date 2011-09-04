@@ -14,11 +14,11 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gi
 
 from gi.repository import Gtk as gtk
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 
 from base_plugin import Plugin
 from view import ViewManager
-from accerciser.tools import Tools, GConfListWrapper, getTreePathBoundingBox
+from accerciser.tools import Tools, getTreePathBoundingBox
 from message import MessageManager
 import os
 import sys
@@ -26,7 +26,7 @@ import imp
 import traceback
 from accerciser.i18n import _, N_, C_
 
-GCONF_PLUGIN_DISABLED = '/apps/accerciser/disabled_plugins'      
+GSCHEMA = 'org.a11y.Accerciser'
 
 class PluginManager(gtk.ListStore, Tools):
   '''
@@ -68,6 +68,7 @@ class PluginManager(gtk.ListStore, Tools):
                            str) # Plugin path
     self.node = node
     self.hotkey_manager = hotkey_manager
+    self.gsettings = GSettings(schema=GSCHEMA)
     self.view_manager = ViewManager(*main_views)
     self.message_manager = MessageManager()
     self.message_manager.connect('plugin-reload-request', 
@@ -169,8 +170,9 @@ class PluginManager(gtk.ListStore, Tools):
         iter_id = self.append([None, plugin_locals[symbol], plugin_dir])
         self.handler_unblock(self._row_changed_handler)
         # if a plugin class is found, initialize
+        disabled_list = self.gsettings.get_strv('disabled-plugins')
         enabled = plugin_locals[symbol].plugin_name not in \
-            GConfListWrapper(GCONF_PLUGIN_DISABLED)
+            disabled_list
         if enabled:
           self._enablePlugin(iter_id)
         self.row_changed(self.get_path(iter_id), iter_id)
@@ -206,6 +208,10 @@ class PluginManager(gtk.ListStore, Tools):
     if isinstance(plugin_instance, gtk.Widget):
       self.view_manager.addElement(plugin_instance)
     plugin_instance.onAccChanged(plugin_instance.node.acc)
+    disabled_list = self.gsettings.get_strv('disabled-plugins')
+    if plugin_instance.plugin_name in disabled_list:
+      disabled_list.remove(plugin_instance.plugin_name)
+      self.gsettings.set_strv('disabled-plugins', disabled_list)
 
   def _disablePlugin(self, iter):
     '''
@@ -222,7 +228,12 @@ class PluginManager(gtk.ListStore, Tools):
     if isinstance(plugin_instance, gtk.Widget):
       plugin_instance.destroy()
     plugin_instance._close()
-    
+
+    disabled_list = self.gsettings.get_strv('disabled-plugins')
+    if not plugin_instance.plugin_name in disabled_list:
+      disabled_list.append(plugin_instance.plugin_name)
+    self.gsettings.set_strv('disabled-plugins', disabled_list)   
+
     self[iter][self.COL_INSTANCE] = False
 
   def _reloadPlugin(self, iter):
@@ -309,7 +320,7 @@ class PluginManager(gtk.ListStore, Tools):
   def _onPluginRowChanged(self, model, path, iter):
     '''
     Callback for model row changes. Persists plugins state (enabled/disabled)
-    in gconf.
+    in gsettings.
     
     @param model: Current model, actually self.
     @type model: gtk.ListStore
@@ -322,7 +333,7 @@ class PluginManager(gtk.ListStore, Tools):
     if plugin_class is None:
       return
     plugin_instance = model[iter][self.COL_INSTANCE]
-    disabled_list = GConfListWrapper(GCONF_PLUGIN_DISABLED)
+    disabled_list = self.gsettings.get_strv('disabled-plugins')
     if plugin_instance is None:
       if plugin_class.plugin_name not in disabled_list:
         disabled_list.append(plugin_class.plugin_name)

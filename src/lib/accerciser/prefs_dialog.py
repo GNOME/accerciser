@@ -16,7 +16,7 @@ import gi
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import Atk as atk
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 
 from i18n import _
 import node
@@ -72,7 +72,7 @@ class _HighlighterView(gtk.Alignment):
   def __init__(self):
     gtk.Alignment.__init__(self)
     self.set_padding(12, 12, 18, 12)
-    self.gconf_cl = gconf.Client.get_default()
+    self.gsettings = GSettings(schema='org.a11y.Accerciser')
     self._buildUI()
 
   def _buildUI(self):
@@ -88,17 +88,16 @@ class _HighlighterView(gtk.Alignment):
     controls[0] = gtk.SpinButton()
     controls[0].set_range(0.01, 5)
     controls[0].set_digits(2)
-    controls[0].set_value(
-      self.gconf_cl.get_float('/apps/accerciser/highlight_duration'))
+    controls[0].set_value(self.gsettings.get_double('highlight-duration'))
     controls[0].set_increments(0.01, 0.1)
     controls[0].connect('value-changed', self._onDurationChanged)
     labels[1] = gtk.Label(_('Border color:'))
     controls[1] = self._ColorButton(node.BORDER_COLOR, node.BORDER_ALPHA)
-    controls[1].connect('color-set', self._onColorSet, 'highlight_border')
+    controls[1].connect('color-set', self._onColorSet, 'highlight-border')
     controls[1].set_tooltip_text(_('The border color of the highlight box'))
     labels[2] = gtk.Label(_('Fill color:'))
     controls[2] = self._ColorButton(node.FILL_COLOR, node.FILL_ALPHA)
-    controls[2].connect('color-set', self._onColorSet, 'highlight_fill')
+    controls[2].connect('color-set', self._onColorSet, 'highlight-fill')
     controls[2].set_tooltip_text(_('The fill color of the highlight box'))
 
     for label, control, row in zip(labels, controls, range(3)):
@@ -113,36 +112,35 @@ class _HighlighterView(gtk.Alignment):
 
   def _onDurationChanged(self, spin_button):
     '''
-    Callback for the duration spin button. Update gconf and the global variable
+    Callback for the duration spin button. Update key and the global variable
     in the L{node} module.
 
     @param spin_button: The spin button that emitted the value-changed signal.
     @type spin_button: gtk.SpinButton
     '''
     node.HL_DURATION = int(spin_button.get_value()*1000)
-    self.gconf_cl.set_float('/apps/accerciser/highlight_duration',
+    self.gsettings.set_double('highlight-duration',
                             spin_button.get_value())
                             
 
-  def _onColorSet(self, color_button, gconf_key):
+  def _onColorSet(self, color_button, key):
     '''
-    Callback for a color button. Update gconf and the global variables
+    Callback for a color button. Update gsettings and the global variables
     in the L{node} module.
 
     @param color_button: The color button that emitted the color-set signal.
     @type color_button: l{_HighlighterView._ColorButton}
-    @param gconf_key: the key name suffix for this color setting.
-    @type gconf_key: string
+    @param key: the key name suffix for this color setting.
+    @type key: string
     '''
-    if 'fill' in gconf_key:
+    if 'fill' in key:
       node.FILL_COLOR = color_button.get_rgb_string()
       node.FILL_ALPHA = color_button.get_alpha_float()
     else:
       node.BORDER_COLOR = color_button.get_rgb_string()
       node.BORDER_ALPHA = color_button.get_alpha_float()
       
-    self.gconf_cl.set_string('/apps/accerciser/' + gconf_key,
-                             color_button.get_rgba_string())
+    self.gsettings.set_string(key, color_button.get_rgba_string())
 
   class _ColorButton(gtk.ColorButton):
     '''

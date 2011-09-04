@@ -12,6 +12,7 @@ dnl == requeriments ==
 GTK_REQUIRED=3.1.13
 PYGOBJECT_REQUIRED=2.90.3
 ATSPI_REQUIRED=2.1.5
+GLIB_GSETTINGS
 
 dnl == check for requeriments ==
 PKG_CHECK_MODULES([GTK], [gtk+-3.0 >= GTK_REQUIRED])
@@ -26,10 +27,6 @@ AM_GLIB_GNU_GETTEXT
 
 dnl == intltool check ==
 IT_PROG_INTLTOOL([0.35.0])
-
-dnl == gconf config ==
-AC_PATH_PROG(GCONFTOOL, gconftool-2)
-AM_GCONF_SOURCE_2
 
 dnl == generate makefiles ==
 AC_OUTPUT([

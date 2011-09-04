@@ -10,11 +10,6 @@ desktop_in_files=accerciser.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-schemasdir = $(GCONF_SCHEMA_FILE_DIR)
-schemas_in_files = accerciser.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-@INTLTOOL_SCHEMAS_RULE@
-
 EXTRA_DIST =  \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
@@ -22,8 +17,7 @@ EXTRA_DIST =  \
 	accerciser.spec \
 	gnome-doc-utils.make \
 	$(INTLTOOL) \
-	$(schemas_in_files) \
-	$(schemas_DATA)
+        org.a11y.Accerciser.gschema.xml
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--disable-scrollkeeper \
@@ -34,22 +28,10 @@ DISTCLEANFILES = \
 	intltool-extract \
 	intltool-merge \
 	intltool-update	\
-	gnome-doc-utils.make \
-	$(schemas_DATA)
+	gnome-doc-utils.make
 
-if GCONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
-		done \
-	fi
-uninstall-local:
-	for p in $(schemas_DATA) ; do \
-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-uninstall-rule $(srcdir)/$$p ; \
-	done
-else
-install-data-local:
-uninstall-local:
-endif
+gsettings_SCHEMAS = \
+        org.a11y.Accerciser.gschema.xml
+ 
+@GSETTINGS_RULES@
 

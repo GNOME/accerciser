@@ -1,6 +1,6 @@
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import GConf as gconf
+from gi.repository.Gio import Settings as GSettings
 
 from plugin import PluginView
 from i18n import _, N_
@@ -8,7 +8,7 @@ from accessible_treeview import *
 import ui_manager
 from ui_manager import uimanager
 
-GCONF_GENERAL = '/apps/accerciser/general'
+GSCHEMA = 'org.a11y.Accerciser'
 
 class AccerciserMainWindow(gtk.Window):
   '''
@@ -42,9 +42,9 @@ class AccerciserMainWindow(gtk.Window):
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
     node.connect('blink-done', self._onBlinkDone)    
-    cl = gconf.Client.get_default()
-    width = cl.get_int(GCONF_GENERAL+'/window_width') or 640
-    height = cl.get_int(GCONF_GENERAL+'/window_height') or 640
+    self.gsettings = GSettings(schema=GSCHEMA)
+    width = self.gsettings.get_int('window-width') or 640
+    height = self.gsettings.get_int('window-height') or 640
     self.set_default_size(width, height)
     self.add_accel_group(ui_manager.uimanager.get_accel_group())
     # Populate window
@@ -103,10 +103,9 @@ class AccerciserMainWindow(gtk.Window):
     sw.add(self.treeview)
     self._hpaned.add1(sw)
 
-    cl = gconf.Client.get_default()
     for paned in (self._vpaned, self._hpaned):
-      if not cl.get(GCONF_GENERAL+'/'+paned.get_name()): continue
-      paned_position = cl.get_int(GCONF_GENERAL+'/'+paned.get_name())
+      if not self.gsettings.get_int(paned.get_name()): continue
+      paned_position = self.gsettings.get_int(paned.get_name())
       paned.set_position(paned_position)
       paned.set_data('last_position', paned.get_position())
 
@@ -164,16 +163,15 @@ class AccerciserMainWindow(gtk.Window):
     '''
     Save the dimensions of the main window, and the position of the panes.
     '''
-    cl = gconf.Client.get_default()
-    cl.set_int(GCONF_GENERAL+'/window_width', self.get_allocated_width())
-    cl.set_int(GCONF_GENERAL+'/window_height', self.get_allocated_height())
-    cl.set_int(GCONF_GENERAL+'/hpaned', self._hpaned.get_position())
+    self.gsettings.set_int('window-width', self.get_allocated_width())
+    self.gsettings.set_int('window-height', self.get_allocated_height())
+    self.gsettings.set_int('hpaned', self._hpaned.get_position())
     if self.pluginview2.get_n_pages():
       position = self._vpaned.get_position()
     else:
       position = self._vpaned.get_data('last_position')
     if position is not None:
-      cl.set_int(GCONF_GENERAL+'/vpaned', position)
+      self.gsettings.set_int('vpaned', position)
 
   def _onBlinkDone(self, node):
     '''

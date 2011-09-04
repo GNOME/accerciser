@@ -17,7 +17,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import Wnck as wnck
-from gi.repository import GConf as gconf
 from gi.repository import GObject
 from gi.repository import Atk as atk
 from gi.repository.Gio import Settings
@@ -39,8 +38,6 @@ from about_dialog import AccerciserAboutDialog
 from prefs_dialog import AccerciserPreferencesDialog
 from main_window import AccerciserMainWindow
 import ui_manager
-
-GCONF_GENERAL = '/apps/accerciser/general'
 
 class Main(Tools):
   '''
