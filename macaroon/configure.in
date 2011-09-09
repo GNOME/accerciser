@@ -1,7 +1,7 @@
 AC_INIT(Macaroon, 0.0.1, eitan@ascender.com, macaroon)
 AC_CONFIG_AUX_DIR(./)
 AM_INIT_AUTOMAKE
-AM_MAINTAINER_MODE
+AM_MAINTAINER_MODE([enable])
 
 dnl == check for python ==
 AM_PATH_PYTHON(2.4)
