@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-13 19:06+0000\n"
-"PO-Revision-Date: 2011-07-14 07:58+0100\n"
+"POT-Creation-Date: 2011-09-09 21:15+0000\n"
+"PO-Revision-Date: 2011-09-15 22:13+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid "Accerciser"
 msgstr "Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
-#: ../src/lib/accerciser/main_window.py:39
+#: ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Raziskovalnik dostopnosti Accerciser"
 
@@ -33,41 +33,142 @@ msgstr "Raziskovalnik dostopnosti Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Programu omogočite vaje iz dostopnosti"
 
-#: ../accerciser.schemas.in.h:1
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "Seznam vstavkov, ki so privzeto onemogočeni"
 
-#: ../accerciser.schemas.in.h:2
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+#| msgid "A list of plugins that are disabled by default"
+msgid "A list of plugins that are disabled by default."
+msgstr "Seznam vstavkov, ki so privzeto onemogočeni."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+#| msgid "_Single plugins view"
+msgid "Available new pluginviews"
+msgstr "Novi pogledi vstavkov"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "Default window height"
+msgstr "Privzeta višina okna"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+msgid "Default window width"
+msgstr "Privzeta širina okna"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "Highlight border color"
 msgstr "Barva okvira poudarjanja"
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "Trajanje poudarjanja"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
 msgid "Highlight fill color"
 msgstr "Barva polnila poudarjanja"
 
-#: ../accerciser.schemas.in.h:5
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "Vodoravno deljeno"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Hotkey combination"
+msgstr "Kombinacija tipk"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Hotkey combination for related action."
+msgstr "Kombinacija tipk za povezano dejanje."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the horizontal split of the main window."
+msgstr "Položaj vodoravne razmejitve glavnega okna."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Position of the vertical split of the main window."
+msgstr "Položaj navpične razmejitve glavnega okna."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+#| msgid "_Single plugins view"
+msgid "Single layout view"
+msgstr "Pogled enojne postavitve"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
 msgid "The color and opacity of the highlight border."
 msgstr "Barva in prosojnost okvirja poudarjanja."
 
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
 msgid "The color and opacity of the highlight fill."
 msgstr "Barva in prosojnost polnila poudarjanja."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "Privzeti nabor vstavkov za spodnji pult"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+#| msgid "The default plugin layout for the top panel"
+msgid "The default plugin layout for the top panel."
+msgstr "Privzeta postavitev vstavkov za zgornji pult."
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
-msgstr "Privzeti nabor vstavkov za zgornji pult"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+#| msgid "The duration of the highlight box when selecting accessible nodes"
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "Trajanje poudarjanja ob izbiri dostopnih vozlišč."
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Trajanje poudarjanja ob izbiri dostopnih vozlišč"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel"
+msgstr "Postavitev za spodnji pult"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel pluginview."
+msgstr "Postavitev pogleda vstavkov za spodnji pult."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel"
+msgstr "Postavitev za zgornji pult"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel pluginview."
+msgstr "Postavitev pogleda vstavkov za zgornji pult."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+msgid "The pluginview layout"
+msgstr "Postavitev pogleda vstavkov"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "The window height value."
+msgstr "Vrednost višine okna."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+msgid "The window width value."
+msgstr "Vrednost širine okna."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+msgid "This list contains all the new available pluginviews"
+msgstr "Seznam vsebuje vse nove poglede vstavkov"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Vertical split"
+msgstr "Navpično deljeno"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+msgid "View plugins in a single layout."
+msgstr "Pokaži vstavke v enojni postavitvi."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window height"
+msgstr "Višina okna"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+msgid "Window height value."
+msgstr "Vrednost višine okna."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+msgid "Window width"
+msgstr "Širina okna"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+msgid "Window width value."
+msgstr "Vrednost širine okna."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -93,11 +194,11 @@ msgstr "Lastnost"
 msgid "Value"
 msgstr "Vrednost"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "IPython konzola"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktivna konzola za upravljanje izbrane enote dostopnosti"
 
@@ -129,23 +230,23 @@ msgstr "Vir"
 msgid "_Monitor Events"
 msgstr "_Nadzor dogodkov"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Nadzornik dogajanja"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Pokaže dogodke, kot se ti pojavijo preko izbranih vrst in virov"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Poudari zadnji vnos dogodka"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Začni/Zaustavi snemanje dogodkov"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Počisti dnevnik dogodkov"
 
@@ -195,8 +296,8 @@ msgid "<b>unknown</b>"
 msgstr "<b>neznano</b>"
 
 #: ../plugins/interface_view.ui.h:13
-#: ../plugins/interface_view.py:334
-#: ../plugins/interface_view.py:827
+#: ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>(brez opisa)</i>"
 
@@ -264,8 +365,8 @@ msgstr "_Namizje"
 
 #. add description to buffer
 #: ../plugins/interface_view.ui.h:31
-#: ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "Opis"
 
@@ -284,7 +385,7 @@ msgstr "Glava:"
 
 #. add url role to buffer
 #: ../plugins/interface_view.ui.h:36
-#: ../plugins/validate.py:283
+#: ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "Hiperpovezava"
 
@@ -421,69 +522,69 @@ msgid "name (x,y)"
 msgstr "ime (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Pregledovalnik vmesnikov"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Omogoča prikaz različnih lastnosti vmesnikov"
 
-#: ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:231
-#: ../plugins/interface_view.py:232
+#: ../plugins/interface_view.py:233
+#: ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(ni del programa)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:703
-#: ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708
+#: ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Ime"
 
-#: ../plugins/interface_view.py:710
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:717
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "Začetek"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "Konec"
 
-#: ../plugins/interface_view.py:885
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "Preveč izbirnih podrejenih procesov"
 
-#: ../plugins/interface_view.py:1230
-#: ../plugins/interface_view.py:1233
+#: ../plugins/interface_view.py:1239
+#: ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Uredljivo)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Hiter izbor"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Vstavek z različnimi možnostmi hitrega izbiranja enot dostopnosti."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Preverjanje zadnje izbrane enote dostopnosti"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Preverjanje enote dostopnosti pod kazalnikom miške"
 
 #: ../plugins/validate.ui.h:1
-#: ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "Nedejavno"
 
@@ -495,56 +596,56 @@ msgstr "She_ma:"
 msgid "V_alidate"
 msgstr "Določi _veljavnost"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "Brez opisa"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "AT-SPI določilnik veljavnosti"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "Določi veljavnost dostopnosti programa"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207
-#: ../plugins/validate.py:275
+#: ../plugins/validate.py:210
+#: ../plugins/validate.py:278
 msgid "Level"
 msgstr "Raven"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284
+#: ../src/lib/accerciser/accessible_treeview.py:409
 msgid "Role"
 msgstr "Vloga"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "Shranjevanje"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "Določanje veljavnosti"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "IZJEMA"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "NAPAKA"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "OPOZORILO"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "PODROBNOSTI"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "RAZHROŠČEVANJE"
 
@@ -644,117 +745,117 @@ msgstr "%(rolename)s nadrejeno kazalo %(num1)d ni skladno s stolpci in z vrstica
 msgid "%s has no name or description"
 msgstr "%s nima imena ali opisa"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "_Možnosti ..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "_Vsebina"
 
-#: ../src/lib/accerciser/accerciser.py:128
+#: ../src/lib/accerciser/accerciser.py:125
 msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr "Program Accerciser ne zazna programa na namizju. Omogočena mora biti enota namizne dostopnosti za razrešitev težav. Ali želite enoto omogočiti takoj?"
 
-#: ../src/lib/accerciser/accerciser.py:145
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "Opomba: spremembe bodo uveljavljene ob naslednji prijavi."
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:355
 msgid "<dead>"
 msgstr "<nedejavno>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:416
 msgid "Children"
 msgstr "Podrejeno"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:445
 msgid "_Refresh Registry"
 msgstr "Osveži _vpisnik"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:448
 msgid "Refresh all"
 msgstr "Osveži vse"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:451
 msgid "Refresh _Node"
 msgstr "Osveži _vozlišče"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:454
 msgid "Refresh selected node's children"
 msgstr "Osveži podrejene predmete vozlišča"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Enota"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Naloga"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Ključ"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Dvigalka"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "Zgornji pult"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "Spodnji pult"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Možnosti programa"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Vstavki"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Splošne hitre tipke"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Poudarjanje"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Trajanje poudarjanja:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Barva okvirja:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Barva okvirja poudarjanja"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Barva polnila:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Barva polnila poudarjanja"
 
@@ -767,8 +868,9 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Interaktivni raziskovalec python dostopnosti"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "Avtorske pravice © 2006, 2007 IBM Corporation (BSD)"
+#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "Avtorske pravice za accerciser (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -778,133 +880,110 @@ msgstr "Novo BSD dovoljenje. Za več podrobnosti si poglejte datoteki COPYING in
 msgid "Web site"
 msgstr "Spletna stran"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "_Dodaj zaznamek ..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "Izbran zaznamek je dostopen."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "_Uredi zaznamke ..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "Uredi zaznamke."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Uredi zaznamke ..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Naslov"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Program"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Pot"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Dodaj zaznamek ..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Naslov:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Program:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Pot:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Napake vstavkov"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "Pogled"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "Brez pogleda"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
 msgstr "_Enotni pogled vstavkov"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "Pogled vstavkov"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Pogled vstavkov (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>_Nov pogled ...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "Nov pogled ..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Datoteka"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Uredi"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Zaznamki"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Pogled"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Pomo_č"
 
-#~ msgid "Dogtail"
-#~ msgstr "Dogtail"
-
-#~ msgid "LDTP"
-#~ msgstr "LDTP"
-
-#~ msgid "Native"
-#~ msgstr "Osnovni"
-
-#~ msgid "Script Type"
-#~ msgstr "Vrsta skripta"
-
-#~ msgid "Script Recorder"
-#~ msgstr "Snemalnik skriptov"
-
-#~ msgid "Creates dogtail style scripts"
-#~ msgstr "Ustvari dogtail skripte"
-
-#~ msgid "The current script will be lost."
-#~ msgstr "Trenutni skript bo izgubljen."
-
-#~ msgid "Confirm clear"
-#~ msgstr "Potrditev čiščenja"
