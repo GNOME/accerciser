@@ -3,24 +3,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2011-03-06 16:51+0000\n"
-"PO-Revision-Date: 2011-03-15 10:43+0200\n"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-09-10 20:47+0000\n"
+"PO-Revision-Date: 2011-09-11 13:03+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Serbian (sr)\n"
+"Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.5.2\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Аксерсајзер"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Аксерсајзер — истраживач приступачности"
 
@@ -28,41 +29,133 @@ msgstr "Аксерсајзер — истраживач приступачнос
 msgid "Give your application an accessibility workout"
 msgstr "Дајте вашем програму тренинг приступачности"
 
-#: ../accerciser.schemas.in.h:1
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "Списак додатака који су унапред искључени"
 
-#: ../accerciser.schemas.in.h:2
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+msgid "A list of plugins that are disabled by default."
+msgstr "Списак додатака који су унапред искључени."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+msgid "Available new pluginviews"
+msgstr "Преглед доступних нових додатака"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "Default window height"
+msgstr "Основна висина прозора"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+msgid "Default window width"
+msgstr "Основна ширина прозора"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "Highlight border color"
 msgstr "Истакни боју ивице"
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "Трајање истицања"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
 msgid "Highlight fill color"
 msgstr "Истакни боју испуњавања"
 
-#: ../accerciser.schemas.in.h:5
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "Водоравна подела"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Hotkey combination"
+msgstr "Комбинација тастера пречице"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Hotkey combination for related action."
+msgstr "Комбинација тастера пречице за одређену радњу."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the horizontal split of the main window."
+msgstr "Положај водоравне поделе главног прозора."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Position of the vertical split of the main window."
+msgstr "Положај усправне поделе главног прозора."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+msgid "Single layout view"
+msgstr "Приказ појединачног распореда"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
 msgid "The color and opacity of the highlight border."
 msgstr "Боја и непрозирност означене ивице."
 
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
 msgid "The color and opacity of the highlight fill."
-msgstr "Боја и непрозирност означеног испуњавања."
+msgstr "Боја и непрозирност испуњавања истицања."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "Подразумевани распоред додатка доњег панела"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+msgid "The default plugin layout for the top panel."
+msgstr "Основни распоред додатка за горњи панел."
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
-msgstr "Подразумевани распоред додатка горњег панела"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "Трајање поља за истицање приликом бирања чворова доступног."
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Трајање поља за истицање приликом бирања чворова доступног"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+msgid "The layout for the bottom panel"
+msgstr "Распоред за доњи панел"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+msgid "The layout for the bottom panel pluginview."
+msgstr "Распоред приказа додатка за доњи панел."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+msgid "The layout for the top panel"
+msgstr "Распоред за горњи панел"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+msgid "The layout for the top panel pluginview."
+msgstr "Распоред приказа додатка за горњи панел."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+msgid "The pluginview layout"
+msgstr "Распоред приказа додатка"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "The window height value."
+msgstr "Вредност висине прозора."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+msgid "The window width value."
+msgstr "Вредност ширине прозора."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+msgid "This list contains all the new available pluginviews"
+msgstr "Ова листа садржи све нове доступне приказе додатка"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Vertical split"
+msgstr "Усправна подела"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+msgid "View plugins in a single layout."
+msgstr "Приказ додатка у једном распореду."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window height"
+msgstr "Висина прозора"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+msgid "Window height value."
+msgstr "Вредност висине прозора."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+msgid "Window width"
+msgstr "Ширина прозора"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+msgid "Window width value."
+msgstr "Вредност ширине прозора."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -88,11 +181,11 @@ msgstr "Својство"
 msgid "Value"
 msgstr "Вредност"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "ИПајтон конзола"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Интерактивна конзола за манипулацију тренутно изабраног доступног"
 
@@ -124,23 +217,23 @@ msgstr "Извор"
 msgid "_Monitor Events"
 msgstr "_Надгледај догађаје"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Надзор догађаја"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Приказује догађаје када се појаве из одабраних врста и извора"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Истакни последњи унос догађаја"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Покрени/заустави снимање догађаја"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Очисти дневик догађаја"
 
@@ -189,8 +282,8 @@ msgstr "<b>Текст</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>непознато</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
-#: ../plugins/interface_view.py:827
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>(нема описа)</i>"
 
@@ -257,8 +350,8 @@ msgid "Des_ktop"
 msgstr "Рад_на површ"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "Опис"
 
@@ -276,7 +369,7 @@ msgid "Header:"
 msgstr "Заглавље:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "Хипервеза"
 
@@ -413,100 +506,65 @@ msgid "name (x,y)"
 msgstr "име (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Прегледач сучеља"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Омогућава преглед различитих својстава сучеља"
 
-#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
-#: ../plugins/interface_view.py:232
+#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(није примењен)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Име"
 
-#: ../plugins/interface_view.py:710
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "Адреса"
 
-#: ../plugins/interface_view.py:717
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "Почетак"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "Крај"
 
-#: ../plugins/interface_view.py:885
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "Превелик избор потпроцеса"
 
-#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
+#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Изменљив)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Брз избор"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Додатак са разним начинима брзог избора доступних."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Провери последње фокусираног приступног"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Проверите приступног мишем"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Догтејл"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "ЛДТП"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Изворни"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Врста скрипте"
-
-#: ../plugins/script_recorder.py:175
-msgid "Script Recorder"
-msgstr "Снимач скрипте"
-
-#: ../plugins/script_recorder.py:177
-msgid "Creates dogtail style scripts"
-msgstr "Ствара скрипте у догтејл стилу"
-
-#: ../plugins/script_recorder.py:341
-msgid "The current script will be lost."
-msgstr "Тренутна скрипта ће бити изгубљена."
-
-#: ../plugins/script_recorder.py:342
-msgid "Confirm clear"
-msgstr "Потврди чишћење"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "У стању мировања"
 
@@ -518,54 +576,54 @@ msgstr "Ше_ма:"
 msgid "V_alidate"
 msgstr "П_отврди"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "Нема описа"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "АТ-СПИ Потврђивач"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "Проверава приступачност апликација"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:210 ../plugins/validate.py:278
 msgid "Level"
 msgstr "Ниво"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
 msgid "Role"
 msgstr "Улога"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "Чувам"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "Проверавам"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "ИЗУЗЕВ"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "ГРЕШКА"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "УПОЗОРЕЊЕ"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "ИНФО"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "ИСПРАВЉАЊЕ ГРЕШАКА"
 
@@ -577,21 +635,21 @@ msgstr "Основно"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Тестира приступачност основних ГУИ апликација"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "делотворан „%s“ не може бити у жижи или изабран"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "интерактивни „%s“ није делотворан"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "више од једног фокусираног виџета"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "„%s“ нема текстуално сучеље"
@@ -599,12 +657,12 @@ msgstr "„%s“ нема текстуално сучеље"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Индекс објекта „%s“ у матичном се не подудара са индексом потпроцеса"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Узајамно недостајање за „%s“ однос"
@@ -612,21 +670,21 @@ msgstr "Узајамно недостајање за „%s“ однос"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "Објекту „%s“ недостаје име или ознака"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "фокусни „%s“ има табеларно сучеље, нема изборно сучеље"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "фокусни „%s“ има табеларно сучеље, али нема изборно сучеље"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "„%s“ има „%s“ стање без „%s“ стања"
@@ -634,7 +692,7 @@ msgstr "„%s“ има „%s“ стање без „%s“ стања"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "„%s“ не припада скупу"
@@ -644,7 +702,7 @@ msgstr "„%s“ не припада скупу"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "„%(rolename)s“ индекс „%(num)d“ се не подудара са редовима и колонама"
@@ -655,7 +713,7 @@ msgstr "„%(rolename)s“ индекс „%(num)d“ се не подудара
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index %"
@@ -664,20 +722,20 @@ msgstr ""
 "„%(rolename)s“ матични индекс „%(num1)d“ се не подудара са индексом „%(num2)"
 "d“ редова и колона"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "„%s“ нема име или опис"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "_Подешавања..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "_Садржај"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:125
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -686,105 +744,105 @@ msgstr ""
 "приступачност радне површи да бисте решили овај проблем. Да ли желите да је "
 "омогућите сада?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "Напомена: Промене ће ступити на снагу након одјављивања."
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:355
 msgid "<dead>"
 msgstr "<неактиван>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:416
 msgid "Children"
 msgstr "Потпроцеси"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:445
 msgid "_Refresh Registry"
 msgstr "_Освежи регистар"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:448
 msgid "Refresh all"
 msgstr "Освежи све"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:451
 msgid "Refresh _Node"
 msgstr "Освежи _чвор"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:454
 msgid "Refresh selected node's children"
 msgstr "Освежи потпроцесе изабраних чворова"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Компонента"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Задатак"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Тастер"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Алт"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Цтрл"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Шифт"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "Горњи панел"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "Доњи панел"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Подешавања аксерсајзера"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Додаци"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Глобалне пречице"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Истицање"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Трајање истицања:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Боја оквира:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Боја оквира поља за истицање"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Боја испуњавања:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Боја испуњавања поља за истицање"
 
@@ -797,8 +855,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Пајтонов интерактивни истраживач приступачности"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "Ауторска права аксерсајзера © 2006, 2007 ИБМ корпорација (БСД)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "Ауторска права аксерсајзера (c) 2006, 2007 ИБМ корпорација (БСД)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -809,109 +867,133 @@ msgstr ""
 msgid "Web site"
 msgstr "Веб сајт"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "_Додај обележивач..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "Обележите изабраног доступног."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "_Уреди обележиваче..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "Управљајте обележивачима."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Уреди обележиваче..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Наслов"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Програм"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Путања"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Додај обележивач..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Наслов:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Програм:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Путања:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Грешке додатка"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "Преглед"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "Нема прегледа"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
 msgstr "_Самосталан преглед додатака"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "Преглед додатка"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Преглед додатка (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>_Нови преглед...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "Нови преглед..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Датотека"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Уређивање"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Обележивачи"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Преглед"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Помо_ћ"
+
+#~ msgid "Dogtail"
+#~ msgstr "Догтејл"
+
+#~ msgid "LDTP"
+#~ msgstr "ЛДТП"
+
+#~ msgid "Native"
+#~ msgstr "Изворни"
+
+#~ msgid "Script Type"
+#~ msgstr "Врста скрипте"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Снимач скрипте"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Ствара скрипте у догтејл стилу"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Тренутна скрипта ће бити изгубљена."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Потврди чишћење"
