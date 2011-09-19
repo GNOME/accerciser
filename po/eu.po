@@ -1,16 +1,18 @@
-# translation of eu.po to Basque
+# translation of accerciser.master.po to Basque
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009, 2010.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&component=general\n"
-"POT-Creation-Date: 2010-03-22 10:25+0000\n"
-"PO-Revision-Date: 2010-03-27 11:51+0100\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Project-Id-Version: accerciser.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-19 19:43+0200\n"
+"PO-Revision-Date: 2011-09-16 16:31+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +23,7 @@ msgstr ""
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser erabilerraztasunerako arakatzailea"
 
@@ -29,41 +31,133 @@ msgstr "Accerciser erabilerraztasunerako arakatzailea"
 msgid "Give your application an accessibility workout"
 msgstr "Eman aplikazioari erabilerraza izateko ahalmena"
 
-#: ../accerciser.schemas.in.h:1
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "Lehenespenez desgaitzen diren pluginen zerrenda"
 
-#: ../accerciser.schemas.in.h:2
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+msgid "A list of plugins that are disabled by default."
+msgstr "Lehenespenez desgaitzen diren pluginen zerrenda"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+msgid "Available new pluginviews"
+msgstr "Plugin-ikuspegi indibidual erabilgarri berriak"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "Default window height"
+msgstr "Leihoaren altuera lehenetsia"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+msgid "Default window width"
+msgstr "Leihoaren zabalera lehenetsia"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "Highlight border color"
 msgstr "Nabarmentze-ertzaren kolorea"
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "Nabarmentzearen iraupena"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
 msgid "Highlight fill color"
 msgstr "Nabarmentze-betegarriaren kolorea"
 
-#: ../accerciser.schemas.in.h:5
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "Zatitze horizontala"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Hotkey combination"
+msgstr "Laster-teklen konbinazioa"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Hotkey combination for related action."
+msgstr "Dagokion ekintzaren laster-teklen konbinazioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the horizontal split of the main window."
+msgstr "Leiho nagusiaren zatitze horizontalaren posizioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Position of the vertical split of the main window."
+msgstr "Leiho nagusiaren zatitze bertikalaren posizioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+msgid "Single layout view"
+msgstr "Pluginen ikuspegi bakuna"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
 msgid "The color and opacity of the highlight border."
 msgstr "Nabarmentze-ertzaren kolorea eta opakutasuna."
 
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
 msgid "The color and opacity of the highlight fill."
 msgstr "Nabarmentze-betegarriaren kolorea eta opakutasuna."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "Plugin-diseinu lehenetsia beheko panelerako"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+msgid "The default plugin layout for the top panel."
+msgstr "Goiko panelaren plugin-diseinu lehenetsia."
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
-msgstr "Plugin-diseinu lehenetsia goiko panelerako"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "Nabarmentze-koadroaren iraupena nodo erabilerrazak hautatzean."
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Nabarmentze-koadroaren iraupena nodo erabilerrazak hautatzean"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+msgid "The layout for the bottom panel"
+msgstr "Beheko panelaren plugin-diseinu lehenetsia."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+msgid "The layout for the bottom panel pluginview."
+msgstr "Beheko panelaren plugin-ikuspegi lehenetsia."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+msgid "The layout for the top panel"
+msgstr "Goiko panelaren diseinu lehenetsia."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+msgid "The layout for the top panel pluginview."
+msgstr "Goiko panelaren plugin-ikuspegi lehenetsia."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+msgid "The pluginview layout"
+msgstr "Plugin-ikuspegiaren diseinua"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "The window height value."
+msgstr "Leihoaren altueraren balioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+msgid "The window width value."
+msgstr "Leihoaren zabaleraren balioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+msgid "This list contains all the new available pluginviews"
+msgstr "Zerrenda honek plugin-ikuspegi erabilgarri berriak ditu."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Vertical split"
+msgstr "Zatitze bertikala"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+msgid "View plugins in a single layout."
+msgstr "Ikusi pluginak diseinu bakun batean."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window height"
+msgstr "Leihoaren altuera"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+msgid "Window height value."
+msgstr "Leihoaren altueraren balioa."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+msgid "Window width"
+msgstr "Leihoaren zabalera"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+msgid "Window width value."
+msgstr "Leihoaren zabaleraren balioa."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -89,13 +183,14 @@ msgstr "Propietatea"
 msgid "Value"
 msgstr "Balioa"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "IPython kontsola"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Unean hautatutako elementu erabilerraza manipulatzeko kontsola interaktiboa"
+msgstr ""
+"Unean hautatutako elementu erabilerraza manipulatzeko kontsola interaktiboa"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
@@ -125,25 +220,25 @@ msgstr "Iturburua"
 msgid "_Monitor Events"
 msgstr "_Monitorizatu gertaerak"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Gertaera-monitorea"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Hautatutako motetatik eta iturburuetatik gertatzen diren bezala erakusten "
 "ditu gertaerak"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Nabarmendu azken gertaera-sarrera"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Hasi/gelditu gertaerak erregistratzea"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Garbitu gertaeren erregistroa"
 
@@ -192,8 +287,8 @@ msgstr "<b>Testua</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>ezezaguna</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>(azalpenik ez)</i>"
 
@@ -260,8 +355,8 @@ msgid "Des_ktop"
 msgstr "_Mahaigaina"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "Azalpena"
 
@@ -279,7 +374,7 @@ msgid "Header:"
 msgstr "Goiburua:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "Hiperesteka"
 
@@ -416,100 +511,65 @@ msgid "name (x,y)"
 msgstr "izena (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Interfaze-ikustailea"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Interfaze-propietate batzuk ikusteko aukera ematen du"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(ez dago inplementatuta)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Izena"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "URIa"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "Hasiera"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "Amaiera"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "Ume gehiegi hautagai"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Editagarria)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Hautapen bizkorra"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Elementu erabilerrazak hautatzeko hainbat metodo dituen plugina."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Aztertu fokua eduki duen azken elementu erabilerraza"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Aztertu sagu azpiko elementu erabilerraza"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Natiboa"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Script mota"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Script-grabagailua"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Dogtail estiloko scriptak sortzen ditu"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Uneko scripta galdu egingo da."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Berretsi garbiketa"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "Inaktibo"
 
@@ -521,54 +581,54 @@ msgstr "E_skema:"
 msgid "V_alidate"
 msgstr "_Balidatu"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "Azalpenik ez"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "AT-SPI balidatzailea"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "Aplikazioaren erabilerraztasuna balidatzen du"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:210 ../plugins/validate.py:278
 msgid "Level"
 msgstr "Maila"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
 msgid "Role"
 msgstr "Funtzioa"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "Gordetzen"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "Balidatzen"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "IZAN EZIK"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "ERROREA"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "ABISUA"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "INFORMAZIOA"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "ARAZTU"
 
@@ -578,23 +638,24 @@ msgstr "Oinarrizkoa"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "Aplikazioaren interfazearen erabilerraztasunaren oinarriak probatzen ditu"
+msgstr ""
+"Aplikazioaren interfazearen erabilerraztasunaren oinarriak probatzen ditu"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "%s eragingarriak ezin du fokua jaso edo hautagarria izan"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "%s elkarreragilea ez da eragingarria"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "trepeta bat baino gehiagok fokua dute"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s(e)k ez du testu-interfazerik"
@@ -602,12 +663,12 @@ msgstr "%s(e)k ez du testu-interfazerik"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Gurasoaren %s indizea ez dator bat umearen indizearekin"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "%s erlazioaren elkarrekikoa falta da"
@@ -615,21 +676,22 @@ msgstr "%s erlazioaren elkarrekikoa falta da"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s(e)ri izena edo etiketa falta zaio"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "fokua eduki dezakeen %s(e)k taula-interfazea du, ez hautapen-interfazea"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr ""
+"fokua eduki dezakeen %s(e)k taula-interfazea du, ez hautapen-interfaze bat"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s(e)k '%s' egoera du (%s egoerarik gabe)"
@@ -637,7 +699,7 @@ msgstr "%s(e)k '%s' egoera du (%s egoerarik gabe)"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s ez dagokio multzo bati"
@@ -647,10 +709,11 @@ msgstr "%s ez dagokio multzo bati"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr "%(rolename)s -(r)en %(num)d indizea ez dator bat errenkada eta zutabearekin"
+msgstr ""
+"%(rolename)s -(r)en %(num)d indizea ez dator bat errenkada eta zutabearekin"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -658,29 +721,29 @@ msgstr "%(rolename)s -(r)en %(num)d indizea ez dator bat errenkada eta zutabeare
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "%(rolename)s-(r)en %(num1)d guraso indizea ez dator bat errenkada eta "
 "zutabearen %(num2)d indizearekin"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s(e)k ez du izenik edo azalpenik"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "_Hobespenak..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "_Edukia"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:125
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -688,105 +751,105 @@ msgstr ""
 "Accerciser-ek ezin ditu ikusi zure mahaigaineko aplikazioak. Mahaigaineko "
 "Erabilerraztasuna gaitu behar duzu arazoa konpontzeko. Orain gaitu nahi duzu?"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "Oharra: aldaketek eragina izateko, saioa itxi egin behar da."
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:355
 msgid "<dead>"
 msgstr "<hilda>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:416
 msgid "Children"
 msgstr "Seme-alabak"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:445
 msgid "_Refresh Registry"
 msgstr "_Freskatu erregistroa"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:448
 msgid "Refresh all"
 msgstr "Freskatu denak"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:451
 msgid "Refresh _Node"
 msgstr "Freskatu _nodoa"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:454
 msgid "Refresh selected node's children"
 msgstr "Freskatu hautatutako nodoen umeak"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Osagaia"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Ataza"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Tekla"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ktrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Maius"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "Goiko panela"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "Beheko panela"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Accerciser-en hobespenak"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Pluginak"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Laster-tekla globalak"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Nabarmentzea"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Nabarmentze-iraupena:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Ertzaren kolorea:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Nabarmentze-koadroaren ertzaren kolorea"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Betegarriaren kolorea:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Nabarmentze-koadroaren betegarriaren kolorea"
 
@@ -799,8 +862,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Python-en erabilerraztasunerako arakatzaile interaktiboa"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -812,112 +875,109 @@ msgstr ""
 msgid "Web site"
 msgstr "Webgunea"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "_Gehitu laster-marka..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "Markatu hautatutako elementu erabilerraza."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "_Editatu laster-markak..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "Kudeatu laster-markak."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Editatu laster-markak..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Titulua"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Aplikazioa"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Bide-izena"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Gehitu laster-marka..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Titulua:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Aplikazioa:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Bidea:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Plugin erroreak"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "Leihatila"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "Ikuspegirik ez"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
-msgstr "_Pluginen ikuspegi indibiduala"
+msgstr "_Pluginen ikuspegi bakuna"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "Plugin ikuspegia"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Plugin ikuspegia (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>_Ikuspegi berria...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "Ikuspegi berria..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Fitxategia"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Editatu"
 
-#: ../src/lib/accerciser/ui_manager.py:22
-#| msgid "_Edit Bookmarks..."
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "Laster-_markak"
 
-#: ../src/lib/accerciser/ui_manager.py:23
-#| msgid "_File"
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Ikusi"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Laguntza"
-
