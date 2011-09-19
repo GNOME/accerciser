@@ -199,18 +199,20 @@ class _HighLight(gtk.Window):
     self.w, self.h = w + padding*2, h + padding*2
     self.fill_color = fill_color
 
+    # TODO: Implement transparency for fallback-mode
+    #
     # Determine if we are compositing.
-    self._composited = True #self.is_composited()
-    if self._composited:
-      # Prepare window for transparency.
-      screen = self.get_screen()
-      visual = screen.get_rgba_visual()
-      self.set_visual(visual)
-    else:
-      # Take a screenshot for compositing on the client side.
-      self.root = gdk.get_default_root_window().get_image(
-        self.x, self.y, self.w, self.h)
-      #self.root = gtk.Image(self.x, self.y, self.w, self.h)
+    #self._composited = self.is_composited()
+    #if self._composited:
+    #  # Prepare window for transparency.
+    #  screen = self.get_screen()
+    #  visual = screen.get_rgba_visual()
+    #  self.set_visual(visual)
+    #else:
+    #  # Take a screenshot for compositing on the client side.
+    #  self.root = gdk.get_default_root_window().get_image(
+    #    self.x, self.y, self.w, self.h)
+    #  #self.root = gtk.Image(self.x, self.y, self.w, self.h)
  
 
     # Place window, and resize it, and set proper properties.
@@ -254,10 +256,10 @@ class _HighLight(gtk.Window):
     if not self.is_composited():
       # Draw the screengrab of the underlaying window, and set the drawing
       # operator to OVER.
-      self.window.draw_image(self.style.black_gc, self.root, 
-                             event.area.x,event.area.y, 
-                             event.area.x, event.area.y, 
-                             event.area.width, event.area.height)
+      #self.window.draw_image(self.style.black_gc, self.root,
+      #                       event.area.x,event.area.y,
+      #                       event.area.x, event.area.y,
+      #                       event.area.width, event.area.height)
       cairo_operator = cairo.OPERATOR_OVER
     else:
       cairo_operator = cairo.OPERATOR_SOURCE
@@ -266,6 +268,7 @@ class _HighLight(gtk.Window):
     color = gdk.color_parse(self.fill_color)
 
     #TODO: look for for set_source_rgb and Gdk.Color issues
+    #
     cr.set_source_rgb(color.red, color.green, color.blue)
     cr.paint()
 
