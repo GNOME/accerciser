@@ -4,24 +4,27 @@
 # Liu Yubao <yubao.liu@gmail.com>, 2008.
 # Ray Wang <wanglei1123@gmail.com>, 2008.
 # QAed by Funda Wang <fundawang@gmail.com>, 2008
+# YunQiang Su <wzssyqa@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-12 20:07+0800\n"
-"PO-Revision-Date: 2009-03-27 15:08+0800\n"
-"Last-Translator: Ray Wang <wanglei1123@gmail.com>\n"
-"Language-Team: i18-zh <i18n-zh@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-09-27 17:49+0000\n"
+"PO-Revision-Date: 2011-09-28 02:57+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser 辅助功能浏览器"
 
@@ -29,41 +32,142 @@ msgstr "Accerciser 辅助功能浏览器"
 msgid "Give your application an accessibility workout"
 msgstr "为你的应用提供辅助功能测试"
 
-#: ../accerciser.schemas.in.h:1
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "默认禁用插件的列表"
 
-#: ../accerciser.schemas.in.h:2
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+#| msgid "A list of plugins that are disabled by default"
+msgid "A list of plugins that are disabled by default."
+msgstr "默认禁用插件的列表"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+#| msgid "_Single plugins view"
+msgid "Available new pluginviews"
+msgstr "可用的插件视图"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "Default window height"
+msgstr "默认窗口高度"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+msgid "Default window width"
+msgstr "默认窗口宽度"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "Highlight border color"
 msgstr "高亮边框颜色"
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "高亮持续时间"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
 msgid "Highlight fill color"
 msgstr "高亮填充颜色"
 
-#: ../accerciser.schemas.in.h:5
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "水平分隔"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Hotkey combination"
+msgstr "热键组合"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Hotkey combination for related action."
+msgstr "相关动作的热键组合。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the horizontal split of the main window."
+msgstr "主窗口水平分隔的位置。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Position of the vertical split of the main window."
+msgstr "主窗口竖直分隔的位置。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+#| msgid "_Single plugins view"
+msgid "Single layout view"
+msgstr "单布局视图(_S)"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
 msgid "The color and opacity of the highlight border."
 msgstr "高亮边框的颜色和不透明。"
 
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
 msgid "The color and opacity of the highlight fill."
 msgstr "高亮填充的颜色和不透明。"
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "下方面板的默认插件布局"
-
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+#| msgid "The default plugin layout for the top panel"
+msgid "The default plugin layout for the top panel."
 msgstr "上方面板的默认插件布局"
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "当选择可访问对象时，高亮框的持续时间"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+#| msgid "The duration of the highlight box when selecting accessible nodes"
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "当选择无障碍功能节点时，高亮框的持续时间"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel"
+msgstr "下方面板的布局"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel pluginview."
+msgstr "下方面板的插件视图布局。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel"
+msgstr "上方面板的布局"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel pluginview."
+msgstr "上方面板插件视图布局"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+msgid "The pluginview layout"
+msgstr "插件视图布局"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "The window height value."
+msgstr "窗口高度值。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+msgid "The window width value."
+msgstr "窗口宽度值。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+msgid "This list contains all the new available pluginviews"
+msgstr "此列表包含全部新的可用插件视图"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Vertical split"
+msgstr "竖直分隔"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+msgid "View plugins in a single layout."
+msgstr "在一个单独布局中查看插件。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window height"
+msgstr "窗口高度"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+msgid "Window height value."
+msgstr "窗口高度值。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+msgid "Window width"
+msgstr "窗口宽度"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+msgid "Window width value."
+msgstr "窗口宽度值。"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -89,11 +193,11 @@ msgstr "属性"
 msgid "Value"
 msgstr "值"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "IPython 控制台"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "操纵目前所选可访问对象的交互控制台"
 
@@ -125,23 +229,23 @@ msgstr "来源"
 msgid "_Monitor Events"
 msgstr "监视器事件(_M)"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "事件监视器"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "显示来自选中的类型和来源的事件"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "高亮最后一个事件"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "开始/停止记录事件"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "清除事件日志"
 
@@ -190,8 +294,8 @@ msgstr "<b>文本</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>未知</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>(没有描述)</i>"
 
@@ -258,8 +362,8 @@ msgid "Des_ktop"
 msgstr "桌面(_K)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "描述"
 
@@ -277,7 +381,7 @@ msgid "Header:"
 msgstr "标题："
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "超级链接"
 
@@ -415,100 +519,65 @@ msgid "name (x,y)"
 msgstr "名字 (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "界面查看器"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "允许查看各种界面属性"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(未实现)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "名称"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "开始"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "结束"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "太多可选择的子节点"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(可编辑)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "快速选择"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "此插件所提供的各种方法可快速选中可访问对象。"
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "检查上次获得焦点的可访问对象"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "检查鼠标下面的可访问对象"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "自有"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "脚本类型"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "脚本录制器"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "创建 dogtail 格式的脚本"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "当前脚本将丢失。"
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "确认清除"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "空闲"
 
@@ -520,54 +589,54 @@ msgstr "Sche_ma："
 msgid "V_alidate"
 msgstr "校验(_A)"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "没有描述"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "AT-SPI 校验器"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "校验应用程序的辅助功能"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:210 ../plugins/validate.py:278
 msgid "Level"
 msgstr "级别"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
 msgid "Role"
 msgstr "角色"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "正在保存"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "正在校验"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "异常"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "错误"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "警告"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "信息"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "调试"
 
@@ -579,21 +648,21 @@ msgstr "基本"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "测试图形界面应用程序的基本辅助功能"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "控件 %s 不能获得焦点也不能被选中"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "控件 %s 不能交互"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "多于一个获得焦点的部件"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s 没有文本界面"
@@ -601,12 +670,12 @@ msgstr "%s 没有文本界面"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s 的父节点和子节点索引值不匹配"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "关系 %s 丢失双向性"
@@ -614,21 +683,22 @@ msgstr "关系 %s 丢失双向性"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s 缺少名字或标签"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "可聚焦的 %s 有表格接口，没有选择接口"
+#| msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "可聚焦的 %s 有表格接口，但没有选择接口"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s 有 %s 状态，没有 %s 状态"
@@ -636,7 +706,7 @@ msgstr "%s 有 %s 状态，没有 %s 状态"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s 不属于一个单选按钮集"
@@ -646,7 +716,7 @@ msgstr "%s 不属于一个单选按钮集"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s 的索引 %(num)d 与其行列不匹配"
@@ -657,27 +727,27 @@ msgstr "%(rolename)s 的索引 %(num)d 与其行列不匹配"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr "%(rolename)s 的父节点索引 %(num1)d 不匹配其行、列索引 %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s 没有名字或描述"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "首选项(_P)..."
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "目录(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:125
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -685,105 +755,105 @@ msgstr ""
 "Accerciser 找不到桌面上的应用程序。要修复这一问题，您必须启用桌面辅助功能。您"
 "想现在启用该特性吗？"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "注意：更改要到下次登录时才生效。"
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:355
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:416
 msgid "Children"
 msgstr "子节点"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:445
 msgid "_Refresh Registry"
 msgstr "刷新注册库(_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:448
 msgid "Refresh all"
 msgstr "全部刷新"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:451
 msgid "Refresh _Node"
 msgstr "刷新节点(_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:454
 msgid "Refresh selected node's children"
 msgstr "刷新所选节点的子节点"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "组件"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "任务"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "键"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "上方面板"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "下方面板"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "accerciser 首选项"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "插件"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "全局热键"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "高亮"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "高亮持续时间："
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "边框颜色："
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "高亮框的边框颜色"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "填充颜色："
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "高亮框的填充颜色"
 
@@ -798,8 +868,9 @@ msgid "An interactive Python accessibility explorer"
 msgstr "一个用 Python 编写的交互式辅助功能浏览器"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser 版权所有 © 2006, 2007 IBM Corporation (BSD)"
+#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser 版权所有 (c) 2006, 2007 IBM 公司 (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -809,112 +880,136 @@ msgstr "新 BSD 许可证的细节请查看 COPYING 和 NOTICE。"
 msgid "Web site"
 msgstr "网站"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "添加书签(_A)..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "将选中可访问对象加入书签。"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "编辑书签(_E)..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "管理书签。"
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "编辑书签..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "标题"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "应用程序"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "路径"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "添加书签..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "标题："
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "应用程序："
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "路径："
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "插件错误"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "视图"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "没有视图"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
 msgstr "单插件视图(_S)"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "插件视图"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "插件视图(%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>新建视图(_N)...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "新建视图..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "书签(_B)"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "视图(_V)"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "帮助(_H)"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "自有"
+
+#~ msgid "Script Type"
+#~ msgstr "脚本类型"
+
+#~ msgid "Script Recorder"
+#~ msgstr "脚本录制器"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "创建 dogtail 格式的脚本"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "当前脚本将丢失。"
+
+#~ msgid "Confirm clear"
+#~ msgstr "确认清除"
 
 #~ msgid "Full name"
 #~ msgstr "全名"
