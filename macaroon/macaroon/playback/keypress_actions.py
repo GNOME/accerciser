@@ -15,11 +15,14 @@ See "COPYING" in the source distribution for more information.
 Headers in this file shall remain intact.
 '''
 
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
 import pyatspi
-import gtk
+
 from sequence_step import AtomicAction
-import gobject
 import utils
+
 _ = lambda x: x
 
 # Highest granularity, define timing for every single press and release
@@ -30,7 +33,7 @@ min_delta = 50
 # Maximum time before a key release
 release_max = 400
 
-keymap = gtk.gdk.keymap_get_default()
+keymap = Gdk.Keymap.get_default()
 
 class KeyPressAction(AtomicAction):
   '''
@@ -53,7 +56,7 @@ class KeyPressAction(AtomicAction):
     if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
     if key_code is None:
-      key_code = utils.getKeyCodeFromVal(gtk.gdk.keyval_from_name(key_name))
+      key_code = utils.getKeyCodeFromVal(Gdk.keyval_from_name(key_name))
     AtomicAction.__init__(self, delta_time, self._keyPress, key_code)
 
   def _keyPress(self, key_code):
@@ -95,7 +98,7 @@ class KeyReleaseAction(AtomicAction):
     if delta_time > release_max: delta_time = release_max
     self._key_name = key_name
     if key_code is None:
-      key_code = utils.getKeyCodeFromVal(gtk.gdk.keyval_from_name(key_name))
+      key_code = utils.getKeyCodeFromVal(Gdk.keyval_from_name(key_name))
     AtomicAction.__init__(self, delta_time, self._keyRelease, key_code)
 
   def _keyRelease(self, key_code):
@@ -143,7 +146,7 @@ class KeyComboAction(AtomicAction):
     @param delta_time: Time to wait before performing step.
     @type delta_time: integer
     '''
-    keyval, modifiers = gtk.accelerator_parse(key_combo)
+    keyval, modifiers = Gtk.accelerator_parse(key_combo)
     key_code = utils.getKeyCodeFromVal(keyval)
     self._key_combo = key_combo
     if delta_time < min_delta: delta_time = min_delta
@@ -167,15 +170,15 @@ class KeyComboAction(AtomicAction):
     interval = 0
     mod_hw_codes = map(mod_key_code_mappings.get, modifiers.value_names)
     for mod_hw_code in mod_hw_codes:
-      gobject.timeout_add(interval, self._keyPress, mod_hw_code)
+      GObject.timeout_add(interval, self._keyPress, mod_hw_code)
       interval += keystroke_interval
-    gobject.timeout_add(interval, self._keyPressRelease, key_code)
+    GObject.timeout_add(interval, self._keyPressRelease, key_code)
     interval += keystroke_interval
     mod_hw_codes.reverse()
     for mod_hw_code in mod_hw_codes:
-      gobject.timeout_add(interval, self._keyRelease, mod_hw_code)
+      GObject.timeout_add(interval, self._keyRelease, mod_hw_code)
       interval += keystroke_interval
-    gobject.timeout_add(interval, self.stepDone)
+    GObject.timeout_add(interval, self.stepDone)
 
   def _keyPress(self, hw_code):
     '''
@@ -255,10 +258,10 @@ class TypeAction(AtomicAction):
     '''
     interval = 0
     for char in string_to_type:
-      gobject.timeout_add(interval, self._charType, 
-                          gtk.gdk.unicode_to_keyval(ord(char)))
+      GObject.timeout_add(interval, self._charType,
+                          Gdk.unicode_to_keyval(ord(char)))
       interval += self.interval 
-    gobject.timeout_add(interval, self.stepDone)
+    GObject.timeout_add(interval, self.stepDone)
 
   def _charType(self, keyval):
     '''

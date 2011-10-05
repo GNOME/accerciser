@@ -15,12 +15,15 @@ See "COPYING" in the source distribution for more information.
 Headers in this file shall remain intact.
 '''
 
-import gobject, pyatspi, sys
+from gi.repository import GObject
+from gi.repository import GLib
+import pyatspi
+import sys
 from wait_actions import WaitAction
 from os import environ
 _ = lambda x: x
 
-class MacroSequence(gobject.GObject):
+class MacroSequence(GObject.GObject):
   '''
   Sequence class. Holds a list of steps and performs them in order. 
   Waits for each step to emit a "done" signal. And performs the next step 
@@ -28,7 +31,7 @@ class MacroSequence(gobject.GObject):
   is completed.
 
   @ivar _loop: Loop instance if the main loop should be embedded.
-  @type _loop: gobject.MainLoop
+  @type _loop: GLib.MainLoop
   @ivar _verbose: Print to standard output the current step the sequence is in.
   @type _verbose: boolean
   @ivar _current_step: The index of the currently performed step.
@@ -44,13 +47,13 @@ class MacroSequence(gobject.GObject):
   came through.
   @type _anticipated_events: list of Accessibility.Accessible
   '''
-  __gsignals__ = {'step-done' : (gobject.SIGNAL_RUN_FIRST, 
-                                 gobject.TYPE_NONE, (gobject.TYPE_INT,))} 
+  __gsignals__ = {'step-done' : (GObject.SignalFlags.RUN_FIRST,
+                                 None, (GObject.TYPE_INT,))}
   def __init__(self):
     '''
     Initialize L{MacroSequence}.
     '''
-    self.__gobject_init__()
+    super(MacroSequence, self).__init__()
     self._loop = None
     self._verbose = False
     self._current_step = 0
@@ -79,7 +82,7 @@ class MacroSequence(gobject.GObject):
     self._verbose = bool(verbose or environ.get('MACAROON_VERBOSE', 0))
     self._iterAction()
     if embedded_loop:
-      self._loop = gobject.MainLoop()
+      self._loop = GLib.MainLoop()
       self._loop.run()
 
   def _iterAction(self):
@@ -109,7 +112,7 @@ class MacroSequence(gobject.GObject):
                                            *self._anticipated_event_types)
     self._current_handler = action.connect('done', self._onStepDone)
 
-    gobject.timeout_add(action.delta_time, self._doAction, action)
+    GObject.timeout_add(action.delta_time, self._doAction, action)
 
   def _onAnticipatedEvent(self, event):
     '''

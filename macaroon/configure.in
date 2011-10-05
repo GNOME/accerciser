@@ -6,19 +6,6 @@ AM_MAINTAINER_MODE([enable])
 dnl == check for python ==
 AM_PATH_PYTHON(2.4)
 
-dnl == avoid running pyreqs during package building ==
-AC_MSG_CHECKING([whether to run pyreqs.py])
-AC_ARG_WITH(pyreqs,
-    [  --with-pyreqs           Build with Python module checks.],
-    with_pyreqs=$withval,
-    with_pyreqs=yes)
-AC_MSG_RESULT($with_pyreqs)
-if test "$with_pyreqs" = "yes"; then
-  dnl == check for required modules ==
-  AM_CHECK_PYSCRIPT($srcdir/pyreqs.py, , 
-    [AC_MSG_ERROR(Could not find required Python module)])
-fi
-
 dnl == i18n ==
 GETTEXT_PACKAGE=macaroon
 AC_SUBST(GETTEXT_PACKAGE)

@@ -11,9 +11,12 @@
 
 # Headers in this file shall remain intact.
 
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import Pango
+from gi.repository import GtkSource
+
 import script_factory
-import gtk, gobject
-import gtksourceview, pango
 from Queue import Queue
 from macaroon.playback import MacroSequence
 
@@ -33,7 +36,7 @@ class Main:
   start_tooltip = _('Record new keyboard macro')
   stop_tooltip = _('Stop recording macro')
   def __init__(self):
-    status_icon = gtk.status_icon_new_from_stock(gtk.STOCK_MEDIA_RECORD)
+    status_icon = Gtk.StatusIcon.new_from_stock(Gtk.STOCK_MEDIA_RECORD)
     status_icon.connect('activate', self._onActivate)
     status_icon.connect('popup-menu', self._onPopup)
     status_icon.set_tooltip(self.start_tooltip)
@@ -45,20 +48,20 @@ class Main:
     self.macro_preview = None
     # Get program ID
     global APP_ID
-    from gnome import program_get
-    _prog = program_get()
-    if _prog is not None:
-      APP_ID = _prog.get_app_id()
+#    from gnome import program_get
+#    _prog = program_get()
+#    if _prog is not None:
+#      APP_ID = _prog.get_app_id()
 
     pyatspi.Registry.start()
 
   def _onRecordChange(self, gobject, pspec, status_icon):
     is_recording = self.script_buffer.get_property('recording')
     if is_recording:
-      status_icon.set_from_stock(gtk.STOCK_MEDIA_STOP)
+      status_icon.set_from_stock(Gtk.STOCK_MEDIA_STOP)
       status_icon.set_tooltip(self.stop_tooltip)
     else:
-      status_icon.set_from_stock(gtk.STOCK_MEDIA_RECORD)
+      status_icon.set_from_stock(Gtk.STOCK_MEDIA_RECORD)
       status_icon.set_tooltip(self.start_tooltip)
 
   def _onActivate(self, status_icon):
@@ -83,19 +86,19 @@ class Main:
     <menuitem action="Quit" />
 </popup>
 </ui>'''
-    main_action_group = gtk.ActionGroup('MenuActions')
+    main_action_group = Gtk.ActionGroup('MenuActions')
     main_action_group.add_actions([
         ('ScriptType', None, 'Script type'),
-        ('Quit', gtk.STOCK_QUIT, _('_Quit'), None, None, self._onQuit),
-        ('About', gtk.STOCK_ABOUT, _('_About'), None, None, self._onAbout)])
-    ui_manager = gtk.UIManager()
+        ('Quit', Gtk.STOCK_QUIT, _('_Quit'), None, None, self._onQuit),
+        ('About', Gtk.STOCK_ABOUT, _('_About'), None, None, self._onAbout)])
+    ui_manager = Gtk.UIManager()
     ui_manager.add_ui_from_string(popup_ui)
     ui_manager.insert_action_group(main_action_group, 0)
     return ui_manager
 
   def _onPopup(self, status_icon, button, activate_time):
     menu = self.ui_manager.get_widget('/popup')
-    menu.popup(None, None, gtk.status_icon_position_menu, 
+    menu.popup(None, None, Gtk.status_icon_position_menu,
                button, activate_time, status_icon)
     
   def _onQuit(self, action):
@@ -106,46 +109,46 @@ class Main:
     Shows the about dialog.
 
     @param widget: The widget that emitted the signal that callback caught.
-    @type widget: L{gtk.Widget}
+    @type widget: L{Gtk.Widget}
     '''
     about = MacaroonAboutDialog()
     about.show_all()
 
 
-class MacroPreview(gtk.Window):
+class MacroPreview(Gtk.Window):
   def __init__(self, script_buffer):
-    gtk.Window.__init__(self)
+    GObject.GObject.__init__(self)
     self.set_title(_('Macro preview'))
     self.set_default_size(480, 720)
     self.set_border_width(6)
     self.connect('delete-event', self._onDelete)
     self.script_buffer = script_buffer
-    text_view = gtksourceview.SourceView(self.script_buffer)
+    text_view = GtkSource.View(self.script_buffer)
     text_view.set_editable(True)
     text_view.set_cursor_visible(True)
-    text_view.modify_font(pango.FontDescription('Mono'))
-    sw = gtk.ScrolledWindow()
-    sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-    sw.set_shadow_type(gtk.SHADOW_IN)
+    text_view.modify_font(Pango.FontDescription('Mono'))
+    sw = Gtk.ScrolledWindow()
+    sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+    sw.set_shadow_type(Gtk.ShadowType.IN)
     sw.add(text_view)
-    vbox = gtk.VBox()
+    vbox = Gtk.VBox()
     vbox.set_spacing(3)
-    vbox.pack_start(sw)
-    bbox = gtk.HButtonBox()
-    bbox.set_layout(gtk.BUTTONBOX_START)
-    for label, callback in [(gtk.STOCK_SAVE_AS, self._onSave),
-                            (gtk.STOCK_CLEAR, self._onClear),
-                            (gtk.STOCK_MEDIA_RECORD, self._onRecord),
-                            (gtk.STOCK_MEDIA_PLAY, self._onPlay)]:
-      button = gtk.Button(label)
+    vbox.pack_start(sw, True, True, 0)
+    bbox = Gtk.HButtonBox()
+    bbox.set_layout(Gtk.ButtonBoxStyle.START)
+    for label, callback in [(Gtk.STOCK_SAVE_AS, self._onSave),
+                            (Gtk.STOCK_CLEAR, self._onClear),
+                            (Gtk.STOCK_MEDIA_RECORD, self._onRecord),
+                            (Gtk.STOCK_MEDIA_PLAY, self._onPlay)]:
+      button = Gtk.Button(label)
       button.set_use_stock(True)
       button.connect('clicked', callback)
-      bbox.pack_start(button)
-      if label == gtk.STOCK_MEDIA_RECORD:
+      bbox.pack_start(button, True, True, 0)
+      if label == Gtk.STOCK_MEDIA_RECORD:
         self.script_buffer.connect('notify::recording', 
                                    self._onRecordChange, button)
     vbox.pack_start(bbox, False)
-    self.progress_bar = gtk.ProgressBar()
+    self.progress_bar = Gtk.ProgressBar()
     vbox.pack_start(self.progress_bar, False)
     self.add(vbox)
 
@@ -176,9 +179,9 @@ class MacroPreview(gtk.Window):
   def _onRecordChange(self, gobject, pspec, button):
     is_recording = self.script_buffer.get_property('recording')
     if is_recording:
-      button.set_label(gtk.STOCK_MEDIA_STOP)
+      button.set_label(Gtk.STOCK_MEDIA_STOP)
     else:
-      button.set_label(gtk.STOCK_MEDIA_RECORD)
+      button.set_label(Gtk.STOCK_MEDIA_RECORD)
 
   def _onDelete(self, window, event):
     if self._askLoseChanges():
@@ -192,18 +195,18 @@ class MacroPreview(gtk.Window):
     contents of script buffer.
     
     @param button: Button that was clicked.
-    @type button: gtk.Button
+    @type button: Gtk.Button
     '''
-    save_dialog = gtk.FileChooserDialog(
+    save_dialog = Gtk.FileChooserDialog(
       'Save recorded script',
-      action=gtk.FILE_CHOOSER_ACTION_SAVE,
-      buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-               gtk.STOCK_OK, gtk.RESPONSE_OK))
+      action=Gtk.FileChooserAction.SAVE,
+      buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+               Gtk.STOCK_OK, Gtk.ResponseType.OK))
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.set_default_response(gtk.RESPONSE_OK)
+    save_dialog.set_default_response(Gtk.ResponseType.OK)
     save_dialog.show_all()
     response = save_dialog.run()
-    if response == gtk.RESPONSE_OK:
+    if response == Gtk.ResponseType.OK:
       save_to = open(save_dialog.get_filename(), 'w')
       save_to.write(self.script_buffer.get_text(
           self.script_buffer.get_start_iter(),
@@ -217,7 +220,7 @@ class MacroPreview(gtk.Window):
     Callback for 'clear' button press.
     
     @param button: Button that was clicked.
-    @type button: gtk.Button
+    @type button: Gtk.Button
     '''
     if self._askLoseChanges():
       self.script_buffer.clearBuffer()
@@ -239,28 +242,28 @@ class MacroPreview(gtk.Window):
     '''
     if not self.script_buffer.get_modified():
       return True
-    dialog = gtk.MessageDialog(self.get_toplevel(), 0, gtk.MESSAGE_WARNING,
-                               gtk.BUTTONS_OK_CANCEL,
+    dialog = Gtk.MessageDialog(self.get_toplevel(), 0, Gtk.MessageType.WARNING,
+                               Gtk.ButtonsType.OK_CANCEL,
                                _('The current script will be lost.'))
     dialog.set_title(_('Confirm clear'))
     response_id = dialog.run()
     dialog.destroy()
-    if response_id == gtk.RESPONSE_OK:
+    if response_id == Gtk.ResponseType.OK:
       return True
     else:
       return False
 
-class ScriptBuffer(gtksourceview.SourceBuffer):
+class ScriptBuffer(GtkSource.Buffer):
   __gproperties__ = {
-    'recording': (gobject.TYPE_BOOLEAN, 
+    'recording': (GObject.TYPE_BOOLEAN,
                   'Is recording', 
                   'True if script buffer is recording',
-                  False, gobject.PARAM_READWRITE)}
+                  False, GObject.PARAM_READWRITE)}
   factory_mapping = {'Level1' : script_factory.Level1SequenceFactory,
                      'Level2' : script_factory.Level2SequenceFactory}
   def __init__(self, uimanager):
-    gtksourceview.SourceBuffer.__init__(self)
-    lm = gtksourceview.SourceLanguagesManager()
+    GtkSource.Buffer.__init__(self)
+    lm = GtkSource.LanguagesManager()
     lang = lm.get_language_from_mime_type('text/x-python')
     self.set_language(lang)
     self.set_highlight(True)
@@ -270,12 +273,12 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
     self._addToUIManager()
 
   def _addToUIManager(self):
-    self.script_type_actions = gtk.ActionGroup('ScriptTypes')
+    self.script_type_actions = Gtk.ActionGroup('ScriptTypes')
     self.script_type_actions.add_radio_actions(
         (('Level1', None, 'Level 1', None, None, 1),
          ('Level2', None, 'Level 2', None, None, 2)),
         2, self._onChange)
-    self._wait_for_focus_toggle = gtk.ToggleAction('WaitForFocus', 
+    self._wait_for_focus_toggle = Gtk.ToggleAction('WaitForFocus',
                                                    'Record focus events',
                                                    None, None)
     self._wait_for_focus_toggle.set_active(True)
@@ -442,17 +445,17 @@ class ScriptBuffer(gtksourceview.SourceBuffer):
 
 class _FakeDeviceEvent(object):
   def __init__(self, key_combo, type):
-    id = gtk.gdk.keyval_from_name(key_combo)
-    if gtk.gdk.keyval_from_name(key_combo):
+    id = Gdk.keyval_from_name(key_combo)
+    if Gdk.keyval_from_name(key_combo):
       modifiers = 0
     else:
-      id, modifiers = gtk.accelerator_parse(key_combo)
-    keymap = gtk.gdk.keymap_get_default()
+      id, modifiers = Gtk.accelerator_parse(key_combo)
+    keymap = Gdk.keymap_get_default()
     map_entry = keymap.get_entries_for_keyval(65471)
     self.type = type
     self.id = id
     self.hw_code = map_entry[0][0]
     self.modifiers = int(modifiers)
     self.timestamp = 0
-    self.event_string = gtk.gdk.keyval_name(id)
+    self.event_string = Gdk.keyval_name(id)
     self.is_text = True
