@@ -39,7 +39,7 @@ class Main:
     status_icon = Gtk.StatusIcon.new_from_stock(Gtk.STOCK_MEDIA_RECORD)
     status_icon.connect('activate', self._onActivate)
     status_icon.connect('popup-menu', self._onPopup)
-    status_icon.set_tooltip(self.start_tooltip)
+    status_icon.set_tooltip_text(self.start_tooltip)
     self.ui_manager = self._newUIManager()
     self.script_buffer = ScriptBuffer(self.ui_manager)
     self.script_buffer.clearBuffer()
@@ -59,10 +59,10 @@ class Main:
     is_recording = self.script_buffer.get_property('recording')
     if is_recording:
       status_icon.set_from_stock(Gtk.STOCK_MEDIA_STOP)
-      status_icon.set_tooltip(self.stop_tooltip)
+      status_icon.set_tooltip_text(self.stop_tooltip)
     else:
       status_icon.set_from_stock(Gtk.STOCK_MEDIA_RECORD)
-      status_icon.set_tooltip(self.start_tooltip)
+      status_icon.set_tooltip_text(self.start_tooltip)
 
   def _onActivate(self, status_icon):
     is_recording = self.script_buffer.get_property('recording')
@@ -98,7 +98,7 @@ class Main:
 
   def _onPopup(self, status_icon, button, activate_time):
     menu = self.ui_manager.get_widget('/popup')
-    menu.popup(None, None, Gtk.status_icon_position_menu,
+    menu.popup(None, None, Gtk.status_icon_position_menu, 
                button, activate_time, status_icon)
     
   def _onQuit(self, action):
@@ -255,7 +255,7 @@ class MacroPreview(Gtk.Window):
 
 class ScriptBuffer(GtkSource.Buffer):
   __gproperties__ = {
-    'recording': (GObject.TYPE_BOOLEAN,
+    'recording': (GObject.TYPE_BOOLEAN, 
                   'Is recording', 
                   'True if script buffer is recording',
                   False, GObject.PARAM_READWRITE)}
@@ -263,10 +263,10 @@ class ScriptBuffer(GtkSource.Buffer):
                      'Level2' : script_factory.Level2SequenceFactory}
   def __init__(self, uimanager):
     GtkSource.Buffer.__init__(self)
-    lm = GtkSource.LanguagesManager()
-    lang = lm.get_language_from_mime_type('text/x-python')
+    lm = GtkSource.LanguageManager()
+    lang = lm.guess_language(None, 'text/x-python')
     self.set_language(lang)
-    self.set_highlight(True)
+    self.set_highlight_syntax(True)
     self.script_factory = self.factory_mapping['Level2'](True)
     self._recording = False
     self._uimanager = uimanager
@@ -278,7 +278,7 @@ class ScriptBuffer(GtkSource.Buffer):
         (('Level1', None, 'Level 1', None, None, 1),
          ('Level2', None, 'Level 2', None, None, 2)),
         2, self._onChange)
-    self._wait_for_focus_toggle = Gtk.ToggleAction('WaitForFocus',
+    self._wait_for_focus_toggle = Gtk.ToggleAction('WaitForFocus', 
                                                    'Record focus events',
                                                    None, None)
     self._wait_for_focus_toggle.set_active(True)
