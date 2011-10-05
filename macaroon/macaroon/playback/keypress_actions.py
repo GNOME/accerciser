@@ -270,7 +270,10 @@ class TypeAction(AtomicAction):
     @param keyval: Key code to type.
     @type keyval: intger
     '''
-    key_code, group, level = utils.keymap.get_entries_for_keyval(keyval)[0]
+    success, entries = keymap.get_entries_for_keyval(keyval)
+    entry = [(int(i.keycode), i.group, i.level) for i in entries]
+    key_code, group, level = entry[0]
+    #key_code, group, level = utils.keymap.get_entries_for_keyval(keyval)[0]
     if level == 1:
         pyatspi.Registry.generateKeyboardEvent(50, None, 
                                                pyatspi.KEY_PRESS)
