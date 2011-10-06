@@ -147,9 +147,9 @@ class MacroPreview(Gtk.Window):
       if label == Gtk.STOCK_MEDIA_RECORD:
         self.script_buffer.connect('notify::recording', 
                                    self._onRecordChange, button)
-    vbox.pack_start(bbox, False)
+    vbox.pack_start(bbox, False, False, 0)
     self.progress_bar = Gtk.ProgressBar()
-    vbox.pack_start(self.progress_bar, False)
+    vbox.pack_start(self.progress_bar, False, False, 0)
     self.add(vbox)
 
   def _onPlay(self, button):
