@@ -123,7 +123,7 @@ class MacroPreview(Gtk.Window):
     self.set_border_width(6)
     self.connect('delete-event', self._onDelete)
     self.script_buffer = script_buffer
-    text_view = GtkSource.View(self.script_buffer)
+    text_view = GtkSource.View.new_with_buffer(self.script_buffer)
     text_view.set_editable(True)
     text_view.set_cursor_visible(True)
     text_view.modify_font(Pango.FontDescription('Mono'))
