@@ -98,9 +98,9 @@ class Main:
 
   def _onPopup(self, status_icon, button, activate_time):
     menu = self.ui_manager.get_widget('/popup')
-    menu.popup(None, None, Gtk.status_icon_position_menu, 
+    menu.popup(None, None, Gtk.StatusIcon.position_menu,
                button, activate_time, status_icon)
-    
+ 
   def _onQuit(self, action):
     pyatspi.Registry.stop()
 
