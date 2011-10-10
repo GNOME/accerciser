@@ -1,25 +1,31 @@
 # Telugu translation of accerciser.
-# Copyright (C) 2007 Swecha Telugu Localisation Team <localisation@swecha.org>.
+# Copyright (C) 2005,2006,2007,2008,2009,2010,2011 Swecha Telugu Localisation Team <localization@swecha.net>.
 # This file is distributed under the same license as the accerciser package.
 # Kiran Chandra <kiran@swecha.net>, 2007.
-# 
+# Sasi Bhushan <sasi@swecha.net>, 2011
+# Krishna Babu K <kkrothap@redhat.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-07 00:36+0530\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-07-04 12:27+0000\n"
 "PO-Revision-Date: 2007-07-26 12:14+0530\n"
-"Last-Translator: Kiran Chandra <kiran@swecha.net>\n"
-"Language-Team: Swecha Telugu Localisation Team <localisation@swecha.org>\n"
+"Last-Translator: Sasi Bhushan <sasi@swecha.net>\n"
+"Language-Team: Swecha Telugu Localisation Team <localization@swecha.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../accerciser.desktop.in.in.h:1
-msgid "Accerciser Accessibility Explorer"
-msgstr "Accerciser అందుబాటు అన్వేషి "
+msgid "Accerciser"
+msgstr "ఎక్సర్ సైజర్"
 
-#: ../accerciser.desktop.in.in.h:2
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+msgid "Accerciser Accessibility Explorer"
+msgstr "ఎక్సర్ సైజర్  అందుబాటు అన్వేషి "
+
+#: ../accerciser.desktop.in.in.h:3
 msgid "Give your application an accessibility workout"
 msgstr "మీ కార్యక్షేత్రముకు అందుబాటు రూపమివ్వండి"
 
@@ -28,12 +34,36 @@ msgid "A list of plugins that are disabled by default"
 msgstr "అప్రమేయంగా క్రియాహీనంచేసిన ప్లగిన్ల జాబితా"
 
 #: ../accerciser.schemas.in.h:2
+msgid "Highlight border color"
+msgstr "అంచు రంగును  గుర్తించ దగినదిగా"
+
+#: ../accerciser.schemas.in.h:3
+msgid "Highlight duration"
+msgstr "వ్యవధిని  ప్రాముఖ్యత గల్గినదిగా"
+
+#: ../accerciser.schemas.in.h:4
+msgid "Highlight fill color"
+msgstr "రంగు పూరించుట  ప్రాముఖ్యతగల్గినదిగా"
+
+#: ../accerciser.schemas.in.h:5
+msgid "The color and opacity of the highlight border."
+msgstr "అపారదర్శక మరియు  అంచును ప్రాముఖ్యత కల్గినదిగా చేసే రంగు  "
+
+#: ../accerciser.schemas.in.h:6
+msgid "The color and opacity of the highlight fill."
+msgstr "పూరించుటను ప్రాముఖ్యత కల్గినదిగా చేసే   అపారదర్శక  రంగు  "
+
+#: ../accerciser.schemas.in.h:7
 msgid "The default plugin layout for the bottom panel"
 msgstr "దిగువ పలుకకు అప్రమేయ ప్లగిన్ సమకూర్పు"
 
-#: ../accerciser.schemas.in.h:3
+#: ../accerciser.schemas.in.h:8
 msgid "The default plugin layout for the top panel"
 msgstr "పైన పలక కొరకు అప్రమేయ ప్లగిన్ కూర్పు"
+
+#: ../accerciser.schemas.in.h:9
+msgid "The duration of the highlight box when selecting accessible nodes"
+msgstr "అందుబాటులో ఉన్న కణుపులను ఎంచుకొన్నపుడు     ప్రాముఖ్యత గల్గిన పెట్టె యెక్క   వ్యవధి"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -41,7 +71,7 @@ msgstr "API అన్వేషి "
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "ప్రస్థుత అందుబాటులోని వివిధ పద్దతులను అన్వెషించు"
+msgstr "ప్రస్థుత అందుబాటులోని వివిధ పద్దతులను అన్వేషించు"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -61,471 +91,596 @@ msgstr "విలువ"
 
 #: ../plugins/console.py:29
 msgid "IPython Console"
-msgstr "IPython కన్సొల్  "
+msgstr "ఐ పైథాన్  కన్సొల్  "
 
 #: ../plugins/console.py:32
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "ప్రస్థుతం ఎంచుకున్న అందుబాట్లకు మార్పులు చేర్పులు చేయుటకు ఆదాన్న ప్రదాన్న కన్సోలు"
+msgstr "ప్రస్తుతం ఎంచుకున్న అందుబాట్లకు మార్పులు చేర్పులు చేయుటకు ఆదాన్న ప్రదాన్న కన్సోలు"
 
-#: ../plugins/event_monitor.glade.h:1
+#: ../plugins/event_monitor.ui.h:1
 msgid "<b>Event monitor</b>"
 msgstr "<b>ఘటన దర్శని</b>"
 
-#: ../plugins/event_monitor.glade.h:2
+#: ../plugins/event_monitor.ui.h:2
 msgid "C_lear Selection"
-msgstr "ఎంపికను చె_రుపు"
+msgstr "ఎంపికను చెరుపు (_l)"
 
-#: ../plugins/event_monitor.glade.h:3
+#: ../plugins/event_monitor.ui.h:3
 msgid "Everything"
 msgstr "అన్నీ"
 
-#: ../plugins/event_monitor.glade.h:4
+#: ../plugins/event_monitor.ui.h:4
 msgid "Selected accessible"
 msgstr "ఎంచిన సాంగత్యాలు"
 
-#: ../plugins/event_monitor.glade.h:5
+#: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "ఎంచిన కార్యక్షేత్రము"
 
-#: ../plugins/event_monitor.glade.h:6
+#: ../plugins/event_monitor.ui.h:6
 msgid "Source"
 msgstr "మూలం"
 
-#: ../plugins/event_monitor.glade.h:7
+#: ../plugins/event_monitor.ui.h:7
 msgid "_Monitor Events"
-msgstr "ఘటనలను _పర్యవేక్షించు"
+msgstr "ఘటనలను పర్యవేక్షించు (_M)"
 
-#: ../plugins/event_monitor.glade.h:8 ../plugins/interface_view.glade.h:66
-#: ../plugins/script_recorder.glade.h:5
-msgid "gtk-clear"
-msgstr "gtk-చెరుపు"
-
-#: ../plugins/event_monitor.glade.h:9 ../plugins/script_recorder.glade.h:7
-msgid "gtk-save"
-msgstr "gtk-దాచు "
-
-#: ../plugins/event_monitor.glade.h:10
-msgid "gtk-select-all"
-msgstr "gtk-అన్నింటినీ ఎంచు"
-
-#: ../plugins/event_monitor.py:52
+#: ../plugins/event_monitor.py:48
 msgid "Event Monitor"
 msgstr "ఘటన పర్యవేక్షి"
 
-#: ../plugins/event_monitor.py:55
+#: ../plugins/event_monitor.py:51
 msgid "Shows events as they occur from selected types and sources"
 msgstr "ఎంచిన రకాలు మరియు మూలాల నుండి వస్తున్న ఘటనలను చూపించు"
 
-#: ../plugins/event_monitor.py:65
+#: ../plugins/event_monitor.py:61
 msgid "Highlight last event entry"
 msgstr "చివరి ఘటనా ప్రవేశాన్ని ఉద్దీపనంచేయు"
 
-#: ../plugins/event_monitor.py:110 ../plugins/interface_view.py:450
-#: ../plugins/interface_view.py:733
-#: ../src/lib/accerciser/accessible_treeview.py:388
+#: ../plugins/event_monitor.py:64
+msgid "Start/stop event recording"
+msgstr "సంఘటన నమోదు ఆరంభించు/నిలుపు"
+
+#: ../plugins/event_monitor.py:67
+msgid "Clear event log"
+msgstr "ఎంపికను చెరుపు"
+
+#: ../plugins/interface_view.ui.h:1
+msgid "0"
+msgstr "0"
+
+#. Component                                 size
+#: ../plugins/interface_view.ui.h:3
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:4
+msgid "<b>Attributes</b>"
+msgstr "<b>ఆపాదనలు </b>"
+
+#: ../plugins/interface_view.ui.h:5
+msgid "<b>Child count</b>"
+msgstr "<b>శిసు సంఖ్య</b>"
+
+#: ../plugins/interface_view.ui.h:6
+msgid "<b>Description</b>"
+msgstr "<b>వివరణ</b>"
+
+#: ../plugins/interface_view.ui.h:7
+msgid "<b>Relations</b>"
+msgstr "<b>బాంధవ్యాలు</b>"
+
+#: ../plugins/interface_view.ui.h:8
+msgid "<b>Selected Cell</b>"
+msgstr "<b>ఎంచిన కణం</b>"
+
+#: ../plugins/interface_view.ui.h:9
+msgid "<b>States</b>"
+msgstr "<b>స్థితులు</b>"
+
+#: ../plugins/interface_view.ui.h:10
+msgid "<b>Table Information</b>"
+msgstr "<b>పట్టిక సమాచారం</b>"
+
+#: ../plugins/interface_view.ui.h:11
+msgid "<b>Text</b>"
+msgstr "<b>పాఠము</b>"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "<b>unknown</b>"
+msgstr "<b>తెలియని</b>"
+
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
+#: ../plugins/interface_view.py:827
+msgid "<i>(no description)</i>"
+msgstr "<i>(వివరణ లేదు)</i>"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "<i>Caption:</i>"
+msgstr "<i>శీర్షిక:</i>"
+
+#. End chaacter                                                 offset of text attributes span
+#: ../plugins/interface_view.ui.h:16
+msgid "<i>End: 0</i>"
+msgstr "<i>చివర: 0</i>"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:18
+msgid "<i>Start: 0</i>"
+msgstr "<i>మొదలు: 0</i>"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "<i>Summary:</i>"
+msgstr "<i>సంక్షిప్తం:</i>"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "<no description>"
+msgstr "<వివరణ లేదు>"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "Absolute position"
+msgstr "నికర స్థానము"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Acti_on"
+msgstr "క్రియ (_o)"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "Alpha"
+msgstr "ఆల్ఫా"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Ap_plication"
+msgstr "కార్యక్షేత్రము (_p)"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Co_mponent"
+msgstr "అంశము (_m)"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Col_lection"
+msgstr "కలెక్షన్(_l)"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Column"
+msgstr "నిలువు పట్టీ"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Columns"
+msgstr "నిలువు పట్టీలు"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "Current value"
+msgstr "ప్రస్థుత విలువ"
+
+#: ../plugins/interface_view.ui.h:30
+msgid "Des_ktop"
+msgstr "రంగస్థలం (_k)"
+
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
+#: ../plugins/validate.py:277
+msgid "Description"
+msgstr "వివరణ"
+
+#. How many columns the cell spans.
+#: ../plugins/interface_view.ui.h:33
+msgid "Extents:"
+msgstr "పరిమితులు:"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "H_ypertext"
+msgstr "అమిత పాఠము (_y)"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Header:"
+msgstr "పీఠిక:"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+msgid "Hyperlink"
+msgstr "మహాతలానికి జొడింపు"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "ID"
+msgstr "గుచి"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "Include defaults"
+msgstr "అప్రమేయాలను జోడించు"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Layer"
+msgstr "పొర"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Lo_gin Helper"
+msgstr "ప్రవేశించునపుడు సహాయకి (_g)"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Locale"
+msgstr "ప్రాంతీయ"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Locale:"
+msgstr "ప్రాంతీయ:"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "MDI-Z-order"
+msgstr "MDI-Z-క్రమం"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Maximum value"
+msgstr "అత్యధిక విలువ"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Minimum increment"
+msgstr "అత్యల్ప పెరుగుదల"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "Minimum value"
+msgstr "అత్యల్ప విలువ"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Offset"
+msgstr "ఆఫ్ సెట్"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "Perform action"
+msgstr "కార్యమును చేయు "
+
+#: ../plugins/interface_view.ui.h:49
+msgid "Position"
+msgstr "స్థానము"
+
+#: ../plugins/interface_view.ui.h:50
+msgid "Relative position"
+msgstr "సాపేక్ష స్థానము"
+
+#: ../plugins/interface_view.ui.h:51
+msgid "Row"
+msgstr "అడ్డ పట్టీ"
+
+#: ../plugins/interface_view.ui.h:52
+msgid "Rows"
+msgstr "అడ్డ పట్టీలు"
+
+#: ../plugins/interface_view.ui.h:53
+msgid "Select All"
+msgstr "అన్నింటినీ ఎంచు"
+
+#: ../plugins/interface_view.ui.h:54
+msgid "Selected columns"
+msgstr "ఎంచిన నిలువు పట్టీలు"
+
+#: ../plugins/interface_view.ui.h:55
+msgid "Selected rows"
+msgstr "ఎంచిన అడ్డపట్టీలు"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Show"
+msgstr "చూపు"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Size"
+msgstr "పరిమాణం"
+
+#: ../plugins/interface_view.ui.h:58
+msgid "St_reamable Content"
+msgstr "వరుసలో పెట్టగల సారము(_r) "
+
+#: ../plugins/interface_view.ui.h:59
+msgid "Te_xt"
+msgstr "పాఠము (_x)"
+
+#: ../plugins/interface_view.ui.h:60
+msgid "Toolkit"
+msgstr "పనిముట్ల సంచి"
+
+#: ../plugins/interface_view.ui.h:61
+msgid "Val_ue"
+msgstr "విలువ (_u)"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Version"
+msgstr "వివరణం"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "WIDGET"
+msgstr "విడ్జెట్"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "_Accessible"
+msgstr "అందుబాటు (_A)"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "_Document"
+msgstr "పత్రము (_D)"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "_Image"
+msgstr "ప్రతిరూపము (_I)"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "_Selection"
+msgstr "ఎంపిక (_S)"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "_Table"
+msgstr "పట్టిక (_T)"
+
+#: ../plugins/interface_view.ui.h:69
+msgid "name (x,y)"
+msgstr "నామము (x,y)"
+
+#. Translators: this is a plugin name
+#: ../plugins/interface_view.py:38
+msgid "Interface Viewer"
+msgstr "సంవిధాన దర్శిని"
+
+#. Translators: this is a plugin description
+#: ../plugins/interface_view.py:41
+msgid "Allows viewing of various interface properties"
+msgstr "వివిధ సంవిధాన లక్షణాలను దర్శించుటకు అనుమతిస్తుంది"
+
+#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
+#: ../plugins/interface_view.py:232
+msgid "(not implemented)"
+msgstr " (అమలు చేయలేదు)"
+
+#. add accessible's name to buffer
+#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
+#: ../src/lib/accerciser/accessible_treeview.py:389
 #: ../src/lib/accerciser/plugin/plugin_manager.py:369
 msgid "Name"
 msgstr "నామము"
 
-#: ../plugins/event_monitor.py:119
-msgid "Full name"
-msgstr "పూర్తి నామము"
-
-#: ../plugins/interface_view.glade.h:1
-msgid "0"
-msgstr "0"
-
-#: ../plugins/interface_view.glade.h:2
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.glade.h:3
-msgid "1.0"
-msgstr "1.0"
-
-#: ../plugins/interface_view.glade.h:4
-msgid "<b>Attributes</b>"
-msgstr "<b>ఆపాదనలు </b>"
-
-#: ../plugins/interface_view.glade.h:5
-msgid "<b>Child count</b>"
-msgstr "<b>శిసు సంఖ్య</b>"
-
-#: ../plugins/interface_view.glade.h:6
-msgid "<b>Description</b>"
-msgstr "<b>వివరణ</b>"
-
-#: ../plugins/interface_view.glade.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>బాంధవ్యాలు</b>"
-
-#: ../plugins/interface_view.glade.h:8
-msgid "<b>Selected Cell</b>"
-msgstr "<b>ఎంచిన కణం</b>"
-
-#: ../plugins/interface_view.glade.h:9
-msgid "<b>States</b>"
-msgstr "<b>స్థితులు</b>"
-
-#: ../plugins/interface_view.glade.h:10
-msgid "<b>Table Information</b>"
-msgstr "<b>పట్టిక సమాచారం</b>"
-
-#: ../plugins/interface_view.glade.h:11
-msgid "<b>Text</b>"
-msgstr "<b>పాఠము</b>"
-
-#: ../plugins/interface_view.glade.h:12
-msgid "<b>unknown</b>"
-msgstr "<b>తెలియని</b>"
-
-#: ../plugins/interface_view.glade.h:13 ../plugins/interface_view.py:318
-#: ../plugins/interface_view.py:857
-msgid "<i>(no description)</i>"
-msgstr "<i>(వివరణ లేదు)</i>"
-
-#: ../plugins/interface_view.glade.h:14
-msgid "<i>Caption:</i>"
-msgstr "<i>శీర్షిక:</i>"
-
-#: ../plugins/interface_view.glade.h:15
-msgid "<i>End: 0</i>"
-msgstr "<i>చివర: 0</i>"
-
-#: ../plugins/interface_view.glade.h:16
-msgid "<i>Start: 0</i>"
-msgstr "<i>మొదలు: 0</i>"
-
-#: ../plugins/interface_view.glade.h:17
-msgid "<i>Summary:</i>"
-msgstr "<i>సంక్షిప్తం:</i>"
-
-#: ../plugins/interface_view.glade.h:18
-msgid "<no description>"
-msgstr "<వివరణ లేదు>"
-
-#: ../plugins/interface_view.glade.h:19
-msgid "Absolute position"
-msgstr "నికర స్థానము"
-
-#: ../plugins/interface_view.glade.h:20
-msgid "Acti_on"
-msgstr "క్రి_య"
-
-#: ../plugins/interface_view.glade.h:21
-msgid "Alpha"
-msgstr "ఆల్ఫా"
-
-#: ../plugins/interface_view.glade.h:22
-msgid "Ap_plication"
-msgstr "కార్యక్షేత్ర_ము"
-
-#: ../plugins/interface_view.glade.h:23
-msgid "Co_mponent"
-msgstr "అం_శము"
-
-#: ../plugins/interface_view.glade.h:24
-msgid "Col_lection"
-msgstr "కలెక్షన్(_l)"
-
-#: ../plugins/interface_view.glade.h:25
-msgid "Column"
-msgstr "నిలువు పట్టీ"
-
-#: ../plugins/interface_view.glade.h:26
-msgid "Columns"
-msgstr "నిలువు పట్టీలు"
-
-#: ../plugins/interface_view.glade.h:27
-msgid "Current value"
-msgstr "ప్రస్థుత విలువ"
-
-#: ../plugins/interface_view.glade.h:28
-msgid "Des_ktop"
-msgstr "రం_గస్థలం"
-
-#: ../plugins/interface_view.glade.h:29 ../plugins/interface_view.py:455
-msgid "Description"
-msgstr "వివరణ"
-
-#: ../plugins/interface_view.glade.h:30
-msgid "Extents:"
-msgstr "పరిమితులు:"
-
-#: ../plugins/interface_view.glade.h:31
-msgid "H_ypertext"
-msgstr "అమిత పాఠము"
-
-#: ../plugins/interface_view.glade.h:32
-msgid "Header:"
-msgstr "పీఠిక:"
-
-#: ../plugins/interface_view.glade.h:33
-msgid "Hyperlink"
-msgstr "మహాతలానికి జొడింపు"
-
-#: ../plugins/interface_view.glade.h:34
-msgid "ID"
-msgstr "గుచి"
-
-#: ../plugins/interface_view.glade.h:35
-msgid "Include defaults"
-msgstr "అప్రమేయాలను జోడించు"
-
-#: ../plugins/interface_view.glade.h:36
-msgid "Layer"
-msgstr "పొర"
-
-#: ../plugins/interface_view.glade.h:37
-msgid "Lo_gin Helper"
-msgstr "ప్రవేశించునపుడు సహాయకి"
-
-#: ../plugins/interface_view.glade.h:38
-msgid "Locale"
-msgstr "ప్రాంతీయ"
-
-#: ../plugins/interface_view.glade.h:39
-msgid "Locale:"
-msgstr "ప్రాంతీయ:"
-
-#: ../plugins/interface_view.glade.h:40
-msgid "MDI-Z-order"
-msgstr "MDI-Z-క్రమం"
-
-#: ../plugins/interface_view.glade.h:41
-msgid "Maximum value"
-msgstr "అత్యధిక విలువ"
-
-#: ../plugins/interface_view.glade.h:42
-msgid "Minimum increment"
-msgstr "అత్యల్ప పెరుగుదల"
-
-#: ../plugins/interface_view.glade.h:43
-msgid "Minimum value"
-msgstr "అత్యల్ప విలువ"
-
-#: ../plugins/interface_view.glade.h:44
-msgid "Offset"
-msgstr "ఆఫ్ సెట్"
-
-#: ../plugins/interface_view.glade.h:45
-msgid "Perform action"
-msgstr "కార్యమును చేయు "
-
-#: ../plugins/interface_view.glade.h:46
-msgid "Position"
-msgstr "స్థానము"
-
-#: ../plugins/interface_view.glade.h:47
-msgid "Relative position"
-msgstr "సాపేక్ష స్థానము"
-
-#: ../plugins/interface_view.glade.h:48
-msgid "Row"
-msgstr "అడ్డ పట్టీ"
-
-#: ../plugins/interface_view.glade.h:49
-msgid "Rows"
-msgstr "అడ్డ పట్టీలు"
-
-#: ../plugins/interface_view.glade.h:50
-msgid "Select All"
-msgstr "అన్నింటినీ ఎంచు"
-
-#: ../plugins/interface_view.glade.h:51
-msgid "Selected columns"
-msgstr "ఎంచిన నిలువు పట్టీలు"
-
-#: ../plugins/interface_view.glade.h:52
-msgid "Selected rows"
-msgstr "ఎంచిన అడ్డపట్టీలు"
-
-#: ../plugins/interface_view.glade.h:53
-msgid "Show"
-msgstr "చూపు"
-
-#: ../plugins/interface_view.glade.h:54
-msgid "Size"
-msgstr "పరిమాణం"
-
-#: ../plugins/interface_view.glade.h:55
-msgid "St_reamable Content"
-msgstr "వరుసలో పెట్టగల సారము(_r) "
-
-#: ../plugins/interface_view.glade.h:56
-msgid "Te_xt"
-msgstr "పా_ఠము"
-
-#: ../plugins/interface_view.glade.h:57
-msgid "Toolkit"
-msgstr "పనిముట్ల సంచి"
-
-#: ../plugins/interface_view.glade.h:58
-msgid "Val_ue"
-msgstr "విలు_వ"
-
-#: ../plugins/interface_view.glade.h:59
-msgid "Version"
-msgstr "వివరణం"
-
-#: ../plugins/interface_view.glade.h:60
-msgid "WIDGET"
-msgstr "విడ్జెట్"
-
-#: ../plugins/interface_view.glade.h:61
-msgid "_Accessible"
-msgstr "_అందుబాటు"
-
-#: ../plugins/interface_view.glade.h:62
-msgid "_Document"
-msgstr "_పత్రము"
-
-#: ../plugins/interface_view.glade.h:63
-msgid "_Image"
-msgstr "_ప్రతిరూపము"
-
-#: ../plugins/interface_view.glade.h:64
-msgid "_Selection"
-msgstr "_ఎంపిక"
-
-#: ../plugins/interface_view.glade.h:65
-msgid "_Table"
-msgstr "_పట్టిక"
-
-#: ../plugins/interface_view.glade.h:67
-msgid "name (x,y)"
-msgstr "నామము (x,y)"
-
-#: ../plugins/interface_view.py:35
-msgid "Interface Viewer"
-msgstr "సంవిధాన దర్శిని"
-
-#: ../plugins/interface_view.py:37
-msgid "Allows viewing of various interface properties"
-msgstr "వివిధ సంవిధాన లక్షణాలను దర్శించుటకు అనుమతిస్తుంది"
-
-#: ../plugins/interface_view.py:185 ../plugins/interface_view.py:186
-#: ../plugins/interface_view.py:187
-msgid " (not implemented)"
-msgstr " (అమలు చేయలేదు)"
-
-#: ../plugins/interface_view.py:460
-msgid "Key binding"
-msgstr "మీట అనుసంధానం"
-
-#: ../plugins/interface_view.py:740 ../plugins/interface_view.py:1024
+#: ../plugins/interface_view.py:710
 msgid "URI"
 msgstr "యుఆర్ఎల్"
 
-#: ../plugins/interface_view.py:747
+#: ../plugins/interface_view.py:717
 msgid "Start"
 msgstr "ప్రారంభించు"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:724
 msgid "End"
 msgstr "ముగింపు"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:885
 msgid "Too many selectable children"
 msgstr "ఎంపికకు చాలా ఎక్కువ శిసువులు"
 
-#: ../plugins/interface_view.py:1019
-msgid "Content type"
-msgstr "సారము రకం"
-
-#: ../plugins/interface_view.py:1295 ../plugins/interface_view.py:1297
-msgid " <i>(Editable)</i>"
+#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
+msgid "<i>(Editable)</i>"
 msgstr " <i>(సరిచూడ దగిన)</i>"
 
 #: ../plugins/quick_select.py:11
 msgid "Quick Select"
-msgstr ""
+msgstr "వేగమైన ఏరిక"
 
 #: ../plugins/quick_select.py:14
-#, fuzzy
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "ప్రస్థుత అందుబాటులోని వివిధ పద్దతులను అన్వెషించు"
 
 #: ../plugins/quick_select.py:20
-#, fuzzy
 msgid "Inspect last focused accessible"
 msgstr "ఎంచిన సాంగత్యాలు"
 
 #: ../plugins/quick_select.py:24
 msgid "Inspect accessible under mouse"
-msgstr ""
+msgstr "మౌస్ కు  అందుబాటులో వున్న వాటిని శోధించుము"
 
-#: ../plugins/script_recorder.glade.h:1
-msgid "Dogtail"
-msgstr "కుక్కతోక"
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
+#: ../plugins/validate.py:412
+msgid "Idle"
+msgstr "తీరిక"
 
-#: ../plugins/script_recorder.glade.h:2
-msgid "LDTP"
-msgstr "ఎల్డిటిపి"
+#: ../plugins/validate.ui.h:2
+msgid "Sche_ma:"
+msgstr "ముఖ్యాంశ సూచిక (_m)"
 
-#: ../plugins/script_recorder.glade.h:3
-msgid "Native"
-msgstr "సొంత"
+#: ../plugins/validate.ui.h:3
+msgid "V_alidate"
+msgstr "ధృవీకరించు (_a)"
 
-#: ../plugins/script_recorder.glade.h:4
-msgid "Script Type"
-msgstr "లిపి రకము"
+#: ../plugins/validate.py:64
+msgid "No description"
+msgstr "వివరణ లేదు"
 
-#: ../plugins/script_recorder.glade.h:6
-msgid "gtk-media-record"
-msgstr "gtk-మాధ్యమ-రికార్డు"
+#: ../plugins/validate.py:152
+msgid "AT-SPI Validator"
+msgstr "ఎటి-ఎస్ పిఐ  సాధికారం చేయునది(సాధికారి) "
 
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "లిపి నమోదు చేయునది"
+#: ../plugins/validate.py:154
+msgid "Validates application accessibility"
+msgstr "మీ కార్యక్షేత్రముకు అందుబాటు రూపమివ్వండి"
 
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "కుక్కతోక శైలి లిపిలను సృష్టిస్తుంది"
+#. log level column
+#. add level to buffer
+#: ../plugins/validate.py:207 ../plugins/validate.py:275
+msgid "Level"
+msgstr " క్రమము"
 
-#: ../plugins/script_recorder.py:340
-msgid "The current script will be lost."
-msgstr "ప్రస్థుత లిపి పోతుంది"
+#. add accessible's role to buffer
+#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+msgid "Role"
+msgstr "పాత్ర"
 
-#: ../plugins/script_recorder.py:341
-msgid "Confirm clear"
-msgstr "చెరపమంటారా"
+#: ../plugins/validate.py:346
+msgid "Saving"
+msgstr "దాస్తున్న"
 
-#: ../src/lib/accerciser/accerciser.py:94
-msgid "_Preferences..."
-msgstr "_అభీష్టాలు..."
+#: ../plugins/validate.py:394
+msgid "Validating"
+msgstr "ధృవీకరిస్తున్న"
 
-#: ../src/lib/accerciser/accerciser.py:96
-msgid "_Contents"
-msgstr "_సారములు"
+#: ../plugins/validate.py:550
+msgid "EXCEPT"
+msgstr "మినహాయించు"
 
-#: ../src/lib/accerciser/accerciser.py:133
+#: ../plugins/validate.py:557
+msgid "ERROR"
+msgstr "పొరపాటు"
+
+#: ../plugins/validate.py:565
+msgid "WARN"
+msgstr "హెచ్చరిక"
+
+#: ../plugins/validate.py:572
+msgid "INFO"
+msgstr "సమాచారము"
+
+#: ../plugins/validate.py:579
+msgid "DEBUG"
+msgstr "తప్పులను విశదీకరించు"
+
+#: ../plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "మూలమైన"
+
+#: ../plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "మీ కార్యక్షేత్రముకు అందుబాటు రూపమివ్వండి"
+
+#: ../plugindata/validate/basic.py:28
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "చర్య జరపాల్సిన  %s కేంద్రీకరణ   లేదా ఎంపిక కుదరడం లేదు"
+
+#: ../plugindata/validate/basic.py:46
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "అనుసంధాన %s అనునది  చర్యారహితమైనది"
+
+#: ../plugindata/validate/basic.py:61
+msgid "more than one focused widget"
+msgstr "ఒకటి కంటే ఎక్కువ కేంద్రీకరించబడిన సాధనాలు"
+
+#: ../plugindata/validate/basic.py:87
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s కి ఎటువంటి పాఠ సంవిధానము లేదు"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: ../plugindata/validate/basic.py:107
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s మాతృసూచిక, శిశు సూచికతో  సరిపోలటం లేదు"
+
+#: ../plugindata/validate/basic.py:153
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "%s కి  పరస్పరమైన  సంబంధము  కనపడుటలేదు"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: ../plugindata/validate/basic.py:202
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s కు  నామము లేదా  చీటి  లేదు"
+
+#: ../plugindata/validate/basic.py:220
+#, python-format
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr "కేంద్రమునకు వచ్చే  %s కు   పట్టిక   సంవిధానము వుంది, ఎంచుకొను సంవిధానము లేదు"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: ../plugindata/validate/basic.py:249
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "%s కు  %s స్ధితి వుంది  కాని %s స్ధితి లేదు"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: ../plugindata/validate/basic.py:275
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s ఏ వర్గముకు చెందదు"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: ../plugindata/validate/basic.py:310
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s సూచిక %(num)d అడ్డు వరుసలు మరియు నిలువు వరుసలతో సరి పోలటం లేదు"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: ../plugindata/validate/basic.py:342
+#, python-format
 msgid ""
-"Accerciser could not see the applications on your desktop.You must enable "
-"desktop accessibility to fix this problem.Do you want to enable it now?"
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr "%(rolename)s మాతృ సూచిక %(num1)d నిలువు మరియు అడ్డు సూచికలతో సరిపోలటం లేదు %"
+"(num2)d"
+#: ../plugindata/validate/basic.py:369
+msgid "%s has no name or description"
+msgstr "%s కు  పేరు గాని  వివరణ గాని  లేదు"
+
+#: ../src/lib/accerciser/accerciser.py:87
+msgid "_Preferences..."
+msgstr "అభీష్టాలు... (_P)"
+
+#: ../src/lib/accerciser/accerciser.py:89
+msgid "_Contents"
+msgstr "సారములు (_C)"
+
+#: ../src/lib/accerciser/accerciser.py:130
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
 msgstr ""
 "మీ రంగస్థలంలోని కార్యక్షేత్రాలను Accerciser చూడలేక పోయింది. రంగస్థల సాంగత్యాన్ని క్రియాశీలం చేసినపుడే ఈ "
 "సమస్యకు పరిష్కారం లభిస్తుంది.దీన్ని క్రియాశీలం చేయమంటారా?"
 
-#: ../src/lib/accerciser/accerciser.py:148
+#: ../src/lib/accerciser/accerciser.py:147
 msgid "Note: Changes only take effect after logout."
 msgstr "గమనిక: మీరు నిష్క్రమించినాక మాత్రమే మార్పులు జరుగుతాయి."
 
-#: ../src/lib/accerciser/accessible_treeview.py:344
+#: ../src/lib/accerciser/accessible_treeview.py:345
 msgid "<dead>"
 msgstr "<నిర్జీవ>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:398
-msgid "Role"
-msgstr "పాత్ర"
-
-#: ../src/lib/accerciser/accessible_treeview.py:405
+#: ../src/lib/accerciser/accessible_treeview.py:406
 msgid "Children"
-msgstr "శిసువులు"
+msgstr "శిశువులు"
 
-#: ../src/lib/accerciser/accessible_treeview.py:431
-msgid "Refresh _Current"
-msgstr "ప్రస్థు_తం పునర్వికాసంచేయు"
+#: ../src/lib/accerciser/accessible_treeview.py:435
+msgid "_Refresh Registry"
+msgstr "నమోదు జాబితాను పునర్వికాసం చేయు (_R)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:438
+msgid "Refresh all"
+msgstr "సర్వము  పునర్వికాసం చేయు"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:441
+msgid "Refresh _Node"
+msgstr "ప్రస్తుత  కణుపు పునర్వికాసంచేయు (_N)"
+
+#. Translators: Appears as tooltip
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:444
+msgid "Refresh selected node's children"
+msgstr "ఎంచిన కణపు  సంతతిని  పునర్వికాసం చేయుము"
 
 #: ../src/lib/accerciser/hotkey_manager.py:220
 msgid "Component"
@@ -545,56 +700,79 @@ msgstr "ఆల్ట్"
 
 #: ../src/lib/accerciser/hotkey_manager.py:251
 msgid "Ctrl"
-msgstr "నియంత్రణ"
+msgstr "నియంత్రణ(Ctrl)"
 
 #: ../src/lib/accerciser/hotkey_manager.py:258
 msgid "Shift"
 msgstr "జరుపు"
 
-#: ../src/lib/accerciser/main_window.py:70
+#: ../src/lib/accerciser/main_window.py:73
 msgid "Top panel"
 msgstr "మీద పలక"
 
-#: ../src/lib/accerciser/main_window.py:71
+#: ../src/lib/accerciser/main_window.py:74
 msgid "Bottom panel"
 msgstr "దిగువ పలక"
 
-#: ../src/lib/accerciser/prefs_dialog.py:30
+#: ../src/lib/accerciser/prefs_dialog.py:34
 msgid "accerciser Preferences"
-msgstr "accerciser అభీష్టాలు"
+msgstr "ఏక్సెర్ సైజర్  అభీష్టాలు"
 
-#: ../src/lib/accerciser/prefs_dialog.py:36
+#: ../src/lib/accerciser/prefs_dialog.py:40
 msgid "Plugins"
 msgstr "ప్లగిన్లు"
 
-#: ../src/lib/accerciser/prefs_dialog.py:37
+#: ../src/lib/accerciser/prefs_dialog.py:41
 msgid "Global Hotkeys"
 msgstr "సర్వవ్యాప్త ముఖ్య మీటలు"
 
-#: ../src/lib/accerciser/about_dialog.py:50
-msgid "translator-credits"
-msgstr "తర్జుమా చేసినవారు"
+#: ../src/lib/accerciser/prefs_dialog.py:49
+msgid "Highlighting"
+msgstr "ప్రాధాన్యత కల్గినదిగా చేయుట"
 
-#: ../src/lib/accerciser/about_dialog.py:51
-msgid "An interactive Python accessibility explorer"
-msgstr "అందుబాటులోని పైతాన్ ఆదాన్న ప్రదాన అన్వేషి"
+#: ../src/lib/accerciser/prefs_dialog.py:81
+msgid "Highlight duration:"
+msgstr "ప్రాధాన్యత కల్గిన వ్యవధి"
+
+#: ../src/lib/accerciser/prefs_dialog.py:89
+msgid "Border color:"
+msgstr "అంచు రంగు"
+
+#: ../src/lib/accerciser/prefs_dialog.py:92
+msgid "The border color of the highlight box"
+msgstr "ప్రాముఖ్యత కల్గిన పెట్టె యొక్క అంచు రంగు"
+
+#: ../src/lib/accerciser/prefs_dialog.py:93
+msgid "Fill color:"
+msgstr "నింపాల్సిన  రంగు"
+
+#: ../src/lib/accerciser/prefs_dialog.py:96
+msgid "The fill color of the highlight box"
+msgstr "ప్రాముఖ్యత కల్గిన పెట్టె యొక్క అంచు రంగు పూరించు"
 
 #: ../src/lib/accerciser/about_dialog.py:52
-#, fuzzy
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser కాపీరైటు Â© 2006, 2007 IBM కార్పోరేషను (BSD) "
+msgid "translator-credits"
+msgstr "తర్జుమా చేసినవారి  గుర్తింపు"
+
+#: ../src/lib/accerciser/about_dialog.py:53
+msgid "An interactive Python accessibility explorer"
+msgstr "పరస్పరమైన  పైతాన్   అందుబాటు   అన్వేషి"
 
 #: ../src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "ఏక్సెర్ సైజర్  కాపీరైటు © 2006, 2007 IBM కార్పోరేషను (BSD) "
+
+#: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr "కొత్త BSD లైసెన్సు. నకలు తీయుటకు మరియు నోటీసు కొరకు దస్త్రములోని వివరములను చూడు ."
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "వెబ్‌సైటు"
 
 #: ../src/lib/accerciser/bookmarks.py:62
 msgid "_Add Bookmark..."
-msgstr "గుర్తును జతచేయు..."
+msgstr "గుర్తును జతచేయు... (_A)"
 
 #: ../src/lib/accerciser/bookmarks.py:63
 msgid "Bookmark selected accessible."
@@ -602,7 +780,7 @@ msgstr "ఎంచిన అందుబాటును గుర్తుపె�
 
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Edit Bookmarks..."
-msgstr "గుర్తులను _సరిచేయు..."
+msgstr "గుర్తులను సరిచేయు... (_E)"
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Manage bookmarks."
@@ -644,17 +822,21 @@ msgstr "త్రోవ:"
 msgid "Plugin Errors"
 msgstr "ప్లగిన్ దోషాలు"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:375
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+msgctxt "viewport"
 msgid "View"
 msgstr "దర్శించు"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:462
+#: ../src/lib/accerciser/plugin/plugin_manager.py:455
 msgid "No view"
 msgstr "దర్శనం లేదు"
 
 #: ../src/lib/accerciser/plugin/view.py:369
 msgid "_Single plugins view"
-msgstr "ప్లగిన్ల _ఒంటరి దర్శనం"
+msgstr "ప్లగిన్ల ఒంటరి దర్శనం (_S)"
 
 #: ../src/lib/accerciser/plugin/view.py:758
 msgid "Plugin View"
@@ -667,31 +849,78 @@ msgstr "ప్లగిన్ దర్శనం (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1029
 msgid "<i>_New view...</i>"
-msgstr "<i>_కొత్త దర్శనం...</i>"
+msgstr "<i>కొత్త దర్శనం... (_N)</i>"
 
 #: ../src/lib/accerciser/plugin/view.py:1085
 msgid "New View..."
 msgstr "కొత్త దర్శనం..."
 
 #: ../src/lib/accerciser/ui_manager.py:20
-#, fuzzy
 msgid "_File"
-msgstr "పీఠిక"
+msgstr "పీఠిక (_F)"
 
 #: ../src/lib/accerciser/ui_manager.py:21
 msgid "_Edit"
-msgstr ""
+msgstr "కూర్పు (_E)"
 
 #: ../src/lib/accerciser/ui_manager.py:22
-#, fuzzy
+msgctxt "menu"
 msgid "_Bookmarks"
-msgstr "గుర్తులను _సరిచేయు..."
+msgstr "పుట గుర్తులు... (_B)"
 
 #: ../src/lib/accerciser/ui_manager.py:23
-#, fuzzy
+msgctxt "menu"
 msgid "_View"
-msgstr "దర్శించు"
+msgstr "దర్శించు (_V)"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Help"
-msgstr ""
+msgstr "సహాయం (_H)"
+
+#~ msgid "gtk-clear"
+#~ msgstr "gtk-చెరుపు"
+
+#~ msgid "gtk-save"
+#~ msgstr "gtk-దాచు "
+
+#~ msgid "gtk-select-all"
+#~ msgstr "gtk-అన్నింటినీ ఎంచు"
+
+#~ msgid "Full name"
+#~ msgstr "పూర్తి నామము"
+
+#~ msgid "1.0"
+#~ msgstr "1.0"
+
+#~ msgid "Key binding"
+#~ msgstr "మీట అనుసంధానం"
+
+#~ msgid "Content type"
+#~ msgstr "సారము రకం"
+
+#~ msgid "Dogtail"
+#~ msgstr "కుక్కతోక"
+
+#~ msgid "LDTP"
+#~ msgstr "ఎల్డిటిపి"
+
+#~ msgid "Native"
+#~ msgstr "సొంత"
+
+#~ msgid "Script Type"
+#~ msgstr "లిపి రకము"
+
+#~ msgid "gtk-media-record"
+#~ msgstr "gtk-మాధ్యమ-రికార్డు"
+
+#~ msgid "Script Recorder"
+#~ msgstr "లిపి నమోదు చేయునది"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "కుక్కతోక శైలి లిపిలను సృష్టిస్తుంది"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "ప్రస్థుత లిపి పోతుంది"
+
+#~ msgid "Confirm clear"
+#~ msgstr "చెరపమంటారా"
