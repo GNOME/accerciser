@@ -33,5 +33,5 @@ DOC_PAGES = \
 	validator_plugin.page
 
 DISTCLEANFILES = accerciser-C.omf
-DOC_LINGUAS = ca cs de el en_GB es fr gl it ja oc pt_BR sl sv uk zh_CN
+DOC_LINGUAS = ca cs de el en_GB es fr gl it ja oc pl pt_BR sl sv uk zh_CN
 dist-hook: doc-dist-hook
