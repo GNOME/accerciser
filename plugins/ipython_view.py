@@ -68,35 +68,53 @@ class IterableIPShell:
     @type input_func: function
     '''
     if input_func:
-      IPython.iplib.raw_input_original = input_func
+      IPython.frontend.terminal.interactiveshell.raw_input_original = input_func
     if cin:
-      IPython.Shell.Term.cin = cin
+      IPython.utils.io.stdin = IPython.utils.io.IOStream(cin)
     if cout:
-      IPython.Shell.Term.cout = cout
+      IPython.utils.io.stdout = IPython.utils.io.IOStream(cout)
     if cerr:
-      IPython.Shell.Term.cerr = cerr
+      IPython.utils.io.stderr = IPython.utils.io.IOStream(cerr)
 
     # This is to get rid of the blockage that accurs during 
     # IPython.Shell.InteractiveShell.user_setup()
-    IPython.iplib.raw_input = lambda x: None
 
-    self.term = IPython.genutils.IOTerm(cin=cin, cout=cout, cerr=cerr)
+    IPython.utils.io.raw_input = lambda x: None
+
+    self.term = IPython.utils.io.IOTerm(stdin=cin, stdout=cout, stderr=cerr)
     os.environ['TERM'] = 'dumb'
     excepthook = sys.excepthook 
-    self.IP = IPython.Shell.make_IPython(
-      argv,user_ns=user_ns,
-      user_global_ns=user_global_ns,
-      embedded=True,
-      shell_class=IPython.Shell.InteractiveShell)
+
+    from IPython.config.loader import Config
+    cfg = Config()
+    cfg.InteractiveShell.colors = "Linux"
+
+    self.IP = IPython.frontend.terminal.embed.InteractiveShellEmbed(config=cfg, user_ns=user_ns)
     self.IP.system = lambda cmd: self.shell(self.IP.var_expand(cmd),
                                             header='IPython system call: ',
-                                            verbose=self.IP.rc.system_verbose)
+                                            local_ns=user_ns) 
+                                            #global_ns=user_global_ns)
+                                            #verbose=self.IP.rc.system_verbose)
+
+    self.IP.raw_input = input_func
     sys.excepthook = excepthook
     self.iter_more = 0
     self.history_level = 0
     self.complete_sep =  re.compile('[\s\{\}\[\]\(\)]')
     self.updateNamespace({'exit':lambda:None})
     self.updateNamespace({'quit':lambda:None})
+    self.IP.readline_startup_hook(self.IP.pre_readline)
+    # Workaround for updating namespace with sys.modules
+    #
+    self.__update_namespace()
+
+  def __update_namespace(self):
+    '''
+    Update self.IP namespace for autocompletion with sys.modules
+    '''
+    for k,v in sys.modules.items():
+        if not '.' in k:
+          self.IP.user_ns.update({k:v})
 
   def execute(self):
     '''
@@ -105,37 +123,42 @@ class IterableIPShell:
     self.history_level = 0
 
     orig_stdout = sys.stdout
-    sys.stdout = IPython.Shell.Term.cout
+    sys.stdout = self.term.stdout
 
     orig_stdin = sys.stdin
-    sys.stdin = StringIO()
+    sys.stdin = IPython.utils.io.stdin;
+    self.prompt = self.IP.hooks.generate_prompt(self.iter_more)
+
+    self.IP.hooks.pre_prompt_hook()
+    if self.iter_more:
+        try:
+            self.prompt = self.IP.hooks.generate_prompt(True)
+        except:
+            self.IP.showtraceback()
+        if self.IP.autoindent:
+            self.IP.rl_do_indent = True
 
     try:
-      line = self.IP.raw_input(None, self.iter_more)
-      if self.IP.autoindent:
-        self.IP.readline_startup_hook(None)
+      line = self.IP.raw_input(self.prompt)
     except KeyboardInterrupt:
       self.IP.write('\nKeyboardInterrupt\n')
-      self.IP.resetbuffer()
-      # keep cache in sync with the prompt counter:
-      self.IP.outputcache.prompt_count -= 1
-        
-      if self.IP.autoindent:
-        self.IP.indent_current_nsp = 0
-      self.iter_more = 0
+      self.IP.input_splitter.reset()
     except:
       self.IP.showtraceback()
     else:
-      self.iter_more = self.IP.push(line)
+      self.IP.input_splitter.push(line)
+      self.iter_more = self.IP.input_splitter.push_accepts_more()
+      self.prompt = self.IP.hooks.generate_prompt(self.iter_more)
       if (self.IP.SyntaxTB.last_syntax_error and
-          self.IP.rc.autoedit_syntax):
-        self.IP.edit_syntax_error()
-    if self.iter_more:
-      self.prompt = str(self.IP.outputcache.prompt2).strip()
-      if self.IP.autoindent:
-        self.IP.readline_startup_hook(self.IP.pre_readline)
-    else:
-      self.prompt = str(self.IP.outputcache.prompt1).strip()
+          self.IP.autoedit_syntax):
+          self.IP.edit_syntax_error()
+      if not self.iter_more:
+          source_raw = self.IP.input_splitter.source_raw_reset()[1]
+          self.IP.run_cell(source_raw, store_history=True)
+      else:
+          # TODO: Auto-indent
+          #
+          pass
 
     sys.stdout = orig_stdout
     sys.stdin = orig_stdin
@@ -197,7 +220,11 @@ class IterableIPShell:
     @rtype: tuple
     '''
     split_line = self.complete_sep.split(line)
-    possibilities = self.IP.complete(split_line[-1])
+    if split_line[-1]:
+      possibilities = self.IP.complete(split_line[-1])
+    else:
+      completed = line
+      possibilities = ['',[]]
     if possibilities:
       def _commonPrefix(str1, str2):
         '''
@@ -215,11 +242,14 @@ class IterableIPShell:
           if not str2.startswith(str1[:i+1]):
             return str1[:i]
         return str1
-      common_prefix = reduce(_commonPrefix, possibilities)
-      completed = line[:-len(split_line[-1])]+common_prefix
+      if possibilities[1]:
+        common_prefix = reduce(_commonPrefix, possibilities[1]) or line[-1]
+        completed = line[:-len(split_line[-1])]+common_prefix
+      else:
+        completed = line
     else:
       completed = line
-    return completed, possibilities
+    return completed, possibilities[1]
   
 
   def shell(self, cmd,verbose=0,debug=0,header=''):
@@ -459,6 +489,7 @@ class IPythonView(ConsoleView, IterableIPShell):
                              input_func=self.raw_input)
 #    self.connect('key_press_event', self.keyPress)
     self.execute()
+    self.prompt = self.IP.hooks.generate_prompt(False)
     self.cout.truncate(0)
     self.showPrompt(self.prompt)
     self.interrupt = False
