@@ -11,14 +11,14 @@
 
 # Headers in this file shall remain intact.
 
-import gtk
-from gnome import program_get, url_show
+from gi.repository import Gtk
+#from gnome import program_get, url_show
 
 _ = lambda x: x
-gtk.about_dialog_set_url_hook(lambda dialog, url, data: url_show(url), None)
+#Gtk.about_dialog_set_url_hook(lambda dialog, url, data: url_show(url), None)
 
 
-class MacaroonAboutDialog(gtk.AboutDialog):
+class MacaroonAboutDialog(Gtk.AboutDialog):
   '''
   Creates a dialog with info about the program.
 
@@ -54,19 +54,19 @@ class MacaroonAboutDialog(gtk.AboutDialog):
     '''
     Initialize dialog.
     '''
-    program = program_get()
-    gtk.AboutDialog.__init__(self)
+#    program = program_get()
+    GObject.GObject.__init__(self)
     self.connect('response', self._onResponse)
-    gtk.AboutDialog.set_authors(self, self.AUTHORS)
-    gtk.AboutDialog.set_artists(self, self.ARTISTS)
-    gtk.AboutDialog.set_documenters(self, self.DOCUMENTERS)
-    gtk.AboutDialog.set_comments(self, self.COMMENTS)
-    gtk.AboutDialog.set_copyright(self, self.COPYRIGHT)
-    gtk.AboutDialog.set_license(self, self.LICENSE)
-    gtk.AboutDialog.set_logo_icon_name(self, 'macaroon')
-    gtk.AboutDialog.set_version(self, program.get_app_version())
-    gtk.AboutDialog.set_website(self, self.WEB_URL)
-    gtk.AboutDialog.set_website_label(self, self.WEB_LABEL)
+    Gtk.AboutDialog.set_authors(self, self.AUTHORS)
+    Gtk.AboutDialog.set_artists(self, self.ARTISTS)
+    Gtk.AboutDialog.set_documenters(self, self.DOCUMENTERS)
+    Gtk.AboutDialog.set_comments(self, self.COMMENTS)
+    Gtk.AboutDialog.set_copyright(self, self.COPYRIGHT)
+    Gtk.AboutDialog.set_license(self, self.LICENSE)
+    Gtk.AboutDialog.set_logo_icon_name(self, 'macaroon')
+#    Gtk.AboutDialog.set_version(self, program.get_app_version())
+    Gtk.AboutDialog.set_website(self, self.WEB_URL)
+    Gtk.AboutDialog.set_website_label(self, self.WEB_LABEL)
 
   def _onResponse(self, dialog, response_id):
     '''

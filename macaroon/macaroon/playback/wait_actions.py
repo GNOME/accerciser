@@ -15,10 +15,15 @@ See "COPYING" in the source distribution for more information.
 Headers in this file shall remain intact.
 '''
 
+from gi.repository import GObject
+import pyatspi
+
 import re
 
 from sequence_step import SequenceStep
-import utils, pyatspi, gobject, sys
+import utils
+import sys
+
 _ = lambda x: x
 
 class WaitAction(SequenceStep):
@@ -73,7 +78,7 @@ class WaitAction(SequenceStep):
     self._cached_events = cached_events
     if self.checkExistingState(): return
     pyatspi.Registry.registerEventListener(self.onEvent, *self.wait_for)
-    gobject.timeout_add(self._timeout, self._onTimeout)
+    GObject.timeout_add(self._timeout, self._onTimeout)
 
   def checkExistingState(self):
     '''

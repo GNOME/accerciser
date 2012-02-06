@@ -15,9 +15,11 @@ See "COPYING" in the source distribution for more information.
 Headers in this file shall remain intact.
 '''
 
-import gobject, pyatspi, sys
+from gi.repository import GObject
+import pyatspi
+import sys
 
-class SequenceStep(gobject.GObject):
+class SequenceStep(GObject.GObject):
   '''
   Base class for all sequence steps in a Macaroon sequence. Emits a "done" 
   signal when the step is done.
@@ -28,14 +30,14 @@ class SequenceStep(gobject.GObject):
   @ivar done: True if step is done.
   @type done: boolean
   '''
-  __gsignals__ = {'done' : (gobject.SIGNAL_RUN_FIRST, 
-                                 gobject.TYPE_NONE, ())}
+  __gsignals__ = {'done' : (GObject.SignalFlags.RUN_FIRST,
+                                 None, ())}
   delta_time = 0
   def __init__(self):
     '''
     Initialize L{SequenceStep}.
     '''
-    self.__gobject_init__()
+    super(SequenceStep, self).__init__()
     self.done = False
 
   def stepDone(self):

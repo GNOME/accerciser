@@ -24,15 +24,12 @@ sys.path.insert(1, libs)
 
 from macaroon.record.main import Main
 
-if not '@PYGTK_DIR@' in sys.path:
-  sys.path.insert(0, '@PYGTK_DIR@')
+#if not '@PYGTK_DIR@' in sys.path:
+#  sys.path.insert(0, '@PYGTK_DIR@')
 
-import pygtk
-pygtk.require('2.0')
-
-import gnome
-# make this program accessible
-props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
-gnome.program_init('macaroon', '@VERSION@', properties=props)
+#import gnome
+## make this program accessible
+#props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
+#gnome.program_init('macaroon', '@VERSION@', properties=props)
 
 Main()
