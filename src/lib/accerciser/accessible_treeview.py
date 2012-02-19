@@ -20,6 +20,7 @@ from gi.repository import GObject
 import pyatspi
 import os
 import ui_manager
+from time import sleep
 from icons import getIcon
 from node import Node
 from tools import Tools, getTreePathBoundingBox
@@ -32,6 +33,8 @@ COL_CHILDCOUNT = 3
 COL_FILLED = 4
 COL_DUMMY = 5
 COL_ACC = 6
+
+ACCESSIBLE_LOADING = 5
 
 class AccessibleModel(gtk.TreeStore, Tools):
   '''
@@ -70,6 +73,25 @@ class AccessibleModel(gtk.TreeStore, Tools):
     self.desktop = desktop_acc
     self._path_to_populate = None
     self._populating_tasks = 0
+    self._hide_leaves = False
+
+
+  def _hideShowLeaves(self):
+    '''
+    Change _hide_leaves state, allowing leaves either to appear or to be hidden
+    in the accessible treeview.
+    '''
+    self._hide_leaves = not self._hide_leaves
+
+  def getHideLeaves(self):
+    '''
+    Return a boolean that indicates whether accessibles with no children
+    (leaves) should be hidden.
+
+    @return: A boolean indicating if leaves should be hidden.
+    @rtype: boolean
+    '''
+    return self._hide_leaves
 
   def _onRowChanged(self, model, path, iter):
     '''
@@ -177,7 +199,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     @param iter: Th iter of the row that needs to be pre-populated
     @type iter: L{gtk.TreeIter}
     '''
-    if (parent and parent.childCount > 0 and 
+    if (parent and self.children_number(parent) > 0 and
         not self.isMyApp(parent) and self.iter_n_children(iter) == 0):
       row = self._buildRow(None, True)
       self.append(iter, row)
@@ -201,6 +223,63 @@ class AccessibleModel(gtk.TreeStore, Tools):
     if self._populating_tasks == 1:
       self.emit('start-populating')
     GObject.idle_add(self._popOnIdle, row_reference)
+
+  def _childrenIndexesInParent(self, accessible):
+    '''
+    Gets ids from children (either all of them or only those that are not leaves).
+
+    @param accessible: An accessible from which we want to get children ids.
+    @type accessible: L{Accessibility.Accessible}
+
+    @return: A list with children ids.
+    @rtype: list
+    '''
+
+    if not self._hide_leaves:
+      return [i for i in xrange(accessible.childCount)]
+    else:
+      children_ids = []
+      for i in xrange(accessible.childCount):
+        child = accessible.getChildAtIndex(i)
+        if child.childCount > 0:
+          children_ids.append(i)
+      return children_ids
+
+  def _selectChild(self, parent, index):
+    '''
+    Returns a child id.
+
+    @param parent: An accessible from which we want to select a child id.
+    @type parent: L{Accessibility.Accessible}
+    @param index: An index to retrieve the child id. In some cases, it is equal to the id.
+    @type index: integer
+
+    @return: A child id.
+    @rtype: integer
+    '''
+
+    if not self._hide_leaves:
+      return index
+    else:
+      children = self._childrenIndexesInParent(parent)
+      return children[index]
+
+  def children_number(self, parent):
+    '''
+    Returns how many children an accessible has (either all of them or only those that are not leaves).
+
+    @param parent: An accessible from which we want to get the number of children.
+    @type parent: L{Accessibility.Accessible}
+
+    @return: The number of children (including leaves or not) an accessible has.
+    @rtype: integer
+    '''
+
+    if not self._hide_leaves:
+      return parent.childCount
+    else:
+      children = self._childrenIndexesInParent(parent)
+      return len(children)
 
   def _popOnIdle(self, row_reference):
     '''
@@ -229,7 +308,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
 
     already_populated_num = self.iter_n_children(iter)
 
-    if already_populated_num >= parent.childCount and \
+    if already_populated_num >= self.children_number(parent) and \
           not remove_iter:
       if iter:
         self[iter][COL_FILLED] = True
@@ -239,7 +318,8 @@ class AccessibleModel(gtk.TreeStore, Tools):
     elif remove_iter:
       already_populated_num -= 1
     try:
-      child = parent.getChildAtIndex(already_populated_num)
+      index = self._selectChild(parent, already_populated_num)
+      child = parent.getChildAtIndex(index)
     except LookupError:
       child = None
 
@@ -304,6 +384,27 @@ class AccessibleModel(gtk.TreeStore, Tools):
         if self._walkThroughFilled(self._path_to_populate):
           self._path_to_populate = None
 
+  def getIndexInParent(self, child):
+    '''
+    Returns a position of a child in its parent.
+
+    @param child: Accessible for which we want to determine the index.
+    @type child: L{Accessibility.Accessible}
+
+    @return: The child's index or -1 if it wasn't found
+    @rtype: integer
+    '''
+    if not self._hide_leaves:
+      return child.getIndexInParent()
+    else:
+      parent = child.parent
+      children = self._childrenIndexesInParent(parent)
+
+      for i in children:
+        if parent.getChildAtIndex(i) == child:
+          return children.index(i)
+      return -1
+
   def getAccPath(self, acc):
     '''
     Get the tree path that a given accessible should have.
@@ -320,17 +421,19 @@ class AccessibleModel(gtk.TreeStore, Tools):
     child = acc
     while child.get_parent():
       try:
-        index_in_parent = child.getIndexInParent()
+        index_in_parent = self.getIndexInParent(child)
         if index_in_parent < 0:
           break
         path = (index_in_parent,) + path
       except Exception, e:
         return None
       child = child.get_parent()
-    try:
-      path = (list(self.desktop).index(child),) + path
-    except Exception, e:
-      return None
+    if not self._hide_leaves:
+      try:
+        path = (list(self.desktop).index(child),) + path
+      except Exception, e:
+        return None
+
     return path
 
   def _buildRow(self, accessible, dummy=False):
@@ -441,6 +544,9 @@ class AccessibleTreeView(gtk.TreeView, Tools):
         'object:property-change:accessible-name')
 
     self.action_group = gtk.ActionGroup('TreeActions')
+    self.action_group.add_toggle_actions(
+      [('HideShowLeaves', None, _('_Hide/Show Applications without children'), None,
+        None, self._onHideShowLeaves, False)])
     self.action_group.add_actions([
         ('RefreshAll', gtk.STOCK_REFRESH, _('_Refresh Registry'),
         # Translators: Appears as tooltip
@@ -524,6 +630,14 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       self.expand_row(path, False)
       self._onExpanded(self, self.model.get_iter(path), path)
 
+  def _onHideShowLeaves(self, option):
+    '''
+    Hides/Shows all leaves (accessibles with no children) from the accessible treeview.
+    '''
+
+    self.model._hideShowLeaves()
+    self._refreshTopLevel()
+
   def _onExpanded(self, treeview, iter, path):
     '''
     Populates a level when it is expanded. Removes the previously added dummy
@@ -589,6 +703,24 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       if iter and self.model.iter_is_valid(iter):
         self.model[iter][COL_CHILDCOUNT] = str(event.source.childCount)
 
+  def removeLeaves(self, accessibles):
+    '''
+    Removes accessibles with no children (leaves) from a list
+    of accessibles. 
+
+    @param accessibles: List of accessibles to be examined
+    @type accessibles: list
+
+    @return: The accessibles list without leaves
+    @rtype: list
+    '''
+
+    nonleaves = []
+    for acc in accessibles:
+      if acc.childCount > 0:
+        nonleaves.append(acc)
+    return nonleaves
+
   def _addChild(self, iter, parent):
     '''
     Add the new child to the given accessible.
@@ -598,8 +730,17 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @param parent: The given row's accessible.
     @type parent: L{Accessibility.Accessible}
     '''
-    old_children = set(self.model.getChildrenAccs(iter))
-    new_children = set(list(parent))
+    old_children = self.model.getChildrenAccs(iter)
+    new_children = list(parent) 
+    if self.model.getHideLeaves():
+      # time for new child load its children (if it has any),
+      # so it won't be confused with a leaf
+      sleep(ACCESSIBLE_LOADING)
+      new_children = self.removeLeaves(new_children)
+
+    old_children = set(old_children)
+    new_children = set(new_children)
+
     added = new_children.difference(old_children)
     try:
       new_child = added.pop()
@@ -609,7 +750,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     if new_child is None:
       self.model.append(iter, row)
     else:
-      self.model.insert(iter, new_child.getIndexInParent(), row)
+      self.model.insert(iter, self.model.getIndexInParent(new_child), row)
       # We do this because an application won't have an icon loaded in 
       # the window manager when it is first registered to at-spi
       if new_child == new_child.getApplication():
