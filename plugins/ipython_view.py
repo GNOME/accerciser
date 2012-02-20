@@ -127,12 +127,12 @@ class IterableIPShell:
 
     orig_stdin = sys.stdin
     sys.stdin = IPython.utils.io.stdin;
-    self.prompt = self.IP.hooks.generate_prompt(self.iter_more)
+    self.prompt = self.generatePrompt(self.iter_more)
 
     self.IP.hooks.pre_prompt_hook()
     if self.iter_more:
         try:
-            self.prompt = self.IP.hooks.generate_prompt(True)
+            self.prompt = self.generatePrompt(True)
         except:
             self.IP.showtraceback()
         if self.IP.autoindent:
@@ -148,7 +148,7 @@ class IterableIPShell:
     else:
       self.IP.input_splitter.push(line)
       self.iter_more = self.IP.input_splitter.push_accepts_more()
-      self.prompt = self.IP.hooks.generate_prompt(self.iter_more)
+      self.prompt = self.generatePrompt(self.iter_more)
       if (self.IP.SyntaxTB.last_syntax_error and
           self.IP.autoedit_syntax):
           self.IP.edit_syntax_error()
@@ -162,6 +162,32 @@ class IterableIPShell:
 
     sys.stdout = orig_stdout
     sys.stdin = orig_stdin
+
+  def generatePrompt(self, is_continuation):
+    '''
+    Generate prompt depending on is_continuation value
+
+    @param is_continuation
+    @type is_continuation: boolean 
+
+    @return: The prompt string representation
+    @rtype: string
+
+    '''
+
+    # Backwards compatibility with ipyton-0.11
+    #
+    ver = IPython.__version__
+    if ver == '0.11':
+        prompt = self.IP.hooks.generate_prompt(is_continuation)
+    else:
+        if is_continuation:
+            prompt = self.IP.prompt_manager.render('in2')
+        else:
+            prompt = self.IP.prompt_manager.render('in')
+
+    return prompt
+
 
   def historyBack(self):
     '''
@@ -489,7 +515,7 @@ class IPythonView(ConsoleView, IterableIPShell):
                              input_func=self.raw_input)
 #    self.connect('key_press_event', self.keyPress)
     self.execute()
-    self.prompt = self.IP.hooks.generate_prompt(False)
+    self.prompt = self.generatePrompt(False)
     self.cout.truncate(0)
     self.showPrompt(self.prompt)
     self.interrupt = False
