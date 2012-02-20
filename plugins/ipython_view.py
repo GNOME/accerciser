@@ -178,7 +178,7 @@ class IterableIPShell:
     # Backwards compatibility with ipyton-0.11
     #
     ver = IPython.__version__
-    if ver == '0.11':
+    if '0.11' in ver:
         prompt = self.IP.hooks.generate_prompt(is_continuation)
     else:
         if is_continuation:
