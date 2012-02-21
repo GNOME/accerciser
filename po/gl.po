@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser-master-po-gl-1951\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-31 05:44+0100\n"
-"PO-Revision-Date: 2012-01-31 05:52+0100\n"
+"POT-Creation-Date: 2012-02-21 12:09+0100\n"
+"PO-Revision-Date: 2012-02-21 12:09+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -533,7 +533,7 @@ msgstr "(non implementado)"
 
 #. add accessible's name to buffer
 #: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/accessible_treeview.py:502
 #: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Nome"
@@ -606,7 +606,7 @@ msgid "Level"
 msgstr "Nivel"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Rol"
 
@@ -762,33 +762,37 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: Os cambios só son efectivos despois de saír da sesión."
 
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<morto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "Fillos"
 
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "_Ocultar/Mostrar aplicativos sen fillos"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "Actualiza_r rexistro"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "Actualizar todo"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "Actualizar _nodo"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "Actualizar os fillos do nodo seleccionado"
 
