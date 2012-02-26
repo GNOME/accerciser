@@ -7,15 +7,17 @@
 # Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2008.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
 # Antonio Fernandes C. Neto <fernandesn@gnome.org>, 2011.
+# Jonh Wendell <jwendell@gnome.org>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-16 08:27-0400\n"
-"PO-Revision-Date: 2011-09-13 21:21-0300\n"
-"Last-Translator: Antonio Fernandes C. Neto <fernandesn@gnome.org>\n"
+"POT-Creation-Date: 2012-02-26 09:19-0300\n"
+"PO-Revision-Date: 2012-02-26 10:18-0300\n"
+"Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -530,7 +532,7 @@ msgstr "(não implementado)"
 
 #. add accessible's name to buffer
 #: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/accessible_treeview.py:502
 #: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Nome"
@@ -604,7 +606,7 @@ msgid "Level"
 msgstr "Nível"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Função"
 
@@ -727,8 +729,8 @@ msgstr "%(rolename)s índice %(num)d não corresponde à linha e coluna"
 #: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "%(rolename)s índice parente %(num1)d não corresponde ao índice %(num2)d da "
 "linha e coluna"
@@ -759,33 +761,37 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Nota: As alterações só terão efeito depois da sessão ser encerrada."
 
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<morto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "Filho"
 
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "_Mostrar/esconder aplicativos que não têm filhos"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "Atualizar _registro"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "Atualiza tudo"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "Atualizar _nó"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "Atualiza os filhos do nó selecionado"
 
