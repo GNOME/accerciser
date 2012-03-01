@@ -23,6 +23,9 @@ PKG_CHECK_MODULES([GTK], [gtk+-3.0 >= $GTK_REQUIRED])
 PKG_CHECK_MODULES([PYGOBJECT], [pygobject-3.0 >= $PYGOBJECT_REQUIRED])
 PKG_CHECK_MODULES([ATSPI2], [atspi-2 >= $ATSPI_REQUIRED])
 
+dnl == check for python modules
+AM_CHECK_PYMOD(IPython,,[ipython_support="yes"],[AC_MSG_WARN(Could not find python module: IPython);ipython_support="no"])
+
 dnl == i18n ==
 # FIXME: Remove AM_GNU_GETTEXT_VERSION once autoreconf supports REQUIRE_VERSION
 AM_GNU_GETTEXT_VERSION([0.19.8])
@@ -54,3 +57,11 @@ src/lib/accerciser/Makefile
 src/lib/accerciser/plugin/Makefile
 ])
 
+dnl =============================================================================================
+echo "
+Accerciser $VERSION
+
+        Installation prefix:     ${prefix}
+        IPython support:         ${ipython_support}
+
+"
