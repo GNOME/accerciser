@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 10:14+0300\n"
-"PO-Revision-Date: 2011-09-23 10:22+0200\n"
+"POT-Creation-Date: 2012-03-02 14:19+0200\n"
+"PO-Revision-Date: 2012-03-02 14:20+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -19,7 +19,8 @@ msgstr ""
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:2
+#: ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "מגלה נגישות אינטראקטיבי Accerciser"
 
@@ -280,7 +281,8 @@ msgstr "<b>טקסט</b>"
 msgid "<b>unknown</b>"
 msgstr "<b>לא ידוע</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.py:338
 #: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "(אין תיאור)"
@@ -348,7 +350,8 @@ msgid "Des_ktop"
 msgstr "_שולחן עבודה"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
+#: ../plugins/interface_view.ui.h:31
+#: ../plugins/validate.py:217
 #: ../plugins/validate.py:280
 msgid "Description"
 msgstr "תיאור"
@@ -367,7 +370,8 @@ msgid "Header:"
 msgstr "כותרת עליונה:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:36
+#: ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "קישורית"
 
@@ -513,14 +517,16 @@ msgstr "צג מנשקים"
 msgid "Allows viewing of various interface properties"
 msgstr "מאפשר הצגה ושליטה במאפייני ממשקים"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:233
+#: ../plugins/interface_view.py:235
 #: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr " (לא ממומש)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/interface_view.py:708
+#: ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:502
 #: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "שם"
@@ -541,7 +547,8 @@ msgstr "סוף"
 msgid "Too many selectable children"
 msgstr "יש יותר מדי צאצאים הניתנים לבחירה"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1239
+#: ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "(ניתן לעריכה)"
 
@@ -561,7 +568,8 @@ msgstr "בחינת נגיש אחרון שקיבל מיקוד"
 msgid "Inspect accessible under mouse"
 msgstr "בחינת נגיש שמתחת לעכבר"
 
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
+#: ../plugins/validate.ui.h:1
+#: ../plugins/validate.py:363
 #: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "ממתין"
@@ -588,12 +596,14 @@ msgstr "בדיקת נגישות יישום"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:210
+#: ../plugins/validate.py:278
 msgid "Level"
 msgstr "רמה"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:284
+#: ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "תפקיד"
 
@@ -713,12 +723,8 @@ msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה 
 #.
 #: ../plugindata/validate/basic.py:342
 #, python-format
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index "
-"%(num2)d"
-msgstr ""
-"האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה "
-"%(num2)d"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה %(num2)d"
 
 #: ../plugindata/validate/basic.py:369
 #, python-format
@@ -734,44 +740,44 @@ msgid "_Contents"
 msgstr "‏_תכנים"
 
 #: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן "
-"עבודה. האם ברצונך לאפשר זאת כעת?"
+msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr "‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן עבודה. האם ברצונך לאפשר זאת כעת?"
 
 #: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr "הערה: השינויים רק יחלו באיתחול מחודש של השולחן עבודה"
 
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<מת>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "צאצאים"
 
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "ה_צגה/הסתרה של יישומים ללא צאצאים"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "רענן _רשומות"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "רענון הכל"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "רענון _מפרק"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "רענון צאצאי המפרק הנבחר"
 
@@ -845,9 +851,7 @@ msgstr "צבע המילוי של תיבת ההדגשה"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr ""
-"Eitan Isaacson <eitan@ascender.com>Yaron Shahrabani <sh.yaron@gmail.com>, "
-"2011."
+msgstr "Eitan Isaacson <eitan@ascender.com>Yaron Shahrabani <sh.yaron@gmail.com>, 2011."
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
