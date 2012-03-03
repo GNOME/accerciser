@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 17:00+0200\n"
-"PO-Revision-Date: 2011-09-23 17:01+0200\n"
+"POT-Creation-Date: 2012-03-03 23:35+0100\n"
+"PO-Revision-Date: 2012-03-03 23:36+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -526,7 +526,7 @@ msgstr "(niezaimplementowane)"
 
 #. add accessible's name to buffer
 #: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
+#: ../src/lib/accerciser/accessible_treeview.py:502
 #: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Nazwa"
@@ -599,7 +599,7 @@ msgid "Level"
 msgstr "Poziom"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Rola"
 
@@ -752,33 +752,37 @@ msgstr ""
 msgid "Note: Changes only take effect after logout."
 msgstr "Uwaga: zmiany zostaną uwzględnione po wylogowaniu."
 
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<martwy>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "L. potomków"
 
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "_Wyświetlanie/ukrywanie programów bez potomków"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "Odśwież _rejestr"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "Odświeża wszystkie"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "Odśwież _węzły"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "Odświeża elementy potomne zaznaczonego węzła"
 
@@ -853,7 +857,7 @@ msgstr "Kolor wypełnienia obszaru wyróżnienia"
 # Hubert Stachurski <...>, 2008
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009, 2010, 2011"
+msgstr "Aviary.pl <gnomepl@aviary.pl>, 2008, 2009, 2010, 2011, 2012"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
