@@ -241,7 +241,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
       children_ids = []
       for i in xrange(accessible.childCount):
         child = accessible.getChildAtIndex(i)
-        if child.childCount > 0:
+        if child.childCount > 0 or child.getRoleName() != 'application':
           children_ids.append(i)
       return children_ids
 
