@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser manual fr\n"
-"POT-Creation-Date: 2012-02-08 09:03+0000\n"
-"PO-Revision-Date: 2012-02-12 12:31+0100\n"
+"POT-Creation-Date: 2012-03-27 18:02+0000\n"
+"PO-Revision-Date: 2012-04-14 23:58+0200\n"
 "Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/validator_report.png'; md5=a21bc11a8fc1f8d7976d7ea8a3dc80d2"
 msgstr ""
+"@@image: 'figures/validator_report.png'; md5=a21bc11a8fc1f8d7976d7ea8a3dc80d2"
 
 #: C/validator_plugin.page:4(title)
 msgid "3. Validator Default Plugin"
@@ -240,12 +241,14 @@ msgid ""
 "@@image: 'figures/accerciser_preferences.png'; "
 "md5=35df6feb4a5dfc905331b45390783ad5"
 msgstr ""
+"@@image: 'figures/accerciser_preferences.png'; "
+"md5=35df6feb4a5dfc905331b45390783ad5"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/preferences.page:61(None)
 msgid "@@image: 'figures/plugins.png'; md5=aa997acc25c59cf82a788bb8a97f8654"
-msgstr ""
+msgstr "@@image: 'figures/plugins.png'; md5=aa997acc25c59cf82a788bb8a97f8654"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -253,6 +256,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/global-hotkeys.png'; md5=e624ecfca646f771d03ea3feed4a5dcb"
 msgstr ""
+"@@image: 'figures/global-hotkeys.png'; md5=e624ecfca646f771d03ea3feed4a5dcb"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -260,6 +264,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/highlighting.png'; md5=a7eeb359d726fecba85b13b92a41b919"
 msgstr ""
+"@@image: 'figures/highlighting.png'; md5=a7eeb359d726fecba85b13b92a41b919"
 
 #: C/preferences.page:4(title)
 msgid "4. Preferences"
@@ -416,6 +421,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/IPython_plugin.png'; md5=4e25a8b12536302b54f4ea31e2d142c9"
 msgstr ""
+"@@image: 'figures/IPython_plugin.png'; md5=4e25a8b12536302b54f4ea31e2d142c9"
 
 #: C/ipython_plugin.page:4(title)
 msgid "2. IPython Plugin"
@@ -501,6 +507,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/accerciser-view.png'; md5=fe4edcab1458ebe903cc46878c53ee64"
 msgstr ""
+"@@image: 'figures/accerciser-view.png'; md5=fe4edcab1458ebe903cc46878c53ee64"
 
 #: C/introduction.page:5(title)
 msgid "1. What is Accerciser?"
@@ -751,6 +758,8 @@ msgid ""
 "@@image: 'figures/interface_viewer_plugin.png'; "
 "md5=c83c4113369ff2adc756dfd8614a48ed"
 msgstr ""
+"@@image: 'figures/interface_viewer_plugin.png'; "
+"md5=c83c4113369ff2adc756dfd8614a48ed"
 
 #: C/interface_viewer_plugin.page:4(title)
 msgid "2. Interface Viewer Plugin"
@@ -1149,7 +1158,8 @@ msgstr ""
 msgid ""
 "\n"
 "      def init(self):\n"
-"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, "
+"'focus')\n"
 "        self.global_hotkeys = [('Inspect last focused accessible',\n"
 "                                self.inspectLastFocused,\n"
 "                                gtk.keysyms.e,\n"
@@ -1159,7 +1169,8 @@ msgid ""
 msgstr ""
 "\n"
 "      def init(self):\n"
-"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, "
+"'focus')\n"
 "        self.global_hotkeys = [('Inspect last focused accessible',\n"
 "                                self.inspectLastFocused,\n"
 "                                gtk.keysyms.e,\n"
@@ -1295,12 +1306,14 @@ msgstr ""
 msgid ""
 "\n"
 "       def init(self):\n"
-"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, "
+"'focus')\n"
 "    "
 msgstr ""
 "\n"
 "       def init(self):\n"
-"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, "
+"'focus')\n"
 "    "
 
 #: C/howto_write_a_plugin.page:149(p)
@@ -1368,13 +1381,15 @@ msgid ""
 "\n"
 "      class Clicker(ViewportPlugin):\n"
 "        plugin_name = 'Clicker'\n"
-"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"        plugin_description = 'Test the \"click\" action in relevant "
+"accessibles.'\n"
 "    "
 msgstr ""
 "\n"
 "      class Clicker(ViewportPlugin):\n"
 "        plugin_name = 'Clicker'\n"
-"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"        plugin_description = 'Test the \"click\" action in relevant "
+"accessibles.'\n"
 "    "
 
 #: C/howto_write_a_plugin.page:181(p)
@@ -1631,6 +1646,8 @@ msgid ""
 "@@image: 'figures/event_monitor_plugin.png'; "
 "md5=1ee2a1d281deefa5b401244b49ed9654"
 msgstr ""
+"@@image: 'figures/event_monitor_plugin.png'; "
+"md5=1ee2a1d281deefa5b401244b49ed9654"
 
 #: C/event_monitor_plugin.page:4(title)
 msgid "4. Event Monitor Plugin"
@@ -1803,6 +1820,8 @@ msgid ""
 "@@image: 'figures/tree_view_accerciser.png'; "
 "md5=08296541e21b96951e1f1b4d99ca130b"
 msgstr ""
+"@@image: 'figures/tree_view_accerciser.png'; "
+"md5=08296541e21b96951e1f1b4d99ca130b"
 
 #: C/desktop_tree_view.page:4(title)
 msgid "1. Application Tree View"
@@ -1908,6 +1927,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
 msgstr ""
+"@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
 
 #: C/api_browser_plugin.page:4(title)
 msgid "1. API Browser Plugin"
@@ -1989,3 +2009,4 @@ msgstr ""
 "Claude Paroz <claude@2xlibre.net>, 2008\n"
 "Julien Hardelin <jhardlin@orange.fr>, 2011\n"
 "Bruno Brouard <annoa.b@gmail.com>, 2012"
+
