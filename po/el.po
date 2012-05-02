@@ -4,16 +4,17 @@
 #
 # Simos Xenitellis <simos@gnome.org>, 2007.
 # Giannis Katsampirhs <giannis1_86@hotmail.com>, 2008.
-# Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2010.
+# Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2011, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD.el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2010-01-31 00:03+0000\n"
-"PO-Revision-Date: 2010-02-05 09:46+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-02 10:12+0300\n"
+"PO-Revision-Date: 2012-05-02 10:11+0300\n"
 "Last-Translator: Μάριος Ζηντίλης <m.zindilis@dmajor.org>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +24,7 @@ msgstr ""
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
+#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Περιηγητής προσιτότητας Accerciser"
 
@@ -31,45 +32,137 @@ msgstr "Περιηγητής προσιτότητας Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Δοκιμάστε την προσιτότητα της εφαρμογής σας"
 
-#: ../accerciser.schemas.in.h:1
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr ""
 "Μια λίστα με πρόσθετες λειτουργίες που είναι προκαθορισμένες ως "
 "απενεργοποιημένες"
 
-#: ../accerciser.schemas.in.h:2
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+msgid "A list of plugins that are disabled by default."
+msgstr ""
+"Μια λίστα με πρόσθετες λειτουργίες που είναι απενεργοποιημένες εξ ορισμού"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+msgid "Available new pluginviews"
+msgstr "Διαθέσιμες νέες προβολές πρόσθετων λειτουργιών"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "Default window height"
+msgstr "Προκαθορισμένο ύψος παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+msgid "Default window width"
+msgstr "Προκαθορισμένο πλάτος παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "Highlight border color"
 msgstr "Χρώμα περιγράμματος επισήμανσης"
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "Διάρκεια επισήμανσης"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
 msgid "Highlight fill color"
 msgstr "Χρώμα γεμίσματος επισήμανσης"
 
-#: ../accerciser.schemas.in.h:5
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "Οριζόντιος διαχωρισμός"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Hotkey combination"
+msgstr "Συνδυασμός Hotkey"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Hotkey combination for related action."
+msgstr "Συνδυασμός Hotkey για σχετική ενέργεια"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the horizontal split of the main window."
+msgstr "Θέση οριζόντιου διαχωρισμού του κύριου παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Position of the vertical split of the main window."
+msgstr "Θέση κάθετου διαχωρισμού του κυρίου παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+msgid "Single layout view"
+msgstr "Μονή προβολή διάταξης"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
 msgid "The color and opacity of the highlight border."
 msgstr "Το χρώμα και η διαφάνεια του περιγράμματος επισήμανσης."
 
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
 msgid "The color and opacity of the highlight fill."
 msgstr "Το χρώμα και η διαφάνεια του γεμίσματος επισήμανσης."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr ""
-"Η προκαθορισμένη διάταξη πρόσθετης λειτουργίας του κάτω πίνακα εφαρμογών"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+msgid "The default plugin layout for the top panel."
+msgstr "Η προκαθορισμένη διάταξη πρόσθετου για τον άνω πίνακα εφαρμογών"
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+msgid "The duration of the highlight box when selecting accessible nodes."
 msgstr ""
-"Η προκαθορισμένη διάταξη πρόσθετης λειτουργίας του πάνω πίνακα εφαρμογών"
+"Η διάρκεια του πλαισίου επισήμανσης όταν επιλέγονται προσβάσιμοι κόμβοι"
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Η διάρκεια του πλαισίου επισήμανσης όταν επιλέγονται προσιτοί κόμβοι"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+msgid "The layout for the bottom panel"
+msgstr "Η διάταξη για τον κάτω πίνακα εφαρμογών"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+msgid "The layout for the bottom panel pluginview."
+msgstr "Η διάταξη για την κάτω προβολή προσθέτου του πίνακα εφαρμογών"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+msgid "The layout for the top panel"
+msgstr "Η διάταξη για τον άνω πίνακα εφαρμογών"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+msgid "The layout for the top panel pluginview."
+msgstr "Η διάταξη για τον άνω πίνακα εφαρμογών προσθέτου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+msgid "The pluginview layout"
+msgstr "Η εμφάνιση της προβολής πρόσθετου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "The window height value."
+msgstr "Η τιμή ύψους του παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+msgid "The window width value."
+msgstr "Η τιμή μήκους του παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+msgid "This list contains all the new available pluginviews"
+msgstr "Αυτή η λίστα περιέχει όλες τις διαθέσιμες προβολές προσθέτων"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Vertical split"
+msgstr "Κάθετος διαχωρισμός"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+msgid "View plugins in a single layout."
+msgstr "Προβολή προσθέτων σε μονή διάταξη"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window height"
+msgstr "Ύψος παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+msgid "Window height value."
+msgstr "Τιμή ύψους παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+msgid "Window width"
+msgstr "Πλάτος παραθύρου"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+msgid "Window width value."
+msgstr "Τιμή πλάτους παραθύρου"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -95,11 +188,11 @@ msgstr "Ιδιότητα"
 msgid "Value"
 msgstr "Τιμή"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "Κονσόλα IPython"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Διαδραστική κονσόλα για τη διαχείριση του επιλεγμένου προσιτού"
 
@@ -131,24 +224,24 @@ msgstr "Πηγή"
 msgid "_Monitor Events"
 msgstr "Γεγονότα _οθόνης"
 
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Παρακολούθηση γεγονότων"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Εμφανίζει τα γεγονότα όπως λαμβάνουν χώρα από επιλεγμένους τύπους και πηγές"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Επισήμανση της τελευταίας καταχώρισης γεγονότος"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Εκκίνηση/Διακοπή της ηχογράφησης γεγονότων"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Καθαρισμός καταγραφής γεγονότων"
 
@@ -197,8 +290,8 @@ msgstr "<b>Κείμενο</b> "
 msgid "<b>unknown</b>"
 msgstr "<b>άγνωστο</b>"
 
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
+#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
 msgid "<i>(no description)</i>"
 msgstr "<i>χωρίς περιγραφή</i>"
 
@@ -266,8 +359,8 @@ msgid "Des_ktop"
 msgstr "Επιφάνεια _εργασίας"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
+#: ../plugins/validate.py:280
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -285,7 +378,7 @@ msgid "Header:"
 msgstr "Κεφαλίδα:"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
+#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
 msgid "Hyperlink"
 msgstr "Υπερσύνδεσμος"
 
@@ -424,100 +517,65 @@ msgid "name (x,y)"
 msgstr "όνομα (x,y)"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Προβολέας διεπαφής"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Επιτρέπει την προβολή διάφορων ιδιοτήτων διεπαφής"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
+#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(δεν έχει υλοποιηθεί)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../src/lib/accerciser/plugin/plugin_manager.py:385
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:716
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:715
+#: ../plugins/interface_view.py:724
 msgid "Start"
 msgstr "Έναρξη"
 
-#: ../plugins/interface_view.py:722
+#: ../plugins/interface_view.py:732
 msgid "End"
 msgstr "Τέλος"
 
-#: ../plugins/interface_view.py:883
+#: ../plugins/interface_view.py:894
 msgid "Too many selectable children"
 msgstr "Μεγάλος αριθμός επιλέξιμων θυγατρικών"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
+#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Επεξεργάσιμο)</i>"
 
-#: ../plugins/quick_select.py:11
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Γρήγορη επιλογή"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Πρόσθετη λειτουργία με διάφορες μεθόδους γρήγορης επιλογής προσιτών."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Επιθεώρηση τελευταίου εστιασμένου προσιτού"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Επιθεώρηση προσιτού με χρήση του ποντικιού"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Γηγενές"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Είδος δέσμης ενεργειών"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Ηχογράφος δέσμης ενεργειών"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Δημιουργεί δέσμες ενεργειών με στιλ dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Η τρέχουσα δέσμη ενεργειών θα χαθεί."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Επιβεβαίωση καθαρισμού"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
+#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
+#: ../plugins/validate.py:415
 msgid "Idle"
 msgstr "Αδρανής"
 
@@ -529,54 +587,54 @@ msgstr "Σ_χήμα:"
 msgid "V_alidate"
 msgstr "Επι_κύρωση"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.py:67
 msgid "No description"
 msgstr "Χωρίς περιγραφή"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:155
 msgid "AT-SPI Validator"
 msgstr "Εφαρμογή επικύρωσης για AT-SPI"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:157
 msgid "Validates application accessibility"
 msgstr "Επαληθεύει την προσιτότητα των εφαρμογών"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:210 ../plugins/validate.py:278
 msgid "Level"
 msgstr "Επίπεδο"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Ρόλος"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:349
 msgid "Saving"
 msgstr "Γίνεται αποθήκευση"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:397
 msgid "Validating"
 msgstr "Γίνεται επικύρωση"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:553
 msgid "EXCEPT"
 msgstr "Εξαίρεση"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:560
 msgid "ERROR"
 msgstr "Σφάλμα"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:568
 msgid "WARN"
 msgstr "Προειδοποίηση"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:575
 msgid "INFO"
 msgstr "Πληροφορίες"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:582
 msgid "DEBUG"
 msgstr "Αποσφαλμάτωση"
 
@@ -588,22 +646,22 @@ msgstr "Βασικά"
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Δοκιμάζει τη θεμελιώδη GUI εφαρμογή προσιτότητας"
 
-#: ../plugindata/validate/basic.py:24
+#: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr ""
 "Το άμεσα αξιοποιήσιμο στοιχείο %s δεν έχει δυνατότητα εστίασης ή επιλογής"
 
-#: ../plugindata/validate/basic.py:42
+#: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "Το διαδραστικό στοιχείο %s δεν είναι άμεσα αξιοποιήσιμο"
 
-#: ../plugindata/validate/basic.py:56
+#: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "περισσότερα από ένα εστιασμένα γραφικά συστατικά"
 
-#: ../plugindata/validate/basic.py:81
+#: ../plugindata/validate/basic.py:87
 #, python-format
 msgid "%s has no text interface"
 msgstr "Το %s δεν έχει διεπαφή κειμένου"
@@ -611,12 +669,12 @@ msgstr "Το %s δεν έχει διεπαφή κειμένου"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: ../plugindata/validate/basic.py:107
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Ο γονικός κατάλογος %s δεν ταιριάζει με τον θυγατρικό κατάλογο"
 
-#: ../plugindata/validate/basic.py:145
+#: ../plugindata/validate/basic.py:153
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Απουσία αντιστροφής για σχέση %s"
@@ -624,21 +682,22 @@ msgstr "Απουσία αντιστροφής για σχέση %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: ../plugindata/validate/basic.py:202
 #, python-format
 msgid "%s missing name or label"
 msgstr "Απουσία ονόματος ή ετικέτας %s"
 
-#: ../plugindata/validate/basic.py:210
+#: ../plugindata/validate/basic.py:220
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
-msgstr "Το εστάσιμο στοιχείο %s έχει διεπαφή πίνακα, όχι όμως διεπαφή επιλογής"
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr ""
+"Το εστιάσιμο στοιχείο %s έχει διεπαφή πίνακα, αλλά όχι διεπαφή επιλογής"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: ../plugindata/validate/basic.py:249
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "Το %s έχει κατάσταση %s χωρίς κατάσταση %s"
@@ -646,7 +705,7 @@ msgstr "Το %s έχει κατάσταση %s χωρίς κατάσταση %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: ../plugindata/validate/basic.py:275
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "Το %s δεν ανήκει σε καμία ομάδα"
@@ -656,7 +715,7 @@ msgstr "Το %s δεν ανήκει σε καμία ομάδα"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: ../plugindata/validate/basic.py:310
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "Το %(rolename)s με δείκτη %(num)d δεν ταιριάζει με γραμμή και στήλη"
@@ -667,30 +726,30 @@ msgstr "Το %(rolename)s με δείκτη %(num)d δεν ταιριάζει μ
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: ../plugindata/validate/basic.py:342
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "Το %(rolename)s με γονικό δείκτη %(num1)d δεν ταιριάζει με δείκτη γραμμής "
 "και στήλης %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: ../plugindata/validate/basic.py:369
 #, python-format
 msgid "%s has no name or description"
 msgstr "Το %s δεν έχει όνομα ή περιγραφή"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Preferences..."
 msgstr "_Προτιμήσεις..."
 
 # #-#-#-#-#  ekiga.gnome-2-14.el.po (el)  #-#-#-#-#
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:84
 msgid "_Contents"
 msgstr "_Περιεχόμενα"
 
-#: ../src/lib/accerciser/accerciser.py:129
+#: ../src/lib/accerciser/accerciser.py:125
 msgid ""
 "Accerciser could not see the applications on your desktop.  You must enable "
 "desktop accessibility to fix this problem.  Do you want to enable it now?"
@@ -699,106 +758,110 @@ msgstr ""
 "σας. Ενεργοποιήστε την προσιτότητα για να διορθώσετε το πρόβλημα. Επιθυμείτε "
 "να την ενεργοποιήσετε τώρα;"
 
-#: ../src/lib/accerciser/accerciser.py:147
+#: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
 msgstr ""
 "Σημείωση: Οι αλλαγές θα εφαρμοστούν μετά την αποσύνδεση από το σύστημα."
 
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "Θυγατρικά"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "Απόκρυ_ψη/Εμφάνιση εφαρμογών χωρίς θυγατρικά"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "Ανανέωση _μητρώου"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "Ανανέωση όλων"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "Ανανέωση _κόμβου"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "Ανανέωση των παιδιών του επιλεγμένου κόμβου"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Συστατικό"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Εργασία"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Πλήκτρο"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
 msgstr "Κάτω πίνακας εφαρμογών"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
 msgstr "Κάτω εργαλειοθήκη"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Προτιμήσεις accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Πρόσθετες λειτουργίες"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Καθολικές συντομεύσεις πληκτρολογίου"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Επισήμανση"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Διάρκεια επισήμανσης:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Χρώμα περιγράμματος:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Το χρώμα του περιγράμματος του πλασίου επισήμανσης"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Χρώμα γεμίσματος:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Το χρώμα γεμίσματος του πλαισίου επισήμανσης"
 
@@ -820,8 +883,8 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Ένας διαδραστικός περιηγητής προσιτότητας σε Python"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -833,31 +896,31 @@ msgstr ""
 msgid "Web site"
 msgstr "Ιστότοπος"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:64
 msgid "_Add Bookmark..."
 msgstr "Προσ_θήκη σελιδοδείκτη..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "Bookmark selected accessible."
 msgstr "Ο σελιδοδείκτης επιλέχθηκε ως ποσβάσιμος."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "_Edit Bookmarks..."
 msgstr "_Επεξεργασία σελιδοδεικτών..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "Manage bookmarks."
 msgstr "Διαχείριση σελιδοδεικτών."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Επεξεργασία σελιδοδεικτών..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Εφαρμογή"
 
@@ -869,72 +932,72 @@ msgstr "Εφαρμογή"
 #
 # #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
 #
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Διαδρομή"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Προσθήκη σελιδοδείκτη..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Εφαρμογή:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Διαδρομή:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Σφάλματα πρόσθετων λειτουργιών"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:394
 msgctxt "viewport"
 msgid "View"
 msgstr "Προβολή"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:471
 msgid "No view"
 msgstr "Χωρίς προβολή"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:378
 msgid "_Single plugins view"
 msgstr "Απ_λή προβολή πρόσθετων λειτουργιών"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:767
 msgid "Plugin View"
 msgstr "Προβολή πρόσθετων λειτουργιών"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:770
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Προβολή πρόσθετης λειτουργίας (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
+#: ../src/lib/accerciser/plugin/view.py:1075
 msgid "<i>_New view...</i>"
 msgstr "<i>_Νέα προβολή...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1131
 msgid "New View..."
 msgstr "Νέα προβολή..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Αρχείο"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Σελιδοδείκτες"
@@ -947,11 +1010,35 @@ msgstr "_Σελιδοδείκτες"
 # #-#-#-#-#  libgda-el.po (gnome-db 0.0.91)  #-#-#-#-##
 # #-#-#-#-#  toutdoux-el.po (toutdoux 1.0)  #-#-#-#-##
 # #-#-#-#-#  screem-el.po (screem 1.0)  #-#-#-#-##
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Προβολή"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Βοήθεια"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Γηγενές"
+
+#~ msgid "Script Type"
+#~ msgstr "Είδος δέσμης ενεργειών"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Ηχογράφος δέσμης ενεργειών"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Δημιουργεί δέσμες ενεργειών με στιλ dogtail"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Η τρέχουσα δέσμη ενεργειών θα χαθεί."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Επιβεβαίωση καθαρισμού"
