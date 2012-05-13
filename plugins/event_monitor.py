@@ -366,8 +366,8 @@ class EventMonitor(ViewportPlugin):
       foreground='blue',
       underline=Pango.Underline.SINGLE)
     hyperlink.connect('event', self._onLinkClicked)
-    hyperlink.set_data('acc', acc)
-    hyperlink.set_data('islink', True)
+    setattr(hyperlink, 'acc', acc)
+    setattr(hyperlink, 'islink', True)
     return hyperlink
 
   def _onLinkClicked(self, tag, widget, event, iter):
@@ -385,7 +385,7 @@ class EventMonitor(ViewportPlugin):
     '''
     if event.type == gdk.EventType.BUTTON_RELEASE and \
            event.button == 1 and not self.monitor_buffer.get_has_selection():
-      self.node.update(tag.get_data('acc'))
+      self.node.update(getattr(tag, 'acc'))
 
   def _onLinkKeyPress(self, textview, event):
     '''
@@ -404,7 +404,7 @@ class EventMonitor(ViewportPlugin):
       iter = buffer.get_iter_at_mark(buffer.get_insert())
       acc = None
       for tag in iter.get_tags():
-        acc = tag.get_data('acc')
+        acc = getattr(tag, 'acc')
         if acc:
           self.node.update(acc)
           break
@@ -426,7 +426,7 @@ class EventMonitor(ViewportPlugin):
     iter = textview.get_iter_at_location(x, y)
     cursor = gdk.Cursor(gdk.CursorType.XTERM)
     for tag in iter.get_tags():
-      if tag.get_data('islink'):
+      if getattr(tag, 'islink'):
         cursor = gdk.Cursor(gdk.CursorType.HAND2)
         break
     window = textview.get_window(gtk.TextWindowType.TEXT)

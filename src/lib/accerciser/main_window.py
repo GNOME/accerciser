@@ -107,7 +107,7 @@ class AccerciserMainWindow(gtk.Window):
       if not self.gsettings.get_int(paned.get_name()): continue
       paned_position = self.gsettings.get_int(paned.get_name())
       paned.set_position(paned_position)
-      paned.set_data('last_position', paned.get_position())
+      setattr(paned, 'last_position', paned.get_position())
 
     self.add(main_vbox)
 
@@ -126,10 +126,10 @@ class AccerciserMainWindow(gtk.Window):
     @type action: string
     '''
     if pluginview.get_n_pages() == 1 and action == 'added':
-      last_pos = self._vpaned.get_data('last_position')
+      last_pos = getattr(self._vpaned, 'last_position')
       self._vpaned.set_position(last_pos or 350)
     elif pluginview.get_n_pages() == 0:
-      self._vpaned.set_data('last_position', self._vpaned.get_position())
+      setattr(self._vpaned, 'last_position', self._vpaned.get_position())
       self._vpaned.set_position(self._vpaned.get_allocated_height() - 30)
 
   def _onBottomPanelRealize(self, pluginview):
@@ -169,7 +169,7 @@ class AccerciserMainWindow(gtk.Window):
     if self.pluginview2.get_n_pages():
       position = self._vpaned.get_position()
     else:
-      position = self._vpaned.get_data('last_position')
+      position = getattr(self._vpaned, 'last_position')
     if position is not None:
       self.gsettings.set_int('vpaned', position)
 

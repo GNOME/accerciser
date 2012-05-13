@@ -1128,7 +1128,7 @@ class _SectionTable(_InterfaceSection):
                                self.cell_button)]:
       button.set_label(str(desc or '<no description>'))
       button.set_sensitive(bool(acc))
-      button.set_data('acc', acc)
+      setattr(button, 'acc', acc)
         
   def _onTableButtonClicked(self, button):
     '''
@@ -1138,7 +1138,7 @@ class _SectionTable(_InterfaceSection):
     @param button: Button that triggered event.
     @type button: gtk.Button
     '''
-    self.node.update(button.get_data('acc'))
+    self.node.update(getattr(button, 'acc'))
 
 class _SectionText(_InterfaceSection):
   '''
