@@ -14,6 +14,7 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import GObject
+from gi.repository import GLib
 
 import os
 import traceback
@@ -26,7 +27,7 @@ from accerciser.i18n import _, N_, DOMAIN
 import pyatspi
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 'validate.ui')
-USER_SCHEMA_PATH = os.path.join(os.environ['HOME'], '.accerciser', 
+USER_SCHEMA_PATH = os.path.join(GLib.get_user_data_dir(), 'accerciser',
                                 'plugindata', 'validate')
 SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser', 
                                'plugindata', 'validate')

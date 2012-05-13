@@ -1,3 +1,4 @@
+from gi.repository import GLib
 from gi.repository import Gtk as gtk
 from gi.repository import Atk as atk
 
@@ -14,7 +15,7 @@ COL_APP = 1
 COL_PATH = 2
 _BM_ATTRIBS = ['title', 'app', 'path']
 
-BOOKMARKS_PATH = os.path.join(os.environ['HOME'], '.accerciser')
+BOOKMARKS_PATH = os.path.join(GLib.get_user_config_dir(), 'accerciser')
 BOOKMARKS_FILE = 'bookmarks.xml'
 
 class BookmarkStore(gtk.ListStore):

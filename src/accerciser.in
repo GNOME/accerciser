@@ -13,12 +13,23 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
+from gi.repository import GLib
 
 import sys, os
+
+def migrate_data (old_path, new_path):
+  if os.path.exists(old_path) and not os.path.exists(new_path):
+    mask = os.umask(077)
+    try:
+      os.renames(old_path, new_path)
+    except:
+      print "Unable to migrate ", old_path
+    os.umask(mask)
+
 # Load gail module no matter what the desktop-wide settings are.
 os.environ['GTK_MODULES'] = 'gail:atk-bridge'
-# make the ~/.accerciser directory part of the path to aid user imports
-sys.path.append(os.path.join(os.environ['HOME'], '.accerciser'))
+# make the accerciser directory part of the path to aid user imports
+sys.path.append(os.path.join(GLib.get_user_config_dir(), 'accerciser'))
 # We can't rely on prefix if we're installed by relocated RPM. Instead, we 
 # use __file__ and for now hope that lib is relative to bin.
 sys.prefix = '@prefix@'
@@ -49,6 +60,17 @@ except Exception:
 else:
   # TODO: REVIEW
   gtk.Window.set_default_icon_list(icons)
-  
+
+# Try migration
+old_plugin_dir = os.path.join(os.environ['HOME'], '.accerciser', 'plugins')
+new_plugin_dir = os.path.join(GLib.get_user_data_dir(), 'accerciser', 'plugins')
+migrate_data(old_plugin_dir, new_plugin_dir)
+old_bookmarks = os.path.join(os.environ['HOME'], '.accerciser', 'bookmarks.xml')
+new_bookmarks = os.path.join(GLib.get_user_config_dir(), 'accerciser', 'bookmarks.xml')
+migrate_data(old_bookmarks, new_bookmarks)
+old_plugindata = os.path.join(os.environ['HOME'], '.accerciser', 'plugindata')
+new_plugindata = os.path.join(GLib.get_user_data_dir(), 'accerciser', 'plugindata')
+
+
 import accerciser
 accerciser.main()

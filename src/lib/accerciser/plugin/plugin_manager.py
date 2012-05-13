@@ -13,6 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 import gi
 
+from gi.repository import GLib
 from gi.repository import Gtk as gtk
 from gi.repository.Gio import Settings as GSettings
 
@@ -108,8 +109,8 @@ class PluginManager(gtk.ListStore, Tools):
     @rtype: tuple
     '''
     plugin_file_list = []
-    plugin_dir_local = os.path.join(os.environ['HOME'], 
-                                    '.accerciser', 'plugins')
+    plugin_dir_local = os.path.join(GLib.get_user_data_dir(),
+                                    'accerciser', 'plugins')
     plugin_dir_global = os.path.join(sys.prefix, 'share',
                                      'accerciser', 'plugins')
     for plugin_dir in (plugin_dir_local, plugin_dir_global):
