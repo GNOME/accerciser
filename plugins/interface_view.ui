@@ -101,8 +101,10 @@
                                 <property name="visible">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="xpad">5</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Child count&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Child count</property>
+                              <attributes>
+                                <attribute name="weight" value="bold"/>
+                              </attributes>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -147,9 +149,11 @@
                                     <property name="visible">True</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="xalign">0</property>
-                                    <property name="label" translatable="yes">&lt;i&gt;(no description)&lt;/i&gt;</property>
-                                    <property name="use_markup">True</property>
+                                    <property name="label" translatable="yes">(no description)</property>
                                     <property name="selectable">True</property>
+                                    <attributes>
+                                      <attribute name="style" value="italic"/>
+                                    </attributes>
                                   </object>
                                 </child>
                               </object>
@@ -158,8 +162,10 @@
                               <object class="GtkLabel" id="label58">
                                 <property name="visible">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Description&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Description</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -213,8 +219,10 @@
                                 <child type="label">
                                   <object class="GtkLabel" id="label32">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;States&lt;/b&gt;</property>
-                                    <property name="use_markup">True</property>
+                                    <property name="label" translatable="yes">States</property>
+                                    <attributes>
+                                      <attribute name="weight" value="bold"/>
+                                    </attributes>
                                   </object>
                                 </child>
                               </object>
@@ -331,8 +339,10 @@
                                 <child type="label">
                                   <object class="GtkLabel" id="label31">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;Relations&lt;/b&gt;</property>
-                                    <property name="use_markup">True</property>
+                                    <property name="label" translatable="yes">Relations</property>
+                                    <attributes>
+                                      <attribute name="weight" value="bold"/>
+                                    </attributes>
                                   </object>
                                 </child>
                               </object>
@@ -398,8 +408,10 @@
                             <child type="label">
                               <object class="GtkLabel" id="label12">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Attributes&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Attributes</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -768,7 +780,7 @@
                           <object class="GtkLabel" id="size_label">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes" comments="Component                                 size in pixels">0, 0</property>
+                            <property name="label" translatable="yes" comments="Component size in pixels">0, 0</property>
                             <property name="selectable">True</property>
                             <accessibility>
                               <relation type="labelled-by" target="label14"/>
@@ -1036,8 +1048,10 @@
                             <child type="label">
                               <object class="GtkLabel" id="label37">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Attributes&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Attributes</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -1289,7 +1303,7 @@
                           <object class="GtkLabel" id="img_size_label">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes" comments="Component                                 size">0, 0</property>
+                            <property name="label" translatable="yes" comments="Component size">0, 0</property>
                             <property name="selectable">True</property>
                             <accessibility>
                               <relation type="labelled-by" target="label21"/>
@@ -1338,9 +1352,11 @@
                           <object class="GtkLabel" id="img_desc_label">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
-                            <property name="label" translatable="yes">&lt;i&gt;(no description)&lt;/i&gt;</property>
-                            <property name="use_markup">True</property>
+                            <property name="label" translatable="yes">(no description)</property>
                             <property name="selectable">True</property>
+                            <attributes>
+                              <attribute name="style" value="italic"/>
+                            </attributes>
                             <accessibility>
                               <relation type="labelled-by" target="label59"/>
                             </accessibility>
@@ -1602,8 +1618,10 @@
                                     <child>
                                       <object class="GtkLabel" id="label52">
                                         <property name="visible">True</property>
-                                        <property name="label" translatable="yes">&lt;i&gt;Caption:&lt;/i&gt;</property>
-                                        <property name="use_markup">True</property>
+                                        <property name="label" translatable="yes">Caption:</property>
+                                        <attributes>
+                                          <attribute name="style" value="italic"/>
+                                        </attributes>
                                         <accessibility>
                                           <relation type="label-for" target="table_caption_label"/>
                                         </accessibility>
@@ -1638,8 +1656,10 @@
                                     <child>
                                       <object class="GtkLabel" id="label53">
                                         <property name="visible">True</property>
-                                        <property name="label" translatable="yes">&lt;i&gt;Summary:&lt;/i&gt;</property>
-                                        <property name="use_markup">True</property>
+                                        <property name="label" translatable="yes">Summary:</property>
+                                        <attributes>
+                                          <attribute name="style" value="italic"/>
+                                        </attributes>
                                         <accessibility>
                                           <relation type="label-for" target="table_summary_label"/>
                                         </accessibility>
@@ -1833,8 +1853,10 @@
                                 <child type="label">
                                   <object class="GtkLabel" id="label4">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;Table Information&lt;/b&gt;</property>
-                                    <property name="use_markup">True</property>
+                                    <property name="label" translatable="yes">Table Information</property>
+                                    <attributes>
+                                      <attribute name="weight" value="bold"/>
+                                    </attributes>
                                   </object>
                                 </child>
                               </object>
@@ -1994,7 +2016,6 @@
                                           <object class="GtkLabel" id="label48">
                                             <property name="visible">True</property>
                                             <property name="label" translatable="yes">Row</property>
-                                            <property name="use_markup">True</property>
                                           </object>
                                         </child>
                                       </object>
@@ -2099,7 +2120,6 @@
                                           <object class="GtkLabel" id="label49">
                                             <property name="visible">True</property>
                                             <property name="label" translatable="yes">Column</property>
-                                            <property name="use_markup">True</property>
                                           </object>
                                         </child>
                                       </object>
@@ -2115,8 +2135,10 @@
                             <child type="label">
                               <object class="GtkLabel" id="label45">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Selected Cell&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Selected Cell</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -2146,7 +2168,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="use_underline">True</property>
-                <property name="use_markup">True</property>
                 <child>
                   <object class="GtkAlignment" id="alignment2">
                     <property name="visible">True</property>
@@ -2190,8 +2211,10 @@
                             <child type="label">
                               <object class="GtkLabel" id="label9">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Text&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Text</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -2271,8 +2294,10 @@
                                           <object class="GtkLabel" id="label_text_attr_start">
                                             <property name="visible">True</property>
                                             <property name="xalign">0</property>
-                                            <property name="label" translatable="yes" comments="Start character offset of text attributes span">&lt;i&gt;Start: 0&lt;/i&gt;</property>
-                                            <property name="use_markup">True</property>
+                                            <property name="label" translatable="yes" comments="Start character offset of text attributes span">Start: 0</property>
+                                            <attributes>
+                                              <attribute name="style" value="italic"/>
+                                            </attributes>
                                             <property name="wrap_mode">word-char</property>
                                             <property name="selectable">True</property>
                                           </object>
@@ -2284,8 +2309,10 @@
                                           <object class="GtkLabel" id="label_text_attr_end">
                                             <property name="visible">True</property>
                                             <property name="xalign">0</property>
-                                            <property name="label" translatable="yes" comments="End chaacter                                                 offset of text attributes span">&lt;i&gt;End: 0&lt;/i&gt;</property>
-                                            <property name="use_markup">True</property>
+                                            <property name="label" translatable="yes" comments="End character offset of text attributes span">End: 0</property>
+                                            <attributes>
+                                              <attribute name="style" value="italic"/>
+                                            </attributes>
                                             <property name="wrap_mode">word-char</property>
                                             <property name="selectable">True</property>
                                           </object>
@@ -2357,8 +2384,10 @@
                             <child type="label">
                               <object class="GtkLabel" id="label8">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Attributes&lt;/b&gt;</property>
-                                <property name="use_markup">True</property>
+                                <property name="label" translatable="yes">Attributes</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
                               </object>
                             </child>
                           </object>
@@ -2374,7 +2403,6 @@
                   <object class="GtkLabel" id="label6">
                     <property name="visible">True</property>
                     <property name="label" translatable="yes">Te_xt</property>
-                    <property name="use_markup">True</property>
                     <property name="use_underline">True</property>
                   </object>
                 </child>
@@ -2558,8 +2586,10 @@
     <child type="label">
       <object class="GtkLabel" id="label_role">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">&lt;b&gt;unknown&lt;/b&gt;</property>
-        <property name="use_markup">True</property>
+        <property name="label" translatable="yes">unknown</property>
+        <attributes>
+          <attribute name="weight" value="bold"/>
+        </attributes>
       </object>
     </child>
   </object>
