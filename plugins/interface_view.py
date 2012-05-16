@@ -73,7 +73,10 @@ class InterfaceViewer(ViewportPlugin):
       _SectionStreamableContent(ui_xml, self.node),
       _SectionTable(ui_xml, self.node),
       _SectionText(ui_xml, self.node),
-      _SectionValue(ui_xml, self.node)]
+      _SectionValue(ui_xml, self.node),
+      _SectionCollection(ui_xml, self.node),
+      _SectionDesktop(ui_xml, self.node),
+      _SectionLoginHelper(ui_xml, self.node)]
 
     # HACK: Add callbacks to this class. 
     for cb in callbacks:
@@ -229,11 +232,20 @@ class _InterfaceSection(object):
     expander = expander or self.expander
     label = expander.get_label_widget()
     label_text = label.get_label()
+
+    if isinstance(label_text, unicode):
+        label_text = label_text.decode('UTF-8')
+
+    not_implemented_str = _('(not implemented)')
+
+    if isinstance(not_implemented_str, unicode):
+        not_implemented_str = not_implemented_str.encode('UTF-8')
+
     if sensitive:
-      label_text = label_text.replace(_('(not implemented)'), '')
+      label_text = label_text.replace(not_implemented_str, '')
       label_text = label_text.strip(' ')
-    elif _('(not implemented)') not in label_text:
-      label_text += ' ' + _('(not implemented)')
+    elif not not_implemented_str in label_text:
+      label_text = label_text + ' ' + not_implemented_str
     label.set_label(label_text)
     for child in expander.get_children():
       child.set_sensitive(sensitive)
@@ -674,6 +686,24 @@ class _SectionHyperlink(_InterfaceSection):
   interface_name = 'Hyperlink'
   '''
   A placeholder class for Hyperlink interface section.
+  '''
+
+class _SectionCollection(_InterfaceSection):
+  interface_name = 'Collection'
+  '''
+  A placeholder class for Collection interface section.
+  '''
+
+class _SectionDesktop(_InterfaceSection):
+  interface_name = 'Desktop'
+  '''
+  A placeholder class for Desktop interface section.
+  '''
+
+class _SectionLoginHelper(_InterfaceSection):
+  interface_name = 'LoginHelper'
+  '''
+  A placeholder class for LoginHelper interface section.
   '''
 
 class _SectionHypertext(_InterfaceSection):
