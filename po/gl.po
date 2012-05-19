@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser-master-po-gl-1951\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-21 12:09+0100\n"
-"PO-Revision-Date: 2012-02-21 12:09+0100\n"
+"POT-Creation-Date: 2012-05-19 15:39+0200\n"
+"PO-Revision-Date: 2012-05-19 15:40+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -199,8 +199,8 @@ msgstr ""
 "Consola interactiva para manipular o accesíbel seleccionado neste momento"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Monitor de eventos</b>"
+msgid "Event monitor"
+msgstr "Monitor de eventos"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
@@ -249,37 +249,38 @@ msgid "Clear event log"
 msgstr "Limpar o rexistro de eventos"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Número de fillos</b>"
+msgid "Child count"
+msgstr "Contía de fillos"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(sen descrición)</i>"
+#: ../plugins/interface_view.ui.h:3
+msgid "(no description)"
+msgstr "(sen descrición)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Descrición</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Descrición"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Estados</b>"
+msgid "States"
+msgstr "Estados"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Mostrar"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Relacións</b>"
+msgid "Relations"
+msgstr "Relacións"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Atributos</b>"
+msgid "Attributes"
+msgstr "Atributos"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -313,7 +314,7 @@ msgstr "A_plicativo"
 msgid "Col_lection"
 msgstr "Co_lección"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -363,7 +364,7 @@ msgid "_Document"
 msgstr "_Documento"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hiperligazón"
 
@@ -375,146 +376,140 @@ msgstr "H_ipertexto"
 msgid "Position"
 msgstr "Posición"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Descrición"
-
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "Configuración rexional"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Imaxe"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Asistente de ini_cio de sesión"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "_Selección"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "Contido de _fluxo"
 
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "Título:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Título:</i>"
+msgid "Summary:"
+msgstr "Resumo:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Resumo:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Columnas seleccionadas"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Filas seleccionadas"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Columnas"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Filas"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Información da táboa</b>"
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "Información da táboa"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "nome (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Cabeceira:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<sen descrición>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Amplitude:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Fila"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Columna"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Cela seleccionada</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "Cela seleccionada"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Táboa"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Texto</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Texto"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Desprazamento"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Incluír predeterminados"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Inicio: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "Inicio: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "Fin: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Fin: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "Te_xto"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Valor actual"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Incremento mínimo"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Valor máximo"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Valor mínimo"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "Val_or"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>descoñecido</b>"
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "descoñecido"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -531,10 +526,14 @@ msgstr "Permite ver varias propiedades da interface"
 msgid "(not implemented)"
 msgstr "(non implementado)"
 
+#: ../plugins/interface_view.py:338 ../plugins/interface_view.py:836
+msgid "<i>(no description)</i>"
+msgstr "<i>(sen descrición)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../plugins/interface_view.py:708 ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nome"
 
@@ -582,59 +581,59 @@ msgstr "Esque_ma:"
 msgid "V_alidate"
 msgstr "V_alidar"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Inactivo"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Sen descrición"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "Validador AT-SPI"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Valida a accesibilidade dun aplicativo"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Nivel"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Rol"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Gardando"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Validando"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "EXCEPTO"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "ERRO"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "AVISO"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFORMACIÓN"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "DEPURACIÓN"
 
@@ -892,51 +891,51 @@ msgstr ""
 msgid "Web site"
 msgstr "Sitio web"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "_Engadir marcador…"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Marcar o accesíbel seleccionado."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Editar os marcadores…"
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Xestionar os marcadores."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Editar os marcadores…"
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Título"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Aplicativo"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Ruta"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Engadir marcador…"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Título:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Aplicativo:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Ruta:"
 
@@ -947,12 +946,12 @@ msgstr "Erros do engadido"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Ver"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Sen vista"
 
@@ -998,6 +997,18 @@ msgstr "_Ver"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "A_xuda"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Monitor de eventos</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Descrición</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Texto</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Inicio: 0</i>"
 
 #~ msgid "The hpaned value for the main window."
 #~ msgstr "O valor hpaned para a xanela principal."
