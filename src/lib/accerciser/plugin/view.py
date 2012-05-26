@@ -29,7 +29,7 @@ from accerciser import ui_manager
 GSCHEMA = 'org.a11y.Accerciser'
 PLUGVIEWS_GSCHEMA = 'org.a11y.Accerciser.pluginviews'
 NEWPLUGVIEWS_GSCHEMA = 'org.a11y.Accerciser.newpluginviews'
-NEWPLUGVIEWS_PATH = '/apps/accerciser/newpluginviews/'
+NEWPLUGVIEWS_PATH = '/org/a11y/accerciser/newpluginviews/'
 
 
 class PluginView(gtk.Notebook):

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema path="/apps/accerciser/" id="org.a11y.Accerciser" gettext-domain="accerciser">
+  <schema path="/org/a11y/accerciser/" id="org.a11y.Accerciser" gettext-domain="accerciser">
     <key type="as" name="disabled-plugins">
       <default>[]</default>
       <_summary>A list of plugins that are disabled by default</_summary>
@@ -45,7 +45,7 @@
     <child schema="org.a11y.Accerciser.newpluginviews" name="newpluginviews"/>
     <child schema="org.a11y.Accerciser.hotkeys" name="hotkeys"/>
   </schema>
-  <schema path="/apps/accerciser/pluginviews/" id="org.a11y.Accerciser.pluginviews" gettext-domain="accerciser">
+  <schema path="/org/a11y/accerciser/pluginviews/" id="org.a11y.Accerciser.pluginviews" gettext-domain="accerciser">
     <key type="as" name="bottom-panel-layout">
       <default>["IPython Console"]</default>
       <_summary>The layout for the bottom panel</_summary>

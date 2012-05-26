@@ -18,7 +18,7 @@ from i18n import _
 import pyatspi
 
 HOTKEYS_GSCHEMA = 'org.a11y.Accerciser.hotkeys'
-HOTKEYS_BASEPATH = '/apps/accerciser/hotkeys/'
+HOTKEYS_BASEPATH = '/org/a11y/accerciser/hotkeys/'
 
 COL_COMPONENT = 0
 COL_DESC = 1
