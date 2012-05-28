@@ -67,17 +67,14 @@ class WidgetHasText(Validator):
   '''
   URL = URL_BASE + 'ITEM_ROLE_has_no_text_interface'
   def condition(self, acc):
-    return acc.getRole() in [ROLE_PUSH_BUTTON, ROLE_MENU, ROLE_MENU_ITEM,
-                             ROLE_CHECK_MENU_ITEM, ROLE_RADIO_MENU_ITEM,
-                             ROLE_TOGGLE_BUTTON, ROLE_STATUS_BAR,
+    return acc.getRole() in [
                              ROLE_TABLE_COLUMN_HEADER,
-                             ROLE_TABLE_ROW_HEADER, ROLE_SPIN_BUTTON,
-                             ROLE_SLIDER, ROLE_ROW_HEADER, ROLE_COLUMN_HEADER,
-                             ROLE_RADIO_BUTTON, ROLE_PASSWORD_TEXT,
+                             ROLE_TABLE_ROW_HEADER,
+                             ROLE_PASSWORD_TEXT,
                              ROLE_TEXT, ROLE_ENTRY, ROLE_PARAGRAPH,
-                             ROLE_PAGE_TAB, ROLE_LIST_ITEM, ROLE_LINK,
+                             ROLE_LIST_ITEM,
                              ROLE_HEADING, ROLE_HEADER,
-                             ROLE_FOOTER, ROLE_CHECK_BOX, ROLE_CAPTION,
+                             ROLE_FOOTER, ROLE_CAPTION,
                              ROLE_TERMINAL]
 
   def before(self, acc, state, view):
