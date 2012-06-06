@@ -2,23 +2,26 @@
 # translation of accerciser to Russian
 # Copyright (C) 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
+# Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 # Yuri Kozlov <kozlov.y@gmail.com>, 2008.
 # Leonid Kanter <leon@asplinux.ru>, 2009.
-# Yuri Kozlov <yuray@komyakino.ru>, 2010.
-# Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+# Yuri Kozlov <yuray@komyakino.ru>, 2010, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 01:24+0000\n"
-"PO-Revision-Date: 2012-02-26 18:45+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-05-30 10:56+0000\n"
+"PO-Revision-Date: 2012-06-03 09:07+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: ru\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -28,8 +31,7 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Исследование поддержки вспомогательных технологий"
 
-#: ../accerciser.desktop.in.in.h:3
-#: ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Изучение доступности приложений Accerciser"
 
@@ -194,8 +196,8 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Интерактивная консоль для работы с текущим объектом"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Монитор событий</b>"
+msgid "Event monitor"
+msgstr "Монитор событий"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
@@ -242,38 +244,38 @@ msgid "Clear event log"
 msgstr "Очистить журнал событий"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Число дочерних элементов</b>"
+msgid "Child count"
+msgstr "Число дочерних элементов"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
 #: ../plugins/interface_view.ui.h:3
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(описание отсутствует)</i>"
+msgid "(no description)"
+msgstr "(нет описания)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Описание</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Описание"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Состояния</b>"
+msgid "States"
+msgstr "Состояния"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Показать"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Связи</b>"
+msgid "Relations"
+msgstr "Связи"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Атрибуты</b>"
+msgid "Attributes"
+msgstr "Атрибуты"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -307,7 +309,7 @@ msgstr "Прило_жение"
 msgid "Col_lection"
 msgstr "_Набор"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -357,8 +359,7 @@ msgid "_Document"
 msgstr "_Документ"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30
-#: ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Гиперссылка"
 
@@ -370,147 +371,140 @@ msgstr "_Гипертекст"
 msgid "Position"
 msgstr "Положение"
 
-#. add description to buffer
 #: ../plugins/interface_view.ui.h:33
-#: ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Описание"
-
-#: ../plugins/interface_view.ui.h:34
 msgid "Locale"
 msgstr "Язык"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Изображение"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Помощн_ик входа в систему"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "_Выделение"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "_Потоковое содержимое"
 
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "Подпись:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Подпись:</i>"
+msgid "Summary:"
+msgstr "Сведения:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Сведения:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Выделенные колонки"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Выделенные строки"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Столбцы"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Строки"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Табличная информация</b>"
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "Табличная информация"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "имя (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Заголовок:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<нет описания>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Размеры:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Строка"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Столбец"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Выделенная ячейка</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "Выделенная ячейка"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Таблица"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Текст</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Текст"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Смещение"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Включить умолчания"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Начало: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "Начало: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "Конец: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Конец: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "_Текст"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Текущее значение"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Минимальное приращение"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Максимальное значение"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Минимальное значение"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "_Значение"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>Неизвестно</b>"
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "неизвестно"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -522,38 +516,38 @@ msgstr "Просмотр интерфейса"
 msgid "Allows viewing of various interface properties"
 msgstr "Позволяет изучать различные свойства пользовательского интерфейса"
 
-#: ../plugins/interface_view.py:233
-#: ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr " (не поддерживается)"
 
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(описание отсутствует)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708
-#: ../plugins/validate.py:282
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Название"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Начало"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Конец"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Слишком много выделенных дочерних объектов"
 
-#: ../plugins/interface_view.py:1239
-#: ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr " <i>(Изменяемый)</i>"
 
@@ -581,62 +575,59 @@ msgstr "С_хема:"
 msgid "V_alidate"
 msgstr "П_роверить"
 
-#: ../plugins/validate.ui.h:3
-#: ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Простаивает"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Нет описания"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "Проверка с AT-SPI"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Проверка доступности приложения"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210
-#: ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Уровень"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284
-#: ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Роль"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Сохранение"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Проверка"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "ИСКЛЮЧЕНИЕ"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "ОШИБКА"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "ПРЕДУПР"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "ИНФО"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "ОТЛАД"
 
@@ -662,7 +653,7 @@ msgstr "у интерактивного %s нет действия"
 msgid "more than one focused widget"
 msgstr "более одного виджета имеют фокус"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s не имеет текстового интерфейса"
@@ -670,12 +661,12 @@ msgstr "%s не имеет текстового интерфейса"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "индекс %s у родителя не совпадает с индексом у потомка"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Отсутствует обратная величина для отношения %s"
@@ -683,12 +674,12 @@ msgstr "Отсутствует обратная величина для отно
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "у %s отсутствует имя или метка"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "фокусируемая %s имеет табличный интерфейс, но нет интерфейса выделения"
@@ -697,7 +688,7 @@ msgstr "фокусируемая %s имеет табличный интерфе
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s имеет состояние %s без состояния %s"
@@ -705,7 +696,7 @@ msgstr "%s имеет состояние %s без состояния %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s не принадлежит набору"
@@ -715,7 +706,7 @@ msgstr "%s не принадлежит набору"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "индекс %(num)d у %(rolename)s не совпадает по строке и столбцу"
@@ -726,12 +717,16 @@ msgstr "индекс %(num)d у %(rolename)s не совпадает по стр
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "индекс родителя %(num1)d у %(rolename)s не совпадает со строкой и столбцом по индексу %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
+msgstr ""
+"индекс родителя %(num1)d у %(rolename)s не совпадает со строкой и столбцом "
+"по индексу %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "у %s отсутствует имя или описание"
@@ -745,8 +740,12 @@ msgid "_Contents"
 msgstr "_Содержание"
 
 #: ../src/lib/accerciser/accerciser.py:125
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Не удалось получить доступ к приложениям рабочей среды из Accerciser. Необходимо включить поддержку вспомогательных технологий. Включить её сейчас?"
+msgid ""
+"Accerciser could not see the applications on your desktop.  You must enable "
+"desktop accessibility to fix this problem.  Do you want to enable it now?"
+msgstr ""
+"Не удалось получить доступ к приложениям рабочей среды из Accerciser. "
+"Необходимо включить поддержку вспомогательных технологий. Включить её сейчас?"
 
 #: ../src/lib/accerciser/accerciser.py:142
 msgid "Note: Changes only take effect after logout."
@@ -860,7 +859,9 @@ msgstr "Николай В. Шмырёв <nshmyrev@yandex.ru>, 2007-2008"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "Интерактивный обозреватель поддержки вспомогательных технологий на языке Python"
+msgstr ""
+"Интерактивный обозреватель поддержки вспомогательных технологий на языке "
+"Python"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
@@ -874,51 +875,51 @@ msgstr "Новая лицензия BSD. Подробности смотрите
 msgid "Web site"
 msgstr "Веб-сайт"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "_Добавить закладку…"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Добавить в закладки выделенный объект."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Изменить закладки…"
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Управление закладками."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Изменить закладки…"
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Заглавие"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Приложение"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Путь"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Добавить закладку…"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Заглавие:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Приложение:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Путь:"
 
@@ -929,12 +930,12 @@ msgstr "Ошибки модуля"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Область"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Без области"
 
@@ -981,3 +982,20 @@ msgstr "_Вид"
 msgid "_Help"
 msgstr "_Справка"
 
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Монитор событий</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Описание</b>"
+
+#~ msgid "<b>States</b>"
+#~ msgstr "<b>Состояния</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Текст</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Начало: 0</i>"
+
+#~ msgid "<i>End: 0</i>"
+#~ msgstr "<i>Конец: 0</i>"
