@@ -165,8 +165,12 @@ class Level2SequenceFactory(SequenceFactory):
           Gtk.accelerator_name(event.id, Gdk.ModifierType(event.modifiers)))
 
   def focusCommand(self, event):
+    try:
+      path = pyatspi.getPath(event.source)
+    except RuntimeError:
+      path = []
     self.last_focused = (event.source.name, 
-                         pyatspi.getPath(event.source), 
+                         path,
                          event.source.getRole())
 
   def windowActivateCommand(self, event):
