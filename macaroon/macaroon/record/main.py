@@ -306,14 +306,9 @@ class ScriptBuffer(GtkSource.Buffer):
                                            'focus')
     pyatspi.Registry.registerEventListener(self._onDocLoad, 
                                            'document:load-complete')
-    masks = []
-    mask = 0
-    while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
-      masks.append(mask)
-      mask += 1
     pyatspi.Registry.registerKeystrokeListener(
       self._onKeystroke,
-      mask=masks,
+      mask = range(256),
       kind=(pyatspi.KEY_PRESSED_EVENT, pyatspi.KEY_RELEASED_EVENT))
     self.set_property('recording', True)
 
@@ -324,14 +319,9 @@ class ScriptBuffer(GtkSource.Buffer):
                                              'focus')
     pyatspi.Registry.deregisterEventListener(self._onDocLoad, 
                                              'document:load-complete')
-    masks = []
-    mask = 0
-    while mask <= (1 << pyatspi.MODIFIER_NUMLOCK):
-      masks.append(mask)
-      mask += 1
     pyatspi.Registry.deregisterKeystrokeListener(
       self._onKeystroke,
-      mask=masks,
+      mask = range(256),
       kind=(pyatspi.KEY_PRESSED_EVENT, pyatspi.KEY_RELEASED_EVENT))
     self.script_factory.terminateScript()
     while self.script_factory.commands_queue.qsize():
