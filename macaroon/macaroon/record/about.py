@@ -11,7 +11,7 @@
 
 # Headers in this file shall remain intact.
 
-from gi.repository import Gtk
+from gi.repository import Gtk, GObject
 #from gnome import program_get, url_show
 
 _ = lambda x: x

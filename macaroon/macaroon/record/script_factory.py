@@ -136,15 +136,15 @@ class Level2SequenceFactory(SequenceFactory):
           (event.event_string.startswith('ISO') and \
              event.event_string != 'ISO_Left_Tab'):
       return
-    if isinstance(event, pyatspi.event.DeviceEvent):
+    if isinstance(event, pyatspi.deviceevent.DeviceEvent):
       # If it's a fake one, then it is a global WM hotkey, no need for context.
       self._prependContext()
-    if event.modifiers in (0, Gdk.EventMask.SHIFT_MASK) and \
+    if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
       self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
     else:
       if self.frame_name:
-        if isinstance(event, pyatspi.event.DeviceEvent):
+        if isinstance(event, pyatspi.deviceevent.DeviceEvent):
           self.commands_queue.put_nowait(
             'sequence.append(WaitForWindowActivate("%s", None))\n' % \
               self.frame_name.replace('"','\"'))
@@ -162,7 +162,7 @@ class Level2SequenceFactory(SequenceFactory):
         self.typed_text = ''
       self.commands_queue.put_nowait(
         'sequence.append(KeyComboAction("%s"))\n' % \
-          Gtk.accelerator_name(event.id, event.modifiers))
+          Gtk.accelerator_name(event.id, Gdk.ModifierType(event.modifiers)))
 
   def focusCommand(self, event):
     self.last_focused = (event.source.name, 
@@ -264,7 +264,7 @@ class DogtailFactory(ScriptFactory):
     if event.id in self.MODIFIERS or \
           event.event_string.startswith('ISO'):
       return
-    if event.modifiers in (0, Gdk.EventMask.SHIFT_MASK) and \
+    if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
       self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
     else:
@@ -282,7 +282,7 @@ class DogtailFactory(ScriptFactory):
         self.typed_text = ''
       self.commands_queue.put_nowait('keyCombo("%s")\n' % \
                                        Gtk.accelerator_name(event.id,
-                                                            event.modifiers))
+                                                            Gdk.ModifierType(event.modifiers)))
 
 
 class NativeFactory(DogtailFactory):
@@ -317,7 +317,7 @@ class LDTPFactory(DogtailFactory):
     if event.id in self.MODIFIERS or \
           event.event_string.startswith('ISO'):
       return
-    if event.modifiers in (0, Gdk.EventMask.SHIFT_MASK) and \
+    if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
       self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
     else:
@@ -331,4 +331,4 @@ class LDTPFactory(DogtailFactory):
         self.typed_text = ''
       self.commands_queue.put_nowait('generatekeyevent("%s")\n' % \
                                        Gtk.accelerator_name(event.id,
-                                                            event.modifiers))
+                                                            Gdk.ModifierType(event.modifiers)))

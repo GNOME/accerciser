@@ -12,6 +12,7 @@
 # Headers in this file shall remain intact.
 
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
 from gi.repository import GtkSource
@@ -99,7 +100,7 @@ class Main:
   def _onPopup(self, status_icon, button, activate_time):
     menu = self.ui_manager.get_widget('/popup')
     menu.popup(None, None, Gtk.StatusIcon.position_menu,
-               button, activate_time, status_icon)
+               status_icon, button, activate_time)
  
   def _onQuit(self, action):
     pyatspi.Registry.stop()
@@ -450,11 +451,11 @@ class _FakeDeviceEvent(object):
       modifiers = 0
     else:
       id, modifiers = Gtk.accelerator_parse(key_combo)
-    keymap = Gdk.keymap_get_default()
-    map_entry = keymap.get_entries_for_keyval(65471)
+    keymap = Gdk.Keymap.get_default()
+    success, map_entry = keymap.get_entries_for_keyval(65471)
     self.type = type
     self.id = id
-    self.hw_code = map_entry[0][0]
+    self.hw_code = map_entry[0].keycode
     self.modifiers = int(modifiers)
     self.timestamp = 0
     self.event_string = Gdk.keyval_name(id)
