@@ -335,7 +335,7 @@ class BookmarkStore(gtk.ListStore):
       tv = self._createTreeView(bookmarks_store)
       sw = gtk.ScrolledWindow()
       sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
-      sw.set_shadow_type(gtk.ShadowType.IN)
+      sw.set_shadow_type(gtk.ShadowType.IN_)
       sw.add(tv)
       hbox.pack_start(sw, True, True, 0)
       button_vbox = gtk.VBox()

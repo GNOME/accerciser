@@ -129,7 +129,7 @@ class MacroPreview(Gtk.Window):
     text_view.modify_font(Pango.FontDescription('Mono'))
     sw = Gtk.ScrolledWindow()
     sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-    sw.set_shadow_type(Gtk.ShadowType.IN)
+    sw.set_shadow_type(Gtk.ShadowType.IN_)
     sw.add(text_view)
     vbox = Gtk.VBox()
     vbox.set_spacing(3)
