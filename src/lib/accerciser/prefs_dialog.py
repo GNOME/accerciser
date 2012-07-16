@@ -46,7 +46,7 @@ class AccerciserPreferencesDialog(gtk.Dialog):
                           (hotkeys_view, _('Global Hotkeys'))]:
       if view is not None:
         sw = gtk.ScrolledWindow()
-        sw.set_shadow_type(gtk.ShadowType.IN_)
+        sw.set_shadow_type(gtk.ShadowType.IN)
         sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
         sw.set_size_request(500, 150)
         sw.add(view)
