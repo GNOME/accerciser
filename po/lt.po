@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 01:24+0000\n"
-"PO-Revision-Date: 2012-03-17 18:13+0300\n"
+"POT-Creation-Date: 2012-05-15 18:27+0000\n"
+"PO-Revision-Date: 2012-08-20 22:19+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -193,8 +193,9 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktyvi konsolė parinkčių valdymui prieinama"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Įvykių stebėtojas</b>"
+#| msgid "Event Monitor"
+msgid "Event monitor"
+msgstr "Įvykių stebėtojas"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
@@ -241,38 +242,44 @@ msgid "Clear event log"
 msgstr "Išvalyti įvykių žurnalą"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Antrinių procesų skaičius</b>"
+#| msgid "<b>Child count</b>"
+msgid "Child count"
+msgstr "Antrinių procesų skaičius"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
 #: ../plugins/interface_view.ui.h:3
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(be aprašo)</i>"
+#| msgid "<no description>"
+msgid "(no description)"
+msgstr "(nėra aprašo)"
 
+#. add description to buffer
 #: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Aprašas</b>"
+#: ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Apibūdinimas"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Būsenos</b>"
+#| msgid "Start"
+msgid "States"
+msgstr "Būsenos"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Rodyti"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Sąsajos</b>"
+#| msgid "<b>Relations</b>"
+msgid "Relations"
+msgstr "Sąsajos"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Atributai</b>"
+#| msgid "<b>Attributes</b>"
+msgid "Attributes"
+msgstr "Atributai"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -306,7 +313,7 @@ msgstr "Pr_ograma"
 msgid "Col_lection"
 msgstr "Kol_lekcija"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -357,7 +364,7 @@ msgstr "_Dokumentas"
 
 #. add url role to buffer
 #: ../plugins/interface_view.ui.h:30
-#: ../plugins/validate.py:286
+#: ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hipersaitas"
 
@@ -369,147 +376,148 @@ msgstr "H_ipertekstas"
 msgid "Position"
 msgstr "Pozicija"
 
-#. add description to buffer
 #: ../plugins/interface_view.ui.h:33
-#: ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Apibūdinimas"
-
-#: ../plugins/interface_view.ui.h:34
 msgid "Locale"
 msgstr "Lokalė"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Paveikslėlis"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Prisijun_gimo pagalba"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "Pari_nktis"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "T_ransliuojamas turinys"
 
+#: ../plugins/interface_view.ui.h:39
+#| msgid "<i>Caption:</i>"
+msgid "Caption:"
+msgstr "Pavadinimas:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Pavadinimas:</i>"
+#| msgid "<i>Summary:</i>"
+msgid "Summary:"
+msgstr "Santrauka:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Santrauka:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Pasirinkti stulpeliai"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Pasirinktos eilutės"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Stulpeliai"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Eilutės"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Lentelės informacija</b>"
+#: ../plugins/interface_view.ui.h:45
+#| msgid "<b>Table Information</b>"
+msgid "Table Information"
+msgstr "Lentelės informacija"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "pavadinimas (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Antraštė:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<nėra aprašo>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Plėtiniai:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Eilutė"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Stulpelis"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Pasirinkti langeliai</b>"
+#: ../plugins/interface_view.ui.h:53
+#| msgid "<b>Selected Cell</b>"
+msgid "Selected Cell"
+msgstr "Pasirinktas langelis"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Lentelė"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Tekstas</b>"
+#: ../plugins/interface_view.ui.h:55
+#| msgid "Te_xt"
+msgid "Text"
+msgstr "Tekstas"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Poslinkis"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Įtraukti standartines nuostatas"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Pradžia: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+#| msgid "Start"
+msgid "Start: 0"
+msgstr "Pradžia: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+#| msgid "End"
+msgid "End: 0"
+msgstr "Pabaiga: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Pabaiga: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "_Tekstas"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Dabartinė reikšmė"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Minimalus žingsnis"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Maksimali reikšmė"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Minimali reikšmė"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "Ve_rtė"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>nežinoma</b>"
+#: ../plugins/interface_view.ui.h:68
+#| msgid "<b>unknown</b>"
+msgid "unknown"
+msgstr "nežinoma"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -527,11 +535,16 @@ msgstr "Leidžia peržvelgti įvairias sąsajos savybes"
 msgid "(not implemented)"
 msgstr "(nerealizuota)"
 
+#: ../plugins/interface_view.py:338
+#: ../plugins/interface_view.py:836
+msgid "<i>(no description)</i>"
+msgstr "<i>(be aprašo)</i>"
+
 #. add accessible's name to buffer
 #: ../plugins/interface_view.py:708
-#: ../plugins/validate.py:282
+#: ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Pavadinimas"
 
@@ -581,61 +594,61 @@ msgid "V_alidate"
 msgstr "P_atikrinti"
 
 #: ../plugins/validate.ui.h:3
-#: ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Neveiklus"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Aprašymo nėra"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "Patikrinimas su AT-SPI"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Patikrina programos prieinamumą"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210
-#: ../plugins/validate.py:278
+#: ../plugins/validate.py:211
+#: ../plugins/validate.py:279
 msgid "Level"
 msgstr "Lygis"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284
+#: ../plugins/validate.py:285
 #: ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Rolė"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Įrašoma"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Tikrinama"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "IŠIMT"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "KLAIDA"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "ĮSPĖJIMAS"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "DERINIMAS"
 
@@ -855,7 +868,9 @@ msgstr "Paryškinto langelio užpildo spalva"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "vt <punktyras@nkm.lt>"
+msgstr ""
+"vt <punktyras@nkm.lt>\n"
+"Aurimas Černius <aurisc4@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -875,51 +890,51 @@ msgstr ""
 msgid "Web site"
 msgstr "Tinklalapis"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "_Pridėti žymelę…"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Žymėti pasirinktus prieinamus objektus"
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Keisti žymeles…"
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Tvarkyti žymeles"
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Keisti žymeles…"
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Programa"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Kelias"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Pridėti žymelę…"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Pavadinimas:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Programa:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Kelias:"
 
@@ -930,12 +945,12 @@ msgstr "Įskiepio klaidos"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Peržiūrėti"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Nėra vaizdo"
 
@@ -982,50 +997,3 @@ msgstr "_Rodymas"
 msgid "_Help"
 msgstr "_Žinynas"
 
-#~ msgid "The hpaned value for the main window."
-#~ msgstr "Pagrindinio lango hpaned reikšmė."
-
-#~ msgid "The vpaned value for the main window."
-#~ msgstr "Pagrindinio lango vpaned reikšmė."
-
-#~ msgid "hpaned value"
-#~ msgstr "hpaned reikšmė"
-
-#~ msgid "vpaned value"
-#~ msgstr "vpaned reikšmė"
-
-#~ msgid "Dogtail"
-#~ msgstr "Dogtail"
-
-#~ msgid "LDTP"
-#~ msgstr "LDTP"
-
-#~ msgid "Native"
-#~ msgstr "Native"
-
-#~ msgid "Script Type"
-#~ msgstr "Scenarijaus tipas"
-
-#~ msgid "Script Recorder"
-#~ msgstr "Scenarijaus įrašiklis"
-
-#~ msgid "Creates dogtail style scripts"
-#~ msgstr "Kuria dogtail stiliaus scenarijus"
-
-#~ msgid "The current script will be lost."
-#~ msgstr "Dabartinis scenarijus bus prarastas."
-
-#~ msgid "Confirm clear"
-#~ msgstr "Patvirtinti išvalymą"
-
-#~ msgid "Full name"
-#~ msgstr "Pilnas pavadinimas"
-
-#~ msgid "Key binding"
-#~ msgstr "Klavišo susiejimas"
-
-#~ msgid "Content type"
-#~ msgstr "Turinio tipas"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
