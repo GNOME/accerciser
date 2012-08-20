@@ -19,9 +19,6 @@ from gi.repository import Gdk as gdk
 from gi.repository import Wnck as wnck
 from gi.repository import GObject
 from gi.repository import Atk as atk
-from gi.repository.Gio import Settings
-
-a11yAppSettings = Settings('org.gnome.desktop.interface')
 
 import os, sys, locale
 from icons import getIcon
@@ -103,8 +100,6 @@ class Main(Tools):
     '''
     Runs the app.
     '''
-    # Tell user if desktop accessibility is disabled.
-    self._showNoA11yDialog()
     GObject.timeout_add(200, self._pumpEvents)
     try:
       pyatspi.Registry.start(async=True, gil=False)
@@ -115,34 +110,6 @@ class Main(Tools):
     pyatspi.Registry.pumpQueuedEvents()
     return True
 
-  def _showNoA11yDialog(self):
-    '''
-    Shows a dialog with a relevant message when desktop accessibility seems to
-    be disabled. If desktop accessibility is disabled in gsettings, prompts the
-    user to enable it.
-    '''
-    if not a11yAppSettings.get_boolean('toolkit-accessibility'):
-      message = _('Accerciser could not see the applications on your desktop.  '
-                  'You must enable desktop accessibility to fix this problem.  '
-                  'Do you want to enable it now?')
-      dialog = gtk.MessageDialog(self.window,type=gtk.MessageType.ERROR,
-                                 buttons=gtk.ButtonsType.YES_NO, 
-                                 message_format=message)
-      dialog.connect('response', self._onNoA11yResponse)
-      dialog.show_all()
-
-  def _onNoA11yResponse(self, dialog, response_id):
-    dialog.destroy()
-    if response_id == gtk.ResponseType.YES:
-      a11yAppSettings.set_boolean('toolkit-accessibility', True)
-      dialog = gtk.MessageDialog(
-        self.window,
-        type=gtk.MessageType.INFO,
-        buttons=gtk.ButtonsType.OK, 
-        message_format=_('Note: Changes only take effect after logout.'))
-      dialog.connect('response', lambda dia, resp: dia.destroy())
-      dialog.show_all()
-  
   def _shutDown(self):
     '''
     Cleans up any object instances that need explicit shutdown.
