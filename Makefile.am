@@ -22,7 +22,6 @@ EXTRA_DIST =  \
 	$(desktop_DATA) \
 	pyreqs.py \
 	accerciser.spec \
-	gnome-doc-utils.make \
 	$(INTLTOOL) \
         $(gsettings_files)
 
@@ -36,6 +35,5 @@ DISTCLEANFILES = \
 	intltool-extract \
 	intltool-merge \
 	intltool-update	\
-	gnome-doc-utils.make \
         $(gsettings_SCHEMAS)
 

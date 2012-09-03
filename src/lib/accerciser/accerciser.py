@@ -144,9 +144,9 @@ class Main(Tools):
     @param widget: The widget that emitted the signal that this callback caught.
     @type widget: L{gtk.Widget}
     '''
-    uri = "ghelp:accerciser"
+    uri = "help:accerciser"
     if page:
-        uri += "?%s" % page
+        uri += "/%s" % page
     gtk.show_uri(gdk.Screen.get_default(),
                  uri,
                  gtk.get_current_event_time())

@@ -1,7 +1,8 @@
-include $(top_srcdir)/gnome-doc-utils.make
+@YELP_HELP_RULES@
 
-DOC_ID = accerciser
-DOC_FIGURES = \
+HELP_ID= accerciser
+
+HELP_MEDIA = \
 	figures/accerciser-logo.png \
 	figures/highlighting.png \
 	figures/accerciser_preferences.png \
@@ -18,7 +19,7 @@ DOC_FIGURES = \
 	figures/validator_report.png \
 	figures/global-hotkeys.png 
 
-DOC_PAGES = \
+HELP_FILES = \
 	api_browser_plugin.page \
 	desktop_tree_view.page \
 	event_monitor_plugin.page \
@@ -32,6 +33,4 @@ DOC_PAGES = \
 	quick_select_plugin.page \
 	validator_plugin.page
 
-DISTCLEANFILES = accerciser-C.omf
-DOC_LINGUAS = ca cs de el en_GB es fr gl it ja oc pl pt_BR sl sv uk zh_CN
-dist-hook: doc-dist-hook
+HELP_LINGUAS  = ca cs de el en_GB es fr gl it ja oc pl pt_BR sl sv uk zh_CN
