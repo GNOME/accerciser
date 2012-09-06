@@ -1,1027 +1,669 @@
 # translation of accerciser manual to Spanish
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.master\n"
-"POT-Creation-Date: 2011-10-10 11:21+0000\n"
-"PO-Revision-Date: 2011-08-20 12:18+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2012-09-03 23:38+0000\n"
+"PO-Revision-Date: 2012-09-06 17:15+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/validator_plugin.page:37(None)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2011"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:22(media)
+#| msgid ""
+#| "@@image: 'figures/accerciser-logo.png'; "
+#| "md5=ccb260de40944187394405ae163757cf"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/validator_report.png'; md5=a21bc11a8fc1f8d7976d7ea8a3dc80d2"
+"external ref='figures/accerciser-logo.png' "
+"md5='ccb260de40944187394405ae163757cf'"
 msgstr ""
-"@@image: 'figures/validator_report.png'; md5=a21bc11a8fc1f8d7976d7ea8a3dc80d2"
-
-#: C/validator_plugin.page:4(title)
-msgid "3. Validator Default Plugin"
-msgstr "3. Complemento validador predeterminado"
-
-#: C/validator_plugin.page:6(desc)
-msgid "Testing an application for accessibility"
-msgstr "Comprobar la accesibilidad de una aplicación"
-
-#: C/validator_plugin.page:10(name) C/quick_select_plugin.page:10(name)
-#: C/preferences.page:10(name) C/ipython_plugin.page:10(name)
-#: C/introduction.page:10(name) C/interface_viewer_plugin.page:10(name)
-#: C/index.page:6(name) C/howto_write_a_plugin.page:10(name)
-#: C/howto_setting_up_accerciser.page:11(name)
-#: C/event_monitor_plugin.page:10(name) C/desktop_tree_view.page:10(name)
-#: C/api_browser_plugin.page:10(name)
-msgid "Eitan Isaacson"
-msgstr "Eitan Isaacson"
-
-#: C/validator_plugin.page:11(email) C/quick_select_plugin.page:11(email)
-#: C/preferences.page:11(email) C/ipython_plugin.page:11(email)
-#: C/introduction.page:11(email) C/interface_viewer_plugin.page:11(email)
-#: C/index.page:7(email) C/howto_write_a_plugin.page:11(email)
-#: C/howto_setting_up_accerciser.page:12(email)
-#: C/event_monitor_plugin.page:11(email) C/desktop_tree_view.page:11(email)
-#: C/api_browser_plugin.page:11(email)
-msgid "eitan@ascender.com"
-msgstr "eitan@ascender.com"
-
-#: C/validator_plugin.page:14(name) C/quick_select_plugin.page:14(name)
-#: C/preferences.page:14(name) C/ipython_plugin.page:14(name)
-#: C/introduction.page:14(name) C/interface_viewer_plugin.page:14(name)
-#: C/index.page:10(name) C/howto_write_a_plugin.page:14(name)
-#: C/howto_setting_up_accerciser.page:15(name)
-#: C/event_monitor_plugin.page:14(name) C/desktop_tree_view.page:14(name)
-#: C/api_browser_plugin.page:14(name)
-msgid "Peter Parente"
-msgstr "Peter Parente"
-
-#: C/validator_plugin.page:15(email) C/quick_select_plugin.page:15(email)
-#: C/preferences.page:15(email) C/ipython_plugin.page:15(email)
-#: C/introduction.page:15(email) C/interface_viewer_plugin.page:15(email)
-#: C/index.page:11(email) C/howto_write_a_plugin.page:15(email)
-#: C/howto_setting_up_accerciser.page:16(email)
-#: C/event_monitor_plugin.page:15(email) C/desktop_tree_view.page:15(email)
-#: C/api_browser_plugin.page:15(email)
-msgid "pparent@us.ibm.com"
-msgstr "pparent@us.ibm.com"
-
-#: C/validator_plugin.page:18(name) C/quick_select_plugin.page:18(name)
-#: C/preferences.page:18(name) C/ipython_plugin.page:18(name)
-#: C/introduction.page:18(name) C/interface_viewer_plugin.page:18(name)
-#: C/index.page:14(name) C/howto_write_a_plugin.page:18(name)
-#: C/howto_setting_up_accerciser.page:19(name)
-#: C/event_monitor_plugin.page:18(name) C/desktop_tree_view.page:18(name)
-#: C/api_browser_plugin.page:18(name)
-msgid "Aline Bessa"
-msgstr "Aline Bessa"
-
-#: C/validator_plugin.page:19(email) C/quick_select_plugin.page:19(email)
-#: C/preferences.page:19(email) C/ipython_plugin.page:19(email)
-#: C/introduction.page:19(email) C/interface_viewer_plugin.page:19(email)
-#: C/index.page:15(email) C/howto_write_a_plugin.page:19(email)
-#: C/howto_setting_up_accerciser.page:20(email)
-#: C/event_monitor_plugin.page:19(email) C/desktop_tree_view.page:19(email)
-#: C/api_browser_plugin.page:19(email)
-msgid "alibezz@gmail.com"
-msgstr "alibezz@gmail.com"
-
-#: C/validator_plugin.page:22(p) C/quick_select_plugin.page:22(p)
-#: C/preferences.page:22(p) C/ipython_plugin.page:22(p)
-#: C/introduction.page:22(p) C/interface_viewer_plugin.page:22(p)
-#: C/index.page:18(p) C/howto_write_a_plugin.page:22(p)
-#: C/howto_setting_up_accerciser.page:23(p) C/event_monitor_plugin.page:22(p)
-#: C/desktop_tree_view.page:22(p) C/api_browser_plugin.page:22(p)
-msgid "Creative Commons Share Alike 3.0"
-msgstr "Creative Commons Compartir Igual 3.0"
-
-#: C/validator_plugin.page:25(title) C/validator_plugin.page:32(title)
-msgid "AT-SPI Validator Plugin"
-msgstr "Complemento de validación AT-SPI"
-
-#: C/validator_plugin.page:26(p)
-msgid ""
-"The AT-SPI Validator Plugin generates a report with accessibility issues "
-"related to a target application. For each error, the report includes the "
-"severity level and a brief description."
-msgstr ""
-"El complemento de validación AT-SPI genera un informe con los errores de "
-"accesibilidad de una aplicación objetivo. El informe incluye el nivel de "
-"gravedad y una breve descripción para cada error."
-
-#: C/validator_plugin.page:33(desc) C/validator_plugin.page:38(p)
-msgid ""
-"The AT-SPI Validator Plugin generates useful reports for verifying the "
-"accessibility of a target application."
-msgstr ""
-"El complemento de validación AT-SPI genera informes útiles para verificar la "
-"accesibilidad de una aplicación objetivo."
-
-#: C/validator_plugin.page:46(title)
-msgid "Running the AT-SPI Validator Plugin"
-msgstr "Ejecutar el complemento de validación AT-SPI"
-
-#: C/validator_plugin.page:47(p)
-msgid ""
-"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
-"View. The validator will generate the report with respect to the selected "
-"item and all of its descendant widgets in the tree hierarchy."
-msgstr ""
-"Para ejecutar el complemento de validación AT-SPI seleccione un elemento en "
-"la vista en árbol de la aplicación. El validador generará el informe "
-"correspondiente al elemento seleccionado y de todos sus widgets hijos en la "
-"jerarquía del árbol."
-
-#: C/validator_plugin.page:53(p)
-msgid ""
-"After selecting an item, choose a validation schema in the combobox and "
-"press the <cmd>Validate</cmd> button to start generating the report. If you "
-"want to cancel the execution, just press the <cmd>Validate</cmd> button "
-"again."
-msgstr ""
-"Después de seleccionar un elemento, elija un esquema de validación en la "
-"caja combinada y pulse el botón <cmd>Validar</cmd> para empezar a generar el "
-"informe. Si quiere cancelar la ejecución, simplemente pulse el botón "
-"<cmd>Validar</cmd> otra vez."
-
-#: C/validator_plugin.page:59(p)
-msgid ""
-"The generated report is interactive. Therefore, you can double-click any "
-"error found to check which of the target application widgets is causing it. "
-"The corresponding widget will then appear selected in the <link xref="
-"\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
-"target application."
-msgstr ""
-"El informe generado es interactivo. Por lo tanto, puede hacer una doble "
-"pulsación en cualquier error encontrado para comprobar qué aplicación "
-"objetivo lo está causando. El widget correspondiente aparecerá seleccionado "
-"en la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</"
-"link> y resaltado en la aplicación objetivo."
-
-#: C/validator_plugin.page:64(p)
-msgid ""
-"If you want to save the generated report in your system, just click the "
-"<cmd>Save</cmd> button. To clear the validation screen, press the "
-"<cmd>Clear</cmd> button."
-msgstr ""
-"Si quiere guardar en informe generado en su equipo, simplemente pulse el "
-"botón <cmd>Guardar</cmd>. Para limpiar la pantalla de validación, pulse el "
-"botón <cmd>Limpiar</cmd>."
-
-#: C/validator_plugin.page:68(p)
-msgid ""
-"To get more information about an error in the generated report, make sure "
-"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
-"will open a Help Page in your default browser."
-msgstr ""
-"Para obtener más información sobre un error en el informe generado, "
-"asegúrese de que el elemento correspondiente está seleccionado y pulse el "
-"botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador "
-"predeterminado."
-
-#: C/quick_select_plugin.page:4(title)
-msgid "5. Quick Select Plugin"
-msgstr "5. Complemento de selección rápida"
-
-#: C/quick_select_plugin.page:6(desc)
-msgid "Locating the object you need"
-msgstr "Ubicando el objeto que necesita"
-
-#: C/quick_select_plugin.page:25(title)
-msgid "Quick Select Plugin"
-msgstr "Complemento de selección rápida"
-
-#: C/quick_select_plugin.page:26(p)
-msgid ""
-"The Quick Select Plugin does not provide a visible interface like the other "
-"default <app>Accerciser</app> plugins - instead, it adds facilities for "
-"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
-"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
-"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
-"later."
-msgstr ""
-"El complemento de selección rápida no proporciona una interfaz visible coma "
-"la de los otros complementos de <app>Accerciser</app>; en su lugar, añade "
-"características para seleccionar elementos rápidamente en la <link xref="
-"\"desktop_tree_view\">vista en árbol de la aplicación</link> mediante teclas "
-"rápidas globales. Originalmente, estas teclas rápidas formaban parte del "
-"núcleo del código de <app>Accerciser</app>, pero posteriormente se pasaron "
-"al complemento de selección rápida."
-
-#: C/quick_select_plugin.page:32(p)
-msgid ""
-"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
-"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
-"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
-"key> selects the accessible widget under the pointer in the Application Tree "
-"View and highlights it in the target application."
-msgstr ""
-"El complemento de selección rápida proporciona dos teclas rápidas globales. "
-"Pulsar <key>Ctrl</key>+<key>Alt</key>+<key>a</key> selecciona el último "
-"widget accesible con el foco en la vista en árbol de la aplicación. Pulsar "
-"<key>Ctrl</key>+<key>alt</key>+<key>/</key> seleccione el widget accesible "
-"debajo del puntero en la vista en árbol de la aplicación y lo resalta en la "
-"aplicación objetivo."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:36(None)
-msgid ""
-"@@image: 'figures/accerciser_preferences.png'; "
-"md5=35df6feb4a5dfc905331b45390783ad5"
-msgstr ""
-"@@image: 'figures/accerciser_preferences.png'; "
-"md5=35df6feb4a5dfc905331b45390783ad5"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:61(None)
-msgid "@@image: 'figures/plugins.png'; md5=aa997acc25c59cf82a788bb8a97f8654"
-msgstr "@@image: 'figures/plugins.png'; md5=aa997acc25c59cf82a788bb8a97f8654"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:90(None)
-msgid ""
-"@@image: 'figures/global-hotkeys.png'; md5=e624ecfca646f771d03ea3feed4a5dcb"
-msgstr ""
-"@@image: 'figures/global-hotkeys.png'; md5=e624ecfca646f771d03ea3feed4a5dcb"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/preferences.page:111(None)
-msgid ""
-"@@image: 'figures/highlighting.png'; md5=a7eeb359d726fecba85b13b92a41b919"
-msgstr ""
-"@@image: 'figures/highlighting.png'; md5=a7eeb359d726fecba85b13b92a41b919"
-
-#: C/preferences.page:4(title)
-msgid "4. Preferences"
-msgstr "4. Preferencias"
-
-#. link type="next" xref="event_monitor_plugin" /
-#: C/preferences.page:6(desc)
-msgid "Customizing <app>Accerciser</app>'s preferences"
-msgstr "Personalizar las preferencias de <app>Accerciser</app>"
-
-#: C/preferences.page:25(title)
-msgid "Configuring <app>Accerciser</app>"
-msgstr "Configurar <app>Accerciser</app>"
-
-#: C/preferences.page:26(p)
-msgid ""
-"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
-"+<key>p</key> or <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> to "
-"open a dialog."
-msgstr ""
-"Para configurar los complementos, las teclas rápidas y el resaltado, pulse "
-"<key>ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</"
-"gui></guiseq> para abrir un diálogo."
-
-#: C/preferences.page:32(title)
-msgid "<app>Accerciser</app> preferences"
-msgstr "Preferencias de <app>Accerciser</app>"
-
-#: C/preferences.page:33(desc) C/preferences.page:37(p)
-msgid ""
-"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
-"widget's highlighting."
-msgstr ""
-"<app>Accerciser</app> le permite configurar los complementos, las teclas "
-"rápidas globales y el resaltado de widgets."
-
-#: C/preferences.page:44(title)
-msgid "Configuring plugins"
-msgstr "Configurar complementos"
-
-#: C/preferences.page:45(p)
-msgid ""
-"After opening the Preferences Dialog, you will find a list of all available "
-"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
-"or disable a plugin, toggle its checkbox. Only active plugins can be "
-"accessed via <app>Accerciser</app>'s interface."
-msgstr ""
-"Después de abrir el diálogo de preferencias, encontrará una lista de "
-"complementos disponibles, con sus correspondientes casillas, en la pestaña "
-"«Complementos». Para activar o desactivar un complemento, conmute su casilla. "
-"Sólo se puede acceder a los complementos activos a través de la interfaz de "
-"<app>Accerciser</app>."
-
-#: C/preferences.page:50(p)
-msgid ""
-"Right-clicking on any given plugin allows you to choose its location: \"Top "
-"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
-"a new window for the plugin."
-msgstr ""
-"Una pulsación con el botón derecho sobre un complemento dado le permite "
-"elegir su ubicación: «Panel superior», «Panel inferior» y «Nueva vista». Al "
-"seleccionar «Nueva vista» se crea una ventana nueva para el complemento."
-
-#: C/preferences.page:57(title)
-msgid "Configuring plugins' preferences"
-msgstr "Configurar las preferencias de los complementos"
-
-#: C/preferences.page:58(desc) C/preferences.page:62(p)
-msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
-msgstr ""
-"<app>Accerciser</app> le permite ajustar las preferencias de sus "
-"complementos."
-
-#: C/preferences.page:69(p)
-msgid ""
-"You may bypass the Preferences dialog by using drag and drop to move a "
-"plugin from a location to another."
-msgstr ""
-"Puede omitir el diálogo de preferencias usando arrastrar y soltar para mover "
-"un complemento desde una ubicación hasta otra."
-
-#: C/preferences.page:76(title)
-msgid "Configuring global hotkeys"
-msgstr "Configurar teclas rápidas globales"
-
-#: C/preferences.page:77(p)
-msgid ""
-"Some elements in <app>Accerciser</app> may enable certain functionalities "
-"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
-"Select Plugin</link>. The hotkey combination for each functionality can be "
-"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
-"this tab, you will find a list of all features for which hotkeys can be "
-"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
-"checkboxes to enable or disable these modifiers."
-msgstr ""
-"Algunos elementos en <app>Accerciser</app> puede activar ciertas "
-"funcionalidades mediante teclas rápidas. Un ejemplo es el <link xref="
-"\"quick_select_plugin\">complemento de selección rápida</link>. La "
-"combinación de teclas rápidas para cada funcionalidad se puede cambiar en el "
-"diálogo de preferencias, en la pestaña «Teclas rápidas globales». En esta "
-"pestaña encontrará una lista de todas las características para las que se "
-"pueden configurar las teclas rápidas. Use las casillas <cmd>Ctrl</cmd>, "
-"<cmd>Alt</cmd>, y <cmd>Mayús</cmd> para activar o desactivar estos "
-"modificadores."
-
-#: C/preferences.page:86(title)
-msgid "Configuring global hotkeys' preferences"
-msgstr "Configurarlas preferencias de las teclas rápidas globales"
-
-#: C/preferences.page:87(desc)
-msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
-msgstr ""
-"<app>Accerciser</app> le permite ajustar las preferencias de sus teclas "
-"rápidas."
-
-#: C/preferences.page:91(p)
-msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
-msgstr ""
-"<app>Accerciser</app> le permite ajustar las preferencias de sus "
-"complementos."
-
-#: C/preferences.page:99(title)
-msgid "Configuring widget's highlighting"
-msgstr "Configurar el resaltado de widgets"
-
-#: C/preferences.page:100(p)
-msgid ""
-"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
-"a target application. The highlighting duration, border color, and fill "
-"color can be customized via the Preferences dialog, under the \"Highlighting"
-"\" tab."
-msgstr ""
-"Algunos elementos de <app>Accerciser</app>, como la tecla rápida global "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, resaltan un widget específico "
-"en la aplicación objetivo. La duración del resaltado, el color del borde y "
-"el color de relleno se pueden personalizar en el diálogo de preferencias, en "
-"la pestaña «Resaltado»."
-
-#: C/preferences.page:107(title)
-msgid "Configuring highlighting preferences"
-msgstr "Configurar las preferencias de resaltado"
-
-#: C/preferences.page:108(desc) C/preferences.page:112(p)
-msgid ""
-"<app>Accerciser</app> allows you to adjust your highlighting preferences."
-msgstr ""
-"<app>Accerciser</app> le permite ajustar sus preferencias de resaltado."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/ipython_plugin.page:57(None)
-msgid ""
-"@@image: 'figures/IPython_plugin.png'; md5=4e25a8b12536302b54f4ea31e2d142c9"
-msgstr ""
-"@@image: 'figures/IPython_plugin.png'; md5=4e25a8b12536302b54f4ea31e2d142c9"
-
-#: C/ipython_plugin.page:4(title)
-msgid "2. IPython Plugin"
-msgstr "2. Complemento IPython"
-
-#: C/ipython_plugin.page:6(desc)
-msgid "When all else fails"
-msgstr "Cuando todo falla"
-
-#: C/ipython_plugin.page:25(title)
-msgid "IPython Console Plugin"
-msgstr "Complemento de la Consola IPython"
-
-#: C/ipython_plugin.page:26(p)
-msgid ""
-"The IPython Console Plugin allows real-time interaction with a selected item "
-"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
-"the IPython Console Plugin is an interactive Python shell, you can import "
-"any Python modules you want."
-msgstr ""
-"El complemento de la Consola IPython permite interacción en tiempo real con "
-"el elemento seleccionado en la <link xref=\"desktop_tree_view\">vista en "
-"árbol de la aplicación</link>. Ya que el complemento de la Consola IPython "
-"es una shell Python interactiva, puede importar cualquier módulo Python que "
-"quiera."
-
-#: C/ipython_plugin.page:33(p)
-msgid ""
-"Make sure you have the standalone package IPython installed in your system. "
-"Otherwise, the IPython Console Plugin will not work properly."
-msgstr ""
-"Asegúrese de que tiene el paquete autónomo de IPython instalado en su "
-"sistema. De otra forma, el complemento de la Consola IPython no funcionará "
-"correctamente. "
-
-#: C/ipython_plugin.page:40(title)
-msgid "Running the IPython Console Plugin"
-msgstr "Ejecutar el complemento de la consola IPython"
-
-#: C/ipython_plugin.page:41(p)
-msgid ""
-"To run the IPython Console Plugin, select one of the accessible items listed "
-"in the Application Tree View - either an application or a widget. In the "
-"plugin, the selected item will correspond to the variable 'acc'."
-msgstr ""
-"Para ejecutar el complemento de la Consola IPython, seleccione uno de los "
-"elementos accesibles listados en la vista en árbol de la aplicación; ya sea "
-"una aplicación o un widget. En el complemento, el elemento seleccionado "
-"corresponderá a la variable «acc»."
-
-#: C/ipython_plugin.page:46(p)
-msgid ""
-"Pressing <key>Tab</key> shows completions for the current command in the "
-"console, what can be useful for discovering pyatspi methods."
-msgstr ""
-"Pulsar <key>Tab</key> muestra sugerencias para completar el comando actual "
-"en la consola, lo que puede ser útil para descubrir métodos pyatspi."
-
-#: C/ipython_plugin.page:52(title)
-msgid "Investigating selected items with the IPython Console Plugin"
-msgstr ""
-"Investigar elementos seleccionados con el complemento de la consola IPython"
-
-#: C/ipython_plugin.page:53(desc) C/ipython_plugin.page:58(p)
-msgid ""
-"The IPython Console Plugin lets you investigate methods, constants, and "
-"properties related to a selected item in the Application Tree View."
-msgstr ""
-"El complemento de la consola IPython le permite investigar métodos, "
-"constantes y propiedades relativas a un elemento seleccionado en la vista en "
-"árbol de la aplicación."
-
-#: C/ipython_plugin.page:66(p)
-msgid ""
-"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
-"documentation about the corresponding selected accessible item."
-msgstr ""
-"Escribir <cmd>help(acc)</cmd> en el complemento de la consola de IPython "
-"muestra cierta documentación útil sobre el correspondiente elemento "
-"accesible seleccionado."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/introduction.page:55(None)
-msgid ""
-"@@image: 'figures/accerciser-view.png'; md5=fe4edcab1458ebe903cc46878c53ee64"
-msgstr ""
-"@@image: 'figures/accerciser-view.png'; md5=fe4edcab1458ebe903cc46878c53ee64"
-
-#: C/introduction.page:5(title)
-msgid "1. What is Accerciser?"
-msgstr "1. ¿Qué es Accerciser?"
-
-#: C/introduction.page:6(desc)
-msgid "An interactive accessibility explorer"
-msgstr "Un examinador de accesibilidad interactivo"
-
-#: C/introduction.page:25(title)
-msgid "What is <app>Accerciser</app>?"
-msgstr "¿Qué es <app>Accerciser</app>?"
-
-#: C/introduction.page:26(p)
-msgid ""
-"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
-"uses the AT-SPI library to inspect, examine, and interact with widgets, "
-"allowing you to check if an application is providing correct information to "
-"assistive technologies and automated testing frameworks. <app>Accerciser</"
-"app> comes with a set of plugins that you can use to create custom views of "
-"accessibility information."
-msgstr ""
-"<application>Accerciser</application> es un examinador de accesibilidad "
-"interactivo escrito en Python. Usa la biblioteca AT-SPI para inspeccionar, "
-"examinar e interaccionar con los widgets, permitiéndole comprobar si una "
-"aplicación proporciona la información correcta a las tecnologías de "
-"asistencia y entornos de trabajo de prueba automáticos. "
-"<application>Accerciser</application> incluye un conjunto complementos que "
-"puede usar para crear vistas personalizadas de la información de "
-"accesibilidad."
-
-#: C/introduction.page:35(p)
-msgid ""
-"By default, <app>Accerciser</app>'s main interface is comprised of three "
-"sections: a tree view of the entire desktop accessible hierarchy, namely "
-"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
-"plugin areas. If you prefer to see all plugins in a single area, dividing "
-"<app>Accerciser</app>'s interface in two sections instead of three, type "
-"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
-"<key>ctrl</key>+<key>t</key> again."
-msgstr ""
-"De manera predeterminada, la interfaz principal de <app>Accerciser</app> se "
-"compone de tres seccione: una vista en árbol de la jerarquía completa de "
-"accesibles del escritorio, llamada <link xref=\"desktop_tree_view\"> vista "
-"en árbol de la aplicación</link>, y dos áreas de complementos. Si prefiere "
-"ver todos los complementos en una única área, divida la interfaz de "
-"<app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>ctrl "
-"</key>+<key>t</key>. Para volver a dividirla en tres secciones, simplemente "
-"pulse <key>ctrl </key>+<key>t</key> otra vez."
-
-#: C/introduction.page:44(p)
-msgid ""
-"Make sure that accessibility suport is enabled in your desktop - otherwise, "
-"<app>Accerciser</app> will not work as expected."
-msgstr ""
-"Asegúrese de que el soporte de accesibilidad está activado en su escritorio; "
-"si no lo está, <app>Accerciser</app> no funcionará como se espera."
-
-#: C/introduction.page:51(app) C/index.page:3(title) C/index.page:23(app)
-#: C/index.page:25(app)
+"external ref='figures/accerciser-logo.png' "
+"md5='ccb260de40944187394405ae163757cf'"
+
+#: C/index.page:3(info/title)
+#| msgid "Accerciser"
+msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: C/introduction.page:52(desc) C/introduction.page:56(p)
-msgid "<app>Accerciser</app>'s default interface."
-msgstr "Interfaz predeterminada de <app>Accerciser</app>."
-
-#: C/introduction.page:63(title)
-msgid "<app>Accerciser</app>'s intended audience"
-msgstr "Público objetivo de <app>Accerciser</app>"
-
-#: C/introduction.page:64(p)
-msgid ""
-"<app>Accerciser</app> fits the needs of many different audiences. User "
-"interface developers use it to ensure that their applications are providing "
-"all of their features through AT-SPI. Assistive technology developers are "
-"able to see what AT-SPI is providing to their applications. Automated UI "
-"test developers find <app>Accerciser</app> beneficial since it exposes "
-"different events that could be expected from their target application."
-msgstr ""
-"<app>Accerciser</app> se ajusta a las necesidades de diferentes públicos "
-"objetivo. Los desarrolladores de interfaces de usuario lo usan para "
-"asegurarse de que sus aplicaciones proporcionan todas sus características a "
-"través de At-SPI. Los desarrolladores de tecnologías de asistencia pueden "
-"ver qué proporciona AT-SPI a sus aplicaciones. Los desarrolladores de "
-"pruebas de IU automatizadas encuentra beneficioso a <app>Accerciser</app> ya "
-"que expone diferentes eventos que se podrían esperar de su aplicación "
-"objetivo."
-
-#: C/introduction.page:74(title)
-msgid "<app>Accerciser</app>'s plugin architecture"
-msgstr "Arquitectura de complementos de <app>Accerciser</app>"
-
-#: C/introduction.page:75(p)
-msgid ""
-"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
-"code is fairly small and most of its features are part of default plugins:"
-msgstr ""
-"<app>Accerciser</app> tiene una arquitectura extensible basada en "
-"complementos. El núcleo de su código es bastante pequeño y la mayoría de sus "
-"características son parte de los complementos predeterminados:"
-
-#: C/introduction.page:82(p)
-msgid ""
-"<link xref=\"interface_viewer\">Interface Viewer</link> - A plugin that lets "
-"you explore the AT-SPI interfaces provided by each accessible widget of a "
-"target application."
-msgstr ""
-"<link xref=\"interface_viewer\">Visor de interfaces</link>: un complemento "
-"que le permite examinar las interfaces AT-SPI proporcionadas por cada widget "
-"accesible en una aplicación objetivo."
-
-#: C/introduction.page:88(p)
-msgid ""
-"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
-"applies tests to verify the accessibility of a target application."
-msgstr ""
-"<link xref=\"validator_plugin\">Validador AT-SPI</link>: un complemento que "
-"aplica pruebas para verificar la accesibilidad de una aplicación objetivo."
-
-#: C/introduction.page:94(p)
-msgid ""
-"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
-"displays AT-SPI events emitted by a target application as they occur."
-msgstr ""
-"<link xref=\"event_monitor_plugin\">Monitor de eventos</link>: un "
-"complemento que muestra eventos AT-SPI emitidos por una aplicación objetivo, "
-"según suceden."
-
-#: C/introduction.page:100(p)
-msgid ""
-"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
-"provides global hotkeys for quickly selecting accessible widgets in "
-"<app>Accerciser</app>'s Application Tree View."
-msgstr ""
-"<link xref=\"quick_select_plugin\">Selección rápida</link>: Un complemento "
-"que proporciona teclas rápidas globales para seleccionar rápidamente widgets "
-"accesibles en la vista en árbol de la aplicación de <app>Accerciser</app>."
-
-#: C/introduction.page:106(p)
-msgid ""
-"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
-"the interfaces, methods, and attributes available on each accessible widget "
-"of a target application."
-msgstr ""
-"<link xref=\"api_browser_plugin\">Examinador API</link>: un complemento que "
-"muestra las interfaces, métodos y atributos disponibles en cada widget "
-"accesible de una aplicación objetivo."
-
-#: C/introduction.page:112(p)
-msgid ""
-"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
-"provides a full, interactive Python shell with access to selected accessible "
-"widgets of a target application."
-msgstr ""
-"<link xref=\"ipython_plugin\">Consola IPython</link>: un complemento que "
-"proporciona una shell Python completa e interactiva con acceso a los widgets "
-"accesibles seleccionados de una aplicación objetivo."
-
-#: C/introduction.page:122(title)
-msgid "More about Accessibility"
-msgstr "Más acerca de accesibilidad"
-
-#: C/introduction.page:123(p)
-msgid ""
-"Accessibility is a core value that should touch all aspects of a Desktop "
-"Environment. To help achieve it in GNOME, some libraries were developed, "
-"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
-"also used in other Desktop Environments. To learn more about Accessibility "
-"Libraries for GNU/UNIX systems, you can consult:"
-msgstr ""
-"La accesibilidad es un valor esencial que debe abarcar todos los aspectos de "
-"un entorno de escritorio. Para ayudar a lograrlo en GNOME, se han "
-"desarrollado algunas bibliotecas como ATK y AT-SPI. Aunque se crearon en "
-"GNOME, estas bibliotecas se usan también en otros entornos de escritorio. "
-"Para aprender más sobre bibliotecas de accesibilidad para sistemas GNU/"
-"Linux, puede consultar:"
-
-#: C/introduction.page:132(p)
-msgid ""
-"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
-"link> - ATK provides the set of accessibility interfaces that are "
-"implemented by other toolkits and applications. Using the ATK interfaces, "
-"accessibility tools have full access to view and control running "
-"applications."
-msgstr ""
-"<link href=\"http://developer.gnome.org/atk/\">Kit de herramientas de "
-"accesibilidad ATK</link>: ATK proporciona un conjunto de interfaces de "
-"accesibilidad implementadas por otros kits de herramientas y aplicaciones. "
-"Usando las interfaces ATK, las herramientas de accesibilidad tienen acceso "
-"completo para ver y controlar las aplicaciones en ejecución"
-
-#: C/introduction.page:139(p)
-msgid ""
-"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
-"- AT-SPI is the primary service interface by which assistive technologies "
-"query and receive notifications from running applications. Additional "
-"material is available from the <link href=\"http://accessibility.kde.org/"
-"developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
-"link>."
-msgstr ""
-"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link>: "
-"AT-SPI es la interfaz de servicio principal a la que consultan las "
-"tecnologías de asistencia y que recibe notificaciones de las aplicaciones en "
-"ejecución. Puede encontrar material adicional en la <link href=\"http://"
-"accessibility.kde.org/developer/atk.php#coreclasses\">comunidad de "
-"desarrollo de accesibilidad de KDE</link>."
-
-#: C/introduction.page:147(p)
-msgid ""
-"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
-"\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
-"in how the GNOME Desktop supports the needs of users with disabilities."
-msgstr ""
-"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
-"\">Guía de accesibilidad del escritorio GNOME</link>: una guía para "
-"cualquiera que esté interesado en cómo soporta el escritorio GNOME las "
-"necesidades de usuarios con discapacidades."
-
-#: C/introduction.page:153(p)
-msgid ""
-"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
-"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
-"want to ensure their applications are accessible to the widest audience of "
-"users."
-msgstr ""
-"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
-"\">Guía de accesibilidad para desarrolladores </link>: una guía para "
-"desarrolladores que quieren asegurarse de que sus aplicaciones son "
-"accesibles para la mayor parte del público usuario."
-
-#: C/introduction.page:159(p)
-msgid ""
-"<link href=\"http://projects.gnome.org/accessibility/\">GNOME Accessibility "
-"Project</link> - The GNOME Accessibility Project includes the guides listed "
-"above along with many other useful links for users, developers and system "
-"administrators."
-msgstr ""
-"<link href=\"http://projects.gnome.org/accessibility/\">Proyecto de "
-"accesibilidad de GNOME</link>: el proyecto de accesibilidad de GNOME incluye "
-"las guías mencionadas anteriormente junto con muchos otros enlaces útiles "
-"para usuarios, desarrolladores y administradores de sistemas."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/interface_viewer_plugin.page:41(None)
-msgid ""
-"@@image: 'figures/interface_viewer_plugin.png'; "
-"md5=c83c4113369ff2adc756dfd8614a48ed"
-msgstr ""
-"@@image: 'figures/interface_viewer_plugin.png'; "
-"md5=c83c4113369ff2adc756dfd8614a48ed"
-
-#: C/interface_viewer_plugin.page:4(title)
-msgid "2. Interface Viewer Plugin"
-msgstr "2. Complemento Visor de interfaces"
-
-#: C/interface_viewer_plugin.page:6(desc)
-msgid "Examining your accessibility implementation"
-msgstr "Examinar su implementación de accesibilidad"
-
-#: C/interface_viewer_plugin.page:25(title)
-msgid "Interface Viewer Plugin"
-msgstr "Complemento Visor de interfaces"
-
-#: C/interface_viewer_plugin.page:27(p)
-msgid ""
-"The Interface Viewer Plugin shows the information and controls provided by "
-"the AT-SPI interfaces present in each accessible item from the <link xref="
-"\"desktop_tree_view\">Application Tree View</link>. After selecting an item, "
-"you can use this plugin to quickly review its supported interfaces, to "
-"retrieve each interface's information, and to manipulate the item through "
-"all the interface’s methods."
-msgstr ""
-"El complemento «Visor de interfaces» muestra la información y los controles "
-"proporcionados por la interfaz AT-SPI presente en cada elemento accesible de "
-"la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</link>. "
-"Después de seleccionar un elemento, puede usar este complemento para revisar "
-"rápidamente sus interfaces soportadas, para obtener información sobre cada "
-"interfaz y para manipular el elemento mediante los métodos de la interfaz."
-
-#: C/interface_viewer_plugin.page:35(title)
-msgid "Examining a Menu with the Interface Viewer Plugin"
-msgstr "Examinar un menú con el complemento «Visor de interfaces»"
-
-#: C/interface_viewer_plugin.page:36(desc)
-#: C/interface_viewer_plugin.page:42(p)
-msgid ""
-"Given a selected item in the Application Tree View, all of its AT-SPI "
-"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
-"unsupported will appear grayed out, such as the Application and Collection "
-"interfaces in the figure above."
-msgstr ""
-"Dado un elemento seleccionado en la vista en árbol de la aplicación, se "
-"mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento de "
-"«Visor de interfaces». Aquellas no soportadas aparecerán en gris, tales como "
-"las interfaces de aplicación de recolección en la figura superior."
-
-#: C/interface_viewer_plugin.page:49(title)
-msgid "Running the Interface Viewer Plugin"
-msgstr "Ejecutar el complemento Visor de interfaces"
-
-#: C/interface_viewer_plugin.page:50(p)
-msgid ""
-"The first step to run the Interface Viewer Plugin is to select an item in "
-"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
-"that, all AT-SPI interfaces covered by the plugin will be listed in the "
-"plugin's panel. The interfaces implemented by the selected item will be "
-"sensitive, so you can click each one of them to either retrieve their "
-"provided information or to interact with available methods. The following "
-"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
-"item implements them:"
-msgstr ""
-"El primer paso para ejecutar el complemento «Visor de interfaces» es "
-"seleccionar un elemento en la <link xref=\"desktop_tree_view\">vista en "
-"árbol de la aplicación</link>. Después de esto, todas las interfaces At-SPI "
-"cubiertas por el complemento se listarán en el panel de complementos. Las "
-"interfaces implementadas por el elemento seleccionado serán sensibles, por "
-"lo que podrá pulsar en cada una de ellas para obtener información o para "
-"interactuar con los métodos disponibles. Se pueden examinar las siguientes "
-"interfaces en <app>Accerciser</app>, asumiendo que el elemento seleccionado "
-"las implementa:"
-
-#: C/interface_viewer_plugin.page:59(p)
-msgid ""
-"Accessible - This interface shows the selected item's child count (number of "
-"child widgets), description, states, relations, and attributes."
-msgstr ""
-"Accesible: esta interfaz muestra el contador de elementos hijos "
-"seleccionados (número de widgets hijos), descripción, estados, relaciones y "
-"atributos."
-
-#: C/interface_viewer_plugin.page:65(p)
-msgid ""
-"Action - This interface shows all the actions that can be performed by the "
-"selected item. For each interface, you will see its name, such as \"press\" "
-"or \"click\", followed by a description and a key binding, if there are any. "
-"If you select an action, a \"Perform action\" button will become sensitive. "
-"Press this button to see the item performing the selected action."
-msgstr ""
-"Acción: esta interfaz muestra todas las acciones que el elemento "
-"seleccionado se pueden realizar. Para cada interfaz verá su nombre, como "
-"«presionar» o «pulsar», seguido de una descripción y de una asociación de "
-"teclas, si hay alguna. si selecciona una acción, el botón «Realizar acción» "
-"se volverá sensible. Pulse este botón para ver al elemento realizar la "
-"acción seleccionada."
-
-#: C/interface_viewer_plugin.page:73(p)
-msgid ""
-"Application - This interface can be implemented by items with role "
-"\"application\". It is worth to point out that items with role \"application"
-"\" not necessarily implement this interface. If the selected item implements "
-"it, the interface will show its ID and, if there are any, its toolkit and "
-"version."
-msgstr ""
-"Aplicación: esta interfaz se puede implementar con elementos cuyo rol es "
-"«aplicación». Merece la pena señalar que los elementos cuyo rol es "
-"«aplicación» no necesariamente implementan esta interfaz. Si el elemento "
-"seleccionado la implementa, la interfaz mostrará su ID y, si tiene, su kit "
-"de herramientas y su versión."
-
-#: C/interface_viewer_plugin.page:80(p)
-msgid ""
-"Component - This interface shows the selected item's absolute position (with "
-"respect to the desktop coordinate system), relative position (with respect "
-"to the window coordinate system), size, layer type, MDI-Z-order (a short "
-"integer indicating the stacking order of the component in the MDI layer), "
-"and alpha (if alpha blending is used)."
-msgstr ""
-"Componente: esta interfaz muestra la posición absoluta del elemento "
-"seleccionado (respecto del sistema de coordenadas del escritorio), posición "
-"relativa (respecto del sistema de coordenadas de la ventana), tamaño, tipo "
-"de capa, orden MDI-Z (un entero corto que indica el orden de apilamiento del "
-"componente en la capa MDI) y alfa (si se usa alfa)."
-
-#: C/interface_viewer_plugin.page:86(p)
-msgid ""
-"Document - This interface shows the selected item's document attributes and "
-"locale description, if there is one."
-msgstr ""
-"Documento: esta interfaz muestra los atributos de documento del elemento "
-"seleccionado, así como la descripción regional, si existe."
-
-#: C/interface_viewer_plugin.page:91(p)
-msgid ""
-"Hypertext - This interface shows a list with all the selected item's "
-"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
-"URI, start (the index in the hypertext at which the hyperlink begins) and "
-"end (the index in the hypertext at which this hyperlink ends)."
-msgstr ""
-"Hipertexto: esta interfaz muestra una lista de todos los hiperenlaces de "
-"hipertexto de los elementos seleccionados. Para cada hiperenlace la interfaz "
-"proporciona su nombre, URI, inicio (el índice en el hipertexto en el que "
-"comienza el hiperenlace) y el final (el índice en el hipertexto en el que "
-"finaliza el hiperenlace)."
-
-#: C/interface_viewer_plugin.page:98(p)
-msgid ""
-"Image - This interface shows the selected item's description (or \"no "
-"description\" if unspecified), size, position (with respect to the desktop "
-"coordinate system), and locale, if there is one."
-msgstr ""
-"Imagen: esta interfaz muestra la descripción del elemento seleccionado (o "
-"«sin descripción» si está sin especificar), tamaño, posición (respecto del "
-"sistema de coordenadas del escritorio), y configuración regional, si existe."
-
-#: C/interface_viewer_plugin.page:104(p)
-msgid ""
-"Selection - This interface shows all selectable child items of the selected "
-"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
-"\"View\", and \"Help\", and all of them are selectable, then they will be "
-"listed in this interface. If you click a listed option - \"File\", for "
-"example - and want to clear it, just press the \"Clear\" button below the "
-"list."
-msgstr ""
-"Selección: esta interfaz muestra todos los elementos hijos seleccionables "
-"del elemento seleccionado. Si el elemento seleccionado es una barra de menú "
-"con las opciones «Archivo», «Editar», «Ver» y «Ayuda» y todas ellas se pueden "
-"seleccionar, entonces se listarán en esta interfaz. Si pulsa sobre una "
-"opción listada —«Archivo», por ejemplo— y quiere limpiarla, simplemente pulse "
-"el botón «Limpiar» en la lista de abajo."
-
-#: C/interface_viewer_plugin.page:112(p)
-msgid ""
-"Streamable Content - This interface shows the selected item's content types "
-"and their corresponding URIs."
-msgstr ""
-"Contenido secuenciable: esta interfaz muestra el tipo de contenido de los "
-"elementos seleccionados y sus URI correspondientes."
-
-#: C/interface_viewer_plugin.page:117(p)
-msgid ""
-"Table - This interface shows the selected item's caption and summary, rows "
-"(number of rows), columns (number of columns), selected rows (number of "
-"selected rows), and selected columns (number of selected columns). For a "
-"selected cell, the interface shows its row's and column's header and extents."
-msgstr ""
-"Tabla: esta interfaz muestra el título y el resumen del elemento "
-"seleccionado, filas (número de filas), columnas (número de columnas), filas "
-"seleccionadas (número de filas seleccionadas) y columnas seleccionadas "
-"(número de columnas seleccionadas). Para una celda seleccionada, la interfaz "
-"muestra la cabecera y extensión de sus filas y columnas."
-
-#: C/interface_viewer_plugin.page:124(p)
-msgid ""
-"Text - This interface shows the selected item's text content, that can be "
-"editable, and its attributes. The basic attributes are offset (the number of "
-"characters the text has) and justification. To see possible CSS attributes, "
-"click the \"Include defaults\" check box."
-msgstr ""
-"Texto: esta interfaz muestra el contenido de los elementos de texto del "
-"elemento, que pueden ser editables, y sus atributos. Los atributos básicos "
-"son el desplazamiento (el número de caracteres que tiene el texto) y su "
-"justificación. Para ver los posibles atributos de CSS, pulse en la casilla "
-"«incluir predeterminados»."
-
-#: C/interface_viewer_plugin.page:131(p)
-msgid ""
-"Value - This interface shows the selected item's current value, minimum "
-"allowed value, maximum allowed value, and the minimum increment by which the "
-"value may be changed (or zero if this value cannot be determined). The "
-"current value can be manually changed via a spin button."
-msgstr ""
-"Valor: esta interfaz muestra el valor actual del elemento seleccionado, los "
-"valores mínimo y máximo permitidos y el incremento mínimo por el que el "
-"valor debe cambiar (o cero si este valor no se puede determinar). El valor "
-"actual se puede cambiar manualmente usando un botón incrementable."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/index.page:22(None)
-msgid ""
-"@@image: 'figures/accerciser-logo.png'; md5=ccb260de40944187394405ae163757cf"
-msgstr ""
-"@@image: 'figures/accerciser-logo.png'; md5=ccb260de40944187394405ae163757cf"
-
-#: C/index.page:4(title)
+#: C/index.page:4(info/title)
+#| msgid "Introduction to <app>Accerciser</app>"
+msgctxt "link"
 msgid "Introduction to <app>Accerciser</app>"
 msgstr "Introducción a <app>Accerciser</app>"
 
-#: C/index.page:22(media)
-msgid "<placeholder-1/>'s logo"
-msgstr "Logo de <placeholder-1/>"
+#: C/index.page:6(credit/name) C/api_browser_plugin.page:10(credit/name)
+#: C/desktop_tree_view.page:10(credit/name)
+#: C/event_monitor_plugin.page:10(credit/name)
+#: C/howto_setting_up_accerciser.page:11(credit/name)
+#: C/howto_write_a_plugin.page:10(credit/name)
+#: C/interface_viewer_plugin.page:10(credit/name)
+#: C/introduction.page:10(credit/name) C/ipython_plugin.page:10(credit/name)
+#: C/preferences.page:10(credit/name)
+#: C/quick_select_plugin.page:10(credit/name)
+#: C/validator_plugin.page:10(credit/name)
+msgid "Eitan Isaacson"
+msgstr "Eitan Isaacson"
 
-#: C/index.page:28(title)
+#: C/index.page:10(credit/name) C/api_browser_plugin.page:14(credit/name)
+#: C/desktop_tree_view.page:14(credit/name)
+#: C/event_monitor_plugin.page:14(credit/name)
+#: C/howto_setting_up_accerciser.page:15(credit/name)
+#: C/howto_write_a_plugin.page:14(credit/name)
+#: C/interface_viewer_plugin.page:14(credit/name)
+#: C/introduction.page:14(credit/name) C/ipython_plugin.page:14(credit/name)
+#: C/preferences.page:14(credit/name)
+#: C/quick_select_plugin.page:14(credit/name)
+#: C/validator_plugin.page:14(credit/name)
+msgid "Peter Parente"
+msgstr "Peter Parente"
+
+#: C/index.page:14(credit/name) C/api_browser_plugin.page:18(credit/name)
+#: C/desktop_tree_view.page:18(credit/name)
+#: C/event_monitor_plugin.page:18(credit/name)
+#: C/howto_setting_up_accerciser.page:19(credit/name)
+#: C/howto_write_a_plugin.page:18(credit/name)
+#: C/interface_viewer_plugin.page:18(credit/name)
+#: C/introduction.page:18(credit/name) C/ipython_plugin.page:18(credit/name)
+#: C/preferences.page:18(credit/name)
+#: C/quick_select_plugin.page:18(credit/name)
+#: C/validator_plugin.page:18(credit/name)
+msgid "Aline Bessa"
+msgstr "Aline Bessa"
+
+#: C/index.page:18(license/p) C/api_browser_plugin.page:22(license/p)
+#: C/desktop_tree_view.page:22(license/p)
+#: C/event_monitor_plugin.page:22(license/p)
+#: C/howto_setting_up_accerciser.page:23(license/p)
+#: C/howto_write_a_plugin.page:22(license/p)
+#: C/interface_viewer_plugin.page:22(license/p)
+#: C/introduction.page:22(license/p) C/ipython_plugin.page:22(license/p)
+#: C/preferences.page:22(license/p) C/quick_select_plugin.page:22(license/p)
+#: C/validator_plugin.page:22(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Compartir Igual 3.0"
+
+#: C/index.page:21(page/title)
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+"\"> <app>Accerciser</app>'s logo </media> <app>Accerciser</app>"
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+"\"> Logo de <app>Accerciser</app> </media> <app>Accerciser</app>"
+
+#: C/index.page:28(note/title)
 msgid "Before You Begin"
 msgstr "Antes de comenzar"
 
-#: C/index.page:29(p)
+#: C/index.page:29(note/p)
 msgid ""
 "Read the <link href=\"ghelp:gnome-help#a11y\">Universal Access Help</link>"
 msgstr ""
 "Lea la <link href=\"ghelp:gnome-help#a11y\">ayuda del acceso universal</link>"
 
-#: C/index.page:34(title)
+#: C/index.page:34(section/title)
 msgid "Getting Started"
 msgstr "Inicio"
 
-#: C/index.page:37(title)
+#: C/index.page:37(section/title)
 msgid "Examining the Accessibility of an Application"
 msgstr "Examinar la accesibilidad de una aplicación"
 
-#: C/index.page:40(title)
+#: C/index.page:40(section/title)
 msgid "Advanced Topics"
 msgstr "Temas avanzados"
 
-#: C/howto_write_a_plugin.page:4(title)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37(media)
+#| msgid ""
+#| "@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
+msgctxt "_"
+msgid ""
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
+msgstr ""
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
+
+#: C/api_browser_plugin.page:4(info/title)
+#| msgid "1. API Browser Plugin"
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "1. Complemento Examinador API"
+
+#: C/api_browser_plugin.page:6(info/desc)
+msgid "Verifying interfaces, methods, and properties"
+msgstr "Verificar interfaces, métodos y propiedades"
+
+#: C/api_browser_plugin.page:25(page/title)
+#: C/api_browser_plugin.page:32(figure/title)
+msgid "API Browser Plugin"
+msgstr "Complemento Examinador API"
+
+#: C/api_browser_plugin.page:26(page/p)
+msgid ""
+"Given an accessible widget selected in the <link xref=\"desktop_tree_view"
+"\">Application Tree View</link>, the API Browser Plugin shows its "
+"implemented AT-SPI interfaces along with its methods and properties."
+msgstr ""
+"Dado un «widget» accesible seleccionado en la <link xref=\"desktop_tree_view"
+"\">vista en árbol de la aplicación</link>, el complemento Examinador API "
+"muestra sus interfaces AT-SPI implementadas, junto con sus métodos y "
+"propiedades."
+
+#: C/api_browser_plugin.page:33(figure/desc)
+#: C/api_browser_plugin.page:38(media/p)
+msgid ""
+"The API Browser Plugin allows you to verify interfaces, methods, and "
+"properties of a target accessible widget in an application."
+msgstr ""
+"El complemento Examinador API le permite verificar interfaces, métodos y "
+"propiedades soportados por el widget accesible objetivo en la aplicación."
+
+#: C/api_browser_plugin.page:46(section/title)
+msgid "Running the API Browser Plugin"
+msgstr "Ejecutar el complemento Examinador API"
+
+#: C/api_browser_plugin.page:47(section/p)
+msgid ""
+"To run the API Browser Plugin, select an accessible widget in the "
+"Application Tree View. Double-clicking a widget highlights it in the "
+"application's interface, so you can be sure whether a certain widget were "
+"the one you were looking for."
+msgstr ""
+"Para ejecutar el complemento Examinador API, seleccione un «widget» accesible "
+"en la Vista en árbol de la aplicación. Pulsar dos veces sobre un «widget» lo "
+"resalta en la interfaz de la aplicación, de tar forma que puede estar seguro "
+"del «widget» que está buscando."
+
+#: C/api_browser_plugin.page:53(section/p)
+msgid ""
+"After that, select one of the widget's interfaces in the combobox. All "
+"public methods of the selected interface will be listed in the plugin's "
+"leftmost column. All public properties, with their corresponding values, "
+"will be listed in the plugin's rightmost column."
+msgstr ""
+"Después de ello, seleccione una de las interfaces del «widget» en la caja "
+"combinada. Se listarán, en la columna de la izquierda del complemento, todos "
+"los métodos públicos de la interfaz seleccionada. Se listarán, en la columna "
+"de la derecha del complemento, todas las propiedades públicas, con sus "
+"correspondientes valores."
+
+#: C/api_browser_plugin.page:59(section/p)
+msgid ""
+"By default, the API Browser Plugin hides private methods and properties. To "
+"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
+"To hide them again, re-select this checkbox."
+msgstr ""
+"De manera predeterminada, el complemento «Examinador API» oculta los métodos "
+"y las propiedades privadas. Para listarlos, desmarque la casilla "
+"<cmd>Ocultar los atributos privados</cmd>. Para volver a ocultarlos, "
+"selecciona esta casilla de nuevo."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42(media)
+#| msgid ""
+#| "@@image: 'figures/tree_view_accerciser.png'; "
+#| "md5=08296541e21b96951e1f1b4d99ca130b"
+msgctxt "_"
+msgid ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+msgstr ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+
+#: C/desktop_tree_view.page:4(info/title)
+#| msgid "1. Application Tree View"
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr "1. Vista en árbol de la aplicación"
+
+#: C/desktop_tree_view.page:6(info/desc)
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr "Explorar la jerarquía accesible del escritorio"
+
+#: C/desktop_tree_view.page:25(page/title)
+#: C/desktop_tree_view.page:37(figure/title)
+msgid "Application Tree View"
+msgstr "Vista en árbol de la aplicación"
+
+#: C/desktop_tree_view.page:27(page/p)
+msgid ""
+"<app>Accerciser</app>'s interface contains a tree view, namely Application "
+"Tree View, that covers all accessible applications currently running on the "
+"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
+"registry daemon. This daemon is responsible for keeping track of all the "
+"accessible applications on the desktop and forwarding X events over the AT-"
+"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
+"represents each one of them as a hierarchical structure with expanding nodes."
+msgstr ""
+"La interfaz de <app>Accerciser</app> contiene una vista de árbol llamada "
+"vista de árbol de la aplicación, que cubre todas las aplicaciones accesibles "
+"actualmente en ejecución en el escritorio. Para crear esta vista de árbol "
+"<app>Accerciser</app> usa el demonio de registro de AT-SPI. Este demonio es "
+"el responsable de mantener el seguimiento de todas las aplicaciones "
+"accesibles en el escritorio y reenviar los eventos X sobre el D-Bus de AT-"
+"SPI. Después de obtener todas las aplicaciones accesibles, <app>Accerciser</"
+"app> representa cada una de ellas en una estructura jerárquica con nodos "
+"expandidos."
+
+#: C/desktop_tree_view.page:38(figure/desc)
+#: C/desktop_tree_view.page:43(media/p)
+msgid ""
+"<app>Accerciser</app>'s Application Tree View represents the interface of "
+"each accessible application running on the desktop as a widget hierarchical "
+"structure."
+msgstr ""
+"La vista en árbol de la aplicación de <app>Accerciser</app> representa la "
+"interfaz de cada aplicación accesible en ejecución en el escritorio como una "
+"estructura jerárquica de widget."
+
+#: C/desktop_tree_view.page:49(page/p)
+msgid ""
+"The first node of each application represented in this tree view is the "
+"application itself. When you expand a node, you can see all of its child "
+"widgets, which allows a hierarchical view of the application's interface. "
+"For each node, <app>Accerciser</app> provides some basic information, such "
+"as its name, role and number of children."
+msgstr ""
+"El primer nodo de cada aplicación representada en esta vista de árbol es la "
+"aplicación en sí. Cuando expande un nodo puede ver todos sus widgets hijos, "
+"lo que permite una vista jerárquica de la interfaz de la aplicación. Para "
+"cada nodo, <app>Accerciser</app> proporciona alguna información básica, tal "
+"como su nombre, rol y número de hijos."
+
+#: C/desktop_tree_view.page:56(note/p)
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr ""
+"Tenga en cuenta que los nodos con muchos hijos puede tardar en expandirse."
+
+#: C/desktop_tree_view.page:62(section/title)
+msgid "Bookmarking items in the Application Tree View"
+msgstr "Marcar elementos en la vista en árbol de la aplicación"
+
+#: C/desktop_tree_view.page:63(section/p)
+msgid ""
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
+"for later examining. This is helpful when the target application must be "
+"restarted - after rebuilding it, for example. To bookmark an item, select it "
+"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
+"<key>Ctrl</key>+<key>d</key>."
+msgstr ""
+"<app>Accerciser</app> permite marcar elementos en la vista en árbol de la "
+"aplicación, para examinarlos posteriormente. Esto puede ser útil si la "
+"aplicación objetivo debe reiniciarse, por ejemplo, después de reconstruirla. "
+"Para marcar un elemento, selecciónelo y pulse <guiseq><gui>Marcadores</"
+"gui><gui>Añadir marcador</gui></guiseq> o pulse <key>Ctrl</key>+<key>d</key>."
+
+#: C/desktop_tree_view.page:68(section/p)
+msgid ""
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
+"application name and a \"path\" in the application's internal accessible "
+"hierarchy to the bookmarked accessible. When the target application is in a "
+"different state - i.e. multiple top level frames -, the path might not be "
+"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
+msgstr ""
+"Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
+"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de "
+"la aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
+"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
+"no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de "
+"edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar "
+"marcadores</gui></guiseq>."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40(media)
+#| msgid ""
+#| "@@image: 'figures/event_monitor_plugin.png'; "
+#| "md5=1ee2a1d281deefa5b401244b49ed9654"
+msgctxt "_"
+msgid ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
+msgstr ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
+
+#: C/event_monitor_plugin.page:4(info/title)
+#| msgid "4. Event Monitor Plugin"
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "4. Complemento Monitor de eventos"
+
+#: C/event_monitor_plugin.page:6(info/desc)
+msgid "Monitoring accessible events as they occur"
+msgstr "Monitorizar eventos accesibles cuando ocurren"
+
+#: C/event_monitor_plugin.page:25(page/title)
+#: C/event_monitor_plugin.page:35(figure/title)
+msgid "Event Monitor Plugin"
+msgstr "Complemento Monitor de eventos"
+
+#: C/event_monitor_plugin.page:26(page/p)
+msgid ""
+"The Event Monitor Plugin allows you to view <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">AT-SPI events</link> as they occur on the applications exposed in "
+"<app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>. The plugin is useful to explore the dynamics of an "
+"application's interface and verify which accessible widgets are related to "
+"which AT-SPI events."
+msgstr ""
+"El complemento «Monitor de eventos» le permite ver los <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">eventos AT-SPI</link> a medida que suceden en la aplicación expuesta en "
+"la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</link> "
+"de <app>Accerciser</app>. El complemento es útil para examinar la dinámica "
+"de la interfaz de una aplicación y verificar qué widgets accesibles están "
+"relacionados con eventos de AT-SPI."
+
+#: C/event_monitor_plugin.page:36(figure/desc)
+#: C/event_monitor_plugin.page:41(media/p)
+msgid ""
+"The Event Monitor Plugin allows you to view AT-SPI events and match them "
+"with accessible widgets."
+msgstr ""
+"El complemento Monitor de eventos le permite ver los eventos AT-SPI y "
+"asociarlos con widgets accesibles."
+
+#: C/event_monitor_plugin.page:49(section/title)
+msgid "Running the Event Monitor Plugin"
+msgstr "Ejecutar el complemento Monitor de eventos"
+
+#: C/event_monitor_plugin.page:50(section/p)
+msgid ""
+"When you open the Event Monitor Plugin, you see a list of checkboxes "
+"representing all the different AT-SPI event classes covered by the plugin:"
+msgstr ""
+"Cuando abre el complemento del Monitor de eventos, verá una lista de "
+"casillas de verificación representando todas las clases diferentes de AT-SPI "
+"que el complemento cubre:"
+
+#: C/event_monitor_plugin.page:58(item/p)
+msgid "document"
+msgstr "documento"
+
+#: C/event_monitor_plugin.page:63(item/p)
+msgid "focus"
+msgstr "foco"
+
+#: C/event_monitor_plugin.page:68(item/p)
+msgid "mouse"
+msgstr "ratón"
+
+#: C/event_monitor_plugin.page:73(item/p)
+msgid "object"
+msgstr "objeto"
+
+#: C/event_monitor_plugin.page:78(item/p)
+msgid "terminal"
+msgstr "terminal"
+
+#: C/event_monitor_plugin.page:83(item/p)
+msgid "window"
+msgstr "ventana"
+
+#: C/event_monitor_plugin.page:89(section/p)
+msgid ""
+"If you check a class, all of its event types will be monitored by the "
+"plugin. The classes are exposed as tree structures; therefore, you can "
+"refine your selection by expanding them and checking only the event types "
+"you really care about."
+msgstr ""
+"Si selecciona una clase, el complemento monitorizará todos sus tipos de "
+"eventos. Las clases se exponen como estructuras en árbol; por ello, puede "
+"refinar su selección expandiéndolas y seleccionando solo los tipos de "
+"eventos que realmente le importan."
+
+#: C/event_monitor_plugin.page:95(section/p)
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the "
+"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
+"selected event types, press the <cmd>Clear Selection</cmd> button."
+msgstr ""
+"Si quiere monitorizar todos los tipos posibles de eventos AT-SPI, pulse el "
+"botón <cmd>Seleccionar todos</cmd>. De forma similar, si quiere limpiar "
+"todos los tipos de eventos actualmente seleccionados, pulse el botón "
+"<cmd>Limpiar selección</cmd>."
+
+#: C/event_monitor_plugin.page:102(note/p)
+msgid ""
+"Selecting only a few event types per monitoring gives you a clearer output."
+msgstr ""
+"Seleccionar sólo unos pocos tipos de eventos para monitorizar proporciona "
+"una salida más limpia."
+
+#: C/event_monitor_plugin.page:107(section/p)
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, "
+"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
+"events of all applications will be monitored. If you want to investigate a "
+"single application, select it in the Application Tree View and click the "
+"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, "
+"select it in the Application Tree View and click the Source radio button "
+"<cmd>Selected accessible</cmd>."
+msgstr ""
+"Otra forma de refinar la monitorización de eventos es a través del origen "
+"del evento. De forma predeterminada la opción <cmd>Todo</cmd>, como fuente, "
+"está seleccionada, indicando que se monitorizarán todos los eventos AT-SPI "
+"de todas las aplicaciones. Si quiere investigar una sola aplicación, "
+"selecciónela en la vista de árbol de la aplicación y pulse en el botón de "
+"radio Fuente <cmd>Aplicación seleccionada</cmd>. De la misma forma, si "
+"quiere monitorizar un solo widget accesible y sus correspondientes "
+"descendientes, selecciónelo en la vista de árbol de la aplicación y pulse en "
+"el botón de radio Fuente <cmd>Accesible seleccionado</cmd>."
+
+#: C/event_monitor_plugin.page:116(section/p)
+msgid ""
+"After selecting event types and specifying a Source option, the Event "
+"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
+"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
+"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
+"monitoring, press this button again."
+msgstr ""
+"Después de seleccionar los tipos de evento y especificar una opción para la "
+"fuente, el complemento de monitorización de eventos comienza automáticamente "
+"a monitorizar los eventos AT-SPI, ya que el botón <cmd>Monitorizar eventos</"
+"cmd> está pulsado de forma predeterminada. Cuando quiera dejar de "
+"monitorizar eventos, pulse el botón <cmd>Monitorizar eventos</cmd>. Pulse el "
+"botón de nuevo para reiniciar la monitorización."
+
+#: C/event_monitor_plugin.page:123(section/p)
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and "
+"the application. Activating the link for either of these items will cause it "
+"to become selected in the Application Tree View."
+msgstr ""
+"Para cada evento entrante, el complemento del Monitor de eventos indica la "
+"fuente y la aplicación. Activar el enlace para alguno de esos elementos hará "
+"que se seleccione en la vista en árbol de la aplicación."
+
+#: C/event_monitor_plugin.page:128(section/p)
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just "
+"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
+"to click the <cmd>Clear</cmd> button."
+msgstr ""
+"Si quiere guardar la salida generada por el complemento de Monitor de "
+"eventos, simplemente pulse el botón <cmd>Guardar</cmd>. Para limpiar la "
+"salida de la pantalla, simplemente pulse el botón <cmd>Limpiar</cmd>."
+
+#: C/howto_setting_up_accerciser.page:5(info/title)
+#| msgid "2. How to install and run <app>Accerciser</app>"
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr "2. Cómo instalar y configurar <app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:6(info/title)
+#| msgid "Setting up <app>Accerciser</app>"
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Configurar <app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:7(info/desc)
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "Instalar y ejecutar <app>Accerciser</app> en su sistema"
+
+#: C/howto_setting_up_accerciser.page:26(page/title)
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Configurar <app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:28(page/p)
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If "
+"this is the case, you can install it via its package manager. Otherwise, you "
+"can follow the section below to install <app>Accerciser</app> manually."
+msgstr ""
+"Compruebe si su distribución tiene <app>Accerciser</app> ya empaquetado. En "
+"este caso, puede instalarlo mediante su gestor de paquetes. Si no, puede "
+"leer la siguiente sección para instalar <app>Accerciser</app> manualmente."
+
+#: C/howto_setting_up_accerciser.page:35(section/title)
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "Instalar <app>Accerciser</app> manualmente"
+
+#: C/howto_setting_up_accerciser.page:36(section/p)
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it "
+"first. <app>Accerciser</app>'s source code can either be downloaded from "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the gnome."
+"org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
+"accerciser\">the gnome.org GIT repository</link>."
+msgstr ""
+"Para instalar <app>Accerciser</app> manualmente, primero deberá descargarlo. "
+"El código fuente de <app>Accerciser</app> se puede descargar desde el <link "
+"href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">sitio FTP de "
+"gnome.org</link> o clonarse desde el <link href=\"http://git.gnome.org/"
+"browse/accerciser\">repositorio GIT de gnome.org</link>."
+
+#: C/howto_setting_up_accerciser.page:43(note/p)
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
+"version 3 or later is not compatible with your environment."
+msgstr ""
+"Si no usa GNOME 3, puede pasar que la versión 3 o superior de "
+"<app>Accerciser</app> no es compatible con su entorno."
+
+#: C/howto_setting_up_accerciser.page:50(section/p)
+msgid ""
+"After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr ""
+"Después de obtener <application>Accerciser</application> instálelo usando "
+"los siguientes comandos:"
+
+#: C/howto_setting_up_accerciser.page:54(item/p)
+#| msgid "cd accerciser"
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
+
+#: C/howto_setting_up_accerciser.page:55(item/p)
+#| msgid "./autogen.sh # or ./configure for first time installation"
+msgid "<cmd>./autogen.sh # or ./configure for first time installation</cmd>"
+msgstr "<cmd>./autogen.sh # o ./configure para la instalación inicial</cmd>"
+
+#: C/howto_setting_up_accerciser.page:56(item/p)
+msgid "<cmd>make</cmd>"
+msgstr "<cmd>make</cmd>"
+
+#: C/howto_setting_up_accerciser.page:57(item/p)
+#| msgid "sudo make install # or make install as root"
+msgid "<cmd>sudo make install # or make install as root</cmd>"
+msgstr "<cmd>sudo make install # o make install como administrador</cmd>"
+
+#: C/howto_setting_up_accerciser.page:59(section/p)
+#| msgid ""
+#| "If you find any problems installing <app>Accerciser</app> on your system, "
+#| "it is likely that some of its dependencies are missing. Check <link href="
+#| "\"https://live.gnome.org/Accerciser/#Requirements\"><app>Accerciser</"
+#| "app>'s wiki</link> to make sure you have all dependencies properly "
+#| "installed."
+msgid ""
+"If you find any problems installing <app>Accerciser</app> on your system, it "
+"is likely that some of its dependencies are missing. Check <link href="
+"\"https://live.gnome.org/Accerciser/#Requirements\"> <app>Accerciser</app>'s "
+"wiki</link> to make sure you have all dependencies properly installed."
+msgstr ""
+"Si tiene problemas al instalar <app>Accerciser</app> en su sistema, es "
+"posible que falte alguna de sus dependencias. Compruebe el <link href="
+"\"https://live.gnome.org/Accerciser/#Requirements\">wiki de <app>Accerciser</"
+"app></link> para asegurarse de que tiene todas las dependencias instaladas "
+"correctamente."
+
+#: C/howto_setting_up_accerciser.page:67(section/title)
+msgid "Running <app>Accerciser</app>"
+msgstr "Ejecutar <app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:68(section/p)
+msgid ""
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
+"window or within the Run dialog and then press <key>Return</key>."
+msgstr ""
+"Para iniciar <app>Accerciser</app>, escriba <cmd>accerciser</cmd> en una "
+"ventana de la terminal o en el diálogo «Ejecutar» y pulse <key>Intro</key>."
+
+#: C/howto_setting_up_accerciser.page:72(section/p)
+msgid ""
+"After that, you can use <app>Accerciser</app> to inspect any accessible item "
+"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
+"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
+"app>'s plugins."
+msgstr ""
+"Después de esto puede usar <app>Accerciser</app> para inspeccionar un "
+"elemento accesible mostrado en la jerarquía de la <link xref="
+"\"desktop_tree_view\">vista en árbol de la aplicación.</link>. Seleccione un "
+"elemento e investíguelo usando uno de los complementos de <app>Accerciser</"
+"app>."
+
+#: C/howto_write_a_plugin.page:4(info/title)
+#| msgid "3. Writing New Plugins"
+msgctxt "sort"
 msgid "3. Writing New Plugins"
 msgstr "3. Escribir complementos nuevos"
 
-#: C/howto_write_a_plugin.page:6(desc)
+#: C/howto_write_a_plugin.page:6(info/desc)
 msgid "Extending <app>Accerciser</app> with your desired functionalities"
 msgstr "Ampliar <app>Accerciser</app> con nuevas funcionalidades"
 
-#: C/howto_write_a_plugin.page:25(title)
+#: C/howto_write_a_plugin.page:25(page/title)
 msgid "Writing Plugins for <app>Accerciser</app>"
 msgstr "Escribir complementos para <application>Accerciser</application>"
 
-#: C/howto_write_a_plugin.page:26(p)
+#: C/howto_write_a_plugin.page:26(page/p)
 msgid ""
 "Extending <app>Accerciser</app> with new plugins became much simpler since "
 "<link href=\"http://live.gnome.org/Accerciser/PluginTutorial\">this "
@@ -1035,11 +677,11 @@ msgstr ""
 "explicación muy detallada sobre el tema; esta sección consta básicamente del "
 "contenido original (sólo se han hecho pequeñas ediciones y actualizaciones)."
 
-#: C/howto_write_a_plugin.page:33(p)
+#: C/howto_write_a_plugin.page:33(page/p)
 msgid "<app>Accerciser</app> supports three basic types of plugins:"
 msgstr "<app>Accerciser</app> soporta tres tipos de complementos básicos:"
 
-#: C/howto_write_a_plugin.page:38(p)
+#: C/howto_write_a_plugin.page:38(item/p)
 msgid ""
 "Base plugins - These plugins are derived from the Plugin base class. They do "
 "not provide a visible interface, but could provide additional functionality "
@@ -1049,7 +691,7 @@ msgstr ""
 "No proporcionan una interfaz visible, pero pueden proporcionar funcionalidad "
 "adicional a <app>Accerciser</app>."
 
-#: C/howto_write_a_plugin.page:44(p)
+#: C/howto_write_a_plugin.page:44(item/p)
 msgid ""
 "Console plugins - These plugins provide simple console output into a text "
 "area in a plugin tab. Not to be confused with the packaged <link xref="
@@ -1060,7 +702,7 @@ msgstr ""
 "se confunda con el <link xref=\"ipython_plugin\">complemento de la Consola "
 "IPython</link> incluido."
 
-#: C/howto_write_a_plugin.page:50(p)
+#: C/howto_write_a_plugin.page:50(item/p)
 msgid ""
 "Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
 "They provide a custom graphical interface in a tab."
@@ -1068,11 +710,11 @@ msgstr ""
 "Complementos visuales: la mayoría de los complementos predeterminados de "
 "<app>Accerciser</app>. Proporcionan una interfaz gráfica en una pestaña."
 
-#: C/howto_write_a_plugin.page:58(title)
+#: C/howto_write_a_plugin.page:58(section/title)
 msgid "Creating a Base Plugin"
 msgstr "Crear un complemento base"
 
-#: C/howto_write_a_plugin.page:59(p)
+#: C/howto_write_a_plugin.page:59(section/p)
 msgid ""
 "We will create a simplified version of the <link xref=\"quick_select_plugin"
 "\">Quick Select Plugin</link>. This plugin will select the last focused "
@@ -1083,11 +725,11 @@ msgstr ""
 "último accesible con el foco al pulsar <key>ctrl</key>+<key>alt</key>"
 "+<key>e</key>."
 
-#: C/howto_write_a_plugin.page:63(p)
+#: C/howto_write_a_plugin.page:63(section/p)
 msgid "First off, the import lines we will use are:"
 msgstr "Lo primero, las líneas de importación que se usarán son:"
 
-#: C/howto_write_a_plugin.page:66(code)
+#: C/howto_write_a_plugin.page:66(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1102,7 +744,7 @@ msgstr ""
 "      import pyatspi\n"
 "    "
 
-#: C/howto_write_a_plugin.page:71(p)
+#: C/howto_write_a_plugin.page:71(section/p)
 msgid ""
 "Next we will derive a new class from the Plugin base class, and assign some "
 "mandatory class attributes:"
@@ -1110,7 +752,7 @@ msgstr ""
 "Lo siguiente será derivar una clase nueva de la clase base de complementos, "
 "y asignar algunos atributos obligatorios de clase:"
 
-#: C/howto_write_a_plugin.page:75(code)
+#: C/howto_write_a_plugin.page:75(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1125,7 +767,7 @@ msgstr ""
 "        plugin_description = 'Allows selecting last focused accessible.'\n"
 "    "
 
-#: C/howto_write_a_plugin.page:80(p)
+#: C/howto_write_a_plugin.page:80(section/p)
 msgid ""
 "We will now override the init method, in which we will set a global key "
 "action for selecting the last focused accessible item, register an event "
@@ -1137,7 +779,7 @@ msgstr ""
 "registrar un «listener» de eventos para el evento «focus», y establecer la "
 "variable de instancia <cmd>last_focused</cmd> a <cmd>None</cmd>."
 
-#: C/howto_write_a_plugin.page:86(code)
+#: C/howto_write_a_plugin.page:86(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1160,7 +802,7 @@ msgstr ""
 "        self.last_focused = None\n"
 "    "
 
-#: C/howto_write_a_plugin.page:95(p)
+#: C/howto_write_a_plugin.page:95(section/p)
 msgid ""
 "Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of "
 "tuples. Each tuple is a global hotkey action, composed by an action "
@@ -1172,7 +814,7 @@ msgstr ""
 "descripción de la acción, un método al que llamar, un símbolo de tecla de "
 "pulsación y una máscara modificadora."
 
-#: C/howto_write_a_plugin.page:100(p)
+#: C/howto_write_a_plugin.page:100(section/p)
 msgid ""
 "In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> "
 "instance variable with the accessible item that has just emitted the \"focus"
@@ -1182,7 +824,7 @@ msgstr ""
 "instancia <cmd>last_focused</cmd> con el elemento accesible que acaba de "
 "emitir el evento «focus»."
 
-#: C/howto_write_a_plugin.page:104(code)
+#: C/howto_write_a_plugin.page:104(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1197,7 +839,7 @@ msgstr ""
 "          self.last_focused = event.source\n"
 "    "
 
-#: C/howto_write_a_plugin.page:109(p)
+#: C/howto_write_a_plugin.page:109(section/p)
 msgid ""
 "In the hotkey action callback, we update the application wide node with the "
 "last focused accessible item, if we have recorded it:"
@@ -1206,7 +848,7 @@ msgstr ""
 "nodo amplio de la aplicación con el último elemento que tuvo el foco, si se "
 "guardó:"
 
-#: C/howto_write_a_plugin.page:113(code)
+#: C/howto_write_a_plugin.page:113(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1221,11 +863,11 @@ msgstr ""
 "          self.node.update(self.last_focused)\n"
 "    "
 
-#: C/howto_write_a_plugin.page:120(title)
+#: C/howto_write_a_plugin.page:120(section/title)
 msgid "Creating a Console Plugin"
 msgstr "Crear un complemento de consola"
 
-#: C/howto_write_a_plugin.page:121(p)
+#: C/howto_write_a_plugin.page:121(section/p)
 msgid ""
 "We will create a console plugin to display focus changes emitted by an "
 "accessible item with a \"push button\" role - remember that it is easy to "
@@ -1239,11 +881,11 @@ msgstr ""
 "app>, puede comprobarlo en la <link xref=\"desktop_tree_view\">vista en "
 "árbol de la aplicación</link>, por ejemplo."
 
-#: C/howto_write_a_plugin.page:127(p)
+#: C/howto_write_a_plugin.page:127(section/p)
 msgid "The needed import lines are:"
 msgstr "Las líneas de importaciones necesarias son:"
 
-#: C/howto_write_a_plugin.page:130(code)
+#: C/howto_write_a_plugin.page:130(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1256,13 +898,13 @@ msgstr ""
 "      import pyatspi\n"
 "    "
 
-#: C/howto_write_a_plugin.page:134(p)
+#: C/howto_write_a_plugin.page:134(section/p)
 msgid "Then we add a class definition, with a plugin name and description:"
 msgstr ""
 "Se añade entonces una definición de clase, con un nombre para el complemento "
 "y una descripción:"
 
-#: C/howto_write_a_plugin.page:137(code)
+#: C/howto_write_a_plugin.page:137(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1277,11 +919,11 @@ msgstr ""
 "        plugin_description = 'Imprimir evento cuando el pulsador obtiene el foco.'\n"
 "    "
 
-#: C/howto_write_a_plugin.page:142(p)
+#: C/howto_write_a_plugin.page:142(section/p)
 msgid "We override the init method adding a register listener:"
 msgstr "Se sobreescribe el método «init» añadiendo un registro de «listener»:"
 
-#: C/howto_write_a_plugin.page:145(code)
+#: C/howto_write_a_plugin.page:145(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1294,13 +936,13 @@ msgstr ""
 "         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
 "    "
 
-#: C/howto_write_a_plugin.page:149(p)
+#: C/howto_write_a_plugin.page:149(section/p)
 msgid "In the callback method, all push button events are printed."
 msgstr ""
 "En el método de retorno de llamada se imprimen todos los eventos de "
 "pulsaciones de botones."
 
-#: C/howto_write_a_plugin.page:152(code)
+#: C/howto_write_a_plugin.page:152(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1315,11 +957,11 @@ msgstr ""
 "          self.appendText(str(event)+'\\n')\n"
 "    "
 
-#: C/howto_write_a_plugin.page:159(title)
+#: C/howto_write_a_plugin.page:159(section/title)
 msgid "Creating a Viewport Plugin"
 msgstr "Crear un complemento de punto de vista"
 
-#: C/howto_write_a_plugin.page:160(p)
+#: C/howto_write_a_plugin.page:160(section/p)
 msgid ""
 "We will create a viewport plugin that allows quick testing of the \"click\" "
 "action in accessible items that support the AT-SPI Action interface and have "
@@ -1331,11 +973,11 @@ msgstr ""
 "AT-SPI Action y tienen una acción llamada «click». Será un botón simple que, "
 "una vez pulsado, realiza la acción de pulsación sobre el accesible."
 
-#: C/howto_write_a_plugin.page:166(p)
+#: C/howto_write_a_plugin.page:166(section/p)
 msgid "First off, some mandatory import lines:"
 msgstr "En primer lugar, algunas líneas de importación obligatorias:"
 
-#: C/howto_write_a_plugin.page:169(code)
+#: C/howto_write_a_plugin.page:169(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1348,12 +990,12 @@ msgstr ""
 "      from accerciser.plugin import ViewportPlugin\n"
 "    "
 
-#: C/howto_write_a_plugin.page:173(p)
+#: C/howto_write_a_plugin.page:173(section/p)
 msgid "Next, a class definition, with a name and description:"
 msgstr ""
 "Lo siguiente es una definición de clase, con un nombre y una descripción:"
 
-#: C/howto_write_a_plugin.page:176(code)
+#: C/howto_write_a_plugin.page:176(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1368,7 +1010,7 @@ msgstr ""
 "        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
 "    "
 
-#: C/howto_write_a_plugin.page:181(p)
+#: C/howto_write_a_plugin.page:181(section/p)
 msgid ""
 "We override the init method with some UI building, and connecting a callback "
 "to a signal for the button. We use the alignment container to allow the "
@@ -1384,7 +1026,7 @@ msgstr ""
 "que la variable de instancia <cmd>plugin_area</cmd> gontiene un gtk.Frame "
 "que se puede llenar con todos los widgets del complemento."
 
-#: C/howto_write_a_plugin.page:188(code)
+#: C/howto_write_a_plugin.page:188(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1411,7 +1053,7 @@ msgstr ""
 "         self.show_all()\n"
 "    "
 
-#: C/howto_write_a_plugin.page:199(p)
+#: C/howto_write_a_plugin.page:199(section/p)
 msgid ""
 "We also created a convenience method that returns a list of supported "
 "actions of the currently selected accessible item - if it does not support "
@@ -1421,7 +1063,7 @@ msgstr ""
 "acciones soportadas por el elemento accesible actualmente seleccionado; si "
 "no soporta la acción de la interfaz, entonces devuelve una lista vacía:"
 
-#: C/howto_write_a_plugin.page:204(code)
+#: C/howto_write_a_plugin.page:204(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1446,7 +1088,7 @@ msgstr ""
 "       return action_names\n"
 "    "
 
-#: C/howto_write_a_plugin.page:214(p)
+#: C/howto_write_a_plugin.page:214(section/p)
 msgid ""
 "The base plugin class has a method call onAccChanged that is called "
 "everytime the target application's selected accessible item changes. We will "
@@ -1458,7 +1100,7 @@ msgstr ""
 "aplicación objetivo cambia. Se sobreescribirá ajustando el botón para ser "
 "sensible sólo cuando el elemento accesible actual tiene la acción «click»."
 
-#: C/howto_write_a_plugin.page:219(code)
+#: C/howto_write_a_plugin.page:219(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1473,7 +1115,7 @@ msgstr ""
 "         self.click_button.set_sensitive(has_click)\n"
 "    "
 
-#: C/howto_write_a_plugin.page:224(p)
+#: C/howto_write_a_plugin.page:224(section/p)
 msgid ""
 "The callback method for button \"clicked\" performs the \"click\" action on "
 "the accessible item. Since this callback could only be called when the "
@@ -1485,7 +1127,7 @@ msgstr ""
 "le puede llamar cuando el botón es sensible, no se debe preocupar acerca de "
 "comprobar si el accesible actual tiene la acción «cick»."
 
-#: C/howto_write_a_plugin.page:229(code)
+#: C/howto_write_a_plugin.page:229(section/code)
 #, no-wrap
 msgid ""
 "\n"
@@ -1502,478 +1144,980 @@ msgstr ""
 "        ai.doAction(action_names.index('click'))\n"
 "    "
 
-#: C/howto_setting_up_accerciser.page:5(title)
-msgid "2. How to install and run <app>Accerciser</app>"
-msgstr "2. Cómo instalar y configurar <app>Accerciser</app>"
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41(media)
+#| msgid ""
+#| "@@image: 'figures/interface_viewer_plugin.png'; "
+#| "md5=c83c4113369ff2adc756dfd8614a48ed"
+msgctxt "_"
+msgid ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
+msgstr ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
 
-#: C/howto_setting_up_accerciser.page:6(title)
-#: C/howto_setting_up_accerciser.page:26(title)
-msgid "Setting up <app>Accerciser</app>"
+#: C/interface_viewer_plugin.page:4(info/title)
+#| msgid "2. Interface Viewer Plugin"
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "2. Complemento Visor de interfaces"
+
+#: C/interface_viewer_plugin.page:6(info/desc)
+msgid "Examining your accessibility implementation"
+msgstr "Examinar su implementación de accesibilidad"
+
+#: C/interface_viewer_plugin.page:25(page/title)
+msgid "Interface Viewer Plugin"
+msgstr "Complemento Visor de interfaces"
+
+#: C/interface_viewer_plugin.page:27(page/p)
+msgid ""
+"The Interface Viewer Plugin shows the information and controls provided by "
+"the AT-SPI interfaces present in each accessible item from the <link xref="
+"\"desktop_tree_view\">Application Tree View</link>. After selecting an item, "
+"you can use this plugin to quickly review its supported interfaces, to "
+"retrieve each interface's information, and to manipulate the item through "
+"all the interface’s methods."
+msgstr ""
+"El complemento «Visor de interfaces» muestra la información y los controles "
+"proporcionados por la interfaz AT-SPI presente en cada elemento accesible de "
+"la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</link>. "
+"Después de seleccionar un elemento, puede usar este complemento para revisar "
+"rápidamente sus interfaces soportadas, para obtener información sobre cada "
+"interfaz y para manipular el elemento mediante los métodos de la interfaz."
+
+#: C/interface_viewer_plugin.page:35(figure/title)
+msgid "Examining a Menu with the Interface Viewer Plugin"
+msgstr "Examinar un menú con el complemento «Visor de interfaces»"
+
+#: C/interface_viewer_plugin.page:36(figure/desc)
+#: C/interface_viewer_plugin.page:42(media/p)
+msgid ""
+"Given a selected item in the Application Tree View, all of its AT-SPI "
+"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
+"unsupported will appear grayed out, such as the Application and Collection "
+"interfaces in the figure above."
+msgstr ""
+"Dado un elemento seleccionado en la vista en árbol de la aplicación, se "
+"mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento de "
+"«Visor de interfaces». Aquellas no soportadas aparecerán en gris, tales como "
+"las interfaces de aplicación de recolección en la figura superior."
+
+#: C/interface_viewer_plugin.page:49(section/title)
+msgid "Running the Interface Viewer Plugin"
+msgstr "Ejecutar el complemento Visor de interfaces"
+
+#: C/interface_viewer_plugin.page:50(section/p)
+msgid ""
+"The first step to run the Interface Viewer Plugin is to select an item in "
+"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
+"that, all AT-SPI interfaces covered by the plugin will be listed in the "
+"plugin's panel. The interfaces implemented by the selected item will be "
+"sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following "
+"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
+"item implements them:"
+msgstr ""
+"El primer paso para ejecutar el complemento «Visor de interfaces» es "
+"seleccionar un elemento en la <link xref=\"desktop_tree_view\">vista en "
+"árbol de la aplicación</link>. Después de esto, todas las interfaces At-SPI "
+"cubiertas por el complemento se listarán en el panel de complementos. Las "
+"interfaces implementadas por el elemento seleccionado serán sensibles, por "
+"lo que podrá pulsar en cada una de ellas para obtener información o para "
+"interactuar con los métodos disponibles. Se pueden examinar las siguientes "
+"interfaces en <app>Accerciser</app>, asumiendo que el elemento seleccionado "
+"las implementa:"
+
+#: C/interface_viewer_plugin.page:59(item/p)
+msgid ""
+"Accessible - This interface shows the selected item's child count (number of "
+"child widgets), description, states, relations, and attributes."
+msgstr ""
+"Accesible: esta interfaz muestra el contador de elementos hijos "
+"seleccionados (número de widgets hijos), descripción, estados, relaciones y "
+"atributos."
+
+#: C/interface_viewer_plugin.page:65(item/p)
+msgid ""
+"Action - This interface shows all the actions that can be performed by the "
+"selected item. For each interface, you will see its name, such as \"press\" "
+"or \"click\", followed by a description and a key binding, if there are any. "
+"If you select an action, a \"Perform action\" button will become sensitive. "
+"Press this button to see the item performing the selected action."
+msgstr ""
+"Acción: esta interfaz muestra todas las acciones que el elemento "
+"seleccionado se pueden realizar. Para cada interfaz verá su nombre, como "
+"«presionar» o «pulsar», seguido de una descripción y de una asociación de "
+"teclas, si hay alguna. si selecciona una acción, el botón «Realizar acción» "
+"se volverá sensible. Pulse este botón para ver al elemento realizar la "
+"acción seleccionada."
+
+#: C/interface_viewer_plugin.page:73(item/p)
+msgid ""
+"Application - This interface can be implemented by items with role "
+"\"application\". It is worth to point out that items with role \"application"
+"\" not necessarily implement this interface. If the selected item implements "
+"it, the interface will show its ID and, if there are any, its toolkit and "
+"version."
+msgstr ""
+"Aplicación: esta interfaz se puede implementar con elementos cuyo rol es "
+"«aplicación». Merece la pena señalar que los elementos cuyo rol es "
+"«aplicación» no necesariamente implementan esta interfaz. Si el elemento "
+"seleccionado la implementa, la interfaz mostrará su ID y, si tiene, su kit "
+"de herramientas y su versión."
+
+#: C/interface_viewer_plugin.page:80(item/p)
+msgid ""
+"Component - This interface shows the selected item's absolute position (with "
+"respect to the desktop coordinate system), relative position (with respect "
+"to the window coordinate system), size, layer type, MDI-Z-order (a short "
+"integer indicating the stacking order of the component in the MDI layer), "
+"and alpha (if alpha blending is used)."
+msgstr ""
+"Componente: esta interfaz muestra la posición absoluta del elemento "
+"seleccionado (respecto del sistema de coordenadas del escritorio), posición "
+"relativa (respecto del sistema de coordenadas de la ventana), tamaño, tipo "
+"de capa, orden MDI-Z (un entero corto que indica el orden de apilamiento del "
+"componente en la capa MDI) y alfa (si se usa alfa)."
+
+#: C/interface_viewer_plugin.page:86(item/p)
+msgid ""
+"Document - This interface shows the selected item's document attributes and "
+"locale description, if there is one."
+msgstr ""
+"Documento: esta interfaz muestra los atributos de documento del elemento "
+"seleccionado, así como la descripción regional, si existe."
+
+#: C/interface_viewer_plugin.page:91(item/p)
+msgid ""
+"Hypertext - This interface shows a list with all the selected item's "
+"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
+"URI, start (the index in the hypertext at which the hyperlink begins) and "
+"end (the index in the hypertext at which this hyperlink ends)."
+msgstr ""
+"Hipertexto: esta interfaz muestra una lista de todos los hiperenlaces de "
+"hipertexto de los elementos seleccionados. Para cada hiperenlace la interfaz "
+"proporciona su nombre, URI, inicio (el índice en el hipertexto en el que "
+"comienza el hiperenlace) y el final (el índice en el hipertexto en el que "
+"finaliza el hiperenlace)."
+
+#: C/interface_viewer_plugin.page:98(item/p)
+msgid ""
+"Image - This interface shows the selected item's description (or \"no "
+"description\" if unspecified), size, position (with respect to the desktop "
+"coordinate system), and locale, if there is one."
+msgstr ""
+"Imagen: esta interfaz muestra la descripción del elemento seleccionado (o "
+"«sin descripción» si está sin especificar), tamaño, posición (respecto del "
+"sistema de coordenadas del escritorio), y configuración regional, si existe."
+
+#: C/interface_viewer_plugin.page:104(item/p)
+msgid ""
+"Selection - This interface shows all selectable child items of the selected "
+"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
+"\"View\", and \"Help\", and all of them are selectable, then they will be "
+"listed in this interface. If you click a listed option - \"File\", for "
+"example - and want to clear it, just press the \"Clear\" button below the "
+"list."
+msgstr ""
+"Selección: esta interfaz muestra todos los elementos hijos seleccionables "
+"del elemento seleccionado. Si el elemento seleccionado es una barra de menú "
+"con las opciones «Archivo», «Editar», «Ver» y «Ayuda» y todas ellas se pueden "
+"seleccionar, entonces se listarán en esta interfaz. Si pulsa sobre una "
+"opción listada —«Archivo», por ejemplo— y quiere limpiarla, simplemente pulse "
+"el botón «Limpiar» en la lista de abajo."
+
+#: C/interface_viewer_plugin.page:112(item/p)
+msgid ""
+"Streamable Content - This interface shows the selected item's content types "
+"and their corresponding URIs."
+msgstr ""
+"Contenido secuenciable: esta interfaz muestra el tipo de contenido de los "
+"elementos seleccionados y sus URI correspondientes."
+
+#: C/interface_viewer_plugin.page:117(item/p)
+msgid ""
+"Table - This interface shows the selected item's caption and summary, rows "
+"(number of rows), columns (number of columns), selected rows (number of "
+"selected rows), and selected columns (number of selected columns). For a "
+"selected cell, the interface shows its row's and column's header and extents."
+msgstr ""
+"Tabla: esta interfaz muestra el título y el resumen del elemento "
+"seleccionado, filas (número de filas), columnas (número de columnas), filas "
+"seleccionadas (número de filas seleccionadas) y columnas seleccionadas "
+"(número de columnas seleccionadas). Para una celda seleccionada, la interfaz "
+"muestra la cabecera y extensión de sus filas y columnas."
+
+#: C/interface_viewer_plugin.page:124(item/p)
+msgid ""
+"Text - This interface shows the selected item's text content, that can be "
+"editable, and its attributes. The basic attributes are offset (the number of "
+"characters the text has) and justification. To see possible CSS attributes, "
+"click the \"Include defaults\" check box."
+msgstr ""
+"Texto: esta interfaz muestra el contenido de los elementos de texto del "
+"elemento, que pueden ser editables, y sus atributos. Los atributos básicos "
+"son el desplazamiento (el número de caracteres que tiene el texto) y su "
+"justificación. Para ver los posibles atributos de CSS, pulse en la casilla "
+"«incluir predeterminados»."
+
+#: C/interface_viewer_plugin.page:131(item/p)
+msgid ""
+"Value - This interface shows the selected item's current value, minimum "
+"allowed value, maximum allowed value, and the minimum increment by which the "
+"value may be changed (or zero if this value cannot be determined). The "
+"current value can be manually changed via a spin button."
+msgstr ""
+"Valor: esta interfaz muestra el valor actual del elemento seleccionado, los "
+"valores mínimo y máximo permitidos y el incremento mínimo por el que el "
+"valor debe cambiar (o cero si este valor no se puede determinar). El valor "
+"actual se puede cambiar manualmente usando un botón incrementable."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55(media)
+#| msgid ""
+#| "@@image: 'figures/accerciser-view.png'; "
+#| "md5=fe4edcab1458ebe903cc46878c53ee64"
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+msgstr ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+
+#: C/introduction.page:5(info/title)
+#| msgid "1. What is Accerciser?"
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "1. ¿Qué es Accerciser?"
+
+#: C/introduction.page:6(info/desc)
+msgid "An interactive accessibility explorer"
+msgstr "Un examinador de accesibilidad interactivo"
+
+#: C/introduction.page:25(page/title)
+msgid "What is <app>Accerciser</app>?"
+msgstr "¿Qué es <app>Accerciser</app>?"
+
+#: C/introduction.page:26(page/p)
+msgid ""
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
+"uses the AT-SPI library to inspect, examine, and interact with widgets, "
+"allowing you to check if an application is providing correct information to "
+"assistive technologies and automated testing frameworks. <app>Accerciser</"
+"app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
+msgstr ""
+"<application>Accerciser</application> es un examinador de accesibilidad "
+"interactivo escrito en Python. Usa la biblioteca AT-SPI para inspeccionar, "
+"examinar e interaccionar con los widgets, permitiéndole comprobar si una "
+"aplicación proporciona la información correcta a las tecnologías de "
+"asistencia y entornos de trabajo de prueba automáticos. "
+"<application>Accerciser</application> incluye un conjunto complementos que "
+"puede usar para crear vistas personalizadas de la información de "
+"accesibilidad."
+
+#: C/introduction.page:35(page/p)
+msgid ""
+"By default, <app>Accerciser</app>'s main interface is comprised of three "
+"sections: a tree view of the entire desktop accessible hierarchy, namely "
+"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+"plugin areas. If you prefer to see all plugins in a single area, dividing "
+"<app>Accerciser</app>'s interface in two sections instead of three, type "
+"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
+"<key>ctrl</key>+<key>t</key> again."
+msgstr ""
+"De manera predeterminada, la interfaz principal de <app>Accerciser</app> se "
+"compone de tres seccione: una vista en árbol de la jerarquía completa de "
+"accesibles del escritorio, llamada <link xref=\"desktop_tree_view\"> vista "
+"en árbol de la aplicación</link>, y dos áreas de complementos. Si prefiere "
+"ver todos los complementos en una única área, divida la interfaz de "
+"<app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>ctrl "
+"</key>+<key>t</key>. Para volver a dividirla en tres secciones, simplemente "
+"pulse <key>ctrl </key>+<key>t</key> otra vez."
+
+#: C/introduction.page:44(note/p)
+msgid ""
+"Make sure that accessibility suport is enabled in your desktop - otherwise, "
+"<app>Accerciser</app> will not work as expected."
+msgstr ""
+"Asegúrese de que el soporte de accesibilidad está activado en su escritorio; "
+"si no lo está, <app>Accerciser</app> no funcionará como se espera."
+
+#: C/introduction.page:51(figure/title)
+#| msgid "Running <app>Accerciser</app>"
+msgid "<app>Accerciser</app>"
+msgstr "<app>Accerciser</app>"
+
+#: C/introduction.page:52(figure/desc) C/introduction.page:56(media/p)
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "Interfaz predeterminada de <app>Accerciser</app>."
+
+#: C/introduction.page:63(section/title)
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "Público objetivo de <app>Accerciser</app>"
+
+#: C/introduction.page:64(section/p)
+msgid ""
+"<app>Accerciser</app> fits the needs of many different audiences. User "
+"interface developers use it to ensure that their applications are providing "
+"all of their features through AT-SPI. Assistive technology developers are "
+"able to see what AT-SPI is providing to their applications. Automated UI "
+"test developers find <app>Accerciser</app> beneficial since it exposes "
+"different events that could be expected from their target application."
+msgstr ""
+"<app>Accerciser</app> se ajusta a las necesidades de diferentes públicos "
+"objetivo. Los desarrolladores de interfaces de usuario lo usan para "
+"asegurarse de que sus aplicaciones proporcionan todas sus características a "
+"través de At-SPI. Los desarrolladores de tecnologías de asistencia pueden "
+"ver qué proporciona AT-SPI a sus aplicaciones. Los desarrolladores de "
+"pruebas de IU automatizadas encuentra beneficioso a <app>Accerciser</app> ya "
+"que expone diferentes eventos que se podrían esperar de su aplicación "
+"objetivo."
+
+#: C/introduction.page:74(section/title)
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "Arquitectura de complementos de <app>Accerciser</app>"
+
+#: C/introduction.page:75(section/p)
+msgid ""
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
+"code is fairly small and most of its features are part of default plugins:"
+msgstr ""
+"<app>Accerciser</app> tiene una arquitectura extensible basada en "
+"complementos. El núcleo de su código es bastante pequeño y la mayoría de sus "
+"características son parte de los complementos predeterminados:"
+
+#: C/introduction.page:82(item/p)
+msgid ""
+"<link xref=\"interface_viewer\">Interface Viewer</link> - A plugin that lets "
+"you explore the AT-SPI interfaces provided by each accessible widget of a "
+"target application."
+msgstr ""
+"<link xref=\"interface_viewer\">Visor de interfaces</link>: un complemento "
+"que le permite examinar las interfaces AT-SPI proporcionadas por cada widget "
+"accesible en una aplicación objetivo."
+
+#: C/introduction.page:88(item/p)
+msgid ""
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
+"applies tests to verify the accessibility of a target application."
+msgstr ""
+"<link xref=\"validator_plugin\">Validador AT-SPI</link>: un complemento que "
+"aplica pruebas para verificar la accesibilidad de una aplicación objetivo."
+
+#: C/introduction.page:94(item/p)
+msgid ""
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
+"displays AT-SPI events emitted by a target application as they occur."
+msgstr ""
+"<link xref=\"event_monitor_plugin\">Monitor de eventos</link>: un "
+"complemento que muestra eventos AT-SPI emitidos por una aplicación objetivo, "
+"según suceden."
+
+#: C/introduction.page:100(item/p)
+msgid ""
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
+"provides global hotkeys for quickly selecting accessible widgets in "
+"<app>Accerciser</app>'s Application Tree View."
+msgstr ""
+"<link xref=\"quick_select_plugin\">Selección rápida</link>: Un complemento "
+"que proporciona teclas rápidas globales para seleccionar rápidamente widgets "
+"accesibles en la vista en árbol de la aplicación de <app>Accerciser</app>."
+
+#: C/introduction.page:106(item/p)
+msgid ""
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
+"the interfaces, methods, and attributes available on each accessible widget "
+"of a target application."
+msgstr ""
+"<link xref=\"api_browser_plugin\">Examinador API</link>: un complemento que "
+"muestra las interfaces, métodos y atributos disponibles en cada widget "
+"accesible de una aplicación objetivo."
+
+#: C/introduction.page:112(item/p)
+msgid ""
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
+"provides a full, interactive Python shell with access to selected accessible "
+"widgets of a target application."
+msgstr ""
+"<link xref=\"ipython_plugin\">Consola IPython</link>: un complemento que "
+"proporciona una shell Python completa e interactiva con acceso a los widgets "
+"accesibles seleccionados de una aplicación objetivo."
+
+#: C/introduction.page:122(section/title)
+msgid "More about Accessibility"
+msgstr "Más acerca de accesibilidad"
+
+#: C/introduction.page:123(section/p)
+msgid ""
+"Accessibility is a core value that should touch all aspects of a Desktop "
+"Environment. To help achieve it in GNOME, some libraries were developed, "
+"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
+"also used in other Desktop Environments. To learn more about Accessibility "
+"Libraries for GNU/UNIX systems, you can consult:"
+msgstr ""
+"La accesibilidad es un valor esencial que debe abarcar todos los aspectos de "
+"un entorno de escritorio. Para ayudar a lograrlo en GNOME, se han "
+"desarrollado algunas bibliotecas como ATK y AT-SPI. Aunque se crearon en "
+"GNOME, estas bibliotecas se usan también en otros entornos de escritorio. "
+"Para aprender más sobre bibliotecas de accesibilidad para sistemas GNU/"
+"Linux, puede consultar:"
+
+#: C/introduction.page:132(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
+"link> - ATK provides the set of accessibility interfaces that are "
+"implemented by other toolkits and applications. Using the ATK interfaces, "
+"accessibility tools have full access to view and control running "
+"applications."
+msgstr ""
+"<link href=\"http://developer.gnome.org/atk/\">Kit de herramientas de "
+"accesibilidad ATK</link>: ATK proporciona un conjunto de interfaces de "
+"accesibilidad implementadas por otros kits de herramientas y aplicaciones. "
+"Usando las interfaces ATK, las herramientas de accesibilidad tienen acceso "
+"completo para ver y controlar las aplicaciones en ejecución"
+
+#: C/introduction.page:139(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"- AT-SPI is the primary service interface by which assistive technologies "
+"query and receive notifications from running applications. Additional "
+"material is available from the <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
+"link>."
+msgstr ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link>: "
+"AT-SPI es la interfaz de servicio principal a la que consultan las "
+"tecnologías de asistencia y que recibe notificaciones de las aplicaciones en "
+"ejecución. Puede encontrar material adicional en la <link href=\"http://"
+"accessibility.kde.org/developer/atk.php#coreclasses\">comunidad de "
+"desarrollo de accesibilidad de KDE</link>."
+
+#: C/introduction.page:147(item/p)
+msgid ""
+"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
+"\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
+"in how the GNOME Desktop supports the needs of users with disabilities."
+msgstr ""
+"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
+"\">Guía de accesibilidad del escritorio GNOME</link>: una guía para "
+"cualquiera que esté interesado en cómo soporta el escritorio GNOME las "
+"necesidades de usuarios con discapacidades."
+
+#: C/introduction.page:153(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
+"want to ensure their applications are accessible to the widest audience of "
+"users."
+msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">Guía de accesibilidad para desarrolladores </link>: una guía para "
+"desarrolladores que quieren asegurarse de que sus aplicaciones son "
+"accesibles para la mayor parte del público usuario."
+
+#: C/introduction.page:159(item/p)
+msgid ""
+"<link href=\"http://projects.gnome.org/accessibility/\">GNOME Accessibility "
+"Project</link> - The GNOME Accessibility Project includes the guides listed "
+"above along with many other useful links for users, developers and system "
+"administrators."
+msgstr ""
+"<link href=\"http://projects.gnome.org/accessibility/\">Proyecto de "
+"accesibilidad de GNOME</link>: el proyecto de accesibilidad de GNOME incluye "
+"las guías mencionadas anteriormente junto con muchos otros enlaces útiles "
+"para usuarios, desarrolladores y administradores de sistemas."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57(media)
+#| msgid ""
+#| "@@image: 'figures/IPython_plugin.png'; "
+#| "md5=4e25a8b12536302b54f4ea31e2d142c9"
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+msgstr ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+
+#: C/ipython_plugin.page:4(info/title)
+#| msgid "2. IPython Plugin"
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "2. Complemento IPython"
+
+#: C/ipython_plugin.page:6(info/desc)
+msgid "When all else fails"
+msgstr "Cuando todo falla"
+
+#: C/ipython_plugin.page:25(page/title)
+msgid "IPython Console Plugin"
+msgstr "Complemento de la Consola IPython"
+
+#: C/ipython_plugin.page:26(page/p)
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item "
+"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
+"the IPython Console Plugin is an interactive Python shell, you can import "
+"any Python modules you want."
+msgstr ""
+"El complemento de la Consola IPython permite interacción en tiempo real con "
+"el elemento seleccionado en la <link xref=\"desktop_tree_view\">vista en "
+"árbol de la aplicación</link>. Ya que el complemento de la Consola IPython "
+"es una shell Python interactiva, puede importar cualquier módulo Python que "
+"quiera."
+
+#: C/ipython_plugin.page:33(note/p)
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. "
+"Otherwise, the IPython Console Plugin will not work properly."
+msgstr ""
+"Asegúrese de que tiene el paquete autónomo de IPython instalado en su "
+"sistema. De otra forma, el complemento de la Consola IPython no funcionará "
+"correctamente. "
+
+#: C/ipython_plugin.page:40(section/title)
+msgid "Running the IPython Console Plugin"
+msgstr "Ejecutar el complemento de la consola IPython"
+
+#: C/ipython_plugin.page:41(section/p)
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed "
+"in the Application Tree View - either an application or a widget. In the "
+"plugin, the selected item will correspond to the variable 'acc'."
+msgstr ""
+"Para ejecutar el complemento de la Consola IPython, seleccione uno de los "
+"elementos accesibles listados en la vista en árbol de la aplicación; ya sea "
+"una aplicación o un widget. En el complemento, el elemento seleccionado "
+"corresponderá a la variable «acc»."
+
+#: C/ipython_plugin.page:46(section/p)
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the "
+"console, what can be useful for discovering pyatspi methods."
+msgstr ""
+"Pulsar <key>Tab</key> muestra sugerencias para completar el comando actual "
+"en la consola, lo que puede ser útil para descubrir métodos pyatspi."
+
+#: C/ipython_plugin.page:52(figure/title)
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr ""
+"Investigar elementos seleccionados con el complemento de la consola IPython"
+
+#: C/ipython_plugin.page:53(figure/desc) C/ipython_plugin.page:58(media/p)
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and "
+"properties related to a selected item in the Application Tree View."
+msgstr ""
+"El complemento de la consola IPython le permite investigar métodos, "
+"constantes y propiedades relativas a un elemento seleccionado en la vista en "
+"árbol de la aplicación."
+
+#: C/ipython_plugin.page:66(note/p)
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
+"documentation about the corresponding selected accessible item."
+msgstr ""
+"Escribir <cmd>help(acc)</cmd> en el complemento de la consola de IPython "
+"muestra cierta documentación útil sobre el correspondiente elemento "
+"accesible seleccionado."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:36(media)
+#| msgid ""
+#| "@@image: 'figures/accerciser_preferences.png'; "
+#| "md5=35df6feb4a5dfc905331b45390783ad5"
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+msgstr ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:61(media)
+#| msgid "@@image: 'figures/plugins.png'; md5=aa997acc25c59cf82a788bb8a97f8654"
+msgctxt "_"
+msgid ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+msgstr ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:90(media)
+#| msgid ""
+#| "@@image: 'figures/global-hotkeys.png'; "
+#| "md5=e624ecfca646f771d03ea3feed4a5dcb"
+msgctxt "_"
+msgid ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+msgstr ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:111(media)
+#| msgid ""
+#| "@@image: 'figures/highlighting.png'; md5=a7eeb359d726fecba85b13b92a41b919"
+msgctxt "_"
+msgid ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+msgstr ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+
+#: C/preferences.page:4(info/title)
+#| msgid "4. Preferences"
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "4. Preferencias"
+
+#: C/preferences.page:6(info/desc)
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "Personalizar las preferencias de <app>Accerciser</app>"
+
+#: C/preferences.page:25(page/title)
+msgid "Configuring <app>Accerciser</app>"
 msgstr "Configurar <app>Accerciser</app>"
 
-#: C/howto_setting_up_accerciser.page:7(desc)
-msgid "Installing and running <app>Accerciser</app> on your system"
-msgstr "Instalar y ejecutar <app>Accerciser</app> en su sistema"
-
-#: C/howto_setting_up_accerciser.page:28(p)
+#: C/preferences.page:26(page/p)
+#| msgid ""
+#| "To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
+#| "+<key>p</key> or <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> "
+#| "to open a dialog."
 msgid ""
-"Check if your distribution has <app>Accerciser</app> already packaged. If "
-"this is the case, you can install it via its package manager. Otherwise, you "
-"can follow the section below to install <app>Accerciser</app> manually."
+"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
+"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
+"open a dialog."
 msgstr ""
-"Compruebe si su distribución tiene <app>Accerciser</app> ya empaquetado. En "
-"este caso, puede instalarlo mediante su gestor de paquetes. Si no, puede "
-"leer la siguiente sección para instalar <app>Accerciser</app> manualmente."
+"Para configurar los complementos, las teclas rápidas y el resaltado, pulse "
+"<key>ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</"
+"gui></guiseq> para abrir un diálogo."
 
-#: C/howto_setting_up_accerciser.page:35(title)
-msgid "Installing <app>Accerciser</app> manually"
-msgstr "Instalar <app>Accerciser</app> manualmente"
+#: C/preferences.page:32(figure/title)
+msgid "<app>Accerciser</app> preferences"
+msgstr "Preferencias de <app>Accerciser</app>"
 
-#: C/howto_setting_up_accerciser.page:36(p)
+#: C/preferences.page:33(figure/desc) C/preferences.page:37(media/p)
 msgid ""
-"To install <app>Accerciser</app> manually, you will need to download it "
-"first. <app>Accerciser</app>'s source code can either be downloaded from "
-"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the gnome."
-"org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
-"accerciser\">the gnome.org GIT repository</link>."
+"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
+"widget's highlighting."
 msgstr ""
-"Para instalar <app>Accerciser</app> manualmente, primero deberá descargarlo. "
-"El código fuente de <app>Accerciser</app> se puede descargar desde el <link "
-"href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">sitio FTP de "
-"gnome.org</link> o clonarse desde el <link href=\"http://git.gnome.org/"
-"browse/accerciser\">repositorio GIT de gnome.org</link>."
+"<app>Accerciser</app> le permite configurar los complementos, las teclas "
+"rápidas globales y el resaltado de widgets."
 
-#: C/howto_setting_up_accerciser.page:43(p)
+#: C/preferences.page:44(section/title)
+msgid "Configuring plugins"
+msgstr "Configurar complementos"
+
+#: C/preferences.page:45(section/p)
 msgid ""
-"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
-"version 3 or later is not compatible with your environment."
+"After opening the Preferences Dialog, you will find a list of all available "
+"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
+"or disable a plugin, toggle its checkbox. Only active plugins can be "
+"accessed via <app>Accerciser</app>'s interface."
 msgstr ""
-"Si no usa GNOME 3, puede pasar que la versión 3 o superior de "
-"<app>Accerciser</app> no es compatible con su entorno."
+"Después de abrir el diálogo de preferencias, encontrará una lista de "
+"complementos disponibles, con sus correspondientes casillas, en la pestaña "
+"«Complementos». Para activar o desactivar un complemento, conmute su casilla. "
+"Sólo se puede acceder a los complementos activos a través de la interfaz de "
+"<app>Accerciser</app>."
 
-#: C/howto_setting_up_accerciser.page:50(p)
+#: C/preferences.page:50(section/p)
 msgid ""
-"After getting <app>Accerciser</app>, install it using the following commands:"
+"Right-clicking on any given plugin allows you to choose its location: \"Top "
+"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
+"a new window for the plugin."
 msgstr ""
-"Después de obtener <application>Accerciser</application> instálelo usando "
-"los siguientes comandos:"
+"Una pulsación con el botón derecho sobre un complemento dado le permite "
+"elegir su ubicación: «Panel superior», «Panel inferior» y «Nueva vista». Al "
+"seleccionar «Nueva vista» se crea una ventana nueva para el complemento."
 
-#: C/howto_setting_up_accerciser.page:54(cmd)
-msgid "cd accerciser"
-msgstr "cd accerciser"
+#: C/preferences.page:57(figure/title)
+msgid "Configuring plugins' preferences"
+msgstr "Configurar las preferencias de los complementos"
 
-#: C/howto_setting_up_accerciser.page:55(cmd)
-msgid "./autogen.sh # or ./configure for first time installation"
-msgstr "«./autogen.sh #» o «./configure» para la instalación inicial"
+#: C/preferences.page:58(figure/desc) C/preferences.page:62(media/p)
+msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
+msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus "
+"complementos."
 
-#: C/howto_setting_up_accerciser.page:56(cmd)
-msgid "make"
-msgstr "make"
-
-#: C/howto_setting_up_accerciser.page:57(cmd)
-msgid "sudo make install # or make install as root"
-msgstr "«sudo make install #» o «make install» como root"
-
-#: C/howto_setting_up_accerciser.page:59(p)
+#: C/preferences.page:69(note/p)
 msgid ""
-"If you find any problems installing <app>Accerciser</app> on your system, it "
-"is likely that some of its dependencies are missing. Check <link href="
-"\"https://live.gnome.org/Accerciser/#Requirements\"><app>Accerciser</app>'s "
-"wiki</link> to make sure you have all dependencies properly installed."
+"You may bypass the Preferences dialog by using drag and drop to move a "
+"plugin from a location to another."
 msgstr ""
-"Si tiene problemas al instalar <app>Accerciser</app> en su sistema, es "
-"posible que falte alguna de sus dependencias. Compruebe el <link href="
-"\"https://live.gnome.org/Accerciser/#Requirements\">wiki de <app>Accerciser</"
-"app></link> para asegurarse de que tiene todas las dependencias instaladas "
-"correctamente."
+"Puede omitir el diálogo de preferencias usando arrastrar y soltar para mover "
+"un complemento desde una ubicación hasta otra."
 
-#: C/howto_setting_up_accerciser.page:67(title)
-msgid "Running <app>Accerciser</app>"
-msgstr "Ejecutar <app>Accerciser</app>"
+#: C/preferences.page:76(section/title)
+msgid "Configuring global hotkeys"
+msgstr "Configurar teclas rápidas globales"
 
-#: C/howto_setting_up_accerciser.page:68(p)
+#: C/preferences.page:77(section/p)
 msgid ""
-"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
-"window or within the Run dialog and then press <key>Return</key>."
+"Some elements in <app>Accerciser</app> may enable certain functionalities "
+"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
+"Select Plugin</link>. The hotkey combination for each functionality can be "
+"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
+"this tab, you will find a list of all features for which hotkeys can be "
+"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
+"checkboxes to enable or disable these modifiers."
 msgstr ""
-"Para iniciar <app>Accerciser</app>, escriba <cmd>accerciser</cmd> en una "
-"ventana de la terminal o en el diálogo «Ejecutar» y pulse <key>Intro</key>."
+"Algunos elementos en <app>Accerciser</app> puede activar ciertas "
+"funcionalidades mediante teclas rápidas. Un ejemplo es el <link xref="
+"\"quick_select_plugin\">complemento de selección rápida</link>. La "
+"combinación de teclas rápidas para cada funcionalidad se puede cambiar en el "
+"diálogo de preferencias, en la pestaña «Teclas rápidas globales». En esta "
+"pestaña encontrará una lista de todas las características para las que se "
+"pueden configurar las teclas rápidas. Use las casillas <cmd>Ctrl</cmd>, "
+"<cmd>Alt</cmd>, y <cmd>Mayús</cmd> para activar o desactivar estos "
+"modificadores."
 
-#: C/howto_setting_up_accerciser.page:72(p)
+#: C/preferences.page:86(figure/title)
+msgid "Configuring global hotkeys' preferences"
+msgstr "Configurarlas preferencias de las teclas rápidas globales"
+
+#: C/preferences.page:87(figure/desc)
+msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
+msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus teclas "
+"rápidas."
+
+#: C/preferences.page:91(media/p)
+msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
+msgstr ""
+"<app>Accerciser</app> le permite ajustar las preferencias de sus "
+"complementos."
+
+#: C/preferences.page:99(section/title)
+msgid "Configuring widget's highlighting"
+msgstr "Configurar el resaltado de widgets"
+
+#: C/preferences.page:100(section/p)
 msgid ""
-"After that, you can use <app>Accerciser</app> to inspect any accessible item "
-"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
-"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
-"app>'s plugins."
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
+"a target application. The highlighting duration, border color, and fill "
+"color can be customized via the Preferences dialog, under the \"Highlighting"
+"\" tab."
 msgstr ""
-"Después de esto puede usar <app>Accerciser</app> para inspeccionar un "
-"elemento accesible mostrado en la jerarquía de la <link xref="
-"\"desktop_tree_view\">vista en árbol de la aplicación.</link>. Seleccione un "
-"elemento e investíguelo usando uno de los complementos de <app>Accerciser</"
-"app>."
+"Algunos elementos de <app>Accerciser</app>, como la tecla rápida global "
+"<key>ctrl</key>+<key>alt</key>+<key>/</key>, resaltan un widget específico "
+"en la aplicación objetivo. La duración del resaltado, el color del borde y "
+"el color de relleno se pueden personalizar en el diálogo de preferencias, en "
+"la pestaña «Resaltado»."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/event_monitor_plugin.page:40(None)
+#: C/preferences.page:107(figure/title)
+msgid "Configuring highlighting preferences"
+msgstr "Configurar las preferencias de resaltado"
+
+#: C/preferences.page:108(figure/desc) C/preferences.page:112(media/p)
 msgid ""
-"@@image: 'figures/event_monitor_plugin.png'; "
-"md5=1ee2a1d281deefa5b401244b49ed9654"
+"<app>Accerciser</app> allows you to adjust your highlighting preferences."
 msgstr ""
-"@@image: 'figures/event_monitor_plugin.png'; "
-"md5=1ee2a1d281deefa5b401244b49ed9654"
+"<app>Accerciser</app> le permite ajustar sus preferencias de resaltado."
 
-#: C/event_monitor_plugin.page:4(title)
-msgid "4. Event Monitor Plugin"
-msgstr "4. Complemento Monitor de eventos"
+#: C/quick_select_plugin.page:4(info/title)
+#| msgid "5. Quick Select Plugin"
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "5. Complemento de selección rápida"
 
-#: C/event_monitor_plugin.page:6(desc)
-msgid "Monitoring accessible events as they occur"
-msgstr "Monitorizar eventos accesibles cuando ocurren"
+#: C/quick_select_plugin.page:6(info/desc)
+msgid "Locating the object you need"
+msgstr "Ubicando el objeto que necesita"
 
-#: C/event_monitor_plugin.page:25(title) C/event_monitor_plugin.page:35(title)
-msgid "Event Monitor Plugin"
-msgstr "Complemento Monitor de eventos"
+#: C/quick_select_plugin.page:25(page/title)
+msgid "Quick Select Plugin"
+msgstr "Complemento de selección rápida"
 
-#: C/event_monitor_plugin.page:26(p)
+#: C/quick_select_plugin.page:26(page/p)
 msgid ""
-"The Event Monitor Plugin allows you to view <link href=\"http://"
-"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
-"\">AT-SPI events</link> as they occur on the applications exposed in "
-"<app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
-"View</link>. The plugin is useful to explore the dynamics of an "
-"application's interface and verify which accessible widgets are related to "
-"which AT-SPI events."
+"The Quick Select Plugin does not provide a visible interface like the other "
+"default <app>Accerciser</app> plugins - instead, it adds facilities for "
+"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
+"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
+"later."
 msgstr ""
-"El complemento «Monitor de eventos» le permite ver los <link href=\"http://"
-"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
-"\">eventos AT-SPI</link> a medida que suceden en la aplicación expuesta en "
-"la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</link> "
-"de <app>Accerciser</app>. El complemento es útil para examinar la dinámica "
-"de la interfaz de una aplicación y verificar qué widgets accesibles están "
-"relacionados con eventos de AT-SPI."
+"El complemento de selección rápida no proporciona una interfaz visible coma "
+"la de los otros complementos de <app>Accerciser</app>; en su lugar, añade "
+"características para seleccionar elementos rápidamente en la <link xref="
+"\"desktop_tree_view\">vista en árbol de la aplicación</link> mediante teclas "
+"rápidas globales. Originalmente, estas teclas rápidas formaban parte del "
+"núcleo del código de <app>Accerciser</app>, pero posteriormente se pasaron "
+"al complemento de selección rápida."
 
-#: C/event_monitor_plugin.page:36(desc) C/event_monitor_plugin.page:41(p)
+#: C/quick_select_plugin.page:32(page/p)
 msgid ""
-"The Event Monitor Plugin allows you to view AT-SPI events and match them "
-"with accessible widgets."
+"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
+"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
+"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
+"key> selects the accessible widget under the pointer in the Application Tree "
+"View and highlights it in the target application."
 msgstr ""
-"El complemento Monitor de eventos le permite ver los eventos AT-SPI y "
-"asociarlos con widgets accesibles."
+"El complemento de selección rápida proporciona dos teclas rápidas globales. "
+"Pulsar <key>Ctrl</key>+<key>Alt</key>+<key>a</key> selecciona el último "
+"widget accesible con el foco en la vista en árbol de la aplicación. Pulsar "
+"<key>Ctrl</key>+<key>alt</key>+<key>/</key> seleccione el widget accesible "
+"debajo del puntero en la vista en árbol de la aplicación y lo resalta en la "
+"aplicación objetivo."
 
-#: C/event_monitor_plugin.page:49(title)
-msgid "Running the Event Monitor Plugin"
-msgstr "Ejecutar el complemento Monitor de eventos"
-
-#: C/event_monitor_plugin.page:50(p)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37(media)
+#| msgid ""
+#| "@@image: 'figures/validator_report.png'; "
+#| "md5=a21bc11a8fc1f8d7976d7ea8a3dc80d2"
+msgctxt "_"
 msgid ""
-"When you open the Event Monitor Plugin, you see a list of checkboxes "
-"representing all the different AT-SPI event classes covered by the plugin:"
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
 msgstr ""
-"Cuando abre el complemento del Monitor de eventos, verá una lista de "
-"casillas de verificación representando todas las clases diferentes de AT-SPI "
-"que el complemento cubre:"
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
 
-#: C/event_monitor_plugin.page:58(p)
-msgid "document"
-msgstr "documento"
+#: C/validator_plugin.page:4(info/title)
+#| msgid "3. Validator Default Plugin"
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "3. Complemento validador predeterminado"
 
-#: C/event_monitor_plugin.page:63(p)
-msgid "focus"
-msgstr "foco"
+#: C/validator_plugin.page:6(info/desc)
+msgid "Testing an application for accessibility"
+msgstr "Comprobar la accesibilidad de una aplicación"
 
-#: C/event_monitor_plugin.page:68(p)
-msgid "mouse"
-msgstr "ratón"
+#: C/validator_plugin.page:25(page/title)
+#: C/validator_plugin.page:32(figure/title)
+msgid "AT-SPI Validator Plugin"
+msgstr "Complemento de validación AT-SPI"
 
-#: C/event_monitor_plugin.page:73(p)
-msgid "object"
-msgstr "objeto"
-
-#: C/event_monitor_plugin.page:78(p)
-msgid "terminal"
-msgstr "terminal"
-
-#: C/event_monitor_plugin.page:83(p)
-msgid "window"
-msgstr "ventana"
-
-#: C/event_monitor_plugin.page:89(p)
+#: C/validator_plugin.page:26(page/p)
 msgid ""
-"If you check a class, all of its event types will be monitored by the "
-"plugin. The classes are exposed as tree structures; therefore, you can "
-"refine your selection by expanding them and checking only the event types "
-"you really care about."
+"The AT-SPI Validator Plugin generates a report with accessibility issues "
+"related to a target application. For each error, the report includes the "
+"severity level and a brief description."
 msgstr ""
-"Si selecciona una clase, el complemento monitorizará todos sus tipos de "
-"eventos. Las clases se exponen como estructuras en árbol; por ello, puede "
-"refinar su selección expandiéndolas y seleccionando solo los tipos de "
-"eventos que realmente le importan."
+"El complemento de validación AT-SPI genera un informe con los errores de "
+"accesibilidad de una aplicación objetivo. El informe incluye el nivel de "
+"gravedad y una breve descripción para cada error."
 
-#: C/event_monitor_plugin.page:95(p)
+#: C/validator_plugin.page:33(figure/desc) C/validator_plugin.page:38(media/p)
 msgid ""
-"If you want to monitor all possible types of AT-SPI events, press the "
-"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
-"selected event types, press the <cmd>Clear Selection</cmd> button."
+"The AT-SPI Validator Plugin generates useful reports for verifying the "
+"accessibility of a target application."
 msgstr ""
-"Si quiere monitorizar todos los tipos posibles de eventos AT-SPI, pulse el "
-"botón <cmd>Seleccionar todos</cmd>. De forma similar, si quiere limpiar "
-"todos los tipos de eventos actualmente seleccionados, pulse el botón "
-"<cmd>Limpiar selección</cmd>."
+"El complemento de validación AT-SPI genera informes útiles para verificar la "
+"accesibilidad de una aplicación objetivo."
 
-#: C/event_monitor_plugin.page:102(p)
+#: C/validator_plugin.page:46(section/title)
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "Ejecutar el complemento de validación AT-SPI"
+
+#: C/validator_plugin.page:47(section/p)
 msgid ""
-"Selecting only a few event types per monitoring gives you a clearer output."
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
+"View. The validator will generate the report with respect to the selected "
+"item and all of its descendant widgets in the tree hierarchy."
 msgstr ""
-"Seleccionar sólo unos pocos tipos de eventos para monitorizar proporciona "
-"una salida más limpia."
+"Para ejecutar el complemento de validación AT-SPI seleccione un elemento en "
+"la vista en árbol de la aplicación. El validador generará el informe "
+"correspondiente al elemento seleccionado y de todos sus widgets hijos en la "
+"jerarquía del árbol."
 
-#: C/event_monitor_plugin.page:107(p)
+#: C/validator_plugin.page:53(section/p)
 msgid ""
-"Another way to refine event monitoring is by the event source. By default, "
-"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
-"events of all applications will be monitored. If you want to investigate a "
-"single application, select it in the Application Tree View and click the "
-"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
-"to monitor a single accessible widget and its corresponding descendants, "
-"select it in the Application Tree View and click the Source radio button "
-"<cmd>Selected accessible</cmd>."
+"After selecting an item, choose a validation schema in the combobox and "
+"press the <cmd>Validate</cmd> button to start generating the report. If you "
+"want to cancel the execution, just press the <cmd>Validate</cmd> button "
+"again."
 msgstr ""
-"Otra forma de refinar la monitorización de eventos es a través del origen "
-"del evento. De forma predeterminada la opción <cmd>Todo</cmd>, como fuente, "
-"está seleccionada, indicando que se monitorizarán todos los eventos AT-SPI "
-"de todas las aplicaciones. Si quiere investigar una sola aplicación, "
-"selecciónela en la vista de árbol de la aplicación y pulse en el botón de "
-"radio Fuente <cmd>Aplicación seleccionada</cmd>. De la misma forma, si "
-"quiere monitorizar un solo widget accesible y sus correspondientes "
-"descendientes, selecciónelo en la vista de árbol de la aplicación y pulse en "
-"el botón de radio Fuente <cmd>Accesible seleccionado</cmd>."
+"Después de seleccionar un elemento, elija un esquema de validación en la "
+"caja combinada y pulse el botón <cmd>Validar</cmd> para empezar a generar el "
+"informe. Si quiere cancelar la ejecución, simplemente pulse el botón "
+"<cmd>Validar</cmd> otra vez."
 
-#: C/event_monitor_plugin.page:116(p)
+#: C/validator_plugin.page:59(section/p)
 msgid ""
-"After selecting event types and specifying a Source option, the Event "
-"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
-"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
-"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
-"monitoring, press this button again."
+"The generated report is interactive. Therefore, you can double-click any "
+"error found to check which of the target application widgets is causing it. "
+"The corresponding widget will then appear selected in the <link xref="
+"\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
+"target application."
 msgstr ""
-"Después de seleccionar los tipos de evento y especificar una opción para la "
-"fuente, el complemento de monitorización de eventos comienza automáticamente "
-"a monitorizar los eventos AT-SPI, ya que el botón <cmd>Monitorizar eventos</"
-"cmd> está pulsado de forma predeterminada. Cuando quiera dejar de "
-"monitorizar eventos, pulse el botón <cmd>Monitorizar eventos</cmd>. Pulse el "
-"botón de nuevo para reiniciar la monitorización."
+"El informe generado es interactivo. Por lo tanto, puede hacer una doble "
+"pulsación en cualquier error encontrado para comprobar qué aplicación "
+"objetivo lo está causando. El widget correspondiente aparecerá seleccionado "
+"en la <link xref=\"desktop_tree_view\">vista en árbol de la aplicación</"
+"link> y resaltado en la aplicación objetivo."
 
-#: C/event_monitor_plugin.page:123(p)
+#: C/validator_plugin.page:64(section/p)
 msgid ""
-"For each incoming event, the Event Monitor Plugin indicates the source and "
-"the application. Activating the link for either of these items will cause it "
-"to become selected in the Application Tree View."
+"If you want to save the generated report in your system, just click the "
+"<cmd>Save</cmd> button. To clear the validation screen, press the "
+"<cmd>Clear</cmd> button."
 msgstr ""
-"Para cada evento entrante, el complemento del Monitor de eventos indica la "
-"fuente y la aplicación. Activar el enlace para alguno de esos elementos hará "
-"que se seleccione en la vista en árbol de la aplicación."
+"Si quiere guardar en informe generado en su equipo, simplemente pulse el "
+"botón <cmd>Guardar</cmd>. Para limpiar la pantalla de validación, pulse el "
+"botón <cmd>Limpiar</cmd>."
 
-#: C/event_monitor_plugin.page:128(p)
+#: C/validator_plugin.page:68(section/p)
 msgid ""
-"If you want to save the output generated by the Event Monitor Plugin, just "
-"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
-"to click the <cmd>Clear</cmd> button."
+"To get more information about an error in the generated report, make sure "
+"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
+"will open a Help Page in your default browser."
 msgstr ""
-"Si quiere guardar la salida generada por el complemento de Monitor de "
-"eventos, simplemente pulse el botón <cmd>Guardar</cmd>. Para limpiar la "
-"salida de la pantalla, simplemente pulse el botón <cmd>Limpiar</cmd>."
+"Para obtener más información sobre un error en el informe generado, "
+"asegúrese de que el elemento correspondiente está seleccionado y pulse el "
+"botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador "
+"predeterminado."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/desktop_tree_view.page:42(None)
-msgid ""
-"@@image: 'figures/tree_view_accerciser.png'; "
-"md5=08296541e21b96951e1f1b4d99ca130b"
-msgstr ""
-"@@image: 'figures/tree_view_accerciser.png'; "
-"md5=08296541e21b96951e1f1b4d99ca130b"
+#~ msgid "eitan@ascender.com"
+#~ msgstr "eitan@ascender.com"
 
-#: C/desktop_tree_view.page:4(title)
-msgid "1. Application Tree View"
-msgstr "1. Vista en árbol de la aplicación"
+#~ msgid "pparent@us.ibm.com"
+#~ msgstr "pparent@us.ibm.com"
 
-#: C/desktop_tree_view.page:6(desc)
-msgid "Exploring the accessible hierarchy of the desktop"
-msgstr "Explorar la jerarquía accesible del escritorio"
+#~ msgid "alibezz@gmail.com"
+#~ msgstr "alibezz@gmail.com"
 
-#: C/desktop_tree_view.page:25(title) C/desktop_tree_view.page:37(title)
-msgid "Application Tree View"
-msgstr "Vista en árbol de la aplicación"
+#~ msgid "<placeholder-1/>'s logo"
+#~ msgstr "Logo de <placeholder-1/>"
 
-#: C/desktop_tree_view.page:27(p)
-msgid ""
-"<app>Accerciser</app>'s interface contains a tree view, namely Application "
-"Tree View, that covers all accessible applications currently running on the "
-"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
-"registry daemon. This daemon is responsible for keeping track of all the "
-"accessible applications on the desktop and forwarding X events over the AT-"
-"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
-"represents each one of them as a hierarchical structure with expanding nodes."
-msgstr ""
-"La interfaz de <app>Accerciser</app> contiene una vista de árbol llamada "
-"vista de árbol de la aplicación, que cubre todas las aplicaciones accesibles "
-"actualmente en ejecución en el escritorio. Para crear esta vista de árbol "
-"<app>Accerciser</app> usa el demonio de registro de AT-SPI. Este demonio es "
-"el responsable de mantener el seguimiento de todas las aplicaciones "
-"accesibles en el escritorio y reenviar los eventos X sobre el D-Bus de AT-"
-"SPI. Después de obtener todas las aplicaciones accesibles, <app>Accerciser</"
-"app> representa cada una de ellas en una estructura jerárquica con nodos "
-"expandidos."
-
-#: C/desktop_tree_view.page:38(desc) C/desktop_tree_view.page:43(p)
-msgid ""
-"<app>Accerciser</app>'s Application Tree View represents the interface of "
-"each accessible application running on the desktop as a widget hierarchical "
-"structure."
-msgstr ""
-"La vista en árbol de la aplicación de <app>Accerciser</app> representa la "
-"interfaz de cada aplicación accesible en ejecución en el escritorio como una "
-"estructura jerárquica de widget."
-
-#: C/desktop_tree_view.page:49(p)
-msgid ""
-"The first node of each application represented in this tree view is the "
-"application itself. When you expand a node, you can see all of its child "
-"widgets, which allows a hierarchical view of the application's interface. "
-"For each node, <app>Accerciser</app> provides some basic information, such "
-"as its name, role and number of children."
-msgstr ""
-"El primer nodo de cada aplicación representada en esta vista de árbol es la "
-"aplicación en sí. Cuando expande un nodo puede ver todos sus widgets hijos, "
-"lo que permite una vista jerárquica de la interfaz de la aplicación. Para "
-"cada nodo, <app>Accerciser</app> proporciona alguna información básica, tal "
-"como su nombre, rol y número de hijos."
-
-#: C/desktop_tree_view.page:56(p)
-msgid "Be aware that nodes with many children take a long time to expand."
-msgstr ""
-"Tenga en cuenta que los nodos con muchos hijos puede tardar en expandirse."
-
-#: C/desktop_tree_view.page:62(title)
-msgid "Bookmarking items in the Application Tree View"
-msgstr "Marcar elementos en la vista en árbol de la aplicación"
-
-#: C/desktop_tree_view.page:63(p)
-msgid ""
-"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
-"for later examining. This is helpful when the target application must be "
-"restarted - after rebuilding it, for example. To bookmark an item, select it "
-"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
-"<key>Ctrl</key>+<key>d</key>."
-msgstr ""
-"<app>Accerciser</app> permite marcar elementos en la vista en árbol de la "
-"aplicación, para examinarlos posteriormente. Esto puede ser útil si la "
-"aplicación objetivo debe reiniciarse, por ejemplo, después de reconstruirla. "
-"Para marcar un elemento, selecciónelo y pulse <guiseq><gui>Marcadores</"
-"gui><gui>Añadir marcador</gui></guiseq> o pulse <key>Ctrl</key>+<key>d</key>."
-
-#: C/desktop_tree_view.page:68(p)
-msgid ""
-"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
-"application name and a \"path\" in the application's internal accessible "
-"hierarchy to the bookmarked accessible. When the target application is in a "
-"different state - i.e. multiple top level frames -, the path might not be "
-"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
-"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
-msgstr ""
-"Los marcadores a accesibles en <app>Accerciser</app> están definidos por el "
-"nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de "
-"la aplicación al accesible marcado. Cuando la aplicación objetivo está en un "
-"estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta "
-"no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de "
-"edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar "
-"marcadores</gui></guiseq>."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/api_browser_plugin.page:37(None)
-msgid ""
-"@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
-msgstr ""
-"@@image: 'figures/api_browser.png'; md5=47cae67d29c708139b9740d06fd2521e"
-
-#: C/api_browser_plugin.page:4(title)
-msgid "1. API Browser Plugin"
-msgstr "1. Complemento Examinador API"
-
-#: C/api_browser_plugin.page:6(desc)
-msgid "Verifying interfaces, methods, and properties"
-msgstr "Verificar interfaces, métodos y propiedades"
-
-#: C/api_browser_plugin.page:25(title) C/api_browser_plugin.page:32(title)
-msgid "API Browser Plugin"
-msgstr "Complemento Examinador API"
-
-#: C/api_browser_plugin.page:26(p)
-msgid ""
-"Given an accessible widget selected in the <link xref=\"desktop_tree_view"
-"\">Application Tree View</link>, the API Browser Plugin shows its "
-"implemented AT-SPI interfaces along with its methods and properties."
-msgstr ""
-"Dado un «widget» accesible seleccionado en la <link xref=\"desktop_tree_view"
-"\">vista en árbol de la aplicación</link>, el complemento Examinador API "
-"muestra sus interfaces AT-SPI implementadas, junto con sus métodos y "
-"propiedades."
-
-#: C/api_browser_plugin.page:33(desc) C/api_browser_plugin.page:38(p)
-msgid ""
-"The API Browser Plugin allows you to verify interfaces, methods, and "
-"properties of a target accessible widget in an application."
-msgstr ""
-"El complemento Examinador API le permite verificar interfaces, métodos y "
-"propiedades soportados por el widget accesible objetivo en la aplicación."
-
-#: C/api_browser_plugin.page:46(title)
-msgid "Running the API Browser Plugin"
-msgstr "Ejecutar el complemento Examinador API"
-
-#: C/api_browser_plugin.page:47(p)
-msgid ""
-"To run the API Browser Plugin, select an accessible widget in the "
-"Application Tree View. Double-clicking a widget highlights it in the "
-"application's interface, so you can be sure whether a certain widget were "
-"the one you were looking for."
-msgstr ""
-"Para ejecutar el complemento Examinador API, seleccione un «widget» accesible "
-"en la Vista en árbol de la aplicación. Pulsar dos veces sobre un «widget» lo "
-"resalta en la interfaz de la aplicación, de tar forma que puede estar seguro "
-"del «widget» que está buscando."
-
-#: C/api_browser_plugin.page:53(p)
-msgid ""
-"After that, select one of the widget's interfaces in the combobox. All "
-"public methods of the selected interface will be listed in the plugin's "
-"leftmost column. All public properties, with their corresponding values, "
-"will be listed in the plugin's rightmost column."
-msgstr ""
-"Después de ello, seleccione una de las interfaces del «widget» en la caja "
-"combinada. Se listarán, en la columna de la izquierda del complemento, todos "
-"los métodos públicos de la interfaz seleccionada. Se listarán, en la columna "
-"de la derecha del complemento, todas las propiedades públicas, con sus "
-"correspondientes valores."
-
-#: C/api_browser_plugin.page:59(p)
-msgid ""
-"By default, the API Browser Plugin hides private methods and properties. To "
-"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
-"To hide them again, re-select this checkbox."
-msgstr ""
-"De manera predeterminada, el complemento «Examinador API» oculta los métodos "
-"y las propiedades privadas. Para listarlos, desmarque la casilla "
-"<cmd>Ocultar los atributos privados</cmd>. Para volver a ocultarlos, "
-"selecciona esta casilla de nuevo."
-
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/index.page:0(None)
-msgid "translator-credits"
-msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007-2011"
+#~ msgid "make"
+#~ msgstr "make"
 
 #~ msgid "<application>Accerciser</application> Manual v0.2.0"
 #~ msgstr "Manual de <application>Accerciser</application> v0.2.0"
