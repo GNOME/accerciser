@@ -11,10 +11,11 @@ msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 01:24+0000\n"
-"PO-Revision-Date: 2012-02-20 10:25+0100\n"
+"POT-Creation-Date: 2012-08-20 22:53+0000\n"
+"PO-Revision-Date: 2012-09-09 10:10+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -193,12 +194,12 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktivní konzola pro úpravu zvoleného objektu přístupnosti"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Monitor událostí</b>"
+msgid "Event monitor"
+msgstr "Sledování událostí"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
-msgstr "_Monitorovat událostí"
+msgstr "_Sledovat události"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
@@ -222,7 +223,7 @@ msgstr "Zdroj"
 
 #: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
-msgstr "Monitor událostí"
+msgstr "Sledování událostí"
 
 #: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
@@ -243,37 +244,38 @@ msgid "Clear event log"
 msgstr "Vymazat záznam událostí"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Počet potomků</b>"
+msgid "Child count"
+msgstr "Počet potomků"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(bez popisu)</i>"
+#: ../plugins/interface_view.ui.h:3
+msgid "(no description)"
+msgstr "(bez popisu)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Popis</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Popis"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Stavy</b>"
+msgid "States"
+msgstr "Stavy"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Zobrazit"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Vztahy</b>"
+msgid "Relations"
+msgstr "Vztahy"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Atributy</b>"
+msgid "Attributes"
+msgstr "Atributy"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -307,7 +309,7 @@ msgstr "A_plikace"
 msgid "Col_lection"
 msgstr "Ko_lekce"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -357,7 +359,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Odkaz"
 
@@ -369,146 +371,140 @@ msgstr "_Hypertext"
 msgid "Position"
 msgstr "Pozice"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Popis"
-
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "Lokalizace"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Obrázek"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Po_mocník při přihlášení"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "_Výběr"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "Obsah je st_reamovatelný"
 
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "Titulek:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Titulek:</i>"
+msgid "Summary:"
+msgstr "Shrnutí:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Shrnutí:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Vybrané sloupce"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Vybrané řádky"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Sloupce"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Řádky"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Informace o tabulce</b>"
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "Informace o tabulce"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "jméno (x, y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Hlavička:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<bez popisu>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Zabírá:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Řádka"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Sloupec"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Zvolená buňka</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "Vybraná buňka"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Tabulka"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Text</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Text"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Posun"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Včetně výchozích"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Začátek: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "Začátek: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "Konec: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Konec: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Aktuální hodnota"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Minimální přírůstek"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Maximální hodnota"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Minimální hodnota"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "H_odnota"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>Neznámé</b>"
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "neznámý"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -520,35 +516,38 @@ msgstr "Prohlížeč rozhraní"
 msgid "Allows viewing of various interface properties"
 msgstr "Umožňuje prohlížení různých vlastností rozhraní"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr "(neimplementováno)"
 
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(bez popisu)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Jméno"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Začátek"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Konec"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Příliš mnoho zvolitelných potomků"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Upravitelné)</i>"
 
@@ -576,59 +575,59 @@ msgstr "Sché_ma:"
 msgid "V_alidate"
 msgstr "_Validovat"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Nečinný"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Bez popisu"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "Validace AT-SPI"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Ověřuje přístupnost aplikace"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Úroveň"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Úloha"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Ukládá se"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Validování"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "VYJMA"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "CHYBA"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "POZOR"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -655,7 +654,7 @@ msgstr "s interaktivním objektem %s nelze provádět akce"
 msgid "more than one focused widget"
 msgstr "Více než jeden aktivovaný widget"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s nemá žádné textové rozhraní"
@@ -663,12 +662,12 @@ msgstr "%s nemá žádné textové rozhraní"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "rodičovský index objektu %s neodpovídá indexu potomka"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Schází převrácený prvek vztahu %s"
@@ -676,12 +675,12 @@ msgstr "Schází převrácený prvek vztahu %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s postrádá jméno nebo popisek"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "zaměřitelný objekt %s má tabulkové rozhraní, ale žádné rozhraní výběru"
@@ -690,7 +689,7 @@ msgstr "zaměřitelný objekt %s má tabulkové rozhraní, ale žádné rozhran�
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s má stav %s, aniž má možnost stav %s získat"
@@ -698,7 +697,7 @@ msgstr "%s má stav %s, aniž má možnost stav %s získat"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nenáleží sadě"
@@ -708,7 +707,7 @@ msgstr "%s nenáleží sadě"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
@@ -720,7 +719,7 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
@@ -729,30 +728,18 @@ msgstr ""
 "index rodiče %(rolename)s s hodnotou %(num1)d neodpovídá řádce ani sloupci s "
 "indexem %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s nemá žádné jméno nebo popis"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Předvolby…"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Obsah"
-
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser nevidí aplikace vaší pracovní plochy. Problém odstraníte "
-"povolením zpřístupnění pracovní plochy. Chcete zpřístupnění povolit?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Poznámka: Změny se projeví až po odhlášení."
 
 #: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
@@ -877,51 +864,51 @@ msgstr ""
 msgid "Web site"
 msgstr "WWW stránka"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "Přid_at záložku…"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Uložit zvolený objekt přístupnosti."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Upravit záložky…"
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Spravovat záložky."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Upravit záložky…"
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Nadpis"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Aplikace"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Cesta"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Přidat záložku…"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Nadpis:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Aplikace:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Cesta:"
 
@@ -932,12 +919,12 @@ msgstr "Chyby zásuvných modulů"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Zobrazení"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Žádné zobrazení"
 
