@@ -8,10 +8,11 @@ msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-05 12:21+0000\n"
-"PO-Revision-Date: 2012-03-07 00:24+0900\n"
+"POT-Creation-Date: 2012-09-06 16:11+0000\n"
+"PO-Revision-Date: 2012-09-09 13:08+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,8 +191,8 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "현재 선택한 접근권을 조작하기 위한 대화형 콘솔"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>이벤트 감시자</b>"
+msgid "Event monitor"
+msgstr "이벤트 감시자"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
@@ -199,7 +200,7 @@ msgstr "이벤트 감시(_M)"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
-msgstr "선택한 것 지우기(_L)"
+msgstr "선택 요소 지우기(_L)"
 
 #: ../plugins/event_monitor.ui.h:4
 msgid "Everything"
@@ -238,37 +239,38 @@ msgid "Clear event log"
 msgstr "이벤트 로그 지우기"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>하위 갯수</b>"
+msgid "Child count"
+msgstr "하위 갯수"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(설명 없음)</i>"
+#: ../plugins/interface_view.ui.h:3
+msgid "(no description)"
+msgstr "(설명 없음)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>설명</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "설명"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>상태</b>"
+msgid "States"
+msgstr "상태"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "보이기"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>관계</b>"
+msgid "Relations"
+msgstr "관계"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>속성</b>"
+msgid "Attributes"
+msgstr "속성"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -302,7 +304,7 @@ msgstr "프로그램(_P)"
 msgid "Col_lection"
 msgstr "모음(_L)"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -352,7 +354,7 @@ msgid "_Document"
 msgstr "문서(_D)"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "하이퍼링크"
 
@@ -364,146 +366,140 @@ msgstr "하이퍼텍스트(_Y)"
 msgid "Position"
 msgstr "위치"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "설명"
-
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "로캘"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "그림(_I)"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "로그인 도우미(_G)"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "모두 선택"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "선택(_S)"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "스트리머블 컨텐트(_R)"
 
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "캡션:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>캡션:</i>"
+msgid "Summary:"
+msgstr "요약:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>요약:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "선택한 열"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "선택한 행"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "열"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "행"
 
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "표 정보"
+
 #: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>표 정보</b>"
+msgid "name (x,y)"
+msgstr "이름(x,y)"
 
 #: ../plugins/interface_view.ui.h:47
-msgid "name (x,y)"
-msgstr "이름 (x,y)"
-
-#: ../plugins/interface_view.ui.h:48
 msgid "Header:"
 msgstr "헤더:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<설명 없음>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "크기:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "열"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "행"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>선택한 셀</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "선택한 셀"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "표(_T)"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>텍스트</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "텍스트"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "오프셋"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "기본 포함"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>시작: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "시작: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "끝: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>끝: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "텍스트(_X)"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "현재 값"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "최소 증가"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "최대값"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "최소값"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "값(_U)"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>알 수 없음</b>"
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "알 수 없음"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -515,35 +511,38 @@ msgstr "인터페이스 보기"
 msgid "Allows viewing of various interface properties"
 msgstr "다양힌 인터페이스 속성을 보게 해줍니다"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr "(구현 안 됨)"
 
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(설명 없음)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "이름"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "시작"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "끝"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "선택할 수 있는 하위요소가 너무 많습니다"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr "<i>(편집 가능)</i>"
 
@@ -571,59 +570,59 @@ msgstr "스키마(_M):"
 msgid "V_alidate"
 msgstr "검증(_A)"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "유휴"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "설명 없음"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "AT-SPI 검증자"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "프로그램 접근성을 검증합니다"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "수준"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "역할"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "저장중"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "검증중"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "예외"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "오류"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "경고"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "정보"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "디버그"
 
@@ -649,7 +648,7 @@ msgstr "대화식 %s이(가) 동작할 수 없습니다"
 msgid "more than one focused widget"
 msgstr "하나 이상 잡힌 위젯이 있습니다"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s에 텍스트 인터페이스가 없습니다"
@@ -657,12 +656,12 @@ msgstr "%s에 텍스트 인터페이스가 없습니다"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s의 상위 인덱스가 하위 인덱스와 일치하지 않습니다"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "%s 관계에 대한 상호관계 정보가 빠졌습니다"
@@ -670,12 +669,12 @@ msgstr "%s 관계에 대한 상호관계 정보가 빠졌습니다"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s에 이름 또는 레이블이 빠졌습니다"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "잡을 수 있는 %s에 표 인터페이스가 있지만, 선택 인터페이스는 아닙니다"
@@ -684,7 +683,7 @@ msgstr "잡을 수 있는 %s에 표 인터페이스가 있지만, 선택 인터�
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s은(는) %s 상태이지만 %s상태는 아닙니다"
@@ -692,7 +691,7 @@ msgstr "%s은(는) %s 상태이지만 %s상태는 아닙니다"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s은(는) 셋의 전유물이 아닙니다"
@@ -702,7 +701,7 @@ msgstr "%s은(는) 셋의 전유물이 아닙니다"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s의 인덱스 %(num)d은(는) 행과 열이 맞지 않습니다"
@@ -713,39 +712,27 @@ msgstr "%(rolename)s의 인덱스 %(num)d은(는) 행과 열이 맞지 않습니
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "%(rolename)s의 상위 인덱스 %(num1)d은(는) 행과 열 인덱스 %(num2)d와(과) 일치"
 "하지 않습니다"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s에 이름이나 설명이 없습니다"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "기본 설정(_P)..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "내용(_C)"
-
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"액서사이저가 데스크톱의 프로그램을 살펴볼 수 없습니다. 이 문제를 해결하려면 "
-"데스크톱 접근성을 활성화 해야 합니다. 활성화 하시겠습니까?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "참고: 로그아웃 한 다음 효과가 적용됩니다."
 
 #: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
@@ -872,51 +859,51 @@ msgstr "The New BSD License See the COPYING and NOTICE files for details."
 msgid "Web site"
 msgstr "웹 사이트"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "북마크 추가(_A)..."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "선택한 접근권을 북마크 합니다."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "북마크 편집(_E)..."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "북마크를 관리합니다."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "북마크 편집..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "제목"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "프로그램"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "경로"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "북마크 추가..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "제목:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "프로그램:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "경로:"
 
@@ -927,12 +914,12 @@ msgstr "플러그인 오류"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "보기"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "보기 없음"
 
@@ -978,3 +965,26 @@ msgstr "보기(_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "도움말(_H)"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>이벤트 감시자</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>설명</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>텍스트</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>시작: 0</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "액서사이저가 데스크톱의 프로그램을 살펴볼 수 없습니다. 이 문제를 해결하려"
+#~ "면 데스크톱 접근성을 활성화 해야 합니다. 활성화 하시겠습니까?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "참고: 로그아웃 한 다음 효과가 적용됩니다."
