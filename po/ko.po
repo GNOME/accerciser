@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-06 16:11+0000\n"
+"POT-Creation-Date: 2012-09-16 11:41+0000\n"
 "PO-Revision-Date: 2012-09-09 13:08+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
@@ -339,7 +339,7 @@ msgstr "절대 위치"
 
 #: ../plugins/interface_view.ui.h:26
 msgid "Co_mponent"
-msgstr "구성요소(_M)"
+msgstr "구성 요소(_M)"
 
 #: ../plugins/interface_view.ui.h:27
 msgid "Des_ktop"
@@ -540,7 +540,7 @@ msgstr "끝"
 
 #: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
-msgstr "선택할 수 있는 하위요소가 너무 많습니다"
+msgstr "선택할 수 있는 하위 요소가 너무 많습니다"
 
 #: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
@@ -664,7 +664,7 @@ msgstr "%s의 상위 인덱스가 하위 인덱스와 일치하지 않습니다"
 #: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr "%s 관계에 대한 상호관계 정보가 빠졌습니다"
+msgstr "%s 관계에 대한 상호 관계 정보가 빠졌습니다"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
@@ -740,11 +740,11 @@ msgstr "<죽음>"
 
 #: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
-msgstr "하위요소"
+msgstr "하위 요소"
 
 #: ../src/lib/accerciser/accessible_treeview.py:548
 msgid "_Hide/Show Applications without children"
-msgstr "하위요소 없이 프로그램 숨기기/보이기(_H)"
+msgstr "하위 요소 없이 프로그램 숨기기/보이기(_H)"
 
 #: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
@@ -766,11 +766,11 @@ msgstr "노드 새로 고침(_N)"
 #.
 #: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
-msgstr "선택한 노드의 하위요소 새로고침"
+msgstr "선택한 노드의 하위 요소 새로 고침"
 
 #: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
-msgstr "구성요소"
+msgstr "구성 요소"
 
 #: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
@@ -841,7 +841,7 @@ msgstr "강조 상자의 채우기 색 입니다."
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
+msgstr "조성호 <darkcircle.0426@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -853,7 +853,9 @@ msgstr "액서사이저 Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "The New BSD License See the COPYING and NOTICE files for details."
+msgstr ""
+"새로운 BSD 라이선스에 대한 자세한 내용은 COPYING과 NOTICE 파일을 참조하십시"
+"오."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
@@ -965,26 +967,3 @@ msgstr "보기(_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "도움말(_H)"
-
-#~ msgid "<b>Event monitor</b>"
-#~ msgstr "<b>이벤트 감시자</b>"
-
-#~ msgid "<b>Description</b>"
-#~ msgstr "<b>설명</b>"
-
-#~ msgid "<b>Text</b>"
-#~ msgstr "<b>텍스트</b>"
-
-#~ msgid "<i>Start: 0</i>"
-#~ msgstr "<i>시작: 0</i>"
-
-#~ msgid ""
-#~ "Accerciser could not see the applications on your desktop.  You must "
-#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
-#~ "it now?"
-#~ msgstr ""
-#~ "액서사이저가 데스크톱의 프로그램을 살펴볼 수 없습니다. 이 문제를 해결하려"
-#~ "면 데스크톱 접근성을 활성화 해야 합니다. 활성화 하시겠습니까?"
-
-#~ msgid "Note: Changes only take effect after logout."
-#~ msgstr "참고: 로그아웃 한 다음 효과가 적용됩니다."
