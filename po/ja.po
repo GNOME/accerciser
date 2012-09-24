@@ -3,178 +3,161 @@
 # This file is distributed under the same license as the accerciser package.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2007-2009.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
+# Nishio Futoshi <fut_nis@d3.dion.ne.jp>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-10 09:12+0000\n"
-"PO-Revision-Date: 2011-09-10 23:37+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-23 18:26+0000\n"
+"PO-Revision-Date: 2012-09-24 20:31+0900\n"
+"Last-Translator: Nishio Futoshi <fut_nis@d3.dion.ne.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:42
-msgid "Accerciser Accessibility Explorer"
-msgstr "アクセシビリティ・エクスプローラー"
-
-#: ../accerciser.desktop.in.in.h:3
+#: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
 msgstr "アプリケーションにアクセシビリティの機能を付与します"
+
+#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+msgid "Accerciser Accessibility Explorer"
+msgstr "アクセシビリティ エクスプローラー"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "デフォルトで無効にするプラグインの並び"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:2
-#, fuzzy
-#| msgid "A list of plugins that are disabled by default"
 msgid "A list of plugins that are disabled by default."
-msgstr "デフォルトで無効にするプラグインの並び"
+msgstr "デフォルトで無効にするプラグインの並びです。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:3
-#, fuzzy
-#| msgid "_Single plugins view"
-msgid "Available new pluginviews"
-msgstr "プラグイン固有の表示(_S)"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:4
-msgid "Default window height"
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:5
-msgid "Default window width"
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:6
-msgid "Highlight border color"
-msgstr "強調表示した境界線の色"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:7
 msgid "Highlight duration"
 msgstr "強調表示する時間"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:8
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "アクセシブルなノードを選択した時に、その範囲を強調表示する時間です。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
 msgid "Highlight fill color"
 msgstr "強調表示で塗りつぶす色"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:9
-msgid "Horizontal split"
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:10
-msgid "Hotkey combination"
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:11
-msgid "Hotkey combination for related action."
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:12
-msgid "Position of the horizontal split of the main window."
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:13
-msgid "Position of the vertical split of the main window."
-msgstr ""
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:14
-#, fuzzy
-#| msgid "_Single plugins view"
-msgid "Single layout view"
-msgstr "プラグイン固有の表示(_S)"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:15
-msgid "The color and opacity of the highlight border."
-msgstr "強調表示した境界線の色とその不透明度です。"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:16
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "The color and opacity of the highlight fill."
 msgstr "強調表示で塗りつぶした時の色とその不透明度です。"
 
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
+msgid "Highlight border color"
+msgstr "強調表示した境界線の色"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
+msgid "The color and opacity of the highlight border."
+msgstr "強調表示した境界線の色とその不透明度です。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+msgid "Horizontal split"
+msgstr "水平分割"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Position of the horizontal split of the main window."
+msgstr "メインウィンドウの水平分割の位置です。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+msgid "Vertical split"
+msgstr "垂直分割"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the vertical split of the main window."
+msgstr "メインウィンドウの垂直分割の位置です。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Default window height"
+msgstr "デフォルトのウィンドウの高さ"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+msgid "The window height value."
+msgstr "ウィンドウの高さの値です。"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
+msgid "Default window width"
+msgstr "デフォルトのウィンドウの幅"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
+msgid "The window width value."
+msgstr "ウィンドウの幅の値です。"
+
 #: ../org.a11y.Accerciser.gschema.xml.in.h:17
-#, fuzzy
-#| msgid "The default plugin layout for the top panel"
-msgid "The default plugin layout for the top panel."
-msgstr "プラグイン表示におけるトップ・パネルのレイアウト"
+msgid "The layout for the bottom panel"
+msgstr "ボトムパネルのレイアウト"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:18
-#, fuzzy
-#| msgid "The duration of the highlight box when selecting accessible nodes"
-msgid "The duration of the highlight box when selecting accessible nodes."
-msgstr "アクセシブルなノードを選択した時に強調表示する時間です。"
+msgid "The layout for the bottom panel pluginview."
+msgstr "プラグイン表示におけるボトムパネルのレイアウトです。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:19
-#, fuzzy
-#| msgid "The default plugin layout for the bottom panel"
-msgid "The layout for the bottom panel"
-msgstr "プラグイン表示におけるボタン・パネルのレイアウト"
+msgid "The layout for the top panel"
+msgstr "トップパネルのレイアウト"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:20
-#, fuzzy
-#| msgid "The default plugin layout for the bottom panel"
-msgid "The layout for the bottom panel pluginview."
-msgstr "プラグイン表示におけるボタン・パネルのレイアウト"
+msgid "The layout for the top panel pluginview."
+msgstr "プラグイン表示におけるトップパネルのレイアウトです。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:21
-#, fuzzy
-#| msgid "The default plugin layout for the top panel"
-msgid "The layout for the top panel"
-msgstr "プラグイン表示におけるトップ・パネルのレイアウト"
+msgid "Single layout view"
+msgstr "一列レイアウト表示"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:22
-#, fuzzy
-#| msgid "The default plugin layout for the top panel"
-msgid "The layout for the top panel pluginview."
-msgstr "プラグイン表示におけるトップ・パネルのレイアウト"
+msgid "View plugins in a single layout."
+msgstr "一列のレイアウトでプラグインを表示します。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:23
-msgid "The pluginview layout"
-msgstr ""
+msgid "Available new pluginviews"
+msgstr "利用可能な新規プラグイン表示"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:24
-msgid "The window height value."
-msgstr ""
+msgid "This list contains all the new available pluginviews"
+msgstr "リストには、新たに利用可能なプラグイン表示が全て含まれています"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:25
-msgid "The window width value."
-msgstr ""
+msgid "The pluginview layout"
+msgstr "プラグイン表示のレイアウト"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:26
-msgid "This list contains all the new available pluginviews"
-msgstr ""
+msgid "The default plugin layout for the top panel."
+msgstr "デフォルトのトップパネルのプラグインレイアウトです。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:27
-msgid "Vertical split"
-msgstr ""
+msgid "Window height"
+msgstr "ウィンドウの高さ"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:28
-msgid "View plugins in a single layout."
-msgstr ""
+msgid "Window height value."
+msgstr "ウィンドウの高さの値です。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:29
-msgid "Window height"
-msgstr ""
+msgid "Window width"
+msgstr "ウィンドウの幅"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:30
-msgid "Window height value."
-msgstr ""
+msgid "Window width value."
+msgstr "ウィンドウの幅の値です。"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:31
-msgid "Window width"
-msgstr ""
+msgid "Hotkey combination"
+msgstr "ホットキーの組み合わせ"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
-msgid "Window width value."
-msgstr ""
+msgid "Hotkey combination for related action."
+msgstr "アクションに関連付けられたホットキーの組み合わせです。"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -209,32 +192,32 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "現在選択しているアクセシブルを操作する対話型のコンソールです"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>イベントの監視</b>"
+msgid "Event monitor"
+msgstr "イベントの監視"
 
 #: ../plugins/event_monitor.ui.h:2
+msgid "_Monitor Events"
+msgstr "イベントを監視する(_M)"
+
+#: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
 msgstr "選択の解除(_L)"
 
-#: ../plugins/event_monitor.ui.h:3
-msgid "Everything"
-msgstr "すべて"
-
 #: ../plugins/event_monitor.ui.h:4
-msgid "Selected accessible"
-msgstr "選択したアクセシブル"
+msgid "Everything"
+msgstr "全て"
 
 #: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "選択したアプリ"
 
 #: ../plugins/event_monitor.ui.h:6
-msgid "Source"
-msgstr "ソース"
+msgid "Selected accessible"
+msgstr "選択したアクセシブル"
 
 #: ../plugins/event_monitor.ui.h:7
-msgid "_Monitor Events"
-msgstr "イベントを監視する(_M)"
+msgid "Source"
+msgstr "ソース"
 
 #: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
@@ -254,326 +237,323 @@ msgstr "イベントの記録を開始/停止する"
 
 #: ../plugins/event_monitor.py:72
 msgid "Clear event log"
-msgstr "イベント・ログをクリアする"
+msgstr "イベントログをクリアする"
 
 #: ../plugins/interface_view.ui.h:1
+msgid "Child count"
+msgstr "子ノードカウンター"
+
+#: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#. Component                                 size
 #: ../plugins/interface_view.ui.h:3
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Attributes</b>"
-msgstr "<b>属性値</b>"
-
-#: ../plugins/interface_view.ui.h:5
-msgid "<b>Child count</b>"
-msgstr "<b>リファレンス・カウンター</b>"
-
-#: ../plugins/interface_view.ui.h:6
-msgid "<b>Description</b>"
-msgstr "<b>説明</b>"
-
-#: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>リレーション</b>"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "<b>Selected Cell</b>"
-msgstr "<b>選択しているセル</b>"
-
-#: ../plugins/interface_view.ui.h:9
-msgid "<b>States</b>"
-msgstr "<b>状態</b>"
-
-#: ../plugins/interface_view.ui.h:10
-msgid "<b>Table Information</b>"
-msgstr "<b>テーブルの情報</b>"
-
-#: ../plugins/interface_view.ui.h:11
-msgid "<b>Text</b>"
-msgstr "<b>文字列</b>"
-
-#: ../plugins/interface_view.ui.h:12
-msgid "<b>unknown</b>"
-msgstr "<b>不明</b>"
-
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(説明なし)</i>"
-
-#: ../plugins/interface_view.ui.h:14
-msgid "<i>Caption:</i>"
-msgstr "<i>表題:</i>"
-
-#. End chaacter                                                 offset of text attributes span
-#: ../plugins/interface_view.ui.h:16
-msgid "<i>End: 0</i>"
-msgstr "<i>終了: 0</i>"
-
-#. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:18
-msgid "<i>Start: 0</i>"
-msgstr "<i>開始: 0</i>"
-
-#: ../plugins/interface_view.ui.h:19
-msgid "<i>Summary:</i>"
-msgstr "<i>概要:</i>"
-
-#: ../plugins/interface_view.ui.h:20
-msgid "<no description>"
-msgstr "<説明なし>"
-
-#: ../plugins/interface_view.ui.h:21
-msgid "Absolute position"
-msgstr "絶対座標"
-
-#: ../plugins/interface_view.ui.h:22
-msgid "Acti_on"
-msgstr "アクション(_O)"
-
-#: ../plugins/interface_view.ui.h:23
-msgid "Alpha"
-msgstr "アルファ"
-
-#: ../plugins/interface_view.ui.h:24
-msgid "Ap_plication"
-msgstr "アプリケーション(_P)"
-
-#: ../plugins/interface_view.ui.h:25
-msgid "Co_mponent"
-msgstr "コンポーネント(_M)"
-
-#: ../plugins/interface_view.ui.h:26
-msgid "Col_lection"
-msgstr "コレクション(_L)"
-
-#: ../plugins/interface_view.ui.h:27
-msgid "Column"
-msgstr "項目"
-
-#: ../plugins/interface_view.ui.h:28
-msgid "Columns"
-msgstr "項目"
-
-#: ../plugins/interface_view.ui.h:29
-msgid "Current value"
-msgstr "現在の値"
-
-#: ../plugins/interface_view.ui.h:30
-msgid "Des_ktop"
-msgstr "デスクトップ(_K)"
+msgid "(no description)"
+msgstr "(説明なし)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
 msgid "Description"
 msgstr "説明"
 
-#. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:33
-msgid "Extents:"
-msgstr "範囲:"
+#: ../plugins/interface_view.ui.h:5
+msgid "States"
+msgstr "状態"
 
-#: ../plugins/interface_view.ui.h:34
-msgid "H_ypertext"
-msgstr "ハイパーテキスト(_Y)"
+#: ../plugins/interface_view.ui.h:6
+msgid "Show"
+msgstr "表示"
 
-#: ../plugins/interface_view.ui.h:35
-msgid "Header:"
-msgstr "ヘッダー:"
+#: ../plugins/interface_view.ui.h:7
+msgid "Relations"
+msgstr "リレーション"
 
-#. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:286
-msgid "Hyperlink"
-msgstr "ハイパーリンク"
+#: ../plugins/interface_view.ui.h:8
+msgid "Attributes"
+msgstr "属性値"
 
-#: ../plugins/interface_view.ui.h:37
-msgid "ID"
-msgstr "ID"
+#: ../plugins/interface_view.ui.h:9
+msgid "_Accessible"
+msgstr "アクセシブル(_A)"
 
-#: ../plugins/interface_view.ui.h:38
-msgid "Include defaults"
-msgstr "デフォルトを含める"
-
-#: ../plugins/interface_view.ui.h:39
-msgid "Layer"
-msgstr "レイヤー"
-
-#: ../plugins/interface_view.ui.h:40
-msgid "Lo_gin Helper"
-msgstr "ログイン・ヘルパー(_G)"
-
-#: ../plugins/interface_view.ui.h:41
-msgid "Locale"
-msgstr "ロケール"
-
-#: ../plugins/interface_view.ui.h:42
-msgid "Locale:"
-msgstr "ロケール:"
-
-#: ../plugins/interface_view.ui.h:43
-msgid "MDI-Z-order"
-msgstr "MDI-Z-オーダ"
-
-#: ../plugins/interface_view.ui.h:44
-msgid "Maximum value"
-msgstr "最大値"
-
-#: ../plugins/interface_view.ui.h:45
-msgid "Minimum increment"
-msgstr "最小幅"
-
-#: ../plugins/interface_view.ui.h:46
-msgid "Minimum value"
-msgstr "最小値"
-
-#: ../plugins/interface_view.ui.h:47
-msgid "Offset"
-msgstr "オフセット"
-
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:10
 msgid "Perform action"
 msgstr "アクションの実行"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:11
+msgid "Acti_on"
+msgstr "アクション(_O)"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:13
+msgid "Toolkit"
+msgstr "ツールキット"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "Version"
+msgstr "バージョン"
+
+#: ../plugins/interface_view.ui.h:15
+msgid "Ap_plication"
+msgstr "アプリケーション(_P)"
+
+#: ../plugins/interface_view.ui.h:16
+msgid "Col_lection"
+msgstr "コレクション(_L)"
+
+#. Component size
+#: ../plugins/interface_view.ui.h:18
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "Relative position"
+msgstr "相対位置"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "Size"
+msgstr "大きさ"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "WIDGET"
+msgstr "ウィジェット"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Layer"
+msgstr "レイヤー"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "MDI-Z-order"
+msgstr "MDI-Z-オーダ"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Alpha"
+msgstr "アルファ"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Absolute position"
+msgstr "絶対座標"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Co_mponent"
+msgstr "コンポーネント(_M)"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Des_ktop"
+msgstr "デスクトップ(_K)"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Locale:"
+msgstr "ロケール:"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "_Document"
+msgstr "ドキュメント(_D)"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+msgid "Hyperlink"
+msgstr "ハイパーリンク"
+
+#: ../plugins/interface_view.ui.h:31
+msgid "H_ypertext"
+msgstr "ハイパーテキスト(_Y)"
+
+#: ../plugins/interface_view.ui.h:32
 msgid "Position"
 msgstr "位置"
 
+#: ../plugins/interface_view.ui.h:33
+msgid "Locale"
+msgstr "ロケール"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "_Image"
+msgstr "画像(_I)"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Lo_gin Helper"
+msgstr "ログインヘルパー(_G)"
+
+#: ../plugins/interface_view.ui.h:36
+msgid "Select All"
+msgstr "すべて選択"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "_Selection"
+msgstr "選択範囲(_S)"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "St_reamable Content"
+msgstr "ストリーム可能なデータ(_R)"
+
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "見出し:"
+
+#: ../plugins/interface_view.ui.h:40
+msgid "Summary:"
+msgstr "概要:"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Selected columns"
+msgstr "選択した項目"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Selected rows"
+msgstr "選択したノード"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "Columns"
+msgstr "項目"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Rows"
+msgstr "ノード"
+
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "テーブルの情報"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "name (x,y)"
+msgstr "名前 (x,y)"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Header:"
+msgstr "ヘッダー:"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "<no description>"
+msgstr "<説明なし>"
+
+#. How many columns the cell spans.
 #: ../plugins/interface_view.ui.h:50
-msgid "Relative position"
-msgstr "相対位置"
+msgid "Extents:"
+msgstr "範囲:"
 
 #: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "ノード"
 
 #: ../plugins/interface_view.ui.h:52
-msgid "Rows"
-msgstr "ノード"
+msgid "Column"
+msgstr "項目"
 
 #: ../plugins/interface_view.ui.h:53
-msgid "Select All"
-msgstr "すべて選択"
+msgid "Selected Cell"
+msgstr "選択しているセル"
 
 #: ../plugins/interface_view.ui.h:54
-msgid "Selected columns"
-msgstr "選択した項目"
-
-#: ../plugins/interface_view.ui.h:55
-msgid "Selected rows"
-msgstr "選択したノード"
-
-#: ../plugins/interface_view.ui.h:56
-msgid "Show"
-msgstr "表示"
-
-#: ../plugins/interface_view.ui.h:57
-msgid "Size"
-msgstr "大きさ"
-
-#: ../plugins/interface_view.ui.h:58
-msgid "St_reamable Content"
-msgstr "ストリーム可能なデータ(_R)"
-
-#: ../plugins/interface_view.ui.h:59
-msgid "Te_xt"
-msgstr "文字列(_X)"
-
-#: ../plugins/interface_view.ui.h:60
-msgid "Toolkit"
-msgstr "ツールキット"
-
-#: ../plugins/interface_view.ui.h:61
-msgid "Val_ue"
-msgstr "値(_U)"
-
-#: ../plugins/interface_view.ui.h:62
-msgid "Version"
-msgstr "バージョン"
-
-#: ../plugins/interface_view.ui.h:63
-msgid "WIDGET"
-msgstr "<ウィジェット>"
-
-#: ../plugins/interface_view.ui.h:64
-msgid "_Accessible"
-msgstr "アクセシブル(_A)"
-
-#: ../plugins/interface_view.ui.h:65
-msgid "_Document"
-msgstr "ドキュメント(_D)"
-
-#: ../plugins/interface_view.ui.h:66
-msgid "_Image"
-msgstr "画像(_I)"
-
-#: ../plugins/interface_view.ui.h:67
-msgid "_Selection"
-msgstr "選択範囲(_S)"
-
-#: ../plugins/interface_view.ui.h:68
 msgid "_Table"
 msgstr "テーブル(_T)"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "name (x,y)"
-msgstr "名前 (x,y)"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "テキスト"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Offset"
+msgstr "オフセット"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Include defaults"
+msgstr "デフォルトを含める"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "開始: 0"
+
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "終了: 0"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Te_xt"
+msgstr "文字列(_X)"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "Current value"
+msgstr "現在の値"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "Minimum increment"
+msgstr "最小幅"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "Maximum value"
+msgstr "最大値"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "Minimum value"
+msgstr "最小値"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "Val_ue"
+msgstr "値(_U)"
+
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "不明"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
-msgstr "インターフェース・ビューアー"
+msgstr "インターフェースビューアー"
 
 #. Translators: this is a plugin description
 #: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "いろいろなインターフェースのプロパティを表示します"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr " (未実装)"
 
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(説明なし)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "名前"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "開始"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "終了"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "選択可能な子オブジェクトが多すぎます"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr " <i>(編集可)</i>"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
-msgstr "クイック・セレクト"
+msgstr "クイックセレクト"
 
 #: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-"アクセシビリティを素早く選択するいろいろなメソッドを提供するプラグインです"
+msgstr "アクセシビリティを素早く選択するいろいろなメソッドを提供するプラグインです"
 
 #: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
@@ -583,67 +563,67 @@ msgstr "最後にフォーカスを与えたアクセシブルを調査する"
 msgid "Inspect accessible under mouse"
 msgstr "マウスの下にあるアクセシブルを調査する"
 
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
-msgid "Idle"
-msgstr "アイドル"
-
-#: ../plugins/validate.ui.h:2
+#: ../plugins/validate.ui.h:1
 msgid "Sche_ma:"
 msgstr "スキーマ(_M):"
 
-#: ../plugins/validate.ui.h:3
+#: ../plugins/validate.ui.h:2
 msgid "V_alidate"
 msgstr "検証(_A)"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
+msgid "Idle"
+msgstr "アイドル"
+
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "説明なし"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "AT-SPI の検証"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "アプリのアクセシビリティを検証します"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "レベル"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "役割"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "保存中"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "検証中"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "WARN"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -658,76 +638,75 @@ msgstr "基本的な GUI アプリケーションのアクセシビリティ"
 #: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr "%s フォーカス可能でも選択可能でもありません"
+msgstr "実行可能な %s は、フォーカス可能でも選択可能でもありません"
 
 #: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr "%s はアクション可能ではありません"
+msgstr "割り込み可能な %s はアクション可能ではありません"
 
 #: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "1つ以上のフォーカスを持ったウィジェット"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
-msgstr "%s にはテキスト・インターフェースがありません"
+msgstr "%s にはテキストインターフェースがありません"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
-"親にある %s オブジェクトのインデックスが子のインデックスと同じではありません"
+msgstr "親にある %s オブジェクトのインデックスが子オブジェクトのインデックスと同じではありません"
 
-#: ../plugindata/validate/basic.py:153
+# reciprocal は形容詞なのすが、該当するものと訳出しました。
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr "Missing reciprocal for %s relation"
+msgstr "%s の関連に該当するものがありません。"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s には名前もラベルもありません"
 
-#: ../plugindata/validate/basic.py:220
-#, fuzzy, python-format
-#| msgid "focusable %s has table interface, no selection interface"
+#: ../plugindata/validate/basic.py:217
+#, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
-msgstr "focusable %s has table interface, no selection interface"
+msgstr "フォーカス可能な %s にはテーブルインターフェースはありますが、選択インターフェースはありません"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr "%s has %s state without %s state"
+msgstr "%s には %s 状態はありますが、 %s 状態はありません"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
-msgstr "%s does not belong to a set"
+msgstr "%s は、セットに属していません"
 
 #. Translators: The row or column number retrieved from a table child's
 #. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr "%(rolename)s index %(num)d does not match row and column"
+msgstr "%(rolename)s index %(num)d は、ノードと列に一致しません"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
@@ -735,68 +714,55 @@ msgstr "%(rolename)s index %(num)d does not match row and column"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
-msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
-msgstr ""
-"%(rolename)s の親のインデックス %(num1)d が行と列のインデックス %(num2)d と同"
-"じではありません"
+msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+msgstr "%(rolename)s の親のインデックス %(num1)d がノードと列のインデックス %(num2)d と同じではありません"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s には名前も説明もありません"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "設定(_P)..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "目次(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser はデスクトップ上にあるアプリケーションを参照できませんでした。この"
-"問題を修正するには、デスクトップに対する支援技術を有効にする必要があります。"
-"今すぐ有効にしますか?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "注意: 実際に有効にするために一旦ログアウトしてください。"
-
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "子オブジェクト"
 
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "子オブジェクトの無いアプリケーションの表示/非表示(_H)"
+
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "レジストリの更新(_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
-msgstr "すべて更新します"
+msgstr "全て更新"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "ノードの更新(_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "選択したノードの子を更新します"
 
@@ -826,11 +792,11 @@ msgstr "Shift"
 
 #: ../src/lib/accerciser/main_window.py:76
 msgid "Top panel"
-msgstr "トップ・パネル"
+msgstr "トップパネル"
 
 #: ../src/lib/accerciser/main_window.py:77
 msgid "Bottom panel"
-msgstr "ボトム・パネル"
+msgstr "ボトムパネル"
 
 #: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
@@ -877,69 +843,65 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "対話型の Python アクセシビリティ・エクスプローラーです"
+msgstr "対話型の Python アクセシビリティ エクスプローラーです"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-#, fuzzy
-#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
-"新しい BSD ライセンスの詳細については COPYING と NOTICE ファイルをご覧くださ"
-"い。"
+msgstr "新しい BSD ライセンスの詳細については COPYING と NOTICE ファイルをご覧ください。"
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
-msgstr "ウェブ・サイト"
+msgstr "ウェブサイト"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "ブックマークの追加(_A)..."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
-msgstr "選択したブックマークをアクセシビリティ対応にします"
+msgstr "選択したアクセシブルなノードをブックマークします。"
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "ブックマークの編集(_E)..."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
-msgstr "ブックマークを管理します"
+msgstr "ブックマークを管理します。"
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "ブックマークの編集..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "タイトル"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "アプリケーション"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "パス名"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "ブックマークの追加..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "タイトル:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "アプリケーション:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "パス名:"
 
@@ -950,12 +912,12 @@ msgstr "プラグインのエラー"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "表示する場所"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "表示しない"
 
@@ -1001,6 +963,24 @@ msgstr "表示(_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "ヘルプ(_H)"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>イベントの監視</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>説明</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>文字列</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>開始: 0</i>"
+
+#~ msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
+#~ msgstr "Accerciser はデスクトップ上にあるアプリケーションを参照できませんでした。この問題を修正するには、デスクトップに対する支援技術を有効にする必要があります。今すぐ有効にしますか?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "注意: 実際に有効にするために一旦ログアウトしてください。"
 
 #~ msgid "Dogtail"
 #~ msgstr "Dogtail"
