@@ -7,19 +7,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 01:24+0000\n"
-"PO-Revision-Date: 2012-03-24 18:45+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-25 00:19+0300\n"
+"PO-Revision-Date: 2012-09-25 00:26+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"Language: lv\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -195,12 +194,12 @@ msgstr ""
 "Interaktīva konsole manipulēšanai ar pašreiz izvēlēto pieejamības vienumu"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Notikumu pārraugs</b>"
+msgid "Event monitor"
+msgstr "Notikumu pārraugs"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
-msgstr "Uzraudzīt notiku_mus"
+msgstr "Pārraudzīt notiku_mus"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
@@ -244,37 +243,38 @@ msgid "Clear event log"
 msgstr "Notīrīt notikumu žurnālu"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Bērnu skaits</b>"
+msgid "Child count"
+msgstr "Bērnu skaits"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(apraksta nav)</i>"
+#: ../plugins/interface_view.ui.h:3
+msgid "(no description)"
+msgstr "(apraksta nav)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Apraksts</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Apraksts"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Stāvokļi</b>"
+msgid "States"
+msgstr "Stāvokļi"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Rādīt"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Attiecības</b>"
+msgid "Relations"
+msgstr "Attiecības"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Atribūti</b>"
+msgid "Attributes"
+msgstr "Atribūti"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -308,7 +308,7 @@ msgstr "Lietojum_programma"
 msgid "Col_lection"
 msgstr "Ko_lekcija"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -358,7 +358,7 @@ msgid "_Document"
 msgstr "_Dokuments"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hipersaite"
 
@@ -370,146 +370,140 @@ msgstr "H_iperteksts"
 msgid "Position"
 msgstr "Pozīcija"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Apraksts"
-
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "Lokāle"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Attēls"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Pieteikšanās palī_gs"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Izvēlēties visu"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "I_zvēle"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "St_raumējams saturs"
 
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "Paraksts:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Paraksts:</i>"
+msgid "Summary:"
+msgstr "Kopsavilkums:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Kopsavilkums:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Izvēlētās kolonnas"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Izvēlētās rindas"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Kolonnas"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Rindas"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Informācija par tabulu</b>"
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "Informācija par tabulu"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "nosaukums (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Galvene:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<apraksta nav>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Apjomi:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Rinda"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Kolonna"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Izvēlētā šūna</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "Izvēlētā šūna"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Tabula"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Teksts</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Teksts"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Nobīde"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Iekļaušanas noklusējumi"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Sākums: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "Sākums: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "Beigas: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Beigas: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "Te_ksts"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Pašreizējā vērtība"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Minimālais pieaugums"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Maksimālā vērtība"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Minimālā vērtība"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "Vērtī_ba"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>nezināms</b>"
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "nezināms"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -521,35 +515,38 @@ msgstr "Saskarnes skatītājs"
 msgid "Allows viewing of various interface properties"
 msgstr "Dod iespēju apskatīt dažādas saskarnes īpašības"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr "(nav realizēts)"
 
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(apraksta nav)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
 #: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Sākums"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Beigas"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Pārāk daudz atlasāmu bērnu"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Rediģējams)</i>"
 
@@ -577,59 +574,59 @@ msgstr "Shē_ma:"
 msgid "V_alidate"
 msgstr "Pārb_audīt"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Dīkstāvē"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Apraksta nav"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "AT-SPI pārbaudītājs"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Pārbauda lietojumprogrammas pieejamību"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Līmenis"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Loma"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Saglabā"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Pārbauda"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "WARN"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -655,7 +652,7 @@ msgstr "interaktīvais %s nav darāms"
 msgid "more than one focused widget"
 msgstr "vairāk kā viena fokusēta logdaļa"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s nav teksta saskarnes"
@@ -663,12 +660,12 @@ msgstr "%s nav teksta saskarnes"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s indeks vecākā neatbilst bērna indeksam"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Trūkst pretējā elementa relācijai %s"
@@ -676,12 +673,12 @@ msgstr "Trūkst pretējā elementa relācijai %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s trūkst nosaukums vai etiķete"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "fokusējamajam %s ir tabulas saskarne, bet nav izvēles saskarne"
@@ -690,7 +687,7 @@ msgstr "fokusējamajam %s ir tabulas saskarne, bet nav izvēles saskarne"
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s ir %s stāvoklis bez %s stāvokļa"
@@ -698,7 +695,7 @@ msgstr "%s ir %s stāvoklis bez %s stāvokļa"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nepieder kopai"
@@ -708,7 +705,7 @@ msgstr "%s nepieder kopai"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeks %(num)d neatbilst rindai un kolonnai"
@@ -719,40 +716,27 @@ msgstr "%(rolename)s indeks %(num)d neatbilst rindai un kolonnai"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
-"%(rolename)s vecāka indeks %(num1)d neatbilst rindas un kolonnas indeksam %"
-"(num2)d"
+"%(rolename)s vecāka indeks %(num1)d neatbilst rindas un kolonnas indeksam "
+"%(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s nav nosaukuma vai apraksta"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Iestatījumi..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Saturs"
-
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser nespēj saredzēt lietojumprogrammas uz jūsu darbvirsmas. Jums ir "
-"jāaktivē darbvirsmas pieejamība, lai novērstu šo problēmu. Vai vēlaties to "
-"aktivēt tagad?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Piezīme: izmaiņas stāsies spēkā nākamo reizi piesakoties."
 
 #: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
@@ -873,57 +857,57 @@ msgstr "accerciser autortiesības (c) 2006, 2007 IBM korporācija (BSD)"
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
 msgstr ""
-"Jaunā BSD licence. Detalizētāku informāciju skatīt failos COPYING un NOTICE."
+"Jaunā BSD licence. Detalizētāku informāciju skatīt datnēs COPYING un NOTICE."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Tīmekļa vietne"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "Pievienot grām_atzīmi..."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Pielikt grāmatzīmi izvēlētajam pieejamības vienumam."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "R_ediģēt grāmatzīmes..."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Pārvaldīt grāmatzīmes."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Rediģēt grāmatzīmes..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Virsraksts"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Lietotne"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Ceļš"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Pievienot grāmatzīmi..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Virsraksts:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Lietotne:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Ceļš:"
 
@@ -934,12 +918,12 @@ msgstr "Spraudņu kļūdas"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Skats"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Nav skata"
 
@@ -966,7 +950,7 @@ msgstr "Jauns skats..."
 
 #: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
-msgstr "_Fails"
+msgstr "_Datne"
 
 #: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
@@ -985,6 +969,30 @@ msgstr "_Skats"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Palīdzība"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Notikumu pārraugs</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Apraksts</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Teksts</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Sākums: 0</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accerciser nespēj saredzēt lietojumprogrammas uz jūsu darbvirsmas. Jums "
+#~ "ir jāaktivē darbvirsmas pieejamība, lai novērstu šo problēmu. Vai "
+#~ "vēlaties to aktivēt tagad?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Piezīme: izmaiņas stāsies spēkā nākamo reizi piesakoties."
 
 #~ msgid "The hpaned value for the main window."
 #~ msgstr "Galvenā loga hpaned vērtība."
