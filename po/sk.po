@@ -1,17 +1,18 @@
 # Slovak translation for accerciser.
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
-# Roman Mátyus <romanmatyus@gmail.com>, 2010.
+# Roman Mátyus <romanmatyus@gmail.com>, 2010, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-07 00:07+0000\n"
-"PO-Revision-Date: 2011-10-14 19:51+0100\n"
+"POT-Creation-Date: 2012-09-27 22:32+0000\n"
+"PO-Revision-Date: 2012-10-09 21:34+0100\n"
 "Last-Translator: Roman Mátyus <romanmatyus@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -234,15 +235,15 @@ msgstr "Konzola programu IPython"
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktívna konzola na úpravu vybraného objektu prístupnosti"
 
-# label
+# plugin name
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Monitor udalostí</b>"
+msgid "Event monitor"
+msgstr "Monitor udalostí"
 
 # toggle button
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
-msgstr "_Monitorovať udalosti"
+msgstr "M_onitorovať udalosti"
 
 # button
 #: ../plugins/event_monitor.ui.h:3
@@ -298,29 +299,30 @@ msgstr "Vymaže záznam udalostí"
 
 # label
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Počet potomkov</b>"
+msgid "Child count"
+msgstr "Počet potomkov"
 
 # label child count
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-# label in frame / in table
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(bez popisu)</i>"
+# button
+#: ../plugins/interface_view.ui.h:3
+msgid "(no description)"
+msgstr "(bez popisu)"
 
-# label
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Popis</b>"
+# label in table
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Popis"
 
 # label
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Stavy</b>"
+msgid "States"
+msgstr "Stavy"
 
 # button
 #: ../plugins/interface_view.ui.h:6
@@ -329,13 +331,13 @@ msgstr "Zobraziť"
 
 # label
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Vzťahy</b>"
+msgid "Relations"
+msgstr "Vzťahy"
 
 # label
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Atribúty</b>"
+msgid "Attributes"
+msgstr "Atribúty"
 
 # label pri expanderi
 #: ../plugins/interface_view.ui.h:9
@@ -378,7 +380,7 @@ msgid "Col_lection"
 msgstr "_Kolekcia"
 
 # label in table (Screen coordinates)
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -442,7 +444,7 @@ msgstr "_Dokument"
 
 # label pri expanderi
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Odkaz"
 
@@ -457,179 +459,172 @@ msgid "Position"
 msgstr "Pozícia"
 
 # label in table
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Popis"
-
-# label in table
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "Lokalizácia"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Obrázok"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Pomoc_ník pri prihlásení"
 
 # button
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Vybrať všetko"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "_Výber"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "St_reamovateľný obsah"
 
 # label
-#: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Titulok:</i>"
+#: ../plugins/interface_view.ui.h:39
+msgid "Caption:"
+msgstr "Titulok:"
 
 # label
-#: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Zhrnutie:</i>"
+#: ../plugins/interface_view.ui.h:40
+msgid "Summary:"
+msgstr "Zhrnutie:"
 
 # label in table
-#: ../plugins/interface_view.ui.h:42
+#: ../plugins/interface_view.ui.h:41
 msgid "Selected columns"
 msgstr "Vybrané stĺpce"
 
 # label in table
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Vybrané riadky"
 
 # label in table
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Stĺpce"
 
 # label in table
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Riadky"
 
 # label
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Informácie o tabuľke</b>"
+#: ../plugins/interface_view.ui.h:45
+msgid "Table Information"
+msgstr "Informácie o tabuľke"
 
 # button
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "názov (x,y)"
 
 # label
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Hlavička:"
 
 # button
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<bez popisu>"
 
 # label
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Zaberá:"
 
 # label
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Riadok"
 
 # label
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Stĺpec"
 
 # label
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Zvolená bunka</b>"
+#: ../plugins/interface_view.ui.h:53
+msgid "Selected Cell"
+msgstr "Zvolená bunka"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Tabuľka"
 
-# label
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Text</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Text"
 
 # label
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Posun"
 
 # check button
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Vrátane predvolených"
 
-# label
+# TreeViewColumn
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Začiatok: 0</b>"
+#: ../plugins/interface_view.ui.h:59
+msgid "Start: 0"
+msgstr "Začiatok: 0"
 
 # label
-#. End chaacter                                                 offset of text attributes span
-#: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Koniec: 0</i>"
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+msgid "End: 0"
+msgstr "Koniec: 0"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:63
+#: ../plugins/interface_view.ui.h:62
 msgid "Te_xt"
 msgstr "Te_xt"
 
 # label in table
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Aktuálna hodnota"
 
 # label in table
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Minimálny prírastok"
 
 # label in table
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Maximálna hodnota"
 
 # label in table
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Minimálna hodnota"
 
 # label pri expanderi
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "Hodno_ta"
 
 # label
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>neznámy</b>"
+# je to nazov
+#: ../plugins/interface_view.ui.h:68
+msgid "unknown"
+msgstr "neznámy"
 
 # plugin name
 #. Translators: this is a plugin name
@@ -644,39 +639,43 @@ msgid "Allows viewing of various interface properties"
 msgstr "Umožňuje prehliadanie rôznych vlastností rozhrania"
 
 # prídavný text do labelu
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr "(neimplementované)"
 
+# label in frame / in table
+#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
+msgid "<i>(no description)</i>"
+msgstr "<i>(bez popisu)</i>"
+
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:399
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Názov"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:746
 msgid "URI"
 msgstr "URI"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:754
 msgid "Start"
 msgstr "Začiatok"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:762
 msgid "End"
 msgstr "Koniec"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:924
 msgid "Too many selectable children"
 msgstr "Príliš mnoho zvoliteľných potomkov"
 
 # prídavný text do labelu
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
+#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
 msgid "<i>(Editable)</i>"
 msgstr "<i>(Upraviteľné)</i>"
 
@@ -711,67 +710,67 @@ msgid "V_alidate"
 msgstr "_Overiť"
 
 # progress bar
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Nečinnosť"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Bez popisu"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "Overovač AT_SPI"
 
 # plugin desc
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Overuje prístupnosť aplikácie"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Úroveň"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:409
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
 msgid "Role"
 msgstr "Úloha"
 
 # progress
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Ukladanie"
 
 # progress
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Overovanie"
 
 # validator log message
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "VÝNIMKA"
 
 # validator log message
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "CHYBA"
 
 # validator log message
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "VAROVANIE"
 
 # validator log message
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "INFO"
 
 # validator log message
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "LADENIE"
 
@@ -802,7 +801,7 @@ msgid "more than one focused widget"
 msgstr "viac ako jeden aktivovaný prvok"
 
 # %s - LocalizedRoleName
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "objekt %s nemá textové rozhranie"
@@ -811,13 +810,13 @@ msgstr "objekt %s nemá textové rozhranie"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "rodičovský index objektu %s neodpovedá indexu potomka"
 
 # %s - LocalizedRoleName
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Chýba prevrátený prvok vzťahu %s"
@@ -826,13 +825,13 @@ msgstr "Chýba prevrátený prvok vzťahu %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "objekt %s nemá názov alebo popisok"
 
 # %s - LocalizedRoleName
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
@@ -842,7 +841,7 @@ msgstr ""
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "objekt %s má stav %s, bez toho aby mal možnosť stav %s získať"
@@ -851,7 +850,7 @@ msgstr "objekt %s má stav %s, bez toho aby mal možnosť stav %s získať"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "objekt %s nepatrí do sady"
@@ -861,7 +860,7 @@ msgstr "objekt %s nepatrí do sady"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr ""
@@ -873,74 +872,65 @@ msgstr ""
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "index rodiča %(rolename)s s hodnotou %(num1)d nezodpovedá riadku ani stĺpcu "
 "s indexom %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "objekt %s nemá žiaden názov ani popis"
 
 # action
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "Nas_tavenia..."
 
 # action
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "Ob_sah"
 
-# message
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser nevidí aplikácie vášho pracovného prostredia. Problém odstránite "
-"povolením sprístupnenia pracovného prostredia. Chcete sprístupnenie povoliť?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Poznámka: Zmeny sa prejavia po odhlásení."
-
 # accessible.name
-#: ../src/lib/accerciser/accessible_treeview.py:355
+#: ../src/lib/accerciser/accessible_treeview.py:458
 msgid "<dead>"
 msgstr "<mŕtvy>"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/accessible_treeview.py:416
+#: ../src/lib/accerciser/accessible_treeview.py:519
 msgid "Children"
 msgstr "Potomok"
 
+#: ../src/lib/accerciser/accessible_treeview.py:548
+msgid "_Hide/Show Applications without children"
+msgstr "_Skryť/zobraziť aplikácie bez potomkov"
+
 # action
-#: ../src/lib/accerciser/accessible_treeview.py:445
+#: ../src/lib/accerciser/accessible_treeview.py:551
 msgid "_Refresh Registry"
 msgstr "_Aktualizovať register"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:448
+#: ../src/lib/accerciser/accessible_treeview.py:554
 msgid "Refresh all"
 msgstr "Obnoví všetko"
 
 # action
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:451
+#: ../src/lib/accerciser/accessible_treeview.py:557
 msgid "Refresh _Node"
 msgstr "Aktualizovať aktuálny _objekt"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:454
+#: ../src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh selected node's children"
 msgstr "Obnoví potomka zvoleného objektu"
 
@@ -1050,62 +1040,62 @@ msgid "Web site"
 msgstr "Webové stránky"
 
 # action
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "Prid_ať záložku..."
 
 # tooltip
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Uloží zvolený objekt prístupnosti medzi záložky."
 
 # action
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Upraviť záložky..."
 
 # tooltip
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Spravuje záložky."
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Upraviť záložky..."
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:433
 msgid "Title"
 msgstr "Nadpis"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:441
 msgid "Application"
 msgstr "Aplikácia"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:449
 msgid "Path"
 msgstr "Cesta"
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:518
 msgid "Add Bookmark..."
 msgstr "Pridať záložku..."
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:532
 msgid "Title:"
 msgstr "Nadpis:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:535
 msgid "Application:"
 msgstr "Aplikácia:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:538
 msgid "Path:"
 msgstr "Cesta:"
 
@@ -1118,13 +1108,13 @@ msgstr "Chyby zásuvných modulov"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Zobrazenie"
 
 # view_name
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Žiadne zobrazenie"
 
@@ -1180,27 +1170,3 @@ msgstr "_Zobraziť"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Pomocník"
-
-#~ msgid "Dogtail"
-#~ msgstr "Dogtail"
-
-#~ msgid "LDTP"
-#~ msgstr "LDTP"
-
-#~ msgid "Native"
-#~ msgstr "Natívny"
-
-#~ msgid "Script Type"
-#~ msgstr "Typ skriptu"
-
-#~ msgid "Script Recorder"
-#~ msgstr "Záznamník skriptu"
-
-#~ msgid "Creates dogtail style scripts"
-#~ msgstr "Vytváranie skriptov v štýle dogtail"
-
-#~ msgid "The current script will be lost."
-#~ msgstr "Aktuálny skript bude stratený."
-
-#~ msgid "Confirm clear"
-#~ msgstr "Potvrdiť vymazanie"
