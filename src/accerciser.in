@@ -13,6 +13,8 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
+gi.require_version('Wnck', '3.0')
+
 from gi.repository import GLib
 
 import sys, os
