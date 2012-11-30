@@ -21,7 +21,6 @@ EXTRA_DIST =  \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
 	pyreqs.py \
-	accerciser.spec \
 	$(INTLTOOL) \
         $(gsettings_files)
 
@@ -31,7 +30,6 @@ DISTCHECK_CONFIGURE_FLAGS = \
 
 DISTCLEANFILES = \
 	$(desktop_DATA) \
-	accerciser.spec \
 	intltool-extract \
 	intltool-merge \
 	intltool-update	\
