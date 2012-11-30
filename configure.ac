@@ -1,4 +1,4 @@
-AC_INIT(Accerciser, 3.7.1pre, eitan@ascender.com, accerciser)
+AC_INIT([Accerciser],[3.7.1pre],[eitan@ascender.com],[accerciser])
 AC_CONFIG_SRCDIR(src/accerciser.in)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE([enable])
@@ -48,3 +48,4 @@ src/lib/accerciser/i18n.py
 src/lib/accerciser/Makefile
 src/lib/accerciser/plugin/Makefile
 ])
+
