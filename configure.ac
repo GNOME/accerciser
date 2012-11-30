@@ -31,7 +31,6 @@ IT_PROG_INTLTOOL([0.35.0])
 dnl == generate makefiles ==
 AC_OUTPUT([
 Makefile
-accerciser.spec
 accerciser.desktop.in
 doc/Makefile
 help/Makefile
