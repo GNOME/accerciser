@@ -19,12 +19,12 @@ from gi.repository import GObject
 
 import pyatspi
 import os
-import ui_manager
+from . import ui_manager
 from time import sleep
-from icons import getIcon
-from node import Node
-from tools import Tools, getTreePathBoundingBox
-from i18n import _
+from .icons import getIcon
+from .node import Node
+from .tools import Tools, getTreePathBoundingBox
+from .i18n import _
 
 COL_ICON = 0
 COL_NAME = 1
@@ -236,10 +236,10 @@ class AccessibleModel(gtk.TreeStore, Tools):
     '''
 
     if not self._hide_leaves:
-      return [i for i in xrange(accessible.childCount)]
+      return [i for i in range(accessible.childCount)]
     else:
       children_ids = []
-      for i in xrange(accessible.childCount):
+      for i in range(accessible.childCount):
         child = accessible.getChildAtIndex(i)
         if child.childCount > 0 or child.getRoleName() != 'application':
           children_ids.append(i)
@@ -361,7 +361,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     @return: True if entire path is populated.
     @rtype: boolean
     '''
-    for i in xrange(1, len(path)):
+    for i in range(1, len(path)):
       if not self[path[:i]][COL_FILLED]:
         self.popLevel(self.get_iter(path[:i]))
         return False
@@ -425,13 +425,13 @@ class AccessibleModel(gtk.TreeStore, Tools):
         if index_in_parent < 0:
           break
         path = (index_in_parent,) + path
-      except Exception, e:
+      except Exception as e:
         return None
       child = child.get_parent()
     if not self._hide_leaves:
       try:
         path = (list(self.desktop).index(child),) + path
-      except Exception, e:
+      except Exception as e:
         return None
 
     return path

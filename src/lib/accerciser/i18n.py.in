@@ -50,7 +50,7 @@ def bind(domain, locale_dir):
   except IOError:
     # no translation file, so just return the unicode version of the given 
     # string
-    return lambda x: unicode(x)
+    return lambda x: str(x)
 
 # use the current system locale
 locale.setlocale(locale.LC_ALL, '')

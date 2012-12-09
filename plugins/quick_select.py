@@ -80,7 +80,7 @@ class QuickSelect(Plugin):
     # First check if the currently selected accessible has the pointer over it.
     # This is an optimization: Instead of searching for 
     # STATE_SELECTED and ROLE_MENU and LAYER_POPUP in the entire tree.
-    item = self._getPopupItem(x,y)
+    item = self._getPopupItem(x, y)
     if item:
       self.node.update(item)
       return
@@ -140,7 +140,7 @@ class QuickSelect(Plugin):
         except NotImplementedError:
           continue
 
-        if ci.contains(x,y, pyatspi.DESKTOP_COORDS) and \
+        if ci.contains(x, y, pyatspi.DESKTOP_COORDS) and \
               ci.getLayer() == pyatspi.LAYER_POPUP:
           return child
 

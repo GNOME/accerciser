@@ -17,10 +17,10 @@ from gi.repository import GLib
 from gi.repository import Gtk as gtk
 from gi.repository.Gio import Settings as GSettings
 
-from base_plugin import Plugin
-from view import ViewManager
+from .base_plugin import Plugin
+from .view import ViewManager
 from accerciser.tools import Tools, getTreePathBoundingBox
-from message import MessageManager
+from .message import MessageManager
 import os
 import sys
 import imp
@@ -139,7 +139,7 @@ class PluginManager(gtk.ListStore, Tools):
       params = imp.find_module(plugin_fn, [plugin_dir])
       plugin = imp.load_module(plugin_fn, *params)
       plugin_locals = plugin.__dict__
-    except Exception, e:
+    except Exception as e:
       self.message_manager.newModuleError(plugin_fn, plugin_dir,
         traceback.format_exception_only(e.__class__, e)[0].strip(),
         traceback.format_exc())
@@ -158,7 +158,7 @@ class PluginManager(gtk.ListStore, Tools):
     '''
     plugin_locals = self._getPluginLocals(plugin_dir, plugin_fn)
     # use keys list to avoid size changes during iteration
-    for symbol in plugin_locals.keys():
+    for symbol in list(plugin_locals.keys()):
       try:
         is_plugin = \
             issubclass(plugin_locals[symbol], Plugin) and \
@@ -195,7 +195,7 @@ class PluginManager(gtk.ListStore, Tools):
           plugin_class.plugin_name, 
           plugin_class.plugin_name_localized or plugin_class.plugin_name
           , *key_combo)
-    except Exception, e:
+    except Exception as e:
       self.message_manager.newPluginError(
         plugin_instance, plugin_class,
         traceback.format_exception_only(e.__class__, e)[0].strip(),

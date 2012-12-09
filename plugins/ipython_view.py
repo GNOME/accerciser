@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''
 Provides IPython console widget.
 
@@ -23,7 +23,8 @@ import re
 import sys
 import os
 
-from StringIO import StringIO
+from io import StringIO
+from functools import reduce
 
 try:
   import IPython
@@ -124,7 +125,7 @@ class IterableIPShell:
     '''
     Update self.IP namespace for autocompletion with sys.modules
     '''
-    for k,v in sys.modules.items():
+    for k, v in list(sys.modules.items()):
         if not '.' in k:
           self.IP.user_ns.update({k:v})
 
@@ -265,7 +266,7 @@ class IterableIPShell:
       possibilities = self.IP.complete(split_line[-1])
     else:
       completed = line
-      possibilities = ['',[]]
+      possibilities = ['', []]
     if possibilities:
       def _commonPrefix(str1, str2):
         '''
@@ -307,11 +308,11 @@ class IterableIPShell:
     @type header: string
     '''
     stat = 0
-    if verbose or debug: print header+cmd
+    if verbose or debug: print(header+cmd)
     # flush stdout so we don't mangle python's buffering
     if not debug:
       input, output = os.popen4(cmd)
-      print output.read()
+      print(output.read())
       output.close()
       input.close()
 
@@ -458,7 +459,7 @@ class ConsoleView(gtk.TextView):
     if text:
       self._write('\n')
     self._showPrompt(self.prompt)
-    self.text_buffer.move_mark(self.line_start,self.text_buffer.get_end_iter())
+    self.text_buffer.move_mark(self.line_start, self.text_buffer.get_end_iter())
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
   def onKeyPress(self, widget, event):
@@ -526,7 +527,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     '''
     ConsoleView.__init__(self)
     self.cout = StringIO()
-    IterableIPShell.__init__(self, cout=self.cout,cerr=self.cout, 
+    IterableIPShell.__init__(self, cout=self.cout, cerr=self.cout,
                              input_func=self.raw_input)
 #    self.connect('key_press_event', self.keyPress)
     self.interrupt = False

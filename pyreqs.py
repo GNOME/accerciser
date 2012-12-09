@@ -14,7 +14,7 @@ U{http://www.opensource.org/licenses/bsd-license.php}
 import sys, os, imp
 
 PYGTK_REQ = '2.0'
-PYATSPI_REQ = (2,23,3)
+PYATSPI_REQ = (2, 23, 3)
 GTK_VERSION = (2, 8, 0)
 
 try:
@@ -33,22 +33,21 @@ modules = ['pyatspi', 'cairo', 'rsvg', 'gi', 'gi.repository.Gtk', \
 for name in modules:
   try:
     m = __import__(name)
-    print name, 
-  except ImportError, e:
-    print name, '*MISSING*'
+    print(name)
+  except ImportError as e:
+    print(name, '*MISSING*')
     sys.exit(1)
   except RuntimeError:
     # ignore other errors which might be from lack of a display
     continue
   if name =='pyatspi':
     try:
-      compared = map(lambda x: cmp(*x),  zip(PYATSPI_REQ, m.__version__))
+      compared = [cmp(*x) for x in zip(PYATSPI_REQ, m.__version__)]
     except AttributeError:
       # Installed pyatspi does not support __version__, too old.
       compared = [-1, 0, 0]
     if -1 in compared and 1 not in compared[:compared.index(-1)]:
       # A -1 without a 1 preceding it means an older version.
-      print
-      print "Need pyatspi 1.23.4 or higher (or SVN trunk)"
+      print("\nNeed pyatspi 1.23.4 or higher (or SVN trunk)")
       sys.exit(1)
-print
+print()

@@ -233,12 +233,12 @@ class _InterfaceSection(object):
     label = expander.get_label_widget()
     label_text = label.get_label()
 
-    if isinstance(label_text, unicode):
+    if isinstance(label_text, str):
         label_text = label_text.decode('UTF-8')
 
     not_implemented_str = _('(not implemented)')
 
-    if isinstance(not_implemented_str, unicode):
+    if isinstance(not_implemented_str, str):
         not_implemented_str = not_implemented_str.encode('UTF-8')
 
     if sensitive:
@@ -351,7 +351,7 @@ class _SectionAccessible(_InterfaceSection):
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
-    map(self.states_model.append, [[state] for state in states])
+    list(map(self.states_model.append, [[state] for state in states]))
     
     try:
       attribs = acc.getAttributes()
@@ -436,7 +436,7 @@ class _SectionAccessible(_InterfaceSection):
         # Maybe we got a defunct state, in which case the object is diseased.
         states = []
       states.sort()
-      map(self.states_model.append, [[state] for state in states])        
+      list(map(self.states_model.append, [[state] for state in states]))        
 
 
 class _SectionAction(_InterfaceSection):
@@ -604,7 +604,7 @@ class _SectionComponent(_InterfaceSection):
     bbox = ci.getExtents(pyatspi.WINDOW_COORDS)
     self.label_posrel.set_text('%d, %d' % (bbox.x, bbox.y))
     layer = ci.getLayer()
-    self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_',''))
+    self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_', ''))
     self.label_zorder.set_text(repr(ci.getMDIZOrder()))
     self.label_alpha.set_text(repr(ci.getAlpha()))
     self.registerEventListener(self._accEventComponent, 
@@ -782,14 +782,14 @@ class _SectionHypertext(_InterfaceSection):
     '''
     hti = acc.queryHypertext()
 
-    for link_index in xrange(hti.getNLinks()):
+    for link_index in range(hti.getNLinks()):
       link = hti.getLink(link_index)
       iter = self.links_model.append(None,
                                      [link_index, 
                                       '', '', '',
                                       link.startIndex, 
                                       link.endIndex, None])
-      for anchor_index in xrange(link.nAnchors):
+      for anchor_index in range(link.nAnchors):
         acc_obj = link.getObject(anchor_index)
         self.links_model.append(iter,
                                 [link_index, acc_obj.name, acc_obj.description,
@@ -933,7 +933,7 @@ class _SectionSelection(_InterfaceSection):
       if child is not None:
         state = child.getState()
         if state.contains(pyatspi.STATE_SELECTABLE):
-          self.sel_model.append([getIcon(child),child.name, child])
+          self.sel_model.append([getIcon(child), child.name, child])
     
     state = acc.getState()
     multiple_selections = state.contains(pyatspi.STATE_MULTISELECTABLE)
@@ -1266,7 +1266,7 @@ class _SectionText(_InterfaceSection):
 
     expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
-    label_text = label_text.replace(_('<i>(Editable)</i>'),'')
+    label_text = label_text.replace(_('<i>(Editable)</i>'), '')
     label_text = label_text.strip(' ')
     if eti and acc.getState().contains(pyatspi.STATE_EDITABLE):
       label_text += ' ' + _('<i>(Editable)</i>')
@@ -1394,7 +1394,7 @@ class _SectionText(_InterfaceSection):
     else:
       attr_dict = self._attrStringToDict(attr)
 
-    attr_list = attr_dict.keys()
+    attr_list = list(attr_dict.keys())
     attr_list.sort()
 
     self.attr_model.clear()

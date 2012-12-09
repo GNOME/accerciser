@@ -55,7 +55,7 @@ class OneFocus(Validator):
   def before(self, acc, state, view):
     s = acc.getState()
     if s.contains(STATE_FOCUSED):
-      if not state.has_key('focus'):
+      if 'focus' not in state:
         state['focus'] = acc
       else:
         view.error(_('more than one focused widget'), acc, self.URL)
@@ -133,7 +133,7 @@ class ReciprocalRelations(Validator):
       rec = rel.getRelationType()
       if kind != rec:
         continue
-      for i in xrange(rel.getNTargets()):
+      for i in range(rel.getNTargets()):
         if rel.getTarget(i) == acc:
           return True
     return False
@@ -142,7 +142,7 @@ class ReciprocalRelations(Validator):
     s = acc.getRelationSet()
     for rel in s:
       kind = rel.getRelationType()
-      for i in xrange(rel.getNTargets()):
+      for i in range(rel.getNTargets()):
         target = rel.getTarget(i)
         ts = target.getRelationSet()
         rec = self._getReciprocal(kind)
@@ -189,7 +189,7 @@ class HasLabelName(Validator):
     for rel in acc.getRelationSet():
       if rel.getRelationType() != RELATION_LABELLED_BY:
         continue
-      for i in xrange(rel.getNTargets()):
+      for i in range(rel.getNTargets()):
         target = rel.getTarget(i)
         if self._checkForReadable(target):
           return
@@ -260,7 +260,7 @@ class RadioInSet(Validator):
   def before(self, acc, state, view):
     attrs = acc.getAttributes()
     m = dict([attr.split(':', 1) for attr in attrs])
-    if m.has_key('posinset'):
+    if 'posinset' in m:
       return
     rels = acc.getRelationSet()
     for rel in rels:
@@ -293,7 +293,7 @@ class TableRowColIndex(Validator):
   def before(self, acc, state, view):
     t = acc.queryTable()
     samples = max(t.nRows * t.nColumns, self.MAX_SAMPLES)
-    for i in xrange(samples):
+    for i in range(samples):
       r, c = _randomRowCol(t)
       i = t.getIndexAt(r, c)
       ir = t.getRowAtIndex(i)
@@ -324,7 +324,7 @@ class TableRowColParentIndex(Validator):
   def before(self, acc, state, view):
     t = acc.queryTable()
     samples = max(t.nRows * t.nColumns, self.MAX_SAMPLES)
-    for i in xrange(samples):
+    for i in range(samples):
       r, c = _randomRowCol(t)
       child = t.getAccessibleAt(r, c)
       ip = child.getIndexInParent()

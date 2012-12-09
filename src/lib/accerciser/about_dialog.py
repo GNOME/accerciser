@@ -16,7 +16,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gi
 
 from gi.repository import Gtk as gtk
-from i18n import _
+from .i18n import _
 
 class AccerciserAboutDialog(gtk.AboutDialog):
   '''

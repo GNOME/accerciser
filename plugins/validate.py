@@ -85,7 +85,7 @@ class ValidatorManager(type):
 
     @return: List of string names
     '''
-    return VALIDATORS.keys()
+    return list(VALIDATORS.keys())
 
   @staticmethod
   def getSchemaMetadata(name):
@@ -261,7 +261,7 @@ class ValidatorViewport(ViewportPlugin):
       self.save.set_sensitive(False)
       report_store = self.report.get_model()
       # create list of lists containing column values
-      self.row_values = [[row[0],row[1],row[2],row[3]] for row in report_store]
+      self.row_values = [[row[0], row[1], row[2], row[3]] for row in report_store]
       self.n_report_rows = len(self.row_values)
       return True
 
@@ -429,7 +429,7 @@ class ValidatorViewport(ViewportPlugin):
     '''
     try:
       # generate the next accessible to validate
-      self.walk.next()
+      next(self.walk)
     except StopIteration:
       # nothing left to validate, so stop
       self._stopValidate()
@@ -454,8 +454,8 @@ class ValidatorViewport(ViewportPlugin):
     while 1:
       try:
         # get one child
-        child = gen_child.next()
-      except StopIteration, e:
+        child = next(gen_child)
+      except StopIteration as e:
         break
       # recurse
       gen_traverse = self._traverse(child, state)
@@ -464,7 +464,7 @@ class ValidatorViewport(ViewportPlugin):
         yield None
         try:
           # get one descendant
-          gen_traverse.next()
+          next(gen_traverse)
         except StopIteration:
           break
     
@@ -481,7 +481,7 @@ class ValidatorViewport(ViewportPlugin):
     self._runValidators(acc, state, True)
     # generate all children, but only if acc doesn't manage descendants
     if not acc.getState().contains(pyatspi.constants.STATE_MANAGES_DESCENDANTS):
-      for i in xrange(acc.childCount):
+      for i in range(acc.childCount):
         child = acc.getChildAtIndex(i)
         yield child
     # run after methods on all validators
@@ -509,7 +509,7 @@ class ValidatorViewport(ViewportPlugin):
               val.before(acc, state, self)
             else:
               val.after(acc, state, self)
-          except Exception, e:
+          except Exception as e:
             self._exceptionError(acc, e)
 
   def _onCursorChanged(self, report):

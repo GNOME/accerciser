@@ -155,13 +155,13 @@ class Plugin(Tools):
       '''
       try:
         return self.func(*args, **kwargs)
-      except Exception, e:
+      except Exception as e:
         if hasattr(self.func, 'im_self') and hasattr(self.func, 'im_class'):
-          message_manager = getattr(self.func.im_self, '_message_manager', None)
+          message_manager = getattr(self.func.__self__, '_message_manager', None)
           if not message_manager:
             raise e
           message_manager.newPluginError(
-            self.func.im_self, self.func.im_class,
+            self.func.__self__, self.func.__self__.__class__,
             traceback.format_exception_only(e.__class__, e)[0].strip(),
             traceback.format_exc())
 

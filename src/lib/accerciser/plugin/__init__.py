@@ -11,7 +11,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
-from base_plugin import Plugin, ViewportPlugin, ConsolePlugin
-from plugin_manager import PluginManager
-from view import PluginView
+from .base_plugin import Plugin, ViewportPlugin, ConsolePlugin
+from .plugin_manager import PluginManager
+from .view import PluginView
 

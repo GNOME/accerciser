@@ -2,11 +2,11 @@ from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository.Gio import Settings as GSettings
 
-from plugin import PluginView
-from i18n import _, N_
-from accessible_treeview import *
-import ui_manager
-from ui_manager import uimanager
+from .plugin import PluginView
+from .i18n import _, N_
+from .accessible_treeview import *
+from . import ui_manager
+from .ui_manager import uimanager
 
 GSCHEMA = 'org.a11y.Accerciser'
 
@@ -147,7 +147,7 @@ class AccerciserMainWindow(gtk.Window):
     @type event: L{gtk.gdk.Event}
     '''
     if event.state & gdk.ModifierType.MOD1_MASK and \
-          event.keyval in xrange(gdk.keyval_from_name('0'), 
+          event.keyval in range(gdk.keyval_from_name('0'),
                                  gdk.keyval_from_name('9')):
       tab_num = event.keyval - gdk.keyval_from_name('0') or 10
       pages_count1 = self.pluginview1.getNVisiblePages()
@@ -197,7 +197,7 @@ class AccerciserMainWindow(gtk.Window):
     tree_path = model.get_path(iter)
     path_tuple = tuple(tree_path.get_indices())
 
-    path = map(str, path_tuple)
+    path = list(map(str, path_tuple))
     self.statusbar.pop(context_id)
     if len(path) > 1:
       self.statusbar.push(context_id, 'Path: '+' '.join(path[1:]))

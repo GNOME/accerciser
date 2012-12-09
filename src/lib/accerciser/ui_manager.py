@@ -15,7 +15,7 @@ import gi
 
 from gi.repository import Gtk as gtk
 
-from i18n import _, N_, C_
+from .i18n import _, N_, C_
 
 menu_actions = gtk.ActionGroup('MenuActions')
 

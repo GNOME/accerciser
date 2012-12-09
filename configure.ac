@@ -6,12 +6,12 @@ AM_MAINTAINER_MODE([enable])
 YELP_HELP_INIT
 
 dnl == check for python ==
-AM_PATH_PYTHON(2.7)
+AM_PATH_PYTHON(3.2)
 
 dnl == requeriments ==
 GTK_REQUIRED=3.1.13
 PYGOBJECT_REQUIRED=2.90.3
-ATSPI_REQUIRED=2.1.5
+ATSPI_REQUIRED=2.5.2
 GLIB_GSETTINGS
 
 dnl == check for requeriments ==

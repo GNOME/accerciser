@@ -4,11 +4,11 @@ from gi.repository import Atk as atk
 
 import os
 from xml.dom.minidom import getDOMImplementation, parse, Element
-from i18n import _
+from .i18n import _
 from pyatspi import getPath
 from random import random
 import random
-import ui_manager
+from . import ui_manager
 
 COL_NAME = 0
 COL_APP = 1
@@ -188,8 +188,7 @@ class BookmarkStore(gtk.ListStore):
     @return: list of elements.
     @rtype: list of Element
     '''
-    return filter(lambda x: isinstance(x, Element),
-                  self._xmldoc.documentElement.childNodes)
+    return [x for x in self._xmldoc.documentElement.childNodes if isinstance(x, Element)]
 
   def _onRowChanged(self, model, tree_path, iter):
     '''
@@ -273,7 +272,7 @@ class BookmarkStore(gtk.ListStore):
     if '' == bookmark.path: 
       path = ()
     else: 
-      path = map(int, bookmark.path.split(','))
+      path = list(map(int, bookmark.path.split(',')))
     self.node.updateToPath(bookmark.app, path)
 
   def bookmarkCurrent(self):
@@ -327,7 +326,7 @@ class BookmarkStore(gtk.ListStore):
       '''
       gtk.Dialog.__init__(self, _('Edit Bookmarks...'), 
                           buttons=(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE))
-      self.set_default_size(480,240)
+      self.set_default_size(480, 240)
       self.connect('response', self._onResponse)
       vbox = self.get_children()[0]
       hbox = gtk.HBox()
@@ -472,7 +471,7 @@ class BookmarkStore(gtk.ListStore):
         return
       if col_id == COL_PATH:
         try:
-          int_path = map(int, new_text.split(','))
+          int_path = list(map(int, new_text.split(',')))
         except ValueError:
           return
       bookmark = model[path][0]
@@ -542,7 +541,7 @@ class BookmarkStore(gtk.ListStore):
         entry.set_text(value)
         entry.connect('activate', self._onEnter, ok_button)
         label_widget = gtk.Label(label)
-        label_widget.set_alignment(0.0,0.5)
+        label_widget.set_alignment(0.0, 0.5)
         label_acc = label_widget.get_accessible()
         entry_acc = entry.get_accessible()
         label_acc.add_relationship(atk.RelationType.LABEL_FOR, entry_acc)

@@ -21,20 +21,20 @@ from gi.repository import GObject
 from gi.repository import Atk as atk
 
 import os, sys, locale
-from icons import getIcon
+from .icons import getIcon
 import os
-from bookmarks import BookmarkStore
-from accessible_treeview import *
-from node import Node
-from plugin import PluginManager
-from plugin import PluginView
-from tools import Tools
-from i18n import _, N_
-from hotkey_manager import HotkeyManager, HotkeyTreeView
-from about_dialog import AccerciserAboutDialog
-from prefs_dialog import AccerciserPreferencesDialog
-from main_window import AccerciserMainWindow
-import ui_manager
+from .bookmarks import BookmarkStore
+from .accessible_treeview import *
+from .node import Node
+from .plugin import PluginManager
+from .plugin import PluginView
+from .tools import Tools
+from .i18n import _, N_
+from .hotkey_manager import HotkeyManager, HotkeyTreeView
+from .about_dialog import AccerciserAboutDialog
+from .prefs_dialog import AccerciserPreferencesDialog
+from .main_window import AccerciserMainWindow
+from . import ui_manager
 
 class Main(Tools):
   '''

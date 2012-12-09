@@ -14,7 +14,7 @@ from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository.Gio import Settings as GSettings
 
-from i18n import _
+from .i18n import _
 import pyatspi
 
 HOTKEYS_GSCHEMA = 'org.a11y.Accerciser.hotkeys'
@@ -123,14 +123,14 @@ class HotkeyManager(gtk.ListStore):
     be perfomed.
     @type modifiers: int
     '''
-    component_desc_pairs = zip([row[COL_COMPONENT] for row in self],
-                               [row[COL_DESC] for row in self])
+    component_desc_pairs = list(zip([row[COL_COMPONENT] for row in self],
+                               [row[COL_DESC] for row in self]))
     if (component, description) in component_desc_pairs:
       path = component_desc_pairs.index((component, description))
       self[path][COL_CALLBACK] = callback
     else:
       gspath = self._getComboGSettingsPath(component, description)
-      gsettings = GSettings(schema=HOTKEYS_GSCHEMA , path=gspath)
+      gsettings = GSettings(schema=HOTKEYS_GSCHEMA, path=gspath)
       if gsettings.get_string('hotkey-combo'):
         final_keypress, final_modifiers = gtk.accelerator_parse(
           gsettings.get_string('hotkey-combo'))
@@ -181,7 +181,7 @@ class HotkeyManager(gtk.ListStore):
 
     gspath = self._getComboGSettingsPath(model[iter][COL_COMPONENT], 
                                          model[iter][COL_DESC])
-    gsettings = GSettings(schema=HOTKEYS_GSCHEMA , path=gspath)
+    gsettings = GSettings(schema=HOTKEYS_GSCHEMA, path=gspath)
     combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS], 
                                       gdk.ModifierType(model[iter][COL_MOD]))
 

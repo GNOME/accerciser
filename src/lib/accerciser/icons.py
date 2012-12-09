@@ -61,7 +61,7 @@ def getIcon(acc):
         return GdkPixbuf.Pixbuf.new_from_file(fn)
       except GObject.GError:
         pass
-  except Exception, e:
+  except Exception as e:
     pass
   fn = os.path.join(ICONS_PATH, 'filler.png')
   return GdkPixbuf.Pixbuf.new_from_file(fn)

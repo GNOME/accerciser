@@ -15,9 +15,9 @@ from gi.repository import Gdk as gdk
 from gi.repository.Gio import Settings as GSettings
 from gi.repository import GObject
 
-from base_plugin import Plugin
+from .base_plugin import Plugin
 from accerciser.tools import *
-from message import MessageManager
+from .message import MessageManager
 import os
 import sys
 import imp
@@ -193,7 +193,7 @@ class PluginView(gtk.Notebook):
     @return: Plugins in given view.
     @rtype: List of {Plugin}
     '''
-    return filter(lambda x: isinstance(x, Plugin), self.get_children())
+    return [x for x in self.get_children() if isinstance(x, Plugin)]
 
   def insert_page(self, child, tab_label=None, position=-1):
     '''
@@ -213,7 +213,7 @@ class PluginView(gtk.Notebook):
     if tab_label:
       name = tab_label
     elif isinstance(child, Plugin):
-      name = getattr(child,'plugin_name_localized', None) or child.plugin_name
+      name = getattr(child, 'plugin_name_localized', None) or child.plugin_name
     elif child.get_name():
       name = child.get_name()
     gtk.Notebook.append_page(self, child, None)
@@ -252,7 +252,7 @@ class PluginView(gtk.Notebook):
     @type tab_num: integer
     '''
     children = self.get_children()
-    shown_children = filter(lambda x: x.get_property('visible'), children)
+    shown_children = [x for x in children if x.get_property('visible')]
     try:
       child = shown_children[tab_num]
     except IndexError:
@@ -267,8 +267,7 @@ class PluginView(gtk.Notebook):
     @return: Number of visible children.
     @rtype: integer
     '''
-    shown_children = filter(lambda x: x.get_property('visible'), 
-                            self.get_children())
+    shown_children = [x for x in self.get_children() if x.get_property('visible')]
     return len(shown_children)
 
 class PluginViewWindow(gtk.Window, Tools):
@@ -342,7 +341,7 @@ class PluginViewWindow(gtk.Window, Tools):
     @type event: gtk.gdk.Event
     '''
     if event.state & gdk.ModifierType.MOD1_MASK and \
-          event.keyval in xrange(gdk.keyval_from_name('0'), 
+          event.keyval in range(gdk.keyval_from_name('0'),
                                  gdk.keyval_from_name('9')):
       tab_num = event.keyval - gdk.keyval_from_name('0') or 10
       pages_count = self.plugin_view.get_n_pages()
@@ -871,7 +870,7 @@ class MultiViewModel(list, BaseViewModel):
     if (view.view_name, plugin.plugin_name) in self._ignore_insertion:
       self._ignore_insertion.remove((view.view_name, plugin.plugin_name))
       return
-    if self._placement_cache.has_key(plugin.plugin_name):
+    if plugin.plugin_name in self._placement_cache:
       self._placement_cache.pop(plugin.plugin_name)
 
     plugin_layouts = self._getPluginLayouts()
@@ -896,8 +895,8 @@ class MultiViewModel(list, BaseViewModel):
     self.plugviews.set_strv('top-panel-layout', plugin_layouts.pop('Top panel'))
     self.plugviews.set_strv('bottom-panel-layout', plugin_layouts.pop('Bottom panel'))
 
-    for plugview in plugin_layouts.keys():
-      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ','-') + '/'
+    for plugview in list(plugin_layouts.keys()):
+      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ', '-') + '/'
       newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
       newview.set_strv('layout', plugin_layouts[plugview])
       l = self.plugviews.get_strv('available-newviews')
@@ -911,7 +910,7 @@ class MultiViewModel(list, BaseViewModel):
     plugin_layouts['Bottom panel'] = self.plugviews.get_strv('bottom-panel-layout')
 
     for plugview in self.plugviews.get_strv('available-newviews'):
-      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ','-') + '/'
+      gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ', '-') + '/'
       newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
       layout = newview.get_strv('layout')
       if layout:
@@ -932,7 +931,7 @@ class MultiViewModel(list, BaseViewModel):
     @param plugin: Plugin to add.
     @type plugin: L{Plugin}
     '''
-    if self._placement_cache.has_key(plugin.plugin_name):
+    if plugin.plugin_name in self._placement_cache:
       view_name, index = self._placement_cache.pop(plugin.plugin_name)
       view = self._getViewOrNewView(view_name)
     else:

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!@PYTHON@
 '''
 Creates an instance of the program GUI and starts the main event loop.
 
@@ -21,11 +21,11 @@ import sys, os
 
 def migrate_data (old_path, new_path):
   if os.path.exists(old_path) and not os.path.exists(new_path):
-    mask = os.umask(077)
+    mask = os.umask(0o77)
     try:
       os.renames(old_path, new_path)
     except:
-      print "Unable to migrate ", old_path
+      print("Unable to migrate ", old_path)
     os.umask(mask)
 
 # Load gail module no matter what the desktop-wide settings are.

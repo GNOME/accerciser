@@ -141,7 +141,7 @@ class Level2SequenceFactory(SequenceFactory):
       self._prependContext()
     if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
-      self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
+      self.typed_text += chr(Gdk.keyval_to_unicode(event.id))
     else:
       if self.frame_name:
         if isinstance(event, pyatspi.deviceevent.DeviceEvent):
@@ -270,7 +270,7 @@ class DogtailFactory(ScriptFactory):
       return
     if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
-      self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
+      self.typed_text += chr(Gdk.keyval_to_unicode(event.id))
     else:
       if self.app_name:
         self.commands_queue.put_nowait('focus.application("%s")\n' % \
@@ -323,7 +323,7 @@ class LDTPFactory(DogtailFactory):
       return
     if event.modifiers in (0, Gdk.ModifierType.SHIFT_MASK) and \
           Gdk.keyval_to_unicode(event.id):
-      self.typed_text += unichr(Gdk.keyval_to_unicode(event.id))
+      self.typed_text += chr(Gdk.keyval_to_unicode(event.id))
     else:
       if self.frame_name:
         self.commands_queue.put_nowait('waittillguiexist("%s")\n' % \

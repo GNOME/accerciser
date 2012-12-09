@@ -13,7 +13,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import os
 import pickle
 import weakref
-import new
 
 class Tools(object):
   '''
@@ -43,13 +42,13 @@ class Tools(object):
       return False
     try:
       app = acc.getApplication()
-    except Exception, e:
+    except Exception as e:
       return False
     try:
       app_id = app.id
     except:
       return False
-    if hasattr(self,'my_app_id'):
+    if hasattr(self, 'my_app_id'):
       if self.my_app_id == app_id:
         return True
     else:
@@ -69,14 +68,14 @@ class Proxy(object):
   def __init__(self, cb):
     try:
       try:
-        self.inst = weakref.ref(cb.im_self)
+        self.inst = weakref.ref(cb.__self__)
       except TypeError:
         self.inst = None
-      self.func = cb.im_func
-      self.klass = cb.im_class
+      self.func = cb.__func__
+      self.klass = cb.__self__.__class__
     except AttributeError:
       self.inst = None
-      self.func = cb.im_func
+      self.func = cb.__func__
       self.klass = None
      
   def __call__(self, *args, **kwargs):
@@ -90,7 +89,7 @@ class Proxy(object):
       return
     elif self.inst is not None:
       # build a new instance method with a strong reference to the instance
-      mtd = new.instancemethod(self.func, self.inst(), self.klass)
+      mtd = self.func.__get__(self.inst(), self.klass)
     else:
       # not a bound method, just return the func
       mtd = self.func
@@ -129,7 +128,7 @@ def parseColorString(color_string):
   of 0.0 to 1.0
   @rtype: tuple of string and float.
   '''
-  return color_string[:-2], long(color_string[-2:], 16)/255.0
+  return color_string[:-2], int(color_string[-2:], 16)/255.0
 
 def getTreePathBoundingBox(treeview, path, col):
   '''

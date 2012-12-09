@@ -117,8 +117,8 @@ class EventMonitor(ViewportPlugin):
     Populate the model for the event types tree view. Uses a constant
     from pyatspi for the listing of all event types.
     '''
-    events = pyatspi.EVENT_TREE.keys()
-    for sub_events in pyatspi.EVENT_TREE.itervalues():
+    events = list(pyatspi.EVENT_TREE.keys())
+    for sub_events in pyatspi.EVENT_TREE.values():
       events.extend(sub_events)
     events = list(set([event.strip(':') for event in events]))
     events.sort()

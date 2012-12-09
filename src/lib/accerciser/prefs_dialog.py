@@ -18,9 +18,9 @@ from gi.repository import Gdk as gdk
 from gi.repository import Atk as atk
 from gi.repository.Gio import Settings as GSettings
 
-from i18n import _
-import node
-from tools import parseColorString
+from .i18n import _
+from . import node
+from .tools import parseColorString
 
 class AccerciserPreferencesDialog(gtk.Dialog):
   '''
@@ -38,7 +38,7 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     gtk.Dialog.__init__(self, _('accerciser Preferences'), 
                         buttons=(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE))
     self.connect('response', self._onResponse)
-    self.set_default_size(500,250)
+    self.set_default_size(500, 250)
     notebook = gtk.Notebook()
     vbox = self.get_children()[0]
     vbox.add(notebook)
@@ -105,8 +105,8 @@ class _HighlighterView(gtk.Alignment):
       table.attach(label, 0, 1, row, row + 1, gtk.AttachOptions.FILL)
       table.attach(control, 1, 2, row, row + 1, gtk.AttachOptions.FILL)
 
-    for label, control in zip(map(lambda x: x.get_accessible(),labels),
-                              map(lambda x: x.get_accessible(),controls)):
+    for label, control in zip([x.get_accessible() for x in labels],
+                              [x.get_accessible() for x in controls]):
       label.add_relationship(atk.RelationType.LABEL_FOR, control)
       control.add_relationship(atk.RelationType.LABELLED_BY, label)
 

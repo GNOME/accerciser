@@ -21,7 +21,7 @@ from gi.repository.Gio import Settings as GSettings
 import cairo
 import pyatspi
 import string
-from tools import Tools, parseColorString
+from .tools import Tools, parseColorString
 
 MAX_BLINKS = 6
 
@@ -42,7 +42,7 @@ class Bag(object):
     self.__dict__.update(kwargs)
     
   def __str__(self):
-    return ', '.join(vars(self).keys())
+    return ', '.join(list(vars(self).keys()))
 
 class Node(GObject.GObject, Tools):
   '''

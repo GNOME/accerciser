@@ -12,13 +12,13 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, os
-from i18n import _
+from .i18n import _
 import signal
 def signal_handler(signal, frame):
-  print _(
-    'You pressed Ctrl+Z. This would normally freeze your keyboard')
-  print _(
-    'Ctrl+Z has been disabled; use "accerciser &" instead from the command line')
+  print(_(
+    'You pressed Ctrl+Z. This would normally freeze your keyboard'))
+  print(_(
+    'Ctrl+Z has been disabled; use "accerciser &" instead from the command line'))
 signal.signal(signal.SIGTSTP, signal_handler)
 
 # If pyatspi not installed seperately, add pyatspi zip file to the path
@@ -31,6 +31,6 @@ def main():
   '''
   Run program.
   '''
-  from accerciser import Main
+  from .accerciser import Main
   main = Main()
   main.run()
