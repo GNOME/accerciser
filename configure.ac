@@ -1,4 +1,4 @@
-AC_INIT([Accerciser],[3.7.3],[eitan@ascender.com],[accerciser])
+AC_INIT([Accerciser],[3.7.4pre],[eitan@ascender.com],[accerciser])
 AC_CONFIG_SRCDIR(src/accerciser.in)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE([enable])
