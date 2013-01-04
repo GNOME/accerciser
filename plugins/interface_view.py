@@ -340,7 +340,7 @@ class _SectionAccessible(_InterfaceSection):
     '''
 
     self.child_count_label.set_text(str(acc.childCount))
-    self.desc_label.set_label(acc.description or _('<i>(no description)</i>'))
+    self.desc_label.set_label(acc.description or _('(no description)'))
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
@@ -361,7 +361,7 @@ class _SectionAccessible(_InterfaceSection):
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
       iter = self.relations_model.append(
           None, [None, 
-                 '<i>'+markup_escape_text(r_type_name)+'</i>', -1, 
+                 markup_escape_text(r_type_name), -1,
                  self.header_bg, False])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
@@ -856,7 +856,7 @@ class _SectionImage(_InterfaceSection):
     self.label_pos.set_text('%d, %d' % (bbox.x, bbox.y))
     self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
     self.label_desc.set_label(ii.imageDescription or \
-                                _('<i>(no description)</i>'))
+                                _('(no description)'))
     self.label_locale.set_text(ii.imageLocale)
   def clearUI(self):
     '''
@@ -1259,10 +1259,10 @@ class _SectionText(_InterfaceSection):
 
     expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
-    label_text = label_text.replace(_('<i>(Editable)</i>'), '')
+    label_text = label_text.replace(_('(Editable)'), '')
     label_text = label_text.strip(' ')
     if eti and acc.getState().contains(pyatspi.STATE_EDITABLE):
-      label_text += ' ' + _('<i>(Editable)</i>')
+      label_text += ' ' + _('(Editable)')
       self.text_view.set_editable(True)
     else:
       self.text_view.set_editable(False)
@@ -1402,9 +1402,19 @@ class _SectionText(_InterfaceSection):
       'attr_region',
       self.text_buffer.get_iter_at_offset(start),
       self.text_buffer.get_iter_at_offset(end))
-                                  
-    self.label_start.set_markup('<i>Start: %d</i>' % start)
-    self.label_end.set_markup('<i>End: %d</i>' % end)
+
+    # Translators: This string appears in Accerciser's Interface Viewer
+    # and refers to a range of characters which has a particular format.
+    # "Start" is the character offset where the formatting begins. If
+    # the first four letters of some text is bold, the start offset of
+    # that bold formatting is 0.
+    self.label_start.set_markup(_('Start: %d') % start)
+    # Translators: This string appears in Accerciser's Interface Viewer
+    # and refers to a range of characters which has a particular format.
+    # "End" is the character offset where the formatting ends.  If the
+    # first four letters of some text is bold, the end offset of that
+    # bold formatting is 4.
+    self.label_end.set_markup(_('End: %d') % end)
 
   def _onTextViewPressed(self, widget, event):
     '''
