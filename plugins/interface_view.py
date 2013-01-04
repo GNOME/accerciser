@@ -232,14 +232,7 @@ class _InterfaceSection(object):
     expander = expander or self.expander
     label = expander.get_label_widget()
     label_text = label.get_label()
-
-    if isinstance(label_text, str):
-        label_text = label_text.decode('UTF-8')
-
     not_implemented_str = _('(not implemented)')
-
-    if isinstance(not_implemented_str, str):
-        not_implemented_str = not_implemented_str.encode('UTF-8')
 
     if sensitive:
       label_text = label_text.replace(not_implemented_str, '')
