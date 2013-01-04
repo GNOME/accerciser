@@ -308,7 +308,7 @@ class ValidatorViewport(ViewportPlugin):
     response = save_dialog.run()
     if response == gtk.ResponseType.OK:
       self.save_to = open(save_dialog.get_filename(), 'w')
-      GObject.idle_add(self._writeFile)
+      GLib.idle_add(self._writeFile)
     save_dialog.destroy()
 
   def _onClear(self, button):
@@ -346,7 +346,7 @@ class ValidatorViewport(ViewportPlugin):
     self.write_in_progress = True
     self._setDefaultSaveVars()
     # register an idle callback
-    self.idle_save_id = GObject.idle_add(self._onSaveIdle)
+    self.idle_save_id = GLib.idle_add(self._onSaveIdle)
     self.progress.set_text(_('Saving'))
     # disable controls
     self.validate.set_sensitive(False)
@@ -358,7 +358,7 @@ class ValidatorViewport(ViewportPlugin):
     components to their enabled states.
     '''
     # stop callbacks
-    GObject.source_remove(self.idle_save_id)
+    GLib.source_remove(self.idle_save_id)
     # reset progress
     self.progress.set_fraction(0.0)
     self.progress.set_text(_('Idle'))
@@ -394,7 +394,7 @@ class ValidatorViewport(ViewportPlugin):
     # build our walk generator
     self.walk = self._traverse(self.acc, state)
     # register an idle callback
-    self.idle_validate_id = GObject.idle_add(self._onValidateIdle)
+    self.idle_validate_id = GLib.idle_add(self._onValidateIdle)
     self.progress.set_text(_('Validating'))
     # disable controls
     self.schema.set_sensitive(False)
@@ -408,7 +408,7 @@ class ValidatorViewport(ViewportPlugin):
     various UI components to their enabled states.
     '''
     # stop callbacks
-    GObject.source_remove(self.idle_validate_id)
+    GLib.source_remove(self.idle_validate_id)
     # destroy generator
     self.walk = None
     # reset progress

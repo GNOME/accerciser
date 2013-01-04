@@ -17,7 +17,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import Wnck as wnck
-from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import Atk as atk
 
 import os, sys, locale
@@ -100,7 +100,7 @@ class Main(Tools):
     '''
     Runs the app.
     '''
-    GObject.timeout_add(200, self._pumpEvents)
+    GLib.timeout_add(200, self._pumpEvents)
     try:
       pyatspi.Registry.start(async=True, gil=False)
     except KeyboardInterrupt:

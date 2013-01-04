@@ -15,6 +15,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GdkPixbuf
+from gi.repository import GLib
 from gi.repository import GObject
 
 import pyatspi
@@ -222,7 +223,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     self._populating_tasks += 1
     if self._populating_tasks == 1:
       self.emit('start-populating')
-    GObject.idle_add(self._popOnIdle, row_reference)
+    GLib.idle_add(self._popOnIdle, row_reference)
 
   def _childrenIndexesInParent(self, accessible):
     '''
@@ -754,7 +755,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
       # We do this because an application won't have an icon loaded in 
       # the window manager when it is first registered to at-spi
       if new_child == new_child.getApplication():
-        GObject.timeout_add(1000, self._refreshIcon, new_child)
+        GLib.timeout_add(1000, self._refreshIcon, new_child)
     
   def _refreshIcon(self, app):
     '''
@@ -947,7 +948,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
     @type iter: L{gtk.TreeIter}
     '''
     # TODO: Remove idle_add when at-spi2 reentrancy issues are fixed
-    GObject.idle_add(self._accCellDataFuncReal, tvc, cellrenderer, model, iter_id)
+    GLib.idle_add(self._accCellDataFuncReal, tvc, cellrenderer, model, iter_id)
 
   def _accCellDataFuncReal(self, tvc, cellrenderer, model, iter_id):
     '''

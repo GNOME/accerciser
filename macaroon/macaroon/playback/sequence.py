@@ -112,7 +112,7 @@ class MacroSequence(GObject.GObject):
                                            *self._anticipated_event_types)
     self._current_handler = action.connect('done', self._onStepDone)
 
-    GObject.timeout_add(action.delta_time, self._doAction, action)
+    GLib.timeout_add(action.delta_time, self._doAction, action)
 
   def _onAnticipatedEvent(self, event):
     '''

@@ -14,7 +14,7 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import Pango
 
 import pyatspi
@@ -122,7 +122,7 @@ class EventMonitor(ViewportPlugin):
       events.extend(sub_events)
     events = list(set([event.strip(':') for event in events]))
     events.sort()
-    GObject.idle_add(self._appendChildren, None, '', 0, events)
+    GLib.idle_add(self._appendChildren, None, '', 0, events)
 
   def _initTextView(self):
     '''
@@ -161,7 +161,7 @@ class EventMonitor(ViewportPlugin):
         iter = self.events_model.append(parent_iter, 
                                         [event.split(':')[-1],
                                          event, False, False])
-        GObject.idle_add(self._appendChildren, iter, event, level + 1, events)
+        GLib.idle_add(self._appendChildren, iter, event, level + 1, events)
     return False
         
   def _onToggled(self, renderer_toggle, path):

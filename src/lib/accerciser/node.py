@@ -15,6 +15,7 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
+from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository.Gio import Settings as GSettings
 #from gi.repository import cairo
@@ -156,7 +157,7 @@ class Node(GObject.GObject, Tools):
                                 gdk.CapStyle.BUTT, gdk.JoinStyle.MITER)
     self.inv = gtk.Invisible()
     self.inv.set_screen(screen)
-    GObject.timeout_add(30, self._drawRectangle)
+    GLib.timeout_add(30, self._drawRectangle)
 
   def _drawRectangle(self):
     '''
@@ -244,7 +245,7 @@ class _HighLight(gtk.Window):
     
   def highlight(self, duration=500):
     if duration > 0:
-      GObject.timeout_add(duration, lambda w: w.destroy(), self)
+      GLib.timeout_add(duration, lambda w: w.destroy(), self)
       self.show_all()
     else:
       self.destroy()
@@ -341,7 +342,7 @@ class _HighLight(gtk.Window):
 #    
 #  def highlight(self, duration=500):
 #    if duration > 0:
-#      GObject.timeout_add(duration, lambda w: w.destroy(), self)
+#      GLib.timeout_add(duration, lambda w: w.destroy(), self)
 #      self.show_all()
 #    else:
 #      self.destroy()

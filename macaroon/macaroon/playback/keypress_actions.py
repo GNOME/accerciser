@@ -17,7 +17,7 @@ Headers in this file shall remain intact.
 
 from gi.repository import Gtk
 from gi.repository import Gdk
-from gi.repository import GObject
+from gi.repository import GLib
 import pyatspi
 
 from sequence_step import AtomicAction
@@ -170,15 +170,15 @@ class KeyComboAction(AtomicAction):
     interval = 0
     mod_hw_codes = map(mod_key_code_mappings.get, modifiers.value_names)
     for mod_hw_code in mod_hw_codes:
-      GObject.timeout_add(interval, self._keyPress, mod_hw_code)
+      GLib.timeout_add(interval, self._keyPress, mod_hw_code)
       interval += keystroke_interval
-    GObject.timeout_add(interval, self._keyPressRelease, key_code)
+    GLib.timeout_add(interval, self._keyPressRelease, key_code)
     interval += keystroke_interval
     mod_hw_codes.reverse()
     for mod_hw_code in mod_hw_codes:
-      GObject.timeout_add(interval, self._keyRelease, mod_hw_code)
+      GLib.timeout_add(interval, self._keyRelease, mod_hw_code)
       interval += keystroke_interval
-    GObject.timeout_add(interval, self.stepDone)
+    GLib.timeout_add(interval, self.stepDone)
 
   def _keyPress(self, hw_code):
     '''
@@ -258,10 +258,10 @@ class TypeAction(AtomicAction):
     '''
     interval = 0
     for char in string_to_type:
-      GObject.timeout_add(interval, self._charType,
+      GLib.timeout_add(interval, self._charType,
                           Gdk.unicode_to_keyval(ord(char)))
       interval += self.interval 
-    GObject.timeout_add(interval, self.stepDone)
+    GLib.timeout_add(interval, self.stepDone)
 
   def _charType(self, keyval):
     '''
