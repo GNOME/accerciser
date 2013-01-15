@@ -4,38 +4,25 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">accerciser</name>
+  <name xml:lang="en">Accerciser</name>
   <shortdesc xml:lang="en">Interactive Python accessibility explorer</shortdesc>
   <description xml:lang="en">
     Accerciser is an interactive Python accessibility explorer for the GNOME
-    desktop.
+    desktop. 
+
+    It uses AT-SPI2 to inspect and control widgets, allowing you to check
+    if an application is providing correct information to assistive
+    technologies and automated test frameworks. Accerciser has a simple
+    plugin framework which you can use to create custom views of
+    accessibility information.
+
+    You can read more about Accerciser at http://live.gnome.org/Accerciser
   </description>
   <homepage rdf:resource="http://live.gnome.org/Accerciser" />
   <download-page rdf:resource="http://download.gnome.org/sources/accerciser/" />
   <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=accerciser" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#development" />
 
-  <maintainer>
-    <foaf:Person>
-      <foaf:name>Eitan Isaacson</foaf:name>
-      <foaf:mbox rdf:resource="mailto:eitan@ascender.com" />
-      <gnome:userid>eitani</gnome:userid>
-    </foaf:Person>
-  </maintainer>
-  <maintainer>
-    <foaf:Person>
-      <foaf:name>Peter Parente</foaf:name>
-      <foaf:mbox rdf:resource="mailto:pparente@us.ibm.com" />
-      <gnome:userid>parente</gnome:userid>
-    </foaf:Person>
-  </maintainer>
-  <maintainer>
-    <foaf:Person>
-      <foaf:name>Brian G. Merrell</foaf:name>
-      <foaf:mbox rdf:resource="mailto:bgmerrell@novell.com" />
-      <gnome:userid>bgmerrell</gnome:userid>
-    </foaf:Person>
-  </maintainer>
   <maintainer>
     <foaf:Person>
       <foaf:name>Brian Nitz</foaf:name>
@@ -46,7 +33,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Javier Hernández</foaf:name>
-      <foaf:mbox rdf:resource="mailto:jhernandez@emergya.es" />
+      <foaf:mbox rdf:resource="mailto:jhernandez@emergya.com" />
       <gnome:userid>jhernandez</gnome:userid>
     </foaf:Person>
   </maintainer>
