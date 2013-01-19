@@ -4,20 +4,24 @@
 # vt <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2009.
 # Rimas Kudelis <rq@akl.lt>, 2010.
+# Aurimas Černius <aurisc4@gmail.com>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-05-15 18:27+0000\n"
-"PO-Revision-Date: 2012-08-20 22:19+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-15 12:29+0000\n"
+"PO-Revision-Date: 2013-01-19 23:00+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
-"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.5.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -28,7 +32,10 @@ msgid "Give your application an accessibility workout"
 msgstr "Ištestuokite savo programos prieinamumo palaikymą"
 
 #: ../accerciser.desktop.in.in.h:3
-#: ../src/lib/accerciser/main_window.py:42
+msgid "accessibility;development;test;"
+msgstr "prieiga;kūrimas;testavimas;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser prieinamumo žvalgas"
 
@@ -193,7 +200,6 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktyvi konsolė parinkčių valdymui prieinama"
 
 #: ../plugins/event_monitor.ui.h:1
-#| msgid "Event Monitor"
 msgid "Event monitor"
 msgstr "Įvykių stebėtojas"
 
@@ -242,7 +248,6 @@ msgid "Clear event log"
 msgstr "Išvalyti įvykių žurnalą"
 
 #: ../plugins/interface_view.ui.h:1
-#| msgid "<b>Child count</b>"
 msgid "Child count"
 msgstr "Antrinių procesų skaičius"
 
@@ -250,20 +255,18 @@ msgstr "Antrinių procesų skaičius"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
-#| msgid "<no description>"
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(nėra aprašo)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4
-#: ../plugins/validate.py:218
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
 #: ../plugins/validate.py:281
 msgid "Description"
 msgstr "Apibūdinimas"
 
 #: ../plugins/interface_view.ui.h:5
-#| msgid "Start"
 msgid "States"
 msgstr "Būsenos"
 
@@ -272,12 +275,10 @@ msgid "Show"
 msgstr "Rodyti"
 
 #: ../plugins/interface_view.ui.h:7
-#| msgid "<b>Relations</b>"
 msgid "Relations"
 msgstr "Sąsajos"
 
 #: ../plugins/interface_view.ui.h:8
-#| msgid "<b>Attributes</b>"
 msgid "Attributes"
 msgstr "Atributai"
 
@@ -363,8 +364,7 @@ msgid "_Document"
 msgstr "_Dokumentas"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30
-#: ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hipersaitas"
 
@@ -401,12 +401,10 @@ msgid "St_reamable Content"
 msgstr "T_ransliuojamas turinys"
 
 #: ../plugins/interface_view.ui.h:39
-#| msgid "<i>Caption:</i>"
 msgid "Caption:"
 msgstr "Pavadinimas:"
 
 #: ../plugins/interface_view.ui.h:40
-#| msgid "<i>Summary:</i>"
 msgid "Summary:"
 msgstr "Santrauka:"
 
@@ -427,7 +425,6 @@ msgid "Rows"
 msgstr "Eilutės"
 
 #: ../plugins/interface_view.ui.h:45
-#| msgid "<b>Table Information</b>"
 msgid "Table Information"
 msgstr "Lentelės informacija"
 
@@ -457,7 +454,6 @@ msgid "Column"
 msgstr "Stulpelis"
 
 #: ../plugins/interface_view.ui.h:53
-#| msgid "<b>Selected Cell</b>"
 msgid "Selected Cell"
 msgstr "Pasirinktas langelis"
 
@@ -466,7 +462,6 @@ msgid "_Table"
 msgstr "_Lentelė"
 
 #: ../plugins/interface_view.ui.h:55
-#| msgid "Te_xt"
 msgid "Text"
 msgstr "Tekstas"
 
@@ -480,13 +475,11 @@ msgstr "Įtraukti standartines nuostatas"
 
 #. Start character offset of text attributes span
 #: ../plugins/interface_view.ui.h:59
-#| msgid "Start"
 msgid "Start: 0"
 msgstr "Pradžia: 0"
 
 #. End character offset of text attributes span
 #: ../plugins/interface_view.ui.h:61
-#| msgid "End"
 msgid "End: 0"
 msgstr "Pabaiga: 0"
 
@@ -515,7 +508,6 @@ msgid "Val_ue"
 msgstr "Ve_rtė"
 
 #: ../plugins/interface_view.ui.h:68
-#| msgid "<b>unknown</b>"
 msgid "unknown"
 msgstr "nežinoma"
 
@@ -529,45 +521,59 @@ msgstr "Sąsajos žiūriklis"
 msgid "Allows viewing of various interface properties"
 msgstr "Leidžia peržvelgti įvairias sąsajos savybes"
 
-#: ../plugins/interface_view.py:233
 #: ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(nerealizuota)"
 
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(be aprašo)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708
-#: ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Pradžia"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Pabaiga"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Per daug pasirenkamųjų antrinių procesų"
 
-#: ../plugins/interface_view.py:1239
-#: ../plugins/interface_view.py:1242
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Redaguojamas)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "(Redaguojamas)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+#| msgid "Start: 0"
+msgid "Start: %d"
+msgstr "Pradžia: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+#| msgid "End: 0"
+msgid "End: %d"
+msgstr "Pabaiga: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -593,8 +599,7 @@ msgstr "Sche_ma:"
 msgid "V_alidate"
 msgstr "P_atikrinti"
 
-#: ../plugins/validate.ui.h:3
-#: ../plugins/validate.py:364
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
 #: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Neveiklus"
@@ -613,14 +618,12 @@ msgstr "Patikrina programos prieinamumą"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211
-#: ../plugins/validate.py:279
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Lygis"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285
-#: ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rolė"
 
@@ -674,7 +677,7 @@ msgstr "interaktyvusis %s neturi veiksmo"
 msgid "more than one focused widget"
 msgstr "daugiau nei vienas fokusuotas valdiklis "
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s neturi teksto sąsajos"
@@ -682,12 +685,12 @@ msgstr "%s neturi teksto sąsajos"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Kūrėjo indeksas %s neatitinka sukurtųjų indeksų"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Santykiui %s nėra atvirkštinio"
@@ -695,12 +698,12 @@ msgstr "Santykiui %s nėra atvirkštinio"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s trūksta pavadinimo ar žymės"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "fokusuojamasis %s turi lentelės sąsają, bet neturi išrinkimo sąsajos"
@@ -709,7 +712,7 @@ msgstr "fokusuojamasis %s turi lentelės sąsają, bet neturi išrinkimo sąsajo
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s turi būseną %s be būsenos %s"
@@ -717,7 +720,7 @@ msgstr "%s turi būseną %s be būsenos %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nepriklauso rinkiniui"
@@ -727,7 +730,7 @@ msgstr "%s nepriklauso rinkiniui"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeksas %(num)d neatitinka eilutės ir stulpelio"
@@ -738,63 +741,59 @@ msgstr "%(rolename)s indeksas %(num)d neatitinka eilutės ir stulpelio"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "%(rolename)s kūrėjo indeksas %(num1)d neatitinka eilučių ir stulpelių indekso %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"%(rolename)s kūrėjo indeksas %(num1)d neatitinka eilučių ir stulpelių "
+"indekso %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s neturi pavadinimo ar aprašo"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Nustatymai…"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Turinys"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio prieinamumą. Ar norite dabar jį įjungti?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Pastaba: pakeitimai įsigalios tik paleidus programą iš naujo."
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<baigtas>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Antrinis procesas"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Slėpti/Rodyti programas be vaikų"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "Atnaujinti _registrą"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Atnaujinti viską"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "At_naujinti mazgą"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Atnaujinti pasirinktojo mazgo sukurtuosius"
 
@@ -878,7 +877,8 @@ msgstr "Interaktyvus Python prieinamumo žvalgas"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser autorinės teisės priklauso (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr ""
+"accerciser autorinės teisės priklauso (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -906,35 +906,35 @@ msgstr "_Keisti žymeles…"
 msgid "Manage bookmarks."
 msgstr "Tvarkyti žymeles"
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Keisti žymeles…"
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Programa"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Kelias"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Pridėti žymelę…"
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Pavadinimas:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Programa:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Kelias:"
 
@@ -954,24 +954,24 @@ msgstr "Peržiūrėti"
 msgid "No view"
 msgstr "Nėra vaizdo"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Standartinis įskiepio vaizdas"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Įskiepio vaizdas"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Įskiepio vaizdas (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
+#: ../src/lib/accerciser/plugin/view.py:1074
 msgid "<i>_New view...</i>"
 msgstr "<i>_Naujas vaizdas…</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Naujas vaizdas…"
 
@@ -997,3 +997,16 @@ msgstr "_Rodymas"
 msgid "_Help"
 msgstr "_Žinynas"
 
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(be aprašo)</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio "
+#~ "prieinamumą. Ar norite dabar jį įjungti?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Pastaba: pakeitimai įsigalios tik paleidus programą iš naujo."
