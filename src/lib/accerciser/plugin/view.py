@@ -1071,7 +1071,7 @@ class MultiViewModel(list, BaseViewModel):
       menu_item = gtk.SeparatorMenuItem()
       self.append(menu_item)
       menu_item.show()
-      menu_item = gtk.MenuItem(label=_('<i>_New view...</i>'))
+      menu_item = gtk.MenuItem(label="<i>" + _('_New view...') + "</i>")
       menu_item.get_child().set_use_markup(True)
       menu_item.connect('activate', self._onItemActivated, 
                         context_plugin, transient_window)
