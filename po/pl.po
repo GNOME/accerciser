@@ -8,14 +8,14 @@
 # Hubert Stachurski, 2008.
 # Tomasz Dominikowski <tdominikowski@aviary.pl>, 2009.
 # Wadim Dziedzic <wdziedzic@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2012.
-# Aviary.pl <gnomepl@aviary.pl>, 2009-2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2013.
+# Aviary.pl <gnomepl@aviary.pl>, 2009-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-01 20:02+0200\n"
-"PO-Revision-Date: 2012-09-01 20:03+0200\n"
+"POT-Creation-Date: 2013-02-03 00:05+0100\n"
+"PO-Revision-Date: 2013-02-03 00:06+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -35,13 +35,19 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Ćwiczenia z dostępności dla programów"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr ""
+"dostępność;ułatwienia dostępu;rozwijanie;programowanie;development;test;"
+"testowanie;testuj;przetestuj;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Przeglądarka dostępności Accerciser"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr "Lista wtyczek domyślnie wyłączonych"
+msgstr "Lista domyślnie wyłączonych wtyczek"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:2
 msgid "A list of plugins that are disabled by default."
@@ -255,7 +261,8 @@ msgstr "Liczba potomków"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(brak opisu)"
 
@@ -520,40 +527,56 @@ msgstr "Widok interfejsu"
 msgid "Allows viewing of various interface properties"
 msgstr "Umożliwia podgląd różnych właściwości interfejsu"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(niezaimplementowane)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(brak opisu)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Początek"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Koniec"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Zbyt wielu potomków możliwych do zaznaczenia"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Element modyfikowalny)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Element modyfikowalny)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Początek: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Koniec: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -603,7 +626,7 @@ msgid "Level"
 msgstr "Poziom"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rola"
 
@@ -743,37 +766,37 @@ msgstr "_Preferencje..."
 msgid "_Contents"
 msgstr "_Spis treści"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<martwy>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "L. potomków"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Wyświetlanie/ukrywanie programów bez potomków"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "Odśwież _rejestr"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Odświeża wszystkie"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Odśwież _węzły"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Odświeża elementy potomne zaznaczonego węzła"
 
@@ -852,8 +875,8 @@ msgstr ""
 "Hubert Stachurski, 2008\n"
 "Tomasz Dominikowski <tdominikowski@aviary.pl>, 2009\n"
 "Wadim Dziedzic <wdziedzic@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2012\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2009-2012"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2013\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2009-2013"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -887,35 +910,35 @@ msgstr "_Modyfikuj zakładki..."
 msgid "Manage bookmarks."
 msgstr "Zarządza zakładkami."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Modyfikuj zakładki..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Tytuł"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Program"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Ścieżka"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Dodaj zakładkę..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Tytuł:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Program:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Ścieżka:"
 
@@ -935,24 +958,24 @@ msgstr "Widok"
 msgid "No view"
 msgstr "Bez wyświetlania"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Pojedynczy widok wtyczek"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Widok wtyczek"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Widok wtyczek (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
+#: ../src/lib/accerciser/plugin/view.py:1074
 msgid "<i>_New view...</i>"
 msgstr "<i>_Nowy widok...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Nowy widok..."
 
