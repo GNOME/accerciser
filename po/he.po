@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-26 07:33+0300\n"
-"PO-Revision-Date: 2012-05-26 07:37+0200\n"
+"POT-Creation-Date: 2013-02-02 11:36+0200\n"
+"PO-Revision-Date: 2013-02-02 11:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -24,6 +24,10 @@ msgid "Give your application an accessibility workout"
 msgstr "חדר כושר לנגישות של יישומים"
 
 #: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "נגישות;פיתוח;בדיקה;"
+
+#: ../accerciser.desktop.in.in.h:4
 #: ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "מגלה נגישות אינטראקטיבי Accerciser"
@@ -245,6 +249,8 @@ msgid "0"
 msgstr "0"
 
 #: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(אין תיאור)"
 
@@ -350,7 +356,7 @@ msgstr "אזור"
 
 #: ../plugins/interface_view.ui.h:29
 msgid "_Document"
-msgstr "_מסמך"
+msgstr "מ_סמך"
 
 #. add url role to buffer
 #: ../plugins/interface_view.ui.h:30
@@ -376,7 +382,7 @@ msgstr "_תמונה"
 
 #: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
-msgstr "_עזר התחברות"
+msgstr "מ_סייע כניסה"
 
 #: ../plugins/interface_view.ui.h:36
 msgid "Select All"
@@ -483,15 +489,15 @@ msgstr "ערך נוכחי"
 
 #: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
-msgstr "גידול מינימלי"
+msgstr "גידול מזערי"
 
 #: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
-msgstr "ערך מקסימלי"
+msgstr "ערך מרבי"
 
 #: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
-msgstr "ערך מינימלי"
+msgstr "ערך מזערי"
 
 #: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
@@ -511,45 +517,58 @@ msgstr "צג מנשקים"
 msgid "Allows viewing of various interface properties"
 msgstr "מאפשר הצגה ושליטה במאפייני ממשקים"
 
-#: ../plugins/interface_view.py:233
 #: ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr " (לא ממומש)"
 
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "(אין תיאור)"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708
+#: ../plugins/interface_view.py:731
 #: ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "שם"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "כתובת"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "תחילה"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "סוף"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "יש יותר מדי צאצאים הניתנים לבחירה"
 
-#: ../plugins/interface_view.py:1239
-#: ../plugins/interface_view.py:1242
-msgid "<i>(Editable)</i>"
+#: ../plugins/interface_view.py:1262
+#: ../plugins/interface_view.py:1265
+msgid "(Editable)"
 msgstr "(ניתן לעריכה)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "התחלה: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "סוף: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -602,7 +621,7 @@ msgstr "רמה"
 
 #. add accessible's role to buffer
 #: ../plugins/validate.py:285
-#: ../src/lib/accerciser/accessible_treeview.py:512
+#: ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "תפקיד"
 
@@ -656,7 +675,7 @@ msgstr "ה־%s האינטרקטיבי איני ניתן להפעלה"
 msgid "more than one focused widget"
 msgstr "יותר מווידג׳ט אחד במיקוד"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "ל־%s אין מנשק טקסט"
@@ -664,12 +683,12 @@ msgstr "ל־%s אין מנשק טקסט"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "האינדקס %s אצל ההורה אינו תואם לאינדקס הצאצא"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "חסר יחס הופכי עבור היחס %s"
@@ -677,12 +696,12 @@ msgstr "חסר יחס הופכי עבור היחס %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "ל־%s אין שם או תווית"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "ל־%s הניתן להתמקדות יש מנשק טבלה אך אין מנשק בחירה"
@@ -691,7 +710,7 @@ msgstr "ל־%s הניתן להתמקדות יש מנשק טבלה אך אין מ
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s הוא במצב %s ללא מצב %s"
@@ -699,7 +718,7 @@ msgstr "%s הוא במצב %s ללא מצב %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s אינו שייך לערכה"
@@ -709,7 +728,7 @@ msgstr "%s אינו שייך לערכה"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה ולעמודה"
@@ -720,69 +739,61 @@ msgstr "האינדקס %(num)d תחת %(rolename)s אינו תואם לשורה 
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
 msgstr "האינדקס %(num1)d של ההורה %(rolename)s אינו תואם לאינדקס השורה והעמודה %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "ל־%s אין שם ותיאור"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "העד_פות..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "‏_תכנים"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות לשולחן עבודה. האם ברצונך לאפשר זאת כעת?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "הערה: השינויים רק יחלו באיתחול מחודש של השולחן עבודה"
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<מת>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "צאצאים"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "ה_צגה/הסתרה של יישומים ללא צאצאים"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
-msgstr "רענן _רשומות"
+msgstr "רענון _רשומות"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
-msgstr "רענון הכל"
+msgstr "רענון הכול"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "רענון _מפרק"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "רענון צאצאי המפרק הנבחר"
 
 #: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
-msgstr "רחיב"
+msgstr "רכיב"
 
 #: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
@@ -850,7 +861,9 @@ msgstr "צבע המילוי של תיבת ההדגשה"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Eitan Isaacson <eitan@ascender.com>Yaron Shahrabani <sh.yaron@gmail.com>, 2011."
+msgstr ""
+"Eitan Isaacson <eitan@ascender.com>\n"
+"Yaron Shahrabani <sh.yaron@gmail.com>, 2013."
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -884,35 +897,35 @@ msgstr "_עריכת הסימניות..."
 msgid "Manage bookmarks."
 msgstr "ניהול הסימניות"
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "עריכת הסימניות..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "שם"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "‏יישום"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "נתיב"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "הוספת סימנייה..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "שם:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "‏יישום:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "נתיב:"
 
@@ -932,24 +945,24 @@ msgstr "תצוגה"
 msgid "No view"
 msgstr "אין תצוגה"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "תצוגת תוספים _יחידה"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "צג תוספות"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "צג תוספות (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
+#: ../src/lib/accerciser/plugin/view.py:1074
 msgid "<i>_New view...</i>"
 msgstr "‏_תצוגה חדשה..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "תצוגה חדשה..."
 
@@ -974,6 +987,20 @@ msgstr "_תצוגה"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "ע_זרה"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "(אין תיאור)"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "‏Accerciser לא יכול לראות יישומים על שולחן העבודה. עליך לאפשר נגישות "
+#~ "לשולחן עבודה. האם ברצונך לאפשר זאת כעת?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "הערה: השינויים רק יחלו באיתחול מחודש של השולחן עבודה"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>צג אירועים</b>"
