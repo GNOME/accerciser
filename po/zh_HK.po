@@ -6,15 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser 3.1.92\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-17 14:34+0800\n"
-"PO-Revision-Date: 2012-07-17 14:34+0800\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-15 12:29+0000\n"
+"PO-Revision-Date: 2013-02-04 19:33+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -24,7 +25,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "為你的應用提供無障礙功能測試"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "accessibility;development;test;無障礙;開發;測試;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser 無障礙功能瀏覽器"
 
@@ -244,7 +249,8 @@ msgstr "子項計數"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(沒有描述)"
 
@@ -509,40 +515,59 @@ msgstr "介面檢視程式"
 msgid "Allows viewing of various interface properties"
 msgstr "允許檢視各種介面屬性"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(未實作)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(沒有描述)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "名稱"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "開始"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "結束"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "有太多的可選擇子節點"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(可編輯的)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "(可編輯)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+#| msgid "Start: 0"
+msgid "Start: %d"
+msgstr "開始：%d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+#| msgid "End: 0"
+msgid "End: %d"
+msgstr "結束：%d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -592,7 +617,7 @@ msgid "Level"
 msgstr "等級"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "角色"
 
@@ -722,55 +747,45 @@ msgstr "%(rolename)s 的父項索引 %(num1)d 跟其列、欄索引 %(num2)d 不
 msgid "%s has no name or description"
 msgstr "%s 沒有名稱或描述"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "偏好設定(_P)…"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "內容(_C)"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser 無法在你的桌面上看到應用程式。你必須啟用桌面無障礙功能才能修正這個問題。是否要立刻啟用它？"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "注意：更改只有在登出後才會生效。"
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "子節點"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "隱藏/顯示沒有子項的程式(_H)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "重整註冊表(_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "全部重新整理"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "重整節點(_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "重整選取的子節點"
 
@@ -878,35 +893,35 @@ msgstr "編輯書籤(_E)…"
 msgid "Manage bookmarks."
 msgstr "管理書籤。"
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "編輯書籤…"
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "標題"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "應用程式"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "路徑"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "加入書籤…"
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "標題:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "應用程式:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "路徑:"
 
@@ -926,24 +941,24 @@ msgstr "檢視"
 msgid "No view"
 msgstr "沒有檢視"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "單一外掛程式檢視(_S)"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "外掛程式檢視"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "外掛程式檢視 (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
+#: ../src/lib/accerciser/plugin/view.py:1074
 msgid "<i>_New view...</i>"
 msgstr "<i>新增檢視(_N)…</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "新增檢視…"
 
@@ -968,6 +983,20 @@ msgstr "檢視(_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "求助(_H)"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(沒有描述)</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accerciser 無法在您的桌面上看到應用程式。您必須啟用桌面無障礙功能才能修正"
+#~ "這個問題。是否要立刻啟用它？"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "注意：變更只有在登出後才會生效。"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>事件監視器</b>"
