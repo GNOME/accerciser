@@ -3,14 +3,14 @@
 # Copyright (C) 2003, 2009, 2012 accerciser'S COPYRIGHT HOLDER.
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <peter.ani@gmail.com>, 2006, 2009.
-# Anish A <aneesh.nl@gmail.com>, 2012.
+# Anish A <aneesh.nl@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: atk.HEAD.ml\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-09 20:36+0000\n"
-"PO-Revision-Date: 2012-10-15 20:45+0530\n"
+"POT-Creation-Date: 2013-01-28 15:01+0000\n"
+"PO-Revision-Date: 2013-02-01 11:55+0530\n"
 "Last-Translator: Anish A <aneesh.nl@gmail.com>\n"
 "Language-Team: Swatantra Malayalam Computing\n"
 "Language: ml\n"
@@ -29,7 +29,11 @@ msgstr "അക്സര്‍സൈസര്‍"
 msgid "Give your application an accessibility workout"
 msgstr "നിങ്ങളുടെ പ്രയോഗത്തിനു് ഒരു ആക്സസിബിളിറ്റി അഭ്യാസം ലഭ്യമാക്കുക"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "accessibility;development;test;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser ആക്സസിബിളിറ്റി എക്സ്പ്ലോറര്‍"
 
@@ -249,7 +253,8 @@ msgstr "ചൈള്‍ഡ് കൌണ്ട്"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(വിവരണം ലഭ്യമല്ല)"
 
@@ -514,40 +519,56 @@ msgstr "ഇന്റര്‍ഫെയിസ് വ്യൂവര്‍"
 msgid "Allows viewing of various interface properties"
 msgstr "അനവധി ഇന്റര്‍ഫെയിസ് വിശേഷതകളുടെ കാഴ്ച അനുവദിക്കുന്നു"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(ലഭ്യമാക്കിയിട്ടില്ല)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(വിവരണം ലഭ്യമല്ല)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "പേര്"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "തുടക്കം"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "അവസാനിപ്പിക്കുക"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "തെരഞ്ഞെടുക്കുവാന്‍ സാധിക്കുന്ന വളരെ അധികം ചിള്‍ഡ്രന്‍"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr " <i>(ചിട്ടപ്പെടുത്തുവാന്‍ സാധിക്കുന്ന)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(തിരുത്താനാകുന്നത്)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "തുടക്കം: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "അവസാനം: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -597,7 +618,7 @@ msgid "Level"
 msgstr "ലവല്‍"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "റോള്‍"
 
@@ -739,37 +760,37 @@ msgstr "_മുന്‍ഗണനകള്‍..."
 msgid "_Contents"
 msgstr "_ഉള്ളടക്കം"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "ചിള്‍ഡ്രന്‍"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "ചില്‍ഡ്രന്‍ ഇല്ലാത്ത പ്രയോഗങ്ങള്‍ കാണിക്കുക/_മറയ്ക്കുക"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "ര‍ജിസ്ട്രി _പുതുക്കുക"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "എല്ലാം പുതുക്കുക"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "_നോഡ് പുതുക്കുന്നു"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "തെരഞ്ഞെടുത്ത നോഡിന്റെ ചിള്‍ഡ്രനെ പുതുക്കുന്നു"
 
@@ -877,35 +898,35 @@ msgstr "അടയാളക്കുറിപ്പുകള്‍ _ചിട്�
 msgid "Manage bookmarks."
 msgstr "അടയാളക്കുറിപ്പുകള്‍ കൈകാര്യം ചെയ്യുക."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "അടയാളക്കുറിപ്പുകള്‍ ചിട്ടപ്പെടുത്തുക..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "ശീര്‍ഷകം"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "പ്രയോഗം"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "പാഥ്"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "അടയാളക്കുറിപ്പ് ചേര്‍ക്കുക..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "ശീര്‍ഷകം:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "പ്രയോഗം:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "പാഥ്:"
 
@@ -925,24 +946,24 @@ msgstr "കാഴ്ച"
 msgid "No view"
 msgstr "കാണുവാന്‍ സാധ്യമല്ല"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_ഓരോ പ്ലഗിന്‍ കാഴ്ചകള്‍"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "പ്ളഗിന്‍ വ്യൂ"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "പ്ളഗിന്‍ വ്യൂ (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
+#: ../src/lib/accerciser/plugin/view.py:1074
 msgid "<i>_New view...</i>"
 msgstr "<i>_പുതിയ കാഴ്ച...</i>"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "പുതിയ കാഴ്ച..."
 
@@ -967,6 +988,9 @@ msgstr "_കാഴ്ച"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_സഹായം"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(വിവരണം ലഭ്യമല്ല)</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>ഈവന്റ് നിരീക്ഷകന്‍</b>"
