@@ -41,12 +41,12 @@ def bind(domain, locale_dir):
   @type domain: string
   @param locale_dir: Directory to search for translation files for the domain
   @type locale_dir: string
-  @return: Bound method ugettext on the translation object
+  @return: Bound method gettext on the translation object
   @rtype: callable
   '''
   try:
     t = gettext.translation(domain, locale_dir)
-    return t.ugettext
+    return t.gettext
   except IOError:
     # no translation file, so just return the unicode version of the given 
     # string
