@@ -1062,7 +1062,7 @@ class MultiViewModel(list, BaseViewModel):
       '''
       menu_item = None
       for view in self.view_manager:
-        menu_item = gtk.RadioMenuItem(label = view.view_name)
+        menu_item = gtk.RadioMenuItem(label = _(view.view_name))
         menu_item.set_name(view.view_name)
         menu_item.connect('toggled', self._onItemToggled, view, context_plugin)
         menu_item.set_active(view == context_plugin.get_parent())
