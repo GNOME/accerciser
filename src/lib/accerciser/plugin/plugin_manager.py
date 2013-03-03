@@ -448,7 +448,7 @@ class PluginManager(gtk.ListStore, Tools):
       plugin = \
           self.plugin_manager[path][self.plugin_manager.COL_INSTANCE]
       menu = self.view_manager.Menu(plugin, self.get_toplevel())
-      menu.popup(None, None, pos_func, button, time, data)
+      menu.popup(None, None, pos_func, data, button, time)
 
     def _viewNameDataFunc(self, column, cell, model, iter, foo=None):
       '''
