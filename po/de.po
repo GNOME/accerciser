@@ -4,7 +4,7 @@
 #
 # Hendrik Richter <hendrikr@gnome.org>, 2007, 2008, 2009.
 # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2008.
-# Mario Blättermann <mariobl@freenet.de>, 2011.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2013.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2012.
 # Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>, 2012.
 #
@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-24 04:43+0000\n"
-"PO-Revision-Date: 2012-07-29 15:32+0200\n"
-"Last-Translator: Tobias Endrigkeit <tobiasendrigkeit@googlemail.com>\n"
+"POT-Creation-Date: 2013-03-03 18:29+0000\n"
+"PO-Revision-Date: 2013-03-04 08:38+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.5\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -32,7 +34,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Gestalten Sie Ihre Anwendungen barrierefrei"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "Barrierefreiheit;Entwicklung;Test;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser Barrierfreiheit-Untersucher"
 
@@ -253,7 +259,8 @@ msgstr "Anzahl Kinder"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(keine Beschreibung)"
 
@@ -518,40 +525,56 @@ msgstr "Schnittstellenanzeige"
 msgid "Allows viewing of various interface properties"
 msgstr "Die Eigenschaften einer Schnittstelle anzeigen"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(nicht implementiert)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(keine Beschreibung)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Name"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "Adresse"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Ende"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Zu viele auswählbare Kinder"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Bearbeitbar)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Bearbeitbar)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Start: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Ende: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -602,7 +625,7 @@ msgid "Level"
 msgstr "Ausführlichkeit"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rolle"
 
@@ -686,8 +709,7 @@ msgstr "%s besitzt keinen Namen und keine Bezeichnung"
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"Fokusobjekt %s hat eine Tabellenschnittstelle, aber keine "
-"Auswahlschnittstelle"
+"Fokusobjekt %s hat eine Tabellenschnittstelle, aber keine Auswahlschnittstelle"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -728,66 +750,53 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
 "%(num2)d"
 msgstr ""
-"%(rolename)s Elternindex %(num1)d stimmt nicht mit Zeile und Spalte mit "
-"Index %(num2)d überein"
+"%(rolename)s Elternindex %(num1)d stimmt nicht mit Zeile und Spalte mit Index "
+"%(num2)d überein"
 
 #: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s ist ohne Namen und Beschreibung"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Einstellungen …"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Inhalte"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Die Anwendungen auf Ihrer Arbeitsfläche konnten nicht erkannt werden. Damit "
-"dies funktioniert, muss Barrierefreiheit aktiviert werden. Soll diese nun "
-"aktiviert werden?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Hinweis: Änderungen treten erst nach Abmelden in Kraft."
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<tot>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Kinder"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "Anwendungen ohne Kinder _verbergen/anzeigen"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "Registrierung _aktualisieren"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Alles aktualisieren"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Element _aktualisieren"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Kind des ausgewählten Elements aktualisieren"
 
@@ -900,35 +909,35 @@ msgstr "Lesezeichen _bearbeiten …"
 msgid "Manage bookmarks."
 msgstr "Lesezeichen verwalten."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Lesezeichen bearbeiten …"
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Anwendung"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Pfad"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Lesezeichen hinzufügen …"
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Titel:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Anwendung:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Pfad:"
 
@@ -948,24 +957,24 @@ msgstr "Ansicht"
 msgid "No view"
 msgstr "Keine Ansicht"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Einzelne Plugin-Ansicht"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Plugin-Ansicht"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Plugin-Ansicht (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Neue Ansicht …</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "_Neue Ansicht …"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Neue Ansicht …"
 
@@ -990,6 +999,24 @@ msgstr "_Ansicht"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Hilfe"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(keine Beschreibung)</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Die Anwendungen auf Ihrer Arbeitsfläche konnten nicht erkannt werden. "
+#~ "Damit dies funktioniert, muss Barrierefreiheit aktiviert werden. Soll "
+#~ "diese nun aktiviert werden?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Hinweis: Änderungen treten erst nach Abmelden in Kraft."
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Neue Ansicht …</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>Ereignisüberwachung</b>"
