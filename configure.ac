@@ -1,4 +1,8 @@
-AC_INIT([Accerciser],[3.7.5pre],[eitan@ascender.com],[accerciser])
+AC_INIT([Accerciser],
+        [3.7.5pre],
+        [https://bugzilla.gnome.org/enter_bug.cgi?product=accerciser],
+        [accerciser])
+
 AC_CONFIG_SRCDIR(src/accerciser.in)
 AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE([enable])
