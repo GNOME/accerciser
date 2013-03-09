@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: accerciser.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-15 12:29+0000\n"
-"PO-Revision-Date: 2013-01-19 23:00+0200\n"
+"POT-Creation-Date: 2013-03-03 18:29+0000\n"
+"PO-Revision-Date: 2013-03-09 17:14+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -549,7 +549,6 @@ msgid "Too many selectable children"
 msgstr "Per daug pasirenkamųjų antrinių procesų"
 
 #: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
-#| msgid "<i>(Editable)</i>"
 msgid "(Editable)"
 msgstr "(Redaguojamas)"
 
@@ -560,7 +559,6 @@ msgstr "(Redaguojamas)"
 #. that bold formatting is 0.
 #: ../plugins/interface_view.py:1411
 #, python-format
-#| msgid "Start: 0"
 msgid "Start: %d"
 msgstr "Pradžia: %d"
 
@@ -571,7 +569,6 @@ msgstr "Pradžia: %d"
 #. bold formatting is 4.
 #: ../plugins/interface_view.py:1417
 #, python-format
-#| msgid "End: 0"
 msgid "End: %d"
 msgstr "Pabaiga: %d"
 
@@ -968,12 +965,13 @@ msgid "Plugin View (%d)"
 msgstr "Įskiepio vaizdas (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1074
-msgid "<i>_New view...</i>"
-msgstr "<i>_Naujas vaizdas…</i>"
+#| msgid "New View..."
+msgid "_New view..."
+msgstr "_Naujas rodinys..."
 
 #: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
-msgstr "Naujas vaizdas…"
+msgstr "Naujas rodinys..."
 
 #: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
@@ -997,16 +995,3 @@ msgstr "_Rodymas"
 msgid "_Help"
 msgstr "_Žinynas"
 
-#~ msgid "<i>(no description)</i>"
-#~ msgstr "<i>(be aprašo)</i>"
-
-#~ msgid ""
-#~ "Accerciser could not see the applications on your desktop.  You must "
-#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
-#~ "it now?"
-#~ msgstr ""
-#~ "Accerciser nemato programų ant darbastalio. Reikia įjungti darbastalio "
-#~ "prieinamumą. Ar norite dabar jį įjungti?"
-
-#~ msgid "Note: Changes only take effect after logout."
-#~ msgstr "Pastaba: pakeitimai įsigalios tik paleidus programą iš naujo."
