@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the accerciser package.
 #
 # ngoswami <ngoswami@redhat.com>, 2012.
-# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012.
+# Nilamdyuti Goswami <ngoswami@redhat.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 22:53+0000\n"
-"PO-Revision-Date: 2012-08-09 16:33+0530\n"
+"POT-Creation-Date: 2013-03-03 18:29+0000\n"
+"PO-Revision-Date: 2013-03-12 15:51+0530\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
-"Language-Team: as_IN <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
+"Language: as\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -28,7 +28,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "আপোনাৰ এপ্লিকেচনক এটা অভিগম্যতা প্ৰদান কৰক"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "অভিগম্যতা;উন্নয়ন;পৰিক্ষণ;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser অভিগম্যতা অন্বেষক"
 
@@ -248,7 +252,8 @@ msgstr "সন্তান গণনা"
 msgid "0"
 msgstr "০"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(no description)"
 
@@ -513,40 +518,59 @@ msgstr "আন্তঃপৃষ্ঠ দৰ্শক"
 msgid "Allows viewing of various interface properties"
 msgstr "বিভিন্ন আন্তঃপৃষ্ঠ বৈশিষ্টসমূহ দৰ্শন কৰাৰ অনুমতি দিয়ে"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(প্ৰণয়ন কৰা হোৱা নাই)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(কোনো বিৱৰণ নাই)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "নাম"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "আৰম্ভণি"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "সমাপ্তি"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "অতি বেছি নিৰ্বাচন কৰিব পৰা সন্তান"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(সম্পাদন কৰিব পৰা)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "(সম্পাদন কৰিব পৰা)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+#| msgid "Start: 0"
+msgid "Start: %d"
+msgstr "আৰম্ভণি: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+#| msgid "End: 0"
+msgid "End: %d"
+msgstr "সমাপ্তি: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -596,7 +620,7 @@ msgid "Level"
 msgstr "স্তৰ"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "ভূমিকা"
 
@@ -680,7 +704,8 @@ msgstr "%s সন্ধানহিন নাম অথবা লেবেল"
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"মনোনিবেষ কৰিব পৰা %s ৰ এটা টেবুল আন্তঃপৃষ্ঠ আছে, কিন্তু এটা নিৰ্বাচন আন্তঃপৃষ্ঠ নাই"
+"মনোনিবেষ কৰিব পৰা %s ৰ এটা টেবুল আন্তঃপৃষ্ঠ আছে, কিন্তু এটা নিৰ্বাচন "
+"আন্তঃপৃষ্ঠ নাই"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -721,7 +746,8 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
 "%(num2)d"
 msgstr ""
-"%(rolename)s parent index %(num1)d শাৰী আৰু স্তম্ভ সূচী %(num2)d ৰ সৈতে মিল নাখায়"
+"%(rolename)s parent index %(num1)d শাৰী আৰু স্তম্ভ সূচী %(num2)d ৰ সৈতে মিল "
+"নাখায়"
 
 #: ../plugindata/validate/basic.py:366
 #, python-format
@@ -736,37 +762,37 @@ msgstr "পছন্দসমূহ (_P)..."
 msgid "_Contents"
 msgstr "সমলসমূহ (_C)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "সন্তান"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "সন্তানৰ বাহিৰে এপ্লিকেচনসমূহ লুকুৱাওক/দেখুৱাওক (_H)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "ৰেজিস্ট্ৰি সতেজ কৰক (_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "সকলো সতেজ কৰক"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "ন'ড সতেজ কৰক (_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "নিৰ্বাচিত ন'ডৰ সন্তান সতেজ কৰক"
 
@@ -874,35 +900,35 @@ msgstr "পত্ৰচিহ্নসমূহ সম্পাদন কৰক 
 msgid "Manage bookmarks."
 msgstr "পত্ৰচিহ্নসমূহ ব্যৱস্থাপনা কৰক।"
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "পত্ৰচিহ্নসমূহ সম্পাদন কৰক..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "শীৰ্ষক"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "এপ্লিকেচন"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "পথ"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "পত্ৰচিহ্ন যোগ কৰক..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "শীৰ্ষক:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "এপ্লিকেচন:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "পথ:"
 
@@ -922,24 +948,25 @@ msgstr "দৰ্শন কৰক"
 msgid "No view"
 msgstr "কোনো দৰ্শন নাই"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "এটা প্লাগিন দৰ্শন (_S)"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "প্লাগিন দৰ্শন"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "প্লাগিন দৰ্শন (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>নতুন দৰ্শন (_N)...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+#| msgid "New View..."
+msgid "_New view..."
+msgstr "নতুন দৰ্শন (_N)..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "নতুন দৰ্শন..."
 
@@ -964,6 +991,12 @@ msgstr "দৰ্শন কৰক (_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "সহায় (_H)"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(কোনো বিৱৰণ নাই)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>নতুন দৰ্শন (_N)...</i>"
 
 #~ msgid ""
 #~ "Accerciser could not see the applications on your desktop.  You must "
