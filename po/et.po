@@ -6,15 +6,15 @@
 # This file is distributed under the same license as the accerciser package.
 #
 # Ivar Smolin <okul linux ee>, 2009, 2010.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2009, 2010, 2012.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2009, 2010, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser MASTER\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-21 15:38+0000\n"
-"PO-Revision-Date: 2012-10-18 02:13+0300\n"
+"POT-Creation-Date: 2013-03-12 10:19+0000\n"
+"PO-Revision-Date: 2013-03-12 22:37+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
@@ -28,6 +28,9 @@ msgstr "Hõlbustaja"
 
 msgid "Give your application an accessibility workout"
 msgstr "Testi oma rakenduse abistava tehnika tuge"
+
+msgid "accessibility;development;test;"
+msgstr "universaalne ligipääs;ligipääs;arendus;testimine;"
 
 msgid "Accerciser Accessibility Explorer"
 msgstr "Hõlbustaja - abistava tehnika sirvija"
@@ -397,9 +400,6 @@ msgstr "Liidese omaduste vaatamise lubamine"
 msgid "(not implemented)"
 msgstr "(pole veel teostatud)"
 
-msgid "<i>(no description)</i>"
-msgstr "<i>(kirjeldus puudub)</i>"
-
 #. add accessible's name to buffer
 msgid "Name"
 msgstr "Nimi"
@@ -416,8 +416,26 @@ msgstr "Lõpp"
 msgid "Too many selectable children"
 msgstr "Liiga palju valitavaid lapsi"
 
-msgid "<i>(Editable)</i>"
-msgstr "<i>(muudetav)</i>"
+msgid "(Editable)"
+msgstr "(muudetav)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#, python-format
+msgid "Start: %d"
+msgstr "Algus: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#, python-format
+msgid "End: %d"
+msgstr "Lõpp: %d"
 
 msgid "Quick Select"
 msgstr "Kiirmärkimine"
@@ -724,8 +742,8 @@ msgstr "Plugina vaade"
 msgid "Plugin View (%d)"
 msgstr "Plugina vaade (%d)"
 
-msgid "<i>_New view...</i>"
-msgstr "<i>_Uus vaade...</i>"
+msgid "_New view..."
+msgstr "_Uus vaade..."
 
 msgid "New View..."
 msgstr "Uus vaade..."
@@ -746,3 +764,9 @@ msgstr "_Vaade"
 
 msgid "_Help"
 msgstr "A_bi"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(kirjeldus puudub)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Uus vaade...</i>"
