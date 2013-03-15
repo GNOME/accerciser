@@ -1,16 +1,16 @@
 # accerciser's Portuguese translation.
-# Copyright © 2007, 2008, 2009, 2010, 2011, 2012 accerciser
+# Copyright © 2007, 2008, 2009, 2010, 2011, 2012, 2013 accerciser
 # This file is distributed under the same license as the accerciser package.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2007, 2008, 2009.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2007, 2008, 2009, 2013.
 # Rui Batista <ruiandrebatista@gmail.com>, 2009, 2010, 2011, 2012.
-#
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.4\n"
+"Project-Id-Version: 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-22 11:30+0100\n"
-"PO-Revision-Date: 2011-09-17 00:12+0100\n"
-"Last-Translator: Rui Batista <ruiandrebatista@gmail.com>\n"
+"POT-Creation-Date: 2013-03-15 17:30+0000\n"
+"PO-Revision-Date: 2013-03-15 17:35+0100\n"
+"Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +25,21 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Faça um teste ao suporte de acessibilidade da sua aplicação"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "acessibilidade;desenvolvimento;teste;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Explorador de Acessibilidade Accerciser"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
-msgstr "Uma lista de plugins que estão desactivados por omissão"
+msgstr "Uma lista de plugins que estão desativados por omissão"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:2
 msgid "A list of plugins that are disabled by default."
-msgstr "Uma lista de plugins que estão desactivados por omissão."
+msgstr "Uma lista de plugins que estão desativados por omissão."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:3
 msgid "Highlight duration"
@@ -43,7 +47,7 @@ msgstr "Duração do realce"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:4
 msgid "The duration of the highlight box when selecting accessible nodes."
-msgstr "A duração da caixa de realce ao seleccionar nós acessíveis."
+msgstr "A duração da caixa de realce ao selecionar nós acessíveis."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:5
 msgid "Highlight fill color"
@@ -155,7 +159,7 @@ msgstr "Combinação de teclas"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
-msgstr "Combinação de teclas para a acção relacionada."
+msgstr "Combinação de teclas para a ação relacionada."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -163,7 +167,7 @@ msgstr "Navegador de API"
 
 #: ../plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr "Navegar pelos vários métodos do objecto acessível actual"
+msgstr "Navegar pelos vários métodos do objeto acessível atual"
 
 #: ../plugins/api_view.py:66
 msgid "Hide private attributes"
@@ -188,8 +192,7 @@ msgstr "Consola IPython"
 #: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
-"Consola interactiva para manipular o objecto acessível actualmente "
-"seleccionado"
+"Consola interativa para manipular o objeto acessível atualmente selecionado"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "Event monitor"
@@ -201,7 +204,7 @@ msgstr "_Monitorizar Eventos"
 
 #: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
-msgstr "_Limpar a Selecção"
+msgstr "_Limpar a Seleção"
 
 #: ../plugins/event_monitor.ui.h:4
 msgid "Everything"
@@ -209,11 +212,11 @@ msgstr "Tudo"
 
 #: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
-msgstr "Aplicação seleccionada"
+msgstr "Aplicação selecionada"
 
 #: ../plugins/event_monitor.ui.h:6
 msgid "Selected accessible"
-msgstr "Objecto acessível seleccionado"
+msgstr "Objeto acessível selecionado"
 
 #: ../plugins/event_monitor.ui.h:7
 msgid "Source"
@@ -226,7 +229,7 @@ msgstr "Monitor de Eventos"
 #: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
-"Apresenta os eventos à medida que ocorrem em tipos e origens seleccionadas"
+"Apresenta os eventos à medida que ocorrem em tipos e origens selecionadas"
 
 #: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
@@ -248,7 +251,8 @@ msgstr "Número de filhos"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(sem descrição)"
 
@@ -280,7 +284,7 @@ msgstr "_Acessível"
 
 #: ../plugins/interface_view.ui.h:10
 msgid "Perform action"
-msgstr "Realizar acção"
+msgstr "Realizar ação"
 
 #: ../plugins/interface_view.ui.h:11
 msgid "Acti_on"
@@ -382,11 +386,11 @@ msgstr "Assistente de Início de _Sessão"
 
 #: ../plugins/interface_view.ui.h:36
 msgid "Select All"
-msgstr "Seleccionar Tudo"
+msgstr "Selecionar Tudo"
 
 #: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
-msgstr "_Selecção"
+msgstr "_Seleção"
 
 #: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
@@ -402,11 +406,11 @@ msgstr "Resumo:"
 
 #: ../plugins/interface_view.ui.h:41
 msgid "Selected columns"
-msgstr "Colunas seleccionadas"
+msgstr "Colunas selecionadas"
 
 #: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
-msgstr "Linhas seleccionadas"
+msgstr "Linhas selecionadas"
 
 #: ../plugins/interface_view.ui.h:43
 msgid "Columns"
@@ -447,7 +451,7 @@ msgstr "Coluna"
 
 #: ../plugins/interface_view.ui.h:53
 msgid "Selected Cell"
-msgstr "Célula Seleccionada"
+msgstr "Célula Selecionada"
 
 #: ../plugins/interface_view.ui.h:54
 msgid "_Table"
@@ -481,7 +485,7 @@ msgstr "Te_xto"
 
 #: ../plugins/interface_view.ui.h:63
 msgid "Current value"
-msgstr "Valor actual"
+msgstr "Valor atual"
 
 #: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
@@ -513,56 +517,72 @@ msgstr "Visualizador de Interface"
 msgid "Allows viewing of various interface properties"
 msgstr "Permite a visualização de várias propriedades do interface"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(não implementado)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(sem descrição)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nome"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Iniciar"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Fim"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
-msgstr "Demasiados filhos seleccionáveis"
+msgstr "Demasiados filhos selecionáveis"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Editável)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Editável)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Início: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Fim: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
-msgstr "Selecção Rápida"
+msgstr "Seleção Rápida"
 
 #: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "Plugin com vários métodos de selecção rápida de objectos acessíveis."
+msgstr "Plugin com vários métodos de seleção rápida de objetos acessíveis."
 
 #: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
-msgstr "Inspeccionar o último objecto acessível com o foco"
+msgstr "Inspecionar o último objeto acessível com o foco"
 
 #: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
-msgstr "Inspeccionar o objecto acessível sob o rato"
+msgstr "Inspecionar o objeto acessível sob o rato"
 
 #: ../plugins/validate.ui.h:1
 msgid "Sche_ma:"
@@ -575,7 +595,7 @@ msgstr "V_alidar"
 #: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
 #: ../plugins/validate.py:416
 msgid "Idle"
-msgstr "Inactivo"
+msgstr "Inativo"
 
 #: ../plugins/validate.py:68
 msgid "No description"
@@ -596,7 +616,7 @@ msgid "Level"
 msgstr "Nível"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Papel"
 
@@ -610,7 +630,7 @@ msgstr "A validar"
 
 #: ../plugins/validate.py:554
 msgid "EXCEPT"
-msgstr "EXCEPÇÃO"
+msgstr "EXCEÇÃO"
 
 #: ../plugins/validate.py:561
 msgid "ERROR"
@@ -640,12 +660,12 @@ msgstr ""
 #: ../plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr "accionável %s não pode obter foco ou ser seleccionado"
+msgstr "acionável %s não pode obter foco ou ser selecionado"
 
 #: ../plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr "interagível %s não pode ser accionado"
+msgstr "interagível %s não pode ser acionado"
 
 #: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
@@ -680,8 +700,7 @@ msgstr "%s não tem nome ou etiqueta"
 #: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
-msgstr ""
-"focável %s possui interface de tabela, mas nenhum interface de selecção"
+msgstr "focável %s possui interface de tabela, mas nenhum interface de seleção"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -738,39 +757,39 @@ msgstr "_Preferências..."
 msgid "_Contents"
 msgstr "_Conteúdo"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<morto>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Filhos"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Esconder/Apresentar Aplicações sem filhos"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
-msgstr "Actualizar o _Registo"
+msgstr "Atualizar o _Registo"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
-msgstr "Actualizar tudo"
+msgstr "Atualizar tudo"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
-msgstr "Actualizar _Nó"
+msgstr "Atualizar _Nó"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
-msgstr "Actualizar os filhos do nó seleccionado"
+msgstr "Atualizar os filhos do nó selecionado"
 
 #: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
@@ -848,7 +867,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "Um explorador de acessibilidade interactivo em Python"
+msgstr "Um explorador de acessibilidade interativo em Python"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
@@ -869,7 +888,7 @@ msgstr "_Adicionar Marcador..."
 
 #: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
-msgstr "Objecto acessível de marcador seleccionado."
+msgstr "Objeto acessível de marcador selecionado."
 
 #: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
@@ -879,35 +898,35 @@ msgstr "_Editar Marcadores..."
 msgid "Manage bookmarks."
 msgstr "Gerir marcadores."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Editar Marcadores..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Título"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Aplicação"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Caminho"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Adicionar Marcador..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Título:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Aplicação:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Caminho:"
 
@@ -927,24 +946,24 @@ msgstr "Vista"
 msgid "No view"
 msgstr "Sem vista"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "Vi_sta de plugin único"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Vista de Plugin"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Vista de Plugin (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Nova vista...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "_Nova vista..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Nova Vista..."
 
@@ -970,6 +989,12 @@ msgstr "_Ver"
 msgid "_Help"
 msgstr "_Ajuda"
 
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(sem descrição)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Nova vista...</i>"
+
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>Monitor de eventos</b>"
 
@@ -988,8 +1013,8 @@ msgstr "_Ajuda"
 #~ "it now?"
 #~ msgstr ""
 #~ "O Accerciser foi incapaz de visualizar as aplicações na sua área de "
-#~ "trabalho. Tem de activar a acessibilidade do ambiente de trabalho para "
-#~ "resolver este problema. Deseja activá-la agora?"
+#~ "trabalho. Tem de ativar a acessibilidade do ambiente de trabalho para "
+#~ "resolver este problema. Deseja ativá-la agora?"
 
 #~ msgid "Note: Changes only take effect after logout."
 #~ msgstr "Nota: As alterações apenas terão efeito após reiniciar a sessão."
@@ -1013,7 +1038,7 @@ msgstr "_Ajuda"
 #~ msgstr "Cria scripts do estilo \"dogtail\""
 
 #~ msgid "The current script will be lost."
-#~ msgstr "O script actual será perdido."
+#~ msgstr "O script atual será perdido."
 
 #~ msgid "Confirm clear"
 #~ msgstr "Confirmar o limpar"
