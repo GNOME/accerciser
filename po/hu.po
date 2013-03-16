@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the accerciser package.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2011, 2012.
+# Balázs Úr <urbalazs at gmail dot com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 22:53+0000\n"
-"PO-Revision-Date: 2012-09-04 01:47+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2013-03-03 18:29+0000\n"
+"PO-Revision-Date: 2013-03-16 19:25+0100\n"
+"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -27,7 +28,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Alkalmazások felmérése akadálymentesítési szempontból"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "akadálymentesítés;fejlesztés;teszt;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser akadálymentesítés-felderítő"
 
@@ -192,7 +197,6 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktív konzol a kiválasztott akadálymentes kezeléséhez"
 
 #: ../plugins/event_monitor.ui.h:1
-#| msgid "Event Monitor"
 msgid "Event monitor"
 msgstr "Eseményfigyelő"
 
@@ -243,7 +247,6 @@ msgid "Clear event log"
 msgstr "Eseménynapló törlése"
 
 #: ../plugins/interface_view.ui.h:1
-#| msgid "<b>Child count</b>"
 msgid "Child count"
 msgstr "Gyermekek száma"
 
@@ -251,8 +254,8 @@ msgstr "Gyermekek száma"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
-#| msgid "<no description>"
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(nincs leírás)"
 
@@ -263,7 +266,6 @@ msgid "Description"
 msgstr "Leírás"
 
 #: ../plugins/interface_view.ui.h:5
-#| msgid "<b>States</b>"
 msgid "States"
 msgstr "Állapotok"
 
@@ -272,12 +274,10 @@ msgid "Show"
 msgstr "Megjelenítés"
 
 #: ../plugins/interface_view.ui.h:7
-#| msgid "<b>Relations</b>"
 msgid "Relations"
 msgstr "Relációk"
 
 #: ../plugins/interface_view.ui.h:8
-#| msgid "<b>Attributes</b>"
 msgid "Attributes"
 msgstr "Jellemzők"
 
@@ -400,12 +400,10 @@ msgid "St_reamable Content"
 msgstr "S_ugározható tartalom"
 
 #: ../plugins/interface_view.ui.h:39
-#| msgid "<i>Caption:</i>"
 msgid "Caption:"
 msgstr "Felirat:"
 
 #: ../plugins/interface_view.ui.h:40
-#| msgid "<i>Summary:</i>"
 msgid "Summary:"
 msgstr "Összefoglaló:"
 
@@ -426,7 +424,6 @@ msgid "Rows"
 msgstr "Sorok"
 
 #: ../plugins/interface_view.ui.h:45
-#| msgid "<b>Table Information</b>"
 msgid "Table Information"
 msgstr "Táblázatinformációk"
 
@@ -456,7 +453,6 @@ msgid "Column"
 msgstr "Oszlop"
 
 #: ../plugins/interface_view.ui.h:53
-#| msgid "<b>Selected Cell</b>"
 msgid "Selected Cell"
 msgstr "Kijelölt cella"
 
@@ -478,13 +474,11 @@ msgstr "Alapértelmezések felvétele"
 
 #. Start character offset of text attributes span
 #: ../plugins/interface_view.ui.h:59
-#| msgid "Start"
 msgid "Start: 0"
 msgstr "Kezdés: 0"
 
 #. End character offset of text attributes span
 #: ../plugins/interface_view.ui.h:61
-#| msgid "<i>End: 0</i>"
 msgid "End: 0"
 msgstr "Befejezés: 0"
 
@@ -513,7 +507,6 @@ msgid "Val_ue"
 msgstr "É_rték"
 
 #: ../plugins/interface_view.ui.h:68
-#| msgid "<b>unknown</b>"
 msgid "unknown"
 msgstr "ismeretlen"
 
@@ -527,40 +520,59 @@ msgstr "Felületmegjelenítő"
 msgid "Allows viewing of various interface properties"
 msgstr "Lehetővé teszi különböző felülettulajdonságok megjelenítését"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(nincs megvalósítva)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(nincs leírás)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Név"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Kezdés"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Befejezés"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Túl sok kijelölhető gyermek"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Szerkeszthető)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "(Szerkeszthető)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+#| msgid "Start: 0"
+msgid "Start: %d"
+msgstr "Kezdés: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+#| msgid "End: 0"
+msgid "End: %d"
+msgstr "Befejezés: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -612,7 +624,7 @@ msgid "Level"
 msgstr "Szint"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Szerep"
 
@@ -754,37 +766,37 @@ msgstr "B_eállítások…"
 msgid "_Contents"
 msgstr "_Tartalom"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<halott>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Gyermekek"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Gyermekek nélküli alkalmazások elrejtése/megjelenítése"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "_Nyilvántartás frissítése"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Összes frissítése"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "_Csomópont frissítése"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Kiválasztott csomópont gyermekeinek frissítése"
 
@@ -892,35 +904,35 @@ msgstr "Könyvjelzők s_zerkesztése…"
 msgid "Manage bookmarks."
 msgstr "Könyvjelzők kezelése."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Könyvjelzők szerkesztése…"
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Cím"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Alkalmazás"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Útvonal"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Könyvjelző hozzáadása…"
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Cím:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Alkalmazás:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Útvonal:"
 
@@ -940,24 +952,25 @@ msgstr "Nézet"
 msgid "No view"
 msgstr "Nincs nézet"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Egybővítményes nézet"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Bővítménynézet"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Bővítménynézet (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>Ú_j nézet…</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+#| msgid "New View..."
+msgid "_New view..."
+msgstr "Ú_j nézet…"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Új nézet…"
 
@@ -982,6 +995,12 @@ msgstr "_Nézet"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Súgó"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(nincs leírás)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>Ú_j nézet…</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>Eseményfigyelő</b>"
