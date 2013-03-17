@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-16 13:40+0200\n"
-"PO-Revision-Date: 2012-09-15 18:53+0200\n"
+"POT-Creation-Date: 2013-03-17 14:54+0100\n"
+"PO-Revision-Date: 2013-03-16 18:06+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -33,7 +33,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Giv dit program en tilgængelighedsoverhaling"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "tilgængelighed;udvikling;test;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser tilgængelighedsnavigatør"
 
@@ -258,7 +262,8 @@ msgstr "Underelementtal"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(ingen beskrivelse)"
 
@@ -523,40 +528,57 @@ msgstr "Grænsefladeviser"
 msgid "Allows viewing of various interface properties"
 msgstr "Muliggør visning af diverse grænsefladeegenskaber"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(ikke implementeret)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(ingen beskrivelse)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Navn"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Slut"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "For mange markerbare underelementer"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Redigérbar)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Redigerbar)"
+
+# Jeg kan ikke helt se hvad vi skal bruge kommentaren til.  Den synes ikke rigtig at kommunikere hvad vi skal gøre
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Start: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Slut: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -608,7 +630,7 @@ msgid "Level"
 msgstr "Niveau"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rolle"
 
@@ -749,38 +771,38 @@ msgstr "_Indstillinger..."
 msgid "_Contents"
 msgstr "_Indhold"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<død>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Underelementer"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Skjul/vis programmer uden underelementer"
 
 # Der er ingen andre referencer til registry, så vi kan evt. bare kalde det database
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "_Opdatér database"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Opdatér alle"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Opdatér _træelement"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Opdatér det valgte træelements underelementer"
 
@@ -893,35 +915,35 @@ msgstr "_Redigér bogmærker..."
 msgid "Manage bookmarks."
 msgstr "Håndtér bogmærker."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Redigér bogmærker..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Program"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Sti"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Tilføj bogmærke..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Titel:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Program:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Sti:"
 
@@ -943,24 +965,24 @@ msgid "No view"
 msgstr "Ingen visning"
 
 # Hvad dette end betyder, så er oversættelsen så ordret at det forhåbentlig ikke går helt galt
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Enkeltmodulvisning"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Modulvisning"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Modulvisning (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Ny visning...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "_Ny visning..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Ny visning..."
 
@@ -985,6 +1007,12 @@ msgstr "_Vis"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Hjælp"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(ingen beskrivelse)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Ny visning...</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>Handlingsovervågning</b>"
