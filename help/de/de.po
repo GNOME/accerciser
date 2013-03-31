@@ -1,19 +1,21 @@
 # German translation of the accerciser manual.
 # Mario Blättermann <mariobl@freenet.de>, 2009, 2011.
-# Christian Kirbach <Christian.Kirbach@gmail.com>, 2012.
+#
+# accessible  –  barrierefrei
+# Christian Kirbach <christian.kirbach@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser help master\n"
-"POT-Creation-Date: 2012-10-15 15:21+0000\n"
-"PO-Revision-Date: 2012-10-19 12:23+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"POT-Creation-Date: 2012-11-20 11:58+0000\n"
+"PO-Revision-Date: 2013-03-31 09:57+0100\n"
+"Last-Translator: Max Orxy <maxorxy@googlemail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"X-Generator: Poedit 1.5.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -21,8 +23,8 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Mario Blättermann <mariobl@freenet.de>, 2009, 2011\n"
-"Max Orxy <maxorxy@googlemail.com>, 2012\n"
-"Christian Kirbach <christian.kirbach@gmail.com>, 2012"
+"Max Orxy <maxorxy@googlemail.com>, 2012, 2013\n"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2012, 2013"
 
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
@@ -117,6 +119,8 @@ msgstr "Bevor Sie beginnen"
 msgid ""
 "Read the <link href=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgstr ""
+"Lesen Sie die <link href=\"help:gnome-help/a11y\">Hilfe zur "
+"Barrierefreiheit</link>"
 
 #: C/index.page:34(section/title)
 msgid "Getting Started"
@@ -161,9 +165,9 @@ msgid ""
 "\">Application Tree View</link>, the API Browser Plugin shows its "
 "implemented AT-SPI interfaces along with its methods and properties."
 msgstr ""
-"Wenn man eine barrierefreie Anwendung in der Anwendungs-Baumansicht "
-"auswählt, zeigt das API-Browser-Plugin ihre AT-SPI-Oberflächen sowie ihre "
-"Funktionen und Eigenschaften an."
+"Wenn man ein barrierefreies Widget in der Anwendungs-Baumansicht auswählt, "
+"zeigt das API-Browser-Plugin ihre AT-SPI-Oberflächen sowie ihre Funktionen "
+"und Eigenschaften an."
 
 #: C/api_browser_plugin.page:33(figure/desc)
 #: C/api_browser_plugin.page:38(media/p)
@@ -278,11 +282,11 @@ msgid ""
 "as its name, role and number of children."
 msgstr ""
 "Der erste Knoten einer jeden Anwendung in dieser Baumansicht stellt die "
-"Anwendung selbst dar. Wenn Sie einen Knoten erweitertern, können Sie alle "
-"ihre eigenen Widgets sehen, was eine hierarchische Ansicht der Oberfläche "
-"einer Anwendung ermöglicht. Für jeden Knoten stellt <app>Accerciser</app> "
-"einige grundsätzliche Informationen zur Verfügung, wie den Namen, die "
-"Funktionen und die Anzahl der Unterelemente."
+"Anwendung selbst dar. Wenn Sie einen Knoten erweitern, können Sie alle ihre "
+"Widgets sehen, was eine hierarchische Ansicht der Oberfläche einer Anwendung "
+"ermöglicht. Für jeden Knoten stellt <app>Accerciser</app> einige "
+"grundsätzliche Informationen zur Verfügung, wie den Namen, die Funktionen "
+"und die Anzahl der Unterelemente."
 
 #: C/desktop_tree_view.page:56(note/p)
 msgid "Be aware that nodes with many children take a long time to expand."
@@ -336,9 +340,7 @@ msgctxt "_"
 msgid ""
 "external ref='figures/event_monitor_plugin.png' "
 "md5='1ee2a1d281deefa5b401244b49ed9654'"
-msgstr ""
-"external ref='figures/event_monitor_plugin.png' "
-"md5='1ee2a1d281deefa5b401244b49ed9654'"
+msgstr "original"
 
 #: C/event_monitor_plugin.page:4(info/title)
 msgctxt "sort"
@@ -427,7 +429,7 @@ msgid ""
 msgstr ""
 "Wenn Sie eine Klasse wählen, werden alle ihre Ereignistypen durch das Plugin "
 "überwacht. Die Klassen sind als Baumansicht dargestellt, d.h. Sie können "
-"ihre Auswahl durch Erweiterung und Auswahl relevanter Ereignistypen "
+"Ihre Auswahl durch Erweiterung und Auswahl relevanter Ereignistypen "
 "verfeinern, welche Sie interessieren."
 
 #: C/event_monitor_plugin.page:95(section/p)
@@ -528,7 +530,7 @@ msgid ""
 "this is the case, you can install it via its package manager. Otherwise, you "
 "can follow the section below to install <app>Accerciser</app> manually."
 msgstr ""
-"Prüfen Sie, ob ihre Distribution <app>Accerciser</app> schon als Paket hat. "
+"Prüfen Sie, ob Ihre Distribution <app>Accerciser</app> schon als Paket hat. "
 "Wenn dies der Fall sein sollte, können Sie es über die Paketverwaltung Ihrer "
 "Distribution installieren. Andernfalls können Sie den folgenden Abschnitt "
 "befolgen, um <app>Accerciser</app> manuell zu installieren."
@@ -748,6 +750,10 @@ msgid ""
 "listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
 "instance variable to <cmd>None</cmd>."
 msgstr ""
+"Wir überschreiben nun die Anfangsmethode, und setzen ein globales "
+"Tastenkürzel, um das zuletzt angewählte barrierefreie Objekt auszuwählen, "
+"wir setzen einen Event-Listener für das »focus«-Ereignis und setzen die "
+"Instanzvariable <cmd>last_focused</cmd> auf <cmd>None</cmd>."
 
 #: C/howto_write_a_plugin.page:86(section/code)
 #, no-wrap
@@ -779,6 +785,11 @@ msgid ""
 "description, a desired method to call, a key symbol of keypress, and a key "
 "modifier mask."
 msgstr ""
+"Hierbei werden Sie feststellen, dass die Instanzvariable "
+"<cmd>global_hotkeys</cmd> eine Liste von Tupeln ist. Jedes der Tupel ist ein "
+"Tastenkürzel, was aus einer Beschreibung der Aktion, der gewünschten "
+"Methode, die aufgerufen werden soll, einem Tastenkürzel, und einer Maske für "
+"die Änderung des Tastenkürzels besteht."
 
 #: C/howto_write_a_plugin.page:100(section/p)
 msgid ""
@@ -786,6 +797,9 @@ msgid ""
 "instance variable with the accessible item that has just emitted the \"focus"
 "\" event."
 msgstr ""
+"In der Callback-Funktion des »focus«-Ereignisses setzen wir die Variable "
+"<cmd>last_focused</cmd> auf die barrierefreie Anwendung, welche gerade das "
+"»focus«-Ereignis ausgelöst hat."
 
 #: C/howto_write_a_plugin.page:104(section/code)
 #, no-wrap
@@ -835,6 +849,12 @@ msgid ""
 "verify it in the <link xref=\"desktop_tree_view\">Application Tree View</"
 "link>, for example."
 msgstr ""
+"Wir erstellen nun ein Konsolen-Plugin, um die Veränderungen des Fokus "
+"anzuzeigen, welche durch ein barrierefreies Objekt durch den »push button« "
+"ausgelöst werden - vergessen Sie dabei nicht, dass es mithilfe von "
+"<app>Accerciser</app> einfach ist festzustellen, welche die Funktion eines "
+"Objekts ist; das können Sie z.B. auch in der <link xref=\"desktop_tree_view"
+"\">Anwendungsbaumansicht</link> überprüfen."
 
 #: C/howto_write_a_plugin.page:127(section/p)
 msgid "The needed import lines are:"
@@ -856,6 +876,8 @@ msgstr ""
 #: C/howto_write_a_plugin.page:134(section/p)
 msgid "Then we add a class definition, with a plugin name and description:"
 msgstr ""
+"Dann definieren wir eine Klasse, mit dem Namen des Plugins und einer "
+"Beschreibung:"
 
 #: C/howto_write_a_plugin.page:137(section/code)
 #, no-wrap
@@ -1091,7 +1113,7 @@ msgstr "2. Schnittstellenanzeige-Plugin"
 
 #: C/interface_viewer_plugin.page:6(info/desc)
 msgid "Examining your accessibility implementation"
-msgstr ""
+msgstr "Untersuchen Ihrer Umsetzung der Barrierefreiheit"
 
 #: C/interface_viewer_plugin.page:25(page/title)
 msgid "Interface Viewer Plugin"
@@ -1106,10 +1128,18 @@ msgid ""
 "retrieve each interface's information, and to manipulate the item through "
 "all the interface’s methods."
 msgstr ""
+"Das Schnittstellenanzeige-Plugin zeigt Informationen und die Kontrolle, "
+"welche von der AT-SPI-Schnittstelle zur Verfügung gestellt werden, für jedes "
+"barrierefreie Objekt der <link xref=\"desktop_tree_view"
+"\">Anwendungsbaumansicht</link>. Nachdem Sie ein Objekt angewählt haben, "
+"können Sie dieses Plugin verwenden, um schnell die Schnittstellen zu "
+"untersuchen, die das Objekt zur Verfügung stellt, Informationen über jede "
+"Schnittstelle zu erhalten oder das Objekt durch die Funktionen der "
+"Schnittstelle zu bearbeiten."
 
 #: C/interface_viewer_plugin.page:35(figure/title)
 msgid "Examining a Menu with the Interface Viewer Plugin"
-msgstr ""
+msgstr "Ein Menü mit dem Schnittstellenanzeige-Plugin untersuchen"
 
 #: C/interface_viewer_plugin.page:36(figure/desc)
 #: C/interface_viewer_plugin.page:42(media/p)
@@ -1119,6 +1149,10 @@ msgid ""
 "unsupported will appear grayed out, such as the Application and Collection "
 "interfaces in the figure above."
 msgstr ""
+"Indem Sie ein Objekt in der Anwendungsbaumansicht auswählen, werden alle "
+"ihre AT-SPI-Schnittstellen im Schnittstellenanzeige-Plugin anklickbar "
+"angezeigt. Nicht unterstützte Schnittstellen werden grau dargestellt, z.B. "
+"die Anwendungs- und Zeichensatzschnittstelle im Bild oben."
 
 #: C/interface_viewer_plugin.page:49(section/title)
 msgid "Running the Interface Viewer Plugin"
@@ -1135,6 +1169,16 @@ msgid ""
 "interfaces can be explored in <app>Accerciser</app>, assuming the selected "
 "item implements them:"
 msgstr ""
+"Der erste Schritt, um das Schnittstellenanzeige-Plugin auszuführen, ist ein "
+"Objekt in der <link xref=\"desktop_tree_view\"> Anwendungsbaumansicht</link> "
+"auszuwählen. Danach werden Ihnen alle AT-SPI-Schnittstellen, welche durch "
+"das Plugin abgedeckt werden, in dem Plugin-Feld aufgelistet. Die "
+"Schnittstellen, welche das ausgewählte Programm umgesetzt hat, sind "
+"anklickbar, sodass Sie auf jede von diesen klicken können, um entweder die "
+"Informationen, die sie zur Verfügung stellt, zu erhalten oder mit den "
+"vorhandenen Funktionen zu interagieren. Die folgenden Schnittstellen können "
+"in <app>Accerciser</app> erforscht werden, angenommen, das ausgewählte "
+"Objekt unterstützt sie:"
 
 #: C/interface_viewer_plugin.page:59(item/p)
 msgid ""
@@ -1248,7 +1292,7 @@ msgstr "1. Was ist Accerciser?"
 
 #: C/introduction.page:6(info/desc)
 msgid "An interactive accessibility explorer"
-msgstr ""
+msgstr "Ein Untersucher für interaktive Barrierfreiheit"
 
 #: C/introduction.page:25(page/title)
 msgid "What is <app>Accerciser</app>?"
@@ -1281,6 +1325,15 @@ msgid ""
 "<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
 "<key>ctrl</key>+<key>t</key> again."
 msgstr ""
+"Standardmäßig ist die Hauptoberfläche von <app>Accerciser</app> in drei "
+"Teile aufgeteilt: eine Baumansicht der gesamten verfügbaren "
+"Barrierefreiheitshierarchie der Arbeitsfläche mit dem Namen <link xref="
+"\"destop_tree_view\">Anwendungsbaumansicht</link>, und zwei Plugin-Felder. "
+"Wenn Sie es bevorzugen alle Plugins in einem einzigen Feld zu haben, teilen "
+"Sie die Oberfläche von <app>Accerciser</app> in zwei statt drei Teile, indem "
+"Sie <key>Strg</key>+<key>t</key> drücken. Um diesen Vorgang rückgängig zu "
+"machen, damit Sie wieder drei Felder haben, müssen Sie nur <key>Strg</key>"
+"+<key>t</key> noch einmal drücken."
 
 #: C/introduction.page:44(note/p)
 msgid ""
@@ -1312,6 +1365,14 @@ msgid ""
 "test developers find <app>Accerciser</app> beneficial since it exposes "
 "different events that could be expected from their target application."
 msgstr ""
+"<app>Accerciser</app> wird vielen verschiedenen Anforderungen gerecht. "
+"Entwickler von Benutzeroberflächen nutzen <app>Accerciser</app> um "
+"sicherzustellen, dass alle ihre Anwendungen alle deren Funktionen über AT-"
+"SPI zur Verfügung stellen. Entwickler von Unterstützungstechnologien können "
+"sehen, was AT-SPI für ihre Anwendungen bietet. Testentwickler von "
+"automatisierten Benutzeroberflächen finden <app>Accerciser</app> hilfreich, "
+"weil es verschiedene Ereignisse aufdeckt, welche von ihrer Zielanwendung "
+"erwartet werden könnten."
 
 #: C/introduction.page:74(section/title)
 msgid "<app>Accerciser</app>'s plugin architecture"
@@ -1322,6 +1383,9 @@ msgid ""
 "<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
 "code is fairly small and most of its features are part of default plugins:"
 msgstr ""
+"<app>Accerciser</app> hat eine erweiterbare, pluginbasierte Architektur. "
+"Sein Kerncode ist sehr klein und die meisten seiner Funktionen sind Teil von "
+"Standard-Plugins:"
 
 #: C/introduction.page:82(item/p)
 msgid ""
@@ -1329,18 +1393,27 @@ msgid ""
 "you explore the AT-SPI interfaces provided by each accessible widget of a "
 "target application."
 msgstr ""
+"<link xref=\"interface_viewer\">Schnittstellenanzeige-Plugin</link> - Ein "
+"Plugin, mit dessen Hilfe Sie AT-SPI-Schnittstellen von jedes barrierefreie "
+"Widget einer Zielanwendung erforschen können."
 
 #: C/introduction.page:88(item/p)
 msgid ""
 "<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
 "applies tests to verify the accessibility of a target application."
 msgstr ""
+"<link xref=\"validator_plugin\">AT-SPI-Überprüfungsplugin</link> - Ein "
+"Plugin, welches Tests anwendet, um die Barrierefreiheit einer Zielanwendung "
+"zu überprüfen."
 
 #: C/introduction.page:94(item/p)
 msgid ""
 "<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
 "displays AT-SPI events emitted by a target application as they occur."
 msgstr ""
+"<link xref=\"event_monitor_plugin\">Ereignisüberwachungs-Plugin</link> - Ein "
+"Plugin, welches AT-SPI-Ereignisse, welche in Zielanwendungen auftreten, so "
+"anzeigt, wie sie auftreten."
 
 #: C/introduction.page:100(item/p)
 msgid ""
@@ -1348,6 +1421,10 @@ msgid ""
 "provides global hotkeys for quickly selecting accessible widgets in "
 "<app>Accerciser</app>'s Application Tree View."
 msgstr ""
+"<link xref=\"quick_select_plugin\">Schnellauswahl-Plugin</link> - Ein "
+"Plugin, welches globale Tastenkombinationen zur Verfügung stellt, um schnell "
+"barrierefreie Widgets in der Anwendungsbaumansicht von <app>Accerciser</app> "
+"auszuwählen."
 
 #: C/introduction.page:106(item/p)
 msgid ""
@@ -1355,6 +1432,9 @@ msgid ""
 "the interfaces, methods, and attributes available on each accessible widget "
 "of a target application."
 msgstr ""
+"<link xref=\"api_browser_plugin\">API-Browser-Plugin</link> - Ein Plugin, "
+"welches die Schnittstellen, Funktionen und Attribute zeigt, welche bei einer "
+"verfügbaren Funktion einer Zielanwendung vorhanden sind."
 
 #: C/introduction.page:112(item/p)
 msgid ""
@@ -1362,6 +1442,9 @@ msgid ""
 "provides a full, interactive Python shell with access to selected accessible "
 "widgets of a target application."
 msgstr ""
+"<link xref=\"ipython_plugin\">IPython-Konsole-Plugin</link> - Ein Plugin, "
+"welches eine komplette, interaktive Python-Shell mit Zugang zu ausgewählten "
+"Funktionen einer Zielanwendung zur Verfügung stellt."
 
 #: C/introduction.page:122(section/title)
 msgid "More about Accessibility"
@@ -1375,6 +1458,12 @@ msgid ""
 "also used in other Desktop Environments. To learn more about Accessibility "
 "Libraries for GNU/UNIX systems, you can consult:"
 msgstr ""
+"Barrierefreiheit ist einer der Grundwerte, welche alle Aspekte einer "
+"Arbeitsumgebung betreffen sollte. Um das in GNOME zu erreichen, wurden "
+"einige Bibliotheken entwickelt, wie z.B. ATK und AT-SPI. Obwohl eigentlich "
+"in GNOME beheimatet, werden diese Bibliotheken nun auch bei anderen "
+"Arbeitsumgebungen verwendet. Um mehr über die Barrierefreiheitsbibliotheken "
+"für GNU/UNIX-Systeme zu erfahren, können Sie folgende Seite besuchen:"
 
 #: C/introduction.page:132(item/p)
 msgid ""
@@ -1449,6 +1538,11 @@ msgid ""
 "the IPython Console Plugin is an interactive Python shell, you can import "
 "any Python modules you want."
 msgstr ""
+"Das IPython-Konsolen-Plugin macht Echtzeit-Interaktion mit einem "
+"ausgewählten Objekt in der <link xref=\"desktop_tree_view"
+"\">Anwendungsbaumansicht</link> möglich. Weil das IPython-Konsolen-Plugin "
+"eine interaktive Python-Shell ist, können Sie alle Python-Module "
+"importieren, die Sie wollen."
 
 #: C/ipython_plugin.page:33(note/p)
 msgid ""
@@ -1466,28 +1560,41 @@ msgid ""
 "in the Application Tree View - either an application or a widget. In the "
 "plugin, the selected item will correspond to the variable 'acc'."
 msgstr ""
+"Um das IPyton-Konsolen-Plugin zu starten, wählen Sie eines der "
+"barrierefreien Objekte in der Anwendungsbaumansicht aus - entweder eine "
+"Anwendung oder ein Widget. Im Plugin ist das ausgewählte Objekt dann über "
+"die Variable »acc« erreichbar."
 
 #: C/ipython_plugin.page:46(section/p)
 msgid ""
 "Pressing <key>Tab</key> shows completions for the current command in the "
 "console, what can be useful for discovering pyatspi methods."
 msgstr ""
+"Drücken Sie <key>Tabulatortaste</key>, um sich Vervollständigungen zum "
+"aktuellen Befehl in der Konsole anzeigen zu lassen. Dies kann nützlich sein, "
+"um pyatspi-Funktionen auszuprobieren."
 
 #: C/ipython_plugin.page:52(figure/title)
 msgid "Investigating selected items with the IPython Console Plugin"
-msgstr ""
+msgstr "Ausgewählte Objekte mit dem IPyton-Konsolen-Plugin untersuchen"
 
 #: C/ipython_plugin.page:53(figure/desc) C/ipython_plugin.page:58(media/p)
 msgid ""
 "The IPython Console Plugin lets you investigate methods, constants, and "
 "properties related to a selected item in the Application Tree View."
 msgstr ""
+"Mit dem IPyton-Konsolen-Plugin können Sie Funktionen, Konstanten und "
+"Eigenschaften eines ausgewählten Objekts in der Anwendungsbaumansicht "
+"erforschen."
 
 #: C/ipython_plugin.page:66(note/p)
 msgid ""
 "Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
 "documentation about the corresponding selected accessible item."
 msgstr ""
+"Tippen Sie <cmd>help(acc)</cmd> im IPyton-Konsolen-Plugin, um eine nützliche "
+"Dokumentation über das dazugehörige ausgewählte und barrierefreie Objekt "
+"anzuzeigen."
 
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
@@ -1551,6 +1658,9 @@ msgid ""
 "+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
 "open a dialog."
 msgstr ""
+"Um Plugins, Tastenkürzel und die Hervorhebung zu konfigurieren, drücken Sie "
+"entweder <key>Strg</key>+<key>p</key> oder klicken Sie "
+"<guiseq><gui>Bearbeiten</gui></guiseq>, um das Einstellungsfenster zu öffnen."
 
 #: C/preferences.page:32(figure/title)
 msgid "<app>Accerciser</app> preferences"
@@ -1575,6 +1685,11 @@ msgid ""
 "or disable a plugin, toggle its checkbox. Only active plugins can be "
 "accessed via <app>Accerciser</app>'s interface."
 msgstr ""
+"Nachdem Sie die Einstellungen geöffnet haben, finden Sie eine Liste aller "
+"vorhandenen Plugins, mit den dazugehörigen Ankreuzfeldern, unter dem Reiter "
+"»Plugins«. Um ein Plugin zu aktivieren oder zu deaktivieren, schalten Sie "
+"das Ankreuzfeld um. Nur aktive Plugins können Sie über die Oberfläche von "
+"<app>Accerciser</app> ansprechen."
 
 #: C/preferences.page:50(section/p)
 msgid ""
@@ -1582,6 +1697,10 @@ msgid ""
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
 "a new window for the plugin."
 msgstr ""
+"Indem Sie auf ein Plugin mit der rechten Maustaste klicken, können Sie seine "
+"Position festlegen: »Oberes Fenster«,»Unteres Fenster« und »Neues Fenster«. "
+"Wenn Sie »Neues Fenster« auswählen, erstellen Sie ein neues Fenster für das "
+"Plugin."
 
 #: C/preferences.page:57(figure/title)
 msgid "Configuring plugins' preferences"
@@ -1615,6 +1734,15 @@ msgid ""
 "configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
 "checkboxes to enable or disable these modifiers."
 msgstr ""
+"Ein paar der Elemente von <app>Accerciser</app> aktivieren bestimmte "
+"Funktionalitäten über Tastenkürzel. Ein Beispiel hierfür ist das <link xref="
+"\"quick_select_plugin\">Schnellauswahl-Plugin</link>. Die Tastenkombination "
+"für jede dieser Funktionalitäten können Sie bei den Einstellungen, unter dem "
+"Reiter »Globale Tastenkombinationen« ändern. Bei diesem Reiter, finden Sie "
+"auch eine Liste aller Funktionen, für die Tastenkürzel konfiguriert werden "
+"können. Drücken Sie <cmd>Strg</cmd>-, <cmd>Alt</cmd>- und "
+"<cmd>Umschalttaste</cmd>-Ankreuzfelder, um diese zu aktivieren oder zu "
+"deaktivieren."
 
 #: C/preferences.page:86(figure/title)
 msgid "Configuring global hotkeys' preferences"
@@ -1644,6 +1772,11 @@ msgid ""
 "color can be customized via the Preferences dialog, under the \"Highlighting"
 "\" tab."
 msgstr ""
+"Ein paar von den Elementen von <app>Accerciser</app>, z.B. die globalen "
+"Tastenkürzel <key>Strg</key>+<key>Alt</key>+<key>/</key>, markieren eine "
+"spezielle Funktion einer Zielanwendung. Die Dauer der Markierung, die Farbe "
+"des Rahmens, und die Füllfarbe können in den Einstellung, unter dem Reiter "
+"»Hervorhebung«, verändert werden."
 
 #: C/preferences.page:107(figure/title)
 msgid "Configuring highlighting preferences"
@@ -1678,6 +1811,12 @@ msgid ""
 "<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
 "later."
 msgstr ""
+"Das Schnellauswahl-Plugin stellt keine sichtbare Oberfläche wie die anderen "
+"Standard-<app>Accerciser</app>-Plugins zur Verfügung - stattdessen aber "
+"Möglichkeiten, um Objekte in der <link xref=\"desktop_tree_view"
+"\">Anwendungsbaumansicht </link> über globale Tastenkürzel schnell "
+"auszuwählen. Übersprünglich waren diese Tastenkürzel Teil von "
+"<app>Accerciser</app>s Kern, später wurden sie zum Schnellauswahl-Plugin."
 
 #: C/quick_select_plugin.page:32(page/p)
 msgid ""
@@ -1687,6 +1826,12 @@ msgid ""
 "key> selects the accessible widget under the pointer in the Application Tree "
 "View and highlights it in the target application."
 msgstr ""
+"Das Schnellauswahl-Plugin stellt 2 globale Tastenkürzel zur Verfügung. Durch "
+"das Drücken von <key>Strg</key>+<key>alt</key>+<key>a</key> wählen Sie das "
+"zuletzt ausgewählte barrierefreie Widget in der Anwendungsbaumansicht aus. "
+"Durch das Drücken von <key>Strg</key>+<key>alt</key>+<key>/</key> wählen Sie "
+"das barrierefreie Widget unter dem Zeiger in der Anwendungsbaumansicht aus "
+"und außerdem wird es in der Zielanwendung aufleuchten. "
 
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
@@ -1702,7 +1847,7 @@ msgstr ""
 #: C/validator_plugin.page:4(info/title)
 msgctxt "sort"
 msgid "3. Validator Default Plugin"
-msgstr ""
+msgstr "3. Das Standardüberprüfungs-Plugin"
 
 #: C/validator_plugin.page:6(info/desc)
 msgid "Testing an application for accessibility"
@@ -1711,7 +1856,7 @@ msgstr "So prüfen Sie die Barrierefreiheit einer Anwendung"
 #: C/validator_plugin.page:25(page/title)
 #: C/validator_plugin.page:32(figure/title)
 msgid "AT-SPI Validator Plugin"
-msgstr ""
+msgstr "Das AT-SPI-Überprüfung-Plugin"
 
 #: C/validator_plugin.page:26(page/p)
 msgid ""
@@ -1719,16 +1864,22 @@ msgid ""
 "related to a target application. For each error, the report includes the "
 "severity level and a brief description."
 msgstr ""
+"Das AT-SPI Überprüfung-Plugin erstellt einen Bericht Problem der "
+"Barrierefreiheit in Bezug auf die Zielanwendung. Zu jedem Fehler stellt der "
+"Bericht den Schweregrad des Fehlers sowie eine kurze Beschreibung zur "
+"Verfügung."
 
 #: C/validator_plugin.page:33(figure/desc) C/validator_plugin.page:38(media/p)
 msgid ""
 "The AT-SPI Validator Plugin generates useful reports for verifying the "
 "accessibility of a target application."
 msgstr ""
+"Das AT-SPI Überprüfung-Plugin erstellt nützliche Berichte, um die "
+"Barrierefreiheit einer Zielanwendung zu überprüfen."
 
 #: C/validator_plugin.page:46(section/title)
 msgid "Running the AT-SPI Validator Plugin"
-msgstr ""
+msgstr "Das AT-SPI Überprüfung-Plugin ausführen"
 
 #: C/validator_plugin.page:47(section/p)
 msgid ""
@@ -1736,6 +1887,10 @@ msgid ""
 "View. The validator will generate the report with respect to the selected "
 "item and all of its descendant widgets in the tree hierarchy."
 msgstr ""
+"Um das AT-SPI Überprüfung-Plugin auszuführen, wählen Sie ein Objekt in der "
+"Anwendungsbaumansicht. Das Plugin wird einen Bericht erstellen, in welchem "
+"es das ausgewählte Objekt und alle seiner Unteranwendungen in der "
+"Baumhierarchie beachtet."
 
 #: C/validator_plugin.page:53(section/p)
 msgid ""
@@ -1744,6 +1899,10 @@ msgid ""
 "want to cancel the execution, just press the <cmd>Validate</cmd> button "
 "again."
 msgstr ""
+"Nachdem Sie ein Objekt ausgewählt haben, wählen Sie noch ein "
+"Überprüfungsschema in dem Auswahlfeld und klicken Sie auf <cmd>Überprüfen</"
+"cmd>, um die Erstellung des Berichts zu starten. Wenn Sie die Ausführung "
+"abbrechen wollen, müssen Sie nur wieder auf <cmd>Überprüfen</cmd> klicken."
 
 #: C/validator_plugin.page:59(section/p)
 msgid ""
@@ -1753,6 +1912,12 @@ msgid ""
 "\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
 "target application."
 msgstr ""
+"Der erstellte Bericht ist interaktiv. Deshalb können Sie auf jeden "
+"gefundenen Fehler doppelklicken, um festzustellen, welche Widgets der "
+"Zielanwendung für den Fehler verantwortlich sind. Das dazugehörige Widget "
+"wird dann automatisch in der <link xref=\"desktop_tree_view"
+"\">Anwendungsbaumansicht</link> ausgewählt und in der Zielanwendung "
+"aufleuchten."
 
 #: C/validator_plugin.page:64(section/p)
 msgid ""
@@ -1760,6 +1925,9 @@ msgid ""
 "<cmd>Save</cmd> button. To clear the validation screen, press the "
 "<cmd>Clear</cmd> button."
 msgstr ""
+"Wenn Sie den erstellten Bericht auf ihrem System speichern wollen, klicken "
+"Sie einfach auf <cmd>Speichern</cmd>. Um das Überprüfungsfenster zu leeren, "
+"klicken Sie auf <cmd>Leeren</cmd>."
 
 #: C/validator_plugin.page:68(section/p)
 msgid ""
@@ -1767,6 +1935,10 @@ msgid ""
 "the corresponding item is selected and press the <cmd>Help</cmd> button. It "
 "will open a Help Page in your default browser."
 msgstr ""
+"Um mehr Informationen über einen Fehler in dem erstellten Bericht zu "
+"erhalten, stellen Sie sicher, dass das dazugehörige Objekt ausgewählt ist "
+"und klicken Sie auf <cmd>Hilfe</cmd>. Dadurch öffnet sich eine Hilfeseite in "
+"Ihrem Standardbrowser."
 
 #~ msgid "eitan@ascender.com"
 #~ msgstr "eitan@ascender.com"
