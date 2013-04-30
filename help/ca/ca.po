@@ -1,774 +1,2219 @@
 # Traducció del accerciser de l'equip de Softcatalà.
 # Copyright © 2007-2009 Free Software Foundation, Inc.
 # Joan Duran <jodufi@gmail.com>, 2007-2009.
+# Gil Forcada <gilforcada@guifi.net>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-13 21:31+0000\n"
-"PO-Revision-Date: 2012-09-28 00:29+0200\n"
-"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
+"POT-Creation-Date: 2013-04-08 13:20+0000\n"
+"PO-Revision-Date: 2013-04-08 15:38+0200\n"
+"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:191(None)
-msgid "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
-msgstr ""
-"@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Joan Duran <jodufi@gmail.com>, 2007-2009"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:372(None)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:22(media)
+msgctxt "_"
 msgid ""
-"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+"external ref='figures/accerciser-logo.png' "
+"md5='ccb260de40944187394405ae163757cf'"
 msgstr ""
-"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+"external ref='figures/accerciser-logo.png' "
+"md5='ccb260de40944187394405ae163757cf'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:389(None)
-msgid ""
-"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
-msgstr ""
-"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:436(None)
-msgid ""
-"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
-msgstr ""
-"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:461(None)
-msgid ""
-"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
-msgstr ""
-"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
-
-#: C/accerciser.xml:24(title)
-msgid "<application>Accerciser</application> Manual v0.2.0"
-msgstr "Manual de l'<application>Accerciser</application> v0.2.0"
-
-#: C/accerciser.xml:27(year)
-msgid "2006"
-msgstr "2006"
-
-#: C/accerciser.xml:28(year)
-msgid "2007"
-msgstr "2007"
-
-#: C/accerciser.xml:29(year)
-msgid "2008"
-msgstr "2008"
-
-#: C/accerciser.xml:30(holder)
-msgid "IBM Corporation"
-msgstr "IBM Corporation"
-
-#: C/accerciser.xml:45(publishername)
-msgid "GNOME Documentation Project"
-msgstr "Projecte de documentació del GNOME"
-
-#: C/accerciser.xml:54(firstname)
-msgid "Eitan"
-msgstr "Eitan"
-
-#: C/accerciser.xml:55(surname)
-msgid "Isaacson"
-msgstr "Isaacson"
-
-#: C/accerciser.xml:57(orgname) C/accerciser.xml:66(orgname)
-#: C/accerciser.xml:108(para)
-msgid "Accerciser team"
-msgstr "Equip de l'Accerciser"
-
-#: C/accerciser.xml:58(email)
-msgid "eitan@ascender.com"
-msgstr "eitan@ascender.com"
-
-#: C/accerciser.xml:63(firstname)
-msgid "Peter"
-msgstr "Peter"
-
-#: C/accerciser.xml:64(surname)
-msgid "Parente"
-msgstr "Parente"
-
-#: C/accerciser.xml:67(email)
-msgid "pparent@us.ibm.com"
-msgstr "pparent@us.ibm.com"
-
-#: C/accerciser.xml:102(revnumber)
-msgid "Accerciser Manual v0.2.0"
-msgstr "Manual de l'Accerciser v0.2.0"
-
-#: C/accerciser.xml:103(date)
-msgid "2007-06-29"
-msgstr "2007-06-29"
-
-#: C/accerciser.xml:105(para)
-msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
-msgstr "Eitan Isaacson <email>eitan@ascender.com</email>"
-
-#: C/accerciser.xml:113(releaseinfo)
-msgid "This manual describes version 0.1.5 of Accerciser."
-msgstr "Aquest manual descriu la versió 0.1.5 de l'Accerciser."
-
-#: C/accerciser.xml:115(para)
-msgid "This manual describes the use of <application>Accerciser</application>."
-msgstr "Aquest manual descriu l'ús de l'<application>Accerciser</application>."
-
-#: C/accerciser.xml:118(title)
-msgid "Feedback"
-msgstr "Comentaris"
-
-#: C/accerciser.xml:119(para)
-msgid ""
-"To report a bug or make a suggestion regarding the <application>Accerciser</"
-"application> application or this manual, follow the directions in the <ulink "
-"url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr ""
-"Per a informar d'un error o fer algun suggeriment sobre l'aplicació "
-"<application>Accerciser</application> o d'aquest manual, seguiu les "
-"indicacions en la <ulink url=\"ghelp:gnome-feedback\" type=\"help\">Pàgina "
-"de comentaris del GNOME</ulink>."
-
-#: C/accerciser.xml:126(primary) C/accerciser.xml:0(application)
+#: C/index.page:3(info/title)
+msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: C/accerciser.xml:134(title)
-msgid "Introduction"
-msgstr "Introducció"
+#: C/index.page:4(info/title)
+msgctxt "link"
+msgid "Introduction to <app>Accerciser</app>"
+msgstr "Introducció a l'<app>Accerciser</app>"
 
-#: C/accerciser.xml:136(para)
+#: C/index.page:6(credit/name) C/api_browser_plugin.page:10(credit/name)
+#: C/desktop_tree_view.page:10(credit/name)
+#: C/event_monitor_plugin.page:10(credit/name)
+#: C/howto_setting_up_accerciser.page:11(credit/name)
+#: C/howto_write_a_plugin.page:10(credit/name)
+#: C/interface_viewer_plugin.page:10(credit/name)
+#: C/introduction.page:10(credit/name) C/ipython_plugin.page:10(credit/name)
+#: C/preferences.page:10(credit/name)
+#: C/quick_select_plugin.page:10(credit/name)
+#: C/validator_plugin.page:10(credit/name)
+msgid "Eitan Isaacson"
+msgstr "Eitan Isaacson"
+
+#: C/index.page:10(credit/name) C/api_browser_plugin.page:14(credit/name)
+#: C/desktop_tree_view.page:14(credit/name)
+#: C/event_monitor_plugin.page:14(credit/name)
+#: C/howto_setting_up_accerciser.page:15(credit/name)
+#: C/howto_write_a_plugin.page:14(credit/name)
+#: C/interface_viewer_plugin.page:14(credit/name)
+#: C/introduction.page:14(credit/name) C/ipython_plugin.page:14(credit/name)
+#: C/preferences.page:14(credit/name)
+#: C/quick_select_plugin.page:14(credit/name)
+#: C/validator_plugin.page:14(credit/name)
+msgid "Peter Parente"
+msgstr "Peter Parente"
+
+#: C/index.page:14(credit/name) C/api_browser_plugin.page:18(credit/name)
+#: C/desktop_tree_view.page:18(credit/name)
+#: C/event_monitor_plugin.page:18(credit/name)
+#: C/howto_setting_up_accerciser.page:19(credit/name)
+#: C/howto_write_a_plugin.page:18(credit/name)
+#: C/interface_viewer_plugin.page:18(credit/name)
+#: C/introduction.page:18(credit/name) C/ipython_plugin.page:18(credit/name)
+#: C/preferences.page:18(credit/name)
+#: C/quick_select_plugin.page:18(credit/name)
+#: C/validator_plugin.page:18(credit/name)
+msgid "Aline Bessa"
+msgstr "Aline Bessa"
+
+#: C/index.page:18(license/p) C/api_browser_plugin.page:22(license/p)
+#: C/desktop_tree_view.page:22(license/p)
+#: C/event_monitor_plugin.page:22(license/p)
+#: C/howto_setting_up_accerciser.page:23(license/p)
+#: C/howto_write_a_plugin.page:22(license/p)
+#: C/interface_viewer_plugin.page:22(license/p)
+#: C/introduction.page:22(license/p) C/ipython_plugin.page:22(license/p)
+#: C/preferences.page:22(license/p) C/quick_select_plugin.page:22(license/p)
+#: C/validator_plugin.page:22(license/p)
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Compartir Igual 3.0"
+
+#: C/index.page:21(page/title)
 msgid ""
-"<application>Accerciser</application> is an interactive Python accessibility "
-"explorer for the GNOME desktop. It uses <ulink url=\"http://directory.fsf."
-"org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect and control "
-"widgets, allowing you to check if an application is providing correct "
-"information to assistive technologies and automated test frameworks. "
-"<application>Accerciser</application> has a simple plugin framework which "
-"you can use to create custom views of accessibility information."
+"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+"\"> <app>Accerciser</app>'s logo </media> <app>Accerciser</app>"
 msgstr ""
-"L'<application>Accerciser</application> és un explorador interactiu "
-"d'accessibilitat en Python per a l'escriptori GNOME. Aquest utilitza "
-"l'<ulink url=\"http://directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</"
-"ulink> per a inspeccionar i controlar ginys, permetent-vos comprovar si una "
-"aplicació està proveint informació correcta a les tecnologies assistives i "
-"als entorns de test automàtic. L'<application>Accerciser</application> és un "
-"simple entorn de connectors que podeu utilitzar per a crear vistes pròpies "
-"de l'informació d'accessibilitat."
+"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+"\"> Logotip de l'<app>Accerciser</app></media> <app>Accerciser</app>"
 
-#: C/accerciser.xml:138(para)
+#: C/index.page:28(note/title)
+msgid "Before You Begin"
+msgstr "Abans que comenceu"
+
+#: C/index.page:29(note/p)
 msgid ""
-"In essence, <application>Accerciser</application> is a next generation "
-"<ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</"
-"ulink> tool."
+"Read the <link href=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgstr ""
-"En essència, l'<application>Accerciser</application> és la següent generació "
-"de l'eina <ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http"
-"\">at-poke</ulink>."
+"Llegiu l'<link href=\"help:gnome-help/a11y\">ajuda de l'accés universal</"
+"link>"
 
-#: C/accerciser.xml:152(title)
+#: C/index.page:34(section/title)
 msgid "Getting Started"
-msgstr "Inici"
+msgstr "Primers passos"
 
-#: C/accerciser.xml:155(title)
-msgid "To Start <application>Accerciser</application>"
-msgstr "Per a iniciar l'<application>Accerciser</application>"
+#: C/index.page:37(section/title)
+msgid "Examining the Accessibility of an Application"
+msgstr "Inspecció de l'accessibilitat d'una aplicació"
 
-#: C/accerciser.xml:156(para)
+#: C/index.page:40(section/title)
+msgid "Advanced Topics"
+msgstr "Temes avançats"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37(media)
+msgctxt "_"
 msgid ""
-"You can start <application>Accerciser</application> in the following ways:"
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
 msgstr ""
-"Podeu iniciar l'<application>Accerciser</application> de les següents "
-"maneres:"
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
 
-#: C/accerciser.xml:159(term)
-msgid "<guimenu>Applications</guimenu> menu"
-msgstr "Menú <guimenu>Aplicacions</guimenu>"
+#: C/api_browser_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "1. Connector per explorar l'API"
 
-#: C/accerciser.xml:161(para)
+#: C/api_browser_plugin.page:6(info/desc)
+msgid "Verifying interfaces, methods, and properties"
+msgstr "Verificació d'interfícies, de mètodes i les propietats"
+
+#: C/api_browser_plugin.page:25(page/title)
+#: C/api_browser_plugin.page:32(figure/title)
+msgid "API Browser Plugin"
+msgstr "Connector per explorar l'API"
+
+#: C/api_browser_plugin.page:26(page/p)
 msgid ""
-"Choose the <menuchoice><guisubmenu>Programming</"
-"guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice> menu item."
+"Given an accessible widget selected in the <link xref=\"desktop_tree_view"
+"\">Application Tree View</link>, the API Browser Plugin shows its "
+"implemented AT-SPI interfaces along with its methods and properties."
 msgstr ""
-"Trieu l'element del menú <menuchoice><guisubmenu>Programació</"
-"guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice>."
+"Si seleccioneu un giny accessible a la <link xref=\"desktop_tree_view"
+"\">vista en arbre de l'aplicació</link>, el connector per explorar l'API us "
+"mostra les interfícies de l'AT-SPI que implementa a més a més dels mètodes i "
+"les propietats."
 
-#: C/accerciser.xml:169(term)
-msgid "Command line"
-msgstr "Línia d'ordres"
-
-#: C/accerciser.xml:171(para)
+#: C/api_browser_plugin.page:33(figure/desc)
+#: C/api_browser_plugin.page:38(media/p)
 msgid ""
-"Type the following command in a console window then press <keycap>Return</"
-"keycap>:"
+"The API Browser Plugin allows you to verify interfaces, methods, and "
+"properties of a target accessible widget in an application."
 msgstr ""
-"Introduïu la següent ordre a la finestra de la consola i premeu "
-"<keycap>Retorn</keycap>:"
+"El connector per explorar l'API us permet comprovar les interfícies, els "
+"mètodes i les propietats disponibles del giny accessible seleccionat en una "
+"aplicació."
 
-#: C/accerciser.xml:174(command)
-msgid "accerciser"
-msgstr "accerciser"
+#: C/api_browser_plugin.page:46(section/title)
+msgid "Running the API Browser Plugin"
+msgstr ""
 
-#: C/accerciser.xml:182(title)
-msgid "When You Start <application>Accerciser</application>"
-msgstr "En iniciar l'<application>Accerciser</application>"
-
-#: C/accerciser.xml:183(para)
+#: C/api_browser_plugin.page:47(section/p)
 msgid ""
-"When you start <application>Accerciser</application>, the following window "
-"is displayed."
+"To run the API Browser Plugin, select an accessible widget in the "
+"Application Tree View. Double-clicking a widget highlights it in the "
+"application's interface, so you can be sure whether a certain widget were "
+"the one you were looking for."
 msgstr ""
-"En iniciar l'<application>Accerciser</application> es mostrarà la següent "
-"finestra."
 
-#: C/accerciser.xml:187(title)
-msgid "<application>Accerciser</application> Main Window"
-msgstr "Finestra principal de l'<application>Accerciser</application>"
-
-#: C/accerciser.xml:194(phrase)
+#: C/api_browser_plugin.page:53(section/p)
 msgid ""
-"Shows <placeholder-1/> main window. Contains title bar, menu bar, accessible "
-"tree , right plugin display area, and bottom plugin display area. The menu "
-"bar contains File, Edit, Bookmarks, View, and Help menus."
+"After that, select one of the widget's interfaces in the combobox. All "
+"public methods of the selected interface will be listed in the plugin's "
+"leftmost column. All public properties, with their corresponding values, "
+"will be listed in the plugin's rightmost column."
 msgstr ""
-"Mostra la finestra principal <placeholder-1/>. Conté la barra de títol, la "
-"barra de menú, l'arbre de l'accessible, l'àrea esquerra de visualització del "
-"connector i l'àrea inferior de visualització del connector. La barra de menú "
-"conté els menús Fitxer, Edita, Adreces d'interès, Visualitza i Ajuda."
 
-#. for example, the items on the menubar and on the toolbar. 
-#. 		 This section is optional.
-#: C/accerciser.xml:211(para)
+#: C/api_browser_plugin.page:59(section/p)
 msgid ""
-"The main <application>Accerciser</application> window contains the following "
-"elements:"
+"By default, the API Browser Plugin hides private methods and properties. To "
+"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
+"To hide them again, re-select this checkbox."
 msgstr ""
-"La finestra principal de l'<application>Accerciser</application> conté els "
-"següents elements:"
 
-#: C/accerciser.xml:214(term)
-msgid "Menubar"
-msgstr "Barra de menú"
-
-#: C/accerciser.xml:216(para)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42(media)
+msgctxt "_"
 msgid ""
-"The menu bar contains commands for managing plugins, managing and using "
-"bookmarks, refreshing the accessible tree view, and accessing this help "
-"system."
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
 msgstr ""
-"La barra de menú conté ordres per a gestionar els connectors, gestionar i "
-"utilitzar les adreces d'interès, refrescar la visualització d'arbre de "
-"l'accessible i accedir en aquest sistema d'ajuda."
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
 
-#: C/accerciser.xml:224(term)
-msgid "Accessible tree view"
-msgstr "Visualització d'arbre de l'accessible"
+#: C/desktop_tree_view.page:4(info/title)
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr ""
 
-#: C/accerciser.xml:226(para)
+#: C/desktop_tree_view.page:6(info/desc)
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr ""
+
+#: C/desktop_tree_view.page:25(page/title)
+#: C/desktop_tree_view.page:37(figure/title)
+msgid "Application Tree View"
+msgstr ""
+
+#: C/desktop_tree_view.page:27(page/p)
 msgid ""
-"The accessible tree view allows to view all of the accessibles starting at "
-"the desktop level. Selecting an accessible makes it available for further "
-"inspection using the loaded plugins."
+"<app>Accerciser</app>'s interface contains a tree view, namely Application "
+"Tree View, that covers all accessible applications currently running on the "
+"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
+"registry daemon. This daemon is responsible for keeping track of all the "
+"accessible applications on the desktop and forwarding X events over the AT-"
+"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
+"represents each one of them as a hierarchical structure with expanding nodes."
 msgstr ""
-"La visualització d'arbre de l'accessible permet visualitzar tots els "
-"accessibles, començant pel nivell de l'escriptori. En seleccionar-se un "
-"accessible, el tindreu disponible per a posteriors inspeccions utilitzant "
-"els connectors carregats."
 
-#: C/accerciser.xml:234(term)
-msgid "Right plugin view"
-msgstr "Visualització dreta del connector"
-
-#: C/accerciser.xml:236(para)
+#: C/desktop_tree_view.page:38(figure/desc)
+#: C/desktop_tree_view.page:43(media/p)
 msgid ""
-"This is one of the two default plugin views. When <application>Accerciser</"
-"application> is first run, most plugins will reside here. You can drag "
-"plugin tabs to the bottom plugin view or to the desktop to show two or more "
-"plugins simultaneously."
+"<app>Accerciser</app>'s Application Tree View represents the interface of "
+"each accessible application running on the desktop as a widget hierarchical "
+"structure."
 msgstr ""
-"Aquesta és una de les dues visualitzacions del connector per defecte. "
-"Quan l'<application>Accerciser</application> s'executi per primer cop, la "
-"majoria dels connectors estaran aquí. Podeu arrossegar les pestanyes dels "
-"connectors a la visualització inferior del connector o a l'escriptori per a "
-"mostrar dos o més connectors simultàniament."
 
-#: C/accerciser.xml:245(term)
-msgid "Bottom plugin view"
-msgstr "Visualització inferior del connector"
-
-#: C/accerciser.xml:247(para)
+#: C/desktop_tree_view.page:49(page/p)
 msgid ""
-"You can drag plugins to or from this area just like the right plugin view."
+"The first node of each application represented in this tree view is the "
+"application itself. When you expand a node, you can see all of its child "
+"widgets, which allows a hierarchical view of the application's interface. "
+"For each node, <app>Accerciser</app> provides some basic information, such "
+"as its name, role and number of children."
 msgstr ""
-"Podeu arrossegar connectors a o des d'aquesta àrea, de la mateixa manera que "
-"en la visualització dreta del connector."
 
-#: C/accerciser.xml:253(title)
-msgid "Plugin View Management"
-msgstr "Gestió de la visualització dels connectors"
+#: C/desktop_tree_view.page:56(note/p)
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr ""
 
-#: C/accerciser.xml:254(para)
+#: C/desktop_tree_view.page:62(section/title)
+msgid "Bookmarking items in the Application Tree View"
+msgstr ""
+
+#: C/desktop_tree_view.page:63(section/p)
 msgid ""
-"<application>Accerciser</application> has two modes for viewing plugins. The "
-"current view mode could be toggled with <menuchoice><guimenu>View</"
-"guimenu><guimenuitem>Single plugin view</guimenuitem></menuchoice> or by "
-"pressing <keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. "
-"When single mode is enabled, all plugins will be put in the top right plugin "
-"view and ordered alphabetically, this could be useful for screen reader "
-"users who have no use for <application>Accerciser</application>'s flexible "
-"plugin spacial layout scheme. When single view mode is disabled plugin tabs "
-"could be dragged and dropped in to different plugin views, or could be "
-"dragged to the desktop to put the given plugin in a new view. The placement "
-"of plugins could also be manipulated with the plugin context menu that could "
-"be brought up either from the plugin tab, or the plugin preferences dialog."
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
+"for later examining. This is helpful when the target application must be "
+"restarted - after rebuilding it, for example. To bookmark an item, select it "
+"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
+"<key>Ctrl</key>+<key>d</key>."
 msgstr ""
-"L'<application>Accerciser</application> té dos modes per a visualitzar "
-"connectors. El mode de visualització actual es pot commutar si premeu "
-"<menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Visualització "
-"individual de connectors</guimenuitem></menuchoice> o si premeu "
-"<keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. Quan el "
-"mode individual està activat, tots els connectors es posaran en la "
-"visualització del connector superior dret ordenats alfabèticament, això és "
-"útil per als usuaris del lector de pantalla que no utilitzen l'esquema "
-"flexible de mostrat de connectors de l'<application>Accerciser</"
-"application>. Quan el mode de visualització individual de connectors està "
-"desactivat es poden arrossegar i deixar anar pestanyes de connectors en les "
-"diferents visualitzacions de connectors, o es poden arrossegar a "
-"l'escriptori per a mostrar el connector en una nova visualització. També es "
-"pot manipular la posició dels connectors amb el menú contextual del "
-"connector que pot aparèixer en la pestanya del connector o en el diàleg de "
-"preferències del connector."
+"L'<app>Accerciser</app> permet crear adreces d'interès dels accessibles "
+"seleccionats en la vista d'arbre de l'aplicació per examinar-los "
+"posteriorment. Això pot ser útil si, per exemple, s'ha de reiniciar "
+"l'aplicació objectiu. Per crear una adreça d'interès d'un element "
+"seleccioneu <guiseq><gui>Adreces d'interès</gui><gui>Afegeix una adreça "
+"d'interès</gui></guiseq> o premeu <key>Ctrl</key>+<key>d</key>."
 
-#: C/accerciser.xml:278(title)
-msgid "Usage"
-msgstr "Ús"
-
-#: C/accerciser.xml:279(para)
+#: C/desktop_tree_view.page:68(section/p)
 msgid ""
-"You can use <application>Accerciser</application> to inspect any accessible "
-"widget shown in the tree view using the available plugins. The first step is "
-"to select an accessible to inspect using one of the following methods: "
-"<placeholder-1/>"
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
+"application name and a \"path\" in the application's internal accessible "
+"hierarchy to the bookmarked accessible. When the target application is in a "
+"different state - i.e. multiple top level frames -, the path might not be "
+"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
-"Podeu utilitzar l'<application>Accerciser</application> per a inspeccionar "
-"qualsevol giny accessible mostrat a la visualització d'arbre utilitzant els "
-"connectors disponibles. El primer pas és seleccionar un accessible a "
-"inspeccionar utilitzant un dels següents mètodes: <placeholder-1/>"
+"A l'<app>Accerciser</app> les adreces d'interès d'elements accessibles en "
+"defineixen com el nom de l'aplicació i el «camí» en la jerarquia "
+"d'accessibilitat interna de l'aplicació de l'element accessible. Quan "
+"l'aplicació objectiu està en un estat diferent (ex. múltiples marcs de "
+"nivell superior) pot ser que el camí no sigui correcte. Es poden gestionar "
+"les adreces d'interès a través del diàleg d'edició d'adreces d'interès, al "
+"qual hi podeu accedir des de <guiseq><gui>Adreces d'interès</gui><gui>Edita "
+"les adreces d'interès</gui></guiseq>."
 
-#: C/accerciser.xml:292(title)
-msgid "Select an accessible through the tree view."
-msgstr "Seleccionar un accessible a través de la visualització d'arbre."
-
-#: C/accerciser.xml:293(para)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40(media)
+msgctxt "_"
 msgid ""
-"Use the tree view to navigate the hierarchy of accessible objects rooted at "
-"desktop. Unfolding a tree node reveals its immediate children while folding "
-"it hides them. Each node shows an icon for its associated application or "
-"widget role and its accessible name, if available. The second column lists "
-"how many nodes will be shown if the item is unfolded."
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
 msgstr ""
-"Utilitzeu la visualització d'arbre per a navegar en la jerarquia dels "
-"objectes accessibles arrelats a l'escriptori. Desplegant l'arbre de nodes es "
-"mostraran els seus fills, mentre que plegant-lo els amagareu. Cada node "
-"mostra un icona de la seva aplicació associada o el giny i el nom del seu "
-"accessible, si està disponible. La segona columna llista quants nodes seran "
-"mostrats si els elements són desplegats."
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
 
-#: C/accerciser.xml:304(title)
-msgid "Using bookmarks"
-msgstr "Utilitzant adreces d'interès"
+#: C/event_monitor_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "4. Connector de seguiment d'esdeveniments"
 
-#: C/accerciser.xml:305(para)
+#: C/event_monitor_plugin.page:6(info/desc)
+msgid "Monitoring accessible events as they occur"
+msgstr ""
+"Fes un seguiment dels esdeveniments d'accessibilitat de seguida que es "
+"produeixen"
+
+#: C/event_monitor_plugin.page:25(page/title)
+#: C/event_monitor_plugin.page:35(figure/title)
+msgid "Event Monitor Plugin"
+msgstr "Connector de seguiment d'esdeveniments"
+
+#: C/event_monitor_plugin.page:26(page/p)
 msgid ""
-"Accerciser allows bookmarking selected accessibles for later examining. This "
-"could be helpful if the target application must be restarted, for example "
-"after rebuilding it. To bookmark the currently selected accessible do "
-"<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark...</"
-"guimenuitem></menuchoice> or press <keycombo><keycap>Control</"
-"keycap><keycap>d</keycap></keycombo>."
+"The Event Monitor Plugin allows you to view <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">AT-SPI events</link> as they occur on the applications exposed in "
+"<app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>. The plugin is useful to explore the dynamics of an "
+"application's interface and verify which accessible widgets are related to "
+"which AT-SPI events."
 msgstr ""
-"L'Accerciser permet marcar els accessibles seleccionats per a examinar-los "
-"posteriorment. Això pot ser útil si l'aplicació objectiu ha de reiniciar-se; "
-"per exemple, després de reconstruir-la. Per a marcar l'accessible "
-"seleccionat actualment, premeu <menuchoice><guimenu>Adreces d'interès</"
-"guimenu><guimenuitem>Afegeix una adreça d'interès...</guimenuitem></"
-"menuchoice> o premeu <keycombo><keycap>Control</keycap><keycap>d</keycap></"
-"keycombo>."
 
-#: C/accerciser.xml:317(para)
+#: C/event_monitor_plugin.page:36(figure/desc)
+#: C/event_monitor_plugin.page:41(media/p)
 msgid ""
-"Bookmarks to accessibles in Accerciser are defined by an application name "
-"and a \"path\" in the application's internal accessible hierarchy to the "
-"bookmarked accessible. When the target application is in a different state "
-"(ie. multiple top level frames) the path might not be correct."
+"The Event Monitor Plugin allows you to view AT-SPI events and match them "
+"with accessible widgets."
 msgstr ""
-"Les adreces d'interès a accessibles en l'Accerciser estan definides pel nom "
-"de l'aplicació i un «camí» en la jerarquia interna de l'accessible de "
-"l'aplicació a l'accessible. Quan l'aplicació objectiu està en un estat "
-"diferent (ex. múltiples marcs de nivell superior) pot ser que el camí no "
-"sigui correcte."
 
-#: C/accerciser.xml:324(para)
+#: C/event_monitor_plugin.page:49(section/title)
+msgid "Running the Event Monitor Plugin"
+msgstr ""
+
+#: C/event_monitor_plugin.page:50(section/p)
 msgid ""
-"Bookmarks could be managed by accessing the bookmark editing dialog through "
-"<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit Bookmarks...</"
-"guimenuitem></menuchoice>."
+"When you open the Event Monitor Plugin, you see a list of checkboxes "
+"representing all the different AT-SPI event classes covered by the plugin:"
 msgstr ""
-"Les adreces d'interès es poden gestionar mitjançant el diàleg d'edició "
-"d'adreces d'interès a través de <menuchoice><guimenu>Adreces d'interès</"
-"guimenu><guimenuitem>Edita les adreces d'interès...</guimenuitem></"
-"menuchoice>."
 
-#: C/accerciser.xml:337(title)
-msgid "Default Plugins"
-msgstr "Connectors per defecte"
+#: C/event_monitor_plugin.page:58(item/p)
+msgid "document"
+msgstr "document"
 
-#: C/accerciser.xml:337(para)
+#: C/event_monitor_plugin.page:63(item/p)
+msgid "focus"
+msgstr "focus"
+
+#: C/event_monitor_plugin.page:68(item/p)
+msgid "mouse"
+msgstr "ratolí"
+
+#: C/event_monitor_plugin.page:73(item/p)
+msgid "object"
+msgstr "objecte"
+
+#: C/event_monitor_plugin.page:78(item/p)
+msgid "terminal"
+msgstr "terminal"
+
+#: C/event_monitor_plugin.page:83(item/p)
+msgid "window"
+msgstr "finestra"
+
+#: C/event_monitor_plugin.page:89(section/p)
 msgid ""
-"<application>Accerciser</application> comes with several default plugins. "
-"These plugins allow you to view a variety of information about the currently "
-"selected accessible in the tree view and its neighbors. The default plugins "
-"available in 0.1.5 are the following:"
+"If you check a class, all of its event types will be monitored by the "
+"plugin. The classes are exposed as tree structures; therefore, you can "
+"refine your selection by expanding them and checking only the event types "
+"you really care about."
 msgstr ""
-"L'<application>Accerciser</application> incorpora diversos connectors per "
-"defecte. Aquests connectors us permeten visualitzar diferents informacions "
-"respecte l'actual accessible seleccionat a la visualització d'arbre i els "
-"seus veïns. Els connectors disponibles per defecte a la versió 0.1.5 són els "
+
+#: C/event_monitor_plugin.page:95(section/p)
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the "
+"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
+"selected event types, press the <cmd>Clear Selection</cmd> button."
+msgstr ""
+
+#: C/event_monitor_plugin.page:102(note/p)
+msgid ""
+"Selecting only a few event types per monitoring gives you a clearer output."
+msgstr ""
+
+#: C/event_monitor_plugin.page:107(section/p)
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, "
+"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
+"events of all applications will be monitored. If you want to investigate a "
+"single application, select it in the Application Tree View and click the "
+"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, "
+"select it in the Application Tree View and click the Source radio button "
+"<cmd>Selected accessible</cmd>."
+msgstr ""
+
+#: C/event_monitor_plugin.page:116(section/p)
+msgid ""
+"After selecting event types and specifying a Source option, the Event "
+"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
+"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
+"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
+"monitoring, press this button again."
+msgstr ""
+
+#: C/event_monitor_plugin.page:123(section/p)
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and "
+"the application. Activating the link for either of these items will cause it "
+"to become selected in the Application Tree View."
+msgstr ""
+
+#: C/event_monitor_plugin.page:128(section/p)
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just "
+"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
+"to click the <cmd>Clear</cmd> button."
+msgstr ""
+
+#: C/howto_setting_up_accerciser.page:5(info/title)
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr ""
+
+#: C/howto_setting_up_accerciser.page:6(info/title)
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Configuració de l'<app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:7(info/desc)
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "Instal·lació i execució de l'<app>Accerciser</app> en el sistema"
+
+#: C/howto_setting_up_accerciser.page:26(page/title)
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Configuració de l'<app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:28(page/p)
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If "
+"this is the case, you can install it via its package manager. Otherwise, you "
+"can follow the section below to install <app>Accerciser</app> manually."
+msgstr ""
+
+#: C/howto_setting_up_accerciser.page:35(section/title)
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "Instal·lació manual de l'<app>Accerciser</app>"
+
+#: C/howto_setting_up_accerciser.page:36(section/p)
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it "
+"first. <app>Accerciser</app>'s source code can either be downloaded from "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the gnome."
+"org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
+"accerciser\">the gnome.org GIT repository</link>."
+msgstr ""
+
+#: C/howto_setting_up_accerciser.page:43(note/p)
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
+"version 3 or later is not compatible with your environment."
+msgstr ""
+
+#: C/howto_setting_up_accerciser.page:50(section/p)
+msgid ""
+"After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr ""
+"Després d'obtenir l'<app>Accerciser</app>, instal·leu-lo amb les ordres "
 "següents:"
 
-#: C/accerciser.xml:363(title) C/accerciser.xml:367(title)
-msgid "Interface Viewer"
-msgstr "Visualització d'interfícies"
+#: C/howto_setting_up_accerciser.page:54(item/p)
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
 
-#: C/accerciser.xml:364(para)
-msgid ""
-"This plugin displays information about the available interfaces for the "
-"selected tree view accessible. Unsupported interfaces are grayed out. "
-"Various instruments for viewing and controlling an interface are available "
-"under each expander."
+#: C/howto_setting_up_accerciser.page:55(item/p)
+msgid "<cmd>./autogen.sh # or ./configure for first time installation</cmd>"
 msgstr ""
-"Aquest connector visualitza informació quant a les interfícies disponibles "
-"de l'accessible seleccionat a la visualització d'arbre. Les interfícies no "
-"compatibles són ombrejades. Hi ha varis instruments disponibles per a "
-"visualitzar i controlar una interfície sota cada expansor."
+"<cmd>./autogen.sh # o ./configure si és la primera vegada que l'instal·leu</"
+"cmd>"
 
-#: C/accerciser.xml:375(phrase)
+#: C/howto_setting_up_accerciser.page:56(item/p)
+msgid "<cmd>make</cmd>"
+msgstr "<cmd>make</cmd>"
+
+#: C/howto_setting_up_accerciser.page:57(item/p)
+msgid "<cmd>sudo make install # or make install as root</cmd>"
+msgstr "<cmd>sudo make install # o make install com a usuari primari</cmd>"
+
+#: C/howto_setting_up_accerciser.page:59(section/p)
 msgid ""
-"Interfaces that are supported by the selected accessible are shown as "
-"sensitive."
+"If you find any problems installing <app>Accerciser</app> on your system, it "
+"is likely that some of its dependencies are missing. Check <link href="
+"\"https://live.gnome.org/Accerciser/#Requirements\"> <app>Accerciser</app>'s "
+"wiki</link> to make sure you have all dependencies properly installed."
 msgstr ""
-"Les interfícies que estan suportades per l'accessible seleccionat es "
-"mostraran com a sensibles."
 
-#: C/accerciser.xml:382(title) C/accerciser.xml:385(title)
-msgid "Event Monitor"
-msgstr "Seguiment d'esdeveniments"
+#: C/howto_setting_up_accerciser.page:67(section/title)
+msgid "Running <app>Accerciser</app>"
+msgstr "Execució de l'<app>Accerciser</app>"
 
-#: C/accerciser.xml:383(para)
+#: C/howto_setting_up_accerciser.page:68(section/p)
 msgid ""
-"This plugin monitors the selected types of events from the selected tree "
-"view accessible, from the selected tree view application, or the entire "
-"desktop."
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
+"window or within the Run dialog and then press <key>Return</key>."
 msgstr ""
-"Aquest connector fa un seguiment dels tipus d'esdeveniments seleccionats a "
-"la visualització d'arbre de l'accessible seleccionat, a la visualització "
-"d'arbre de l'aplicació seleccionada, o de tot l'escriptori."
 
-#: C/accerciser.xml:392(phrase)
+#: C/howto_setting_up_accerciser.page:72(section/p)
 msgid ""
-"The bottom part of the event monitor window allows you to pick the type and "
-"source of events."
+"After that, you can use <app>Accerciser</app> to inspect any accessible item "
+"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
+"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
+"app>'s plugins."
 msgstr ""
-"La part inferior de la finestra de seguiment d'esdeveniments us permet triar "
-"el tipus i la font dels esdeveniments."
 
-#: C/accerciser.xml:399(para)
+#: C/howto_write_a_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "3. Writing New Plugins"
+msgstr "3. Escriure connectors nous"
+
+#: C/howto_write_a_plugin.page:6(info/desc)
+msgid "Extending <app>Accerciser</app> with your desired functionalities"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:25(page/title)
+msgid "Writing Plugins for <app>Accerciser</app>"
+msgstr "Escriure connectors per l'<app>Accerciser</app>"
+
+#: C/howto_write_a_plugin.page:26(page/p)
 msgid ""
-"By pressing <keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>l</"
-"keycap></keycombo> anywhere on the desktop, the last logged event will be "
-"highlighted for later reference. See <xref linkend=\"accerciser-hotkey-config"
-"\"/> for how to change this key combination."
+"Extending <app>Accerciser</app> with new plugins became much simpler since "
+"<link href=\"http://live.gnome.org/Accerciser/PluginTutorial\">this "
+"tutorial</link> was written. Given that it provides a very detailed "
+"explanation about the topic, this section consists basically of its original "
+"content - only simple editions and updates were done."
 msgstr ""
-"En prémer <keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>l</"
-"keycap></keycombo> des de qualsevol indret de l'escriptori, l'últim "
-"esdeveniment registrat serà realçat per a una posterior referència. Vegeu "
-"<xref linkend=\"accerciser-hotkey-config\"/> per a saber com canviar aquesta "
-"drecera de teclat."
 
-#: C/accerciser.xml:412(title)
-msgid "IPython Console"
-msgstr "Consola IPython"
+#: C/howto_write_a_plugin.page:33(page/p)
+msgid "<app>Accerciser</app> supports three basic types of plugins:"
+msgstr ""
 
-#: C/accerciser.xml:413(para)
+#: C/howto_write_a_plugin.page:38(item/p)
 msgid ""
-"This plugin is a fully-fledged <ulink url=\"http://ipython.scipy.org/moin/\" "
-"type=\"http\">IPython</ulink> console. Press <keycap>Tab</keycap> to show "
-"completions for the current command. Press <keycap>Enter</keycap> to execute "
-"any valid Python code. Commands at the console have access to the currently "
-"selected accessible in the accessible tree by way of the <varname>acc</"
-"varname> variable. In addition, all functions and constants from the pyatspi "
-"package are available as locals in the console. The most important of these "
-"are the functions for querying to other accessibility interfaces. For "
-"example, to query to the Text interface: <command>t = acc.queryText() </"
-"command>. Imports from the current working directory or Python path are also "
-"allowed."
+"Base plugins - These plugins are derived from the Plugin base class. They do "
+"not provide a visible interface, but could provide additional functionality "
+"to <app>Accerciser</app>."
 msgstr ""
-"Aquest connector és una completa consola <ulink url=\"http://ipython.scipy."
-"org/moin/\" type=\"http\">IPython</ulink>. Premeu <keycap>Tab</keycap> per a "
-"mostrar completa l'ordre actual. Premeu <keycap>Retorn</keycap> per a "
-"executar un codi Python vàlid. Les ordres de la consola tenen accés a "
-"l'accessible seleccionat actualment en l'arbre d'accessibles mitjançant la "
-"variable <varname>acc</varname>. A més, totes les funcions i constants del "
-"paquet pyatspi estan disponibles com a locals en la consola. La finalitat "
-"més important d'aquestes funcions és per a fer consultes sobre "
-"l'accessibilitat a d'altres interfícies. Per exemple, per a consultar a "
-"l'interfície «Text»: <command>t = acc.queryText()</command>. També estan "
-"permeses importacions de l'actual directori de treball o de camins del "
-"Python."
 
-#: C/accerciser.xml:429(title) C/accerciser.xml:432(title)
-msgid "API Browser"
-msgstr "Explorador de l'API"
-
-#: C/accerciser.xml:430(para)
+#: C/howto_write_a_plugin.page:44(item/p)
 msgid ""
-"This plugin shows the interfaces, methods, and attributes supported by the "
-"accessible selected in the tree view."
+"Console plugins - These plugins provide simple console output into a text "
+"area in a plugin tab. Not to be confused with the packaged <link xref="
+"\"ipython_plugin\">IPython Console Plugin</link>."
 msgstr ""
-"Aquest connector mostra les interfícies, mètodes i atributs disponibles per "
-"l'accessible seleccionat en la visualització d'arbre."
 
-#: C/accerciser.xml:439(phrase)
-msgid "The API browser."
-msgstr "L'explorador de l'API."
-
-#: C/accerciser.xml:446(title)
-msgid "Script recorder"
-msgstr "Enregistrador d'scripts"
-
-#: C/accerciser.xml:447(para)
+#: C/howto_write_a_plugin.page:50(item/p)
 msgid ""
-"<application>Accerciser</application>'s script recorder allows users to "
-"record keyboard interaction with other desktop applications for the purpose "
-"of authoring UI test scripts. Currently the plug-in supports the generation "
-"of scripts for three platforms: Dogtail, LDTP, and an Accerciser's built-in "
-"API. Once you press the \"Record\" button every keyboard interaction will be "
-"recorded in to a script that could be executed later as a stand alone script."
+"Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
+"They provide a custom graphical interface in a tab."
 msgstr ""
-"L'enregistrador d'scripts de l'<application>Accerciser</application> us "
-"permet gravar la interacció del teclat amb altres aplicacions de "
-"l'escriptori per a autoritzar els scripts de proba per a la interfície "
-"gràfica. Actualment el connector admet la generació d'scripts per a tres "
-"plataformes: el Dogtail, el LDTP i l'API integrada de l'Accerciser. Un cop "
-"premeu el botó «Gravar» es gravarà tota l'interacció del teclat en un script "
-"que podrà ser executat més tard com un script individual."
 
-#: C/accerciser.xml:457(title)
-msgid "Script Recorder"
-msgstr "Enregistrador d'scripts"
+#: C/howto_write_a_plugin.page:58(section/title)
+msgid "Creating a Base Plugin"
+msgstr ""
 
-#: C/accerciser.xml:464(phrase)
-msgid "The script recorder."
-msgstr "L'enregistrador d'scripts."
-
-#: C/accerciser.xml:471(title)
-msgid "Quick select"
-msgstr "Selecció ràpida"
-
-#: C/accerciser.xml:472(para)
+#: C/howto_write_a_plugin.page:59(section/p)
 msgid ""
-"This plugin provides global hotkeys for allowing quick selection of "
-"accessibles through the target application's UI. Pressing "
-"<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>a</keycap></"
-"keycombo> will select the last focused widget's accessible in "
-"<application>Accerciser</application>. Pressing <keycombo><keycap>Control</"
-"keycap><keycap>Alt</keycap><keycap>t</keycap></keycombo> will select the "
-"accessible of the widget that is under the pointer."
+"We will create a simplified version of the <link xref=\"quick_select_plugin"
+"\">Quick Select Plugin</link>. This plugin will select the last focused "
+"accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
 msgstr ""
-"Aquest connector proporciona combinacions de tecles globals que permeten una "
-"selecció ràpida dels accessibles a través de la interfície gràfica de "
-"l'aplicació objectiu. En prémer <keycombo><keycap>Control</"
-"keycap><keycap>Alt</keycap><keycap>a</keycap></keycombo> se seleccionarà "
-"l'últim accessible del giny que tenia el focus en l'<application>Accerciser</"
-"application>. En prémer <keycombo><keycap>Control</keycap><keycap>Alt</"
-"keycap><keycap>t</keycap></keycombo> se seleccionarà l'accessible del giny "
-"que està sota el punter."
 
-#: C/accerciser.xml:489(title)
-msgid "Validation"
-msgstr "Validació"
+#: C/howto_write_a_plugin.page:63(section/p)
+msgid "First off, the import lines we will use are:"
+msgstr ""
 
-#: C/accerciser.xml:490(para)
+#: C/howto_write_a_plugin.page:66(section/code)
+#, no-wrap
 msgid ""
-"This plugin checks applications for accessibility problems and generates a "
-"report including the severity and description of the problems. The report "
-"links errors to documentation about how to remedy common problems. The "
-"plugin is extensible with test schemas that define rules for validation."
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
 msgstr ""
-"Aquest connector comprova els problemes d'accessibilitat de les aplicacions "
-"i genera un informe on inclou la gravetat i la descripció dels problemes. "
-"L'informe enllaça els errors amb la documentació sobre com solucionar els "
-"problemes comuns. El connector és extensible amb esquemes de prova que "
-"defineixen regles de validació."
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
 
-#: C/accerciser.xml:498(para)
+#: C/howto_write_a_plugin.page:71(section/p)
 msgid ""
-"To run the validator, first select an item in the accessibility tree. The "
-"plugin will test the selected accessible and all of its descendants. Next "
-"select a schema to use for the test. Then click the <guibutton>Validate</"
-"guibutton> button to start the test. While the test is running, click the "
-"button again to cancel it."
+"Next we will derive a new class from the Plugin base class, and assign some "
+"mandatory class attributes:"
 msgstr ""
-"Per a executar la validació, primer seleccioneu un element de l'arbre "
-"d'accessibilitat. El connector comprovarà l'accessible seleccionat i tots "
-"els seus descendents. Després seleccioneu un esquema a utilitzar per a la "
-"comprovació. Llavors feu clic al botó <guibutton>Validar</guibutton> per a "
-"iniciar la comprovació. Feu un altre cop clic al botó, mentre s'està "
-"executant la comprovació, per a cancel·lar-la."
 
-#: C/accerciser.xml:506(para)
+#: C/howto_write_a_plugin.page:75(section/code)
+#, no-wrap
 msgid ""
-"When the test completes, the report table shows the severity and description "
-"of all errors. Double click a row in the table to show the associated "
-"accessible in the tree. With an item selected, click the <guibutton>Help</"
-"guibutton> to get information about how to resolve the problem."
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
 msgstr ""
-"En acabar la comprovació, la taula d'informe mostrarà la gravetat i la "
-"descripció de tots els errors. Feu un doble clic a una fila de la taula per "
-"a visualitzar l'accessible associat en l'arbre. Amb un element seleccionat, "
-"feu clic a <guibutton>Ajuda</guibutton> per a aconseguir informació sobre "
-"com resoldre el problema."
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
 
-#: C/accerciser.xml:519(title)
-msgid "Preferences"
-msgstr "Preferències"
-
-#: C/accerciser.xml:520(para)
+#: C/howto_write_a_plugin.page:80(section/p)
 msgid ""
-"There are some elements in <application>Accerciser</application> that are "
-"configurable:"
+"We will now override the init method, in which we will set a global key "
+"action for selecting the last focused accessible item, register an event "
+"listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
+"instance variable to <cmd>None</cmd>."
 msgstr ""
-"Hi ha alguns elements configurables en l'<application>Accerciser</"
-"application>:"
 
-#: C/accerciser.xml:531(title)
-msgid "Plugin Layout"
-msgstr "Disposició dels connectors"
-
-#: C/accerciser.xml:532(para)
+#: C/howto_write_a_plugin.page:86(section/code)
+#, no-wrap
 msgid ""
-"There are two methods for configuring plugin layout in "
-"<application>Accerciser</application>. First you may choose "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></"
-"menuchoice> to activate the <guilabel>Preferences</guilabel> dialog. This "
-"dialog contains tabs for each section, select the <guilabel>Plugins</"
-"guilabel> tab. Under this section you will find a list view of all the "
-"available plugins. Right-click on any of the plugins listed to configure "
-"it's view."
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
 msgstr ""
-"Hi ha dos mètodes per a configurar la disposició dels connectors a "
-"l'<application>Accerciser</application>. Primer heu de triar "
-"<menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</guimenuitem></"
-"menuchoice> per a activar el diàleg de <guilabel>Preferències</guilabel>. "
-"Aquest diàleg conté pestanyes per a cada secció, seleccioneu la pestanya "
-"<guilabel>Connectors</guilabel>. En aquesta secció trobareu una "
-"visualització de llista de tots els connectors disponibles. Feu clic amb el "
-"botó dret a qualsevol dels connectors llistats per a configurar la seva "
-"visualització."
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
 
-#: C/accerciser.xml:545(para)
+#: C/howto_write_a_plugin.page:95(section/p)
 msgid ""
-"You may bypass the <guilabel>Preferences</guilabel> dialog by using drag and "
-"drop to move plugin tabs. Dragging a plugin tab to the bottom or right "
-"plugin area in the main window will move the plugin. Dragging a tab to the "
-"desktop will create a new plugin window and drop the plugin in it."
+"Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of "
+"tuples. Each tuple is a global hotkey action, composed by an action "
+"description, a desired method to call, a key symbol of keypress, and a key "
+"modifier mask."
 msgstr ""
-"En comptes de fer servir el diàleg de <guilabel>Preferències</guilabel>, "
-"podeu arrossegar i deixar anar les pestanyes dels connectors per a moure-"
-"les. En arrossegar la pestanya del connector a l'àrea de connectors inferior "
-"o dreta de la finestra principal moureu el connector. En arrossegar la "
-"pestanya a l'escriptori creareu una nova finestra de connectors on deixar-hi "
-"anar el connector."
 
-#: C/accerciser.xml:552(title)
-msgid "Global Hotkey Configuration"
-msgstr "Configuració de les dreceres de teclat globals"
-
-#: C/accerciser.xml:553(para)
+#: C/howto_write_a_plugin.page:100(section/p)
 msgid ""
-"Some elements in <application>Accerciser</application> may enable certain "
-"functionality via hotkeys. The hotkey combination could be changed via the "
-"<guilabel>Preferences</guilabel> dialog, to do so you may select "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></"
-"menuchoice> to activate the <guilabel>Preferences</guilabel> dialog. This "
-"dialog contains tabs for each section, select the <guilabel>Global Hotkeys</"
-"guilabel> tab. Under this section you will find a list view of all the "
-"available hotkey features. Change the key bindings to you liking."
+"In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> "
+"instance variable with the accessible item that has just emitted the \"focus"
+"\" event."
 msgstr ""
-"Alguns elements de l'<application>Accerciser</application> poden activar "
-"certa funcionalitat a través de les dreceres de teclat. La combinació de la "
-"drecera de teclat es pot canviar a través del diàleg de "
-"<guilabel>Preferències</guilabel>, per a fer-ho heu de seleccionar  "
-"<menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</guimenuitem></"
-"menuchoice> per a activar el diàleg de <guilabel>Preferències</guilabel>. "
-"Aquest diàleg conté una pestanya per a cada secció, seleccioneu la pestanya "
-"<guilabel>Dreceres de teclat globals</guilabel>. En aquesta secció trobareu "
-"una visualització de llista de totes les funcions disponibles de les "
-"dreceres de teclat. Canvieu l'assignació de tecles al vostre gust."
 
-#: C/accerciser.xml:586(title)
-msgid "About <application>Accerciser</application>"
-msgstr "Quant a l'<application>Accerciser</application>"
-
-#: C/accerciser.xml:587(para)
+#: C/howto_write_a_plugin.page:104(section/code)
+#, no-wrap
 msgid ""
-"<application>Accerciser</application> was written by Eitan Isaacson "
-"(<email>eitan@ascender.com</email>). To find more information about "
-"<application>Accerciser</application>, please visit the <ulink url=\"http://"
-"live.gnome.org/Accerciser\" type=\"http\"><application>Accerciser</"
-"application> GNOME Live! page</ulink>."
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
 msgstr ""
-"L'<application>Accerciser</application> ha sigut escrit per l'Eitan Isaacson "
-"(<email>eitan@ascender.com</email>). Per a obtenir més informació quant a "
-"l'<application>Accerciser</application>, visiteu la <ulink url=\"http://live."
-"gnome.org/Accerciser\" type=\"http\"> pàgina de l'<application>Accerciser</"
-"application> a GNOME Live!</ulink>."
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
 
-#: C/accerciser.xml:589(para)
+#: C/howto_write_a_plugin.page:109(section/p)
 msgid ""
-"To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
-"type=\"help\">document</ulink>."
+"In the hotkey action callback, we update the application wide node with the "
+"last focused accessible item, if we have recorded it:"
 msgstr ""
-"Per a informar d'un error o fer un suggeriment sobre l'aplicació o d'aquest "
-"manual, seguiu les indicacions en aquest <ulink url=\"ghelp:gnome-feedback\" "
-"type=\"help\">document</ulink>."
 
-#: C/accerciser.xml:592(para)
+#: C/howto_write_a_plugin.page:113(section/code)
+#, no-wrap
 msgid ""
-"Redistribution and use in source and binary forms, with or without "
-"modification, are permitted under the terms of the BSD License."
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
 msgstr ""
-"Es permet la redistribució i utilització del codi font i del binari, amb o "
-"sense modificació, sota els termes de la llicència BSD."
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: C/accerciser.xml:0(None)
-msgid "translator-credits"
-msgstr "Joan Duran <jodufi@gmail.com>, 2007-2009"
+#: C/howto_write_a_plugin.page:120(section/title)
+msgid "Creating a Console Plugin"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:121(section/p)
+msgid ""
+"We will create a console plugin to display focus changes emitted by an "
+"accessible item with a \"push button\" role - remember that it is easy to "
+"check what is the role of any item with <app>Accerciser</app>; you can "
+"verify it in the <link xref=\"desktop_tree_view\">Application Tree View</"
+"link>, for example."
+msgstr ""
+
+#: C/howto_write_a_plugin.page:127(section/p)
+msgid "The needed import lines are:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:130(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+
+#: C/howto_write_a_plugin.page:134(section/p)
+msgid "Then we add a class definition, with a plugin name and description:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:137(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+msgstr ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+
+#: C/howto_write_a_plugin.page:142(section/p)
+msgid "We override the init method adding a register listener:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:145(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+
+#: C/howto_write_a_plugin.page:149(section/p)
+msgid "In the callback method, all push button events are printed."
+msgstr ""
+
+#: C/howto_write_a_plugin.page:152(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+
+#: C/howto_write_a_plugin.page:159(section/title)
+msgid "Creating a Viewport Plugin"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:160(section/p)
+msgid ""
+"We will create a viewport plugin that allows quick testing of the \"click\" "
+"action in accessible items that support the AT-SPI Action interface and have "
+"an action named \"click\". It will be a simple button that, once clicked, "
+"does the \"click\" action in the accessible."
+msgstr ""
+
+#: C/howto_write_a_plugin.page:166(section/p)
+msgid "First off, some mandatory import lines:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:169(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+msgstr ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+
+#: C/howto_write_a_plugin.page:173(section/p)
+msgid "Next, a class definition, with a name and description:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:176(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+
+#: C/howto_write_a_plugin.page:181(section/p)
+msgid ""
+"We override the init method with some UI building, and connecting a callback "
+"to a signal for the button. We use the alignment container to allow the "
+"button to be centered in the plugin tab, and not monstrously take up the "
+"entire plugin space. Notice that the <cmd>plugin_area</cmd> instance "
+"variable contains a gtk.Frame that could be populated with all the plugin's "
+"widgets."
+msgstr ""
+
+#: C/howto_write_a_plugin.page:188(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         alignment = gtk.Alignment(0.5,0.5,0,0)\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         alignment.add(self.click_button)\n"
+"         self.plugin_area.add(alignment)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         alignment = gtk.Alignment(0.5,0.5,0,0)\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         alignment.add(self.click_button)\n"
+"         self.plugin_area.add(alignment)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+
+#: C/howto_write_a_plugin.page:199(section/p)
+msgid ""
+"We also created a convenience method that returns a list of supported "
+"actions of the currently selected accessible item - if it does not support "
+"the Action interface, it returns an empty list:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:204(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+msgstr ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+
+#: C/howto_write_a_plugin.page:214(section/p)
+msgid ""
+"The base plugin class has a method call onAccChanged that is called "
+"everytime the target application's selected accessible item changes. We will "
+"override it setting the button to be sensitive only when the current "
+"accessible item has the \"click\" action:"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:219(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+msgstr ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+
+#: C/howto_write_a_plugin.page:224(section/p)
+msgid ""
+"The callback method for button \"clicked\" performs the \"click\" action on "
+"the accessible item. Since this callback could only be called when the "
+"button is sensitive, we don't need to worry about checking if the current "
+"accessible has the \"click\" action?"
+msgstr ""
+
+#: C/howto_write_a_plugin.page:229(section/code)
+#, no-wrap
+msgid ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+msgstr ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
+msgstr ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
+
+#: C/interface_viewer_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "2. Connector de visualització d'interfícies"
+
+#: C/interface_viewer_plugin.page:6(info/desc)
+msgid "Examining your accessibility implementation"
+msgstr "Examineu la vostra implementació de l'accessibilitat"
+
+#: C/interface_viewer_plugin.page:25(page/title)
+msgid "Interface Viewer Plugin"
+msgstr "Connector de visualització d'interfícies"
+
+#: C/interface_viewer_plugin.page:27(page/p)
+msgid ""
+"The Interface Viewer Plugin shows the information and controls provided by "
+"the AT-SPI interfaces present in each accessible item from the <link xref="
+"\"desktop_tree_view\">Application Tree View</link>. After selecting an item, "
+"you can use this plugin to quickly review its supported interfaces, to "
+"retrieve each interface's information, and to manipulate the item through "
+"all the interface’s methods."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:35(figure/title)
+msgid "Examining a Menu with the Interface Viewer Plugin"
+msgstr ""
+
+#: C/interface_viewer_plugin.page:36(figure/desc)
+#: C/interface_viewer_plugin.page:42(media/p)
+msgid ""
+"Given a selected item in the Application Tree View, all of its AT-SPI "
+"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
+"unsupported will appear grayed out, such as the Application and Collection "
+"interfaces in the figure above."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:49(section/title)
+msgid "Running the Interface Viewer Plugin"
+msgstr "Execució del connector de visualització d'interfícies"
+
+#: C/interface_viewer_plugin.page:50(section/p)
+msgid ""
+"The first step to run the Interface Viewer Plugin is to select an item in "
+"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
+"that, all AT-SPI interfaces covered by the plugin will be listed in the "
+"plugin's panel. The interfaces implemented by the selected item will be "
+"sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following "
+"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
+"item implements them:"
+msgstr ""
+
+#: C/interface_viewer_plugin.page:59(item/p)
+msgid ""
+"Accessible - This interface shows the selected item's child count (number of "
+"child widgets), description, states, relations, and attributes."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:65(item/p)
+msgid ""
+"Action - This interface shows all the actions that can be performed by the "
+"selected item. For each interface, you will see its name, such as \"press\" "
+"or \"click\", followed by a description and a key binding, if there are any. "
+"If you select an action, a \"Perform action\" button will become sensitive. "
+"Press this button to see the item performing the selected action."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:73(item/p)
+msgid ""
+"Application - This interface can be implemented by items with role "
+"\"application\". It is worth to point out that items with role \"application"
+"\" not necessarily implement this interface. If the selected item implements "
+"it, the interface will show its ID and, if there are any, its toolkit and "
+"version."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:80(item/p)
+msgid ""
+"Component - This interface shows the selected item's absolute position (with "
+"respect to the desktop coordinate system), relative position (with respect "
+"to the window coordinate system), size, layer type, MDI-Z-order (a short "
+"integer indicating the stacking order of the component in the MDI layer), "
+"and alpha (if alpha blending is used)."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:86(item/p)
+msgid ""
+"Document - This interface shows the selected item's document attributes and "
+"locale description, if there is one."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:91(item/p)
+msgid ""
+"Hypertext - This interface shows a list with all the selected item's "
+"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
+"URI, start (the index in the hypertext at which the hyperlink begins) and "
+"end (the index in the hypertext at which this hyperlink ends)."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:98(item/p)
+msgid ""
+"Image - This interface shows the selected item's description (or \"no "
+"description\" if unspecified), size, position (with respect to the desktop "
+"coordinate system), and locale, if there is one."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:104(item/p)
+msgid ""
+"Selection - This interface shows all selectable child items of the selected "
+"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
+"\"View\", and \"Help\", and all of them are selectable, then they will be "
+"listed in this interface. If you click a listed option - \"File\", for "
+"example - and want to clear it, just press the \"Clear\" button below the "
+"list."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:112(item/p)
+msgid ""
+"Streamable Content - This interface shows the selected item's content types "
+"and their corresponding URIs."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:117(item/p)
+msgid ""
+"Table - This interface shows the selected item's caption and summary, rows "
+"(number of rows), columns (number of columns), selected rows (number of "
+"selected rows), and selected columns (number of selected columns). For a "
+"selected cell, the interface shows its row's and column's header and extents."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:124(item/p)
+msgid ""
+"Text - This interface shows the selected item's text content, that can be "
+"editable, and its attributes. The basic attributes are offset (the number of "
+"characters the text has) and justification. To see possible CSS attributes, "
+"click the \"Include defaults\" check box."
+msgstr ""
+
+#: C/interface_viewer_plugin.page:131(item/p)
+msgid ""
+"Value - This interface shows the selected item's current value, minimum "
+"allowed value, maximum allowed value, and the minimum increment by which the "
+"value may be changed (or zero if this value cannot be determined). The "
+"current value can be manually changed via a spin button."
+msgstr ""
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+msgstr ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+
+#: C/introduction.page:5(info/title)
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "1. Què és l'Accerciser?"
+
+#: C/introduction.page:6(info/desc)
+msgid "An interactive accessibility explorer"
+msgstr "Un explorador interactiu de l'accessibilitat"
+
+#: C/introduction.page:25(page/title)
+msgid "What is <app>Accerciser</app>?"
+msgstr "Què és l'<app>Accerciser</app>?"
+
+#: C/introduction.page:26(page/p)
+msgid ""
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
+"uses the AT-SPI library to inspect, examine, and interact with widgets, "
+"allowing you to check if an application is providing correct information to "
+"assistive technologies and automated testing frameworks. <app>Accerciser</"
+"app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
+msgstr ""
+"L'<app>Accerciser</app> és un explorador interactiu d'accessibilitat en "
+"Python. Utilitza la biblioteca AT-SPI per inspeccionar, examinar i "
+"interactuar amb els ginys. Us permet comprovar si una aplicació proporciona "
+"la informació correcta a les tecnologies assistives i als entorns de proves "
+"automàtic. L'<app>Accerciser</app> incorpora un conjunt de connectors que "
+"podeu utilitzar per crear vistes pròpies de la informació d'accessibilitat."
+
+#: C/introduction.page:35(page/p)
+msgid ""
+"By default, <app>Accerciser</app>'s main interface is comprised of three "
+"sections: a tree view of the entire desktop accessible hierarchy, namely "
+"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+"plugin areas. If you prefer to see all plugins in a single area, dividing "
+"<app>Accerciser</app>'s interface in two sections instead of three, type "
+"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
+"<key>ctrl</key>+<key>t</key> again."
+msgstr ""
+
+#: C/introduction.page:44(note/p)
+msgid ""
+"Make sure that accessibility suport is enabled in your desktop - otherwise, "
+"<app>Accerciser</app> will not work as expected."
+msgstr ""
+
+#: C/introduction.page:51(figure/title)
+msgid "<app>Accerciser</app>"
+msgstr "<app>Accerciser</app>"
+
+#: C/introduction.page:52(figure/desc) C/introduction.page:56(media/p)
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "La interfície per defecte de l'<app>Accerciser</app>"
+
+#: C/introduction.page:63(section/title)
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "Audiència esperada de l'<app>Accerciser</app>"
+
+#: C/introduction.page:64(section/p)
+msgid ""
+"<app>Accerciser</app> fits the needs of many different audiences. User "
+"interface developers use it to ensure that their applications are providing "
+"all of their features through AT-SPI. Assistive technology developers are "
+"able to see what AT-SPI is providing to their applications. Automated UI "
+"test developers find <app>Accerciser</app> beneficial since it exposes "
+"different events that could be expected from their target application."
+msgstr ""
+
+#: C/introduction.page:74(section/title)
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "L'arquitectura de connectors de l'<app>Accerciser</app>"
+
+#: C/introduction.page:75(section/p)
+msgid ""
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
+"code is fairly small and most of its features are part of default plugins:"
+msgstr ""
+
+#: C/introduction.page:82(item/p)
+msgid ""
+"<link xref=\"interface_viewer\">Interface Viewer</link> - A plugin that lets "
+"you explore the AT-SPI interfaces provided by each accessible widget of a "
+"target application."
+msgstr ""
+
+#: C/introduction.page:88(item/p)
+msgid ""
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
+"applies tests to verify the accessibility of a target application."
+msgstr ""
+
+#: C/introduction.page:94(item/p)
+msgid ""
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
+"displays AT-SPI events emitted by a target application as they occur."
+msgstr ""
+
+#: C/introduction.page:100(item/p)
+msgid ""
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
+"provides global hotkeys for quickly selecting accessible widgets in "
+"<app>Accerciser</app>'s Application Tree View."
+msgstr ""
+
+#: C/introduction.page:106(item/p)
+msgid ""
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
+"the interfaces, methods, and attributes available on each accessible widget "
+"of a target application."
+msgstr ""
+
+#: C/introduction.page:112(item/p)
+msgid ""
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
+"provides a full, interactive Python shell with access to selected accessible "
+"widgets of a target application."
+msgstr ""
+
+#: C/introduction.page:122(section/title)
+msgid "More about Accessibility"
+msgstr "Més sobre l'accessibilitat"
+
+#: C/introduction.page:123(section/p)
+msgid ""
+"Accessibility is a core value that should touch all aspects of a Desktop "
+"Environment. To help achieve it in GNOME, some libraries were developed, "
+"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
+"also used in other Desktop Environments. To learn more about Accessibility "
+"Libraries for GNU/UNIX systems, you can consult:"
+msgstr ""
+
+#: C/introduction.page:132(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
+"link> - ATK provides the set of accessibility interfaces that are "
+"implemented by other toolkits and applications. Using the ATK interfaces, "
+"accessibility tools have full access to view and control running "
+"applications."
+msgstr ""
+
+#: C/introduction.page:139(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"- AT-SPI is the primary service interface by which assistive technologies "
+"query and receive notifications from running applications. Additional "
+"material is available from the <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
+"link>."
+msgstr ""
+
+#: C/introduction.page:147(item/p)
+msgid ""
+"<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
+"\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
+"in how the GNOME Desktop supports the needs of users with disabilities."
+msgstr ""
+
+#: C/introduction.page:153(item/p)
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
+"want to ensure their applications are accessible to the widest audience of "
+"users."
+msgstr ""
+
+#: C/introduction.page:159(item/p)
+msgid ""
+"<link href=\"http://projects.gnome.org/accessibility/\">GNOME Accessibility "
+"Project</link> - The GNOME Accessibility Project includes the guides listed "
+"above along with many other useful links for users, developers and system "
+"administrators."
+msgstr ""
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+msgstr ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+
+#: C/ipython_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "2. Connector IPython"
+
+#: C/ipython_plugin.page:6(info/desc)
+msgid "When all else fails"
+msgstr "Quan ja no serveix res més"
+
+#: C/ipython_plugin.page:25(page/title)
+msgid "IPython Console Plugin"
+msgstr "Connector de consola IPython"
+
+#: C/ipython_plugin.page:26(page/p)
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item "
+"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
+"the IPython Console Plugin is an interactive Python shell, you can import "
+"any Python modules you want."
+msgstr ""
+
+#: C/ipython_plugin.page:33(note/p)
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. "
+"Otherwise, the IPython Console Plugin will not work properly."
+msgstr ""
+
+#: C/ipython_plugin.page:40(section/title)
+msgid "Running the IPython Console Plugin"
+msgstr "Execució del connector de consola IPython"
+
+#: C/ipython_plugin.page:41(section/p)
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed "
+"in the Application Tree View - either an application or a widget. In the "
+"plugin, the selected item will correspond to the variable 'acc'."
+msgstr ""
+
+#: C/ipython_plugin.page:46(section/p)
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the "
+"console, what can be useful for discovering pyatspi methods."
+msgstr ""
+
+#: C/ipython_plugin.page:52(figure/title)
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr ""
+
+#: C/ipython_plugin.page:53(figure/desc) C/ipython_plugin.page:58(media/p)
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and "
+"properties related to a selected item in the Application Tree View."
+msgstr ""
+
+#: C/ipython_plugin.page:66(note/p)
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
+"documentation about the corresponding selected accessible item."
+msgstr ""
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:36(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+msgstr ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:61(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+msgstr ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:90(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+msgstr ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:111(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+msgstr ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+
+#: C/preferences.page:4(info/title)
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "4. Preferències"
+
+#: C/preferences.page:6(info/desc)
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "Personalització de les preferències de l'<app>Accerciser</app>"
+
+#: C/preferences.page:25(page/title)
+msgid "Configuring <app>Accerciser</app>"
+msgstr "Configuració de l'<app>Accerciser</app>"
+
+#: C/preferences.page:26(page/p)
+msgid ""
+"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
+"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
+"open a dialog."
+msgstr ""
+"Per configurar els connectors, les tecles de drecera i el ressaltat, premeu "
+"<key>ctrl</key>+<key>p</key>, o bé, aneu a <guiseq><gui>Edita</gui> "
+"<gui>Preferències</gui></guiseq> per obrir el diàleg."
+
+#: C/preferences.page:32(figure/title)
+msgid "<app>Accerciser</app> preferences"
+msgstr "Preferències de l'<app>Accerciser</app>"
+
+#: C/preferences.page:33(figure/desc) C/preferences.page:37(media/p)
+msgid ""
+"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
+"widget's highlighting."
+msgstr ""
+"L'<app>Accerciser</app> us permet configurar els connectors, les tecles de "
+"drecera globals i el ressaltat de ginys."
+
+#: C/preferences.page:44(section/title)
+msgid "Configuring plugins"
+msgstr "Configuració dels connectors"
+
+#: C/preferences.page:45(section/p)
+msgid ""
+"After opening the Preferences Dialog, you will find a list of all available "
+"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
+"or disable a plugin, toggle its checkbox. Only active plugins can be "
+"accessed via <app>Accerciser</app>'s interface."
+msgstr ""
+
+#: C/preferences.page:50(section/p)
+msgid ""
+"Right-clicking on any given plugin allows you to choose its location: \"Top "
+"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
+"a new window for the plugin."
+msgstr ""
+
+#: C/preferences.page:57(figure/title)
+msgid "Configuring plugins' preferences"
+msgstr "Configuració de les preferències dels connectors"
+
+#: C/preferences.page:58(figure/desc) C/preferences.page:62(media/p)
+msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
+msgstr ""
+"L'<app>Accerciser</app> us permet canviar les preferències dels connectors."
+
+#: C/preferences.page:69(note/p)
+msgid ""
+"You may bypass the Preferences dialog by using drag and drop to move a "
+"plugin from a location to another."
+msgstr ""
+
+#: C/preferences.page:76(section/title)
+msgid "Configuring global hotkeys"
+msgstr "Configuració de les tecles de drecera globals"
+
+#: C/preferences.page:77(section/p)
+msgid ""
+"Some elements in <app>Accerciser</app> may enable certain functionalities "
+"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
+"Select Plugin</link>. The hotkey combination for each functionality can be "
+"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
+"this tab, you will find a list of all features for which hotkeys can be "
+"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
+"checkboxes to enable or disable these modifiers."
+msgstr ""
+
+#: C/preferences.page:86(figure/title)
+msgid "Configuring global hotkeys' preferences"
+msgstr "Configuració de les preferències de les tecles de drecera globals"
+
+#: C/preferences.page:87(figure/desc)
+msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
+msgstr ""
+"L'<app>Accerciser</app> us permet canviar les preferències de les tecles de "
+"drecera."
+
+#: C/preferences.page:91(media/p)
+msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
+msgstr ""
+"L'<app>Accerciser</app> us permet canviar les preferències dels connectors."
+
+#: C/preferences.page:99(section/title)
+msgid "Configuring widget's highlighting"
+msgstr "Configuració del ressaltat dels ginys"
+
+#: C/preferences.page:100(section/p)
+msgid ""
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
+"a target application. The highlighting duration, border color, and fill "
+"color can be customized via the Preferences dialog, under the \"Highlighting"
+"\" tab."
+msgstr ""
+
+#: C/preferences.page:107(figure/title)
+msgid "Configuring highlighting preferences"
+msgstr "Configuració de les preferències de ressaltat"
+
+#: C/preferences.page:108(figure/desc) C/preferences.page:112(media/p)
+msgid ""
+"<app>Accerciser</app> allows you to adjust your highlighting preferences."
+msgstr ""
+"L'<app>Accerciser</app> us permet canviar les preferències de ressaltat."
+
+#: C/quick_select_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "5. Connector de selecció ràpida"
+
+#: C/quick_select_plugin.page:6(info/desc)
+msgid "Locating the object you need"
+msgstr "Ubiqueu l'objecte que necessiteu"
+
+#: C/quick_select_plugin.page:25(page/title)
+msgid "Quick Select Plugin"
+msgstr "Connector de selecció ràpida"
+
+#: C/quick_select_plugin.page:26(page/p)
+msgid ""
+"The Quick Select Plugin does not provide a visible interface like the other "
+"default <app>Accerciser</app> plugins - instead, it adds facilities for "
+"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
+"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
+"later."
+msgstr ""
+
+#: C/quick_select_plugin.page:32(page/p)
+msgid ""
+"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
+"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
+"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
+"key> selects the accessible widget under the pointer in the Application Tree "
+"View and highlights it in the target application."
+msgstr ""
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
+msgstr ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
+
+#: C/validator_plugin.page:4(info/title)
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "3. Connector de validació per defecte"
+
+#: C/validator_plugin.page:6(info/desc)
+msgid "Testing an application for accessibility"
+msgstr "Comprovació de l'accessibilitat d'una aplicació"
+
+#: C/validator_plugin.page:25(page/title)
+#: C/validator_plugin.page:32(figure/title)
+msgid "AT-SPI Validator Plugin"
+msgstr "Connector de validació de l'AT-SPI"
+
+#: C/validator_plugin.page:26(page/p)
+msgid ""
+"The AT-SPI Validator Plugin generates a report with accessibility issues "
+"related to a target application. For each error, the report includes the "
+"severity level and a brief description."
+msgstr ""
+
+#: C/validator_plugin.page:33(figure/desc) C/validator_plugin.page:38(media/p)
+msgid ""
+"The AT-SPI Validator Plugin generates useful reports for verifying the "
+"accessibility of a target application."
+msgstr ""
+
+#: C/validator_plugin.page:46(section/title)
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "Execució del connector de validació de l'AT-SPI"
+
+#: C/validator_plugin.page:47(section/p)
+msgid ""
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
+"View. The validator will generate the report with respect to the selected "
+"item and all of its descendant widgets in the tree hierarchy."
+msgstr ""
+
+#: C/validator_plugin.page:53(section/p)
+msgid ""
+"After selecting an item, choose a validation schema in the combobox and "
+"press the <cmd>Validate</cmd> button to start generating the report. If you "
+"want to cancel the execution, just press the <cmd>Validate</cmd> button "
+"again."
+msgstr ""
+
+#: C/validator_plugin.page:59(section/p)
+msgid ""
+"The generated report is interactive. Therefore, you can double-click any "
+"error found to check which of the target application widgets is causing it. "
+"The corresponding widget will then appear selected in the <link xref="
+"\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
+"target application."
+msgstr ""
+
+#: C/validator_plugin.page:64(section/p)
+msgid ""
+"If you want to save the generated report in your system, just click the "
+"<cmd>Save</cmd> button. To clear the validation screen, press the "
+"<cmd>Clear</cmd> button."
+msgstr ""
+
+#: C/validator_plugin.page:68(section/p)
+msgid ""
+"To get more information about an error in the generated report, make sure "
+"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
+"will open a Help Page in your default browser."
+msgstr ""
+
+#~ msgid ""
+#~ "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+#~ msgstr ""
+#~ "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+
+#~ msgid ""
+#~ "@@image: 'figures/interface_viewer.png'; "
+#~ "md5=aa1a5d030e67214010533e5f2e598faa"
+#~ msgstr ""
+#~ "@@image: 'figures/interface_viewer.png'; "
+#~ "md5=aa1a5d030e67214010533e5f2e598faa"
+
+#~ msgid ""
+#~ "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+#~ msgstr ""
+#~ "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+
+#~ msgid ""
+#~ "@@image: 'figures/script_recorder.png'; "
+#~ "md5=a15027c852c58df789886f6aadf0130c"
+#~ msgstr ""
+#~ "@@image: 'figures/script_recorder.png'; "
+#~ "md5=a15027c852c58df789886f6aadf0130c"
+
+#~ msgid "<application>Accerciser</application> Manual v0.2.0"
+#~ msgstr "Manual de l'<application>Accerciser</application> v0.2.0"
+
+#~ msgid "2006"
+#~ msgstr "2006"
+
+#~ msgid "2007"
+#~ msgstr "2007"
+
+#~ msgid "2008"
+#~ msgstr "2008"
+
+#~ msgid "IBM Corporation"
+#~ msgstr "IBM Corporation"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "Projecte de documentació del GNOME"
+
+#~ msgid "Eitan"
+#~ msgstr "Eitan"
+
+#~ msgid "Accerciser team"
+#~ msgstr "Equip de l'Accerciser"
+
+#~ msgid "eitan@ascender.com"
+#~ msgstr "eitan@ascender.com"
+
+#~ msgid "Peter"
+#~ msgstr "Peter"
+
+#~ msgid "pparent@us.ibm.com"
+#~ msgstr "pparent@us.ibm.com"
+
+#~ msgid "Accerciser Manual v0.2.0"
+#~ msgstr "Manual de l'Accerciser v0.2.0"
+
+#~ msgid "2007-06-29"
+#~ msgstr "2007-06-29"
+
+#~ msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
+#~ msgstr "Eitan Isaacson <email>eitan@ascender.com</email>"
+
+#~ msgid "This manual describes version 0.1.5 of Accerciser."
+#~ msgstr "Aquest manual descriu la versió 0.1.5 de l'Accerciser."
+
+#~ msgid ""
+#~ "This manual describes the use of <application>Accerciser</application>."
+#~ msgstr ""
+#~ "Aquest manual descriu l'ús de l'<application>Accerciser</application>."
+
+#~ msgid "Feedback"
+#~ msgstr "Comentaris"
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding the "
+#~ "<application>Accerciser</application> application or this manual, follow "
+#~ "the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help"
+#~ "\">GNOME Feedback Page</ulink>."
+#~ msgstr ""
+#~ "Per a informar d'un error o fer algun suggeriment sobre l'aplicació "
+#~ "<application>Accerciser</application> o d'aquest manual, seguiu les "
+#~ "indicacions en la <ulink url=\"ghelp:gnome-feedback\" type=\"help"
+#~ "\">Pàgina de comentaris del GNOME</ulink>."
+
+#~ msgid "Introduction"
+#~ msgstr "Introducció"
+
+#~ msgid ""
+#~ "In essence, <application>Accerciser</application> is a next generation "
+#~ "<ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-"
+#~ "poke</ulink> tool."
+#~ msgstr ""
+#~ "En essència, l'<application>Accerciser</application> és la següent "
+#~ "generació de l'eina <ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" "
+#~ "type=\"http\">at-poke</ulink>."
+
+#~ msgid ""
+#~ "You can start <application>Accerciser</application> in the following ways:"
+#~ msgstr ""
+#~ "Podeu iniciar l'<application>Accerciser</application> de les següents "
+#~ "maneres:"
+
+#~ msgid "<guimenu>Applications</guimenu> menu"
+#~ msgstr "Menú <guimenu>Aplicacions</guimenu>"
+
+#~ msgid ""
+#~ "Choose the <menuchoice><guisubmenu>Programming</"
+#~ "guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Trieu l'element del menú <menuchoice><guisubmenu>Programació</"
+#~ "guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice>."
+
+#~ msgid "Command line"
+#~ msgstr "Línia d'ordres"
+
+#~ msgid ""
+#~ "Type the following command in a console window then press <keycap>Return</"
+#~ "keycap>:"
+#~ msgstr ""
+#~ "Introduïu la següent ordre a la finestra de la consola i premeu "
+#~ "<keycap>Retorn</keycap>:"
+
+#~ msgid "accerciser"
+#~ msgstr "accerciser"
+
+#~ msgid ""
+#~ "When you start <application>Accerciser</application>, the following "
+#~ "window is displayed."
+#~ msgstr ""
+#~ "En iniciar l'<application>Accerciser</application> es mostrarà la següent "
+#~ "finestra."
+
+#~ msgid ""
+#~ "Shows <placeholder-1/> main window. Contains title bar, menu bar, "
+#~ "accessible tree , right plugin display area, and bottom plugin display "
+#~ "area. The menu bar contains File, Edit, Bookmarks, View, and Help menus."
+#~ msgstr ""
+#~ "Mostra la finestra principal <placeholder-1/>. Conté la barra de títol, "
+#~ "la barra de menú, l'arbre de l'accessible, l'àrea esquerra de "
+#~ "visualització del connector i l'àrea inferior de visualització del "
+#~ "connector. La barra de menú conté els menús Fitxer, Edita, Adreces "
+#~ "d'interès, Visualitza i Ajuda."
+
+#~ msgid "Menubar"
+#~ msgstr "Barra de menú"
+
+#~ msgid ""
+#~ "The menu bar contains commands for managing plugins, managing and using "
+#~ "bookmarks, refreshing the accessible tree view, and accessing this help "
+#~ "system."
+#~ msgstr ""
+#~ "La barra de menú conté ordres per a gestionar els connectors, gestionar i "
+#~ "utilitzar les adreces d'interès, refrescar la visualització d'arbre de "
+#~ "l'accessible i accedir en aquest sistema d'ajuda."
+
+#~ msgid "Accessible tree view"
+#~ msgstr "Visualització d'arbre de l'accessible"
+
+#~ msgid ""
+#~ "The accessible tree view allows to view all of the accessibles starting "
+#~ "at the desktop level. Selecting an accessible makes it available for "
+#~ "further inspection using the loaded plugins."
+#~ msgstr ""
+#~ "La visualització d'arbre de l'accessible permet visualitzar tots els "
+#~ "accessibles, començant pel nivell de l'escriptori. En seleccionar-se un "
+#~ "accessible, el tindreu disponible per a posteriors inspeccions utilitzant "
+#~ "els connectors carregats."
+
+#~ msgid "Right plugin view"
+#~ msgstr "Visualització dreta del connector"
+
+#~ msgid ""
+#~ "This is one of the two default plugin views. When "
+#~ "<application>Accerciser</application> is first run, most plugins will "
+#~ "reside here. You can drag plugin tabs to the bottom plugin view or to the "
+#~ "desktop to show two or more plugins simultaneously."
+#~ msgstr ""
+#~ "Aquesta és una de les dues visualitzacions del connector per defecte. "
+#~ "Quan l'<application>Accerciser</application> s'executi per primer cop, la "
+#~ "majoria dels connectors estaran aquí. Podeu arrossegar les pestanyes dels "
+#~ "connectors a la visualització inferior del connector o a l'escriptori per "
+#~ "a mostrar dos o més connectors simultàniament."
+
+#~ msgid "Bottom plugin view"
+#~ msgstr "Visualització inferior del connector"
+
+#~ msgid ""
+#~ "You can drag plugins to or from this area just like the right plugin view."
+#~ msgstr ""
+#~ "Podeu arrossegar connectors a o des d'aquesta àrea, de la mateixa manera "
+#~ "que en la visualització dreta del connector."
+
+#~ msgid "Plugin View Management"
+#~ msgstr "Gestió de la visualització dels connectors"
+
+#~ msgid ""
+#~ "<application>Accerciser</application> has two modes for viewing plugins. "
+#~ "The current view mode could be toggled with <menuchoice><guimenu>View</"
+#~ "guimenu><guimenuitem>Single plugin view</guimenuitem></menuchoice> or by "
+#~ "pressing <keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. "
+#~ "When single mode is enabled, all plugins will be put in the top right "
+#~ "plugin view and ordered alphabetically, this could be useful for screen "
+#~ "reader users who have no use for <application>Accerciser</application>'s "
+#~ "flexible plugin spacial layout scheme. When single view mode is disabled "
+#~ "plugin tabs could be dragged and dropped in to different plugin views, or "
+#~ "could be dragged to the desktop to put the given plugin in a new view. "
+#~ "The placement of plugins could also be manipulated with the plugin "
+#~ "context menu that could be brought up either from the plugin tab, or the "
+#~ "plugin preferences dialog."
+#~ msgstr ""
+#~ "L'<application>Accerciser</application> té dos modes per a visualitzar "
+#~ "connectors. El mode de visualització actual es pot commutar si premeu "
+#~ "<menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Visualització "
+#~ "individual de connectors</guimenuitem></menuchoice> o si premeu "
+#~ "<keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. Quan el "
+#~ "mode individual està activat, tots els connectors es posaran en la "
+#~ "visualització del connector superior dret ordenats alfabèticament, això "
+#~ "és útil per als usuaris del lector de pantalla que no utilitzen l'esquema "
+#~ "flexible de mostrat de connectors de l'<application>Accerciser</"
+#~ "application>. Quan el mode de visualització individual de connectors està "
+#~ "desactivat es poden arrossegar i deixar anar pestanyes de connectors en "
+#~ "les diferents visualitzacions de connectors, o es poden arrossegar a "
+#~ "l'escriptori per a mostrar el connector en una nova visualització. També "
+#~ "es pot manipular la posició dels connectors amb el menú contextual del "
+#~ "connector que pot aparèixer en la pestanya del connector o en el diàleg "
+#~ "de preferències del connector."
+
+#~ msgid "Usage"
+#~ msgstr "Ús"
+
+#~ msgid ""
+#~ "You can use <application>Accerciser</application> to inspect any "
+#~ "accessible widget shown in the tree view using the available plugins. The "
+#~ "first step is to select an accessible to inspect using one of the "
+#~ "following methods: <placeholder-1/>"
+#~ msgstr ""
+#~ "Podeu utilitzar l'<application>Accerciser</application> per a "
+#~ "inspeccionar qualsevol giny accessible mostrat a la visualització d'arbre "
+#~ "utilitzant els connectors disponibles. El primer pas és seleccionar un "
+#~ "accessible a inspeccionar utilitzant un dels següents mètodes: "
+#~ "<placeholder-1/>"
+
+#~ msgid "Select an accessible through the tree view."
+#~ msgstr "Seleccionar un accessible a través de la visualització d'arbre."
+
+#~ msgid ""
+#~ "Use the tree view to navigate the hierarchy of accessible objects rooted "
+#~ "at desktop. Unfolding a tree node reveals its immediate children while "
+#~ "folding it hides them. Each node shows an icon for its associated "
+#~ "application or widget role and its accessible name, if available. The "
+#~ "second column lists how many nodes will be shown if the item is unfolded."
+#~ msgstr ""
+#~ "Utilitzeu la visualització d'arbre per a navegar en la jerarquia dels "
+#~ "objectes accessibles arrelats a l'escriptori. Desplegant l'arbre de nodes "
+#~ "es mostraran els seus fills, mentre que plegant-lo els amagareu. Cada "
+#~ "node mostra un icona de la seva aplicació associada o el giny i el nom "
+#~ "del seu accessible, si està disponible. La segona columna llista quants "
+#~ "nodes seran mostrats si els elements són desplegats."
+
+#~ msgid "Using bookmarks"
+#~ msgstr "Utilitzant adreces d'interès"
+
+#~ msgid ""
+#~ "Bookmarks could be managed by accessing the bookmark editing dialog "
+#~ "through <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit "
+#~ "Bookmarks...</guimenuitem></menuchoice>."
+#~ msgstr ""
+#~ "Les adreces d'interès es poden gestionar mitjançant el diàleg d'edició "
+#~ "d'adreces d'interès a través de <menuchoice><guimenu>Adreces d'interès</"
+#~ "guimenu><guimenuitem>Edita les adreces d'interès...</guimenuitem></"
+#~ "menuchoice>."
+
+#~ msgid ""
+#~ "<application>Accerciser</application> comes with several default plugins. "
+#~ "These plugins allow you to view a variety of information about the "
+#~ "currently selected accessible in the tree view and its neighbors. The "
+#~ "default plugins available in 0.1.5 are the following:"
+#~ msgstr ""
+#~ "L'<application>Accerciser</application> incorpora diversos connectors per "
+#~ "defecte. Aquests connectors us permeten visualitzar diferents "
+#~ "informacions respecte l'actual accessible seleccionat a la visualització "
+#~ "d'arbre i els seus veïns. Els connectors disponibles per defecte a la "
+#~ "versió 0.1.5 són els següents:"
+
+#~ msgid ""
+#~ "This plugin displays information about the available interfaces for the "
+#~ "selected tree view accessible. Unsupported interfaces are grayed out. "
+#~ "Various instruments for viewing and controlling an interface are "
+#~ "available under each expander."
+#~ msgstr ""
+#~ "Aquest connector visualitza informació quant a les interfícies "
+#~ "disponibles de l'accessible seleccionat a la visualització d'arbre. Les "
+#~ "interfícies no compatibles són ombrejades. Hi ha varis instruments "
+#~ "disponibles per a visualitzar i controlar una interfície sota cada "
+#~ "expansor."
+
+#~ msgid ""
+#~ "Interfaces that are supported by the selected accessible are shown as "
+#~ "sensitive."
+#~ msgstr ""
+#~ "Les interfícies que estan suportades per l'accessible seleccionat es "
+#~ "mostraran com a sensibles."
+
+#~ msgid ""
+#~ "This plugin monitors the selected types of events from the selected tree "
+#~ "view accessible, from the selected tree view application, or the entire "
+#~ "desktop."
+#~ msgstr ""
+#~ "Aquest connector fa un seguiment dels tipus d'esdeveniments seleccionats "
+#~ "a la visualització d'arbre de l'accessible seleccionat, a la "
+#~ "visualització d'arbre de l'aplicació seleccionada, o de tot l'escriptori."
+
+#~ msgid ""
+#~ "The bottom part of the event monitor window allows you to pick the type "
+#~ "and source of events."
+#~ msgstr ""
+#~ "La part inferior de la finestra de seguiment d'esdeveniments us permet "
+#~ "triar el tipus i la font dels esdeveniments."
+
+#~ msgid ""
+#~ "By pressing <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>l</keycap></keycombo> anywhere on the desktop, the last "
+#~ "logged event will be highlighted for later reference. See <xref linkend="
+#~ "\"accerciser-hotkey-config\"/> for how to change this key combination."
+#~ msgstr ""
+#~ "En prémer <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>l</keycap></keycombo> des de qualsevol indret de "
+#~ "l'escriptori, l'últim esdeveniment registrat serà realçat per a una "
+#~ "posterior referència. Vegeu <xref linkend=\"accerciser-hotkey-config\"/> "
+#~ "per a saber com canviar aquesta drecera de teclat."
+
+#~ msgid ""
+#~ "This plugin is a fully-fledged <ulink url=\"http://ipython.scipy.org/moin/"
+#~ "\" type=\"http\">IPython</ulink> console. Press <keycap>Tab</keycap> to "
+#~ "show completions for the current command. Press <keycap>Enter</keycap> to "
+#~ "execute any valid Python code. Commands at the console have access to the "
+#~ "currently selected accessible in the accessible tree by way of the "
+#~ "<varname>acc</varname> variable. In addition, all functions and constants "
+#~ "from the pyatspi package are available as locals in the console. The most "
+#~ "important of these are the functions for querying to other accessibility "
+#~ "interfaces. For example, to query to the Text interface: <command>t = acc."
+#~ "queryText() </command>. Imports from the current working directory or "
+#~ "Python path are also allowed."
+#~ msgstr ""
+#~ "Aquest connector és una completa consola <ulink url=\"http://ipython."
+#~ "scipy.org/moin/\" type=\"http\">IPython</ulink>. Premeu <keycap>Tab</"
+#~ "keycap> per a mostrar completa l'ordre actual. Premeu <keycap>Retorn</"
+#~ "keycap> per a executar un codi Python vàlid. Les ordres de la consola "
+#~ "tenen accés a l'accessible seleccionat actualment en l'arbre "
+#~ "d'accessibles mitjançant la variable <varname>acc</varname>. A més, totes "
+#~ "les funcions i constants del paquet pyatspi estan disponibles com a "
+#~ "locals en la consola. La finalitat més important d'aquestes funcions és "
+#~ "per a fer consultes sobre l'accessibilitat a d'altres interfícies. Per "
+#~ "exemple, per a consultar a l'interfície «Text»: <command>t = acc.queryText"
+#~ "()</command>. També estan permeses importacions de l'actual directori de "
+#~ "treball o de camins del Python."
+
+#~ msgid "The API browser."
+#~ msgstr "L'explorador de l'API."
+
+#~ msgid "Script recorder"
+#~ msgstr "Enregistrador d'scripts"
+
+#~ msgid ""
+#~ "<application>Accerciser</application>'s script recorder allows users to "
+#~ "record keyboard interaction with other desktop applications for the "
+#~ "purpose of authoring UI test scripts. Currently the plug-in supports the "
+#~ "generation of scripts for three platforms: Dogtail, LDTP, and an "
+#~ "Accerciser's built-in API. Once you press the \"Record\" button every "
+#~ "keyboard interaction will be recorded in to a script that could be "
+#~ "executed later as a stand alone script."
+#~ msgstr ""
+#~ "L'enregistrador d'scripts de l'<application>Accerciser</application> us "
+#~ "permet gravar la interacció del teclat amb altres aplicacions de "
+#~ "l'escriptori per a autoritzar els scripts de proba per a la interfície "
+#~ "gràfica. Actualment el connector admet la generació d'scripts per a tres "
+#~ "plataformes: el Dogtail, el LDTP i l'API integrada de l'Accerciser. Un "
+#~ "cop premeu el botó «Gravar» es gravarà tota l'interacció del teclat en un "
+#~ "script que podrà ser executat més tard com un script individual."
+
+#~ msgid "Script Recorder"
+#~ msgstr "Enregistrador d'scripts"
+
+#~ msgid "The script recorder."
+#~ msgstr "L'enregistrador d'scripts."
+
+#~ msgid ""
+#~ "This plugin provides global hotkeys for allowing quick selection of "
+#~ "accessibles through the target application's UI. Pressing "
+#~ "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>a</keycap></"
+#~ "keycombo> will select the last focused widget's accessible in "
+#~ "<application>Accerciser</application>. Pressing "
+#~ "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>t</keycap></"
+#~ "keycombo> will select the accessible of the widget that is under the "
+#~ "pointer."
+#~ msgstr ""
+#~ "Aquest connector proporciona combinacions de tecles globals que permeten "
+#~ "una selecció ràpida dels accessibles a través de la interfície gràfica de "
+#~ "l'aplicació objectiu. En prémer <keycombo><keycap>Control</"
+#~ "keycap><keycap>Alt</keycap><keycap>a</keycap></keycombo> se seleccionarà "
+#~ "l'últim accessible del giny que tenia el focus en "
+#~ "l'<application>Accerciser</application>. En prémer "
+#~ "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>t</keycap></"
+#~ "keycombo> se seleccionarà l'accessible del giny que està sota el punter."
+
+#~ msgid "Validation"
+#~ msgstr "Validació"
+
+#~ msgid ""
+#~ "This plugin checks applications for accessibility problems and generates "
+#~ "a report including the severity and description of the problems. The "
+#~ "report links errors to documentation about how to remedy common problems. "
+#~ "The plugin is extensible with test schemas that define rules for "
+#~ "validation."
+#~ msgstr ""
+#~ "Aquest connector comprova els problemes d'accessibilitat de les "
+#~ "aplicacions i genera un informe on inclou la gravetat i la descripció "
+#~ "dels problemes. L'informe enllaça els errors amb la documentació sobre "
+#~ "com solucionar els problemes comuns. El connector és extensible amb "
+#~ "esquemes de prova que defineixen regles de validació."
+
+#~ msgid ""
+#~ "To run the validator, first select an item in the accessibility tree. The "
+#~ "plugin will test the selected accessible and all of its descendants. Next "
+#~ "select a schema to use for the test. Then click the <guibutton>Validate</"
+#~ "guibutton> button to start the test. While the test is running, click the "
+#~ "button again to cancel it."
+#~ msgstr ""
+#~ "Per a executar la validació, primer seleccioneu un element de l'arbre "
+#~ "d'accessibilitat. El connector comprovarà l'accessible seleccionat i tots "
+#~ "els seus descendents. Després seleccioneu un esquema a utilitzar per a la "
+#~ "comprovació. Llavors feu clic al botó <guibutton>Validar</guibutton> per "
+#~ "a iniciar la comprovació. Feu un altre cop clic al botó, mentre s'està "
+#~ "executant la comprovació, per a cancel·lar-la."
+
+#~ msgid ""
+#~ "When the test completes, the report table shows the severity and "
+#~ "description of all errors. Double click a row in the table to show the "
+#~ "associated accessible in the tree. With an item selected, click the "
+#~ "<guibutton>Help</guibutton> to get information about how to resolve the "
+#~ "problem."
+#~ msgstr ""
+#~ "En acabar la comprovació, la taula d'informe mostrarà la gravetat i la "
+#~ "descripció de tots els errors. Feu un doble clic a una fila de la taula "
+#~ "per a visualitzar l'accessible associat en l'arbre. Amb un element "
+#~ "seleccionat, feu clic a <guibutton>Ajuda</guibutton> per a aconseguir "
+#~ "informació sobre com resoldre el problema."
+
+#~ msgid ""
+#~ "There are some elements in <application>Accerciser</application> that are "
+#~ "configurable:"
+#~ msgstr ""
+#~ "Hi ha alguns elements configurables en l'<application>Accerciser</"
+#~ "application>:"
+
+#~ msgid "Plugin Layout"
+#~ msgstr "Disposició dels connectors"
+
+#~ msgid ""
+#~ "There are two methods for configuring plugin layout in "
+#~ "<application>Accerciser</application>. First you may choose "
+#~ "<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</"
+#~ "guimenuitem></menuchoice> to activate the <guilabel>Preferences</"
+#~ "guilabel> dialog. This dialog contains tabs for each section, select the "
+#~ "<guilabel>Plugins</guilabel> tab. Under this section you will find a list "
+#~ "view of all the available plugins. Right-click on any of the plugins "
+#~ "listed to configure it's view."
+#~ msgstr ""
+#~ "Hi ha dos mètodes per a configurar la disposició dels connectors a "
+#~ "l'<application>Accerciser</application>. Primer heu de triar "
+#~ "<menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</"
+#~ "guimenuitem></menuchoice> per a activar el diàleg de "
+#~ "<guilabel>Preferències</guilabel>. Aquest diàleg conté pestanyes per a "
+#~ "cada secció, seleccioneu la pestanya <guilabel>Connectors</guilabel>. En "
+#~ "aquesta secció trobareu una visualització de llista de tots els "
+#~ "connectors disponibles. Feu clic amb el botó dret a qualsevol dels "
+#~ "connectors llistats per a configurar la seva visualització."
+
+#~ msgid ""
+#~ "You may bypass the <guilabel>Preferences</guilabel> dialog by using drag "
+#~ "and drop to move plugin tabs. Dragging a plugin tab to the bottom or "
+#~ "right plugin area in the main window will move the plugin. Dragging a tab "
+#~ "to the desktop will create a new plugin window and drop the plugin in it."
+#~ msgstr ""
+#~ "En comptes de fer servir el diàleg de <guilabel>Preferències</guilabel>, "
+#~ "podeu arrossegar i deixar anar les pestanyes dels connectors per a moure-"
+#~ "les. En arrossegar la pestanya del connector a l'àrea de connectors "
+#~ "inferior o dreta de la finestra principal moureu el connector. En "
+#~ "arrossegar la pestanya a l'escriptori creareu una nova finestra de "
+#~ "connectors on deixar-hi anar el connector."
+
+#~ msgid "Global Hotkey Configuration"
+#~ msgstr "Configuració de les dreceres de teclat globals"
+
+#~ msgid ""
+#~ "Some elements in <application>Accerciser</application> may enable certain "
+#~ "functionality via hotkeys. The hotkey combination could be changed via "
+#~ "the <guilabel>Preferences</guilabel> dialog, to do so you may select "
+#~ "<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</"
+#~ "guimenuitem></menuchoice> to activate the <guilabel>Preferences</"
+#~ "guilabel> dialog. This dialog contains tabs for each section, select the "
+#~ "<guilabel>Global Hotkeys</guilabel> tab. Under this section you will find "
+#~ "a list view of all the available hotkey features. Change the key bindings "
+#~ "to you liking."
+#~ msgstr ""
+#~ "Alguns elements de l'<application>Accerciser</application> poden activar "
+#~ "certa funcionalitat a través de les dreceres de teclat. La combinació de "
+#~ "la drecera de teclat es pot canviar a través del diàleg de "
+#~ "<guilabel>Preferències</guilabel>, per a fer-ho heu de seleccionar  "
+#~ "<menuchoice><guimenu>Edita</guimenu><guimenuitem>Preferències</"
+#~ "guimenuitem></menuchoice> per a activar el diàleg de "
+#~ "<guilabel>Preferències</guilabel>. Aquest diàleg conté una pestanya per a "
+#~ "cada secció, seleccioneu la pestanya <guilabel>Dreceres de teclat "
+#~ "globals</guilabel>. En aquesta secció trobareu una visualització de "
+#~ "llista de totes les funcions disponibles de les dreceres de teclat. "
+#~ "Canvieu l'assignació de tecles al vostre gust."
+
+#~ msgid ""
+#~ "<application>Accerciser</application> was written by Eitan Isaacson "
+#~ "(<email>eitan@ascender.com</email>). To find more information about "
+#~ "<application>Accerciser</application>, please visit the <ulink url="
+#~ "\"http://live.gnome.org/Accerciser\" type=\"http"
+#~ "\"><application>Accerciser</application> GNOME Live! page</ulink>."
+#~ msgstr ""
+#~ "L'<application>Accerciser</application> ha sigut escrit per l'Eitan "
+#~ "Isaacson (<email>eitan@ascender.com</email>). Per a obtenir més "
+#~ "informació quant a l'<application>Accerciser</application>, visiteu la "
+#~ "<ulink url=\"http://live.gnome.org/Accerciser\" type=\"http\"> pàgina de "
+#~ "l'<application>Accerciser</application> a GNOME Live!</ulink>."
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding this application or this "
+#~ "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+#~ "type=\"help\">document</ulink>."
+#~ msgstr ""
+#~ "Per a informar d'un error o fer un suggeriment sobre l'aplicació o "
+#~ "d'aquest manual, seguiu les indicacions en aquest <ulink url=\"ghelp:"
+#~ "gnome-feedback\" type=\"help\">document</ulink>."
+
+#~ msgid ""
+#~ "Redistribution and use in source and binary forms, with or without "
+#~ "modification, are permitted under the terms of the BSD License."
+#~ msgstr ""
+#~ "Es permet la redistribució i utilització del codi font i del binari, amb "
+#~ "o sense modificació, sota els termes de la llicència BSD."
 
 #~ msgid ""
 #~ "If you unfold a node with a large number of children (e.g. hundreds), "
