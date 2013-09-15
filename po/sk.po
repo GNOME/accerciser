@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-27 22:32+0000\n"
-"PO-Revision-Date: 2012-10-09 21:34+0100\n"
+"POT-Creation-Date: 2013-09-08 12:13+0000\n"
+"PO-Revision-Date: 2013-09-12 10:40+0100\n"
 "Last-Translator: Roman Mátyus <romanmatyus@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -17,8 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Poedit-Language: Slovak\n"
-"X-Poedit-Country: SLOVAKIA\n"
 
 # desktop entry name
 #: ../accerciser.desktop.in.in.h:1
@@ -30,8 +28,12 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "Sprístupní vašu aplikáciu"
 
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "zjednodušenie ovládania;vývoj;testovanie;"
+
 # desktop entry full name
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser - prieskumník prístupnosti"
 
@@ -308,7 +310,8 @@ msgid "0"
 msgstr "0"
 
 # button
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(bez popisu)"
 
@@ -639,45 +642,62 @@ msgid "Allows viewing of various interface properties"
 msgstr "Umožňuje prehliadanie rôznych vlastností rozhrania"
 
 # prídavný text do labelu
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(neimplementované)"
 
-# label in frame / in table
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(bez popisu)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Názov"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Začiatok"
 
 # TreeViewColumn
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Koniec"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Príliš mnoho zvoliteľných potomkov"
 
 # prídavný text do labelu
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Upraviteľné)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Upraviteľné)"
+
+# TreeViewColumn
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Začiatok: %d"
+
+# label
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Koniec: %d"
 
 # plugin name
 #: ../plugins/quick_select.py:16
@@ -735,7 +755,7 @@ msgid "Level"
 msgstr "Úroveň"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Úloha"
 
@@ -889,7 +909,7 @@ msgstr "objekt %s nemá žiaden názov ani popis"
 # action
 #: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
-msgstr "Nas_tavenia..."
+msgstr "Nas_tavenia…"
 
 # action
 #: ../src/lib/accerciser/accerciser.py:81
@@ -897,40 +917,40 @@ msgid "_Contents"
 msgstr "Ob_sah"
 
 # accessible.name
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<mŕtvy>"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Potomok"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Skryť/zobraziť aplikácie bez potomkov"
 
 # action
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "_Aktualizovať register"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Obnoví všetko"
 
 # action
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Aktualizovať aktuálny _objekt"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Obnoví potomka zvoleného objektu"
 
@@ -1042,7 +1062,7 @@ msgstr "Webové stránky"
 # action
 #: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
-msgstr "Prid_ať záložku..."
+msgstr "Prid_ať záložku…"
 
 # tooltip
 #: ../src/lib/accerciser/bookmarks.py:66
@@ -1052,7 +1072,7 @@ msgstr "Uloží zvolený objekt prístupnosti medzi záložky."
 # action
 #: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
-msgstr "_Upraviť záložky..."
+msgstr "_Upraviť záložky…"
 
 # tooltip
 #: ../src/lib/accerciser/bookmarks.py:69
@@ -1060,42 +1080,42 @@ msgid "Manage bookmarks."
 msgstr "Spravuje záložky."
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
-msgstr "Upraviť záložky..."
+msgstr "Úprava záložiek…"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Nadpis"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Aplikácia"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Cesta"
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
-msgstr "Pridať záložku..."
+msgstr "Pridať záložku…"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Nadpis:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Aplikácia:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Cesta:"
 
@@ -1119,30 +1139,30 @@ msgid "No view"
 msgstr "Žiadne zobrazenie"
 
 # action
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Jednoduché zobrazenie zásuvných modulov"
 
 # view_name
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Zobrazenie zásuvného modulu"
 
 # view_name
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Zobrazenie zásuvného modulu (%d)"
 
-# menu item
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Nové zobrazenie</i>"
+# dialog title
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "_Nové zobrazenie…"
 
 # dialog title
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
-msgstr "Nové zobrazenie..."
+msgstr "Nové zobrazenie…"
 
 # action
 #: ../src/lib/accerciser/ui_manager.py:23
