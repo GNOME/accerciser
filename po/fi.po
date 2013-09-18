@@ -2,24 +2,26 @@
 # Copyright (C) 2007-2009 Free Software Foundation.
 # This file is distributed under the same license as the accerciser package.
 # Ilkka Tuohela <hile@iki.fi> 2007-2009.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013.
 #
 # Gnome 2012-03 Finnish translation sprint participants:
-# Jiri Grönroos
 # Niklas Laxström
+#
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-20 01:24+0000\n"
-"PO-Revision-Date: 2012-03-12 08:36:38+0000\n"
-"Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
-"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-08-12 13:02+0000\n"
+"PO-Revision-Date: 2013-09-16 22:48+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-03-05 14:42:12+0000\n"
-"X-Generator: MediaWiki 1.20alpha (r113129); Translate 2012-03-02\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -28,11 +30,15 @@ msgstr "Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "Anna ohjelmallesi esteettömyysharjoitus"
+msgstr "Anna sovelluksellesi esteettömyysharjoitus"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "accessibility;development;test;esteettömyys;kehitys;testaus;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
-msgstr "Accerciser esteettömyysselain"
+msgstr "Accerciser-esteettömyysselain"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
@@ -48,7 +54,8 @@ msgstr "Korostuksen kesto"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:4
 msgid "The duration of the highlight box when selecting accessible nodes."
-msgstr "Kuinka kauan korostus näkyy, kun valitaan esteettömyyskorostettuja solmuja."
+msgstr ""
+"Kuinka kauan korostus näkyy, kun valitaan esteettömyyskorostettuja solmuja."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:5
 msgid "Highlight fill color"
@@ -151,7 +158,7 @@ msgstr "Ikkunan korkeus"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:28
 msgid "Window height value."
-msgstr ""
+msgstr "Ikkunan korkeuden arvo."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:29
 msgid "Window width"
@@ -159,7 +166,7 @@ msgstr "Ikkunan leveys"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:30
 msgid "Window width value."
-msgstr ""
+msgstr "Ikkunan leveyden arvo."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:31
 msgid "Hotkey combination"
@@ -202,8 +209,9 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktiivinen konsoli valitun apuneuvon käsittelyyn"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Tapahtumamonitori</b>"
+#| msgid "Event Monitor"
+msgid "Event monitor"
+msgstr "Tapahtumamonitori"
 
 #: ../plugins/event_monitor.ui.h:2
 msgid "_Monitor Events"
@@ -235,7 +243,8 @@ msgstr "Tapahtumamonitori"
 
 #: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
-msgstr "Näyttää tapahtumat valituista tyypeistä ja lähteistä niiden tapahtuessa"
+msgstr ""
+"Näyttää tapahtumat valituista tyypeistä ja lähteistä niiden tapahtuessa"
 
 #: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
@@ -250,37 +259,44 @@ msgid "Clear event log"
 msgstr "Tyhjennä tapahtumaloki"
 
 #: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>Lapsien lukumäärä</b>"
+#| msgid "<b>Child count</b>"
+msgid "Child count"
+msgstr "Lapsien lukumäärä"
 
 #: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(ei kuvausta)</i>"
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
+#| msgid "<no description>"
+msgid "(no description)"
+msgstr "(ei kuvausta)"
 
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Description</b>"
-msgstr "<b>Kuvaus</b>"
+#. add description to buffer
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
+#: ../plugins/validate.py:281
+msgid "Description"
+msgstr "Kuvaus"
 
 #: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>Tilat</b>"
+#| msgid "<b>States</b>"
+msgid "States"
+msgstr "Tilat"
 
 #: ../plugins/interface_view.ui.h:6
 msgid "Show"
 msgstr "Näytä"
 
 #: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Suhteet</b>"
+#| msgid "<b>Relations</b>"
+msgid "Relations"
+msgstr "Suhteet"
 
 #: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>Määreet</b>"
+#| msgid "<b>Attributes</b>"
+msgid "Attributes"
+msgstr "Määreet"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -314,7 +330,7 @@ msgstr "_Sovellus"
 msgid "Col_lection"
 msgstr "_Kokoelma"
 
-#. Component                                 size
+#. Component size
 #: ../plugins/interface_view.ui.h:18
 msgid "0, 0"
 msgstr "0, 0"
@@ -364,7 +380,7 @@ msgid "_Document"
 msgstr "_Asiakirja"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hyperlinkki"
 
@@ -376,146 +392,147 @@ msgstr "H_yperteksti"
 msgid "Position"
 msgstr "Sijainti"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "Kuvaus"
-
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:33
 msgid "Locale"
 msgstr "Maa-asetusto"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:34
 msgid "_Image"
 msgstr "_Kuva"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:35
 msgid "Lo_gin Helper"
 msgstr "Kir_jautumisapulainen"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:36
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:37
 msgid "_Selection"
 msgstr "_Valinta"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:38
 msgid "St_reamable Content"
 msgstr "_Virtaava sisältö"
 
+#: ../plugins/interface_view.ui.h:39
+#| msgid "<i>Caption:</i>"
+msgid "Caption:"
+msgstr "Otsikko:"
+
 #: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>Otsikko:</i>"
+#| msgid "<i>Summary:</i>"
+msgid "Summary:"
+msgstr "Yhteenveto:"
 
 #: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>Yhteenveto:</i>"
-
-#: ../plugins/interface_view.ui.h:42
 msgid "Selected columns"
 msgstr "Valitut sarakkeet"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:42
 msgid "Selected rows"
 msgstr "Valitut rivit"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:43
 msgid "Columns"
 msgstr "Sarakkeet"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:44
 msgid "Rows"
 msgstr "Rivit"
 
-#: ../plugins/interface_view.ui.h:46
-msgid "<b>Table Information</b>"
-msgstr "<b>Tietoja taulusta</b>"
+#: ../plugins/interface_view.ui.h:45
+#| msgid "<b>Table Information</b>"
+msgid "Table Information"
+msgstr "Tietoja taulusta"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:46
 msgid "name (x,y)"
 msgstr "nimi (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:47
 msgid "Header:"
 msgstr "Otsake:"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:48
 msgid "<no description>"
 msgstr "<ei kuvausta>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:50
 msgid "Extents:"
 msgstr "Kattaa:"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Rivi"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:52
 msgid "Column"
 msgstr "Sarake"
 
-#: ../plugins/interface_view.ui.h:54
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Valittu solu</b>"
+#: ../plugins/interface_view.ui.h:53
+#| msgid "<b>Selected Cell</b>"
+msgid "Selected Cell"
+msgstr "Valittu solu"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:54
 msgid "_Table"
 msgstr "_Taulukko"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>Teksti</b>"
+#: ../plugins/interface_view.ui.h:55
+msgid "Text"
+msgstr "Teksti"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:56
 msgid "Offset"
 msgstr "Siirtymä"
 
-#: ../plugins/interface_view.ui.h:58
+#: ../plugins/interface_view.ui.h:57
 msgid "Include defaults"
 msgstr "Sisällytä oletukset"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>Alku: 0</i>"
+#: ../plugins/interface_view.ui.h:59
+#| msgid "Start"
+msgid "Start: 0"
+msgstr "Alku: 0"
 
-#. End chaacter                                                 offset of text attributes span
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+#| msgid "<i>End: 0</i>"
+msgid "End: 0"
+msgstr "Loppu: 0"
+
 #: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>Loppu: 0</i>"
-
-#: ../plugins/interface_view.ui.h:63
 msgid "Te_xt"
 msgstr "Te_ksti"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:63
 msgid "Current value"
 msgstr "Nykyinen arvo"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:64
 msgid "Minimum increment"
 msgstr "Pienin mahdollinen kasvatus"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:65
 msgid "Maximum value"
 msgstr "Suurin mahdollinen arvo"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:66
 msgid "Minimum value"
 msgstr "Pienin mahdollinen arvo"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:67
 msgid "Val_ue"
 msgstr "Ar_vo"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>tuntematon</b>"
+#: ../plugins/interface_view.ui.h:68
+#| msgid "<b>unknown</b>"
+msgid "unknown"
+msgstr "tuntematon"
 
 #. Translators: this is a plugin name
 #: ../plugins/interface_view.py:42
@@ -527,37 +544,58 @@ msgstr "Käyttöliittymäkatselin"
 msgid "Allows viewing of various interface properties"
 msgstr "Näyttää käyttöliittymän eri ominaisuuksia"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(ei toteutettu)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nimi"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Alku"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Loppu"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Liian monta valittavissa olevaa lasta"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Muokattava)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "(Muokattava)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+#| msgid "Start"
+msgid "Start: %d"
+msgstr "Alku: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Loppu: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -583,59 +621,59 @@ msgstr "Kaa_vain:"
 msgid "V_alidate"
 msgstr "T_arkista"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
+#: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Jouten"
 
-#: ../plugins/validate.py:67
+#: ../plugins/validate.py:68
 msgid "No description"
 msgstr "Ei kuvausta"
 
-#: ../plugins/validate.py:155
+#: ../plugins/validate.py:156
 msgid "AT-SPI Validator"
 msgstr "AT-SPI-validaattori"
 
-#: ../plugins/validate.py:157
+#: ../plugins/validate.py:158
 msgid "Validates application accessibility"
 msgstr "Tarkistaa ohjelman esteettömyystuen"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Taso"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rooli"
 
-#: ../plugins/validate.py:349
+#: ../plugins/validate.py:350
 msgid "Saving"
 msgstr "Tallennetaan"
 
-#: ../plugins/validate.py:397
+#: ../plugins/validate.py:398
 msgid "Validating"
 msgstr "Tarkistus"
 
-#: ../plugins/validate.py:553
+#: ../plugins/validate.py:554
 msgid "EXCEPT"
 msgstr "POIKKEUS"
 
-#: ../plugins/validate.py:560
+#: ../plugins/validate.py:561
 msgid "ERROR"
 msgstr "VIRHE"
 
-#: ../plugins/validate.py:568
+#: ../plugins/validate.py:569
 msgid "WARN"
 msgstr "VAROITUS"
 
-#: ../plugins/validate.py:575
+#: ../plugins/validate.py:576
 msgid "INFO"
 msgstr "HUOMAUTUS"
 
-#: ../plugins/validate.py:582
+#: ../plugins/validate.py:583
 msgid "DEBUG"
 msgstr "VIANETSINTÄ"
 
@@ -661,31 +699,33 @@ msgstr "interaktiivinen %s ei ole toimennettavissa"
 msgid "more than one focused widget"
 msgstr "useampi kuin yksi kohdistettava elementti"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s ei sisällä tekstiliittymää"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
-#: ../plugindata/validate/basic.py:107
+#.
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "%s-indeksi vanhemmassa ei vastaa lapsen indeksiä"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Puuttuva vastavuoroisuus suhteessa %s"
 
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
-#: ../plugindata/validate/basic.py:202
+#.
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "kohteelta %s puuttuu nimi tai otsikko"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, fuzzy, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "kohdistettava %s sisältää taulukkoliitynnän, ei valintaliittymää"
@@ -693,14 +733,16 @@ msgstr "kohdistettava %s sisältää taulukkoliitynnän, ei valintaliittymää"
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
-#: ../plugindata/validate/basic.py:249
+#.
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s sisältää tilan %s ilman tilaa %s"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
-#: ../plugindata/validate/basic.py:275
+#.
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s ei kuulu joukkoon"
@@ -709,7 +751,8 @@ msgstr "%s ei kuulu joukkoon"
 #. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
-#: ../plugindata/validate/basic.py:310
+#.
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeksi %(num)d ei vastaa riviä ja saraketta"
@@ -719,60 +762,60 @@ msgstr "%(rolename)s indeksi %(num)d ei vastaa riviä ja saraketta"
 #. object's location in the table.
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
-#: ../plugindata/validate/basic.py:342
+#.
+#: ../plugindata/validate/basic.py:339
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "%(rolename)s vanhemman indeksi %(num1)d ei vastaa rivin ja sarakkeen indeksiä %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"%(rolename)s vanhemman indeksi %(num1)d ei vastaa rivin ja sarakkeen "
+"indeksiä %(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s ei sisällä nimeä tai kuvausta"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Asetukset..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Sisältö"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser ei voinut nähdä työpöytäsi sovelluksia. Työpöydän esteettömyys täytyy olla käytössä ohjelman käyttämiseksi. Haluatko ottaa sen nyt käyttöön?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Huomautus: muutos tulee voimaan uudelleenkirjautumisen jälkeen."
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<kuollut>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Lapset"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
-msgstr ""
+msgstr "_Piilota/näytä sovellukset ilman lapsia"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "Päivitä _rekisteri"
 
 #. Translators: Appears as tooltip
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Virkistä kaikki"
 
 #. Translators: Refresh current tree node's children.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Päivitä _solmu"
 
 #. Translators: Appears as tooltip
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#.
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Virkistä valitun solmu lapset"
 
@@ -846,11 +889,14 @@ msgstr "Korostuslaatikon täytön väri"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Ilkka Tuohela, 2007-2008.\n\nhttp://www.gnome.fi/"
+msgstr ""
+"Ilkka Tuohela, 2007-2008.\n"
+"\n"
+"http://www.gnome.fi/"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "Interaktiivinen Python-esteettömyys-selain"
+msgstr "Vuorovaikutteinen Python-esteettömyysselain"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
@@ -864,19 +910,19 @@ msgstr "Uusi BSD-lisenssi, katso lisätietoja tiedostoista COPYING ja NOTICE."
 msgid "Web site"
 msgstr "WWW-sivusto"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: ../src/lib/accerciser/bookmarks.py:65
 msgid "_Add Bookmark..."
 msgstr "_Lisää kirjanmerkki..."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "Bookmark selected accessible."
 msgstr "Lisää kirjanmerkki valittuun apuneuvoon."
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: ../src/lib/accerciser/bookmarks.py:68
 msgid "_Edit Bookmarks..."
 msgstr "_Muokkaa kirjamerkkejä..."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "Manage bookmarks."
 msgstr "Hallitse kirjanmerkkejä."
 
@@ -918,33 +964,35 @@ msgstr "Liitännäisen virheet"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
+#.
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Näkymä"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Ei näkymää"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Yhden liitännäisen näkymä"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Liitännäisnäkymä"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Liitännäisnäkymä (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Uusi näkymä...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+#| msgid "New View..."
+msgid "_New view..."
+msgstr "_Uusi näkymä..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Uusi näkymä..."
 
@@ -970,3 +1018,32 @@ msgstr "_Näytä"
 msgid "_Help"
 msgstr "O_hje"
 
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Tapahtumamonitori</b>"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(ei kuvausta)</i>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Kuvaus</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Teksti</b>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Alku: 0</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accerciser ei voinut nähdä työpöytäsi sovelluksia. Työpöydän esteettömyys "
+#~ "täytyy olla käytössä ohjelman käyttämiseksi. Haluatko ottaa sen nyt "
+#~ "käyttöön?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Huomautus: muutos tulee voimaan uudelleenkirjautumisen jälkeen."
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Uusi näkymä...</i>"
