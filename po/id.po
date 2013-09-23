@@ -2,22 +2,22 @@
 # Copyright (C) 2009 THE accerciser'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Accerciser package.
 #
-# Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012.
+# Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012, 2013.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-05-15 18:27+0000\n"
-"PO-Revision-Date: 2012-07-13 09:35+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-08-12 13:01+0000\n"
+"PO-Revision-Date: 2013-09-23 13:32+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
+"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Indonesian\n"
-"X-Poedit-Country: INDONESIA\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -29,7 +29,10 @@ msgid "Give your application an accessibility workout"
 msgstr "Memberikan kemampuan aksesibilitas kepada aplikasi Anda"
 
 #: ../accerciser.desktop.in.in.h:3
-#: ../src/lib/accerciser/main_window.py:42
+msgid "accessibility;development;test;"
+msgstr "aksesibilitas;pengembangan;tes;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Penelusur Aksesibilitas Accerciser"
 
@@ -250,13 +253,13 @@ msgstr "Cacah anak"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(tanpa deskripsi)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4
-#: ../plugins/validate.py:218
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
 #: ../plugins/validate.py:281
 msgid "Description"
 msgstr "Deskripsi"
@@ -359,8 +362,7 @@ msgid "_Document"
 msgstr "_Dokumen"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30
-#: ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
 msgid "Hyperlink"
 msgstr "Hipertaut"
 
@@ -517,45 +519,56 @@ msgstr "Penampil Antarmuka"
 msgid "Allows viewing of various interface properties"
 msgstr "Menampilkan berbagai properti antarmuka"
 
-#: ../plugins/interface_view.py:233
 #: ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(belum diterapkan)"
 
-#: ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-msgid "<i>(no description)</i>"
-msgstr "<i>(tanpa deskripsi)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:708
-#: ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nama"
 
-#: ../plugins/interface_view.py:716
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Awal"
 
-#: ../plugins/interface_view.py:732
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Akhir"
 
-#: ../plugins/interface_view.py:894
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Terlalu banyak anakan yang bisa dipilih"
 
-#: ../plugins/interface_view.py:1239
-#: ../plugins/interface_view.py:1242
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Dapat disunting)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Dapat disunting)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "Awal: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "Akhir: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -581,8 +594,7 @@ msgstr "Ske_ma"
 msgid "V_alidate"
 msgstr "V_alidasi"
 
-#: ../plugins/validate.ui.h:3
-#: ../plugins/validate.py:364
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
 #: ../plugins/validate.py:416
 msgid "Idle"
 msgstr "Menganggur"
@@ -601,14 +613,12 @@ msgstr "Memvalidasi aksesibilitas aplikasi"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211
-#: ../plugins/validate.py:279
+#: ../plugins/validate.py:211 ../plugins/validate.py:279
 msgid "Level"
 msgstr "Tingkat"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285
-#: ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Tugas"
 
@@ -662,7 +672,7 @@ msgstr "%s interaktif tidak dapat dijalankan"
 msgid "more than one focused widget"
 msgstr "lebih dari satu widget yang difokuskan"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s tidak memiliki teks antarmuka"
@@ -670,12 +680,12 @@ msgstr "%s tidak memiliki teks antarmuka"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Indeks %s pada induk tidak sama dengan indeks anak"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Kehilangan timbal balik untuk hubungan %s"
@@ -683,21 +693,23 @@ msgstr "Kehilangan timbal balik untuk hubungan %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s kehilangan nama atau label"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
-msgstr "%s yang dapat difokuskan mempunyai antarmuka tabel, tapi tidak mempunyai antarmuka pilihan"
+msgstr ""
+"%s yang dapat difokuskan mempunyai antarmuka tabel, tapi tidak mempunyai "
+"antarmuka pilihan"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s mempunyai keadaan %s tanpa keadaan %s"
@@ -705,7 +717,7 @@ msgstr "%s mempunyai keadaan %s tanpa keadaan %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s tidak termasuk dalam suatu set"
@@ -715,7 +727,7 @@ msgstr "%s tidak termasuk dalam suatu set"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeks %(num)d tidak cocok dengan baris dan kolom"
@@ -726,63 +738,59 @@ msgstr "%(rolename)s indeks %(num)d tidak cocok dengan baris dan kolom"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
-msgid "%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
-msgstr "induk %(rolename)s indeks %(num1)d tidak cocok dengankolom dan baris indeks %(num2)d"
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"induk %(rolename)s indeks %(num1)d tidak cocok dengankolom dan baris indeks "
+"%(num2)d"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s tidak mempunyai nama atau deskripsi"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:79
 msgid "_Preferences..."
 msgstr "_Preferensi..."
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:81
 msgid "_Contents"
 msgstr "_Isi"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid "Accerciser could not see the applications on your desktop.  You must enable desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr "Accerciser tidak dapat melihat aplikasi pada desktop Anda.  Anda harus mengaktifkan aksesibilitas desktop untuk memperbaiki masalah ini. Anda ingin mengaktifkannya sekarang?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Catatan: Perubahan yang dibuat baru diterapkan setelah log keluar."
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Anak"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "Sembunyik_an/Tampilkan Aplikasi tanpa anak"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "Sega_rkan Resgistri"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Menyegarkan semua"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Segarkan _Noktah"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Menyegarkan noktah anak yang dipilih"
 
@@ -857,7 +865,7 @@ msgstr "Warna yang mengisi kotak sorotan"
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012.\n"
+"Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012, 2013.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2010."
 
 #: ../src/lib/accerciser/about_dialog.py:53
@@ -892,35 +900,35 @@ msgstr "Sunting P_enanda Taut..."
 msgid "Manage bookmarks."
 msgstr "Mengelola penanda taut."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "Sunting Penanda..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "Judul"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "Aplikasi"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "Path"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "Tambah Penanda Taut..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "Judul:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "Aplikasi:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "Path:"
 
@@ -940,24 +948,24 @@ msgstr "Tampilan"
 msgid "No view"
 msgstr "Tanpa tampilan"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Tampilan pengaya tunggal"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Tampilan Pengaya"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Tampilan Pengaya (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>Tampila_n baru...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "Tampila_n baru..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Tampilan Baru..."
 
@@ -982,4 +990,3 @@ msgstr "_Tampilan"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Ba_ntuan"
-
