@@ -4,7 +4,17 @@ AM_INIT_AUTOMAKE
 AM_MAINTAINER_MODE([enable])
 
 dnl == check for python ==
-AM_PATH_PYTHON(2.4)
+AM_PATH_PYTHON(3.2)
+
+dnl == requeriments ==
+GTK_REQUIRED=3.1.13
+PYGOBJECT_REQUIRED=2.90.3
+ATSPI_REQUIRED=2.5.2
+
+dnl == check for requeriments ==
+PKG_CHECK_MODULES([GTK], [gtk+-3.0 >= GTK_REQUIRED])
+PKG_CHECK_MODULES([PYGOBJECT], [pygobject-3.0 >= PYGOBJECT_REQUIRED])
+PKG_CHECK_MODULES([ATSPI2], [atspi-2 >= ATSPI_REQUIRED])
 
 dnl == i18n ==
 GETTEXT_PACKAGE=macaroon

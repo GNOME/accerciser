@@ -15,8 +15,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 
 import pyatspi
-
-from Queue import Queue
+from queue import Queue
 from time import time
 
 class _CommandsQueue(Queue):
@@ -46,7 +45,7 @@ class ScriptFactory(object):
   @ivar frame_name: The last focused window frame name.
   @type frame_name: string.
   '''
-  intepreter_line = '#!/usr/bin/python'
+  intepreter_line = '#!/usr/bin/python3.2'
   import_line = ''
   MODIFIERS = [Gdk.KEY_Control_L, Gdk.KEY_Control_R,
                Gdk.KEY_Alt_L, Gdk.KEY_Alt_R,
@@ -185,7 +184,7 @@ class Level2SequenceFactory(SequenceFactory):
     self.frame_name = event.source.name
 
   def docLoadCommand(self):
-    print 'factory thing'
+    print('factory thing')
     self.commands_queue.put_nowait(
       'sequence.append(WaitForDocLoad())\n')
 

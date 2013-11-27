@@ -20,8 +20,8 @@ from gi.repository import Gdk
 from gi.repository import GLib
 import pyatspi
 
-from sequence_step import AtomicAction
-import utils
+from .sequence_step import AtomicAction
+from . import utils
 
 _ = lambda x: x
 
@@ -168,7 +168,7 @@ class KeyComboAction(AtomicAction):
     @type modifiers: integer
     '''
     interval = 0
-    mod_hw_codes = map(mod_key_code_mappings.get, modifiers.value_names)
+    mod_hw_codes = list(map(mod_key_code_mappings.get, modifiers.value_names))
     for mod_hw_code in mod_hw_codes:
       GLib.timeout_add(interval, self._keyPress, mod_hw_code)
       interval += keystroke_interval

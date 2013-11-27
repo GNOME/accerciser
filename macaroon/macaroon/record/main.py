@@ -17,8 +17,8 @@ from gi.repository import GObject
 from gi.repository import Pango
 from gi.repository import GtkSource
 
-import script_factory
-from Queue import Queue
+from . import script_factory
+from queue import Queue
 from macaroon.playback import MacroSequence
 
 APP_ID = None
@@ -26,7 +26,7 @@ APP_ID = None
 MacroSequence.startReally = MacroSequence.start
 MacroSequence.start = lambda x: None
 
-from about import MacaroonAboutDialog
+from .about import MacaroonAboutDialog
 
 import pyatspi
 
@@ -308,7 +308,7 @@ class ScriptBuffer(GtkSource.Buffer):
                                            'document:load-complete')
     pyatspi.Registry.registerKeystrokeListener(
       self._onKeystroke,
-      mask = range(256),
+      mask = list(range(256)),
       kind=(pyatspi.KEY_PRESSED_EVENT, pyatspi.KEY_RELEASED_EVENT))
     self.set_property('recording', True)
 
@@ -321,7 +321,7 @@ class ScriptBuffer(GtkSource.Buffer):
                                              'document:load-complete')
     pyatspi.Registry.deregisterKeystrokeListener(
       self._onKeystroke,
-      mask = range(256),
+      mask = list(range(256)),
       kind=(pyatspi.KEY_PRESSED_EVENT, pyatspi.KEY_RELEASED_EVENT))
     self.script_factory.terminateScript()
     while self.script_factory.commands_queue.qsize():

@@ -19,7 +19,7 @@ from gi.repository import GObject
 from gi.repository import GLib
 import pyatspi
 import sys
-from wait_actions import WaitAction
+from .wait_actions import WaitAction
 from os import environ
 _ = lambda x: x
 
@@ -95,7 +95,7 @@ class MacroSequence(GObject.GObject):
       return
     action = self.steps[self._current_step]
     if self._verbose:
-      print _('SEQUENCE: %s') % action
+      print(_('SEQUENCE: %s') % action)
 
     try:
       next_action = self.steps[self._current_step + 1]

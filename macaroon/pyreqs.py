@@ -28,12 +28,12 @@ modules = ['pygtk', 'gtk', 'Gtk.gdk', 'wnck']
 for name in modules:
   try:
     m = __import__(name)
-    print name, 
-  except ImportError, e:
+    print(name)
+  except ImportError as e:
     if name == 'wnck' and e.args[0].find('gtk') > -1:
       # just no display, continue
       continue
-    print name, '*MISSING*'
+    print(name, '*MISSING*')
     sys.exit(1)
   except RuntimeError:
     # ignore other errors which might be from lack of a display

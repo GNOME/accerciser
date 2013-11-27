@@ -20,8 +20,8 @@ import pyatspi
 
 import re
 
-from sequence_step import SequenceStep
-import utils
+from .sequence_step import SequenceStep
+from . import utils
 import sys
 
 _ = lambda x: x

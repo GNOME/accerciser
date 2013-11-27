@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Macaroon - a desktop macro tool
 # Copyright (C) 2007 Eitan Isaacson <eitan@ascender.com>
 # All rights reserved.

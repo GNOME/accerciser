@@ -11,7 +11,7 @@
 
 # Headers in this file shall remain intact.
 
-from __init__ import *
+from .__init__ import *
 
 import sys
 
