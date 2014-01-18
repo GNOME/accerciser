@@ -5,15 +5,16 @@
 # Ray Wang <wanglei1123@gmail.com>, 2008.
 # QAed by Funda Wang <fundawang@gmail.com>, 2008
 # YunQiang Su <wzssyqa@gmail.com>, 2011, 2012.
+# Tong Hui <tonghuix@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-20 22:53+0000\n"
-"PO-Revision-Date: 2012-09-23 11:26+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"POT-Creation-Date: 2013-12-18 13:41+0000\n"
+"PO-Revision-Date: 2014-01-18 17:30+0800\n"
+"Last-Translator: Tong Hui <tonghuix@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +31,11 @@ msgstr "Accerciser"
 msgid "Give your application an accessibility workout"
 msgstr "为你的应用提供辅助功能测试"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "accessibility;development;test;辅助功能;开发;测试;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser 辅助功能浏览器"
 
@@ -195,7 +200,6 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "操纵目前所选可访问对象的交互控制台"
 
 #: ../plugins/event_monitor.ui.h:1
-#| msgid "Event Monitor"
 msgid "Event monitor"
 msgstr "事件监视器"
 
@@ -244,7 +248,6 @@ msgid "Clear event log"
 msgstr "清除事件日志"
 
 #: ../plugins/interface_view.ui.h:1
-#| msgid "<b>Child count</b>"
 msgid "Child count"
 msgstr "子节点数"
 
@@ -252,8 +255,8 @@ msgstr "子节点数"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
-#| msgid "<no description>"
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(没有描述)"
 
@@ -264,7 +267,6 @@ msgid "Description"
 msgstr "描述"
 
 #: ../plugins/interface_view.ui.h:5
-#| msgid "<b>States</b>"
 msgid "States"
 msgstr "状态"
 
@@ -273,12 +275,10 @@ msgid "Show"
 msgstr "显示"
 
 #: ../plugins/interface_view.ui.h:7
-#| msgid "<b>Relations</b>"
 msgid "Relations"
 msgstr "关系"
 
 #: ../plugins/interface_view.ui.h:8
-#| msgid "<b>Attributes</b>"
 msgid "Attributes"
 msgstr "属性"
 
@@ -402,12 +402,10 @@ msgid "St_reamable Content"
 msgstr "流式内容(_R)"
 
 #: ../plugins/interface_view.ui.h:39
-#| msgid "<i>Caption:</i>"
 msgid "Caption:"
 msgstr "标题："
 
 #: ../plugins/interface_view.ui.h:40
-#| msgid "<i>Summary:</i>"
 msgid "Summary:"
 msgstr "摘要："
 
@@ -428,7 +426,6 @@ msgid "Rows"
 msgstr "行"
 
 #: ../plugins/interface_view.ui.h:45
-#| msgid "<b>Table Information</b>"
 msgid "Table Information"
 msgstr "表格信息"
 
@@ -458,7 +455,6 @@ msgid "Column"
 msgstr "列"
 
 #: ../plugins/interface_view.ui.h:53
-#| msgid "<b>Selected Cell</b>"
 msgid "Selected Cell"
 msgstr "选中的单元"
 
@@ -480,13 +476,11 @@ msgstr "包含默认值"
 
 #. Start character offset of text attributes span
 #: ../plugins/interface_view.ui.h:59
-#| msgid "Start"
 msgid "Start: 0"
 msgstr "开始：0"
 
 #. End character offset of text attributes span
 #: ../plugins/interface_view.ui.h:61
-#| msgid "<i>End: 0</i>"
 msgid "End: 0"
 msgstr "结束：0"
 
@@ -515,7 +509,6 @@ msgid "Val_ue"
 msgstr "值(_U)"
 
 #: ../plugins/interface_view.ui.h:68
-#| msgid "<b>unknown</b>"
 msgid "unknown"
 msgstr "未知"
 
@@ -529,40 +522,56 @@ msgstr "界面查看器"
 msgid "Allows viewing of various interface properties"
 msgstr "允许查看各种界面属性"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(未实现)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(没有描述)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "名称"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "开始"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "结束"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "太多可选择的子节点"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr "<i>(可编辑)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(可编辑)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1411
+#, python-format
+msgid "Start: %d"
+msgstr "开始：%d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1417
+#, python-format
+msgid "End: %d"
+msgstr "结束：%d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -612,7 +621,7 @@ msgid "Level"
 msgstr "级别"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "角色"
 
@@ -750,37 +759,37 @@ msgstr "首选项(_P)..."
 msgid "_Contents"
 msgstr "目录(_C)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "子节点"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "隐藏/显示无子节点的应用程序(_H)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "刷新注册库(_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "全部刷新"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "刷新节点(_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "刷新所选节点的子节点"
 
@@ -856,7 +865,8 @@ msgstr "高亮框的填充颜色"
 msgid "translator-credits"
 msgstr ""
 "Liu Yubao <yubao.liu@gmail.com>\n"
-"Ray Wang <wanglei1123@gmail.com>"
+"Ray Wang <wanglei1123@gmail.com>\n"
+"Tong Hui <tonghuix@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -890,35 +900,35 @@ msgstr "编辑书签(_E)..."
 msgid "Manage bookmarks."
 msgstr "管理书签。"
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: ../src/lib/accerciser/bookmarks.py:327
 msgid "Edit Bookmarks..."
 msgstr "编辑书签..."
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:432
 msgid "Title"
 msgstr "标题"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:440
 msgid "Application"
 msgstr "应用程序"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:448
 msgid "Path"
 msgstr "路径"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:517
 msgid "Add Bookmark..."
 msgstr "添加书签..."
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:531
 msgid "Title:"
 msgstr "标题："
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:534
 msgid "Application:"
 msgstr "应用程序："
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:537
 msgid "Path:"
 msgstr "路径："
 
@@ -938,24 +948,24 @@ msgstr "视图"
 msgid "No view"
 msgstr "没有视图"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "单插件视图(_S)"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "插件视图"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "插件视图(%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>新建视图(_N)...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "新建视图(_N)..."
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "新建视图..."
 
@@ -980,6 +990,12 @@ msgstr "视图(_V)"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "帮助(_H)"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(没有描述)</i>"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>新建视图(_N)...</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>事件监视器</b>"
