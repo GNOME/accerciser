@@ -192,8 +192,7 @@ class _HighLight(gtk.Window):
                stroke_width, padding=0):
 
     # Initialize window.
-    #gtk.Window.__init__(self, gtk.WindowType.POPUP)
-    gtk.Window.__init__(self)
+    gtk.Window.__init__(self, gtk.WindowType.POPUP)
 
     # Normalize position for stroke and padding.
     self.x, self.y = x - padding, y - padding
