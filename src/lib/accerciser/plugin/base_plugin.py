@@ -121,7 +121,7 @@ class Plugin(Tools):
     @rtype: object
     '''
     obj = super(Plugin, self).__getattribute__(name)
-    if callable(obj):
+    if callable(obj) and name not in ['__class__']:
       method_wrapper = \
           super(Plugin, self).__getattribute__('_PluginMethodWrapper')
       return method_wrapper(obj)
