@@ -70,7 +70,7 @@ class IterableIPShell:
     '''
     io = IPython.utils.io
     if input_func:
-      IPython.frontend.terminal.interactiveshell.raw_input_original = input_func
+      IPython.terminal.interactiveshell.raw_input_original = input_func
     if cin:
       io.stdin = io.IOStream(cin)
     if cout:
@@ -98,7 +98,7 @@ class IterableIPShell:
 
     # InteractiveShell inherits from SingletonConfigurable, so use instance()
     #
-    self.IP = IPython.frontend.terminal.embed.InteractiveShellEmbed.instance(\
+    self.IP = IPython.terminal.embed.InteractiveShellEmbed.instance(\
             config=cfg, user_ns=user_ns)
 
     sys.stdout, sys.stderr = old_stdout, old_stderr
@@ -169,7 +169,7 @@ class IterableIPShell:
           self.IP.autoedit_syntax):
           self.IP.edit_syntax_error()
       if not self.iter_more:
-          source_raw = self.IP.input_splitter.source_raw_reset()[1]
+          source_raw = self.IP.input_splitter.raw_reset()
           self.IP.run_cell(source_raw, store_history=True)
       else:
           # TODO: Auto-indent
@@ -608,4 +608,4 @@ if __name__ == "__main__":
   window.add(IPythonView())
   window.show_all()
   gtk.main()
-    
+ 
