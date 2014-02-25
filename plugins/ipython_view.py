@@ -600,7 +600,8 @@ class IPythonView(ConsoleView, IterableIPShell):
     if rv: rv = rv.strip('\n')
     self.showReturned(rv)
     self.cout.truncate(0)
-    
+    self.cout.seek(0)
+ 
 if __name__ == "__main__":
   window = gtk.Window()
   window.set_default_size(640, 320)
