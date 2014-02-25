@@ -171,9 +171,11 @@ class IterableIPShell:
       if not self.iter_more:
           source_raw = self.IP.input_splitter.raw_reset()
           self.IP.run_cell(source_raw, store_history=True)
+          self.IP.rl_do_indent = False
       else:
           # TODO: Auto-indent
           #
+          self.IP.rl_do_indent = True
           pass
 
     sys.stdout = orig_stdout
@@ -461,6 +463,10 @@ class ConsoleView(gtk.TextView):
     self._showPrompt(self.prompt)
     self.text_buffer.move_mark(self.line_start, self.text_buffer.get_end_iter())
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
+
+    if self.IP.rl_do_indent:
+      indentation = self.IP.input_splitter.indent_spaces * ' '
+      self.text_buffer.insert_at_cursor(indentation)
 
   def onKeyPress(self, widget, event):
     '''
