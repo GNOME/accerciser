@@ -57,6 +57,7 @@ class Main(Tools):
     self.node = Node()
 
     self.window = AccerciserMainWindow(self.node)
+    self.window.connect('delete-event', self._onDeleteEvent)
     self.window.connect('destroy', self._onQuit)
 
     # Start hotkey manager
@@ -114,7 +115,6 @@ class Main(Tools):
     '''
     Cleans up any object instances that need explicit shutdown.
     '''
-    self.window.saveState()
     self.plugin_manager.close()
 
   def _onQuit(self, obj, data=None):
@@ -163,4 +163,12 @@ class Main(Tools):
     hotkeys_view = HotkeyTreeView(self.hotkey_manager)
     dialog = AccerciserPreferencesDialog(plugins_view, hotkeys_view)
     dialog.show_all()
-    
+
+  def _onDeleteEvent(self, obj, data=None):
+    '''
+    Handles when a delete-event is triggered from the main window.
+
+    @param obj: The object that emitted the signal that this callback caught.
+    @type obj: L{gtk.Widget}
+    '''
+    self.window.saveState()
