@@ -34,6 +34,18 @@ SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser',
 VALIDATORS = {}
 SCHEMA_METADATA = {}
 
+# method to make use of metaclasses on both python 2.x and 3.x
+#
+def with_metaclass(meta, *bases):
+    class metaclass(meta):
+        __call__ = type.__call__
+        __init__ = type.__init__
+        def __new__(cls, name, this_bases, d):
+            if this_bases is None:
+                return type.__new__(cls, name, (), d)
+            return meta(name, bases, d)
+    return metaclass('temporary_class', None, {})
+
 class ValidatorManager(type):
   '''
   Metaclass that tracks all validator subclasses imported by the plug-in.
@@ -97,12 +109,11 @@ class ValidatorManager(type):
     '''
     return SCHEMA_METADATA[name]
 
-class Validator(object):
+class Validator(with_metaclass(ValidatorManager, object)):
   '''
   Base class for all validators. Defines the public interface used by the 
   plug-in controller/view to generate validation reports.
   '''
-  __metaclass__ = ValidatorManager
   def __init__(self):
     pass
   
