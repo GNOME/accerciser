@@ -240,7 +240,7 @@ class Level1SequenceFactory(SequenceFactory):
     self.commands_queue.put_nowait(
       '%ssequence.append(WaitForFocus("%s", acc_role=pyatspi.%s))\n' % \
         (self._focus_comment, event.source.name,
-         repr(event.source.getRole())))
+         event.source.getRole().value_name.replace("ATSPI_", "")))
 
 class DogtailFactory(ScriptFactory):
   '''
