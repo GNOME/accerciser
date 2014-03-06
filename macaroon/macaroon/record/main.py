@@ -155,7 +155,8 @@ class MacroPreview(Gtk.Window):
 
   def _onPlay(self, button):
     script = self.script_buffer.get_text(self.script_buffer.get_start_iter(),
-                                         self.script_buffer.get_end_iter())
+                                         self.script_buffer.get_end_iter(),
+                                         True)
     script_scope = {}
     exec(script, script_scope)
     sequence = script_scope.get('sequence')
@@ -211,7 +212,7 @@ class MacroPreview(Gtk.Window):
       save_to = open(save_dialog.get_filename(), 'w')
       save_to.write(self.script_buffer.get_text(
           self.script_buffer.get_start_iter(),
-          self.script_buffer.get_end_iter()))
+          self.script_buffer.get_end_iter(), True))
       save_to.close()
       self.script_buffer.set_modified(False)
     save_dialog.destroy()
