@@ -1322,6 +1322,7 @@ class _SectionText(_InterfaceSection):
     @type text_buffer: gtk.TextBuffer
     '''
     self.offset_spin.get_adjustment().upper = text_buffer.get_char_count()
+    self.offset_spin.set_range(0, text_buffer.get_char_count())
     text_buffer.set_modified(False)
 
   def _onTextMarkSet(self, text_buffer, iter, text_mark):

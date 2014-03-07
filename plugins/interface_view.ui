@@ -43,6 +43,11 @@
       <column type="gboolean"/>
     </columns>
   </object>
+  <object class="GtkAdjustment" id="spin_button_adjustement">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkListStore" id="states_liststore">
     <columns>
       <!-- column-name State -->
@@ -2489,6 +2494,7 @@
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="invisible_char">●</property>
+                                            <property name="adjustment">spin_button_adjustement</property>
                                             <accessibility>
                                               <relation type="labelled-by" target="label18"/>
                                             </accessibility>
