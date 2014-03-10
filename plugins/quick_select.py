@@ -73,7 +73,7 @@ class QuickSelect(Plugin):
     '''
     Inspect accessible of widget under mouse.
     '''
-    display = gdk.Display(gdk.get_display())
+    display = gdk.Display.get_default()
     screen, x, y, flags =  display.get_pointer()
     del screen # A workaround http://bugzilla.gnome.org/show_bug.cgi?id=593732
 
