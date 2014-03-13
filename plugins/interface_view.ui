@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk+" version="3.0"/>
   <object class="GtkListStore" id="accattrib_liststore">
     <columns>
       <!-- column-name gchararray1 -->
@@ -206,39 +207,45 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkFrame" id="frame4">
+                              <object class="GtkPaned" id="paned1">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label_xalign">0</property>
-                                <property name="shadow_type">none</property>
+                                <property name="can_focus">True</property>
                                 <child>
-                                  <object class="GtkAlignment" id="alignment4">
+                                  <object class="GtkFrame" id="frame4">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="left_padding">12</property>
+                                    <property name="label_xalign">0</property>
+                                    <property name="shadow_type">none</property>
                                     <child>
-                                      <object class="GtkScrolledWindow" id="scrolledwindow7">
-                                        <property name="width_request">100</property>
+                                      <object class="GtkAlignment" id="alignment4">
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="shadow_type">in</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="left_padding">12</property>
                                         <child>
-                                          <object class="GtkTreeView" id="states_view">
+                                          <object class="GtkScrolledWindow" id="scrolledwindow7">
+                                            <property name="width_request">100</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
-                                            <property name="model">states_liststore</property>
-                                            <property name="headers_visible">False</property>
-                                            <child internal-child="selection">
-                                              <object class="GtkTreeSelection" id="treeview-selection1"/>
-                                            </child>
+                                            <property name="shadow_type">in</property>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="treeviewcolumn1">
-                                                <property name="title">column</property>
+                                              <object class="GtkTreeView" id="states_view">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="model">states_liststore</property>
+                                                <property name="headers_visible">False</property>
+                                                <child internal-child="selection">
+                                                  <object class="GtkTreeSelection" id="treeview-selection1"/>
+                                                </child>
                                                 <child>
-                                                  <object class="GtkCellRendererText" id="cellrenderertext1"/>
-                                                  <attributes>
-                                                    <attribute name="text">0</attribute>
-                                                  </attributes>
+                                                  <object class="GtkTreeViewColumn" id="treeviewcolumn1">
+                                                    <property name="title">column</property>
+                                                    <child>
+                                                      <object class="GtkCellRendererText" id="cellrenderertext1"/>
+                                                      <attributes>
+                                                        <attribute name="text">0</attribute>
+                                                      </attributes>
+                                                    </child>
+                                                  </object>
                                                 </child>
                                               </object>
                                             </child>
@@ -246,71 +253,70 @@
                                         </child>
                                       </object>
                                     </child>
-                                  </object>
-                                </child>
-                                <child type="label">
-                                  <object class="GtkLabel" id="label32">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">States</property>
-                                    <attributes>
-                                      <attribute name="weight" value="bold"/>
-                                    </attributes>
-                                  </object>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkFrame" id="frame8">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label_xalign">0</property>
-                                <property name="shadow_type">none</property>
-                                <child>
-                                  <object class="GtkAlignment" id="alignment7">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="left_padding">12</property>
-                                    <child>
-                                      <object class="GtkScrolledWindow" id="scrolledwindow13">
+                                    <child type="label">
+                                      <object class="GtkLabel" id="label32">
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="shadow_type">in</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="label" translatable="yes">States</property>
+                                        <attributes>
+                                          <attribute name="weight" value="bold"/>
+                                        </attributes>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="resize">True</property>
+                                    <property name="shrink">True</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkFrame" id="frame8">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="label_xalign">0</property>
+                                    <property name="shadow_type">none</property>
+                                    <child>
+                                      <object class="GtkAlignment" id="alignment7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="left_padding">12</property>
                                         <child>
-                                          <object class="GtkTreeView" id="accattrib_view">
+                                          <object class="GtkScrolledWindow" id="scrolledwindow13">
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
-                                            <property name="model">accattrib_liststore</property>
-                                            <property name="headers_visible">False</property>
-                                            <property name="headers_clickable">False</property>
-                                            <property name="search_column">0</property>
-                                            <child internal-child="selection">
-                                              <object class="GtkTreeSelection" id="treeview-selection2"/>
-                                            </child>
+                                            <property name="shadow_type">in</property>
                                             <child>
-                                              <object class="GtkTreeViewColumn" id="treeviewcolumn3">
-                                                <property name="title">column</property>
-                                                <child>
-                                                  <object class="GtkCellRendererText" id="cellrenderertext3"/>
-                                                  <attributes>
-                                                    <attribute name="text">0</attribute>
-                                                  </attributes>
+                                              <object class="GtkTreeView" id="accattrib_view">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="model">accattrib_liststore</property>
+                                                <property name="headers_visible">False</property>
+                                                <property name="headers_clickable">False</property>
+                                                <property name="search_column">0</property>
+                                                <child internal-child="selection">
+                                                  <object class="GtkTreeSelection" id="treeview-selection2"/>
                                                 </child>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkTreeViewColumn" id="treeviewcolumn4">
-                                                <property name="title">column</property>
                                                 <child>
-                                                  <object class="GtkCellRendererText" id="cellrenderertext4"/>
-                                                  <attributes>
-                                                    <attribute name="text">1</attribute>
-                                                  </attributes>
+                                                  <object class="GtkTreeViewColumn" id="treeviewcolumn3">
+                                                    <property name="title">column</property>
+                                                    <child>
+                                                      <object class="GtkCellRendererText" id="cellrenderertext3"/>
+                                                      <attributes>
+                                                        <attribute name="text">0</attribute>
+                                                      </attributes>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkTreeViewColumn" id="treeviewcolumn4">
+                                                    <property name="title">column</property>
+                                                    <child>
+                                                      <object class="GtkCellRendererText" id="cellrenderertext4"/>
+                                                      <attributes>
+                                                        <attribute name="text">1</attribute>
+                                                      </attributes>
+                                                    </child>
+                                                  </object>
                                                 </child>
                                               </object>
                                             </child>
@@ -318,23 +324,27 @@
                                         </child>
                                       </object>
                                     </child>
+                                    <child type="label">
+                                      <object class="GtkLabel" id="label12">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="label" translatable="yes">Attributes</property>
+                                        <attributes>
+                                          <attribute name="weight" value="bold"/>
+                                        </attributes>
+                                      </object>
+                                    </child>
                                   </object>
-                                </child>
-                                <child type="label">
-                                  <object class="GtkLabel" id="label12">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">Attributes</property>
-                                    <attributes>
-                                      <attribute name="weight" value="bold"/>
-                                    </attributes>
-                                  </object>
+                                  <packing>
+                                    <property name="resize">True</property>
+                                    <property name="shrink">True</property>
+                                  </packing>
                                 </child>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
                                 <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="position">2</property>
                               </packing>
                             </child>
                           </object>
@@ -1497,12 +1507,12 @@
                             <property name="xalign">0</property>
                             <property name="label" translatable="yes">(no description)</property>
                             <property name="selectable">True</property>
-                            <accessibility>
-                              <relation type="labelled-by" target="label59"/>
-                            </accessibility>
                             <attributes>
                               <attribute name="style" value="italic"/>
                             </attributes>
+                            <accessibility>
+                              <relation type="labelled-by" target="label59"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -1779,12 +1789,12 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes">Caption:</property>
-                                        <accessibility>
-                                          <relation type="label-for" target="table_caption_label"/>
-                                        </accessibility>
                                         <attributes>
                                           <attribute name="style" value="italic"/>
                                         </attributes>
+                                        <accessibility>
+                                          <relation type="label-for" target="table_caption_label"/>
+                                        </accessibility>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1824,12 +1834,12 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes">Summary:</property>
-                                        <accessibility>
-                                          <relation type="label-for" target="table_summary_label"/>
-                                        </accessibility>
                                         <attributes>
                                           <attribute name="style" value="italic"/>
                                         </attributes>
+                                        <accessibility>
+                                          <relation type="label-for" target="table_summary_label"/>
+                                        </accessibility>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -2092,10 +2102,10 @@
                                                 <property name="receives_default">True</property>
                                                 <property name="relief">none</property>
                                                 <property name="xalign">0</property>
+                                                <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                 <accessibility>
                                                   <relation type="labelled-by" target="label50"/>
                                                 </accessibility>
-                                                <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                               </object>
                                               <packing>
                                                 <property name="expand">False</property>
@@ -2159,10 +2169,10 @@
                                                         <property name="receives_default">True</property>
                                                         <property name="relief">none</property>
                                                         <property name="xalign">0</property>
+                                                        <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                         <accessibility>
                                                           <relation type="labelled-by" target="label50"/>
                                                         </accessibility>
-                                                        <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                       </object>
                                                       <packing>
                                                         <property name="expand">False</property>
@@ -2278,10 +2288,10 @@
                                                         <property name="receives_default">True</property>
                                                         <property name="relief">none</property>
                                                         <property name="xalign">0</property>
+                                                        <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                         <accessibility>
                                                           <relation type="labelled-by" target="label46"/>
                                                         </accessibility>
-                                                        <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                       </object>
                                                       <packing>
                                                         <property name="expand">False</property>
@@ -2500,10 +2510,10 @@
                                             <property name="can_focus">True</property>
                                             <property name="invisible_char">●</property>
                                             <property name="adjustment">spin_button_adjustement</property>
+                                            <signal name="value-changed" handler="_onTextSpinnerChanged" swapped="no"/>
                                             <accessibility>
                                               <relation type="labelled-by" target="label18"/>
                                             </accessibility>
-                                            <signal name="value-changed" handler="_onTextSpinnerChanged" swapped="no"/>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
@@ -2707,10 +2717,10 @@
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">●</property>
                                 <property name="adjustment">spin_value_adjustement</property>
+                                <signal name="value-changed" handler="_onValueSpinnerChange" swapped="no"/>
                                 <accessibility>
                                   <relation type="labelled-by" target="label40"/>
                                 </accessibility>
-                                <signal name="value-changed" handler="_onValueSpinnerChange" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
