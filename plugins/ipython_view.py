@@ -19,6 +19,8 @@ from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import Pango
 
+from pkg_resources import parse_version
+
 import re
 import sys
 import os
@@ -70,7 +72,10 @@ class IterableIPShell:
     '''
     io = IPython.utils.io
     if input_func:
-      IPython.terminal.interactiveshell.raw_input_original = input_func
+      if parse_version(IPython.release.version) >= parse_version("1.2.1"):
+        IPython.terminal.interactiveshell.raw_input_original = input_func
+      else:
+        IPython.frontend.terminal.interactiveshell.raw_input_original = input_func
     if cin:
       io.stdin = io.IOStream(cin)
     if cout:
@@ -98,8 +103,12 @@ class IterableIPShell:
 
     # InteractiveShell inherits from SingletonConfigurable, so use instance()
     #
-    self.IP = IPython.terminal.embed.InteractiveShellEmbed.instance(\
-            config=cfg, user_ns=user_ns)
+    if parse_version(IPython.release.version) >= parse_version("1.2.1"):
+      self.IP = IPython.terminal.embed.InteractiveShellEmbed.instance(\
+              config=cfg, user_ns=user_ns)
+    else:
+      self.IP = IPython.frontend.terminal.embed.InteractiveShellEmbed.instance(\
+              config=cfg, user_ns=user_ns)
 
     sys.stdout, sys.stderr = old_stdout, old_stderr
 
@@ -169,7 +178,10 @@ class IterableIPShell:
           self.IP.autoedit_syntax):
           self.IP.edit_syntax_error()
       if not self.iter_more:
-          source_raw = self.IP.input_splitter.raw_reset()
+          if parse_version(IPython.release.version) >= parse_version("2.0.0-dev"):
+            source_raw = self.IP.input_splitter.raw_reset()
+          else:
+            source_raw = self.IP.input_splitter.source_raw_reset()[1]
           self.IP.run_cell(source_raw, store_history=True)
           self.IP.rl_do_indent = False
       else:
