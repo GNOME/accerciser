@@ -1,22 +1,24 @@
-# translation of accerciser.master.po to Basque
+# Basque translation of accerciser.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009, 2010.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011, 2013, 2014.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser.master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-28 21:05+0100\n"
-"PO-Revision-Date: 2013-02-27 21:26+0100\n"
+"Project-Id-Version: accerciser master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-30 15:23+0200\n"
+"PO-Revision-Date: 2014-03-30 15:23+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../accerciser.desktop.in.in.h:1
@@ -260,8 +262,8 @@ msgid "(no description)"
 msgstr "(azalpenik ez)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Azalpena"
 
@@ -270,16 +272,16 @@ msgid "States"
 msgstr "Egoerak"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Atributuak"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Erakutsi"
 
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Erlazioak"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Atributuak"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -363,7 +365,7 @@ msgid "_Document"
 msgstr "_Dokumentua"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hiperesteka"
 
@@ -525,7 +527,7 @@ msgid "(not implemented)"
 msgstr "(ez dago inplementatuta)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -556,7 +558,7 @@ msgstr "(Editagarria)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
 msgid "Start: %d"
 msgstr "Hasiera: %d"
@@ -566,7 +568,7 @@ msgstr "Hasiera: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Amaiera: %d"
@@ -595,59 +597,59 @@ msgstr "E_skema:"
 msgid "V_alidate"
 msgstr "_Balidatu"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Inaktibo"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Azalpenik ez"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "AT-SPI balidatzailea"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Aplikazioaren erabilerraztasuna balidatzen du"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Maila"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Funtzioa"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Gordetzen"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Balidatzen"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "IZAN EZIK"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "ERROREA"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "ABISUA"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "INFORMAZIOA"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "ARAZTU"
 
@@ -754,11 +756,11 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s(e)k ez du izenik edo azalpenik"
 
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Hobespenak..."
 
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Edukia"
 
@@ -964,8 +966,8 @@ msgid "Plugin View (%d)"
 msgstr "Plugin ikuspegia (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1074
-msgid "<i>_New view...</i>"
-msgstr "<i>_Ikuspegi berria...</i>"
+msgid "_New view..."
+msgstr "Ikuspegi _berria..."
 
 #: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
@@ -992,6 +994,9 @@ msgstr "_Ikusi"
 #: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Laguntza"
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>_Ikuspegi berria...</i>"
 
 #~ msgid "<b>Event monitor</b>"
 #~ msgstr "<b>Gertaera-monitorea</b>"
