@@ -5,16 +5,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.master\n"
-"POT-Creation-Date: 2014-03-24 03:25+0000\n"
-"PO-Revision-Date: 2014-03-24 11:20+0100\n"
+"POT-Creation-Date: 2014-05-08 14:25+0000\n"
+"PO-Revision-Date: 2014-05-10 18:07+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.5\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -49,7 +49,7 @@ msgstr "Verificar interfaces, métodos y propiedades"
 #. (itstool) path: credit/name
 #: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10
 #: C/event_monitor_plugin.page:10 C/howto_setting_up_accerciser.page:11
-#: C/howto_write_a_plugin.page:10 C/index.page:6
+#: C/howto_write_a_plugin.page:10 C/index.page:9
 #: C/interface_viewer_plugin.page:10 C/introduction.page:10
 #: C/ipython_plugin.page:10 C/preferences.page:10
 #: C/quick_select_plugin.page:10 C/validator_plugin.page:10
@@ -59,7 +59,7 @@ msgstr "Eitan Isaacson"
 #. (itstool) path: credit/name
 #: C/api_browser_plugin.page:14 C/desktop_tree_view.page:14
 #: C/event_monitor_plugin.page:14 C/howto_setting_up_accerciser.page:15
-#: C/howto_write_a_plugin.page:14 C/index.page:10
+#: C/howto_write_a_plugin.page:14 C/index.page:13
 #: C/interface_viewer_plugin.page:14 C/introduction.page:14
 #: C/ipython_plugin.page:14 C/preferences.page:14
 #: C/quick_select_plugin.page:14 C/validator_plugin.page:14
@@ -69,7 +69,7 @@ msgstr "Peter Parente"
 #. (itstool) path: credit/name
 #: C/api_browser_plugin.page:18 C/desktop_tree_view.page:18
 #: C/event_monitor_plugin.page:18 C/howto_setting_up_accerciser.page:19
-#: C/howto_write_a_plugin.page:18 C/index.page:14
+#: C/howto_write_a_plugin.page:18 C/index.page:17
 #: C/interface_viewer_plugin.page:18 C/introduction.page:18
 #: C/ipython_plugin.page:18 C/preferences.page:18
 #: C/quick_select_plugin.page:18 C/validator_plugin.page:18
@@ -79,7 +79,7 @@ msgstr "Aline Bessa"
 #. (itstool) path: license/p
 #: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22
 #: C/event_monitor_plugin.page:22 C/howto_setting_up_accerciser.page:23
-#: C/howto_write_a_plugin.page:22 C/index.page:18
+#: C/howto_write_a_plugin.page:22 C/index.page:21
 #: C/interface_viewer_plugin.page:22 C/introduction.page:22
 #: C/ipython_plugin.page:22 C/preferences.page:22
 #: C/quick_select_plugin.page:22 C/validator_plugin.page:22
@@ -629,12 +629,6 @@ msgstr "Escribir complementos para <application>Accerciser</application>"
 
 #. (itstool) path: page/p
 #: C/howto_write_a_plugin.page:26
-#| msgid ""
-#| "Extending <app>Accerciser</app> with new plugins became much simpler "
-#| "since <link href=\"http://live.gnome.org/Accerciser/PluginTutorial\">this "
-#| "tutorial</link> was written. Given that it provides a very detailed "
-#| "explanation about the topic, this section consists basically of its "
-#| "original content - only simple editions and updates were done."
 msgid ""
 "Extending <app>Accerciser</app> with new plugins became much simpler since "
 "<link href=\"https://wiki.gnome.org/Apps/Accerciser/PluginTutorial\">this "
@@ -756,7 +750,7 @@ msgid ""
 "listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
 "instance variable to <cmd>None</cmd>."
 msgstr ""
-"Ahora se sobreescribirá el método «init», en el que se establecerá una "
+"Ahora se sobrescribirá el método «init», en el que se establecerá una "
 "acción de clave global para seleccionar el último elemento accesible con el "
 "foco, registrar un «listener» de eventos para el evento «focus», y "
 "establecer la variable de instancia <cmd>last_focused</cmd> a <cmd>None</"
@@ -917,7 +911,7 @@ msgstr ""
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:142
 msgid "We override the init method adding a register listener:"
-msgstr "Se sobreescribe el método «init» añadiendo un registro de «listener»:"
+msgstr "Se sobrescribe el método «init» añadiendo un registro de «listener»:"
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:145
@@ -1025,7 +1019,7 @@ msgid ""
 "variable contains a gtk.Frame that could be populated with all the plugin's "
 "widgets."
 msgstr ""
-"Se sobreescribirá el método «init» con una construcción de IU y conectando "
+"Se sobrescribirá el método «init» con una construcción de IU y conectando "
 "el retorno de la llamada a una señal para el botón. Se usará el contenedor "
 "de alineamiento para permitir que el botón esté centrado en la pestaña del "
 "complemento, y que no ocupe monstruosamente todo el espacio disponible. Note "
@@ -1107,7 +1101,7 @@ msgid ""
 msgstr ""
 "Esta clase de complemento base tiene una llamada de método onAccChanged a la "
 "que se llama cada vez que el elemento accesible seleccionado de la "
-"aplicación objetivo cambia. Se sobreescribirá ajustando el botón para ser "
+"aplicación objetivo cambia. Se sobrescribirá ajustando el botón para ser "
 "sensible sólo cuando el elemento accesible actual tiene la acción «click»."
 
 #. (itstool) path: section/code
@@ -1157,65 +1151,54 @@ msgstr ""
 "        ai.doAction(action_names.index('click'))\n"
 "    "
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.page:22
-msgctxt "_"
-msgid ""
-"external ref='figures/accerciser-logo.png' "
-"md5='ccb260de40944187394405ae163757cf'"
-msgstr ""
-"external ref='figures/accerciser-logo.png' "
-"md5='ccb260de40944187394405ae163757cf'"
-
 #. (itstool) path: info/title
-#: C/index.page:3
+#: C/index.page:6
 msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
 #. (itstool) path: info/title
-#: C/index.page:4
+#: C/index.page:7
 msgctxt "link"
 msgid "Introduction to <app>Accerciser</app>"
 msgstr "Introducción a <app>Accerciser</app>"
 
+#. (itstool) path: media/span
+#: C/index.page:26
+#| msgid "<app>Accerciser</app>"
+msgid "<app>Accerciser</app>'s logo"
+msgstr "Logo de <app>Accerciser</app>"
+
 #. (itstool) path: page/title
-#: C/index.page:21
-msgid ""
-"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
-"\"> <app>Accerciser</app>'s logo </media> <app>Accerciser</app>"
-msgstr ""
-"<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
-"\"> Logo de <app>Accerciser</app> </media> <app>Accerciser</app>"
+#: C/index.page:24
+#| msgid "<app>Accerciser</app>"
+msgid "<_:media-1/> <app>Accerciser</app>"
+msgstr "<_:media-1/> <app>Accerciser</app>"
 
 #. (itstool) path: note/title
-#: C/index.page:28
+#: C/index.page:31
 msgid "Before You Begin"
 msgstr "Antes de comenzar"
 
 #. (itstool) path: note/p
-#: C/index.page:29
+#: C/index.page:32
 msgid ""
 "Read the <link href=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgstr ""
 "Lea la <link href=\"help:gnome-help/a11y\">ayuda del acceso universal</link>"
 
 #. (itstool) path: section/title
-#: C/index.page:34
+#: C/index.page:37
 msgid "Getting Started"
 msgstr "Inicio"
 
 #. (itstool) path: section/title
-#: C/index.page:37
+#: C/index.page:40
 msgid "Examining the Accessibility of an Application"
 msgstr "Examinar la accesibilidad de una aplicación"
 
 #. (itstool) path: section/title
-#: C/index.page:40
+#: C/index.page:43
 msgid "Advanced Topics"
 msgstr "Temas avanzados"
 
@@ -1715,11 +1698,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/introduction.page:147
-#| msgid ""
-#| "<link href=\"http://library.gnome.org/users/gnome-access-guide/stable/"
-#| "\">GNOME Desktop Accessibility Guide</link> - A guide for anyone "
-#| "interested in how the GNOME Desktop supports the needs of users with "
-#| "disabilities."
 msgid ""
 "<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html"
 "\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
@@ -1745,11 +1723,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/introduction.page:159
-#| msgid ""
-#| "<link href=\"http://projects.gnome.org/accessibility/\">GNOME "
-#| "Accessibility Project</link> - The GNOME Accessibility Project includes "
-#| "the guides listed above along with many other useful links for users, "
-#| "developers and system administrators."
 msgid ""
 "<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Accessibility "
 "Project</link> - The GNOME Accessibility Project includes the guides listed "
@@ -2263,6 +2236,21 @@ msgstr ""
 "asegúrese de que el elemento correspondiente está seleccionado y pulse el "
 "botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador "
 "predeterminado."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/accerciser-logo.png' "
+#~ "md5='ccb260de40944187394405ae163757cf'"
+#~ msgstr ""
+#~ "external ref='figures/accerciser-logo.png' "
+#~ "md5='ccb260de40944187394405ae163757cf'"
+
+#~ msgid ""
+#~ "<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+#~ "\"> <app>Accerciser</app>'s logo </media> <app>Accerciser</app>"
+#~ msgstr ""
+#~ "<media type=\"image\" mime=\"image/png\" src=\"figures/accerciser-logo.png"
+#~ "\"> Logo de <app>Accerciser</app> </media> <app>Accerciser</app>"
 
 #~ msgid "eitan@ascender.com"
 #~ msgstr "eitan@ascender.com"
