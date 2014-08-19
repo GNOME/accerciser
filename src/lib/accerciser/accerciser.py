@@ -62,7 +62,7 @@ class Main(Tools):
 
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
-    self.bookmarks_store = BookmarkStore(self.node)
+    self.bookmarks_store = BookmarkStore(self.node, self.window)
 
     # load plugins
     self.plugin_manager = \
@@ -135,6 +135,7 @@ class Main(Tools):
     @type widget: L{gtk.Widget}
     '''
     about = AccerciserAboutDialog()
+    about.set_transient_for(self.window)
     about.run()
     
   def _onHelp(self, action, page=""):
@@ -162,6 +163,7 @@ class Main(Tools):
     plugins_view = self.plugin_manager.View()
     hotkeys_view = HotkeyTreeView(self.hotkey_manager)
     dialog = AccerciserPreferencesDialog(plugins_view, hotkeys_view)
+    dialog.set_transient_for(self.window)
     dialog.show_all()
 
   def _onDeleteEvent(self, obj, data=None):

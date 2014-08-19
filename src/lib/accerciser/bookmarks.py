@@ -32,7 +32,7 @@ class BookmarkStore(gtk.ListStore):
   @ivar _xmldoc: XML documenr object.
   @type _xmldoc: xml.dom.DOMImplementation
   '''
-  def __init__(self, node):
+  def __init__(self, node, window):
     '''
     Initialize bookmark manager. Load saved bookmarks from disk.
     
@@ -44,6 +44,7 @@ class BookmarkStore(gtk.ListStore):
     ui_manager.uimanager.insert_action_group(self._bookmarks_action_group, 0)
     self._buildMenuUI()
     self.node = node
+    self.parent_window = window
     bookmarks_fn = os.path.join(BOOKMARKS_PATH, BOOKMARKS_FILE)
     try:
       self._xmldoc = parse(bookmarks_fn)
@@ -91,7 +92,7 @@ class BookmarkStore(gtk.ListStore):
     iter = self.bookmarkCurrent()
     if not iter: return
     bookmark = self[iter][0]
-    dialog = self._NewBookmarkDialog(bookmark)
+    dialog = self._NewBookmarkDialog(bookmark, self.parent_window)
     response_id = dialog.run()
     if response_id == gtk.ResponseType.OK:
       bookmark.title, bookmark.app, bookmark.path = dialog.getFields()
@@ -353,6 +354,7 @@ class BookmarkStore(gtk.ListStore):
       button_vbox.pack_start(jump_button, False, False, 0)
       vbox.add(hbox)
       hbox.set_border_width(3)
+      self.set_transient_for(bookmarks_store.parent_window)
       self.show_all()
 
     def _onAddClicked(self, button, tv):
@@ -507,7 +509,7 @@ class BookmarkStore(gtk.ListStore):
     @ivar _path_entry: Path entry widget
     @type _path_entry: gtk.Entry
     '''
-    def __init__(self, bookmark):
+    def __init__(self, bookmark, parent_window):
       '''
       Initialize the dialog.
       
@@ -519,7 +521,7 @@ class BookmarkStore(gtk.ListStore):
       ok_button = self.add_button(gtk.STOCK_ADD, gtk.ResponseType.OK)
       ok_button.set_sensitive(False)
       self.set_default_response(gtk.ResponseType.OK)
-      table = gtk.Table(3, 2, False)
+      table = gtk.Table.new(3, 2, False)
       table.set_row_spacings(3)
       table.set_col_spacings(3)
       vbox = self.get_children()[0]
@@ -540,14 +542,15 @@ class BookmarkStore(gtk.ListStore):
         label, value, entry = label_entry_pair
         entry.set_text(value)
         entry.connect('activate', self._onEnter, ok_button)
-        label_widget = gtk.Label(label)
+        label_widget = gtk.Label.new(label)
         label_widget.set_alignment(0.0, 0.5)
         label_acc = label_widget.get_accessible()
         entry_acc = entry.get_accessible()
         label_acc.add_relationship(atk.RelationType.LABEL_FOR, entry_acc)
         entry_acc.add_relationship(atk.RelationType.LABELLED_BY, label_acc)
-        table.attach(gtk.Label(label), 0, 1, i, i+1, gtk.AttachOptions.FILL, 0)
+        table.attach(gtk.Label.new(label), 0, 1, i, i+1, gtk.AttachOptions.FILL, 0)
         table.attach(entry, 1, 2, i, i+1)
+      self.set_transient_for(parent_window)
       self.show_all()
 
     def _onChanged(self, entry, button):
