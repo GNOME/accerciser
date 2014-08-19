@@ -69,7 +69,7 @@ class PluginManager(gtk.ListStore, Tools):
                            str) # Plugin path
     self.node = node
     self.hotkey_manager = hotkey_manager
-    self.gsettings = GSettings(schema=GSCHEMA)
+    self.gsettings = GSettings.new(GSCHEMA)
     self.view_manager = ViewManager(*main_views)
     self.message_manager = MessageManager()
     self.message_manager.connect('plugin-reload-request', 

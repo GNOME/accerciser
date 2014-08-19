@@ -29,6 +29,7 @@ class AccerciserMainWindow(gtk.Window):
   @ivar _hpaned: Horizontal paned.
   @type _hpaned: gtk.HPaned
   '''
+  __gtype_name__ = "AccerciserMainWindow"
 
   def __init__(self, node):
     '''
@@ -42,7 +43,7 @@ class AccerciserMainWindow(gtk.Window):
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
     node.connect('blink-done', self._onBlinkDone)    
-    self.gsettings = GSettings(schema=GSCHEMA)
+    self.gsettings = GSettings.new(GSCHEMA)
     width = self.gsettings.get_int('window-width') or 640
     height = self.gsettings.get_int('window-height') or 640
     self.set_default_size(width, height)

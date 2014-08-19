@@ -449,6 +449,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
     @type dummy: boolean
     '''
     if accessible is not None:
+      print("accessible_name = ", accessible.name)
       icon = getIcon(accessible)
       name = accessible.name
       role = accessible.getLocalizedRoleName()
@@ -544,7 +545,7 @@ class AccessibleTreeView(gtk.TreeView, Tools):
         self._accEventNameChanged, 
         'object:property-change:accessible-name')
 
-    self.action_group = gtk.ActionGroup('TreeActions')
+    self.action_group = gtk.ActionGroup.new('TreeActions')
     self.action_group.add_toggle_actions(
       [('HideShowLeaves', None, _('_Hide/Show Applications without children'), None,
         None, self._onHideShowLeaves, False)])

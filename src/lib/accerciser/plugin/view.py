@@ -218,7 +218,7 @@ class PluginView(gtk.Notebook):
       name = child.get_name()
     gtk.Notebook.append_page(self, child, None)
     gtk.Notebook.reorder_child(self, child, position)
-    gtk.Notebook.set_tab_label(self, child, gtk.Label(name))
+    gtk.Notebook.set_tab_label(self, child, gtk.Label.new(name))
 
   def append_page(self, child, tab_label=None):
     '''
@@ -289,7 +289,7 @@ class PluginViewWindow(gtk.Window, Tools):
     self.add(self.plugin_view)
 
     gspath = NEWPLUGVIEWS_PATH + view_name.lower().replace(' ', '-') + '/'
-    gsettings = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+    gsettings = GSettings.new_with_path(NEWPLUGVIEWS_GSCHEMA, gspath)
     width = gsettings.get_int('width')
     height = gsettings.get_int('height')
     self.set_default_size(width, height)
@@ -312,7 +312,7 @@ class PluginViewWindow(gtk.Window, Tools):
     '''
     view_name = self.plugin_view.view_name
     gspath = NEWPLUGVIEWS_PATH + view_name.lower().replace(' ', '-') + '/'
-    gsettings = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+    gsettings = GSettings.new_with_path(NEWPLUGVIEWS_GSCHEMA, gspath)
     gsettings.set_int('width', self.get_allocated_width())
     gsettings.set_int('height', self.get_allocated_height())
 
@@ -361,7 +361,7 @@ class ViewManager(object):
     @type perm_views: list of {PluginView}
     '''
     self._perm_views = perm_views
-    gsettings = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    gsettings = GSettings.new(PLUGVIEWS_GSCHEMA)
     single = gsettings.get_boolean('layout-single')
     self._initViewModel(single)
     self._setupActions()
@@ -371,7 +371,7 @@ class ViewManager(object):
     Sets up actions related to plugin layout.
     '''
     single = isinstance(self._view_model, SingleViewModel)
-    layout_action_group = gtk.ActionGroup('PluginActions')
+    layout_action_group = gtk.ActionGroup.new('PluginActions')
     ui_manager.uimanager.insert_action_group(layout_action_group, 0)
     layout_action_group.add_toggle_actions(
       [('SingleViewMode', None, _('_Single plugins view'), '<Control>t',
@@ -403,7 +403,7 @@ class ViewManager(object):
     '''
     if isinstance(self._view_model, SingleViewModel) == single:
       return
-    gsettings = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    gsettings = GSettings.new(PLUGVIEWS_GSCHEMA)
     gsettings.set_boolean('layout-single', single)
     plugins = self._view_model.getViewedPlugins()
     self._view_model.close()
@@ -891,13 +891,13 @@ class MultiViewModel(list, BaseViewModel):
     self._setPluginLayouts(plugin_layouts)
 
   def _setPluginLayouts(self, plugin_layouts):
-    self.plugviews = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    self.plugviews = GSettings.new(PLUGVIEWS_GSCHEMA)
     self.plugviews.set_strv('top-panel-layout', plugin_layouts.pop('Top panel'))
     self.plugviews.set_strv('bottom-panel-layout', plugin_layouts.pop('Bottom panel'))
 
     for plugview in list(plugin_layouts.keys()):
       gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ', '-') + '/'
-      newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+      newview = GSettings.new_with_path(NEWPLUGVIEWS_GSCHEMA, gspath)
       newview.set_strv('layout', plugin_layouts[plugview])
       l = self.plugviews.get_strv('available-newviews')
       l.append(plugview)
@@ -905,13 +905,13 @@ class MultiViewModel(list, BaseViewModel):
 
   def _getPluginLayouts(self):
     plugin_layouts= {}
-    self.plugviews = GSettings(schema=PLUGVIEWS_GSCHEMA)
+    self.plugviews = GSettings.new(PLUGVIEWS_GSCHEMA)
     plugin_layouts['Top panel'] = self.plugviews.get_strv('top-panel-layout')
     plugin_layouts['Bottom panel'] = self.plugviews.get_strv('bottom-panel-layout')
 
     for plugview in self.plugviews.get_strv('available-newviews'):
       gspath = NEWPLUGVIEWS_PATH + plugview.lower().replace(' ', '-') + '/'
-      newview = GSettings(schema=NEWPLUGVIEWS_GSCHEMA, path=gspath)
+      newview = GSettings.new_with_path(NEWPLUGVIEWS_GSCHEMA, gspath)
       layout = newview.get_strv('layout')
       if layout:
         plugin_layouts[plugview] = layout

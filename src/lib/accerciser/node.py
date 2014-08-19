@@ -26,7 +26,7 @@ from .tools import Tools, parseColorString
 
 MAX_BLINKS = 6
 
-gsettings = GSettings(schema='org.a11y.Accerciser')
+gsettings = GSettings.new('org.a11y.Accerciser')
 BORDER_COLOR, BORDER_ALPHA = parseColorString(
   gsettings.get_string('highlight-border'))
 
@@ -186,13 +186,15 @@ class _HighLight(gtk.Window):
   Highlight box class. Uses compositing when available. When not, it does
   transparency client-side.
   '''
+  __gtype_name__ = "_Highlight"
+
   def __init__(self, x, y, w, h, 
                fill_color, fill_alpha,
                stroke_color, stroke_alpha, 
                stroke_width, padding=0):
 
     # Initialize window.
-    gtk.Window.__init__(self, gtk.WindowType.POPUP)
+    gtk.Window.__init__(self, type=gtk.WindowType.POPUP)
 
     # Normalize position for stroke and padding.
     self.x, self.y = x - padding, y - padding

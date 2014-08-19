@@ -130,7 +130,7 @@ class HotkeyManager(gtk.ListStore):
       self[path][COL_CALLBACK] = callback
     else:
       gspath = self._getComboGSettingsPath(component, description)
-      gsettings = GSettings(schema=HOTKEYS_GSCHEMA, path=gspath)
+      gsettings = GSettings.new_with_path(HOTKEYS_GSCHEMA, gspath)
       if gsettings.get_string('hotkey-combo'):
         final_keypress, final_modifiers = gtk.accelerator_parse(
           gsettings.get_string('hotkey-combo'))
@@ -181,7 +181,7 @@ class HotkeyManager(gtk.ListStore):
 
     gspath = self._getComboGSettingsPath(model[iter][COL_COMPONENT], 
                                          model[iter][COL_DESC])
-    gsettings = GSettings(schema=HOTKEYS_GSCHEMA, path=gspath)
+    gsettings = GSettings.new_with_path(HOTKEYS_GSCHEMA, gspath)
     combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS], 
                                       gdk.ModifierType(model[iter][COL_MOD]))
 

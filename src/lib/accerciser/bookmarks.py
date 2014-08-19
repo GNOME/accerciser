@@ -40,7 +40,7 @@ class BookmarkStore(gtk.ListStore):
     @type node: L{Node>
     '''
     gtk.ListStore.__init__(self, object)
-    self._bookmarks_action_group = gtk.ActionGroup('BookmarkActions')
+    self._bookmarks_action_group = gtk.ActionGroup.new('BookmarkActions')
     ui_manager.uimanager.insert_action_group(self._bookmarks_action_group, 0)
     self._buildMenuUI()
     self.node = node
@@ -324,8 +324,8 @@ class BookmarkStore(gtk.ListStore):
       @param bookmarks_store: Bookmarks manager.
       @type bookmarks_store: L{BookmarkStore}
       '''
-      gtk.Dialog.__init__(self, _('Edit Bookmarks...'), 
-                          buttons=(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE))
+      gtk.Dialog.__init__(self, name=_('Edit Bookmarks...'))
+      self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
       self.set_default_size(480, 240)
       self.connect('response', self._onResponse)
       vbox = self.get_children()[0]
@@ -339,13 +339,13 @@ class BookmarkStore(gtk.ListStore):
       hbox.pack_start(sw, True, True, 0)
       button_vbox = gtk.VBox()
       hbox.pack_start(button_vbox, False, False, 0)
-      add_button = gtk.Button('gtk-add')
+      add_button = gtk.Button.new_from_stock('gtk-add')
       add_button.set_use_stock(True)
       add_button.connect('clicked', self._onAddClicked, tv)
-      remove_button = gtk.Button('gtk-remove')
+      remove_button = gtk.Button.new_from_stock('gtk-remove')
       remove_button.set_use_stock(True)
       remove_button.connect('clicked', self._onRemoveClicked, tv)
-      jump_button = gtk.Button('gtk-jump-to')
+      jump_button = gtk.Button.new_from_stock('gtk-jump-to')
       jump_button.set_use_stock(True)
       jump_button.connect('clicked', self._onJumpToClicked, tv)
       button_vbox.pack_start(add_button, False, False, 0)

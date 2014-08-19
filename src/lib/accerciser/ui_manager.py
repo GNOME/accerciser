@@ -17,7 +17,7 @@ from gi.repository import Gtk as gtk
 
 from .i18n import _, N_, C_
 
-menu_actions = gtk.ActionGroup('MenuActions')
+menu_actions = gtk.ActionGroup.new('MenuActions')
 
 menu_actions.add_actions([
     ('File', None, _('_File')),

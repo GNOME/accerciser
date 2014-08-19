@@ -63,7 +63,7 @@ class APIBrowser(ViewportPlugin):
     bottom_hbox.pack_start(scrolled_window, True, True, 0)
     self.iface_combo = gtk.ComboBoxText.new() 
     top_hbox.pack_start(self.iface_combo, False, True, 0)
-    self.private_toggle = gtk.CheckButton(_('Hide private attributes'))
+    self.private_toggle = gtk.CheckButton.new_with_label(_('Hide private attributes'))
     self.private_toggle.set_active(True)
     top_hbox.pack_end(self.private_toggle, False, True, 0)
     self.show_all()

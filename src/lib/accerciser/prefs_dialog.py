@@ -35,8 +35,8 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     @param hotkeys_view: Treeview of global hotkeys.
     @type hotkeys_view: L{HotkeyTreeView}
     '''
-    gtk.Dialog.__init__(self, _('accerciser Preferences'), 
-                        buttons=(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE))
+    gtk.Dialog.__init__(self, name=_('accerciser Preferences'))
+    self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
     self.connect('response', self._onResponse)
     self.set_default_size(500, 250)
     notebook = gtk.Notebook()
@@ -50,9 +50,9 @@ class AccerciserPreferencesDialog(gtk.Dialog):
         sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
         sw.set_size_request(500, 150)
         sw.add(view)
-        notebook.append_page(sw, gtk.Label(section))
+        notebook.append_page(sw, gtk.Label.new(section))
     
-    notebook.append_page(_HighlighterView(), gtk.Label(_('Highlighting')))
+    notebook.append_page(_HighlighterView(), gtk.Label.new(_('Highlighting')))
         
   def _onResponse(self, dialog, response_id):
     '''
@@ -72,30 +72,30 @@ class _HighlighterView(gtk.Alignment):
   def __init__(self):
     gtk.Alignment.__init__(self)
     self.set_padding(12, 12, 18, 12)
-    self.gsettings = GSettings(schema='org.a11y.Accerciser')
+    self.gsettings = GSettings.new('org.a11y.Accerciser')
     self._buildUI()
 
   def _buildUI(self):
     '''
     Programatically build the UI.
     '''
-    table = gtk.Table(3, 2)
+    table = gtk.Table.new(3, 2, True)
     table.set_col_spacings(6)
     self.add(table)
     labels = [None, None, None]
     controls = [None, None, None]
-    labels[0] = gtk.Label(_('Highlight duration:'))
+    labels[0] = gtk.Label.new(_('Highlight duration:'))
     controls[0] = gtk.SpinButton()
     controls[0].set_range(0.01, 5)
     controls[0].set_digits(2)
     controls[0].set_value(self.gsettings.get_double('highlight-duration'))
     controls[0].set_increments(0.01, 0.1)
     controls[0].connect('value-changed', self._onDurationChanged)
-    labels[1] = gtk.Label(_('Border color:'))
+    labels[1] = gtk.Label.new(_('Border color:'))
     controls[1] = self._ColorButton(node.BORDER_COLOR, node.BORDER_ALPHA)
     controls[1].connect('color-set', self._onColorSet, 'highlight-border')
     controls[1].set_tooltip_text(_('The border color of the highlight box'))
-    labels[2] = gtk.Label(_('Fill color:'))
+    labels[2] = gtk.Label.new(_('Fill color:'))
     controls[2] = self._ColorButton(node.FILL_COLOR, node.FILL_ALPHA)
     controls[2].connect('color-set', self._onColorSet, 'highlight-fill')
     controls[2].set_tooltip_text(_('The fill color of the highlight box'))

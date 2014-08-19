@@ -72,7 +72,7 @@ class Main(Tools):
     # connect signal handlers and show the GUI in its initial state
     self.window.show_all()
 
-    main_actions = gtk.ActionGroup('MainActions')
+    main_actions = gtk.ActionGroup.new('MainActions')
     ui_manager.uimanager.insert_action_group(main_actions, 0)
     main_actions.add_actions([
         ('Quit', gtk.STOCK_QUIT, None, 
