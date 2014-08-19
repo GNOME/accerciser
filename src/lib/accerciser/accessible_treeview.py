@@ -449,7 +449,6 @@ class AccessibleModel(gtk.TreeStore, Tools):
     @type dummy: boolean
     '''
     if accessible is not None:
-      print("accessible_name = ", accessible.name)
       icon = getIcon(accessible)
       name = accessible.name
       role = accessible.getLocalizedRoleName()
