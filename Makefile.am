@@ -14,10 +14,16 @@ gsettings_files = \
         org.a11y.Accerciser.gschema.xml.in
 
 gsettings_SCHEMAS = $(gsettings_files:.xml.in=.xml)
-@INTLTOOL_XML_NOMERGE_RULE@
+
+appdatadir = $(datadir)/appdata
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+appdata_in_files = org.gnome.accerciser.appdata.xml.in
+@INTLTOOL_XML_RULE@
+
 @GSETTINGS_RULES@
 
 EXTRA_DIST =  \
+	$(appdata_in_files) \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
 	pyreqs.py \
@@ -35,3 +41,5 @@ DISTCLEANFILES = \
 	intltool-update	\
         $(gsettings_SCHEMAS)
 
+CLEANFILES = \
+	$(appdata_DATA)
