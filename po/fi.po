@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-12 13:02+0000\n"
+"POT-Creation-Date: 2014-11-07 03:24+0000\n"
 "PO-Revision-Date: 2013-09-16 22:48+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -36,7 +36,7 @@ msgstr "Anna sovelluksellesi esteettömyysharjoitus"
 msgid "accessibility;development;test;"
 msgstr "accessibility;development;test;esteettömyys;kehitys;testaus;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser-esteettömyysselain"
 
@@ -209,7 +209,6 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktiivinen konsoli valitun apuneuvon käsittelyyn"
 
 #: ../plugins/event_monitor.ui.h:1
-#| msgid "Event Monitor"
 msgid "Event monitor"
 msgstr "Tapahtumamonitori"
 
@@ -259,7 +258,6 @@ msgid "Clear event log"
 msgstr "Tyhjennä tapahtumaloki"
 
 #: ../plugins/interface_view.ui.h:1
-#| msgid "<b>Child count</b>"
 msgid "Child count"
 msgstr "Lapsien lukumäärä"
 
@@ -269,34 +267,30 @@ msgstr "0"
 
 #: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
 #: ../plugins/interface_view.py:859
-#| msgid "<no description>"
 msgid "(no description)"
 msgstr "(ei kuvausta)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Kuvaus"
 
 #: ../plugins/interface_view.ui.h:5
-#| msgid "<b>States</b>"
 msgid "States"
 msgstr "Tilat"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Määreet"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Näytä"
 
-#: ../plugins/interface_view.ui.h:7
-#| msgid "<b>Relations</b>"
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Suhteet"
-
-#: ../plugins/interface_view.ui.h:8
-#| msgid "<b>Attributes</b>"
-msgid "Attributes"
-msgstr "Määreet"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -380,7 +374,7 @@ msgid "_Document"
 msgstr "_Asiakirja"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hyperlinkki"
 
@@ -417,12 +411,10 @@ msgid "St_reamable Content"
 msgstr "_Virtaava sisältö"
 
 #: ../plugins/interface_view.ui.h:39
-#| msgid "<i>Caption:</i>"
 msgid "Caption:"
 msgstr "Otsikko:"
 
 #: ../plugins/interface_view.ui.h:40
-#| msgid "<i>Summary:</i>"
 msgid "Summary:"
 msgstr "Yhteenveto:"
 
@@ -443,7 +435,6 @@ msgid "Rows"
 msgstr "Rivit"
 
 #: ../plugins/interface_view.ui.h:45
-#| msgid "<b>Table Information</b>"
 msgid "Table Information"
 msgstr "Tietoja taulusta"
 
@@ -473,7 +464,6 @@ msgid "Column"
 msgstr "Sarake"
 
 #: ../plugins/interface_view.ui.h:53
-#| msgid "<b>Selected Cell</b>"
 msgid "Selected Cell"
 msgstr "Valittu solu"
 
@@ -495,13 +485,11 @@ msgstr "Sisällytä oletukset"
 
 #. Start character offset of text attributes span
 #: ../plugins/interface_view.ui.h:59
-#| msgid "Start"
 msgid "Start: 0"
 msgstr "Alku: 0"
 
 #. End character offset of text attributes span
 #: ../plugins/interface_view.ui.h:61
-#| msgid "<i>End: 0</i>"
 msgid "End: 0"
 msgstr "Loppu: 0"
 
@@ -530,7 +518,6 @@ msgid "Val_ue"
 msgstr "Ar_vo"
 
 #: ../plugins/interface_view.ui.h:68
-#| msgid "<b>unknown</b>"
 msgid "unknown"
 msgstr "tuntematon"
 
@@ -549,7 +536,7 @@ msgid "(not implemented)"
 msgstr "(ei toteutettu)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -572,7 +559,6 @@ msgid "Too many selectable children"
 msgstr "Liian monta valittavissa olevaa lasta"
 
 #: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
-#| msgid "<i>(Editable)</i>"
 msgid "(Editable)"
 msgstr "(Muokattava)"
 
@@ -581,9 +567,8 @@ msgstr "(Muokattava)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
-#| msgid "Start"
 msgid "Start: %d"
 msgstr "Alku: %d"
 
@@ -592,7 +577,7 @@ msgstr "Alku: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Loppu: %d"
@@ -621,59 +606,59 @@ msgstr "Kaa_vain:"
 msgid "V_alidate"
 msgstr "T_arkista"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Jouten"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Ei kuvausta"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "AT-SPI-validaattori"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Tarkistaa ohjelman esteettömyystuen"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Taso"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rooli"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Tallennetaan"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Tarkistus"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "POIKKEUS"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "VIRHE"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "VAROITUS"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "HUOMAUTUS"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "VIANETSINTÄ"
 
@@ -777,11 +762,11 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s ei sisällä nimeä tai kuvausta"
 
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Asetukset..."
 
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Sisältö"
 
@@ -843,11 +828,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Vaihto"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Yläpaneeli"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Alapaneeli"
 
@@ -892,7 +877,7 @@ msgid "translator-credits"
 msgstr ""
 "Ilkka Tuohela, 2007-2008.\n"
 "\n"
-"http://www.gnome.fi/"
+"https://l10n.gnome.org/teams/fi/"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -910,51 +895,51 @@ msgstr "Uusi BSD-lisenssi, katso lisätietoja tiedostoista COPYING ja NOTICE."
 msgid "Web site"
 msgstr "WWW-sivusto"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Lisää kirjanmerkki..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Lisää kirjanmerkki valittuun apuneuvoon."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Muokkaa kirjamerkkejä..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Hallitse kirjanmerkkejä."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Muokkaa kirjanmerkkejä..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Sovellus"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Polku"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Lisää kirjanmerkki..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Sovellus:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Polku:"
 
@@ -988,7 +973,6 @@ msgid "Plugin View (%d)"
 msgstr "Liitännäisnäkymä (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1074
-#| msgid "New View..."
 msgid "_New view..."
 msgstr "_Uusi näkymä..."
 
