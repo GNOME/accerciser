@@ -3,69 +3,190 @@
 # This file is distributed under the same license as the accerciser package.
 #
 # Baris Cicek <baris@teamforce.name.tr>, 2008, 2009.
-# Muhammet Kara <muhammet.k@gmail.com>, 2011.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-07-04 12:27+0000\n"
-"PO-Revision-Date: 2011-07-06 16:16+0300\n"
-"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2014-12-08 15:25+0000\n"
+"PO-Revision-Date: 2014-12-08 22:19+0200\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
-msgid "Accerciser Accessibility Explorer"
-msgstr "Accerciser Erişilebilirlik Gezgini"
-
-#: ../accerciser.desktop.in.in.h:3
+#: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
 msgstr "Uygulamanıza bir erişilebilirlik çalışma alanı verin"
 
-#: ../accerciser.schemas.in.h:1
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "erişilebilirlik;geliştirme;test;sınama;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
+msgid "Accerciser Accessibility Explorer"
+msgstr "Accerciser Erişilebilirlik Gezgini"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:1
 msgid "A list of plugins that are disabled by default"
 msgstr "Öntanımlı olarak etkisizleştirilmiş eklentilerin bir listesi"
 
-#: ../accerciser.schemas.in.h:2
-msgid "Highlight border color"
-msgstr "Vurgulama kenarlık rengi"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+#| msgid "A list of plugins that are disabled by default"
+msgid "A list of plugins that are disabled by default."
+msgstr "Öntanımlı olarak etkisizleştirilmiş eklentilerin bir listesi."
 
-#: ../accerciser.schemas.in.h:3
+#: ../org.a11y.Accerciser.gschema.xml.in.h:3
 msgid "Highlight duration"
 msgstr "Vurgulama süresi"
 
-#: ../accerciser.schemas.in.h:4
+#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+#| msgid "The duration of the highlight box when selecting accessible nodes"
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "Erişilebilir düğümler seçilirken vurgulama kutusunun süresi."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:5
 msgid "Highlight fill color"
 msgstr "Vurgulama doldurma rengi"
 
-#: ../accerciser.schemas.in.h:5
-msgid "The color and opacity of the highlight border."
-msgstr "Vurgulama kenarlığının rengi ve matlığı."
-
-#: ../accerciser.schemas.in.h:6
+#: ../org.a11y.Accerciser.gschema.xml.in.h:6
 msgid "The color and opacity of the highlight fill."
 msgstr "Vurgulama doldurmasının rengi ve matlığı."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:7
+msgid "Highlight border color"
+msgstr "Vurgulama kenarlık rengi"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:8
+msgid "The color and opacity of the highlight border."
+msgstr "Vurgulama kenarlığının rengi ve matlığı."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+#, fuzzy
+msgid "Horizontal split"
+msgstr "ayrık panel"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+msgid "Position of the horizontal split of the main window."
+msgstr ""
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+#, fuzzy
+msgid "Vertical split"
+msgstr "ayrık panel"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+msgid "Position of the vertical split of the main window."
+msgstr ""
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+msgid "Default window height"
+msgstr "Öntanımlı pencere yüksekliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+msgid "The window height value."
+msgstr "Pencerenin yükseklik değeri."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:15
+msgid "Default window width"
+msgstr "Öntanımlı pencere genişliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:16
+msgid "The window width value."
+msgstr "Pencerenin genişlik değeri."
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+#, fuzzy
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel"
+msgstr "Düzen göstergesi için yazıtipi ailesi"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+#, fuzzy
+#| msgid "The default plugin layout for the bottom panel"
+msgid "The layout for the bottom panel pluginview."
 msgstr "Alt panel için öntanımlı eklenti yerleşimi"
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+#, fuzzy
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel"
+msgstr "Düzen göstergesi için yazıtipi ailesi"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+#, fuzzy
+#| msgid "The default plugin layout for the top panel"
+msgid "The layout for the top panel pluginview."
 msgstr "Üst panel için öntanımlı eklenti yerleşimi"
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Erişilebilir düğümler seçilirken vurgulama kutusunun süresi"
+#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+#, fuzzy
+#| msgid "_Single plugins view"
+msgid "Single layout view"
+msgstr "_Sadece eklenti görünümü"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+msgid "View plugins in a single layout."
+msgstr ""
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+#, fuzzy
+#| msgid "_Single plugins view"
+msgid "Available new pluginviews"
+msgstr "'%s' yeni eklentisi kullanıma hazır"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+msgid "This list contains all the new available pluginviews"
+msgstr ""
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+#, fuzzy
+msgid "The pluginview layout"
+msgstr "_Yatay Yerleşim"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+#, fuzzy
+#| msgid "The default plugin layout for the top panel"
+msgid "The default plugin layout for the top panel."
+msgstr "Üst panel için öntanımlı eklenti yerleşimi"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+msgid "Window height"
+msgstr "Pencere yüksekliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+#, fuzzy
+msgid "Window height value."
+msgstr "Ana pencerenin yüksekliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+msgid "Window width"
+msgstr "Pencere genişliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+#, fuzzy
+msgid "Window width value."
+msgstr "Ana pencerenin genişliği"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+#, fuzzy
+msgid "Hotkey combination"
+msgstr "yeni satır işaretlerinin geçersiz kombinasyonu"
+
+#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+#, fuzzy
+msgid "Hotkey combination for related action."
+msgstr "Özel eylem için tuş kombinasyonu"
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -91,450 +212,488 @@ msgstr "Özellik"
 msgid "Value"
 msgstr "Değer"
 
-#: ../plugins/console.py:29
+#: ../plugins/console.py:32
 msgid "IPython Console"
 msgstr "IPython Konsolu"
 
-#: ../plugins/console.py:32
+#: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Şimdiki seçili erişilebilirliği işlemek için etkileşimli konsol"
 
 #: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Olay izleyici</b>"
+#| msgid "Event Monitor"
+msgid "Event monitor"
+msgstr "Olay izleyici"
 
 #: ../plugins/event_monitor.ui.h:2
+msgid "_Monitor Events"
+msgstr "Olayları İ_zle"
+
+#: ../plugins/event_monitor.ui.h:3
 msgid "C_lear Selection"
 msgstr "Seçimi Temiz_le"
 
-#: ../plugins/event_monitor.ui.h:3
+#: ../plugins/event_monitor.ui.h:4
 msgid "Everything"
 msgstr "Her şey"
-
-#: ../plugins/event_monitor.ui.h:4
-msgid "Selected accessible"
-msgstr "Seçili erişilebilirlik"
 
 #: ../plugins/event_monitor.ui.h:5
 msgid "Selected application"
 msgstr "Seçilmiş uygulama"
 
 #: ../plugins/event_monitor.ui.h:6
+msgid "Selected accessible"
+msgstr "Seçili erişilebilirlik"
+
+#: ../plugins/event_monitor.ui.h:7
 msgid "Source"
 msgstr "Kaynak"
 
-#: ../plugins/event_monitor.ui.h:7
-msgid "_Monitor Events"
-msgstr "Olayları İ_zle"
-
-#: ../plugins/event_monitor.py:48
+#: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Olay İzleyici"
 
-#: ../plugins/event_monitor.py:51
+#: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Seçili türlerden ve kaynaklardan oluşan olayları göster"
 
-#: ../plugins/event_monitor.py:61
+#: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Son olay girdisini"
 
-#: ../plugins/event_monitor.py:64
+#: ../plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Olay kaydetmeyi başlat/durdur"
 
-#: ../plugins/event_monitor.py:67
+#: ../plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Olay kaydını temizle"
 
 #: ../plugins/interface_view.ui.h:1
+#, fuzzy
+#| msgid "<b>Child count</b>"
+msgid "Child count"
+msgstr "_Geçiş sayısı:"
+
+#: ../plugins/interface_view.ui.h:2
 msgid "0"
 msgstr "0"
 
-#. Component                                 size
-#: ../plugins/interface_view.ui.h:3
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Attributes</b>"
-msgstr "<b>Öznitelikler</b>"
-
-#: ../plugins/interface_view.ui.h:5
-msgid "<b>Child count</b>"
-msgstr "<b>Çocuk sayısı</b>"
-
-#: ../plugins/interface_view.ui.h:6
-msgid "<b>Description</b>"
-msgstr "<b>Tanım</b>"
-
-#: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>İlişkiler</b>"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Seçilmiş Hücre</b>"
-
-#: ../plugins/interface_view.ui.h:9
-msgid "<b>States</b>"
-msgstr "<b>Durumlar</b>"
-
-#: ../plugins/interface_view.ui.h:10
-msgid "<b>Table Information</b>"
-msgstr "<b>Tablo bilgisi</b>"
-
-#: ../plugins/interface_view.ui.h:11
-msgid "<b>Text</b>"
-msgstr "<b>Metin</b>"
-
-#: ../plugins/interface_view.ui.h:12
-msgid "<b>unknown</b>"
-msgstr "<b>bilinmiyor</b>"
-
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:334
-#: ../plugins/interface_view.py:827
-msgid "<i>(no description)</i>"
-msgstr "<i>(tanım yok)</i>"
-
-#: ../plugins/interface_view.ui.h:14
-msgid "<i>Caption:</i>"
-msgstr "<i>Başlık:</i>"
-
-#. End chaacter                                                 offset of text attributes span
-#: ../plugins/interface_view.ui.h:16
-msgid "<i>End: 0</i>"
-msgstr "<i>Son: 0</i>"
-
-#. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:18
-msgid "<i>Start: 0</i>"
-msgstr "<i>Başlangıç: 0</i>"
-
-#: ../plugins/interface_view.ui.h:19
-msgid "<i>Summary:</i>"
-msgstr "<i>Özet:</i>"
-
-#: ../plugins/interface_view.ui.h:20
-msgid "<no description>"
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
+#, fuzzy
+#| msgid "<no description>"
+msgid "(no description)"
 msgstr "<tanım yok>"
 
-#: ../plugins/interface_view.ui.h:21
-msgid "Absolute position"
-msgstr "Mutlak konum"
-
-#: ../plugins/interface_view.ui.h:22
-msgid "Acti_on"
-msgstr "E_ylem"
-
-#: ../plugins/interface_view.ui.h:23
-msgid "Alpha"
-msgstr "Alfa"
-
-#: ../plugins/interface_view.ui.h:24
-msgid "Ap_plication"
-msgstr "_Uygulama"
-
-#: ../plugins/interface_view.ui.h:25
-msgid "Co_mponent"
-msgstr "_Bileşen"
-
-#: ../plugins/interface_view.ui.h:26
-msgid "Col_lection"
-msgstr "Kol_leksiyon"
-
-#: ../plugins/interface_view.ui.h:27
-msgid "Column"
-msgstr "Sütun"
-
-#: ../plugins/interface_view.ui.h:28
-msgid "Columns"
-msgstr "Sütunlar"
-
-#: ../plugins/interface_view.ui.h:29
-msgid "Current value"
-msgstr "Şimdiki değer"
-
-#: ../plugins/interface_view.ui.h:30
-msgid "Des_ktop"
-msgstr "_Masaüstü"
-
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Tanım"
 
-#. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:33
-msgid "Extents:"
-msgstr "Kapsar:"
+#: ../plugins/interface_view.ui.h:5
+#| msgid "<b>States</b>"
+msgid "States"
+msgstr "Durumlar"
 
-#: ../plugins/interface_view.ui.h:34
-msgid "H_ypertext"
-msgstr "_Hipermetin"
+#: ../plugins/interface_view.ui.h:6
+#| msgid "<b>Attributes</b>"
+msgid "Attributes"
+msgstr "Öznitelikler"
 
-#: ../plugins/interface_view.ui.h:35
-msgid "Header:"
-msgstr "Başlık:"
+#: ../plugins/interface_view.ui.h:7
+msgid "Show"
+msgstr "Göster"
 
-#. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
-msgid "Hyperlink"
-msgstr "Hiper bağ"
+#: ../plugins/interface_view.ui.h:8
+#| msgid "<b>Relations</b>"
+msgid "Relations"
+msgstr "İlişkiler"
 
-#: ../plugins/interface_view.ui.h:37
-msgid "ID"
-msgstr "ID"
+#: ../plugins/interface_view.ui.h:9
+msgid "_Accessible"
+msgstr "_Erişilebilirlik"
 
-#: ../plugins/interface_view.ui.h:38
-msgid "Include defaults"
-msgstr "Öntanımlıları kapsa"
-
-#: ../plugins/interface_view.ui.h:39
-msgid "Layer"
-msgstr "Katman"
-
-#: ../plugins/interface_view.ui.h:40
-msgid "Lo_gin Helper"
-msgstr "_Giriş Yardımcısı"
-
-#: ../plugins/interface_view.ui.h:41
-msgid "Locale"
-msgstr "Yerel"
-
-#: ../plugins/interface_view.ui.h:42
-msgid "Locale:"
-msgstr "Yereller:"
-
-#: ../plugins/interface_view.ui.h:43
-msgid "MDI-Z-order"
-msgstr "MDI-Z-sırası"
-
-#: ../plugins/interface_view.ui.h:44
-msgid "Maximum value"
-msgstr "En fazla değer"
-
-#: ../plugins/interface_view.ui.h:45
-msgid "Minimum increment"
-msgstr "En az artış"
-
-#: ../plugins/interface_view.ui.h:46
-msgid "Minimum value"
-msgstr "En az değer"
-
-#: ../plugins/interface_view.ui.h:47
-msgid "Offset"
-msgstr "Ofset"
-
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:10
 msgid "Perform action"
 msgstr "Eylemi gerçekleştir"
 
-#: ../plugins/interface_view.ui.h:49
+#: ../plugins/interface_view.ui.h:11
+msgid "Acti_on"
+msgstr "E_ylem"
+
+#: ../plugins/interface_view.ui.h:12
+msgid "ID"
+msgstr "ID"
+
+#: ../plugins/interface_view.ui.h:13
+msgid "Toolkit"
+msgstr "Araç takımı"
+
+#: ../plugins/interface_view.ui.h:14
+msgid "Version"
+msgstr "Sürüm"
+
+#: ../plugins/interface_view.ui.h:15
+msgid "Ap_plication"
+msgstr "_Uygulama"
+
+#: ../plugins/interface_view.ui.h:16
+msgid "Col_lection"
+msgstr "Kol_leksiyon"
+
+#. Component size
+#: ../plugins/interface_view.ui.h:18
+msgid "0, 0"
+msgstr "0, 0"
+
+#: ../plugins/interface_view.ui.h:19
+msgid "Relative position"
+msgstr "Göreceli konum"
+
+#: ../plugins/interface_view.ui.h:20
+msgid "Size"
+msgstr "Boyut"
+
+#: ../plugins/interface_view.ui.h:21
+msgid "WIDGET"
+msgstr "PARÇA"
+
+#: ../plugins/interface_view.ui.h:22
+msgid "Layer"
+msgstr "Katman"
+
+#: ../plugins/interface_view.ui.h:23
+msgid "MDI-Z-order"
+msgstr "MDI-Z-sırası"
+
+#: ../plugins/interface_view.ui.h:24
+msgid "Alpha"
+msgstr "Alfa"
+
+#: ../plugins/interface_view.ui.h:25
+msgid "Absolute position"
+msgstr "Mutlak konum"
+
+#: ../plugins/interface_view.ui.h:26
+msgid "Co_mponent"
+msgstr "_Bileşen"
+
+#: ../plugins/interface_view.ui.h:27
+msgid "Des_ktop"
+msgstr "_Masaüstü"
+
+#: ../plugins/interface_view.ui.h:28
+msgid "Locale:"
+msgstr "Yereller:"
+
+#: ../plugins/interface_view.ui.h:29
+msgid "_Document"
+msgstr "_Döküman"
+
+#. add url role to buffer
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
+msgid "Hyperlink"
+msgstr "Hiper bağ"
+
+#: ../plugins/interface_view.ui.h:31
+msgid "H_ypertext"
+msgstr "_Hipermetin"
+
+#: ../plugins/interface_view.ui.h:32
 msgid "Position"
 msgstr "Konum"
 
+#: ../plugins/interface_view.ui.h:33
+msgid "Locale"
+msgstr "Yerel"
+
+#: ../plugins/interface_view.ui.h:34
+msgid "_Image"
+msgstr "_Görüntü"
+
+#: ../plugins/interface_view.ui.h:35
+msgid "Lo_gin Helper"
+msgstr "_Giriş Yardımcısı"
+
+#: ../plugins/interface_view.ui.h:36
+msgid "Select All"
+msgstr "Hepsini Seç"
+
+#: ../plugins/interface_view.ui.h:37
+msgid "_Selection"
+msgstr "_Seçim"
+
+#: ../plugins/interface_view.ui.h:38
+msgid "St_reamable Content"
+msgstr "Akışkan İçe_rik"
+
+#: ../plugins/interface_view.ui.h:39
+#| msgid "<i>Caption:</i>"
+msgid "Caption:"
+msgstr "Başlık:"
+
+#: ../plugins/interface_view.ui.h:40
+#| msgid "<i>Summary:</i>"
+msgid "Summary:"
+msgstr "Özet:"
+
+#: ../plugins/interface_view.ui.h:41
+msgid "Selected columns"
+msgstr "Seçilmiş sütunlar"
+
+#: ../plugins/interface_view.ui.h:42
+msgid "Selected rows"
+msgstr "Seçilmiş satırlar"
+
+#: ../plugins/interface_view.ui.h:43
+msgid "Columns"
+msgstr "Sütunlar"
+
+#: ../plugins/interface_view.ui.h:44
+msgid "Rows"
+msgstr "Satırlar"
+
+#: ../plugins/interface_view.ui.h:45
+#| msgid "<b>Table Information</b>"
+msgid "Table Information"
+msgstr "Tablo Bilgileri"
+
+#: ../plugins/interface_view.ui.h:46
+msgid "name (x,y)"
+msgstr "isim (x,y)"
+
+#: ../plugins/interface_view.ui.h:47
+msgid "Header:"
+msgstr "Başlık:"
+
+#: ../plugins/interface_view.ui.h:48
+msgid "<no description>"
+msgstr "<tanım yok>"
+
+#. How many columns the cell spans.
 #: ../plugins/interface_view.ui.h:50
-msgid "Relative position"
-msgstr "Göreceli konum"
+msgid "Extents:"
+msgstr "Kapsar:"
 
 #: ../plugins/interface_view.ui.h:51
 msgid "Row"
 msgstr "Satır"
 
 #: ../plugins/interface_view.ui.h:52
-msgid "Rows"
-msgstr "Satırlar"
+msgid "Column"
+msgstr "Sütun"
 
 #: ../plugins/interface_view.ui.h:53
-msgid "Select All"
-msgstr "Hepsini Seç"
+#, fuzzy
+#| msgid "<b>Selected Cell</b>"
+msgid "Selected Cell"
+msgstr "tablo hücresi"
 
 #: ../plugins/interface_view.ui.h:54
-msgid "Selected columns"
-msgstr "Seçilmiş sütunlar"
-
-#: ../plugins/interface_view.ui.h:55
-msgid "Selected rows"
-msgstr "Seçilmiş satırlar"
-
-#: ../plugins/interface_view.ui.h:56
-msgid "Show"
-msgstr "Göster"
-
-#: ../plugins/interface_view.ui.h:57
-msgid "Size"
-msgstr "Boyut"
-
-#: ../plugins/interface_view.ui.h:58
-msgid "St_reamable Content"
-msgstr "Akışkan İçe_rik"
-
-#: ../plugins/interface_view.ui.h:59
-msgid "Te_xt"
-msgstr "_Metin"
-
-#: ../plugins/interface_view.ui.h:60
-msgid "Toolkit"
-msgstr "Araç takımı"
-
-#: ../plugins/interface_view.ui.h:61
-msgid "Val_ue"
-msgstr "Değe_r"
-
-#: ../plugins/interface_view.ui.h:62
-msgid "Version"
-msgstr "Sürüm"
-
-#: ../plugins/interface_view.ui.h:63
-msgid "WIDGET"
-msgstr "PARÇA"
-
-#: ../plugins/interface_view.ui.h:64
-msgid "_Accessible"
-msgstr "_Erişilebilirlik"
-
-#: ../plugins/interface_view.ui.h:65
-msgid "_Document"
-msgstr "_Döküman"
-
-#: ../plugins/interface_view.ui.h:66
-msgid "_Image"
-msgstr "_Görüntü"
-
-#: ../plugins/interface_view.ui.h:67
-msgid "_Selection"
-msgstr "_Seçim"
-
-#: ../plugins/interface_view.ui.h:68
 msgid "_Table"
 msgstr "_Tablo"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "name (x,y)"
-msgstr "isim (x,y)"
+#: ../plugins/interface_view.ui.h:55
+#, fuzzy
+msgid "Text"
+msgstr "Metin"
+
+#: ../plugins/interface_view.ui.h:56
+msgid "Offset"
+msgstr "Ofset"
+
+#: ../plugins/interface_view.ui.h:57
+msgid "Include defaults"
+msgstr "Öntanımlıları kapsa"
+
+#. Start character offset of text attributes span
+#: ../plugins/interface_view.ui.h:59
+#, fuzzy
+#| msgid "Start"
+msgid "Start: 0"
+msgstr "Başla"
+
+#. End character offset of text attributes span
+#: ../plugins/interface_view.ui.h:61
+#, fuzzy
+#| msgid "<i>End: 0</i>"
+msgid "End: 0"
+msgstr "Son"
+
+#: ../plugins/interface_view.ui.h:62
+msgid "Te_xt"
+msgstr "_Metin"
+
+#: ../plugins/interface_view.ui.h:63
+msgid "Current value"
+msgstr "Şimdiki değer"
+
+#: ../plugins/interface_view.ui.h:64
+msgid "Minimum increment"
+msgstr "En az artış"
+
+#: ../plugins/interface_view.ui.h:65
+msgid "Maximum value"
+msgstr "En fazla değer"
+
+#: ../plugins/interface_view.ui.h:66
+msgid "Minimum value"
+msgstr "En az değer"
+
+#: ../plugins/interface_view.ui.h:67
+msgid "Val_ue"
+msgstr "Değe_r"
+
+#: ../plugins/interface_view.ui.h:68
+#, fuzzy
+#| msgid "<b>unknown</b>"
+msgid "unknown"
+msgstr "bilinmeyen"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Arayüz Gösterici"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: ../plugins/interface_view.py:45
 msgid "Allows viewing of various interface properties"
 msgstr "Çeşitli arayüz özelliklerini görüntülemeye izin verir"
 
-#: ../plugins/interface_view.py:229 ../plugins/interface_view.py:231
-#: ../plugins/interface_view.py:232
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(uygulanmamış)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:703 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
+#: ../src/lib/accerciser/accessible_treeview.py:503
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "İsim"
 
-#: ../plugins/interface_view.py:710
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "URI"
 
-#: ../plugins/interface_view.py:717
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Başla"
 
-#: ../plugins/interface_view.py:724
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Son"
 
-#: ../plugins/interface_view.py:885
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Çok fazla seçilebilir çocuk"
 
-#: ../plugins/interface_view.py:1230 ../plugins/interface_view.py:1233
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Düzenlenebilir)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#, fuzzy
+#| msgid "<i>(Editable)</i>"
+msgid "(Editable)"
+msgstr "Düzenlenebilir"
 
-#: ../plugins/quick_select.py:11
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1412
+#, fuzzy, python-format
+#| msgid "Start"
+msgid "Start: %d"
+msgstr "Başla"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1418
+#, fuzzy, python-format
+msgid "End: %d"
+msgstr "Son"
+
+#: ../plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Çabuk Seçim"
 
-#: ../plugins/quick_select.py:14
+#: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr ""
 "Çeşitli erişilebilirlikleri çabucak seçebilecek yöntemlete sahip eklenti."
 
-#: ../plugins/quick_select.py:20
+#: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Son odaklanılan erişilebilirliği incele"
 
-#: ../plugins/quick_select.py:24
+#: ../plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Fare altındaki erşilebilirliği incele"
 
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
-msgid "Idle"
-msgstr "Beklemede"
-
-#: ../plugins/validate.ui.h:2
+#: ../plugins/validate.ui.h:1
 msgid "Sche_ma:"
 msgstr "Şe_ma:"
 
-#: ../plugins/validate.ui.h:3
+#: ../plugins/validate.ui.h:2
 msgid "V_alidate"
 msgstr "Doğrul_a"
 
-#: ../plugins/validate.py:64
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
+msgid "Idle"
+msgstr "Beklemede"
+
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Tanım yok"
 
-#: ../plugins/validate.py:152
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "AT-SPI Doğrulayıcı"
 
-#: ../plugins/validate.py:154
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Uygulama erişilebilirliğini doğrular"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Seviye"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rol"
 
-#: ../plugins/validate.py:346
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Kaydediliyor"
 
-#: ../plugins/validate.py:394
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Doğrulanıyor"
 
-#: ../plugins/validate.py:550
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "HARİÇ"
 
-#: ../plugins/validate.py:557
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "HATA"
 
-#: ../plugins/validate.py:565
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "UYARI"
 
-#: ../plugins/validate.py:572
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "BİLGİ"
 
-#: ../plugins/validate.py:579
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "HATA AYIKLAMA"
 
@@ -560,7 +719,7 @@ msgstr "etkileşimli %s sorgulanabilir değil"
 msgid "more than one focused widget"
 msgstr "birden fazla odaklanılmış parça"
 
-#: ../plugindata/validate/basic.py:87
+#: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s has no text interface"
@@ -568,12 +727,12 @@ msgstr "%s has no text interface"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "Asıl içindeki %s indeksi alt indeks ile uyuşmuyor"
 
-#: ../plugindata/validate/basic.py:153
+#: ../plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "%s ilişkisi için kayıp karşılık"
@@ -581,14 +740,13 @@ msgstr "%s ilişkisi için kayıp karşılık"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s eksik isim veya etiket"
 
-#: ../plugindata/validate/basic.py:220
+#: ../plugindata/validate/basic.py:217
 #, python-format
-#| msgid "focusable %s has table interface, no selection interface"
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "odaklanabilir %s için tablo arayüzü var, ama seçim arayüzü yok"
 
@@ -596,7 +754,7 @@ msgstr "odaklanabilir %s için tablo arayüzü var, ama seçim arayüzü yok"
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%1s %3s durumu hariç %2s durumunda"
@@ -604,7 +762,7 @@ msgstr "%1s %3s durumu hariç %2s durumunda"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s bir kümeye ait değil"
@@ -614,7 +772,7 @@ msgstr "%s bir kümeye ait değil"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeks %(num)d satır ve sütun ile uyuşmuyor"
@@ -625,7 +783,7 @@ msgstr "%(rolename)s indeks %(num)d satır ve sütun ile uyuşmuyor"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
@@ -634,127 +792,118 @@ msgstr ""
 "%(rolename)s ana indeksi %(num1)d satır ve sütun indeksi %(num2)d ile "
 "uyuşmuyor"
 
-#: ../plugindata/validate/basic.py:369
+#: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s için bir isim veya tanım yok"
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Tercihler..."
 
-#: ../src/lib/accerciser/accerciser.py:89
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "İçeri_k"
 
-#: ../src/lib/accerciser/accerciser.py:130
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser masaüstünüzdeki uygulamaları göremedi. Bu sorunu çözmek için "
-"masaüstü erişilebilirliğini etkinleştirmelisiniz. Şimdi etkinleştirmek ister "
-"misiniz?"
-
-#: ../src/lib/accerciser/accerciser.py:147
-msgid "Note: Changes only take effect after logout."
-msgstr "Not: Değişiklikler sadece çıkış yaptıktan sonra etkinleşecektir."
-
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<ölü>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Çocuklar"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: ../src/lib/accerciser/accessible_treeview.py:549
+msgid "_Hide/Show Applications without children"
+msgstr ""
+
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "_Kaydı Güncelle"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Tümünü Güncelle"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "_Düğümü Güncelle"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Seçilen düğümün altını güncelle"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: ../src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Bileşen"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: ../src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Görev"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: ../src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Anahtar"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Üstkarakter"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Üst panel"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Alt panel"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "accerciser Tercihleri"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: ../src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Genel kısayollar"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: ../src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Vurgulama"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: ../src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Vurgulama süresi:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: ../src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Kenarlık rengi:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: ../src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Vurgulama kutusunun kenarlık rengi"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: ../src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Doldurma rengi:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: ../src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Vurgulama kutusunun doldurma rengi"
 
@@ -762,15 +911,17 @@ msgstr "Vurgulama kutusunun doldurma rengi"
 msgid "translator-credits"
 msgstr ""
 "Deniz Koçak <deniz.kocak@linux.org.tr>\n"
-"Barış Çiçek <baris@teamforce.name.tr>"
+"Barış Çiçek <baris@teamforce.name.tr>\n"
+"Muhammet Kara <muhammetk@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Bir interaktif Piton erişilebilirlik gezgini"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "accerciser Telif Hakkı Â© 2006, 2007 IBM Şirketi (BSD)"
+#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Telif Hakkı (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
@@ -780,112 +931,143 @@ msgstr "Yeni BSD Lisansı detaylar için COPYING ve README dosyalarına bakın."
 msgid "Web site"
 msgstr "Web sitesi"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Yer imi ekle..."
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Yer imi seçili erişilebilirlik."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "Yer İmlerini Düz_enle..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Yer İmlerini Yönet."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Yer imlerini düzenle..."
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Başlık"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Uygulama"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Yol"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Yer imi ekle..."
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Başlık:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Uygulama:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Yol:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: ../src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Eklenti Hataları"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Görünüm"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: ../src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Görünüm yok"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Sadece eklenti görünümü"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Eklenti Görünümü"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Eklenti Görünümü (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
-msgid "<i>_New view...</i>"
-msgstr "<i>Ye_ni görünüm...</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+#| msgid "New View..."
+msgid "_New view..."
+msgstr "Ye_ni Görünüm..."
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Yeni Görünüm..."
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: ../src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Dosya"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: ../src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "Düz_enle"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: ../src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "Yer İ_mleri"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: ../src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Görünüm"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: ../src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Ya_rdım"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Olay izleyici</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Tanım</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Metin</b>"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(tanım yok)</i>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Başlangıç: 0</i>"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accerciser masaüstünüzdeki uygulamaları göremedi. Bu sorunu çözmek için "
+#~ "masaüstü erişilebilirliğini etkinleştirmelisiniz. Şimdi etkinleştirmek "
+#~ "ister misiniz?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Not: Değişiklikler sadece çıkış yaptıktan sonra etkinleşecektir."
+
+#~ msgid "<i>_New view...</i>"
+#~ msgstr "<i>Ye_ni görünüm...</i>"
 
 #~ msgid "Dogtail"
 #~ msgstr "Dogtail"
