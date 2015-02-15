@@ -2,15 +2,15 @@
 # Copyright (C) 2009 accerciser COPYRIGHT HOLDER
 # This file is distributed under the same license as the accerciser package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2007-2013.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-07 12:03+0000\n"
-"PO-Revision-Date: 2013-03-07 17:07+0100\n"
+"POT-Creation-Date: 2015-02-15 15:26+0000\n"
+"PO-Revision-Date: 2015-02-15 21:23+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
@@ -34,7 +34,7 @@ msgstr "Programu omogočite vaje iz dostopnosti"
 msgid "accessibility;development;test;"
 msgstr "dostopnost;razvoj;preizkus;test;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Raziskovalnik dostopnosti Accerciser"
 
@@ -166,6 +166,26 @@ msgstr "Kombinacija tipk"
 msgid "Hotkey combination for related action."
 msgstr "Kombinacija tipk za povezano dejanje."
 
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Raziskovalec dostopnosti za namizje GNOME"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Program Accerciser vključuje enostaven vstavek, ki omogoča prikazovanje "
+"podrobnosti o dostopnosti."
+
 #: ../plugins/api_view.py:32
 msgid "API Browser"
 msgstr "API brskalnik"
@@ -260,8 +280,8 @@ msgid "(no description)"
 msgstr "(brez opisa)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Opis"
 
@@ -270,16 +290,16 @@ msgid "States"
 msgstr "Stanja"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Atributi"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Povezave"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Atributi"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -363,7 +383,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hiperpovezava"
 
@@ -525,7 +545,7 @@ msgid "(not implemented)"
 msgstr "(ni del programa)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -556,7 +576,7 @@ msgstr "(Uredljivo)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
 msgid "Start: %d"
 msgstr "Začetek: %d"
@@ -566,7 +586,7 @@ msgstr "Začetek: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Konec: %d"
@@ -595,59 +615,59 @@ msgstr "She_ma:"
 msgid "V_alidate"
 msgstr "Določi _veljavnost"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Nedejavno"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Brez opisa"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "AT-SPI določilnik veljavnosti"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Določi veljavnost dostopnosti programa"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Raven"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Vloga"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Shranjevanje"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Določanje veljavnosti"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "IZJEMA"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "NAPAKA"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "OPOZORILO"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "PODROBNOSTI"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "RAZHROŠČEVANJE"
 
@@ -751,11 +771,11 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s nima imena ali opisa"
 
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Možnosti ..."
 
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Vsebina"
 
@@ -817,11 +837,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Dvigalka"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Zgornji pult"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Spodnji pult"
 
@@ -883,51 +903,51 @@ msgstr ""
 msgid "Web site"
 msgstr "Spletna stran"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Dodaj zaznamek ..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Izbran zaznamek je dostopen."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Uredi zaznamke ..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Uredi zaznamke."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Uredi zaznamke ..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Naslov"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Program"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Pot"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Dodaj zaznamek ..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Naslov:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Program:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Pot:"
 
