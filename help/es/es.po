@@ -1,12 +1,12 @@
 # translation of accerciser manual to Spanish
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2010, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2014.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.master\n"
-"POT-Creation-Date: 2014-05-08 14:25+0000\n"
-"PO-Revision-Date: 2014-05-10 18:07+0200\n"
+"POT-Creation-Date: 2015-02-17 15:26+0000\n"
+"PO-Revision-Date: 2015-02-17 17:16+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -20,7 +20,7 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011 - 2014\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011 - 2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2011"
 
 #. (itstool) path: media
@@ -750,11 +750,10 @@ msgid ""
 "listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
 "instance variable to <cmd>None</cmd>."
 msgstr ""
-"Ahora se sobrescribirá el método «init», en el que se establecerá una "
-"acción de clave global para seleccionar el último elemento accesible con el "
-"foco, registrar un «listener» de eventos para el evento «focus», y "
-"establecer la variable de instancia <cmd>last_focused</cmd> a <cmd>None</"
-"cmd>."
+"Ahora se sobrescribirá el método «init», en el que se establecerá una acción "
+"de clave global para seleccionar el último elemento accesible con el foco, "
+"registrar un «listener» de eventos para el evento «focus», y establecer la "
+"variable de instancia <cmd>last_focused</cmd> a <cmd>None</cmd>."
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:86
@@ -1019,9 +1018,9 @@ msgid ""
 "variable contains a gtk.Frame that could be populated with all the plugin's "
 "widgets."
 msgstr ""
-"Se sobrescribirá el método «init» con una construcción de IU y conectando "
-"el retorno de la llamada a una señal para el botón. Se usará el contenedor "
-"de alineamiento para permitir que el botón esté centrado en la pestaña del "
+"Se sobrescribirá el método «init» con una construcción de IU y conectando el "
+"retorno de la llamada a una señal para el botón. Se usará el contenedor de "
+"alineamiento para permitir que el botón esté centrado en la pestaña del "
 "complemento, y que no ocupe monstruosamente todo el espacio disponible. Note "
 "que la variable de instancia <cmd>plugin_area</cmd> gontiene un gtk.Frame "
 "que se puede llenar con todos los widgets del complemento."
@@ -1165,13 +1164,11 @@ msgstr "Introducción a <app>Accerciser</app>"
 
 #. (itstool) path: media/span
 #: C/index.page:26
-#| msgid "<app>Accerciser</app>"
 msgid "<app>Accerciser</app>'s logo"
 msgstr "Logo de <app>Accerciser</app>"
 
 #. (itstool) path: page/title
 #: C/index.page:24
-#| msgid "<app>Accerciser</app>"
 msgid "<_:media-1/> <app>Accerciser</app>"
 msgstr "<_:media-1/> <app>Accerciser</app>"
 
@@ -1182,10 +1179,12 @@ msgstr "Antes de comenzar"
 
 #. (itstool) path: note/p
 #: C/index.page:32
+#| msgid ""
+#| "Read the <link href=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgid ""
-"Read the <link href=\"help:gnome-help/a11y\">Universal Access Help</link>"
+"Read the <link xref=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgstr ""
-"Lea la <link href=\"help:gnome-help/a11y\">ayuda del acceso universal</link>"
+"Lea la <link xref=\"help:gnome-help/a11y\">ayuda del acceso universal</link>"
 
 #. (itstool) path: section/title
 #: C/index.page:37
