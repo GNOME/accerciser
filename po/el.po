@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: accerciser.HEAD.el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-09 15:25+0000\n"
-"PO-Revision-Date: 2014-08-13 15:40+0200\n"
+"POT-Creation-Date: 2015-02-27 03:25+0000\n"
+"PO-Revision-Date: 2015-02-27 13:59+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Project-Style: gnome\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
@@ -34,7 +34,7 @@ msgstr "Δοκιμάστε την προσιτότητα της εφαρμογή
 msgid "accessibility;development;test;"
 msgstr "προσβασιμότητα;ανάπτυξη;δοκιμή;accessibility;development;test;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Περιηγητής προσιτότητας Accerciser"
 
@@ -166,6 +166,32 @@ msgstr "Συνδυασμός πλήκτρου ενεργειών"
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
 msgstr "Συνδυασμός πλήκτρου για σχετική ενέργεια."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Περιηγητής προσιτότητας για την επιφάνεια εργασίας του GNOME"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Το Accerciser είναι ένας διαδραστικός περιηγητής προσιτότητας, γραμμένος σε "
+"Python, για την επιφάνεια εργασίας του GNOME. Χρησιμοποιεί το AT-SPI για να "
+"επιθεωρήσει και να ελέγξει τα γραφικά στοιχεία, επιτρέποντας σας να δείτε "
+"αν μια εφαρμογή παρέχει σωστές πληροφορίες σε υποστηρικτικές τεχνολογίες "
+"και αυτοματοποιημένα πλαίσια δοκιμών."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Το Accerciser έχει ένα απλό πλαίσιο υποστήριξης, το οποίο μπορείτε να "
+"χρησιμοποιήσετε για να δημιουργήσετε προσαρμοσμένες προβολές των "
+"πληροφοριών προσιτότητας."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -624,7 +650,8 @@ msgid "Level"
 msgstr "Επίπεδο"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296
+#: ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Ρόλος"
 
@@ -824,11 +851,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Κάτω πίνακας εφαρμογών"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Κάτω εργαλειοθήκη"
 
@@ -906,31 +933,31 @@ msgstr ""
 msgid "Web site"
 msgstr "Ιστότοπος"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "Προσ_θήκη σελιδοδείκτη..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Ο σελιδοδείκτης επιλέχθηκε ως ποσβάσιμος."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Επεξεργασία σελιδοδεικτών..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Διαχείριση σελιδοδεικτών."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Επεξεργασία σελιδοδεικτών..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Εφαρμογή"
 
@@ -942,23 +969,23 @@ msgstr "Εφαρμογή"
 #
 # #-#-#-#-#  gnome-libs-el.po (gnome-libs 1.2.12)  #-#-#-#-#
 #
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Διαδρομή"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Προσθήκη σελιδοδείκτη..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Εφαρμογή:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Διαδρομή:"
 
