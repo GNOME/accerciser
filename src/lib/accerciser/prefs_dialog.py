@@ -41,7 +41,7 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     self.set_default_size(500, 250)
     notebook = gtk.Notebook()
     vbox = self.get_children()[0]
-    vbox.add(notebook)
+    vbox.pack_start(notebook, True, True, 2)
     for view, section in [(plugins_view, _('Plugins')),
                           (hotkeys_view, _('Global Hotkeys'))]:
       if view is not None:
