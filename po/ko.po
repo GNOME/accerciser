@@ -1,16 +1,16 @@
 # Korean translation for accerciser.
 # Copyright (C) 2012 Seong-ho Cho et al.
 # This file is distributed under the same license as the accerciser package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012, 2013.
+# Seong-ho Cho <shcho@gnome.org>, 2012-2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-16 03:25+0000\n"
-"PO-Revision-Date: 2013-03-20 16:27+0900\n"
-"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"POT-Creation-Date: 2015-03-06 03:25+0000\n"
+"PO-Revision-Date: 2015-03-06 13:50+0900\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.5.5\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "액서사이저"
 
@@ -29,9 +29,9 @@ msgstr "프로그램에 대한 접근성 개선책을 제시합니다"
 
 #: ../accerciser.desktop.in.in.h:3
 msgid "accessibility;development;test;"
-msgstr "accesibility;접근성;development;개발;test;테스트;"
+msgstr "accessibility;접근성;development;개발;test;테스트;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "액서사이저 접근성 탐색기"
 
@@ -162,6 +162,29 @@ msgstr "단축키 조합"
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
 msgstr "관련된 동작에 대한 단축키 조합."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "그놈 데스크톱용 접근성 탐색기"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"액서사이저는 그놈 데스크톱용 대화식 파이썬 접근성 탐색기입니다. 위젯을 살펴보"
+"고 제어하는데 AT-SPI를 사용하며, 프로그램이 보조 기술과 자동화 테스트 프레임"
+"워크에 대한 올바른 정보를 제공하는지 확인할 수 있도록 해줍니다."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"액서사이저는 접근 성 정보를 표시하는 사용자 정의 뷰를 만들 수 있도록 하는 간"
+"단한 플러그인 프레임워크입니다."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -574,7 +597,7 @@ msgstr "빠른 선택"
 
 #: ../plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "접근권 선택을 빠르게 하는 다양한 메서드를 포함하는 플러그인."
+msgstr "접근권 선택을 빠르게 하는 다양한 수단이 있는 플러그인."
 
 #: ../plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
@@ -646,7 +669,7 @@ msgstr "정보"
 
 #: ../plugins/validate.py:594
 msgid "DEBUG"
-msgstr "디버그"
+msgstr "디버깅"
 
 #: ../plugindata/validate/basic.py:8
 msgid "Basic"
@@ -708,7 +731,7 @@ msgstr "잡을 수 있는 %s에 표 인터페이스가 있지만, 선택 인터�
 #: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr "%s은(는) %s 상태이지만 %s상태는 아닙니다"
+msgstr "%s은(는) %s 상태이지만 %s 상태는 아닙니다"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
@@ -817,11 +840,11 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "상단 패널"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "하단 패널"
 
@@ -863,11 +886,11 @@ msgstr "강조 상자의 채우기 색"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "조성호 <darkcircle.0426@gmail.com>"
+msgstr "조성호 <shcho@gnome.org>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "대화형 파이선 접근성 탐색기"
+msgstr "대화형 파이썬 접근성 탐색기"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
@@ -883,51 +906,51 @@ msgstr ""
 msgid "Web site"
 msgstr "웹 사이트"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "북마크 추가(_A)..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "선택한 접근권을 북마크 합니다."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "북마크 편집(_E)..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "북마크를 관리합니다."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "북마크 편집..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "제목"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "프로그램"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "경로"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "북마크 추가..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "제목:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "프로그램:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "경로:"
 
@@ -958,7 +981,7 @@ msgstr "플러그인 보기"
 #: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "플러그인 보기 (%d)"
+msgstr "플러그인 보기(%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1074
 msgid "_New view..."
