@@ -6,18 +6,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-09-27 20:09+0000\n"
-"PO-Revision-Date: 2014-01-15 22:43+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-27 03:25+0000\n"
+"PO-Revision-Date: 2015-03-02 16:04+0100\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-16 06:01+0000\n"
-"X-Generator: Launchpad (build 16901)\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:18+0000\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
@@ -29,7 +31,7 @@ msgstr "Dajte svom programu trening iz pristupačnosti"
 msgid "accessibility;development;test;"
 msgstr "pristupačnost;razvoj;test;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser istraživač pristupačnosti"
 
@@ -161,6 +163,30 @@ msgstr "Kombinacija prečice"
 msgid "Hotkey combination for related action."
 msgstr "Kombinacija prečice za povezanu akciju."
 
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Accerciser istraživač pristupačnosti"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser je interaktivni istraživač dostupnosti napisan u jeziku Python za "
+"GNOME desktop. On koristi AT-SPI za inspekciju i provjeru grafičkih "
+"kontrola, omogućavajući vam da provjerite da li aplikacija pruža tačne "
+"podatke za pomoćne tehnologije i automatizirane testne okvire."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser ima jednostavan okvir dodataka koji možete koristiti za stvaranje "
+"prilagođenih pogleda na informacije o pristupačnosti."
+
 #: ../plugins/api_view.py:32
 msgid "API Browser"
 msgstr "API pregledač"
@@ -191,8 +217,7 @@ msgstr "IPython konzola"
 
 #: ../plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr ""
-"Interaktivna konzola za upravljanje trenutno odabranom pristupačnošću"
+msgstr "Interaktivna konzola za upravljanje trenutno odabranom pristupačnošću"
 
 #: ../plugins/event_monitor.ui.h:1
 msgid "Event monitor"
@@ -257,8 +282,8 @@ msgid "(no description)"
 msgstr "(nema opisa)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Opis"
 
@@ -267,16 +292,16 @@ msgid "States"
 msgstr "Stanja"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Atributi"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Prikaži"
 
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Relacije"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Atributi"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -360,7 +385,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hiperlink"
 
@@ -507,7 +532,7 @@ msgstr "Vrije_dnost"
 msgid "unknown"
 msgstr "nepoznato"
 
-#. Translators: this is a plugin name
+#. Translators: this is a plugin nami
 #: ../plugins/interface_view.py:42
 msgid "Interface Viewer"
 msgstr "Preglednik interfejsa"
@@ -521,8 +546,8 @@ msgstr "Omogućava pregled raznih svojstava interfejsa"
 msgid "(not implemented)"
 msgstr "(nije implementirano)"
 
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#. add accessible's nami to buffer
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -553,7 +578,7 @@ msgstr "(Moguće uređivati)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
 msgid "Start: %d"
 msgstr "Početak: %d"
@@ -563,7 +588,7 @@ msgstr "Početak: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Kraj:%d"
@@ -592,59 +617,59 @@ msgstr "Še_ma:"
 msgid "V_alidate"
 msgstr "V_alidacija"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Neaktivno"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Bez opisa"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "AT-SPI validator"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Vrši validaciju pristupačnosti aplikacije"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Nivo"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Uloga"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Snimanje"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Validacija"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "OSIM"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "GREŠKA"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "UPOZORENJE"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "INFO"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -675,9 +700,9 @@ msgstr "više od jednog fokusiranog dodatka"
 msgid "%s has no text interface"
 msgstr "%s nema tekstualni interfejs"
 
-#. Translators: The first variable is the role name of the object that has an
+#. Translators: The first variable is the role nami of the object that has an
 #. index mismatch.
-#. 
+#.
 #: ../plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
@@ -688,9 +713,9 @@ msgstr "%s matični indekst se ne podudara sa dijete indeksom"
 msgid "Missing reciprocal for %s relation"
 msgstr "Nedostaje reciprocitet za %s relaciju"
 
-#. Translators: The first variable is the role name of the object that is missing
-#. the name or label.
-#. 
+#. Translators: The first variable is the role nami of the object that is missing
+#. the nami or label.
+#.
 #: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
@@ -701,18 +726,18 @@ msgstr "za %s nedostaje ime ili natpis"
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "fokus %s ima tabelarni interfejs, ali ga nije moguće odabrati"
 
-#. Translators: First variable is an accessible role name, the next two
-#. variables are accessible state names.
-#. For example: "button has focused state without focusable state".
-#. 
+#. Translators: First variable is an accessible role nami, the next two
+#. variables are accessible stati names.
+#. For example: "button has focused stati without focusable stati".
+#.
 #: ../plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s ima %s stanje bez %s stanja"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
-#. The first variable is the object's role name.
-#. 
+#. The first variable is the object's role nami.
+#.
 #: ../plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
@@ -720,25 +745,25 @@ msgstr "%s ne pripada setu"
 
 #. Translators: The row or column number retrieved from a table child's
 #. object at a certain index is wrong.
-#. The first variable is the role name of the object, the second is the
+#. The first variable is the role nami of the object, the second is the
 #. given index.
-#. 
+#.
 #: ../plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s indeks %(num)d se ne poklapa sa redom i kolonom"
 
 #. Translators: The "parent index" is the order of the child in the parent.
-#. the "row and column index" should be the same value retrieved by the
+#. the "row and column index" should bje the same value retrieved by the
 #. object's location in the table.
-#. The first variable is the object's role name, the second and third variables
+#. The first variable is the object's role nami, the second and third variables
 #. are index numbers.
-#. 
+#.
 #: ../plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index "
-"%(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index %"
+"(num2)d"
 msgstr ""
 "%(rolename)s matični indekst %(num1)d se ne poklapa sa redom i kolonom "
 "indeksa %(num2)d"
@@ -748,11 +773,11 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s nema imena ili opisa"
 
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "O_pcije..."
 
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Sadržaj..."
 
@@ -773,19 +798,19 @@ msgid "_Refresh Registry"
 msgstr "_Osvježi registracijsku bazu"
 
 #. Translators: Appears as tooltip
-#. 
+#.
 #: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Osvježi sve"
 
 #. Translators: Refresh current tree node's children.
-#. 
+#.
 #: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Osvježi _čvor"
 
 #. Translators: Appears as tooltip
-#. 
+#.
 #: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Osvježi djecu odabranog čvora"
@@ -814,17 +839,17 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Gornja ploča"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Donja ploča"
 
 #: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr "Opcije accercisera"
+msgstr "opcije accercisera"
 
 #: ../src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
@@ -861,8 +886,7 @@ msgstr "Boja ispune okvira za isticanje"
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Kenan Dervišević https://launchpad.net/~kenan3008\n"
+"   Kenan Dervišević https://launchpad.net/~kenan3008\n"
 "  Samir Ribić https://launchpad.net/~megaribi"
 
 #: ../src/lib/accerciser/about_dialog.py:53
@@ -875,58 +899,57 @@ msgstr "accerciser Sva prava zadržana (c) 2006, 2007 IBM Corporation (BSD)"
 
 #: ../src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr ""
-"Nova BSD licenca Za više detalja pogledajte datoteke COPYING i NOTICE."
+msgstr "Nova BSD licenca Za više detalja pogledajte datoteke COPYING i NOTICE."
 
 #: ../src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Web stranica"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Dodaj zabilješku..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Zabilješka označena kao pristupačnost."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Izmijeni zabilješke..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Upravljanje zabilješkama."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Izmijeni zabilješke..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Naslov"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Aplikacija"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Staza"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Dodaj zabilješku..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Naslov:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Aplikacija:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Putanja:"
 
@@ -936,7 +959,7 @@ msgstr "Greška plugina"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
-#. 
+#.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
@@ -976,12 +999,12 @@ msgid "_Edit"
 msgstr "_Izmijeni"
 
 #: ../src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
+msgctxt "mijenu"
 msgid "_Bookmarks"
 msgstr "_Zabilješke"
 
 #: ../src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
+msgctxt "mijenu"
 msgid "_View"
 msgstr "_Pogled"
 
