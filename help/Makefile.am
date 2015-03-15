@@ -33,4 +33,4 @@ HELP_FILES = \
 	quick_select_plugin.page \
 	validator_plugin.page
 
-HELP_LINGUAS  = ca cs de el en_GB es fr gl it ja oc pl pt_BR sl sv uk zh_CN
+HELP_LINGUAS  = ca cs de el en_GB es fr gl it ja oc pt_BR sl sv uk zh_CN
