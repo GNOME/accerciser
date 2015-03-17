@@ -1,752 +1,2796 @@
 # Czech translation of Accerciser help manual
 # Lucas Lommer <llommer@svn.gnome.org>, 2008, 2010.
-# Marek Černocký <marek@manet.cz>, 2009.
+# Marek Černocký <marek@manet.cz>, 2009, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser gnome-2-28\n"
-"POT-Creation-Date: 2009-12-14 15:27+0000\n"
-"PO-Revision-Date: 2010-03-18 09:45+0100\n"
-"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
+"POT-Creation-Date: 2015-02-16 00:23+0000\n"
+"PO-Revision-Date: 2015-03-03 20:59+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:191(None)
-msgid "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
 msgstr ""
-"@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+"Lucas Lommer <llommer@svn.gnome.org>, 2008, 2010.\n"
+"Marek Černocký <marek@manet.cz>, 2009, 2015."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:372(None)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37
+#| msgid ""
+#| "@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
 msgstr ""
-"@@image: 'figures/interface_viewer.png'; md5=aa1a5d030e67214010533e5f2e598faa"
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:389(None)
+#. (itstool) path: info/title
+#: C/api_browser_plugin.page:4
+#| msgid "API Browser"
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "1. Zásuvný modul pro prohlížení API"
+
+#. (itstool) path: info/desc
+#: C/api_browser_plugin.page:6
+msgid "Verifying interfaces, methods, and properties"
+msgstr "Jak ověřit rozhraní, metody a vlastnosti."
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10
+#: C/event_monitor_plugin.page:10 C/howto_setting_up_accerciser.page:11
+#: C/howto_write_a_plugin.page:10 C/index.page:9
+#: C/interface_viewer_plugin.page:10 C/introduction.page:10
+#: C/ipython_plugin.page:10 C/preferences.page:10
+#: C/quick_select_plugin.page:10 C/validator_plugin.page:10
+#| msgid "Isaacson"
+msgid "Eitan Isaacson"
+msgstr "Eitan Isaacson"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:14 C/desktop_tree_view.page:14
+#: C/event_monitor_plugin.page:14 C/howto_setting_up_accerciser.page:15
+#: C/howto_write_a_plugin.page:14 C/index.page:13
+#: C/interface_viewer_plugin.page:14 C/introduction.page:14
+#: C/ipython_plugin.page:14 C/preferences.page:14
+#: C/quick_select_plugin.page:14 C/validator_plugin.page:14
+#| msgid "Parente"
+msgid "Peter Parente"
+msgstr "Peter Parente"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:18 C/desktop_tree_view.page:18
+#: C/event_monitor_plugin.page:18 C/howto_setting_up_accerciser.page:19
+#: C/howto_write_a_plugin.page:18 C/index.page:17
+#: C/interface_viewer_plugin.page:18 C/introduction.page:18
+#: C/ipython_plugin.page:18 C/preferences.page:18
+#: C/quick_select_plugin.page:18 C/validator_plugin.page:18
+msgid "Aline Bessa"
+msgstr "Aline Bessa"
+
+#. (itstool) path: license/p
+#: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22
+#: C/event_monitor_plugin.page:22 C/howto_setting_up_accerciser.page:23
+#: C/howto_write_a_plugin.page:22 C/index.page:21
+#: C/interface_viewer_plugin.page:22 C/introduction.page:22
+#: C/ipython_plugin.page:22 C/preferences.page:22
+#: C/quick_select_plugin.page:22 C/validator_plugin.page:22
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
+#| msgid "API Browser"
+msgid "API Browser Plugin"
+msgstr "Zásuvný modul pro prohlížení API"
+
+#. (itstool) path: page/p
+#: C/api_browser_plugin.page:26
 msgid ""
-"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+"Given an accessible widget selected in the <link xref=\"desktop_tree_view"
+"\">Application Tree View</link>, the API Browser Plugin shows its "
+"implemented AT-SPI interfaces along with its methods and properties."
 msgstr ""
-"@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+"Když je ve <link xref=\"desktop_tree_view\">stromovém zobrazení aplikací</"
+"link> udán zpřístupněný widget, zásuvný modul Prohlížeč API zobrazí jeho "
+"implementovaná rozhraní AT-SPI v podobě jeho metod a vlastností."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:436(None)
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
+#| msgid ""
+#| "This plugin shows the interfaces, methods, and attributes supported by "
+#| "the accessible selected in the tree view."
 msgid ""
-"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
+"The API Browser Plugin allows you to verify interfaces, methods, and "
+"properties of a target accessible widget in an application."
 msgstr ""
-"@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
+"Zásuvný modul Prohlížeč API vám umožňuje ověřit rozhraní, metody a "
+"vlastnosti cílového zpřístupněného widgetu v aplikaci."
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/accerciser.xml:461(None)
+#. (itstool) path: section/title
+#: C/api_browser_plugin.page:46
+msgid "Running the API Browser Plugin"
+msgstr "Spuštění zásuvného modulu pro prohlížení API"
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:47
 msgid ""
-"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
+"To run the API Browser Plugin, select an accessible widget in the "
+"Application Tree View. Double-clicking a widget highlights it in the "
+"application's interface, so you can be sure whether a certain widget were "
+"the one you were looking for."
 msgstr ""
-"@@image: 'figures/script_recorder.png'; md5=a15027c852c58df789886f6aadf0130c"
+"Zásuvný modul Prohližeč API spusíte tak, že vyberete zpřístupněný widget ve "
+"stromovém zobrazení aplikací. Dvojitým kliknutím se widget zvýrazní v "
+"uživatelském rozhraní aplikace, díky čemuž se můžete ujistit, že se opravdu "
+"jedná o widget, který jste hledali."
 
-#: C/accerciser.xml:24(title)
-msgid "<application>Accerciser</application> Manual v0.2.0"
-msgstr "Příručka k aplikaci <application>Accerciser</application> verze 0.2.0"
-
-#: C/accerciser.xml:27(year)
-msgid "2006"
-msgstr "2006"
-
-#: C/accerciser.xml:28(year)
-msgid "2007"
-msgstr "2007"
-
-#: C/accerciser.xml:29(year)
-msgid "2008"
-msgstr "2008"
-
-#: C/accerciser.xml:30(holder)
-msgid "IBM Corporation"
-msgstr "IBM Corporation"
-
-#: C/accerciser.xml:45(publishername)
-msgid "GNOME Documentation Project"
-msgstr "Dokumentační projekt GNOME"
-
-#: C/accerciser.xml:54(firstname)
-msgid "Eitan"
-msgstr "Eitan"
-
-#: C/accerciser.xml:55(surname)
-msgid "Isaacson"
-msgstr "Isaacson"
-
-#: C/accerciser.xml:57(orgname) C/accerciser.xml:66(orgname)
-#: C/accerciser.xml:108(para)
-msgid "Accerciser team"
-msgstr "Tým projektu Accerciser"
-
-#: C/accerciser.xml:58(email)
-msgid "eitan@ascender.com"
-msgstr "eitan@ascender.com"
-
-#: C/accerciser.xml:63(firstname)
-msgid "Peter"
-msgstr "Peter"
-
-#: C/accerciser.xml:64(surname)
-msgid "Parente"
-msgstr "Parente"
-
-#: C/accerciser.xml:67(email)
-msgid "pparent@us.ibm.com"
-msgstr "pparent@us.ibm.com"
-
-#: C/accerciser.xml:102(revnumber)
-msgid "Accerciser Manual v0.2.0"
-msgstr "Příručka k nástroji Accerciser verze 0.2.0"
-
-#: C/accerciser.xml:103(date)
-msgid "2007-06-29"
-msgstr "29. 6. 2007"
-
-#: C/accerciser.xml:105(para)
-msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
-msgstr "Eitan Isaacson <email>eitan@ascender.com</email>"
-
-#: C/accerciser.xml:113(releaseinfo)
-msgid "This manual describes version 0.1.5 of Accerciser."
-msgstr "Tato příručka popisuje aplikaci Accerciser ve verzi 0.1.5"
-
-#: C/accerciser.xml:115(para)
-msgid "This manual describes the use of <application>Accerciser</application>."
-msgstr ""
-"Tato příručka popisuje používání aplikace <application>Accerciser</"
-"application>."
-
-#: C/accerciser.xml:118(title)
-msgid "Feedback"
-msgstr "Zpětná vazba"
-
-#: C/accerciser.xml:119(para)
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:53
 msgid ""
-"To report a bug or make a suggestion regarding the <application>Accerciser</"
-"application> application or this manual, follow the directions in the <ulink "
-"url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+"After that, select one of the widget's interfaces in the combobox. All "
+"public methods of the selected interface will be listed in the plugin's "
+"leftmost column. All public properties, with their corresponding values, "
+"will be listed in the plugin's rightmost column."
 msgstr ""
-"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
-"<application>Accerciser</application> nebo této příručce, postupujte dle "
-"instrukcí na stránce <ulink url=\"ghelp:gnome-feedback\" type=\"help"
-"\">Stránka s ohlasy na GNOME</ulink>."
+"Následně v rozbalovacím seznamu vyberte jedno z rozhraní widgetu. Všechny "
+"veřejné metody vybraného rozhraní budou vypsány v levém sloupci zásuvného "
+"modulu. Všechny veřejné vlastnosti, i s jejich příslušnými hodnotami, budou "
+"vypsány v pravém sloupci zásuvného modulu."
 
-#: C/accerciser.xml:126(primary) C/accerciser.xml:0(application)
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:59
+msgid ""
+"By default, the API Browser Plugin hides private methods and properties. To "
+"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
+"To hide them again, re-select this checkbox."
+msgstr ""
+"Ve výchozím stavu zásuvný modul Prohlížeč API skrývá privátní metody a "
+"vlastnosti. Pokud je chcete v seznamu vidět, zruště zaškrtnutí políčka "
+"<gui>Skrýt privátní atributy</gui>. Pro opětovné skrytí políčko znovu "
+"zaškrtněte."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42
+msgctxt "_"
+msgid ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+msgstr ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+
+#. (itstool) path: info/title
+#: C/desktop_tree_view.page:4
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr "1. Stromové zobrazení aplikací"
+
+#. (itstool) path: info/desc
+#: C/desktop_tree_view.page:6
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr "Jak prozkoumat hierarchii přístupnosti pracovního prostředí."
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/desktop_tree_view.page:25 C/desktop_tree_view.page:37
+msgid "Application Tree View"
+msgstr "Stromové zobrazení aplikací"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:27
+msgid ""
+"<app>Accerciser</app>'s interface contains a tree view, namely Application "
+"Tree View, that covers all accessible applications currently running on the "
+"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
+"registry daemon. This daemon is responsible for keeping track of all the "
+"accessible applications on the desktop and forwarding X events over the AT-"
+"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
+"represents each one of them as a hierarchical structure with expanding nodes."
+msgstr ""
+"Uživatelské rozhraní aplikace <app>Accerciser</app> obsahuje stromové "
+"zobrazení nazývané „stromové zobrazení aplikací“, ve kterém jsou všechny "
+"aplikace podporující přístupnost a aktuálně běžící v pracovním prostředí. K "
+"vytvoření tohoto stromového zobrazení využívá <app>Accerciser</app> "
+"registračního démona AT-SPI. Tento démon je zodpovědný za sledování všech "
+"aplikací v pracovním prostředí podporujících přístupnost a za předávání "
+"událostí X přes sběrnici D-Bus AT-SPI. Všechny zpřístupněné aplikace, které "
+"<app>Accerciser</app> objeví, zobrazí v hierarchické struktuře s "
+"rozbalovacími uzly."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/desktop_tree_view.page:38 C/desktop_tree_view.page:43
+msgid ""
+"<app>Accerciser</app>'s Application Tree View represents the interface of "
+"each accessible application running on the desktop as a widget hierarchical "
+"structure."
+msgstr ""
+"Stromové zobrazení aplikací v aplikaci <app>Accerciser</app> představuje v "
+"podobě hierarchické struktury widgetů uživatelská rozhraní aplikací, které "
+"podporují zpřístupnění a zrovna běží v pracovním prostředí"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:49
+msgid ""
+"The first node of each application represented in this tree view is the "
+"application itself. When you expand a node, you can see all of its child "
+"widgets, which allows a hierarchical view of the application's interface. "
+"For each node, <app>Accerciser</app> provides some basic information, such "
+"as its name, role and number of children."
+msgstr ""
+"První uzel ve stromovém zobrazení aplikací představuje vždy samotnou "
+"aplikaci. Když jej rozbalíte, zobrazí se všechny její synovské widgety, díky "
+"čemuž můžete vidět hierarchii uživatelského rozhraní aplikace. U každého "
+"uzlu poskytuje <app>Accerciser</app> některé základní informace, jako je "
+"název položky, její role a počet potomků."
+
+#. (itstool) path: note/p
+#: C/desktop_tree_view.page:56
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr ""
+"Vezměta na vědomí, že u uzlů s mnoha potomky může rozbalení trvat dlouho."
+
+#. (itstool) path: section/title
+#: C/desktop_tree_view.page:62
+msgid "Bookmarking items in the Application Tree View"
+msgstr "Přidávání položek ve stromovém zobrazení aplikací do záložek"
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:63
+#| msgid ""
+#| "Accerciser allows bookmarking selected accessibles for later examining. "
+#| "This could be helpful if the target application must be restarted, for "
+#| "example after rebuilding it. To bookmark the currently selected "
+#| "accessible do <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add "
+#| "Bookmark...</guimenuitem></menuchoice> or press "
+#| "<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
+msgid ""
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
+"for later examining. This is helpful when the target application must be "
+"restarted - after rebuilding it, for example. To bookmark an item, select it "
+"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
+"<key>Ctrl</key>+<key>d</key>."
+msgstr ""
+"<app>Accerciser</app> umožňuje přidávat zpřístupněné položky ve stromovém "
+"zobrazení aplikací do záložek, abyste je mohli zkoumat později. To je "
+"užitečné například, pokud je nutné zkoumanou aplikaci restartovat po její "
+"novém sestavení. Když chcete položku přidat do záložek, vyberte ji a zvolte "
+"<guiseq><gui>Záložky</gui><gui>Přidat záložku</gui></guiseq> nebo zmáčkněte "
+"<keyseq><key>Ctrl</key><key>D</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:68
+#| msgid ""
+#| "Bookmarks to accessibles in Accerciser are defined by an application name "
+#| "and a \"path\" in the application's internal accessible hierarchy to the "
+#| "bookmarked accessible. When the target application is in a different "
+#| "state (ie. multiple top level frames) the path might not be correct."
+msgid ""
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
+"application name and a \"path\" in the application's internal accessible "
+"hierarchy to the bookmarked accessible. When the target application is in a "
+"different state - i.e. multiple top level frames -, the path might not be "
+"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
+msgstr ""
+"Záložky ke zpřístupněným položkám jsou v aplikaci <app>Accerciser</app> "
+"definovány pomocí názvu aplikace a „cesty“ v interní hierarchii zpřístupnění "
+"aplikace. Když je cílová aplikace v rozdílném stavu, tzn. více rámů nejvyšší "
+"úrovně, může být cesta nesprávná. Záložky je možné spravovat pomocí "
+"dialogového okna pro úpravu záložek, které najdete pod <guiseq><gui>Záložky</"
+"gui> <gui>Upravit záložky</gui></guiseq>."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40
+msgctxt "_"
+msgid ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
+msgstr ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
+
+#. (itstool) path: info/title
+#: C/event_monitor_plugin.page:4
+#| msgid "Event Monitor"
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "4. Zásuvný modul pro sledování událostí"
+
+#. (itstool) path: info/desc
+#: C/event_monitor_plugin.page:6
+msgid "Monitoring accessible events as they occur"
+msgstr "Jak sledovat události přístupnosti, které se objeví."
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
+#| msgid "Event Monitor"
+msgid "Event Monitor Plugin"
+msgstr "Zásuvný modul pro sledování událostí"
+
+#. (itstool) path: page/p
+#: C/event_monitor_plugin.page:26
+msgid ""
+"The Event Monitor Plugin allows you to view <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">AT-SPI events</link> as they occur on the applications exposed in "
+"<app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>. The plugin is useful to explore the dynamics of an "
+"application's interface and verify which accessible widgets are related to "
+"which AT-SPI events."
+msgstr ""
+"Zásuvný modul Sledování událostí umožňuje zobrazit <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html"
+"\">události AT-SPI</link> tak, jak se postupně objevují v aplikacích, které "
+"vidíte ve <link xref=\"desktop_tree_view\">stromovém zobrazení aplikací</"
+"link> v aplikaci <app>Accerciser</app>. Zásuvný modul je vhodný ke zkoumání "
+"dynamických záležitostí uživatelského rozhraní aplikací a k ověřování, které "
+"widgety souvisí se kterými událostmi AT-SPI."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/event_monitor_plugin.page:36 C/event_monitor_plugin.page:41
+msgid ""
+"The Event Monitor Plugin allows you to view AT-SPI events and match them "
+"with accessible widgets."
+msgstr ""
+"Zásuvný moudul Sledování událostí umožňuje zobrazit události AT-SPI a "
+"zjistit jejich sounáležitost se zpřístupněnými widgety."
+
+#. (itstool) path: section/title
+#: C/event_monitor_plugin.page:49
+msgid "Running the Event Monitor Plugin"
+msgstr "Spuštění zásuvného modulu pro sledování událostí"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:50
+msgid ""
+"When you open the Event Monitor Plugin, you see a list of checkboxes "
+"representing all the different AT-SPI event classes covered by the plugin:"
+msgstr ""
+"Když otevřete zásuvný modul Sledování událostí, můžete vidět seznam "
+"zaškrtávacích políček představujících všechny možné třídy událostí AT-SPI "
+"pokryté tímto zásuvným modulem:"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:58
+msgid "document"
+msgstr "dokument"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:63
+msgid "focus"
+msgstr "zaměření"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:68
+msgid "mouse"
+msgstr "myš"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:73
+msgid "object"
+msgstr "objekt"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:78
+msgid "terminal"
+msgstr "terminál"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:83
+msgid "window"
+msgstr "okno"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:89
+msgid ""
+"If you check a class, all of its event types will be monitored by the "
+"plugin. The classes are exposed as tree structures; therefore, you can "
+"refine your selection by expanding them and checking only the event types "
+"you really care about."
+msgstr ""
+"Když třídu zaškrtnete, budou zásuvným modulem sledovány typy jejích "
+"událostí. Třídy jsou prezentovány ve stromové struktuře, takže můžete svůj "
+"vyběr upřesnit rozbalením dané třídy a zaškrtnutím jen typů událostí, které "
+"vás opravdu zajímají."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:95
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the "
+"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
+"selected event types, press the <cmd>Clear Selection</cmd> button."
+msgstr ""
+"V případě, že chcete sledovat všechny možné typy událostí AT-SPI, zmáčkněte "
+"tlačítko <gui>Vybrat vše</gui>. Obdobně, pokud chcete zrušit výběr všech "
+"vybraných typů událostí, zmáčkněte tlačítko <gui>Zrušit výběr</gui>."
+
+#. (itstool) path: note/p
+#: C/event_monitor_plugin.page:102
+msgid ""
+"Selecting only a few event types per monitoring gives you a clearer output."
+msgstr ""
+"Zvolte si ke sledování raději jen pár událostí, aby byl výpis přehledný."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:107
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, "
+"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
+"events of all applications will be monitored. If you want to investigate a "
+"single application, select it in the Application Tree View and click the "
+"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, "
+"select it in the Application Tree View and click the Source radio button "
+"<cmd>Selected accessible</cmd>."
+msgstr ""
+"Jiným způsobem, jak sledování upřesnit, je volba zdroje události. Ve "
+"výchozím stavu je jak zdroj vybráno <gui>Vše</gui>, což znamená, že jsou "
+"sledovány události AT-SPI ze všech aplikací. Když chcete prozkoumat jen "
+"jednu aplikaci, vyberte ji ve stromovém zobrazení aplikací a ve volbě zdroje "
+"klikněte na <gui>Vybraná aplikace</gui>. Obdobně, když chcete sledovat jen "
+"jeden zpřístupněný widget a jeho potomky, vyberte jej ve stomovém zobrazení "
+"aplikací a jako zdroj zvolte <gui>Vybraný widget</gui>."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:116
+msgid ""
+"After selecting event types and specifying a Source option, the Event "
+"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
+"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
+"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
+"monitoring, press this button again."
+msgstr ""
+"Po vybrání typu události a určení zdroje začne zásuvný modul automaticky "
+"sledovat události AT-SPI, protože tlačítko <gui>Sledovat události</gui> je "
+"ve výchozím stavu zmáčknuté. Kdykoliv sledování chcete zastavit, klikněte na "
+"toto tlačítko. Opětovným kliknutím spustíte sledování odznovu."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:123
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and "
+"the application. Activating the link for either of these items will cause it "
+"to become selected in the Application Tree View."
+msgstr ""
+"U každé příchozí události určí zásuvný modul Sledování událostí její zdroj a "
+"aplikaci. Aktivací odkazu vedoucího na některou z těchto položek se daná "
+"položka vybere v zobrazení stromu aplikací."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:128
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just "
+"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
+"to click the <cmd>Clear</cmd> button."
+msgstr ""
+"Pokud chcete uložit výstup vygenerovaný zásuvným modulem Sledování událostí, "
+"stačí zmáčknout tlačítko <gui>Uložit</gui>. Pro smazání výstupní obrazovky "
+"musíte kliknout na tlačítko <gui>Vymazat</gui>."
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:5
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr "2. Instalace a spuštění aplikace <app>Accerciser</app>"
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:6
+#| msgid "To Start <application>Accerciser</application>"
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Pořízení aplikace <app>Accerciser</app>"
+
+#. (itstool) path: info/desc
+#: C/howto_setting_up_accerciser.page:7
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "Jak nainstalovat a spustit <app>Accerciser</app> na vašem počítači."
+
+#. (itstool) path: page/title
+#: C/howto_setting_up_accerciser.page:26
+#| msgid "To Start <application>Accerciser</application>"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Pořízení aplikace <app>Accerciser</app>"
+
+#. (itstool) path: page/p
+#: C/howto_setting_up_accerciser.page:28
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If "
+"this is the case, you can install it via its package manager. Otherwise, you "
+"can follow the section below to install <app>Accerciser</app> manually."
+msgstr ""
+"Podívejte se, jestli nemá vaše distribuce <app>Accerciser</app> připravený "
+"jako balíček. Pokud ano, nainstalujte jej pomocí správy balíčků vaší "
+"distribuce. V opačném případě postupujte ručně podle popisu níže."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:35
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "Ruční instalace aplikace <app>Accerciser</app>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:36
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it "
+"first. <app>Accerciser</app>'s source code can either be downloaded from "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the gnome."
+"org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
+"accerciser\">the gnome.org GIT repository</link>."
+msgstr ""
+"Abyste mohli <app>Accerciser</app> nainstalovat ručně, musíte si jej nejprve "
+"stáhnot. Zdrojové kódy aplikace <app>Accerciser</app> můžete stánout buď ze "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">serveru "
+"FTP na gnome.org</link> nebo je naklonovat z <link href=\"http://git.gnome."
+"org/browse/accerciser\">repozitáře GIT na gnome.org</link>."
+
+#. (itstool) path: note/p
+#: C/howto_setting_up_accerciser.page:43
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
+"version 3 or later is not compatible with your environment."
+msgstr ""
+"Pokud nepoužíváte GNOME 3, můžete narazit na to, že <app>Accerciser</app> "
+"verze 3 a novější nebude kompatibilní s vaším pracovním prostředím."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:50
+#| msgid ""
+#| "The main <application>Accerciser</application> window contains the "
+#| "following elements:"
+msgid ""
+"After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr ""
+"Po získání aplikace <app>Accerciser</app> ji nainstalujte pomocí "
+"následujících příkazů:"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:54
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:55
+msgid "<cmd>./autogen.sh # or ./configure for first time installation</cmd>"
+msgstr ""
+"<cmd>./configure</cmd> nebo <cmd>./autogen.sh</cmd> při první instalaci"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:56
+msgid "<cmd>make</cmd>"
+msgstr "<cmd>make</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:57
+msgid "<cmd>sudo make install # or make install as root</cmd>"
+msgstr ""
+"<cmd>sudo make install</cmd> nebo <cmd>make install</cmd> jako superuživatel "
+"root"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:59
+msgid ""
+"If you find any problems installing <app>Accerciser</app> on your system, it "
+"is likely that some of its dependencies are missing. Check <link href="
+"\"https://live.gnome.org/Accerciser/#Requirements\"> <app>Accerciser</app>'s "
+"wiki</link> to make sure you have all dependencies properly installed."
+msgstr ""
+"Pokud při instalaci narazíte na nějaké problémy, může to být obvykle tím, že "
+"schází některé závislosti. Zkontrolujte si podle <link href=\"https://live."
+"gnome.org/Accerciser/#Requirements\">wiki aplikace <app>Accerciser</app></"
+"link>, jestli máte všechny potřebné závislosti nainstalovány."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:67
+#| msgid "About <application>Accerciser</application>"
+msgid "Running <app>Accerciser</app>"
+msgstr "Spuštění aplikace <app>Accerciser</app>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:68
+msgid ""
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
+"window or within the Run dialog and then press <key>Return</key>."
+msgstr ""
+"Pro spuštění aplikace <app>Accerciser</app> napište <cmd>accerciser</cmd> v "
+"terminálovém okně nebo v dialogovém okně <gui>Spuštění</gui> a zmáčkněte "
+"<key>Enter</key>."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:72
+msgid ""
+"After that, you can use <app>Accerciser</app> to inspect any accessible item "
+"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
+"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
+"app>'s plugins."
+msgstr ""
+"Nyní již můžete <app>Accerciser</app> používat ke zkoumání libovolné "
+"zpřístupněné položky zobrazené v hierarchii <link xref=\"desktop_tree_view"
+"\">stromového zobrazení aplikací</link>. Vyberte položku a prozkoumejte ji "
+"pomocí některého ze zásuvných modulů."
+
+#. (itstool) path: info/title
+#: C/howto_write_a_plugin.page:4
+msgctxt "sort"
+msgid "3. Writing New Plugins"
+msgstr "3. Psaní nových zásuvných modulů"
+
+#. (itstool) path: info/desc
+#: C/howto_write_a_plugin.page:6
+msgid "Extending <app>Accerciser</app> with your desired functionalities"
+msgstr "Jak <app>Accerciser</app> rozšířit o svoji požadovanou funkcionalitu."
+
+#. (itstool) path: page/title
+#: C/howto_write_a_plugin.page:25
+#| msgid "When You Start <application>Accerciser</application>"
+msgid "Writing Plugins for <app>Accerciser</app>"
+msgstr "Psaní zásuvných modulů pro <app>Accerciser</app>"
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:26
+msgid ""
+"Extending <app>Accerciser</app> with new plugins became much simpler since "
+"<link href=\"https://wiki.gnome.org/Apps/Accerciser/PluginTutorial\">this "
+"tutorial</link> was written. Given that it provides a very detailed "
+"explanation about the topic, this section consists basically of its original "
+"content - only simple editions and updates were done."
+msgstr ""
+"Rozšíření funkcí aplikace <app>Accerciser</app> pomocí nových zásuvných "
+"modulů je teď mnohem snažší díky <link href=\"https://wiki.gnome.org/Apps/"
+"Accerciser/PluginTutorial\">tomuto průvodci</link> (odkazovaný text je v "
+"angličitně). Vzhledem k tomu, že poskytuje velmi podrobné vysvětlení tématu, "
+"vychází tato část v podstatě z jeho původního obsahu – byly provedeny jen "
+"drobné úpravy a aktualizace."
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:33
+msgid "<app>Accerciser</app> supports three basic types of plugins:"
+msgstr "<app>Accerciser</app> podporuje tři hlavní typy zásuvných modulů:"
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:38
+msgid ""
+"Base plugins - These plugins are derived from the Plugin base class. They do "
+"not provide a visible interface, but could provide additional functionality "
+"to <app>Accerciser</app>."
+msgstr ""
+"Základní zásuvné moduly – Tyto zásuvné moduly jsou odvozeny od základní "
+"třídy Plugin. Neposkytují viditelné uživatelské rozhraní, ale mohou v "
+"aplikaci <app>Accerciser</app> poskytnout dodatečnou funkcionalitu."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:44
+msgid ""
+"Console plugins - These plugins provide simple console output into a text "
+"area in a plugin tab. Not to be confused with the packaged <link xref="
+"\"ipython_plugin\">IPython Console Plugin</link>."
+msgstr ""
+"Konzolové zásuvné moduly – Tyto zásuvné moduly poskytují jednoduchý "
+"konzolový výstup do textové oblasti na kartě zásuvného modulu. Neplést si s "
+"balíčkem <link xref=\"ipython_plugin\">Konzolový zásuvný modul IPython</"
+"link>."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:50
+msgid ""
+"Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
+"They provide a custom graphical interface in a tab."
+msgstr ""
+"Okenní zásuvné moduly – Většina výchozích zásuvných modulů aplikace "
+"<app>Accerciser</app>. Poskytují vlastní grafické rozhraní v kartě."
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:58
+msgid "Creating a Base Plugin"
+msgstr "Vytvoření základního zásuvného modulu"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:59
+msgid ""
+"We will create a simplified version of the <link xref=\"quick_select_plugin"
+"\">Quick Select Plugin</link>. This plugin will select the last focused "
+"accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
+msgstr ""
+"Vytvoříme zjednodušenou verzi <link xref=\"quick_select_plugin\">zásuvného "
+"modulu Rychlý výběr</link>. Tento zásuvný modul bude vybírat poslední "
+"zaměřený zpřístupněný objekt pomocí zmáčknutí <keyseq><key>Ctrl</"
+"key><key>Alt</key><key>E</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:63
+msgid "First off, the import lines we will use are:"
+msgstr "Nejprve řádky s importy, které budeme používat:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:66
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:71
+msgid ""
+"Next we will derive a new class from the Plugin base class, and assign some "
+"mandatory class attributes:"
+msgstr ""
+"Následně odvodíme novou třídu ze základní třídy Plugin a přiřadíme některé "
+"její povinné atributy:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:75
+#, no-wrap
+msgid ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+msgstr ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:80
+msgid ""
+"We will now override the init method, in which we will set a global key "
+"action for selecting the last focused accessible item, register an event "
+"listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
+"instance variable to <cmd>None</cmd>."
+msgstr ""
+"Nyní přepíšeme metodu init, ve které budeme nastavovat akci globání "
+"klávesové zkratky pro výběr naposledy zaměřené zpřístupněné položky, "
+"registrovat naslouchání události pro událost „focus“ a nastavovat instanci "
+"proměnné <cmd>last_focused</cmd> na <cmd>None</cmd>."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:86
+#, no-wrap
+msgid ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+msgstr ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:95
+msgid ""
+"Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of "
+"tuples. Each tuple is a global hotkey action, composed by an action "
+"description, a desired method to call, a key symbol of keypress, and a key "
+"modifier mask."
+msgstr ""
+"Všimněte si, že instance proměnné <cmd>global_hotkeys</cmd> je seznam n-tic. "
+"Každou n-ticí je akce globální klávesové zkratky složená z popisu akce, "
+"požadovaného volání metody, symbol mačkané klávesy a maska s klávesovými "
+"modifikátory."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:100
+msgid ""
+"In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> "
+"instance variable with the accessible item that has just emitted the \"focus"
+"\" event."
+msgstr ""
+"Ve zpětném volání události „focus“ přiřadíme instanci proměnné "
+"<cmd>last_focused</cmd> zpřístupněnu položku, která událost „focus“ vyslala."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:104
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:109
+msgid ""
+"In the hotkey action callback, we update the application wide node with the "
+"last focused accessible item, if we have recorded it:"
+msgstr ""
+"Ve zpětném volání akce klávesové zkratky aktualizujeme uzel aplikace s "
+"poslední zaměřenou zpřístupněnou položkou (v případě, že ji máme poznačenou):"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:113
+#, no-wrap
+msgid ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+msgstr ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:120
+msgid "Creating a Console Plugin"
+msgstr "Vytvoření konzolového zásuvného modulu"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:121
+msgid ""
+"We will create a console plugin to display focus changes emitted by an "
+"accessible item with a \"push button\" role - remember that it is easy to "
+"check what is the role of any item with <app>Accerciser</app>; you can "
+"verify it in the <link xref=\"desktop_tree_view\">Application Tree View</"
+"link>, for example."
+msgstr ""
+"Vytvoříme konzolový zásuvný modul, který bude zobrazovat změny zaměření "
+"vyslané zpřístupněnou položkou pomocí role „push button“. Pamatujte, že "
+"zjistit u položky o jakou se jedná roli je pomoci aplikace <app>Accerciser</"
+"app> snadné. Můžete to ověřit například ve <link xref=\"desktop_tree_view"
+"\">stromovém zobrazení aplikací</link>."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:127
+msgid "The needed import lines are:"
+msgstr "Řádky s potřebnými importy jsou:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:130
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:134
+msgid "Then we add a class definition, with a plugin name and description:"
+msgstr "Přidáme definici třídy s názvem a popisem zásuvného modulu:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:137
+#, no-wrap
+msgid ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+msgstr ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:142
+msgid "We override the init method adding a register listener:"
+msgstr "Přepíšeme metodu init přidáním registrovaného naslouchání:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:145
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:149
+msgid "In the callback method, all push button events are printed."
+msgstr ""
+"V metodě zpětného volání se vypíší všechny události zmáčknutí tlačítka."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:152
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:159
+msgid "Creating a Viewport Plugin"
+msgstr "Vytvoření okenního zásuvného modulu"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:160
+msgid ""
+"We will create a viewport plugin that allows quick testing of the \"click\" "
+"action in accessible items that support the AT-SPI Action interface and have "
+"an action named \"click\". It will be a simple button that, once clicked, "
+"does the \"click\" action in the accessible."
+msgstr ""
+"Vytvoříme okenní zásuvný modul, který umožní rychle testovat akci „click“ na "
+"zpřístupněné položce, která podporuje rozhraní AT-SPI „Action“ a má akci "
+"pojmenovanou „click“. Bude se jedna o prosté tlačítko, na které když se "
+"klikne, provede se akce „click“ na zpřístupněné položce."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:166
+msgid "First off, some mandatory import lines:"
+msgstr "Ze všecho nejdřív uvedeme řádky s povinným importem:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:169
+#, no-wrap
+msgid ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+msgstr ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:173
+msgid "Next, a class definition, with a name and description:"
+msgstr "Následně definujeme třídu s názvem a popisem:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:176
+#, no-wrap
+msgid ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:181
+msgid ""
+"We override the init method with some UI building, and connecting a callback "
+"to a signal for the button. We use the alignment container to allow the "
+"button to be centered in the plugin tab, and not monstrously take up the "
+"entire plugin space. Notice that the <cmd>plugin_area</cmd> instance "
+"variable contains a gtk.Frame that could be populated with all the plugin's "
+"widgets."
+msgstr ""
+"Přepíšeme metodu init kódem pro sestavení uživatelského rozhraní a pro "
+"přípojení zpětného volání k signálu pro tlačítko. Použijeme kontejner pro "
+"zarovnávní, aby bylo tlačítko na kartě zásuvného modulu umístěno na střed a "
+"nezabíralo monstrózně celý prostor zásuvného modulu. Všimněte si, že "
+"instance proměnné <cmd>plugin_area</cmd> obsahuje gtk.Frame, který by měl "
+"vystupovat ve všech widgetech zásuvného modulu."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:188
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         alignment = gtk.Alignment(0.5,0.5,0,0)\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         alignment.add(self.click_button)\n"
+"         self.plugin_area.add(alignment)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         alignment = gtk.Alignment(0.5,0.5,0,0)\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         alignment.add(self.click_button)\n"
+"         self.plugin_area.add(alignment)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:199
+msgid ""
+"We also created a convenience method that returns a list of supported "
+"actions of the currently selected accessible item - if it does not support "
+"the Action interface, it returns an empty list:"
+msgstr ""
+"Rovněž vytvoříme vhodnou metodu, která vrací seznam podporovaných akcí právě "
+"vybrané přístupné položky. V případě, že nepodporuje rozhraní Action, vrátí "
+"se prázdný seznam:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:204
+#, no-wrap
+msgid ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+msgstr ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:214
+msgid ""
+"The base plugin class has a method call onAccChanged that is called "
+"everytime the target application's selected accessible item changes. We will "
+"override it setting the button to be sensitive only when the current "
+"accessible item has the \"click\" action:"
+msgstr ""
+"Základní třída zásuvných modulů má metodu nazývanou onAccChanged, které je "
+"volána pokaždé, když se vybraná přístupná položka v aplikaci změní. "
+"Přepíšeme ji tak, aby se nastavilo tlačítko jako citlivé jen když má "
+"aktuální přístupná položka činnost „click“:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:219
+#, no-wrap
+msgid ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+msgstr ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:224
+msgid ""
+"The callback method for button \"clicked\" performs the \"click\" action on "
+"the accessible item. Since this callback could only be called when the "
+"button is sensitive, we don't need to worry about checking if the current "
+"accessible has the \"click\" action?"
+msgstr ""
+"Metoda zpětného volání „clicked“ pro tlačítko provádí akci při kliknutí na "
+"zpřístupněnou položku. Protože toto zpětné volání může být zavoláno jen když "
+"je tlačítko citlivé, nemusíme se starat o kontrolu, jestli má aktuální "
+"zpřístupněná položka akci „click“?"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:229
+#, no-wrap
+msgid ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+msgstr ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+
+#. (itstool) path: info/title
+#: C/index.page:6
+#| msgid "Accerciser"
+msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: C/accerciser.xml:134(title)
-msgid "Introduction"
-msgstr "Úvod"
+#. (itstool) path: info/title
+#: C/index.page:7
+#| msgid "About <application>Accerciser</application>"
+msgctxt "link"
+msgid "Introduction to <app>Accerciser</app>"
+msgstr "Úvod do aplikace <app>Accerciser</app>"
 
-#: C/accerciser.xml:136(para)
+#. (itstool) path: media/span
+#: C/index.page:26
+#| msgid "About <application>Accerciser</application>"
+msgid "<app>Accerciser</app>'s logo"
+msgstr "Logo aplikace <app>Accerciser</app>"
+
+#. (itstool) path: page/title
+#: C/index.page:24
+msgid "<_:media-1/> <app>Accerciser</app>"
+msgstr "<_:media-1/> <app>Accerciser</app>"
+
+#. (itstool) path: note/title
+#: C/index.page:31
+msgid "Before You Begin"
+msgstr "Než začnete"
+
+#. (itstool) path: note/p
+#: C/index.page:32
 msgid ""
-"<application>Accerciser</application> is an interactive Python accessibility "
-"explorer for the GNOME desktop. It uses <ulink url=\"http://directory.fsf."
-"org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect and control "
-"widgets, allowing you to check if an application is providing correct "
-"information to assistive technologies and automated test frameworks. "
-"<application>Accerciser</application> has a simple plugin framework which "
-"you can use to create custom views of accessibility information."
+"Read the <link xref=\"help:gnome-help/a11y\">Universal Access Help</link>"
 msgstr ""
-"<application>Accerciser</application> je interaktivní průzkumník "
-"přístupnosti, napsaný v jazyce Python, pro pracovní prostředí GNOME. Využívá "
-"<ulink url=\"http://directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</"
-"ulink> ke kontrole a ovládání widgetů, což vám umožňuje kontrolovat, jestli "
-"aplikace předává správné informace nástrojům zpřístupnění a automatizovat "
-"testy frameworků. <application>Accerciser</application> obsahuje jednoduchý "
-"zásuvný modul pro frameworky, který vám umožňuje vytvořit vlastní zobrazení "
-"informací o přístupnosti."
+"Přečtěte si <link xref=\"help:gnome-help/a11y\">nápovědu k univerzálnímu "
+"přístupu</link>."
 
-#: C/accerciser.xml:138(para)
-msgid ""
-"In essence, <application>Accerciser</application> is a next generation "
-"<ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</"
-"ulink> tool."
-msgstr ""
-"<application>Accerciser</application> je ve své podstatě nástroj <ulink url="
-"\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</ulink> "
-"příští generace."
-
-#: C/accerciser.xml:152(title)
+#. (itstool) path: section/title
+#: C/index.page:37
 msgid "Getting Started"
 msgstr "Začínáme"
 
-#: C/accerciser.xml:155(title)
-msgid "To Start <application>Accerciser</application>"
-msgstr "Spuštění aplikace <application>Accerciser</application>"
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Examining the Accessibility of an Application"
+msgstr "Zkoušení přístupnosti aplikace"
 
-#: C/accerciser.xml:156(para)
+#. (itstool) path: section/title
+#: C/index.page:43
+msgid "Advanced Topics"
+msgstr "Pokročilá témata"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41
+msgctxt "_"
 msgid ""
-"You can start <application>Accerciser</application> in the following ways:"
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
 msgstr ""
-"Aplikaci <application>Accerciser</application> lze spustit následujícími "
-"způsoby:"
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
 
-#: C/accerciser.xml:159(term)
-msgid "<guimenu>Applications</guimenu> menu"
-msgstr "Nabídka <guimenu>Aplikace</guimenu>"
+#. (itstool) path: info/title
+#: C/interface_viewer_plugin.page:4
+#| msgid "Interface Viewer"
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "2. Zásuvný modul pro prohlížení rozhraní"
 
-#: C/accerciser.xml:161(para)
+#. (itstool) path: info/desc
+#: C/interface_viewer_plugin.page:6
+msgid "Examining your accessibility implementation"
+msgstr "Jak vyzkoušet svoji implementaci přístupnosti."
+
+#. (itstool) path: page/title
+#: C/interface_viewer_plugin.page:25
+#| msgid "Interface Viewer"
+msgid "Interface Viewer Plugin"
+msgstr "Zásuvný modul pro prohlížení rozhraní"
+
+#. (itstool) path: page/p
+#: C/interface_viewer_plugin.page:27
 msgid ""
-"Choose the <menuchoice><guisubmenu>Programming</"
-"guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice> menu item."
+"The Interface Viewer Plugin shows the information and controls provided by "
+"the AT-SPI interfaces present in each accessible item from the <link xref="
+"\"desktop_tree_view\">Application Tree View</link>. After selecting an item, "
+"you can use this plugin to quickly review its supported interfaces, to "
+"retrieve each interface's information, and to manipulate the item through "
+"all the interface’s methods."
 msgstr ""
-"Zvolte z nabídky položku <menuchoice><guisubmenu>Programování</"
-"guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice>"
+"Zásuvný modul Prohlížeč rozhraní zobrazuje informace a ovládací prvky "
+"poskytované rozhraními AT-SPI přítomné v jednotlivých zpřístupněných "
+"položkách ze <link xref=\"desktop_tree_view\">stromového zobrazení aplikací</"
+"link>. Po vybrání položky můžete tento zásuvný modul použít k rychlému "
+"přehledu, jaká rohraní položka podporuje, získat o rozhraních informace a "
+"pracovat s položkou skrze metody těchto rozhraní."
 
-#: C/accerciser.xml:169(term)
-msgid "Command line"
-msgstr "Příkazová řádka"
-
-#: C/accerciser.xml:171(para)
-msgid ""
-"Type the following command in a console window then press <keycap>Return</"
-"keycap>:"
+#. (itstool) path: figure/title
+#: C/interface_viewer_plugin.page:35
+msgid "Examining a Menu with the Interface Viewer Plugin"
 msgstr ""
-"Do konzoly napište následující příkaz a stiskněte <keycap>Enter</keycap>:"
+"Zkoumání položky typu nabídka pomocí zásuvného modulu Prohlížeč rozhraní"
 
-#: C/accerciser.xml:174(command)
-msgid "accerciser"
-msgstr "accerciser"
-
-#: C/accerciser.xml:182(title)
-msgid "When You Start <application>Accerciser</application>"
-msgstr "Po spuštění aplikace <application>Accerciser</application>"
-
-#: C/accerciser.xml:183(para)
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/interface_viewer_plugin.page:36 C/interface_viewer_plugin.page:42
 msgid ""
-"When you start <application>Accerciser</application>, the following window "
-"is displayed."
+"Given a selected item in the Application Tree View, all of its AT-SPI "
+"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
+"unsupported will appear grayed out, such as the Application and Collection "
+"interfaces in the figure above."
 msgstr ""
-"Po spuštění aplikace <application>Accerciser</application> se zobrazí "
-"následující okno."
+"Pro položku danou výběrem ve stromovém zobrazení aplikací budou zobrazena "
+"všechna rozhraní AT-SPI jako interaktivní v zásuvném modulu Prohlížeč "
+"rozhraní. Ta nepodporovaná budou zašedlá, obdobně jako rozhraní Aplikace a "
+"Kolekce na obrázku níže."
 
-#: C/accerciser.xml:187(title)
-msgid "<application>Accerciser</application> Main Window"
-msgstr "Hlavní okno aplikace <application>Accerciser</application>"
+#. (itstool) path: section/title
+#: C/interface_viewer_plugin.page:49
+#| msgid "Interface Viewer"
+msgid "Running the Interface Viewer Plugin"
+msgstr "Spuštění zásuvného modulu pro prohlížení rozhraní"
 
-#: C/accerciser.xml:194(phrase)
+#. (itstool) path: section/p
+#: C/interface_viewer_plugin.page:50
 msgid ""
-"Shows <placeholder-1/> main window. Contains title bar, menu bar, accessible "
-"tree , right plugin display area, and bottom plugin display area. The menu "
-"bar contains File, Edit, Bookmarks, View, and Help menus."
+"The first step to run the Interface Viewer Plugin is to select an item in "
+"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
+"that, all AT-SPI interfaces covered by the plugin will be listed in the "
+"plugin's panel. The interfaces implemented by the selected item will be "
+"sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following "
+"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
+"item implements them:"
 msgstr ""
-"Zobrazuje <placeholder-1/> hlavní okno, které obsahuje záhlaví, lištu "
-"nabídek, strom objektů přístupnosti, spodní a pravý prostor pro zásuvné "
-"moduly. Lišta nabídek obsahuje položky Soubor, Upravit, Zobrazit, Záložky a "
-"Nápověda."
+"Prvním krokem ke spuštění zásuvného modulu Prohlížeč rozhraní je vybrat "
+"položku ve <link xref=\"desktop_tree_view\">stromové zobrazení aplikací</"
+"link>. Až tak učiníte, vypíší se v panelu zásuvného modulu všechna rozhraní "
+"AT-SPI, která zásuvný modul rozpozná. Rozhraní implementovaná položkou budou "
+"citlivá, takže na ně můžete klikat a získávat tak informace, které poskytují "
+"nebo pracovat s jejich metodami. V aplikaci <app>Accerciser</app> můžete "
+"prozkoumávat následující rozhraní, samozřejmě za předpokladu, že je vybraná "
+"položka implementuje:"
 
-#. for example, the items on the menubar and on the toolbar. 
-#. 		 This section is optional.
-#: C/accerciser.xml:211(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:59
 msgid ""
-"The main <application>Accerciser</application> window contains the following "
-"elements:"
+"Accessible - This interface shows the selected item's child count (number of "
+"child widgets), description, states, relations, and attributes."
 msgstr ""
-"Hlavní okno aplikace <application>Accerciser</application> obsahuje "
-"následující části:"
+"Zpřístupněný objekt – Toto rozhraní zobrazuje počet potomků vybrané položky "
+"(počet synovských widgetů), popis, stav, vztahy a vlastnosti."
 
-#: C/accerciser.xml:214(term)
-msgid "Menubar"
-msgstr "Lišta nabídek"
-
-#: C/accerciser.xml:216(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:65
 msgid ""
-"The menu bar contains commands for managing plugins, managing and using "
-"bookmarks, refreshing the accessible tree view, and accessing this help "
-"system."
+"Action - This interface shows all the actions that can be performed by the "
+"selected item. For each interface, you will see its name, such as \"press\" "
+"or \"click\", followed by a description and a key binding, if there are any. "
+"If you select an action, a \"Perform action\" button will become sensitive. "
+"Press this button to see the item performing the selected action."
 msgstr ""
-"Lišta nabídek obsahuje příkazy pro správu zásuvných modulů, správu a "
-"používání záložek, aktualizaci stromu s objekty přístupnosti a přístup k "
-"nápovědě."
+"Akce – Toto rozhraní zobrazuje činnosti, které může provádět vybraná "
+"položka. U každého rohraní můžete vidět název, jako je „press“ nebo „click“, "
+"následovaný popisem a přidělenou klávesovou zkratkou, pokud nějaká přidělená "
+"je. Když některou z akcí vyberete, aktivuje se tlačítko „Provést akci“. Po "
+"jeho zmáčknutí uvidíte, jak položka vybranou akci provádí."
 
-#: C/accerciser.xml:224(term)
-msgid "Accessible tree view"
-msgstr "Strom objektů přístupnosti"
-
-#: C/accerciser.xml:226(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:73
 msgid ""
-"The accessible tree view allows to view all of the accessibles starting at "
-"the desktop level. Selecting an accessible makes it available for further "
-"inspection using the loaded plugins."
+"Application - This interface can be implemented by items with role "
+"\"application\". It is worth to point out that items with role \"application"
+"\" not necessarily implement this interface. If the selected item implements "
+"it, the interface will show its ID and, if there are any, its toolkit and "
+"version."
 msgstr ""
-"Strom objektů přístupnosti vám umožňuje zobrazit všechny objekty od úrovně "
-"pracovní plochy. Po zvolení objektu můžete provádět další kontrolu za pomoci "
-"nahraných zásuvných modulů."
+"Aplikace – Toto rozhraní může implementovat položka s rolí „application“. "
+"Stojí za to zdůraznit, že položka s rolí „application“ nemusí toto rozhraní "
+"mít implementováno nutně. Pokud jej implementováno má, zobrazuje se její ID "
+"(pokud nějaké má), nástrojová sada a verze."
 
-#: C/accerciser.xml:234(term)
-msgid "Right plugin view"
-msgstr "Prostor pro zásuvné moduly vpravo"
-
-#: C/accerciser.xml:236(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:80
 msgid ""
-"This is one of the two default plugin views. When <application>Accerciser</"
-"application> is first run, most plugins will reside here. You can drag "
-"plugin tabs to the bottom plugin view or to the desktop to show two or more "
-"plugins simultaneously."
+"Component - This interface shows the selected item's absolute position (with "
+"respect to the desktop coordinate system), relative position (with respect "
+"to the window coordinate system), size, layer type, MDI-Z-order (a short "
+"integer indicating the stacking order of the component in the MDI layer), "
+"and alpha (if alpha blending is used)."
 msgstr ""
-"Zásuvné moduly lze zobrazovat dvěma způsoby. Při prvním spuštění aplikace "
-"<application>Accerciser</application> je zde uložena většina zásuvných "
-"modulů. Pokud chcete zobrazit dva zásuvné moduly najednou, přetáhněte "
-"zvolené do spodního prostoru pro zásuvné moduly nebo na plochu."
+"Komponenta – Toto rozhraní zobrazuje absolutní pozici vybrané položky "
+"(vzhledm k systému souřadnic pracovní plochy), relativní pozici (vzhledem k "
+"systému souřadnic okna), velikost, typ vrstvy, pořadí MDI-Z (krátké celé "
+"číslo určující pořadí v zásobníku komponent v MDI) a průhlednost (pokud je "
+"průhlednost použita)."
 
-#: C/accerciser.xml:245(term)
-msgid "Bottom plugin view"
-msgstr "Spodní prostor pro zásuvné moduly"
-
-#: C/accerciser.xml:247(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:86
 msgid ""
-"You can drag plugins to or from this area just like the right plugin view."
+"Document - This interface shows the selected item's document attributes and "
+"locale description, if there is one."
 msgstr ""
-"Z a do tohoto prostoru můžete zásuvné moduly přetahovat stejně jako v "
-"případě prostoru pro zásuvné moduly vpravo."
+"Dokument – Toto rohraní zobrazuje atributy a místní popis dokumentu "
+"náležejícího vybrané položce, pokud nějaký takový existuje."
 
-#: C/accerciser.xml:253(title)
-msgid "Plugin View Management"
-msgstr "Správa zobrazení zásuvných modulů"
-
-#: C/accerciser.xml:254(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:91
 msgid ""
-"<application>Accerciser</application> has two modes for viewing plugins. The "
-"current view mode could be toggled with <menuchoice><guimenu>View</"
-"guimenu><guimenuitem>Single plugin view</guimenuitem></menuchoice> or by "
-"pressing <keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. "
-"When single mode is enabled, all plugins will be put in the top right plugin "
-"view and ordered alphabetically, this could be useful for screen reader "
-"users who have no use for <application>Accerciser</application>'s flexible "
-"plugin spacial layout scheme. When single view mode is disabled plugin tabs "
-"could be dragged and dropped in to different plugin views, or could be "
-"dragged to the desktop to put the given plugin in a new view. The placement "
-"of plugins could also be manipulated with the plugin context menu that could "
-"be brought up either from the plugin tab, or the plugin preferences dialog."
+"Hypertext - This interface shows a list with all the selected item's "
+"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
+"URI, start (the index in the hypertext at which the hyperlink begins) and "
+"end (the index in the hypertext at which this hyperlink ends)."
 msgstr ""
-"<application>Accerciser</application> má dva módy pro prohlížení zásuvných "
-"modulů. Aktuální mód lze přepnout zvolením <menuchoice><guimenu>Zobrazit</"
-"guimenu><guimenuitem>Jednoduché zobrazení zásuvných modulů</guimenuitem></"
-"menuchoice> z nabídky nebo stiskem kombinace kláves "
-"<keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. Pokud je "
-"mód jednoduchého zobrazení zapnutý, všechny zásuvné moduly jsou zobrazeny "
-"abecedně v pravém prostoru pro zásuvné moduly, což je užitečné například pro "
-"uživatele se čtečkou obrazovky, kteří nevyužijí flexibilní rozložení "
-"zásuvných modulů aplikace <application>Accerciser</application>. Pokud je "
-"mód jednoduchého zobrazení vypnutý, lze karty zásuvných modulů přetahovat "
-"mezi umístěními nebo na plochu za účelem otevření nového pohledu. Umístění "
-"zásuvných modulů lze také ovlivnit z kontextové nabídky dostupné u karty "
-"modulu nebo v okně nastavení."
+"Hypertext – Toto rozhraní zobrazuje seznam všech hypertextových odkazů "
+"vybrané položky. U každého odkazuje je uveden jeho název, adresa URI, "
+"začátek (index do místa v textu, ve kterém odkaz začíná) a konec (index do "
+"místa v textu, ve kterém odkaz končí)."
 
-#: C/accerciser.xml:278(title)
-msgid "Usage"
-msgstr "Použití"
-
-#: C/accerciser.xml:279(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:98
 msgid ""
-"You can use <application>Accerciser</application> to inspect any accessible "
-"widget shown in the tree view using the available plugins. The first step is "
-"to select an accessible to inspect using one of the following methods: "
-"<placeholder-1/>"
+"Image - This interface shows the selected item's description (or \"no "
+"description\" if unspecified), size, position (with respect to the desktop "
+"coordinate system), and locale, if there is one."
 msgstr ""
-"Aplikaci <application>Accerciser</application> můžete použít ke kontrole "
-"přístupnosti widgetů zobrazených ve Stromu objektů přístupnosti za pomoci "
-"dostupných zásuvných modulů. Prvním krokem je výběr objektu, který lze "
-"provádět těmito způsoby: <placeholder-1/>"
+"Obrázek – Toto rohraní zobrazuje popis (nebo „bez popisu“ pokud žádný nemá), "
+"velikost, pozici (vzhledem k souřadnicovému systému pracovní plochy) a "
+"lokalizovaný popis, pokud existuje."
 
-#: C/accerciser.xml:292(title)
-msgid "Select an accessible through the tree view."
-msgstr "Ze Stromu objektů přístupnosti vyberte objekt."
-
-#: C/accerciser.xml:293(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:104
 msgid ""
-"Use the tree view to navigate the hierarchy of accessible objects rooted at "
-"desktop. Unfolding a tree node reveals its immediate children while folding "
-"it hides them. Each node shows an icon for its associated application or "
-"widget role and its accessible name, if available. The second column lists "
-"how many nodes will be shown if the item is unfolded."
+"Selection - This interface shows all selectable child items of the selected "
+"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
+"\"View\", and \"Help\", and all of them are selectable, then they will be "
+"listed in this interface. If you click a listed option - \"File\", for "
+"example - and want to clear it, just press the \"Clear\" button below the "
+"list."
 msgstr ""
-"Použijte strom objektů přístupnosti pro navigaci v hierarchii objektů s "
-"nejvyšší úrovní na pracovní ploše. Rozvinutím položky stromu zobrazíte "
-"všechny podřízené položky, kdežto zavinutí je skryje. Každá položka "
-"zobrazuje ikonu aplikace nebo widgetu dle příslušnosti a název. Druhý "
-"sloupec pak udává, kolik bude zobrazeno položek, pokud bude daná rozvinuta."
+"Výběr – Toto rozhraní zobrazuje všechny dceřiné položky vybrané položky, "
+"které lze vybrat. Pokud je vybranou položkou třeba nabídková lišta s "
+"položkami „Soubor“, „Upravit“, „Zobrazit“ a „Nápověda“ a všechny tyto "
+"položky jsou vybratelné, budou v tomto rozhraní uvedeny. Když pak kliknete "
+"na položku v seznamu, například „Soubor“, a chcete ji vymazat, zmáčkněte "
+"tlačítko <gui>Vymazat</gui> pod seznamem."
 
-#: C/accerciser.xml:304(title)
-msgid "Using bookmarks"
-msgstr "Používání záložek"
-
-#: C/accerciser.xml:305(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:112
 msgid ""
-"Accerciser allows bookmarking selected accessibles for later examining. This "
-"could be helpful if the target application must be restarted, for example "
-"after rebuilding it. To bookmark the currently selected accessible do "
-"<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark...</"
-"guimenuitem></menuchoice> or press <keycombo><keycap>Control</"
-"keycap><keycap>d</keycap></keycombo>."
+"Streamable Content - This interface shows the selected item's content types "
+"and their corresponding URIs."
 msgstr ""
-"Accerciser umožňuje ukládat objekty přístupnosti, které chcete zkoumat "
-"později. Toto je užitečné například, pokud je nutné zkoumanou aplikaci "
-"restartovat. Aktuálně vybraný objekt přidáte do záložek zvolením "
-"<menuchoice><guimenu>Záložky</guimenu><guimenuitem>Přidat záložku...</"
-"guimenuitem></menuchoice> z nabídky nebo stisknutím kombinace kláves "
-"<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
+"Proud dat – Toto rozhraní zobrazuje typ obsahu u vybrané položky a adresu "
+"URI, která k němu přísluší."
 
-#: C/accerciser.xml:317(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:117
 msgid ""
-"Bookmarks to accessibles in Accerciser are defined by an application name "
-"and a \"path\" in the application's internal accessible hierarchy to the "
-"bookmarked accessible. When the target application is in a different state "
-"(ie. multiple top level frames) the path might not be correct."
+"Table - This interface shows the selected item's caption and summary, rows "
+"(number of rows), columns (number of columns), selected rows (number of "
+"selected rows), and selected columns (number of selected columns). For a "
+"selected cell, the interface shows its row's and column's header and extents."
 msgstr ""
-"Záložky objektů přístupnosti jsou v aplikaci Accerciser definovány názvem "
-"aplikace a \"cestou\" k umístění objektu v interní hierarchii přístupnosti "
-"aplikace. Pokud je cílová aplikace v jiném stavu než při uložení (například "
-"vícenásobné rámce nejvyšší úrovně), mohou být cesty neplatné."
+"Tabulka – Toto rozhraní zobrazuje pro vybranou položku nadpis a souhrn, "
+"řádky (počet řádků), sloupce (počet sloupců), vybrané řádky (počet vybraných "
+"řádků) a vybrané sloupce (počet vybraných sloupců). Pro vybranou buňku "
+"rozhraní zobrazuje hlavičku v příslušném řádku a sloupci a rozměry."
 
-#: C/accerciser.xml:324(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:124
 msgid ""
-"Bookmarks could be managed by accessing the bookmark editing dialog through "
-"<menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit Bookmarks...</"
-"guimenuitem></menuchoice>."
+"Text - This interface shows the selected item's text content, that can be "
+"editable, and its attributes. The basic attributes are offset (the number of "
+"characters the text has) and justification. To see possible CSS attributes, "
+"click the \"Include defaults\" check box."
 msgstr ""
-"Záložky můžete spravovat z okna správy záložek, které je dostupné vybráním "
-"položky <menuchoice><guimenu>Záložky</guimenu><guimenuitem>Upravit záložky..."
-"</guimenuitem></menuchoice> z nabídky."
+"Text – Toto rozhraní zobrazuje textový obsah, který může být upravitelný, "
+"vybrané položky a jeho vlastnosti. Základnímy vlastnostmi jsou posun (počet "
+"znaků, které text má) a zarovnání. Pokud chcete vidět i možné vlastnosti "
+"CSS, zaškrtněte „Včetně výchozích“."
 
-#: C/accerciser.xml:337(title)
-msgid "Default Plugins"
-msgstr "Výchozí zásuvné moduly"
-
-#: C/accerciser.xml:337(para)
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:131
 msgid ""
-"<application>Accerciser</application> comes with several default plugins. "
-"These plugins allow you to view a variety of information about the currently "
-"selected accessible in the tree view and its neighbors. The default plugins "
-"available in 0.1.5 are the following:"
+"Value - This interface shows the selected item's current value, minimum "
+"allowed value, maximum allowed value, and the minimum increment by which the "
+"value may be changed (or zero if this value cannot be determined). The "
+"current value can be manually changed via a spin button."
 msgstr ""
-"<application>Accerciser</application> obsahuje několik výchozích zásuvných "
-"modulů. Ty vám umožňují prohlížet různorodé informace o aktuálně vybraném "
-"objektu přístupnosti ve stromu a jeho sousedů. Výchozí zásuvné moduly "
-"dostupné pro verzi 0.1.5 jsou:"
+"Hodnota – Toto rozhraní zobrazuje aktuální hodnotu vybrané položky, její "
+"minimální a maximální dovolenou hodnotu a minimální krok, po kterém může být "
+"hodnota měněna (nebou nulu, když tento údaj nelze určit). Aktuální hodnotu "
+"můžete ručně změnit pomocí tlačítek číselníku."
 
-#: C/accerciser.xml:363(title) C/accerciser.xml:367(title)
-msgid "Interface Viewer"
-msgstr "Prohlížeč rozhraní"
-
-#: C/accerciser.xml:364(para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55
+msgctxt "_"
 msgid ""
-"This plugin displays information about the available interfaces for the "
-"selected tree view accessible. Unsupported interfaces are grayed out. "
-"Various instruments for viewing and controlling an interface are available "
-"under each expander."
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
 msgstr ""
-"Tento zásuvný modul zobrazuje informace o tom, jaká rozhraní jsou pro "
-"zvolený objekt přístupnosti ve stromu dostupná. Nedostupná rozhraní jsou "
-"zašedlá. Pod každým rozpínačem jsou zobrazeny různé nástroje pro prohlížení "
-"a kontrolu."
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
 
-#: C/accerciser.xml:375(phrase)
+#. (itstool) path: info/title
+#: C/introduction.page:5
+#| msgid "Accerciser"
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "1. Co je to Accerciser?"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:6
+msgid "An interactive accessibility explorer"
+msgstr "Interaktivní průzkumník přístupnosti."
+
+#. (itstool) path: page/title
+#: C/introduction.page:25
+#| msgid "When You Start <application>Accerciser</application>"
+msgid "What is <app>Accerciser</app>?"
+msgstr "Co je to <app>Accerciser</app>?"
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+#| msgid ""
+#| "<application>Accerciser</application> is an interactive Python "
+#| "accessibility explorer for the GNOME desktop. It uses <ulink url=\"http://"
+#| "directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect "
+#| "and control widgets, allowing you to check if an application is providing "
+#| "correct information to assistive technologies and automated test "
+#| "frameworks. <application>Accerciser</application> has a simple plugin "
+#| "framework which you can use to create custom views of accessibility "
+#| "information."
 msgid ""
-"Interfaces that are supported by the selected accessible are shown as "
-"sensitive."
-msgstr "Rozhraní, která zvolený objekt přístupnosti podporuje, jsou rozlišena."
-
-#: C/accerciser.xml:382(title) C/accerciser.xml:385(title)
-msgid "Event Monitor"
-msgstr "Monitor událostí"
-
-#: C/accerciser.xml:383(para)
-msgid ""
-"This plugin monitors the selected types of events from the selected tree "
-"view accessible, from the selected tree view application, or the entire "
-"desktop."
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
+"uses the AT-SPI library to inspect, examine, and interact with widgets, "
+"allowing you to check if an application is providing correct information to "
+"assistive technologies and automated testing frameworks. <app>Accerciser</"
+"app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
 msgstr ""
-"Tento zásuvný modul sleduje zvolené typy událostí pro vybraný objekt "
-"přístupnosti ve stromu. pro zvolenou aplikaci ve stromu nebo celou pracovní "
-"plochu."
+"<app>Accerciser</app> je interaktivní průzkumník přístupnosti pro pracovní "
+"prostředí GNOME napsaný v jazyce Python. Využívá knihovnu AT-SPI ke zkoumání "
+"a ovládání widgetů, což vám umožňuje kontrolovat, jestli aplikace předává "
+"správné informace nástrojům přístupnosti a automatizovat testy základních "
+"konstrukcí. <app>Accerciser</app> přichází se sadou zásuvných modulů, které "
+"můžete použít k vytvoření vlastního zobrazení informací o přístupnosti."
 
-#: C/accerciser.xml:392(phrase)
+#. (itstool) path: page/p
+#: C/introduction.page:35
 msgid ""
-"The bottom part of the event monitor window allows you to pick the type and "
-"source of events."
+"By default, <app>Accerciser</app>'s main interface is comprised of three "
+"sections: a tree view of the entire desktop accessible hierarchy, namely "
+"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+"plugin areas. If you prefer to see all plugins in a single area, dividing "
+"<app>Accerciser</app>'s interface in two sections instead of three, type "
+"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
+"<key>ctrl</key>+<key>t</key> again."
 msgstr ""
-"Spodní část okna Monitor událostí umožňuje výběr typu a zdroje událostí."
+"Ve výchozím stavu je hlavní část uživatelského rozhraní aplikace "
+"<app>Accerciser</app> složena ze tří částí: stromového zobrazení hierarchie "
+"přístupnosti celého pracovního prostředí (nazývá se <link xref="
+"\"desktop_tree_view\">stromové zobrazení aplikací</link>) a dvou oblastní "
+"zásuvných modulů. Pokud chcete vidět všechny zásuvné moduly raději jen v "
+"jedné oblasti, zmáčkněte <keyseq><key>Ctrl</key><key>T</key></keyseq> a "
+"uživatelské rozhraní se rozdělí jen na dvě části. Pro opětovné rozdělení na "
+"tři části, zmáčkněte <keyseq><key>Ctrl</key><key>T</key></keyseq> znovu."
 
-#: C/accerciser.xml:399(para)
+#. (itstool) path: note/p
+#: C/introduction.page:44
 msgid ""
-"By pressing <keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>l</"
-"keycap></keycombo> anywhere on the desktop, the last logged event will be "
-"highlighted for later reference. See <xref linkend=\"accerciser-hotkey-config"
-"\"/> for how to change this key combination."
+"Make sure that accessibility support is enabled in your desktop - otherwise, "
+"<app>Accerciser</app> will not work as expected."
 msgstr ""
-"Stiskem kombinace kláves <keycombo><keycap>Control</keycap><keycap>Alt</"
-"keycap><keycap>l</keycap></keycombo> kdekoliv na ploše způsobíte zvýraznění "
-"poslední zaznamenané události, aby bylo možno ji později dohledat. <xref "
-"linkend=\"accerciser-hotkey-config\"/> popisuje způsob, jak tuto kombinaci "
-"kláves změnit."
+"Ujistěte se, že je ve vašem pracovním prostředí povolena podpora "
+"přístupnosti. V případě, že není, nebude <app>Accerciser</app> pracovat "
+"podle očekávání."
 
-#: C/accerciser.xml:412(title)
-msgid "IPython Console"
-msgstr "Konzola IPythonu"
+#. (itstool) path: figure/title
+#: C/introduction.page:51
+#| msgid "About <application>Accerciser</application>"
+msgid "<app>Accerciser</app>"
+msgstr "<app>Accerciser</app>"
 
-#: C/accerciser.xml:413(para)
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/introduction.page:52 C/introduction.page:56
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "Výchozí uživatelské rozhraní aplikace <app>Accerciser</app>"
+
+#. (itstool) path: section/title
+#: C/introduction.page:63
+#| msgid "<application>Accerciser</application> Main Window"
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "Cílová skupina aplikace <app>Accerciser</app>"
+
+#. (itstool) path: section/p
+#: C/introduction.page:64
 msgid ""
-"This plugin is a fully-fledged <ulink url=\"http://ipython.scipy.org/moin/\" "
-"type=\"http\">IPython</ulink> console. Press <keycap>Tab</keycap> to show "
-"completions for the current command. Press <keycap>Enter</keycap> to execute "
-"any valid Python code. Commands at the console have access to the currently "
-"selected accessible in the accessible tree by way of the <varname>acc</"
-"varname> variable. In addition, all functions and constants from the pyatspi "
-"package are available as locals in the console. The most important of these "
-"are the functions for querying to other accessibility interfaces. For "
-"example, to query to the Text interface: <command>t = acc.queryText() </"
-"command>. Imports from the current working directory or Python path are also "
-"allowed."
+"<app>Accerciser</app> fits the needs of many different audiences. User "
+"interface developers use it to ensure that their applications are providing "
+"all of their features through AT-SPI. Assistive technology developers are "
+"able to see what AT-SPI is providing to their applications. Automated UI "
+"test developers find <app>Accerciser</app> beneficial since it exposes "
+"different events that could be expected from their target application."
 msgstr ""
-"Tento zásuvný modul je plnohodnotnou konzolou <ulink url=\"http://ipython."
-"scipy.org/moin/\" type=\"http\">IPythonu</ulink>. Stisknutím klávesy "
-"<keycap>Tab</keycap> zobrazíte nabídku dokončení příkazu. Stisknutím klávesy "
-"<keycap>Enter</keycap> spustíte jakýkoliv funkční kód v jazyce Python. "
-"Příkazy mají přístup k aktuálně vybranému objektu přístupnosti ve stromu "
-"podle cesty proměnné <varname>acc</varname>. Dále jsou také do konzoly "
-"zahrnuty jako místní všechny dostupné funkce a konstanty balíčku pyatspi. "
-"Nejdůležitější jsou funkce pro dotazy na rozhraní přístupnosti, například "
-"dotaz na rozhraní Text: <command>t = acc.queryText() </command>. Také jsou "
-"dovoleny importy z aktuálního pracovního adresáře a cesty Pythonu."
+"<app>Accerciser</app> odpovídá na potřeby širokého publika. Vývojáři "
+"uživatelského rozhraní jej používají k ujištění, že jejich aplikace "
+"poskytuje všechy své vlastnosti přes AT-SPI. Vývojáři technologí "
+"přístupnosti mohou vidět, co AT-SPI poskytuje jejich aplikacím. Vývojáři "
+"automatizovaných testů uživatelského rozhraní najdou v aplikaci "
+"<app>Accerciser</app> užitek proto, že odhaluje různé události, které mohou "
+"být očekávány od jejich cílové aplikace."
 
-#: C/accerciser.xml:429(title) C/accerciser.xml:432(title)
-msgid "API Browser"
-msgstr "Prohlížeč API"
+#. (itstool) path: section/title
+#: C/introduction.page:74
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "Architektura zásuvných modulů <app>Accerciser</app>"
 
-#: C/accerciser.xml:430(para)
+#. (itstool) path: section/p
+#: C/introduction.page:75
 msgid ""
-"This plugin shows the interfaces, methods, and attributes supported by the "
-"accessible selected in the tree view."
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
+"code is fairly small and most of its features are part of default plugins:"
 msgstr ""
-"Tento zásuvný modul zobrazuje rozhraní, metody a atributy, které podporuje "
-"ve stromu zvolený objekt přístupnosti."
+"<app>Accerciser</app> má rozšiřitelnou architekturu založenou na zásuvných "
+"modulech. Kód jádra je docela malý a většinu funkcí zajišťují výchozí "
+"zásuvné moduly:"
 
-#: C/accerciser.xml:439(phrase)
-msgid "The API browser."
-msgstr "Prohlížeč API"
-
-#: C/accerciser.xml:446(title)
-msgid "Script recorder"
-msgstr "Záznamník skriptů"
-
-# I can't see any 'Record' string in accerciser po file so I'll keep it untranslated
-#: C/accerciser.xml:447(para)
+#. (itstool) path: item/p
+#: C/introduction.page:82
 msgid ""
-"<application>Accerciser</application>'s script recorder allows users to "
-"record keyboard interaction with other desktop applications for the purpose "
-"of authoring UI test scripts. Currently the plug-in supports the generation "
-"of scripts for three platforms: Dogtail, LDTP, and an Accerciser's built-in "
-"API. Once you press the \"Record\" button every keyboard interaction will be "
-"recorded in to a script that could be executed later as a stand alone script."
+"<link xref=\"interface_viewer\">Interface Viewer</link> - A plugin that lets "
+"you explore the AT-SPI interfaces provided by each accessible widget of a "
+"target application."
 msgstr ""
-"Záznamník skriptů aplikace <application>Accerciser</application> umožňuje "
-"zaznamenávat interakci pomocí klávesnice s ostatními aplikacemi na ploše za "
-"účelem vytvoření skriptu na testování uživatelského rozhraní. V současné "
-"době podporuje zásuvný modul generování skriptů pro tři platformy: Dogtail, "
-"LDTP a vestavěné API aplikace Accerciser. Od stisknutí tlačítka \"Record\" "
-"bude každá akce provedená pomocí klávesnice zaznamenána do skriptu, který "
-"může být později samostatně spuštěn."
+"<link xref=\"interface_viewer\">Prohlížeč rozhraní</link> – Zásuvný modul, "
+"který vám umožní prozkoumat rozhraní AT-SPI poskytovaná každým ze "
+"zpřístupněných widgetů v cílové aplikaci."
 
-#: C/accerciser.xml:457(title)
-msgid "Script Recorder"
-msgstr "Záznamník skriptů"
-
-#: C/accerciser.xml:464(phrase)
-msgid "The script recorder."
-msgstr "Záznamník skriptů"
-
-#: C/accerciser.xml:471(title)
-msgid "Quick select"
-msgstr "Rychlý výběr"
-
-#: C/accerciser.xml:472(para)
+#. (itstool) path: item/p
+#: C/introduction.page:88
 msgid ""
-"This plugin provides global hotkeys for allowing quick selection of "
-"accessibles through the target application's UI. Pressing "
-"<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>a</keycap></"
-"keycombo> will select the last focused widget's accessible in "
-"<application>Accerciser</application>. Pressing <keycombo><keycap>Control</"
-"keycap><keycap>Alt</keycap><keycap>t</keycap></keycombo> will select the "
-"accessible of the widget that is under the pointer."
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
+"applies tests to verify the accessibility of a target application."
 msgstr ""
-"Tento zásuvný modul poskytuje globální klávesové zkratky umožňující rychlý "
-"výběr objektů přístupnosti napříč uživatelským rozhraním aplikace. Stiskem "
-"kombinace kláves <keycombo><keycap>Control</keycap><keycap>Alt</"
-"keycap><keycap>a</keycap></keycombo> zaměříte v aplikaci "
-"<application>Accerciser</application> poslední objekt přístupnosti widgetu. "
-"Stiskem kombinace <keycombo><keycap>Control</keycap><keycap>Alt</"
-"keycap><keycap>t</keycap></keycombo> vyberete objekt přístupnosti widgetu, "
-"který je pod ukazatelem."
+"<link xref=\"validator_plugin\">Ověřování přes AT-SPI</link> – Zásuvný "
+"moudul který používá testy k ověření přístupnosti cílové aplikace."
 
-#: C/accerciser.xml:489(title)
-msgid "Validation"
-msgstr "Validace"
-
-#: C/accerciser.xml:490(para)
+#. (itstool) path: item/p
+#: C/introduction.page:94
 msgid ""
-"This plugin checks applications for accessibility problems and generates a "
-"report including the severity and description of the problems. The report "
-"links errors to documentation about how to remedy common problems. The "
-"plugin is extensible with test schemas that define rules for validation."
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
+"displays AT-SPI events emitted by a target application as they occur."
 msgstr ""
-"Tento zásuvný modul kontroluje aplikace z hlediska přístupnosti a sestavuje "
-"zprávu obsahující závažnost a popis problémů. Ve zprávě jsou odkazy na návod "
-"v dokumentaci, jak odstranit nejběžnější problémy."
+"<link xref=\"event_monitor_plugin\">Sledování událostí</link> – Zásuvný "
+"modul, který zobrazuje události AT-SPI vyslané cílovou událostí při jejich "
+"vzniku."
 
-#: C/accerciser.xml:498(para)
+#. (itstool) path: item/p
+#: C/introduction.page:100
 msgid ""
-"To run the validator, first select an item in the accessibility tree. The "
-"plugin will test the selected accessible and all of its descendants. Next "
-"select a schema to use for the test. Then click the <guibutton>Validate</"
-"guibutton> button to start the test. While the test is running, click the "
-"button again to cancel it."
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
+"provides global hotkeys for quickly selecting accessible widgets in "
+"<app>Accerciser</app>'s Application Tree View."
 msgstr ""
-"Pokud chcete Validaci použít, nejprve vyberte ze Stromu objektů přístupnosti "
-"cíl. Zásuvný modul objekt prozkoumá, včetně všech jeho potomků. Následně "
-"vyberte schéma, které chcete pro test použít a po klepnutí na tlačítko "
-"<guibutton>Validovat</guibutton> se test spustí. Pokud test běží, opětovným "
-"klepnutím na tlačítko jej zrušíte."
+"<link xref=\"quick_select_plugin\">Rychlý výběr</link> – Zásuvný modul, "
+"který poskytuje globální horké klávesy pro rychlý výběr zpřístupněných "
+"widgetů ve stromovém zobrazení aplikací, které <app>Accerciser</app> vidí."
 
-#: C/accerciser.xml:506(para)
+#. (itstool) path: item/p
+#: C/introduction.page:106
 msgid ""
-"When the test completes, the report table shows the severity and description "
-"of all errors. Double click a row in the table to show the associated "
-"accessible in the tree. With an item selected, click the <guibutton>Help</"
-"guibutton> to get information about how to resolve the problem."
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
+"the interfaces, methods, and attributes available on each accessible widget "
+"of a target application."
 msgstr ""
-"Po dokončení testu vám tabulka zprávy ukáže u každé chyby závažnost a popis. "
-"Poklepáním na řádek tabulky zobrazíte odpovídající objekt přístupnosti ve "
-"stromu. Když máte objekt vybrán, klepněte na tlačítko <guibutton>Nápověda</"
-"guibutton> a zobrazí se informace o možnostech odstranění problému."
+"<link xref=\"api_browser_plugin\">Prohlížeč API</link> – Zásuvný modul, "
+"který zobrazuje rozhraní, metody a vlastnosti dostupné u každého z "
+"přístupných widgetů v cílové aplikaci."
 
-#: C/accerciser.xml:519(title)
-msgid "Preferences"
-msgstr "Nastavení"
-
-#: C/accerciser.xml:520(para)
+#. (itstool) path: item/p
+#: C/introduction.page:112
 msgid ""
-"There are some elements in <application>Accerciser</application> that are "
-"configurable:"
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
+"provides a full, interactive Python shell with access to selected accessible "
+"widgets of a target application."
 msgstr ""
-"Některé elementy aplikace <application>Accerciser</application> lze "
-"konfigurovat:"
+"<link xref=\"ipython_plugin\">Konzola IPython</link> – Zásuvný modul, který "
+"poskytuje úplný interaktivní shell jazyka Python s přístupem k vybraným "
+"zpřístupněným widgetům v cílové aplikaci."
 
-#: C/accerciser.xml:531(title)
-msgid "Plugin Layout"
-msgstr "Rozložení zásuvných modulů"
+#. (itstool) path: section/title
+#: C/introduction.page:122
+msgid "More about Accessibility"
+msgstr "Více o přístupnosti"
 
-#: C/accerciser.xml:532(para)
+#. (itstool) path: section/p
+#: C/introduction.page:123
 msgid ""
-"There are two methods for configuring plugin layout in "
-"<application>Accerciser</application>. First you may choose "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></"
-"menuchoice> to activate the <guilabel>Preferences</guilabel> dialog. This "
-"dialog contains tabs for each section, select the <guilabel>Plugins</"
-"guilabel> tab. Under this section you will find a list view of all the "
-"available plugins. Right-click on any of the plugins listed to configure "
-"it's view."
+"Accessibility is a core value that should touch all aspects of a Desktop "
+"Environment. To help achieve it in GNOME, some libraries were developed, "
+"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
+"also used in other Desktop Environments. To learn more about Accessibility "
+"Libraries for GNU/UNIX systems, you can consult:"
 msgstr ""
-"V aplikaci <application>Accerciser</application> existují dva způsoby "
-"nastavení rozložení zásuvných modulů. Nejdříve zvolením "
-"<menuchoice><guimenu>Upravit</guimenu><guimenuitem>Nastavení</guimenuitem></"
-"menuchoice> z nabídky otevřete okno <guilabel>Nastavení</guilabel>, které "
-"obsahuje kartu pro každou oblast. Zvolte kartu <guilabel>Zásuvné moduly</"
-"guilabel> a na ní naleznete seznam dostupných zásuvných modulů. Klepnutím "
-"pravým tlačítkem na libovolný modul v seznamu umožní změnit jeho zobrazení."
+"Přístupnost je klíčová vlastnost, která by se měla dotýkat všech aspektů "
+"pracovního prostředí. Aby toho bylo dosaženo v GNOME, byly vyvinuty některé "
+"knihovny, jako je ATK a AT-SPI. Přestože tyto knihovny pocházejí z GNOME, "
+"jsou dne používány i jinými pracovními prostředími. Jestli se chcete o "
+"knihovnách přístupnosti pro systémy GNU/UNIX dozvědět více, podívejte se na:"
 
-#: C/accerciser.xml:545(para)
+#. (itstool) path: item/p
+#: C/introduction.page:132
 msgid ""
-"You may bypass the <guilabel>Preferences</guilabel> dialog by using drag and "
-"drop to move plugin tabs. Dragging a plugin tab to the bottom or right "
-"plugin area in the main window will move the plugin. Dragging a tab to the "
-"desktop will create a new plugin window and drop the plugin in it."
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
+"link> - ATK provides the set of accessibility interfaces that are "
+"implemented by other toolkits and applications. Using the ATK interfaces, "
+"accessibility tools have full access to view and control running "
+"applications."
 msgstr ""
-"Bez použití okna <guilabel>Nastavení</guilabel> můžete přetahovat karty "
-"zásuvných modulů. S moduly lze hýbat přetažením do spodního nebo pravého "
-"prostoru pro zásuvné moduly. Přetažení karty na plochu otevře nové okno a "
-"zásuvný modul do něj umístí."
+"<link href=\"http://developer.gnome.org/atk/\">Sada nástrojů přístupnosti "
+"ATK</link> – ATK poskytuje sadu rozhraní přístupnosti, která implementují "
+"ostatní sady nástrojů a aplikace. Díky rozhraním ATK mají nástroje "
+"přístupnosti úplný přístup k zobrazení a řízení běžících aplikací."
 
-#: C/accerciser.xml:552(title)
-msgid "Global Hotkey Configuration"
+#. (itstool) path: item/p
+#: C/introduction.page:139
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"- AT-SPI is the primary service interface by which assistive technologies "
+"query and receive notifications from running applications. Additional "
+"material is available from the <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
+"link>."
+msgstr ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"– Jedná se o hlavní rozhraní služby, pomocí které se technologie "
+"přístupnosti dotazují běžících aplikací a získávají od nich upozornění. "
+"Další materiál najdete u <link href=\"http://accessibility.kde.org/developer/"
+"atk.php#coreclasses\">komunity pro vývoj přístupnosti KDE</link>."
+
+#. (itstool) path: item/p
+#: C/introduction.page:147
+msgid ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html"
+"\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
+"in how the GNOME Desktop supports the needs of users with disabilities."
+msgstr ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html"
+"\">Příručka přístupnosti pracovního prostředí GNOME</link> – Příručka pro "
+"všechny, kteří se zajímají o to, jak pracovní prostředí GNOME podporuje "
+"potřeby uživatelů s postižením."
+
+#. (itstool) path: item/p
+#: C/introduction.page:153
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
+"want to ensure their applications are accessible to the widest audience of "
+"users."
+msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">Příručka přístupnosti GNOME pro vývojáře</link> – Jedná se o příručku pro "
+"vývojáře, kteří chtějí mít jistotu, že jejich aplikace bude přístupná pro "
+"široký okruh uživatelů."
+
+#. (itstool) path: item/p
+#: C/introduction.page:159
+msgid ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Accessibility "
+"Project</link> - The GNOME Accessibility Project includes the guides listed "
+"above along with many other useful links for users, developers and system "
+"administrators."
+msgstr ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">Projetk přístupnosti "
+"GNOME</link> – Zahrnuje příručky uvedené výše plus další odkazy užitečné pro "
+"uživatele, vývojáře a správce systémů."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+msgstr ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+
+#. (itstool) path: info/title
+#: C/ipython_plugin.page:4
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "2. Zásuvný modul IPython"
+
+#. (itstool) path: info/desc
+#: C/ipython_plugin.page:6
+msgid "When all else fails"
+msgstr "Co dělat, když vše ostatní selže."
+
+#. (itstool) path: page/title
+#: C/ipython_plugin.page:25
+#| msgid "IPython Console"
+msgid "IPython Console Plugin"
+msgstr "Zásuvný modul s konzolou IPython"
+
+#. (itstool) path: page/p
+#: C/ipython_plugin.page:26
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item "
+"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
+"the IPython Console Plugin is an interactive Python shell, you can import "
+"any Python modules you want."
+msgstr ""
+"Zásuvný modul Konzola IPython umožňuje komunikaci v reálném čase s položkou "
+"vybranou ve <link xref=\"desktop_tree_view\">stromovém zobrazení aplikací</"
+"link>. Vzhledem k tomu, že u tohoto zásuvného modulu se jedná o interaktivní "
+"shell jazyka Python, můžete dle potřeb importovat libovolný modul Python."
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:33
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. "
+"Otherwise, the IPython Console Plugin will not work properly."
+msgstr ""
+"Ujistěte se, že máte ve svém systému nainstalován samostatný balíček "
+"IPython. Bez něj nebude zásuvný modul Konzola IPython správně fungovat."
+
+#. (itstool) path: section/title
+#: C/ipython_plugin.page:40
+#| msgid "IPython Console"
+msgid "Running the IPython Console Plugin"
+msgstr "Spuštění zásuvného modulu Konzola IPython"
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:41
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed "
+"in the Application Tree View - either an application or a widget. In the "
+"plugin, the selected item will correspond to the variable 'acc'."
+msgstr ""
+"Zásuvný modul Konzola IPython spustíte tak, že vyberete položku podporující "
+"přístupnost uvedenou ve stromovém zobrazení aplikací, tj. buď přímo aplikaci "
+"nebo widget. V zásuvném modulu pak bude vybraná položka odpovídat proměnné "
+"„acc“."
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:46
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the "
+"console, what can be useful for discovering pyatspi methods."
+msgstr ""
+"Zmáčknutím klávesy <key>Tab</key> získáte návrhy na doplnění aktuálního "
+"příkazu v konzole, což se může hodit při vyhledávání metod pyatspi."
+
+#. (itstool) path: figure/title
+#: C/ipython_plugin.page:52
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr "Zkoumání vybrané položky pomocí zásuvného modulu Konzola IPython"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/ipython_plugin.page:53 C/ipython_plugin.page:58
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and "
+"properties related to a selected item in the Application Tree View."
+msgstr ""
+"Zásuvný modul Konzola IPython vám umožňuje zkoumat metody, konstanty a "
+"vlastnosti vztahující se k vybrané položce ve stromovém zobrazení aplikací."
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:66
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
+"documentation about the corresponding selected accessible item."
+msgstr ""
+"Po napsáním <cmd>help(acc)</cmd> v konzole IPython se vám zobrazí užitečná "
+"dokumentace vztahující se k vybrané položce s podporou přístupnosti."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:36
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+msgstr ""
+"external ref='figures/accerciser_preferences.png' "
+"md5='35df6feb4a5dfc905331b45390783ad5'"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:61
+msgctxt "_"
+msgid ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+msgstr ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:90
+msgctxt "_"
+msgid ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+msgstr ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:111
+msgctxt "_"
+msgid ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+msgstr ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+
+#. (itstool) path: info/title
+#: C/preferences.page:4
+#| msgid "Preferences"
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "4. Předvolby"
+
+#. (itstool) path: info/desc
+#: C/preferences.page:6
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "Jak si přizpůsobit předvolby aplikace <app>Accerciser</app>."
+
+#. (itstool) path: page/title
+#: C/preferences.page:25
+#| msgid "About <application>Accerciser</application>"
+msgid "Configuring <app>Accerciser</app>"
+msgstr "Nastavení aplikace <app>Accerciser</app>"
+
+#. (itstool) path: page/p
+#: C/preferences.page:26
+msgid ""
+"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
+"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
+"open a dialog."
+msgstr ""
+"Když chcete nastavit zásuvné moduly, klávesové zkratky nebo zvýrazňování, "
+"buď zmáčkněte <keyseq><key>Ctrl</key><key>P</key></keyseq> nebo zvolte "
+"<guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq> a otevře se "
+"dialogové okno."
+
+#. (itstool) path: figure/title
+#: C/preferences.page:32
+msgid "<app>Accerciser</app> preferences"
+msgstr "Předvolby aplikace <app>Accerciser</app>"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/preferences.page:33 C/preferences.page:37
+msgid ""
+"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
+"widget's highlighting."
+msgstr ""
+"V aplikaci <app>Accerciser</app> si můžete nastavit zásuvné moduly, globální "
+"klávesové zkratky a zvýrazňování widgetů."
+
+#. (itstool) path: section/title
+#: C/preferences.page:44
+msgid "Configuring plugins"
+msgstr "Nastavení zásuvných modulů"
+
+#. (itstool) path: section/p
+#: C/preferences.page:45
+msgid ""
+"After opening the Preferences Dialog, you will find a list of all available "
+"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
+"or disable a plugin, toggle its checkbox. Only active plugins can be "
+"accessed via <app>Accerciser</app>'s interface."
+msgstr ""
+"Po otevření dialogového okna Předvolby uvidíte na kartě „Zásuvné moduly“ "
+"seznam všech dostupných zásuvných modulů, přičemž u každého z nich je "
+"zaškrtávací políčko. Jeho zaškrtnutím, případně zrušením zaškrtnutí, zásuvný "
+"modul povolíte, respektive zakážete. V uživatelském rozhraní aplikace "
+"<app>Accerciser</app> jsou pak přístupné jen ty povolené."
+
+#. (itstool) path: section/p
+#: C/preferences.page:50
+msgid ""
+"Right-clicking on any given plugin allows you to choose its location: \"Top "
+"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
+"a new window for the plugin."
+msgstr ""
+"Po kliknutí pravým tlačítkem na zásuvný modul můžete zvolit jeho umístění: "
+"„Horní panel“, „Spodní panel“ a „Nové zobrazení“. Pří volbě „Nové zobrazení“ "
+"se pro zásuvný moduly vytvoří nové okno."
+
+#. (itstool) path: figure/title
+#: C/preferences.page:57
+msgid "Configuring plugins' preferences"
+msgstr "Nastavení předvoleb zásuvných modulů"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/preferences.page:58 C/preferences.page:62
+msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
+msgstr ""
+"V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby zásuvných "
+"modulů."
+
+#. (itstool) path: note/p
+#: C/preferences.page:69
+msgid ""
+"You may bypass the Preferences dialog by using drag and drop to move a "
+"plugin from a location to another."
+msgstr ""
+"Mimo dialogové okno předvoleb můžete použít postup „táhni a upusť“ k přesunu "
+"zásuvného modulu na jiné místo."
+
+#. (itstool) path: section/title
+#: C/preferences.page:76
+msgid "Configuring global hotkeys"
 msgstr "Nastavení globálních klávesových zkratek"
 
-#: C/accerciser.xml:553(para)
+#. (itstool) path: section/p
+#: C/preferences.page:77
 msgid ""
-"Some elements in <application>Accerciser</application> may enable certain "
-"functionality via hotkeys. The hotkey combination could be changed via the "
-"<guilabel>Preferences</guilabel> dialog, to do so you may select "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></"
-"menuchoice> to activate the <guilabel>Preferences</guilabel> dialog. This "
-"dialog contains tabs for each section, select the <guilabel>Global Hotkeys</"
-"guilabel> tab. Under this section you will find a list view of all the "
-"available hotkey features. Change the key bindings to you liking."
+"Some elements in <app>Accerciser</app> may enable certain functionalities "
+"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
+"Select Plugin</link>. The hotkey combination for each functionality can be "
+"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
+"this tab, you will find a list of all features for which hotkeys can be "
+"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
+"checkboxes to enable or disable these modifiers."
 msgstr ""
-"Některé elementy aplikace <application>Accerciser</application> mohou "
-"nabízet část funkcí prostřednictvím klávesových zkratek. V okně "
-"<guilabel>Nastavení</guilabel> je lze změnit. Pokud tak chcete učinit, "
-"zvolte z nabídky položku <menuchoice><guimenu>Upravit</"
-"guimenu><guimenuitem>Nastavení</guimenuitem></menuchoice> a objeví se okno "
-"<guilabel>Nastavení</guilabel>. Z karet v tomto okně, které jsou pro každou "
-"oblast, vyberte kartu <guilabel>Globální klávesové zkratky</guilabel>. Dole "
-"naleznete seznam všech funkcí, ke kterým lze zkratku nastavit. Kombinace "
-"kláves závisí jen na vás."
+"Některé prvky aplikace <app>Accerciser</app> mohou zapínat určité funkce "
+"pomocí klávesových zkratek. Příkladem je <link xref=\"quick_select_plugin"
+"\">zásuvný modul Rychlý výběr</link>. Kombinace klávesových zkratek pro "
+"jednotlivé funkce můžete měnit v dialogovém okně Předvolby na kartě "
+"„Globální klávesové zkratky“. Na této kartě najdete seznam všech funkcí, pro "
+"které je možné klávesové zkratky nastavit. Pro zapnutí nebo vypnutí "
+"příslušných modifikátorů použijte zaškrtávátka <gui>Ctrl</gui>, <gui>Alt</"
+"gui> a <gui>Shift</gui>."
 
-#: C/accerciser.xml:586(title)
-msgid "About <application>Accerciser</application>"
-msgstr "O aplikaci <application>Accerciser</application>"
+#. (itstool) path: figure/title
+#: C/preferences.page:86
+msgid "Configuring global hotkeys' preferences"
+msgstr "Nastavení předvoleb globálních klávesových zkratek"
 
-#: C/accerciser.xml:587(para)
+#. (itstool) path: figure/desc
+#: C/preferences.page:87
+msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
+msgstr ""
+"V aplikaci <app>Accerciser</app> si můžete v předvolbách přizpůsobit "
+"klávesové zkratky."
+
+#. (itstool) path: media/p
+#: C/preferences.page:91
+msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
+msgstr ""
+"V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby zásuvných "
+"modulů."
+
+#. (itstool) path: section/title
+#: C/preferences.page:99
+msgid "Configuring widget's highlighting"
+msgstr "Nastavení zvýrazňování widgetů"
+
+#. (itstool) path: section/p
+#: C/preferences.page:100
 msgid ""
-"<application>Accerciser</application> was written by Eitan Isaacson "
-"(<email>eitan@ascender.com</email>). To find more information about "
-"<application>Accerciser</application>, please visit the <ulink url=\"http://"
-"live.gnome.org/Accerciser\" type=\"http\"><application>Accerciser</"
-"application> GNOME Live! page</ulink>."
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
+"a target application. The highlighting duration, border color, and fill "
+"color can be customized via the Preferences dialog, under the \"Highlighting"
+"\" tab."
 msgstr ""
-"<application>Accerciser</application> napsal Eitan Isaacson "
-"(<email>eitan@ascender.com</email>).  Více informací popisuje <ulink url="
-"\"http://live.gnome.org/Accerciser\" type=\"http\">stránka projektu "
-"<application>Accerciser</application> na GNOME Live!</ulink>."
+"Některé prvky aplikace <app>Accerciser</app>, například globální klávesová "
+"zkratka <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></keyseq>, zvýrazní "
+"určený widget v cílové aplikaci. Dobu trvání zvýraznění, barvu okraje a "
+"barvu výplně si můžete přizpůsobit v dialogovém okně Předvolby na kartě "
+"„Zvýrazňování“."
 
-#: C/accerciser.xml:589(para)
+#. (itstool) path: figure/title
+#: C/preferences.page:107
+msgid "Configuring highlighting preferences"
+msgstr "Nastavení předvoleb zvýrazňování"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/preferences.page:108 C/preferences.page:112
 msgid ""
-"To report a bug or make a suggestion regarding this application or this "
-"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
-"type=\"help\">document</ulink>."
+"<app>Accerciser</app> allows you to adjust your highlighting preferences."
 msgstr ""
-"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
-"nebo této příručce, postupujte podle instrukcí v tomto <ulink url=\"ghelp:"
-"gnome-feedback\" type=\"help\">dokumentu</ulink>."
+"V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby "
+"zvýrazňování."
 
-#: C/accerciser.xml:592(para)
+#. (itstool) path: info/title
+#: C/quick_select_plugin.page:4
+#| msgid "Quick select"
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "5. Zásuvný modul pro rychlý výběr"
+
+#. (itstool) path: info/desc
+#: C/quick_select_plugin.page:6
+msgid "Locating the object you need"
+msgstr "Jak vyhledat objekty, které potřebujete."
+
+#. (itstool) path: page/title
+#: C/quick_select_plugin.page:25
+#| msgid "Quick select"
+msgid "Quick Select Plugin"
+msgstr "Zásuvný modul pro rychlý výběr"
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:26
 msgid ""
-"Redistribution and use in source and binary forms, with or without "
-"modification, are permitted under the terms of the BSD License."
+"The Quick Select Plugin does not provide a visible interface like the other "
+"default <app>Accerciser</app> plugins - instead, it adds facilities for "
+"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
+"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
+"later."
 msgstr ""
-"Re-distribuce a použití ve zdrojové nebo binární podobě, s nebo bez úprav, "
-"je povoleno v souladu se zněním licence BSD."
+"Zásuvný modul Rychlý výběr nemá viditelné uživatelské rozhraní jako ostatní "
+"výchozí zásuvné moduly <app>Accerciser</app> – namísto toho přidává "
+"schopnost rychlého výběru položek ve <link xref=\"desktop_tree_view"
+"\">stromovém zobrazení aplikací</link> pomocí globálních klávesových "
+"zkratek. Původně byly tyto klávesové zkratky přímo součástí základního kódu "
+"aplikace <app>Accerciser</app>, ale později byly odděleny do zásuvného "
+"modulu Rychlý výběr."
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/accerciser.xml:0(None)
-msgid "translator-credits"
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:32
+msgid ""
+"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
+"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
+"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
+"key> selects the accessible widget under the pointer in the Application Tree "
+"View and highlights it in the target application."
 msgstr ""
-"Lucas Lommer <llommer@svn.gnome.org>, 2008, 2010\n"
-"Marek Černocký <marek@manet.cz>, 2009"
+"Zásuvný modul Rychlý výběr poskytuje dvě globální klávesové zkratky. "
+"Zmáčknutím <keyseq><key>Ctrl</key><key>Alt</key><key>A</key></keyseq> "
+"vyberete poslední zaměřený zpřístupněný widget v stromovém zobrazení "
+"aplikací. Zmáčknutím <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></"
+"keyseq> vyberete zpřístupněný widget nacházející se pod ukazatelem ve "
+"stromovém zobrazení aplikací, přičemž se zároveň zvýrazní v cílové aplikaci."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
+msgstr ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
+
+#. (itstool) path: info/title
+#: C/validator_plugin.page:4
+#| msgid "Default Plugins"
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "3. Výchozí zásuvný modul pro ověřování"
+
+#. (itstool) path: info/desc
+#: C/validator_plugin.page:6
+msgid "Testing an application for accessibility"
+msgstr "Jak otestovat přístupnost aplikace."
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/validator_plugin.page:25 C/validator_plugin.page:32
+msgid "AT-SPI Validator Plugin"
+msgstr "Zásuvný modul pro ověřování přes AT-SPI"
+
+#. (itstool) path: page/p
+#: C/validator_plugin.page:26
+msgid ""
+"The AT-SPI Validator Plugin generates a report with accessibility issues "
+"related to a target application. For each error, the report includes the "
+"severity level and a brief description."
+msgstr ""
+"Zásuvný modul Ověřování přes AT-SPI generuje výstupní sestavy s problémy v "
+"přístupnosti vztahujícími se k cílové aplikaci. U každé chyby je uvedena "
+"její závažnost a stručný popis."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/validator_plugin.page:33 C/validator_plugin.page:38
+msgid ""
+"The AT-SPI Validator Plugin generates useful reports for verifying the "
+"accessibility of a target application."
+msgstr ""
+"Zásuvný modul Ověřování přes AT-SPI generuje užitečné výstupní sestavy "
+"sloužící k ověření přístupnosti cílové aplikace."
+
+#. (itstool) path: section/title
+#: C/validator_plugin.page:46
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "Spuštění zásuvného modulu Ověřování přes AT-SPI"
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:47
+msgid ""
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
+"View. The validator will generate the report with respect to the selected "
+"item and all of its descendant widgets in the tree hierarchy."
+msgstr ""
+"Zásuvný modul Ověřování přes AT-SPI spusíte tak, že vyberete položku ve "
+"stromovém zobrazení aplikací. Zásuvný modul vygeneruje výstupní sestavu vůči "
+"vybrané položce a všem jejím synovským widgetům ve stromové hierarchii."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:53
+msgid ""
+"After selecting an item, choose a validation schema in the combobox and "
+"press the <cmd>Validate</cmd> button to start generating the report. If you "
+"want to cancel the execution, just press the <cmd>Validate</cmd> button "
+"again."
+msgstr ""
+"Po výběru položky zvolte ověřovací schéma v rozbalovacím seznamu a zmáčkněte "
+"tlačítko <gui>Ověřit</gui>. Spustí se generování výstupní sestavy. Pokud jej "
+"chcete zrušit, stačí tlačítko <gui>Ověřit</gui> zmáčknout znovu."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:59
+msgid ""
+"The generated report is interactive. Therefore, you can double-click any "
+"error found to check which of the target application widgets is causing it. "
+"The corresponding widget will then appear selected in the <link xref="
+"\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
+"target application."
+msgstr ""
+"Vygenerovaná zpráva je interaktivní. Díky tomu můžete dvojitě kliknout na "
+"nalezenou chybu, abyste zjistili, který widget v cílové aplikaci ji "
+"způsobil. Příslušný widget se objeví vybraný ve <link xref="
+"\"desktop_tree_view\">stromovém zobrazení aplikací</link> a zvýrazní se v "
+"cílové aplikaci."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:64
+msgid ""
+"If you want to save the generated report in your system, just click the "
+"<cmd>Save</cmd> button. To clear the validation screen, press the "
+"<cmd>Clear</cmd> button."
+msgstr ""
+"Pokud chcete vygenerovanou zprávu ve svém počítači uložit, stačí kliknout na "
+"tlačítko <cmd>Uložit</cmd>. Tlačítkem <cmd>Smazat</cmd> vymažete obrazovku s "
+"ověřením."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:68
+msgid ""
+"To get more information about an error in the generated report, make sure "
+"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
+"will open a Help Page in your default browser."
+msgstr ""
+"Když chcete získat o chybě ve vygenerované zprávě více informací, ujistěte "
+"se, že je vybrána příslušná položka a zmáčkněte tlačítko <gui>Nápověda</"
+"gui>. Otevře se stránka s nápovědou ve vašem výchozím prohlížeči."
+
+#~ msgid ""
+#~ "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+#~ msgstr ""
+#~ "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
+
+#~ msgid ""
+#~ "@@image: 'figures/interface_viewer.png'; "
+#~ "md5=aa1a5d030e67214010533e5f2e598faa"
+#~ msgstr ""
+#~ "@@image: 'figures/interface_viewer.png'; "
+#~ "md5=aa1a5d030e67214010533e5f2e598faa"
+
+#~ msgid ""
+#~ "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+#~ msgstr ""
+#~ "@@image: 'figures/event_monitor.png'; md5=8e0aaf777e16d47ac5f8f3e7cf2035ac"
+
+#~ msgid ""
+#~ "@@image: 'figures/script_recorder.png'; "
+#~ "md5=a15027c852c58df789886f6aadf0130c"
+#~ msgstr ""
+#~ "@@image: 'figures/script_recorder.png'; "
+#~ "md5=a15027c852c58df789886f6aadf0130c"
+
+#~ msgid "<application>Accerciser</application> Manual v0.2.0"
+#~ msgstr ""
+#~ "Příručka k aplikaci <application>Accerciser</application> verze 0.2.0"
+
+#~ msgid "2006"
+#~ msgstr "2006"
+
+#~ msgid "2007"
+#~ msgstr "2007"
+
+#~ msgid "2008"
+#~ msgstr "2008"
+
+#~ msgid "IBM Corporation"
+#~ msgstr "IBM Corporation"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "Dokumentační projekt GNOME"
+
+#~ msgid "Eitan"
+#~ msgstr "Eitan"
+
+#~ msgid "Accerciser team"
+#~ msgstr "Tým projektu Accerciser"
+
+#~ msgid "eitan@ascender.com"
+#~ msgstr "eitan@ascender.com"
+
+#~ msgid "Peter"
+#~ msgstr "Peter"
+
+#~ msgid "pparent@us.ibm.com"
+#~ msgstr "pparent@us.ibm.com"
+
+#~ msgid "Accerciser Manual v0.2.0"
+#~ msgstr "Příručka k nástroji Accerciser verze 0.2.0"
+
+#~ msgid "2007-06-29"
+#~ msgstr "29. 6. 2007"
+
+#~ msgid "Eitan Isaacson <email>eitan@ascender.com</email>"
+#~ msgstr "Eitan Isaacson <email>eitan@ascender.com</email>"
+
+#~ msgid "This manual describes version 0.1.5 of Accerciser."
+#~ msgstr "Tato příručka popisuje aplikaci Accerciser ve verzi 0.1.5"
+
+#~ msgid ""
+#~ "This manual describes the use of <application>Accerciser</application>."
+#~ msgstr ""
+#~ "Tato příručka popisuje používání aplikace <application>Accerciser</"
+#~ "application>."
+
+#~ msgid "Feedback"
+#~ msgstr "Zpětná vazba"
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding the "
+#~ "<application>Accerciser</application> application or this manual, follow "
+#~ "the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help"
+#~ "\">GNOME Feedback Page</ulink>."
+#~ msgstr ""
+#~ "Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k "
+#~ "aplikaci <application>Accerciser</application> nebo této příručce, "
+#~ "postupujte dle instrukcí na stránce <ulink url=\"ghelp:gnome-feedback\" "
+#~ "type=\"help\">Stránka s ohlasy na GNOME</ulink>."
+
+#~ msgid "Introduction"
+#~ msgstr "Úvod"
+
+#~ msgid ""
+#~ "In essence, <application>Accerciser</application> is a next generation "
+#~ "<ulink url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-"
+#~ "poke</ulink> tool."
+#~ msgstr ""
+#~ "<application>Accerciser</application> je ve své podstatě nástroj <ulink "
+#~ "url=\"http://svn.gnome.org/viewcvs/at-poke\" type=\"http\">at-poke</"
+#~ "ulink> příští generace."
+
+#~ msgid ""
+#~ "You can start <application>Accerciser</application> in the following ways:"
+#~ msgstr ""
+#~ "Aplikaci <application>Accerciser</application> lze spustit následujícími "
+#~ "způsoby:"
+
+#~ msgid "<guimenu>Applications</guimenu> menu"
+#~ msgstr "Nabídka <guimenu>Aplikace</guimenu>"
+
+#~ msgid ""
+#~ "Choose the <menuchoice><guisubmenu>Programming</"
+#~ "guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Zvolte z nabídky položku <menuchoice><guisubmenu>Programování</"
+#~ "guisubmenu><guimenuitem>Accerciser</guimenuitem></menuchoice>"
+
+#~ msgid "Command line"
+#~ msgstr "Příkazová řádka"
+
+#~ msgid ""
+#~ "Type the following command in a console window then press <keycap>Return</"
+#~ "keycap>:"
+#~ msgstr ""
+#~ "Do konzoly napište následující příkaz a stiskněte <keycap>Enter</keycap>:"
+
+#~ msgid "accerciser"
+#~ msgstr "accerciser"
+
+#~ msgid ""
+#~ "When you start <application>Accerciser</application>, the following "
+#~ "window is displayed."
+#~ msgstr ""
+#~ "Po spuštění aplikace <application>Accerciser</application> se zobrazí "
+#~ "následující okno."
+
+#~ msgid ""
+#~ "Shows <placeholder-1/> main window. Contains title bar, menu bar, "
+#~ "accessible tree , right plugin display area, and bottom plugin display "
+#~ "area. The menu bar contains File, Edit, Bookmarks, View, and Help menus."
+#~ msgstr ""
+#~ "Zobrazuje <placeholder-1/> hlavní okno, které obsahuje záhlaví, lištu "
+#~ "nabídek, strom objektů přístupnosti, spodní a pravý prostor pro zásuvné "
+#~ "moduly. Lišta nabídek obsahuje položky Soubor, Upravit, Zobrazit, Záložky "
+#~ "a Nápověda."
+
+#~ msgid "Menubar"
+#~ msgstr "Lišta nabídek"
+
+#~ msgid ""
+#~ "The menu bar contains commands for managing plugins, managing and using "
+#~ "bookmarks, refreshing the accessible tree view, and accessing this help "
+#~ "system."
+#~ msgstr ""
+#~ "Lišta nabídek obsahuje příkazy pro správu zásuvných modulů, správu a "
+#~ "používání záložek, aktualizaci stromu s objekty přístupnosti a přístup k "
+#~ "nápovědě."
+
+#~ msgid "Accessible tree view"
+#~ msgstr "Strom objektů přístupnosti"
+
+#~ msgid ""
+#~ "The accessible tree view allows to view all of the accessibles starting "
+#~ "at the desktop level. Selecting an accessible makes it available for "
+#~ "further inspection using the loaded plugins."
+#~ msgstr ""
+#~ "Strom objektů přístupnosti vám umožňuje zobrazit všechny objekty od "
+#~ "úrovně pracovní plochy. Po zvolení objektu můžete provádět další kontrolu "
+#~ "za pomoci nahraných zásuvných modulů."
+
+#~ msgid "Right plugin view"
+#~ msgstr "Prostor pro zásuvné moduly vpravo"
+
+#~ msgid ""
+#~ "This is one of the two default plugin views. When "
+#~ "<application>Accerciser</application> is first run, most plugins will "
+#~ "reside here. You can drag plugin tabs to the bottom plugin view or to the "
+#~ "desktop to show two or more plugins simultaneously."
+#~ msgstr ""
+#~ "Zásuvné moduly lze zobrazovat dvěma způsoby. Při prvním spuštění aplikace "
+#~ "<application>Accerciser</application> je zde uložena většina zásuvných "
+#~ "modulů. Pokud chcete zobrazit dva zásuvné moduly najednou, přetáhněte "
+#~ "zvolené do spodního prostoru pro zásuvné moduly nebo na plochu."
+
+#~ msgid "Bottom plugin view"
+#~ msgstr "Spodní prostor pro zásuvné moduly"
+
+#~ msgid ""
+#~ "You can drag plugins to or from this area just like the right plugin view."
+#~ msgstr ""
+#~ "Z a do tohoto prostoru můžete zásuvné moduly přetahovat stejně jako v "
+#~ "případě prostoru pro zásuvné moduly vpravo."
+
+#~ msgid "Plugin View Management"
+#~ msgstr "Správa zobrazení zásuvných modulů"
+
+#~ msgid ""
+#~ "<application>Accerciser</application> has two modes for viewing plugins. "
+#~ "The current view mode could be toggled with <menuchoice><guimenu>View</"
+#~ "guimenu><guimenuitem>Single plugin view</guimenuitem></menuchoice> or by "
+#~ "pressing <keycombo><keycap>Control</keycap><keycap>t</keycap></keycombo>. "
+#~ "When single mode is enabled, all plugins will be put in the top right "
+#~ "plugin view and ordered alphabetically, this could be useful for screen "
+#~ "reader users who have no use for <application>Accerciser</application>'s "
+#~ "flexible plugin spacial layout scheme. When single view mode is disabled "
+#~ "plugin tabs could be dragged and dropped in to different plugin views, or "
+#~ "could be dragged to the desktop to put the given plugin in a new view. "
+#~ "The placement of plugins could also be manipulated with the plugin "
+#~ "context menu that could be brought up either from the plugin tab, or the "
+#~ "plugin preferences dialog."
+#~ msgstr ""
+#~ "<application>Accerciser</application> má dva módy pro prohlížení "
+#~ "zásuvných modulů. Aktuální mód lze přepnout zvolením "
+#~ "<menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Jednoduché zobrazení "
+#~ "zásuvných modulů</guimenuitem></menuchoice> z nabídky nebo stiskem "
+#~ "kombinace kláves <keycombo><keycap>Control</keycap><keycap>t</keycap></"
+#~ "keycombo>. Pokud je mód jednoduchého zobrazení zapnutý, všechny zásuvné "
+#~ "moduly jsou zobrazeny abecedně v pravém prostoru pro zásuvné moduly, což "
+#~ "je užitečné například pro uživatele se čtečkou obrazovky, kteří nevyužijí "
+#~ "flexibilní rozložení zásuvných modulů aplikace <application>Accerciser</"
+#~ "application>. Pokud je mód jednoduchého zobrazení vypnutý, lze karty "
+#~ "zásuvných modulů přetahovat mezi umístěními nebo na plochu za účelem "
+#~ "otevření nového pohledu. Umístění zásuvných modulů lze také ovlivnit z "
+#~ "kontextové nabídky dostupné u karty modulu nebo v okně nastavení."
+
+#~ msgid "Usage"
+#~ msgstr "Použití"
+
+#~ msgid ""
+#~ "You can use <application>Accerciser</application> to inspect any "
+#~ "accessible widget shown in the tree view using the available plugins. The "
+#~ "first step is to select an accessible to inspect using one of the "
+#~ "following methods: <placeholder-1/>"
+#~ msgstr ""
+#~ "Aplikaci <application>Accerciser</application> můžete použít ke kontrole "
+#~ "přístupnosti widgetů zobrazených ve Stromu objektů přístupnosti za pomoci "
+#~ "dostupných zásuvných modulů. Prvním krokem je výběr objektu, který lze "
+#~ "provádět těmito způsoby: <placeholder-1/>"
+
+#~ msgid "Select an accessible through the tree view."
+#~ msgstr "Ze Stromu objektů přístupnosti vyberte objekt."
+
+#~ msgid ""
+#~ "Use the tree view to navigate the hierarchy of accessible objects rooted "
+#~ "at desktop. Unfolding a tree node reveals its immediate children while "
+#~ "folding it hides them. Each node shows an icon for its associated "
+#~ "application or widget role and its accessible name, if available. The "
+#~ "second column lists how many nodes will be shown if the item is unfolded."
+#~ msgstr ""
+#~ "Použijte strom objektů přístupnosti pro navigaci v hierarchii objektů s "
+#~ "nejvyšší úrovní na pracovní ploše. Rozvinutím položky stromu zobrazíte "
+#~ "všechny podřízené položky, kdežto zavinutí je skryje. Každá položka "
+#~ "zobrazuje ikonu aplikace nebo widgetu dle příslušnosti a název. Druhý "
+#~ "sloupec pak udává, kolik bude zobrazeno položek, pokud bude daná "
+#~ "rozvinuta."
+
+#~ msgid "Using bookmarks"
+#~ msgstr "Používání záložek"
+
+#~ msgid ""
+#~ "Bookmarks could be managed by accessing the bookmark editing dialog "
+#~ "through <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit "
+#~ "Bookmarks...</guimenuitem></menuchoice>."
+#~ msgstr ""
+#~ "Záložky můžete spravovat z okna správy záložek, které je dostupné "
+#~ "vybráním položky <menuchoice><guimenu>Záložky</"
+#~ "guimenu><guimenuitem>Upravit záložky...</guimenuitem></menuchoice> z "
+#~ "nabídky."
+
+#~ msgid ""
+#~ "<application>Accerciser</application> comes with several default plugins. "
+#~ "These plugins allow you to view a variety of information about the "
+#~ "currently selected accessible in the tree view and its neighbors. The "
+#~ "default plugins available in 0.1.5 are the following:"
+#~ msgstr ""
+#~ "<application>Accerciser</application> obsahuje několik výchozích "
+#~ "zásuvných modulů. Ty vám umožňují prohlížet různorodé informace o "
+#~ "aktuálně vybraném objektu přístupnosti ve stromu a jeho sousedů. Výchozí "
+#~ "zásuvné moduly dostupné pro verzi 0.1.5 jsou:"
+
+#~ msgid ""
+#~ "This plugin displays information about the available interfaces for the "
+#~ "selected tree view accessible. Unsupported interfaces are grayed out. "
+#~ "Various instruments for viewing and controlling an interface are "
+#~ "available under each expander."
+#~ msgstr ""
+#~ "Tento zásuvný modul zobrazuje informace o tom, jaká rozhraní jsou pro "
+#~ "zvolený objekt přístupnosti ve stromu dostupná. Nedostupná rozhraní jsou "
+#~ "zašedlá. Pod každým rozpínačem jsou zobrazeny různé nástroje pro "
+#~ "prohlížení a kontrolu."
+
+#~ msgid ""
+#~ "Interfaces that are supported by the selected accessible are shown as "
+#~ "sensitive."
+#~ msgstr ""
+#~ "Rozhraní, která zvolený objekt přístupnosti podporuje, jsou rozlišena."
+
+#~ msgid ""
+#~ "This plugin monitors the selected types of events from the selected tree "
+#~ "view accessible, from the selected tree view application, or the entire "
+#~ "desktop."
+#~ msgstr ""
+#~ "Tento zásuvný modul sleduje zvolené typy událostí pro vybraný objekt "
+#~ "přístupnosti ve stromu. pro zvolenou aplikaci ve stromu nebo celou "
+#~ "pracovní plochu."
+
+#~ msgid ""
+#~ "The bottom part of the event monitor window allows you to pick the type "
+#~ "and source of events."
+#~ msgstr ""
+#~ "Spodní část okna Monitor událostí umožňuje výběr typu a zdroje událostí."
+
+#~ msgid ""
+#~ "By pressing <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>l</keycap></keycombo> anywhere on the desktop, the last "
+#~ "logged event will be highlighted for later reference. See <xref linkend="
+#~ "\"accerciser-hotkey-config\"/> for how to change this key combination."
+#~ msgstr ""
+#~ "Stiskem kombinace kláves <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>l</keycap></keycombo> kdekoliv na ploše způsobíte "
+#~ "zvýraznění poslední zaznamenané události, aby bylo možno ji později "
+#~ "dohledat. <xref linkend=\"accerciser-hotkey-config\"/> popisuje způsob, "
+#~ "jak tuto kombinaci kláves změnit."
+
+#~ msgid ""
+#~ "This plugin is a fully-fledged <ulink url=\"http://ipython.scipy.org/moin/"
+#~ "\" type=\"http\">IPython</ulink> console. Press <keycap>Tab</keycap> to "
+#~ "show completions for the current command. Press <keycap>Enter</keycap> to "
+#~ "execute any valid Python code. Commands at the console have access to the "
+#~ "currently selected accessible in the accessible tree by way of the "
+#~ "<varname>acc</varname> variable. In addition, all functions and constants "
+#~ "from the pyatspi package are available as locals in the console. The most "
+#~ "important of these are the functions for querying to other accessibility "
+#~ "interfaces. For example, to query to the Text interface: <command>t = acc."
+#~ "queryText() </command>. Imports from the current working directory or "
+#~ "Python path are also allowed."
+#~ msgstr ""
+#~ "Tento zásuvný modul je plnohodnotnou konzolou <ulink url=\"http://ipython."
+#~ "scipy.org/moin/\" type=\"http\">IPythonu</ulink>. Stisknutím klávesy "
+#~ "<keycap>Tab</keycap> zobrazíte nabídku dokončení příkazu. Stisknutím "
+#~ "klávesy <keycap>Enter</keycap> spustíte jakýkoliv funkční kód v jazyce "
+#~ "Python. Příkazy mají přístup k aktuálně vybranému objektu přístupnosti ve "
+#~ "stromu podle cesty proměnné <varname>acc</varname>. Dále jsou také do "
+#~ "konzoly zahrnuty jako místní všechny dostupné funkce a konstanty balíčku "
+#~ "pyatspi. Nejdůležitější jsou funkce pro dotazy na rozhraní přístupnosti, "
+#~ "například dotaz na rozhraní Text: <command>t = acc.queryText() </"
+#~ "command>. Také jsou dovoleny importy z aktuálního pracovního adresáře a "
+#~ "cesty Pythonu."
+
+#~ msgid "The API browser."
+#~ msgstr "Prohlížeč API"
+
+#~ msgid "Script recorder"
+#~ msgstr "Záznamník skriptů"
+
+# I can't see any 'Record' string in accerciser po file so I'll keep it untranslated
+#~ msgid ""
+#~ "<application>Accerciser</application>'s script recorder allows users to "
+#~ "record keyboard interaction with other desktop applications for the "
+#~ "purpose of authoring UI test scripts. Currently the plug-in supports the "
+#~ "generation of scripts for three platforms: Dogtail, LDTP, and an "
+#~ "Accerciser's built-in API. Once you press the \"Record\" button every "
+#~ "keyboard interaction will be recorded in to a script that could be "
+#~ "executed later as a stand alone script."
+#~ msgstr ""
+#~ "Záznamník skriptů aplikace <application>Accerciser</application> umožňuje "
+#~ "zaznamenávat interakci pomocí klávesnice s ostatními aplikacemi na ploše "
+#~ "za účelem vytvoření skriptu na testování uživatelského rozhraní. V "
+#~ "současné době podporuje zásuvný modul generování skriptů pro tři "
+#~ "platformy: Dogtail, LDTP a vestavěné API aplikace Accerciser. Od "
+#~ "stisknutí tlačítka \"Record\" bude každá akce provedená pomocí klávesnice "
+#~ "zaznamenána do skriptu, který může být později samostatně spuštěn."
+
+#~ msgid "Script Recorder"
+#~ msgstr "Záznamník skriptů"
+
+#~ msgid "The script recorder."
+#~ msgstr "Záznamník skriptů"
+
+#~ msgid ""
+#~ "This plugin provides global hotkeys for allowing quick selection of "
+#~ "accessibles through the target application's UI. Pressing "
+#~ "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>a</keycap></"
+#~ "keycombo> will select the last focused widget's accessible in "
+#~ "<application>Accerciser</application>. Pressing "
+#~ "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>t</keycap></"
+#~ "keycombo> will select the accessible of the widget that is under the "
+#~ "pointer."
+#~ msgstr ""
+#~ "Tento zásuvný modul poskytuje globální klávesové zkratky umožňující "
+#~ "rychlý výběr objektů přístupnosti napříč uživatelským rozhraním aplikace. "
+#~ "Stiskem kombinace kláves <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>a</keycap></keycombo> zaměříte v aplikaci "
+#~ "<application>Accerciser</application> poslední objekt přístupnosti "
+#~ "widgetu. Stiskem kombinace <keycombo><keycap>Control</keycap><keycap>Alt</"
+#~ "keycap><keycap>t</keycap></keycombo> vyberete objekt přístupnosti "
+#~ "widgetu, který je pod ukazatelem."
+
+#~ msgid "Validation"
+#~ msgstr "Validace"
+
+#~ msgid ""
+#~ "This plugin checks applications for accessibility problems and generates "
+#~ "a report including the severity and description of the problems. The "
+#~ "report links errors to documentation about how to remedy common problems. "
+#~ "The plugin is extensible with test schemas that define rules for "
+#~ "validation."
+#~ msgstr ""
+#~ "Tento zásuvný modul kontroluje aplikace z hlediska přístupnosti a "
+#~ "sestavuje zprávu obsahující závažnost a popis problémů. Ve zprávě jsou "
+#~ "odkazy na návod v dokumentaci, jak odstranit nejběžnější problémy."
+
+#~ msgid ""
+#~ "To run the validator, first select an item in the accessibility tree. The "
+#~ "plugin will test the selected accessible and all of its descendants. Next "
+#~ "select a schema to use for the test. Then click the <guibutton>Validate</"
+#~ "guibutton> button to start the test. While the test is running, click the "
+#~ "button again to cancel it."
+#~ msgstr ""
+#~ "Pokud chcete Validaci použít, nejprve vyberte ze Stromu objektů "
+#~ "přístupnosti cíl. Zásuvný modul objekt prozkoumá, včetně všech jeho "
+#~ "potomků. Následně vyberte schéma, které chcete pro test použít a po "
+#~ "klepnutí na tlačítko <guibutton>Validovat</guibutton> se test spustí. "
+#~ "Pokud test běží, opětovným klepnutím na tlačítko jej zrušíte."
+
+#~ msgid ""
+#~ "When the test completes, the report table shows the severity and "
+#~ "description of all errors. Double click a row in the table to show the "
+#~ "associated accessible in the tree. With an item selected, click the "
+#~ "<guibutton>Help</guibutton> to get information about how to resolve the "
+#~ "problem."
+#~ msgstr ""
+#~ "Po dokončení testu vám tabulka zprávy ukáže u každé chyby závažnost a "
+#~ "popis. Poklepáním na řádek tabulky zobrazíte odpovídající objekt "
+#~ "přístupnosti ve stromu. Když máte objekt vybrán, klepněte na tlačítko "
+#~ "<guibutton>Nápověda</guibutton> a zobrazí se informace o možnostech "
+#~ "odstranění problému."
+
+#~ msgid ""
+#~ "There are some elements in <application>Accerciser</application> that are "
+#~ "configurable:"
+#~ msgstr ""
+#~ "Některé elementy aplikace <application>Accerciser</application> lze "
+#~ "konfigurovat:"
+
+#~ msgid "Plugin Layout"
+#~ msgstr "Rozložení zásuvných modulů"
+
+#~ msgid ""
+#~ "There are two methods for configuring plugin layout in "
+#~ "<application>Accerciser</application>. First you may choose "
+#~ "<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</"
+#~ "guimenuitem></menuchoice> to activate the <guilabel>Preferences</"
+#~ "guilabel> dialog. This dialog contains tabs for each section, select the "
+#~ "<guilabel>Plugins</guilabel> tab. Under this section you will find a list "
+#~ "view of all the available plugins. Right-click on any of the plugins "
+#~ "listed to configure it's view."
+#~ msgstr ""
+#~ "V aplikaci <application>Accerciser</application> existují dva způsoby "
+#~ "nastavení rozložení zásuvných modulů. Nejdříve zvolením "
+#~ "<menuchoice><guimenu>Upravit</guimenu><guimenuitem>Nastavení</"
+#~ "guimenuitem></menuchoice> z nabídky otevřete okno <guilabel>Nastavení</"
+#~ "guilabel>, které obsahuje kartu pro každou oblast. Zvolte kartu "
+#~ "<guilabel>Zásuvné moduly</guilabel> a na ní naleznete seznam dostupných "
+#~ "zásuvných modulů. Klepnutím pravým tlačítkem na libovolný modul v seznamu "
+#~ "umožní změnit jeho zobrazení."
+
+#~ msgid ""
+#~ "You may bypass the <guilabel>Preferences</guilabel> dialog by using drag "
+#~ "and drop to move plugin tabs. Dragging a plugin tab to the bottom or "
+#~ "right plugin area in the main window will move the plugin. Dragging a tab "
+#~ "to the desktop will create a new plugin window and drop the plugin in it."
+#~ msgstr ""
+#~ "Bez použití okna <guilabel>Nastavení</guilabel> můžete přetahovat karty "
+#~ "zásuvných modulů. S moduly lze hýbat přetažením do spodního nebo pravého "
+#~ "prostoru pro zásuvné moduly. Přetažení karty na plochu otevře nové okno a "
+#~ "zásuvný modul do něj umístí."
+
+#~ msgid "Global Hotkey Configuration"
+#~ msgstr "Nastavení globálních klávesových zkratek"
+
+#~ msgid ""
+#~ "Some elements in <application>Accerciser</application> may enable certain "
+#~ "functionality via hotkeys. The hotkey combination could be changed via "
+#~ "the <guilabel>Preferences</guilabel> dialog, to do so you may select "
+#~ "<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</"
+#~ "guimenuitem></menuchoice> to activate the <guilabel>Preferences</"
+#~ "guilabel> dialog. This dialog contains tabs for each section, select the "
+#~ "<guilabel>Global Hotkeys</guilabel> tab. Under this section you will find "
+#~ "a list view of all the available hotkey features. Change the key bindings "
+#~ "to you liking."
+#~ msgstr ""
+#~ "Některé elementy aplikace <application>Accerciser</application> mohou "
+#~ "nabízet část funkcí prostřednictvím klávesových zkratek. V okně "
+#~ "<guilabel>Nastavení</guilabel> je lze změnit. Pokud tak chcete učinit, "
+#~ "zvolte z nabídky položku <menuchoice><guimenu>Upravit</"
+#~ "guimenu><guimenuitem>Nastavení</guimenuitem></menuchoice> a objeví se "
+#~ "okno <guilabel>Nastavení</guilabel>. Z karet v tomto okně, které jsou pro "
+#~ "každou oblast, vyberte kartu <guilabel>Globální klávesové zkratky</"
+#~ "guilabel>. Dole naleznete seznam všech funkcí, ke kterým lze zkratku "
+#~ "nastavit. Kombinace kláves závisí jen na vás."
+
+#~ msgid ""
+#~ "<application>Accerciser</application> was written by Eitan Isaacson "
+#~ "(<email>eitan@ascender.com</email>). To find more information about "
+#~ "<application>Accerciser</application>, please visit the <ulink url="
+#~ "\"http://live.gnome.org/Accerciser\" type=\"http"
+#~ "\"><application>Accerciser</application> GNOME Live! page</ulink>."
+#~ msgstr ""
+#~ "<application>Accerciser</application> napsal Eitan Isaacson "
+#~ "(<email>eitan@ascender.com</email>).  Více informací popisuje <ulink url="
+#~ "\"http://live.gnome.org/Accerciser\" type=\"http\">stránka projektu "
+#~ "<application>Accerciser</application> na GNOME Live!</ulink>."
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding this application or this "
+#~ "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+#~ "type=\"help\">document</ulink>."
+#~ msgstr ""
+#~ "Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k "
+#~ "aplikaci nebo této příručce, postupujte podle instrukcí v tomto <ulink "
+#~ "url=\"ghelp:gnome-feedback\" type=\"help\">dokumentu</ulink>."
+
+#~ msgid ""
+#~ "Redistribution and use in source and binary forms, with or without "
+#~ "modification, are permitted under the terms of the BSD License."
+#~ msgstr ""
+#~ "Re-distribuce a použití ve zdrojové nebo binární podobě, s nebo bez "
+#~ "úprav, je povoleno v souladu se zněním licence BSD."
