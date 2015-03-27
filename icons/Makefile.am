@@ -1,1 +1,1 @@
-SUBDIRS = hicolor HighContrast
+SUBDIRS = hicolor

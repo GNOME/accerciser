@@ -4,13 +4,16 @@ app_icons =			\
 	accerciser-22.png	\
 	accerciser-32.png	\
 	accerciser.png		\
-	accerciser.svg
+	accerciser.svg    \
+	accerciser-symbolic.svg
 
 noinst_DATA = accerciser-small.svg
 
 install-data-local:
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/scalable/apps
 	$(INSTALL_DATA) $(srcdir)/accerciser.svg $(DESTDIR)$(hicolordir)/scalable/apps/accerciser.svg
+	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/symbolic/apps
+	$(INSTALL_DATA) $(srcdir)/accerciser-symbolic.svg $(DESTDIR)$(hicolordir)/symbolic/apps/accerciser-symbolic.svg
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/16x16/apps
 	$(INSTALL_DATA) $(srcdir)/accerciser-16.png $(DESTDIR)$(hicolordir)/16x16/apps/accerciser.png
 	@-$(mkinstalldirs) $(DESTDIR)$(hicolordir)/22x22/apps
@@ -22,6 +25,7 @@ install-data-local:
 
 uninstall-hook:
 	rm -f $(DESTDIR)$(hicolordir)/scalable/apps/accerciser.svg
+	rm -f $(DESTDIR)$(hicolordir)/symbolic/apps/accerciser-symbolic.svg
 	rm -f $(DESTDIR)$(hicolordir)/16x16/apps/accerciser.png
 	rm -f $(DESTDIR)$(hicolordir)/22x22/apps/accerciser.png
 	rm -f $(DESTDIR)$(hicolordir)/32x32/apps/accerciser.png
