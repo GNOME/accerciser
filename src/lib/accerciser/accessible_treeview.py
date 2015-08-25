@@ -24,7 +24,7 @@ from . import ui_manager
 from time import sleep
 from .icons import getIcon
 from .node import Node
-from .tools import Tools, getTreePathBoundingBox
+from .tools import ToolsAccessor, getTreePathBoundingBox
 from .i18n import _
 
 COL_ICON = 0
@@ -37,7 +37,7 @@ COL_ACC = 6
 
 ACCESSIBLE_LOADING = 5
 
-class AccessibleModel(gtk.TreeStore, Tools):
+class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   '''
   Stores the desktop accessible tree. Only populates sections of the tree
   that are being viewed. This cuts short on a lot of potential overhead.
@@ -463,7 +463,7 @@ class AccessibleModel(gtk.TreeStore, Tools):
       count = None
     return [icon, name, role, count, False, dummy, accessible]
 
-class AccessibleTreeView(gtk.TreeView, Tools):
+class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   '''
   The treeview for the desktop's accessibles. The treeview's model (L{AccessibleModel}
   is only populated when the treeview is traversed and nodes are expanded. This class

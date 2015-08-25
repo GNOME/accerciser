@@ -14,10 +14,10 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 import gi
 
 from gi.repository import Gtk as gtk
-from accerciser.tools import Tools
+from accerciser.tools import ToolsAccessor
 import traceback
 
-class Plugin(Tools):
+class Plugin(ToolsAccessor):
   '''
   Base class for all plugins. It contains abstract methods for initializing 
   and finalizing a plugin. It also holds a reference to the main L{Node} and
@@ -100,33 +100,14 @@ class Plugin(Tools):
 
   def onAccChanged(self, acc):
     '''
-    An abstract event handler method that is called when the selected 
-    accessible in the main app changes. Should be overridden by 
+    An abstract event handler method that is called when the selected
+    accessible in the main app changes. Should be overridden by
     L{Plugin} authors.
 
     @param acc: The new accessibility object.
     @type acc: Accessibility.Accessible
     '''
-    pass 
-
-  def __getattribute__(self, name):
-    '''
-    Wraps attributes that are callable in a wrapper. This allows us to 
-    catch exceptions and display them in the plugin view if necessary.
-    
-    @param name: Name of attribure we are seeking.
-    @type name: string
-    
-    @return: Wrap attribut in L{_PluginMethodWrapper} if callable
-    @rtype: object
-    '''
-    obj = super(Plugin, self).__getattribute__(name)
-    if callable(obj) and name not in ['__class__']:
-      method_wrapper = \
-          super(Plugin, self).__getattribute__('_PluginMethodWrapper')
-      return method_wrapper(obj)
-    else:
-      return obj
+    pass
 
   class _PluginMethodWrapper(object):
     '''

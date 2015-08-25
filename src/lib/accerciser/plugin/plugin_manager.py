@@ -19,7 +19,7 @@ from gi.repository.Gio import Settings as GSettings
 
 from .base_plugin import Plugin
 from .view import ViewManager
-from accerciser.tools import Tools, getTreePathBoundingBox
+from accerciser.tools import ToolsAccessor, getTreePathBoundingBox
 from .message import MessageManager
 import os
 import sys
@@ -29,7 +29,7 @@ from accerciser.i18n import _, N_, C_
 
 GSCHEMA = 'org.a11y.Accerciser'
 
-class PluginManager(gtk.ListStore, Tools):
+class PluginManager(gtk.ListStore, ToolsAccessor):
   '''
 
   @cvar COL_INSTANCE: Instance column ID.

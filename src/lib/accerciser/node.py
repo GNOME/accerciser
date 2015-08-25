@@ -22,7 +22,7 @@ from gi.repository.Gio import Settings as GSettings
 import cairo
 import pyatspi
 import string
-from .tools import Tools, parseColorString
+from .tools import ToolsAccessor, parseColorString
 
 MAX_BLINKS = 6
 
@@ -45,7 +45,7 @@ class Bag(object):
   def __str__(self):
     return ', '.join(list(vars(self).keys()))
 
-class Node(GObject.GObject, Tools):
+class Node(GObject.GObject, ToolsAccessor):
   '''
   Node class that contains convient references to accessibility information 
   for the currently selected node. A L{Node} instance will emit an 

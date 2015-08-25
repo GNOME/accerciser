@@ -14,6 +14,9 @@ import os
 import pickle
 import weakref
 
+import traceback
+import functools
+
 class Tools(object):
   '''
   A class with some common methods that more than a few classes will need.
@@ -146,3 +149,30 @@ def getTreePathBoundingBox(treeview, path, col):
   rect.x += x
   rect.y += y
   return rect
+
+def logException(func):
+  '''
+  Handle (and log) the exceptions that are coming from plugins
+  '''
+  @functools.wraps(func)
+  def newfunc(*args, **kwargs):
+    # use Exception otherwise KeyboardInterrupt won't get through
+    try:
+      return func(*args, **kwargs)
+    except Exception:
+      traceback.print_exc()
+  return newfunc
+
+class ToolsAccessor(Tools):
+  '''
+  By following the recommendation on
+  https://bugzilla.gnome.org/show_bug.cgi?id=723081#c4, this Accessor allows us
+  to wrap every plugin's method and in order to catch all possible exceptions
+  and print them appropiately.
+  '''
+  def __init__(self, plugin):
+    self.plugin = plugin
+
+    @logException
+    def method(self):
+      return self.plugin.method()

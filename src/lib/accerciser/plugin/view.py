@@ -270,7 +270,7 @@ class PluginView(gtk.Notebook):
     shown_children = [x for x in self.get_children() if x.get_property('visible')]
     return len(shown_children)
 
-class PluginViewWindow(gtk.Window, Tools):
+class PluginViewWindow(gtk.Window, ToolsAccessor):
   '''
   Standalone window with a plugin view.
 
@@ -495,7 +495,7 @@ class ViewManager(object):
     '''
     return self._view_model.Menu(context_plugin, transient_window)
 
-class BaseViewModel(Tools):
+class BaseViewModel(ToolsAccessor):
   '''
   Base class for views model
 
