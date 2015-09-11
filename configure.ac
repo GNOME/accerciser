@@ -40,7 +40,6 @@ doc/Makefile
 help/Makefile
 icons/Makefile
 icons/hicolor/Makefile
-icons/HighContrast/Makefile
 pixmaps/Makefile
 plugins/Makefile
 plugindata/Makefile
