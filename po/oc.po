@@ -1,16 +1,16 @@
 # Occitan translation of accerciser.
 # Copyright (c) 2006-2015 Listed translators
 # This file is distributed under the same license as the accerciser package.
-# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org> - 2006-2007
-# Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>, 2015.
+# Cédric Valmary <cvalmary@yahoo.fr>, 2015.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerci"
 "ser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-08 17:32+0000\n"
-"PO-Revision-Date: 2015-05-16 10:56+0200\n"
-"Last-Translator: Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>\n"
+"POT-Creation-Date: 2015-09-19 15:30+0000\n"
+"PO-Revision-Date: 2015-11-13 10:32+0200\n"
+"Last-Translator: Cédric VALMARY <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot en òc (totenoc.eu)\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgid ""
 "Accerciser is an interactive Python accessibility explorer for the GNOME "
 "desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
 "check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
+"tecnologias and automated test frameworks."
 msgstr ""
 "Accerciser es un explorador d'accessibilitat interactiu en Python pel burèu "
 "GNOME. Utiliza AT-SPI per inspectar e contrarotlar los components, que "
@@ -274,7 +274,6 @@ msgid "Clear event log"
 msgstr "Escafar lo jornal dels eveniments"
 
 #: ../plugins/interface_view.ui.h:1
-#| msgid "Children"
 msgid "Child count"
 msgstr "Nombre de filhs"
 
@@ -284,7 +283,6 @@ msgstr "0"
 
 #: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
 #: ../plugins/interface_view.py:859
-#| msgid "<no description>"
 msgid "(no description)"
 msgstr "(pas cap de descripcion)"
 
@@ -295,12 +293,10 @@ msgid "Description"
 msgstr "Descripcion"
 
 #: ../plugins/interface_view.ui.h:5
-#| msgid "<b>States</b>"
 msgid "States"
 msgstr "Estats"
 
 #: ../plugins/interface_view.ui.h:6
-#| msgid "<b>Attributes</b>"
 msgid "Attributes"
 msgstr "Atributs"
 
@@ -309,7 +305,6 @@ msgid "Show"
 msgstr "Afichar"
 
 #: ../plugins/interface_view.ui.h:8
-#| msgid "<b>Relations</b>"
 msgid "Relations"
 msgstr "Relacions"
 
@@ -432,12 +427,10 @@ msgid "St_reamable Content"
 msgstr "Contengut de _flux"
 
 #: ../plugins/interface_view.ui.h:39
-#| msgid "Application:"
 msgid "Caption:"
 msgstr "Legenda :"
 
 #: ../plugins/interface_view.ui.h:40
-#| msgid "<i>Summary:</i>"
 msgid "Summary:"
 msgstr "Resumit :"
 
@@ -458,7 +451,6 @@ msgid "Rows"
 msgstr "Linhas"
 
 #: ../plugins/interface_view.ui.h:45
-#| msgid "<b>Table Information</b>"
 msgid "Table Information"
 msgstr "Informacions sul tablèu"
 
@@ -488,7 +480,6 @@ msgid "Column"
 msgstr "Colomna"
 
 #: ../plugins/interface_view.ui.h:53
-#| msgid "<b>Selected Cell</b>"
 msgid "Selected Cell"
 msgstr "Cellula seleccionada"
 
@@ -510,13 +501,11 @@ msgstr "Inclure las valors per defaut"
 
 #. Start character offset of text attributes span
 #: ../plugins/interface_view.ui.h:59
-#| msgid "Start"
 msgid "Start: 0"
 msgstr "Començament : 0"
 
 #. End character offset of text attributes span
 #: ../plugins/interface_view.ui.h:61
-#| msgid "<i>End: 0</i>"
 msgid "End: 0"
 msgstr "Fin :0"
 
@@ -545,7 +534,6 @@ msgid "Val_ue"
 msgstr "Val_or"
 
 #: ../plugins/interface_view.ui.h:68
-#| msgid "<b>unknown</b>"
 msgid "unknown"
 msgstr "desconegut"
 
@@ -587,7 +575,6 @@ msgid "Too many selectable children"
 msgstr "Tròp de filhs seleccionables"
 
 #: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
-#| msgid "<i>(Editable)</i>"
 msgid "(Editable)"
 msgstr "(editable)"
 
@@ -597,8 +584,7 @@ msgstr "(editable)"
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
 #: ../plugins/interface_view.py:1412
-#, python-format, python-format
-#| msgid "Start"
+#, python-format
 msgid "Start: %d"
 msgstr "Començament : %d"
 
@@ -720,7 +706,7 @@ msgstr "i a mai d'un widget qu'a lo focus"
 #: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
-msgstr "%s n'a pas d'interfàcia tèxte"
+msgstr "%s a pas d'interfàcia tèxte"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
@@ -747,8 +733,8 @@ msgstr "l'element %s a pas de nom o d'etiqueta"
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"l'element %s pouvant obtenir lo focus a una interfàcia de tablèu, mas pas "
-"d'interfàcia de sélection"
+"l'element %s que pòt obténer lo focus a una interfàcia de tablèu, mas pas "
+"d'interfàcia de seleccion"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
@@ -912,7 +898,10 @@ msgstr "La color d'emplenatge de la bóstia de susbrilhança"
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Yannig Marchegay (msgstr \"Localizar) \"  Cédric VALMARY (Tot en òc) "
+"https://launchpad.net/~cvalmary\n"
+"  Yannig MARCHEGAY (msgstr \"Localizar) https://launchpad.net/~yannick-"
+"marchegay\"\n"
 "Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
@@ -920,7 +909,6 @@ msgid "An interactive Python accessibility explorer"
 msgstr "Un explorador d'accessibilitat interactiu en Python"
 
 #: ../src/lib/accerciser/about_dialog.py:54
-#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
 
@@ -939,7 +927,7 @@ msgstr "_Apondre un favorit..."
 
 #: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
-msgstr "Signet accessible seleccionat."
+msgstr "Marcapagina accessible seleccionat."
 
 #: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
@@ -989,7 +977,6 @@ msgstr "Errors dels empeutons"
 #. it is a noun.
 #.
 #: ../src/lib/accerciser/plugin/plugin_manager.py:395
-#| msgid "View"
 msgctxt "viewport"
 msgid "View"
 msgstr "Vista"
@@ -1004,12 +991,12 @@ msgstr "Vista _unica dels empeutons"
 
 #: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
-msgstr "Vista del empeuton"
+msgstr "Vista de l'empeuton"
 
 #: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "Vista del empeuton (%d)"
+msgstr "Vista de l'empeuton (%d)"
 
 #: ../src/lib/accerciser/plugin/view.py:1074
 msgid "_New view..."
@@ -1028,13 +1015,11 @@ msgid "_Edit"
 msgstr "_Editar"
 
 #: ../src/lib/accerciser/ui_manager.py:25
-#| msgid "_Bookmarks"
 msgctxt "menu"
 msgid "_Bookmarks"
-msgstr "_Signets"
+msgstr "_Marcapaginas"
 
 #: ../src/lib/accerciser/ui_manager.py:26
-#| msgid "_View"
 msgctxt "menu"
 msgid "_View"
 msgstr "_Afichatge"
@@ -1050,7 +1035,7 @@ msgstr "_Ajuda"
 #~ msgstr "<b>Descripcion</b>"
 
 #~ msgid "<b>Text</b>"
-#~ msgstr "<b>Tèxt</b>"
+#~ msgstr "<b>Tèxte</b>"
 
 #~ msgid "<i>(no description)</i>"
 #~ msgstr "<i>(pas cap de descripcion)</i>"
@@ -1073,7 +1058,7 @@ msgstr "_Ajuda"
 #~ "it now?"
 #~ msgstr ""
 #~ "Accerciser a pas pogut veire las aplicacions sul vòstre burèu. Debètz "
-#~ "activar l'accessibilitat del burèu per corregir lo problème. La volètz "
+#~ "activar l'accessibilitat del burèu per corregir lo problèma. La volètz "
 #~ "activar ara ?"
 
 #~ msgid "1.0"
