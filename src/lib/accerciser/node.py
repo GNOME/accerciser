@@ -18,7 +18,7 @@ from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository.Gio import Settings as GSettings
-#from gi.repository import cairo
+from gi.repository import Rsvg as rsvg
 import cairo
 import pyatspi
 import string
@@ -180,14 +180,24 @@ class Node(GObject.GObject, ToolsAccessor):
       return False
     return True
 
-
 class _HighLight(gtk.Window):
   '''
   Highlight box class. Uses compositing when available. When not, it does
   transparency client-side.
   '''
-  __gtype_name__ = "_Highlight"
-
+  _svg = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <rect
+       style="fill:$fill;fill-opacity:$fill_opacity;fill-rule:evenodd;stroke:$stroke;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:$stroke_opacity"
+       id="highlight"
+       width="$width"
+       height="$height"
+       x="$x"
+       y="$y"
+       rx="2"
+       ry="2" />
+</svg>
+"""
   def __init__(self, x, y, w, h, 
                fill_color, fill_alpha,
                stroke_color, stroke_alpha, 
@@ -199,23 +209,18 @@ class _HighLight(gtk.Window):
     # Normalize position for stroke and padding.
     self.x, self.y = x - padding, y - padding
     self.w, self.h = w + padding*2, h + padding*2
-    self.fill_color = fill_color
 
-    # TODO: Implement transparency for fallback-mode
-    #
     # Determine if we are compositing.
-    #self._composited = self.is_composited()
-    #if self._composited:
-    #  # Prepare window for transparency.
-    #  screen = self.get_screen()
-    #  visual = screen.get_rgba_visual()
-    #  self.set_visual(visual)
-    #else:
-    #  # Take a screenshot for compositing on the client side.
-    #  self.root = gdk.get_default_root_window().get_image(
-    #    self.x, self.y, self.w, self.h)
-    #  #self.root = gtk.Image(self.x, self.y, self.w, self.h)
- 
+    self._composited = self.is_composited()
+    if self._composited:
+      # Prepare window for transparency.
+      screen = self.get_screen()
+      visual = screen.get_rgba_visual()
+      self.set_visual(visual)
+    else:
+      # Take a screenshot for compositing on the client side.
+      self.root = gdk.get_default_root_window().get_image(
+        self.x, self.y, self.w, self.h)
 
     # Place window, and resize it, and set proper properties.
     self.set_app_paintable(True)
@@ -225,24 +230,20 @@ class _HighLight(gtk.Window):
     self.resize(self.w, self.h)
     self.set_accept_focus(False)
     self.set_sensitive(False)
-    self.set_opacity(fill_alpha)
 
-#    # Create SVG with given parameters.
-#    offset = stroke_width/2.0
-#    self.svg = string.Template(self._svg).substitute(
-#      x=offset, y=offset,
-#      width=int(self.w - stroke_width), height=int(self.h - stroke_width),
-#      fill=fill_color, 
-#      stroke_width=stroke_width,
-#      stroke=stroke_color,
-#      fill_opacity=fill_alpha,
-#      stroke_opacity=stroke_alpha)
+    # Create SVG with given parameters.
+    offset = stroke_width/2.0
+    self.svg = string.Template(self._svg).substitute(
+      x=offset, y=offset,
+      width=int(self.w - stroke_width), height=int(self.h - stroke_width),
+      fill=fill_color,
+      stroke_width=stroke_width,
+      stroke=stroke_color,
+      fill_opacity=fill_alpha,
+      stroke_opacity=stroke_alpha)
 
-    da = gtk.DrawingArea()
     # Connect "draw"
-    da.connect("draw", self._onExpose)
-    self.add(da)
-    self.show_all()
+    self.connect("draw", self._onExpose)
     
   def highlight(self, duration=500):
     if duration > 0:
@@ -252,130 +253,33 @@ class _HighLight(gtk.Window):
       self.destroy()
     
   def _onExpose(self, widget, event):
-    window = widget.get_window()
-    cr = window.cairo_create()
+    svgh = rsvg.Handle()
+    try:
+      svgh.write(bytes(self.svg, "utf-8"))
+    except (GObject.GError, KeyError, ValueError) as ex:
+      print ('Error reading SVG for display: %s\r\n%s', ex, self.svg)
+      svgh.close()
+      return
+    svgh.close()
 
-    if not self.is_composited():
+    if not self._composited:
       # Draw the screengrab of the underlaying window, and set the drawing
       # operator to OVER.
-      #self.window.draw_image(self.style.black_gc, self.root,
-      #                       event.area.x,event.area.y,
-      #                       event.area.x, event.area.y,
-      #                       event.area.width, event.area.height)
+      self.window.draw_image(self.style.black_gc, self.root,
+                             event.area.x,event.area.y,
+                             event.area.x, event.area.y,
+                             event.area.width, event.area.height)
       cairo_operator = cairo.OPERATOR_OVER
     else:
       cairo_operator = cairo.OPERATOR_SOURCE
+    window = self.get_window()
+    cr = window.cairo_create()
+    cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
     cr.set_operator(cairo_operator)
-
-    color = gdk.color_parse(self.fill_color)
-
-    #TODO: look for for set_source_rgb and Gdk.Color issues
-    #
-    cr.set_source_rgb(color.red, color.green, color.blue)
     cr.paint()
 
-
-#class _HighLight(gtk.Window):
-#  '''
-#  Highlight box class. Uses compositing when available. When not, it does
-#  transparency client-side.
-#  '''
-#  _svg = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#<svg xmlns="http://www.w3.org/2000/svg"> 
-#  <rect
-#       style="fill:$fill;fill-opacity:$fill_opacity;fill-rule:evenodd;stroke:$stroke;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:$stroke_opacity"
-#       id="highlight"
-#       width="$width"
-#       height="$height"
-#       x="$x"
-#       y="$y"
-#       rx="2"
-#       ry="2" />
-#</svg>
-#"""
-#  def __init__(self, x, y, w, h, 
-#               fill_color, fill_alpha,
-#               stroke_color, stroke_alpha, 
-#               stroke_width, padding=0):
-#
-#    # Initialize window.
-#    #gtk.Window.__init__(self, gtk.WindowType.POPUP)
-#    gtk.Window.__init__(self)
-#
-#    # Normalize position for stroke and padding.
-#    self.x, self.y = x - padding, y - padding
-#    self.w, self.h = w + padding*2, h + padding*2
-#
-#    # Determine if we are compositing.
-#    self._composited = self.is_composited()
-#    if self._composited:
-#      # Prepare window for transparency.
-#      screen = self.get_screen()
-#      visual = screen.get_rgba_visual()
-#      self.set_visual(visual)
-#    else:
-#      # Take a screenshot for compositing on the client side.
-#      self.root = gdk.get_default_root_window().get_image(
-#        self.x, self.y, self.w, self.h)
-#
-#    # Place window, and resize it, and set proper properties.
-#    self.set_app_paintable(True)
-#    self.set_decorated(False)
-#    self.set_keep_above(True)
-#    self.move(self.x, self.y)
-#    self.resize(self.w, self.h)
-#    self.set_accept_focus(False)
-#    self.set_sensitive(False)
-#
-#    # Create SVG with given parameters.
-#    offset = stroke_width/2.0
-#    self.svg = string.Template(self._svg).substitute(
-#      x=offset, y=offset,
-#      width=int(self.w - stroke_width), height=int(self.h - stroke_width),
-#      fill=fill_color, 
-#      stroke_width=stroke_width,
-#      stroke=stroke_color,
-#      fill_opacity=fill_alpha,
-#      stroke_opacity=stroke_alpha)
-#
-#    # Connect "draw"
-#    self.connect("draw", self._onExpose)
-#    
-#  def highlight(self, duration=500):
-#    if duration > 0:
-#      GLib.timeout_add(duration, lambda w: w.destroy(), self)
-#      self.show_all()
-#    else:
-#      self.destroy()
-#    
-#  def _onExpose(self, widget, event):
-#    svgh = rsvg.Handle()
-#    try:
-#      svgh.write(self.svg)
-#    except (GObject.GError, KeyError, ValueError), ex:
-#      print 'Error reading SVG for display: %s\r\n%s', ex, self.svg
-#      svgh.close()
-#      return
-#    svgh.close()
-#      
-#    if not self._composited:
-#      # Draw the screengrab of the underlaying window, and set the drawing
-#      # operator to OVER.
-#      self.window.draw_image(self.style.black_gc, self.root, 
-#                             event.area.x,event.area.y, 
-#                             event.area.x, event.area.y, 
-#                             event.area.width, event.area.height)
-#      cairo_operator = cairo.OPERATOR_OVER
-#    else:
-#      cairo_operator = cairo.OPERATOR_SOURCE
-#    window = self.get_window()
-#    cr = window.cairo_create()
-#    cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
-#    cr.set_operator(cairo_operator)
-#    cr.paint()
-#
-#    svgh.render_cairo( cr )
-#    del svgh
+    svgh.render_cairo(cr)
+    del svgh
 
 if __name__ == "__main__":
     hl = _HighLight(200, 200, 200, 200, '#ff0000', 
