@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
+<!-- Generated with glade 3.19.0 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkListStore" id="accattrib_liststore">
@@ -109,6 +109,7 @@
                       <object class="GtkVBox" id="vbox2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="margin_right">7</property>
                         <property name="spacing">2</property>
                         <child>
                           <object class="GtkHBox" id="hbox20">
@@ -174,9 +175,9 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                                    <property name="xalign">0</property>
                                     <property name="label" translatable="yes">(no description)</property>
                                     <property name="selectable">True</property>
+                                    <property name="xalign">0</property>
                                     <attributes>
                                       <attribute name="style" value="italic"/>
                                     </attributes>
@@ -210,6 +211,8 @@
                               <object class="GtkPaned" id="paned1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="position">175</property>
+                                <property name="position_set">True</property>
                                 <child>
                                   <object class="GtkFrame" id="frame4">
                                     <property name="visible">True</property>
@@ -227,6 +230,7 @@
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="shadow_type">in</property>
+                                            <property name="min_content_height">75</property>
                                             <child>
                                               <object class="GtkTreeView" id="states_view">
                                                 <property name="visible">True</property>
@@ -285,6 +289,7 @@
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="shadow_type">in</property>
+                                            <property name="min_content_height">75</property>
                                             <child>
                                               <object class="GtkTreeView" id="accattrib_view">
                                                 <property name="visible">True</property>
@@ -375,6 +380,7 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="shadow_type">in</property>
+                                        <property name="min_content_height">75</property>
                                         <child>
                                           <object class="GtkTreeView" id="relations_view">
                                             <property name="visible">True</property>
@@ -533,6 +539,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
+                            <property name="min_content_height">75</property>
                             <child>
                               <object class="GtkTreeView" id="treeview_action">
                                 <property name="visible">True</property>
@@ -686,8 +693,8 @@
                           <object class="GtkLabel" id="label23">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">ID</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="label_app_id"/>
                             </accessibility>
@@ -701,8 +708,8 @@
                           <object class="GtkLabel" id="label22">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Toolkit</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="label_app_tk"/>
                             </accessibility>
@@ -718,8 +725,8 @@
                           <object class="GtkLabel" id="label20">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Version</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="label_app_version"/>
                             </accessibility>
@@ -735,8 +742,8 @@
                           <object class="GtkLabel" id="label_app_id">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label23"/>
                             </accessibility>
@@ -752,8 +759,8 @@
                           <object class="GtkLabel" id="label_app_tk">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label22"/>
                             </accessibility>
@@ -771,8 +778,8 @@
                           <object class="GtkLabel" id="label_app_version">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label20"/>
                             </accessibility>
@@ -846,9 +853,9 @@
                           <object class="GtkLabel" id="relative_position_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label33"/>
                             </accessibility>
@@ -866,8 +873,8 @@
                           <object class="GtkLabel" id="label33">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Relative position</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="relative_position_label"/>
                             </accessibility>
@@ -883,9 +890,9 @@
                           <object class="GtkLabel" id="size_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes" comments="Component size in pixels">0, 0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label14"/>
                             </accessibility>
@@ -903,8 +910,8 @@
                           <object class="GtkLabel" id="label14">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Size</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="size_label"/>
                             </accessibility>
@@ -920,9 +927,9 @@
                           <object class="GtkLabel" id="layer_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">WIDGET</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label15"/>
                             </accessibility>
@@ -940,8 +947,8 @@
                           <object class="GtkLabel" id="label15">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Layer</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="layer_label"/>
                             </accessibility>
@@ -957,9 +964,9 @@
                           <object class="GtkLabel" id="zorder_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label16"/>
                             </accessibility>
@@ -977,8 +984,8 @@
                           <object class="GtkLabel" id="label16">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">MDI-Z-order</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="zorder_label"/>
                             </accessibility>
@@ -994,9 +1001,9 @@
                           <object class="GtkLabel" id="alpha_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label">1.0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label19"/>
                             </accessibility>
@@ -1014,8 +1021,8 @@
                           <object class="GtkLabel" id="label19">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Alpha</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="alpha_label"/>
                             </accessibility>
@@ -1031,9 +1038,9 @@
                           <object class="GtkLabel" id="absolute_position_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label13"/>
                             </accessibility>
@@ -1049,8 +1056,8 @@
                           <object class="GtkLabel" id="label13">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Absolute position</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="absolute_position_label"/>
                             </accessibility>
@@ -1129,6 +1136,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="shadow_type">in</property>
+                                    <property name="min_content_height">75</property>
                                     <child>
                                       <object class="GtkTreeView" id="docattrib_view">
                                         <property name="visible">True</property>
@@ -1284,6 +1292,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
+                            <property name="min_content_height">75</property>
                             <child>
                               <object class="GtkTreeView" id="treeview_links">
                                 <property name="height_request">140</property>
@@ -1398,8 +1407,8 @@
                           <object class="GtkLabel" id="label25">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Position</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="img_position_label"/>
                             </accessibility>
@@ -1415,8 +1424,8 @@
                           <object class="GtkLabel" id="label21">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Size</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="img_size_label"/>
                             </accessibility>
@@ -1432,9 +1441,9 @@
                           <object class="GtkLabel" id="img_position_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label25"/>
                             </accessibility>
@@ -1452,9 +1461,9 @@
                           <object class="GtkLabel" id="img_size_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes" comments="Component size">0, 0</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label21"/>
                             </accessibility>
@@ -1472,8 +1481,8 @@
                           <object class="GtkLabel" id="label59">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Description</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="img_desc_label"/>
                             </accessibility>
@@ -1487,8 +1496,8 @@
                           <object class="GtkLabel" id="label60">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">Locale</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="label-for" target="img_locale_label"/>
                             </accessibility>
@@ -1504,9 +1513,9 @@
                           <object class="GtkLabel" id="img_desc_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label" translatable="yes">(no description)</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <attributes>
                               <attribute name="style" value="italic"/>
                             </attributes>
@@ -1525,9 +1534,9 @@
                           <object class="GtkLabel" id="img_locale_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="xalign">0</property>
                             <property name="label">C</property>
                             <property name="selectable">True</property>
+                            <property name="xalign">0</property>
                             <accessibility>
                               <relation type="labelled-by" target="label60"/>
                             </accessibility>
@@ -1598,6 +1607,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
+                            <property name="min_content_height">75</property>
                             <child>
                               <object class="GtkTreeView" id="treeview_selection">
                                 <property name="visible">True</property>
@@ -1707,6 +1717,7 @@
                         <property name="can_focus">True</property>
                         <property name="border_width">6</property>
                         <property name="shadow_type">in</property>
+                        <property name="min_content_height">75</property>
                         <child>
                           <object class="GtkTreeView" id="treeview_streams">
                             <property name="visible">True</property>
@@ -1903,8 +1914,8 @@
                                               <object class="GtkLabel" id="table_scolumns_label">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label">0</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="labelled-by" target="label44"/>
                                                 </accessibility>
@@ -1922,8 +1933,8 @@
                                               <object class="GtkLabel" id="table_srows_label">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">0</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="labelled-by" target="label43"/>
                                                 </accessibility>
@@ -1941,8 +1952,8 @@
                                               <object class="GtkLabel" id="table_columns_label">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">0</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="labelled-by" target="label42"/>
                                                 </accessibility>
@@ -1960,8 +1971,8 @@
                                               <object class="GtkLabel" id="table_rows_label">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">0</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="labelled-by" target="label41"/>
                                                 </accessibility>
@@ -1977,8 +1988,8 @@
                                               <object class="GtkLabel" id="label44">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">Selected columns</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="label-for" target="table_scolumns_label"/>
                                                 </accessibility>
@@ -1993,8 +2004,8 @@
                                               <object class="GtkLabel" id="label43">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">Selected rows</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="label-for" target="table_srows_label"/>
                                                 </accessibility>
@@ -2009,8 +2020,8 @@
                                               <object class="GtkLabel" id="label42">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">Columns</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="label-for" target="table_columns_label"/>
                                                 </accessibility>
@@ -2025,8 +2036,8 @@
                                               <object class="GtkLabel" id="label41">
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">False</property>
-                                                <property name="xalign">0</property>
                                                 <property name="label" translatable="yes">Rows</property>
+                                                <property name="xalign">0</property>
                                                 <accessibility>
                                                   <relation type="label-for" target="table_rows_label"/>
                                                 </accessibility>
@@ -2435,6 +2446,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="shadow_type">in</property>
+                                    <property name="min_content_height">75</property>
                                     <child>
                                       <object class="GtkTextView" id="textview_text">
                                         <property name="visible">True</property>
@@ -2492,8 +2504,8 @@
                                           <object class="GtkLabel" id="label18">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
-                                            <property name="xalign">1</property>
                                             <property name="label" translatable="yes">Offset</property>
+                                            <property name="xalign">1</property>
                                             <accessibility>
                                               <relation type="label-for" target="spinbutton_text_offset"/>
                                             </accessibility>
@@ -2552,10 +2564,10 @@
                                           <object class="GtkLabel" id="label_text_attr_start">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
-                                            <property name="xalign">0</property>
                                             <property name="label" translatable="yes" comments="Start character offset of text attributes span">Start: 0</property>
                                             <property name="wrap_mode">word-char</property>
                                             <property name="selectable">True</property>
+                                            <property name="xalign">0</property>
                                             <attributes>
                                               <attribute name="style" value="italic"/>
                                             </attributes>
@@ -2570,10 +2582,10 @@
                                           <object class="GtkLabel" id="label_text_attr_end">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
-                                            <property name="xalign">0</property>
                                             <property name="label" translatable="yes" comments="End character offset of text attributes span">End: 0</property>
                                             <property name="wrap_mode">word-char</property>
                                             <property name="selectable">True</property>
+                                            <property name="xalign">0</property>
                                             <attributes>
                                               <attribute name="style" value="italic"/>
                                             </attributes>
@@ -2608,6 +2620,7 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="shadow_type">in</property>
+                                        <property name="min_content_height">75</property>
                                         <child>
                                           <object class="GtkTreeView" id="treeview_text_attr">
                                             <property name="visible">True</property>
@@ -2732,8 +2745,8 @@
                               <object class="GtkLabel" id="label40">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">Current value</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="label-for" target="spinbutton_value"/>
                                 </accessibility>
@@ -2743,9 +2756,9 @@
                               <object class="GtkLabel" id="label_value_inc">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">0</property>
                                 <property name="selectable">True</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="labelled-by" target="label36"/>
                                 </accessibility>
@@ -2762,9 +2775,9 @@
                               <object class="GtkLabel" id="label_value_min">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">0</property>
                                 <property name="selectable">True</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="labelled-by" target="label35"/>
                                 </accessibility>
@@ -2781,9 +2794,9 @@
                               <object class="GtkLabel" id="label_value_max">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">0</property>
                                 <property name="selectable">True</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="labelled-by" target="label34"/>
                                 </accessibility>
@@ -2800,8 +2813,8 @@
                               <object class="GtkLabel" id="label36">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">Minimum increment</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="label-for" target="label_value_inc"/>
                                 </accessibility>
@@ -2815,8 +2828,8 @@
                               <object class="GtkLabel" id="label35">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">Maximum value</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="label-for" target="label_value_max"/>
                                 </accessibility>
@@ -2830,8 +2843,8 @@
                               <object class="GtkLabel" id="label34">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">Minimum value</property>
+                                <property name="xalign">0</property>
                                 <accessibility>
                                   <relation type="label-for" target="label_value_min"/>
                                 </accessibility>
