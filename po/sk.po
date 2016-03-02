@@ -8,18 +8,19 @@ msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-08 12:13+0000\n"
-"PO-Revision-Date: 2013-09-12 10:40+0100\n"
-"Last-Translator: Roman Mátyus <romanmatyus@gmail.com>\n"
+"POT-Creation-Date: 2016-03-02 03:26+0000\n"
+"PO-Revision-Date: 2016-03-02 08:04+0100\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.8.7\n"
 
 # desktop entry name
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
@@ -33,7 +34,7 @@ msgid "accessibility;development;test;"
 msgstr "zjednodušenie ovládania;vývoj;testovanie;"
 
 # desktop entry full name
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser - prieskumník prístupnosti"
 
@@ -197,6 +198,28 @@ msgstr "Kombinácia klávesových skratiek"
 msgid "Hotkey combination for related action."
 msgstr "Kombinácia klávesových skratiek pre súvisiace akcie."
 
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Prieskumník prístupnosti prostredia GNOME"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser je interaktívny prieskumník prístupnosti jazyka Python pre "
+"prostredie GNOME. Využíva AT-SPI na kontrolu a ovládanie miniaplikácií, "
+"umožňujúc vám skontrolovať, či aplikácia poskytuje správne informácie "
+"asistujúcim technológiám a automatizovaným skúšobným rozhraniam."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+
 # plugin name
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -317,8 +340,8 @@ msgstr "(bez popisu)"
 
 # label in table
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Popis"
 
@@ -327,20 +350,20 @@ msgstr "Popis"
 msgid "States"
 msgstr "Stavy"
 
-# button
+# label
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Atribúty"
+
+# button
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Zobraziť"
 
 # label
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Vzťahy"
-
-# label
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Atribúty"
 
 # label pri expanderi
 #: ../plugins/interface_view.ui.h:9
@@ -447,7 +470,7 @@ msgstr "_Dokument"
 
 # label pri expanderi
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Odkaz"
 
@@ -647,7 +670,7 @@ msgid "(not implemented)"
 msgstr "(neimplementované)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -683,7 +706,7 @@ msgstr "(Upraviteľné)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
 msgid "Start: %d"
 msgstr "Začiatok: %d"
@@ -694,7 +717,7 @@ msgstr "Začiatok: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Koniec: %d"
@@ -730,67 +753,67 @@ msgid "V_alidate"
 msgstr "_Overiť"
 
 # progress bar
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Nečinnosť"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Bez popisu"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "Overovač AT_SPI"
 
 # plugin desc
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Overuje prístupnosť aplikácie"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Úroveň"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Úloha"
 
 # progress
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Ukladanie"
 
 # progress
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Overovanie"
 
 # validator log message
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "VÝNIMKA"
 
 # validator log message
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "CHYBA"
 
 # validator log message
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "VAROVANIE"
 
 # validator log message
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "INFO"
 
 # validator log message
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "LADENIE"
 
@@ -907,12 +930,12 @@ msgid "%s has no name or description"
 msgstr "objekt %s nemá žiaden názov ani popis"
 
 # action
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "Nas_tavenia…"
 
 # action
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "Ob_sah"
 
@@ -985,12 +1008,12 @@ msgid "Shift"
 msgstr "Shift"
 
 # PluginView
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Horný panel"
 
 # PluginView
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Dolný panel"
 
@@ -1041,7 +1064,9 @@ msgstr "Farba výplne zvýrazujúceho rámčeka"
 
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
-msgstr "Roman Mátyus <romanmatyus@gmail.com>"
+msgstr ""
+"Roman Mátyus <romanmatyus@gmail.com>\n"
+"Dušan Kazik <prescott66@gmail.com>"
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
@@ -1060,62 +1085,62 @@ msgid "Web site"
 msgstr "Webové stránky"
 
 # action
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "Prid_ať záložku…"
 
 # tooltip
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Uloží zvolený objekt prístupnosti medzi záložky."
 
 # action
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Upraviť záložky…"
 
 # tooltip
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Spravuje záložky."
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Úprava záložiek…"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Nadpis"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Aplikácia"
 
 # TreeViewColumn
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Cesta"
 
 # dialog title
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Pridať záložku…"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Nadpis:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Aplikácia:"
 
 # label_entry_pair
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Cesta:"
 
