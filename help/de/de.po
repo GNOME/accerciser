@@ -7,15 +7,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser help master\n"
-"POT-Creation-Date: 2016-01-02 03:26+0000\n"
-"PO-Revision-Date: 2016-01-02 10:14+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2016-03-17 03:26+0000\n"
+"PO-Revision-Date: 2016-03-17 20:15+0100\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -24,7 +24,7 @@ msgid "translator-credits"
 msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2009, 2011, 2016\n"
 "Max Orxy <maxorxy@googlemail.com>, 2012, 2013\n"
-"Christian Kirbach <christian.kirbach@gmail.com>, 2012, 2013"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2012, 2013, 2016"
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -935,6 +935,8 @@ msgstr ""
 #: C/howto_write_a_plugin.page:149
 msgid "In the callback method, all push button events are printed."
 msgstr ""
+"In der Callback-Methode werden alle Ereignisse für Knopfbetätigungen "
+"ausgegeben."
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:152
@@ -969,7 +971,7 @@ msgstr ""
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:166
 msgid "First off, some mandatory import lines:"
-msgstr ""
+msgstr "Zunächst einige grundlegende Import-Zeilen:"
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:169
@@ -1087,6 +1089,10 @@ msgid ""
 "override it setting the button to be sensitive only when the current "
 "accessible item has the \"click\" action:"
 msgstr ""
+"Die Basis-Pluginklasse hat eine Methode namens onAccChanged, die jedes mal "
+"aufgerufen wird, wenn sich das gewählte Accessible der Zielanwendung ändert. "
+"Dies wird durch Setzen des Knopfes als »druckempfindlich«überschrieben, für "
+"den Fall, dass das aktuelle Accessible die Aktion »Klicken« besitzt:"
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:219
@@ -1145,13 +1151,11 @@ msgstr "Einführung in <app>Accerciser</app>"
 
 #. (itstool) path: media/span
 #: C/index.page:26
-#| msgid "<app>Accerciser</app>"
 msgid "<app>Accerciser</app>'s logo"
 msgstr "<app>Accerciser</app>-Logo"
 
 #. (itstool) path: page/title
 #: C/index.page:24
-#| msgid "<app>Accerciser</app>"
 msgid "<_:media-1/> <app>Accerciser</app>"
 msgstr "<_:media-1/> <app>Accerciser</app>"
 
@@ -1283,6 +1287,9 @@ msgid ""
 "Accessible - This interface shows the selected item's child count (number of "
 "child widgets), description, states, relations, and attributes."
 msgstr ""
+"Accessible - Diese Schnittstelle zeigt die Anzahl der Unterelemente (Kinder-"
+"Widgets) des gewählten Objekts, die Beschreibung, Zustände, Beziehungen und "
+"Attribute."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:65
@@ -1293,6 +1300,12 @@ msgid ""
 "If you select an action, a \"Perform action\" button will become sensitive. "
 "Press this button to see the item performing the selected action."
 msgstr ""
+"Aktion - Diese Schnittstelle zeigt alle Aktionen, die mit dem gewählten "
+"Objekt ausgeführt werden können. Für jede Schnittstelle wird der Name wie "
+"zum Beispiel »drücken« oder »klicken« angezeigt, sowie eine Beschreibung und "
+"gegebenenfalls eine Tastenkombination. Wenn Sie eine Aktion auswählen, so "
+"wird der Knopf »Aktion ausführen« aktiv. Klicken Sie auf diesen Knopf, um "
+"das Objekt die gewählte Aktion ausführen zu lassen."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:73
@@ -1303,6 +1316,11 @@ msgid ""
 "it, the interface will show its ID and, if there are any, its toolkit and "
 "version."
 msgstr ""
+"Anwendung - Diese Schnittstelle kann von Objekten mit der Rolle »Anwendung« "
+"implementiert werden. Man muss bedenken, dass Objekte mit der Rolle "
+"»Anwendung« nicht zwangsweise diese Schnittstelle implementieren. Wenn das "
+"gewählte Objekte sie implementiert, so zeigt die Schnittstelle dessen "
+"Kennung (ID) und gegebenenfalls den Werkzeugsatz und die Version."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:80
@@ -1313,6 +1331,12 @@ msgid ""
 "integer indicating the stacking order of the component in the MDI layer), "
 "and alpha (if alpha blending is used)."
 msgstr ""
+"Komponente - Diese Schnittstelle zeigt die absolute Position des gewählten "
+"Objekts (im Bezug auf das Koordinatensystem der Arbeitsumgebung), die "
+"relative Position (im Bezug auf das Koordinatensystem des Fensters), Größe, "
+"Ebenentyp, MDI-Z-Reihenfolge (eine Ganzzahl, welche die Stapelreihenfolge "
+"der Komponente im MDI-Stapel angibt) und Alpha (falls Alpha-Transparenz "
+"verwendet wird)."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:86
@@ -1320,6 +1344,8 @@ msgid ""
 "Document - This interface shows the selected item's document attributes and "
 "locale description, if there is one."
 msgstr ""
+"Dokument - Diese Schnittstelle zeigt die Dokumentattribute des gewählten "
+"Objekts und gegebenenfalls die Beschreibung der Spracheinstellung."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:91
@@ -1329,6 +1355,10 @@ msgid ""
 "URI, start (the index in the hypertext at which the hyperlink begins) and "
 "end (the index in the hypertext at which this hyperlink ends)."
 msgstr ""
+"Hypertext - Diese Schnittstelle zeigt eine Liste mit allen Hypertext-"
+"Verweisen des gewählten Objekts. Für jeden Verweis legt die Schnittstelle "
+"den Namen, die Adresse, Start (der Index im Hypertext, auf den der Verweis "
+"zeigt) und Ende fest (der Index im Hypertext, an dem der Verweis endet)."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:98
@@ -1337,6 +1367,10 @@ msgid ""
 "description\" if unspecified), size, position (with respect to the desktop "
 "coordinate system), and locale, if there is one."
 msgstr ""
+"Bild - diese Schnittstelle zeigt die Beschreibung des gewählten Objekts "
+"(oder »keine Beschreibung«, falls nicht vorhanden), die Größe, die Position "
+"(im Bezug auf das Koordinatensystem der Arbeitsumgebung) und gegebenenfalls "
+"die Spracheinstellung."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:104
@@ -1348,6 +1382,12 @@ msgid ""
 "example - and want to clear it, just press the \"Clear\" button below the "
 "list."
 msgstr ""
+"Auswahl - diese Schnittstelle zeigt alle wählbaren Unterelemente des "
+"gewählten Objekts. Wenn das gewählte Objekte eine Menüleiste mit den "
+"Optionen »Datei«, »Bearbeiten«, »Ansicht« und »Hilfe« ist und alle wählbar "
+"sind, dann werden Sie in dieser Schnittstelle aufgelistet. Wenn Sie eine "
+"gelistete Option anklicken, zum Beispiel »Datei«, und diese leeren möchten, "
+"klicken Sie auf den Knopf »Löschen« unter der Liste."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:112
