@@ -1,31 +1,37 @@
 # Bulgarian translation of accerciser po-file.
-# Copyright (C) 2007, 2008, 2009, 2011, 2012 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008, 2009, 2011, 2012, 2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 # Alexander Shopov <ash@kambanaria.org> 2007, 2008, 2009, 2011, 2012.
+# Zahari Yurukov <zahari.yurukov@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-26 08:03+0300\n"
-"PO-Revision-Date: 2012-06-26 08:02+0300\n"
-"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
+"POT-Creation-Date: 2016-03-22 07:08+0200\n"
+"PO-Revision-Date: 2016-03-18 14:11-0700\n"
+"Last-Translator: Zahari Yurukov <zahari.yurukov@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
-msgstr "Проверка на програма за достъпност"
+msgstr "Проверете вашата програма за достъпност"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:3
+msgid "accessibility;development;test;"
+msgstr "достъпност;разработка;проверка;accessibility;development;test;"
+
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Разглеждане на достъпността с Accerciser"
 
@@ -35,7 +41,7 @@ msgstr "Списък с приставки, които стандартно са
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:2
 msgid "A list of plugins that are disabled by default."
-msgstr "Списък с приставки, които стандартно са изключени"
+msgstr "Списък с приставки, които стандартно са изключени."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:3
 msgid "Highlight duration"
@@ -157,7 +163,32 @@ msgstr "Клавишна комбинация"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
-msgstr "Клавишна комбинация за свързано или подобно действие"
+msgstr "Клавишна комбинация за свързано или подобно действие."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Проверка на достъпността в графичната среда GNOME"
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser е интерактивен инструмент за Python за изследване на "
+"достъпността  за графичната среда GNOME. Използва интерфейса AT-SPI за "
+"разглеждане и контролиране на графични обекти, позволявайки ви да проверите "
+"дали програмата предоставя коректна информация на технологиите за достъпност "
+"и програмите за автоматична проверка."
+
+#: ../org.gnome.accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser има проста система за приставки, която можете да използвате за "
+"създаването на потребителски изгледи с информация за достъпността."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -225,7 +256,9 @@ msgstr "Наблюдение на събития"
 
 #: ../plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
-msgstr "Визуализация на събитията "
+msgstr ""
+"Визуализация на събитията, когато те се случат за избраните видове и "
+"източници"
 
 #: ../plugins/event_monitor.py:64
 msgid "Highlight last event entry"
@@ -237,7 +270,7 @@ msgstr "Начало/край на записването на събития"
 
 #: ../plugins/event_monitor.py:72
 msgid "Clear event log"
-msgstr "Изчистване на журнала"
+msgstr "Изчистване на журнала на събития"
 
 #: ../plugins/interface_view.ui.h:1
 msgid "Child count"
@@ -247,13 +280,14 @@ msgstr "Брой деца"
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3
+#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
+#: ../plugins/interface_view.py:859
 msgid "(no description)"
 msgstr "(без описание)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Описание"
 
@@ -262,16 +296,16 @@ msgid "States"
 msgstr "Състояния"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Атрибути"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Показване"
 
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Отношения"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Атрибути"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -336,7 +370,7 @@ msgstr "Алфа"
 
 #: ../plugins/interface_view.ui.h:25
 msgid "Absolute position"
-msgstr "Абсолютно положение"
+msgstr "Абсолютна позиция"
 
 #: ../plugins/interface_view.ui.h:26
 msgid "Co_mponent"
@@ -355,7 +389,7 @@ msgid "_Document"
 msgstr "_Документ"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Хипервръзка"
 
@@ -512,40 +546,56 @@ msgstr "Програма за разглеждане на графичен ин�
 msgid "Allows viewing of various interface properties"
 msgstr "Позволява разглеждането на различни свойства на интерфейса"
 
-#: ../plugins/interface_view.py:239
+#: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(не е реализирано)"
 
-#: ../plugins/interface_view.py:350 ../plugins/interface_view.py:866
-msgid "<i>(no description)</i>"
-msgstr "<i>(без описание)</i>"
-
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:738 ../plugins/validate.py:283
-#: ../src/lib/accerciser/accessible_treeview.py:502
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
+#: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Име"
 
-#: ../plugins/interface_view.py:746
+#: ../plugins/interface_view.py:739
 msgid "URI"
 msgstr "Адрес"
 
-#: ../plugins/interface_view.py:754
+#: ../plugins/interface_view.py:747
 msgid "Start"
 msgstr "Начало"
 
-#: ../plugins/interface_view.py:762
+#: ../plugins/interface_view.py:755
 msgid "End"
 msgstr "Край"
 
-#: ../plugins/interface_view.py:924
+#: ../plugins/interface_view.py:917
 msgid "Too many selectable children"
 msgstr "Прекалено много избрани деца"
 
-#: ../plugins/interface_view.py:1269 ../plugins/interface_view.py:1272
-msgid "<i>(Editable)</i>"
-msgstr " <i>(Редактируем)</i>"
+#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+msgid "(Editable)"
+msgstr "(Редактируемо)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: ../plugins/interface_view.py:1412
+#, python-format
+msgid "Start: %d"
+msgstr "Начало: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: ../plugins/interface_view.py:1418
+#, python-format
+msgid "End: %d"
+msgstr "Край: %d"
 
 #: ../plugins/quick_select.py:16
 msgid "Quick Select"
@@ -571,69 +621,69 @@ msgstr "_Схема"
 msgid "V_alidate"
 msgstr "_Проверка"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Бездействие"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Без описание"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "Проверка на AT-SPI"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Проверка на програма за достъпност"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Ниво"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:512
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Роля"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "Запазване"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "Проверка"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "ИЗКЛЮЧЕНИЯ"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "ГРЕШКИ"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "ПРЕДУПРЕЖДЕНИЯ"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "ИНФОРМАЦИЯ"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "ИЗЧИСТВАНЕ"
 
 #: ../plugindata/validate/basic.py:8
 msgid "Basic"
-msgstr "Основен интерфейс"
+msgstr "Основен"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "Проверка на основния потребителски интерфейс на програма за достъпност"
+msgstr "Проверка на потребителския интерфейс на програма за основна достъпност"
 
 #: ../plugindata/validate/basic.py:28
 #, python-format
@@ -729,58 +779,45 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s няма име или описание"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Настройки…"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Съдържание"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accerciser не може да види приложенията на вашия работен плот. Трябва да "
-"включите достъпността на средата, за да решите този проблем. Искате ли да "
-"направите това сега?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "Бележка: Промените влизат в сила след излизане от системата."
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: ../src/lib/accerciser/accessible_treeview.py:459
 msgid "<dead>"
 msgstr "<мъртъв>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: ../src/lib/accerciser/accessible_treeview.py:520
 msgid "Children"
 msgstr "Деца"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
+#: ../src/lib/accerciser/accessible_treeview.py:549
 msgid "_Hide/Show Applications without children"
 msgstr "_Скриване/показване на програмите без прозорци-деца"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: ../src/lib/accerciser/accessible_treeview.py:552
 msgid "_Refresh Registry"
 msgstr "_Обновяване на регистъра"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: ../src/lib/accerciser/accessible_treeview.py:555
 msgid "Refresh all"
 msgstr "Обновяване на всичко"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: ../src/lib/accerciser/accessible_treeview.py:558
 msgid "Refresh _Node"
 msgstr "Обновяване на _възела"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: ../src/lib/accerciser/accessible_treeview.py:561
 msgid "Refresh selected node's children"
 msgstr "Обновяване на децата на избрания възел"
 
@@ -808,13 +845,13 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:76
-msgid "Top panel"
-msgstr "Горен подпрозорец"
-
 #: ../src/lib/accerciser/main_window.py:77
+msgid "Top panel"
+msgstr "Горен панел"
+
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
-msgstr "Долен подпрозорец"
+msgstr "Долен панел"
 
 #: ../src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
@@ -879,19 +916,19 @@ msgstr "Новият лиценз на BSD. За подробности вижт
 msgid "Web site"
 msgstr "Уеб сайт"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Добавяне на отметка…"
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Добавяне на отметка към избрания достъпен обект."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Редактиране на отметки…"
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Управление на отметки."
 
@@ -899,31 +936,31 @@ msgstr "Управление на отметки."
 msgid "Edit Bookmarks..."
 msgstr "Редактиране на отметки…"
 
-#: ../src/lib/accerciser/bookmarks.py:433
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Заглавие"
 
-#: ../src/lib/accerciser/bookmarks.py:441
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Програма"
 
-#: ../src/lib/accerciser/bookmarks.py:449
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Път"
 
-#: ../src/lib/accerciser/bookmarks.py:518
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Добавяне на отметка…"
 
-#: ../src/lib/accerciser/bookmarks.py:532
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Заглавие:"
 
-#: ../src/lib/accerciser/bookmarks.py:535
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Програма:"
 
-#: ../src/lib/accerciser/bookmarks.py:538
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Път:"
 
@@ -943,24 +980,24 @@ msgstr "Изглед"
 msgid "No view"
 msgstr "Няма изглед"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: ../src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "Изглед на _единична приставка"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: ../src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Изглед на приставки"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: ../src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Изглед на приставки (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-msgid "<i>_New view...</i>"
-msgstr "<i>_Нов изглед…</i>"
+#: ../src/lib/accerciser/plugin/view.py:1074
+msgid "_New view..."
+msgstr "_Нов изглед…"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: ../src/lib/accerciser/plugin/view.py:1130
 msgid "New View..."
 msgstr "Нов изглед…"
 
