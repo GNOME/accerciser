@@ -1,5 +1,5 @@
 AC_INIT([Accerciser],
-        [3.15.1pre],
+        [3.22.0],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=accerciser],
         [accerciser])
 
