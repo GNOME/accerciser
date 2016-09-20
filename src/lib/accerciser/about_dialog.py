@@ -44,7 +44,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   AUTHORS = ['Eitan Isaacson <eitan@ascender.com>',
              'Peter Parente <pparente@us.ibm.com>',
              'Brian Nitz <brian.nitz@oracle.com>',
-             'Javier Hernández <jhernandez@emergya.es>']
+             'Javier Hernández <javi@raisingthefloor.org>']
   ARTISTS = ['Eitan Isaacson <eitan@ascender.com>',
              'James Stipp <James_Stipp@us.ibm.com>',
              'Vincent Geddes <vincent.geddes@gmail.com>']
