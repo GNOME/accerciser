@@ -17,7 +17,7 @@ gsettings_SCHEMAS = $(gsettings_files:.xml.in=.xml)
 
 appdatadir = $(datadir)/appdata
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
-appdata_in_files = org.gnome.accerciser.appdata.xml.in
+appdata_in_files = accerciser.appdata.xml.in
 @INTLTOOL_XML_RULE@
 
 %.gschema.xml: %.gschema.xml.in
