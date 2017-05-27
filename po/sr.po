@@ -5,23 +5,48 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerci"
-"ser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-02 15:25+0000\n"
-"PO-Revision-Date: 2015-03-02 19:42+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=accerciser&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-04-15 15:50+0000\n"
+"PO-Revision-Date: 2017-05-20 16:54+0200\n"
+"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
+"X-Generator: Poedit 2.0.2\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
+#: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Аксерсајзер"
+
+#: ../accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Истраживач приступачности за Гномову радну површ"
+
+#: ../accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Аксерсајзер је међудејствени Питонов истраживач приступачности за Гномову "
+"радну површ. Користи АТ-СПИ за прегледањеи управљање елементима, "
+"омогућавајући вам да проверите да ли неки програм доставља исправне податке "
+"технологијама испомоћи и осамостаљеним радним склоповима пробе."
+
+#: ../accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Аксерсајзер има једноставан радни склоп прикључка који можете да користите "
+"да направите произвољне прегледе података приступачности."
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
@@ -162,30 +187,6 @@ msgstr "Комбинација тастера пречице"
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
 msgstr "Комбинација тастера пречице за одређену радњу."
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:2
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Истраживач приступачности за Гномову радну површ"
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:3
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Аксерсајзер је међудејствени Питонов истраживач приступачности за Гномову "
-"радну површ. Користи АТ-СПИ за прегледањеи управљање елементима, "
-"омогућавајући вам да проверите да ли неки програм доставља исправне податке "
-"технологијама испомоћи и осамостаљеним радним склоповима пробе."
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:4
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Аксерсајзер има једноставан радни склоп прикључка који можете да користите "
-"да направите произвољне прегледе података приступачности."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -828,15 +829,15 @@ msgstr "Тастер"
 
 #: ../src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
-msgstr "Алт"
+msgstr "Alt"
 
 #: ../src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
-msgstr "Ктрл"
+msgstr "Ctrl"
 
 #: ../src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
-msgstr "Шифт"
+msgstr "Shift"
 
 #: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
@@ -885,7 +886,7 @@ msgstr "Боја испуњавања поља за истицање"
 #: ../src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"  Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "\n"
 "http://prevod.org — превод на српски језик"
 
