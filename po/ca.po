@@ -7,10 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-07 17:58+0000\n"
-"PO-Revision-Date: 2013-03-07 21:29+0100\n"
+"POT-Creation-Date: 2017-08-26 14:21+0000\n"
+"PO-Revision-Date: 2017-09-02 23:54+0200\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -18,10 +18,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
+
+#: ../accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Explorador d'accessibilitat per l'escriptori del GNOME"
+
+#: ../accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"L'Accerciser és un explorador d'accessibilitat interactiu de Python per "
+"l'escriptori del GNOME. Utilitza AT-SPI per inspeccionar i controlar ginys, "
+"permetent-vos comprovar si una aplicació proveeix informació correcta a "
+"tecnologies assistides i espais de treball automatitzats de prova."
+
+#: ../accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"L'Accerciser té un espai de treball de connectors senzills que podeu "
+"utilitzar per crear vistes personalitzades d'informació d'accessibilitat."
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
@@ -31,7 +56,7 @@ msgstr "Feu una anàlisi d'accessibilitat a les aplicacions"
 msgid "accessibility;development;test;"
 msgstr "accessibilitat;desenvolupament;prova;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:42
+#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
 msgid "Accerciser Accessibility Explorer"
 msgstr "Explorador d'accessibilitat Accerciser"
 
@@ -259,8 +284,8 @@ msgid "(no description)"
 msgstr "(sense descripció)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:218
-#: ../plugins/validate.py:281
+#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
+#: ../plugins/validate.py:292
 msgid "Description"
 msgstr "Descripció"
 
@@ -269,16 +294,16 @@ msgid "States"
 msgstr "Estats"
 
 #: ../plugins/interface_view.ui.h:6
+msgid "Attributes"
+msgstr "Atributs"
+
+#: ../plugins/interface_view.ui.h:7
 msgid "Show"
 msgstr "Mostra"
 
-#: ../plugins/interface_view.ui.h:7
+#: ../plugins/interface_view.ui.h:8
 msgid "Relations"
 msgstr "Relacions"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Attributes"
-msgstr "Atributs"
 
 #: ../plugins/interface_view.ui.h:9
 msgid "_Accessible"
@@ -362,7 +387,7 @@ msgid "_Document"
 msgstr "_Document"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:287
+#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Enllaç"
 
@@ -524,7 +549,7 @@ msgid "(not implemented)"
 msgstr "(no està implementat)"
 
 #. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:283
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
 #: ../src/lib/accerciser/accessible_treeview.py:503
 #: ../src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -555,7 +580,7 @@ msgstr "(Editable)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1411
+#: ../plugins/interface_view.py:1412
 #, python-format
 msgid "Start: %d"
 msgstr "Inici: %d"
@@ -565,7 +590,7 @@ msgstr "Inici: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1417
+#: ../plugins/interface_view.py:1418
 #, python-format
 msgid "End: %d"
 msgstr "Final: %d"
@@ -595,59 +620,59 @@ msgstr "Esque_ma:"
 msgid "V_alidate"
 msgstr "V_alida"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:364
-#: ../plugins/validate.py:416
+#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
+#: ../plugins/validate.py:427
 msgid "Idle"
 msgstr "Inactiu"
 
-#: ../plugins/validate.py:68
+#: ../plugins/validate.py:80
 msgid "No description"
 msgstr "Sense descripció"
 
-#: ../plugins/validate.py:156
+#: ../plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "Validador AT-SPI"
 
-#: ../plugins/validate.py:158
+#: ../plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Valida l'accessibilitat de l'aplicació"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:211 ../plugins/validate.py:279
+#: ../plugins/validate.py:222 ../plugins/validate.py:290
 msgid "Level"
 msgstr "Nivell"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:285 ../src/lib/accerciser/accessible_treeview.py:513
+#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
 msgid "Role"
 msgstr "Rol"
 
-#: ../plugins/validate.py:350
+#: ../plugins/validate.py:361
 msgid "Saving"
 msgstr "S'està desant"
 
-#: ../plugins/validate.py:398
+#: ../plugins/validate.py:409
 msgid "Validating"
 msgstr "S'està validant"
 
-#: ../plugins/validate.py:554
+#: ../plugins/validate.py:565
 msgid "EXCEPT"
 msgstr "EXCEPTE"
 
-#: ../plugins/validate.py:561
+#: ../plugins/validate.py:572
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:569
+#: ../plugins/validate.py:580
 msgid "WARN"
 msgstr "ADVERTÈNCIA"
 
-#: ../plugins/validate.py:576
+#: ../plugins/validate.py:587
 msgid "INFO"
 msgstr "INFORMACIÓ"
 
-#: ../plugins/validate.py:583
+#: ../plugins/validate.py:594
 msgid "DEBUG"
 msgstr "DEPURAR"
 
@@ -754,11 +779,11 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s no té nom o descripció"
 
-#: ../src/lib/accerciser/accerciser.py:79
+#: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
 msgstr "_Preferències..."
 
-#: ../src/lib/accerciser/accerciser.py:81
+#: ../src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Continguts"
 
@@ -820,11 +845,11 @@ msgstr "Control"
 msgid "Shift"
 msgstr "Maj"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: ../src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Quadre superior"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: ../src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Quadre inferior"
 
@@ -885,51 +910,51 @@ msgstr ""
 msgid "Web site"
 msgstr "Pàgina web"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: ../src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark..."
 msgstr "_Afegeix una adreça d'interès..."
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: ../src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Afegeix a les adreces d'interès l'accessible seleccionat."
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: ../src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks..."
 msgstr "_Edita les adreces d'interès..."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: ../src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Gestiona les adreces d'interès."
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: ../src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks..."
 msgstr "Edita les adreces d'interès..."
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: ../src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Títol"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: ../src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Aplicació"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: ../src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Camí"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: ../src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark..."
 msgstr "Afegeix una adreça d'interès..."
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: ../src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Títol:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: ../src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Aplicació:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: ../src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Camí:"
 
