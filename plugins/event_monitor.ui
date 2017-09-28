@@ -335,7 +335,7 @@
                         <property name="model">events_treestore</property>
                         <child>
                           <object class="GtkTreeViewColumn" id="treeviewcolumn1">
-                            <property name="title">Name</property>
+                            <property name="title" translatable="yes">Name</property>
                             <child>
                               <object class="GtkCellRendererToggle" id="cellrenderertoggle1">
                                 <signal name="toggled" handler="_onToggled"/>
@@ -355,7 +355,7 @@
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="treeviewcolumn2">
-                            <property name="title">Full Name</property>
+                            <property name="title" translatable="yes">Full Name</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext2"/>
                               <attributes>
