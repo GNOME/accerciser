@@ -1,23 +1,24 @@
 # Swedish translation for accerciser.
-# Copyright © 2007-2012, 2014, 2015 Free Software Foundation, Inc.
+# Copyright © 2007-2012, 2014, 2015, 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 # Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2017.
+# Sebastian Rasmussen <sebras@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-06-28 17:31+0000\n"
-"PO-Revision-Date: 2017-09-16 00:19+0200\n"
-"Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
+"POT-Creation-Date: 2017-10-27 11:56+0000\n"
+"PO-Revision-Date: 2017-12-26 22:00+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
@@ -248,6 +249,18 @@ msgstr "Markerad åtkomlig komponent"
 msgid "Source"
 msgstr "Källa"
 
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.ui.h:8 ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
+#: ../src/lib/accerciser/accessible_treeview.py:503
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Namn"
+
+#: ../plugins/event_monitor.ui.h:9
+msgid "Full Name"
+msgstr "Fullständigt namn"
+
 #: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Händelseövervakare"
@@ -307,228 +320,240 @@ msgstr "Relationer"
 msgid "_Accessible"
 msgstr "_Åtkomlig komponent"
 
-#: ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.ui.h:11
+msgid "Key binding"
+msgstr "Tangentbindning"
+
+#: ../plugins/interface_view.ui.h:12
 msgid "Perform action"
 msgstr "Genomför åtgärd"
 
-#: ../plugins/interface_view.ui.h:11
+#: ../plugins/interface_view.ui.h:13
 msgid "Acti_on"
 msgstr "Åtgä_rd"
 
-#: ../plugins/interface_view.ui.h:12
+#: ../plugins/interface_view.ui.h:14
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.ui.h:15
 msgid "Toolkit"
 msgstr "Verktygslåda"
 
-#: ../plugins/interface_view.ui.h:14
+#: ../plugins/interface_view.ui.h:16
 msgid "Version"
 msgstr "Version"
 
-#: ../plugins/interface_view.ui.h:15
+#: ../plugins/interface_view.ui.h:17
 msgid "Ap_plication"
 msgstr "_Program"
 
-#: ../plugins/interface_view.ui.h:16
+#: ../plugins/interface_view.ui.h:18
 msgid "Col_lection"
 msgstr "Sam_ling"
 
 #. Component size
-#: ../plugins/interface_view.ui.h:18
+#: ../plugins/interface_view.ui.h:20
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.ui.h:19
+#: ../plugins/interface_view.ui.h:21
 msgid "Relative position"
 msgstr "Relativ position"
 
-#: ../plugins/interface_view.ui.h:20
+#: ../plugins/interface_view.ui.h:22
 msgid "Size"
 msgstr "Storlek"
 
-#: ../plugins/interface_view.ui.h:21
+#: ../plugins/interface_view.ui.h:23
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: ../plugins/interface_view.ui.h:22
+#: ../plugins/interface_view.ui.h:24
 msgid "Layer"
 msgstr "Lager"
 
-#: ../plugins/interface_view.ui.h:23
+#: ../plugins/interface_view.ui.h:25
 msgid "MDI-Z-order"
 msgstr "MDI-Z-ordning"
 
-#: ../plugins/interface_view.ui.h:24
+#: ../plugins/interface_view.ui.h:26
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.ui.h:25
+#: ../plugins/interface_view.ui.h:27
 msgid "Absolute position"
 msgstr "Absolut position"
 
-#: ../plugins/interface_view.ui.h:26
+#: ../plugins/interface_view.ui.h:28
 msgid "Co_mponent"
 msgstr "Ko_mponent"
 
-#: ../plugins/interface_view.ui.h:27
+#: ../plugins/interface_view.ui.h:29
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: ../plugins/interface_view.ui.h:28
+#: ../plugins/interface_view.ui.h:30
 msgid "Locale:"
 msgstr "Lokal:"
 
-#: ../plugins/interface_view.ui.h:29
+#: ../plugins/interface_view.ui.h:31
 msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
+#: ../plugins/interface_view.ui.h:32 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hyperlänk"
 
-#: ../plugins/interface_view.ui.h:31
+#: ../plugins/interface_view.ui.h:33
 msgid "H_ypertext"
 msgstr "H_ypertext"
 
-#: ../plugins/interface_view.ui.h:32
+#: ../plugins/interface_view.ui.h:34
 msgid "Position"
 msgstr "Position"
 
-#: ../plugins/interface_view.ui.h:33
+#: ../plugins/interface_view.ui.h:35
 msgid "Locale"
 msgstr "Lokal"
 
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:36
 msgid "_Image"
 msgstr "_Bild"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:37
 msgid "Lo_gin Helper"
 msgstr "Inlo_ggningshjälpare"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:38
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:39
 msgid "_Selection"
 msgstr "_Markering"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:40
+msgid "Content type"
+msgstr "Innehållstyp"
+
+#: ../plugins/interface_view.ui.h:41 ../plugins/interface_view.py:739
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.ui.h:42
 msgid "St_reamable Content"
 msgstr "St_römmande innehåll"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:43
 msgid "Caption:"
 msgstr "Överskrift:"
 
-#: ../plugins/interface_view.ui.h:40
+#: ../plugins/interface_view.ui.h:44
 msgid "Summary:"
 msgstr "Sammandrag:"
 
-#: ../plugins/interface_view.ui.h:41
+#: ../plugins/interface_view.ui.h:45
 msgid "Selected columns"
 msgstr "Markerade kolumner"
 
-#: ../plugins/interface_view.ui.h:42
+#: ../plugins/interface_view.ui.h:46
 msgid "Selected rows"
 msgstr "Markerade rader"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:47
 msgid "Columns"
 msgstr "Kolumner"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:48
 msgid "Rows"
 msgstr "Rader"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:49
 msgid "Table Information"
 msgstr "Tabellinformation"
 
-#: ../plugins/interface_view.ui.h:46
+#: ../plugins/interface_view.ui.h:50
 msgid "name (x,y)"
 msgstr "namn (x,y)"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:51
 msgid "Header:"
 msgstr "Rubrik:"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:52
 msgid "<no description>"
 msgstr "<ingen beskrivning>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:50
+#: ../plugins/interface_view.ui.h:54
 msgid "Extents:"
 msgstr "Områden:"
 
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:55
 msgid "Row"
 msgstr "Rad"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:56
 msgid "Column"
 msgstr "Kolumn"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:57
 msgid "Selected Cell"
 msgstr "Markerad cell"
 
-#: ../plugins/interface_view.ui.h:54
+#: ../plugins/interface_view.ui.h:58
 msgid "_Table"
 msgstr "_Tabell"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:59
 msgid "Text"
 msgstr "Text"
 
-#: ../plugins/interface_view.ui.h:56
+#: ../plugins/interface_view.ui.h:60
 msgid "Offset"
 msgstr "Position"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:61
 msgid "Include defaults"
 msgstr "Inkludera standardvärden"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:59
+#: ../plugins/interface_view.ui.h:63
 msgid "Start: 0"
 msgstr "Start: 0"
 
 #. End character offset of text attributes span
-#: ../plugins/interface_view.ui.h:61
+#: ../plugins/interface_view.ui.h:65
 msgid "End: 0"
 msgstr "Slut: 0"
 
-#: ../plugins/interface_view.ui.h:62
+#: ../plugins/interface_view.ui.h:66
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: ../plugins/interface_view.ui.h:63
+#: ../plugins/interface_view.ui.h:67
 msgid "Current value"
 msgstr "Aktuellt värde"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:68
 msgid "Minimum increment"
 msgstr "Minimal ökning"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:69
 msgid "Maximum value"
 msgstr "Maximalt värde"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:70
 msgid "Minimum value"
 msgstr "Minimalt värde"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:71
 msgid "Val_ue"
 msgstr "Vä_rde"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:72
 msgid "unknown"
 msgstr "okänd"
 
@@ -545,17 +570,6 @@ msgstr "Tillåter visning av olika gränssnittsegenskaper"
 #: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(inte implementerad)"
-
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
-#: ../src/lib/accerciser/accessible_treeview.py:503
-#: ../src/lib/accerciser/plugin/plugin_manager.py:386
-msgid "Name"
-msgstr "Namn"
-
-#: ../plugins/interface_view.py:739
-msgid "URI"
-msgstr "URI"
 
 #: ../plugins/interface_view.py:747
 msgid "Start"
