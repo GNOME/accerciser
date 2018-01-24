@@ -7,22 +7,47 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-15 03:25+0000\n"
-"PO-Revision-Date: 2015-02-15 14:13+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2017-09-28 11:09+0000\n"
+"PO-Revision-Date: 2018-01-24 20:15+0100\n"
+"Last-Translator: Meskó Balázs <meskobalazs@fedoraproject.org>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
+#: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
+
+#: ../accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Akadálymentesítés-felderítő a GNOME asztalhoz"
+
+#: ../accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Az Accerciser egy interaktív Python akadálymentesítés-felderítő a GNOME "
+"asztalhoz. A felületi elemek vizsgálatához és vezérléséhez AT-SPI-t használ, "
+"amely lehetővé teszi annak ellenőrzését, hogy egy alkalmazás helyes "
+"információkat szolgáltat-e a kisegítő technológiákhoz és az automatizált "
+"teszt keretrendszerekhez."
+
+#: ../accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Az Accerciser egy egyszerű bővítmény keretrendszerrel rendelkezik, amelyet "
+"akadálymentesítési információk egyéni nézeteinek létrehozásához használhat."
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
@@ -164,31 +189,6 @@ msgstr "Gyorsbillentyű-kombináció"
 msgid "Hotkey combination for related action."
 msgstr "Gyorsbillentyű-kombináció a kapcsolódó művelethez."
 
-#: ../org.gnome.accerciser.appdata.xml.in.h:2
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Akadálymentesítés-felderítő a GNOME asztalhoz"
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:3
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Az Accerciser egy interaktív Python akadálymentesítés-felderítő a GNOME "
-"asztalhoz. A felületi elemek vizsgálatához és vezérléséhez AT-SPI-t használ, "
-"amely lehetővé teszi annak ellenőrzését, hogy egy alkalmazás helyes "
-"információkat szolgáltat-e a kisegítő technológiákhoz és az automatizált "
-"teszt keretrendszerekhez."
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:4
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Az Accerciser egy egyszerű bővítmény keretrendszerrel rendelkezik, amelyet "
-"akadálymentesítési információk egyéni nézeteinek létrehozásához használhat."
-
 #: ../plugins/api_view.py:32
 msgid "API Browser"
 msgstr "API böngésző"
@@ -248,6 +248,18 @@ msgstr "Kijelölt akadálymentes"
 #: ../plugins/event_monitor.ui.h:7
 msgid "Source"
 msgstr "Forrás"
+
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.ui.h:8 ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
+#: ../src/lib/accerciser/accessible_treeview.py:503
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Név"
+
+#: ../plugins/event_monitor.ui.h:9
+msgid "Full Name"
+msgstr "Teljes név"
 
 #: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
@@ -310,228 +322,240 @@ msgstr "Relációk"
 msgid "_Accessible"
 msgstr "_Akadálymentes"
 
-#: ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.ui.h:11
+msgid "Key binding"
+msgstr "Billentyűtársítás"
+
+#: ../plugins/interface_view.ui.h:12
 msgid "Perform action"
 msgstr "Művelet végrehajtása"
 
-#: ../plugins/interface_view.ui.h:11
+#: ../plugins/interface_view.ui.h:13
 msgid "Acti_on"
 msgstr "Mű_velet"
 
-#: ../plugins/interface_view.ui.h:12
+#: ../plugins/interface_view.ui.h:14
 msgid "ID"
 msgstr "Azonosító"
 
-#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.ui.h:15
 msgid "Toolkit"
 msgstr "Eszközkészlet"
 
-#: ../plugins/interface_view.ui.h:14
+#: ../plugins/interface_view.ui.h:16
 msgid "Version"
 msgstr "Verzió"
 
-#: ../plugins/interface_view.ui.h:15
+#: ../plugins/interface_view.ui.h:17
 msgid "Ap_plication"
 msgstr "_Alkalmazás"
 
-#: ../plugins/interface_view.ui.h:16
+#: ../plugins/interface_view.ui.h:18
 msgid "Col_lection"
 msgstr "_Gyűjtemény"
 
 #. Component size
-#: ../plugins/interface_view.ui.h:18
+#: ../plugins/interface_view.ui.h:20
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.ui.h:19
+#: ../plugins/interface_view.ui.h:21
 msgid "Relative position"
 msgstr "Relatív pozíció"
 
-#: ../plugins/interface_view.ui.h:20
+#: ../plugins/interface_view.ui.h:22
 msgid "Size"
 msgstr "Méret"
 
-#: ../plugins/interface_view.ui.h:21
+#: ../plugins/interface_view.ui.h:23
 msgid "WIDGET"
 msgstr "GRAFIKAI ELEM"
 
-#: ../plugins/interface_view.ui.h:22
+#: ../plugins/interface_view.ui.h:24
 msgid "Layer"
 msgstr "Réteg"
 
-#: ../plugins/interface_view.ui.h:23
+#: ../plugins/interface_view.ui.h:25
 msgid "MDI-Z-order"
 msgstr "MDI-Z sorrend"
 
-#: ../plugins/interface_view.ui.h:24
+#: ../plugins/interface_view.ui.h:26
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.ui.h:25
+#: ../plugins/interface_view.ui.h:27
 msgid "Absolute position"
 msgstr "Abszolút pozíció"
 
-#: ../plugins/interface_view.ui.h:26
+#: ../plugins/interface_view.ui.h:28
 msgid "Co_mponent"
 msgstr "_Komponens"
 
-#: ../plugins/interface_view.ui.h:27
+#: ../plugins/interface_view.ui.h:29
 msgid "Des_ktop"
 msgstr "_Asztal"
 
-#: ../plugins/interface_view.ui.h:28
+#: ../plugins/interface_view.ui.h:30
 msgid "Locale:"
 msgstr "Területi beállítás:"
 
-#: ../plugins/interface_view.ui.h:29
+#: ../plugins/interface_view.ui.h:31
 msgid "_Document"
 msgstr "_Dokumentum"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
+#: ../plugins/interface_view.ui.h:32 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hiperlink"
 
-#: ../plugins/interface_view.ui.h:31
+#: ../plugins/interface_view.ui.h:33
 msgid "H_ypertext"
 msgstr "_Hiperszöveg"
 
-#: ../plugins/interface_view.ui.h:32
+#: ../plugins/interface_view.ui.h:34
 msgid "Position"
 msgstr "Pozíció"
 
-#: ../plugins/interface_view.ui.h:33
+#: ../plugins/interface_view.ui.h:35
 msgid "Locale"
 msgstr "Területi beállítás"
 
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:36
 msgid "_Image"
 msgstr "_Kép"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:37
 msgid "Lo_gin Helper"
 msgstr "Bejelentkezéssegé_d"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:38
 msgid "Select All"
 msgstr "Mindent kijelöl"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:39
 msgid "_Selection"
 msgstr "_Kijelölés"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:40
+msgid "Content type"
+msgstr "Tartalom típusa"
+
+#: ../plugins/interface_view.ui.h:41 ../plugins/interface_view.py:739
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.ui.h:42
 msgid "St_reamable Content"
 msgstr "S_ugározható tartalom"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:43
 msgid "Caption:"
 msgstr "Felirat:"
 
-#: ../plugins/interface_view.ui.h:40
+#: ../plugins/interface_view.ui.h:44
 msgid "Summary:"
 msgstr "Összefoglaló:"
 
-#: ../plugins/interface_view.ui.h:41
+#: ../plugins/interface_view.ui.h:45
 msgid "Selected columns"
 msgstr "Kijelölt oszlopok"
 
-#: ../plugins/interface_view.ui.h:42
+#: ../plugins/interface_view.ui.h:46
 msgid "Selected rows"
 msgstr "Kijelölt sorok"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:47
 msgid "Columns"
 msgstr "Oszlopok"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:48
 msgid "Rows"
 msgstr "Sorok"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:49
 msgid "Table Information"
 msgstr "Táblázatinformációk"
 
-#: ../plugins/interface_view.ui.h:46
+#: ../plugins/interface_view.ui.h:50
 msgid "name (x,y)"
 msgstr "név (x,y)"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:51
 msgid "Header:"
 msgstr "Fejléc:"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:52
 msgid "<no description>"
 msgstr "<nincs leírás>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:50
+#: ../plugins/interface_view.ui.h:54
 msgid "Extents:"
 msgstr "Kiterjedések:"
 
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:55
 msgid "Row"
 msgstr "Sor"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:56
 msgid "Column"
 msgstr "Oszlop"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:57
 msgid "Selected Cell"
 msgstr "Kijelölt cella"
 
-#: ../plugins/interface_view.ui.h:54
+#: ../plugins/interface_view.ui.h:58
 msgid "_Table"
 msgstr "_Táblázat"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:59
 msgid "Text"
 msgstr "Szöveg"
 
-#: ../plugins/interface_view.ui.h:56
+#: ../plugins/interface_view.ui.h:60
 msgid "Offset"
 msgstr "Eltolás"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:61
 msgid "Include defaults"
 msgstr "Alapértelmezések felvétele"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:59
+#: ../plugins/interface_view.ui.h:63
 msgid "Start: 0"
 msgstr "Kezdés: 0"
 
 #. End character offset of text attributes span
-#: ../plugins/interface_view.ui.h:61
+#: ../plugins/interface_view.ui.h:65
 msgid "End: 0"
 msgstr "Befejezés: 0"
 
-#: ../plugins/interface_view.ui.h:62
+#: ../plugins/interface_view.ui.h:66
 msgid "Te_xt"
 msgstr "Szöve_g"
 
-#: ../plugins/interface_view.ui.h:63
+#: ../plugins/interface_view.ui.h:67
 msgid "Current value"
 msgstr "Jelenlegi érték"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:68
 msgid "Minimum increment"
 msgstr "Minimális növekmény"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:69
 msgid "Maximum value"
 msgstr "Maximális érték"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:70
 msgid "Minimum value"
 msgstr "Minimális érték"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:71
 msgid "Val_ue"
 msgstr "É_rték"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:72
 msgid "unknown"
 msgstr "ismeretlen"
 
@@ -548,17 +572,6 @@ msgstr "Lehetővé teszi különböző felülettulajdonságok megjelenítését"
 #: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(nincs megvalósítva)"
-
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
-#: ../src/lib/accerciser/accessible_treeview.py:503
-#: ../src/lib/accerciser/plugin/plugin_manager.py:386
-msgid "Name"
-msgstr "Név"
-
-#: ../plugins/interface_view.py:739
-msgid "URI"
-msgstr "URI"
 
 #: ../plugins/interface_view.py:747
 msgid "Start"
