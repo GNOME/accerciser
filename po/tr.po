@@ -5,27 +5,52 @@
 # Baris Cicek <baris@teamforce.name.tr>, 2008, 2009.
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-22 15:26+0000\n"
-"PO-Revision-Date: 2015-03-22 17:48+0200\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2017-09-28 11:09+0000\n"
+"PO-Revision-Date: 2018-01-21 11:43+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-POOTLE-MTIME: 1420419208.000000\n"
 
-#: ../accerciser.desktop.in.in.h:1 ../org.gnome.accerciser.appdata.xml.in.h:1
+#: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
 msgid "Accerciser"
 msgstr "Accerciser"
+
+#: ../accerciser.appdata.xml.in.h:2
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "GNOME masaüstü için erişilebilirlik gezgini"
+
+#: ../accerciser.appdata.xml.in.h:3
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser, GNOME masaüstü için etkileşimli bir Python erişilebilirlik "
+"gezginidir. Parçacıkları incelemek ve denetlemek için AT-SPI kullanır; bu da "
+"bir uygulamanın yardımcı teknolojilere ve kendiliğinden sınama çerçevelerine "
+"doğru bilgiler sağlayıp sağlamadığını denetlemenize izin verir."
+
+#: ../accerciser.appdata.xml.in.h:4
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser, erişilebilirlik bilgilerinin özel görünümlerini oluşturmak için "
+"kullanabileceğiniz basit bir eklenti çerçevesine sahiptir."
 
 #: ../accerciser.desktop.in.in.h:2
 msgid "Give your application an accessibility workout"
@@ -161,35 +186,11 @@ msgstr "Pencere genişliği değeri."
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:31
 msgid "Hotkey combination"
-msgstr "Kısayol kombinasyonu"
+msgstr "Kısayol birleşimi"
 
 #: ../org.a11y.Accerciser.gschema.xml.in.h:32
 msgid "Hotkey combination for related action."
-msgstr "İlgili eylem için kısayol kombinasyonu."
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:2
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "GNOME masaüstü için erişilebilirlik gezgini"
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:3
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Accerciser, GNOME masaüstü için etkileşimli bir Python erişilebilirlik "
-"gezginidir. Parçacıkları incelemek ve denetlemek için AT-SPI kullanır; bu da "
-"bir uygulamanın yardımcı teknolojilere ve otomatik sınama çerçevelerine "
-"doğru bilgiler sağlayıp sağlamadığını denetlemenize izin verir."
-
-#: ../org.gnome.accerciser.appdata.xml.in.h:4
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Accerciser, erişilebilirlik bilgilerinin özel görünümlerini oluşturmak için "
-"kullanabileceğiniz basit bir eklenti çerçevesine sahiptir."
+msgstr "İlgili eylem için kısayol birleşimi."
 
 #: ../plugins/api_view.py:32
 msgid "API Browser"
@@ -251,6 +252,19 @@ msgstr "Seçili erişilebilirlik"
 msgid "Source"
 msgstr "Kaynak"
 
+#. add accessible's name to buffer
+#: ../plugins/event_monitor.ui.h:8 ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
+#: ../src/lib/accerciser/accessible_treeview.py:503
+#: ../src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Ad"
+
+#: ../plugins/event_monitor.ui.h:9
+#| msgid "Full name"
+msgid "Full Name"
+msgstr "Tam Ad"
+
 #: ../plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Olay İzleyici"
@@ -310,228 +324,240 @@ msgstr "İlişkiler"
 msgid "_Accessible"
 msgstr "_Erişilebilirlik"
 
-#: ../plugins/interface_view.ui.h:10
+#: ../plugins/interface_view.ui.h:11
+msgid "Key binding"
+msgstr "Anahtar bağı"
+
+#: ../plugins/interface_view.ui.h:12
 msgid "Perform action"
 msgstr "Eylemi gerçekleştir"
 
-#: ../plugins/interface_view.ui.h:11
+#: ../plugins/interface_view.ui.h:13
 msgid "Acti_on"
 msgstr "E_ylem"
 
-#: ../plugins/interface_view.ui.h:12
+#: ../plugins/interface_view.ui.h:14
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.ui.h:13
+#: ../plugins/interface_view.ui.h:15
 msgid "Toolkit"
 msgstr "Araç takımı"
 
-#: ../plugins/interface_view.ui.h:14
+#: ../plugins/interface_view.ui.h:16
 msgid "Version"
 msgstr "Sürüm"
 
-#: ../plugins/interface_view.ui.h:15
+#: ../plugins/interface_view.ui.h:17
 msgid "Ap_plication"
 msgstr "_Uygulama"
 
-#: ../plugins/interface_view.ui.h:16
+#: ../plugins/interface_view.ui.h:18
 msgid "Col_lection"
-msgstr "Kol_leksiyon"
+msgstr "Der_lem"
 
 #. Component size
-#: ../plugins/interface_view.ui.h:18
+#: ../plugins/interface_view.ui.h:20
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.ui.h:19
+#: ../plugins/interface_view.ui.h:21
 msgid "Relative position"
 msgstr "Göreceli konum"
 
-#: ../plugins/interface_view.ui.h:20
+#: ../plugins/interface_view.ui.h:22
 msgid "Size"
 msgstr "Boyut"
 
-#: ../plugins/interface_view.ui.h:21
+#: ../plugins/interface_view.ui.h:23
 msgid "WIDGET"
 msgstr "PARÇA"
 
-#: ../plugins/interface_view.ui.h:22
+#: ../plugins/interface_view.ui.h:24
 msgid "Layer"
 msgstr "Katman"
 
-#: ../plugins/interface_view.ui.h:23
+#: ../plugins/interface_view.ui.h:25
 msgid "MDI-Z-order"
 msgstr "MDI-Z-sırası"
 
-#: ../plugins/interface_view.ui.h:24
+#: ../plugins/interface_view.ui.h:26
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.ui.h:25
+#: ../plugins/interface_view.ui.h:27
 msgid "Absolute position"
 msgstr "Mutlak konum"
 
-#: ../plugins/interface_view.ui.h:26
+#: ../plugins/interface_view.ui.h:28
 msgid "Co_mponent"
 msgstr "_Bileşen"
 
-#: ../plugins/interface_view.ui.h:27
+#: ../plugins/interface_view.ui.h:29
 msgid "Des_ktop"
 msgstr "_Masaüstü"
 
-#: ../plugins/interface_view.ui.h:28
+#: ../plugins/interface_view.ui.h:30
 msgid "Locale:"
-msgstr "Yereller:"
+msgstr "Yerel:"
 
-#: ../plugins/interface_view.ui.h:29
+#: ../plugins/interface_view.ui.h:31
 msgid "_Document"
-msgstr "_Döküman"
+msgstr "_Belge"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
+#: ../plugins/interface_view.ui.h:32 ../plugins/validate.py:298
 msgid "Hyperlink"
 msgstr "Hiper bağ"
 
-#: ../plugins/interface_view.ui.h:31
+#: ../plugins/interface_view.ui.h:33
 msgid "H_ypertext"
 msgstr "_Hipermetin"
 
-#: ../plugins/interface_view.ui.h:32
+#: ../plugins/interface_view.ui.h:34
 msgid "Position"
 msgstr "Konum"
 
-#: ../plugins/interface_view.ui.h:33
+#: ../plugins/interface_view.ui.h:35
 msgid "Locale"
 msgstr "Yerel"
 
-#: ../plugins/interface_view.ui.h:34
+#: ../plugins/interface_view.ui.h:36
 msgid "_Image"
 msgstr "_Görüntü"
 
-#: ../plugins/interface_view.ui.h:35
+#: ../plugins/interface_view.ui.h:37
 msgid "Lo_gin Helper"
 msgstr "_Giriş Yardımcısı"
 
-#: ../plugins/interface_view.ui.h:36
+#: ../plugins/interface_view.ui.h:38
 msgid "Select All"
 msgstr "Hepsini Seç"
 
-#: ../plugins/interface_view.ui.h:37
+#: ../plugins/interface_view.ui.h:39
 msgid "_Selection"
 msgstr "_Seçim"
 
-#: ../plugins/interface_view.ui.h:38
+#: ../plugins/interface_view.ui.h:40
+msgid "Content type"
+msgstr "İçerik türü"
+
+#: ../plugins/interface_view.ui.h:41 ../plugins/interface_view.py:739
+msgid "URI"
+msgstr "URI"
+
+#: ../plugins/interface_view.ui.h:42
 msgid "St_reamable Content"
 msgstr "Akışkan İçe_rik"
 
-#: ../plugins/interface_view.ui.h:39
+#: ../plugins/interface_view.ui.h:43
 msgid "Caption:"
 msgstr "Başlık:"
 
-#: ../plugins/interface_view.ui.h:40
+#: ../plugins/interface_view.ui.h:44
 msgid "Summary:"
 msgstr "Özet:"
 
-#: ../plugins/interface_view.ui.h:41
+#: ../plugins/interface_view.ui.h:45
 msgid "Selected columns"
 msgstr "Seçilmiş sütunlar"
 
-#: ../plugins/interface_view.ui.h:42
+#: ../plugins/interface_view.ui.h:46
 msgid "Selected rows"
 msgstr "Seçilmiş satırlar"
 
-#: ../plugins/interface_view.ui.h:43
+#: ../plugins/interface_view.ui.h:47
 msgid "Columns"
 msgstr "Sütunlar"
 
-#: ../plugins/interface_view.ui.h:44
+#: ../plugins/interface_view.ui.h:48
 msgid "Rows"
 msgstr "Satırlar"
 
-#: ../plugins/interface_view.ui.h:45
+#: ../plugins/interface_view.ui.h:49
 msgid "Table Information"
 msgstr "Tablo Bilgileri"
 
-#: ../plugins/interface_view.ui.h:46
+#: ../plugins/interface_view.ui.h:50
 msgid "name (x,y)"
-msgstr "isim (x,y)"
+msgstr "ad (x,y)"
 
-#: ../plugins/interface_view.ui.h:47
+#: ../plugins/interface_view.ui.h:51
 msgid "Header:"
 msgstr "Başlık:"
 
-#: ../plugins/interface_view.ui.h:48
+#: ../plugins/interface_view.ui.h:52
 msgid "<no description>"
 msgstr "<tanım yok>"
 
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:50
+#: ../plugins/interface_view.ui.h:54
 msgid "Extents:"
 msgstr "Kapsar:"
 
-#: ../plugins/interface_view.ui.h:51
+#: ../plugins/interface_view.ui.h:55
 msgid "Row"
 msgstr "Satır"
 
-#: ../plugins/interface_view.ui.h:52
+#: ../plugins/interface_view.ui.h:56
 msgid "Column"
 msgstr "Sütun"
 
-#: ../plugins/interface_view.ui.h:53
+#: ../plugins/interface_view.ui.h:57
 msgid "Selected Cell"
 msgstr "Seçili Hücre"
 
-#: ../plugins/interface_view.ui.h:54
+#: ../plugins/interface_view.ui.h:58
 msgid "_Table"
 msgstr "_Tablo"
 
-#: ../plugins/interface_view.ui.h:55
+#: ../plugins/interface_view.ui.h:59
 msgid "Text"
 msgstr "Metin"
 
-#: ../plugins/interface_view.ui.h:56
+#: ../plugins/interface_view.ui.h:60
 msgid "Offset"
 msgstr "Ofset"
 
-#: ../plugins/interface_view.ui.h:57
+#: ../plugins/interface_view.ui.h:61
 msgid "Include defaults"
 msgstr "Öntanımlıları kapsa"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:59
+#: ../plugins/interface_view.ui.h:63
 msgid "Start: 0"
 msgstr "Başlangıç: 0"
 
 #. End character offset of text attributes span
-#: ../plugins/interface_view.ui.h:61
+#: ../plugins/interface_view.ui.h:65
 msgid "End: 0"
 msgstr "Son: 0"
 
-#: ../plugins/interface_view.ui.h:62
+#: ../plugins/interface_view.ui.h:66
 msgid "Te_xt"
 msgstr "_Metin"
 
-#: ../plugins/interface_view.ui.h:63
+#: ../plugins/interface_view.ui.h:67
 msgid "Current value"
 msgstr "Şimdiki değer"
 
-#: ../plugins/interface_view.ui.h:64
+#: ../plugins/interface_view.ui.h:68
 msgid "Minimum increment"
 msgstr "En az artış"
 
-#: ../plugins/interface_view.ui.h:65
+#: ../plugins/interface_view.ui.h:69
 msgid "Maximum value"
 msgstr "En fazla değer"
 
-#: ../plugins/interface_view.ui.h:66
+#: ../plugins/interface_view.ui.h:70
 msgid "Minimum value"
 msgstr "En az değer"
 
-#: ../plugins/interface_view.ui.h:67
+#: ../plugins/interface_view.ui.h:71
 msgid "Val_ue"
 msgstr "Değe_r"
 
-#: ../plugins/interface_view.ui.h:68
+#: ../plugins/interface_view.ui.h:72
 msgid "unknown"
 msgstr "bilinmeyen"
 
@@ -548,17 +574,6 @@ msgstr "Çeşitli arayüz özelliklerini görüntülemeye izin verir"
 #: ../plugins/interface_view.py:235
 msgid "(not implemented)"
 msgstr "(uygulanmamış)"
-
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
-#: ../src/lib/accerciser/accessible_treeview.py:503
-#: ../src/lib/accerciser/plugin/plugin_manager.py:386
-msgid "Name"
-msgstr "İsim"
-
-#: ../plugins/interface_view.py:739
-msgid "URI"
-msgstr "URI"
 
 #: ../plugins/interface_view.py:747
 msgid "Start"
@@ -683,7 +698,7 @@ msgstr "Temel"
 
 #: ../plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "Temel GUI uygulama erişilebilirliğini test eder"
+msgstr "Temel GUI uygulama erişilebilirliğini sınar"
 
 #: ../plugindata/validate/basic.py:28
 #, python-format
@@ -697,12 +712,12 @@ msgstr "etkileşimli %s sorgulanabilir değil"
 
 #: ../plugindata/validate/basic.py:61
 msgid "more than one focused widget"
-msgstr "birden fazla odaklanılmış parça"
+msgstr "birden çok odaklanılmış parça"
 
 #: ../plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
-msgstr "%s has no text interface"
+msgstr "%sʼin metin arayüzü yok"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
@@ -723,7 +738,7 @@ msgstr "%s ilişkisi için kayıp karşılık"
 #: ../plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
-msgstr "%s eksik isim veya etiket"
+msgstr "%s eksik ad veya etiket"
 
 #: ../plugindata/validate/basic.py:217
 #, python-format
@@ -775,7 +790,7 @@ msgstr ""
 #: ../plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
-msgstr "%s için bir isim veya tanım yok"
+msgstr "%s için bir ad veya tanım yok"
 
 #: ../src/lib/accerciser/accerciser.py:80
 msgid "_Preferences..."
@@ -896,7 +911,7 @@ msgstr ""
 
 #: ../src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
-msgstr "Bir interaktif Piton erişilebilirlik gezgini"
+msgstr "Etkileşimli Python erişilebilirlik gezgini"
 
 #: ../src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright (c) 2006, 2007 IBM Corporation (BSD)"
@@ -1070,15 +1085,6 @@ msgstr "Ya_rdım"
 
 #~ msgid "Confirm clear"
 #~ msgstr "Silmeyi onayla"
-
-#~ msgid "Full name"
-#~ msgstr "Tam isim"
-
-#~ msgid "Key binding"
-#~ msgstr "Anahtar bağı"
-
-#~ msgid "Content type"
-#~ msgstr "İçerik türü"
 
 #~ msgid "1.0"
 #~ msgstr "1.0"
