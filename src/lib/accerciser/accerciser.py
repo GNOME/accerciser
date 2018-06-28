@@ -103,7 +103,8 @@ class Main(Tools):
     '''
     GLib.timeout_add(200, self._pumpEvents)
     try:
-      pyatspi.Registry.start(async=True, gil=False)
+      # async is a reserved keyword in Python 3.7+, so we pass the args as dict
+      pyatspi.Registry.start(**{'async': True, 'gil': False})
     except KeyboardInterrupt:
       self._shutDown()
 
