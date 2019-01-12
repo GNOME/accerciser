@@ -3,43 +3,43 @@
   <schema path="/org/a11y/accerciser/" id="org.a11y.Accerciser" gettext-domain="accerciser">
     <key type="as" name="disabled-plugins">
       <default>[]</default>
-      <_summary>A list of plugins that are disabled by default</_summary>
-      <_description>A list of plugins that are disabled by default.</_description>
+      <summary>A list of plugins that are disabled by default</summary>
+      <description>A list of plugins that are disabled by default.</description>
     </key>
     <key type="d" name="highlight-duration">
       <default>0.5</default>
-      <_summary>Highlight duration</_summary>
-      <_description>The duration of the highlight box when selecting accessible nodes.</_description>
+      <summary>Highlight duration</summary>
+      <description>The duration of the highlight box when selecting accessible nodes.</description>
     </key>
     <key type="s" name="highlight-fill">
       <default>"#ff00006f"</default>
-      <_summary>Highlight fill color</_summary>
-      <_description>The color and opacity of the highlight fill.</_description>
+      <summary>Highlight fill color</summary>
+      <description>The color and opacity of the highlight fill.</description>
     </key>
     <key type="s" name="highlight-border">
       <default>"#ff0000ff"</default>
-      <_summary>Highlight border color</_summary>
-      <_description>The color and opacity of the highlight border.</_description>
+      <summary>Highlight border color</summary>
+      <description>The color and opacity of the highlight border.</description>
     </key>
     <key type="i" name="hpaned">
       <default>250</default>
-      <_summary>Horizontal split</_summary>
-      <_description>Position of the horizontal split of the main window.</_description>
+      <summary>Horizontal split</summary>
+      <description>Position of the horizontal split of the main window.</description>
     </key>
     <key type="i" name="vpaned">
       <default>350</default>
-      <_summary>Vertical split</_summary>
-      <_description>Position of the vertical split of the main window.</_description>
+      <summary>Vertical split</summary>
+      <description>Position of the vertical split of the main window.</description>
     </key>
     <key type="i" name="window-height">
       <default>600</default>
-      <_summary>Default window height</_summary>
-      <_description>The window height value.</_description>
+      <summary>Default window height</summary>
+      <description>The window height value.</description>
     </key>
     <key type="i" name="window-width">
       <default>800</default>
-      <_summary>Default window width</_summary>
-      <_description>The window width value.</_description>
+      <summary>Default window width</summary>
+      <description>The window width value.</description>
     </key>
     <child schema="org.a11y.Accerciser.pluginviews" name="pluginviews"/>
     <child schema="org.a11y.Accerciser.newpluginviews" name="newpluginviews"/>
@@ -48,47 +48,47 @@
   <schema path="/org/a11y/accerciser/pluginviews/" id="org.a11y.Accerciser.pluginviews" gettext-domain="accerciser">
     <key type="as" name="bottom-panel-layout">
       <default>["IPython Console"]</default>
-      <_summary>The layout for the bottom panel</_summary>
-      <_description>The layout for the bottom panel pluginview.</_description>
+      <summary>The layout for the bottom panel</summary>
+      <description>The layout for the bottom panel pluginview.</description>
     </key>
     <key type="as" name="top-panel-layout">
       <default>["Interface Viewer", "API Browser", "Event Monitor", "Script Recorder"]</default>
-      <_summary>The layout for the top panel</_summary>
-      <_description>The layout for the top panel pluginview.</_description>
+      <summary>The layout for the top panel</summary>
+      <description>The layout for the top panel pluginview.</description>
     </key>
     <key type="b" name="layout-single">
       <default>false</default>
-      <_summary>Single layout view</_summary>
-      <_description>View plugins in a single layout.</_description>
+      <summary>Single layout view</summary>
+      <description>View plugins in a single layout.</description>
     </key>
     <key type="as" name="available-newviews">
       <default>[]</default>
-      <_summary>Available new pluginviews</_summary>
-      <_description>This list contains all the new available pluginviews</_description>
+      <summary>Available new pluginviews</summary>
+      <description>This list contains all the new available pluginviews</description>
     </key>
    </schema>
   <schema id="org.a11y.Accerciser.newpluginviews" gettext-domain="accerciser">
    <key type="as" name="layout">
       <default>[]</default>
-      <_summary>The pluginview layout</_summary>
-      <_description>The default plugin layout for the top panel.</_description>
+      <summary>The pluginview layout</summary>
+      <description>The default plugin layout for the top panel.</description>
     </key>
     <key type="i" name="height">
       <default>480</default>
-      <_summary>Window height</_summary>
-      <_description>Window height value.</_description>
+      <summary>Window height</summary>
+      <description>Window height value.</description>
     </key>
     <key type="i" name="width">
       <default>480</default>
-      <_summary>Window width</_summary>
-      <_description>Window width value.</_description>
+      <summary>Window width</summary>
+      <description>Window width value.</description>
     </key>
   </schema>
   <schema id="org.a11y.Accerciser.hotkeys" gettext-domain="accerciser">
     <key type="s" name="hotkey-combo">
       <default>""</default>
-      <_summary>Hotkey combination</_summary>
-      <_description>Hotkey combination for related action.</_description>
+      <summary>Hotkey combination</summary>
+      <description>Hotkey combination for related action.</description>
     </key>
   </schema>
 </schemalist>

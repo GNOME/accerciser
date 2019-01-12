@@ -24,18 +24,17 @@ PKG_CHECK_MODULES([PYGOBJECT], [pygobject-3.0 >= PYGOBJECT_REQUIRED])
 PKG_CHECK_MODULES([ATSPI2], [atspi-2 >= ATSPI_REQUIRED])
 
 dnl == i18n ==
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=accerciser
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [The gettext package])
-AM_GLIB_GNU_GETTEXT
 
-dnl == intltool check ==
-IT_PROG_INTLTOOL([0.35.0])
+APPSTREAM_XML
 
 dnl == generate makefiles ==
 AC_OUTPUT([
 Makefile
-accerciser.desktop.in
 doc/Makefile
 help/Makefile
 icons/Makefile

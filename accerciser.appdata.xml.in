@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Daniel Mustieles <daniel.mustieles@gmail.com> -->
-<application>
+<component type="desktop-application">
   <id type="desktop">accerciser.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <_name>Accerciser</_name>
-  <_summary>Accessibility explorer for the GNOME desktop</_summary>
+  <name>Accerciser</name>
+  <summary>Accessibility explorer for the GNOME desktop</summary>
   <description>
-    <_p>
+    <p>
       Accerciser is an interactive Python accessibility explorer for the GNOME desktop.
       It uses AT-SPI to inspect and control widgets, allowing you to check if an application
       is providing correct information to assistive technologies and automated test frameworks.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Accerciser has a simple plugin framework which you can use to create custom views of
       accessibility information.
-    </_p>
+    </p>
   </description>
   <url type="homepage">https://wiki.gnome.org/action/show/Apps/Accerciser</url>
   <screenshots>
@@ -23,4 +23,4 @@
   <updatecontact>daniel.mustieles@gmail.com</updatecontact>
   <project_group>GNOME</project_group>
   <translation type="gettext">accerciser</translation>
-</application>
+</component>

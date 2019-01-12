@@ -1,48 +1,34 @@
 SUBDIRS = doc help icons plugindata plugins po src pixmaps
 
-INTLTOOL = 			\
-	intltool-extract.in 	\
-	intltool-merge.in 	\
-	intltool-update.in
-
 desktopdir = $(datadir)/applications
 desktop_in_files=accerciser.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+$(desktop_DATA): $(desktop_in_files)
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
-gsettings_files = \
-        org.a11y.Accerciser.gschema.xml.in
-
-gsettings_SCHEMAS = $(gsettings_files:.xml.in=.xml)
-
-appdatadir = $(datadir)/appdata
-appdata_DATA = $(appdata_in_files:.xml.in=.xml)
-appdata_in_files = accerciser.appdata.xml.in
-@INTLTOOL_XML_RULE@
-
-%.gschema.xml: %.gschema.xml.in
-	$(AM_V_GEN) $(INTLTOOL_MERGE) -x -u --no-translations $< $@
-
+gsettings_SCHEMAS = org.a11y.Accerciser.gschema.xml
 @GSETTINGS_RULES@
 
+appstream_in_files = accerciser.appdata.xml.in
+appstream_XML = $(appstream_in_files:.xml.in=.xml)
+$(appstream_XML): $(appstream_in_files)
+	$(AM_V_GEN)$(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+@APPSTREAM_XML_RULES@
+
 EXTRA_DIST =  \
-	$(appdata_in_files) \
+	$(appstream_in_files) \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
 	pyreqs.py \
-	$(INTLTOOL) \
-        $(gsettings_files)
+	$(gsettings_SCHEMAS)
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--disable-scrollkeeper \
 	--enable-pydoc
 
 DISTCLEANFILES = \
-	$(desktop_DATA) \
-	intltool-extract \
-	intltool-merge \
-	intltool-update	\
-        $(gsettings_SCHEMAS)
+	$(desktop_DATA)
 
 CLEANFILES = \
-	$(appdata_DATA)
+	$(appstream_XML) \
+	$(desktop_DATA)
