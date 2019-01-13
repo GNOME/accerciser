@@ -1,6 +1,6 @@
 AC_INIT([Accerciser],
         [3.31.90pre],
-        [https://bugzilla.gnome.org/enter_bug.cgi?product=accerciser],
+        [https://gitlab.gnome.org/GNOME/accerciser/issues],
         [accerciser])
 
 AC_CONFIG_SRCDIR(src/accerciser.in)
