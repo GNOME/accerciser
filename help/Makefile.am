@@ -15,7 +15,6 @@ HELP_MEDIA = \
 	figures/tree_view_accerciser.png \
 	figures/event_monitor_plugin.png \
 	figures/validator_app_tree.png \
-	figures/event_monitor.png \
 	figures/validator_report.png \
 	figures/global-hotkeys.png 
 
