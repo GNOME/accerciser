@@ -5,7 +5,6 @@ HELP_ID= accerciser
 HELP_MEDIA = \
 	figures/accerciser-logo.png \
 	figures/highlighting.png \
-	figures/accerciser_preferences.png \
 	figures/interface_viewer_plugin.png \
 	figures/accerciser-view.png \
 	figures/IPython_plugin.png \
