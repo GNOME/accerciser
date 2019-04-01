@@ -35,7 +35,7 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     @param hotkeys_view: Treeview of global hotkeys.
     @type hotkeys_view: L{HotkeyTreeView}
     '''
-    gtk.Dialog.__init__(self, name=_('accerciser Preferences'))
+    gtk.Dialog.__init__(self, title=_('accerciser Preferences'))
     self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
     self.connect('response', self._onResponse)
     self.set_default_size(500, 250)
