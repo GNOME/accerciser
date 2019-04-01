@@ -24,6 +24,8 @@ import pyatspi
 import string
 from .tools import ToolsAccessor, parseColorString
 
+import Xlib, Xlib.display
+
 MAX_BLINKS = 6
 
 gsettings = GSettings.new('org.a11y.Accerciser')
@@ -147,14 +149,11 @@ class Node(GObject.GObject, ToolsAccessor):
     self.max_blinks = times
     self.blinks = 0
     # get info for drawing higlight rectangles
-    display = gdk.Display.get_default()
-    screen = display.get_default_screen()
-    self.root = screen.get_root_window()
-    self.gc = self.root.new_gc()
-    self.gc.set_subwindow(gdk.SubwindowMode.INCLUDE_INFERIORS)
-    self.gc.set_function(gdk.Function.INVERT)
-    self.gc.set_line_attributes(3, gdk.LineStyle.ON_OFF_DASH, \
-                                gdk.CapStyle.BUTT, gdk.JoinStyle.MITER)
+    display = Xlib.display.Display()
+    screen = display.screen()
+    self.root = screen.root
+    self.gc = w.create_gc(subwindow_mode = Xlib.X.IncludeInferiors, function = Xlib.X.GXinvert)
+
     self.inv = gtk.Invisible()
     self.inv.set_screen(screen)
     GLib.timeout_add(30, self._drawRectangle)
@@ -167,7 +166,7 @@ class Node(GObject.GObject, ToolsAccessor):
     if self.blinks == 0:
       self.inv.show()
       self.inv.grab_add()
-    self.root.draw_rectangle(self.gc, False, 
+    self.root.fill_rectangle(self.gc,
                              self.extents.x,
                              self.extents.y,
                              self.extents.width,
@@ -217,10 +216,6 @@ class _HighLight(gtk.Window):
       screen = self.get_screen()
       visual = screen.get_rgba_visual()
       self.set_visual(visual)
-    else:
-      # Take a screenshot for compositing on the client side.
-      self.root = gdk.get_default_root_window().get_image(
-        self.x, self.y, self.w, self.h)
 
     # Place window, and resize it, and set proper properties.
     self.set_app_paintable(True)
@@ -263,12 +258,6 @@ class _HighLight(gtk.Window):
     svgh.close()
 
     if not self._composited:
-      # Draw the screengrab of the underlaying window, and set the drawing
-      # operator to OVER.
-      self.window.draw_image(self.style.black_gc, self.root,
-                             event.area.x,event.area.y,
-                             event.area.x, event.area.y,
-                             event.area.width, event.area.height)
       cairo_operator = cairo.OPERATOR_OVER
     else:
       cairo_operator = cairo.OPERATOR_SOURCE
