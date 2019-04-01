@@ -18,6 +18,7 @@ from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository.Gio import Settings as GSettings
+gi.require_version('Rsvg', '2.0')
 from gi.repository import Rsvg as rsvg
 import cairo
 import pyatspi

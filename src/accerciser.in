@@ -49,6 +49,7 @@ sys.path.insert(1, libs)
 #gnome.program_init('accerciser', '@VERSION@', 
 #                   properties=props, argv=['accerciser'] + sys.argv[1:])
 
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
 # initialize threads
 # get global icon resources
