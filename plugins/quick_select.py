@@ -48,6 +48,13 @@ class QuickSelect(Plugin):
     @param event: The event that is being handled.
     @type event: L{pyatspi.event.Event}
     '''
+    if event.type != "object:state-changed:focused" and \
+       event.type != "object:state-changed:selected":
+      return
+
+    if event.detail1 != 1:
+      return
+
     if not self.isMyApp(event.source):
       self.last_focused = event.source      
 
