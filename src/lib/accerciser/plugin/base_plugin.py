@@ -95,8 +95,9 @@ class Plugin(ToolsAccessor):
     @param acc: The new accessibility object.
     @type acc: Accessibility.Accessible
     '''
-    self.acc = acc
-    self.onAccChanged(acc)
+    if not self.isMyApp(acc):
+      self.acc = acc
+      self.onAccChanged(acc)
 
   def onAccChanged(self, acc):
     '''

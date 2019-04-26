@@ -450,9 +450,14 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     '''
     if accessible is not None:
       icon = getIcon(accessible)
-      name = accessible.name
-      role = accessible.getLocalizedRoleName()
-      count = str(accessible.childCount)
+      if self.isMyApp(accessible):
+        name = "Accerciser"
+        role = "accerciser"
+        count = "0"
+      else:
+        name = accessible.name
+        role = accessible.getLocalizedRoleName()
+        count = str(accessible.childCount)
     else:
       icon = None
       if not dummy:
