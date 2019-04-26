@@ -952,22 +952,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param iter: The iter at the given row.
     @type iter: L{gtk.TreeIter}
     '''
-    # TODO: Remove idle_add when at-spi2 reentrancy issues are fixed
-    GLib.idle_add(self._accCellDataFuncReal, tvc, cellrenderer, model, iter_id)
-
-  def _accCellDataFuncReal(self, tvc, cellrenderer, model, iter_id):
-    '''
-    Called by _acCellDataFunc when idle
-
-    @param tvc: A treeview column.
-    @type tvc: L{gtk.TreeViewColumn}
-    @param cellrenderer: The cellrenderer that needs to be tweaked.
-    @type cellrenderer: L{gtk.CellRenderer}
-    @param model: The treeview's data model.
-    @type model: L{AccessibleModel}
-    @param iter: The iter at the given row.
-    @type iter: L{gtk.TreeIter}
-    '''
     if model.iter_is_valid(iter_id):
       acc = model.get_value(iter_id, COL_ACC)
     else:
