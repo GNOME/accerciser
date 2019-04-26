@@ -51,8 +51,8 @@ class Main(Tools):
     '''
     # mark the root of this window with its PID so we can easily identify it
     # as this app
-    #root_atk = atk.get_root()
-    #root_atk.set_description(str(os.getpid()))
+    root_atk = atk.get_root()
+    root_atk.set_description(str(os.getpid()))
 
     self.node = Node()
 
