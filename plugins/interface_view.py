@@ -308,6 +308,7 @@ class _SectionAccessible(_InterfaceSection):
     # Child count and description labels
     self.child_count_label = ui_xml.get_object('label_acc_child count')
     self.desc_label = ui_xml.get_object('label_acc_desc')
+    self.id_label = ui_xml.get_object('label_acc_id')
 
     # configure states tree view
     self.states_model = ui_xml.get_object('states_liststore')
@@ -341,6 +342,10 @@ class _SectionAccessible(_InterfaceSection):
 
     self.child_count_label.set_text(str(acc.childCount))
     self.desc_label.set_label(acc.description or _('(no description)'))
+    if 'accessibleId' in dir(acc) and acc.accessibleId:
+        self.id_label.set_label(acc.accessibleId)
+    else:
+        self.id_label.set_label(_('(no id)'))
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
