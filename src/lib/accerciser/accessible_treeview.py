@@ -563,7 +563,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
         ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Node'),
         # Translators: Appears as tooltip
         #
-         None, _('Refresh selected node\'s children'), 
+         None, _('Refresh selected node’s children'), 
          self._refreshCurrentLevel)])  
 
     self.refresh_current_action = self.action_group.get_action('RefreshCurrent')
