@@ -1071,7 +1071,7 @@ class MultiViewModel(list, BaseViewModel):
       menu_item = gtk.SeparatorMenuItem()
       self.append(menu_item)
       menu_item.show()
-      menu_item = gtk.MenuItem(label="<i>" + _('_New view...') + "</i>")
+      menu_item = gtk.MenuItem(label="<i>" + _('_New view…') + "</i>")
       menu_item.get_child().set_use_markup(True)
       menu_item.connect('activate', self._onItemActivated, 
                         context_plugin, transient_window)
@@ -1127,7 +1127,7 @@ class MultiViewModel(list, BaseViewModel):
         @type transient_window: gtk.Window
         '''
         self.view_manager = view_manager
-        gtk.Dialog.__init__(self, _('New View...'), transient_window)
+        gtk.Dialog.__init__(self, _('New View…'), transient_window)
         self.add_buttons(gtk.STOCK_OK, gtk.ResponseType.OK,
                          gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
         self.set_default_response(gtk.ResponseType.OK)

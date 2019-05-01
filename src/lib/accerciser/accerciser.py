@@ -77,7 +77,7 @@ class Main(Tools):
     main_actions.add_actions([
         ('Quit', gtk.STOCK_QUIT, None, 
          '<control>q', 'Quit Accerciser', self._onQuit),
-        ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences...'),
+        ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences…'),
          '<control>p', 'Show preferences', self._onShowPreferences),
         ('Contents', gtk.STOCK_HELP, _('_Contents'),
          'F1', 'View contents of manual', self._onHelp),
