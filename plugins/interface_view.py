@@ -322,8 +322,6 @@ class _SectionAccessible(_InterfaceSection):
     self.relation_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
 
     selection = self.relations_view.get_selection()
-    selection.set_select_function(self._relationSelectFunc, None)
-
     show_button = ui_xml.get_object('button_relation_show')
     show_button.set_sensitive(self._isSelectedInView(selection))
     selection.connect('changed', self._onViewSelectionChanged, show_button)
@@ -411,7 +409,7 @@ class _SectionAccessible(_InterfaceSection):
     '''
     selection = relations_view.get_selection()
     model, iter = selection.get_selected()
-    if iter:
+    if iter and model[iter][2] >= 0:
       path = model.get_path(iter)
       relations = self.node.acc.getRelationSet()
       acc = relations[path[0]].getTarget(model[iter][2])
