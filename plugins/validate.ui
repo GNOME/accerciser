@@ -38,9 +38,6 @@
             <property name="label" translatable="yes">Sche_ma:</property>
             <property name="use_underline">True</property>
             <property name="mnemonic_widget">schema combo</property>
-            <accessibility>
-              <relation type="label-for" target="schema combo"/>
-            </accessibility>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -51,9 +48,6 @@
         <child>
           <object class="GtkComboBox" id="schema combo">
             <property name="visible">True</property>
-            <accessibility>
-              <relation type="labelled-by" target="label1"/>
-            </accessibility>
           </object>
           <packing>
             <property name="position">1</property>
