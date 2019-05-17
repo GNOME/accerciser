@@ -126,6 +126,9 @@
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
+                                <accessibility>
+                                  <relation type="label-for" target="label_acc_child count"/>
+                                </accessibility>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -181,6 +184,9 @@
                                     <attributes>
                                       <attribute name="style" value="italic"/>
                                     </attributes>
+                                    <accessibility>
+                                      <relation type="labelled-by" target="label58"/>
+                                    </accessibility>
                                   </object>
                                 </child>
                               </object>
@@ -194,6 +200,9 @@
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
+                                <accessibility>
+                                  <relation type="label-for" target="label_acc_desc"/>
+                                </accessibility>
                               </object>
                             </child>
                           </object>
@@ -227,12 +236,15 @@
                                     <attributes>
                                       <attribute name="style" value="italic"/>
                                     </attributes>
+                                    <accessibility>
+                                      <relation type="labelled-by" target="label-id"/>
+                                    </accessibility>
                                   </object>
                                 </child>
                               </object>
                             </child>
                             <child type="label">
-                              <object class="GtkLabel">
+                              <object class="GtkLabel" id="label-id">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -240,6 +252,9 @@
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
+                                <accessibility>
+                                  <relation type="label-for" target="label_acc_id"/>
+                                </accessibility>
                               </object>
                             </child>
                           </object>
@@ -279,7 +294,7 @@
                                             <property name="min_content_height">75</property>
                                             <child>
                                               <object class="GtkTreeView" id="states_view">
-                                                <property name="visible">True</property>
+                                                <property name="visible">False</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="model">states_liststore</property>
                                                 <property name="headers_visible">False</property>
@@ -338,7 +353,7 @@
                                             <property name="min_content_height">75</property>
                                             <child>
                                               <object class="GtkTreeView" id="accattrib_view">
-                                                <property name="visible">True</property>
+                                                <property name="visible">False</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="model">accattrib_liststore</property>
                                                 <property name="headers_visible">False</property>
@@ -429,7 +444,7 @@
                                         <property name="min_content_height">75</property>
                                         <child>
                                           <object class="GtkTreeView" id="relations_view">
-                                            <property name="visible">True</property>
+                                            <property name="visible">False</property>
                                             <property name="can_focus">True</property>
                                             <property name="model">relations_treestore</property>
                                             <property name="headers_visible">False</property>
@@ -2161,7 +2176,7 @@
                                                 <property name="xalign">0</property>
                                                 <signal name="clicked" handler="_onTableButtonClicked" swapped="no"/>
                                                 <accessibility>
-                                                  <relation type="labelled-by" target="label50"/>
+                                                  <relation type="labelled-by" target="label45"/>
                                                 </accessibility>
                                               </object>
                                               <packing>
@@ -2434,6 +2449,9 @@
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
+                                <accessibility>
+                                  <relation type="label-for" target="table_cell_button"/>
+                                </accessibility>
                               </object>
                             </child>
                           </object>
@@ -2673,6 +2691,9 @@
                                             <property name="can_focus">True</property>
                                             <property name="model">textattrib_liststore</property>
                                             <property name="headers_visible">False</property>
+                                            <accessibility>
+                                              <relation type="labelled-by" target="label8"/>
+                                            </accessibility>
                                             <child internal-child="selection">
                                               <object class="GtkTreeSelection" id="treeview-selection9"/>
                                             </child>
@@ -2716,6 +2737,9 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Attributes</property>
+                                <accessibility>
+                                  <relation type="label-for" target="treeview_text_attr"/>
+                                </accessibility>
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
@@ -2825,7 +2849,7 @@
                                 <property name="selectable">True</property>
                                 <property name="xalign">0</property>
                                 <accessibility>
-                                  <relation type="labelled-by" target="label35"/>
+                                  <relation type="labelled-by" target="label34"/>
                                 </accessibility>
                               </object>
                               <packing>
@@ -2844,7 +2868,7 @@
                                 <property name="selectable">True</property>
                                 <property name="xalign">0</property>
                                 <accessibility>
-                                  <relation type="labelled-by" target="label34"/>
+                                  <relation type="labelled-by" target="label35"/>
                                 </accessibility>
                               </object>
                               <packing>
