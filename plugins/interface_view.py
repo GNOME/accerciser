@@ -319,7 +319,7 @@ class _SectionAccessible(_InterfaceSection):
     # preset the different bg colors
     style = self.relations_view.get_style_context()
     self.header_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
-    self.relation_bg = style.get_color(gtk.StateFlags.NORMAL).to_string()
+    self.relation_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
 
     selection = self.relations_view.get_selection()
     selection.set_select_function(self._relationSelectFunc, None)
