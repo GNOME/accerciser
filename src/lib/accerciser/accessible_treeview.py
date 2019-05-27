@@ -571,6 +571,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
 
     self.connect('popup-menu', self._onPopup)
     self.connect('button-press-event', self._onPopup)
+    self.connect('key-press-event', self._onKeyPress)
 
     self.connect('cursor-changed', self._onCursorChanged)
 
@@ -581,6 +582,24 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     path = self.get_cursor()[0]
     self.refresh_current_action.set_sensitive(path is not None)      
+
+  def _onKeyPress(self, w, event):
+    '''
+    Expand or collapse a row on Left/Right key-press
+    '''
+    if event.state == 0:
+      path, col = self.get_cursor()
+      if path is not None:
+        if event.keyval == gdk.KEY_Left:
+          if not self.collapse_row(path):
+            # if we ccouldn't collapse the current row, collapse the parent
+            if path.up():
+              self.collapse_row(path)
+          return True
+        elif event.keyval == gdk.KEY_Right:
+          self.expand_row(path, False)
+          return True
+    return False
 
   def _onPopup(self, w, event=None):
     '''
