@@ -35,8 +35,6 @@ COL_FILLED = 4
 COL_DUMMY = 5
 COL_ACC = 6
 
-ACCESSIBLE_LOADING = 5
-
 class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   '''
   Stores the desktop accessible tree. Only populates sections of the tree
@@ -74,25 +72,6 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     self.desktop = desktop_acc
     self._path_to_populate = None
     self._populating_tasks = 0
-    self._hide_leaves = False
-
-
-  def _hideShowLeaves(self):
-    '''
-    Change _hide_leaves state, allowing leaves either to appear or to be hidden
-    in the accessible treeview.
-    '''
-    self._hide_leaves = not self._hide_leaves
-
-  def getHideLeaves(self):
-    '''
-    Return a boolean that indicates whether accessibles with no children
-    (leaves) should be hidden.
-
-    @return: A boolean indicating if leaves should be hidden.
-    @rtype: boolean
-    '''
-    return self._hide_leaves
 
   def _onRowChanged(self, model, path, iter):
     '''
@@ -235,16 +214,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     @return: A list with children ids.
     @rtype: list
     '''
-
-    if not self._hide_leaves:
-      return [i for i in range(accessible.childCount)]
-    else:
-      children_ids = []
-      for i in range(accessible.childCount):
-        child = accessible.getChildAtIndex(i)
-        if child.childCount > 0 or child.getRoleName() != 'application':
-          children_ids.append(i)
-      return children_ids
+    return [i for i in range(accessible.childCount)]
 
   def _selectChild(self, parent, index):
     '''
@@ -258,12 +228,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     @return: A child id.
     @rtype: integer
     '''
-
-    if not self._hide_leaves:
-      return index
-    else:
-      children = self._childrenIndexesInParent(parent)
-      return children[index]
+    return index
 
   def children_number(self, parent):
     '''
@@ -275,12 +240,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     @return: The number of children (including leaves or not) an accessible has.
     @rtype: integer
     '''
-
-    if not self._hide_leaves:
-      return parent.childCount
-    else:
-      children = self._childrenIndexesInParent(parent)
-      return len(children)
+    return parent.childCount
 
   def _popOnIdle(self, row_reference):
     '''
@@ -395,16 +355,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     @return: The child's index or -1 if it wasn't found
     @rtype: integer
     '''
-    if not self._hide_leaves:
-      return child.getIndexInParent()
-    else:
-      parent = child.parent
-      children = self._childrenIndexesInParent(parent)
-
-      for i in children:
-        if parent.getChildAtIndex(i) == child:
-          return children.index(i)
-      return -1
+    return child.getIndexInParent()
 
   def getAccPath(self, acc):
     '''
@@ -429,11 +380,11 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
       except Exception as e:
         return None
       child = child.get_parent()
-    if not self._hide_leaves:
-      try:
-        path = (list(self.desktop).index(child),) + path
-      except Exception as e:
-        return None
+
+    try:
+      path = (list(self.desktop).index(child),) + path
+    except Exception as e:
+      return None
 
     return path
 
@@ -502,7 +453,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     self.connect('row-activated', self._onRowActivated)
 
     self.model = AccessibleModel(self.desktop)
-    self.set_model(self.model)
+    self.filter = self.model.filter_new()
+    self.filter.set_visible_func(self._filterNoChildApps, data=None)
+    self.set_model(self.filter)
+
     crt = gtk.CellRendererText()
     crp = gtk.CellRendererPixbuf()
     tvc = gtk.TreeViewColumn(_('Name'))
@@ -514,6 +468,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     tvc.set_cell_data_func(crt, self._accCellDataFunc)
     tvc.set_cell_data_func(crp, self._accCellDataFunc)
     self.append_column(tvc)
+
     crt= gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Role'))
     tvc.pack_start(crt, True)
@@ -521,6 +476,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     tvc.set_resizable(True)
     tvc.set_cell_data_func(crt, self._accCellDataFunc)
     self.append_column(tvc)
+
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Children'))
     tvc.pack_start(crt, True)
@@ -549,6 +505,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
         self._accEventNameChanged, 
         'object:property-change:accessible-name')
 
+    self._hide_leaves = False
     self.action_group = gtk.ActionGroup.new('TreeActions')
     self.action_group.add_toggle_actions(
       [('HideShowLeaves', None, _('_Hide/Show Applications without children'), None,
@@ -574,6 +531,13 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     self.connect('key-press-event', self._onKeyPress)
 
     self.connect('cursor-changed', self._onCursorChanged)
+
+  def _filterNoChildApps(self, model, iter, data):
+    '''
+    Filter all rows of applications without children
+    '''
+    return not self._hide_leaves or model.iter_parent(iter) != None \
+      or model[iter][COL_CHILDCOUNT] != 0 or self.isMyApp(model[iter][COL_ACC])
 
   def _onCursorChanged(self, tree):
     '''
@@ -648,20 +612,20 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @type: gtk.Action
     '''
     path = self.get_cursor()[0]
-    if path == None: return
+    if path == None:
+      return
     is_expanded = self.row_expanded(path)
-    self._refreshChildren(self.model.get_iter(path))
+    self._refreshChildren(self.filter.convert_iter_to_child_iter(self.filter.get_iter(path)))
     if is_expanded:
       self.expand_row(path, False)
-      self._onExpanded(self, self.model.get_iter(path), path)
+      self._onExpanded(self, self.filter.get_iter(path), path)
 
   def _onHideShowLeaves(self, option):
     '''
     Hides/Shows all leaves (accessibles with no children) from the accessible treeview.
     '''
-
-    self.model._hideShowLeaves()
-    self._refreshTopLevel()
+    self._hide_leaves = not self._hide_leaves
+    self.filter.refilter()
 
   def _onExpanded(self, treeview, iter, path):
     '''
@@ -676,11 +640,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @type path: tuple
     '''
     # don't repopulate if it has been filled before
-    if self.model[iter][COL_FILLED]:
+    if self.filter[iter][COL_FILLED]:
       return
-    acc = self.model[iter][COL_ACC]
     # populate this level
-    self.model.popLevel(iter)
+    self.model.popLevel(self.filter.convert_iter_to_child_iter(iter))
 
   def _accEventNameChanged(self, event):
     '''
@@ -728,24 +691,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       if iter and self.model.iter_is_valid(iter):
         self.model[iter][COL_CHILDCOUNT] = event.source.childCount
 
-  def removeLeaves(self, accessibles):
-    '''
-    Removes accessibles with no children (leaves) from a list
-    of accessibles. 
-
-    @param accessibles: List of accessibles to be examined
-    @type accessibles: list
-
-    @return: The accessibles list without leaves
-    @rtype: list
-    '''
-
-    nonleaves = []
-    for acc in accessibles:
-      if acc.childCount > 0:
-        nonleaves.append(acc)
-    return nonleaves
-
   def _addChild(self, iter, parent):
     '''
     Add the new child to the given accessible.
@@ -755,16 +700,8 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param parent: The given row's accessible.
     @type parent: L{Accessibility.Accessible}
     '''
-    old_children = self.model.getChildrenAccs(iter)
-    new_children = list(parent) 
-    if self.model.getHideLeaves():
-      # time for new child load its children (if it has any),
-      # so it won't be confused with a leaf
-      sleep(ACCESSIBLE_LOADING)
-      new_children = self.removeLeaves(new_children)
-
-    old_children = set(old_children)
-    new_children = set(new_children)
+    old_children = set(self.model.getChildrenAccs(iter))
+    new_children = set(list(parent))
 
     added = new_children.difference(old_children)
     try:
@@ -814,12 +751,14 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       if self.model[iter][COL_ACC] not in parent:
         cursor_path = self.get_cursor()[0]
         if cursor_path != None:
-          iter_path = self.model.get_path(iter)
-          if iter_path.is_ancestor(cursor_path):
-            cursor_path = iter_path
-          if 0 == iter_path.compare(cursor_path):
-            if iter_path.prev() or iter_path.up():
-              self.set_cursor(iter_path, None, False)
+          (res, filter_iter) = self.filter.convert_child_iter_to_iter(iter)
+          if res:
+            filter_path = self.filter.get_path(filter_iter)
+            if filter_path.is_ancestor(cursor_path):
+              cursor_path = filter_path
+            if 0 == filter_path.compare(cursor_path):
+              if filter_path.prev() or filter_path.up():
+                self.set_cursor(filter_path, None, False)
         if not self.model.remove(iter):
           break
       else:
@@ -979,8 +918,8 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param iter: The iter at the given row.
     @type iter: L{gtk.TreeIter}
     '''
-    if model.iter_is_valid(iter_id):
-      acc = model.get_value(iter_id, COL_ACC)
+    if self.model.iter_is_valid(iter_id):
+      acc = self.model.get_value(iter_id, COL_ACC)
     else:
       acc = None
     if self.isMyApp(acc):
@@ -1000,7 +939,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     path = tuple(tree_path.get_indices())
 
-    acc = self.model[path][COL_ACC]
+    acc = self.filter[path][COL_ACC]
     return not self.isMyApp(acc)
 
   def _onRowActivated(self, treeview, path, view_column):
