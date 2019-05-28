@@ -809,13 +809,21 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       iter = self.model.iter_children(parent_iter)
     else:
       iter = self.model.get_iter_first()
+
     while iter:
       if self.model[iter][COL_ACC] not in parent:
+        cursor_path = self.get_cursor()[0]
+        if cursor_path != None:
+          iter_path = self.model.get_path(iter)
+          if iter_path.is_ancestor(cursor_path):
+            cursor_path = iter_path
+          if 0 == iter_path.compare(cursor_path):
+            if iter_path.prev() or iter_path.up():
+              self.set_cursor(iter_path, None, False)
         if not self.model.remove(iter):
           break
       else:
         iter = self.model.iter_next(iter)
-
 
   def _refreshChildren(self, iter):
     '''
