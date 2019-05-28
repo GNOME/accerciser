@@ -197,6 +197,7 @@ class ValidatorViewport(ViewportPlugin):
     self.clear = self.main_xml.get_object('clear button')
     self.schema = self.main_xml.get_object('schema combo')
     self.validator_buffer = gtk.TextBuffer()
+    self.idle_validate_id = 0
 
     # model for the combobox
     model = gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING)
@@ -398,6 +399,9 @@ class ValidatorViewport(ViewportPlugin):
     self.report.get_model().clear()
     # get the validators
     index = self.schema.get_active()
+    if index == -1:
+      self.validate.set_active(False)
+      return
     row = self.schema.get_model()[index]
     self.vals = ValidatorManager.getValidators(row[1])
     # build a new state dict
@@ -418,6 +422,8 @@ class ValidatorViewport(ViewportPlugin):
     Stops a validation run by disabling the idle callback and restoring the
     various UI components to their enabled states.
     '''
+    if self.idle_validate_id == 0:
+      return
     # stop callbacks
     GLib.source_remove(self.idle_validate_id)
     # destroy generator
