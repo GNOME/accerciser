@@ -68,7 +68,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     Connects required signals.
     '''
     self.acc_cache = [desktop_acc]
-    gtk.TreeStore.__init__(self, GdkPixbuf.Pixbuf, str, str, str, bool, bool, object)
+    gtk.TreeStore.__init__(self, GdkPixbuf.Pixbuf, str, str, int, bool, bool, object)
     self.connect('row-changed', self._onRowChanged)
     self.connect('row-filled', self._onRowFilled)
     self.desktop = desktop_acc
@@ -453,11 +453,11 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
       if self.isMyApp(accessible):
         name = "Accerciser"
         role = "accerciser"
-        count = "0"
+        count = 0
       else:
         name = accessible.name
         role = accessible.getLocalizedRoleName()
-        count = str(accessible.childCount)
+        count = accessible.childCount
     else:
       icon = None
       if not dummy:
@@ -465,7 +465,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
       else:
         name = None
       role = None
-      count = None
+      count = 0
     return [icon, name, role, count, False, dummy, accessible]
 
 class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
@@ -726,7 +726,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
         elif event.type.minor == 'remove':
           self._removeChild(iter, event.source)
       if iter and self.model.iter_is_valid(iter):
-        self.model[iter][COL_CHILDCOUNT] = str(event.source.childCount)
+        self.model[iter][COL_CHILDCOUNT] = event.source.childCount
 
   def removeLeaves(self, accessibles):
     '''
@@ -840,7 +840,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       if not self.model.remove(child_iter):
         break
     acc = self.model[iter][COL_ACC]
-    self.model[iter][COL_CHILDCOUNT] = str(acc.childCount)
+    self.model[iter][COL_CHILDCOUNT] = acc.childCount
     self.model[iter][COL_FILLED] = False
 
   def refreshSelected(self):
