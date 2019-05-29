@@ -465,8 +465,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     tvc.add_attribute(crp, 'pixbuf', COL_ICON)
     tvc.add_attribute(crt, 'text', COL_NAME)
     tvc.set_resizable(True)
-    tvc.set_cell_data_func(crt, self._accCellDataFunc)
-    tvc.set_cell_data_func(crp, self._accCellDataFunc)
     self.append_column(tvc)
 
     crt= gtk.CellRendererText()
@@ -474,7 +472,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     tvc.pack_start(crt, True)
     tvc.add_attribute(crt, 'text', COL_ROLE)
     tvc.set_resizable(True)
-    tvc.set_cell_data_func(crt, self._accCellDataFunc)
     self.append_column(tvc)
 
     crt = gtk.CellRendererText()
@@ -482,7 +479,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     tvc.pack_start(crt, True)
     tvc.add_attribute(crt, 'text', COL_CHILDCOUNT)
     tvc.set_resizable(True)
-    tvc.set_cell_data_func(crt, self._accCellDataFunc)
     self.append_column(tvc)
 
     self.model.connect('row-filled', self._onRowFilled)
@@ -495,7 +491,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     selection = self.get_selection()
     selection.unselect_all()
     selection.connect('changed', self._onSelectionChanged)
-    selection.set_select_function(self._selectFunc, None)
     self.connect('row-expanded', self._onExpanded)
 
     pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
@@ -573,7 +568,12 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     if event:
       if event.button != 3:
         return False
-      path = self.get_path_at_pos(int(event.x), int(event.y))[0]
+      info = self.get_path_at_pos(int(event.x), int(event.y))
+      if info is None:
+        return False
+      path = info[0]
+      if self.isMyApp(self.filter[self.filter.get_iter(path)][COL_ACC]):
+        return False
       selection = self.get_selection()
       selection.set_mode(gtk.SelectionMode.NONE)
       self.set_cursor(path, None, False)
@@ -614,8 +614,11 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     path = self.get_cursor()[0]
     if path == None:
       return
+    filter_iter = self.filter.get_iter(path)
+    if self.isMyApp(self.filter[filter_iter][COL_ACC]):
+      return
     is_expanded = self.row_expanded(path)
-    self._refreshChildren(self.filter.convert_iter_to_child_iter(self.filter.get_iter(path)))
+    self._refreshChildren(self.filter.convert_iter_to_child_iter(filter_iter))
     if is_expanded:
       self.expand_row(path, False)
       self._onExpanded(self, self.filter.get_iter(path), path)
@@ -788,7 +791,8 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     selection = self.get_selection()
     model, iter = selection.get_selected()
-    self._refreshChildren(iter)
+    if not self.isMyApp(model[iter][COL_ACC]):
+      self._refreshChildren(iter)
 
   def _onSelectionChanged(self, selection):
     '''
@@ -905,43 +909,6 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       window = self.get_window()
       window.set_cursor(gdk.Cursor(gdk.CursorType.TOP_LEFT_ARROW))
 
-  def _accCellDataFunc(self, tvc, cellrenderer, model, iter_id, iter_type):
-    '''
-    A cellrenderer data function. renderer's this application's node as insensitive.
-
-    @param tvc: A treeview column.
-    @type tvc: L{gtk.TreeViewColumn}
-    @param cellrenderer: The cellrenderer that needs to be tweaked.
-    @type cellrenderer: L{gtk.CellRenderer}
-    @param model: The treeview's data model.
-    @type model: L{AccessibleModel}
-    @param iter: The iter at the given row.
-    @type iter: L{gtk.TreeIter}
-    '''
-    if self.model.iter_is_valid(iter_id):
-      acc = self.model.get_value(iter_id, COL_ACC)
-    else:
-      acc = None
-    if self.isMyApp(acc):
-      cellrenderer.set_property('sensitive', False)
-    else:
-      cellrenderer.set_property('sensitive', True)
-
-  def _selectFunc(self, tree_selection, acc_model, tree_path, foo3, foo4):
-    '''
-    A selection function. Does not allow his application's node to be selected.
-
-    @param path: The path to the selected row.
-    @type path: tuple
-
-    @return: True if the row's accessible is not this app.
-    @rtype: boolean
-    '''
-    path = tuple(tree_path.get_indices())
-
-    acc = self.filter[path][COL_ACC]
-    return not self.isMyApp(acc)
-
   def _onRowActivated(self, treeview, path, view_column):
     '''
     When the row is activated (double clicked, or enter), blink the selected 
@@ -954,4 +921,5 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param view_column: The column in the activated row.
     @type view_column: L{gtk.TreeViewColumn}
     '''
-    self.node.highlight()
+    if not self.isMyApp(self.filter[self.filter.get_iter(path)][COL_ACC]):
+      self.node.highlight()
