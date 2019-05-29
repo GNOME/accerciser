@@ -500,10 +500,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
         self._accEventNameChanged, 
         'object:property-change:accessible-name')
 
-    self._hide_leaves = False
+    self._hide_leaves = True
     self.action_group = gtk.ActionGroup.new('TreeActions')
     self.action_group.add_toggle_actions(
-      [('HideShowLeaves', None, _('_Hide/Show Applications without children'), None,
+      [('HideShowLeaves', None, _('_Show Applications without children'), None,
         None, self._onHideShowLeaves, False)])
     self.action_group.add_actions([
         ('RefreshAll', gtk.STOCK_REFRESH, _('_Refresh Registry'),
