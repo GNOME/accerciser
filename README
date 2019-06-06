@@ -82,6 +82,8 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     glib2 >= 2.10
     GConf2-devel
     pygobject
+    appstream-glib-devel
+    yelp-tools
 
   On a Debian based distro:
 
@@ -90,6 +92,8 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     at-spi2 >= 2.1.5
     libgconf2-dev
     python-gobject
+    appstream-util
+    yelp-tools
     
   To use the Python console plugin, you must hve IPython installed.
 
@@ -101,7 +105,7 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
 Installing
 ==========
 
-  autogen.sh
+  ./autogen.sh
   make
   sudo make install
 
