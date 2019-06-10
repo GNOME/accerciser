@@ -587,7 +587,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     Expand or collapse a row on Left/Right key-press
     '''
-    if event.state == 0:
+    if event.state & \
+        (gdk.ModifierType.SHIFT_MASK
+        |gdk.ModifierType.CONTROL_MASK
+        |gdk.ModifierType.MOD1_MASK) == 0:
       path, col = self.get_cursor()
       if path is not None:
         if event.keyval == gdk.KEY_Left:
