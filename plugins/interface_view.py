@@ -343,7 +343,7 @@ class _SectionAccessible(_InterfaceSection):
     if 'accessibleId' in dir(acc) and acc.accessibleId:
         self.id_label.set_label(acc.accessibleId)
     else:
-        self.id_label.set_label(_('(no id)'))
+        self.id_label.set_label(_('(no ID)'))
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()

@@ -63,10 +63,10 @@ class BookmarkStore(gtk.ListStore):
     '''
     self._bookmarks_action_group.add_actions(
       [('AddBookmark', gtk.STOCK_ADD, 
-        _('_Add Bookmark...'), '<Control>d',
+        _('_Add Bookmark…'), '<Control>d',
         _('Bookmark selected accessible.'), self._onAddBookmark),
        ('EditBookmarks', gtk.STOCK_EDIT, 
-        _('_Edit Bookmarks...'), None,
+        _('_Edit Bookmarks…'), None,
         _('Manage bookmarks.'), self._onEditBookmarks)])
 
 
@@ -325,7 +325,7 @@ class BookmarkStore(gtk.ListStore):
       @param bookmarks_store: Bookmarks manager.
       @type bookmarks_store: L{BookmarkStore}
       '''
-      gtk.Dialog.__init__(self, name=_('Edit Bookmarks...'))
+      gtk.Dialog.__init__(self, name=_('Edit Bookmarks…'))
       self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
       self.set_default_size(480, 240)
       self.connect('response', self._onResponse)
@@ -516,7 +516,7 @@ class BookmarkStore(gtk.ListStore):
       @param bookmark: New bookmark to edit.
       @type bookmark: L{BookmarkStore._Bookmark}
       '''
-      gtk.Dialog.__init__(self, _('Add Bookmark...'))
+      gtk.Dialog.__init__(self, _('Add Bookmark…'))
       self.add_button(gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL)
       ok_button = self.add_button(gtk.STOCK_ADD, gtk.ResponseType.OK)
       ok_button.set_sensitive(False)
