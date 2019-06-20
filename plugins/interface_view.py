@@ -1207,8 +1207,14 @@ class _SectionText(_InterfaceSection):
 
     self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
     self.text_view = ui_xml.get_object('textview_text')
-    font = Pango.FontDescription("Courier New")
-    self.text_view.modify_font(font)
+    pango_ctx = self.text_view.get_pango_context()
+    for f in pango_ctx.list_families():
+        name = f.get_name()
+        # These are known to show e.g U+FFFC
+        if name in [ "Courier New", "Liberation Sans" ]:
+            self.text_view.modify_font(Pango.FontDescription(name))
+            break
+
     self.text_buffer = self.text_view.get_buffer()
     self.toggle_defaults = ui_xml.get_object('checkbutton_text_defaults')
     self.label_start = ui_xml.get_object('label_text_attr_start')
