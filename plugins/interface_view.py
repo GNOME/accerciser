@@ -15,6 +15,7 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
+from gi.repository import Pango
 from gi.repository.GLib import markup_escape_text
 
 import pyatspi
@@ -1206,6 +1207,8 @@ class _SectionText(_InterfaceSection):
 
     self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
     self.text_view = ui_xml.get_object('textview_text')
+    font = Pango.FontDescription("Courier New")
+    self.text_view.modify_font(font)
     self.text_buffer = self.text_view.get_buffer()
     self.toggle_defaults = ui_xml.get_object('checkbutton_text_defaults')
     self.label_start = ui_xml.get_object('label_text_attr_start')
