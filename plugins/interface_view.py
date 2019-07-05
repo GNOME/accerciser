@@ -341,9 +341,9 @@ class _SectionAccessible(_InterfaceSection):
 
     self.child_count_label.set_text(str(acc.childCount))
     self.desc_label.set_label(acc.description or _('(no description)'))
-    if 'accessibleId' in dir(acc) and acc.accessibleId:
+    try:
         self.id_label.set_label(acc.accessibleId)
-    else:
+    except:
         self.id_label.set_label(_('(no ID)'))
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
