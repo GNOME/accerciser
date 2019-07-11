@@ -4,19 +4,20 @@
 #
 # Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012, 2013.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2010.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-01-13 11:04+0000\n"
-"PO-Revision-Date: 2019-02-28 13:35+0700\n"
+"POT-Creation-Date: 2019-06-20 13:33+0000\n"
+"PO-Revision-Date: 2019-07-11 13:55+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
 
 #: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
@@ -55,11 +56,6 @@ msgstr "Memberikan kemampuan aksesibilitas kepada aplikasi Anda"
 #: accerciser.desktop.in:6
 msgid "accessibility;development;test;"
 msgstr "aksesabilitas;pengembangan;tes;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: accerciser.desktop.in:14
-msgid "accerciser"
-msgstr "accerciser"
 
 #: org.a11y.Accerciser.gschema.xml:6
 msgid "A list of plugins that are disabled by default"
@@ -251,9 +247,9 @@ msgid "Source"
 msgstr "Sumber"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:554
-#: plugins/interface_view.py:731 plugins/validate.py:294
-#: src/lib/accerciser/accessible_treeview.py:503
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
+#: plugins/interface_view.py:735 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:508
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nama"
@@ -286,75 +282,79 @@ msgstr "Membersihkan log kejadian"
 msgid "Child count"
 msgstr "Cacah anak"
 
-#: plugins/interface_view.ui:141 plugins/interface_view.ui:967
-#: plugins/interface_view.ui:1936 plugins/interface_view.ui:1955
-#: plugins/interface_view.ui:1974 plugins/interface_view.ui:2759
-#: plugins/interface_view.ui:2778 plugins/interface_view.ui:2797
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
+#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
+#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
+#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:178 plugins/interface_view.ui:1516
-#: plugins/interface_view.py:343 plugins/interface_view.py:859
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
+#: plugins/interface_view.py:343 plugins/interface_view.py:863
 msgid "(no description)"
 msgstr "(tanpa deskripsi)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:193 plugins/interface_view.ui:565
-#: plugins/interface_view.ui:1484 plugins/validate.py:229
-#: plugins/validate.py:292
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
 msgid "Description"
 msgstr "Deskripsi"
 
-#: plugins/interface_view.ui:264
-msgid "States"
-msgstr "Keadaan"
+#: plugins/interface_view.ui:233 plugins/interface_view.py:347
+msgid "(no ID)"
+msgstr "(tidak ada ID)"
 
-#: plugins/interface_view.ui:336 plugins/interface_view.ui:1181
-#: plugins/interface_view.ui:2672
-msgid "Attributes"
-msgstr "Atribut"
-
-#: plugins/interface_view.ui:457 plugins/interface_view.ui:1344
-msgid "Show"
-msgstr "Tampilkan"
-
-#: plugins/interface_view.ui:490
-msgid "Relations"
-msgstr "Relasi"
-
-#: plugins/interface_view.ui:511
-msgid "_Accessible"
-msgstr "D_apat Diakses"
-
-#: plugins/interface_view.ui:576
-msgid "Key binding"
-msgstr "Pengikatan tombol"
-
-#: plugins/interface_view.ui:630
-msgid "Perform action"
-msgstr "Terapkan aksi"
-
-#: plugins/interface_view.ui:663
-msgid "Acti_on"
-msgstr "_Aksi"
-
-#: plugins/interface_view.ui:696
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:711
+#: plugins/interface_view.ui:325
+msgid "States"
+msgstr "Keadaan"
+
+#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
+#: plugins/interface_view.ui:2739
+msgid "Attributes"
+msgstr "Atribut"
+
+#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+msgid "Show"
+msgstr "Tampilkan"
+
+#: plugins/interface_view.ui:551
+msgid "Relations"
+msgstr "Relasi"
+
+#: plugins/interface_view.ui:572
+msgid "_Accessible"
+msgstr "D_apat Diakses"
+
+#: plugins/interface_view.ui:637
+msgid "Key binding"
+msgstr "Pengikatan tombol"
+
+#: plugins/interface_view.ui:691
+msgid "Perform action"
+msgstr "Terapkan aksi"
+
+#: plugins/interface_view.ui:724
+msgid "Acti_on"
+msgstr "_Aksi"
+
+#: plugins/interface_view.ui:772
 msgid "Toolkit"
 msgstr "Perkakas"
 
-#: plugins/interface_view.ui:728
+#: plugins/interface_view.ui:789
 msgid "Version"
 msgstr "Versi"
 
-#: plugins/interface_view.ui:804
+#: plugins/interface_view.ui:865
 msgid "Ap_plication"
 msgstr "Ap_likasi"
 
-#: plugins/interface_view.ui:823
+#: plugins/interface_view.ui:884
 msgid "Col_lection"
 msgstr "Kol_eksi"
 
@@ -362,240 +362,240 @@ msgstr "Kol_eksi"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:856 plugins/interface_view.ui:893
-#: plugins/interface_view.ui:1041 plugins/interface_view.ui:1444
-#: plugins/interface_view.ui:1464
+#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
+#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
+#: plugins/interface_view.ui:1525
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:876
+#: plugins/interface_view.ui:937
 msgid "Relative position"
 msgstr "Posisi relatif"
 
-#: plugins/interface_view.ui:913 plugins/interface_view.ui:1427
+#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
 msgid "Size"
 msgstr "Ukuran"
 
-#: plugins/interface_view.ui:930
+#: plugins/interface_view.ui:991
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: plugins/interface_view.ui:950
+#: plugins/interface_view.ui:1011
 msgid "Layer"
 msgstr "Lapisan"
 
-#: plugins/interface_view.ui:987
+#: plugins/interface_view.ui:1048
 msgid "MDI-Z-order"
 msgstr "MDI-Z-order"
 
-#: plugins/interface_view.ui:1024
+#: plugins/interface_view.ui:1085
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1059
+#: plugins/interface_view.ui:1120
 msgid "Absolute position"
 msgstr "Posisi absolut"
 
-#: plugins/interface_view.ui:1078
+#: plugins/interface_view.ui:1139
 msgid "Co_mponent"
 msgstr "Ko_mponen"
 
-#: plugins/interface_view.ui:1097
+#: plugins/interface_view.ui:1158
 msgid "Des_ktop"
 msgstr "Des_ktop"
 
-#: plugins/interface_view.ui:1203
+#: plugins/interface_view.ui:1264
 msgid "Locale:"
 msgstr "Lokal:"
 
-#: plugins/interface_view.ui:1244
+#: plugins/interface_view.ui:1305
 msgid "_Document"
 msgstr "_Dokumen"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1265 plugins/validate.py:298
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Hipertaut"
 
-#: plugins/interface_view.ui:1377
+#: plugins/interface_view.ui:1438
 msgid "H_ypertext"
 msgstr "H_iperteks"
 
-#: plugins/interface_view.ui:1410
+#: plugins/interface_view.ui:1471
 msgid "Position"
 msgstr "Posisi"
 
-#: plugins/interface_view.ui:1499
+#: plugins/interface_view.ui:1560
 msgid "Locale"
 msgstr "Lokal"
 
-#: plugins/interface_view.ui:1561
+#: plugins/interface_view.ui:1622
 msgid "_Image"
 msgstr "_Gambar"
 
-#: plugins/interface_view.ui:1580
+#: plugins/interface_view.ui:1641
 msgid "Lo_gin Helper"
 msgstr "Pembantu Lo_g Masuk"
 
-#: plugins/interface_view.ui:1651
+#: plugins/interface_view.ui:1712
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: plugins/interface_view.ui:1693
+#: plugins/interface_view.ui:1754
 msgid "_Selection"
 msgstr "_Seleksi"
 
-#: plugins/interface_view.ui:1731
+#: plugins/interface_view.ui:1792
 msgid "Content type"
 msgstr "Jenis isi"
 
-#: plugins/interface_view.ui:1742 plugins/interface_view.py:739
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1761
+#: plugins/interface_view.ui:1822
 msgid "St_reamable Content"
 msgstr "Konten yang Dapat Disia_rkan"
 
-#: plugins/interface_view.ui:1802
+#: plugins/interface_view.ui:1863
 msgid "Caption:"
 msgstr "Keterangan:"
 
-#: plugins/interface_view.ui:1847
+#: plugins/interface_view.ui:1908
 msgid "Summary:"
 msgstr "Ringkasan:"
 
-#: plugins/interface_view.ui:1991
+#: plugins/interface_view.ui:2052
 msgid "Selected columns"
 msgstr "Kolom yang dipilih"
 
-#: plugins/interface_view.ui:2007
+#: plugins/interface_view.ui:2068
 msgid "Selected rows"
 msgstr "Baris yang dipilih"
 
-#: plugins/interface_view.ui:2023
+#: plugins/interface_view.ui:2084
 msgid "Columns"
 msgstr "Kolom"
 
-#: plugins/interface_view.ui:2039
+#: plugins/interface_view.ui:2100
 msgid "Rows"
 msgstr "Baris"
 
-#: plugins/interface_view.ui:2064
+#: plugins/interface_view.ui:2125
 msgid "Table Information"
 msgstr "Informasi Tabel"
 
-#: plugins/interface_view.ui:2110
+#: plugins/interface_view.ui:2171
 msgid "name (x,y)"
 msgstr "nama (x,y)"
 
-#: plugins/interface_view.ui:2164 plugins/interface_view.ui:2283
+#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
 msgid "Header:"
 msgstr "Tajuk:"
 
-#: plugins/interface_view.ui:2177 plugins/interface_view.ui:2296
+#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
 msgid "<no description>"
 msgstr "<tanpa deskripsi>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2210 plugins/interface_view.ui:2329
+#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
 msgid "Extents:"
 msgstr "Rentangan:"
 
-#: plugins/interface_view.ui:2250
+#: plugins/interface_view.ui:2311
 msgid "Row"
 msgstr "Baris"
 
-#: plugins/interface_view.ui:2369
+#: plugins/interface_view.ui:2430
 msgid "Column"
 msgstr "Kolom"
 
-#: plugins/interface_view.ui:2387
+#: plugins/interface_view.ui:2448
 msgid "Selected Cell"
 msgstr "Sel yang Dipilih"
 
-#: plugins/interface_view.ui:2408
+#: plugins/interface_view.ui:2472
 msgid "_Table"
 msgstr "_Tabel"
 
-#: plugins/interface_view.ui:2469
+#: plugins/interface_view.ui:2533
 msgid "Text"
 msgstr "Teks"
 
-#: plugins/interface_view.ui:2507
+#: plugins/interface_view.ui:2571
 msgid "Offset"
 msgstr "Ofset"
 
-#: plugins/interface_view.ui:2545
+#: plugins/interface_view.ui:2609
 msgid "Include defaults"
 msgstr "Termasuk baku"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2567
+#: plugins/interface_view.ui:2631
 msgid "Start: 0"
 msgstr "Awal: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2585
+#: plugins/interface_view.ui:2649
 msgid "End: 0"
 msgstr "Akhir: 0"
 
-#: plugins/interface_view.ui:2693
+#: plugins/interface_view.ui:2763
 msgid "Te_xt"
 msgstr "Te_ks"
 
-#: plugins/interface_view.ui:2748
+#: plugins/interface_view.ui:2818
 msgid "Current value"
 msgstr "Nilai sekarang"
 
-#: plugins/interface_view.ui:2816
+#: plugins/interface_view.ui:2886
 msgid "Minimum increment"
 msgstr "Pertambahan minimal"
 
-#: plugins/interface_view.ui:2831
+#: plugins/interface_view.ui:2901
 msgid "Maximum value"
 msgstr "Nilai maksimal"
 
-#: plugins/interface_view.ui:2846
+#: plugins/interface_view.ui:2916
 msgid "Minimum value"
 msgstr "Nilai minimal"
 
-#: plugins/interface_view.ui:2872
+#: plugins/interface_view.ui:2942
 msgid "Val_ue"
 msgstr "Ni_lai"
 
-#: plugins/interface_view.ui:2891
+#: plugins/interface_view.ui:2961
 msgid "unknown"
 msgstr "tak dikenal"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:42
+#: plugins/interface_view.py:43
 msgid "Interface Viewer"
 msgstr "Penampil Antarmuka"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:45
+#: plugins/interface_view.py:46
 msgid "Allows viewing of various interface properties"
 msgstr "Menampilkan berbagai properti antarmuka"
 
-#: plugins/interface_view.py:235
+#: plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(belum diterapkan)"
 
-#: plugins/interface_view.py:747
+#: plugins/interface_view.py:751
 msgid "Start"
 msgstr "Awal"
 
-#: plugins/interface_view.py:755
+#: plugins/interface_view.py:759
 msgid "End"
 msgstr "Akhir"
 
-#: plugins/interface_view.py:917
+#: plugins/interface_view.py:921
 msgid "Too many selectable children"
 msgstr "Terlalu banyak anakan yang bisa dipilih"
 
-#: plugins/interface_view.py:1262 plugins/interface_view.py:1265
+#: plugins/interface_view.py:1268 plugins/interface_view.py:1271
 msgid "(Editable)"
 msgstr "(Dapat disunting)"
 
@@ -604,7 +604,7 @@ msgstr "(Dapat disunting)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1412
+#: plugins/interface_view.py:1418
 #, python-format
 msgid "Start: %d"
 msgstr "Awal: %d"
@@ -614,7 +614,7 @@ msgstr "Awal: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1418
+#: plugins/interface_view.py:1424
 #, python-format
 msgid "End: %d"
 msgstr "Akhir: %d"
@@ -639,11 +639,11 @@ msgstr "Menginspeksi aksesan di bawah tetikus"
 msgid "Sche_ma:"
 msgstr "Ske_ma:"
 
-#: plugins/validate.ui:95
+#: plugins/validate.ui:89
 msgid "V_alidate"
 msgstr "V_alidasi"
 
-#: plugins/validate.ui:180 plugins/validate.py:375 plugins/validate.py:427
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
 msgid "Idle"
 msgstr "Menganggur"
 
@@ -661,40 +661,40 @@ msgstr "Memvalidasi aksesibilitas aplikasi"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:222 plugins/validate.py:290
+#: plugins/validate.py:223 plugins/validate.py:291
 msgid "Level"
 msgstr "Tingkat"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:296 src/lib/accerciser/accessible_treeview.py:513
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:518
 msgid "Role"
 msgstr "Tugas"
 
-#: plugins/validate.py:361
+#: plugins/validate.py:362
 msgid "Saving"
 msgstr "Menyimpan"
 
-#: plugins/validate.py:409
+#: plugins/validate.py:413
 msgid "Validating"
 msgstr "Memvalidasi"
 
-#: plugins/validate.py:565
+#: plugins/validate.py:571
 msgid "EXCEPT"
 msgstr "EXCEPT"
 
-#: plugins/validate.py:572
+#: plugins/validate.py:578
 msgid "ERROR"
 msgstr "ERROR"
 
-#: plugins/validate.py:580
+#: plugins/validate.py:586
 msgid "WARN"
 msgstr "WARN"
 
-#: plugins/validate.py:587
+#: plugins/validate.py:593
 msgid "INFO"
 msgstr "INFO"
 
-#: plugins/validate.py:594
+#: plugins/validate.py:600
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -808,37 +808,37 @@ msgstr "_Preferensi…"
 msgid "_Contents"
 msgstr "_Isi"
 
-#: src/lib/accerciser/accessible_treeview.py:459
+#: src/lib/accerciser/accessible_treeview.py:464
 msgid "<dead>"
 msgstr "<dead>"
 
-#: src/lib/accerciser/accessible_treeview.py:520
+#: src/lib/accerciser/accessible_treeview.py:525
 msgid "Children"
 msgstr "Anak"
 
-#: src/lib/accerciser/accessible_treeview.py:549
+#: src/lib/accerciser/accessible_treeview.py:554
 msgid "_Hide/Show Applications without children"
 msgstr "Sembunyik_an/Tampilkan Aplikasi tanpa anak"
 
-#: src/lib/accerciser/accessible_treeview.py:552
+#: src/lib/accerciser/accessible_treeview.py:557
 msgid "_Refresh Registry"
 msgstr "Sega_rkan Resgistri"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:555
+#: src/lib/accerciser/accessible_treeview.py:560
 msgid "Refresh all"
 msgstr "Menyegarkan semua"
 
-#. Translators: Refresh current tree node’s children.
+#. Translators: Refresh current tree node's children.
 #.
-#: src/lib/accerciser/accessible_treeview.py:558
+#: src/lib/accerciser/accessible_treeview.py:563
 msgid "Refresh _Node"
 msgstr "Segarkan _Noktah"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:561
+#: src/lib/accerciser/accessible_treeview.py:566
 msgid "Refresh selected node’s children"
 msgstr "Menyegarkan noktah anak yang dipilih"
 
@@ -930,8 +930,8 @@ msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Hak Cipta © 2006, 2007 IBM Corporation (BSD)"
 
 #: src/lib/accerciser/about_dialog.py:56
-msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "Lisensi BSD Baru Lihat berkas COPYING dan NOTICE untuk rinciannya."
+msgid "The New BSD License. See the COPYING and NOTICE files for details."
+msgstr "Lisensi BSD Baru. Lihat berkas COPYING dan NOTICE untuk rinciannya."
 
 #: src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
@@ -1043,3 +1043,6 @@ msgstr "_Tampilan"
 #: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Ba_ntuan"
+
+#~ msgid "accerciser"
+#~ msgstr "accerciser"
