@@ -329,6 +329,10 @@ class EventMonitor(ViewportPlugin):
     self._writeText('\n\tapplication: ')
     hyperlink = self._createHyperlink(event.host_application)
     self._writeText(str(event.host_application), hyperlink)
+    if hasattr(event, "sender"):
+        self._writeText('\n\tsender: ')
+        hyperlink = self._createHyperlink(event.sender)
+        self._writeText(str(event.sender), hyperlink)
     self._writeText('\n')
 
   def _writeText(self, text, *tags):
