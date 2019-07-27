@@ -595,9 +595,9 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       if path is not None:
         if event.keyval == gdk.KEY_Left:
           if not self.collapse_row(path):
-            # if we ccouldn't collapse the current row, collapse the parent
+            # if we ccouldn't collapse the current row, go to the parent
             if path.up():
-              self.collapse_row(path)
+              self.set_cursor(path)
           return True
         elif event.keyval == gdk.KEY_Right:
           self.expand_row(path, False)
