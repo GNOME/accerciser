@@ -329,7 +329,7 @@ class EventMonitor(ViewportPlugin):
     self._writeText('\n\tapplication: ')
     hyperlink = self._createHyperlink(event.host_application)
     self._writeText(str(event.host_application), hyperlink)
-    if hasattr(event, "sender"):
+    if hasattr(event, "sender") and event.sender != event.host_application:
         self._writeText('\n\tsender: ')
         hyperlink = self._createHyperlink(event.sender)
         self._writeText(str(event.sender), hyperlink)
