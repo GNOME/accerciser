@@ -97,6 +97,7 @@ class IterableIPShell:
         from IPython.config.loader import Config
     cfg = Config()
     cfg.InteractiveShell.colors = "Linux"
+    cfg.Completer.use_jedi = False
 
     # InteractiveShell's __init__ overwrites io.stdout,io.stderr with
     # sys.stdout, sys.stderr, this makes sure they are right
