@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-06-10 14:44+0000\n"
-"PO-Revision-Date: 2019-06-10 16:50+0200\n"
+"POT-Creation-Date: 2019-07-27 14:57+0000\n"
+"PO-Revision-Date: 2019-07-28 14:12+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -252,8 +252,8 @@ msgstr "Źródło"
 
 #. add accessible's name to buffer
 #: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:734 plugins/validate.py:294
-#: src/lib/accerciser/accessible_treeview.py:508
+#: plugins/interface_view.py:735 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nazwa"
@@ -294,18 +294,18 @@ msgid "0"
 msgstr "0"
 
 #: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:342 plugins/interface_view.py:862
+#: plugins/interface_view.py:343 plugins/interface_view.py:863
 msgid "(no description)"
 msgstr "(brak opisu)"
 
 #. add description to buffer
 #: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:229
-#: plugins/validate.py:292
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
 msgid "Description"
 msgstr "Opis"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:346
+#: plugins/interface_view.ui:233 plugins/interface_view.py:347
 msgid "(no ID)"
 msgstr "(brak identyfikatora)"
 
@@ -417,7 +417,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:298
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Hiperłącze"
 
@@ -453,7 +453,7 @@ msgstr "_Zaznaczenie"
 msgid "Content type"
 msgstr "Typ treści"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:742
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
 msgid "URI"
 msgstr "Adres URI"
 
@@ -574,32 +574,32 @@ msgid "unknown"
 msgstr "nieznane"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:42
+#: plugins/interface_view.py:43
 msgid "Interface Viewer"
 msgstr "Widok interfejsu"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:45
+#: plugins/interface_view.py:46
 msgid "Allows viewing of various interface properties"
 msgstr "Umożliwia podgląd różnych właściwości interfejsu"
 
-#: plugins/interface_view.py:235
+#: plugins/interface_view.py:236
 msgid "(not implemented)"
 msgstr "(niezaimplementowane)"
 
-#: plugins/interface_view.py:750
+#: plugins/interface_view.py:751
 msgid "Start"
 msgstr "Początek"
 
-#: plugins/interface_view.py:758
+#: plugins/interface_view.py:759
 msgid "End"
 msgstr "Koniec"
 
-#: plugins/interface_view.py:920
+#: plugins/interface_view.py:921
 msgid "Too many selectable children"
 msgstr "Zbyt wiele elementów potomnych możliwych do zaznaczenia"
 
-#: plugins/interface_view.py:1265 plugins/interface_view.py:1268
+#: plugins/interface_view.py:1274 plugins/interface_view.py:1277
 msgid "(Editable)"
 msgstr "(Element modyfikowalny)"
 
@@ -608,7 +608,7 @@ msgstr "(Element modyfikowalny)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1415
+#: plugins/interface_view.py:1424
 #, python-format
 msgid "Start: %d"
 msgstr "Początek: %d"
@@ -618,7 +618,7 @@ msgstr "Początek: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1421
+#: plugins/interface_view.py:1430
 #, python-format
 msgid "End: %d"
 msgstr "Koniec: %d"
@@ -647,7 +647,7 @@ msgstr "Sche_mat:"
 msgid "V_alidate"
 msgstr "_Sprawdź poprawność"
 
-#: plugins/validate.ui:174 plugins/validate.py:375 plugins/validate.py:427
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
 msgid "Idle"
 msgstr "Bezczynny"
 
@@ -665,40 +665,40 @@ msgstr "Sprawdza program pod kątem dostępności"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:222 plugins/validate.py:290
+#: plugins/validate.py:223 plugins/validate.py:291
 msgid "Level"
 msgstr "Poziom"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:296 src/lib/accerciser/accessible_treeview.py:518
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
 msgid "Role"
 msgstr "Rola"
 
-#: plugins/validate.py:361
+#: plugins/validate.py:362
 msgid "Saving"
 msgstr "Zapisywanie"
 
-#: plugins/validate.py:409
+#: plugins/validate.py:413
 msgid "Validating"
 msgstr "Sprawdzanie"
 
-#: plugins/validate.py:565
+#: plugins/validate.py:571
 msgid "EXCEPT"
 msgstr "WYJĄTEK"
 
-#: plugins/validate.py:572
+#: plugins/validate.py:578
 msgid "ERROR"
 msgstr "BŁĄD"
 
-#: plugins/validate.py:580
+#: plugins/validate.py:586
 msgid "WARN"
 msgstr "UWAGA"
 
-#: plugins/validate.py:587
+#: plugins/validate.py:593
 msgid "INFO"
 msgstr "INFO"
 
-#: plugins/validate.py:594
+#: plugins/validate.py:600
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -811,37 +811,37 @@ msgstr "_Preferencje…"
 msgid "_Contents"
 msgstr "_Spis treści"
 
-#: src/lib/accerciser/accessible_treeview.py:464
+#: src/lib/accerciser/accessible_treeview.py:415
 msgid "<dead>"
 msgstr "<martwy>"
 
-#: src/lib/accerciser/accessible_treeview.py:525
+#: src/lib/accerciser/accessible_treeview.py:478
 msgid "Children"
 msgstr "Elementy potomne"
 
-#: src/lib/accerciser/accessible_treeview.py:554
-msgid "_Hide/Show Applications without children"
-msgstr "_Wyświetlanie/ukrywanie programów bez elementów potomnych"
+#: src/lib/accerciser/accessible_treeview.py:506
+msgid "_Show Applications without children"
+msgstr "_Wyświetlanie programów bez elementów potomnych"
 
-#: src/lib/accerciser/accessible_treeview.py:557
+#: src/lib/accerciser/accessible_treeview.py:509
 msgid "_Refresh Registry"
 msgstr "Odśwież _rejestr"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:560
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "Refresh all"
 msgstr "Odświeża wszystkie"
 
-#. Translators: Refresh current tree node’s children.
+#. Translators: Refresh current tree node's children.
 #.
-#: src/lib/accerciser/accessible_treeview.py:563
+#: src/lib/accerciser/accessible_treeview.py:515
 msgid "Refresh _Node"
 msgstr "Odśwież _węzły"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:566
+#: src/lib/accerciser/accessible_treeview.py:518
 msgid "Refresh selected node’s children"
 msgstr "Odświeża elementy potomne zaznaczonego węzła"
 
