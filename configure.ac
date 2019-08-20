@@ -1,5 +1,5 @@
 AC_INIT([Accerciser],
-        [3.33.90pre],
+        [3.33.91],
         [https://gitlab.gnome.org/GNOME/accerciser/issues],
         [accerciser])
 
