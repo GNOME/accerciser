@@ -1,22 +1,22 @@
 # Swedish translation for accerciser.
-# Copyright © 2007, 2017 accerciser's COPYRIGHT HOLDER
+# Copyright © 2007, 2017, 2019 accerciser's COPYRIGHT HOLDER
 # This file is distributed under the same license as the accerciser package.
 # Daniel Nylander <po@danielnylander.se>, 2007.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2019.
 # Sebastian Rasmussen <sebras@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser doc\n"
-"POT-Creation-Date: 2019-03-22 20:54+0000\n"
-"PO-Revision-Date: 2019-03-25 20:26+0100\n"
+"POT-Creation-Date: 2019-03-25 19:27+0000\n"
+"PO-Revision-Date: 2019-08-23 00:56+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -253,13 +253,13 @@ msgid ""
 "for later examining. This is helpful when the target application must be "
 "restarted - after rebuilding it, for example. To bookmark an item, select it "
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
-"<key>Ctrl</key>+<key>d</key>."
+"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
 msgstr ""
 "<app>Accerciser</app> möjliggör att bokmärka objekt i programträdvyn för "
 "senare undersökning. Detta är till hjälp när målprogrammet måste startas om "
 "- till exempel att det har byggts om. För att bokmärka ett objekt, markera "
 "det och klicka <guiseq><gui>Bokmärken</gui><gui>Lägg till bokmärke</gui></"
-"guiseq> eller tryck <key>Ctrl</key>+<key>d</key>."
+"guiseq> eller tryck <keyseq><key>Ctrl</key><key>d</key></keyseq>."
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:68
@@ -684,12 +684,13 @@ msgstr "Skapa ett basinstick"
 msgid ""
 "We will create a simplified version of the <link xref=\"quick_select_plugin"
 "\">Quick Select Plugin</link>. This plugin will select the last focused "
-"accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
+"accessible when pressing <keyseq><key>ctrl</key><key>alt</key><key>e</key></"
+"keyseq>."
 msgstr ""
 "Vi kommer att skapa en förenklad version av insticket <link xref="
 "\"quick_select_plugin\">Snabbväljare</link>. Detta instick kommer att välja "
-"den senast fokuserade åtkomliga komponenten när du trycker på <key>ctrl</key>"
-"+<key>alt</key>+<key>e</key>."
+"den senast fokuserade åtkomliga komponenten när du trycker på "
+"<keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>."
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:63
@@ -1473,17 +1474,17 @@ msgid ""
 "sections: a tree view of the entire desktop accessible hierarchy, namely "
 "<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
 "plugin areas. If you prefer to see all plugins in a single area, dividing "
-"<app>Accerciser</app>'s interface in two sections instead of three, type "
-"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
-"<key>ctrl</key>+<key>t</key> again."
+"<app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
+"sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
 msgstr ""
 "Som standard består <app>Accerciser</app>s gränssnitt av tre delar: en "
 "fullständig trädvy över skrivbordets åtkomliga hierarki, det vill säga <link "
 "xref=\"desktop_tree_view\"> programträdvyn</link>, samt två insticksytor. Om "
 "du föredrar att se alla instick i en enda yta, dela då upp <app>Accerciser</"
-"app>s gränssnitt i två delar istället för tre genom att trycka <key>ctrl </"
-"key>+<key>t</key>. För att åter dela det i tre delar, tryck åter på "
-"<key>ctrl</key>+<key>t</key>."
+"app>s gränssnitt i två delar istället för tre genom att trycka "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. För att åter dela det i tre "
+"delar, tryck åter på <keyseq><key>ctrl</key><key>t</key></keyseq>."
 
 #. (itstool) path: note/p
 #: C/introduction.page:44
@@ -1828,50 +1829,21 @@ msgstr "Konfigurera <app>Accerciser</app>"
 #. (itstool) path: page/p
 #: C/preferences.page:26
 msgid ""
-"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
-"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
-"open a dialog."
+"To configure plugins, hotkeys, and highlighting, do either "
+"<keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui> "
+"<gui>Preferences</gui></guiseq> to open a dialog."
 msgstr ""
 "För att konfigurera instick, snabbknappar och färgmarkering, tryck antingen "
-"på <key>ctrl</key>+<key>p</key> eller <guiseq><gui>Redigera</gui> "
-"<gui>Inställningar</gui></guiseq> för att öppna en dialog."
-
-#. (itstool) path: figure/title
-#: C/preferences.page:32
-msgid "<app>Accerciser</app> preferences"
-msgstr "<app>Accerciser</app>-inställningar"
-
-#. (itstool) path: figure/desc
-#. (itstool) path: media/p
-#: C/preferences.page:33 C/preferences.page:37
-msgid ""
-"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
-"widget's highlighting."
-msgstr ""
-"<app>Accerciser</app> låter dig konfigurera instick, allmänna snabbtangenter "
-"och komponenters färgmarkering."
-
-#. (itstool) path: figure/media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:36
-msgctxt "_"
-msgid ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
-msgstr ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
+"på <keyseq><key>ctrl</key><key>p</key></keyseq> eller <guiseq><gui>Redigera</"
+"gui> <gui>Inställningar</gui></guiseq> för att öppna en dialog."
 
 #. (itstool) path: section/title
-#: C/preferences.page:44
+#: C/preferences.page:32
 msgid "Configuring plugins"
 msgstr "Konfigurera instick"
 
 #. (itstool) path: section/p
-#: C/preferences.page:45
+#: C/preferences.page:33
 msgid ""
 "After opening the Preferences Dialog, you will find a list of all available "
 "plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
@@ -1885,7 +1857,7 @@ msgstr ""
 "gränssnitt."
 
 #. (itstool) path: section/p
-#: C/preferences.page:50
+#: C/preferences.page:38
 msgid ""
 "Right-clicking on any given plugin allows you to choose its location: \"Top "
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
@@ -1896,13 +1868,13 @@ msgstr ""
 "fönster för insticket."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:57
+#: C/preferences.page:45
 msgid "Configuring plugins' preferences"
 msgstr "Konfigurera inställningar för instick"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:58 C/preferences.page:62
+#: C/preferences.page:46 C/preferences.page:50
 msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
 msgstr "<app>Accerciser</app> låter dig justera dina insticksinställningar."
 
@@ -1911,7 +1883,7 @@ msgstr "<app>Accerciser</app> låter dig justera dina insticksinställningar."
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:61
+#: C/preferences.page:49
 msgctxt "_"
 msgid ""
 "external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
@@ -1919,7 +1891,7 @@ msgstr ""
 "external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
 
 #. (itstool) path: note/p
-#: C/preferences.page:69
+#: C/preferences.page:57
 msgid ""
 "You may bypass the Preferences dialog by using drag and drop to move a "
 "plugin from a location to another."
@@ -1928,12 +1900,12 @@ msgstr ""
 "flytta ett instick från en plats till en annan."
 
 #. (itstool) path: section/title
-#: C/preferences.page:76
+#: C/preferences.page:64
 msgid "Configuring global hotkeys"
 msgstr "Att konfigurera allmänna snabbtangenter"
 
 #. (itstool) path: section/p
-#: C/preferences.page:77
+#: C/preferences.page:65
 msgid ""
 "Some elements in <app>Accerciser</app> may enable certain functionalities "
 "via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
@@ -1953,12 +1925,12 @@ msgstr ""
 "modifierare."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:86
+#: C/preferences.page:74
 msgid "Configuring global hotkeys' preferences"
 msgstr "Konfigurera allmänna snabbtangentsinställningar"
 
 #. (itstool) path: figure/desc
-#: C/preferences.page:87
+#: C/preferences.page:75
 msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
 msgstr ""
 "<app>Accerciser</app> låter dig justera dina snabbtangentsinställningar."
@@ -1968,7 +1940,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:90
+#: C/preferences.page:78
 msgctxt "_"
 msgid ""
 "external ref='figures/global-hotkeys.png' "
@@ -1978,38 +1950,38 @@ msgstr ""
 "md5='e624ecfca646f771d03ea3feed4a5dcb'"
 
 #. (itstool) path: media/p
-#: C/preferences.page:91
+#: C/preferences.page:79
 msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
 msgstr "<app>Accerciser</app> låter dig justera dina insticksinställningar."
 
 #. (itstool) path: section/title
-#: C/preferences.page:99
+#: C/preferences.page:87
 msgid "Configuring widget's highlighting"
 msgstr "Konfigurera komponenters markering"
 
 #. (itstool) path: section/p
-#: C/preferences.page:100
+#: C/preferences.page:88
 msgid ""
 "Some of <app>Accerciser</app>'s elements, such as the global hotkey "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
-"a target application. The highlighting duration, border color, and fill "
-"color can be customized via the Preferences dialog, under the \"Highlighting"
-"\" tab."
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, highlight a "
+"specific widget in a target application. The highlighting duration, border "
+"color, and fill color can be customized via the Preferences dialog, under "
+"the \"Highlighting\" tab."
 msgstr ""
 "Vissa av <app>Accerciser</app>s komponenter, så som den allmänna "
-"snabbtangenten <key>ctrl</key>+<key>alt</key>+<key>/</key>, markerar en "
-"specifik komponent i ett målprogram. Varaktigheten för markeringen, "
-"ramfärgen och fyllnadsfärgen kan anpassas via dialogen Inställningar under "
-"fliken ”Markering”."
+"snabbtangenten <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, "
+"markerar en specifik komponent i ett målprogram. Varaktigheten för "
+"markeringen, ramfärgen och fyllnadsfärgen kan anpassas via dialogen "
+"Inställningar under fliken ”Markering”."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:107
+#: C/preferences.page:95
 msgid "Configuring highlighting preferences"
 msgstr "Att konfigurera markeringsinställningar"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:108 C/preferences.page:112
+#: C/preferences.page:96 C/preferences.page:100
 msgid ""
 "<app>Accerciser</app> allows you to adjust your highlighting preferences."
 msgstr "<app>Accerciser</app> låter dig justera dina markeringsinställningar."
@@ -2019,7 +1991,7 @@ msgstr "<app>Accerciser</app> låter dig justera dina markeringsinställningar."
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:111
+#: C/preferences.page:99
 msgctxt "_"
 msgid ""
 "external ref='figures/highlighting.png' "
@@ -2064,17 +2036,19 @@ msgstr ""
 #. (itstool) path: page/p
 #: C/quick_select_plugin.page:32
 msgid ""
-"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
-"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
-"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
-"key> selects the accessible widget under the pointer in the Application Tree "
-"View and highlights it in the target application."
+"The Quick Select Plugin provides two global hotkeys. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
+"focused accessible widget in the Application Tree View. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and "
+"highlights it in the target application."
 msgstr ""
 "Insticket Snabbväljare tillhandahåller två allmänna snabbtangenter. Genom "
-"att trycka på <key>ctrl</key>+<key>alt</key>+<key>a</key> markeras den "
-"senast fokuserade åtkomliga komponenten i programträdvyn. Genom att trycka "
-"på <key>ctrl</key>+<key>alt</key>+<key>/</key> markeras den åtkomliga "
-"komponenten under markören i programträdvyn och färgmarkeras i målprogrammet."
+"att trycka på <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> "
+"markeras den senast fokuserade åtkomliga komponenten i programträdvyn. Genom "
+"att trycka på <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> "
+"markeras den åtkomliga komponenten under markören i programträdvyn och "
+"färgmarkeras i målprogrammet."
 
 #. (itstool) path: info/title
 #: C/validator_plugin.page:4
@@ -2192,6 +2166,24 @@ msgstr ""
 "För att få mer information om ett fel i den genererade rapporten, säkerställ "
 "att det motsvarande objektet är markerat och tryck på knappen <cmd>Hjälp</"
 "cmd>. Det kommer att öppna en hjälpsida i din standardwebbläsare."
+
+#~ msgid "<app>Accerciser</app> preferences"
+#~ msgstr "<app>Accerciser</app>-inställningar"
+
+#~ msgid ""
+#~ "<app>Accerciser</app> allows you to configure plugins, global hotkeys, "
+#~ "and widget's highlighting."
+#~ msgstr ""
+#~ "<app>Accerciser</app> låter dig konfigurera instick, allmänna "
+#~ "snabbtangenter och komponenters färgmarkering."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
+#~ msgstr ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
 
 #~ msgid ""
 #~ "@@image: 'figures/accerciser.png'; md5=f67bcf0322cc5e787470dee5109a31c6"
