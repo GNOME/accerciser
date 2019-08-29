@@ -23,6 +23,7 @@ import os.path
 
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
+from accerciser.node import _HighLight
 from accerciser.i18n import _, N_, DOMAIN
 from xml.dom import minidom
 
@@ -1460,7 +1461,23 @@ class _SectionText(_InterfaceSection):
     @param param_spec: Some gobject crud
     @type param_spec: object
     '''
+
     self.offset_spin.set_value(text_buffer.get_property('cursor-position'))
+
+    s = text_buffer.get_selection_bounds()
+    if s != ():
+      # Highlight selected text
+      try:
+        start,end = s
+        startOffset = start.get_offset()
+        endOffset = end.get_offset()
+        text = self.node.acc.queryText()
+        (x, y, width, height) = text.getRangeExtents(startOffset, endOffset, pyatspi.DESKTOP_COORDS)
+        # TODO: make parameters configurable
+        ah = _HighLight(x, y, width, height, '#00ff00', 0.5, '#00ff00', 1.0, 2.0, 0)
+        ah.highlight(500)
+      except:
+        pass
 
   def _accEventText(self, event):
     '''
