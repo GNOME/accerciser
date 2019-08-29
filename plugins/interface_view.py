@@ -23,7 +23,7 @@ import os.path
 
 from accerciser.plugin import ViewportPlugin
 from accerciser.icons import getIcon
-from accerciser.node import _HighLight
+from accerciser import node
 from accerciser.i18n import _, N_, DOMAIN
 from xml.dom import minidom
 
@@ -1473,9 +1473,11 @@ class _SectionText(_InterfaceSection):
         endOffset = end.get_offset()
         text = self.node.acc.queryText()
         (x, y, width, height) = text.getRangeExtents(startOffset, endOffset, pyatspi.DESKTOP_COORDS)
-        # TODO: make parameters configurable
-        ah = _HighLight(x, y, width, height, '#00ff00', 0.5, '#00ff00', 1.0, 2.0, 0)
-        ah.highlight(500)
+        ah = node._HighLight(x, y, width, height,
+                             node.FILL_COLOR, node.FILL_ALPHA,
+                             node.BORDER_COLOR, node.BORDER_ALPHA,
+                             2.0, 0)
+        ah.highlight(node.HL_DURATION)
       except:
         pass
 
