@@ -4,7 +4,7 @@ AC_INIT([Accerciser],
         [accerciser])
 
 AC_CONFIG_SRCDIR(src/accerciser.in)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([1.11 check-news])
 AM_MAINTAINER_MODE([enable])
 
 YELP_HELP_INIT
