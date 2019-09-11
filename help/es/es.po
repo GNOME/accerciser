@@ -5,15 +5,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser.help.master\n"
-"POT-Creation-Date: 2019-03-22 20:54+0000\n"
-"PO-Revision-Date: 2019-04-05 12:25+0200\n"
+"POT-Creation-Date: 2019-09-11 06:03+0000\n"
+"PO-Revision-Date: 2019-09-11 09:21+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: es <gnome-es-list@gnome.org>\n"
-"Language: es\n"
+"Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 3.32.0\n"
+"X-Generator: Gtranslator 3.32.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -250,12 +250,18 @@ msgstr "Marcar elementos en la vista en árbol de la aplicación"
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:63
+#| msgid ""
+#| "<app>Accerciser</app> allows bookmarking items in the Application Tree "
+#| "View for later examining. This is helpful when the target application "
+#| "must be restarted - after rebuilding it, for example. To bookmark an "
+#| "item, select it and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</"
+#| "gui></guiseq> or press <key>Ctrl</key>+<key>d</key>."
 msgid ""
 "<app>Accerciser</app> allows bookmarking items in the Application Tree View "
 "for later examining. This is helpful when the target application must be "
 "restarted - after rebuilding it, for example. To bookmark an item, select it "
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
-"<key>Ctrl</key>+<key>d</key>."
+"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
 msgstr ""
 "<app>Accerciser</app> permite marcar elementos en la vista en árbol de la "
 "aplicación, para examinarlos posteriormente. Esto puede ser útil si la "
@@ -519,12 +525,6 @@ msgstr "Instalar <app>Accerciser</app> manualmente"
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:36
-#| msgid ""
-#| "To install <app>Accerciser</app> manually, you will need to download it "
-#| "first. <app>Accerciser</app>'s source code can either be downloaded from "
-#| "<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the "
-#| "gnome.org FTP site</link> or cloned from <link href=\"http://git.gnome."
-#| "org/browse/accerciser\">the gnome.org GIT repository</link>."
 msgid ""
 "To install <app>Accerciser</app> manually, you will need to download it "
 "first. <app>Accerciser</app>'s source code can either be downloaded from "
@@ -692,14 +692,20 @@ msgstr "Crear un complemento base"
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:59
+#| msgid ""
+#| "We will create a simplified version of the <link xref="
+#| "\"quick_select_plugin\">Quick Select Plugin</link>. This plugin will "
+#| "select the last focused accessible when pressing <key>ctrl</key>"
+#| "+<key>alt</key>+<key>e</key>."
 msgid ""
 "We will create a simplified version of the <link xref=\"quick_select_plugin"
 "\">Quick Select Plugin</link>. This plugin will select the last focused "
-"accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
+"accessible when pressing <keyseq><key>ctrl</key><key>alt</key><key>e</key></"
+"keyseq>."
 msgstr ""
 "Se creará una versión simplificada del <link xref=\"quick_select_plugin"
-"\">complemento de selección rápida</link>. este complemento seleccionará el "
-"último accesible con el foco al pulsar <key>ctrl</key>+<key>alt</key>"
+"\">complemento de selección rápida</link>. Este complemento seleccionará el "
+"último accesible con el foco al pulsar <key>Ctrl</key>+<key>Alt</key>"
 "+<key>e</key>."
 
 #. (itstool) path: section/p
@@ -1492,23 +1498,31 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/introduction.page:35
+#| msgid ""
+#| "By default, <app>Accerciser</app>'s main interface is comprised of three "
+#| "sections: a tree view of the entire desktop accessible hierarchy, namely "
+#| "<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+#| "plugin areas. If you prefer to see all plugins in a single area, dividing "
+#| "<app>Accerciser</app>'s interface in two sections instead of three, type "
+#| "<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just "
+#| "press <key>ctrl</key>+<key>t</key> again."
 msgid ""
 "By default, <app>Accerciser</app>'s main interface is comprised of three "
 "sections: a tree view of the entire desktop accessible hierarchy, namely "
 "<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
 "plugin areas. If you prefer to see all plugins in a single area, dividing "
-"<app>Accerciser</app>'s interface in two sections instead of three, type "
-"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
-"<key>ctrl</key>+<key>t</key> again."
+"<app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
+"sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
 msgstr ""
 "De manera predeterminada, la interfaz principal de <app>Accerciser</app> se "
 "compone de tres seccione: una vista en árbol de la jerarquía completa de "
 "accesibles del escritorio, llamada <link xref=\"desktop_tree_view\"> vista "
 "en árbol de la aplicación</link>, y dos áreas de complementos. Si prefiere "
 "ver todos los complementos en una única área, divida la interfaz de "
-"<app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>ctrl "
+"<app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>Ctrl "
 "</key>+<key>t</key>. Para volver a dividirla en tres secciones, simplemente "
-"pulse <key>ctrl </key>+<key>t</key> otra vez."
+"pulse <key>Ctrl </key>+<key>t</key> otra vez."
 
 #. (itstool) path: note/p
 #: C/introduction.page:44
@@ -1862,51 +1876,26 @@ msgstr "Configurar <app>Accerciser</app>"
 
 #. (itstool) path: page/p
 #: C/preferences.page:26
+#| msgid ""
+#| "To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
+#| "+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> "
+#| "to open a dialog."
 msgid ""
-"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
-"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
-"open a dialog."
+"To configure plugins, hotkeys, and highlighting, do either "
+"<keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui> "
+"<gui>Preferences</gui></guiseq> to open a dialog."
 msgstr ""
 "Para configurar los complementos, las teclas rápidas y el resaltado, pulse "
-"<key>ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</"
+"<key>Ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</"
 "gui></guiseq> para abrir un diálogo."
 
-#. (itstool) path: figure/title
-#: C/preferences.page:32
-msgid "<app>Accerciser</app> preferences"
-msgstr "Preferencias de <app>Accerciser</app>"
-
-#. (itstool) path: figure/desc
-#. (itstool) path: media/p
-#: C/preferences.page:33 C/preferences.page:37
-msgid ""
-"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
-"widget's highlighting."
-msgstr ""
-"<app>Accerciser</app> le permite configurar los complementos, las teclas "
-"rápidas globales y el resaltado de widgets."
-
-#. (itstool) path: figure/media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:36
-msgctxt "_"
-msgid ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
-msgstr ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
-
 #. (itstool) path: section/title
-#: C/preferences.page:44
+#: C/preferences.page:32
 msgid "Configuring plugins"
 msgstr "Configurar complementos"
 
 #. (itstool) path: section/p
-#: C/preferences.page:45
+#: C/preferences.page:33
 msgid ""
 "After opening the Preferences Dialog, you will find a list of all available "
 "plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
@@ -1920,7 +1909,7 @@ msgstr ""
 "interfaz de <app>Accerciser</app>."
 
 #. (itstool) path: section/p
-#: C/preferences.page:50
+#: C/preferences.page:38
 msgid ""
 "Right-clicking on any given plugin allows you to choose its location: \"Top "
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
@@ -1931,13 +1920,13 @@ msgstr ""
 "seleccionar «Nueva vista» se crea una ventana nueva para el complemento."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:57
+#: C/preferences.page:45
 msgid "Configuring plugins' preferences"
 msgstr "Configurar las preferencias de los complementos"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:58 C/preferences.page:62
+#: C/preferences.page:46 C/preferences.page:50
 msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
 msgstr ""
 "<app>Accerciser</app> le permite ajustar las preferencias de sus "
@@ -1948,7 +1937,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:61
+#: C/preferences.page:49
 msgctxt "_"
 msgid ""
 "external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
@@ -1956,7 +1945,7 @@ msgstr ""
 "external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
 
 #. (itstool) path: note/p
-#: C/preferences.page:69
+#: C/preferences.page:57
 msgid ""
 "You may bypass the Preferences dialog by using drag and drop to move a "
 "plugin from a location to another."
@@ -1965,12 +1954,12 @@ msgstr ""
 "un complemento desde una ubicación hasta otra."
 
 #. (itstool) path: section/title
-#: C/preferences.page:76
+#: C/preferences.page:64
 msgid "Configuring global hotkeys"
 msgstr "Configurar teclas rápidas globales"
 
 #. (itstool) path: section/p
-#: C/preferences.page:77
+#: C/preferences.page:65
 msgid ""
 "Some elements in <app>Accerciser</app> may enable certain functionalities "
 "via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
@@ -1991,12 +1980,12 @@ msgstr ""
 "modificadores."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:86
+#: C/preferences.page:74
 msgid "Configuring global hotkeys' preferences"
 msgstr "Configurarlas preferencias de las teclas rápidas globales"
 
 #. (itstool) path: figure/desc
-#: C/preferences.page:87
+#: C/preferences.page:75
 msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
 msgstr ""
 "<app>Accerciser</app> le permite ajustar las preferencias de sus teclas "
@@ -2007,7 +1996,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:90
+#: C/preferences.page:78
 msgctxt "_"
 msgid ""
 "external ref='figures/global-hotkeys.png' "
@@ -2017,40 +2006,46 @@ msgstr ""
 "md5='e624ecfca646f771d03ea3feed4a5dcb'"
 
 #. (itstool) path: media/p
-#: C/preferences.page:91
+#: C/preferences.page:79
 msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
 msgstr ""
 "<app>Accerciser</app> le permite ajustar las preferencias de sus "
 "complementos."
 
 #. (itstool) path: section/title
-#: C/preferences.page:99
+#: C/preferences.page:87
 msgid "Configuring widget's highlighting"
 msgstr "Configurar el resaltado de widgets"
 
 #. (itstool) path: section/p
-#: C/preferences.page:100
+#: C/preferences.page:88
+#| msgid ""
+#| "Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+#| "<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget "
+#| "in a target application. The highlighting duration, border color, and "
+#| "fill color can be customized via the Preferences dialog, under the "
+#| "\"Highlighting\" tab."
 msgid ""
 "Some of <app>Accerciser</app>'s elements, such as the global hotkey "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
-"a target application. The highlighting duration, border color, and fill "
-"color can be customized via the Preferences dialog, under the \"Highlighting"
-"\" tab."
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, highlight a "
+"specific widget in a target application. The highlighting duration, border "
+"color, and fill color can be customized via the Preferences dialog, under "
+"the \"Highlighting\" tab."
 msgstr ""
 "Algunos elementos de <app>Accerciser</app>, como la tecla rápida global "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, resaltan un widget específico "
+"<key>Ctrl</key>+<key>Alt</key>+<key>/</key>, resaltan un widget específico "
 "en la aplicación objetivo. La duración del resaltado, el color del borde y "
 "el color de relleno se pueden personalizar en el diálogo de preferencias, en "
 "la pestaña «Resaltado»."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:107
+#: C/preferences.page:95
 msgid "Configuring highlighting preferences"
 msgstr "Configurar las preferencias de resaltado"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:108 C/preferences.page:112
+#: C/preferences.page:96 C/preferences.page:100
 msgid ""
 "<app>Accerciser</app> allows you to adjust your highlighting preferences."
 msgstr ""
@@ -2061,7 +2056,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:111
+#: C/preferences.page:99
 msgctxt "_"
 msgid ""
 "external ref='figures/highlighting.png' "
@@ -2106,17 +2101,24 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/quick_select_plugin.page:32
+#| msgid ""
+#| "The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</"
+#| "key>+<key>alt</key>+<key>a</key> selects the last focused accessible "
+#| "widget in the Application Tree View. Pressing <key>ctrl</key>+<key>alt</"
+#| "key>+<key>/</key> selects the accessible widget under the pointer in the "
+#| "Application Tree View and highlights it in the target application."
 msgid ""
-"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
-"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
-"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
-"key> selects the accessible widget under the pointer in the Application Tree "
-"View and highlights it in the target application."
+"The Quick Select Plugin provides two global hotkeys. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
+"focused accessible widget in the Application Tree View. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and "
+"highlights it in the target application."
 msgstr ""
 "El complemento de selección rápida proporciona dos teclas rápidas globales. "
 "Pulsar <key>Ctrl</key>+<key>Alt</key>+<key>a</key> selecciona el último "
 "widget accesible con el foco en la vista en árbol de la aplicación. Pulsar "
-"<key>Ctrl</key>+<key>alt</key>+<key>/</key> seleccione el widget accesible "
+"<key>Ctrl</key>+<key>Alt</key>+<key>/</key> seleccione el widget accesible "
 "debajo del puntero en la vista en árbol de la aplicación y lo resalta en la "
 "aplicación objetivo."
 
@@ -2239,6 +2241,24 @@ msgstr ""
 "asegúrese de que el elemento correspondiente está seleccionado y pulse el "
 "botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador "
 "predeterminado."
+
+#~ msgid "<app>Accerciser</app> preferences"
+#~ msgstr "Preferencias de <app>Accerciser</app>"
+
+#~ msgid ""
+#~ "<app>Accerciser</app> allows you to configure plugins, global hotkeys, "
+#~ "and widget's highlighting."
+#~ msgstr ""
+#~ "<app>Accerciser</app> le permite configurar los complementos, las teclas "
+#~ "rápidas globales y el resaltado de widgets."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
+#~ msgstr ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
 
 #~ msgctxt "_"
 #~ msgid ""
