@@ -1,12 +1,12 @@
 # Czech translation of Accerciser help manual
 # Lucas Lommer <llommer@svn.gnome.org>, 2008, 2010.
-# Marek Černocký <marek@manet.cz>, 2009, 2015.
+# Marek Černocký <marek@manet.cz>, 2009, 2015, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: accerciser gnome-2-28\n"
-"POT-Creation-Date: 2015-02-16 00:23+0000\n"
-"PO-Revision-Date: 2015-03-03 20:59+0100\n"
+"Project-Id-Version: accerciser gnome-3.34\n"
+"POT-Creation-Date: 2019-09-11 06:03+0000\n"
+"PO-Revision-Date: 2019-09-13 09:02+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,30 +19,14 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
-#| msgid "translator-credits"
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Lucas Lommer <llommer@svn.gnome.org>, 2008, 2010.\n"
 "Marek Černocký <marek@manet.cz>, 2009, 2015."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/api_browser_plugin.page:37
-#| msgid ""
-#| "@@image: 'figures/api_browser.png'; md5=7e3b2481bf743644470726421cb5afb1"
-msgctxt "_"
-msgid ""
-"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
-msgstr ""
-"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
-
 #. (itstool) path: info/title
 #: C/api_browser_plugin.page:4
-#| msgid "API Browser"
 msgctxt "sort"
 msgid "1. API Browser Plugin"
 msgstr "1. Zásuvný modul pro prohlížení API"
@@ -57,9 +41,8 @@ msgstr "Jak ověřit rozhraní, metody a vlastnosti."
 #: C/event_monitor_plugin.page:10 C/howto_setting_up_accerciser.page:11
 #: C/howto_write_a_plugin.page:10 C/index.page:9
 #: C/interface_viewer_plugin.page:10 C/introduction.page:10
-#: C/ipython_plugin.page:10 C/preferences.page:10
-#: C/quick_select_plugin.page:10 C/validator_plugin.page:10
-#| msgid "Isaacson"
+#: C/ipython_plugin.page:10 C/preferences.page:10 C/quick_select_plugin.page:10
+#: C/validator_plugin.page:10
 msgid "Eitan Isaacson"
 msgstr "Eitan Isaacson"
 
@@ -68,9 +51,8 @@ msgstr "Eitan Isaacson"
 #: C/event_monitor_plugin.page:14 C/howto_setting_up_accerciser.page:15
 #: C/howto_write_a_plugin.page:14 C/index.page:13
 #: C/interface_viewer_plugin.page:14 C/introduction.page:14
-#: C/ipython_plugin.page:14 C/preferences.page:14
-#: C/quick_select_plugin.page:14 C/validator_plugin.page:14
-#| msgid "Parente"
+#: C/ipython_plugin.page:14 C/preferences.page:14 C/quick_select_plugin.page:14
+#: C/validator_plugin.page:14
 msgid "Peter Parente"
 msgstr "Peter Parente"
 
@@ -79,8 +61,8 @@ msgstr "Peter Parente"
 #: C/event_monitor_plugin.page:18 C/howto_setting_up_accerciser.page:19
 #: C/howto_write_a_plugin.page:18 C/index.page:17
 #: C/interface_viewer_plugin.page:18 C/introduction.page:18
-#: C/ipython_plugin.page:18 C/preferences.page:18
-#: C/quick_select_plugin.page:18 C/validator_plugin.page:18
+#: C/ipython_plugin.page:18 C/preferences.page:18 C/quick_select_plugin.page:18
+#: C/validator_plugin.page:18
 msgid "Aline Bessa"
 msgstr "Aline Bessa"
 
@@ -89,15 +71,14 @@ msgstr "Aline Bessa"
 #: C/event_monitor_plugin.page:22 C/howto_setting_up_accerciser.page:23
 #: C/howto_write_a_plugin.page:22 C/index.page:21
 #: C/interface_viewer_plugin.page:22 C/introduction.page:22
-#: C/ipython_plugin.page:22 C/preferences.page:22
-#: C/quick_select_plugin.page:22 C/validator_plugin.page:22
+#: C/ipython_plugin.page:22 C/preferences.page:22 C/quick_select_plugin.page:22
+#: C/validator_plugin.page:22
 msgid "Creative Commons Share Alike 3.0"
 msgstr "Creative Commons Share Alike 3.0"
 
 #. (itstool) path: page/title
 #. (itstool) path: figure/title
 #: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
-#| msgid "API Browser"
 msgid "API Browser Plugin"
 msgstr "Zásuvný modul pro prohlížení API"
 
@@ -115,15 +96,24 @@ msgstr ""
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
 #: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
-#| msgid ""
-#| "This plugin shows the interfaces, methods, and attributes supported by "
-#| "the accessible selected in the tree view."
 msgid ""
 "The API Browser Plugin allows you to verify interfaces, methods, and "
 "properties of a target accessible widget in an application."
 msgstr ""
 "Zásuvný modul Prohlížeč API vám umožňuje ověřit rozhraní, metody a "
 "vlastnosti cílového zpřístupněného widgetu v aplikaci."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
+msgstr ""
+"external ref='figures/api_browser.png' md5='47cae67d29c708139b9740d06fd2521e'"
 
 #. (itstool) path: section/title
 #: C/api_browser_plugin.page:46
@@ -167,20 +157,6 @@ msgstr ""
 "vlastnosti. Pokud je chcete v seznamu vidět, zruště zaškrtnutí políčka "
 "<gui>Skrýt privátní atributy</gui>. Pro opětovné skrytí políčko znovu "
 "zaškrtněte."
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/desktop_tree_view.page:42
-msgctxt "_"
-msgid ""
-"external ref='figures/tree_view_accerciser.png' "
-"md5='08296541e21b96951e1f1b4d99ca130b'"
-msgstr ""
-"external ref='figures/tree_view_accerciser.png' "
-"md5='08296541e21b96951e1f1b4d99ca130b'"
 
 #. (itstool) path: info/title
 #: C/desktop_tree_view.page:4
@@ -232,6 +208,20 @@ msgstr ""
 "podobě hierarchické struktury widgetů uživatelská rozhraní aplikací, které "
 "podporují zpřístupnění a zrovna běží v pracovním prostředí"
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42
+msgctxt "_"
+msgid ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+msgstr ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='08296541e21b96951e1f1b4d99ca130b'"
+
 #. (itstool) path: page/p
 #: C/desktop_tree_view.page:49
 msgid ""
@@ -260,19 +250,12 @@ msgstr "Přidávání položek ve stromovém zobrazení aplikací do záložek"
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:63
-#| msgid ""
-#| "Accerciser allows bookmarking selected accessibles for later examining. "
-#| "This could be helpful if the target application must be restarted, for "
-#| "example after rebuilding it. To bookmark the currently selected "
-#| "accessible do <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add "
-#| "Bookmark...</guimenuitem></menuchoice> or press "
-#| "<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
 msgid ""
 "<app>Accerciser</app> allows bookmarking items in the Application Tree View "
 "for later examining. This is helpful when the target application must be "
 "restarted - after rebuilding it, for example. To bookmark an item, select it "
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
-"<key>Ctrl</key>+<key>d</key>."
+"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
 msgstr ""
 "<app>Accerciser</app> umožňuje přidávat zpřístupněné položky ve stromovém "
 "zobrazení aplikací do záložek, abyste je mohli zkoumat později. To je "
@@ -283,11 +266,6 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:68
-#| msgid ""
-#| "Bookmarks to accessibles in Accerciser are defined by an application name "
-#| "and a \"path\" in the application's internal accessible hierarchy to the "
-#| "bookmarked accessible. When the target application is in a different "
-#| "state (ie. multiple top level frames) the path might not be correct."
 msgid ""
 "Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
 "application name and a \"path\" in the application's internal accessible "
@@ -303,23 +281,8 @@ msgstr ""
 "dialogového okna pro úpravu záložek, které najdete pod <guiseq><gui>Záložky</"
 "gui> <gui>Upravit záložky</gui></guiseq>."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/event_monitor_plugin.page:40
-msgctxt "_"
-msgid ""
-"external ref='figures/event_monitor_plugin.png' "
-"md5='1ee2a1d281deefa5b401244b49ed9654'"
-msgstr ""
-"external ref='figures/event_monitor_plugin.png' "
-"md5='1ee2a1d281deefa5b401244b49ed9654'"
-
 #. (itstool) path: info/title
 #: C/event_monitor_plugin.page:4
-#| msgid "Event Monitor"
 msgctxt "sort"
 msgid "4. Event Monitor Plugin"
 msgstr "4. Zásuvný modul pro sledování událostí"
@@ -332,7 +295,6 @@ msgstr "Jak sledovat události přístupnosti, které se objeví."
 #. (itstool) path: page/title
 #. (itstool) path: figure/title
 #: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
-#| msgid "Event Monitor"
 msgid "Event Monitor Plugin"
 msgstr "Zásuvný modul pro sledování událostí"
 
@@ -364,6 +326,20 @@ msgid ""
 msgstr ""
 "Zásuvný moudul Sledování událostí umožňuje zobrazit události AT-SPI a "
 "zjistit jejich sounáležitost se zpřístupněnými widgety."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40
+msgctxt "_"
+msgid ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
+msgstr ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='1ee2a1d281deefa5b401244b49ed9654'"
 
 #. (itstool) path: section/title
 #: C/event_monitor_plugin.page:49
@@ -505,7 +481,6 @@ msgstr "2. Instalace a spuštění aplikace <app>Accerciser</app>"
 
 #. (itstool) path: info/title
 #: C/howto_setting_up_accerciser.page:6
-#| msgid "To Start <application>Accerciser</application>"
 msgctxt "link"
 msgid "Setting up <app>Accerciser</app>"
 msgstr "Pořízení aplikace <app>Accerciser</app>"
@@ -517,7 +492,6 @@ msgstr "Jak nainstalovat a spustit <app>Accerciser</app> na vašem počítači."
 
 #. (itstool) path: page/title
 #: C/howto_setting_up_accerciser.page:26
-#| msgid "To Start <application>Accerciser</application>"
 msgid "Setting up <app>Accerciser</app>"
 msgstr "Pořízení aplikace <app>Accerciser</app>"
 
@@ -543,14 +517,14 @@ msgid ""
 "To install <app>Accerciser</app> manually, you will need to download it "
 "first. <app>Accerciser</app>'s source code can either be downloaded from "
 "<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the gnome."
-"org FTP site</link> or cloned from <link href=\"http://git.gnome.org/browse/"
-"accerciser\">the gnome.org GIT repository</link>."
+"org FTP site</link> or cloned from <link href=\"https://gitlab.gnome.org/"
+"GNOME/accerciser\">the gnome.org GIT repository</link>."
 msgstr ""
 "Abyste mohli <app>Accerciser</app> nainstalovat ručně, musíte si jej nejprve "
 "stáhnot. Zdrojové kódy aplikace <app>Accerciser</app> můžete stánout buď ze "
 "<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">serveru "
-"FTP na gnome.org</link> nebo je naklonovat z <link href=\"http://git.gnome."
-"org/browse/accerciser\">repozitáře GIT na gnome.org</link>."
+"FTP na gnome.org</link> nebo je naklonovat z <link href=\"https://gitlab.gnome"
+".org/GNOME/accerciser\">repozitáře GIT na gnome.org</link>."
 
 #. (itstool) path: note/p
 #: C/howto_setting_up_accerciser.page:43
@@ -563,9 +537,6 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:50
-#| msgid ""
-#| "The main <application>Accerciser</application> window contains the "
-#| "following elements:"
 msgid ""
 "After getting <app>Accerciser</app>, install it using the following commands:"
 msgstr ""
@@ -610,7 +581,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/howto_setting_up_accerciser.page:67
-#| msgid "About <application>Accerciser</application>"
 msgid "Running <app>Accerciser</app>"
 msgstr "Spuštění aplikace <app>Accerciser</app>"
 
@@ -650,7 +620,6 @@ msgstr "Jak <app>Accerciser</app> rozšířit o svoji požadovanou funkcionalitu
 
 #. (itstool) path: page/title
 #: C/howto_write_a_plugin.page:25
-#| msgid "When You Start <application>Accerciser</application>"
 msgid "Writing Plugins for <app>Accerciser</app>"
 msgstr "Psaní zásuvných modulů pro <app>Accerciser</app>"
 
@@ -717,7 +686,8 @@ msgstr "Vytvoření základního zásuvného modulu"
 msgid ""
 "We will create a simplified version of the <link xref=\"quick_select_plugin"
 "\">Quick Select Plugin</link>. This plugin will select the last focused "
-"accessible when pressing <key>ctrl</key>+<key>alt</key>+<key>e</key>."
+"accessible when pressing <keyseq><key>ctrl</key><key>alt</key><key>e</key></"
+"keyseq>."
 msgstr ""
 "Vytvoříme zjednodušenou verzi <link xref=\"quick_select_plugin\">zásuvného "
 "modulu Rychlý výběr</link>. Tento zásuvný modul bude vybírat poslední "
@@ -1174,21 +1144,18 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:6
-#| msgid "Accerciser"
 msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-#| msgid "About <application>Accerciser</application>"
 msgctxt "link"
 msgid "Introduction to <app>Accerciser</app>"
 msgstr "Úvod do aplikace <app>Accerciser</app>"
 
 #. (itstool) path: media/span
 #: C/index.page:26
-#| msgid "About <application>Accerciser</application>"
 msgid "<app>Accerciser</app>'s logo"
 msgstr "Logo aplikace <app>Accerciser</app>"
 
@@ -1225,23 +1192,8 @@ msgstr "Zkoušení přístupnosti aplikace"
 msgid "Advanced Topics"
 msgstr "Pokročilá témata"
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/interface_viewer_plugin.page:41
-msgctxt "_"
-msgid ""
-"external ref='figures/interface_viewer_plugin.png' "
-"md5='c83c4113369ff2adc756dfd8614a48ed'"
-msgstr ""
-"external ref='figures/interface_viewer_plugin.png' "
-"md5='c83c4113369ff2adc756dfd8614a48ed'"
-
 #. (itstool) path: info/title
 #: C/interface_viewer_plugin.page:4
-#| msgid "Interface Viewer"
 msgctxt "sort"
 msgid "2. Interface Viewer Plugin"
 msgstr "2. Zásuvný modul pro prohlížení rozhraní"
@@ -1253,7 +1205,6 @@ msgstr "Jak vyzkoušet svoji implementaci přístupnosti."
 
 #. (itstool) path: page/title
 #: C/interface_viewer_plugin.page:25
-#| msgid "Interface Viewer"
 msgid "Interface Viewer Plugin"
 msgstr "Zásuvný modul pro prohlížení rozhraní"
 
@@ -1294,9 +1245,22 @@ msgstr ""
 "rozhraní. Ta nepodporovaná budou zašedlá, obdobně jako rozhraní Aplikace a "
 "Kolekce na obrázku níže."
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41
+msgctxt "_"
+msgid ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
+msgstr ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='c83c4113369ff2adc756dfd8614a48ed'"
+
 #. (itstool) path: section/title
 #: C/interface_viewer_plugin.page:49
-#| msgid "Interface Viewer"
 msgid "Running the Interface Viewer Plugin"
 msgstr "Spuštění zásuvného modulu pro prohlížení rozhraní"
 
@@ -1472,23 +1436,8 @@ msgstr ""
 "hodnota měněna (nebou nulu, když tento údaj nelze určit). Aktuální hodnotu "
 "můžete ručně změnit pomocí tlačítek číselníku."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/introduction.page:55
-msgctxt "_"
-msgid ""
-"external ref='figures/accerciser-view.png' "
-"md5='fe4edcab1458ebe903cc46878c53ee64'"
-msgstr ""
-"external ref='figures/accerciser-view.png' "
-"md5='fe4edcab1458ebe903cc46878c53ee64'"
-
 #. (itstool) path: info/title
 #: C/introduction.page:5
-#| msgid "Accerciser"
 msgctxt "sort"
 msgid "1. What is Accerciser?"
 msgstr "1. Co je to Accerciser?"
@@ -1500,21 +1449,11 @@ msgstr "Interaktivní průzkumník přístupnosti."
 
 #. (itstool) path: page/title
 #: C/introduction.page:25
-#| msgid "When You Start <application>Accerciser</application>"
 msgid "What is <app>Accerciser</app>?"
 msgstr "Co je to <app>Accerciser</app>?"
 
 #. (itstool) path: page/p
 #: C/introduction.page:26
-#| msgid ""
-#| "<application>Accerciser</application> is an interactive Python "
-#| "accessibility explorer for the GNOME desktop. It uses <ulink url=\"http://"
-#| "directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect "
-#| "and control widgets, allowing you to check if an application is providing "
-#| "correct information to assistive technologies and automated test "
-#| "frameworks. <application>Accerciser</application> has a simple plugin "
-#| "framework which you can use to create custom views of accessibility "
-#| "information."
 msgid ""
 "<app>Accerciser</app> is an interactive Python accessibility explorer. It "
 "uses the AT-SPI library to inspect, examine, and interact with widgets, "
@@ -1537,9 +1476,9 @@ msgid ""
 "sections: a tree view of the entire desktop accessible hierarchy, namely "
 "<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
 "plugin areas. If you prefer to see all plugins in a single area, dividing "
-"<app>Accerciser</app>'s interface in two sections instead of three, type "
-"<key>ctrl </key>+<key>t</key>. To re-divide it in three sections, just press "
-"<key>ctrl</key>+<key>t</key> again."
+"<app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
+"sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
 msgstr ""
 "Ve výchozím stavu je hlavní část uživatelského rozhraní aplikace "
 "<app>Accerciser</app> složena ze tří částí: stromového zobrazení hierarchie "
@@ -1562,7 +1501,6 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/introduction.page:51
-#| msgid "About <application>Accerciser</application>"
 msgid "<app>Accerciser</app>"
 msgstr "<app>Accerciser</app>"
 
@@ -1572,9 +1510,22 @@ msgstr "<app>Accerciser</app>"
 msgid "<app>Accerciser</app>'s default interface."
 msgstr "Výchozí uživatelské rozhraní aplikace <app>Accerciser</app>"
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+msgstr ""
+"external ref='figures/accerciser-view.png' "
+"md5='fe4edcab1458ebe903cc46878c53ee64'"
+
 #. (itstool) path: section/title
 #: C/introduction.page:63
-#| msgid "<application>Accerciser</application> Main Window"
 msgid "<app>Accerciser</app>'s intended audience"
 msgstr "Cílová skupina aplikace <app>Accerciser</app>"
 
@@ -1761,20 +1712,6 @@ msgstr ""
 "GNOME</link> – Zahrnuje příručky uvedené výše plus další odkazy užitečné pro "
 "uživatele, vývojáře a správce systémů."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/ipython_plugin.page:57
-msgctxt "_"
-msgid ""
-"external ref='figures/IPython_plugin.png' "
-"md5='4e25a8b12536302b54f4ea31e2d142c9'"
-msgstr ""
-"external ref='figures/IPython_plugin.png' "
-"md5='4e25a8b12536302b54f4ea31e2d142c9'"
-
 #. (itstool) path: info/title
 #: C/ipython_plugin.page:4
 msgctxt "sort"
@@ -1788,7 +1725,6 @@ msgstr "Co dělat, když vše ostatní selže."
 
 #. (itstool) path: page/title
 #: C/ipython_plugin.page:25
-#| msgid "IPython Console"
 msgid "IPython Console Plugin"
 msgstr "Zásuvný modul s konzolou IPython"
 
@@ -1816,7 +1752,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/ipython_plugin.page:40
-#| msgid "IPython Console"
 msgid "Running the IPython Console Plugin"
 msgstr "Spuštění zásuvného modulu Konzola IPython"
 
@@ -1856,6 +1791,20 @@ msgstr ""
 "Zásuvný modul Konzola IPython vám umožňuje zkoumat metody, konstanty a "
 "vlastnosti vztahující se k vybrané položce ve stromovém zobrazení aplikací."
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+msgstr ""
+"external ref='figures/IPython_plugin.png' "
+"md5='4e25a8b12536302b54f4ea31e2d142c9'"
+
 #. (itstool) path: note/p
 #: C/ipython_plugin.page:66
 msgid ""
@@ -1865,63 +1814,8 @@ msgstr ""
 "Po napsáním <cmd>help(acc)</cmd> v konzole IPython se vám zobrazí užitečná "
 "dokumentace vztahující se k vybrané položce s podporou přístupnosti."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:36
-msgctxt "_"
-msgid ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
-msgstr ""
-"external ref='figures/accerciser_preferences.png' "
-"md5='35df6feb4a5dfc905331b45390783ad5'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:61
-msgctxt "_"
-msgid ""
-"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
-msgstr ""
-"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:90
-msgctxt "_"
-msgid ""
-"external ref='figures/global-hotkeys.png' "
-"md5='e624ecfca646f771d03ea3feed4a5dcb'"
-msgstr ""
-"external ref='figures/global-hotkeys.png' "
-"md5='e624ecfca646f771d03ea3feed4a5dcb'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/preferences.page:111
-msgctxt "_"
-msgid ""
-"external ref='figures/highlighting.png' "
-"md5='a7eeb359d726fecba85b13b92a41b919'"
-msgstr ""
-"external ref='figures/highlighting.png' "
-"md5='a7eeb359d726fecba85b13b92a41b919'"
-
 #. (itstool) path: info/title
 #: C/preferences.page:4
-#| msgid "Preferences"
 msgctxt "sort"
 msgid "4. Preferences"
 msgstr "4. Předvolby"
@@ -1933,44 +1827,28 @@ msgstr "Jak si přizpůsobit předvolby aplikace <app>Accerciser</app>."
 
 #. (itstool) path: page/title
 #: C/preferences.page:25
-#| msgid "About <application>Accerciser</application>"
 msgid "Configuring <app>Accerciser</app>"
 msgstr "Nastavení aplikace <app>Accerciser</app>"
 
 #. (itstool) path: page/p
 #: C/preferences.page:26
 msgid ""
-"To configure plugins, hotkeys, and highlighting, do either <key>ctrl</key>"
-"+<key>p</key> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to "
-"open a dialog."
+"To configure plugins, hotkeys, and highlighting, do either "
+"<keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui> "
+"<gui>Preferences</gui></guiseq> to open a dialog."
 msgstr ""
 "Když chcete nastavit zásuvné moduly, klávesové zkratky nebo zvýrazňování, "
 "buď zmáčkněte <keyseq><key>Ctrl</key><key>P</key></keyseq> nebo zvolte "
 "<guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq> a otevře se "
 "dialogové okno."
 
-#. (itstool) path: figure/title
-#: C/preferences.page:32
-msgid "<app>Accerciser</app> preferences"
-msgstr "Předvolby aplikace <app>Accerciser</app>"
-
-#. (itstool) path: figure/desc
-#. (itstool) path: media/p
-#: C/preferences.page:33 C/preferences.page:37
-msgid ""
-"<app>Accerciser</app> allows you to configure plugins, global hotkeys, and "
-"widget's highlighting."
-msgstr ""
-"V aplikaci <app>Accerciser</app> si můžete nastavit zásuvné moduly, globální "
-"klávesové zkratky a zvýrazňování widgetů."
-
 #. (itstool) path: section/title
-#: C/preferences.page:44
+#: C/preferences.page:32
 msgid "Configuring plugins"
 msgstr "Nastavení zásuvných modulů"
 
 #. (itstool) path: section/p
-#: C/preferences.page:45
+#: C/preferences.page:33
 msgid ""
 "After opening the Preferences Dialog, you will find a list of all available "
 "plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
@@ -1984,7 +1862,7 @@ msgstr ""
 "<app>Accerciser</app> jsou pak přístupné jen ty povolené."
 
 #. (itstool) path: section/p
-#: C/preferences.page:50
+#: C/preferences.page:38
 msgid ""
 "Right-clicking on any given plugin allows you to choose its location: \"Top "
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
@@ -1995,20 +1873,32 @@ msgstr ""
 "se pro zásuvný moduly vytvoří nové okno."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:57
+#: C/preferences.page:45
 msgid "Configuring plugins' preferences"
 msgstr "Nastavení předvoleb zásuvných modulů"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:58 C/preferences.page:62
+#: C/preferences.page:46 C/preferences.page:50
 msgid "<app>Accerciser</app> allows you to adjust your plugins' preferences."
 msgstr ""
 "V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby zásuvných "
 "modulů."
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:49
+msgctxt "_"
+msgid ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+msgstr ""
+"external ref='figures/plugins.png' md5='aa997acc25c59cf82a788bb8a97f8654'"
+
 #. (itstool) path: note/p
-#: C/preferences.page:69
+#: C/preferences.page:57
 msgid ""
 "You may bypass the Preferences dialog by using drag and drop to move a "
 "plugin from a location to another."
@@ -2017,12 +1907,12 @@ msgstr ""
 "zásuvného modulu na jiné místo."
 
 #. (itstool) path: section/title
-#: C/preferences.page:76
+#: C/preferences.page:64
 msgid "Configuring global hotkeys"
 msgstr "Nastavení globálních klávesových zkratek"
 
 #. (itstool) path: section/p
-#: C/preferences.page:77
+#: C/preferences.page:65
 msgid ""
 "Some elements in <app>Accerciser</app> may enable certain functionalities "
 "via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
@@ -2042,37 +1932,51 @@ msgstr ""
 "gui> a <gui>Shift</gui>."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:86
+#: C/preferences.page:74
 msgid "Configuring global hotkeys' preferences"
 msgstr "Nastavení předvoleb globálních klávesových zkratek"
 
 #. (itstool) path: figure/desc
-#: C/preferences.page:87
+#: C/preferences.page:75
 msgid "<app>Accerciser</app> allows you to adjust your hotkeys' preferences."
 msgstr ""
 "V aplikaci <app>Accerciser</app> si můžete v předvolbách přizpůsobit "
 "klávesové zkratky."
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:78
+msgctxt "_"
+msgid ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+msgstr ""
+"external ref='figures/global-hotkeys.png' "
+"md5='e624ecfca646f771d03ea3feed4a5dcb'"
+
 #. (itstool) path: media/p
-#: C/preferences.page:91
+#: C/preferences.page:79
 msgid "<app>Accerciser</app> allows you to adjust your plugin's preferences."
 msgstr ""
 "V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby zásuvných "
 "modulů."
 
 #. (itstool) path: section/title
-#: C/preferences.page:99
+#: C/preferences.page:87
 msgid "Configuring widget's highlighting"
 msgstr "Nastavení zvýrazňování widgetů"
 
 #. (itstool) path: section/p
-#: C/preferences.page:100
+#: C/preferences.page:88
 msgid ""
 "Some of <app>Accerciser</app>'s elements, such as the global hotkey "
-"<key>ctrl</key>+<key>alt</key>+<key>/</key>, highlight a specific widget in "
-"a target application. The highlighting duration, border color, and fill "
-"color can be customized via the Preferences dialog, under the \"Highlighting"
-"\" tab."
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, highlight a "
+"specific widget in a target application. The highlighting duration, border "
+"color, and fill color can be customized via the Preferences dialog, under "
+"the \"Highlighting\" tab."
 msgstr ""
 "Některé prvky aplikace <app>Accerciser</app>, například globální klávesová "
 "zkratka <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></keyseq>, zvýrazní "
@@ -2081,22 +1985,35 @@ msgstr ""
 "„Zvýrazňování“."
 
 #. (itstool) path: figure/title
-#: C/preferences.page:107
+#: C/preferences.page:95
 msgid "Configuring highlighting preferences"
 msgstr "Nastavení předvoleb zvýrazňování"
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
-#: C/preferences.page:108 C/preferences.page:112
+#: C/preferences.page:96 C/preferences.page:100
 msgid ""
 "<app>Accerciser</app> allows you to adjust your highlighting preferences."
 msgstr ""
 "V aplikaci <app>Accerciser</app> si můžete přizpůsobit předvolby "
 "zvýrazňování."
 
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/preferences.page:99
+msgctxt "_"
+msgid ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+msgstr ""
+"external ref='figures/highlighting.png' "
+"md5='a7eeb359d726fecba85b13b92a41b919'"
+
 #. (itstool) path: info/title
 #: C/quick_select_plugin.page:4
-#| msgid "Quick select"
 msgctxt "sort"
 msgid "5. Quick Select Plugin"
 msgstr "5. Zásuvný modul pro rychlý výběr"
@@ -2108,7 +2025,6 @@ msgstr "Jak vyhledat objekty, které potřebujete."
 
 #. (itstool) path: page/title
 #: C/quick_select_plugin.page:25
-#| msgid "Quick select"
 msgid "Quick Select Plugin"
 msgstr "Zásuvný modul pro rychlý výběr"
 
@@ -2133,11 +2049,12 @@ msgstr ""
 #. (itstool) path: page/p
 #: C/quick_select_plugin.page:32
 msgid ""
-"The Quick Select Plugin provides two global hotkeys. Pressing <key>ctrl</key>"
-"+<key>alt</key>+<key>a</key> selects the last focused accessible widget in "
-"the Application Tree View. Pressing <key>ctrl</key>+<key>alt</key>+<key>/</"
-"key> selects the accessible widget under the pointer in the Application Tree "
-"View and highlights it in the target application."
+"The Quick Select Plugin provides two global hotkeys. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
+"focused accessible widget in the Application Tree View. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and "
+"highlights it in the target application."
 msgstr ""
 "Zásuvný modul Rychlý výběr poskytuje dvě globální klávesové zkratky. "
 "Zmáčknutím <keyseq><key>Ctrl</key><key>Alt</key><key>A</key></keyseq> "
@@ -2146,23 +2063,8 @@ msgstr ""
 "keyseq> vyberete zpřístupněný widget nacházející se pod ukazatelem ve "
 "stromovém zobrazení aplikací, přičemž se zároveň zvýrazní v cílové aplikaci."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/validator_plugin.page:37
-msgctxt "_"
-msgid ""
-"external ref='figures/validator_report.png' "
-"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
-msgstr ""
-"external ref='figures/validator_report.png' "
-"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
-
 #. (itstool) path: info/title
 #: C/validator_plugin.page:4
-#| msgid "Default Plugins"
 msgctxt "sort"
 msgid "3. Validator Default Plugin"
 msgstr "3. Výchozí zásuvný modul pro ověřování"
@@ -2198,6 +2100,20 @@ msgid ""
 msgstr ""
 "Zásuvný modul Ověřování přes AT-SPI generuje užitečné výstupní sestavy "
 "sloužící k ověření přístupnosti cílové aplikace."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
+msgstr ""
+"external ref='figures/validator_report.png' "
+"md5='a21bc11a8fc1f8d7976d7ea8a3dc80d2'"
 
 #. (itstool) path: section/title
 #: C/validator_plugin.page:46
@@ -2263,6 +2179,24 @@ msgstr ""
 "Když chcete získat o chybě ve vygenerované zprávě více informací, ujistěte "
 "se, že je vybrána příslušná položka a zmáčkněte tlačítko <gui>Nápověda</"
 "gui>. Otevře se stránka s nápovědou ve vašem výchozím prohlížeči."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
+#~ msgstr ""
+#~ "external ref='figures/accerciser_preferences.png' "
+#~ "md5='35df6feb4a5dfc905331b45390783ad5'"
+
+#~ msgid "<app>Accerciser</app> preferences"
+#~ msgstr "Předvolby aplikace <app>Accerciser</app>"
+
+#~ msgid ""
+#~ "<app>Accerciser</app> allows you to configure plugins, global hotkeys, "
+#~ "and widget's highlighting."
+#~ msgstr ""
+#~ "V aplikaci <app>Accerciser</app> si můžete nastavit zásuvné moduly, "
+#~ "globální klávesové zkratky a zvýrazňování widgetů."
 
 #~ msgid ""
 #~ "@@image: 'figures/accerciser.png'; md5=b49b20da531257c9c88640c9bcf1eb29"
