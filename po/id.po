@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-06-20 13:33+0000\n"
-"PO-Revision-Date: 2019-07-11 13:55+0700\n"
-"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
+"POT-Creation-Date: 2019-09-23 16:13+0000\n"
+"PO-Revision-Date: 2019-11-10 14:58+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
 
 #: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
@@ -248,8 +248,8 @@ msgstr "Sumber"
 
 #. add accessible's name to buffer
 #: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:735 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:508
+#: plugins/interface_view.py:736 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
 msgstr "Nama"
@@ -290,7 +290,7 @@ msgid "0"
 msgstr "0"
 
 #: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:343 plugins/interface_view.py:863
+#: plugins/interface_view.py:344 plugins/interface_view.py:864
 msgid "(no description)"
 msgstr "(tanpa deskripsi)"
 
@@ -301,7 +301,7 @@ msgstr "(tanpa deskripsi)"
 msgid "Description"
 msgstr "Deskripsi"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:347
+#: plugins/interface_view.ui:233 plugins/interface_view.py:348
 msgid "(no ID)"
 msgstr "(tidak ada ID)"
 
@@ -449,7 +449,7 @@ msgstr "_Seleksi"
 msgid "Content type"
 msgstr "Jenis isi"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
 msgid "URI"
 msgstr "URI"
 
@@ -570,32 +570,32 @@ msgid "unknown"
 msgstr "tak dikenal"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:43
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "Penampil Antarmuka"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:46
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "Menampilkan berbagai properti antarmuka"
 
-#: plugins/interface_view.py:236
+#: plugins/interface_view.py:237
 msgid "(not implemented)"
 msgstr "(belum diterapkan)"
 
-#: plugins/interface_view.py:751
+#: plugins/interface_view.py:752
 msgid "Start"
 msgstr "Awal"
 
-#: plugins/interface_view.py:759
+#: plugins/interface_view.py:760
 msgid "End"
 msgstr "Akhir"
 
-#: plugins/interface_view.py:921
+#: plugins/interface_view.py:922
 msgid "Too many selectable children"
 msgstr "Terlalu banyak anakan yang bisa dipilih"
 
-#: plugins/interface_view.py:1268 plugins/interface_view.py:1271
+#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
 msgid "(Editable)"
 msgstr "(Dapat disunting)"
 
@@ -604,7 +604,7 @@ msgstr "(Dapat disunting)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1418
+#: plugins/interface_view.py:1425
 #, python-format
 msgid "Start: %d"
 msgstr "Awal: %d"
@@ -614,7 +614,7 @@ msgstr "Awal: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1424
+#: plugins/interface_view.py:1431
 #, python-format
 msgid "End: %d"
 msgstr "Akhir: %d"
@@ -666,7 +666,7 @@ msgid "Level"
 msgstr "Tingkat"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:518
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
 msgid "Role"
 msgstr "Tugas"
 
@@ -808,37 +808,37 @@ msgstr "_Preferensi…"
 msgid "_Contents"
 msgstr "_Isi"
 
-#: src/lib/accerciser/accessible_treeview.py:464
+#: src/lib/accerciser/accessible_treeview.py:415
 msgid "<dead>"
 msgstr "<dead>"
 
-#: src/lib/accerciser/accessible_treeview.py:525
+#: src/lib/accerciser/accessible_treeview.py:478
 msgid "Children"
 msgstr "Anak"
 
-#: src/lib/accerciser/accessible_treeview.py:554
-msgid "_Hide/Show Applications without children"
-msgstr "Sembunyik_an/Tampilkan Aplikasi tanpa anak"
+#: src/lib/accerciser/accessible_treeview.py:506
+msgid "_Show Applications without children"
+msgstr "Tampilkan Aplika_si tanpa anak"
 
-#: src/lib/accerciser/accessible_treeview.py:557
+#: src/lib/accerciser/accessible_treeview.py:509
 msgid "_Refresh Registry"
 msgstr "Sega_rkan Resgistri"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:560
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "Refresh all"
 msgstr "Menyegarkan semua"
 
 #. Translators: Refresh current tree node's children.
 #.
-#: src/lib/accerciser/accessible_treeview.py:563
+#: src/lib/accerciser/accessible_treeview.py:515
 msgid "Refresh _Node"
 msgstr "Segarkan _Noktah"
 
 #. Translators: Appears as tooltip
 #.
-#: src/lib/accerciser/accessible_treeview.py:566
+#: src/lib/accerciser/accessible_treeview.py:518
 msgid "Refresh selected node’s children"
 msgstr "Menyegarkan noktah anak yang dipilih"
 
@@ -917,7 +917,7 @@ msgstr "Warna yang mengisi kotak sorotan"
 #: src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012, 2013.\n"
+"Andika Triwidada <andika@gmail.com>, 2009-2013, 2019.\n"
 "Dirgita <dirgitadevina@yahoo.co.id>, 2010.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019."
 
@@ -1043,6 +1043,3 @@ msgstr "_Tampilan"
 #: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Ba_ntuan"
-
-#~ msgid "accerciser"
-#~ msgstr "accerciser"
