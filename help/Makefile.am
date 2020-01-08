@@ -4,18 +4,15 @@ HELP_ID= accerciser
 
 HELP_MEDIA = \
 	figures/accerciser-logo.png \
-	figures/highlighting.png \
 	figures/interface_viewer_plugin.png \
 	figures/accerciser-view.png \
 	figures/IPython_plugin.png \
 	figures/accessible_tree.png \
-	figures/plugins.png \
 	figures/api_browser.png \
 	figures/tree_view_accerciser.png \
 	figures/event_monitor_plugin.png \
 	figures/validator_app_tree.png \
-	figures/validator_report.png \
-	figures/global-hotkeys.png 
+	figures/validator_report.png 
 
 HELP_FILES = \
 	api_browser_plugin.page \
