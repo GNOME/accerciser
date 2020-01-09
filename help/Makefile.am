@@ -7,11 +7,9 @@ HELP_MEDIA = \
 	figures/interface_viewer_plugin.png \
 	figures/accerciser-view.png \
 	figures/IPython_plugin.png \
-	figures/accessible_tree.png \
 	figures/api_browser.png \
 	figures/tree_view_accerciser.png \
 	figures/event_monitor_plugin.png \
-	figures/validator_app_tree.png \
 	figures/validator_report.png 
 
 HELP_FILES = \
