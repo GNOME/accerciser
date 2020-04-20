@@ -140,6 +140,7 @@ class IterableIPShell:
     # But it definitely does not work any more with >= 7.0.0
     self.no_input_splitter = parse_version(IPython.release.version) >= parse_version('5.8.0')
     self.lines = []
+    self.indent_spaces = ''
 
   def __update_namespace(self):
     '''
@@ -178,20 +179,21 @@ class IterableIPShell:
       line = self.IP.raw_input(self.prompt)
     except KeyboardInterrupt:
       self.IP.write('\nKeyboardInterrupt\n')
-      self.IP.input_splitter.reset()
+      if self.no_input_splitter:
+        self.lines = []
+      else:
+        self.IP.input_splitter.reset()
     except:
       self.IP.showtraceback()
     else:
       if self.no_input_splitter:
         self.lines.append(line)
-        self.iter_more = self.IP.check_complete('\n'.join(self.lines))[0] == 'incomplete'
+        (status, self.indent_spaces) = self.IP.check_complete('\n'.join(self.lines))
+        self.iter_more = status == 'incomplete'
       else:
         self.IP.input_splitter.push(line)
         self.iter_more = self.IP.input_splitter.push_accepts_more()
       self.prompt = self.generatePrompt(self.iter_more)
-      if (self.IP.SyntaxTB.last_syntax_error and
-          self.IP.autoedit_syntax):
-          self.IP.edit_syntax_error()
       if not self.iter_more:
           if self.no_input_splitter:
             source_raw = '\n'.join(self.lines)
@@ -320,7 +322,7 @@ class IterableIPShell:
             return str1[:i]
         return str1
       if possibilities[1]:
-        common_prefix = reduce(_commonPrefix, possibilities[1]) or line[-1]
+        common_prefix = reduce(_commonPrefix, possibilities[1]) or split_line[-1]
         completed = line[:-len(split_line[-1])]+common_prefix
       else:
         completed = line
@@ -511,7 +513,10 @@ class ConsoleView(gtk.TextView):
     self.text_buffer.place_cursor(self.text_buffer.get_end_iter())
 
     if self.IP.rl_do_indent:
-      indentation = self.IP.input_splitter.indent_spaces * ' '
+      if self.no_input_splitter:
+        indentation = self.indent_spaces
+      else:
+        indentation = self.IP.input_splitter.indent_spaces * ' '
       self.text_buffer.insert_at_cursor(indentation)
 
   def onKeyPress(self, widget, event):
