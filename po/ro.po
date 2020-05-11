@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&component=general\n"
-"POT-Creation-Date: 2009-09-10 22:35+0000\n"
-"PO-Revision-Date: 2009-09-11 16:02+0200\n"
-"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
+"POT-Creation-Date: 2020-03-31 06:22+0000\n"
+"PO-Revision-Date: 2020-04-14 17:01+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
+"com>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -18,583 +18,708 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
+"X-Generator: Poedit 2.3\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2 ../src/lib/accerciser/main_window.py:39
-msgid "Accerciser Accessibility Explorer"
-msgstr "Exploratorul de accesibilitate Accerciser"
+#: accerciser.appdata.xml.in:7
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Explorator de accesibilitate pentru desktop-ul GNOME"
 
-#: ../accerciser.desktop.in.in.h:3
+#: accerciser.appdata.xml.in:9
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser este un explorator de accesibilitate Python interactiv pentru "
+"desktopul GNOME. Utilizează AT-SPI pentru a inspecta și controla widget-uri, "
+"permițându-vă să verificați dacă o aplicație furnizează informații corecte "
+"tehnologiilor asistive și platforme de testare automate."
+
+#: accerciser.appdata.xml.in:14
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser are un o platformă de modul simple pe care o puteți utiliza "
+"pentru a crea vizualizări personalizate a informațiilor de accesibilitate."
+
+#: accerciser.desktop.in:4
 msgid "Give your application an accessibility workout"
 msgstr "Verificați accesibilitatea aplicației dumneavoastră"
 
-#: ../accerciser.schemas.in.h:1
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: accerciser.desktop.in:6
+msgid "accessibility;development;test;"
+msgstr "accessibility;development;test;accesibilitate;dezvoltare;"
+
+#: org.a11y.Accerciser.gschema.xml:6
 msgid "A list of plugins that are disabled by default"
 msgstr "O listă a modulelor dezactivate implicit"
 
-#: ../accerciser.schemas.in.h:2
-msgid "Highlight border color"
-msgstr "Culoarea evidențierii conturului"
+#: org.a11y.Accerciser.gschema.xml:7
+msgid "A list of plugins that are disabled by default."
+msgstr "O listă a modulelor dezactivate implicit."
 
-#: ../accerciser.schemas.in.h:3
+#: org.a11y.Accerciser.gschema.xml:11
 msgid "Highlight duration"
 msgstr "Durata evidențierii"
 
-#: ../accerciser.schemas.in.h:4
+#: org.a11y.Accerciser.gschema.xml:12
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "Durata căsuței de evidențiere când se selectează noduri accesibile."
+
+#: org.a11y.Accerciser.gschema.xml:16
 msgid "Highlight fill color"
 msgstr "Culoarea de umplere a evidențierii"
 
-#: ../accerciser.schemas.in.h:5
-msgid "The color and opacity of the highlight border."
-msgstr "Culoarea și opacitatea conturului evidențierii."
-
-#: ../accerciser.schemas.in.h:6
+#: org.a11y.Accerciser.gschema.xml:17
 msgid "The color and opacity of the highlight fill."
 msgstr "Culoarea și opacitatea de umplere a evidențierii."
 
-#: ../accerciser.schemas.in.h:7
-msgid "The default plugin layout for the bottom panel"
-msgstr "Aranjamentul implicit al modulelor pentru panoul de jos"
+#: org.a11y.Accerciser.gschema.xml:21
+msgid "Highlight border color"
+msgstr "Culoarea evidențierii conturului"
 
-#: ../accerciser.schemas.in.h:8
-msgid "The default plugin layout for the top panel"
-msgstr "Aranjamentul implicit al modulelor pentru panoul de sus"
+#: org.a11y.Accerciser.gschema.xml:22
+msgid "The color and opacity of the highlight border."
+msgstr "Culoarea și opacitatea conturului evidențierii."
 
-#: ../accerciser.schemas.in.h:9
-msgid "The duration of the highlight box when selecting accessible nodes"
-msgstr "Durata căsuței de evidențiere când se selectează noduri accesibile"
+#: org.a11y.Accerciser.gschema.xml:26
+msgid "Horizontal split"
+msgstr "Separare orizontală"
 
-#: ../plugins/api_view.py:32
+#: org.a11y.Accerciser.gschema.xml:27
+msgid "Position of the horizontal split of the main window."
+msgstr "Poziția separării orizontale a ferestrei principale."
+
+#: org.a11y.Accerciser.gschema.xml:31
+msgid "Vertical split"
+msgstr "Separare verticală"
+
+#: org.a11y.Accerciser.gschema.xml:32
+msgid "Position of the vertical split of the main window."
+msgstr "Poziția separării verticale a ferestrei principale."
+
+#: org.a11y.Accerciser.gschema.xml:36
+msgid "Default window height"
+msgstr "Înălțime fereastră implicită"
+
+#: org.a11y.Accerciser.gschema.xml:37
+msgid "The window height value."
+msgstr "Valoarea înălțimii ferestrei."
+
+#: org.a11y.Accerciser.gschema.xml:41
+msgid "Default window width"
+msgstr "Lățime fereastră implicită"
+
+#: org.a11y.Accerciser.gschema.xml:42
+msgid "The window width value."
+msgstr "Valoarea lățimii ferestrei."
+
+#: org.a11y.Accerciser.gschema.xml:51
+msgid "The layout for the bottom panel"
+msgstr "Aranjamentul pentru panoul de jos"
+
+#: org.a11y.Accerciser.gschema.xml:52
+msgid "The layout for the bottom panel pluginview."
+msgstr "Aranjamentul pentru vizualizarea de modul al panoului de jos."
+
+#: org.a11y.Accerciser.gschema.xml:56
+msgid "The layout for the top panel"
+msgstr "Aranjamentul pentru panoul de top"
+
+#: org.a11y.Accerciser.gschema.xml:57
+msgid "The layout for the top panel pluginview."
+msgstr "Aranjamentul pentru vizualizarea de modul al panoului de top."
+
+#: org.a11y.Accerciser.gschema.xml:61
+msgid "Single layout view"
+msgstr "Vizualizare aranjament singulară"
+
+#: org.a11y.Accerciser.gschema.xml:62
+msgid "View plugins in a single layout."
+msgstr "Vizualizați modulele într-un singur aranjament."
+
+#: org.a11y.Accerciser.gschema.xml:66
+msgid "Available new pluginviews"
+msgstr "Vizualizări noi disponibile"
+
+#: org.a11y.Accerciser.gschema.xml:67
+msgid "This list contains all the new available pluginviews"
+msgstr "Lista conține toate vizualizările de modul disponibile noi"
+
+#: org.a11y.Accerciser.gschema.xml:73
+msgid "The pluginview layout"
+msgstr "Aranjament de vizualizare de modul"
+
+#: org.a11y.Accerciser.gschema.xml:74
+msgid "The default plugin layout for the top panel."
+msgstr "Aranjamentul implicit pentru panoul de sus."
+
+#: org.a11y.Accerciser.gschema.xml:78
+msgid "Window height"
+msgstr "Înălțime fereastră"
+
+#: org.a11y.Accerciser.gschema.xml:79
+msgid "Window height value."
+msgstr "Valoarea înălțimii ferestrei."
+
+#: org.a11y.Accerciser.gschema.xml:83
+msgid "Window width"
+msgstr "Lățimea ferestrei"
+
+#: org.a11y.Accerciser.gschema.xml:84
+msgid "Window width value."
+msgstr "Valoarea lățimii ferestrei."
+
+#: org.a11y.Accerciser.gschema.xml:90
+msgid "Hotkey combination"
+msgstr "Combinație de taste rapide"
+
+#: org.a11y.Accerciser.gschema.xml:91
+msgid "Hotkey combination for related action."
+msgstr "Combinație de taste rapide pentru acțiunea legată."
+
+#: plugins/api_view.py:32
 msgid "API Browser"
 msgstr "Navigator API"
 
-#: ../plugins/api_view.py:35
+#: plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
 msgstr "Navigare metode diverse ale elementului accesibil curent"
 
-#: ../plugins/api_view.py:66
+#: plugins/api_view.py:66
 msgid "Hide private attributes"
 msgstr "Ascunde atributele private"
 
-#: ../plugins/api_view.py:79
+#: plugins/api_view.py:79
 msgid "Method"
 msgstr "Metodă"
 
-#: ../plugins/api_view.py:88
+#: plugins/api_view.py:88
 msgid "Property"
 msgstr "Proprietate"
 
-#: ../plugins/api_view.py:93
+#: plugins/api_view.py:93
 msgid "Value"
 msgstr "Valoare"
 
-#: ../plugins/console.py:29
+#: plugins/console.py:32
 msgid "IPython Console"
 msgstr "Consolă IPython"
 
-#: ../plugins/console.py:32
+#: plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Consolă interactivă pentru manipularea accesibilelor selectate"
 
-#: ../plugins/event_monitor.ui.h:1
-msgid "<b>Event monitor</b>"
-msgstr "<b>Monitorizare evenimente</b>"
+#: plugins/event_monitor.ui:61
+msgid "Event monitor"
+msgstr "Monitor de eveniment"
 
-#: ../plugins/event_monitor.ui.h:2
-msgid "C_lear Selection"
-msgstr "E_limină selecția"
-
-#: ../plugins/event_monitor.ui.h:3
-msgid "Everything"
-msgstr "Tot"
-
-#: ../plugins/event_monitor.ui.h:4
-msgid "Selected accessible"
-msgstr "Accesibilul selectat"
-
-#: ../plugins/event_monitor.ui.h:5
-msgid "Selected application"
-msgstr "Aplicații selectate"
-
-#: ../plugins/event_monitor.ui.h:6
-msgid "Source"
-msgstr "Sursă"
-
-#: ../plugins/event_monitor.ui.h:7
+#: plugins/event_monitor.ui:114
 msgid "_Monitor Events"
 msgstr "_Monitorizare evenimente"
 
-#: ../plugins/event_monitor.py:48
+#: plugins/event_monitor.ui:224
+msgid "C_lear Selection"
+msgstr "E_limină selecția"
+
+#: plugins/event_monitor.ui:257
+msgid "Everything"
+msgstr "Tot"
+
+#: plugins/event_monitor.ui:273
+msgid "Selected application"
+msgstr "Aplicații selectate"
+
+#: plugins/event_monitor.ui:289
+msgid "Selected accessible"
+msgstr "Accesibilul selectat"
+
+#: plugins/event_monitor.ui:310
+msgid "Source"
+msgstr "Sursă"
+
+#. add accessible's name to buffer
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
+#: plugins/interface_view.py:736 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
+#: src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Nume"
+
+#: plugins/event_monitor.ui:358
+msgid "Full Name"
+msgstr "Nume complet"
+
+#: plugins/event_monitor.py:51
 msgid "Event Monitor"
 msgstr "Monitor eveniment"
 
-#: ../plugins/event_monitor.py:51
+#: plugins/event_monitor.py:54
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Afișează evenimentele așa cum apar de la tipurile și sursele selectate"
 
-#: ../plugins/event_monitor.py:61
+#: plugins/event_monitor.py:64
 msgid "Highlight last event entry"
 msgstr "Evidențiază ultima intrare de eveniment"
 
-#: ../plugins/event_monitor.py:64
+#: plugins/event_monitor.py:68
 msgid "Start/stop event recording"
 msgstr "Pornește/oprește înregistrarea de evenimente"
 
-#: ../plugins/event_monitor.py:67
+#: plugins/event_monitor.py:72
 msgid "Clear event log"
 msgstr "Șterge istoricul evenimentelor"
 
-#: ../plugins/interface_view.ui.h:1
+#: plugins/interface_view.ui:125
+msgid "Child count"
+msgstr "Contor de inferiori"
+
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
+#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
+#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
+#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
 msgid "0"
 msgstr "0"
 
-#. Component                                 size
-#: ../plugins/interface_view.ui.h:3
-msgid "0, 0"
-msgstr "0, 0"
-
-#: ../plugins/interface_view.ui.h:4
-msgid "<b>Attributes</b>"
-msgstr "<b>Atribute</b>"
-
-#: ../plugins/interface_view.ui.h:5
-msgid "<b>Child count</b>"
-msgstr "<b>Contor copii</b>"
-
-#: ../plugins/interface_view.ui.h:6
-msgid "<b>Description</b>"
-msgstr "<b>Descriere</b>"
-
-#: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>Relații</b>"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "<b>Selected Cell</b>"
-msgstr "<b>Celulă selectată</b>"
-
-#: ../plugins/interface_view.ui.h:9
-msgid "<b>States</b>"
-msgstr "<b>Stări</b>"
-
-#: ../plugins/interface_view.ui.h:10
-msgid "<b>Table Information</b>"
-msgstr "<b>Informații tabel</b>"
-
-#: ../plugins/interface_view.ui.h:11
-msgid "<b>Text</b>"
-msgstr "<b>Text</b>"
-
-#: ../plugins/interface_view.ui.h:12
-msgid "<b>unknown</b>"
-msgstr "<b>necunoscut</b>"
-
-#: ../plugins/interface_view.ui.h:13 ../plugins/interface_view.py:332
-#: ../plugins/interface_view.py:825
-msgid "<i>(no description)</i>"
-msgstr "<i>(fără descriere)</i>"
-
-#: ../plugins/interface_view.ui.h:14
-msgid "<i>Caption:</i>"
-msgstr "<i>Legendă:</i>"
-
-#. End chaacter                                                 offset of text attributes span
-#: ../plugins/interface_view.ui.h:16
-msgid "<i>End: 0</i>"
-msgstr "<i>Sfârșit: 0</i>"
-
-#. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:18
-msgid "<i>Start: 0</i>"
-msgstr "<i>Start: 0</i>"
-
-#: ../plugins/interface_view.ui.h:19
-msgid "<i>Summary:</i>"
-msgstr "<i>Sumar:</i>"
-
-#: ../plugins/interface_view.ui.h:20
-msgid "<no description>"
-msgstr "<fără descriere>"
-
-#: ../plugins/interface_view.ui.h:21
-msgid "Absolute position"
-msgstr "Poziție abolută"
-
-#: ../plugins/interface_view.ui.h:22
-msgid "Acti_on"
-msgstr "Acți_une"
-
-#: ../plugins/interface_view.ui.h:23
-msgid "Alpha"
-msgstr "Alfa"
-
-#: ../plugins/interface_view.ui.h:24
-msgid "Ap_plication"
-msgstr "A_plicație"
-
-#: ../plugins/interface_view.ui.h:25
-msgid "Co_mponent"
-msgstr "Co_mponentă"
-
-#: ../plugins/interface_view.ui.h:26
-msgid "Col_lection"
-msgstr "Co_lecție"
-
-#: ../plugins/interface_view.ui.h:27
-msgid "Column"
-msgstr "Coloană"
-
-#: ../plugins/interface_view.ui.h:28
-msgid "Columns"
-msgstr "Coloane"
-
-#: ../plugins/interface_view.ui.h:29
-msgid "Current value"
-msgstr "Valoare curentă"
-
-#: ../plugins/interface_view.ui.h:30
-msgid "Des_ktop"
-msgstr "Des_ktop"
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
+#: plugins/interface_view.py:344 plugins/interface_view.py:864
+msgid "(no description)"
+msgstr "(fără descriere)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:31 ../plugins/validate.py:214
-#: ../plugins/validate.py:277
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
 msgid "Description"
 msgstr "Descriere"
 
-#. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:33
-msgid "Extents:"
-msgstr "Extinde:"
+#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+msgid "(no ID)"
+msgstr "(fără ID)"
 
-#: ../plugins/interface_view.ui.h:34
-msgid "H_ypertext"
-msgstr "H_ypertext"
-
-#: ../plugins/interface_view.ui.h:35
-msgid "Header:"
-msgstr "Antet:"
-
-#. add url role to buffer
-#: ../plugins/interface_view.ui.h:36 ../plugins/validate.py:283
-msgid "Hyperlink"
-msgstr "Hiperlegătură"
-
-#: ../plugins/interface_view.ui.h:37
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
 msgid "ID"
 msgstr "ID"
 
-#: ../plugins/interface_view.ui.h:38
-msgid "Include defaults"
-msgstr "Include implicite"
+#: plugins/interface_view.ui:325
+msgid "States"
+msgstr "Stări"
 
-#: ../plugins/interface_view.ui.h:39
-msgid "Layer"
-msgstr "Strat"
+#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
+#: plugins/interface_view.ui:2739
+msgid "Attributes"
+msgstr "Atribute"
 
-#: ../plugins/interface_view.ui.h:40
-msgid "Lo_gin Helper"
-msgstr "_Asistent autentificare"
-
-#: ../plugins/interface_view.ui.h:41
-msgid "Locale"
-msgstr "Configurație locală"
-
-#: ../plugins/interface_view.ui.h:42
-msgid "Locale:"
-msgstr "Configurație locală:"
-
-#: ../plugins/interface_view.ui.h:43
-msgid "MDI-Z-order"
-msgstr "Ordine MDI-Z"
-
-#: ../plugins/interface_view.ui.h:44
-msgid "Maximum value"
-msgstr "Valoare maximă"
-
-#: ../plugins/interface_view.ui.h:45
-msgid "Minimum increment"
-msgstr "Increment minim"
-
-#: ../plugins/interface_view.ui.h:46
-msgid "Minimum value"
-msgstr "Valoare minimă"
-
-#: ../plugins/interface_view.ui.h:47
-msgid "Offset"
-msgstr "Decalaj"
-
-#: ../plugins/interface_view.ui.h:48
-msgid "Perform action"
-msgstr "Execută acțiunea"
-
-#: ../plugins/interface_view.ui.h:49
-msgid "Position"
-msgstr "Poziție"
-
-#: ../plugins/interface_view.ui.h:50
-msgid "Relative position"
-msgstr "Poziție relativă"
-
-#: ../plugins/interface_view.ui.h:51
-msgid "Row"
-msgstr "Rând"
-
-#: ../plugins/interface_view.ui.h:52
-msgid "Rows"
-msgstr "Rânduri"
-
-#: ../plugins/interface_view.ui.h:53
-msgid "Select All"
-msgstr "Alege tot"
-
-#: ../plugins/interface_view.ui.h:54
-msgid "Selected columns"
-msgstr "Coloane selectate"
-
-#: ../plugins/interface_view.ui.h:55
-msgid "Selected rows"
-msgstr "Rânduri selectate"
-
-#: ../plugins/interface_view.ui.h:56
+#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
 msgid "Show"
 msgstr "Afișează"
 
-#: ../plugins/interface_view.ui.h:57
-msgid "Size"
-msgstr "Mărime"
+#: plugins/interface_view.ui:551
+msgid "Relations"
+msgstr "Relații"
 
-#: ../plugins/interface_view.ui.h:58
-msgid "St_reamable Content"
-msgstr "Conținut _flux"
-
-#: ../plugins/interface_view.ui.h:59
-msgid "Te_xt"
-msgstr "Te_xt"
-
-#: ../plugins/interface_view.ui.h:60
-msgid "Toolkit"
-msgstr "Toolkit"
-
-#: ../plugins/interface_view.ui.h:61
-msgid "Val_ue"
-msgstr "Val_oare"
-
-#: ../plugins/interface_view.ui.h:62
-msgid "Version"
-msgstr "Versiune"
-
-#: ../plugins/interface_view.ui.h:63
-msgid "WIDGET"
-msgstr "WIDGET"
-
-#: ../plugins/interface_view.ui.h:64
+#: plugins/interface_view.ui:572
 msgid "_Accessible"
 msgstr "_Accesibil"
 
-#: ../plugins/interface_view.ui.h:65
+#: plugins/interface_view.ui:637
+msgid "Key binding"
+msgstr "Legare cheie"
+
+#: plugins/interface_view.ui:691
+msgid "Perform action"
+msgstr "Execută acțiunea"
+
+#: plugins/interface_view.ui:724
+msgid "Acti_on"
+msgstr "Acți_une"
+
+#: plugins/interface_view.ui:772
+msgid "Toolkit"
+msgstr "Toolkit"
+
+#: plugins/interface_view.ui:789
+msgid "Version"
+msgstr "Versiune"
+
+#: plugins/interface_view.ui:865
+msgid "Ap_plication"
+msgstr "A_plicație"
+
+#: plugins/interface_view.ui:884
+msgid "Col_lection"
+msgstr "Co_lecție"
+
+#. Screen coordinates
+#. Component size in pixels
+#. Screen coordinates
+#. Component size
+#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
+#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
+#: plugins/interface_view.ui:1525
+msgid "0, 0"
+msgstr "0, 0"
+
+#: plugins/interface_view.ui:937
+msgid "Relative position"
+msgstr "Poziție relativă"
+
+#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
+msgid "Size"
+msgstr "Mărime"
+
+#: plugins/interface_view.ui:991
+msgid "WIDGET"
+msgstr "WIDGET"
+
+#: plugins/interface_view.ui:1011
+msgid "Layer"
+msgstr "Strat"
+
+#: plugins/interface_view.ui:1048
+msgid "MDI-Z-order"
+msgstr "Ordine MDI-Z"
+
+#: plugins/interface_view.ui:1085
+msgid "Alpha"
+msgstr "Alfa"
+
+#: plugins/interface_view.ui:1120
+msgid "Absolute position"
+msgstr "Poziție abolută"
+
+#: plugins/interface_view.ui:1139
+msgid "Co_mponent"
+msgstr "Co_mponentă"
+
+#: plugins/interface_view.ui:1158
+msgid "Des_ktop"
+msgstr "Des_ktop"
+
+#: plugins/interface_view.ui:1264
+msgid "Locale:"
+msgstr "Configurație locală:"
+
+#: plugins/interface_view.ui:1305
 msgid "_Document"
 msgstr "_Document"
 
-#: ../plugins/interface_view.ui.h:66
+#. add url role to buffer
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
+msgid "Hyperlink"
+msgstr "Hiperlegătură"
+
+#: plugins/interface_view.ui:1438
+msgid "H_ypertext"
+msgstr "H_ypertext"
+
+#: plugins/interface_view.ui:1471
+msgid "Position"
+msgstr "Poziție"
+
+#: plugins/interface_view.ui:1560
+msgid "Locale"
+msgstr "Configurație locală"
+
+#: plugins/interface_view.ui:1622
 msgid "_Image"
 msgstr "_Imagine"
 
-#: ../plugins/interface_view.ui.h:67
+#: plugins/interface_view.ui:1641
+msgid "Lo_gin Helper"
+msgstr "_Asistent autentificare"
+
+#: plugins/interface_view.ui:1712
+msgid "Select All"
+msgstr "Alege tot"
+
+#: plugins/interface_view.ui:1754
 msgid "_Selection"
 msgstr "_Selecție"
 
-#: ../plugins/interface_view.ui.h:68
-msgid "_Table"
-msgstr "_Tabel"
+#: plugins/interface_view.ui:1792
+msgid "Content type"
+msgstr "Tip de conținut"
 
-#: ../plugins/interface_view.ui.h:69
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+msgid "URI"
+msgstr "URI"
+
+#: plugins/interface_view.ui:1822
+msgid "St_reamable Content"
+msgstr "Conținut _flux"
+
+#: plugins/interface_view.ui:1863
+msgid "Caption:"
+msgstr "Legendă:"
+
+#: plugins/interface_view.ui:1908
+msgid "Summary:"
+msgstr "Sumar:"
+
+#: plugins/interface_view.ui:2052
+msgid "Selected columns"
+msgstr "Coloane selectate"
+
+#: plugins/interface_view.ui:2068
+msgid "Selected rows"
+msgstr "Rânduri selectate"
+
+#: plugins/interface_view.ui:2084
+msgid "Columns"
+msgstr "Coloane"
+
+#: plugins/interface_view.ui:2100
+msgid "Rows"
+msgstr "Rânduri"
+
+#: plugins/interface_view.ui:2125
+msgid "Table Information"
+msgstr "Informații tabel"
+
+#: plugins/interface_view.ui:2171
 msgid "name (x,y)"
 msgstr "nume (x,y)"
 
+#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+msgid "Header:"
+msgstr "Antet:"
+
+#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+msgid "<no description>"
+msgstr "<fără descriere>"
+
+#. How many rows the cell spans.
+#. How many columns the cell spans.
+#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+msgid "Extents:"
+msgstr "Extinde:"
+
+#: plugins/interface_view.ui:2311
+msgid "Row"
+msgstr "Rând"
+
+#: plugins/interface_view.ui:2430
+msgid "Column"
+msgstr "Coloană"
+
+#: plugins/interface_view.ui:2448
+msgid "Selected Cell"
+msgstr "Celulă selectată"
+
+#: plugins/interface_view.ui:2472
+msgid "_Table"
+msgstr "_Tabel"
+
+#: plugins/interface_view.ui:2533
+msgid "Text"
+msgstr "Text"
+
+#: plugins/interface_view.ui:2571
+msgid "Offset"
+msgstr "Decalaj"
+
+#: plugins/interface_view.ui:2609
+msgid "Include defaults"
+msgstr "Include implicite"
+
+#. Start character offset of text attributes span
+#: plugins/interface_view.ui:2631
+msgid "Start: 0"
+msgstr "Start: 0"
+
+#. End character offset of text attributes span
+#: plugins/interface_view.ui:2649
+msgid "End: 0"
+msgstr "Sfârșit: 0"
+
+#: plugins/interface_view.ui:2763
+msgid "Te_xt"
+msgstr "Te_xt"
+
+#: plugins/interface_view.ui:2818
+msgid "Current value"
+msgstr "Valoare curentă"
+
+#: plugins/interface_view.ui:2886
+msgid "Minimum increment"
+msgstr "Increment minim"
+
+#: plugins/interface_view.ui:2901
+msgid "Maximum value"
+msgstr "Valoare maximă"
+
+#: plugins/interface_view.ui:2916
+msgid "Minimum value"
+msgstr "Valoare minimă"
+
+#: plugins/interface_view.ui:2942
+msgid "Val_ue"
+msgstr "Val_oare"
+
+#: plugins/interface_view.ui:2961
+msgid "unknown"
+msgstr "necunoscut"
+
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:38
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "Vizualizator interfață"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:41
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "Permite vizualizarea a varii proprietăți de interfață"
 
-#: ../plugins/interface_view.py:227 ../plugins/interface_view.py:229
-#: ../plugins/interface_view.py:230
+#: plugins/interface_view.py:237
 msgid "(not implemented)"
 msgstr "(neimplementat)"
 
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:701 ../plugins/validate.py:279
-#: ../src/lib/accerciser/accessible_treeview.py:389
-#: ../src/lib/accerciser/plugin/plugin_manager.py:369
-msgid "Name"
-msgstr "Nume"
-
-#: ../plugins/interface_view.py:708
-msgid "URI"
-msgstr "URI"
-
-#: ../plugins/interface_view.py:715
+#: plugins/interface_view.py:752
 msgid "Start"
 msgstr "Start"
 
-#: ../plugins/interface_view.py:722
+#: plugins/interface_view.py:760
 msgid "End"
 msgstr "Sfârșit"
 
-#: ../plugins/interface_view.py:883
+#: plugins/interface_view.py:922
 msgid "Too many selectable children"
 msgstr "Prea mulți copii selectabili"
 
-#: ../plugins/interface_view.py:1228 ../plugins/interface_view.py:1231
-msgid "<i>(Editable)</i>"
-msgstr "<i>(Editabil)</i>"
+#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
+msgid "(Editable)"
+msgstr "(Editabil)"
 
-#: ../plugins/quick_select.py:11
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: plugins/interface_view.py:1425
+#, python-format
+msgid "Start: %d"
+msgstr "Start: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: plugins/interface_view.py:1431
+#, python-format
+msgid "End: %d"
+msgstr "Sfârșit: %d"
+
+#: plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Selecție rapidă"
 
-#: ../plugins/quick_select.py:14
+#: plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Modul cu metode diverse pentru a alege rapid elementele accesibile."
 
-#: ../plugins/quick_select.py:20
+#: plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Inspectează ultimul accesibil focalizat"
 
-#: ../plugins/quick_select.py:24
+#: plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Inspectează accesibilul de sub maus"
 
-#. A Dogtail (http://people.redhat.com/zcerza/dogtail) format script.
-#: ../plugins/script_recorder.ui.h:2
-msgid "Dogtail"
-msgstr "Dogtail"
-
-#. An LDTP format script (http://ldtp.freedesktop.org/wiki)
-#: ../plugins/script_recorder.ui.h:4
-msgid "LDTP"
-msgstr "LDTP"
-
-#. A native script format.
-#: ../plugins/script_recorder.ui.h:6
-msgid "Native"
-msgstr "Nativ"
-
-#: ../plugins/script_recorder.ui.h:7
-msgid "Script Type"
-msgstr "Tip script"
-
-#: ../plugins/script_recorder.py:176
-msgid "Script Recorder"
-msgstr "Înregistrator scripturi"
-
-#: ../plugins/script_recorder.py:178
-msgid "Creates dogtail style scripts"
-msgstr "Crează scripturi de tip dogtail"
-
-#: ../plugins/script_recorder.py:342
-msgid "The current script will be lost."
-msgstr "Scriptul curent va fi pierdut."
-
-#: ../plugins/script_recorder.py:343
-msgid "Confirm clear"
-msgstr "Confirmă ștergerea"
-
-#: ../plugins/validate.ui.h:1 ../plugins/validate.py:360
-#: ../plugins/validate.py:412
-msgid "Idle"
-msgstr "Inactiv"
-
-#: ../plugins/validate.ui.h:2
+#: plugins/validate.ui:38
 msgid "Sche_ma:"
 msgstr "Sche_ma:"
 
-#: ../plugins/validate.ui.h:3
+#: plugins/validate.ui:89
 msgid "V_alidate"
 msgstr "V_alidează"
 
-#: ../plugins/validate.py:64
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+msgid "Idle"
+msgstr "Inactiv"
+
+#: plugins/validate.py:80
 msgid "No description"
 msgstr "Fără descriere"
 
-#: ../plugins/validate.py:152
+#: plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "Validator AT-SPI"
 
-#: ../plugins/validate.py:154
+#: plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Validează accesibilitatea aplicației"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:207 ../plugins/validate.py:275
+#: plugins/validate.py:223 plugins/validate.py:291
 msgid "Level"
 msgstr "Nivel"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:281 ../src/lib/accerciser/accessible_treeview.py:399
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
 msgid "Role"
 msgstr "Rol"
 
-#: ../plugins/validate.py:346
+#: plugins/validate.py:362
 msgid "Saving"
 msgstr "Se salvează"
 
-#: ../plugins/validate.py:394
+#: plugins/validate.py:413
 msgid "Validating"
 msgstr "Se validează"
 
-#: ../plugins/validate.py:550
+#: plugins/validate.py:571
 msgid "EXCEPT"
 msgstr "EXCEPȚIE"
 
-#: ../plugins/validate.py:557
+#: plugins/validate.py:578
 msgid "ERROR"
 msgstr "EROARE"
 
-#: ../plugins/validate.py:565
+#: plugins/validate.py:586
 msgid "WARN"
 msgstr "AVERTISMENT"
 
-#: ../plugins/validate.py:572
+#: plugins/validate.py:593
 msgid "INFO"
 msgstr "INFORMAȚIE"
 
-#: ../plugins/validate.py:579
+#: plugins/validate.py:600
 msgid "DEBUG"
 msgstr "DEPANARE"
 
-#: ../plugindata/validate/basic.py:8
+#: plugindata/validate/basic.py:8
 msgid "Basic"
 msgstr "De bază"
 
-#: ../plugindata/validate/basic.py:9
+#: plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
 msgstr "Testează accesibilitatea fundamentală a aplicațiilor grafice"
 
-#: ../plugindata/validate/basic.py:24
+#: plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "elementul acționabil %s nu poate fi focalizat sau selectat"
 
-#: ../plugindata/validate/basic.py:42
+#: plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "elementul interactiv %s nu poate fi acționat"
 
-#: ../plugindata/validate/basic.py:56
+#: plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "mai mult de un widget focalizat"
 
-#: ../plugindata/validate/basic.py:81
+#: plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "%s nu are interfață text"
@@ -602,12 +727,12 @@ msgstr "%s nu are interfață text"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:100
+#: plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "indexul %s din părinte nu se potrivește cu indexul copil"
 
-#: ../plugindata/validate/basic.py:145
+#: plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Lipsește reciproca pentru relația %s"
@@ -615,22 +740,23 @@ msgstr "Lipsește reciproca pentru relația %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:194
+#: plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s lipsă nume sau etichetă"
 
-#: ../plugindata/validate/basic.py:210
+#: plugindata/validate/basic.py:217
 #, python-format
-msgid "focusable %s has table interface, no selection interface"
+msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
-"elementul focalizabil %s are o interfață tabel, fără interfață de selecție"
+"elementul focalizabil %s are o interfață tabel, dar nu și o interfață de "
+"selecție"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:237
+#: plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s are starea %s fără starea %s"
@@ -638,7 +764,7 @@ msgstr "%s are starea %s fără starea %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:262
+#: plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s nu aparține unei mulțimi"
@@ -648,7 +774,7 @@ msgstr "%s nu aparține unei mulțimi"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:296
+#: plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s index %(num)d nu se potrivește cu rândul și coloana"
@@ -659,265 +785,315 @@ msgstr "%(rolename)s index %(num)d nu se potrivește cu rândul și coloana"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:326
+#: plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
 "%(rolename)s cu îndex părinte %(num1)d nu se potrivește indexului rând și "
 "coloană %(num2)d"
 
-#: ../plugindata/validate/basic.py:352
+#: plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s nu are nume sau descriere"
 
-#: ../src/lib/accerciser/accerciser.py:85
+#: src/lib/accerciser/accerciser.py:80
 msgid "_Preferences…"
 msgstr "_Preferințe…"
 
-#: ../src/lib/accerciser/accerciser.py:87
+#: src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Conținut"
 
-#: ../src/lib/accerciser/accerciser.py:129
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"Accercise nu poate vedea aplicația pe desktop. Pentru a rezolva această "
-"problemă trebuie să activați accesibilitatea desktop. Doriți să o activați "
-"acum?"
-
-#: ../src/lib/accerciser/accerciser.py:147
-msgid "Note: Changes only take effect after logout."
-msgstr "Notă: Modificările au efect doar după o nouă autentificare."
-
-#: ../src/lib/accerciser/accessible_treeview.py:345
+#: src/lib/accerciser/accessible_treeview.py:415
 msgid "<dead>"
 msgstr "<mort>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:406
+#: src/lib/accerciser/accessible_treeview.py:478
 msgid "Children"
 msgstr "Copii"
 
-#: ../src/lib/accerciser/accessible_treeview.py:435
+#: src/lib/accerciser/accessible_treeview.py:506
+msgid "_Show Applications without children"
+msgstr "_Arată aplicații fără inferiori"
+
+#: src/lib/accerciser/accessible_treeview.py:509
 msgid "_Refresh Registry"
 msgstr "_Reactualizare registru"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:438
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "Refresh all"
 msgstr "Reîncarcă tot"
 
-#. Translators: Refresh current tree node’s children.
+#. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:441
+#: src/lib/accerciser/accessible_treeview.py:515
 msgid "Refresh _Node"
 msgstr "Reîncarcă _nod"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:444
+#: src/lib/accerciser/accessible_treeview.py:518
 msgid "Refresh selected node’s children"
 msgstr "Reactualizează copii nodului selectat"
 
-#: ../src/lib/accerciser/hotkey_manager.py:220
+#: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Component"
 
-#: ../src/lib/accerciser/hotkey_manager.py:227
+#: src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Sarcină"
 
-#: ../src/lib/accerciser/hotkey_manager.py:234
+#: src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Cheie"
 
-#: ../src/lib/accerciser/hotkey_manager.py:244
+#: src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:251
+#: src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:258
+#: src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:73
+#: src/lib/accerciser/main_window.py:43
+msgid "Accerciser Accessibility Explorer"
+msgstr "Exploratorul de accesibilitate Accerciser"
+
+#: src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Panou sus"
 
-#: ../src/lib/accerciser/main_window.py:74
+#: src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Panou jos"
 
-#: ../src/lib/accerciser/prefs_dialog.py:34
+#: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr "Preferințe accersizer"
+msgstr "Preferințe accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:40
+#: src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Module"
 
-#: ../src/lib/accerciser/prefs_dialog.py:41
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Taste rapide globale"
 
-#: ../src/lib/accerciser/prefs_dialog.py:49
+#: src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Subliniere"
 
-#: ../src/lib/accerciser/prefs_dialog.py:81
+#: src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Durată subliniere:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:89
+#: src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Culoare margine:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:92
+#: src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "Culoarea marginii zonei de subliniere"
 
-#: ../src/lib/accerciser/prefs_dialog.py:93
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Culoare umplere:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:96
+#: src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "Culoarea de umplere a zonei de subliniere"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "Adi Roiban\n"
-"Lucian Adrian Grijincu"
+"Lucian Adrian Grijincu\n"
+"Florentina Mușat <emryslokasdottir [at] gmail [dot] com>, 2020"
 
-#: ../src/lib/accerciser/about_dialog.py:53
+#: src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Un navigator de accesibilitate interactiv Python"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser drepturi de autor © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License. See the COPYING and NOTICE files for details."
 msgstr ""
-"Noua licență BSD. Pentru detalii consultați fișierele COPYING și NOTICE"
+"Noua licență BSD. Pentru detalii consultați fișierele COPYING și NOTICE."
 
-#: ../src/lib/accerciser/about_dialog.py:58
+#: src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Pagina web"
 
-#: ../src/lib/accerciser/bookmarks.py:62
+#: src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark…"
 msgstr "_Adaugă favorit…"
 
-#: ../src/lib/accerciser/bookmarks.py:63
+#: src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Favorit element accesibil selectat."
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks…"
 msgstr "Modificar_e favorite…"
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Administrare favorite."
 
-#: ../src/lib/accerciser/bookmarks.py:323
+#: src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks…"
 msgstr "Editare favorite…"
 
-#: ../src/lib/accerciser/bookmarks.py:427
+#: src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Titlu"
 
-#: ../src/lib/accerciser/bookmarks.py:435
+#: src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Aplicație"
 
-#: ../src/lib/accerciser/bookmarks.py:443
+#: src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Cale"
 
-#: ../src/lib/accerciser/bookmarks.py:512
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark…"
 msgstr "Adaugă favorit…"
 
-#: ../src/lib/accerciser/bookmarks.py:525
+#: src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Titlu:"
 
-#: ../src/lib/accerciser/bookmarks.py:528
+#: src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Aplicație:"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Cale:"
 
-#: ../src/lib/accerciser/plugin/message.py:148
+#: src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Eroare modul"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:378
+#: src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Vizualizare"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:455
+#: src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Fără vizualizare"
 
-#: ../src/lib/accerciser/plugin/view.py:369
+#: src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "Vizualizare _singulară modul"
 
-#: ../src/lib/accerciser/plugin/view.py:758
+#: src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Vizualizare modul"
 
-#: ../src/lib/accerciser/plugin/view.py:761
+#: src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Vizualizare modul (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1029
-msgid "<i>_New view…</i>"
-msgstr "<i>Vizualizare _nouă…</i>"
+#: src/lib/accerciser/plugin/view.py:1074
+msgid "_New view…"
+msgstr "Vizualizare _nouă…"
 
-#: ../src/lib/accerciser/plugin/view.py:1085
+#: src/lib/accerciser/plugin/view.py:1130
 msgid "New View…"
 msgstr "Vizualizare nouă…"
 
-#: ../src/lib/accerciser/ui_manager.py:20
+#: src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Fișier"
 
-#: ../src/lib/accerciser/ui_manager.py:21
+#: src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Editare"
 
-#: ../src/lib/accerciser/ui_manager.py:22
+#: src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Favorite"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Vizualizare"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "_Ajutor"
+
+#~ msgid "<b>Event monitor</b>"
+#~ msgstr "<b>Monitorizare evenimente</b>"
+
+#~ msgid "<b>Description</b>"
+#~ msgstr "<b>Descriere</b>"
+
+#~ msgid "<b>Text</b>"
+#~ msgstr "<b>Text</b>"
+
+#~ msgid "<i>(no description)</i>"
+#~ msgstr "<i>(fără descriere)</i>"
+
+#~ msgid "<i>Start: 0</i>"
+#~ msgstr "<i>Start: 0</i>"
+
+#~ msgid "Dogtail"
+#~ msgstr "Dogtail"
+
+#~ msgid "LDTP"
+#~ msgstr "LDTP"
+
+#~ msgid "Native"
+#~ msgstr "Nativ"
+
+#~ msgid "Script Type"
+#~ msgstr "Tip script"
+
+#~ msgid "Script Recorder"
+#~ msgstr "Înregistrator scripturi"
+
+#~ msgid "Creates dogtail style scripts"
+#~ msgstr "Crează scripturi de tip dogtail"
+
+#~ msgid "The current script will be lost."
+#~ msgstr "Scriptul curent va fi pierdut."
+
+#~ msgid "Confirm clear"
+#~ msgstr "Confirmă ștergerea"
+
+#~ msgid ""
+#~ "Accerciser could not see the applications on your desktop.  You must "
+#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
+#~ "it now?"
+#~ msgstr ""
+#~ "Accercise nu poate vedea aplicația pe desktop. Pentru a rezolva această "
+#~ "problemă trebuie să activați accesibilitatea desktop. Doriți să o "
+#~ "activați acum?"
+
+#~ msgid "Note: Changes only take effect after logout."
+#~ msgstr "Notă: Modificările au efect doar după o nouă autentificare."
+
+#~ msgid "<i>_New view…</i>"
+#~ msgstr "<i>Vizualizare _nouă…</i>"
