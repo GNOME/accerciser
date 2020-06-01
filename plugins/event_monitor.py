@@ -22,6 +22,7 @@ import os.path
 import gettext, os, sys, locale
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_, DOMAIN
+from accerciser import node
 
 UI_FILE = os.path.join(os.path.dirname(__file__), 
                        'event_monitor.ui')
@@ -334,6 +335,18 @@ class EventMonitor(ViewportPlugin):
         hyperlink = self._createHyperlink(event.sender)
         self._writeText(str(event.sender), hyperlink)
     self._writeText('\n')
+    if event.type == "screen-reader:region-changed":
+        try:
+            text = event.source.queryText()
+            (x, y, width, height) = text.getRangeExtents(event.detail1, event.detail2, pyatspi.DESKTOP_COORDS)
+            if width > 0 and height > 0:
+                ah = node._HighLight(x, y, width, height,
+                                     node.FILL_COLOR, node.FILL_ALPHA,
+                                     node.BORDER_COLOR, node.BORDER_ALPHA,
+                                     2.0, 0)
+                ah.highlight(node.HL_DURATION)
+        except:
+            pass
 
   def _writeText(self, text, *tags):
     '''
