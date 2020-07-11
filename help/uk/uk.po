@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"POT-Creation-Date: 2020-03-31 06:22+0000\n"
-"PO-Revision-Date: 2020-06-28 20:46+0300\n"
+"POT-Creation-Date: 2020-07-04 19:29+0000\n"
+"PO-Revision-Date: 2020-07-11 20:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -21,14 +21,12 @@ msgstr ""
 "X-Generator: Lokalize 20.07.70\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
-#| msgid "translator-credits"
 msgctxt "_"
 msgid "translator-credits"
 msgstr "Wanderlust <wanderlust@ukr.net>, 2009"
 
 #. (itstool) path: info/title
 #: C/api_browser_plugin.page:4
-#| msgid "API Browser"
 msgctxt "sort"
 msgid "1. API Browser Plugin"
 msgstr "1. Додаток навігатора програмного інтерфейсу (API)"
@@ -36,7 +34,7 @@ msgstr "1. Додаток навігатора програмного інтер
 #. (itstool) path: info/desc
 #: C/api_browser_plugin.page:6
 msgid "Verifying interfaces, methods, and properties"
-msgstr ""
+msgstr "Перевірка інтерфейсів, методів та властивостей"
 
 #. (itstool) path: credit/name
 #: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10
@@ -45,7 +43,6 @@ msgstr ""
 #: C/interface_viewer_plugin.page:10 C/introduction.page:10
 #: C/ipython_plugin.page:10 C/preferences.page:10 C/quick_select_plugin.page:10
 #: C/validator_plugin.page:10
-#| msgid "Isaacson"
 msgid "Eitan Isaacson"
 msgstr "Eitan Isaacson"
 
@@ -56,7 +53,6 @@ msgstr "Eitan Isaacson"
 #: C/interface_viewer_plugin.page:14 C/introduction.page:14
 #: C/ipython_plugin.page:14 C/preferences.page:14 C/quick_select_plugin.page:14
 #: C/validator_plugin.page:14
-#| msgid "Parente"
 msgid "Peter Parente"
 msgstr "Peter Parente"
 
@@ -68,7 +64,7 @@ msgstr "Peter Parente"
 #: C/ipython_plugin.page:18 C/preferences.page:18 C/quick_select_plugin.page:18
 #: C/validator_plugin.page:18
 msgid "Aline Bessa"
-msgstr ""
+msgstr "Aline Bessa"
 
 #. (itstool) path: license/p
 #: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22
@@ -83,7 +79,6 @@ msgstr "Creative Commons Share Alike 3.0"
 #. (itstool) path: page/title
 #. (itstool) path: figure/title
 #: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
-#| msgid "API Browser"
 msgid "API Browser Plugin"
 msgstr "Додаток навігатора програмного інтерфейсу (API)"
 
@@ -94,17 +89,19 @@ msgid ""
 "\">Application Tree View</link>, the API Browser Plugin shows its "
 "implemented AT-SPI interfaces along with its methods and properties."
 msgstr ""
+"Якщо позначено доступний віджет на <link xref=\"desktop_tree_view\">панелі"
+" ієрархії програм</link>, додаток навігатора програмним інтерфейсом покаже"
+" його реалізовані інтерфейси AT-SPI разом з їхніми методами та властивостями."
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
 #: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
-#| msgid ""
-#| "This plugin shows the interfaces, methods, and attributes supported by "
-#| "the accessible selected in the tree view."
 msgid ""
 "The API Browser Plugin allows you to verify interfaces, methods, and "
 "properties of a target accessible widget in an application."
 msgstr ""
+"За допомогою додатка навігатора програмним інтерфейсом ви можете вивчати"
+" інтерфейси, методи та властивості цільового доступного віджета у програмі."
 
 #. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
@@ -121,7 +118,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/api_browser_plugin.page:46
 msgid "Running the API Browser Plugin"
-msgstr ""
+msgstr "Робота із додатком навігації програмним інтерфейсом"
 
 #. (itstool) path: section/p
 #: C/api_browser_plugin.page:47
@@ -131,6 +128,10 @@ msgid ""
 "application's interface, so you can be sure whether a certain widget were "
 "the one you were looking for."
 msgstr ""
+"Щоб запустити додаток навігатора програмним інтерфейсом, виберіть доступний"
+" віджет на панелі ієрархії програм. Подвійне клацання на віджеті підсвітить"
+" його у інтерфейсі програми, отже ви зможете бути певні, що певний віджет є"
+" саме тим, який ви шукаєте."
 
 #. (itstool) path: section/p
 #: C/api_browser_plugin.page:53
@@ -140,6 +141,11 @@ msgid ""
 "leftmost column. All public properties, with their corresponding values, "
 "will be listed in the plugin's rightmost column."
 msgstr ""
+"Після цього виберіть один із інтерфейсів віджета зі спадного списку. У"
+" найлівішому стовпчику панелі додатка буде показано список усіх відкритих"
+" (piublic) методів вибраного інтерфейсу. Усі відкриті властивості, разом із"
+" їхніми відповідними значеннями, буде показано у списку найправішого"
+" стовпчика панелі додатка."
 
 #. (itstool) path: section/p
 #: C/api_browser_plugin.page:59
@@ -148,23 +154,27 @@ msgid ""
 "see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
 "To hide them again, re-select this checkbox."
 msgstr ""
+"Типово, додаток навігації програмним інтерфейсом приховує закриті (private)"
+" методи і властивості. Щоб переглянути їхній список, зніміть позначку з"
+" пункту <cmd>Приховувати внутрішні атрибути</cmd>. Щоб приховати їх знову,"
+" знову позначте цей пункт."
 
 #. (itstool) path: info/title
 #: C/desktop_tree_view.page:4
 msgctxt "sort"
 msgid "1. Application Tree View"
-msgstr ""
+msgstr "1. Панель ієрархії програм"
 
 #. (itstool) path: info/desc
 #: C/desktop_tree_view.page:6
 msgid "Exploring the accessible hierarchy of the desktop"
-msgstr ""
+msgstr "Вивчення доступної ієрархії стільниці"
 
 #. (itstool) path: page/title
 #. (itstool) path: figure/title
 #: C/desktop_tree_view.page:25 C/desktop_tree_view.page:37
 msgid "Application Tree View"
-msgstr ""
+msgstr "Панель ієрархії програм"
 
 #. (itstool) path: page/p
 #: C/desktop_tree_view.page:27
@@ -177,6 +187,15 @@ msgid ""
 "SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
 "represents each one of them as a hierarchical structure with expanding nodes."
 msgstr ""
+"У інтерфейсі <app>Accerciser</app> міститься панель ієрархічного перегляду, а"
+" саме «Панель ієрархії програм», на якій буде показано усіх доступні"
+" програми, які зараз запущено у графічній стільниці. Щоб створити цю панель"
+" ієрархічного перегляду, <app>Accerciser</app> використовує фонову службу"
+" реєстру AT-SPI. Ця фонова служба відповідає за стеження за усіма доступними"
+" програмами у стільничному середовищі і переспрямовування подій графічного"
+" сервера X через D-Bus AT-SPI. Після отримання усіх доступних програм, <app"
+">Accerciser</app> покаже усі з них у форматі ієрархічної структури із"
+" придатними до розгортання вузлами."
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
@@ -186,6 +205,9 @@ msgid ""
 "each accessible application running on the desktop as a widget hierarchical "
 "structure."
 msgstr ""
+"На панелі ієрархії програм <app>Accerciser</app> є інтерфейсом кожної"
+" доступної програми, які запущено у стільничному середовищі, у форматі"
+" ієрархічної структури віджетів."
 
 #. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
@@ -210,26 +232,26 @@ msgid ""
 "For each node, <app>Accerciser</app> provides some basic information, such "
 "as its name, role and number of children."
 msgstr ""
+"Першим вузлом кожної програми на цій панелі ієрархічного перегляду є вузол"
+" самої програми. Після розгортання вузла ви побачите усі дочірні віджети, що"
+" уможливлює ієрархічний перегляд інтерфейсу програми. Для кожного вузла <app"
+">Accerciser</app> надає деяку базову інформацію, зокрема його назву, роль та"
+" кількість дочірніх об'єктів."
 
 #. (itstool) path: note/p
 #: C/desktop_tree_view.page:56
 msgid "Be aware that nodes with many children take a long time to expand."
 msgstr ""
+"Зверніть увагу на те, що розгортання вузлів із багатьма дочірніми об'єктами"
+" може бути доволі тривалим."
 
 #. (itstool) path: section/title
 #: C/desktop_tree_view.page:62
 msgid "Bookmarking items in the Application Tree View"
-msgstr ""
+msgstr "Створення закладок на записи на панелі ієрархії програм"
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:63
-#| msgid ""
-#| "Accerciser allows bookmarking selected accessibles for later examining. "
-#| "This could be helpful if the target application must be restarted, for "
-#| "example after rebuilding it. To bookmark the currently selected "
-#| "accessible do <menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add "
-#| "Bookmark...</guimenuitem></menuchoice> or press "
-#| "<keycombo><keycap>Control</keycap><keycap>d</keycap></keycombo>."
 msgid ""
 "<app>Accerciser</app> allows bookmarking items in the Application Tree View "
 "for later examining. This is helpful when the target application must be "
@@ -237,21 +259,15 @@ msgid ""
 "and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
 "<keyseq><key>Ctrl</key><key>d</key></keyseq>."
 msgstr ""
-"<app>Accerciser</app> дозволяє створювати закладки з панелі ієрархії програм"
-" для подальшого "
-"аналізу. Така функція може бути корисною, якщо кінцева програма повинна "
-"перезапуститися, наприклад після повторної компіляції. Для створення "
-"закладки позначте пункт і скористайтеся пунктом меню <guiseq><gui>Закладки<"
-"/gui><gui>Додати закладку</gui></guiseq> або натисніть комбінацію клавіш "
-"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
+"<app>Accerciser</app> дозволяє створювати закладки з панелі ієрархії програм "
+"для подальшого аналізу. Така функція може бути корисною, якщо кінцева "
+"програма повинна перезапуститися, наприклад після повторної компіляції. Для "
+"створення закладки позначте пункт і скористайтеся пунктом меню "
+"<guiseq><gui>Закладки</gui><gui>Додати закладку</gui></guiseq> або натисніть "
+"комбінацію клавіш <keyseq><key>Ctrl</key><key>d</key></keyseq>."
 
 #. (itstool) path: section/p
 #: C/desktop_tree_view.page:68
-#| msgid ""
-#| "Bookmarks to accessibles in Accerciser are defined by an application name "
-#| "and a \"path\" in the application's internal accessible hierarchy to the "
-#| "bookmarked accessible. When the target application is in a different "
-#| "state (ie. multiple top level frames) the path might not be correct."
 msgid ""
 "Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
 "application name and a \"path\" in the application's internal accessible "
@@ -260,17 +276,16 @@ msgid ""
 "correct. Bookmarks could be managed by accessing the bookmark editing dialog "
 "through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
-"Закладки на доступні об'єкти у <app>Accerciser</app> визначаються іменем"
-" програми та \"шляхом\" "
-"у внутрішній ієрархії об'єктів програми до закладеного об'єкту. Коли кінцева "
-"програма перебуває у іншому стані (напр. декілька рамок верхнього рівня) "
-"шлях може бути невірним. Доступ до керування закладками можна отримати за"
-" допомогою діалогового вікна редагування закладок, яке відкривається пунктом"
-" меню <guiseq><gui>Закладки</gui><gui>Редагувати закладки</gui></guiseq>."
+"Закладки на доступні об'єкти у <app>Accerciser</app> визначаються іменем "
+"програми та \"шляхом\" у внутрішній ієрархії об'єктів програми до "
+"закладеного об'єкту. Коли кінцева програма перебуває у іншому стані (напр. "
+"декілька рамок верхнього рівня) шлях може бути невірним. Доступ до керування "
+"закладками можна отримати за допомогою діалогового вікна редагування "
+"закладок, яке відкривається пунктом меню <guiseq><gui>Закладки</"
+"gui><gui>Редагувати закладки</gui></guiseq>."
 
 #. (itstool) path: info/title
 #: C/event_monitor_plugin.page:4
-#| msgid "Event Monitor"
 msgctxt "sort"
 msgid "4. Event Monitor Plugin"
 msgstr "4. Додаток монітора подій"
@@ -278,12 +293,11 @@ msgstr "4. Додаток монітора подій"
 #. (itstool) path: info/desc
 #: C/event_monitor_plugin.page:6
 msgid "Monitoring accessible events as they occur"
-msgstr ""
+msgstr "Стеження за доступними подіями за створенням"
 
 #. (itstool) path: page/title
 #. (itstool) path: figure/title
 #: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
-#| msgid "Event Monitor"
 msgid "Event Monitor Plugin"
 msgstr "Додаток монітора подій"
 
@@ -298,6 +312,13 @@ msgid ""
 "application's interface and verify which accessible widgets are related to "
 "which AT-SPI events."
 msgstr ""
+"Додаток спостереження за подіями надає вам змогу переглядати <link"
+" href=\"http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-ev"
+"ents.html\">події AT-SPI</link>, які трапляються у програмах, показаних у <"
+"app>Accerciser</app> на <link xref=\"desktop_tree_view\">панелі перегляду"
+" ієрархії програм</link>. Цей додаток корисний для вивчення динаміки"
+" інтефейсу програм і перевірки того, які доступні віджети пов'язано із"
+" різними подіями AT-SPI."
 
 #. (itstool) path: figure/desc
 #. (itstool) path: media/p
@@ -306,6 +327,8 @@ msgid ""
 "The Event Monitor Plugin allows you to view AT-SPI events and match them "
 "with accessible widgets."
 msgstr ""
+"За допомогою додатка спостереження за подіями ви можете переглядати події"
+" AT-SPI і пов'язувати їх із доступними віджетами."
 
 #. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
@@ -324,7 +347,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/event_monitor_plugin.page:49
 msgid "Running the Event Monitor Plugin"
-msgstr ""
+msgstr "Робота із додатком стеження за подіями"
 
 #. (itstool) path: section/p
 #: C/event_monitor_plugin.page:50
@@ -332,6 +355,9 @@ msgid ""
 "When you open the Event Monitor Plugin, you see a list of checkboxes "
 "representing all the different AT-SPI event classes covered by the plugin:"
 msgstr ""
+"Після відкриття вікна додатка спостереження за подіями ви побачите список"
+" пунктів із позначками, які відповідають різним класам подій AT-SPI, з якими"
+" може працювати додаток:"
 
 #. (itstool) path: item/p
 #: C/event_monitor_plugin.page:58
@@ -371,6 +397,10 @@ msgid ""
 "refine your selection by expanding them and checking only the event types "
 "you really care about."
 msgstr ""
+"Якщо ви позначите певний пункт, додаток стежитиме за усіма типами подій із"
+" відповідного класу. Класи буде показано у форматі ієрархічних структур."
+" Таким чином, ви зможете звузити вибір, розгорнувши структуру і позначивши у"
+" ній лише ті типи подій, які вам цікаві."
 
 #. (itstool) path: section/p
 #: C/event_monitor_plugin.page:95
@@ -379,12 +409,17 @@ msgid ""
 "<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
 "selected event types, press the <cmd>Clear Selection</cmd> button."
 msgstr ""
+"Якщо ви хочете стежити за усіма можливими типами подій AT-SPI, натисніть"
+" кнопку <cmd>Виділити все</cmd>. Так само, якщо хочете зняти позначення з"
+" усіх позначених типів подій, натисніть кнопку <cmd>Очистити виділене</cmd>."
 
 #. (itstool) path: note/p
 #: C/event_monitor_plugin.page:102
 msgid ""
 "Selecting only a few event types per monitoring gives you a clearer output."
 msgstr ""
+"Вибір лише декількох типів подій для спостереження надасть вам змогу"
+" зосередити на них увагу."
 
 #. (itstool) path: section/p
 #: C/event_monitor_plugin.page:107
@@ -429,11 +464,10 @@ msgstr ""
 #: C/howto_setting_up_accerciser.page:5
 msgctxt "sort"
 msgid "2. How to install and run <app>Accerciser</app>"
-msgstr ""
+msgstr "2. Як встановити і запустити <app>Accerciser</app>"
 
 #. (itstool) path: info/title
 #: C/howto_setting_up_accerciser.page:6
-#| msgid "To Start <application>Accerciser</application>"
 msgctxt "link"
 msgid "Setting up <app>Accerciser</app>"
 msgstr "Налаштовування <app>Accerciser</app>"
@@ -441,11 +475,10 @@ msgstr "Налаштовування <app>Accerciser</app>"
 #. (itstool) path: info/desc
 #: C/howto_setting_up_accerciser.page:7
 msgid "Installing and running <app>Accerciser</app> on your system"
-msgstr ""
+msgstr "Встановлення та запуск <app>Accerciser</app> у вашій системі"
 
 #. (itstool) path: page/title
 #: C/howto_setting_up_accerciser.page:26
-#| msgid "To Start <application>Accerciser</application>"
 msgid "Setting up <app>Accerciser</app>"
 msgstr "Налаштовування <app>Accerciser</app>"
 
@@ -460,7 +493,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/howto_setting_up_accerciser.page:35
 msgid "Installing <app>Accerciser</app> manually"
-msgstr ""
+msgstr "Встановлення <app>Accerciser</app> вручну"
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:36
@@ -478,37 +511,36 @@ msgid ""
 "If you are not using GNOME 3, you may find that <app>Accerciser</app> "
 "version 3 or later is not compatible with your environment."
 msgstr ""
+"Якщо ви не користуєтеся GNOME 3, ви можете виявити, що <app>Accerciser</app>"
+" версії 3 і новіших версій є несумісним із вашим середовищем."
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:50
-#| msgid ""
-#| "The main <application>Accerciser</application> window contains the "
-#| "following elements:"
 msgid ""
 "After getting <app>Accerciser</app>, install it using the following commands:"
 msgstr ""
-"Після отримання <app>Accerciser</app> встановіть програму за допомогою таких"
-" команд:"
+"Після отримання <app>Accerciser</app> встановіть програму за допомогою таких "
+"команд:"
 
 #. (itstool) path: item/p
 #: C/howto_setting_up_accerciser.page:54
 msgid "<cmd>cd accerciser</cmd>"
-msgstr ""
+msgstr "<cmd>cd accerciser</cmd>"
 
 #. (itstool) path: item/p
 #: C/howto_setting_up_accerciser.page:55
 msgid "<cmd>./autogen.sh # or ./configure for first time installation</cmd>"
-msgstr ""
+msgstr "<cmd>./autogen.sh # або ./configure для встановлення уперше</cmd>"
 
 #. (itstool) path: item/p
 #: C/howto_setting_up_accerciser.page:56
 msgid "<cmd>make</cmd>"
-msgstr ""
+msgstr "<cmd>make</cmd>"
 
 #. (itstool) path: item/p
 #: C/howto_setting_up_accerciser.page:57
 msgid "<cmd>sudo make install # or make install as root</cmd>"
-msgstr ""
+msgstr "<cmd>sudo make install # або make install від імені root</cmd>"
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:59
@@ -521,7 +553,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/howto_setting_up_accerciser.page:67
-#| msgid "About <application>Accerciser</application>"
 msgid "Running <app>Accerciser</app>"
 msgstr "Запуск <app>Accerciser</app>"
 
@@ -531,6 +562,9 @@ msgid ""
 "To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
 "window or within the Run dialog and then press <key>Return</key>."
 msgstr ""
+"Щоб запустити <app>Accerciser</app>, введіть команду <cmd>accerciser</cmd> у"
+" вікні термінала або у діалоговому вікні «Запустити», а потім натисніть"
+" клавішу <key>Enter</key>."
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:72
@@ -545,16 +579,16 @@ msgstr ""
 #: C/howto_write_a_plugin.page:4
 msgctxt "sort"
 msgid "3. Writing New Plugins"
-msgstr ""
+msgstr "3. Написання нових додатків"
 
 #. (itstool) path: info/desc
 #: C/howto_write_a_plugin.page:6
 msgid "Extending <app>Accerciser</app> with your desired functionalities"
 msgstr ""
+"Розширення можливостей <app>Accerciser</app> бажаними для вас функціями"
 
 #. (itstool) path: page/title
 #: C/howto_write_a_plugin.page:25
-#| msgid "When You Start <application>Accerciser</application>"
 msgid "Writing Plugins for <app>Accerciser</app>"
 msgstr "Написання додатків до <app>Accerciser</app>"
 
@@ -572,6 +606,7 @@ msgstr ""
 #: C/howto_write_a_plugin.page:33
 msgid "<app>Accerciser</app> supports three basic types of plugins:"
 msgstr ""
+"В <app>Accerciser</app> передбачено підтримку трьох базових типів додатків:"
 
 #. (itstool) path: item/p
 #: C/howto_write_a_plugin.page:38
@@ -599,7 +634,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/howto_write_a_plugin.page:58
 msgid "Creating a Base Plugin"
-msgstr ""
+msgstr "Створення базового додатка"
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:59
@@ -625,6 +660,11 @@ msgid ""
 "      import pyatspi\n"
 "    "
 msgstr ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:71
@@ -643,6 +683,11 @@ msgid ""
 "        plugin_description = 'Allows selecting last focused accessible.'\n"
 "    "
 msgstr ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:80
@@ -668,6 +713,16 @@ msgid ""
 "        self.last_focused = None\n"
 "    "
 msgstr ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged,"
+" 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:95
@@ -696,6 +751,11 @@ msgid ""
 "          self.last_focused = event.source\n"
 "    "
 msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:109
@@ -714,11 +774,16 @@ msgid ""
 "          self.node.update(self.last_focused)\n"
 "    "
 msgstr ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
 
 #. (itstool) path: section/title
 #: C/howto_write_a_plugin.page:120
 msgid "Creating a Console Plugin"
-msgstr ""
+msgstr "Створення консольного додатка"
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:121
@@ -744,6 +809,10 @@ msgid ""
 "      import pyatspi\n"
 "    "
 msgstr ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:134
@@ -760,6 +829,11 @@ msgid ""
 "        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
 "    "
 msgstr ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:142
@@ -776,6 +850,11 @@ msgid ""
 " 'focus')\n"
 "    "
 msgstr ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged,"
+" 'focus')\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:149
@@ -792,11 +871,16 @@ msgid ""
 "          self.appendText(str(event)+'\\n')\n"
 "    "
 msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
 
 #. (itstool) path: section/title
 #: C/howto_write_a_plugin.page:159
 msgid "Creating a Viewport Plugin"
-msgstr ""
+msgstr "Створення додатка панелі перегляду"
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:160
@@ -821,6 +905,10 @@ msgid ""
 "      from accerciser.plugin import ViewportPlugin\n"
 "    "
 msgstr ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:173
@@ -838,6 +926,12 @@ msgid ""
 " accessibles.'\n"
 "    "
 msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant"
+" accessibles.'\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:181
@@ -866,6 +960,17 @@ msgid ""
 "         self.show_all()\n"
 "    "
 msgstr ""
+"\n"
+"       def init(self):\n"
+"         alignment = gtk.Alignment(0.5,0.5,0,0)\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         alignment.add(self.click_button)\n"
+"         self.plugin_area.add(alignment)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:199
@@ -890,6 +995,16 @@ msgid ""
 "       return action_names\n"
 "    "
 msgstr ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:214
@@ -910,6 +1025,11 @@ msgid ""
 "         self.click_button.set_sensitive(has_click)\n"
 "    "
 msgstr ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
 
 #. (itstool) path: section/p
 #: C/howto_write_a_plugin.page:224
@@ -931,24 +1051,27 @@ msgid ""
 "        ai.doAction(action_names.index('click'))\n"
 "    "
 msgstr ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
 
 #. (itstool) path: info/title
 #: C/index.page:6
-#| msgid "Accerciser"
 msgctxt "text"
 msgid "Accerciser"
 msgstr "Accerciser"
 
 #. (itstool) path: info/title
 #: C/index.page:7
-#| msgid "About <application>Accerciser</application>"
 msgctxt "link"
 msgid "Introduction to <app>Accerciser</app>"
 msgstr "Вступ до <app>Accerciser</app>"
 
 #. (itstool) path: media/span
 #: C/index.page:26
-#| msgid "About <application>Accerciser</application>"
 msgid "<app>Accerciser</app>'s logo"
 msgstr "Логотип <app>Accerciser</app>"
 
@@ -985,7 +1108,6 @@ msgstr "Додаткові теми"
 
 #. (itstool) path: info/title
 #: C/interface_viewer_plugin.page:4
-#| msgid "Interface Viewer"
 msgctxt "sort"
 msgid "2. Interface Viewer Plugin"
 msgstr "2. Додаток перегляду інтерфейсу"
@@ -997,7 +1119,6 @@ msgstr ""
 
 #. (itstool) path: page/title
 #: C/interface_viewer_plugin.page:25
-#| msgid "Interface Viewer"
 msgid "Interface Viewer Plugin"
 msgstr "Додаток перегляду інтерфейсу"
 
@@ -1043,7 +1164,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/interface_viewer_plugin.page:49
-#| msgid "Interface Viewer"
 msgid "Running the Interface Viewer Plugin"
 msgstr "Запуск додатка перегляду інтерфейсу"
 
@@ -1168,7 +1288,6 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/introduction.page:5
-#| msgid "Accerciser"
 msgctxt "sort"
 msgid "1. What is Accerciser?"
 msgstr "1. Для чого призначено Accerciser?"
@@ -1180,21 +1299,11 @@ msgstr "Інтерактивний оглядач підтримки допом�
 
 #. (itstool) path: page/title
 #: C/introduction.page:25
-#| msgid "When You Start <application>Accerciser</application>"
 msgid "What is <app>Accerciser</app>?"
 msgstr "Для чого призначено <app>Accerciser</app>?"
 
 #. (itstool) path: page/p
 #: C/introduction.page:26
-#| msgid ""
-#| "<application>Accerciser</application> is an interactive Python "
-#| "accessibility explorer for the GNOME desktop. It uses <ulink url=\"http://"
-#| "directory.fsf.org/at-spi.html\" type=\"http\">AT-SPI</ulink> to inspect "
-#| "and control widgets, allowing you to check if an application is providing "
-#| "correct information to assistive technologies and automated test "
-#| "frameworks. <application>Accerciser</application> has a simple plugin "
-#| "framework which you can use to create custom views of accessibility "
-#| "information."
 msgid ""
 "<app>Accerciser</app> is an interactive Python accessibility explorer. It "
 "uses the AT-SPI library to inspect, examine, and interact with widgets, "
@@ -1203,14 +1312,13 @@ msgid ""
 "app> comes with a set of plugins that you can use to create custom views of "
 "accessibility information."
 msgstr ""
-"<app>Accerciser</app> є інтерактивним провідником по "
-"елементах доступності, який створено за допомогою Python. Він "
-"використовує бібліотеку «Постачальника послуг інтерфейсу зручних технологій»"
-" (AT-SPI) для "
+"<app>Accerciser</app> є інтерактивним провідником по елементах доступності, "
+"який створено за допомогою Python. Він використовує бібліотеку "
+"«Постачальника послуг інтерфейсу зручних технологій» (AT-SPI) для "
 "спостереження та контролю графічних елементів, дозволяючи перевірити, чи "
 "програма дає вірну інформацію для технологій зручності та каркасів "
-"автоматизованої перевірки. <app>Accerciser</app> постачається із набором"
-" додатків, який можна використовувати для створення спеціалізованих "
+"автоматизованої перевірки. <app>Accerciser</app> постачається із набором "
+"додатків, який можна використовувати для створення спеціалізованих "
 "представлень інформації про доступність."
 
 #. (itstool) path: page/p
@@ -1234,7 +1342,6 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/introduction.page:51
-#| msgid "About <application>Accerciser</application>"
 msgid "<app>Accerciser</app>"
 msgstr "<app>Accerciser</app>"
 
@@ -1260,7 +1367,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/introduction.page:63
-#| msgid "<application>Accerciser</application> Main Window"
 msgid "<app>Accerciser</app>'s intended audience"
 msgstr "Коло призначення <app>Accerciser</app>"
 
@@ -1408,7 +1514,6 @@ msgstr "Якщо нічого не помагає"
 
 #. (itstool) path: page/title
 #: C/ipython_plugin.page:25
-#| msgid "IPython Console"
 msgid "IPython Console Plugin"
 msgstr "Додаток консолі IPython"
 
@@ -1430,7 +1535,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/ipython_plugin.page:40
-#| msgid "IPython Console"
 msgid "Running the IPython Console Plugin"
 msgstr "Запуск додатка консолі IPython"
 
@@ -1485,7 +1589,6 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/preferences.page:4
-#| msgid "Preferences"
 msgctxt "sort"
 msgid "4. Preferences"
 msgstr "4. Параметри"
@@ -1497,7 +1600,6 @@ msgstr "Налаштовування параметрів <app>Accerciser</app>"
 
 #. (itstool) path: page/title
 #: C/preferences.page:25
-#| msgid "About <application>Accerciser</application>"
 msgid "Configuring <app>Accerciser</app>"
 msgstr "Налаштовування <app>Accerciser</app>"
 
@@ -1572,7 +1674,6 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/quick_select_plugin.page:4
-#| msgid "Quick select"
 msgctxt "sort"
 msgid "5. Quick Select Plugin"
 msgstr "5. Додаток швидкого вибору"
@@ -1584,7 +1685,6 @@ msgstr "Пошук потрібного об'єкта"
 
 #. (itstool) path: page/title
 #: C/quick_select_plugin.page:25
-#| msgid "Quick select"
 msgid "Quick Select Plugin"
 msgstr "Додаток швидкого вибору"
 
@@ -1601,15 +1701,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/quick_select_plugin.page:32
-#| msgid ""
-#| "This plugin provides global hotkeys for allowing quick selection of "
-#| "accessibles through the target application's UI. Pressing "
-#| "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>a</keycap></"
-#| "keycombo> will select the last focused widget's accessible in "
-#| "<application>Accerciser</application>. Pressing "
-#| "<keycombo><keycap>Control</keycap><keycap>Alt</keycap><keycap>t</keycap></"
-#| "keycombo> will select the accessible of the widget that is under the "
-#| "pointer."
 msgid ""
 "The Quick Select Plugin provides two global hotkeys. Pressing "
 "<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
@@ -1618,16 +1709,15 @@ msgid ""
 "accessible widget under the pointer in the Application Tree View and "
 "highlights it in the target application."
 msgstr ""
-"У додатку швидкого вибору передбачено два загальних клавіатурних скорочення."
-" Натискання <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq>"
-" вибирає останній фокусованих віджет доступності на панелі ієрархії програм."
-" Натискання <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>"
-" вибирає доступних віджет під вказівником на панелі ієрархії програм і"
-" підсвічує його у програмі призначення."
+"У додатку швидкого вибору передбачено два загальних клавіатурних скорочення. "
+"Натискання <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> "
+"вибирає останній фокусованих віджет доступності на панелі ієрархії програм. "
+"Натискання <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> "
+"вибирає доступних віджет під вказівником на панелі ієрархії програм і "
+"підсвічує його у програмі призначення."
 
 #. (itstool) path: info/title
 #: C/validator_plugin.page:4
-#| msgid "Default Plugins"
 msgctxt "sort"
 msgid "3. Validator Default Plugin"
 msgstr "3. Додаток типового запису перевірки"
@@ -1641,7 +1731,7 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/validator_plugin.page:25 C/validator_plugin.page:32
 msgid "AT-SPI Validator Plugin"
-msgstr ""
+msgstr "Додаток перевірки AT-SPI"
 
 #. (itstool) path: page/p
 #: C/validator_plugin.page:26
