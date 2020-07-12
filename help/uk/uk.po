@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "POT-Creation-Date: 2020-07-04 19:29+0000\n"
-"PO-Revision-Date: 2020-07-12 13:17+0300\n"
+"PO-Revision-Date: 2020-07-12 20:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1108,6 +1108,10 @@ msgid ""
 "override it setting the button to be sensitive only when the current "
 "accessible item has the \"click\" action:"
 msgstr ""
+"У базовому класі додатків є метою, який називається onAccChanged і який"
+" викликають кожного разу, коли вибраний доступний об'єкт цільової програми"
+" змінюється. Ми перевизначимо його встановленням кнопки, яка реагуватиме"
+" лише, якщо поточний доступний об'єкт має дію «клацання»:"
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:219
@@ -1133,6 +1137,10 @@ msgid ""
 "button is sensitive, we don't need to worry about checking if the current "
 "accessible has the \"click\" action?"
 msgstr ""
+"Метод зворотного виклику для «натискання» кнопки виконує дію «натискання» для"
+" доступного об'єкта. Оскільки цей зворотний виклик можна викликати, лише якщо"
+" кнопка є чутливою, нам не слід перейматися перевіркою, чи має поточний"
+" доступний об'єкт дію «клацання»."
 
 #. (itstool) path: section/code
 #: C/howto_write_a_plugin.page:229
@@ -1228,6 +1236,12 @@ msgid ""
 "retrieve each interface's information, and to manipulate the item through "
 "all the interface’s methods."
 msgstr ""
+"Додаток перегляду інтерфейсу показує дані і елементи керування, які надаються"
+" інтерфейсами AT-SPI, які передбачено у кожному доступному об'єкті на <link"
+" xref=\"desktop_tree_view\">панелі перегляду ієрархії програм</link>. Після"
+" вибору об'єкта ви можете скористатися цим додатком для швидкого перегляду"
+" підтримуваних інтерфейсів, для отримання даних щодо кожного інтерфейсу та"
+" для роботи з записом з використанням усіх методів інтерфейсу."
 
 #. (itstool) path: figure/title
 #: C/interface_viewer_plugin.page:35
@@ -1243,6 +1257,10 @@ msgid ""
 "unsupported will appear grayed out, such as the Application and Collection "
 "interfaces in the figure above."
 msgstr ""
+"За позначеним об'єктом на панелі перегляду ієрархії програм усі його"
+" інтерфейси AT-SPI буде показано на панелі додатка перегляду інтерфейсів як"
+" чутливі. Непідтримувані буде показано сірим кольором. Зокрема, так показано"
+" інтерфейси Application і Collection на наведеному вище знімку."
 
 #. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
@@ -1275,6 +1293,14 @@ msgid ""
 "interfaces can be explored in <app>Accerciser</app>, assuming the selected "
 "item implements them:"
 msgstr ""
+"Першим кроком у роботі з додатком перегляду інтерфейсу є вибір об'єкта на <"
+"link xref=\"desktop_tree_view\">панелі перегляду ієрархії програм</link>."
+" Після цього на панелі додатка має бути показано список усіх інтерфейсів"
+" AT-SPI, з якими може працювати додаток. Інтерфейси, які реалізовано"
+" позначним об'єктом, будуть чутливими — ви зможете клацати на них або для"
+" отримання даних, які вони надають, або для взаємодії із доступними методами."
+" У <app>Accerciser</app> можна вивчати, якщо у відповідному об'єкті їх"
+" реалізовано, такі інтерфейси:"
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:59
@@ -1282,6 +1308,8 @@ msgid ""
 "Accessible - This interface shows the selected item's child count (number of "
 "child widgets), description, states, relations, and attributes."
 msgstr ""
+"Об'єкт — цей інтерфейс показує кількість дочірніх елементів об'єкта"
+" (віджета), опис, стани, зв'язки та атрибути."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:65
@@ -1292,6 +1320,11 @@ msgid ""
 "If you select an action, a \"Perform action\" button will become sensitive. "
 "Press this button to see the item performing the selected action."
 msgstr ""
+"Дія — цей інтерфейс показує усі дії, які може бути виконано вибраним"
+" об'єктом. Для кожного інтерфейсу ви побачите назву, зокрема «press» або"
+" «click», з наступним описом і клавіатурним скороченням, якщо таке"
+" призначено. Якщо ви виберете пункт дії, доступною стане кнопка «Виконати"
+" дію». У відповідь на натискання цієї кнопки об'єкт виконає відповідну дію."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:73
@@ -1302,6 +1335,11 @@ msgid ""
 "it, the interface will show its ID and, if there are any, its toolkit and "
 "version."
 msgstr ""
+"Програма — цей інтерфейс може бути реалізовано об'єктами із роллю"
+" «application». Слід зауважити, що об'єкти із роллю «application» не"
+" обов'язково реалізують цей інтерфейс. Якщо у вибраному об'єкті реалізовано"
+" таку можливість, інтерфейс покаже ідентифікатор, а також, якщо визначено,"
+" набір інструментів побудови інтерфейсу та версію."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:80
@@ -1312,6 +1350,11 @@ msgid ""
 "integer indicating the stacking order of the component in the MDI layer), "
 "and alpha (if alpha blending is used)."
 msgstr ""
+"Компонент — цей інтерфейс показу абсолютну позицію вибраного об'єкта (у"
+" координатній системі стільниці), відносну позицію (у координатній системі"
+" вікна), розмір, тип шару, Z-порядок MDI (ціле число, яке вказує місце у"
+" стосі для компонента у шарі MDI) та прозорість (якщо використано змішування"
+" зображення з прозорістю)."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:86
@@ -1330,6 +1373,10 @@ msgid ""
 "URI, start (the index in the hypertext at which the hyperlink begins) and "
 "end (the index in the hypertext at which this hyperlink ends)."
 msgstr ""
+"Гіпертекст — цей інтерфейс показує список усіх гіпертекстових гіперпосилань"
+" вибраного об'єкта. Для кожного гіперпосилання інтерфейс надає його назву,"
+" адресу, початок (індекс у гіпертексті, за яким починається гіперпосилання) і"
+" кінець (індекс у гіпертексті, за яким завершується гіперпосилання)."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:98
@@ -1338,6 +1385,9 @@ msgid ""
 "description\" if unspecified), size, position (with respect to the desktop "
 "coordinate system), and locale, if there is one."
 msgstr ""
+"Зображення — цей інтерфейс показує опис вибраного об'єкта (або «немає опису»,"
+" якщо опис не вказано), розмір, позицію (у координатній системі стільниці) і"
+" локаль, якщо таку визначено."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:104
@@ -1349,6 +1399,12 @@ msgid ""
 "example - and want to clear it, just press the \"Clear\" button below the "
 "list."
 msgstr ""
+"Виділення — цей інтерфейс показує усі придатні до вибору дочірні об'єкти"
+" вибраного об'єкта. Якщо вибраним об'єктом є панель меню із пунктами «Файл»,"
+" «Зміни», «Перегляд» і «Довідка», і всі вони є придатними до вибору, їх буде"
+" показано у цьому інтерфейсі. Якщо ви клацнете на пункту зі списку —"
+" наприклад «Файл» — і захочете його вилучити, просто натисніть кнопку"
+" «Очистити» під списком."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:112
@@ -1356,6 +1412,8 @@ msgid ""
 "Streamable Content - This interface shows the selected item's content types "
 "and their corresponding URIs."
 msgstr ""
+"Потоковий зміст — цей інтерфейс показує типи вмісту вибраного об'єкта та"
+" відповідні адреси."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:117
@@ -1365,6 +1423,11 @@ msgid ""
 "selected rows), and selected columns (number of selected columns). For a "
 "selected cell, the interface shows its row's and column's header and extents."
 msgstr ""
+"Таблиця — цей інтерфейс показує підпис і резюме вибраного об'єкта, рядки"
+" (кількість рядків), стовпчики (кількість стовпчиків), позначені рядки"
+" (кількість позначених рядків) і позначені стовпчики (кількість позначених"
+" стовпчиків). Для позначеної комірки інтерфейс показує заголовки рядка і"
+" стовпчика, а також розміри."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:124
@@ -1374,6 +1437,10 @@ msgid ""
 "characters the text has) and justification. To see possible CSS attributes, "
 "click the \"Include defaults\" check box."
 msgstr ""
+"Текст — цей інтерфейс показує текстовий вміст вибраного об'єкта, який можна"
+" редагувати, а також його атрибути. Базовими атрибутами є відступ (кількість"
+" символів у тексті) та вирівнювання. Щоб переглянути можливі атрибути CSS,"
+" позначте пункт «Увімкнути типові»."
 
 #. (itstool) path: item/p
 #: C/interface_viewer_plugin.page:131
@@ -1383,6 +1450,11 @@ msgid ""
 "value may be changed (or zero if this value cannot be determined). The "
 "current value can be manually changed via a spin button."
 msgstr ""
+"Значення — це інтерфейс показує поточне значення вибраного об'єкта,"
+" мінімальне дозволене значення, максимальне дозволене значення та мінімальний"
+" приріст, на який можна змінювати значення (або нуль, якщо це значення не"
+" визначено). Поточне значення можна змінити вручну за допомогою поля"
+" лічильника."
 
 #. (itstool) path: info/title
 #: C/introduction.page:5
@@ -1430,6 +1502,15 @@ msgid ""
 "<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
 "sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
 msgstr ""
+"Типово, головний інтерфейс <app>Accerciser</app> складається з трьох"
+" розділів: панелі ієрархічного перегляду із усією ієрархією доступності"
+" стільничного середовища, а саме <link xref=\"desktop_tree_view\">панелі"
+" перегляду ієрархії програм</link>, і двох панелей додатків. Якщо ви хочете"
+" бачити усі додатки на одній панелі, поділивши інтерфейс <app>Accerciser</app"
+"> на два розділи замість трьох, натисніть комбінацію клавіш <keyseq><key"
+">Ctrl</key><key>T</key></keyseq>. Щоб знову поділити вікно на три розділи,"
+" натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>T</key></keyseq> ще"
+" раз."
 
 #. (itstool) path: note/p
 #: C/introduction.page:44
@@ -1481,6 +1562,14 @@ msgid ""
 "test developers find <app>Accerciser</app> beneficial since it exposes "
 "different events that could be expected from their target application."
 msgstr ""
+"<app>Accerciser</app> може задовольнити потреби багатьох різних категорій"
+" користувачів. Розробники інтерфейсів користувачів можуть скористатися"
+" програмою, щоб переконатися, що їхні програми надають усі можливості крізь"
+" AT-SPI. Розробники допоміжних технологій можуть переглянути, який доступ"
+" надає AT-SPI для їхніх програм. Розробники автоматичних систем перевірки"
+" інтерфейсу користувача можуть скористатися <app>Accerciser</app>, оскільки"
+" програма надає доступ до різних подій, яких можна очікувати від цільової"
+" програми."
 
 #. (itstool) path: section/title
 #: C/introduction.page:74
@@ -1504,6 +1593,9 @@ msgid ""
 "that lets you explore the AT-SPI interfaces provided by each accessible "
 "widget of a target application."
 msgstr ""
+"<link xref=\"interface_viewer_plugin\">Перегляд інтерфейсу</link> — додаток,"
+" за допомогою якого ви зможете вивчати інтерфейси AT-SPI, які надаються усіма"
+" доступними віджетами цільової програми."
 
 #. (itstool) path: item/p
 #: C/introduction.page:88
@@ -1511,6 +1603,8 @@ msgid ""
 "<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
 "applies tests to verify the accessibility of a target application."
 msgstr ""
+"<link xref=\"validator_plugin\">Перевірка AT-SPI</link> — додаток, який"
+" застосовує тести для перевірки доступності цільової програми."
 
 #. (itstool) path: item/p
 #: C/introduction.page:94
@@ -1518,6 +1612,9 @@ msgid ""
 "<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
 "displays AT-SPI events emitted by a target application as they occur."
 msgstr ""
+"<link xref=\"event_monitor_plugin\">Монітор подій</link> — додаток, який"
+" показує події AT-SPI, сигнали про які видаються цільовою програмою, коли"
+" трапляються ці події."
 
 #. (itstool) path: item/p
 #: C/introduction.page:100
@@ -1526,6 +1623,10 @@ msgid ""
 "provides global hotkeys for quickly selecting accessible widgets in "
 "<app>Accerciser</app>'s Application Tree View."
 msgstr ""
+"<link xref=\"quick_select_plugin\">Швидке виділення</link> — додаток, який"
+" надає доступ до загальних клавіатурних скорочень для швидкого вибору"
+" доступних віджетів на панелі перегляду ієрархії програм <app>Accerciser</app"
+">."
 
 #. (itstool) path: item/p
 #: C/introduction.page:106
@@ -1534,6 +1635,9 @@ msgid ""
 "the interfaces, methods, and attributes available on each accessible widget "
 "of a target application."
 msgstr ""
+"<link xref=\"api_browser_plugin\">Огляд API</link> — додаток, який показує"
+" інтерфейси, методи та атрибути, які доступні для кожного доступного віджета"
+" цільової програми."
 
 #. (itstool) path: item/p
 #: C/introduction.page:112
@@ -1542,6 +1646,9 @@ msgid ""
 "provides a full, interactive Python shell with access to selected accessible "
 "widgets of a target application."
 msgstr ""
+"<link xref=\"ipython_plugin\">Консоль IPython</link> — додаток, який надає"
+" доступ до повної інтерактивної командної оболонки Python із доступом до"
+" вибраних доступних віджетів цільової програми."
 
 #. (itstool) path: section/title
 #: C/introduction.page:122
@@ -1557,6 +1664,12 @@ msgid ""
 "also used in other Desktop Environments. To learn more about Accessibility "
 "Libraries for GNU/UNIX systems, you can consult:"
 msgstr ""
+"Доступність є базовою характеристикою, яка має стосуватися усіх аспектів"
+" стільничного середовища. Щоб досягти доступності у GNOME, було розроблено"
+" декілька бібліотек, зокрема ATK і AT-SPI. Хоча ці бібліотеки походять з"
+" GNOME, ними можна скористатися і в інших стільничних середовищах. Щоб"
+" дізнатися більше про бібліотеки доступності для систем GNU/UNIX, зверніться"
+" до таких джерел:"
 
 #. (itstool) path: item/p
 #: C/introduction.page:132
@@ -1567,6 +1680,11 @@ msgid ""
 "accessibility tools have full access to view and control running "
 "applications."
 msgstr ""
+"<link href=\"http://developer.gnome.org/atk/\">Набір інструментів доступності"
+" ATK</link> — ATK надає доступ до набору інтерфейсів доступності, які"
+" реалізовано іншими наборами інструментів та програмами. За допомогою"
+" інтерфейсів ATK засоби доступності мають повний доступ до перегляду і"
+" керування запущеними програмами."
 
 #. (itstool) path: item/p
 #: C/introduction.page:139
@@ -1578,6 +1696,13 @@ msgid ""
 "developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
 "link>."
 msgstr ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> —"
+" AT-SPI є основним службовим інтерфейсом крізь який допоміжні технології"
+" надсилають запити і отримують сповіщення від запущених програм. Додаткові"
+" матеріали можна знайти у довіднику <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">спільноти розробників технологій доступності"
+" KDE</"
+"link>."
 
 #. (itstool) path: item/p
 #: C/introduction.page:147
@@ -1586,6 +1711,10 @@ msgid ""
 "\">GNOME Desktop Accessibility Guide</link> - A guide for anyone interested "
 "in how the GNOME Desktop supports the needs of users with disabilities."
 msgstr ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html"
+"\">Настанови з доступності для стільничного середовища GNOME</link> —"
+" підручник для усіх, хто цікавиться тим, як у стільничному середовищі GNOME"
+" реалізовано підтримку потреб користувачів із обмеженими можливостями."
 
 #. (itstool) path: item/p
 #: C/introduction.page:153
@@ -1595,6 +1724,10 @@ msgid ""
 "want to ensure their applications are accessible to the widest audience of "
 "users."
 msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">Підручник розробника систем доступності GNOME</link> — підручник для"
+" розробників, які хочуть забезпечити у своїх програма доступність для"
+" якнайширшої аудиторії користувачів."
 
 #. (itstool) path: item/p
 #: C/introduction.page:159
@@ -1604,6 +1737,10 @@ msgid ""
 "above along with many other useful links for users, developers and system "
 "administrators."
 msgstr ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">Проєкт доступності GNOME<"
+"/link> — Проєкт доступності GNOME містить посилання на наведені вище"
+" підручники, а також багато корисних посилань для користувачів, розробників"
+" та системних адміністраторів."
 
 #. (itstool) path: info/title
 #: C/ipython_plugin.page:4
@@ -1629,6 +1766,10 @@ msgid ""
 "the IPython Console Plugin is an interactive Python shell, you can import "
 "any Python modules you want."
 msgstr ""
+"За допомогою додатка консолі IPython можна інтерактивно взаємодіяти із"
+" вибраним на <link xref=\"desktop_tree_view\">панелі перегляду ієрархії"
+" програм</link> об'єктом. Оскільки додаток консолі IPython є інтерактивною"
+" командною оболонкою Python, ви можете імпортувати будь-які модулі Python."
 
 #. (itstool) path: note/p
 #: C/ipython_plugin.page:33
@@ -1652,6 +1793,9 @@ msgid ""
 "in the Application Tree View - either an application or a widget. In the "
 "plugin, the selected item will correspond to the variable 'acc'."
 msgstr ""
+"Щоб запустити додаток консолі IPython, виберіть один із доступних об'єктів зі"
+" списку панелі перегляду ієрархії програм — програму або віджет. На панелі"
+" додатка вибраному об'єкту відповідатиме змінна «acc»."
 
 #. (itstool) path: section/p
 #: C/ipython_plugin.page:46
@@ -1659,6 +1803,9 @@ msgid ""
 "Pressing <key>Tab</key> shows completions for the current command in the "
 "console, what can be useful for discovering pyatspi methods."
 msgstr ""
+"Натискання клавіші <key>Tab</key> призводить до показу варіантів доповнення"
+" поточної команди у консолі. Це може бути корисним для вивчення методів"
+" pyatspi."
 
 #. (itstool) path: figure/title
 #: C/ipython_plugin.page:52
@@ -1741,6 +1888,11 @@ msgid ""
 "or disable a plugin, toggle its checkbox. Only active plugins can be "
 "accessed via <app>Accerciser</app>'s interface."
 msgstr ""
+"Після відкриття діалогового вікна «Параметри» ви побачите список усіх"
+" доступних додатків із пунктами для позначки перед кожним із записів на"
+" вкладці «Додатки». Щоб увімкнути або вимкнути додаток, позначте пункт або"
+" зніміть з нього позначку. Доступ з інтерфейсу <app>Accerciser</app> буде"
+" відкрито лише для активних додатків."
 
 #. (itstool) path: section/p
 #: C/preferences.page:38
@@ -1749,6 +1901,9 @@ msgid ""
 "Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
 "a new window for the plugin."
 msgstr ""
+"Клацанням правою кнопкою на будь-якому додатку можна вибрати розташування"
+" його панелі: «Верхня панель», «Нижня панель» і «Створити панель». Вибір"
+" варіанта «Створити панель» призводить до створення нового вікна для додатка."
 
 #. (itstool) path: note/p
 #: C/preferences.page:44
@@ -1756,6 +1911,9 @@ msgid ""
 "You may bypass the Preferences dialog by using drag and drop to move a "
 "plugin from a location to another."
 msgstr ""
+"Ви можете обійтися без діалогового вікна «Параметри», скориставшись простим"
+" перетягуванням зі скиданням для пересування панелі додатка з одного місця на"
+" екрані у інше."
 
 #. (itstool) path: section/title
 #: C/preferences.page:51
@@ -1773,6 +1931,15 @@ msgid ""
 "configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
 "checkboxes to enable or disable these modifiers."
 msgstr ""
+"У деяких елементах <app>Accerciser</app> передбачено можливість доступу до"
+" функціональних можливостей за допомогою клавіатурних скорочень. Прикладом є"
+" <link xref=\"quick_select_plugin\">додаток швидкого вибору</link>."
+" Комбінацію клавіш для доступу до кожної функціональної можливості можна"
+" змінити за допомогою діалогового вікна «Параметри», вкладка «Глобальні"
+" швидкі клавіші». На цій вкладці показано список усіх можливостей програми, з"
+" якими можна пов'язати клавіатурні скорочення. Скористайтеся пунктами <cmd"
+">ctrl</cmd>, <cmd>alt</cmd> і <cmd>shift</cmd> для вмикання або вимикання"
+" відповідних модифікаторів."
 
 #. (itstool) path: section/title
 #: C/preferences.page:63
@@ -1788,6 +1955,11 @@ msgid ""
 "color, and fill color can be customized via the Preferences dialog, under "
 "the \"Highlighting\" tab."
 msgstr ""
+"Використання деяких можливостей <app>Accerciser</app>, зокрема загального"
+" клавіатурного скорочення <keyseq><key>Ctrl</key><key>Alt</key><key>/</key><"
+"/keyseq>, призводить до підсвічування певного віджета у цільовій програмі."
+" Тривалість підсвічування, колір рамки та колір заповнення можна налаштувати"
+" за допомогою діалогового вікна «Параметри», вкладка «Підсвічування»."
 
 #. (itstool) path: info/title
 #: C/quick_select_plugin.page:4
@@ -1815,6 +1987,13 @@ msgid ""
 "<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
 "later."
 msgstr ""
+"Додаток «Швидке виділення» не надає видимого інтерфейсу, на відміну від інших"
+" типових додатків <app>Accerciser</app>. Замість цього, він надає можливості"
+" для швидкого вибору об'єктів на панелі <link xref=\"desktop_tree_view\""
+">перегляду ієрархії програм</link> за допомогою загальних клавіатурних"
+" скорочень. Від початку, ці клавіатурні скорочення були частиною програмного"
+" коду <app>Accerciser</app>, але згодом їх було виокремлено у додаток «Швидке"
+" виділення»."
 
 #. (itstool) path: page/p
 #: C/quick_select_plugin.page:32
@@ -1897,6 +2076,9 @@ msgid ""
 "View. The validator will generate the report with respect to the selected "
 "item and all of its descendant widgets in the tree hierarchy."
 msgstr ""
+"Щоб запустити додаток «Перевірка AT-SPI», виберіть пункт на панелі перегляду"
+" ієрархії програм. Засіб перевірки створить звіт щодо позначеного пункту і"
+" усіх його підлеглих віджетів у ієрархії."
 
 #. (itstool) path: section/p
 #: C/validator_plugin.page:53
@@ -1906,6 +2088,10 @@ msgid ""
 "want to cancel the execution, just press the <cmd>Validate</cmd> button "
 "again."
 msgstr ""
+"Після вибору пункту виберіть схему перевірки у спадному списку і натисніть"
+" кнопку <cmd>Перевірити</cmd>, щоб розпочати створення звіту. Якщо ви хочете"
+" перервати виконання перевірки, просто натисніть кнопку <cmd>Перевірити</cmd>"
+" ще раз."
 
 #. (itstool) path: section/p
 #: C/validator_plugin.page:59
@@ -1916,6 +2102,11 @@ msgid ""
 "\"desktop_tree_view\"> Application Tree View</link> and highlighted in the "
 "target application."
 msgstr ""
+"Створений звіт є інтерактивним. Отже, ви можете двічі клацнути на пункті"
+" будь-якої знайденої помилки, щоб розібратися із тим, який із віджетів"
+" цільової програми її спричинив. Після клацання відповідний віджет буде"
+" позначено на панелі <link xref=\"desktop_tree_view\">перегляду ієрархії"
+" програм</link> і підсвічено у вікні цільової програми."
 
 #. (itstool) path: section/p
 #: C/validator_plugin.page:64
