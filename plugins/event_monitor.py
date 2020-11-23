@@ -322,9 +322,10 @@ class EventMonitor(ViewportPlugin):
     @param event: The at-spi event we are inserting.
     @type event: Accessibility.Event
     '''
-    self._writeText('%s(%s, %s, %s)\n\tsource: ' % \
-                      (event.type, event.detail1, 
-                       event.detail2, event.any_data))
+    ts = int((os.times()[-1] * 10 ) % 1000)
+    self._writeText('%02.1f %s(%s, %s, %s)\n\tsource: ' % \
+                      (ts / 10, event.type, event.detail1,
+                        event.detail2, event.any_data))
     hyperlink = self._createHyperlink(event.source)
     self._writeText(str(event.source), hyperlink)
     self._writeText('\n\tapplication: ')
