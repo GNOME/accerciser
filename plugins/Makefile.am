@@ -10,4 +10,5 @@ plugins_DATA = api_view.py \
 	validate.py
 plugins_SCRIPTS = \
 	ipython_view.py
-EXTRA_DIST = $(plugins_DATA)
+EXTRA_DIST = $(plugins_DATA) \
+	$(plugins_SCRIPTS)
