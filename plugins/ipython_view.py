@@ -552,6 +552,15 @@ class ConsoleView(gtk.TextView):
       insert_iter.backward_cursor_position()
       if not insert_iter.editable(True):
         return True
+    elif event.state & gdk.ModifierType.CONTROL_MASK and event.keyval in [ord('L'), ord('l')]:
+        # clear previous output on Ctrl+L, but remember current input line + cursor position
+        cursor_offset = self.text_buffer.get_property('cursor-position')
+        cursor_pos_in_line = cursor_offset - start_iter.get_offset() + len(self.prompt)
+        current_input = self.text_buffer.get_text(start_iter, self.text_buffer.get_end_iter(), False)
+        self.text_buffer.set_text(self.prompt + current_input)
+        self.text_buffer.move_mark(self.line_start, self.text_buffer.get_iter_at_offset(len(self.prompt)))
+        self.text_buffer.place_cursor(self.text_buffer.get_iter_at_offset(cursor_pos_in_line))
+        return True
     elif not event.string:
       pass
     elif start_iter.compare(insert_iter) <= 0 and \
