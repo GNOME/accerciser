@@ -7,28 +7,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=accerciser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-08-26 14:21+0000\n"
-"PO-Revision-Date: 2017-09-02 23:54+0200\n"
-"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
+"POT-Creation-Date: 2021-03-20 08:37+0000\n"
+"PO-Revision-Date: 2021-11-01 19:36+0100\n"
+"Last-Translator: maite guix <maite.guix@me.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 3.0\n"
 
-#: ../accerciser.appdata.xml.in.h:1 ../accerciser.desktop.in.in.h:1
+#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: ../accerciser.appdata.xml.in.h:2
+#: accerciser.appdata.xml.in:7
 msgid "Accessibility explorer for the GNOME desktop"
 msgstr "Explorador d'accessibilitat per l'escriptori del GNOME"
 
-#: ../accerciser.appdata.xml.in.h:3
+#: accerciser.appdata.xml.in:9
 msgid ""
 "Accerciser is an interactive Python accessibility explorer for the GNOME "
 "desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
@@ -36,11 +35,11 @@ msgid ""
 "technologies and automated test frameworks."
 msgstr ""
 "L'Accerciser és un explorador d'accessibilitat interactiu de Python per "
-"l'escriptori del GNOME. Utilitza AT-SPI per a inspeccionar i controlar ginys, "
-"permetent-vos comprovar si una aplicació proveeix informació correcta a "
-"tecnologies assistides i espais de treball automatitzats de prova."
+"l'escriptori del GNOME. Utilitza AT-SPI per a inspeccionar i controlar "
+"ginys, permetent-vos comprovar si una aplicació proveeix informació correcta "
+"a tecnologies assistides i espais de treball automatitzats de prova."
 
-#: ../accerciser.appdata.xml.in.h:4
+#: accerciser.appdata.xml.in:14
 msgid ""
 "Accerciser has a simple plugin framework which you can use to create custom "
 "views of accessibility information."
@@ -48,530 +47,556 @@ msgstr ""
 "L'Accerciser té un espai de treball de connectors senzills que podeu "
 "utilitzar per a crear vistes personalitzades d'informació d'accessibilitat."
 
-#: ../accerciser.desktop.in.in.h:2
+#: accerciser.desktop.in:4
 msgid "Give your application an accessibility workout"
 msgstr "Feu una anàlisi d'accessibilitat a les aplicacions"
 
-#: ../accerciser.desktop.in.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: accerciser.desktop.in:6
 msgid "accessibility;development;test;"
 msgstr "accessibilitat;desenvolupament;prova;"
 
-#: ../accerciser.desktop.in.in.h:4 ../src/lib/accerciser/main_window.py:43
-msgid "Accerciser Accessibility Explorer"
-msgstr "Explorador d'accessibilitat Accerciser"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:1
+#: org.a11y.Accerciser.gschema.xml:6
 msgid "A list of plugins that are disabled by default"
 msgstr "Llista de connectors desactivats per defecte"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:2
+#: org.a11y.Accerciser.gschema.xml:7
 msgid "A list of plugins that are disabled by default."
 msgstr "Llista de connectors desactivats per defecte."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:3
+#: org.a11y.Accerciser.gschema.xml:11
 msgid "Highlight duration"
 msgstr "Ressalta la durada"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:4
+#: org.a11y.Accerciser.gschema.xml:12
 msgid "The duration of the highlight box when selecting accessible nodes."
 msgstr "La durada del quadre ressaltat en seleccionar nodes accessibles."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:5
+#: org.a11y.Accerciser.gschema.xml:16
 msgid "Highlight fill color"
 msgstr "Ressalta el color de l'emplenat"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:6
+#: org.a11y.Accerciser.gschema.xml:17
 msgid "The color and opacity of the highlight fill."
 msgstr "El color i l'opacitat de l'emplenat del ressaltat."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:7
+#: org.a11y.Accerciser.gschema.xml:21
 msgid "Highlight border color"
 msgstr "Ressalta el color del contorn"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:8
+#: org.a11y.Accerciser.gschema.xml:22
 msgid "The color and opacity of the highlight border."
 msgstr "El color i l'opacitat del contorn ressaltat."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:9
+#: org.a11y.Accerciser.gschema.xml:26
 msgid "Horizontal split"
 msgstr "Divisió horitzontal"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:10
+#: org.a11y.Accerciser.gschema.xml:27
 msgid "Position of the horizontal split of the main window."
 msgstr "Posició de la divisió horitzontal de la finestra principal."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:11
+#: org.a11y.Accerciser.gschema.xml:31
 msgid "Vertical split"
 msgstr "Divisió vertical"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:12
+#: org.a11y.Accerciser.gschema.xml:32
 msgid "Position of the vertical split of the main window."
 msgstr "Posició de la divisió vertical de la finestra principal."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:13
+#: org.a11y.Accerciser.gschema.xml:36
 msgid "Default window height"
 msgstr "Alçada de la finestra per defecte"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:14
+#: org.a11y.Accerciser.gschema.xml:37
 msgid "The window height value."
 msgstr "El valor de l'alçada de la finestra."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:15
+#: org.a11y.Accerciser.gschema.xml:41
 msgid "Default window width"
 msgstr "Amplada de la finestra per defecte"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:16
+#: org.a11y.Accerciser.gschema.xml:42
 msgid "The window width value."
 msgstr "El valor de l'amplada de la finestra."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:17
+#: org.a11y.Accerciser.gschema.xml:51
 msgid "The layout for the bottom panel"
 msgstr "La disposició per al quadre inferior"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:18
+#: org.a11y.Accerciser.gschema.xml:52
 msgid "The layout for the bottom panel pluginview."
 msgstr "La disposició per a la vista del connector del quadre inferior."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:19
+#: org.a11y.Accerciser.gschema.xml:56
 msgid "The layout for the top panel"
 msgstr "La disposició per al quadre superior"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:20
+#: org.a11y.Accerciser.gschema.xml:57
 msgid "The layout for the top panel pluginview."
 msgstr "La disposició per a la vista del connector del quadre superior."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:21
+#: org.a11y.Accerciser.gschema.xml:61
 msgid "Single layout view"
 msgstr "Visualització sense divisions"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:22
+#: org.a11y.Accerciser.gschema.xml:62
 msgid "View plugins in a single layout."
 msgstr "Visualització dels connectors en una sola disposició."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:23
+#: org.a11y.Accerciser.gschema.xml:66
 msgid "Available new pluginviews"
 msgstr "Vistes de connectors noves disponibles"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:24
+#: org.a11y.Accerciser.gschema.xml:67
 msgid "This list contains all the new available pluginviews"
 msgstr "Aquesta llista conté totes les vistes de connectors noves disponibles"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:25
+#: org.a11y.Accerciser.gschema.xml:73
 msgid "The pluginview layout"
 msgstr "La disposició de la vista del connector"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:26
+#: org.a11y.Accerciser.gschema.xml:74
 msgid "The default plugin layout for the top panel."
 msgstr "La disposició per defecte dels connectors al quadre superior."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:27
+#: org.a11y.Accerciser.gschema.xml:78
 msgid "Window height"
 msgstr "Alçada de la finestra"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:28
+#: org.a11y.Accerciser.gschema.xml:79
 msgid "Window height value."
 msgstr "Valor de l'alçada de la finestra."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:29
+#: org.a11y.Accerciser.gschema.xml:83
 msgid "Window width"
 msgstr "Amplada de la finestra"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:30
+#: org.a11y.Accerciser.gschema.xml:84
 msgid "Window width value."
 msgstr "Valor de l'amplada de la finestra."
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:31
+#: org.a11y.Accerciser.gschema.xml:90
 msgid "Hotkey combination"
 msgstr "Combinació de la drecera de teclat"
 
-#: ../org.a11y.Accerciser.gschema.xml.in.h:32
+#: org.a11y.Accerciser.gschema.xml:91
 msgid "Hotkey combination for related action."
 msgstr "Combinació de la drecera de teclat per a l'acció relacionada."
 
-#: ../plugins/api_view.py:32
+#: plugins/api_view.py:32
 msgid "API Browser"
 msgstr "Explorador de l'API"
 
-#: ../plugins/api_view.py:35
+#: plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
 msgstr "Explora els diferents mètodes de l'actual accessible"
 
-#: ../plugins/api_view.py:66
+#: plugins/api_view.py:66
 msgid "Hide private attributes"
 msgstr "Amaga els atributs privats"
 
-#: ../plugins/api_view.py:79
+#: plugins/api_view.py:79
 msgid "Method"
 msgstr "Mètode"
 
-#: ../plugins/api_view.py:88
+#: plugins/api_view.py:88
 msgid "Property"
 msgstr "Propietat"
 
-#: ../plugins/api_view.py:93
+#: plugins/api_view.py:93
 msgid "Value"
 msgstr "Valor"
 
-#: ../plugins/console.py:32
+#: plugins/console.py:32
 msgid "IPython Console"
 msgstr "Consola IPython"
 
-#: ../plugins/console.py:35
+#: plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "Consola interactiva per a manipular l'accessible actualment seleccionat"
+msgstr ""
+"Consola interactiva per a manipular l'accessible actualment seleccionat"
 
-#: ../plugins/event_monitor.ui.h:1
+#: plugins/event_monitor.ui:61
 msgid "Event monitor"
 msgstr "Monitor d'esdeveniments"
 
-#: ../plugins/event_monitor.ui.h:2
+#: plugins/event_monitor.ui:114
 msgid "_Monitor Events"
 msgstr "_Seguiment d'esdeveniments"
 
-#: ../plugins/event_monitor.ui.h:3
+#: plugins/event_monitor.ui:224
 msgid "C_lear Selection"
 msgstr "_Neteja la selecció"
 
-#: ../plugins/event_monitor.ui.h:4
+#: plugins/event_monitor.ui:257
 msgid "Everything"
 msgstr "Tot"
 
-#: ../plugins/event_monitor.ui.h:5
+#: plugins/event_monitor.ui:273
 msgid "Selected application"
 msgstr "Aplicació seleccionada"
 
-#: ../plugins/event_monitor.ui.h:6
+#: plugins/event_monitor.ui:289
 msgid "Selected accessible"
 msgstr "Accessible seleccionat"
 
-#: ../plugins/event_monitor.ui.h:7
+#: plugins/event_monitor.ui:310
 msgid "Source"
 msgstr "Font"
 
-#: ../plugins/event_monitor.py:51
+#. add accessible's name to buffer
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
+#: plugins/interface_view.py:736 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
+#: src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Nom"
+
+#: plugins/event_monitor.ui:358
+msgid "Full Name"
+msgstr "Nom complet"
+
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Seguiment d'esdeveniments"
 
-#: ../plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Mostra els esdeveniments tal com es produeixen des dels tipus i fonts "
 "seleccionats"
 
-#: ../plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Ressalta l'últim esdeveniment d'entrada"
 
-#: ../plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
 msgstr "Inicia/atura l'enregistrament d'esdeveniments"
 
-#: ../plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Neteja el registre d'esdeveniments"
 
-#: ../plugins/interface_view.ui.h:1
+#: plugins/interface_view.ui:125
 msgid "Child count"
 msgstr "Nombre de fills"
 
-#: ../plugins/interface_view.ui.h:2
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
+#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
+#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
+#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:343
-#: ../plugins/interface_view.py:859
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
+#: plugins/interface_view.py:344 plugins/interface_view.py:864
 msgid "(no description)"
 msgstr "(sense descripció)"
 
 #. add description to buffer
-#: ../plugins/interface_view.ui.h:4 ../plugins/validate.py:229
-#: ../plugins/validate.py:292
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
 msgid "Description"
 msgstr "Descripció"
 
-#: ../plugins/interface_view.ui.h:5
-msgid "States"
-msgstr "Estats"
+#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+msgid "(no ID)"
+msgstr "(sense ID)"
 
-#: ../plugins/interface_view.ui.h:6
-msgid "Attributes"
-msgstr "Atributs"
-
-#: ../plugins/interface_view.ui.h:7
-msgid "Show"
-msgstr "Mostra"
-
-#: ../plugins/interface_view.ui.h:8
-msgid "Relations"
-msgstr "Relacions"
-
-#: ../plugins/interface_view.ui.h:9
-msgid "_Accessible"
-msgstr "_Accessible"
-
-#: ../plugins/interface_view.ui.h:10
-msgid "Perform action"
-msgstr "Realitza l'acció"
-
-#: ../plugins/interface_view.ui.h:11
-msgid "Acti_on"
-msgstr "_Acció"
-
-#: ../plugins/interface_view.ui.h:12
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
 msgid "ID"
 msgstr "Identificador"
 
-#: ../plugins/interface_view.ui.h:13
+#: plugins/interface_view.ui:325
+msgid "States"
+msgstr "Estats"
+
+#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
+#: plugins/interface_view.ui:2739
+msgid "Attributes"
+msgstr "Atributs"
+
+#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+msgid "Show"
+msgstr "Mostra"
+
+#: plugins/interface_view.ui:551
+msgid "Relations"
+msgstr "Relacions"
+
+#: plugins/interface_view.ui:572
+msgid "_Accessible"
+msgstr "_Accessible"
+
+#: plugins/interface_view.ui:637
+msgid "Key binding"
+msgstr "Assignació de tecles"
+
+#: plugins/interface_view.ui:691
+msgid "Perform action"
+msgstr "Realitza l'acció"
+
+#: plugins/interface_view.ui:724
+msgid "Acti_on"
+msgstr "_Acció"
+
+#: plugins/interface_view.ui:772
 msgid "Toolkit"
 msgstr "Joc d'eines"
 
-#: ../plugins/interface_view.ui.h:14
+#: plugins/interface_view.ui:789
 msgid "Version"
 msgstr "Versió"
 
-#: ../plugins/interface_view.ui.h:15
+#: plugins/interface_view.ui:865
 msgid "Ap_plication"
 msgstr "A_plicació"
 
-#: ../plugins/interface_view.ui.h:16
+#: plugins/interface_view.ui:884
 msgid "Col_lection"
 msgstr "Co_l·lecció"
 
+#. Screen coordinates
+#. Component size in pixels
+#. Screen coordinates
 #. Component size
-#: ../plugins/interface_view.ui.h:18
+#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
+#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
+#: plugins/interface_view.ui:1525
 msgid "0, 0"
 msgstr "0, 0"
 
-#: ../plugins/interface_view.ui.h:19
+#: plugins/interface_view.ui:937
 msgid "Relative position"
 msgstr "Posició relativa"
 
-#: ../plugins/interface_view.ui.h:20
+#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
 msgid "Size"
 msgstr "Mida"
 
-#: ../plugins/interface_view.ui.h:21
+#: plugins/interface_view.ui:991
 msgid "WIDGET"
 msgstr "GINY"
 
-#: ../plugins/interface_view.ui.h:22
+#: plugins/interface_view.ui:1011
 msgid "Layer"
 msgstr "Capa"
 
-#: ../plugins/interface_view.ui.h:23
+#: plugins/interface_view.ui:1048
 msgid "MDI-Z-order"
 msgstr "Ordre de superposició de les finestres"
 
-#: ../plugins/interface_view.ui.h:24
+#: plugins/interface_view.ui:1085
 msgid "Alpha"
 msgstr "Alfa"
 
-#: ../plugins/interface_view.ui.h:25
+#: plugins/interface_view.ui:1120
 msgid "Absolute position"
 msgstr "Posició absoluta"
 
-#: ../plugins/interface_view.ui.h:26
+#: plugins/interface_view.ui:1139
 msgid "Co_mponent"
 msgstr "Co_mponent"
 
-#: ../plugins/interface_view.ui.h:27
+#: plugins/interface_view.ui:1158
 msgid "Des_ktop"
 msgstr "_Escriptori"
 
-#: ../plugins/interface_view.ui.h:28
+#: plugins/interface_view.ui:1264
 msgid "Locale:"
 msgstr "Localització:"
 
-#: ../plugins/interface_view.ui.h:29
+#: plugins/interface_view.ui:1305
 msgid "_Document"
 msgstr "_Document"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:298
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Enllaç"
 
-#: ../plugins/interface_view.ui.h:31
+#: plugins/interface_view.ui:1438
 msgid "H_ypertext"
 msgstr "H_ipertext"
 
-#: ../plugins/interface_view.ui.h:32
+#: plugins/interface_view.ui:1471
 msgid "Position"
 msgstr "Posició"
 
-#: ../plugins/interface_view.ui.h:33
+#: plugins/interface_view.ui:1560
 msgid "Locale"
 msgstr "Localització"
 
-#: ../plugins/interface_view.ui.h:34
+#: plugins/interface_view.ui:1622
 msgid "_Image"
 msgstr "_Imatge"
 
-#: ../plugins/interface_view.ui.h:35
+#: plugins/interface_view.ui:1641
 msgid "Lo_gin Helper"
 msgstr "_Aplicació d'ajuda per a l'inici de sessió"
 
-#: ../plugins/interface_view.ui.h:36
+#: plugins/interface_view.ui:1712
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: ../plugins/interface_view.ui.h:37
+#: plugins/interface_view.ui:1754
 msgid "_Selection"
 msgstr "_Selecció"
 
-#: ../plugins/interface_view.ui.h:38
+#: plugins/interface_view.ui:1792
+msgid "Content type"
+msgstr "Tipus de contingut"
+
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+msgid "URI"
+msgstr "URI"
+
+#: plugins/interface_view.ui:1822
 msgid "St_reamable Content"
 msgstr "Contingut del _flux"
 
-#: ../plugins/interface_view.ui.h:39
+#: plugins/interface_view.ui:1863
 msgid "Caption:"
 msgstr "Títol:"
 
-#: ../plugins/interface_view.ui.h:40
+#: plugins/interface_view.ui:1908
 msgid "Summary:"
 msgstr "Resum:"
 
-#: ../plugins/interface_view.ui.h:41
+#: plugins/interface_view.ui:2052
 msgid "Selected columns"
 msgstr "Columnes seleccionades"
 
-#: ../plugins/interface_view.ui.h:42
+#: plugins/interface_view.ui:2068
 msgid "Selected rows"
 msgstr "Files seleccionades"
 
-#: ../plugins/interface_view.ui.h:43
+#: plugins/interface_view.ui:2084
 msgid "Columns"
 msgstr "Columnes"
 
-#: ../plugins/interface_view.ui.h:44
+#: plugins/interface_view.ui:2100
 msgid "Rows"
 msgstr "Files"
 
-#: ../plugins/interface_view.ui.h:45
+#: plugins/interface_view.ui:2125
 msgid "Table Information"
 msgstr "Informació de la taula"
 
-#: ../plugins/interface_view.ui.h:46
+#: plugins/interface_view.ui:2171
 msgid "name (x,y)"
 msgstr "nom (x,y)"
 
-#: ../plugins/interface_view.ui.h:47
+#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
 msgid "Header:"
 msgstr "Capçalera:"
 
-#: ../plugins/interface_view.ui.h:48
+#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
 msgid "<no description>"
 msgstr "<sense descripció>"
 
+#. How many rows the cell spans.
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:50
+#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
 msgid "Extents:"
 msgstr "Extensions:"
 
-#: ../plugins/interface_view.ui.h:51
+#: plugins/interface_view.ui:2311
 msgid "Row"
 msgstr "Fila"
 
-#: ../plugins/interface_view.ui.h:52
+#: plugins/interface_view.ui:2430
 msgid "Column"
 msgstr "Columna"
 
-#: ../plugins/interface_view.ui.h:53
+#: plugins/interface_view.ui:2448
 msgid "Selected Cell"
 msgstr "Cel·la seleccionada"
 
-#: ../plugins/interface_view.ui.h:54
+#: plugins/interface_view.ui:2472
 msgid "_Table"
 msgstr "_Taula"
 
-#: ../plugins/interface_view.ui.h:55
+#: plugins/interface_view.ui:2533
 msgid "Text"
 msgstr "Text"
 
-#: ../plugins/interface_view.ui.h:56
+#: plugins/interface_view.ui:2571
 msgid "Offset"
 msgstr "Desplaçament"
 
-#: ../plugins/interface_view.ui.h:57
+#: plugins/interface_view.ui:2609
 msgid "Include defaults"
 msgstr "Inclou els per defecte"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:59
+#: plugins/interface_view.ui:2631
 msgid "Start: 0"
 msgstr "Inici: 0"
 
 #. End character offset of text attributes span
-#: ../plugins/interface_view.ui.h:61
+#: plugins/interface_view.ui:2649
 msgid "End: 0"
 msgstr "Final: 0"
 
-#: ../plugins/interface_view.ui.h:62
+#: plugins/interface_view.ui:2763
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: ../plugins/interface_view.ui.h:63
+#: plugins/interface_view.ui:2818
 msgid "Current value"
 msgstr "Valor actual"
 
-#: ../plugins/interface_view.ui.h:64
+#: plugins/interface_view.ui:2886
 msgid "Minimum increment"
 msgstr "Increment mínim"
 
-#: ../plugins/interface_view.ui.h:65
+#: plugins/interface_view.ui:2901
 msgid "Maximum value"
 msgstr "Valor màxim"
 
-#: ../plugins/interface_view.ui.h:66
+#: plugins/interface_view.ui:2916
 msgid "Minimum value"
 msgstr "Valor mínim"
 
-#: ../plugins/interface_view.ui.h:67
+#: plugins/interface_view.ui:2942
 msgid "Val_ue"
 msgstr "Val_or"
 
-#: ../plugins/interface_view.ui.h:68
+#: plugins/interface_view.ui:2961
 msgid "unknown"
 msgstr "desconegut"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:42
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "Visualitzador d'interfícies"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:45
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "Permet veure diverses propietats d'interfície"
 
-#: ../plugins/interface_view.py:235
+#: plugins/interface_view.py:237
 msgid "(not implemented)"
 msgstr "(no està implementat)"
 
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:731 ../plugins/validate.py:294
-#: ../src/lib/accerciser/accessible_treeview.py:503
-#: ../src/lib/accerciser/plugin/plugin_manager.py:386
-msgid "Name"
-msgstr "Nom"
-
-#: ../plugins/interface_view.py:739
-msgid "URI"
-msgstr "URI"
-
-#: ../plugins/interface_view.py:747
+#: plugins/interface_view.py:752
 msgid "Start"
 msgstr "Inici"
 
-#: ../plugins/interface_view.py:755
+#: plugins/interface_view.py:760
 msgid "End"
 msgstr "Final"
 
-#: ../plugins/interface_view.py:917
+#: plugins/interface_view.py:922
 msgid "Too many selectable children"
 msgstr "Massa fills seleccionables"
 
-#: ../plugins/interface_view.py:1262 ../plugins/interface_view.py:1265
+#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
 msgid "(Editable)"
 msgstr "(Editable)"
 
@@ -580,7 +605,7 @@ msgstr "(Editable)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: ../plugins/interface_view.py:1412
+#: plugins/interface_view.py:1425
 #, python-format
 msgid "Start: %d"
 msgstr "Inici: %d"
@@ -590,116 +615,115 @@ msgstr "Inici: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: ../plugins/interface_view.py:1418
+#: plugins/interface_view.py:1431
 #, python-format
 msgid "End: %d"
 msgstr "Final: %d"
 
-#: ../plugins/quick_select.py:16
+#: plugins/quick_select.py:16
 msgid "Quick Select"
 msgstr "Selecció ràpida"
 
-#: ../plugins/quick_select.py:19
+#: plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr ""
 "Connector amb diferents mètodes per a seleccionar accessibles ràpidament."
 
-#: ../plugins/quick_select.py:25
+#: plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
 msgstr "Inspecciona l'últim accessible amb el focus"
 
-#: ../plugins/quick_select.py:29
+#: plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
 msgstr "Inspecciona l'accessible sota el ratolí"
 
-#: ../plugins/validate.ui.h:1
+#: plugins/validate.ui:38
 msgid "Sche_ma:"
 msgstr "Esque_ma:"
 
-#: ../plugins/validate.ui.h:2
+#: plugins/validate.ui:89
 msgid "V_alidate"
 msgstr "V_alida"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:375
-#: ../plugins/validate.py:427
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
 msgid "Idle"
 msgstr "Inactiu"
 
-#: ../plugins/validate.py:80
+#: plugins/validate.py:80
 msgid "No description"
 msgstr "Sense descripció"
 
-#: ../plugins/validate.py:167
+#: plugins/validate.py:167
 msgid "AT-SPI Validator"
 msgstr "Validador AT-SPI"
 
-#: ../plugins/validate.py:169
+#: plugins/validate.py:169
 msgid "Validates application accessibility"
 msgstr "Valida l'accessibilitat de l'aplicació"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:222 ../plugins/validate.py:290
+#: plugins/validate.py:223 plugins/validate.py:291
 msgid "Level"
 msgstr "Nivell"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:296 ../src/lib/accerciser/accessible_treeview.py:513
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
 msgid "Role"
 msgstr "Rol"
 
-#: ../plugins/validate.py:361
+#: plugins/validate.py:362
 msgid "Saving"
 msgstr "S'està desant"
 
-#: ../plugins/validate.py:409
+#: plugins/validate.py:413
 msgid "Validating"
 msgstr "S'està validant"
 
-#: ../plugins/validate.py:565
+#: plugins/validate.py:571
 msgid "EXCEPT"
 msgstr "EXCEPTE"
 
-#: ../plugins/validate.py:572
+#: plugins/validate.py:578
 msgid "ERROR"
 msgstr "ERROR"
 
-#: ../plugins/validate.py:580
+#: plugins/validate.py:586
 msgid "WARN"
 msgstr "ADVERTÈNCIA"
 
-#: ../plugins/validate.py:587
+#: plugins/validate.py:593
 msgid "INFO"
 msgstr "INFORMACIÓ"
 
-#: ../plugins/validate.py:594
+#: plugins/validate.py:600
 msgid "DEBUG"
 msgstr "DEPURAR"
 
-#: ../plugindata/validate/basic.py:8
+#: plugindata/validate/basic.py:8
 msgid "Basic"
 msgstr "Bàsic"
 
-#: ../plugindata/validate/basic.py:9
+#: plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
 msgstr ""
 "Comprova l'accessibilitat fonamental de la interfície d'usuari de l'aplicació"
 
-#: ../plugindata/validate/basic.py:28
+#: plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
 msgstr "l'accionable %s no pot tenir el focus o ser seleccionat"
 
-#: ../plugindata/validate/basic.py:46
+#: plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "l'interactiu %s no es pot accionar"
 
-#: ../plugindata/validate/basic.py:61
+#: plugindata/validate/basic.py:61
 msgid "more than one focused widget"
 msgstr "hi ha més d'un giny amb el focus"
 
-#: ../plugindata/validate/basic.py:84
+#: plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
 msgstr "la interfície %s no té text"
@@ -707,12 +731,12 @@ msgstr "la interfície %s no té text"
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:104
+#: plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "l'índex %s en el pare no concorda amb l'índex del fill"
 
-#: ../plugindata/validate/basic.py:150
+#: plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "Falta l'element recíproc per a la relació %s"
@@ -720,12 +744,12 @@ msgstr "Falta l'element recíproc per a la relació %s"
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:199
+#: plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "falta el nom o l'etiqueta a %s"
 
-#: ../plugindata/validate/basic.py:217
+#: plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr ""
@@ -736,7 +760,7 @@ msgstr ""
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:246
+#: plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s té l'estat %s sense tenir l'estat %s"
@@ -744,7 +768,7 @@ msgstr "%s té l'estat %s sense tenir l'estat %s"
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:272
+#: plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s no pertany a un conjunt"
@@ -754,7 +778,7 @@ msgstr "%s no pertany a un conjunt"
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:307
+#: plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s índex %(num)d no concorda amb la fila i la columna"
@@ -765,7 +789,7 @@ msgstr "%(rolename)s índex %(num)d no concorda amb la fila i la columna"
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:339
+#: plugindata/validate/basic.py:339
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
@@ -774,246 +798,250 @@ msgstr ""
 "%(rolename)s índex pare %(num1)d no concorda amb la fila i la columna de "
 "l'índex %(num2)d"
 
-#: ../plugindata/validate/basic.py:366
+#: plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s no té nom o descripció"
 
-#: ../src/lib/accerciser/accerciser.py:80
+#: src/lib/accerciser/accerciser.py:80
 msgid "_Preferences…"
 msgstr "_Preferències…"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "_Continguts"
 
-#: ../src/lib/accerciser/accessible_treeview.py:459
+#: src/lib/accerciser/accessible_treeview.py:415
 msgid "<dead>"
 msgstr "<mort>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:520
+#: src/lib/accerciser/accessible_treeview.py:478
 msgid "Children"
 msgstr "Fills"
 
-#: ../src/lib/accerciser/accessible_treeview.py:549
-msgid "_Hide/Show Applications without children"
-msgstr "_Oculta o mostra les aplicacions sense fills"
+#: src/lib/accerciser/accessible_treeview.py:506
+msgid "_Show Applications without children"
+msgstr "_Mostra les aplicacions sense fills"
 
-#: ../src/lib/accerciser/accessible_treeview.py:552
+#: src/lib/accerciser/accessible_treeview.py:509
 msgid "_Refresh Registry"
 msgstr "_Refresca el registre"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:555
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "Refresh all"
 msgstr "Refresca-ho tot"
 
-#. Translators: Refresh current tree node’s children.
+#. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:558
+#: src/lib/accerciser/accessible_treeview.py:515
 msgid "Refresh _Node"
 msgstr "Refresca el _node"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:561
+#: src/lib/accerciser/accessible_treeview.py:518
 msgid "Refresh selected node’s children"
 msgstr "Refresca els nodes fill seleccionats"
 
-#: ../src/lib/accerciser/hotkey_manager.py:247
+#: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
 msgstr "Component"
 
-#: ../src/lib/accerciser/hotkey_manager.py:254
+#: src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "Tasca"
 
-#: ../src/lib/accerciser/hotkey_manager.py:261
+#: src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "Tecla"
 
-#: ../src/lib/accerciser/hotkey_manager.py:271
+#: src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
 msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:278
+#: src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
 msgstr "Control"
 
-#: ../src/lib/accerciser/hotkey_manager.py:286
+#: src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
 msgstr "Maj"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:43
+msgid "Accerciser Accessibility Explorer"
+msgstr "Explorador d'accessibilitat Accerciser"
+
+#: src/lib/accerciser/main_window.py:77
 msgid "Top panel"
 msgstr "Quadre superior"
 
-#: ../src/lib/accerciser/main_window.py:78
+#: src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
 msgstr "Quadre inferior"
 
-#: ../src/lib/accerciser/prefs_dialog.py:38
+#: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr "Preferències de l'Accerciser"
+msgstr "preferències de l'Accerciser"
 
-#: ../src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "Connectors"
 
-#: ../src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
 msgstr "Dreceres de teclat globals"
 
-#: ../src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
 msgstr "Ressaltat"
 
-#: ../src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
 msgstr "Durada del ressaltat:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "Color del contorn:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
 msgstr "El color del contorn del quadre ressaltat"
 
-#: ../src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "Color de l'emplenat:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
 msgstr "El color de l'emplenat del quadre ressaltat"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr "Joan Duran <jodufi@gmail.com>, 2007-2009"
 
-#: ../src/lib/accerciser/about_dialog.py:53
+#: src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "Un explorador interactiu d'accessibilitat escrit en Python"
 
-#: ../src/lib/accerciser/about_dialog.py:54
+#: src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:56
+#: src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License. See the COPYING and NOTICE files for details."
 msgstr ""
 "La nova llicència BSD, vegeu els fitxers COPYING i NOTICE per a més detalls."
 
-#: ../src/lib/accerciser/about_dialog.py:58
+#: src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
 msgstr "Pàgina web"
 
-#: ../src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark…"
 msgstr "_Afegeix una adreça d'interès…"
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
 msgstr "Afegeix a les adreces d'interès l'accessible seleccionat."
 
-#: ../src/lib/accerciser/bookmarks.py:69
+#: src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks…"
 msgstr "_Edita les adreces d'interès…"
 
-#: ../src/lib/accerciser/bookmarks.py:70
+#: src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
 msgstr "Gestiona les adreces d'interès."
 
-#: ../src/lib/accerciser/bookmarks.py:328
+#: src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks…"
 msgstr "Edita les adreces d'interès…"
 
-#: ../src/lib/accerciser/bookmarks.py:434
+#: src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "Títol"
 
-#: ../src/lib/accerciser/bookmarks.py:442
+#: src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "Aplicació"
 
-#: ../src/lib/accerciser/bookmarks.py:450
+#: src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "Camí"
 
-#: ../src/lib/accerciser/bookmarks.py:519
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark…"
 msgstr "Afegeix una adreça d'interès…"
 
-#: ../src/lib/accerciser/bookmarks.py:533
+#: src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "Títol:"
 
-#: ../src/lib/accerciser/bookmarks.py:536
+#: src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "Aplicació:"
 
-#: ../src/lib/accerciser/bookmarks.py:539
+#: src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
 msgstr "Camí:"
 
-#: ../src/lib/accerciser/plugin/message.py:153
+#: src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Errors del connector"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:395
+#: src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "Visualització"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:472
+#: src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "Sense visualització"
 
-#: ../src/lib/accerciser/plugin/view.py:377
+#: src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
 msgstr "_Visualització individual de connectors"
 
-#: ../src/lib/accerciser/plugin/view.py:766
+#: src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "Visualització del connector"
 
-#: ../src/lib/accerciser/plugin/view.py:769
+#: src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Visualització del connector (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1074
+#: src/lib/accerciser/plugin/view.py:1074
 msgid "_New view…"
 msgstr "Visualització _nova…"
 
-#: ../src/lib/accerciser/plugin/view.py:1130
+#: src/lib/accerciser/plugin/view.py:1130
 msgid "New View…"
 msgstr "Nova visualització…"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: src/lib/accerciser/ui_manager.py:23
 msgid "_File"
 msgstr "_Fitxer"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
 msgstr "_Edita"
 
-#: ../src/lib/accerciser/ui_manager.py:25
+#: src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
 msgstr "_Adreces d'interès"
 
-#: ../src/lib/accerciser/ui_manager.py:26
+#: src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
 msgstr "_Visualitza"
 
-#: ../src/lib/accerciser/ui_manager.py:27
+#: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "A_juda"
 
@@ -1069,15 +1097,6 @@ msgstr "A_juda"
 
 #~ msgid "Confirm clear"
 #~ msgstr "Confirmeu la neteja"
-
-#~ msgid "Full name"
-#~ msgstr "Nom complet"
-
-#~ msgid "Key binding"
-#~ msgstr "Assignació de tecles"
-
-#~ msgid "Content type"
-#~ msgstr "Tipus de contingut"
 
 #~ msgid "View"
 #~ msgstr "Visualitza"
