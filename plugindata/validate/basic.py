@@ -8,7 +8,7 @@ __metadata__ = {
   'name': _('Basic'),
   'description': _('Tests fundamental GUI application accessibility')}
 
-URL_BASE = 'http://live.gnome.org/Accerciser/Validate#'
+URL_BASE = 'https://wiki.gnome.org/Apps/Accerciser/Validate#'
 
 
 class ActionIsInteractive(Validator):
