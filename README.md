@@ -1,9 +1,10 @@
-Accerciser 3.39.1
+# Accerciser 
+
+3.39.1
 Just 15 minutes a day for better accessibility!
 
-Description
-===========
-
+## Description
+  
   Accerciser is an interactive Python accessibility explorer for the GNOME
   desktop. It uses AT-SPI2 to inspect and control widgets, allowing you to check
   if an application is providing correct information to assistive technologies
@@ -12,70 +13,68 @@ Description
 
   In essence, Accerciser is a next generation at-poke tool.
 
-Features
-========
+# Features
 
-* Based in at-spi2
+- Based in at-spi2
 
-Accerciser uses the new dbus-based accessiblity framework.
+  Accerciser uses the new dbus-based accessiblity framework.
 
-* Plugin architecture
+- Plugin architecture
 
-Create a Python module, drop it in a folder, and have it load as a plugin pane
-with full access to AT-SPI2 and the selected element in the accessibility tree
-view.
+  Create a Python module, drop it in a folder, and have it load as a plugin pane
+  with full access to AT-SPI2 and the selected element in the accessibility tree
+  view.
 
-* Interface browser and event monitor plugins
+- Interface browser and event monitor plugins
 
-All the features you've come to expect from a poke tool, and then some.
+  All the features you've come to expect from a poke tool, and then some.
 
-* IPython console plugin
+- IPython console plugin
 
-A full, interactive Python shell with access to the accessible object selected
-in the tree view; all AT-SPI2 interfaces, methods and attributes; and any other
-Python modules. Supports autocompletion and a million other niceties thanks to
-IPython.
+  A full, interactive Python shell with access to the accessible object selected
+  in the tree view; all AT-SPI2 interfaces, methods and attributes; and any other
+  Python modules. Supports autocompletion and a million other niceties thanks to
+  IPython.
 
-* API browser plugin
+- API browser plugin
   
-Shows the interfaces, methods, and attributes available on the selected
-accessible object.
+  Shows the interfaces, methods, and attributes available on the selected
+  accessible object.
 
-* Global hotkeys
+- Global hotkeys
 
-Move the tree view quickly to the last focused accessible or the one under the
-mouse pointer. Insert a marker into the event monitor log for easy
-identification at a later time.
+  Move the tree view quickly to the last focused accessible or the one under the
+  mouse pointer. Insert a marker into the event monitor log for easy
+  identification at a later time.
 
-* Customizable UI layout
+- Customizable UI layout
 
-Move plugin tabs to different panels or even separate windows to view them
-concurrently.
+  Move plugin tabs to different panels or even separate windows to view them
+  concurrently.
 
-* Accessibility!
+- Accessibility!
 
-Accerciser does not disable its own accessibility.
+  Accerciser does not disable its own accessibility.
 
-* Yelp documentation
+- Yelp documentation
   
-Included in the package.
+  Included in the package.
 
-* Python powered
+- Python powered
 
-Brits, not serpents.
+  Brits, not serpents.
 
 
-Requirements
-============
+## Requirements
 
 As Accerciser uses pygobject, you'll need to have the following libraries:
-
+  ```
     gobject-introspection
     python-gobject >= 2.90.3
     gtk+3 >= 3.1.13
-
+  ```
   On a Red Hat based distro:
-
+  ```
     python >= 3.2
     pyatspi >= 1.9.0
     at-spi2-core >= 2.5.2
@@ -85,9 +84,9 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     appstream-glib-devel
     yelp-tools
     python3-xlib
-
+  ```
   On a Debian based distro:
-
+  ```
     python >= 2.4
     python3-pyatspi >= 1.9.0
     at-spi2 >= 2.1.5
@@ -96,34 +95,31 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     appstream-util
     yelp-tools
     python3-xlib
-    
+  ```
   To use the Python console plugin, you must hve IPython installed.
 
   Make sure accessibility is enabled for your GNOME desktop:
-
+  ```
     gsettings get org.gnome.desktop.interface toolkit-accessibility
+  ```
 
   
-Installing
-==========
-
+## Installing
+```
   ./autogen.sh
   make
   sudo make install
+```
+## Running
 
-Running
-=======
-
-  Type 'accerciser' at the prompt or choose the Accerciser item from the 
+  Type `accerciser` at the prompt or choose the Accerciser item from the 
   Programming menu in GNOME.
   
-Help
-=====
+## Help
 
   See the Help menu in the program GUI.
 
-Legal
-=====
+## Legal
   
   Copyright (c) 2006, 2007 IBM Corporation
 
