@@ -875,19 +875,24 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       self._selectExistingPath(self._path_to_expand)
       self._path_to_expand = None
 
-  def _selectExistingPath(self, path):
+  def _selectExistingPath(self, model_path):
     '''
     Select a path that already exists. Expand, scroll, and select.
     
-    @param path: Path to select.
+    @param model_path: Path to select, referring to the unfiltered model.
     @type path: tuple
     '''
-    tree_path = gtk.TreePath(path[:-1])
-    if len(path) > 1:
+    iter = self.model.get_iter(model_path)
+    (res, filter_iter) = self.filter.convert_child_iter_to_iter(iter)
+    if not res:
+        return
+    filter_path = self.filter.get_path(filter_iter)
+    tree_path = gtk.TreePath(filter_path[:-1])
+    if len(filter_path) > 1:
       self.expand_to_path(tree_path)
-    self.scroll_to_cell(path)
+    self.scroll_to_cell(filter_path)
     selection = self.get_selection()
-    selection.select_path(path)
+    selection.select_path(filter_path)
     
 
   def _onStartPop(self, model):
