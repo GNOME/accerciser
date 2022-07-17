@@ -856,7 +856,16 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     if dummy:
       self._path_to_expand = path
       self.model.popToPath(path)
-    else:
+      # process all pending events, so the path actually
+      # gets populated via the corresponding idles
+      main_loop_context = GLib.MainContext.default()
+      while main_loop_context.iteration(False):
+        pass
+      try:
+        dummy = self.model[path][COL_DUMMY]
+      except:
+        pass
+    if not dummy:
       self._selectExistingPath(path)
 
   def _onRowFilled(self, model, iter):
