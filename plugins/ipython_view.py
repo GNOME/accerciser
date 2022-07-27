@@ -76,12 +76,20 @@ class IterableIPShell:
         IPython.terminal.interactiveshell.raw_input_original = input_func
       else:
         IPython.frontend.terminal.interactiveshell.raw_input_original = input_func
-    if cin:
-      io.stdin = io.IOStream(cin)
-    if cout:
-      io.stdout = io.IOStream(cout)
-    if cerr:
-      io.stderr = io.IOStream(cerr)
+    if IPython.version_info < (8,):
+      if cin:
+        io.stdin = io.IOStream(cin)
+      if cout:
+        io.stdout = io.IOStream(cout)
+      if cerr:
+        io.stderr = io.IOStream(cerr)
+    else:
+      if cin:
+        sys.stdin = cin
+      if cout:
+        sys.stdout = cout
+      if cerr:
+        sys.stderr = cerr
 
     # This is to get rid of the blockage that accurs during 
     # IPython.Shell.InteractiveShell.user_setup()
@@ -99,11 +107,11 @@ class IterableIPShell:
     cfg.InteractiveShell.colors = "Linux"
     cfg.Completer.use_jedi = False
 
-    # InteractiveShell's __init__ overwrites io.stdout,io.stderr with
-    # sys.stdout, sys.stderr, this makes sure they are right
-    #
-    old_stdout, old_stderr = sys.stdout, sys.stderr
-    sys.stdout, sys.stderr = io.stdout.stream, io.stderr.stream
+    if IPython.version_info < (8,):
+      # InteractiveShell's __init__ overwrites io.stdout,io.stderr with
+      # sys.stdout, sys.stderr, this makes sure they are right
+      old_stdout, old_stderr = sys.stdout, sys.stderr
+      sys.stdout, sys.stderr = io.stdout.stream, io.stderr.stream
 
     # InteractiveShell inherits from SingletonConfigurable, so use instance()
     #
@@ -114,7 +122,8 @@ class IterableIPShell:
       self.IP = IPython.frontend.terminal.embed.InteractiveShellEmbed.instance(\
               config=cfg, user_ns=user_ns)
 
-    sys.stdout, sys.stderr = old_stdout, old_stderr
+    if IPython.version_info < (8,):
+      sys.stdout, sys.stderr = old_stdout, old_stderr
 
     self.IP.system = lambda cmd: self.shell(self.IP.var_expand(cmd),
                                             header='IPython system call: ')
@@ -156,14 +165,16 @@ class IterableIPShell:
     '''
     self.history_level = 0
 
-    # this is needed because some functions in IPython use 'print' to print
-    # output (like 'who')
-    #
-    orig_stdout = sys.stdout
-    sys.stdout = IPython.utils.io.stdout
+    if IPython.version_info < (8,):
+      # this is needed because some functions in IPython use 'print' to print
+      # output (like 'who')
 
-    orig_stdin = sys.stdin
-    sys.stdin = IPython.utils.io.stdin;
+      orig_stdout = sys.stdout
+      sys.stdout = IPython.utils.io.stdout
+
+      orig_stdin = sys.stdin
+      sys.stdin = IPython.utils.io.stdin;
+
     self.prompt = self.generatePrompt(self.iter_more)
 
     self.IP.hooks.pre_prompt_hook()
@@ -210,8 +221,9 @@ class IterableIPShell:
           self.IP.rl_do_indent = True
           pass
 
-    sys.stdout = orig_stdout
-    sys.stdin = orig_stdin
+    if IPython.version_info < (8,):
+      sys.stdout = orig_stdout
+      sys.stdin = orig_stdin
 
   def generatePrompt(self, is_continuation):
     '''
