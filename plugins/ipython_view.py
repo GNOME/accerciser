@@ -388,7 +388,9 @@ class ConsoleView(gtk.TextView):
                   '1;30': 'DarkGray',  '1;31': 'DarkRed',
                   '1;32': 'SeaGreen',  '1;33': 'Yellow',
                   '1;34': 'LightBlue', '1;35': 'MediumPurple',
-                  '1;36': 'LightCyan', '1;37': 'White'}
+                  '1;36': 'LightCyan', '1;37': 'White',
+                  '38;5;241': 'Gray',
+                  '39': 'Black' }
 
   def __init__(self):
     '''
