@@ -649,7 +649,7 @@ class IPythonView(ConsoleView, IterableIPShell):
     @return: True if event should not trickle.
     @rtype: boolean
     '''
-    if event.state & gdk.ModifierType.CONTROL_MASK and event.keyval == 99:
+    if event.state & gdk.ModifierType.CONTROL_MASK and event.keyval == gdk.KEY_c:
       self.interrupt = True
       self._processLine()
       return True
