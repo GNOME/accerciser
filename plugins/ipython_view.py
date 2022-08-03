@@ -575,6 +575,11 @@ class ConsoleView(gtk.TextView):
         self.text_buffer.move_mark(self.line_start, self.text_buffer.get_iter_at_offset(len(self.prompt)))
         self.text_buffer.place_cursor(self.text_buffer.get_iter_at_offset(cursor_pos_in_line))
         return True
+    elif event.state & gdk.ModifierType.CONTROL_MASK and event.keyval in [gdk.KEY_k, gdk.KEY_K]:
+      # clear text after input cursor on Ctrl+K
+      if insert_iter.editable(True):
+        self.text_buffer.delete(insert_iter, self.text_buffer.get_end_iter())
+      return True
     elif not event.string:
       pass
     elif start_iter.compare(insert_iter) <= 0 and \
