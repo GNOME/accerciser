@@ -580,6 +580,10 @@ class ConsoleView(gtk.TextView):
       if insert_iter.editable(True):
         self.text_buffer.delete(insert_iter, self.text_buffer.get_end_iter())
       return True
+    elif event.state & gdk.ModifierType.CONTROL_MASK and event.keyval == gdk.KEY_C:
+      # copy selection on Ctrl+C (upper-case 'C' only)
+      self.text_buffer.copy_clipboard(gtk.Clipboard.get(gdk.SELECTION_CLIPBOARD))
+      return True
     elif not event.string:
       pass
     elif start_iter.compare(insert_iter) <= 0 and \
