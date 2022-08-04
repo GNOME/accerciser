@@ -204,7 +204,6 @@ class IterableIPShell:
       else:
         self.IP.input_splitter.push(line)
         self.iter_more = self.IP.input_splitter.push_accepts_more()
-      self.prompt = self.generatePrompt(self.iter_more)
       if not self.iter_more:
           if self.no_input_splitter:
             source_raw = '\n'.join(self.lines)
@@ -220,6 +219,7 @@ class IterableIPShell:
           #
           self.IP.rl_do_indent = True
           pass
+      self.prompt = self.generatePrompt(self.iter_more)
 
     if IPython.version_info < (8,):
       sys.stdout = orig_stdout
