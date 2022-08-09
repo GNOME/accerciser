@@ -1430,32 +1430,12 @@ class _SectionText(_InterfaceSection):
     # bold formatting is 4.
     self.label_end.set_markup(_('End: %d') % end)
 
-  def _onTextViewPressed(self, widget, event):
-    '''
-    Update spin button in the case that the textview was clicked.
-    Once the spin button's value changes, it's own callback fires which
-    re-populates the attribute view.
-    
-    @param widget: The widget that recived the click event, 
-    typically the text view.
-    @type widget: gtk.Widget
-    @param event: The click event.
-    @type event: gtk.gdk.Event
-    '''
-    if event.button != 1:
-      return
-
-    x, y = event.get_coords()
-    x, y = self.text_view.window_to_buffer_coords(gtk.TextWindowType.WIDGET,
-                                                   int(x), int(y))
-    iter = self.text_view.get_iter_at_location(x, y)
-     
-    self.offset_spin.set_value(iter.get_offset())
-
   def _onTextCursorMove(self, text_buffer, param_spec):
     '''
     Update spinner when input cursor moves.
-    
+    Once the spin button's value changes, it's own callback fires
+    which re-populates the attribute view.
+
     @param text_buffer: The section's main text buffer.
     @type text_buffer: gtk.TextBuffer
     @param param_spec: Some gobject crud
