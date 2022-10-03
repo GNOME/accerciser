@@ -1,5 +1,5 @@
 # Turkish translation of accerciser
-# Copyright (C) 2007-2019 accerciser'S COPYRIGHT HOLDER
+# Copyright (C) 2007-2022 accerciser's COPYRIGHT HOLDER
 # This file is distributed under the same license as the accerciser package.
 #
 # Barış Çiçek <baris@teamforce.name.tr>, 2008, 2009.
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-07-27 14:57+0000\n"
+"POT-Creation-Date: 2022-07-17 20:52+0000\n"
 "PO-Revision-Date: 2019-09-05 12:47+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -253,7 +253,7 @@ msgstr "Kaynak"
 
 #. add accessible's name to buffer
 #: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:735 plugins/validate.py:295
+#: plugins/interface_view.py:736 plugins/validate.py:295
 #: src/lib/accerciser/accessible_treeview.py:462
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -263,23 +263,23 @@ msgstr "Ad"
 msgid "Full Name"
 msgstr "Tam Ad"
 
-#: plugins/event_monitor.py:51
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Olay İzleyici"
 
-#: plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Seçili türlerden ve kaynaklardan oluşan olayları göster"
 
-#: plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Son olay girdisini"
 
-#: plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
 msgstr "Olay kaydetmeyi başlat/durdur"
 
-#: plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Olay kaydını temizle"
 
@@ -295,7 +295,7 @@ msgid "0"
 msgstr "0"
 
 #: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:343 plugins/interface_view.py:863
+#: plugins/interface_view.py:344 plugins/interface_view.py:864
 msgid "(no description)"
 msgstr "(tanımlama yok)"
 
@@ -306,7 +306,7 @@ msgstr "(tanımlama yok)"
 msgid "Description"
 msgstr "Tanım"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:347
+#: plugins/interface_view.ui:233 plugins/interface_view.py:348
 msgid "(no ID)"
 msgstr "(kimlik yok)"
 
@@ -454,7 +454,7 @@ msgstr "_Seçim"
 msgid "Content type"
 msgstr "İçerik türü"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
 msgid "URI"
 msgstr "URI"
 
@@ -575,32 +575,32 @@ msgid "unknown"
 msgstr "bilinmeyen"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:43
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "Arayüz Gösterici"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:46
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "Çeşitli arayüz özelliklerini görüntülemeye izin verir"
 
-#: plugins/interface_view.py:236
+#: plugins/interface_view.py:237
 msgid "(not implemented)"
 msgstr "(uygulanmamış)"
 
-#: plugins/interface_view.py:751
+#: plugins/interface_view.py:752
 msgid "Start"
 msgstr "Başla"
 
-#: plugins/interface_view.py:759
+#: plugins/interface_view.py:760
 msgid "End"
 msgstr "Son"
 
-#: plugins/interface_view.py:921
+#: plugins/interface_view.py:922
 msgid "Too many selectable children"
 msgstr "Çok fazla seçilebilir alt süreç"
 
-#: plugins/interface_view.py:1274 plugins/interface_view.py:1277
+#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
 msgid "(Editable)"
 msgstr "(Düzenlenebilir)"
 
@@ -609,7 +609,7 @@ msgstr "(Düzenlenebilir)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1424
+#: plugins/interface_view.py:1425
 #, python-format
 msgid "Start: %d"
 msgstr "Başlangıç: %d"
@@ -619,7 +619,7 @@ msgstr "Başlangıç: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1430
+#: plugins/interface_view.py:1431
 #, python-format
 msgid "End: %d"
 msgstr "Son: %d"
@@ -1052,71 +1052,3 @@ msgstr "_Görünüm"
 #: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
 msgstr "Ya_rdım"
-
-#~ msgid "accerciser"
-#~ msgstr "accerciser"
-
-#~ msgid "<b>Event monitor</b>"
-#~ msgstr "<b>Olay izleyici</b>"
-
-#~ msgid "<b>Description</b>"
-#~ msgstr "<b>Tanım</b>"
-
-#~ msgid "<b>Text</b>"
-#~ msgstr "<b>Metin</b>"
-
-#~ msgid "<i>(no description)</i>"
-#~ msgstr "<i>(tanım yok)</i>"
-
-#~ msgid "<i>Start: 0</i>"
-#~ msgstr "<i>Başlangıç: 0</i>"
-
-#~ msgid ""
-#~ "Accerciser could not see the applications on your desktop.  You must "
-#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
-#~ "it now?"
-#~ msgstr ""
-#~ "Accerciser masaüstünüzdeki uygulamaları göremedi. Bu sorunu çözmek için "
-#~ "masaüstü erişilebilirliğini etkinleştirmelisiniz. Şimdi etkinleştirmek "
-#~ "ister misiniz?"
-
-#~ msgid "Note: Changes only take effect after logout."
-#~ msgstr "Not: Değişiklikler sadece çıkış yaptıktan sonra etkinleşecektir."
-
-#~ msgid "<i>_New view...</i>"
-#~ msgstr "<i>Ye_ni görünüm...</i>"
-
-#~ msgid "Dogtail"
-#~ msgstr "Dogtail"
-
-#~ msgid "LDTP"
-#~ msgstr "LDTP"
-
-#~ msgid "Native"
-#~ msgstr "Native"
-
-#~ msgid "Script Type"
-#~ msgstr "Betik Türü"
-
-#~ msgid "Script Recorder"
-#~ msgstr "Betik Kaydedici"
-
-#~ msgid "Creates dogtail style scripts"
-#~ msgstr "Dogtail tarzı betikler oluşturur"
-
-#~ msgid "The current script will be lost."
-#~ msgstr "Şimdiki betik kaybolacak."
-
-#~ msgid "Confirm clear"
-#~ msgstr "Silmeyi onayla"
-
-#~ msgid "1.0"
-#~ msgstr "1.0"
-
-#, fuzzy
-#~ msgid "gtk-clear"
-#~ msgstr "gtk-clear"
-
-#, fuzzy
-#~ msgid "gtk-save"
-#~ msgstr "gtk-save"
