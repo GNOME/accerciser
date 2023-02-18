@@ -369,7 +369,8 @@ class ConsoleView(gtk.TextView):
   '''
   Specialized text view for console-like workflow.
 
-  @cvar ANSI_COLORS: Mapping of terminal colors to X11 names.
+  @cvar ANSI_COLORS: Mapping of terminal control sequence values to
+                     tuples containing foreground and background color names.
   @type ANSI_COLORS: dictionary
 
   @ivar text_buffer: Widget's text buffer.
@@ -381,16 +382,24 @@ class ConsoleView(gtk.TextView):
   @ivar line_start: Start of command line mark.
   @type line_start: gtk.TextMark
   '''
-  ANSI_COLORS =  {'0;30': 'Black',     '0;31': 'Red',
-                  '0;32': 'Green',     '0;33': 'Brown',
-                  '0;34': 'Blue',      '0;35': 'Purple',
-                  '0;36': 'Cyan',      '0;37': 'LightGray',
-                  '1;30': 'DarkGray',  '1;31': 'DarkRed',
-                  '1;32': 'SeaGreen',  '1;33': 'Yellow',
-                  '1;34': 'LightBlue', '1;35': 'MediumPurple',
-                  '1;36': 'LightCyan', '1;37': 'White',
-                  '38;5;241': 'Gray',
-                  '39': 'Black' }
+  ANSI_COLORS = {'0;30': ('Black', None),
+                 '0;31': ('Red', None),
+                 '0;32': ('Green', None),
+                 '0;33': ('Brown', None),
+                 '0;34': ('Blue', None),
+                 '0;35': ('Purple', None),
+                 '0;36': ('Cyan', None),
+                 '0;37': ('LightGray', None),
+                 '1;30': ('DarkGray', None),
+                 '1;31': ('DarkRed', None),
+                 '1;32': ('SeaGreen', None),
+                 '1;33': ('Yellow', None),
+                 '1;34': ('LightBlue', None),
+                 '1;35': ('MediumPurple', None),
+                 '1;36': ('LightCyan', None),
+                 '1;37': ('White', None),
+                 '38;5;241': ('Gray', None),
+                 '39': ('Black', None)}
 
   def __init__(self):
     '''
@@ -418,7 +427,8 @@ class ConsoleView(gtk.TextView):
                                              False)
     for code in self.ANSI_COLORS:
       self.text_buffer.create_tag(code, 
-                                  foreground=self.ANSI_COLORS[code], 
+                                  foreground=self.ANSI_COLORS[code][0],
+                                  background=self.ANSI_COLORS[code][1],
                                   weight=700)
     self.text_buffer.create_tag('0')
     self.text_buffer.create_tag('notouch', editable=False)
