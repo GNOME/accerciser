@@ -398,8 +398,13 @@ class ConsoleView(gtk.TextView):
                  '1;35': ('MediumPurple', None),
                  '1;36': ('LightCyan', None),
                  '1;37': ('White', None),
+                 '38;5;124;43': ('DarkRed', 'Yellow'),
                  '38;5;241': ('Gray', None),
-                 '39': ('Black', None)}
+                 '38;5;241;43': ('Gray', 'Yellow'),
+                 '39': ('Black', None),
+                 '39;49': ('Red', 'White'),
+                 '43': (None, 'Yellow'),
+                 '49': (None, 'White')}
 
   def __init__(self):
     '''
