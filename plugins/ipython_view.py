@@ -401,8 +401,10 @@ class ConsoleView(gtk.TextView):
                  '38;5;124;43': ('DarkRed', 'Yellow'),
                  '38;5;241': ('Gray', None),
                  '38;5;241;43': ('Gray', 'Yellow'),
+                 '38;5;28;43;01': ('Green', 'Yellow'),
                  '39': ('Black', None),
                  '39;49': ('Red', 'White'),
+                 '39;49;00': ('Red', 'White'),
                  '43': (None, 'Yellow'),
                  '49': (None, 'White')}
 
