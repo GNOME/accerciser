@@ -1600,8 +1600,6 @@ class _SectionValue(_InterfaceSection):
     self.label_max = ui_xml.get_object('label_value_max')
     self.label_min = ui_xml.get_object('label_value_min')
     self.label_inc = ui_xml.get_object('label_value_inc')
-    self.registerEventListener(self._accEventValue, 
-                               'object:value-changed')
     
   def populateUI(self, acc):
     '''
@@ -1631,6 +1629,10 @@ class _SectionValue(_InterfaceSection):
     self.ignore_value_changes = False
     self.spinbutton.set_value(vi.currentValue)
     self.spinbutton.set_digits(digits)
+
+    self.registerEventListener(self._accEventValue,
+                               'object:property-change:accessible-value',
+                               'object:value-changed')
    
   def _onValueSpinnerChange(self, spinner):
     '''
