@@ -352,7 +352,7 @@ class BookmarkStore(gtk.ListStore):
       button_vbox.pack_start(add_button, False, False, 0)
       button_vbox.pack_start(remove_button, False, False, 0)
       button_vbox.pack_start(jump_button, False, False, 0)
-      vbox.add(hbox)
+      vbox.pack_start(hbox, True, True, 0)
       hbox.set_border_width(3)
       self.set_transient_for(bookmarks_store.parent_window)
       self.show_all()
