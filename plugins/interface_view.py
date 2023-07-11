@@ -74,6 +74,7 @@ class InterfaceViewer(ViewportPlugin):
       _SectionSelection(ui_xml, self.node),
       _SectionStreamableContent(ui_xml, self.node),
       _SectionTable(ui_xml, self.node),
+      _SectionTableCell(ui_xml, self.node),
       _SectionText(ui_xml, self.node),
       _SectionValue(ui_xml, self.node),
       _SectionCollection(ui_xml, self.node),
@@ -1167,6 +1168,119 @@ class _SectionTable(_InterfaceSection):
     @type button: gtk.Button
     '''
     self.node.update(getattr(button, 'acc'))
+
+class _SectionTableCell(_InterfaceSection):
+  '''
+  A class that populates a TableCell interface section.
+  @ivar row_label: Row label.
+  @type row_label: gtk.Label
+  @ivar column_label: Column label.
+  @type column_label: gtk.Label
+  @ivar row_span_label: Row span label.
+  @type row_span_label: gtk.Label
+  @ivar column_span_label: Column span label.
+  @type column_span_label: gtk.Label
+  @ivar table_button: Table button.
+  @type table_button: gtk.Button
+  '''
+  interface_name = 'TableCell'
+  def init(self, ui_xml):
+    '''
+    Initialization that is specific to the TableCell interface
+    (construct data models, connect signals to callbacks, etc.)
+
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
+    '''
+    self.row_label = ui_xml.get_object('tablecell_row_label')
+    self.column_label = ui_xml.get_object('tablecell_column_label')
+    self.row_span_label = ui_xml.get_object('tablecell_rowspan_label')
+    self.col_span_label = ui_xml.get_object('tablecell_columnspan_label')
+    self.table_button = ui_xml.get_object('tablecell_table_button')
+
+
+    self.row_headers_model = gtk.ListStore(GdkPixbuf.Pixbuf, str, object)
+    self.col_headers_model = gtk.ListStore(GdkPixbuf.Pixbuf, str, object)
+    for treeview_id, button_id, model in [('tablecell_rowheaders_treeview',
+                                           'tablecell_rowheader_show_button',
+                                           self.row_headers_model),
+                                          ('tablecell_columnheaders_treeview',
+                                           'tablecell_columnheader_show_button',
+                                           self.col_headers_model)]:
+      treeview = ui_xml.get_object(treeview_id)
+      treeview.set_model(model)
+      # connect selection changed signal to allow clicking button
+      # when a header cell is selected
+      selection = treeview.get_selection()
+      show_header_button = ui_xml.get_object(button_id)
+      show_header_button.set_sensitive(self._isSelectedInView(selection))
+      selection.connect('changed', self._onViewSelectionChanged, show_header_button)
+
+  def populateUI(self, acc):
+    '''
+    Populate the TableCell section with relevant data of the
+    currently selected accessible.
+
+    @param acc: The currently selected accessible.
+    @type acc: Accessibility.Accessible
+    '''
+    ti = acc.queryTableCell()
+    ok, rowIndex, columnIndex = ti.position
+    for attr, label in [(rowIndex, self.row_label),
+                        (columnIndex, self.column_label),
+                        (ti.rowSpan, self.row_span_label),
+                        (ti.columnSpan, self.col_span_label)]:
+      label.set_text(str(attr))
+
+    for header_cells, model in [(ti.rowHeaderCells, self.row_headers_model),
+                                (ti.columnHeaderCells, self.col_headers_model)]:
+      for header in header_cells:
+        if header is not None:
+          model.append([getIcon(header), header.name, header])
+
+    table = ti.table
+    self.table_button.set_label(table.name if (table and table.name) else str(table))
+    self.table_button.set_sensitive(bool(table))
+    setattr(self.table_button, 'acc', table)
+
+  def clearUI(self):
+    '''
+    Clear all TableCell specific data.
+    '''
+    self.row_label.set_text('')
+    self.column_label.set_text('')
+    self.row_span_label.set_text('')
+    self.col_span_label.set_text('')
+    self.row_headers_model.clear()
+    self.col_headers_model.clear()
+    self.table_button.set_label('')
+
+  def _onTableCellButtonClicked(self, button):
+    '''
+    Callback for button that represents the table.
+    Will select the corresponding accessible in the application.
+
+    @param button: Button that triggered event.
+    @type button: gtk.Button
+    '''
+    self.node.update(getattr(button, 'acc'))
+
+  def _onHeaderCellShow(self, header_cells_treeview, *more_args):
+    '''
+    Callback for "Show" button press. Selects the related
+    accessible from the treeview in the main application.
+
+    @param header_cells_treeview: The row/column header cell treeview.
+    @type header_cells_treeview: gtk.TreeView
+    @param *more_args: More arguments that are provided by various types
+    of signals, but we discard them all.
+    @type *more_args: list
+    '''
+    selection = header_cells_treeview.get_selection()
+    model, iter = selection.get_selected()
+    if iter and model[iter][2]:
+      header_cell = model[iter][2]
+      self.node.update(header_cell)
 
 class _SectionText(_InterfaceSection):
   '''

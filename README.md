@@ -71,7 +71,7 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
   ```
     gobject-introspection
     python-gobject >= 2.90.3
-    gtk+3 >= 3.1.13
+    gtk+3 >= 3.24.0
   ```
   On a Red Hat based distro:
   ```
