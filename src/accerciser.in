@@ -30,6 +30,10 @@ def migrate_data (old_path, new_path):
 
 # Load gail module no matter what the desktop-wide settings are.
 os.environ['GTK_MODULES'] = 'gail:atk-bridge'
+
+# workaround for "libwnck is designed to work in X11 only, no valid display found"
+os.environ['GDK_BACKEND'] = 'x11'
+
 # make the accerciser directory part of the path to aid user imports
 sys.path.append(os.path.join(GLib.get_user_config_dir(), 'accerciser'))
 # We can't rely on prefix if we're installed by relocated RPM. Instead, we 
