@@ -1,22 +1,22 @@
 # Hungarian trasnlation for accerciser.
-# Copyright (C) 2007, 2008, 2009, 2011, 2012, 2013, 2015, 2019 The Free Software Foundation, inc.
+# Copyright (C) 2007, 2008, 2009, 2011, 2012, 2013, 2015, 2019, 2023 The Free Software Foundation, inc.
 # This file is distributed under the same license as the accerciser package.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2011, 2012.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2015, 2019.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2015, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-07-27 14:57+0000\n"
-"PO-Revision-Date: 2019-08-24 23:05+0200\n"
+"POT-Creation-Date: 2023-07-11 09:43+0000\n"
+"PO-Revision-Date: 2023-07-25 23:17+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 18.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
@@ -246,8 +246,8 @@ msgid "Source"
 msgstr "Forrás"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:735 plugins/validate.py:295
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:612
+#: plugins/interface_view.py:737 plugins/validate.py:295
 #: src/lib/accerciser/accessible_treeview.py:462
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -257,25 +257,25 @@ msgstr "Név"
 msgid "Full Name"
 msgstr "Teljes név"
 
-#: plugins/event_monitor.py:51
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Eseményfigyelő"
 
-#: plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "A kiválasztott típusú és forrású eseményeket a bekövetkezésük sorrendjében "
 "jeleníti meg"
 
-#: plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Utolsó eseménybejegyzés kiemelése"
 
-#: plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
 msgstr "Eseményrögzítés indítása/leállítása"
 
-#: plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Eseménynapló törlése"
 
@@ -283,79 +283,82 @@ msgstr "Eseménynapló törlése"
 msgid "Child count"
 msgstr "Gyermekek száma"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
-#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
-#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
-#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1025
+#: plugins/interface_view.ui:1994 plugins/interface_view.ui:2013
+#: plugins/interface_view.ui:2032 plugins/interface_view.ui:2525
+#: plugins/interface_view.ui:2544 plugins/interface_view.ui:2563
+#: plugins/interface_view.ui:3218 plugins/interface_view.ui:3237
+#: plugins/interface_view.ui:3256
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:343 plugins/interface_view.py:863
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1574
+#: plugins/interface_view.py:345 plugins/interface_view.py:865
 msgid "(no description)"
 msgstr "(nincs leírás)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:623
+#: plugins/interface_view.ui:1542 plugins/validate.py:230
 #: plugins/validate.py:293
 msgid "Description"
 msgstr "Leírás"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:347
+#: plugins/interface_view.ui:233 plugins/interface_view.py:349
 msgid "(no ID)"
 msgstr "(nincs azonosító)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:754
 msgid "ID"
 msgstr "Azonosító"
 
-#: plugins/interface_view.ui:325
+#: plugins/interface_view.ui:324
 msgid "States"
 msgstr "Állapotok"
 
-#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
-#: plugins/interface_view.ui:2739
+#: plugins/interface_view.ui:395 plugins/interface_view.ui:1239
+#: plugins/interface_view.ui:3128
 msgid "Attributes"
 msgstr "Jellemzők"
 
-#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+#: plugins/interface_view.ui:515 plugins/interface_view.ui:1402
+#: plugins/interface_view.ui:2754 plugins/interface_view.ui:2824
 msgid "Show"
 msgstr "Megjelenítés"
 
-#: plugins/interface_view.ui:551
+#: plugins/interface_view.ui:548
 msgid "Relations"
 msgstr "Relációk"
 
-#: plugins/interface_view.ui:572
+#: plugins/interface_view.ui:569
 msgid "_Accessible"
 msgstr "_Akadálymentes"
 
-#: plugins/interface_view.ui:637
+#: plugins/interface_view.ui:634
 msgid "Key binding"
 msgstr "Billentyűtársítás"
 
-#: plugins/interface_view.ui:691
+#: plugins/interface_view.ui:688
 msgid "Perform action"
 msgstr "Művelet végrehajtása"
 
-#: plugins/interface_view.ui:724
+#: plugins/interface_view.ui:721
 msgid "Acti_on"
 msgstr "Mű_velet"
 
-#: plugins/interface_view.ui:772
+#: plugins/interface_view.ui:769
 msgid "Toolkit"
 msgstr "Eszközkészlet"
 
-#: plugins/interface_view.ui:789
+#: plugins/interface_view.ui:786
 msgid "Version"
 msgstr "Verzió"
 
-#: plugins/interface_view.ui:865
+#: plugins/interface_view.ui:862
 msgid "Ap_plication"
 msgstr "_Alkalmazás"
 
-#: plugins/interface_view.ui:884
+#: plugins/interface_view.ui:881
 msgid "Col_lection"
 msgstr "_Gyűjtemény"
 
@@ -363,240 +366,268 @@ msgstr "_Gyűjtemény"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
-#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
-#: plugins/interface_view.ui:1525
+#: plugins/interface_view.ui:914 plugins/interface_view.ui:951
+#: plugins/interface_view.ui:1099 plugins/interface_view.ui:1502
+#: plugins/interface_view.ui:1522
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:937
+#: plugins/interface_view.ui:934
 msgid "Relative position"
 msgstr "Relatív pozíció"
 
-#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
+#: plugins/interface_view.ui:971 plugins/interface_view.ui:1485
 msgid "Size"
 msgstr "Méret"
 
-#: plugins/interface_view.ui:991
+#: plugins/interface_view.ui:988
 msgid "WIDGET"
 msgstr "GRAFIKAI ELEM"
 
-#: plugins/interface_view.ui:1011
+#: plugins/interface_view.ui:1008
 msgid "Layer"
 msgstr "Réteg"
 
-#: plugins/interface_view.ui:1048
+#: plugins/interface_view.ui:1045
 msgid "MDI-Z-order"
 msgstr "MDI-Z sorrend"
 
-#: plugins/interface_view.ui:1085
+#: plugins/interface_view.ui:1082
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1120
+#: plugins/interface_view.ui:1117
 msgid "Absolute position"
 msgstr "Abszolút pozíció"
 
-#: plugins/interface_view.ui:1139
+#: plugins/interface_view.ui:1136
 msgid "Co_mponent"
 msgstr "_Komponens"
 
-#: plugins/interface_view.ui:1158
+#: plugins/interface_view.ui:1155
 msgid "Des_ktop"
 msgstr "_Asztal"
 
-#: plugins/interface_view.ui:1264
+#: plugins/interface_view.ui:1261
 msgid "Locale:"
 msgstr "Területi beállítás:"
 
-#: plugins/interface_view.ui:1305
+#: plugins/interface_view.ui:1302
 msgid "_Document"
 msgstr "_Dokumentum"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:299
+#: plugins/interface_view.ui:1323 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Hiperlink"
 
-#: plugins/interface_view.ui:1438
+#: plugins/interface_view.ui:1435
 msgid "H_ypertext"
 msgstr "_Hiperszöveg"
 
-#: plugins/interface_view.ui:1471
+#: plugins/interface_view.ui:1468
 msgid "Position"
 msgstr "Pozíció"
 
-#: plugins/interface_view.ui:1560
+#: plugins/interface_view.ui:1557
 msgid "Locale"
 msgstr "Területi beállítás"
 
-#: plugins/interface_view.ui:1622
+#: plugins/interface_view.ui:1619
 msgid "_Image"
 msgstr "_Kép"
 
-#: plugins/interface_view.ui:1641
+#: plugins/interface_view.ui:1638
 msgid "Lo_gin Helper"
 msgstr "Bejelentkezéssegé_d"
 
-#: plugins/interface_view.ui:1712
+#: plugins/interface_view.ui:1709
 msgid "Select All"
 msgstr "Mindent kijelöl"
 
-#: plugins/interface_view.ui:1754
+#: plugins/interface_view.ui:1751
 msgid "_Selection"
 msgstr "_Kijelölés"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:1789
 msgid "Content type"
 msgstr "Tartalom típusa"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
+#: plugins/interface_view.ui:1800 plugins/interface_view.py:745
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1822
+#: plugins/interface_view.ui:1819
 msgid "St_reamable Content"
 msgstr "S_ugározható tartalom"
 
-#: plugins/interface_view.ui:1863
+#: plugins/interface_view.ui:1860
 msgid "Caption:"
 msgstr "Felirat:"
 
-#: plugins/interface_view.ui:1908
+#: plugins/interface_view.ui:1905
 msgid "Summary:"
 msgstr "Összefoglaló:"
 
-#: plugins/interface_view.ui:2052
+#: plugins/interface_view.ui:2049
 msgid "Selected columns"
 msgstr "Kijelölt oszlopok"
 
-#: plugins/interface_view.ui:2068
+#: plugins/interface_view.ui:2065
 msgid "Selected rows"
 msgstr "Kijelölt sorok"
 
-#: plugins/interface_view.ui:2084
+#: plugins/interface_view.ui:2081
 msgid "Columns"
 msgstr "Oszlopok"
 
-#: plugins/interface_view.ui:2100
+#: plugins/interface_view.ui:2097
 msgid "Rows"
 msgstr "Sorok"
 
-#: plugins/interface_view.ui:2125
+#: plugins/interface_view.ui:2122
 msgid "Table Information"
 msgstr "Táblázatinformációk"
 
-#: plugins/interface_view.ui:2171
+#: plugins/interface_view.ui:2168
 msgid "name (x,y)"
 msgstr "név (x,y)"
 
-#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+#: plugins/interface_view.ui:2222 plugins/interface_view.ui:2341
 msgid "Header:"
 msgstr "Fejléc:"
 
-#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+#: plugins/interface_view.ui:2235 plugins/interface_view.ui:2354
 msgid "<no description>"
 msgstr "<nincs leírás>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+#: plugins/interface_view.ui:2268 plugins/interface_view.ui:2387
 msgid "Extents:"
 msgstr "Kiterjedések:"
 
-#: plugins/interface_view.ui:2311
+#: plugins/interface_view.ui:2308 plugins/interface_view.ui:2628
 msgid "Row"
 msgstr "Sor"
 
-#: plugins/interface_view.ui:2430
+#: plugins/interface_view.ui:2427 plugins/interface_view.ui:2612
 msgid "Column"
 msgstr "Oszlop"
 
-#: plugins/interface_view.ui:2448
+#: plugins/interface_view.ui:2445
 msgid "Selected Cell"
 msgstr "Kijelölt cella"
 
-#: plugins/interface_view.ui:2472
+#: plugins/interface_view.ui:2469
 msgid "_Table"
 msgstr "_Táblázat"
 
-#: plugins/interface_view.ui:2533
+#: plugins/interface_view.ui:2580
+#| msgid "Columns"
+msgid "Column span"
+msgstr "Oszlopátnyúlás"
+
+#: plugins/interface_view.ui:2596
+msgid "Row span"
+msgstr "Sorátnyúlás"
+
+#: plugins/interface_view.ui:2643
+msgid "Row headers"
+msgstr "Sorfejlécek"
+
+#: plugins/interface_view.ui:2660
+#| msgid "Columns"
+msgid "Column headers"
+msgstr "Oszlopfejlécek"
+
+#: plugins/interface_view.ui:2676
+#| msgid "_Table"
+msgid "Table"
+msgstr "Táblázat"
+
+#: plugins/interface_view.ui:2862
+#| msgid "_Table"
+msgid "_TableCell"
+msgstr "_Táblázatcella"
+
+#: plugins/interface_view.ui:2922
 msgid "Text"
 msgstr "Szöveg"
 
-#: plugins/interface_view.ui:2571
+#: plugins/interface_view.ui:2960
 msgid "Offset"
 msgstr "Eltolás"
 
-#: plugins/interface_view.ui:2609
+#: plugins/interface_view.ui:2998
 msgid "Include defaults"
 msgstr "Alapértelmezések felvétele"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2631
+#: plugins/interface_view.ui:3020
 msgid "Start: 0"
 msgstr "Kezdés: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2649
+#: plugins/interface_view.ui:3038
 msgid "End: 0"
 msgstr "Befejezés: 0"
 
-#: plugins/interface_view.ui:2763
+#: plugins/interface_view.ui:3152
 msgid "Te_xt"
 msgstr "Szöve_g"
 
-#: plugins/interface_view.ui:2818
+#: plugins/interface_view.ui:3207
 msgid "Current value"
 msgstr "Jelenlegi érték"
 
-#: plugins/interface_view.ui:2886
+#: plugins/interface_view.ui:3275
 msgid "Minimum increment"
 msgstr "Minimális növekmény"
 
-#: plugins/interface_view.ui:2901
+#: plugins/interface_view.ui:3290
 msgid "Maximum value"
 msgstr "Maximális érték"
 
-#: plugins/interface_view.ui:2916
+#: plugins/interface_view.ui:3305
 msgid "Minimum value"
 msgstr "Minimális érték"
 
-#: plugins/interface_view.ui:2942
+#: plugins/interface_view.ui:3331
 msgid "Val_ue"
 msgstr "É_rték"
 
-#: plugins/interface_view.ui:2961
+#: plugins/interface_view.ui:3350
 msgid "unknown"
 msgstr "ismeretlen"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:43
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "Felületmegjelenítő"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:46
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "Lehetővé teszi különböző felülettulajdonságok megjelenítését"
 
-#: plugins/interface_view.py:236
+#: plugins/interface_view.py:238
 msgid "(not implemented)"
 msgstr "(nincs megvalósítva)"
 
-#: plugins/interface_view.py:751
+#: plugins/interface_view.py:753
 msgid "Start"
 msgstr "Kezdés"
 
-#: plugins/interface_view.py:759
+#: plugins/interface_view.py:761
 msgid "End"
 msgstr "Befejezés"
 
-#: plugins/interface_view.py:921
+#: plugins/interface_view.py:923
 msgid "Too many selectable children"
 msgstr "Túl sok kijelölhető gyermek"
 
-#: plugins/interface_view.py:1274 plugins/interface_view.py:1277
+#: plugins/interface_view.py:1389 plugins/interface_view.py:1392
 msgid "(Editable)"
 msgstr "(Szerkeszthető)"
 
@@ -605,7 +636,7 @@ msgstr "(Szerkeszthető)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1424
+#: plugins/interface_view.py:1539
 #, python-format
 msgid "Start: %d"
 msgstr "Kezdés: %d"
@@ -615,7 +646,7 @@ msgstr "Kezdés: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1430
+#: plugins/interface_view.py:1545
 #, python-format
 msgid "End: %d"
 msgstr "Befejezés: %d"
@@ -820,7 +851,6 @@ msgid "Children"
 msgstr "Gyermekek"
 
 #: src/lib/accerciser/accessible_treeview.py:506
-#| msgid "_Hide/Show Applications without children"
 msgid "_Show Applications without children"
 msgstr "_Gyermekek nélküli alkalmazások megjelenítése"
 
