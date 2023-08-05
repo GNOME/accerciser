@@ -917,10 +917,14 @@ class _SectionSelection(_InterfaceSection):
     '''
     if acc.childCount > 50:
       theme = gtk.IconTheme.get_default()
-      self.sel_model.append(
-        [theme.load_icon('gtk-dialog-warning', 24, 
-                         gtk.IconLookupFlags.USE_BUILTIN),
-         _('Too many selectable children'), None])
+      try:
+        warning_icon = theme.load_icon('gtk-dialog-warning', 24,
+                                       gtk.IconLookupFlags.USE_BUILTIN)
+      except:
+        warning_icon = None
+
+      self.sel_model.append([warning_icon, _('Too many selectable children'),
+                             None])
       # Set section as insensitive, but leave expander label sensitive.
       section_widgets = self.expander.get_children()
       section_widgets.remove(self.expander.get_label_widget())
