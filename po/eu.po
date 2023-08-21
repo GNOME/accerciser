@@ -4,13 +4,13 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011, 2013, 2014, 2015.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021, 2023.
 #
 msgid ""
 msgstr "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2020-09-10 10:07+0000\n"
-"PO-Revision-Date: 2021-03-20 10:00+0100\n"
+"POT-Creation-Date: 2023-07-11 09:43+0000\n"
+"PO-Revision-Date: 2023-08-21 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -33,7 +33,7 @@ msgid ""
 "desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
 "check if an application is providing correct information to assistive "
 "technologies and automated test frameworks."
-msgstr "Accerciser aplikazioa Python elkarreragilean garatutako GNOME mahaigainaren erabilgarritasunaren arakatzailea da. AT-SPI darabil trepetak aztertu eta kontrolatzeko aplikazio batek informazio zuzena eskaintzen duen ziurtatzea baimentzen dizu laguntzako teknologia eta probako lan-marko automatizatzeko."
+msgstr "Accerciser aplikazioa Pythonen garatutako GNOME mahaigainaren erabilgarritasunaren arakatzaile interaktiboa da. AT-SPI darabil trepetak aztertu eta kontrolatzeko aplikazio batek informazio zuzena eskaintzen duen ziurtatzea baimentzen dizu laguntzako teknologia eta probako lan-marko automatizatzeko."
 
 #: accerciser.appdata.xml.in:14
 msgid ""
@@ -239,8 +239,8 @@ msgid "Source"
 msgstr "Iturburua"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:736 plugins/validate.py:295
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:612
+#: plugins/interface_view.py:737 plugins/validate.py:295
 #: src/lib/accerciser/accessible_treeview.py:462
 #: src/lib/accerciser/plugin/plugin_manager.py:386
 msgid "Name"
@@ -274,79 +274,82 @@ msgstr "Garbitu gertaeren erregistroa"
 msgid "Child count"
 msgstr "Haur kopurua"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
-#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
-#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
-#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1025
+#: plugins/interface_view.ui:1994 plugins/interface_view.ui:2013
+#: plugins/interface_view.ui:2032 plugins/interface_view.ui:2525
+#: plugins/interface_view.ui:2544 plugins/interface_view.ui:2563
+#: plugins/interface_view.ui:3218 plugins/interface_view.ui:3237
+#: plugins/interface_view.ui:3256
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:344 plugins/interface_view.py:864
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1574
+#: plugins/interface_view.py:345 plugins/interface_view.py:865
 msgid "(no description)"
 msgstr "(azalpenik ez)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:623
+#: plugins/interface_view.ui:1542 plugins/validate.py:230
 #: plugins/validate.py:293
 msgid "Description"
 msgstr "Azalpena"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+#: plugins/interface_view.ui:233 plugins/interface_view.py:349
 msgid "(no ID)"
 msgstr "(IDrik ez)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:754
 msgid "ID"
 msgstr "IDa"
 
-#: plugins/interface_view.ui:325
+#: plugins/interface_view.ui:324
 msgid "States"
 msgstr "Egoerak"
 
-#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
-#: plugins/interface_view.ui:2739
+#: plugins/interface_view.ui:395 plugins/interface_view.ui:1239
+#: plugins/interface_view.ui:3128
 msgid "Attributes"
 msgstr "Atributuak"
 
-#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+#: plugins/interface_view.ui:515 plugins/interface_view.ui:1402
+#: plugins/interface_view.ui:2754 plugins/interface_view.ui:2824
 msgid "Show"
 msgstr "Erakutsi"
 
-#: plugins/interface_view.ui:551
+#: plugins/interface_view.ui:548
 msgid "Relations"
 msgstr "Erlazioak"
 
-#: plugins/interface_view.ui:572
+#: plugins/interface_view.ui:569
 msgid "_Accessible"
 msgstr "_Elementu erabilerraza"
 
-#: plugins/interface_view.ui:637
+#: plugins/interface_view.ui:634
 msgid "Key binding"
 msgstr "Laster-tekla"
 
-#: plugins/interface_view.ui:691
+#: plugins/interface_view.ui:688
 msgid "Perform action"
 msgstr "Gauzatu ekintza"
 
-#: plugins/interface_view.ui:724
+#: plugins/interface_view.ui:721
 msgid "Acti_on"
 msgstr "_Ekintza"
 
-#: plugins/interface_view.ui:772
+#: plugins/interface_view.ui:769
 msgid "Toolkit"
 msgstr "Tresna-kita"
 
-#: plugins/interface_view.ui:789
+#: plugins/interface_view.ui:786
 msgid "Version"
 msgstr "Bertsioa"
 
-#: plugins/interface_view.ui:865
+#: plugins/interface_view.ui:862
 msgid "Ap_plication"
 msgstr "A_plikazioa"
 
-#: plugins/interface_view.ui:884
+#: plugins/interface_view.ui:881
 msgid "Col_lection"
 msgstr "B_ilduma"
 
@@ -354,210 +357,234 @@ msgstr "B_ilduma"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
-#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
-#: plugins/interface_view.ui:1525
+#: plugins/interface_view.ui:914 plugins/interface_view.ui:951
+#: plugins/interface_view.ui:1099 plugins/interface_view.ui:1502
+#: plugins/interface_view.ui:1522
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:937
+#: plugins/interface_view.ui:934
 msgid "Relative position"
 msgstr "Posizio erlatiboa"
 
-#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
+#: plugins/interface_view.ui:971 plugins/interface_view.ui:1485
 msgid "Size"
 msgstr "Tamaina"
 
-#: plugins/interface_view.ui:991
+#: plugins/interface_view.ui:988
 msgid "WIDGET"
 msgstr "TREPETA"
 
-#: plugins/interface_view.ui:1011
+#: plugins/interface_view.ui:1008
 msgid "Layer"
 msgstr "Geruza"
 
-#: plugins/interface_view.ui:1048
+#: plugins/interface_view.ui:1045
 msgid "MDI-Z-order"
 msgstr "MDI-Z ordena"
 
-#: plugins/interface_view.ui:1085
+#: plugins/interface_view.ui:1082
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1120
+#: plugins/interface_view.ui:1117
 msgid "Absolute position"
 msgstr "Posizio absolutua"
 
-#: plugins/interface_view.ui:1139
+#: plugins/interface_view.ui:1136
 msgid "Co_mponent"
 msgstr "O_sagaia"
 
-#: plugins/interface_view.ui:1158
+#: plugins/interface_view.ui:1155
 msgid "Des_ktop"
 msgstr "_Mahaigaina"
 
-#: plugins/interface_view.ui:1264
+#: plugins/interface_view.ui:1261
 msgid "Locale:"
 msgstr "Konfigurazio lokala:"
 
-#: plugins/interface_view.ui:1305
+#: plugins/interface_view.ui:1302
 msgid "_Document"
 msgstr "_Dokumentua"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:299
+#: plugins/interface_view.ui:1323 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Hiperesteka"
 
-#: plugins/interface_view.ui:1438
+#: plugins/interface_view.ui:1435
 msgid "H_ypertext"
 msgstr "H_ipertestua"
 
-#: plugins/interface_view.ui:1471
+#: plugins/interface_view.ui:1468
 msgid "Position"
 msgstr "Posizioa"
 
-#: plugins/interface_view.ui:1560
+#: plugins/interface_view.ui:1557
 msgid "Locale"
 msgstr "Konfigurazio lokala"
 
-#: plugins/interface_view.ui:1622
+#: plugins/interface_view.ui:1619
 msgid "_Image"
 msgstr "_Irudia"
 
-#: plugins/interface_view.ui:1641
+#: plugins/interface_view.ui:1638
 msgid "Lo_gin Helper"
 msgstr "S_aioa hasteko laguntzailea"
 
-#: plugins/interface_view.ui:1712
+#: plugins/interface_view.ui:1709
 msgid "Select All"
 msgstr "Hautatu denak"
 
-#: plugins/interface_view.ui:1754
+#: plugins/interface_view.ui:1751
 msgid "_Selection"
 msgstr "_Hautapena"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:1789
 msgid "Content type"
 msgstr "Eduki mota"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+#: plugins/interface_view.ui:1800 plugins/interface_view.py:745
 msgid "URI"
 msgstr "URIa"
 
-#: plugins/interface_view.ui:1822
+#: plugins/interface_view.ui:1819
 msgid "St_reamable Content"
 msgstr "K_orronte-edukia"
 
-#: plugins/interface_view.ui:1863
+#: plugins/interface_view.ui:1860
 msgid "Caption:"
 msgstr "Epigrafea:"
 
-#: plugins/interface_view.ui:1908
+#: plugins/interface_view.ui:1905
 msgid "Summary:"
 msgstr "Laburpena:"
 
-#: plugins/interface_view.ui:2052
+#: plugins/interface_view.ui:2049
 msgid "Selected columns"
 msgstr "Hautatutako zutabeak"
 
-#: plugins/interface_view.ui:2068
+#: plugins/interface_view.ui:2065
 msgid "Selected rows"
 msgstr "Hautatutako errenkadak"
 
-#: plugins/interface_view.ui:2084
+#: plugins/interface_view.ui:2081
 msgid "Columns"
 msgstr "Zutabeak"
 
-#: plugins/interface_view.ui:2100
+#: plugins/interface_view.ui:2097
 msgid "Rows"
 msgstr "Errenkadak"
 
-#: plugins/interface_view.ui:2125
+#: plugins/interface_view.ui:2122
 msgid "Table Information"
 msgstr "Taularen informazioa"
 
-#: plugins/interface_view.ui:2171
+#: plugins/interface_view.ui:2168
 msgid "name (x,y)"
 msgstr "izena (x,y)"
 
-#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+#: plugins/interface_view.ui:2222 plugins/interface_view.ui:2341
 msgid "Header:"
 msgstr "Goiburua:"
 
-#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+#: plugins/interface_view.ui:2235 plugins/interface_view.ui:2354
 msgid "<no description>"
 msgstr "<azalpenik ez>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+#: plugins/interface_view.ui:2268 plugins/interface_view.ui:2387
 msgid "Extents:"
 msgstr "Hedapenak:"
 
-#: plugins/interface_view.ui:2311
+#: plugins/interface_view.ui:2308 plugins/interface_view.ui:2628
 msgid "Row"
 msgstr "Errenkada"
 
-#: plugins/interface_view.ui:2430
+#: plugins/interface_view.ui:2427 plugins/interface_view.ui:2612
 msgid "Column"
 msgstr "Zutabea"
 
-#: plugins/interface_view.ui:2448
+#: plugins/interface_view.ui:2445
 msgid "Selected Cell"
 msgstr "Hautatutako gelaxka"
 
-#: plugins/interface_view.ui:2472
+#: plugins/interface_view.ui:2469
 msgid "_Table"
 msgstr "Ta_ula"
 
-#: plugins/interface_view.ui:2533
+#: plugins/interface_view.ui:2580
+msgid "Column span"
+msgstr "Zutabe-hedadura"
+
+#: plugins/interface_view.ui:2596
+msgid "Row span"
+msgstr "Errenkada-hedadura"
+
+#: plugins/interface_view.ui:2643
+msgid "Row headers"
+msgstr "Errenkada-goiburuak"
+
+#: plugins/interface_view.ui:2660
+msgid "Column headers"
+msgstr "Zutabe-goiburuak"
+
+#: plugins/interface_view.ui:2676
+msgid "Table"
+msgstr "Taula"
+
+#: plugins/interface_view.ui:2862
+msgid "_TableCell"
+msgstr "_Taula-gelaxka"
+
+#: plugins/interface_view.ui:2922
 msgid "Text"
 msgstr "Testua"
 
-#: plugins/interface_view.ui:2571
+#: plugins/interface_view.ui:2960
 msgid "Offset"
 msgstr "Desplazamendua"
 
-#: plugins/interface_view.ui:2609
+#: plugins/interface_view.ui:2998
 msgid "Include defaults"
 msgstr "Sartu lehenetsiak"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2631
+#: plugins/interface_view.ui:3020
 msgid "Start: 0"
 msgstr "Hasiera: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2649
+#: plugins/interface_view.ui:3038
 msgid "End: 0"
 msgstr "Amaiera: 0"
 
-#: plugins/interface_view.ui:2763
+#: plugins/interface_view.ui:3152
 msgid "Te_xt"
 msgstr "T_estua"
 
-#: plugins/interface_view.ui:2818
+#: plugins/interface_view.ui:3207
 msgid "Current value"
 msgstr "Uneko balioa"
 
-#: plugins/interface_view.ui:2886
+#: plugins/interface_view.ui:3275
 msgid "Minimum increment"
 msgstr "Gutxieneko gehikuntza"
 
-#: plugins/interface_view.ui:2901
+#: plugins/interface_view.ui:3290
 msgid "Maximum value"
 msgstr "Gehienezko balioa"
 
-#: plugins/interface_view.ui:2916
+#: plugins/interface_view.ui:3305
 msgid "Minimum value"
 msgstr "Gutxieneko balioa"
 
-#: plugins/interface_view.ui:2942
+#: plugins/interface_view.ui:3331
 msgid "Val_ue"
 msgstr "Ba_lioa"
 
-#: plugins/interface_view.ui:2961
+#: plugins/interface_view.ui:3350
 msgid "unknown"
 msgstr "ezezaguna"
 
@@ -571,23 +598,23 @@ msgstr "Interfaze-ikustailea"
 msgid "Allows viewing of various interface properties"
 msgstr "Interfaze-propietate batzuk ikusteko aukera ematen du"
 
-#: plugins/interface_view.py:237
+#: plugins/interface_view.py:238
 msgid "(not implemented)"
 msgstr "(ez dago inplementatuta)"
 
-#: plugins/interface_view.py:752
+#: plugins/interface_view.py:753
 msgid "Start"
 msgstr "Hasiera"
 
-#: plugins/interface_view.py:760
+#: plugins/interface_view.py:761
 msgid "End"
 msgstr "Amaiera"
 
-#: plugins/interface_view.py:922
+#: plugins/interface_view.py:923
 msgid "Too many selectable children"
 msgstr "Haur gehiegi hautagai"
 
-#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
+#: plugins/interface_view.py:1389 plugins/interface_view.py:1392
 msgid "(Editable)"
 msgstr "(Editagarria)"
 
@@ -596,7 +623,7 @@ msgstr "(Editagarria)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1425
+#: plugins/interface_view.py:1539
 #, python-format
 msgid "Start: %d"
 msgstr "Hasiera: %d"
@@ -606,7 +633,7 @@ msgstr "Hasiera: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1431
+#: plugins/interface_view.py:1545
 #, python-format
 msgid "End: %d"
 msgstr "Amaiera: %d"
@@ -916,7 +943,7 @@ msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
 #: src/lib/accerciser/about_dialog.py:56
 msgid "The New BSD License. See the COPYING and NOTICE files for details."
-msgstr "BSD Lizentzia berria, ikus COPYING eta NOTICE fitxategiak xehetasun gehiago nahi badituzu."
+msgstr "BSD lizentzia berria. Ikusi COPYING eta NOTICE fitxategiak xehetasun gehiagorako."
 
 #: src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
