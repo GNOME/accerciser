@@ -1590,6 +1590,12 @@ class _SectionText(_InterfaceSection):
       return
 
     if event.type.major == 'text-changed':
+      current_text = self.text_buffer.get_text(self.text_buffer.get_start_iter(),
+                                               self.text_buffer.get_end_iter(), False)
+      if event.source.queryText().getText(0, -1) == current_text:
+        # text already up to date
+        return
+
       text_iter = self.text_buffer.get_iter_at_offset(event.detail1)
       if event.type.minor == 'insert':
         call = (event.detail1, event.any_data, event.detail2)
