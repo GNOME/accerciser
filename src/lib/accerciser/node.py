@@ -25,8 +25,6 @@ import pyatspi
 import string
 from .tools import ToolsAccessor, parseColorString
 
-MAX_BLINKS = 6
-
 gsettings = GSettings.new('org.a11y.Accerciser')
 BORDER_COLOR, BORDER_ALPHA = parseColorString(
   gsettings.get_string('highlight-border'))
@@ -63,11 +61,7 @@ class Node(GObject.GObject, ToolsAccessor):
   __gsignals__ = {'accessible-changed' : 
                   (GObject.SignalFlags.RUN_FIRST,
                    None, 
-                   (GObject.TYPE_PYOBJECT,)),
-                  'blink-done' : 
-                  (GObject.SignalFlags.RUN_FIRST,
-                   None, 
-                   ())}
+                   (GObject.TYPE_PYOBJECT,))}
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
@@ -134,27 +128,6 @@ class Node(GObject.GObject, ToolsAccessor):
                     FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
                     2.0, 0)
     ah.highlight(HL_DURATION)
-
-  def _drawRectangle(self):
-    '''
-    Draw a rectangle on the screen using L{extents} for position and size.
-    '''
-    # draw a blinking rectangle 
-    if self.blinks == 0:
-      self.inv.show()
-      self.inv.grab_add()
-    self.root.fill_rectangle(self.gc,
-                             self.extents.x,
-                             self.extents.y,
-                             self.extents.width,
-                             self.extents.height)
-    self.blinks += 1
-    if self.blinks >= self.max_blinks:
-      self.inv.grab_remove()
-      self.inv.destroy()
-      self.emit('blink-done')
-      return False
-    return True
 
 class _HighLight(gtk.Window):
   '''

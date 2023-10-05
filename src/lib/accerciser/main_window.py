@@ -42,7 +42,6 @@ class AccerciserMainWindow(gtk.Window):
     self.set_icon_name('accerciser')
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
-    node.connect('blink-done', self._onBlinkDone)    
     self.gsettings = GSettings.new(GSCHEMA)
     width = self.gsettings.get_int('window-width') or 640
     height = self.gsettings.get_int('window-height') or 640
@@ -173,15 +172,6 @@ class AccerciserMainWindow(gtk.Window):
       position = getattr(self._vpaned, 'last_position')
     if position is not None:
       self.gsettings.set_int('vpaned', position)
-
-  def _onBlinkDone(self, node):
-    '''
-    Redraw main window after node stops blinking widget. Gets rid of artifacts.
-    
-    @param node: 
-    @type node: 
-    '''
-    self.queue_draw()
 
   def _onSelectionChanged(self, selection):
     '''
