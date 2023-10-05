@@ -17,6 +17,7 @@ from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import GObject
+from gi.repository import Wnck as wnck
 from gi.repository.Gio import Settings as GSettings
 gi.require_version('Rsvg', '2.0')
 from gi.repository import Rsvg as rsvg
@@ -107,15 +108,64 @@ class Node(GObject.GObject, ToolsAccessor):
         return
     self.update(acc)
 
-  def highlight(self):
-    extents = Bag(x=0, y=0, width=0, height=0)
+  def supportsScreenCoords(self, app):
+    '''
+    Returns False when the app does not support
+    querying screen coordinates directly via AT-SPI,
+    otherwise True.
+    '''
+    if app and app.role == pyatspi.ROLE_APPLICATION:
+      toolkit = app.get_toolkit_name()
+      version = app.get_toolkit_version()
+      if not version or (not isinstance(version, str)):
+        return True
+      try:
+        major_version = int(version.split('.')[0])
+        # Gtk 4 doesn't support global/screen coords
+        if isinstance(toolkit, str) and (toolkit.lower() == 'gtk') and (major_version >= 4):
+          return False
+      except ValueError:
+        pass
+    return True
+
+  def getScreenExtents(self, acc):
+    '''
+    Returns the extents of the given accessible object
+    in screen/global coordinates.
+    '''
     try:
-      i = self.acc.queryComponent()
+      component_iface = acc.queryComponent()
     except NotImplementedError:
-      pass
-    else:
-      if isinstance(i, pyatspi.Accessibility.Component):
-        extents = i.getExtents(pyatspi.DESKTOP_COORDS)
+      return None
+
+    toplevel = acc
+    while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
+      toplevel = toplevel.parent
+
+    screen_coords_supported = True
+    if toplevel.parent and toplevel.parent.role == pyatspi.ROLE_APPLICATION:
+      screen_coords_supported = self.supportsScreenCoords(toplevel.parent)
+
+    if not screen_coords_supported:
+      # try to find matching Wnck window by name
+      # and calculate screen coordinates from screen coords of the
+      # top-level window and window-relative coords of the object
+      wnck_screen = wnck.Screen.get_default()
+      window = None
+      for window in wnck_screen.get_windows():
+        if window.get_name() == toplevel.name:
+          toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+          extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
+          extents.x += toplevel_x
+          extents.y += toplevel_y
+          return extents
+
+    # query screen coords directly via AT-SPI
+    extents = component_iface.getExtents(pyatspi.DESKTOP_COORDS)
+    return extents
+
+  def highlight(self):
+    extents = self.getScreenExtents(self.acc)
     if extents is None or \
           0 in (extents.width, extents.height) or \
           -0x80000000 in (extents.x, extents.y):
