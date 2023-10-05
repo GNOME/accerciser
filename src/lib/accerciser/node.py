@@ -55,8 +55,6 @@ class Node(GObject.GObject, ToolsAccessor):
   @type desktop: L{Accessibility.Accessible}
   @ivar acc: The currently selected accessible.
   @type acc: L{Accessibility.Accessible}
-  @ivar extents: The extents of a given accessible.
-  @type extents: L{Bag}
   '''
   __gsignals__ = {'accessible-changed' : 
                   (GObject.SignalFlags.RUN_FIRST,
@@ -65,14 +63,13 @@ class Node(GObject.GObject, ToolsAccessor):
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
-    self.extents = None
     self.tree_path = None
     GObject.GObject.__init__(self)
     
   def update(self, acc):
     '''
     Updates the information in this node for the given accessible including 
-    a reference to the accessible and its extents. Also emit the 
+    a reference to the accessible. Also emit the
     'accessible-changed' signal.
 
     @param acc: An accessible.
@@ -81,14 +78,6 @@ class Node(GObject.GObject, ToolsAccessor):
     if not acc or self.isMyApp(acc):
       return
     self.acc = acc
-    self.extents = Bag(x=0, y=0, width=0, height=0)
-    try:
-      i = acc.queryComponent()
-    except NotImplementedError:
-      pass
-    else:
-      if isinstance(i, pyatspi.Accessibility.Component):
-        self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.tree_path = None
     if acc != self.desktop:
         # Don't highlight the entire desktop, it gets annoying.
@@ -119,12 +108,20 @@ class Node(GObject.GObject, ToolsAccessor):
     self.update(acc)
 
   def highlight(self):
-    if self.extents is None or \
-          0 in (self.extents.width, self.extents.height) or \
-          -0x80000000 in (self.extents.x, self.extents.y):
+    extents = Bag(x=0, y=0, width=0, height=0)
+    try:
+      i = self.acc.queryComponent()
+    except NotImplementedError:
+      pass
+    else:
+      if isinstance(i, pyatspi.Accessibility.Component):
+        extents = i.getExtents(pyatspi.DESKTOP_COORDS)
+    if extents is None or \
+          0 in (extents.width, extents.height) or \
+          -0x80000000 in (extents.x, extents.y):
       return
-    ah = _HighLight(self.extents.x, self.extents.y, 
-                    self.extents.width, self.extents.height, 
+    ah = _HighLight(extents.x, extents.y,
+                    extents.width, extents.height,
                     FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
                     2.0, 0)
     ah.highlight(HL_DURATION)
