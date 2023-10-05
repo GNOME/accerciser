@@ -25,8 +25,6 @@ import pyatspi
 import string
 from .tools import ToolsAccessor, parseColorString
 
-import Xlib, Xlib.display
-
 MAX_BLINKS = 6
 
 gsettings = GSettings.new('org.a11y.Accerciser')
@@ -136,28 +134,6 @@ class Node(GObject.GObject, ToolsAccessor):
                     FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
                     2.0, 0)
     ah.highlight(HL_DURATION)
-
-  def blinkRect(self, times=MAX_BLINKS):
-    '''
-    Blink a rectangle on the screen using L{extents} for position and size.
-
-    @param times: Maximum times to blink.
-    @type times: integer
-    '''
-    if self.extents is None or \
-          -0x80000000 in (self.extents.x, self.extents.y):
-      return
-    self.max_blinks = times
-    self.blinks = 0
-    # get info for drawing higlight rectangles
-    display = Xlib.display.Display()
-    screen = display.screen()
-    self.root = screen.root
-    self.gc = w.create_gc(subwindow_mode = Xlib.X.IncludeInferiors, function = Xlib.X.GXinvert)
-
-    self.inv = gtk.Invisible()
-    self.inv.set_screen(screen)
-    GLib.timeout_add(30, self._drawRectangle)
 
   def _drawRectangle(self):
     '''
