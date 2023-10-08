@@ -17,6 +17,7 @@ from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import GObject
+from gi.repository import Wnck as wnck
 from gi.repository.Gio import Settings as GSettings
 gi.require_version('Rsvg', '2.0')
 from gi.repository import Rsvg as rsvg
@@ -55,8 +56,6 @@ class Node(GObject.GObject, ToolsAccessor):
   @type desktop: L{Accessibility.Accessible}
   @ivar acc: The currently selected accessible.
   @type acc: L{Accessibility.Accessible}
-  @ivar extents: The extents of a given accessible.
-  @type extents: L{Bag}
   '''
   __gsignals__ = {'accessible-changed' : 
                   (GObject.SignalFlags.RUN_FIRST,
@@ -65,14 +64,13 @@ class Node(GObject.GObject, ToolsAccessor):
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
-    self.extents = None
     self.tree_path = None
     GObject.GObject.__init__(self)
     
   def update(self, acc):
     '''
     Updates the information in this node for the given accessible including 
-    a reference to the accessible and its extents. Also emit the 
+    a reference to the accessible. Also emit the
     'accessible-changed' signal.
 
     @param acc: An accessible.
@@ -81,14 +79,6 @@ class Node(GObject.GObject, ToolsAccessor):
     if not acc or self.isMyApp(acc):
       return
     self.acc = acc
-    self.extents = Bag(x=0, y=0, width=0, height=0)
-    try:
-      i = acc.queryComponent()
-    except NotImplementedError:
-      pass
-    else:
-      if isinstance(i, pyatspi.Accessibility.Component):
-        self.extents = i.getExtents(pyatspi.DESKTOP_COORDS)
     self.tree_path = None
     if acc != self.desktop:
         # Don't highlight the entire desktop, it gets annoying.
@@ -118,13 +108,70 @@ class Node(GObject.GObject, ToolsAccessor):
         return
     self.update(acc)
 
+  def supportsScreenCoords(self, app):
+    '''
+    Returns False when the app does not support
+    querying screen coordinates directly via AT-SPI,
+    otherwise True.
+    '''
+    if app and app.role == pyatspi.ROLE_APPLICATION:
+      toolkit = app.get_toolkit_name()
+      version = app.get_toolkit_version()
+      if not version or (not isinstance(version, str)):
+        return True
+      try:
+        major_version = int(version.split('.')[0])
+        # Gtk 4 doesn't support global/screen coords
+        if isinstance(toolkit, str) and (toolkit.lower() == 'gtk') and (major_version >= 4):
+          return False
+      except ValueError:
+        pass
+    return True
+
+  def getScreenExtents(self, acc):
+    '''
+    Returns the extents of the given accessible object
+    in screen/global coordinates.
+    '''
+    try:
+      component_iface = acc.queryComponent()
+    except NotImplementedError:
+      return None
+
+    toplevel = acc
+    while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
+      toplevel = toplevel.parent
+
+    screen_coords_supported = True
+    if toplevel.parent and toplevel.parent.role == pyatspi.ROLE_APPLICATION:
+      screen_coords_supported = self.supportsScreenCoords(toplevel.parent)
+
+    if not screen_coords_supported:
+      # try to find matching Wnck window by name
+      # and calculate screen coordinates from screen coords of the
+      # top-level window and window-relative coords of the object
+      wnck_screen = wnck.Screen.get_default()
+      window = None
+      for window in wnck_screen.get_windows():
+        if window.get_name() == toplevel.name:
+          toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+          extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
+          extents.x += toplevel_x
+          extents.y += toplevel_y
+          return extents
+
+    # query screen coords directly via AT-SPI
+    extents = component_iface.getExtents(pyatspi.DESKTOP_COORDS)
+    return extents
+
   def highlight(self):
-    if self.extents is None or \
-          0 in (self.extents.width, self.extents.height) or \
-          -0x80000000 in (self.extents.x, self.extents.y):
+    extents = self.getScreenExtents(self.acc)
+    if extents is None or \
+          0 in (extents.width, extents.height) or \
+          -0x80000000 in (extents.x, extents.y):
       return
-    ah = _HighLight(self.extents.x, self.extents.y, 
-                    self.extents.width, self.extents.height, 
+    ah = _HighLight(extents.x, extents.y,
+                    extents.width, extents.height,
                     FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
                     2.0, 0)
     ah.highlight(HL_DURATION)
