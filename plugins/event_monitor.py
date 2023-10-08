@@ -381,7 +381,6 @@ class EventMonitor(ViewportPlugin):
     '''
     hyperlink = self.monitor_buffer.create_tag(
       None, 
-      foreground='blue',
       underline=Pango.Underline.SINGLE)
     hyperlink.connect('event', self._onLinkClicked)
     setattr(hyperlink, 'acc', acc)
