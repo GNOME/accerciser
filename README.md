@@ -82,7 +82,6 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     pygobject
     appstream-glib-devel
     yelp-tools
-    python3-xlib
   ```
   On a Debian based distro:
   ```
@@ -98,7 +97,6 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     python-gi-dev
     python3-pyatspi >= 1.9.0
     libatspi2.0-dev >= 2.1.5
-    python3-xlib
   ```
   To use the Python console plugin, you must hve IPython installed.
 
