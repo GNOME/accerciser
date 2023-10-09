@@ -338,7 +338,7 @@ class BookmarkStore(gtk.ListStore):
       sw.set_shadow_type(gtk.ShadowType.IN)
       sw.add(tv)
       hbox.pack_start(sw, True, True, 0)
-      button_vbox = gtk.VBox()
+      button_vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
       hbox.pack_start(button_vbox, False, False, 0)
       add_button = gtk.Button.new_from_stock('gtk-add')
       add_button.set_use_stock(True)

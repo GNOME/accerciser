@@ -47,7 +47,7 @@ class APIBrowser(ViewportPlugin):
     '''
     Manually build the plugin's UI.
     '''
-    vbox = gtk.VBox()
+    vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     self.plugin_area.add(vbox)
     top_hbox = gtk.HBox()
     bottom_hbox = gtk.HBox()

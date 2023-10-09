@@ -176,7 +176,7 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   @ivar viewport: The top viewport of this plugin.
   @type viewport: gtk.Viewport
   @ivar message_area: Area for plugin messages, mostly errors.
-  @type message_area: gtk.VBox
+  @type message_area: gtk.Box
   @ivar plugin_area: Main frame where plugin resides.
   @type plugin_area: gtk.Frame
   '''
@@ -195,12 +195,12 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
     self.set_border_width(3)
     self.set_shadow_type(gtk.ShadowType.NONE)
     self.viewport = gtk.Viewport()
-    vbox = gtk.VBox()
+    vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     self.viewport.add(vbox)
     self.viewport.connect('set-focus-child', self._onScrollToFocus)
     self.add(self.viewport)
     # Message area
-    self.message_area = gtk.VBox()
+    self.message_area = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     vbox.pack_start(self.message_area, False, False, 0)
 
     # Plugin area

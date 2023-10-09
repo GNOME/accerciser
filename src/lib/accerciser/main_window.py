@@ -60,7 +60,7 @@ class AccerciserMainWindow(gtk.Window):
     @param node: Main application's node.
     @type node: L{Node}
     '''
-    main_vbox = gtk.VBox()
+    main_vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     menu_bar = ui_manager.uimanager.get_widget(ui_manager.MAIN_MENU_PATH)
     main_vbox.pack_start(menu_bar, False, True, 0)
     self._vpaned = gtk.VPaned()

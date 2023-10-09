@@ -142,7 +142,7 @@ class MessageManager(GObject.GObject):
 
   class MessageTab(gtk.ScrolledWindow):
     '''
-    Implements a scrolled window with a vbox for messages that cannot be 
+    Implements a scrolled window with a box for messages that cannot be
     displayed in their plugins
     '''
     def __init__(self):
@@ -151,7 +151,7 @@ class MessageManager(GObject.GObject):
       '''
       gtk.ScrolledWindow.__init__(self)
       self.set_name(_('Plugin Errors'))
-      self._vbox = gtk.VBox()
+      self._vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
       self._vbox.connect('remove', self._onMessageRemove)
       self.add_with_viewport(self._vbox)
       self.set_no_show_all(True)
@@ -176,17 +176,17 @@ class MessageManager(GObject.GObject):
       '''
       message.destroy()
 
-    def _onMessageRemove(self, vbox, message):
+    def _onMessageRemove(self, box, message):
       '''
       Callback for removal of children. If there are no messages displayed,
       hide this widget.
       
-      @param vbox: Vbox that had a child removed.
-      @type vbox: gtk.VBox
+      @param vbox: box that had a child removed.
+      @type vbox: gtk.Box
       @param message: The message that was removed.
       @type message: L{PluginMessage}
       '''
-      if len(vbox.get_children()) == 0:
+      if len(box.get_children()) == 0:
         self.hide()
         
 class PluginMessage(gtk.Frame):
@@ -195,9 +195,9 @@ class PluginMessage(gtk.Frame):
   is realized or in a seperate view.
 
   @ivar vbox: Main contents container.
-  @type vbox: gtk.VBox
+  @type vbox: gtk.Box
   @ivar action_area: Area used mainly for response buttons.
-  @type action_area: gtk.VBox
+  @type action_area: gtk.Box
   @ivar message_style: Tooltip style used for mesages.
   @type message_style: gtk.Style
   '''
@@ -210,9 +210,9 @@ class PluginMessage(gtk.Frame):
     Initialize the message object.
     '''
     gtk.Frame.__init__(self)
-    self.vbox = gtk.VBox()
+    self.vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     self.vbox.set_spacing(3)
-    self.action_area = gtk.VBox()
+    self.action_area = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     self.action_area.set_homogeneous(True)
 
     # Get the tooltip style, for use with the message background color.
