@@ -25,9 +25,9 @@ class AccerciserMainWindow(gtk.Window):
   @ivar main_actions: Main action group.
   @type main_actions: gtk.ActionGroup
   @ivar _vpaned: Vertical paned.
-  @type _vpaned: gtk.VPaned
+  @type _vpaned: gtk.Paned
   @ivar _hpaned: Horizontal paned.
-  @type _hpaned: gtk.HPaned
+  @type _hpaned: gtk.Paned
   '''
   __gtype_name__ = "AccerciserMainWindow"
 
@@ -63,13 +63,13 @@ class AccerciserMainWindow(gtk.Window):
     main_vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     menu_bar = ui_manager.uimanager.get_widget(ui_manager.MAIN_MENU_PATH)
     main_vbox.pack_start(menu_bar, False, True, 0)
-    self._vpaned = gtk.VPaned()
+    self._vpaned = gtk.Paned(orientation=gtk.Orientation.VERTICAL)
     self._vpaned.set_position(350)
     self._vpaned.set_name('vpaned')
     main_vbox.pack_start(self._vpaned, True, True, 0)
     self.statusbar = gtk.Statusbar()
     main_vbox.pack_start(self.statusbar, False, True, 0)
-    self._hpaned = gtk.HPaned()
+    self._hpaned = gtk.Paned(orientation=gtk.Orientation.HORIZONTAL)
     self._hpaned.set_position(250)
     self._hpaned.set_name('hpaned')
     self._vpaned.add1(self._hpaned)
