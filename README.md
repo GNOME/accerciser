@@ -89,7 +89,7 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     autopoint
     automake
     pkg-config
-    intltool
+    gettext
     yelp-tools
     appstream-util
     libgtk-3-dev
