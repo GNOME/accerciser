@@ -330,7 +330,7 @@ class BookmarkStore(gtk.ListStore):
       self.set_default_size(480, 240)
       self.connect('response', self._onResponse)
       vbox = self.get_children()[0]
-      hbox = gtk.HBox()
+      hbox = gtk.Box()
       hbox.set_spacing(3)
       tv = self._createTreeView(bookmarks_store)
       sw = gtk.ScrolledWindow()

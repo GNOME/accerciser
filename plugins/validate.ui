@@ -33,7 +33,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox1">
+      <object class="GtkBox" id="hbox1">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="spacing">3</property>
@@ -70,7 +70,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox3">
+      <object class="GtkBox" id="hbox3">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="spacing">3</property>
@@ -81,7 +81,7 @@
             <property name="receives-default">True</property>
             <signal name="toggled" handler="_onValidate" swapped="no"/>
             <child>
-              <object class="GtkHBox" id="hbox2">
+              <object class="GtkBox" id="hbox2">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="spacing">5</property>
@@ -120,7 +120,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="hbox4">
+          <object class="GtkBox" id="hbox4">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
