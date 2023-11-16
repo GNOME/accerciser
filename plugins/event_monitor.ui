@@ -20,9 +20,10 @@
     <property name="position">150</property>
     <property name="position-set">True</property>
     <child>
-      <object class="GtkVBox" id="event_monitor_vbox1">
+      <object class="GtkBox" id="event_monitor_vbox1">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">3</property>
         <child>
           <object class="GtkFrame" id="frame1">
@@ -78,9 +79,10 @@
       </packing>
     </child>
     <child>
-      <object class="GtkVBox" id="vbox2">
+      <object class="GtkBox" id="vbox2">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
@@ -191,9 +193,10 @@
                 <property name="can-focus">False</property>
                 <property name="spacing">3</property>
                 <child>
-                  <object class="GtkVBox" id="vbox1">
+                  <object class="GtkBox" id="vbox1">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
                     <child>
                       <object class="GtkButton" id="button3">
                         <property name="label">gtk-select-all</property>
@@ -273,9 +276,10 @@
                             <property name="can-focus">False</property>
                             <property name="left-padding">12</property>
                             <child>
-                              <object class="GtkVBox" id="vbox3">
+                              <object class="GtkBox" id="vbox3">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
                                 <child>
                                   <object class="GtkRadioButton" id="source_everthing">
                                     <property name="label" translatable="yes">Everything</property>
