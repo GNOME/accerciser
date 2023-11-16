@@ -49,8 +49,8 @@ class APIBrowser(ViewportPlugin):
     '''
     vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
     self.plugin_area.add(vbox)
-    top_hbox = gtk.HBox()
-    bottom_hbox = gtk.HBox()
+    top_hbox = gtk.Box()
+    bottom_hbox = gtk.Box()
     vbox.pack_start(top_hbox, False, True, 0)
     vbox.pack_start(bottom_hbox, True, True, 0)
     self.method_tree = gtk.TreeView()

@@ -1,43 +1,49 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <!-- interface-naming-policy toplevel-contextual -->
-  <object class="GtkVBox" id="main vbox">
+  <object class="GtkBox" id="main vbox">
     <property name="visible">True</property>
-    <property name="border_width">5</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">5</property>
     <property name="orientation">vertical</property>
     <property name="spacing">5</property>
     <child>
       <object class="GtkScrolledWindow" id="scrolledwindow1">
         <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="hscrollbar_policy">automatic</property>
-        <property name="vscrollbar_policy">automatic</property>
+        <property name="can-focus">True</property>
         <child>
           <object class="GtkTreeView" id="report table">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can-focus">True</property>
             <property name="reorderable">True</property>
-            <property name="rules_hint">True</property>
-            <signal name="cursor_changed" handler="_onCursorChanged"/>
-            <signal name="row_activated" handler="_onActivateRow"/>
+            <property name="rules-hint">True</property>
+            <signal name="cursor-changed" handler="_onCursorChanged" swapped="no"/>
+            <signal name="row-activated" handler="_onActivateRow" swapped="no"/>
+            <child internal-child="selection">
+              <object class="GtkTreeSelection"/>
+            </child>
           </object>
         </child>
       </object>
       <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
         <property name="position">0</property>
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox1">
+      <object class="GtkBox" id="hbox1">
         <property name="visible">True</property>
+        <property name="can-focus">False</property>
         <property name="spacing">3</property>
         <child>
           <object class="GtkLabel" id="label1">
             <property name="visible">True</property>
+            <property name="can-focus">False</property>
             <property name="label" translatable="yes">Sche_ma:</property>
-            <property name="use_underline">True</property>
-            <property name="mnemonic_widget">schema combo</property>
+            <property name="use-underline">True</property>
+            <property name="mnemonic-widget">schema combo</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -48,49 +54,59 @@
         <child>
           <object class="GtkComboBox" id="schema combo">
             <property name="visible">True</property>
+            <property name="can-focus">False</property>
           </object>
           <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
         </child>
       </object>
       <packing>
         <property name="expand">False</property>
+        <property name="fill">True</property>
         <property name="position">1</property>
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox3">
+      <object class="GtkBox" id="hbox3">
         <property name="visible">True</property>
+        <property name="can-focus">False</property>
         <property name="spacing">3</property>
         <child>
           <object class="GtkToggleButton" id="validate button">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <signal name="toggled" handler="_onValidate"/>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="toggled" handler="_onValidate" swapped="no"/>
             <child>
-              <object class="GtkHBox" id="hbox2">
+              <object class="GtkBox" id="hbox2">
                 <property name="visible">True</property>
+                <property name="can-focus">False</property>
                 <property name="spacing">5</property>
                 <child>
                   <object class="GtkImage" id="image1">
                     <property name="visible">True</property>
+                    <property name="can-focus">False</property>
                     <property name="stock">gtk-apply</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
+                    <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="button label">
                     <property name="visible">True</property>
+                    <property name="can-focus">False</property>
                     <property name="label" translatable="yes">V_alidate</property>
-                    <property name="use_underline">True</property>
+                    <property name="use-underline">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
+                    <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
@@ -99,20 +115,22 @@
           </object>
           <packing>
             <property name="expand">False</property>
+            <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="hbox4">
+          <object class="GtkBox" id="hbox4">
             <property name="visible">True</property>
+            <property name="can-focus">False</property>
             <child>
               <object class="GtkButton" id="save button">
                 <property name="label">gtk-save</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="_onSave"/>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
+                <signal name="clicked" handler="_onSave" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -124,10 +142,10 @@
               <object class="GtkButton" id="clear button">
                 <property name="label">gtk-clear</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="_onClear"/>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
+                <signal name="clicked" handler="_onClear" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -140,10 +158,10 @@
                 <property name="label">gtk-help</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="clicked" handler="_onHelp"/>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
+                <signal name="clicked" handler="_onHelp" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -155,7 +173,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
             <property name="position">1</property>
           </packing>
         </child>
@@ -169,9 +187,10 @@
     <child>
       <object class="GtkProgressBar" id="progress bar">
         <property name="visible">True</property>
-        <property name="show_text">True</property>
-        <property name="pulse_step">0.0099999997764800008</property>
+        <property name="can-focus">False</property>
+        <property name="pulse-step">0.00999999977648</property>
         <property name="text" translatable="yes">Idle</property>
+        <property name="show-text">True</property>
       </object>
       <packing>
         <property name="expand">False</property>

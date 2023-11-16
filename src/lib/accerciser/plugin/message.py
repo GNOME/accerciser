@@ -225,7 +225,7 @@ class PluginMessage(gtk.Frame):
     event_box = gtk.EventBox()
     event_box.set_style(self.message_style)
     self.add(event_box)
-    hbox = gtk.HBox()
+    hbox = gtk.Box()
     event_box.add(hbox)
     hbox.pack_start(self.vbox, True, True, 3)
     hbox.pack_start(self.action_area, False, False, 3)
@@ -274,7 +274,7 @@ class PluginErrorMessage(PluginMessage):
     @type details: string
     '''
     PluginMessage.__init__(self)
-    hbox = gtk.HBox()
+    hbox = gtk.Box()
     hbox.set_spacing(6)
     self.vbox.pack_start(hbox, False, False, 0)
     image = gtk.Image()
