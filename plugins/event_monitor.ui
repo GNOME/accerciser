@@ -14,9 +14,10 @@
       <column type="gboolean"/>
     </columns>
   </object>
-  <object class="GtkVPaned" id="monitor_vpaned">
+  <object class="GtkPaned" id="monitor_vpaned">
     <property name="visible">True</property>
     <property name="can-focus">True</property>
+    <property name="orientation">vertical</property>
     <property name="position">150</property>
     <property name="position-set">True</property>
     <child>
