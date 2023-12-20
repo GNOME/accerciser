@@ -146,9 +146,8 @@ class BookmarkStore(gtk.ListStore):
     iter = self.append([None])
     merge_id = ui_manager.uimanager.new_merge_id()
     name = 'Bookmark%s' % merge_id
-    bookmark = self._Bookmark(name, title, app, path, merge_id)
+    bookmark = self._Bookmark(self, name, title, app, path, merge_id)
     bookmark.connect('activate', self._onBookmarkActivate)
-    bookmark.connect('notify', self._onBookmarkChanged)
     self._bookmarks_action_group.add_action(bookmark)
     ui_manager.uimanager.add_ui(merge_id,
                                 '/MainMenuBar/Bookmarks', name, name,
@@ -169,14 +168,12 @@ class BookmarkStore(gtk.ListStore):
       if row[0] == bookmark:
         self.remove(row.iter)
 
-  def _onBookmarkChanged(self, bookmark, property):
+  def _onBookmarkChanged(self, bookmark):
     '''
-    Emit a 'row-changed' signal when bookmark's properties emit a 'notify' event.
+    Emit a 'row-changed' signal when bookmark's properties change.
 
-    @param bookmark: Bookmark that emitted 'notify' event.
+    @param bookmark: Bookmark whose properties changed.
     @type bookmark: L{BookmarkStore._Bookmark}
-    @param property: Property that changed, ignored because we emit dummy signals.
-    @type property: Property
     '''
     for row in self:
       if row[0] == bookmark:
@@ -593,6 +590,8 @@ class BookmarkStore(gtk.ListStore):
     '''
     Bookmark object.
 
+    @ivar bookmark_store: The bookmark store managing this bookmark.
+    @type bookmark_store: BookmarkStore
     @ivar title: Bookmark title (and label).
     @type title: string
     @ivar app: Application name.
@@ -602,10 +601,12 @@ class BookmarkStore(gtk.ListStore):
     @ivar merge_id: Merge id of UIManager.
     @type merge_id: integer
     '''
-    def __init__(self, name, title, app, path, merge_id):
+    def __init__(self, bookmark_store, name, title, app, path, merge_id):
       '''
       Initialize bookmark.
 
+      @param bookmark_store: The bookmark store managing this bookmark.
+      @type bookmark_store: BookmarkStore
       @param name: Action name
       @type name: string
       @param title: Bookmark title (and label).
@@ -618,6 +619,7 @@ class BookmarkStore(gtk.ListStore):
       @type merge_id: integer
       '''
       gtk.Action.__init__(self, name, title, None, None)
+      self.bookmark_store = bookmark_store
       self._title = title
       self._app = app
       self._path = path
@@ -628,18 +630,19 @@ class BookmarkStore(gtk.ListStore):
     def _setTitle(self, title):
       self._title = title
       self.set_property('label', title)
+      self.bookmark_store._onBookmarkChanged(self)
     title = property(_getTitle, _setTitle)
 
     def _getApp(self):
       return self._app
     def _setApp(self, app):
       self._app = app
-      self.notify('name')
+      self.bookmark_store._onBookmarkChanged(self)
     app = property(_getApp, _setApp)
 
     def _getPath(self):
       return self._path
     def _setPath(self, path):
       self._path = path
-      self.notify('name')
+      self.bookmark_store._onBookmarkChanged(self)
     path = property(_getPath, _setPath)
