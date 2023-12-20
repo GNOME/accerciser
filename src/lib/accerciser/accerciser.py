@@ -36,19 +36,24 @@ from .prefs_dialog import AccerciserPreferencesDialog
 from .main_window import AccerciserMainWindow
 from . import ui_manager
 
-class Main(Tools):
+class Main(gtk.Application, Tools):
   '''
   Class for the main accerciser window.
   '''
   COL_ACC = 4
   COL_FILLED = 2
 
-  def __init__(self):
+  def __init__(self, *args, **kwargs):
+    gtk.Application.__init__(self, *args, **kwargs)
+    self.window = None
+
+  def do_startup(self):
     '''
-    Gets references to important widgets, establishes event handlers,
-    configures the tree view, and initializes the tree with the contents of the
-    desktop.
+    gtk.Application callback that gets called when application starts.
+    Set up the application.
     '''
+    gtk.Application.do_startup(self)
+
     # mark the root of this window with its PID so we can easily identify it
     # as this app
     root_atk = atk.get_root()
@@ -56,7 +61,16 @@ class Main(Tools):
 
     self.node = Node()
 
-    self.window = AccerciserMainWindow(self.node)
+  def do_activate(self):
+    '''
+    gtk.Application callback when application gets launched
+    by desktop environment.
+    Set up and show the ApplicationWindow.
+    Gets references to important widgets, establishes event handlers,
+    configures the tree view, and initializes the tree with the contents of the
+    desktop.
+    '''
+    self.window = AccerciserMainWindow(application=self, node=self.node)
     self.window.connect('delete-event', self._onDeleteEvent)
     self.window.connect('destroy', self._onQuit)
 
@@ -97,10 +111,6 @@ class Main(Tools):
     self.last_focused = None
     self.window.show_all()
 
-  def run(self):
-    '''
-    Runs the app.
-    '''
     GLib.timeout_add(200, self._pumpEvents)
     try:
       # async is a reserved keyword in Python 3.7+, so we pass the args as dict
@@ -127,6 +137,7 @@ class Main(Tools):
     '''
     self._shutDown()
     pyatspi.Registry.stop()
+    self.quit()
 
   def _onAbout(self, action, data=None):
     '''

@@ -10,7 +10,7 @@ from .ui_manager import uimanager
 
 GSCHEMA = 'org.a11y.Accerciser'
 
-class AccerciserMainWindow(gtk.Window):
+class AccerciserMainWindow(gtk.ApplicationWindow):
   '''
   Main window class.
 
@@ -29,14 +29,14 @@ class AccerciserMainWindow(gtk.Window):
   '''
   __gtype_name__ = "AccerciserMainWindow"
 
-  def __init__(self, node):
+  def __init__(self, *args, node=None, **kwargs):
     '''
     Initialize the window.
 
     @param node: Main application's node.
     @type node: L{Node}
     '''
-    gtk.Window.__init__(self)
+    gtk.ApplicationWindow.__init__(self, *args, **kwargs)
     self.set_icon_name('accerciser')
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
