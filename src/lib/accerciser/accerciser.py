@@ -9,8 +9,8 @@ accessible.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -38,11 +38,11 @@ from . import ui_manager
 
 class Main(Tools):
   '''
-  Class for the main accerciser window. 
+  Class for the main accerciser window.
   '''
   COL_ACC = 4
   COL_FILLED = 2
-  
+
   def __init__(self):
     '''
     Gets references to important widgets, establishes event handlers,
@@ -75,7 +75,7 @@ class Main(Tools):
     main_actions = gtk.ActionGroup.new('MainActions')
     ui_manager.uimanager.insert_action_group(main_actions, 0)
     main_actions.add_actions([
-        ('Quit', gtk.STOCK_QUIT, None, 
+        ('Quit', gtk.STOCK_QUIT, None,
          '<control>q', 'Quit Accerciser', self._onQuit),
         ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences…'),
          '<control>p', 'Show preferences', self._onShowPreferences),
@@ -89,8 +89,8 @@ class Main(Tools):
                                   ('Contents', ui_manager.HELP_MENU_PATH),
                                   ('About', ui_manager.HELP_MENU_PATH)]:
       action = main_actions.get_action(action_name)
-      ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(), 
-                                  menu_path, action_name, action_name, 
+      ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(),
+                                  menu_path, action_name, action_name,
                                   gtk.UIManagerItemType.MENUITEM, False)
 
 
@@ -127,7 +127,7 @@ class Main(Tools):
     '''
     self._shutDown()
     pyatspi.Registry.stop()
-    
+
   def _onAbout(self, action, data=None):
     '''
     Shows the about dialog.
@@ -138,7 +138,7 @@ class Main(Tools):
     about = AccerciserAboutDialog()
     about.set_transient_for(self.window)
     about.run()
-    
+
   def _onHelp(self, action, page=""):
     '''
     Shows the help dialog.
@@ -153,7 +153,7 @@ class Main(Tools):
                  uri,
                  gtk.get_current_event_time())
     return True
-         
+
   def _onShowPreferences(self, action, data=None):
     '''
     Shows the preferences dialog.

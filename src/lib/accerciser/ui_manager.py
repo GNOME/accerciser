@@ -6,8 +6,8 @@ Defines the main UI manager with a layout.
 @copyright: Copyright (c) 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 

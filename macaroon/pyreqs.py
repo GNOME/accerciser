@@ -6,9 +6,9 @@ Checks if all required Python modules are installed.
 @copyright: Copyright (c) 2005, 2007 IBM Corporation
 @license: The BSD License
 
-All rights reserved. This program and the accompanying materials are made 
+All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD License which accompanies
-this distribution, and is available at 
+this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, os

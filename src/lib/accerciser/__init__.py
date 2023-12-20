@@ -7,8 +7,8 @@ Configures the path to pyatspi. Exposes all other package contents.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, os

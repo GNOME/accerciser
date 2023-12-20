@@ -1,16 +1,16 @@
 '''
 Provides support for internationalization using the Python gettext
 module. Configures gettext to use the translation associated with the locale
-set by the user's environment at runtime. If no appropriate translation is 
+set by the user's environment at runtime. If no appropriate translation is
 found, the default language is used: the one in which the strings in the
 code are written (i.e. English).
 
-The gettext function in the gettext module is alised as _ to match the name of 
+The gettext function in the gettext module is alised as _ to match the name of
 the equivalent C function provided by GNU gettext tools.
 
-See the Python documentation on the gettext module at 
-U{http://docs.python.org/lib/module-gettext.html}. A brief tutorial on 
-i18n and Python is available at 
+See the Python documentation on the gettext module at
+U{http://docs.python.org/lib/module-gettext.html}. A brief tutorial on
+i18n and Python is available at
 U{http://www.async.com.br/faq/pygtk/index.py?req=show&file=faq22.002.htp}
 
 @author: Peter Parente
@@ -18,9 +18,9 @@ U{http://www.async.com.br/faq/pygtk/index.py?req=show&file=faq22.002.htp}
 @copyright: Copyright (c) 2005, 2007 IBM Corporation
 @license: The BSD License
 
-All rights reserved. This program and the accompanying materials are made 
+All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD license which accompanies
-this distribution, and is available at 
+this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import sys, locale, gettext, os.path
@@ -28,14 +28,14 @@ from gettext import gettext as translate_func
 
 def bind(domain, locale_dir):
   '''
-  Convenience function for creating a new instance of a Python translation 
+  Convenience function for creating a new instance of a Python translation
   class bound to a domain and locale directory other than the default one for
   LSR. This function is useful in L{UIElement}s which have translatable strings
   and ship separately from LSR with their own translation files. For instance,
   a L{Perk} writer may call this function globally in his L{Perk} and assign
   the result to a global variable _ to use the GNU translation system without
   affecting how other components of LSR are translated.
-  
+
   @param domain: Filename of the translation file, typically the name of the
     project with which it is associated
   @type domain: string
@@ -48,7 +48,7 @@ def bind(domain, locale_dir):
     t = gettext.translation(domain, locale_dir)
     return t.gettext
   except IOError:
-    # no translation file, so just return the unicode version of the given 
+    # no translation file, so just return the unicode version of the given
     # string
     return lambda x: str(x)
 

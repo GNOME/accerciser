@@ -34,11 +34,11 @@ class MacaroonAboutDialog(Gtk.AboutDialog):
   @cvar COMMENTS: Comments about program.
   @type COMMENTS: string
   @cvar COPYRIGHT: Copyright notice.
-  @type COPYRIGHT: string 
+  @type COPYRIGHT: string
   @cvar LICENSE: License of program.
   @type LICENSE: string
   @cvar WEB_URL: URL to program's website.
-  @type WEB_URL: string 
+  @type WEB_URL: string
   @cvar WEB_LABEL: Label of URL button.
   @type WEB_LABEL: string
   '''
@@ -72,10 +72,10 @@ class MacaroonAboutDialog(Gtk.AboutDialog):
   def _onResponse(self, dialog, response_id):
     '''
     Callback for dialog responses, always destroy it.
-    
+
     @param dialog: This dialog.
     @type dialog: L{MacaroonAboutDialog}
     @param response_id: Response ID recieved.
     @type response_id: integer
     '''
-    self.destroy()  
+    self.destroy()

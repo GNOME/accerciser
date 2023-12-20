@@ -51,7 +51,7 @@ class ScriptFactory(object):
                Gdk.KEY_Alt_L, Gdk.KEY_Alt_R,
                Gdk.KEY_Super_L, Gdk.KEY_Super_R,
                Gdk.KEY_Shift_L, Gdk.KEY_Shift_R]
-               
+
   def __init__(self):
     '''
     Initialize the script factory.
@@ -63,7 +63,7 @@ class ScriptFactory(object):
   def keyPressCommand(self, event):
     '''
     Processing key presses in to commands
-    
+
     @param event: The keypress at-spi event.
     @type event: Accessibility.DeviceEvent
     '''
@@ -72,7 +72,7 @@ class ScriptFactory(object):
   def keyReleaseCommand(self, event):
     '''
     Processing key releases in to commands
-    
+
     @param event: The key release at-spi event.
     @type event: Accessibility.DeviceEvent
     '''
@@ -81,7 +81,7 @@ class ScriptFactory(object):
   def windowActivateCommand(self, event):
     '''
     Store the focus event source's application name and frame name.
-    
+
     @param event: The at-spi focus event.
     @type event: Accessibility.Event
     '''
@@ -168,7 +168,7 @@ class Level2SequenceFactory(SequenceFactory):
       path = pyatspi.getPath(event.source)
     except RuntimeError:
       path = []
-    self.last_focused = (event.source.name, 
+    self.last_focused = (event.source.name,
                          path,
                          event.source.getRole())
 
@@ -196,7 +196,7 @@ class Level2SequenceFactory(SequenceFactory):
         'sequence.append(WaitForWindowActivate("%s",None))\n' % \
           self.frame_name)
       self.frame_name = ''
-    
+
 
   def _getActiveFrameName(self):
     desktop = pyatspi.Registry.getDesktop(0)
@@ -260,7 +260,7 @@ class DogtailFactory(ScriptFactory):
   def keyPressCommand(self, event):
     '''
     Create command lines for variuos key presses.
-    
+
     @param event: Key press at-spi event.
     @type event: Accessibility.DeviceEvent
     '''
@@ -290,7 +290,7 @@ class DogtailFactory(ScriptFactory):
 
 class NativeFactory(DogtailFactory):
   '''
-  Script factory for native scripts. Besides the import line, 
+  Script factory for native scripts. Besides the import line,
   it should be identical to dogtail scripts.
   '''
   import_line = 'from accerciser.script_playback import *'
@@ -313,7 +313,7 @@ class LDTPFactory(DogtailFactory):
   def keyPressCommand(self, event):
     '''
     Create command lines for variuos key presses.
-    
+
     @param event: Key press at-spi event.
     @type event: Accessibility.DeviceEvent
     '''

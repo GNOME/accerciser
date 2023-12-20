@@ -6,8 +6,8 @@ Defines the preferences dialog.
 @copyright: Copyright (c) 2006, 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -29,7 +29,7 @@ class AccerciserPreferencesDialog(gtk.Dialog):
   def __init__(self, plugins_view=None, hotkeys_view=None):
     '''
     Initialize a preferences dialog.
-    
+
     @param plugins_view: Treeview of plugins.
     @type plugins_view: L{PluginManager._View}
     @param hotkeys_view: Treeview of global hotkeys.
@@ -51,13 +51,13 @@ class AccerciserPreferencesDialog(gtk.Dialog):
         sw.set_size_request(500, 150)
         sw.add(view)
         notebook.append_page(sw, gtk.Label.new(section))
-    
+
     notebook.append_page(_HighlighterView(), gtk.Label.new(_('Highlighting')))
-        
+
   def _onResponse(self, dialog, response_id):
     '''
     Callback for dialog responses, always destroy it.
-    
+
     @param dialog: This dialog.
     @type dialog: L{AccerciserPreferencesDialog}
     @param response_id: Response ID recieved.
@@ -121,7 +121,7 @@ class _HighlighterView(gtk.Alignment):
     node.HL_DURATION = int(spin_button.get_value()*1000)
     self.gsettings.set_double('highlight-duration',
                             spin_button.get_value())
-                            
+
 
   def _onColorSet(self, color_button, key):
     '''
@@ -139,7 +139,7 @@ class _HighlighterView(gtk.Alignment):
     else:
       node.BORDER_COLOR = color_button.get_rgb_string()
       node.BORDER_ALPHA = color_button.get_alpha_float()
-      
+
     self.gsettings.set_string(key, color_button.get_rgba_string())
 
   class _ColorButton(gtk.ColorButton):
@@ -152,7 +152,7 @@ class _HighlighterView(gtk.Alignment):
       self.set_use_alpha(True)
       self.set_alpha(int(alpha*0xffff))
       self.set_color(color)
-                               
+
     def get_rgba_string(self):
       '''
       Get the current color and alpha in string format.
@@ -183,7 +183,7 @@ class _HighlighterView(gtk.Alignment):
       color_val |= color.blue >> 8
       return \
           '#' + hex(color_val).replace('0x', '').replace('L', '').rjust(6, '0')
-      
+
     def get_alpha_float(self):
       '''
       Get the current alpha as a value from 0.0 to 1.0.

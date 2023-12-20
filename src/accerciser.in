@@ -8,8 +8,8 @@ Creates an instance of the program GUI and starts the main event loop.
 @copyright: Copyright (c) 2006 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
@@ -36,7 +36,7 @@ os.environ['GDK_BACKEND'] = 'x11'
 
 # make the accerciser directory part of the path to aid user imports
 sys.path.append(os.path.join(GLib.get_user_config_dir(), 'accerciser'))
-# We can't rely on prefix if we're installed by relocated RPM. Instead, we 
+# We can't rely on prefix if we're installed by relocated RPM. Instead, we
 # use __file__ and for now hope that lib is relative to bin.
 sys.prefix = '@prefix@'
 libs = os.path.join(sys.prefix, 'lib',
@@ -50,7 +50,7 @@ sys.path.insert(1, libs)
 #import gnome
 ## make this program accessible
 #props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
-#gnome.program_init('accerciser', '@VERSION@', 
+#gnome.program_init('accerciser', '@VERSION@',
 #                   properties=props, argv=['accerciser'] + sys.argv[1:])
 
 gi.require_version('Gtk', '3.0')
@@ -59,7 +59,7 @@ from gi.repository import Gtk as gtk
 # get global icon resources
 it = gtk.IconTheme()
 try:
-  icons = [it.load_icon('@PACKAGE@', size, gtk.IconLookupFlags.NO_SVG) 
+  icons = [it.load_icon('@PACKAGE@', size, gtk.IconLookupFlags.NO_SVG)
            for size in (16, 22, 32)]
 except Exception:
   # ignore errors, and just don't use the icon

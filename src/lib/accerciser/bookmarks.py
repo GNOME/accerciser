@@ -35,7 +35,7 @@ class BookmarkStore(gtk.ListStore):
   def __init__(self, node, window):
     '''
     Initialize bookmark manager. Load saved bookmarks from disk.
-    
+
     @param node: Main application's node.
     @type node: L{Node>
     '''
@@ -56,16 +56,16 @@ class BookmarkStore(gtk.ListStore):
     self.connect('row-changed', self._onRowChanged)
     self.connect('row-deleted', self._onRowDeleted)
     self.connect('row-inserted', self._onRowInserted)
-    
+
   def _buildMenuUI(self):
     '''
     Build's the initial submenu with functionality menu items.
     '''
     self._bookmarks_action_group.add_actions(
-      [('AddBookmark', gtk.STOCK_ADD, 
+      [('AddBookmark', gtk.STOCK_ADD,
         _('_Add Bookmark…'), '<Control>d',
         _('Bookmark selected accessible.'), self._onAddBookmark),
-       ('EditBookmarks', gtk.STOCK_EDIT, 
+       ('EditBookmarks', gtk.STOCK_EDIT,
         _('_Edit Bookmarks…'), None,
         _('Manage bookmarks.'), self._onEditBookmarks)])
 
@@ -73,19 +73,19 @@ class BookmarkStore(gtk.ListStore):
     for action in self._bookmarks_action_group.list_actions():
       merge_id = ui_manager.uimanager.new_merge_id()
       action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.BOOKMARKS_MENU_PATH, 
-                            action_name, action_name, 
+      ui_manager.uimanager.add_ui(merge_id, ui_manager.BOOKMARKS_MENU_PATH,
+                            action_name, action_name,
                             gtk.UIManagerItemType.MENUITEM, False)
 
-    ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(), 
-                                ui_manager.BOOKMARKS_MENU_PATH, 
-                                'sep', None, 
+    ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(),
+                                ui_manager.BOOKMARKS_MENU_PATH,
+                                'sep', None,
                                 gtk.UIManagerItemType.SEPARATOR, False)
 
   def _onAddBookmark(self, action, data=None):
     '''
     Callback for AddBookmark action.
-    
+
     @param action: Action that emitted this signal.
     @type action: gtk.Action
     '''
@@ -103,7 +103,7 @@ class BookmarkStore(gtk.ListStore):
   def _onEditBookmarks(self, action, data=None):
     '''
     Callback for EditBookmark action.
-    
+
     @param action: Action that emitted this signal.
     @type action: gtk.Action
     '''
@@ -132,14 +132,14 @@ class BookmarkStore(gtk.ListStore):
   def addBookmark(self, title, app, path):
     '''
     Add a bookmark to the maanger.
-    
+
     @param title: Title of bookmark
     @type title: string
     @param app: Application name of bookmark.
     @type app: string
     @param path: Path of bookmarks.
     @type path: string
-    
+
     @return: Tree iter of new bookmark.
     @rtype: gtk.TreeIter
     '''
@@ -150,8 +150,8 @@ class BookmarkStore(gtk.ListStore):
     bookmark.connect('activate', self._onBookmarkActivate)
     bookmark.connect('notify', self._onBookmarkChanged)
     self._bookmarks_action_group.add_action(bookmark)
-    ui_manager.uimanager.add_ui(merge_id, 
-                                '/MainMenuBar/Bookmarks', name, name, 
+    ui_manager.uimanager.add_ui(merge_id,
+                                '/MainMenuBar/Bookmarks', name, name,
                                 gtk.UIManagerItemType.MENUITEM, False)
     self[iter][0] = bookmark
     return iter
@@ -159,7 +159,7 @@ class BookmarkStore(gtk.ListStore):
   def removeBookmark(self, bookmark):
     '''
     Remove bookmark from manager.
-    
+
     @param bookmark: Bookmark to remove.
     @type bookmark: BookmarkStore._Bookmark
     '''
@@ -172,7 +172,7 @@ class BookmarkStore(gtk.ListStore):
   def _onBookmarkChanged(self, bookmark, property):
     '''
     Emit a 'row-changed' signal when bookmark's properties emit a 'notify' event.
-    
+
     @param bookmark: Bookmark that emitted 'notify' event.
     @type bookmark: L{BookmarkStore._Bookmark}
     @param property: Property that changed, ignored because we emit dummy signals.
@@ -185,7 +185,7 @@ class BookmarkStore(gtk.ListStore):
   def _getElements(self):
     '''
     Get a list of elements from XML doc. Filter out strings.
-    
+
     @return: list of elements.
     @rtype: list of Element
     '''
@@ -194,7 +194,7 @@ class BookmarkStore(gtk.ListStore):
   def _onRowChanged(self, model, tree_path, iter):
     '''
     Callback for row changes. Persist changes to disk.
-    
+
     @param model: Model that emitted signal
     @type model: L{BookmarkStore}
     @param path: Path of row that changed.
@@ -214,7 +214,7 @@ class BookmarkStore(gtk.ListStore):
   def _onRowDeleted(self, model, tree_path):
     '''
     Callback for row deletions. Persist changes to disk, and update UI.
-    
+
     @param model: Model that emitted signal
     @type model: L{BookmarkStore}
     @param path: Path of row that got deleted.
@@ -228,7 +228,7 @@ class BookmarkStore(gtk.ListStore):
   def _onRowInserted(self, model, path, iter):
     '''
     Callback for row insertions. Persist changes to disk.
-    
+
     @param model: Model that emitted signal
     @type model: L{BookmarkStore}
     @param path: Path of row that is inserted.
@@ -257,7 +257,7 @@ class BookmarkStore(gtk.ListStore):
   def _onBookmarkActivate(self, bookmark):
     '''
     Bookmark activation callback
-    
+
     @param bookmark: Bookmark that was activated.
     @type bookmark: L{BookmarkStore._Bookmark}
     '''
@@ -266,20 +266,20 @@ class BookmarkStore(gtk.ListStore):
   def jumpTo(self, bookmark):
     '''
     Go to bookmarks.
-    
-    @param bookmark: Bookmark to go to. 
+
+    @param bookmark: Bookmark to go to.
     @type bookmark: L{BookmarkStore._Bookmark}
     '''
-    if '' == bookmark.path: 
+    if '' == bookmark.path:
       path = ()
-    else: 
+    else:
       path = list(map(int, bookmark.path.split(',')))
     self.node.updateToPath(bookmark.app, path)
 
   def bookmarkCurrent(self):
     '''
     Bookmark the currently selected application-wide node.
-    
+
     @return: Tree iter of new bookmark.
     @rtype: gtk.TreeIter
     '''
@@ -301,10 +301,10 @@ class BookmarkStore(gtk.ListStore):
   def _nameIsTaken(self, name):
     '''
     Check if label text is already in use.
-    
+
     @param name: Name to check.
     @type name: string
-    
+
     @return: True is name is taken.
     @rtype: boolean
     '''
@@ -321,7 +321,7 @@ class BookmarkStore(gtk.ListStore):
     def __init__(self, bookmarks_store):
       '''
       Initialize dialog.
-      
+
       @param bookmarks_store: Bookmarks manager.
       @type bookmarks_store: L{BookmarkStore}
       '''
@@ -360,7 +360,7 @@ class BookmarkStore(gtk.ListStore):
     def _onAddClicked(self, button, tv):
       '''
       Callback for add button. Add a bookmark.
-      
+
       @param button: Add button
       @type button: gtk.Button
       @param tv: Treeview of dialog.
@@ -375,7 +375,7 @@ class BookmarkStore(gtk.ListStore):
     def _onRemoveClicked(self, button, tv):
       '''
       Callback for remove button. Remove a bookmark.
-      
+
       @param button: Remove button
       @type button: gtk.Button
       @param tv: Treeview of dialog.
@@ -388,12 +388,12 @@ class BookmarkStore(gtk.ListStore):
         bookmark = model[iter][0]
         model.removeBookmark(bookmark)
         selection.select_path(0)
-        
+
 
     def _onJumpToClicked(self, button, tv):
       '''
       Callback for "jump to" button. Go to bookmark.
-      
+
       @param button: "jump to" button
       @type button: gtk.Button
       @param tv: Treeview of dialog.
@@ -407,7 +407,7 @@ class BookmarkStore(gtk.ListStore):
     def _onResponse(self, dialog, response):
       '''
       Callback for dialog response.
-      
+
       @param dialog: Dialog.
       @type dialog: gtk.Dialog
       @param response: response ID.
@@ -418,10 +418,10 @@ class BookmarkStore(gtk.ListStore):
     def _createTreeView(self, model):
       '''
       Create dialog's tree view.
-      
+
       @param model: Data model for view.
       @type model: L{BookmarkStore}
-      
+
       @return: The new tree view.
       @rtype: gtk.TreeView
       '''
@@ -456,8 +456,8 @@ class BookmarkStore(gtk.ListStore):
 
     def _onCellEdited(self, cellrenderer, path, new_text, model, col_id):
       '''
-      Callback for cell editing. Blocks unallowed input. 
-      
+      Callback for cell editing. Blocks unallowed input.
+
       @param cellrenderer: Cellrenderer that is being edited.
       @type cellrenderer: gtk.CellRendererText
       @param path: Path of tree node.
@@ -482,7 +482,7 @@ class BookmarkStore(gtk.ListStore):
     def _cellDataFunc(self, column, cell, model, iter, col_id):
       '''
       Cell renderer display function.
-      
+
       @param column: Tree view column
       @type column: gtk.TreeViewColumn
       @param cell: Cell renderer.
@@ -495,7 +495,7 @@ class BookmarkStore(gtk.ListStore):
       @type col_id: integer
       '''
       bookmark = model[iter][0]
-      cell.set_property('text', 
+      cell.set_property('text',
                         getattr(bookmark, _BM_ATTRIBS[col_id], ''))
 
   class _NewBookmarkDialog(gtk.Dialog):
@@ -512,7 +512,7 @@ class BookmarkStore(gtk.ListStore):
     def __init__(self, bookmark, parent_window):
       '''
       Initialize the dialog.
-      
+
       @param bookmark: New bookmark to edit.
       @type bookmark: L{BookmarkStore._Bookmark}
       '''
@@ -530,13 +530,13 @@ class BookmarkStore(gtk.ListStore):
       self._title_entry.connect('changed', self._onChanged, ok_button)
       self._app_entry = gtk.Entry()
       self._path_entry = gtk.Entry()
-      for i, label_entry_pair in enumerate([(_('Title:'), 
+      for i, label_entry_pair in enumerate([(_('Title:'),
                                              bookmark.title,
                                             self._title_entry),
-                                           (_('Application:'), 
+                                           (_('Application:'),
                                              bookmark.app,
                                             self._app_entry),
-                                           (_('Path:'), 
+                                           (_('Path:'),
                                              bookmark.path,
                                             self._path_entry)]):
         label, value, entry = label_entry_pair
@@ -556,7 +556,7 @@ class BookmarkStore(gtk.ListStore):
     def _onChanged(self, entry, button):
       '''
       Title entry changed callback. If title entry is empty, disable "add" button.
-      
+
       @param entry: Entry widget that changed.
       @type entry: gtk.Entry
       @param button: Add button.
@@ -569,7 +569,7 @@ class BookmarkStore(gtk.ListStore):
     def _onEnter(self, entry, button):
       '''
       Finish dialog when enter is pressed.
-      
+
       @param entry: Entry widget that changed.
       @type entry: gtk.Entry
       @param button: Add button.
@@ -580,7 +580,7 @@ class BookmarkStore(gtk.ListStore):
     def getFields(self):
       '''
       Return value of all fields.
-      
+
       @return: title, app name, and path.
       @rtype: tuple
       '''
@@ -605,7 +605,7 @@ class BookmarkStore(gtk.ListStore):
     def __init__(self, name, title, app, path, merge_id):
       '''
       Initialize bookmark.
-      
+
       @param name: Action name
       @type name: string
       @param title: Bookmark title (and label).

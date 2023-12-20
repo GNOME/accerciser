@@ -7,8 +7,8 @@ Defines convenience classes representing tree nodes and bag objects.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
@@ -41,35 +41,35 @@ class Bag(object):
   '''
   def __init__(self, **kwargs):
     self.__dict__.update(kwargs)
-    
+
   def __str__(self):
     return ', '.join(list(vars(self).keys()))
 
 class Node(GObject.GObject, ToolsAccessor):
   '''
-  Node class that contains convient references to accessibility information 
-  for the currently selected node. A L{Node} instance will emit an 
+  Node class that contains convient references to accessibility information
+  for the currently selected node. A L{Node} instance will emit an
   'accessible-changed' signal when L{update} is called with a new accessible.
 
-  @ivar desktop: The desktop accessible. It holds references to all the 
+  @ivar desktop: The desktop accessible. It holds references to all the
   application L{Accessibility.Accessible}s
   @type desktop: L{Accessibility.Accessible}
   @ivar acc: The currently selected accessible.
   @type acc: L{Accessibility.Accessible}
   '''
-  __gsignals__ = {'accessible-changed' : 
+  __gsignals__ = {'accessible-changed' :
                   (GObject.SignalFlags.RUN_FIRST,
-                   None, 
+                   None,
                    (GObject.TYPE_PYOBJECT,))}
   def __init__(self):
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.acc = None
     self.tree_path = None
     GObject.GObject.__init__(self)
-    
+
   def update(self, acc):
     '''
-    Updates the information in this node for the given accessible including 
+    Updates the information in this node for the given accessible including
     a reference to the accessible. Also emit the
     'accessible-changed' signal.
 
@@ -83,20 +83,20 @@ class Node(GObject.GObject, ToolsAccessor):
     if acc != self.desktop:
         # Don't highlight the entire desktop, it gets annoying.
         self.highlight()
-    self.emit('accessible-changed', acc)  
+    self.emit('accessible-changed', acc)
 
   def updateToPath(self, app_name, path):
     '''
-    Update the node with a new accessible by providing a tree path 
+    Update the node with a new accessible by providing a tree path
     in an application.
-    
+
     @param app_name: Application name.
     @type app_name: string
     @param path: The accessible path in the application.
     @type path: list of integer
     '''
     acc = pyatspi.findDescendant(
-      self.desktop, 
+      self.desktop,
       lambda x: x.name.lower()==app_name.lower(),
       breadth_first=True)
     if acc is None: return
@@ -172,7 +172,7 @@ class Node(GObject.GObject, ToolsAccessor):
       return
     ah = _HighLight(extents.x, extents.y,
                     extents.width, extents.height,
-                    FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA, 
+                    FILL_COLOR, FILL_ALPHA, BORDER_COLOR, BORDER_ALPHA,
                     2.0, 0)
     ah.highlight(HL_DURATION)
 
@@ -194,9 +194,9 @@ class _HighLight(gtk.Window):
        ry="2" />
 </svg>
 """
-  def __init__(self, x, y, w, h, 
+  def __init__(self, x, y, w, h,
                fill_color, fill_alpha,
-               stroke_color, stroke_alpha, 
+               stroke_color, stroke_alpha,
                stroke_width, padding=0):
 
     # Initialize window.
@@ -236,14 +236,14 @@ class _HighLight(gtk.Window):
 
     # Connect "draw"
     self.connect("draw", self._onExpose)
-    
+
   def highlight(self, duration=500):
     if duration > 0:
       GLib.timeout_add(duration, lambda w: w.destroy(), self)
       self.show_all()
     else:
       self.destroy()
-    
+
   def _onExpose(self, widget, event):
     svgh = rsvg.Handle()
     try:
@@ -268,7 +268,7 @@ class _HighLight(gtk.Window):
     del svgh
 
 if __name__ == "__main__":
-    hl = _HighLight(200, 200, 200, 200, '#ff0000', 
+    hl = _HighLight(200, 200, 200, 200, '#ff0000',
                     0.5, '#ff0000', 0.996108949416, 8.0, 0)
     hl.highlight(2000)
     gtk.main()

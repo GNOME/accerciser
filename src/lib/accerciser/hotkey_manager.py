@@ -6,8 +6,8 @@ Defines the manager for global hot keys.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 from gi.repository import Gtk as gtk
@@ -34,7 +34,7 @@ def _charToKeySym(key):
 
   @param key: The character or key name to convert.
   @type key: string
-  
+
   @return: A key symbol
   @rtype: long
   '''
@@ -61,12 +61,12 @@ class HotkeyManager(gtk.ListStore):
     pyatspi.Registry.registerKeystrokeListener(
       self._accEventKeyPressed, mask=masks, kind=(pyatspi.KEY_PRESSED_EVENT,))
 
-    
+
   def _accEventKeyPressed(self, event):
     '''
-    Handle certain key presses globally. Pass on to the hotkey manager the 
+    Handle certain key presses globally. Pass on to the hotkey manager the
     key combinations pressed for further processing.
-    
+
     @param event: The event that is being handled.
     @type event: L{pyatspi.event.Event}
     '''
@@ -76,9 +76,9 @@ class HotkeyManager(gtk.ListStore):
 
   def hotkeyPress(self, key, modifiers):
     '''
-    Call the appropriate callbacks for given key combination. This method 
-    should be called by an at-spi keyboard:press event handler in the 
-    main program. 
+    Call the appropriate callbacks for given key combination. This method
+    should be called by an at-spi keyboard:press event handler in the
+    main program.
 
     @param key: The pressed key code.
     @type key: integer
@@ -86,7 +86,7 @@ class HotkeyManager(gtk.ListStore):
     @type modifiers: integer
     '''
     km = gdk.Keymap.get_default()
-    
+
     callback = None
 
     for combo in self:
@@ -98,12 +98,12 @@ class HotkeyManager(gtk.ListStore):
         if callback:
           callback()
     return bool(callback)
-  
-  def addKeyCombo(self, component, localized_component, description, 
+
+  def addKeyCombo(self, component, localized_component, description,
                   callback, keypress, modifiers):
     '''
-    Adds the given key combination with the appropriate callbacks to 
-    the L{HotkeyManager}. If an identical description with the identical 
+    Adds the given key combination with the appropriate callbacks to
+    the L{HotkeyManager}. If an identical description with the identical
     component already exists in the model, just reassign with the new callback.
 
     I{Note:} It is important that the component and description strings be
@@ -114,12 +114,12 @@ class HotkeyManager(gtk.ListStore):
     @param description: A description of the action performed during the given
     keycombo.
     @type description: string
-    @param callback: The callback to call when the given key combination 
+    @param callback: The callback to call when the given key combination
     is pressed.
     @type callback: callable
     @param keypress: The key symbol of the keystroke that performs given operation.
     @type keypress: long
-    @param modifiers: The modifiers that must be depressed for function to 
+    @param modifiers: The modifiers that must be depressed for function to
     be perfomed.
     @type modifiers: int
     '''
@@ -136,7 +136,7 @@ class HotkeyManager(gtk.ListStore):
           gsettings.get_string('hotkey-combo'))
       else:
         final_keypress, final_modifiers = keypress, modifiers
-      self.append([component, description, callback, 
+      self.append([component, description, callback,
                    int(final_keypress), final_modifiers, localized_component])
 
   def removeKeyCombo(self, component, description, callback, key, modifiers):
@@ -149,12 +149,12 @@ class HotkeyManager(gtk.ListStore):
     @param description: A description of the action performed during the given
     keycombo.
     @type description: string
-    @param callback: The callback to call when the given key combination 
+    @param callback: The callback to call when the given key combination
     is pressed.
     @type callback: callable
     @param key: The key symbol of the keystroke that performs given operation.
     @type key: long
-    @param modifiers: The modifiers that must be depressed for function to 
+    @param modifiers: The modifiers that must be depressed for function to
     be perfomed.
     @type modifiers: int
     '''
@@ -164,7 +164,7 @@ class HotkeyManager(gtk.ListStore):
         # We never really remove it, just set the callback to None
         self[iter][COL_CALLBACK] = ''
       iter = self.iter_next(iter)
-    
+
   def _onComboChanged(self, model, path, iter):
     '''
     Callback for row changes. Copies the changed key combos over to gsettings.
@@ -179,17 +179,17 @@ class HotkeyManager(gtk.ListStore):
     if not model[iter][COL_COMPONENT] or not model[iter][COL_DESC]:
       return
 
-    gspath = self._getComboGSettingsPath(model[iter][COL_COMPONENT], 
+    gspath = self._getComboGSettingsPath(model[iter][COL_COMPONENT],
                                          model[iter][COL_DESC])
     gsettings = GSettings.new_with_path(HOTKEYS_GSCHEMA, gspath)
-    combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS], 
+    combo_name = gtk.accelerator_name(model[iter][COL_KEYPRESS],
                                       gdk.ModifierType(model[iter][COL_MOD]))
 
     key = gsettings.get_string('hotkey-combo')
-    
+
     if key != combo_name and key != '/':
       gsettings.set_string('hotkey-combo', combo_name)
-  
+
 
   def _getComboGSettingsPath(self, component, description):
     '''
@@ -199,7 +199,7 @@ class HotkeyManager(gtk.ListStore):
     @type component: string
     @param description: The description of the hotkey action
     @type description: string
-    
+
     @return: A full gsettings path
     @rtype: string
     '''
@@ -217,7 +217,7 @@ class HotkeyManager(gtk.ListStore):
 
     @param component: The given string
     @type component: string
-    
+
     @return: A dasherized and decapitalized string
     @rtype: string
     '''
@@ -225,13 +225,13 @@ class HotkeyManager(gtk.ListStore):
 
 class HotkeyTreeView(gtk.TreeView):
   '''
-  A tree view of the variuos global hotkey combinations. The keys and 
+  A tree view of the variuos global hotkey combinations. The keys and
   modifiers could also be changed through this widget.
   '''
   def __init__(self, hotkey_manager):
     '''
     Construct the tree view with the given L{HotkeyManager}.
-    
+
     @ivar hotkey_manager: The manager we wish to view.
     @type hotkey_manager: L{HotkeyManager}
 
@@ -249,7 +249,7 @@ class HotkeyTreeView(gtk.TreeView):
     tvc.add_attribute(crt, 'text', COL_COMPONENT)
     tvc.set_cell_data_func(crt, self._componentDataFunc, COL_COMPONENT)
     self.append_column(tvc)
-    
+
     crt = gtk.CellRendererText()
     tvc = gtk.TreeViewColumn(_('Task'))
     tvc.pack_start(crt, True)
@@ -288,7 +288,7 @@ class HotkeyTreeView(gtk.TreeView):
     tvc.set_cell_data_func(crt, self._modCellFunc, gdk.ModifierType.SHIFT_MASK)
     crt.connect('toggled', self._onModToggled, gdk.ModifierType.SHIFT_MASK)
     self.append_column(tvc)
-  
+
   def _translateDataFunc(self, column, cell, model, iter, column_id):
     '''
     Show the component name as a translated string.
@@ -301,7 +301,7 @@ class HotkeyTreeView(gtk.TreeView):
     @type model: L{gtk.ListStore}
     @param iter: The iter of the given cell data.
     @type iter: L{gtk.TreeIter}
-    '''    
+    '''
     cell.set_property('text', _(model[iter][column_id]))
 
   def _componentDataFunc(self, column, cell, model, iter, column_id):
@@ -316,7 +316,7 @@ class HotkeyTreeView(gtk.TreeView):
     @type model: L{gtk.ListStore}
     @param iter: The iter of the given cell data.
     @type iter: L{gtk.TreeIter}
-    '''    
+    '''
     cell.set_property('text', model[iter][COL_LOCALIZED_COMP] or \
                         model[iter][COL_COMPONENT])
 
@@ -334,7 +334,7 @@ class HotkeyTreeView(gtk.TreeView):
     @type iter: L{gtk.TreeIter}
     '''
     if model[iter][COL_KEYPRESS] > 0:
-      cell.set_property('text', 
+      cell.set_property('text',
                         gdk.keyval_name(model[iter][COL_KEYPRESS]))
       cell.set_property('sensitive', True)
     else:
@@ -360,7 +360,7 @@ class HotkeyTreeView(gtk.TreeView):
 
   def _onKeyChanged(self, cellrenderertext, path, new_text):
     '''
-    A callback for the key cellrenderer when 'edited'. Model must be 
+    A callback for the key cellrenderer when 'edited'. Model must be
     changed accordingly.
 
     @param cellrenderertext: The cell renderer that emitted the signal
@@ -377,10 +377,10 @@ class HotkeyTreeView(gtk.TreeView):
       except:
         keysym = _charToKeySym(new_text[0])
     self.hotkey_manager[path][COL_KEYPRESS] = int(keysym)
-  
+
   def _onModToggled(self, renderer_toggle, path, mask):
     '''
-    A callback for the modifiers' cellrenderers when 'toggled'. 
+    A callback for the modifiers' cellrenderers when 'toggled'.
     Model must be changed accordingly.
 
     @param renderer_toggle: The cell renderer that emitted the signal

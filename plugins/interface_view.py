@@ -6,8 +6,8 @@ AT-SPI interface viewer plugin.
 @copyright: Copyright (c) 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -27,18 +27,18 @@ from accerciser import node
 from accerciser.i18n import _, N_, DOMAIN
 from xml.dom import minidom
 
-UI_FILE = os.path.join(os.path.dirname(__file__), 
+UI_FILE = os.path.join(os.path.dirname(__file__),
                        'interface_view.ui')
 
 class InterfaceViewer(ViewportPlugin):
   '''
   Interface Viewer plugin class.
 
-  @ivar label_role: Top plugin label that displays the role name and 
+  @ivar label_role: Top plugin label that displays the role name and
   the accessible name.
   @type label_role: gtk.Label
   @ivar sections: List of L{_InterfaceSection} instances.
-  @type sections: list  
+  @type sections: list
   '''
   # Translators: this is a plugin name
   plugin_name = N_('Interface Viewer')
@@ -81,14 +81,14 @@ class InterfaceViewer(ViewportPlugin):
       _SectionDesktop(ui_xml, self.node),
       _SectionLoginHelper(ui_xml, self.node)]
 
-    # HACK: Add callbacks to this class. 
+    # HACK: Add callbacks to this class.
     for cb in callbacks:
       for section in self.sections:
         method = getattr(section, cb, None)
         if not method: continue
         setattr(self, cb, method)
 
-    ui_xml.connect_signals(self)    
+    ui_xml.connect_signals(self)
 
     # Mark all expanders with no associated section classes as unimplemented
     implemented_expanders = [s.expander for s in self.sections]
@@ -111,7 +111,7 @@ class InterfaceViewer(ViewportPlugin):
     @param event: 'object:property-change:accessible-name' event.
     @type acc: Accessibility.Event
     '''
-    if event.source != self.node.acc: 
+    if event.source != self.node.acc:
       return
 
     role = self.node.acc.getRoleName()
@@ -121,7 +121,7 @@ class InterfaceViewer(ViewportPlugin):
     else:
       role_name = role
     self.label_role.set_markup('<b>%s</b>' % markup_escape_text(role_name))
-      
+
   def onAccChanged(self, acc):
     '''
     Method that is invoked when the main accessible selection s changed.
@@ -148,12 +148,12 @@ class _InterfaceSection(object):
 
   @cvar interface_name: Name of interface this section is for.
   @type interface_name: string
-  
+
   @ivar node: Application-wide L{Node}.
   @type node: L{Node}
   @ivar expander: The section expander widget.
   @type expander: gtk.Expander
-  @ivar event_listeners: List of client and event pairs that are 
+  @ivar event_listeners: List of client and event pairs that are
   registered by this section. They are typically registered an population time,
   and alwas deregistered on L{clearUI}.
   @type event_listeners: list
@@ -162,7 +162,7 @@ class _InterfaceSection(object):
   def __init__(self, ui_xml, node, interface_name=None):
     '''
     Initialize section object. and call init() for derived classes.
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     @param node: Application-wide node of selected accessible.
@@ -181,7 +181,7 @@ class _InterfaceSection(object):
   def init(self, ui_xml):
     '''
     Abtract method for initializing section-specific code.
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -190,7 +190,7 @@ class _InterfaceSection(object):
   def enable(self, acc):
     '''
     Make section sensitive and populate it.
-    
+
     @param acc: Accessible to use for information when populating section.
     @type acc: Accessibility.Accessible
     '''
@@ -200,7 +200,7 @@ class _InterfaceSection(object):
   def populateUI(self, acc):
     '''
     Abstract method for section specific populating code.
-    
+
     @param acc: Accessible to use for information when populating section.
     @type acc: Accessibility.Accessible
     '''
@@ -226,7 +226,7 @@ class _InterfaceSection(object):
     Convinience method for making the expander's children insensitive.
     We don't want tomake the expander itself insensitive because the user might
     still want to keep it open or close it when it is disabled.
-    
+
     @param sensitive: True for sensitive.
     @type sensitive: boolean
     @param expander: Expander widget. Uses instances expander by default.
@@ -248,12 +248,12 @@ class _InterfaceSection(object):
 
   def _isSelectedInView(self, selection):
     '''
-    Convinience method for determining if a given treeview selection has any 
+    Convinience method for determining if a given treeview selection has any
     selected nodes.
-    
+
     @param selection: Selection to check.
     @type selection: gtk.TreeSelection
-    
+
     @return: True is something is selected
     @rtype: boolean
     '''
@@ -263,19 +263,19 @@ class _InterfaceSection(object):
 
   def _onViewSelectionChanged(self, selection, *widgets):
     '''
-    Convinience callback for selection changes. Useful for setting given 
-    widgets to be sensitive only when something is selected, for example 
-    action buttons. 
-    
+    Convinience callback for selection changes. Useful for setting given
+    widgets to be sensitive only when something is selected, for example
+    action buttons.
+
     @param selection: The selection object that triggered the callback.
     @type selection: gtk.TreeSelection
-    @param widgets: list of widgets that should be made sensitive/insensitive 
+    @param widgets: list of widgets that should be made sensitive/insensitive
     on selection changes.
     @type widgets: list of gtk.Widget
     '''
     for widget in widgets:
       widget.set_sensitive(self._isSelectedInView(selection))
-      
+
   def registerEventListener(self, client, *event_names):
     pyatspi.Registry.registerEventListener(client, *event_names)
     self.event_listeners.append((client, event_names))
@@ -302,9 +302,9 @@ class _SectionAccessible(_InterfaceSection):
 
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Accessible interface 
+    Initialization that is specific to the Accessible interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -334,9 +334,9 @@ class _SectionAccessible(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Accessible section with relevant data of the 
+    Populate the Accessible section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -351,7 +351,7 @@ class _SectionAccessible(_InterfaceSection):
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
     list(map(self.states_model.append, [[state] for state in states]))
-    
+
     try:
       attribs = acc.getAttributes()
     except:
@@ -366,14 +366,14 @@ class _SectionAccessible(_InterfaceSection):
       r_type_name = repr(relation.getRelationType()).replace('RELATION_', '')
       r_type_name = r_type_name.replace('_', ' ').lower().capitalize()
       iter = self.relations_model.append(
-          None, [None, 
+          None, [None,
                  markup_escape_text(r_type_name), -1,
                  self.header_bg, False])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
         self.relations_model.append(
-            iter, [getIcon(acc), 
-                   markup_escape_text(acc.name), i, 
+            iter, [getIcon(acc),
+                   markup_escape_text(acc.name), i,
                    self.relation_bg, True])
     self.relations_view.expand_all()
 
@@ -390,10 +390,10 @@ class _SectionAccessible(_InterfaceSection):
   def _relationSelectFunc(self, path):
     '''
     Make relation-type headers unselectable.
-    
+
     @param path: The path about to be selected
     @type path: tuple
-    
+
     @return: True if selectable
     @rtype: boolean
     '''
@@ -403,7 +403,7 @@ class _SectionAccessible(_InterfaceSection):
     '''
     Callback for row activation or button press. Selects the related
     accessible in the main application.
-    
+
     @param relations_view: The relations treeview.
     @type relations_view: gtk.TreeView
     @param *more_args: More arguments that are provided by variuos types of
@@ -418,11 +418,11 @@ class _SectionAccessible(_InterfaceSection):
       acc = relations[path[0]].getTarget(model[iter][2])
       if acc:
         self.node.update(acc)
-  
+
   def _accEventState(self, event):
     '''
     Callback for accessible state changes. Repopulates the states model.
-    
+
     @param event: Event that triggered this callback.
     @type event: Accessibility.Event
     '''
@@ -435,7 +435,7 @@ class _SectionAccessible(_InterfaceSection):
         # Maybe we got a defunct state, in which case the object is diseased.
         states = []
       states.sort()
-      list(map(self.states_model.append, [[state] for state in states]))        
+      list(map(self.states_model.append, [[state] for state in states]))
 
 
 class _SectionAction(_InterfaceSection):
@@ -445,14 +445,14 @@ class _SectionAction(_InterfaceSection):
   @ivar actions_model: Model for accessible states.
   @type actions_model: gtk.ListStore
   @ivar action_selection: Current selection of actions tree view.
-  @type action_selection: gtk.TreeSelection  
+  @type action_selection: gtk.TreeSelection
   '''
   interface_name = 'Action'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Action interface 
+    Initialization that is specific to the Action interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -462,14 +462,14 @@ class _SectionAction(_InterfaceSection):
     self.action_selection = treeview.get_selection()
     show_button = ui_xml.get_object('button_action_do')
     show_button.set_sensitive(self._isSelectedInView(self.action_selection))
-    self.action_selection.connect('changed', 
+    self.action_selection.connect('changed',
                                   self._onViewSelectionChanged, show_button)
 
   def populateUI(self, acc):
     '''
-    Populate the Action section with relevant data of the 
+    Populate the Action section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -488,7 +488,7 @@ class _SectionAction(_InterfaceSection):
   def _onActionRowActivated(self, treeview, path, view_column):
     '''
     Callback for row activation in action treeview. Performs actions.
-    
+
     @param treeview: Actions tree view.
     @type treeview: gtk.TreeView
     @param path: Path of activated role.
@@ -503,7 +503,7 @@ class _SectionAction(_InterfaceSection):
   def _onActionClicked(self, button):
     '''
     Callback for "do action" button. Performs action of currently selected row.
-    
+
     @param button: The button that was pressed.
     @type button: gtk.Button
     '''
@@ -515,7 +515,7 @@ class _SectionAction(_InterfaceSection):
 class _SectionApplication(_InterfaceSection):
   '''
   A class that populates an Application interface section.
-  
+
   @ivar label_id: Label that displays application id info.
   @type label_id: gtk.Label
   @ivar label_tk: Label for toolkit name.
@@ -526,21 +526,21 @@ class _SectionApplication(_InterfaceSection):
   interface_name = 'Application'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Application interface 
+    Initialization that is specific to the Application interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
     self.label_id = ui_xml.get_object('label_app_id')
     self.label_tk = ui_xml.get_object('label_app_tk')
     self.label_version = ui_xml.get_object('label_app_version')
-  
+
   def populateUI(self, acc):
     '''
-    Populate the Application section with relevant data of the 
+    Populate the Application section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -560,7 +560,7 @@ class _SectionApplication(_InterfaceSection):
 class _SectionComponent(_InterfaceSection):
   '''
   A class that populates a Component interface section.
-  
+
   @ivar label_posrel: Relative position label
   @type label_posrel: gtk.Label
   @ivar label_posabs: Absolute position label
@@ -575,9 +575,9 @@ class _SectionComponent(_InterfaceSection):
   interface_name = 'Component'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Component interface 
+    Initialization that is specific to the Component interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -590,9 +590,9 @@ class _SectionComponent(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Component section with relevant data of the 
+    Populate the Component section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -606,7 +606,7 @@ class _SectionComponent(_InterfaceSection):
     self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_', ''))
     self.label_zorder.set_text(repr(ci.getMDIZOrder()))
     self.label_alpha.set_text(repr(ci.getAlpha()))
-    self.registerEventListener(self._accEventComponent, 
+    self.registerEventListener(self._accEventComponent,
                                'object:bounds-changed',
                                'object:visible-data-changed')
   def clearUI(self):
@@ -623,7 +623,7 @@ class _SectionComponent(_InterfaceSection):
   def _accEventComponent(self, event):
     '''
     Callback for whenever any of the component attributes change.
-    
+
     @param event: Evnt that triggered this callback.
     @type event: Accessibility.Event
     '''
@@ -643,9 +643,9 @@ class _SectionDocument(_InterfaceSection):
 
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Document interface 
+    Initialization that is specific to the Document interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -655,9 +655,9 @@ class _SectionDocument(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Document section with relevant data of the 
+    Populate the Document section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -708,16 +708,16 @@ class _SectionLoginHelper(_InterfaceSection):
 class _SectionHypertext(_InterfaceSection):
   '''
   A class that populates an Hypertext interface section.
-  
+
   @ivar links_model: Data model for available links.
   @type links_model: gtk.ListStore
   '''
   interface_name = 'Hypertext'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Hypertext interface 
+    Initialization that is specific to the Hypertext interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -773,9 +773,9 @@ class _SectionHypertext(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Hypertext section with relevant data of the 
+    Populate the Hypertext section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -784,15 +784,15 @@ class _SectionHypertext(_InterfaceSection):
     for link_index in range(hti.getNLinks()):
       link = hti.getLink(link_index)
       iter = self.links_model.append(None,
-                                     [link_index, 
+                                     [link_index,
                                       '', '', '',
-                                      link.startIndex, 
+                                      link.startIndex,
                                       link.endIndex, None])
       for anchor_index in range(link.nAnchors):
         acc_obj = link.getObject(anchor_index)
         self.links_model.append(iter,
                                 [link_index, acc_obj.name, acc_obj.description,
-                                 link.getURI(anchor_index), 
+                                 link.getURI(anchor_index),
                                  link.startIndex, link.endIndex, acc_obj])
         if anchor_index == 0:
           self.links_model[iter][1] = \
@@ -809,7 +809,7 @@ class _SectionHypertext(_InterfaceSection):
     '''
     Callback for row activation or button press. Selects the related
     link accessible in the main application.
-    
+
     @param link_view: The links tree view.
     @type link_view: gtk.TreeView
     @param *more_args: More arguments that are provided by variuos types of
@@ -827,7 +827,7 @@ class _SectionHypertext(_InterfaceSection):
 class _SectionImage(_InterfaceSection):
   '''
   A class that populates an Image interface section.
-  
+
   @ivar label_pos: Position label
   @type label_pos: gtk.Label
   @ivar label_size: Size label
@@ -837,9 +837,9 @@ class _SectionImage(_InterfaceSection):
 
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Image interface 
+    Initialization that is specific to the Image interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -850,9 +850,9 @@ class _SectionImage(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Image section with relevant data of the 
+    Populate the Image section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -886,9 +886,9 @@ class _SectionSelection(_InterfaceSection):
 
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Selection interface 
+    Initialization that is specific to the Selection interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -900,18 +900,18 @@ class _SectionSelection(_InterfaceSection):
     self.sel_selection = treeview.get_selection()
     show_button = ui_xml.get_object('button_select_clear')
     show_button.set_sensitive(self._isSelectedInView(self.sel_selection))
-    self.sel_selection.connect('changed', 
-                               self._onViewSelectionChanged, 
+    self.sel_selection.connect('changed',
+                               self._onViewSelectionChanged,
                                show_button)
-    self.sel_selection.connect('changed', 
+    self.sel_selection.connect('changed',
                                self._onSelectionSelected)
     self.button_select_all = ui_xml.get_object('button_select_all')
 
   def populateUI(self, acc):
     '''
-    Populate the Selection section with relevant data of the 
+    Populate the Selection section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -937,7 +937,7 @@ class _SectionSelection(_InterfaceSection):
         state = child.getState()
         if state.contains(pyatspi.STATE_SELECTABLE):
           self.sel_model.append([getIcon(child), child.name, child])
-    
+
     state = acc.getState()
     multiple_selections = state.contains(pyatspi.STATE_MULTISELECTABLE)
 
@@ -951,7 +951,7 @@ class _SectionSelection(_InterfaceSection):
   def _onSelectionSelected(self, selection):
     '''
     Callback for selection change in the selection treeview. Confusing?
-    
+
     @param selection: The treeview's selection object.
     @type selection: gtk.TreeSelection
     '''
@@ -962,7 +962,7 @@ class _SectionSelection(_InterfaceSection):
 
     model, paths = selection.get_selected_rows()
     selected_children = [model.get_value(model.get_iter(path), 2).getIndexInParent() for path in paths]
-    
+
     for child_index in range(len(self.node.acc)):
       if child_index in selected_children:
         si.selectChild(child_index)
@@ -974,11 +974,11 @@ class _SectionSelection(_InterfaceSection):
     Clear all section-specific data.
     '''
     self.sel_model.clear()
-  
+
   def _onSelectionClear(self, widget):
     '''
     Callback for selection clear button.
-    
+
     @param widget: Widget that triggered callback.
     @type widget: gtk.Widget
     '''
@@ -990,7 +990,7 @@ class _SectionSelection(_InterfaceSection):
   def _onSelectAll(self, widget):
     '''
     Callback for selection select all button.
-    
+
     @param widget: Widget that triggered callback.
     @type widget: gtk.Widget
     '''
@@ -1008,9 +1008,9 @@ class _SectionStreamableContent(_InterfaceSection):
 
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the StreamableContent interface 
+    Initialization that is specific to the StreamableContent interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -1019,9 +1019,9 @@ class _SectionStreamableContent(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the StreamableContent section with relevant data of the 
+    Populate the StreamableContent section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -1030,7 +1030,7 @@ class _SectionStreamableContent(_InterfaceSection):
     for content_type in sci.getContentTypes():
       self.streams_model.append([content_type,
                                  sci.getURI(content_type)])
-  
+
   def clearUI(self):
     '''
     Clear all section-specific data.
@@ -1069,9 +1069,9 @@ class _SectionTable(_InterfaceSection):
   interface_name = 'Table'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Table interface 
+    Initialization that is specific to the Table interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -1091,9 +1091,9 @@ class _SectionTable(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Table section with relevant data of the 
+    Populate the Table section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -1131,7 +1131,7 @@ class _SectionTable(_InterfaceSection):
     '''
     Callback for 'object:active-descendant-changed' to detect selected cell
     changes.
-    
+
     @param event: The event that triggered the callback.
     @type event: Accessibility.Event
     '''
@@ -1150,22 +1150,22 @@ class _SectionTable(_InterfaceSection):
                              (ti.nSelectedColumns, self.scolumns_label)]:
       label.set_text(str(attr))
 
-    for desc, acc, button in [(ti.getRowDescription(row), 
+    for desc, acc, button in [(ti.getRowDescription(row),
                                ti.getRowHeader(row),
                                self.hrow_button),
-                              (ti.getColumnDescription(column), 
+                              (ti.getColumnDescription(column),
                                ti.getColumnHeader(column),
                                self.hcol_button),
-                              ('%s (%s, %s)' % (event.any_data, row, column), 
+                              ('%s (%s, %s)' % (event.any_data, row, column),
                                event.any_data,
                                self.cell_button)]:
       button.set_label(str(desc or '<no description>'))
       button.set_sensitive(bool(acc))
       setattr(button, 'acc', acc)
-        
+
   def _onTableButtonClicked(self, button):
     '''
-    Callback for buttons that represent headers. 
+    Callback for buttons that represent headers.
     Will make the header the main application's selection.
 
     @param button: Button that triggered event.
@@ -1308,16 +1308,16 @@ class _SectionText(_InterfaceSection):
   @type _text_insert_handler: integer
   @ivar _text_delete_handler: Handler ID for text delete events.
   @type _text_delete_handler: integer
-  @ivar outgoing_calls: Cached outgoing calls to avoid circular event 
+  @ivar outgoing_calls: Cached outgoing calls to avoid circular event
   invocation.
   @type outgoing_calls: dictionary
   '''
   interface_name = 'Text'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Text interface 
+    Initialization that is specific to the Text interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -1342,7 +1342,7 @@ class _SectionText(_InterfaceSection):
     self._text_insert_handler = 0
     self._text_delete_handler = 0
 
-    mark = self.text_buffer.create_mark('attr_mark', 
+    mark = self.text_buffer.create_mark('attr_mark',
                                         self.text_buffer.get_start_iter(), True)
     self.text_buffer.create_tag('attr_region', foreground='red')
 
@@ -1351,9 +1351,9 @@ class _SectionText(_InterfaceSection):
     mark.set_visible(True)
 
 
-    self.text_buffer.connect('modified-changed', 
+    self.text_buffer.connect('modified-changed',
                              self._onTextModified)
-    self.text_buffer.connect('notify::cursor-position', 
+    self.text_buffer.connect('notify::cursor-position',
                              self._onTextCursorMove)
 
     self.text_buffer.set_modified(False)
@@ -1366,9 +1366,9 @@ class _SectionText(_InterfaceSection):
 
   def populateUI(self, acc):
     '''
-    Populate the Text section with relevant data of the 
+    Populate the Text section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -1399,12 +1399,12 @@ class _SectionText(_InterfaceSection):
       self.text_view.set_editable(False)
     expander_label.set_label(label_text)
 
-    self._text_insert_handler = self.text_buffer.connect('insert-text', 
+    self._text_insert_handler = self.text_buffer.connect('insert-text',
                                                          self._onITextInsert)
-    self._text_delete_handler = self.text_buffer.connect('delete-range', 
+    self._text_delete_handler = self.text_buffer.connect('delete-range',
                                                          self._onITextDelete)
 
-    self.registerEventListener(self._accEventText, 
+    self.registerEventListener(self._accEventText,
                                'object:text-changed')
 
   def clearUI(self):
@@ -1427,10 +1427,10 @@ class _SectionText(_InterfaceSection):
   def _attrStringToDict(self, attr_string):
     '''
     Convinience method for converting attribute strings to dictionaries.
-    
+
     @param attr_string: "key:value" pairs seperated by semi-colons.
     @type attr_string: string
-    
+
     @return: Dictionary of attributes
     @rtype: dictionary
     '''
@@ -1448,7 +1448,7 @@ class _SectionText(_InterfaceSection):
     '''
     Callback that is triggered when the main text buffer is modified.
     Allows to adjust the spinners bounds accordingly.
-    
+
     @param text_buffer: The section's main text buffer.
     @type text_buffer: gtk.TextBuffer
     '''
@@ -1460,7 +1460,7 @@ class _SectionText(_InterfaceSection):
     '''
     Callback that is triggered when the attribute mark is moved to
     allow repopulation of the attributes view.
-    
+
     @param text_buffer: The section's main text buffer.
     @type text_buffer: gtk.TextBuffer
     @param iter: Text iter of the new mark position.
@@ -1472,20 +1472,20 @@ class _SectionText(_InterfaceSection):
 
   def _onTextSpinnerChanged(self, spinner):
     '''
-    Callback for hen the spinner's value changes. 
+    Callback for hen the spinner's value changes.
     Moves attribute mark accordingly.
-    
+
     @param spinner: The marker offset spinner.
     @type spinner: gtk.SpinButton
     '''
     iter = self.text_buffer.get_iter_at_offset(int(self.offset_spin.get_value()))
-    self.text_buffer.move_mark_by_name('attr_mark', iter)    
+    self.text_buffer.move_mark_by_name('attr_mark', iter)
 
   def _onDefaultsToggled(self, toggle_button):
     '''
     Callback for when the "defaults" checkbutton is toggled. Re-populates
     attributes view.
-    
+
     @param toggle_button: The defaults checkbutton
     @type toggle_button: gtk.CheckButton
     '''
@@ -1493,10 +1493,10 @@ class _SectionText(_InterfaceSection):
 
   def popTextAttr(self, offset=None):
     '''
-    Populate the attributes view with attributes at the given offset, or at 
+    Populate the attributes view with attributes at the given offset, or at
     the attribute mark.
 
-    @param offset: Offset of wanted attributes. If none is given, 
+    @param offset: Offset of wanted attributes. If none is given,
     use attribute mark's offset.
     @type offset: integer
     '''
@@ -1527,7 +1527,7 @@ class _SectionText(_InterfaceSection):
       self.attr_model.append([attr, attr_dict[attr]])
 
     self.text_buffer.remove_tag_by_name(
-      'attr_region', 
+      'attr_region',
       self.text_buffer.get_start_iter(),
       self.text_buffer.get_end_iter())
     self.text_buffer.apply_tag_by_name(
@@ -1582,7 +1582,7 @@ class _SectionText(_InterfaceSection):
   def _accEventText(self, event):
     '''
     Callback for accessible text changes. Updates the text buffer accordingly.
-    
+
     @param event: Event that triggered thi callback.
     @type event: Accessibility.Event
     '''
@@ -1604,7 +1604,7 @@ class _SectionText(_InterfaceSection):
         self.text_buffer.handler_block(self._text_insert_handler)
         self.text_buffer.insert(text_iter, event.any_data)
         self.text_buffer.handler_unblock(self._text_insert_handler)
-           
+
       elif event.type.minor == 'delete':
         call = (event.detail1, event.detail1 + event.detail2)
         if self.outgoing_calls['itext_delete'].isCached(call):
@@ -1614,12 +1614,12 @@ class _SectionText(_InterfaceSection):
         self.text_buffer.handler_block(self._text_delete_handler)
         self.text_buffer.delete(text_iter, text_iter_end)
         self.text_buffer.handler_unblock(self._text_delete_handler)
-     
+
   def _onITextInsert(self, text_buffer, iter, text, length):
     '''
-    Callback for text inserts in the text buffer. Sends changes to examined 
+    Callback for text inserts in the text buffer. Sends changes to examined
     accessible.
-    
+
     @param text_buffer: The section's main text buffer.
     @type text_buffer: gtk.TextBuffer
     @param iter: Text iter in which the insert occured.
@@ -1635,15 +1635,15 @@ class _SectionText(_InterfaceSection):
       return
 
     call = (iter.get_offset(), text, length)
-    
+
     self.outgoing_calls['itext_insert'].append(call)
     eti.insertText(*call)
 
   def _onITextDelete(self, text_buffer, start, end):
     '''
-    Callback for text deletes in the text buffer. Sends changes to examined 
+    Callback for text deletes in the text buffer. Sends changes to examined
     accessible.
-    
+
     @param text_buffer: The section's main text buffer.
     @type text_buffer: gtk.TextBuffer
     @param start: The start offset of the delete action.
@@ -1657,7 +1657,7 @@ class _SectionText(_InterfaceSection):
       return
 
     call = (start.get_offset(), end.get_offset())
-    
+
     self.outgoing_calls['itext_delete'].append(call)
     eti.deleteText(*call)
 
@@ -1675,7 +1675,7 @@ class _SectionText(_InterfaceSection):
     '''
     mark = self.text_buffer.get_mark('attr_mark')
     mark.set_visible(not event.in_)
-      
+
   class CallCache(list):
     '''
     A list derivative that provides a method for checking if something
@@ -1683,12 +1683,12 @@ class _SectionText(_InterfaceSection):
     '''
     def isCached(self, obj):
       '''
-      Checks if a certain object is in this list instance. If it is, return 
+      Checks if a certain object is in this list instance. If it is, return
       True and remove it.
-      
+
       @param obj: Object to check for.
       @type obj: object
-      
+
       @return: True if it is in the list.
       @rtype: boolean
       '''
@@ -1714,9 +1714,9 @@ class _SectionValue(_InterfaceSection):
   interface_name = 'Value'
   def init(self, ui_xml):
     '''
-    Initialization that is specific to the Value interface 
+    Initialization that is specific to the Value interface
     (construct data models, connect signals to callbacks, etc.)
-    
+
     @param ui_xml: Interface viewer glade xml.
     @type ui_xml: gtk.glade.XML
     '''
@@ -1724,12 +1724,12 @@ class _SectionValue(_InterfaceSection):
     self.label_max = ui_xml.get_object('label_value_max')
     self.label_min = ui_xml.get_object('label_value_min')
     self.label_inc = ui_xml.get_object('label_value_inc')
-    
+
   def populateUI(self, acc):
     '''
-    Populate the Value section with relevant data of the 
+    Populate the Value section with relevant data of the
     currently selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -1757,11 +1757,11 @@ class _SectionValue(_InterfaceSection):
     self.registerEventListener(self._accEventValue,
                                'object:property-change:accessible-value',
                                'object:value-changed')
-   
+
   def _onValueSpinnerChange(self, spinner):
     '''
     Callback for spinner changes. Updates accessible.
-    
+
     @param spinner: The Value spinner
     @type spinner: gtk.SpinButton
     '''
@@ -1772,7 +1772,7 @@ class _SectionValue(_InterfaceSection):
   def _accEventValue(self, event):
     '''
     Callback for value changes from the accessible. Update spin button.
-    
+
     @param event: The event that triggered the callback.
     @type event: Accessibility.Event
     '''

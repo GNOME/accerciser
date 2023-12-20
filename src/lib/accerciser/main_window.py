@@ -34,7 +34,7 @@ class AccerciserMainWindow(gtk.Window):
   def __init__(self, node):
     '''
     Initialize the window.
-    
+
     @param node: Main application's node.
     @type node: L{Node}
     '''
@@ -56,7 +56,7 @@ class AccerciserMainWindow(gtk.Window):
   def _populateUI(self, node):
     '''
     Populate the top level window widget.
-    
+
     @param node: Main application's node.
     @type node: L{Node}
     '''
@@ -75,9 +75,9 @@ class AccerciserMainWindow(gtk.Window):
     self._vpaned.add1(self._hpaned)
     self.pluginview1 = PluginView(N_('Top panel'))
     self.pluginview2 = PluginView(N_('Bottom panel'))
-    self.pluginview2.connect('page_added', 
+    self.pluginview2.connect('page_added',
                               self._onBottomPanelChange, 'added')
-    self.pluginview2.connect('page_removed', 
+    self.pluginview2.connect('page_removed',
                               self._onBottomPanelChange, 'removed')
     self.pluginview2.connect_after('realize', self._onBottomPanelRealize)
     self._vpaned.add2(self.pluginview2)
@@ -90,10 +90,10 @@ class AccerciserMainWindow(gtk.Window):
     for action in self.treeview.action_group.list_actions():
       merge_id = ui_manager.uimanager.new_merge_id()
       action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH, 
-                                  action_name, action_name, 
+      ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH,
+                                  action_name, action_name,
                                   gtk.UIManagerItemType.MENUITEM, False)
-    
+
     merge_id = ui_manager.uimanager.new_merge_id()
     action_name = self.treeview.refresh_current_action.get_name()
     ui_manager.uimanager.add_ui(merge_id, ui_manager.POPUP_MENU_PATH,

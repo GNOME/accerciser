@@ -13,7 +13,7 @@ URL_BASE = 'https://wiki.gnome.org/Apps/Accerciser/Validate#'
 
 class ActionIsInteractive(Validator):
   '''
-  Any item that supports the action interface should also be focusable or 
+  Any item that supports the action interface should also be focusable or
   selectable so the user may interact with it via the keyboard.
   '''
   URL = URL_BASE + 'Actionable_ITEM_ROLE_is_not_focusable_or_selectable'
@@ -30,7 +30,7 @@ class ActionIsInteractive(Validator):
 
 class WidgetHasAction(Validator):
   '''
-  Any widget with a role listed in condition should support the action 
+  Any widget with a role listed in condition should support the action
   interface.
   '''
   URL = URL_BASE + 'Interactive_ITEM_ROLE_is_not_actionable'
@@ -46,7 +46,7 @@ class WidgetHasAction(Validator):
       view.error(_('interactive %s is not actionable') %
                  acc.getLocalizedRoleName(), acc, self.URL)
 
-class OneFocus(Validator):  
+class OneFocus(Validator):
   '''
   The application should have on and only one accessible with state focused
   at any one time.
@@ -93,14 +93,14 @@ class ParentChildIndexMatch(Validator):
     # don't test applications
     acc.queryApplication()
     return False
-  
+
   def before(self, acc, state, view):
     pi = acc.getIndexInParent()
     child = acc.parent.getChildAtIndex(pi)
     if acc != child:
       # Translators: The first variable is the role name of the object that has an
       # index mismatch.
-      # 
+      #
       view.error(_('%s index in parent does not match child index') %
                  acc.getLocalizedRoleName(), acc, self.URL)
 
@@ -117,7 +117,7 @@ class ReciprocalRelations(Validator):
              RELATION_EMBEDS : RELATION_EMBEDDED_BY,
              RELATION_POPUP_FOR : RELATION_PARENT_WINDOW_OF,
              RELATION_DESCRIPTION_FOR : RELATION_DESCRIBED_BY}
-  
+
   def condition(self, acc):
     s = acc.getRelationSet()
     return len(s) > 0
@@ -128,7 +128,7 @@ class ReciprocalRelations(Validator):
   def _hasRelationTarget(self, s, kind, acc):
     if kind is None:
       return True
-    
+
     for rel in s:
       rec = rel.getRelationType()
       if kind != rec:
@@ -149,7 +149,7 @@ class ReciprocalRelations(Validator):
         if not self._hasRelationTarget(ts, rec, acc):
           view.error(_('Missing reciprocal for %s relation') %
                      rel.getRelationTypeName(), acc, self.URL)
-    
+
 class HasLabelName(Validator):
   '''
   Any accessible with one of the roles listed below should have an accessible
@@ -158,7 +158,7 @@ class HasLabelName(Validator):
   URL = URL_BASE + 'ITEM_ROLE_missing_name_or_label'
   TEXT_CANNOT_LABEL = [ROLE_SPIN_BUTTON, ROLE_SLIDER, ROLE_PASSWORD_TEXT,
                        ROLE_TEXT, ROLE_ENTRY, ROLE_TERMINAL]
-                   
+
   TEXT_CAN_LABEL = [ROLE_PUSH_BUTTON, ROLE_MENU, ROLE_MENU_ITEM,
                     ROLE_CHECK_MENU_ITEM, ROLE_RADIO_MENU_ITEM,
                     ROLE_TOGGLE_BUTTON, ROLE_TABLE_COLUMN_HEADER,
@@ -195,13 +195,13 @@ class HasLabelName(Validator):
           return
     # Translators: The first variable is the role name of the object that is missing
     # the name or label.
-    # 
+    #
     view.error(_('%s missing name or label') % acc.getLocalizedRoleName(), acc,
                self.URL)
-    
+
 class TableHasSelection(Validator):
   '''
-  A focusable accessible with a table interface should also support the 
+  A focusable accessible with a table interface should also support the
   selection interface.
   '''
   URL = URL_BASE + \
@@ -216,7 +216,7 @@ class TableHasSelection(Validator):
     except NotImplementedError:
       view.error(_('focusable %s has a table interface, but not a selection interface') %
                  acc.getLocalizedRoleName(), acc, self.URL)
-                 
+
 class StateWithAbility(Validator):
   '''
   Any accessible with one of the ephemeral states in state map should have the
@@ -250,7 +250,7 @@ class StateWithAbility(Validator):
 
 class RadioInSet(Validator):
   '''
-  An accessible with a radio button role should be a member of a set as 
+  An accessible with a radio button role should be a member of a set as
   indicated by a relation or appropriate object property.
   '''
   URL = URL_BASE + 'ITEM_ROLE_does_not_belong_to_a_set'
@@ -268,7 +268,7 @@ class RadioInSet(Validator):
         return
     # Translators: The radio button does not belong to a set, thus it is useless.
     # The first variable is the object's role name.
-    # 
+    #
     view.error(_('%s does not belong to a set') % acc.getLocalizedRoleName(),
                acc, self.URL)
 
@@ -277,7 +277,7 @@ def _randomRowCol(table):
   r = random.randint(0, rows-1)
   c = random.randint(0, cols-1)
   return r, c
-    
+
 class TableRowColIndex(Validator):
   '''
   The index returned by getIndexAt(row, col) should result in getRowAtIndex
@@ -303,14 +303,14 @@ class TableRowColIndex(Validator):
         # object at a certain index is wrong.
         # The first variable is the role name of the object, the second is the
         # given index.
-        # 
+        #
         view.error(_('%(rolename)s index %(num)d does not match row and column') %
                    {'rolename':acc.getLocalizedRoleName(), 'num':i}, acc, self.URL)
         return
 
 class TableRowColParentIndex(Validator):
   '''
-  The accessible returned by table.getAccessibleAt should return 
+  The accessible returned by table.getAccessibleAt should return
   acc.getIndexInParent matching acc.getIndexAt.
   '''
   URL = URL_BASE + \
@@ -363,5 +363,5 @@ class ImageHasName(Validator):
     except NotImplementedError:
       ni = True
     if ni or im.imageDescription is None or not im.imageDescription.strip():
-      view.error(_('%s has no name or description') % 
+      view.error(_('%s has no name or description') %
                  acc.getLocalizedRoleName(), acc, self.URL)

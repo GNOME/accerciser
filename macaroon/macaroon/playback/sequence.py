@@ -7,7 +7,7 @@ Keypress actions.
 
 This file may be distributed and/or modified under the terms of the GNU General
 Public License version 2 as published by the Free Software Foundation. This file
-is distributed without any warranty; without even the implied warranty of 
+is distributed without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
 
 See "COPYING" in the source distribution for more information.
@@ -25,9 +25,9 @@ _ = lambda x: x
 
 class MacroSequence(GObject.GObject):
   '''
-  Sequence class. Holds a list of steps and performs them in order. 
-  Waits for each step to emit a "done" signal. And performs the next step 
-  only after it's delta time has lapsed. Emits "step-done" each time a step 
+  Sequence class. Holds a list of steps and performs them in order.
+  Waits for each step to emit a "done" signal. And performs the next step
+  only after it's delta time has lapsed. Emits "step-done" each time a step
   is completed.
 
   @ivar _loop: Loop instance if the main loop should be embedded.
@@ -43,7 +43,7 @@ class MacroSequence(GObject.GObject):
   @ivar _anticipated_event_types: List of event types we should be on the lookout
   for.
   @type _anticipated_event_types: list of string
-  @ivar _anticipated_events: Events that we have anticipated, and that have 
+  @ivar _anticipated_events: Events that we have anticipated, and that have
   came through.
   @type _anticipated_events: list of Accessibility.Accessible
   '''
@@ -65,7 +65,7 @@ class MacroSequence(GObject.GObject):
   def append(self, step):
     '''
     Add a new sequence step to the end of the sequence.
-    
+
     @param step: A sequence step to add.
     @type step: L{SequenceStep}
     '''
@@ -74,8 +74,8 @@ class MacroSequence(GObject.GObject):
   def start(self, embedded_loop=True, verbose=False):
     '''
     Start sequence.
-    
-    @param embedded_loop: Embed a loop in the sequnce, if we are running this 
+
+    @param embedded_loop: Embed a loop in the sequnce, if we are running this
     outside of a main loop.
     @type embedded_loop: boolean
     '''
@@ -116,9 +116,9 @@ class MacroSequence(GObject.GObject):
 
   def _onAnticipatedEvent(self, event):
     '''
-    Callback for antibitaed events, keep them for the next sequence step which 
+    Callback for antibitaed events, keep them for the next sequence step which
     might be a L{WaitAction} .
-    
+
     @param event: Event that was recieved.
     @type event: Accessibility.Event
     '''
@@ -127,7 +127,7 @@ class MacroSequence(GObject.GObject):
   def _onStepDone(self, action):
     '''
     Callback for when a step is done.
-    
+
     @param action: Step that has finished.
     @type action: L{SequenceStep}
     '''
@@ -139,7 +139,7 @@ class MacroSequence(GObject.GObject):
   def _doAction(self, action):
     '''
     Perform the action.
-    
+
     @param action: Step to perform.
     @type action: L{SequenceStep}
     '''

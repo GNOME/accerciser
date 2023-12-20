@@ -6,8 +6,8 @@ Defines a base class having tools common to the core and the plugins.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import os
@@ -26,10 +26,10 @@ class Tools(object):
   @cvar SETTINGS_FILE: The file that contains information we with to persist
   across session.
   @type SETTINGS_FILE: string
-  @ivar my_app_id: Unique L{Accessibility.Application} ID of current 
+  @ivar my_app_id: Unique L{Accessibility.Application} ID of current
   instance.
   @type my_app_id: integer
-  '''  
+  '''
 
   def isMyApp(self, acc):
     '''
@@ -59,12 +59,12 @@ class Tools(object):
         self.my_app_id = app_id
         return True
     return False
-  
+
 
 class Proxy(object):
   '''
   Our own proxy object which enables weak references to bound and unbound
-  methods and arbitrary callables. Pulls information about the function, 
+  methods and arbitrary callables. Pulls information about the function,
   class, and instance out of a bound method. Stores a weak reference to the
   instance to support garbage collection.
   '''
@@ -80,12 +80,12 @@ class Proxy(object):
       self.inst = None
       self.func = cb.__func__
       self.klass = None
-     
+
   def __call__(self, *args, **kwargs):
     '''
     Proxy for a call to the weak referenced object. Take arbitrary params to
     pass to the callable.
-    
+
     @raise ReferenceError: When the weak reference refers to a dead object
     '''
     if self.inst is not None and self.inst() is None:
@@ -102,7 +102,7 @@ class Proxy(object):
   def __eq__(self, other):
     '''
     Compare the held function and instance with that held by another proxy.
-    
+
     @param other: Another proxy object
     @type other: L{Proxy}
     @return: Whether this func/inst pair is equal to the one in the other proxy
@@ -127,7 +127,7 @@ def parseColorString(color_string):
   @param color_string: String in the format: #rrbbggaa.
   @type color_string: string
 
-  @return: A color string in the format of #rrggbb, and an opacity value 
+  @return: A color string in the format of #rrggbb, and an opacity value
   of 0.0 to 1.0
   @rtype: tuple of string and float.
   '''

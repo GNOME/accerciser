@@ -14,7 +14,7 @@
 
 import sys, os
 
-# We can't rely on prefix if we're installed by relocated RPM. Instead, we 
+# We can't rely on prefix if we're installed by relocated RPM. Instead, we
 # use __file__ and for now hope that lib is relative to bin.
 sys.prefix = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
 libs = os.path.join(sys.prefix, 'lib',

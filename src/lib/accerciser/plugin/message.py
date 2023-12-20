@@ -6,8 +6,8 @@ Defines all plugin-related messaging elements.
 @copyright: Copyright (c) 2006, 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -25,17 +25,17 @@ class MessageManager(GObject.GObject):
   it displays the message within the plugin. If not it displays the message in
   a dedicated message tab.
 
-  This manager also could emit module and plugin reload requests from user 
+  This manager also could emit module and plugin reload requests from user
   responses to messages.
   '''
   __gsignals__ = {'plugin-reload-request' :
                     (GObject.SignalFlags.RUN_FIRST,
-                     None, 
+                     None,
                      (GObject.TYPE_PYOBJECT,
                       GObject.TYPE_PYOBJECT)),
                   'module-reload-request' :
                     (GObject.SignalFlags.RUN_FIRST,
-                     None, 
+                     None,
                      (GObject.TYPE_PYOBJECT,
                       GObject.TYPE_STRING,
                       GObject.TYPE_STRING))}
@@ -48,9 +48,9 @@ class MessageManager(GObject.GObject):
 
   def getMessageTab(self):
     '''
-    Get the manager's dedicated message tab. Initialize a message tab if 
+    Get the manager's dedicated message tab. Initialize a message tab if
     one does not already exist.
-    
+
     @return: The message tab.
     @rtype: L{MessageManager.MessageTab}
     '''
@@ -58,12 +58,12 @@ class MessageManager(GObject.GObject):
       self.message_tab = self.MessageTab()
     return self.message_tab
 
-  def newPluginError(self, plugin_instance, plugin_class, 
+  def newPluginError(self, plugin_instance, plugin_class,
                      error_message, details):
     '''
-    Create a new plugin error message, and display it eithe in the plugin 
+    Create a new plugin error message, and display it eithe in the plugin
     itself or in the error tab.
-    
+
     @param plugin_instance: Plugin instance that had the error.
     @type plugin_instance: L{Plugin}
     @param plugin_class: Plugin class.
@@ -72,7 +72,7 @@ class MessageManager(GObject.GObject):
     @type error_message: string
     @param details: Detailed error message.
     @type details: string
-    
+
     @return: The newly created error message.
     @rtype: L{PluginErrorMessage}
     '''
@@ -87,9 +87,9 @@ class MessageManager(GObject.GObject):
 
   def _onPluginResponseRefresh(self, message, response_id, plugin_class):
     '''
-    Callback for gtk.RESPONSE_APPLY of a plugin error message, emits a plugin 
+    Callback for gtk.RESPONSE_APPLY of a plugin error message, emits a plugin
     reload request signal.
-    
+
     @param message: Error message that emitted response signal.
     @type message: L{PluginErrorMessage}
     @param response_id: The response ID.
@@ -102,9 +102,9 @@ class MessageManager(GObject.GObject):
 
   def newModuleError(self, module, path, error_message, details):
     '''
-    Create a new module error dialog. Usually because of a syntax error 
+    Create a new module error dialog. Usually because of a syntax error
     in a module. Put error message in message tab.
-    
+
     @param module: Failed module name.
     @type module: string
     @param path: Failed module's path.
@@ -113,7 +113,7 @@ class MessageManager(GObject.GObject):
     @type error_message: string
     @param details: Detailed error message.
     @type details: string
-    
+
     @return: The newly created error message.
     @rtype: L{PluginErrorMessage}
     '''
@@ -124,10 +124,10 @@ class MessageManager(GObject.GObject):
 
   def _onModuleResponseRefresh(self, message, response_id, module, path):
     '''
-    Callback for gtk.RESPONSE_APPLY of a module error message, emits a module 
+    Callback for gtk.RESPONSE_APPLY of a module error message, emits a module
     reload request signal.
 
-    
+
     @param message: Error message that emitted response signal.
     @type message: L{PluginErrorMessage}
     @param response_id: The response ID.
@@ -159,18 +159,18 @@ class MessageManager(GObject.GObject):
     def addMessage(self, message):
       '''
       Add a message to the tab.
-      
+
       @param message: The message to be added.
       @type message: L{PluginMessage}
       '''
       self._vbox.pack_start(message, False, True, 0)
       self.show()
       self._vbox.show_all()
-      
+
     def removeMessage(self, message):
       '''
       Remove a message from the tab. Destroys it.
-      
+
       @param message: The message to be removed.
       @type message: L{PluginMessage}
       '''
@@ -180,7 +180,7 @@ class MessageManager(GObject.GObject):
       '''
       Callback for removal of children. If there are no messages displayed,
       hide this widget.
-      
+
       @param vbox: box that had a child removed.
       @type vbox: gtk.Box
       @param message: The message that was removed.
@@ -188,7 +188,7 @@ class MessageManager(GObject.GObject):
       '''
       if len(box.get_children()) == 0:
         self.hide()
-        
+
 class PluginMessage(gtk.Frame):
   '''
   Pretty plugin message area that appears either above the plugin if the plugin
@@ -201,9 +201,9 @@ class PluginMessage(gtk.Frame):
   @ivar message_style: Tooltip style used for mesages.
   @type message_style: gtk.Style
   '''
-  __gsignals__ = {'response' : 
+  __gsignals__ = {'response' :
                   (GObject.SignalFlags.RUN_FIRST,
-                   None, 
+                   None,
                    (GObject.TYPE_INT,))}
   def __init__(self):
     '''
@@ -233,12 +233,12 @@ class PluginMessage(gtk.Frame):
   def add_button(self, button_text, response_id):
     '''
     Add a button to the action area that emits a response when clicked.
-    
+
     @param button_text: The button text, or a stock ID.
     @type button_text: string
     @param response_id: The response emitted when the button is pressed.
     @type response_id: integer
-    
+
     @return: Return the created button.
     @rtype: gtk.Button
     '''
@@ -252,7 +252,7 @@ class PluginMessage(gtk.Frame):
   def _onActionActivated(self, button, response_id):
     '''
     Callback for button presses that emit the correct response.
-    
+
     @param button: The button that was clicked.
     @type button: gtk.Button
     @param response_id: The response ID to emit a response with.
@@ -267,7 +267,7 @@ class PluginErrorMessage(PluginMessage):
   def __init__(self, error_message, details):
     '''
     Plugin error message.
-    
+
     @param error_message: The error message.
     @type error_message: string
     @param details: Further details about the error.
@@ -293,11 +293,11 @@ class PluginErrorMessage(PluginMessage):
     self.add_button(gtk.STOCK_CLEAR, gtk.ResponseType.CLOSE)
     self.add_button(gtk.STOCK_REFRESH, gtk.ResponseType.APPLY)
     self.connect('response', self._onResponse)
-  
+
   def _onResponse(self, plugin_message, response_id):
     '''
     Destroy the message when the "clear" button is clicked.
-    
+
     @param plugin_message: Message that emitted this signal.
     @type plugin_message: L{PluginErrorMessage}
     @param response_id: The response ID
