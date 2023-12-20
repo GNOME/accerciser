@@ -22,8 +22,6 @@ class AccerciserMainWindow(gtk.Window):
   @type pluginview1: L{PluginView}
   @ivar pluginview2: Bottom plugin area
   @type pluginview2: L{PluginView}
-  @ivar main_actions: Main action group.
-  @type main_actions: gtk.ActionGroup
   @ivar _vpaned: Vertical paned.
   @type _vpaned: gtk.Paned
   @ivar _hpaned: Horizontal paned.
