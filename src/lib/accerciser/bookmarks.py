@@ -307,7 +307,7 @@ class BookmarkStore(gtk.ListStore):
     '''
     for row in self:
       bookmark = row[0]
-      if bookmark.get_property('label') == name:
+      if bookmark.title == name:
         return True
     return False
 
