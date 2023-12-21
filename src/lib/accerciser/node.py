@@ -23,6 +23,7 @@ gi.require_version('Rsvg', '2.0')
 from gi.repository import Rsvg as rsvg
 import cairo
 import pyatspi
+import re
 import string
 from .tools import ToolsAccessor, parseColorString
 
@@ -128,6 +129,47 @@ class Node(GObject.GObject, ToolsAccessor):
         pass
     return True
 
+  def getWnckWindow(self, toplevel):
+    '''
+    Retrieve the Wnck window for the given toplevel accessible object.
+
+    @param toplevel: The top level for which to receive the corresponding Wnck
+                     window.
+    @type toplevel: Atspi.Accessible
+    @return: The Wnck window for the toplevel, or None.
+    @rtype: Wnck.Window
+    '''
+    wnck_screen = wnck.Screen.get_default()
+    candidates = []
+    for window in wnck_screen.get_windows():
+      # match by name, but also consider windows for which libwnck/the window manager (?)
+      # has appended a suffix to distinguish multiple windows with the same name
+      # (seen at least on KDE Plasma X11, e.g. first window: "Hypertext",
+      # second window: "Hypertext <2>") - but in the a11y tree, both have the same name
+      #
+      # also accept an additional trailing Left-to-Right Mark (U+200E)
+      # (also seen on KDE Plasma)
+      regex = '^' + toplevel.name + '( <[0-9]*>)?(\u200e)?$'
+      if re.match(regex, window.get_name()):
+        candidates.append(window)
+
+    window = None
+    if len(candidates) == 1:
+      window = candidates[0]
+    elif len(candidates) > 1:
+      # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
+      atspi_width, atspi_height = toplevel.queryComponent().getSize()
+      for candidate in candidates:
+        candidate_x, candidate_y, candidate_width, candidate_height = candidate.get_client_window_geometry()
+        if candidate_width == atspi_width and candidate_height == atspi_height:
+          window = candidate
+          break
+      # if size doesn't match for any, use first candidate
+      if window is None:
+        window = candidates[0]
+
+    return window
+
   def getScreenExtents(self, acc):
     '''
     Returns the extents of the given accessible object
@@ -147,18 +189,15 @@ class Node(GObject.GObject, ToolsAccessor):
       screen_coords_supported = self.supportsScreenCoords(toplevel.parent)
 
     if not screen_coords_supported:
-      # try to find matching Wnck window by name
-      # and calculate screen coordinates from screen coords of the
-      # top-level window and window-relative coords of the object
-      wnck_screen = wnck.Screen.get_default()
-      window = None
-      for window in wnck_screen.get_windows():
-        if window.get_name() == toplevel.name:
-          toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
-          extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
-          extents.x += toplevel_x
-          extents.y += toplevel_y
-          return extents
+      # try to find matching Wnck window and calculate screen coordinates from
+      # screen coords of the Wnck window and window-relative coords of the object
+      window = self.getWnckWindow(toplevel)
+      if window:
+        toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+        extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
+        extents.x += toplevel_x
+        extents.y += toplevel_y
+        return extents
 
     # query screen coords directly via AT-SPI
     extents = component_iface.getExtents(pyatspi.DESKTOP_COORDS)
