@@ -5,8 +5,6 @@ from gi.repository.Gio import Settings as GSettings
 from .plugin import PluginView
 from .i18n import _, N_
 from .accessible_treeview import *
-from . import ui_manager
-from .ui_manager import uimanager
 
 GSCHEMA = 'org.a11y.Accerciser'
 
@@ -14,6 +12,8 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
   '''
   Main window class.
 
+  @ivar application: Main application.
+  @type application: gtk.Application
   @ivar statusbar: Main window's status bar.
   @type statusbar: gtk.Statusbar
   @ivar treeview: Main accessible tree view.
@@ -29,14 +29,17 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
   '''
   __gtype_name__ = "AccerciserMainWindow"
 
-  def __init__(self, *args, node=None, **kwargs):
+  def __init__(self, *args, application=None, node=None, **kwargs):
     '''
     Initialize the window.
 
+    @param application: Main application.
+    @type application: gtk.Application
     @param node: Main application's node.
     @type node: L{Node}
     '''
-    gtk.ApplicationWindow.__init__(self, *args, **kwargs)
+    gtk.ApplicationWindow.__init__(self, *args, application=application, **kwargs)
+    self.application = application
     self.set_icon_name('accerciser')
     self.set_title(_('Accerciser Accessibility Explorer'))
     self.connect('key-press-event', self._onKeyPress)
@@ -44,7 +47,6 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
     width = self.gsettings.get_int('window-width') or 640
     height = self.gsettings.get_int('window-height') or 640
     self.set_default_size(width, height)
-    self.add_accel_group(ui_manager.uimanager.get_accel_group())
     # Populate window
     self._populateUI(node)
 
@@ -59,8 +61,6 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
     @type node: L{Node}
     '''
     main_vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
-    menu_bar = ui_manager.uimanager.get_widget(ui_manager.MAIN_MENU_PATH)
-    main_vbox.pack_start(menu_bar, False, True, 0)
     self._vpaned = gtk.Paned(orientation=gtk.Orientation.VERTICAL)
     self._vpaned.set_position(350)
     self._vpaned.set_name('vpaned')
@@ -83,20 +83,7 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
     sw = gtk.ScrolledWindow()
     sw.set_policy(gtk.PolicyType.AUTOMATIC, gtk.PolicyType.AUTOMATIC)
     sw.set_shadow_type(gtk.ShadowType.IN)
-    self.treeview = AccessibleTreeView(node)
-    ui_manager.uimanager.insert_action_group(self.treeview.action_group, 0)
-    for action in self.treeview.action_group.list_actions():
-      merge_id = ui_manager.uimanager.new_merge_id()
-      action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.TREE_ACTIONS_PATH,
-                                  action_name, action_name,
-                                  gtk.UIManagerItemType.MENUITEM, False)
-
-    merge_id = ui_manager.uimanager.new_merge_id()
-    action_name = self.treeview.refresh_current_action.get_name()
-    ui_manager.uimanager.add_ui(merge_id, ui_manager.POPUP_MENU_PATH,
-                                 action_name, action_name,
-                                 gtk.UIManagerItemType.MENUITEM, False)
+    self.treeview = AccessibleTreeView(self.application, node)
 
     sw.add(self.treeview)
     self._hpaned.add1(sw)

@@ -52,10 +52,12 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   COL_INSTANCE = 0
   COL_CLASS = 1
   COL_PATH = 2
-  def __init__(self, node, hotkey_manager, *main_views):
+  def __init__(self, application, node, hotkey_manager, *main_views):
     '''
     Initialize the plugin manager.
 
+    @param application: The application.
+    @type application: gtk.Application.
     @param node: The application's main node.
     @type node: L{Node}
     @param hotkey_manager: Application's hot key manager.
@@ -70,7 +72,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     self.node = node
     self.hotkey_manager = hotkey_manager
     self.gsettings = GSettings.new(GSCHEMA)
-    self.view_manager = ViewManager(*main_views)
+    self.view_manager = ViewManager(application, *main_views)
     self.message_manager = MessageManager()
     self.message_manager.connect('plugin-reload-request',
                                  self._onPluginReloadRequest)

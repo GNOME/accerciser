@@ -1,4 +1,5 @@
 from gi.repository import GLib
+from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Atk as atk
 
@@ -8,7 +9,7 @@ from .i18n import _
 from pyatspi import getPath
 from random import random
 import random
-from . import ui_manager
+from . import menus
 
 COL_NAME = 0
 COL_APP = 1
@@ -25,23 +26,24 @@ class BookmarkStore(gtk.ListStore):
   2. Persists bookmark changes to disk.
   3. Keeps bookmarks submenu up to date.
 
-  @ivar _bookmarks_action_group: Bookmarks' action group.
-  @type _bookmarks_action_group: gtk.ActionGroup
+  @ivar application: The accerciser application.
+  @type application: gtk.Application
   @ivar node: Main application's node.
   @type node: L{Node}
   @ivar _xmldoc: XML documenr object.
   @type _xmldoc: xml.dom.DOMImplementation
   '''
-  def __init__(self, node, window):
+  def __init__(self, node, application, window):
     '''
     Initialize bookmark manager. Load saved bookmarks from disk.
 
     @param node: Main application's node.
     @type node: L{Node>
+    @ivar application: The accerciser application.
+    @type application: gtk.Application
     '''
     gtk.ListStore.__init__(self, object)
-    self._bookmarks_action_group = gtk.ActionGroup.new('BookmarkActions')
-    ui_manager.uimanager.insert_action_group(self._bookmarks_action_group, 0)
+    self.application = application
     self._buildMenuUI()
     self.node = node
     self.parent_window = window
@@ -61,33 +63,19 @@ class BookmarkStore(gtk.ListStore):
     '''
     Build's the initial submenu with functionality menu items.
     '''
-    self._bookmarks_action_group.add_actions(
-      [('AddBookmark', gtk.STOCK_ADD,
-        _('_Add Bookmark…'), '<Control>d',
-        _('Bookmark selected accessible.'), self._onAddBookmark),
-       ('EditBookmarks', gtk.STOCK_EDIT,
-        _('_Edit Bookmarks…'), None,
-        _('Manage bookmarks.'), self._onEditBookmarks)])
-
-
-    for action in self._bookmarks_action_group.list_actions():
-      merge_id = ui_manager.uimanager.new_merge_id()
-      action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.BOOKMARKS_MENU_PATH,
-                            action_name, action_name,
-                            gtk.UIManagerItemType.MENUITEM, False)
-
-    ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(),
-                                ui_manager.BOOKMARKS_MENU_PATH,
-                                'sep', None,
-                                gtk.UIManagerItemType.SEPARATOR, False)
+    menu_items = [
+      (menus.bookmarks_menu_general_section, 'add_bookmark', 'list-add',
+        _('_Add Bookmark…'), '<Control>d', self._onAddBookmark),
+      (menus.bookmarks_menu_general_section,  'edit_bookmarks', 'document-edit',
+        _('_Edit Bookmarks…'), None, self._onEditBookmarks)]
+    self.application.addMenuItems(menu_items)
 
   def _onAddBookmark(self, action, data=None):
     '''
     Callback for AddBookmark action.
 
     @param action: Action that emitted this signal.
-    @type action: gtk.Action
+    @type action: gio.Action
     '''
     iter = self.bookmarkCurrent()
     if not iter: return
@@ -105,7 +93,7 @@ class BookmarkStore(gtk.ListStore):
     Callback for EditBookmark action.
 
     @param action: Action that emitted this signal.
-    @type action: gtk.Action
+    @type action: gio.Action
     '''
     dialog = self._EditDialog(self)
     dialog.show()
@@ -144,14 +132,7 @@ class BookmarkStore(gtk.ListStore):
     @rtype: gtk.TreeIter
     '''
     iter = self.append([None])
-    merge_id = ui_manager.uimanager.new_merge_id()
-    name = 'Bookmark%s' % merge_id
-    bookmark = self._Bookmark(self, name, title, app, path, merge_id)
-    bookmark.connect('activate', self._onBookmarkActivate)
-    self._bookmarks_action_group.add_action(bookmark)
-    ui_manager.uimanager.add_ui(merge_id,
-                                '/MainMenuBar/Bookmarks', name, name,
-                                gtk.UIManagerItemType.MENUITEM, False)
+    bookmark = self._Bookmark(self, title, app, path, self.application)
     self[iter][0] = bookmark
     return iter
 
@@ -162,8 +143,7 @@ class BookmarkStore(gtk.ListStore):
     @param bookmark: Bookmark to remove.
     @type bookmark: BookmarkStore._Bookmark
     '''
-    self._bookmarks_action_group.remove_action(bookmark)
-    ui_manager.uimanager.remove_ui(bookmark.merge_id)
+    bookmark.removeSelf()
     for row in self:
       if row[0] == bookmark:
         self.remove(row.iter)
@@ -586,7 +566,7 @@ class BookmarkStore(gtk.ListStore):
           self._app_entry.get_text(), \
           self._path_entry.get_text()
 
-  class _Bookmark(gtk.Action):
+  class _Bookmark:
     '''
     Bookmark object.
 
@@ -598,38 +578,58 @@ class BookmarkStore(gtk.ListStore):
     @type app: string
     @ivar path: Accessible path.
     @type path: string
-    @ivar merge_id: Merge id of UIManager.
-    @type merge_id: integer
+    @ivar bookmark_name: Name of the bookmark.
+    @type bookmark_name: string
+    @ivar accerciser_app: The accerciser application.
+    @type accerciser_app: gtk.Application
+    @ivar menu_item: The menu item for this bookmark.
+    @type menu_item: gio.MenuItem
     '''
-    def __init__(self, bookmark_store, name, title, app, path, merge_id):
+    def __init__(self, bookmark_store, title, app, path, accerciser_app):
       '''
       Initialize bookmark.
 
       @param bookmark_store: The bookmark store managing this bookmark.
       @type bookmark_store: BookmarkStore
-      @param name: Action name
-      @type name: string
       @param title: Bookmark title (and label).
       @type title: string
       @param app: Application name.
       @type app: string
       @param path: Accessible path.
       @type path: string
-      @param merge_id: Merge id of UIManager.
-      @type merge_id: integer
+      @param accerciser_app: The accerciser application.
+      @type accerciser_app: gtk.Application
       '''
-      gtk.Action.__init__(self, name, title, None, None)
+      self.accerciser_app = accerciser_app
+      # find an unused bookmark/action ID/name
+      id = 0
+      self.bookmark_name = f'bookmark{id}'
+      while self.accerciser_app.lookup_action(self.bookmark_name):
+        id = id +1
+        self.bookmark_name = f'bookmark{id}'
+
+      action_name = 'app.' + self.bookmark_name
+      self.menu_item = gio.MenuItem.new(title, action_name)
+      menus.bookmarks_menu_individual_section.append_item(self.menu_item)
+      action = gio.SimpleAction.new(self.bookmark_name, None)
+      action.connect('activate', self._onActivate)
+      self.accerciser_app.add_action(action)
       self.bookmark_store = bookmark_store
       self._title = title
       self._app = app
       self._path = path
-      self.merge_id = merge_id
 
     def _getTitle(self):
       return self._title
     def _setTitle(self, title):
       self._title = title
-      self.set_property('label', title)
+      self.menu_item.set_attribute_value('label', GLib.Variant.new_string(title))
+      # When inserted into the menu, the menu item's data were just copied, so updating
+      # the menu item by itself wouldn't have any effect in the actual menu.
+      # Therefore, remove the current entry and insert anew.
+      index = self.getMenuItemIndex()
+      menus.bookmarks_menu_individual_section.remove(index)
+      menus.bookmarks_menu_individual_section.insert_item(index, self.menu_item)
       self.bookmark_store._onBookmarkChanged(self)
     title = property(_getTitle, _setTitle)
 
@@ -646,3 +646,30 @@ class BookmarkStore(gtk.ListStore):
       self._path = path
       self.bookmark_store._onBookmarkChanged(self)
     path = property(_getPath, _setPath)
+
+    def _onActivate(self, obj, data=None):
+      self.bookmark_store._onBookmarkActivate(self)
+
+    def getMenuItemIndex(self):
+      '''
+      Return the index that the bookmark's menu entry has in the menu.
+      '''
+      # iterate over the menu items to find the right one (match by action name)
+      index = -1
+      for i in range(0, menus.bookmarks_menu_individual_section.get_n_items()):
+        action_name = menus.bookmarks_menu_individual_section.get_item_attribute_value(i, 'action', None).get_string()
+        if action_name == 'app.' + self.bookmark_name:
+          index = i
+          break
+
+      assert(index >= 0)
+      return index
+
+    def removeSelf(self):
+      '''
+      Remove the bookmark's menu entry and action.
+      '''
+      # remove menu item from menu and remove the action
+      index = self.getMenuItemIndex()
+      menus.bookmarks_menu_individual_section.remove(index)
+      self.accerciser_app.remove_action(self.bookmark_name)

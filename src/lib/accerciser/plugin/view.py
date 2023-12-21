@@ -10,6 +10,8 @@ All rights reserved. This program and the accompanying materials are made
 available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+from gi.repository import Gio as gio
+from gi.repository import GLib as glib
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository.Gio import Settings as GSettings
@@ -23,7 +25,7 @@ import sys
 import imp
 from accerciser.i18n import _, N_
 import gc
-from accerciser import ui_manager
+from accerciser import menus
 
 
 GSCHEMA = 'org.a11y.Accerciser'
@@ -353,13 +355,16 @@ class ViewManager(object):
   '''
   Manage plugins and their views.
   '''
-  def __init__(self, *perm_views):
+  def __init__(self, application, *perm_views):
     '''
     Initialize view manager.
 
+    @param application: The application.
+    @type application: gtk.Application.
     @param perm_views: List of permanent views, at least one is required.
     @type perm_views: list of {PluginView}
     '''
+    self.application = application
     self._perm_views = perm_views
     gsettings = GSettings.new(PLUGVIEWS_GSCHEMA)
     single = gsettings.get_boolean('layout-single')
@@ -371,28 +376,28 @@ class ViewManager(object):
     Sets up actions related to plugin layout.
     '''
     single = isinstance(self._view_model, SingleViewModel)
-    layout_action_group = gtk.ActionGroup.new('PluginActions')
-    ui_manager.uimanager.insert_action_group(layout_action_group, 0)
-    layout_action_group.add_toggle_actions(
-      [('SingleViewMode', None, _('_Single plugins view'), '<Control>t',
-        None, self._onSingleViewToggled, single)])
+    menu, name, label, accel, callback = (menus.view_menu_general_section, 'single_view_mode', \
+                                         _('_Single plugins view'), '<Control>t', self._onSingleViewToggled)
+    action_name = 'app.' + name
+    menu_item = gio.MenuItem.new(label, action_name)
+    menu.append_item(menu_item)
+    action = gio.SimpleAction.new_stateful(name, None, glib.Variant.new_boolean(single))
+    action.connect('change-state', callback)
+    self.application.set_accels_for_action(action_name, [accel])
+    self.application.add_action(action)
 
-    for action in layout_action_group.list_actions():
-      merge_id = ui_manager.uimanager.new_merge_id()
-      action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.PLUGIN_LAYOUT_PATH,
-                                  action_name, action_name,
-                                  gtk.UIManagerItemType.MENUITEM, True)
+    self.setSingleMode(action.get_property('state').get_boolean())
 
 
-  def _onSingleViewToggled(self, action, data=None):
+  def _onSingleViewToggled(self, action, value, data=None):
     '''
     Callback for single view toggle action.
 
     @param action: Action object that emitted callback.
-    @type action: gtk.ToggleAction
+    @type action: gio.SimpleAction
     '''
-    self.setSingleMode(action.get_active())
+    action.set_state(value)
+    self.setSingleMode(value.get_boolean())
 
   def setSingleMode(self, single):
     '''

@@ -12,6 +12,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GdkPixbuf
@@ -20,7 +21,7 @@ from gi.repository import GObject
 
 import pyatspi
 import os
-from . import ui_manager
+from . import menus
 from time import sleep
 from .icons import getIcon
 from .node import Node
@@ -430,21 +431,26 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   @ivar desktop: The desktop accessible. It holds references to all the
   application L{Accessibility.Accessible}s
   @type desktop: L{Accessibility.Accessible}
+  @ivar application: Main application.
+  @type application: gtk.Application
   @ivar node: An object with a reference to the currently selected accessible.
   @type node: L{Node}
   @ivar model: The data model of this treeview.
   @type model: L{AccessibleModel}
   '''
-  def __init__(self, node):
+  def __init__(self, application, node):
     '''
     Initialize the treeview. Build the proper columns.
     Connect all of the proper signal handlers and at-spi event handlers.
 
+    @param application: Main application.
+    @type application: gtk.Application
     @param node: The main application node.
     @type node: L{Node}
     '''
     gtk.TreeView.__init__(self)
 
+    self.application = application
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.node = node
     self.node.update(self.desktop)
@@ -501,25 +507,27 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
         'object:property-change:accessible-name')
 
     self._hide_leaves = True
-    self.action_group = gtk.ActionGroup.new('TreeActions')
-    self.action_group.add_toggle_actions(
-      [('HideShowLeaves', None, _('_Show Applications without children'), None,
-        None, self._onHideShowLeaves, False)])
-    self.action_group.add_actions([
-        ('RefreshAll', gtk.STOCK_REFRESH, _('_Refresh Registry'),
-        # Translators: Appears as tooltip
-        #
-         None, _('Refresh all'), self._refreshTopLevel),
-        # Translators: Refresh current tree node's children.
-        #
-        ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Node'),
-        # Translators: Appears as tooltip
-        #
-         None, _('Refresh selected node’s children'),
-         self._refreshCurrentLevel)])
 
-    self.refresh_current_action = self.action_group.get_action('RefreshCurrent')
-    self.refresh_current_action.set_sensitive(False)
+    menu, name, label, callback = (menus.view_menu_treeview_section,
+                                   'hide_show_leaves', _('_Show Applications without children'),
+                                   self._onHideShowLeaves)
+    action_name = 'app.' + name
+    menu_item = gio.MenuItem.new(label, action_name)
+    menu.append_item(menu_item)
+    action = gio.SimpleAction.new_stateful(name, None, GLib.Variant.new_boolean(False))
+    action.connect('change-state', callback)
+    self.application.add_action(action)
+
+    self.application.addMenuItem(menus.view_menu_treeview_section, 'refresh_all', 'view-refresh', _('_Refresh Registry'),
+        None, self._refreshTopLevel)
+
+    # add "Refresh Node" to both, the menu bar and the tree view context menu
+    menu_item_refresh_current, self.refresh_current_action = \
+      self.application.addMenuItem(menus.view_menu_treeview_section,
+                                  'refresh_current', 'go-jump', _('Refresh _Node'),
+                                  None, self._refreshCurrentLevel)
+    self.refresh_current_action.set_property('enabled', False)
+    menus.treeview_context_menu.append_item(menu_item_refresh_current)
 
     self.connect('popup-menu', self._onPopup)
     self.connect('button-press-event', self._onPopup)
@@ -540,7 +548,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     on an accessible.
     '''
     path = self.get_cursor()[0]
-    self.refresh_current_action.set_sensitive(path is not None)
+    self.refresh_current_action.set_property('enabled', path is not None)
 
   def _onKeyPress(self, w, event):
     '''
@@ -592,7 +600,11 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       extra_data = getTreePathBoundingBox(self, path, col)
       func = lambda m, b: (b.x, b.y + (b.height/2), True)
 
-    menu = ui_manager.uimanager.get_widget(ui_manager.POPUP_MENU_PATH)
+    menu = gtk.Menu.new_from_model(menus.treeview_context_menu)
+    # attach to widget, since actions are searched in the widget's hierarchy,
+    # which includes the the application window where the actions are defined
+    # s. https://docs.gtk.org/gtk3/ctor.Menu.new_from_model.html
+    menu.attach_to_widget(self, None)
     menu.popup(None, None, func, extra_data, button, time)
     return True
 
@@ -601,7 +613,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     Refreshes the entire tree at the desktop level.
 
     @param action: Action object that emitted this signal, if any.
-    @type: gtk.Action
+    @type: gio.Action
     '''
     self.model.clear()
     self.model.popLevel(None)
@@ -612,7 +624,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     Refreshes the current level. Selects and expands the parent of the level.
 
     @param action: Action object that emitted this signal, if any.
-    @type: gtk.Action
+    @type: gio.SimpleAction
     '''
     path = self.get_cursor()[0]
     if path == None:
@@ -626,11 +638,15 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       self.expand_row(path, False)
       self._onExpanded(self, self.filter.get_iter(path), path)
 
-  def _onHideShowLeaves(self, option):
+  def _onHideShowLeaves(self, action, value, data=None):
     '''
-    Hides/Shows all leaves (accessibles with no children) from the accessible treeview.
+    Callback for toggling showing applications without children.
+
+    @param action: Action object that emitted callback.
+    @type action: gio.SimpleAction
     '''
-    self._hide_leaves = not self._hide_leaves
+    action.set_state(value)
+    self._hide_leaves = not value.get_boolean()
     self.filter.refilter()
 
   def _onExpanded(self, treeview, iter, path):
