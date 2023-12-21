@@ -6,8 +6,8 @@ AT-SPI validation plugin.
 @copyright: Copyright (c) 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
@@ -29,7 +29,7 @@ import pyatspi
 UI_FILE = os.path.join(os.path.dirname(__file__), 'validate.ui')
 USER_SCHEMA_PATH = os.path.join(GLib.get_user_data_dir(), 'accerciser',
                                 'plugindata', 'validate')
-SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser', 
+SYS_SCHEMA_PATH = os.path.join(sys.prefix, 'share', 'accerciser',
                                'plugindata', 'validate')
 VALIDATORS = {}
 SCHEMA_METADATA = {}
@@ -78,12 +78,12 @@ class ValidatorManager(type):
           # default to usinf file name as description
           SCHEMA_METADATA[module] = {'name' : module,
                                         'description' : _('No description')}
-      
+
   @staticmethod
   def getValidators(name):
     '''
     Gets all validator classes within a schema.
-    
+
     @param name: Name of a schema
     @return: List of Validator objects
     @raise KeyError: When the schema is not known
@@ -111,12 +111,12 @@ class ValidatorManager(type):
 
 class Validator(with_metaclass(ValidatorManager, object)):
   '''
-  Base class for all validators. Defines the public interface used by the 
+  Base class for all validators. Defines the public interface used by the
   plug-in controller/view to generate validation reports.
   '''
   def __init__(self):
     pass
-  
+
   def condition(self, acc):
     '''
     Checks if this validator is fit to test the given accessible. For instance,
@@ -127,7 +127,7 @@ class Validator(with_metaclass(ValidatorManager, object)):
     @raise Exception: Same as returning False
     '''
     return True
-  
+
   def before(self, acc, state, view):
     '''
     Tests the accessible before testing its descendants.
@@ -138,7 +138,7 @@ class Validator(with_metaclass(ValidatorManager, object)):
     @param view: View object to use to log test results
     '''
     pass
-  
+
   def after(self, acc, state, view):
     '''
     Tests the accessible after testing its descendants.
@@ -209,7 +209,7 @@ class ValidatorViewport(ViewportPlugin):
       d = vm.getSchemaMetadata(name)
       model.append(['%s - %s' % (d['name'], d['description']), name])
     self.schema.set_active(0)
-    
+
     # model for the report
     model = gtk.ListStore(str, str, object, str)
     self.report.set_model(model)
@@ -218,7 +218,7 @@ class ValidatorViewport(ViewportPlugin):
     cell = gtk.CellRendererText()
     self.schema.pack_start(cell, True)
     self.schema.add_attribute(cell, 'text', 0)
-    
+
     # log level column
     col = gtk.TreeViewColumn(_('Level'))
     rend = gtk.CellRendererText()
@@ -232,10 +232,10 @@ class ValidatorViewport(ViewportPlugin):
 
     # set progress bar to zero initially
     self.progress.set_fraction(0.0)
-        
+
     self.main_xml.connect_signals(self)
     self.show_all()
-    
+
   def onAccChanged(self, acc):
     '''
     Stops validation if the accessible hierarchy changes.
@@ -244,7 +244,7 @@ class ValidatorViewport(ViewportPlugin):
     '''
     if self.walk is not None:
       self._stopValidate()
-    
+
   def _onValidate(self, widget):
     '''
     Starts or stops a validation run.
@@ -281,7 +281,7 @@ class ValidatorViewport(ViewportPlugin):
     n_rows_to_write = 5
     if n_rows_to_write > remaining_rows:
       n_rows_to_write = remaining_rows
-  
+
     file_str_list = [] # list to store strings to be written to file
     start = self.curr_file_row
     end = (self.curr_file_row + n_rows_to_write)
@@ -298,7 +298,7 @@ class ValidatorViewport(ViewportPlugin):
       # add url role to buffer
       file_str_list.append("%s: %s\n\n" % (_('Hyperlink'), val[3]))
       self.curr_file_row += 1
-  
+
     self.save_to.write(''.join(file_str_list))
 
     return True
@@ -387,8 +387,8 @@ class ValidatorViewport(ViewportPlugin):
     Ready appropriate variables for a save
     '''
     self.curr_file_row = 0
-    self.n_report_rows = 0 
-    self.row_values = [] 
+    self.n_report_rows = 0
+    self.row_values = []
 
   def _startValidate(self):
     '''
@@ -438,7 +438,7 @@ class ValidatorViewport(ViewportPlugin):
     self.help.set_sensitive(True)
     self.save.set_sensitive(True)
     self.clear.set_sensitive(True)
-     
+
   def _onValidateIdle(self):
     '''
     Tests one accessible at a time on each idle callback by advancing the
@@ -477,14 +477,14 @@ class ValidatorViewport(ViewportPlugin):
       # recurse
       gen_traverse = self._traverse(child, state)
       while 1:
-        # yield before continuing processing 
+        # yield before continuing processing
         yield None
         try:
           # get one descendant
           next(gen_traverse)
         except StopIteration:
           break
-    
+
   def _genAccessible(self, acc, state):
     '''
     Tests the given accessible in the before pass if its test condition is
@@ -558,11 +558,11 @@ class ValidatorViewport(ViewportPlugin):
       acc = model[iter][2]
       if acc:
         self.node.update(acc)
-                             
+
   def _exceptionError(self, acc, ex):
     '''
     Logs an unexpected exception that occurred during execution of a validator.
-    
+
     @param acc: Accessible under test when the exception occurred
     @param ex: The exception
     '''
@@ -577,7 +577,7 @@ class ValidatorViewport(ViewportPlugin):
     '''
     level = _('ERROR')
     self.report.get_model().append([level, text, acc, url])
-    
+
   def warn(self, text, acc, url=''):
     '''
     Used by validators to log warning messages for accessibility problems that
@@ -585,14 +585,14 @@ class ValidatorViewport(ViewportPlugin):
     '''
     level = _('WARN')
     self.report.get_model().append([level, text, acc, url])
-  
+
   def info(self, text, acc, url=''):
     '''
     Used by validators to log informational messages.
     '''
     level = _('INFO')
     self.report.get_model().append([level, text, acc, url])
-    
+
   def debug(self, text, acc, url=''):
     '''
     Used by validators to log debug messages.

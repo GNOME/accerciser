@@ -23,18 +23,18 @@ class QuickSelect(Plugin):
     Initialize plugin.
     '''
     self.global_hotkeys = [(N_('Inspect last focused accessible'),
-                            self._inspectLastFocused, 
+                            self._inspectLastFocused,
                             gdk.KEY_a, gdk.ModifierType.CONTROL_MASK | \
                                        gdk.ModifierType.MOD1_MASK),
                            (N_('Inspect accessible under mouse'),
-                            self._inspectUnderMouse, 
+                            self._inspectUnderMouse,
                             gdk.KEY_question, gdk.ModifierType.CONTROL_MASK | \
                                               gdk.ModifierType.MOD1_MASK)]
 
-    pyatspi.Registry.registerEventListener(self._accEventFocusChanged, 
+    pyatspi.Registry.registerEventListener(self._accEventFocusChanged,
                                'object:state-changed')
 
-    pyatspi.Registry.registerEventListener(self._accEventSelectionChanged, 
+    pyatspi.Registry.registerEventListener(self._accEventSelectionChanged,
                                'object:selection-changed')
 
     self.last_focused = None
@@ -42,7 +42,7 @@ class QuickSelect(Plugin):
 
   def _accEventFocusChanged(self, event):
     '''
-    Hold a reference for the last focused accessible. This is used when a certain 
+    Hold a reference for the last focused accessible. This is used when a certain
     global hotkey is pressed to select this accessible.
 
     @param event: The event that is being handled.
@@ -56,11 +56,11 @@ class QuickSelect(Plugin):
       return
 
     if not self.isMyApp(event.source):
-      self.last_focused = event.source      
+      self.last_focused = event.source
 
   def _accEventSelectionChanged(self, event):
     '''
-    Hold a reference for the last parent of a selected accessible. 
+    Hold a reference for the last parent of a selected accessible.
     This will be useful if we want to find an accessible at certain coords.
 
     @param event: The event that is being handled.
@@ -85,13 +85,13 @@ class QuickSelect(Plugin):
     del screen # A workaround http://bugzilla.gnome.org/show_bug.cgi?id=593732
 
     # First check if the currently selected accessible has the pointer over it.
-    # This is an optimization: Instead of searching for 
+    # This is an optimization: Instead of searching for
     # STATE_SELECTED and ROLE_MENU and LAYER_POPUP in the entire tree.
     item = self._getPopupItem(x, y)
     if item:
       self.node.update(item)
       return
-          
+
     # Inspect accessible under mouse
     desktop = pyatspi.Registry.getDesktop(0)
     wnck_screen = wnck.Screen.get_default()
@@ -126,7 +126,7 @@ class QuickSelect(Plugin):
   def _getPopupItem(self, x, y):
     suspect_children = []
     # First check if the currently selected accessible has the pointer over it.
-    # This is an optimization: Instead of searching for 
+    # This is an optimization: Instead of searching for
     # STATE_SELECTED and ROLE_MENU and LAYER_POPUP in the entire tree.
     if self.last_selected and \
           self.last_selected.getRole() == pyatspi.ROLE_MENU and \
@@ -191,4 +191,4 @@ class QuickSelect(Plugin):
       return None
     else:
       return inner_container
-    
+

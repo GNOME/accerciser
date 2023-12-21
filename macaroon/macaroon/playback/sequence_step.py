@@ -7,7 +7,7 @@ Base sequence step class and some derivatives.
 
 This file may be distributed and/or modified under the terms of the GNU General
 Public License version 2 as published by the Free Software Foundation. This file
-is distributed without any warranty; without even the implied warranty of 
+is distributed without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
 
 See "COPYING" in the source distribution for more information.
@@ -21,7 +21,7 @@ import sys
 
 class SequenceStep(GObject.GObject):
   '''
-  Base class for all sequence steps in a Macaroon sequence. Emits a "done" 
+  Base class for all sequence steps in a Macaroon sequence. Emits a "done"
   signal when the step is done.
 
   @cvar delta_time: Time, in milliseconds, before this step should be executed.
@@ -43,8 +43,8 @@ class SequenceStep(GObject.GObject):
   def stepDone(self):
     '''
     Puts instance in "done" state. And emits "done" signal.
-    
-    @return: Return False because this is usually called through a 
+
+    @return: Return False because this is usually called through a
     gobject timeout.
     @rtype: boolean
     '''
@@ -67,8 +67,8 @@ class AtomicAction(SequenceStep):
   def __init__(self, delta_time, func, *args, **kwargs):
     '''
     Initialize L{AtomicAction}.
-    
-    @param delta_time: Time, in milliseconds, before this step should be 
+
+    @param delta_time: Time, in milliseconds, before this step should be
     executed.
     @type delta_time: integer
     @param func: Function to call.
@@ -98,7 +98,7 @@ class DebugAction(AtomicAction):
   def __init__(self, debug_msg, delta_time=0):
     '''
     Initialize L{DebugAction}
-    
+
     @param debug_msg: Message to print out to standard output.
     @type debug_msg: string
     @param delta_time: Time to wait before printing the message.
@@ -129,7 +129,7 @@ class PauseAction(AtomicAction):
   def __init__(self, delta_time):
     '''
     Initialize a L{PauseAction}.
-    
+
     @param delta_time: Duration of pause in milliseconds.
     @type delta_time: integer
     '''
@@ -138,7 +138,7 @@ class PauseAction(AtomicAction):
   def __str__(self):
     '''
     String representation of instance.
-    
+
     @return: String representation of instance.
     @rtype: string
     '''
@@ -152,8 +152,8 @@ class CallableAction(AtomicAction):
   def __init__(self, func, *args, **kwargs):
     '''
     Initialize L{AtomicAction}.
-    
-    @param delta_time: Time, in milliseconds, before this step should be 
+
+    @param delta_time: Time, in milliseconds, before this step should be
     executed.
     @type delta_time: integer
     @param func: Function to call.

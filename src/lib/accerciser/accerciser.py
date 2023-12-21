@@ -9,11 +9,12 @@ accessible.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import Wnck as wnck
@@ -34,79 +35,124 @@ from .hotkey_manager import HotkeyManager, HotkeyTreeView
 from .about_dialog import AccerciserAboutDialog
 from .prefs_dialog import AccerciserPreferencesDialog
 from .main_window import AccerciserMainWindow
-from . import ui_manager
+from . import menus
 
-class Main(Tools):
+class Main(gtk.Application, Tools):
   '''
-  Class for the main accerciser window. 
+  Class for the main accerciser window.
   '''
   COL_ACC = 4
   COL_FILLED = 2
-  
-  def __init__(self):
+
+  def __init__(self, *args, **kwargs):
+    gtk.Application.__init__(self, *args, **kwargs)
+    self.window = None
+
+  def do_startup(self):
     '''
-    Gets references to important widgets, establishes event handlers,
-    configures the tree view, and initializes the tree with the contents of the
-    desktop.
+    gtk.Application callback that gets called when application starts.
+    Set up the application.
     '''
+    gtk.Application.do_startup(self)
+
     # mark the root of this window with its PID so we can easily identify it
     # as this app
     root_atk = atk.get_root()
     root_atk.set_description(str(os.getpid()))
 
     self.node = Node()
+    self.set_menubar(menus.main_menu)
 
-    self.window = AccerciserMainWindow(self.node)
+  def do_activate(self):
+    '''
+    gtk.Application callback when application gets launched
+    by desktop environment.
+    Set up and show the ApplicationWindow.
+    Gets references to important widgets, establishes event handlers,
+    configures the tree view, and initializes the tree with the contents of the
+    desktop.
+    '''
+    self.window = AccerciserMainWindow(application=self, node=self.node)
     self.window.connect('delete-event', self._onDeleteEvent)
     self.window.connect('destroy', self._onQuit)
 
     # Start hotkey manager
     self.hotkey_manager = HotkeyManager()
-    self.bookmarks_store = BookmarkStore(self.node, self.window)
+    self.bookmarks_store = BookmarkStore(self.node, self, self.window)
 
     # load plugins
     self.plugin_manager = \
-        PluginManager(self.node, self.hotkey_manager,
+        PluginManager(self, self.node, self.hotkey_manager,
                       self.window.pluginview1, self.window.pluginview2)
 
     # connect signal handlers and show the GUI in its initial state
     self.window.show_all()
 
-    main_actions = gtk.ActionGroup.new('MainActions')
-    ui_manager.uimanager.insert_action_group(main_actions, 0)
-    main_actions.add_actions([
-        ('Quit', gtk.STOCK_QUIT, None, 
-         '<control>q', 'Quit Accerciser', self._onQuit),
-        ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences…'),
-         '<control>p', 'Show preferences', self._onShowPreferences),
-        ('Contents', gtk.STOCK_HELP, _('_Contents'),
-         'F1', 'View contents of manual', self._onHelp),
-        ('About', gtk.STOCK_ABOUT, None,
-         None, 'About Accerciser', self._onAbout)])
+    menu_items = [
+        (menus.file_menu, 'quit', 'application-exit', _('_Quit'),
+         '<control>q', self._onQuit),
+        (menus.edit_menu, 'preferences', 'preferences-system-symbolic', _('_Preferences…'),
+         '<control>p', self._onShowPreferences),
+        (menus.help_menu, 'contents', 'help-browser-symbolic', _('_Contents'),
+         'F1', self._onHelp),
+        (menus.help_menu, 'about', 'help-about-symbolic', _('_About'),
+         None, self._onAbout)]
 
-    for action_name, menu_path in [('Quit', ui_manager.FILE_MENU_PATH),
-                                  ('Preferences', ui_manager.EDIT_MENU_PATH),
-                                  ('Contents', ui_manager.HELP_MENU_PATH),
-                                  ('About', ui_manager.HELP_MENU_PATH)]:
-      action = main_actions.get_action(action_name)
-      ui_manager.uimanager.add_ui(ui_manager.uimanager.new_merge_id(), 
-                                  menu_path, action_name, action_name, 
-                                  gtk.UIManagerItemType.MENUITEM, False)
-
+    self.addMenuItems(menu_items)
 
     self.last_focused = None
     self.window.show_all()
 
-  def run(self):
-    '''
-    Runs the app.
-    '''
     GLib.timeout_add(200, self._pumpEvents)
     try:
       # async is a reserved keyword in Python 3.7+, so we pass the args as dict
       pyatspi.Registry.start(**{'async': True, 'gil': False})
     except KeyboardInterrupt:
       self._shutDown()
+
+  def addMenuItem(self, menu, name, icon_name, label, accel, callback):
+    '''
+    Create menu item in the given menu and return the menu item and its action.
+
+    @param menu: The menu into which the item should be inserted.
+    @type menu: gio.Menu
+    @param name: Name for the action
+    @type name: string
+    @param icon_name: Name of the icon to use.
+    @type icon_name: string
+    @param label: Label for the menu entry.
+    @type label: string
+    @param accel: Keyboard accelerator for the action, or None.
+    @type accel: string
+    @param callback: Callback that gets called when the action gets triggered.
+    @type callback: method
+
+    @return: Menu item and action.
+    @rtype: tuple(gio.MenuItem, gio.SimpleAction)
+    '''
+    action_name = 'app.' + name
+    menu_item = gio.MenuItem.new(label, action_name)
+    icon = gio.ThemedIcon.new(icon_name)
+    menu_item.set_icon(icon)
+    menu.append_item(menu_item)
+    action = gio.SimpleAction.new(name, None)
+    action.connect('activate', callback)
+    if accel:
+      self.set_accels_for_action(action_name, [accel])
+    self.add_action(action)
+    return menu_item, action
+
+  def addMenuItems(self, menu_items):
+    '''
+    Add menu items. The parameter is a list of tuples containing
+    all parameters that L{addMenuItem} takes.
+    See L{addMenuItem} for more details.
+
+    @param menu_items
+    @type list(tuple(gio.Menu, string, string, string, string, method))
+    '''
+    for menu, name, icon_name, label, accel, callback in menu_items:
+      self.addMenuItem(menu, name, icon_name, label, accel, callback)
 
   def _pumpEvents(self):
     pyatspi.Registry.pumpQueuedEvents()
@@ -127,7 +173,8 @@ class Main(Tools):
     '''
     self._shutDown()
     pyatspi.Registry.stop()
-    
+    self.quit()
+
   def _onAbout(self, action, data=None):
     '''
     Shows the about dialog.
@@ -138,7 +185,7 @@ class Main(Tools):
     about = AccerciserAboutDialog()
     about.set_transient_for(self.window)
     about.run()
-    
+
   def _onHelp(self, action, page=""):
     '''
     Shows the help dialog.
@@ -153,7 +200,7 @@ class Main(Tools):
                  uri,
                  gtk.get_current_event_time())
     return True
-         
+
   def _onShowPreferences(self, action, data=None):
     '''
     Shows the preferences dialog.

@@ -6,8 +6,8 @@ Defines the manager for plugin layout and loading.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -52,10 +52,12 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   COL_INSTANCE = 0
   COL_CLASS = 1
   COL_PATH = 2
-  def __init__(self, node, hotkey_manager, *main_views):
+  def __init__(self, application, node, hotkey_manager, *main_views):
     '''
     Initialize the plugin manager.
-    
+
+    @param application: The application.
+    @type application: gtk.Application.
     @param node: The application's main node.
     @type node: L{Node}
     @param hotkey_manager: Application's hot key manager.
@@ -70,11 +72,11 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     self.node = node
     self.hotkey_manager = hotkey_manager
     self.gsettings = GSettings.new(GSCHEMA)
-    self.view_manager = ViewManager(*main_views)
+    self.view_manager = ViewManager(application, *main_views)
     self.message_manager = MessageManager()
-    self.message_manager.connect('plugin-reload-request', 
+    self.message_manager.connect('plugin-reload-request',
                                  self._onPluginReloadRequest)
-    self.message_manager.connect('module-reload-request', 
+    self.message_manager.connect('module-reload-request',
                                  self._onModuleReloadRequest)
     message_tab = self.message_manager.getMessageTab()
     self.view_manager.addElement(message_tab)
@@ -104,7 +106,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _getPluginFiles(self):
     '''
     Get list of all modules in plugin paths.
-    
+
     @return: List of plugin files with their paths.
     @rtype: tuple
     '''
@@ -125,12 +127,12 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _getPluginLocals(self, plugin_dir, plugin_fn):
     '''
     Get namespace of given module
-    
+
     @param plugin_dir: Path.
     @type plugin_dir: string
     @param plugin_fn: Module.
     @type plugin_fn: string
-    
+
     @return: Dictionary of modules symbols.
     @rtype: dictionary
     '''
@@ -150,7 +152,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _loadPluginFile(self, plugin_dir, plugin_fn):
     '''
     Find plugin implementations in the given module, and store them.
-    
+
     @param plugin_dir: Path.
     @type plugin_dir: string
     @param plugin_fn: Module.
@@ -181,7 +183,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _enablePlugin(self, iter):
     '''
     Instantiate a plugin class pointed to by the given iter.
-    
+
     @param iter: Iter of plugin class we should instantiate.
     @type iter: gtk.TreeIter
     '''
@@ -192,7 +194,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
       plugin_instance.init()
       for key_combo in plugin_instance.global_hotkeys:
         self.hotkey_manager.addKeyCombo(
-          plugin_class.plugin_name, 
+          plugin_class.plugin_name,
           plugin_class.plugin_name_localized or plugin_class.plugin_name
           , *key_combo)
     except Exception as e:
@@ -217,7 +219,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _disablePlugin(self, iter):
     '''
     Disable plugin pointed to by the given iter.
-    
+
     @param iter: Iter of plugin instance to be disabled.
     @type iter: gtk.TreeIter
     '''
@@ -233,17 +235,17 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     disabled_list = self.gsettings.get_strv('disabled-plugins')
     if not plugin_instance.plugin_name in disabled_list:
       disabled_list.append(plugin_instance.plugin_name)
-    self.gsettings.set_strv('disabled-plugins', disabled_list)   
+    self.gsettings.set_strv('disabled-plugins', disabled_list)
 
     self[iter][self.COL_INSTANCE] = False
 
   def _reloadPlugin(self, iter):
     '''
     Reload plugin pointed to by the given iter.
-    
+
     @param iter: Iter of plugin to be reloaded.
     @type iter: gtk.TreeIter
-    
+
     @return: New instance of plugin
     @rtype: L{Plugin}
     '''
@@ -258,10 +260,10 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _getIterWithClass(self, plugin_class):
     '''
     Get iter with given plugin class.
-    
+
     @param plugin_class: The plugin class to search for.
     @type plugin_class: type
-    
+
     @return: The first iter with the given class.
     @rtype: gtk.TreeIter
     '''
@@ -273,7 +275,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _onPluginReloadRequest(self, message_manager, message, plugin_class):
     '''
     Callback for a plugin reload request from the message manager.
-    
+
     @param message_manager: The message manager that emitted the signal.
     @type message_manager: L{MessageManager}
     @param message: The message widget.
@@ -292,7 +294,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def _onModuleReloadRequest(self, message_manager, message, module, path):
     '''
     Callback for a module reload request from the message manager.
-    
+
     @param message_manager: The message manager that emitted the signal.
     @type message_manager: L{MessageManager}
     @param message: The message widget.
@@ -308,7 +310,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
   def togglePlugin(self, path):
     '''
     Toggle the plugin, either enable or disable depending on current state.
-    
+
     @param path: Tree path to plugin.
     @type path: tuple
     '''
@@ -322,13 +324,13 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     '''
     Callback for model row changes. Persists plugins state (enabled/disabled)
     in gsettings.
-    
+
     @param model: Current model, actually self.
     @type model: gtk.ListStore
     @param path: Tree path of changed row.
     @type path: tuple
     @param iter: Iter of changed row.
-    @type iter: gtk.TreeIter 
+    @type iter: gtk.TreeIter
     '''
     plugin_class = model[iter][self.COL_CLASS]
     if plugin_class is None:
@@ -346,7 +348,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     '''
     Helps emulate a non-static inner class. These don't exist in python,
     I think.
-    
+
     @return: An inner view class.
     @rtype: L{PluginManager._View}
     '''
@@ -364,7 +366,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def __init__(self, plugin_manager):
       '''
       Initialize view.
-      
+
       @param plugin_manager: Plugin manager to use as data model.
       @type plugin_manager: L{PluginManager}
       '''
@@ -391,7 +393,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
       crc = gtk.CellRendererText()
       # Translators: This is the viewport in which the plugin appears,
       # it is a noun.
-      # 
+      #
       tvc = gtk.TreeViewColumn(C_('viewport', 'View'))
       tvc.pack_start(crc, False)
       tvc.set_cell_data_func(crc, self._viewNameDataFunc)
@@ -402,7 +404,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _onButtonPress(self, widget, event):
       '''
       Callback for plugin view context menus.
-      
+
       @param widget: Widget that emitted signal.
       @type widget: gtk.Widget
       @param event: Event object.
@@ -414,18 +416,18 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
 
     def _onPopupMenu(self, widget):
       '''
-      Callback for popup request event. Usually happens when keyboard 
+      Callback for popup request event. Usually happens when keyboard
       context menu os pressed.
-      
+
       @param widget: Widget that emitted signal.
       @type widget: gtk.Widget
-      
+
       @return: Return true to stop event trickling.
       @rtype: boolean
       '''
       path, col = self.get_cursor()
       rect = getTreePathBoundingBox(self, path, col)
-      self._showPopup(0, gtk.get_current_event_time(), 
+      self._showPopup(0, gtk.get_current_event_time(),
                       path, lambda m, r: (r.x, r.y, True), rect)
       return True
 
@@ -433,7 +435,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _showPopup(self, button, time, path, pos_func=None, data=None):
       '''
       Convinience function for showing the view manager's popup menu.
-      
+
       @param button: Mouse button that was clicked.
       @type button: integer
       @param time: Time of event.
@@ -453,7 +455,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _viewNameDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed data in the tree's view column.
-      
+
       @param column: Column number.
       @type column: integer
       @param cell: Cellrender.
@@ -476,7 +478,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _pluginNameDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed data in the tree's plugin column.
-      
+
       @param column: Column number.
       @type column: integer
       @param cell: Cellrender.
@@ -493,7 +495,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _pluginStateDataFunc(self, column, cell, model, iter, foo=None):
       '''
       Function for determining the displayed state of the plugin's checkbox.
-      
+
       @param column: Column number.
       @type column: integer
       @param cell: Cellrender.
@@ -503,7 +505,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
       @param iter: Tree iter of current row,
       @type iter: gtk.TreeIter
       '''
-      cell.set_property('active', 
+      cell.set_property('active',
                         bool(model[iter][self.plugin_manager.COL_INSTANCE]))
 
     def _onPluginToggled(self, renderer_toggle, path):
@@ -521,7 +523,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     def _onViewChanged(self, cellrenderertext, path, new_text):
       '''
       Callback for an "edited" signal from a L{gtk.CellRendererCombo} in the
-      plugin dialog. Passes along the new requested view name to the 
+      plugin dialog. Passes along the new requested view name to the
       L{PluginManager}.
 
       @param cellrenderertext: The combo cellrenderer that emitted the signal.

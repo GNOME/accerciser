@@ -8,8 +8,8 @@ Defines the about dialog.
 @copyright: Copyright (c) 2006, 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -33,11 +33,11 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   @cvar COMMENTS: Comments about program.
   @type COMMENTS: string
   @cvar COPYRIGHT: Copyright notice.
-  @type COPYRIGHT: string 
+  @type COPYRIGHT: string
   @cvar LICENSE: License of program.
   @type LICENSE: string
   @cvar WEB_URL: URL to program's website.
-  @type WEB_URL: string 
+  @type WEB_URL: string
   @cvar WEB_LABEL: Label of URL button.
   @type WEB_LABEL: string
   '''
@@ -76,7 +76,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   def _onResponse(self, dialog, response_id):
     '''
     Callback for dialog responses, always destroy it.
-    
+
     @param dialog: This dialog.
     @type dialog: L{AccerciserAboutDialog}
     @param response_id: Response ID recieved.

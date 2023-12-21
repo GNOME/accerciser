@@ -7,11 +7,12 @@ Defines behavior of the accessible tree view widget.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository import GdkPixbuf
@@ -20,7 +21,7 @@ from gi.repository import GObject
 
 import pyatspi
 import os
-from . import ui_manager
+from . import menus
 from time import sleep
 from .icons import getIcon
 from .node import Node
@@ -40,16 +41,16 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   Stores the desktop accessible tree. Only populates sections of the tree
   that are being viewed. This cuts short on a lot of potential overhead.
 
-  @ivar desktop: The desktop accessible. It holds references to all the 
+  @ivar desktop: The desktop accessible. It holds references to all the
   application L{Accessibility.Accessible}s
   @type desktop: L{Accessibility.Accessible}
   @ivar acc_cache: A list of L{Accessibility.Accessible}s that are currently
   resident in the model. This helps with faster searching.
   @type acc_cache: list
   '''
-  __gsignals__ = {'row-filled' : 
+  __gsignals__ = {'row-filled' :
                   (GObject.SignalFlags.RUN_FIRST,
-                   None, 
+                   None,
                    (GObject.TYPE_PYOBJECT,)),
                   'start-populating' :
                     (GObject.SignalFlags.RUN_FIRST,
@@ -57,7 +58,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
                      ()),
                   'end-populating' :
                     (GObject.SignalFlags.RUN_FIRST,
-                     None, 
+                     None,
                      ())}
 
   def __init__(self, desktop_acc):
@@ -121,7 +122,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     @rtype: L{gtk.TreeIter}
     '''
     self.insert(iter, -1, row)
-    
+
   def remove(self, iter):
     '''
     A method that overrides the L{gtk.TreeStore} remove method.
@@ -153,8 +154,8 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     '''
     Get list of accessible children of a given row.
 
-    I{Note:} This method returns the accessible's children as they currently exist in 
-    the model. The list of accessibles is not necessarily identical to the actual 
+    I{Note:} This method returns the accessible's children as they currently exist in
+    the model. The list of accessibles is not necessarily identical to the actual
     children of the accessible at the given row.
 
     @param iter: Th iter of the row that we want it's children
@@ -245,10 +246,10 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   def _popOnIdle(self, row_reference):
     '''
     Idle callback for populating the children of a given row reference.
-    
+
     @param row_reference: The parent row reference.
     @type row_reference: gtk.TreeRowReference
-    
+
     @return: False if task is done (to stop handler).
     @rtype: boolean
     '''
@@ -302,7 +303,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   def popToPath(self, path):
     '''
     Populate the model with accessible nodes up to given path.
-    
+
     @param path: Path to populate model to.
     @type path: tuple
     '''
@@ -315,10 +316,10 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   def _walkThroughFilled(self, path):
     '''
     Reach node in path that is not populated yet, and populate it.
-    
+
     @param path: Path to fill.
     @type path: tuple
-    
+
     @return: True if entire path is populated.
     @rtype: boolean
     '''
@@ -326,13 +327,13 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
       if not self[path[:i]][COL_FILLED]:
         self.popLevel(self.get_iter(path[:i]))
         return False
-    return True      
+    return True
 
   def _onRowFilled(self, model, iter):
     '''
     Callback for "row-filled" signal. If there is a specific path we need to populate,
     we continue populating the next node.
-    
+
     @param model: Model that emitted signal (self).
     @type model: L{AccessibleModel}
     @param iter: Iter of row that has been populated.
@@ -360,12 +361,12 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
   def getAccPath(self, acc):
     '''
     Get the tree path that a given accessible should have.
-    
+
     I{Note:} The accessible does not necessarily need to be resident in the model.
-    
+
     @param acc: The accessible we want a path of.
     @type acc: L{Accessibility.Accessible}
-    
+
     @return: The path to the accessible.
     @rtype: tuple
     '''
@@ -424,27 +425,32 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   The treeview for the desktop's accessibles. The treeview's model (L{AccessibleModel}
   is only populated when the treeview is traversed and nodes are expanded. This class
   listens for 'row-expanded' events in order to have a tree node populated. Nodes that
-  are selected are updated into the L{Node} instance variable. This treeview also 
+  are selected are updated into the L{Node} instance variable. This treeview also
   updates automatically in response to at-spi children change events.
 
-  @ivar desktop: The desktop accessible. It holds references to all the 
+  @ivar desktop: The desktop accessible. It holds references to all the
   application L{Accessibility.Accessible}s
   @type desktop: L{Accessibility.Accessible}
+  @ivar application: Main application.
+  @type application: gtk.Application
   @ivar node: An object with a reference to the currently selected accessible.
   @type node: L{Node}
   @ivar model: The data model of this treeview.
   @type model: L{AccessibleModel}
   '''
-  def __init__(self, node):
+  def __init__(self, application, node):
     '''
     Initialize the treeview. Build the proper columns.
     Connect all of the proper signal handlers and at-spi event handlers.
-    
+
+    @param application: Main application.
+    @type application: gtk.Application
     @param node: The main application node.
     @type node: L{Node}
     '''
     gtk.TreeView.__init__(self)
 
+    self.application = application
     self.desktop = pyatspi.Registry.getDesktop(0)
     self.node = node
     self.node.update(self.desktop)
@@ -493,33 +499,35 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     selection.connect('changed', self._onSelectionChanged)
     self.connect('row-expanded', self._onExpanded)
 
-    pyatspi.Registry.registerEventListener(self._accEventChildChanged, 
+    pyatspi.Registry.registerEventListener(self._accEventChildChanged,
                                            'object:children-changed')
 
     pyatspi.Registry.registerEventListener(
-        self._accEventNameChanged, 
+        self._accEventNameChanged,
         'object:property-change:accessible-name')
 
     self._hide_leaves = True
-    self.action_group = gtk.ActionGroup.new('TreeActions')
-    self.action_group.add_toggle_actions(
-      [('HideShowLeaves', None, _('_Show Applications without children'), None,
-        None, self._onHideShowLeaves, False)])
-    self.action_group.add_actions([
-        ('RefreshAll', gtk.STOCK_REFRESH, _('_Refresh Registry'),
-        # Translators: Appears as tooltip
-        #
-         None, _('Refresh all'), self._refreshTopLevel),
-        # Translators: Refresh current tree node's children.
-        #
-        ('RefreshCurrent', gtk.STOCK_JUMP_TO, _('Refresh _Node'),
-        # Translators: Appears as tooltip
-        #
-         None, _('Refresh selected node’s children'), 
-         self._refreshCurrentLevel)])  
 
-    self.refresh_current_action = self.action_group.get_action('RefreshCurrent')
-    self.refresh_current_action.set_sensitive(False)
+    menu, name, label, callback = (menus.view_menu_treeview_section,
+                                   'hide_show_leaves', _('_Show Applications without children'),
+                                   self._onHideShowLeaves)
+    action_name = 'app.' + name
+    menu_item = gio.MenuItem.new(label, action_name)
+    menu.append_item(menu_item)
+    action = gio.SimpleAction.new_stateful(name, None, GLib.Variant.new_boolean(False))
+    action.connect('change-state', callback)
+    self.application.add_action(action)
+
+    self.application.addMenuItem(menus.view_menu_treeview_section, 'refresh_all', 'view-refresh', _('_Refresh Registry'),
+        None, self._refreshTopLevel)
+
+    # add "Refresh Node" to both, the menu bar and the tree view context menu
+    menu_item_refresh_current, self.refresh_current_action = \
+      self.application.addMenuItem(menus.view_menu_treeview_section,
+                                  'refresh_current', 'go-jump', _('Refresh _Node'),
+                                  None, self._refreshCurrentLevel)
+    self.refresh_current_action.set_property('enabled', False)
+    menus.treeview_context_menu.append_item(menu_item_refresh_current)
 
     self.connect('popup-menu', self._onPopup)
     self.connect('button-press-event', self._onPopup)
@@ -536,11 +544,11 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
 
   def _onCursorChanged(self, tree):
     '''
-    Set sensitivity of refresh function only if the tree cursor is 
+    Set sensitivity of refresh function only if the tree cursor is
     on an accessible.
     '''
     path = self.get_cursor()[0]
-    self.refresh_current_action.set_sensitive(path is not None)      
+    self.refresh_current_action.set_property('enabled', path is not None)
 
   def _onKeyPress(self, w, event):
     '''
@@ -580,7 +588,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       selection = self.get_selection()
       selection.set_mode(gtk.SelectionMode.NONE)
       self.set_cursor(path, None, False)
-      selection.set_mode(gtk.SelectionMode.SINGLE)      
+      selection.set_mode(gtk.SelectionMode.SINGLE)
       time = event.time
       button = event.button
       func = None
@@ -591,8 +599,12 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       button = 0
       extra_data = getTreePathBoundingBox(self, path, col)
       func = lambda m, b: (b.x, b.y + (b.height/2), True)
-      
-    menu = ui_manager.uimanager.get_widget(ui_manager.POPUP_MENU_PATH)
+
+    menu = gtk.Menu.new_from_model(menus.treeview_context_menu)
+    # attach to widget, since actions are searched in the widget's hierarchy,
+    # which includes the the application window where the actions are defined
+    # s. https://docs.gtk.org/gtk3/ctor.Menu.new_from_model.html
+    menu.attach_to_widget(self, None)
     menu.popup(None, None, func, extra_data, button, time)
     return True
 
@@ -601,18 +613,18 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     Refreshes the entire tree at the desktop level.
 
     @param action: Action object that emitted this signal, if any.
-    @type: gtk.Action
+    @type: gio.Action
     '''
     self.model.clear()
     self.model.popLevel(None)
     # iter over all apps in the desktop too
-    
+
   def _refreshCurrentLevel(self, action, data=None):
     '''
     Refreshes the current level. Selects and expands the parent of the level.
 
     @param action: Action object that emitted this signal, if any.
-    @type: gtk.Action
+    @type: gio.SimpleAction
     '''
     path = self.get_cursor()[0]
     if path == None:
@@ -626,11 +638,15 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       self.expand_row(path, False)
       self._onExpanded(self, self.filter.get_iter(path), path)
 
-  def _onHideShowLeaves(self, option):
+  def _onHideShowLeaves(self, action, value, data=None):
     '''
-    Hides/Shows all leaves (accessibles with no children) from the accessible treeview.
+    Callback for toggling showing applications without children.
+
+    @param action: Action object that emitted callback.
+    @type action: gio.SimpleAction
     '''
-    self._hide_leaves = not self._hide_leaves
+    action.set_state(value)
+    self._hide_leaves = not value.get_boolean()
     self.filter.refilter()
 
   def _onExpanded(self, treeview, iter, path):
@@ -653,9 +669,9 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
 
   def _accEventNameChanged(self, event):
     '''
-    Event handler for "object:property-change:accessible-name". 
+    Event handler for "object:property-change:accessible-name".
     Updates the treeview accordingly.
-    
+
     @param event: The event which triggered this handler.
     @type event: L{pyatspi.event.Event}
     '''
@@ -674,7 +690,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   def _accEventChildChanged(self, event):
     '''
     Event handler for "object:children-changed". Updates the treeview accordingly.
-    
+
     @param event: The event which triggered this handler.
     @type event: L{pyatspi.event.Event}
     '''
@@ -701,7 +717,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     Add the new child to the given accessible.
 
-    @param iter: Th iter of the row that needs a child added. 
+    @param iter: Th iter of the row that needs a child added.
     @type iter: L{gtk.TreeIter}
     @param parent: The given row's accessible.
     @type parent: L{Accessibility.Accessible}
@@ -719,11 +735,11 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
       self.model.append(iter, row)
     else:
       self.model.insert(iter, self.model.getIndexInParent(new_child), row)
-      # We do this because an application won't have an icon loaded in 
+      # We do this because an application won't have an icon loaded in
       # the window manager when it is first registered to at-spi
       if new_child == new_child.getApplication():
         GLib.timeout_add(1000, self._refreshIcon, new_child)
-    
+
   def _refreshIcon(self, app):
     '''
     Refresh the icon of a given application's accessible. This is done because it
@@ -743,7 +759,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     '''
     Remove a child from the given accessible node.
 
-    @param parent_iter: Th iter of the row that needs a child removed. 
+    @param parent_iter: Th iter of the row that needs a child removed.
     @type parent_iter: L{gtk.TreeIter}
     @param parent: The given row's accessible.
     @type parent: L{Accessibility.Accessible}
@@ -870,10 +886,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
 
   def _onRowFilled(self, model, iter):
     '''
-    Callback for "row-filled" (populated) signal. Used for selecting a child node in 
-    the given iter if L{selectNodeAtPath} was called on one of the given 
+    Callback for "row-filled" (populated) signal. Used for selecting a child node in
+    the given iter if L{selectNodeAtPath} was called on one of the given
     iter's children.
-    
+
     @param model: Model that emitted this signal.
     @type model: L{AccessibleModel}
     @param iter: Iter of row that was populated with children.
@@ -887,7 +903,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   def _selectExistingPath(self, model_path):
     '''
     Select a path that already exists. Expand, scroll, and select.
-    
+
     @param model_path: Path to select, referring to the unfiltered model.
     @type path: tuple
     '''
@@ -902,12 +918,12 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     self.scroll_to_cell(filter_path)
     selection = self.get_selection()
     selection.select_path(filter_path)
-    
+
 
   def _onStartPop(self, model):
     '''
     Callback for when the model is populating, changes the cursor to a watch.
-    
+
     @param model: Model that emitted the signal.
     @type model: L{AccessibleModel}
     '''
@@ -918,7 +934,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
   def _onEndPop(self, model):
     '''
     Callback for when the model stops populating, changes the cursor to an arrow.
-    
+
     @param model: Model that emitted the signal.
     @type model: L{AccessibleModel}
     '''
@@ -928,7 +944,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
 
   def _onRowActivated(self, treeview, path, view_column):
     '''
-    When the row is activated (double clicked, or enter), blink the selected 
+    When the row is activated (double clicked, or enter), blink the selected
     accessible, if possible.
 
     @param treeview: The L{AccessibleTreeView} that emitted the signal.

@@ -6,8 +6,8 @@ IPython console plugin.
 @copyright: Copyright (c) 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -23,7 +23,7 @@ import ipython_view
 
 if ipython_view.IPython == None:
   raise RuntimeError('The IPython module is required for the IPython console')
- 
+
 
 class Console(ViewportPlugin):
   '''
@@ -42,16 +42,16 @@ class Console(ViewportPlugin):
     self.ipython_view = ipython_view.IPythonView()
     self.ipython_view.updateNamespace({'acc': None})
     self.ipython_view.updateNamespace(pyatspi.__dict__)
-    self.ipython_view.updateNamespace({'desktop': 
+    self.ipython_view.updateNamespace({'desktop':
                                       pyatspi.Registry.getDesktop(0)})
     self.ipython_view.updateNamespace({'show': self._showAcc})
     sw.add(self.ipython_view)
-  
+
   def onAccChanged(self, acc):
     '''
-    Update 'acc' variable in console namespace with currently 
+    Update 'acc' variable in console namespace with currently
     selected accessible.
-    
+
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -59,9 +59,9 @@ class Console(ViewportPlugin):
 
   def _showAcc(self, acc):
     '''
-    A method that is exposed in the console's namespace that allows the user 
+    A method that is exposed in the console's namespace that allows the user
     to show a given accessible in the main application.
-    
+
     @param acc: Accessible to show.
     @type acc: Accessibility.Accessible
     '''

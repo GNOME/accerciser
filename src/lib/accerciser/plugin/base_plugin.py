@@ -6,8 +6,8 @@ Defines the base classes for all plugins.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -19,7 +19,7 @@ import traceback
 
 class Plugin(ToolsAccessor):
   '''
-  Base class for all plugins. It contains abstract methods for initializing 
+  Base class for all plugins. It contains abstract methods for initializing
   and finalizing a plugin. It also holds a reference to the main L{Node} and
   listens for 'accessible_changed' events on it.
 
@@ -34,7 +34,7 @@ class Plugin(ToolsAccessor):
 
   @ivar global_hotkeys: A list of tuples containing hotkeys and callbacks.
   @type global_hotkeys: list
-  @ivar node: An object with a reference to the currently selected 
+  @ivar node: An object with a reference to the currently selected
   accessible in the main  treeview.
   @type node: L{Node}
   @ivar acc: The curently selected accessible in the main treeview.
@@ -49,7 +49,7 @@ class Plugin(ToolsAccessor):
   def __init__(self, node, message_manager):
     '''
     Connects the L{Node}'s 'accessible_changed' signal to a handler.
-    
+
     @param node: The applications main L{Node}
     @type node: L{Node}
     @note: L{Plugin} writers should override L{init} to do initialization, not
@@ -63,7 +63,7 @@ class Plugin(ToolsAccessor):
 
   def init(self):
     '''
-    An abstract initialization method. Should be overridden by 
+    An abstract initialization method. Should be overridden by
     L{Plugin} authors.
     '''
     pass
@@ -71,7 +71,7 @@ class Plugin(ToolsAccessor):
   def _close(self):
     '''
     Called by the L{PluginManager} when a plugin needs to be finalized. This
-    method disconnects all signal handlers, and calls L{close} for 
+    method disconnects all signal handlers, and calls L{close} for
     plugin-specific cleanup
     '''
     self.node.disconnect(self._handler)
@@ -79,7 +79,7 @@ class Plugin(ToolsAccessor):
 
   def close(self):
     '''
-    An abstract initialization method. Should be overridden by 
+    An abstract initialization method. Should be overridden by
     L{Plugin} authors.
     '''
     pass
@@ -88,8 +88,8 @@ class Plugin(ToolsAccessor):
     '''
     A signal handler for L{Node}'s 'accessible_changed'. It assigns the
     currently selected accessible to L{acc}, and calls {onAccChanged} for
-    plugin-specific event handling.    
-    
+    plugin-specific event handling.
+
     @param node: Node that emitted the signal.
     @type node: L{Node}
     @param acc: The new accessibility object.
@@ -154,7 +154,7 @@ class Plugin(ToolsAccessor):
       @param other: Another wrapper object
       @type other: L{_PluginMethodWrapper}
 
-      @return: Whether this func/inst pair is equal to the one in the other 
+      @return: Whether this func/inst pair is equal to the one in the other
       wrapper object or not
       @rtype: boolean
       '''
@@ -165,7 +165,7 @@ class Plugin(ToolsAccessor):
 
     def __hash__(self):
       return hash(self.func)
-  
+
 
 
 
@@ -183,14 +183,14 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   def __init__(self, node, message_manager):
     '''
     Initialize object.
-    
+
     @param node: Main application selected accessible node.
     @type node: L{Node}
     '''
     Plugin.__init__(self, node, message_manager)
     gtk.ScrolledWindow.__init__(self)
 
-    self.set_policy(gtk.PolicyType.AUTOMATIC, 
+    self.set_policy(gtk.PolicyType.AUTOMATIC,
                     gtk.PolicyType.AUTOMATIC)
     self.set_border_width(3)
     self.set_shadow_type(gtk.ShadowType.NONE)
@@ -211,7 +211,7 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   def _onScrollToFocus(self, container, widget):
     '''
     Scrolls a focused child widget in viewport into view.
-    
+
     @param container: Viewport with child focus change.
     @type container: gtk.Viewport
     @param widget: Child widget of container that had a focus change.
@@ -237,7 +237,7 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
   def _onMessageResponse(self, error_message, response_id):
     '''
     Standard response callback for error messages.
-    
+
     @param error_message: Message that emitted this response.
     @type error_message: L{PluginErrorMessage}
     @param response_id: response ID
@@ -250,14 +250,14 @@ class ViewportPlugin(Plugin, gtk.ScrolledWindow):
 
 class ConsolePlugin(ViewportPlugin):
   '''
-  A base class for plugins that provides a simple console view where textual 
+  A base class for plugins that provides a simple console view where textual
   information could be displayed to the user.
   '''
 
   def __init__(self, node, message_manager):
     '''
     Sets a few predefined settings for the derivative L{gtk.TextView}.
-    
+
     @param node: Application's main accessibility selection.
     @type node: L{Node}
     '''
@@ -267,13 +267,13 @@ class ConsolePlugin(ViewportPlugin):
     self.text_view.set_cursor_visible(False)
     self.plugin_area.add(self.text_view)
     text_buffer = self.text_view.get_buffer()
-    self.mark = text_buffer.create_mark('scroll_mark', 
+    self.mark = text_buffer.create_mark('scroll_mark',
                                         text_buffer.get_end_iter(),
                                         False)
 
   def appendText(self, text):
     '''
-    Appends the given text to the L{gtk.TextView} which in turn displays the 
+    Appends the given text to the L{gtk.TextView} which in turn displays the
     text in the plugins's console.
 
     @param text: Text to append.

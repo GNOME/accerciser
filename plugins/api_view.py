@@ -6,8 +6,8 @@ AT-SPI API browser plugin.
 @copyright: Copyright (c) 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 from gi.repository import Gtk as gtk
@@ -23,7 +23,7 @@ class APIBrowser(ViewportPlugin):
   @type iface_combo: gtk.ComboBox
   @ivar method_tree: Tree view with available methods from chosen interface.
   @type method_tree: gtk.TreeView
-  @ivar property_tree: Tree view with available properties from chosen 
+  @ivar property_tree: Tree view with available properties from chosen
   interface.
   @type property_tree: gtk.TreeView
   @ivar private_toggle: Toggles visibility of private attributes.
@@ -61,13 +61,13 @@ class APIBrowser(ViewportPlugin):
     scrolled_window = gtk.ScrolledWindow()
     scrolled_window.add(self.property_tree)
     bottom_hbox.pack_start(scrolled_window, True, True, 0)
-    self.iface_combo = gtk.ComboBoxText.new() 
+    self.iface_combo = gtk.ComboBoxText.new()
     top_hbox.pack_start(self.iface_combo, False, True, 0)
     self.private_toggle = gtk.CheckButton.new_with_label(_('Hide private attributes'))
     self.private_toggle.set_active(True)
     top_hbox.pack_end(self.private_toggle, False, True, 0)
     self.show_all()
-    
+
   def _initTreeViews(self):
     '''
     Initialize the properties and methods tree views and models.
@@ -80,7 +80,7 @@ class APIBrowser(ViewportPlugin):
     tvc.pack_start(crt, True)
     tvc.add_attribute(crt, 'text', 0)
     self.method_tree.append_column(tvc)
-    
+
     # property view
     model = gtk.ListStore(str, str)
     self.property_tree.set_model(model)
@@ -98,7 +98,7 @@ class APIBrowser(ViewportPlugin):
   def onAccChanged(self, acc):
     '''
     Update the UI when the selected accessible changes.
-    
+
     @param acc: The applications-wide selected accessible.
     @type acc: Accessibility.Accessible
     '''
@@ -109,11 +109,11 @@ class APIBrowser(ViewportPlugin):
     for iface in ints:
       self.iface_combo.append_text(iface)
     self.iface_combo.set_active(0)
-  
+
   def _refreshAttribs(self, widget):
     '''
     Refresh the attributes in the tree views. Could be used as a callback.
-    
+
     @param widget: The widget that may have triggered this callback.
     @type widget: gtk.Widget
     '''
@@ -129,7 +129,7 @@ class APIBrowser(ViewportPlugin):
 
   def _popAttribViews(self):
     '''
-    Populate the attribute views with information from currently selected 
+    Populate the attribute views with information from currently selected
     accessible and interface.
     '''
     prop_model = self.property_tree.get_model()

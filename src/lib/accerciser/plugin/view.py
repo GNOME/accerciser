@@ -6,10 +6,12 @@ Defines and manages the multiple plugin views.
 @copyright: Copyright (c) 2006, 2007 Mozilla Foundation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
+from gi.repository import Gio as gio
+from gi.repository import GLib as glib
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 from gi.repository.Gio import Settings as GSettings
@@ -23,7 +25,7 @@ import sys
 import imp
 from accerciser.i18n import _, N_
 import gc
-from accerciser import ui_manager
+from accerciser import menus
 
 
 GSCHEMA = 'org.a11y.Accerciser'
@@ -47,14 +49,14 @@ class PluginView(gtk.Notebook):
   @type view_name: string
   '''
 
-  __gsignals__ = {'plugin_drag_end' : 
+  __gsignals__ = {'plugin_drag_end' :
                   (GObject.SignalFlags.RUN_FIRST,
-                   None, 
+                   None,
                    (GObject.TYPE_OBJECT,)),
-                  'tab_popup_menu' : 	 
-                  (GObject.SignalFlags.RUN_FIRST, 	 
-                   None, 	 
-                   (GObject.TYPE_PYOBJECT, 	 
+                  'tab_popup_menu' :
+                  (GObject.SignalFlags.RUN_FIRST,
+                   None,
+                   (GObject.TYPE_PYOBJECT,
                     GObject.TYPE_OBJECT))}
   TARGET_PLUGINVIEW = 0
   TARGET_ROOTWIN = 1
@@ -63,7 +65,7 @@ class PluginView(gtk.Notebook):
   def __init__(self, view_name):
     '''
     Initialize a new plugin view.
-    
+
     @param view_name: The name of the view.
     @type view_name: string
     '''
@@ -77,11 +79,11 @@ class PluginView(gtk.Notebook):
     self.connect('button-press-event', self._onButtonPress)
 
     self.dest_type = None
-    
+
   def _onButtonPress(self, nb, event):
     '''
     Callback for button presses, used for tab context menus.
-    
+
     @param nb: Notebook that emitted signal.
     @type nb: gtk.Notebook
     @param event: Event object.
@@ -94,7 +96,7 @@ class PluginView(gtk.Notebook):
   def _onKeyPress(self, nb, event):
     '''
     Callback for key presses, used for tab context menus.
-    
+
     @param nb: Notebook that emitted signal.
     @type nb: gtk.Notebook
     @param event: Event object.
@@ -110,12 +112,12 @@ class PluginView(gtk.Notebook):
   def _getClickedPlugin(self, event_x, event_y):
     '''
     Determines which plugin's tab was clicked with given coordinates.
-    
+
     @param event_x: X coordnate of click.
     @type event_x: integer
     @param event_y: Y coordnate of click.
     @type event_y: integer
-    
+
     @return: Tab's plugin or None if nothing found.
     @rtype: L{Plugin}
     '''
@@ -134,10 +136,10 @@ class PluginView(gtk.Notebook):
   def getTabAlloc(self, widget):
     '''
     Get the screen allocation of the given tab.
-    
+
     @param widget: The tab widget.
     @type widget: gtk.Widget
-    
+
     @return: X, Y, width any height coordinates.
     @rtype: tuple
     '''
@@ -156,7 +158,7 @@ class PluginView(gtk.Notebook):
   def _onDragDataGet(self, widget, context, selection_data, info, time):
     '''
     Data transfer function for drag and drop.
-    
+
     @param widget: Widget that recieved the signal.
     @type widget: gtk.Widget
     @param context: Drag context for this operation
@@ -174,7 +176,7 @@ class PluginView(gtk.Notebook):
   def _onDragEnd(self, widget, drag_context):
     '''
     Callback for completed drag operation.
-    
+
     @param widget: Widget that recieved the signal.
     @type widget: gtk.Widget
     @param drag_context: Drag context for this operation
@@ -189,7 +191,7 @@ class PluginView(gtk.Notebook):
   def getPlugins(self):
     '''
     Return list of plugins in given view. Filter out tabs that are not plugins.
-    
+
     @return: Plugins in given view.
     @rtype: List of {Plugin}
     '''
@@ -199,7 +201,7 @@ class PluginView(gtk.Notebook):
     '''
     Override gtk.Notebook's method. Use the plugin's name or widget's name
     as default tab label. Keep message tab as first tab.
-    
+
     @param child: Child widget to insert.
     @type child: gtk.Widget
     @param tab_label: Label to use. Plugin name will be used by default.
@@ -224,7 +226,7 @@ class PluginView(gtk.Notebook):
     '''
     Override gtk.Notebook's method. Use the plugin's name or widget's name
     as default tab label. Keep message tab as first tab.
-    
+
     @param child: Child widget to insert.
     @type child: gtk.Widget
     @param tab_label: Label to use. Plugin name will be used by default.
@@ -236,7 +238,7 @@ class PluginView(gtk.Notebook):
     '''
     Override gtk.Notebook's method. Use the plugin's name or widget's name
     as default tab label. Keep message tab as first tab.
-    
+
     @param child: Child widget to insert.
     @type child: gtk.Widget
     @param tab_label: Label to use. Plugin name will be used by default.
@@ -247,7 +249,7 @@ class PluginView(gtk.Notebook):
   def focusTab(self, tab_num):
     '''
     Set focus on given tab number.
-    
+
     @param tab_num: Index within visible tabs.
     @type tab_num: integer
     '''
@@ -263,7 +265,7 @@ class PluginView(gtk.Notebook):
   def getNVisiblePages(self):
     '''
     Get number of visible children.
-    
+
     @return: Number of visible children.
     @rtype: integer
     '''
@@ -280,7 +282,7 @@ class PluginViewWindow(gtk.Window, ToolsAccessor):
   def __init__(self, view_name):
     '''
     Initialize a new plugin view window.
-    
+
     @param view_name: The name of the view.
     @type view_name: string
     '''
@@ -304,7 +306,7 @@ class PluginViewWindow(gtk.Window, ToolsAccessor):
     '''
     Callback for window resizing. Used for persisting view sizes across
     sessions.
-    
+
     @param widget: Window widget.
     @type widget: gtk.Widget
     @param allocation: The new allocation.
@@ -320,7 +322,7 @@ class PluginViewWindow(gtk.Window, ToolsAccessor):
     '''
     Callback for removed tabs. If there are no plugins in a stand alone view,
     destroy it.
-    
+
     @param pluginview: Plugin view that emitted signal.
     @type pluginview: L{PluginView}
     @param page: Child that has been removed.
@@ -334,7 +336,7 @@ class PluginViewWindow(gtk.Window, ToolsAccessor):
   def _onKeyPress(self, widget, event):
     '''
     Callback for keypresses in window. Enables alt-<num> tab switching.
-    
+
     @param widget: Window widget.
     @type widget: gtk.Widget
     @param event: Event object
@@ -353,51 +355,54 @@ class ViewManager(object):
   '''
   Manage plugins and their views.
   '''
-  def __init__(self, *perm_views):
+  def __init__(self, application, *perm_views):
     '''
     Initialize view manager.
-    
+
+    @param application: The application.
+    @type application: gtk.Application.
     @param perm_views: List of permanent views, at least one is required.
     @type perm_views: list of {PluginView}
     '''
+    self.application = application
     self._perm_views = perm_views
     gsettings = GSettings.new(PLUGVIEWS_GSCHEMA)
     single = gsettings.get_boolean('layout-single')
     self._initViewModel(single)
     self._setupActions()
-    
+
   def _setupActions(self):
     '''
     Sets up actions related to plugin layout.
     '''
     single = isinstance(self._view_model, SingleViewModel)
-    layout_action_group = gtk.ActionGroup.new('PluginActions')
-    ui_manager.uimanager.insert_action_group(layout_action_group, 0)
-    layout_action_group.add_toggle_actions(
-      [('SingleViewMode', None, _('_Single plugins view'), '<Control>t',
-        None, self._onSingleViewToggled, single)])
+    menu, name, label, accel, callback = (menus.view_menu_general_section, 'single_view_mode', \
+                                         _('_Single plugins view'), '<Control>t', self._onSingleViewToggled)
+    action_name = 'app.' + name
+    menu_item = gio.MenuItem.new(label, action_name)
+    menu.append_item(menu_item)
+    action = gio.SimpleAction.new_stateful(name, None, glib.Variant.new_boolean(single))
+    action.connect('change-state', callback)
+    self.application.set_accels_for_action(action_name, [accel])
+    self.application.add_action(action)
 
-    for action in layout_action_group.list_actions():
-      merge_id = ui_manager.uimanager.new_merge_id()
-      action_name = action.get_name()
-      ui_manager.uimanager.add_ui(merge_id, ui_manager.PLUGIN_LAYOUT_PATH, 
-                                  action_name, action_name, 
-                                  gtk.UIManagerItemType.MENUITEM, True)
+    self.setSingleMode(action.get_property('state').get_boolean())
 
 
-  def _onSingleViewToggled(self, action, data=None):
+  def _onSingleViewToggled(self, action, value, data=None):
     '''
     Callback for single view toggle action.
-    
+
     @param action: Action object that emitted callback.
-    @type action: gtk.ToggleAction
+    @type action: gio.SimpleAction
     '''
-    self.setSingleMode(action.get_active())
+    action.set_state(value)
+    self.setSingleMode(value.get_boolean())
 
   def setSingleMode(self, single):
     '''
     Toggle single mode on or off.
-    
+
     @param single: True if we want single mode.
     @type single: boolean
     '''
@@ -414,11 +419,11 @@ class ViewManager(object):
     self._initViewModel(single)
     for plugin in plugins:
       self._view_model.addElement(plugin)
-  
+
   def _initViewModel(self, single):
     '''
     Initialize a view model, either multi view or single view.
-    
+
     @param single: True if we want single mode.
     @type single: boolean
     '''
@@ -429,7 +434,7 @@ class ViewManager(object):
 
   def addElement(self, element):
     '''
-    Add an element to a plugin view. 
+    Add an element to a plugin view.
 
     @param element: The element to be added to a view.
     @type element: gtk.Widget
@@ -451,7 +456,7 @@ class ViewManager(object):
   def giveElementFocus(self, element):
     '''
     Give focus to given element (ie. a plugin)
-    
+
     @param element: The element to give focus to.
     @type element: gtk.Widget
     '''
@@ -459,8 +464,8 @@ class ViewManager(object):
 
   def changeView(self, plugin, new_view_name):
     '''
-    Put a plugin instance in a different view. 
-    
+    Put a plugin instance in a different view.
+
     @param plugin: Plugin to move.
     @type plugin: L{Plugin}
     @param new_view_name: New view name.
@@ -471,10 +476,10 @@ class ViewManager(object):
   def getViewNameForPlugin(self, plugin_name):
     '''
     Get the view name for a given plugin name.
-    
+
     @param plugin_name: Plugin's name to lookup view for.
     @type plugin_name: string
-    
+
     @return: View name for plugin.
     @rtype: string
     '''
@@ -483,13 +488,13 @@ class ViewManager(object):
   def Menu(self, context_plugin, transient_window):
     '''
     Return a context menu for the given plugin with view manipulation options.
-    
+
     @param context_plugin: Subject plugin of this menu.
     @type context_plugin: L{Plugin}
     @param transient_window: Transient parent window. Used for keeping the
     new view dialog modal.
     @type transient_window: gtk.Window
-    
+
     @return: A Menu widget
     @rtype: gtk.Menu
     '''
@@ -507,7 +512,7 @@ class BaseViewModel(ToolsAccessor):
   def __init__(self, *perm_views):
     '''
     Initialize view model.
-    
+
     @param perm_views: List of permanent views, at least one is required.
     @type perm_views: list of {PluginView}
     '''
@@ -519,10 +524,10 @@ class BaseViewModel(ToolsAccessor):
   def addElement(self, element):
     '''
     Add an element to a plugin view. If the element is a message tab, put it as
-    the first tab in the main view. If the element is a plugin, check if it's 
+    the first tab in the main view. If the element is a plugin, check if it's
     placement is cached in this instance or read it's position from gsettings.
     By default a plugin is appended to the main view.
-    
+
     @param element: The element to be added to a view.
     @type element: gtk.Widget
     '''
@@ -537,10 +542,10 @@ class BaseViewModel(ToolsAccessor):
 
   def addPlugin(self, plugin):
     '''
-    Add a plugin to the view. Check if it's placement is cached in this 
-    instance or read it's position from gsettings. By default a plugin is 
+    Add a plugin to the view. Check if it's placement is cached in this
+    instance or read it's position from gsettings. By default a plugin is
     appended to the main view.
-    
+
     @param plugin: Plugin to add.
     @type plugin: L{Plugin}
     '''
@@ -561,7 +566,7 @@ class BaseViewModel(ToolsAccessor):
   def giveElementFocus(self, element):
     '''
     Give focus to given element (ie. a plugin)
-    
+
     @param element: The element to give focus to.
     @type element: gtk.Widget
     '''
@@ -575,7 +580,7 @@ class BaseViewModel(ToolsAccessor):
   def _onMessageTabShow(self, message_tab):
     '''
     Callback for when a message tab appears. Give it focus.
-    
+
     @param message_tab: Message tab that just appeared.
     @type message_tab: L{MessageManager.MessageTab}
     '''
@@ -583,8 +588,8 @@ class BaseViewModel(ToolsAccessor):
 
   def changeView(self, plugin, new_view_name):
     '''
-    Put a plugin instance in a different view. 
-    
+    Put a plugin instance in a different view.
+
     @param plugin: Plugin to move.
     @type plugin: L{Plugin}
     @param new_view_name: New view name.
@@ -595,10 +600,10 @@ class BaseViewModel(ToolsAccessor):
   def getViewNameForPlugin(self, plugin_name):
     '''
     Get the view name for a given plugin name.
-    
+
     @param plugin_name: Plugin's name to lookup view for.
     @type plugin_name: string
-    
+
     @return: View name for plugin.
     @rtype: string
     '''
@@ -613,13 +618,13 @@ class BaseViewModel(ToolsAccessor):
   def Menu(self, context_plugin, transient_window):
     '''
     Return a context menu for the given plugin with view manipulation options.
-    
+
     @param context_plugin: Subject plugin of this menu.
     @type context_plugin: L{Plugin}
     @param transient_window: Transient parent window. Used for keeping the
     new view dialog modal.
     @type transient_window: gtk.Window
-    
+
     @return: A Menu widget
     @rtype: gtk.Menu
     '''
@@ -629,7 +634,7 @@ class SingleViewModel(BaseViewModel):
   def addPlugin(self, plugin):
     '''
     Add a given plugin to our single view in alphabetical order.
-    
+
     @param plugin: Plugin to add
     @type plugin: L{Plugin}
     '''
@@ -650,7 +655,7 @@ class SingleViewModel(BaseViewModel):
   def getViewedPlugins(self):
     '''
     Get all managed plugins.
-    
+
     @return: list of all managed plugins.
     @rtype: list of PLugin
     '''
@@ -674,7 +679,7 @@ class MultiViewModel(list, BaseViewModel):
   should be ignored and not go in to gsettings. This is to avoid recursive
   gsettings modification.
   @type _ignore_insertion: list of tuples
-  @ivar _placement_cache: A cache of recently disabled plugins with their 
+  @ivar _placement_cache: A cache of recently disabled plugins with their
   placement. allowsthem to be enabled in to the same position.
   @type _placement_cache: dictionary
   @ivar _closed: Indicator to stop writing plugin remove events to gsettings.
@@ -685,7 +690,7 @@ class MultiViewModel(list, BaseViewModel):
   def __init__(self, *perm_views):
     '''
     Initialize view manager.
-    
+
     @param perm_views: List of permanent views, at least one is required.
     @type perm_views: list of {PluginView}
     '''
@@ -705,12 +710,12 @@ class MultiViewModel(list, BaseViewModel):
 
   def getViewNameForPlugin(self, plugin_name):
     '''
-    Get the view name for a given plugin name as defined in gsettings. 
+    Get the view name for a given plugin name as defined in gsettings.
     Or return name of main view.
-    
+
     @param plugin_name: Plugin's name to lookup view for.
     @type plugin_name: string
-    
+
     @return: View name for plugin.
     @rtype: string
     '''
@@ -723,10 +728,10 @@ class MultiViewModel(list, BaseViewModel):
   def _getViewByName(self, view_name):
     '''
     Return the view instance of the given name.
-    
+
     @param view_name: Name of view to retrieve.
     @type view_name: string
-    
+
     @return: View instance or None
     @rtype: L{PluginView}
     '''
@@ -737,9 +742,9 @@ class MultiViewModel(list, BaseViewModel):
 
   def _onPluginDragEnd(self, view, plugin):
     '''
-    Callback for the end of a drag operation of a plugin. Only is called 
+    Callback for the end of a drag operation of a plugin. Only is called
     when the drag ends on the root window.
-    
+
     @param view: Current plugin's view.
     @type view: L{PluginView}
     @param plugin: Plugin that was dragged.
@@ -754,11 +759,11 @@ class MultiViewModel(list, BaseViewModel):
   def _newView(self, view_name=None):
     '''
     Creates a new view.
-    
+
     @param view_name: An optional view name. Gives a more mundane one if no
     name is provided.
     @type view_name: string
-    
+
     @return: New view
     @rtype: L{PluginView}
     '''
@@ -777,10 +782,10 @@ class MultiViewModel(list, BaseViewModel):
   def _getViewOrNewView(self, view_name):
     '''
     Get an existing or new view with the current name.
-    
+
     @param view_name: View's name
     @type view_name: string
-    
+
     @return: New or existing view.
     @rtype: L{PluginView}
     '''
@@ -791,7 +796,7 @@ class MultiViewModel(list, BaseViewModel):
     '''
     Callback for a view window's delete event. Puts all orphaned plugins
     in main view.
-    
+
     @param view_window: View window that emitted delete event.
     @type view_window: L{PluginViewWindow}
     @param event: Event object.
@@ -806,7 +811,7 @@ class MultiViewModel(list, BaseViewModel):
   def _removeView(self, view):
     '''
     Removes view from model.
-    
+
     @param view: View to remove.
     @type view: L{PluginView}
     '''
@@ -815,11 +820,11 @@ class MultiViewModel(list, BaseViewModel):
     if view in self:
       self.remove(view)
 
-  def _onTabPopupMenu(self, view, event, plugin): 	 
+  def _onTabPopupMenu(self, view, event, plugin):
     '''
     Callback for popup menu signal from plugin view. Displays a context menu
     with available views.
-    
+
     @param view: Plugin view that emitted this signal.
     @type view: L{PluginView}
     @param event: Relevant event object that will be used in popup menu.
@@ -834,14 +839,14 @@ class MultiViewModel(list, BaseViewModel):
       tab = view.get_tab_label(plugin)
       x, y, w, h = view.getTabAlloc(tab)
       rect = gdk.Rectangle(x, y, w, h)
-      menu.popup(None, None, 
-                 lambda m, r: (r.x+r.width/2, r.y+r.height/2, True), 
+      menu.popup(None, None,
+                 lambda m, r: (r.x+r.width/2, r.y+r.height/2, True),
                  rect, 0, event.time)
-  
+
   def _connectSignals(self, view):
     '''
     Convenience function for connecting all needed signal callbacks.
-    
+
     @param view: Plugin view to connect.
     @type view: :{PluginView}
     '''
@@ -856,7 +861,7 @@ class MultiViewModel(list, BaseViewModel):
   def _onViewLayoutChanged(self, view, plugin, page_num, action):
     '''
     Callback for all layout changes. Updates gsettings.
-    
+
     @param view: View that emitted the signal.
     @type view: L{PluginView}
     @param plugin: Plugin that moved.
@@ -864,8 +869,8 @@ class MultiViewModel(list, BaseViewModel):
     @param page_num: Plugin's position in view.
     @type page_num: integer
     @param action: Action that triggered this event.
-    @type action: string    
-    ''' 
+    @type action: string
+    '''
     if self._closed or not isinstance(plugin, Plugin): return
     if (view.view_name, plugin.plugin_name) in self._ignore_insertion:
       self._ignore_insertion.remove((view.view_name, plugin.plugin_name))
@@ -924,10 +929,10 @@ class MultiViewModel(list, BaseViewModel):
 
   def addPlugin(self, plugin):
     '''
-    Add a plugin to the view. Check if it's placement is cached in this 
-    instance or read it's position from gsettings. By default a plugin is 
+    Add a plugin to the view. Check if it's placement is cached in this
+    instance or read it's position from gsettings. By default a plugin is
     appended to the main view.
-    
+
     @param plugin: Plugin to add.
     @type plugin: L{Plugin}
     '''
@@ -976,11 +981,11 @@ class MultiViewModel(list, BaseViewModel):
     for view in self:
       rv.extend(view.getPlugins())
     return rv
-  
+
   def _getViewNames(self):
     '''
     Get a list of all managed view names.
-    
+
     @return: A list of view names.
     @rtype: list of string
     '''
@@ -988,9 +993,9 @@ class MultiViewModel(list, BaseViewModel):
 
   def changeView(self, plugin, new_view_name):
     '''
-    Put a plugin instance in a different view. If given view name does not 
+    Put a plugin instance in a different view. If given view name does not
     exist, create it.
-    
+
     @param plugin: Plugin to move.
     @type plugin: L{Plugin}
     @param new_view_name: New view name.
@@ -1009,13 +1014,13 @@ class MultiViewModel(list, BaseViewModel):
     '''
     Helps emulate a non-static inner class. These don't exist in python,
     I think.
-    
+
     @param context_plugin: Subject plugin of this menu.
     @type context_plugin: L{Plugin}
     @param transient_window: Transient parent window. Used for keeping the
     new view dialog modal.
     @type transient_window: gtk.Window
-    
+
     @return: An inner menu class.
     @rtype: L{ViewManager._Menu}
     '''
@@ -1036,7 +1041,7 @@ class MultiViewModel(list, BaseViewModel):
     def __init__(self, view_manager, context_plugin, transient_window):
       '''
       Initialize menu.
-      
+
       @param view_manager: View manager to use as data model and controller.
       @type view_manager: L{ViewManager}
       @param context_plugin: Subject plugin of this menu.
@@ -1053,7 +1058,7 @@ class MultiViewModel(list, BaseViewModel):
     def _buildMenu(self, context_plugin, transient_window):
       '''
       Build the menu according to the view managers model.
-      
+
       @param context_plugin: Subject plugin of this menu.
       @type context_plugin: L{Plugin}
       @param transient_window: Transient parent window. Used for keeping the
@@ -1073,7 +1078,7 @@ class MultiViewModel(list, BaseViewModel):
       menu_item.show()
       menu_item = gtk.MenuItem(label="<i>" + _('_New view…') + "</i>")
       menu_item.get_child().set_use_markup(True)
-      menu_item.connect('activate', self._onItemActivated, 
+      menu_item.connect('activate', self._onItemActivated,
                         context_plugin, transient_window)
       self.append(menu_item)
       menu_item.show()
@@ -1081,7 +1086,7 @@ class MultiViewModel(list, BaseViewModel):
     def _onItemToggled(self, menu_item, view, context_plugin):
       '''
       Callback for radio item toggles. Change the views accordingly.
-      
+
       @param menu_item: Menu item that was toggled
       @type menu_item: gtk.RadioMenuItem
       @param view: View that was chosen.
@@ -1093,9 +1098,9 @@ class MultiViewModel(list, BaseViewModel):
 
     def _onItemActivated(self, menu_item, context_plugin, transient_window):
       '''
-      Callback for "new view" menu item. Creates a dialog for 
+      Callback for "new view" menu item. Creates a dialog for
       entering a view name.
-      
+
       @param menu_item: Menu item that was activated.
       @type menu_item: gtk.MenuItem
       @param context_plugin: Subject plugin of this menu.
@@ -1118,8 +1123,8 @@ class MultiViewModel(list, BaseViewModel):
       '''
       def __init__(self, view_manager, transient_window):
         '''
-        
-        
+
+
         @param view_manager: View manager to use as data model and controller.
         @type view_manager: L{ViewManager}
         @param transient_window: Transient parent window. Used for keeping the
@@ -1147,7 +1152,7 @@ class MultiViewModel(list, BaseViewModel):
       def getEntryText(self):
         '''
         Get the contents of the entry widget.
-        
+
         @return: Text in entry box.
         @rtype: string
         '''
@@ -1156,7 +1161,7 @@ class MultiViewModel(list, BaseViewModel):
       def _onEntryActivate(self, entry):
         '''
         Callback for activation of the entry box. Return an OK response.
-        
+
         @param entry: Entry box that was activated.
         @type entry: gtk.Entry
         '''

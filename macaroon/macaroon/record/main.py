@@ -44,7 +44,7 @@ class Main:
     self.ui_manager = self._newUIManager()
     self.script_buffer = ScriptBuffer(self.ui_manager)
     self.script_buffer.clearBuffer()
-    self.script_buffer.connect('notify::recording', 
+    self.script_buffer.connect('notify::recording',
                                self._onRecordChange, status_icon)
     self.macro_preview = None
     # Get program ID
@@ -101,7 +101,7 @@ class Main:
     menu = self.ui_manager.get_widget('/popup')
     menu.popup(None, None, Gtk.StatusIcon.position_menu,
                status_icon, button, activate_time)
- 
+
   def _onQuit(self, action):
     pyatspi.Registry.stop()
 
@@ -146,7 +146,7 @@ class MacroPreview(Gtk.Window):
       button.connect('clicked', callback)
       bbox.pack_start(button, True, True, 0)
       if label == Gtk.STOCK_MEDIA_RECORD:
-        self.script_buffer.connect('notify::recording', 
+        self.script_buffer.connect('notify::recording',
                                    self._onRecordChange, button)
     vbox.pack_start(bbox, False, False, 0)
     self.progress_bar = Gtk.ProgressBar()
@@ -195,7 +195,7 @@ class MacroPreview(Gtk.Window):
     '''
     Callback for 'save' button. Raises file chooser dialog for saving
     contents of script buffer.
-    
+
     @param button: Button that was clicked.
     @type button: Gtk.Button
     '''
@@ -220,7 +220,7 @@ class MacroPreview(Gtk.Window):
   def _onClear(self, button):
     '''
     Callback for 'clear' button press.
-    
+
     @param button: Button that was clicked.
     @type button: Gtk.Button
     '''
@@ -238,7 +238,7 @@ class MacroPreview(Gtk.Window):
     '''
     Raises a dialog that asks the user to confirm the loss of the current
     script in the buffer.
-    
+
     @return: True if user confirms.
     @rtype: boolean
     '''
@@ -257,8 +257,8 @@ class MacroPreview(Gtk.Window):
 
 class ScriptBuffer(GtkSource.Buffer):
   __gproperties__ = {
-    'recording': (GObject.TYPE_BOOLEAN, 
-                  'Is recording', 
+    'recording': (GObject.TYPE_BOOLEAN,
+                  'Is recording',
                   'True if script buffer is recording',
                   False, GObject.PARAM_READWRITE)}
   factory_mapping = {'Level1' : script_factory.Level1SequenceFactory,
@@ -280,7 +280,7 @@ class ScriptBuffer(GtkSource.Buffer):
         (('Level1', None, 'Level 1', None, None, 1),
          ('Level2', None, 'Level 2', None, None, 2)),
         2, self._onChange)
-    self._wait_for_focus_toggle = Gtk.ToggleAction('WaitForFocus', 
+    self._wait_for_focus_toggle = Gtk.ToggleAction('WaitForFocus',
                                                    'Record focus events',
                                                    None, None)
     self._wait_for_focus_toggle.set_active(True)
@@ -301,11 +301,11 @@ class ScriptBuffer(GtkSource.Buffer):
     self._uimanager.insert_action_group(self.script_type_actions, 0)
 
   def startRecord(self):
-    pyatspi.Registry.registerEventListener(self._onWindowActivate, 
+    pyatspi.Registry.registerEventListener(self._onWindowActivate,
                                            'window:activate')
-    pyatspi.Registry.registerEventListener(self._onFocus, 
+    pyatspi.Registry.registerEventListener(self._onFocus,
                                            'focus')
-    pyatspi.Registry.registerEventListener(self._onDocLoad, 
+    pyatspi.Registry.registerEventListener(self._onDocLoad,
                                            'document:load-complete')
     pyatspi.Registry.registerKeystrokeListener(
       self._onKeystroke,
@@ -316,9 +316,9 @@ class ScriptBuffer(GtkSource.Buffer):
   def stopRecord(self):
     pyatspi.Registry.deregisterEventListener(self._onWindowActivate,
                                              'window:activate')
-    pyatspi.Registry.deregisterEventListener(self._onFocus, 
+    pyatspi.Registry.deregisterEventListener(self._onFocus,
                                              'focus')
-    pyatspi.Registry.deregisterEventListener(self._onDocLoad, 
+    pyatspi.Registry.deregisterEventListener(self._onDocLoad,
                                              'document:load-complete')
     pyatspi.Registry.deregisterKeystrokeListener(
       self._onKeystroke,
@@ -342,7 +342,7 @@ class ScriptBuffer(GtkSource.Buffer):
     '''
     Callback for window focus events. Calls the script factory and flushes
     it's queue.
-    
+
     @param event: Focus at-spi event.
     @type event: Accessibility.Event
     '''
@@ -354,7 +354,7 @@ class ScriptBuffer(GtkSource.Buffer):
     '''
     Callback for focus events. Calls the script factory and flushes
     it's queue.
-    
+
     @param event: Focus at-spi event.
     @type event: Accessibility.Event
     '''
@@ -383,7 +383,7 @@ class ScriptBuffer(GtkSource.Buffer):
     if triggering_hotkey is not None:
       fake_event = _FakeDeviceEvent(triggering_hotkey, pyatspi.KEY_RELEASED_EVENT)
       self._onKeystroke(fake_event)
-        
+
     while self.script_factory.commands_queue.qsize():
       self._appendText(self.script_factory.commands_queue.get_nowait())
 
@@ -391,7 +391,7 @@ class ScriptBuffer(GtkSource.Buffer):
     '''
     Callback for key press events. Calls the script factory and flushes
     it's queue.
-    
+
     @param event: Key press at-spi event.
     @type event: Accessibility.DeviceEvent
     '''
@@ -427,10 +427,10 @@ class ScriptBuffer(GtkSource.Buffer):
       return self._recording
 
   def _onChange(self, action, current):
-    factory = self.factory_mapping.get(current.get_name(), 
+    factory = self.factory_mapping.get(current.get_name(),
                                        script_factory.Level1SequenceFactory)
     self.script_factory = factory(self._wait_for_focus_toggle.get_active())
-   
+
   def _onWaitForFocusToggled(self, action):
     factory = self.script_factory.__class__
     self.script_factory = factory(self._wait_for_focus_toggle.get_active())

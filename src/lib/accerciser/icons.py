@@ -7,8 +7,8 @@ Defines a mapping from widget roles to icons representing them.
 @copyright: Copyright (c) 2006, 2007 IBM Corporation
 @license: BSD
 
-All rights reserved. This program and the accompanying materials are made 
-available under the terms of the BSD which accompanies this distribution, and 
+All rights reserved. This program and the accompanying materials are made
+available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
@@ -23,7 +23,7 @@ import sys, os, glob
 
 from pyatspi.constants import *
 
-ICONS_PATH = os.path.join(sys.prefix, 'share', 
+ICONS_PATH = os.path.join(sys.prefix, 'share',
                           'accerciser', 'pixmaps', 'hicolor', '22x22')
 
 if not os.path.exists(ICONS_PATH):
@@ -32,7 +32,7 @@ if not os.path.exists(ICONS_PATH):
 def getIcon(acc):
   '''
   Loads an icon for the given application or accessible widget. Tries to use
-  the current theme or wnck to get application icons. Uses icons from 
+  the current theme or wnck to get application icons. Uses icons from
   at-poke for widgets.
   '''
   theme = gtk.IconTheme.get_default()

@@ -7,7 +7,7 @@ Actions used for waiting for something or for a certain time.
 
 This file may be distributed and/or modified under the terms of the GNU General
 Public License version 2 as published by the Free Software Foundation. This file
-is distributed without any warranty; without even the implied warranty of 
+is distributed without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
 
 See "COPYING" in the source distribution for more information.
@@ -44,7 +44,7 @@ class WaitAction(SequenceStep):
   def __init__(self, event, acc_name, acc_path, acc_role, timeout):
     '''
     Initialize a L{WaitAction}
-    
+
     @param event: Event to wait for
     @type event: string
     @param acc_name: Name of source accessible of events we are waiting for.
@@ -69,8 +69,8 @@ class WaitAction(SequenceStep):
   def __call__(self, cached_events):
     '''
     Called when an insance is "called".
-    
-    @param cached_events: List of events that have been cached since the 
+
+    @param cached_events: List of events that have been cached since the
     last sequence step.
     @type cached_events: list of Accessibility.Event
     '''
@@ -84,7 +84,7 @@ class WaitAction(SequenceStep):
     '''
     Check to see if perhaps the event we are waiting for has already been fired
     before this instance has been created.
-    
+
     @return: True if the event has already occured.
     @rtype: boolean
     '''
@@ -105,7 +105,7 @@ class WaitAction(SequenceStep):
   def onEvent(self, event):
     '''
     Event callback.
-    
+
     @param event: Event that has triggered this callback.
     @type event: Accessibility.Event
     '''
@@ -128,7 +128,7 @@ class WaitAction(SequenceStep):
   def __str__(self):
     '''
     String representation of instance.
-    
+
     @return: String representation of instance.
     @rtype: string
     '''
@@ -140,28 +140,28 @@ class WaitForWindowActivate(WaitAction):
 
   @todo: Eitan: Provide the ability to match regular expressions since frame
   titles are highly dynamic.
-  
+
   @ivar _frame_re: Window name to match.
   @type _frame_re: string
-  @ivar _application_re: Application name to match, or None if no 
+  @ivar _application_re: Application name to match, or None if no
   matching needs to be performed.
   @type _application_re: string
   '''
   def __init__(self, frame_re, application_re=None, timeout=30000):
     '''
     Initialize L{WaitForWindowActivate}.
-    
+
     @param frame_re: Window name to match.
     @type frame_re: string
-    @param application_re: Application name to match, or None if no 
+    @param application_re: Application name to match, or None if no
     matching needs to be performed.
     @type application_re: string
     @param timeout: Time to wait in milliseconds before timing out.
     @type timeout: integer
     '''
-    WaitAction.__init__(self, 
-                        ['window:activate', 
-                         'object:property-change:accessible-name'], 
+    WaitAction.__init__(self,
+                        ['window:activate',
+                         'object:property-change:accessible-name'],
                         None, None, None, timeout)
     self._frame_re = frame_re
     self._application_re = application_re
@@ -169,7 +169,7 @@ class WaitForWindowActivate(WaitAction):
   def checkExistingState(self):
     '''
     Check if the window we are waiting for is already activated.
-    
+
     @return: True if window is already activated.
     @rtype: boolean
     '''
@@ -180,7 +180,7 @@ class WaitForWindowActivate(WaitAction):
 
   def onEvent(self, event):
     '''
-    Event callback. Check if this is the fame we are looking for and 
+    Event callback. Check if this is the fame we are looking for and
     move to the next step.
     '''
     if event.type == 'window:activate' or \
@@ -188,15 +188,15 @@ class WaitForWindowActivate(WaitAction):
              event.source == self._active_frame):
       self._active_frame = event.source
       if self.isRightFrame(self._active_frame):
-        self.stepDone()      
+        self.stepDone()
 
   def isRightFrame(self, acc):
     '''
     Check if this is the frame we are waiting for.
-    
+
     @param acc: Frame accessible.
     @type acc: Accessibility.Accessible
-    
+
     @return: True if this is the right frame.
     @rtype: boolean
     '''
@@ -207,7 +207,7 @@ class WaitForWindowActivate(WaitAction):
   def __str__(self):
     '''
     String representation of instance.
-    
+
     @return: String representation of instance.
     @rtype: string
     '''
@@ -217,11 +217,11 @@ class WaitForFocus(WaitAction):
   '''
   Wait for a focus event.
   '''
-  def __init__(self, acc_name=None, 
+  def __init__(self, acc_name=None,
                acc_path=None, acc_role=None, timeout=10000):
     '''
     Initialize a L{WaitForFocus}
-    
+
     @param acc_name: Name of source accessible of events we are waiting for.
     @type acc_name: string
     @param acc_path: Tree path in application to source accessible.
@@ -236,13 +236,13 @@ class WaitForFocus(WaitAction):
   def __str__(self):
     '''
     String representation of instance.
-    
+
     @return: String representation of instance.
     @rtype: string
     '''
     if self._acc_name and self._acc_role:
       identifier = '%s called "%s"' % \
-          (repr(self._acc_role).replace('ROLE_','').lower().replace('_',' '), 
+          (repr(self._acc_role).replace('ROLE_','').lower().replace('_',' '),
            self._acc_name)
     elif self._acc_name:
       identifier = self._acc_name
@@ -263,12 +263,12 @@ class WaitForDocLoad(WaitAction):
     '''
     Initialize L{WaitForDocLoad}
     '''
-    WaitAction.__init__(self, 'document:load-complete', 
+    WaitAction.__init__(self, 'document:load-complete',
                         None, None, None, 30000)
   def __str__(self):
     '''
     String representation of instance.
-    
+
     @return: String representation of instance.
     @rtype: string
     '''
