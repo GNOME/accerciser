@@ -1133,8 +1133,10 @@ class MultiViewModel(list, BaseViewModel):
         '''
         self.view_manager = view_manager
         gtk.Dialog.__init__(self, _('New View…'), transient_window)
-        self.add_buttons(gtk.STOCK_OK, gtk.ResponseType.OK,
-                         gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
+        ok_button = self.add_button(_('_OK'), gtk.ResponseType.OK)
+        ok_button.set_image(gtk.Image.new_from_icon_name("gtk-apply", gtk.IconSize.BUTTON))
+        close_button = self.add_button(_('_Close'), gtk.ResponseType.CLOSE)
+        close_button.set_image(gtk.Image.new_from_icon_name("window-close", gtk.IconSize.BUTTON))
         self.set_default_response(gtk.ResponseType.OK)
         completion = gtk.EntryCompletion()
         complete_model = gtk.ListStore(str)
