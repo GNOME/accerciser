@@ -85,7 +85,7 @@ class BookmarkStore(gtk.ListStore):
     if response_id == gtk.ResponseType.OK:
       bookmark.title, bookmark.app, bookmark.path = dialog.getFields()
     else:
-      self.remove(iter)
+      self.removeBookmark(bookmark)
     dialog.destroy()
 
   def _onEditBookmarks(self, action, data=None):
