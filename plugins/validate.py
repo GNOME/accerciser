@@ -309,16 +309,15 @@ class ValidatorViewport(ViewportPlugin):
 
     @param button: Save button
     '''
-    save_dialog = gtk.FileChooserDialog(
-      'Save validator output',
-      action=gtk.FileChooserAction.SAVE,
-      buttons=(gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL,
-               gtk.STOCK_OK, gtk.ResponseType.OK))
-    #save_dialog.connect("response", self._savedDiagResponse)
+    save_dialog = gtk.FileChooserNative.new(
+      _('Save validator output'),
+      self.get_toplevel(),
+      gtk.FileChooserAction.SAVE,
+      _('_OK'),
+      _('_Cancel'))
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.set_default_response(gtk.ResponseType.OK)
     response = save_dialog.run()
-    if response == gtk.ResponseType.OK:
+    if response == gtk.ResponseType.ACCEPT:
       self.save_to = open(save_dialog.get_filename(), 'w')
       GLib.idle_add(self._writeFile)
     save_dialog.destroy()
