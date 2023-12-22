@@ -36,7 +36,8 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     @type hotkeys_view: L{HotkeyTreeView}
     '''
     gtk.Dialog.__init__(self, title=_('accerciser Preferences'))
-    self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
+    close_button = self.add_button(_('_Close'), gtk.ResponseType.CLOSE)
+    close_button.set_image(gtk.Image.new_from_icon_name('window-close', gtk.IconSize.BUTTON))
     self.connect('response', self._onResponse)
     self.set_default_size(500, 250)
     notebook = gtk.Notebook()
