@@ -303,7 +303,8 @@ class BookmarkStore(gtk.ListStore):
       @type bookmarks_store: L{BookmarkStore}
       '''
       gtk.Dialog.__init__(self, name=_('Edit Bookmarks…'))
-      self.add_buttons(gtk.STOCK_CLOSE, gtk.ResponseType.CLOSE)
+      close_button = self.add_button(_("_Close"), gtk.ResponseType.CLOSE)
+      close_button.set_image(gtk.Image.new_from_icon_name("window-close", gtk.IconSize.BUTTON))
       self.set_default_size(480, 240)
       self.connect('response', self._onResponse)
       vbox = self.get_children()[0]
@@ -317,14 +318,14 @@ class BookmarkStore(gtk.ListStore):
       hbox.pack_start(sw, True, True, 0)
       button_vbox = gtk.Box(orientation=gtk.Orientation.VERTICAL)
       hbox.pack_start(button_vbox, False, False, 0)
-      add_button = gtk.Button.new_from_stock('gtk-add')
-      add_button.set_use_stock(True)
+      add_button = gtk.Button.new_with_mnemonic(_('_Add'))
+      add_button.set_image(gtk.Image.new_from_icon_name("list-add", gtk.IconSize.BUTTON))
       add_button.connect('clicked', self._onAddClicked, tv)
-      remove_button = gtk.Button.new_from_stock('gtk-remove')
-      remove_button.set_use_stock(True)
+      remove_button = gtk.Button.new_with_mnemonic(_('_Remove'))
+      remove_button.set_image(gtk.Image.new_from_icon_name("list-remove", gtk.IconSize.BUTTON))
       remove_button.connect('clicked', self._onRemoveClicked, tv)
-      jump_button = gtk.Button.new_from_stock('gtk-jump-to')
-      jump_button.set_use_stock(True)
+      jump_button = gtk.Button.new_with_mnemonic(_('_Jump to'))
+      jump_button.set_image(gtk.Image.new_from_icon_name("go-jump", gtk.IconSize.BUTTON))
       jump_button.connect('clicked', self._onJumpToClicked, tv)
       button_vbox.pack_start(add_button, False, False, 0)
       button_vbox.pack_start(remove_button, False, False, 0)
@@ -494,8 +495,10 @@ class BookmarkStore(gtk.ListStore):
       @type bookmark: L{BookmarkStore._Bookmark}
       '''
       gtk.Dialog.__init__(self, _('Add Bookmark…'))
-      self.add_button(gtk.STOCK_CANCEL, gtk.ResponseType.CANCEL)
-      ok_button = self.add_button(gtk.STOCK_ADD, gtk.ResponseType.OK)
+      cancel_button = self.add_button("_Cancel", gtk.ResponseType.CANCEL)
+      cancel_button.set_image(gtk.Image.new_from_icon_name("gtk-cancel", gtk.IconSize.BUTTON))
+      ok_button = self.add_button("_Add", gtk.ResponseType.OK)
+      ok_button.set_image(gtk.Image.new_from_icon_name("list-add", gtk.IconSize.BUTTON))
       ok_button.set_sensitive(False)
       self.set_default_response(gtk.ResponseType.OK)
       table = gtk.Table.new(3, 2, False)
