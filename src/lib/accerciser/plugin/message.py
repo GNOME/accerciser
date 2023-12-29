@@ -230,21 +230,22 @@ class PluginMessage(gtk.Frame):
     hbox.pack_start(self.vbox, True, True, 3)
     hbox.pack_start(self.action_area, False, False, 3)
 
-  def add_button(self, button_text, response_id):
+  def add_button(self, button_text, icon_name, response_id):
     '''
     Add a button to the action area that emits a response when clicked.
 
-    @param button_text: The button text, or a stock ID.
+    @param button_text: The button text, including mnemonic.
     @type button_text: string
+    @param icon_name: Icon name for icon to set for the button.
+    @type icon_name: string
     @param response_id: The response emitted when the button is pressed.
     @type response_id: integer
 
     @return: Return the created button.
     @rtype: gtk.Button
     '''
-    button = gtk.Button()
-    button.set_use_stock(True)
-    button.set_label(button_text)
+    button = gtk.Button.new_with_mnemonic(button_text)
+    button.set_image(gtk.Image.new_from_icon_name(icon_name, gtk.IconSize.BUTTON))
     button.connect('clicked', self._onActionActivated, response_id)
     self.action_area.pack_start(button, False, False, 0)
     return button
@@ -277,9 +278,8 @@ class PluginErrorMessage(PluginMessage):
     hbox = gtk.Box()
     hbox.set_spacing(6)
     self.vbox.pack_start(hbox, False, False, 0)
-    image = gtk.Image()
-    image.set_from_stock(gtk.STOCK_DIALOG_WARNING,
-                         gtk.IconSize.SMALL_TOOLBAR)
+    image = gtk.Image.new_from_icon_name('dialog-warning',
+                                         gtk.IconSize.SMALL_TOOLBAR)
     hbox.pack_start(image, False, False, 0)
     label = gtk.Label()
     label.set_ellipsize(Pango.EllipsizeMode.END)
@@ -290,8 +290,8 @@ class PluginErrorMessage(PluginMessage):
     label.set_ellipsize(Pango.EllipsizeMode.END)
     label.set_selectable(True)
     self.vbox.add(label)
-    self.add_button(gtk.STOCK_CLEAR, gtk.ResponseType.CLOSE)
-    self.add_button(gtk.STOCK_REFRESH, gtk.ResponseType.APPLY)
+    self.add_button(_('_Clear'), 'edit-clear', gtk.ResponseType.CLOSE)
+    self.add_button(_('_Refresh'), 'view-refresh', gtk.ResponseType.APPLY)
     self.connect('response', self._onResponse)
 
   def _onResponse(self, plugin_message, response_id):

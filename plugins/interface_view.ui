@@ -465,7 +465,7 @@
                                       <object class="GtkImage" id="image1">
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="stock">gtk-jump-to</property>
+                                        <property name="icon-name">go-jump</property>
                                       </object>
                                       <packing>
                                         <property name="expand">True</property>
@@ -629,7 +629,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                                <property name="stock">gtk-execute</property>
+                                <property name="icon-name">gtk-execute</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1312,7 +1312,7 @@
                               <object class="GtkImage" id="image3">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="stock">gtk-jump-to</property>
+                                <property name="icon-name">go-jump</property>
                               </object>
                               <packing>
                                 <property name="expand">True</property>
@@ -1632,12 +1632,43 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button_select_clear">
-                        <property name="label">gtk-clear</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
-                        <property name="use-stock">True</property>
                         <signal name="clicked" handler="_onSelectionClear" swapped="no"/>
+                        <child>
+                          <object class="GtkBox" id="hbox21">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="spacing">2</property>
+                            <child>
+                              <object class="GtkImage" id="image4">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="icon-name">edit-clear</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label61">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="label" translatable="yes">_Clear</property>
+                                <property name="use-underline">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                        </child>
                       </object>
                       <packing>
                         <property name="expand">True</property>
