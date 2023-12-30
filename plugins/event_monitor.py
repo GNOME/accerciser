@@ -474,20 +474,19 @@ class EventMonitor(ViewportPlugin):
     @param button: Button that was clicked.
     @type button: gtk.Button
     '''
-    save_dialog = gtk.FileChooserDialog(
-      'Save monitor output',
-      action=gtk.FileChooserAction.SAVE,
-      buttons=(gtk.ButtonsType.CANCEL, gtk.ResponseType.CANCEL,
-               gtk.ButtonsType.OK, gtk.ResponseType.OK))
+    save_dialog = gtk.FileChooserNative.new(
+      _('Save monitor output'),
+      self.get_toplevel(),
+      gtk.FileChooserAction.SAVE,
+      _('_OK'),
+      _('_Cancel'))
     save_dialog.set_do_overwrite_confirmation(True)
-    save_dialog.set_default_response(gtk.ResponseType.OK)
     response = save_dialog.run()
-    save_dialog.show_all()
-    if response == gtk.ResponseType.OK:
+    if response == gtk.ResponseType.ACCEPT:
       save_to = open(save_dialog.get_filename(), 'w')
       save_to.write(
         self.monitor_buffer.get_text(self.monitor_buffer.get_start_iter(),
-                                     self.monitor_buffer.get_end_iter()))
+                                     self.monitor_buffer.get_end_iter(), False))
       save_to.close()
     save_dialog.destroy()
 
