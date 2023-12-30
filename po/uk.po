@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-12-21 13:41+0000\n"
-"PO-Revision-Date: 2023-12-21 18:24+0200\n"
+"POT-Creation-Date: 2023-12-29 20:02+0000\n"
+"PO-Revision-Date: 2023-12-30 18:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -228,35 +228,49 @@ msgstr "Монітор подій"
 msgid "_Monitor Events"
 msgstr "_Слідкувати за подіями"
 
-#: plugins/event_monitor.ui:227
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
+#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+msgid "_Clear"
+msgstr "О_чистити"
+
+#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+msgid "_Save"
+msgstr "З_берегти"
+
+#: plugins/event_monitor.ui:274
+#| msgid "Select All"
+msgid "Select _All"
+msgstr "Позначити _все"
+
+#: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
 msgstr "О_чистити виділене"
 
-#: plugins/event_monitor.ui:259
+#: plugins/event_monitor.ui:352
 msgid "Everything"
 msgstr "Все"
 
-#: plugins/event_monitor.ui:276
+#: plugins/event_monitor.ui:369
 msgid "Selected application"
 msgstr "Виділена програма"
 
-#: plugins/event_monitor.ui:293
+#: plugins/event_monitor.ui:386
 msgid "Selected accessible"
 msgstr "Виділений об'єкт"
 
-#: plugins/event_monitor.ui:314
+#: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "Джерело"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:346 plugins/interface_view.ui:569
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
 #: plugins/interface_view.py:737 plugins/validate.py:295
 #: src/lib/accerciser/accessible_treeview.py:468
 #: src/lib/accerciser/plugin/plugin_manager.py:388
 msgid "Name"
 msgstr "Назва"
 
-#: plugins/event_monitor.ui:366
+#: plugins/event_monitor.ui:459
 msgid "Full Name"
 msgstr "Повна назва"
 
@@ -285,11 +299,11 @@ msgid "Child count"
 msgstr "Кількість дочірніх елементів"
 
 #: plugins/interface_view.ui:138 plugins/interface_view.ui:968
-#: plugins/interface_view.ui:1892 plugins/interface_view.ui:1911
-#: plugins/interface_view.ui:1930 plugins/interface_view.ui:2402
-#: plugins/interface_view.ui:2421 plugins/interface_view.ui:2440
-#: plugins/interface_view.ui:3073 plugins/interface_view.ui:3092
-#: plugins/interface_view.ui:3111
+#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
+#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
+#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
+#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
+#: plugins/interface_view.ui:3142
 msgid "0"
 msgstr "0"
 
@@ -318,12 +332,12 @@ msgid "States"
 msgstr "Стани"
 
 #: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
-#: plugins/interface_view.ui:2990
+#: plugins/interface_view.ui:3021
 msgid "Attributes"
 msgstr "Атрибути"
 
 #: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
-#: plugins/interface_view.ui:2632 plugins/interface_view.ui:2703
+#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
 msgid "Show"
 msgstr "Показати"
 
@@ -446,155 +460,155 @@ msgstr "Помі_чник входу у систему"
 msgid "Select All"
 msgstr "Виділити все"
 
-#: plugins/interface_view.ui:1661
+#: plugins/interface_view.ui:1692
 msgid "_Selection"
 msgstr "Виді_лення"
 
-#: plugins/interface_view.ui:1694
+#: plugins/interface_view.ui:1725
 msgid "Content type"
 msgstr "Тип змісту"
 
-#: plugins/interface_view.ui:1705 plugins/interface_view.py:745
+#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1722
+#: plugins/interface_view.ui:1753
 msgid "St_reamable Content"
 msgstr "_Потоковий зміст"
 
-#: plugins/interface_view.ui:1761
+#: plugins/interface_view.ui:1792
 msgid "Caption:"
 msgstr "Підпис:"
 
-#: plugins/interface_view.ui:1806
+#: plugins/interface_view.ui:1837
 msgid "Summary:"
 msgstr "Резюме:"
 
-#: plugins/interface_view.ui:1947
+#: plugins/interface_view.ui:1978
 msgid "Selected columns"
 msgstr "Виділені колонки"
 
-#: plugins/interface_view.ui:1963
+#: plugins/interface_view.ui:1994
 msgid "Selected rows"
 msgstr "Виділені рядки"
 
-#: plugins/interface_view.ui:1979
+#: plugins/interface_view.ui:2010
 msgid "Columns"
 msgstr "Стовпчики"
 
-#: plugins/interface_view.ui:1995
+#: plugins/interface_view.ui:2026
 msgid "Rows"
 msgstr "Рядки"
 
-#: plugins/interface_view.ui:2018
+#: plugins/interface_view.ui:2049
 msgid "Table Information"
 msgstr "Таблична інформація"
 
-#: plugins/interface_view.ui:2062
+#: plugins/interface_view.ui:2093
 msgid "name (x,y)"
 msgstr "назва (x,y)"
 
-#: plugins/interface_view.ui:2113 plugins/interface_view.ui:2227
+#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
 msgid "Header:"
 msgstr "Заголовок:"
 
-#: plugins/interface_view.ui:2126 plugins/interface_view.ui:2240
+#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
 msgid "<no description>"
 msgstr "<без опису>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2159 plugins/interface_view.ui:2273
+#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
 msgid "Extents:"
 msgstr "Розміри:"
 
-#: plugins/interface_view.ui:2197 plugins/interface_view.ui:2505
+#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
 msgid "Row"
 msgstr "Рядок"
 
-#: plugins/interface_view.ui:2311 plugins/interface_view.ui:2489
+#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
 msgid "Column"
 msgstr "Стовпчик"
 
-#: plugins/interface_view.ui:2327
+#: plugins/interface_view.ui:2358
 msgid "Selected Cell"
 msgstr "Позначена комірка"
 
-#: plugins/interface_view.ui:2349
+#: plugins/interface_view.ui:2380
 msgid "_Table"
 msgstr "_Таблиця"
 
-#: plugins/interface_view.ui:2457
+#: plugins/interface_view.ui:2488
 msgid "Column span"
 msgstr "Розмір у стовпчиках"
 
-#: plugins/interface_view.ui:2473
+#: plugins/interface_view.ui:2504
 msgid "Row span"
 msgstr "Розмір у рядках"
 
-#: plugins/interface_view.ui:2520
+#: plugins/interface_view.ui:2551
 msgid "Row headers"
 msgstr "Заголовки рядків"
 
-#: plugins/interface_view.ui:2537
+#: plugins/interface_view.ui:2568
 msgid "Column headers"
 msgstr "Заголовки стовпчиків"
 
-#: plugins/interface_view.ui:2553
+#: plugins/interface_view.ui:2584
 msgid "Table"
 msgstr "Таблиця"
 
-#: plugins/interface_view.ui:2739
+#: plugins/interface_view.ui:2770
 msgid "_TableCell"
 msgstr "_Комірка таблиці"
 
-#: plugins/interface_view.ui:2789
+#: plugins/interface_view.ui:2820
 msgid "Text"
 msgstr "Текст"
 
-#: plugins/interface_view.ui:2828
+#: plugins/interface_view.ui:2859
 msgid "Offset"
 msgstr "Зсув"
 
-#: plugins/interface_view.ui:2866
+#: plugins/interface_view.ui:2897
 msgid "Include defaults"
 msgstr "Увімкнути типові"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2888
+#: plugins/interface_view.ui:2919
 msgid "Start: 0"
 msgstr "Початок: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2906
+#: plugins/interface_view.ui:2937
 msgid "End: 0"
 msgstr "Кінець: 0"
 
-#: plugins/interface_view.ui:3012
+#: plugins/interface_view.ui:3043
 msgid "Te_xt"
 msgstr "_Текст"
 
-#: plugins/interface_view.ui:3062
+#: plugins/interface_view.ui:3093
 msgid "Current value"
 msgstr "Поточне значення"
 
-#: plugins/interface_view.ui:3130
+#: plugins/interface_view.ui:3161
 msgid "Minimum increment"
 msgstr "Мінімальний приріст"
 
-#: plugins/interface_view.ui:3145
+#: plugins/interface_view.ui:3176
 msgid "Maximum value"
 msgstr "Максимальне значення"
 
-#: plugins/interface_view.ui:3160
+#: plugins/interface_view.ui:3191
 msgid "Minimum value"
 msgstr "Мінімальне значення"
 
-#: plugins/interface_view.ui:3184
+#: plugins/interface_view.ui:3215
 msgid "Val_ue"
 msgstr "_Значення"
 
-#: plugins/interface_view.ui:3201
+#: plugins/interface_view.ui:3232
 msgid "unknown"
 msgstr "невідоме"
 
@@ -672,7 +686,11 @@ msgstr "С_хема"
 msgid "V_alidate"
 msgstr "_Перевірити"
 
-#: plugins/validate.ui:192 plugins/validate.py:376 plugins/validate.py:433
+#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+msgid "_Help"
+msgstr "_Довідка"
+
+#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
 msgid "Idle"
 msgstr "Бездіяльний"
 
@@ -699,31 +717,43 @@ msgstr "Рівень"
 msgid "Role"
 msgstr "Роль"
 
-#: plugins/validate.py:362
+#: plugins/validate.py:313
+msgid "Save validator output"
+msgstr "Зберегти результати засобу перевірки"
+
+#: plugins/validate.py:316 src/lib/accerciser/plugin/view.py:1136
+msgid "_OK"
+msgstr "_Гаразд"
+
+#: plugins/validate.py:317
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: plugins/validate.py:361
 msgid "Saving"
 msgstr "Збереження"
 
-#: plugins/validate.py:413
+#: plugins/validate.py:412
 msgid "Validating"
 msgstr "Перевірка"
 
-#: plugins/validate.py:571
+#: plugins/validate.py:570
 msgid "EXCEPT"
 msgstr "ВИКЛЮЧЕННЯ"
 
-#: plugins/validate.py:578
+#: plugins/validate.py:577
 msgid "ERROR"
 msgstr "ПОМИЛКА"
 
-#: plugins/validate.py:586
+#: plugins/validate.py:585
 msgid "WARN"
 msgstr "ПОПЕРЕДЖЕННЯ"
 
-#: plugins/validate.py:593
+#: plugins/validate.py:592
 msgid "INFO"
 msgstr "ІНФО"
 
-#: plugins/validate.py:600
+#: plugins/validate.py:599
 msgid "DEBUG"
 msgstr "НАЛАГОДЖЕННЯ"
 
@@ -909,54 +939,51 @@ msgid "_Edit"
 msgstr "З_міни"
 
 #: src/lib/accerciser/menus.py:25
-#| msgctxt "menu"
-#| msgid "_Bookmarks"
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
 #: src/lib/accerciser/menus.py:27
-#| msgctxt "menu"
-#| msgid "_View"
 msgid "_View"
 msgstr "П_ерегляд"
-
-#: src/lib/accerciser/menus.py:33
-msgid "_Help"
-msgstr "_Довідка"
 
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "параметри accerciser"
 
-#: src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
+#: src/lib/accerciser/plugin/view.py:1138
+msgid "_Close"
+msgstr "_Закрити"
+
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Plugins"
 msgstr "Модулі"
 
-#: src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
 msgstr "Глобальні швидкі клавіші"
 
-#: src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "Підсвічення"
 
-#: src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:88
 msgid "Highlight duration:"
 msgstr "Тривалість підсвічення:"
 
-#: src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:95
 msgid "Border color:"
 msgstr "Колір рамки:"
 
-#: src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "The border color of the highlight box"
 msgstr "Колір рамки прямокутника підсвічення"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "Fill color:"
 msgstr "Колір заповнення:"
 
-#: src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:102
 msgid "The fill color of the highlight box"
 msgstr "Колір заповнення прямокутника підсвічення"
 
@@ -994,37 +1021,54 @@ msgstr "_Правка закладок…"
 msgid "Edit Bookmarks…"
 msgstr "Правка закладок…"
 
-#: src/lib/accerciser/bookmarks.py:411
+#: src/lib/accerciser/bookmarks.py:321
+msgid "_Add"
+msgstr "_Додати"
+
+#: src/lib/accerciser/bookmarks.py:324
+msgid "_Remove"
+msgstr "В_илучити"
+
+#: src/lib/accerciser/bookmarks.py:327
+msgid "_Jump to"
+msgstr "_Перейти до"
+
+#: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
 msgstr "Назва"
 
-#: src/lib/accerciser/bookmarks.py:419
+#: src/lib/accerciser/bookmarks.py:420
 msgid "Application"
 msgstr "Програма"
 
-#: src/lib/accerciser/bookmarks.py:427
+#: src/lib/accerciser/bookmarks.py:428
 msgid "Path"
 msgstr "Шлях"
 
-#: src/lib/accerciser/bookmarks.py:496
+#: src/lib/accerciser/bookmarks.py:497
 msgid "Add Bookmark…"
 msgstr "Додати закладку…"
 
-#: src/lib/accerciser/bookmarks.py:510
+#: src/lib/accerciser/bookmarks.py:513
 msgid "Title:"
 msgstr "Назва:"
 
-#: src/lib/accerciser/bookmarks.py:513
+#: src/lib/accerciser/bookmarks.py:516
 msgid "Application:"
 msgstr "Програма:"
 
-#: src/lib/accerciser/bookmarks.py:516
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Path:"
 msgstr "Шлях:"
 
 #: src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "Помилки модуля"
+
+#: src/lib/accerciser/plugin/message.py:294
+#| msgid "Refresh all"
+msgid "_Refresh"
+msgstr "_Оновити"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
@@ -1058,9 +1102,6 @@ msgstr "С_творити панель перегляду…"
 #: src/lib/accerciser/plugin/view.py:1135
 msgid "New View…"
 msgstr "Створити перегляд…"
-
-#~ msgid "Refresh all"
-#~ msgstr "Оновити все"
 
 #~ msgid "Refresh selected node’s children"
 #~ msgstr "Оновити піддерево виділеної верхівки"
