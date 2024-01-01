@@ -2,13 +2,13 @@
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2007-2008.
 # Korostil Daniel <ted.korostiled@gmail.com>, 2012.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-12-29 20:02+0000\n"
-"PO-Revision-Date: 2023-12-30 18:52+0200\n"
+"POT-Creation-Date: 2023-12-31 10:07+0000\n"
+"PO-Revision-Date: 2024-01-01 14:21+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -238,7 +238,6 @@ msgid "_Save"
 msgstr "З_берегти"
 
 #: plugins/event_monitor.ui:274
-#| msgid "Select All"
 msgid "Select _All"
 msgstr "Позначити _все"
 
@@ -293,6 +292,20 @@ msgstr "Запустити/зупинити запис подій"
 #: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Очистити журнал подій"
+
+#: plugins/event_monitor.py:478
+#| msgid "Save validator output"
+msgid "Save monitor output"
+msgstr "Зберегти результати спостереження"
+
+#: plugins/event_monitor.py:481 plugins/validate.py:316
+#: src/lib/accerciser/plugin/view.py:1136
+msgid "_OK"
+msgstr "_Гаразд"
+
+#: plugins/event_monitor.py:482 plugins/validate.py:317
+msgid "_Cancel"
+msgstr "_Скасувати"
 
 #: plugins/interface_view.ui:119
 msgid "Child count"
@@ -721,14 +734,6 @@ msgstr "Роль"
 msgid "Save validator output"
 msgstr "Зберегти результати засобу перевірки"
 
-#: plugins/validate.py:316 src/lib/accerciser/plugin/view.py:1136
-msgid "_OK"
-msgstr "_Гаразд"
-
-#: plugins/validate.py:317
-msgid "_Cancel"
-msgstr "_Скасувати"
-
 #: plugins/validate.py:361
 msgid "Saving"
 msgstr "Збереження"
@@ -1066,7 +1071,6 @@ msgid "Plugin Errors"
 msgstr "Помилки модуля"
 
 #: src/lib/accerciser/plugin/message.py:294
-#| msgid "Refresh all"
 msgid "_Refresh"
 msgstr "_Оновити"
 
