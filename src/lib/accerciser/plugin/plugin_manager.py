@@ -23,7 +23,7 @@ from accerciser.tools import ToolsAccessor, getTreePathBoundingBox
 from .message import MessageManager
 import os
 import sys
-import imp
+import importlib
 import traceback
 from accerciser.i18n import _, N_, C_
 
@@ -138,8 +138,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
     '''
     sys.path.insert(0, plugin_dir)
     try:
-      params = imp.find_module(plugin_fn, [plugin_dir])
-      plugin = imp.load_module(plugin_fn, *params)
+      plugin = importlib.import_module(plugin_fn)
       plugin_locals = plugin.__dict__
     except Exception as e:
       self.message_manager.newModuleError(plugin_fn, plugin_dir,
