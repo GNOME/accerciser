@@ -66,13 +66,17 @@ class AccerciserPreferencesDialog(gtk.Dialog):
     '''
     dialog.destroy()
 
-class _HighlighterView(gtk.Alignment):
+class _HighlighterView(gtk.Table):
   '''
   A container widget with the settings for the highlighter.
   '''
   def __init__(self):
-    gtk.Alignment.__init__(self)
-    self.set_padding(12, 12, 18, 12)
+    gtk.Table.__init__(self, 3, 2, True)
+    self.set_margin_top(12)
+    self.set_margin_bottom(12)
+    self.set_margin_start(18)
+    self.set_margin_end(12)
+    self.set_col_spacings(6)
     self.gsettings = GSettings.new('org.a11y.Accerciser')
     self._buildUI()
 
@@ -80,9 +84,6 @@ class _HighlighterView(gtk.Alignment):
     '''
     Programatically build the UI.
     '''
-    table = gtk.Table.new(3, 2, True)
-    table.set_col_spacings(6)
-    self.add(table)
     labels = [None, None, None]
     controls = [None, None, None]
     labels[0] = gtk.Label.new(_('Highlight duration:'))
@@ -103,8 +104,8 @@ class _HighlighterView(gtk.Alignment):
 
     for label, control, row in zip(labels, controls, range(3)):
       label.set_alignment(0, 0.5)
-      table.attach(label, 0, 1, row, row + 1, gtk.AttachOptions.FILL)
-      table.attach(control, 1, 2, row, row + 1, gtk.AttachOptions.FILL)
+      self.attach(label, 0, 1, row, row + 1, gtk.AttachOptions.FILL)
+      self.attach(control, 1, 2, row, row + 1, gtk.AttachOptions.FILL)
 
     for label, control in zip([x.get_accessible() for x in labels],
                               [x.get_accessible() for x in controls]):
