@@ -20,7 +20,7 @@ import os
 import traceback
 import sys
 import glob
-import imp
+import importlib
 import webbrowser
 from accerciser.plugin import ViewportPlugin
 from accerciser.i18n import _, N_, DOMAIN
@@ -68,16 +68,18 @@ class ValidatorManager(type):
     '''
     for path in [USER_SCHEMA_PATH, SYS_SCHEMA_PATH]:
       for fn in glob.glob(os.path.join(path, '*.py')):
-        module = os.path.basename(fn)[:-3]
-        params = imp.find_module(module, [path])
-        schema = imp.load_module(module, *params)
+        module_name = os.path.basename(fn)[:-3]
+        spec = importlib.util.spec_from_file_location(module_name, fn)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
         try:
           # try to get descriptive fields from the module
-          SCHEMA_METADATA[module] = schema.__metadata__
+          SCHEMA_METADATA[module_name] = module.__metadata__
         except AttributeError:
           # default to usinf file name as description
-          SCHEMA_METADATA[module] = {'name' : module,
-                                        'description' : _('No description')}
+          SCHEMA_METADATA[module_name] = {'name' : module,
+                                          'description' : _('No description')}
 
   @staticmethod
   def getValidators(name):
