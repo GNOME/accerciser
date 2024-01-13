@@ -22,7 +22,6 @@ from accerciser.tools import *
 from .message import MessageManager
 import os
 import sys
-import imp
 from accerciser.i18n import _, N_
 import gc
 from accerciser import menus
