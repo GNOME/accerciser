@@ -599,22 +599,19 @@ msgstr ""
 msgid "<cmd>cd accerciser</cmd>"
 msgstr "<cmd>cd accerciser</cmd>"
 
-#. (itstool) path: item/p
-#: C/howto_setting_up_accerciser.page:55
-#, fuzzy
-msgid "<cmd>./autogen.sh # or ./configure for first time installation</cmd>"
-msgstr "<cmd>./autogen.sh # atau./Configure untuk instalasi pertama kali</cmd>"
+#: C/howto_setting_up_accerciser.page:55(item/p)
+msgid "<cmd>meson setup _build .</cmd>"
+msgstr "<cmd>meson setup _build .</cmd>"
 
-#. (itstool) path: item/p
-#: C/howto_setting_up_accerciser.page:56
-msgid "<cmd>make</cmd>"
-msgstr "<cmd>make</cmd>"
+#: C/howto_setting_up_accerciser.page:56(item/p)
+msgid "<cmd>meson compile -C _build</cmd>"
+msgstr "<cmd>meson compile -C _build</cmd>"
 
 #. (itstool) path: item/p
 #: C/howto_setting_up_accerciser.page:57
 #, fuzzy
-msgid "<cmd>sudo make install # or make install as root</cmd>"
-msgstr "<cmd>sudo membuat install # atau membuat install sebagai root</cmd>"
+msgid "<cmd>sudo meson install -C _build # or meson install -C _build as root</cmd>"
+msgstr "<cmd>sudo meson install -C _build # atau meson install -C _build sebagai root</cmd>"
 
 #. (itstool) path: section/p
 #: C/howto_setting_up_accerciser.page:59

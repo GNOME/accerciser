@@ -85,13 +85,11 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
   ```
   On a Debian based distro:
   ```
-    autoconf
-    autopoint
-    automake
+    meson
     pkg-config
     gettext
     yelp-tools
-    appstream-util
+    appstreamcli
     libgtk-3-dev
     python3
     python-gi-dev
@@ -108,9 +106,9 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
   
 ## Installing
 ```
-  ./autogen.sh
-  make
-  sudo make install
+  meson setup _build .
+  meson compile -C _build
+  sudo meson install -C _build
 ```
 ## Running
 

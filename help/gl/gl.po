@@ -1364,17 +1364,17 @@ msgstr ""
 msgid "cd accerciser"
 msgstr "accerciser"
 
-#: C/howto_setting_up_accerciser.page:55(cmd)
-msgid "./autogen.sh # or ./configure for first time installation"
-msgstr "./autogen.sh # ou ./configure para a primeira instalación"
+#: C/howto_setting_up_accerciser.page:55(item/p)
+msgid "<cmd>meson setup _build .</cmd>"
+msgstr "<cmd>meson setup _build .</cmd>"
 
-#: C/howto_setting_up_accerciser.page:56(cmd)
-msgid "make"
-msgstr "make"
+#: C/howto_setting_up_accerciser.page:56(item/p)
+msgid "<cmd>meson compile -C _build</cmd>"
+msgstr "<cmd>meson compile -C _build</cmd>"
 
 #: C/howto_setting_up_accerciser.page:57(cmd)
-msgid "sudo make install # or make install as root"
-msgstr "sudo make install # ou make install como root"
+msgid "sudo meson install -C _build # or meson install -C _build as root"
+msgstr "sudo meson install -C _build # ou meson install -C _build como root"
 
 #: C/howto_setting_up_accerciser.page:59(p)
 msgid ""
