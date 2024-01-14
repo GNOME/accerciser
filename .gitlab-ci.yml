@@ -1,0 +1,27 @@
+stages:
+  - build
+
+# Common variables
+variables:
+  COMMON_MESON_FLAGS: "--fatal-meson-warnings --werror"
+  MESON_TEST_TIMEOUT_MULTIPLIER: 2
+
+.default-build:
+  script:
+    - apt-get update
+    - apt-get install -o APT::Install-Recommends=false -y git meson appstream desktop-file-utils gettext yelp-tools python3 ipython3 libatspi2.0-dev libgtk-3-dev pkg-config python-gi-dev python3-pyatspi
+    - meson setup ${COMMON_MESON_FLAGS} ${EXTRA_MESON_FLAGS} _build .
+    - meson compile -C _build
+    - meson dist -C _build
+  artifacts:
+    when: always
+    name: "accerciser-${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    paths:
+      - "_build/meson-logs/meson-log.txt"
+
+debian-stable:
+  extends: .default-build
+  stage: build
+  image: debian:stable
+  variables:
+    EXTRA_MESON_FLAGS: "-Dbuildtype=debug"
