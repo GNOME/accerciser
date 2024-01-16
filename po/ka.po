@@ -1,14 +1,14 @@
 # Georgian translation for accerciser.
 # Copyright (C) 2023 accerciser'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the accerciser package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2023.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-07-11 09:43+0000\n"
-"PO-Revision-Date: 2023-07-11 18:41+0200\n"
+"POT-Creation-Date: 2023-12-31 10:07+0000\n"
+"PO-Revision-Date: 2024-01-16 21:17+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -171,7 +171,7 @@ msgstr "ფანჯრის სიგანის მნიშვნელო�
 
 #: org.a11y.Accerciser.gschema.xml:90
 msgid "Hotkey combination"
-msgstr ""
+msgstr "მალსახმობი ღილაკის კომბინაცია"
 
 #: org.a11y.Accerciser.gschema.xml:91
 msgid "Hotkey combination for related action."
@@ -209,7 +209,7 @@ msgstr "IPython -ის კონსოლი"
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
 
-#: plugins/event_monitor.ui:61
+#: plugins/event_monitor.ui:57
 msgid "Event monitor"
 msgstr "მოვლენების მონიტორი"
 
@@ -217,35 +217,48 @@ msgstr "მოვლენების მონიტორი"
 msgid "_Monitor Events"
 msgstr "_მოვლენების მონიტორი"
 
-#: plugins/event_monitor.ui:224
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
+#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+msgid "_Clear"
+msgstr "გასუფთავება"
+
+#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+msgid "_Save"
+msgstr "_შენახვა"
+
+#: plugins/event_monitor.ui:274
+msgid "Select _All"
+msgstr "მონიშნე _ყველა"
+
+#: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
 msgstr "_მონიშნულის გასუფთავება"
 
-#: plugins/event_monitor.ui:257
+#: plugins/event_monitor.ui:352
 msgid "Everything"
 msgstr "ყველაფერი"
 
-#: plugins/event_monitor.ui:273
+#: plugins/event_monitor.ui:369
 msgid "Selected application"
 msgstr "მონიშნული აპლიკაცია"
 
-#: plugins/event_monitor.ui:289
+#: plugins/event_monitor.ui:386
 msgid "Selected accessible"
-msgstr ""
+msgstr "არჩეული წვდომადი"
 
-#: plugins/event_monitor.ui:310
+#: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "წყარო"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:612
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
 #: plugins/interface_view.py:737 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:462
-#: src/lib/accerciser/plugin/plugin_manager.py:386
+#: src/lib/accerciser/accessible_treeview.py:468
+#: src/lib/accerciser/plugin/plugin_manager.py:388
 msgid "Name"
 msgstr "სახელი"
 
-#: plugins/event_monitor.ui:358
+#: plugins/event_monitor.ui:459
 msgid "Full Name"
 msgstr "სრული სახელი"
 
@@ -269,86 +282,99 @@ msgstr ""
 msgid "Clear event log"
 msgstr "ჟურნალის გასუფთავება"
 
-#: plugins/interface_view.ui:125
+#: plugins/event_monitor.py:478
+msgid "Save monitor output"
+msgstr "მონიტორის გამოტანის შენახვა"
+
+#: plugins/event_monitor.py:481 plugins/validate.py:316
+#: src/lib/accerciser/plugin/view.py:1136
+msgid "_OK"
+msgstr "_დიახ"
+
+#: plugins/event_monitor.py:482 plugins/validate.py:317
+msgid "_Cancel"
+msgstr "გაუქმება"
+
+#: plugins/interface_view.ui:119
 msgid "Child count"
 msgstr "შვილების რაოდენობა"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1025
-#: plugins/interface_view.ui:1994 plugins/interface_view.ui:2013
-#: plugins/interface_view.ui:2032 plugins/interface_view.ui:2525
-#: plugins/interface_view.ui:2544 plugins/interface_view.ui:2563
-#: plugins/interface_view.ui:3218 plugins/interface_view.ui:3237
-#: plugins/interface_view.ui:3256
+#: plugins/interface_view.ui:138 plugins/interface_view.ui:968
+#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
+#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
+#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
+#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
+#: plugins/interface_view.ui:3142
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1574
+#: plugins/interface_view.ui:170 plugins/interface_view.ui:1492
 #: plugins/interface_view.py:345 plugins/interface_view.py:865
 msgid "(no description)"
 msgstr "(აღწერა არაა ხელმისაწვდომი)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:623
-#: plugins/interface_view.ui:1542 plugins/validate.py:230
+#: plugins/interface_view.ui:186 plugins/interface_view.ui:580
+#: plugins/interface_view.ui:1460 plugins/validate.py:230
 #: plugins/validate.py:293
 msgid "Description"
 msgstr "აღწერა"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:349
+#: plugins/interface_view.ui:215 plugins/interface_view.py:349
 msgid "(no ID)"
 msgstr "(ID-ის გარეშე)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:754
+#: plugins/interface_view.ui:231 plugins/interface_view.ui:704
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:324
+#: plugins/interface_view.ui:298
 msgid "States"
 msgstr "შტატები"
 
-#: plugins/interface_view.ui:395 plugins/interface_view.ui:1239
-#: plugins/interface_view.ui:3128
+#: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
+#: plugins/interface_view.ui:3021
 msgid "Attributes"
 msgstr "ატრიბუტები"
 
-#: plugins/interface_view.ui:515 plugins/interface_view.ui:1402
-#: plugins/interface_view.ui:2754 plugins/interface_view.ui:2824
+#: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
+#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
 msgid "Show"
 msgstr "ჩვენება"
 
-#: plugins/interface_view.ui:548
+#: plugins/interface_view.ui:511
 msgid "Relations"
 msgstr "კავშირები"
 
-#: plugins/interface_view.ui:569
+#: plugins/interface_view.ui:530
 msgid "_Accessible"
 msgstr "_წვდომადი"
 
-#: plugins/interface_view.ui:634
+#: plugins/interface_view.ui:591
 msgid "Key binding"
 msgstr "ღილაკის მიბმა"
 
-#: plugins/interface_view.ui:688
+#: plugins/interface_view.ui:645
 msgid "Perform action"
 msgstr "ქმედების შესრულება"
 
-#: plugins/interface_view.ui:721
+#: plugins/interface_view.ui:676
 msgid "Acti_on"
 msgstr "_ქმედება"
 
-#: plugins/interface_view.ui:769
+#: plugins/interface_view.ui:719
 msgid "Toolkit"
 msgstr "ხელსაწყოები"
 
-#: plugins/interface_view.ui:786
+#: plugins/interface_view.ui:736
 msgid "Version"
 msgstr "ვერსია"
 
-#: plugins/interface_view.ui:862
+#: plugins/interface_view.ui:810
 msgid "Ap_plication"
 msgstr "_აპლიკაცია"
 
-#: plugins/interface_view.ui:881
+#: plugins/interface_view.ui:829
 msgid "Col_lection"
 msgstr "_კოლექცია"
 
@@ -356,234 +382,234 @@ msgstr "_კოლექცია"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:914 plugins/interface_view.ui:951
-#: plugins/interface_view.ui:1099 plugins/interface_view.ui:1502
-#: plugins/interface_view.ui:1522
+#: plugins/interface_view.ui:857 plugins/interface_view.ui:894
+#: plugins/interface_view.ui:1042 plugins/interface_view.ui:1420
+#: plugins/interface_view.ui:1440
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:934
+#: plugins/interface_view.ui:877
 msgid "Relative position"
 msgstr "ფარდობითი მდებარეობა"
 
-#: plugins/interface_view.ui:971 plugins/interface_view.ui:1485
+#: plugins/interface_view.ui:914 plugins/interface_view.ui:1403
 msgid "Size"
 msgstr "ზომა"
 
-#: plugins/interface_view.ui:988
+#: plugins/interface_view.ui:931
 msgid "WIDGET"
 msgstr "ვიჯეტი"
 
-#: plugins/interface_view.ui:1008
+#: plugins/interface_view.ui:951
 msgid "Layer"
 msgstr "ფენა"
 
-#: plugins/interface_view.ui:1045
+#: plugins/interface_view.ui:988
 msgid "MDI-Z-order"
 msgstr "MDI-Z-order"
 
-#: plugins/interface_view.ui:1082
+#: plugins/interface_view.ui:1025
 msgid "Alpha"
 msgstr "ალფა"
 
-#: plugins/interface_view.ui:1117
+#: plugins/interface_view.ui:1060
 msgid "Absolute position"
 msgstr "აბსოლუტური პოზიცია"
 
-#: plugins/interface_view.ui:1136
+#: plugins/interface_view.ui:1077
 msgid "Co_mponent"
 msgstr "_კომპონენტი"
 
-#: plugins/interface_view.ui:1155
+#: plugins/interface_view.ui:1096
 msgid "Des_ktop"
 msgstr "_სამუშაო მაგიდა"
 
-#: plugins/interface_view.ui:1261
+#: plugins/interface_view.ui:1192
 msgid "Locale:"
 msgstr "ენის კოდი:"
 
-#: plugins/interface_view.ui:1302
+#: plugins/interface_view.ui:1231
 msgid "_Document"
 msgstr "_დოკუმენტი"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1323 plugins/validate.py:299
+#: plugins/interface_view.ui:1252 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "ჰიპერბმული"
 
-#: plugins/interface_view.ui:1435
+#: plugins/interface_view.ui:1358
 msgid "H_ypertext"
 msgstr "_ჰიპერტექსტი"
 
-#: plugins/interface_view.ui:1468
+#: plugins/interface_view.ui:1386
 msgid "Position"
 msgstr "მდებარეობა"
 
-#: plugins/interface_view.ui:1557
+#: plugins/interface_view.ui:1475
 msgid "Locale"
 msgstr "ენა"
 
-#: plugins/interface_view.ui:1619
+#: plugins/interface_view.ui:1535
 msgid "_Image"
 msgstr "_გამოსახულება"
 
-#: plugins/interface_view.ui:1638
+#: plugins/interface_view.ui:1554
 msgid "Lo_gin Helper"
 msgstr "_შესვლის დამხმარე"
 
-#: plugins/interface_view.ui:1709
+#: plugins/interface_view.ui:1621
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: plugins/interface_view.ui:1751
+#: plugins/interface_view.ui:1692
 msgid "_Selection"
 msgstr "მონიშნული"
 
-#: plugins/interface_view.ui:1789
+#: plugins/interface_view.ui:1725
 msgid "Content type"
 msgstr "შემცველობის ტიპი"
 
-#: plugins/interface_view.ui:1800 plugins/interface_view.py:745
+#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1819
+#: plugins/interface_view.ui:1753
 msgid "St_reamable Content"
 msgstr ""
 
-#: plugins/interface_view.ui:1860
+#: plugins/interface_view.ui:1792
 msgid "Caption:"
 msgstr "წარწერა:"
 
-#: plugins/interface_view.ui:1905
+#: plugins/interface_view.ui:1837
 msgid "Summary:"
 msgstr "შეჯამება:"
 
-#: plugins/interface_view.ui:2049
+#: plugins/interface_view.ui:1978
 msgid "Selected columns"
 msgstr "მონიშნული სვეტები"
 
-#: plugins/interface_view.ui:2065
+#: plugins/interface_view.ui:1994
 msgid "Selected rows"
 msgstr "მონიშნული მწკრივები"
 
-#: plugins/interface_view.ui:2081
+#: plugins/interface_view.ui:2010
 msgid "Columns"
 msgstr "სვეტები"
 
-#: plugins/interface_view.ui:2097
+#: plugins/interface_view.ui:2026
 msgid "Rows"
 msgstr "რიგები"
 
-#: plugins/interface_view.ui:2122
+#: plugins/interface_view.ui:2049
 msgid "Table Information"
 msgstr "ინფორმაცია ცხრილზე"
 
-#: plugins/interface_view.ui:2168
+#: plugins/interface_view.ui:2093
 msgid "name (x,y)"
 msgstr "სახელი (x,y)"
 
-#: plugins/interface_view.ui:2222 plugins/interface_view.ui:2341
+#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
 msgid "Header:"
 msgstr "ჰედერი:"
 
-#: plugins/interface_view.ui:2235 plugins/interface_view.ui:2354
+#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
 msgid "<no description>"
 msgstr "<no description>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2268 plugins/interface_view.ui:2387
+#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
 msgid "Extents:"
 msgstr ""
 
-#: plugins/interface_view.ui:2308 plugins/interface_view.ui:2628
+#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
 msgid "Row"
 msgstr "მწკრივი"
 
-#: plugins/interface_view.ui:2427 plugins/interface_view.ui:2612
+#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
 msgid "Column"
 msgstr "სვეტი"
 
-#: plugins/interface_view.ui:2445
+#: plugins/interface_view.ui:2358
 msgid "Selected Cell"
 msgstr "მონიშნული უჯრედი"
 
-#: plugins/interface_view.ui:2469
+#: plugins/interface_view.ui:2380
 msgid "_Table"
 msgstr "_ცხრილი"
 
-#: plugins/interface_view.ui:2580
+#: plugins/interface_view.ui:2488
 msgid "Column span"
 msgstr "სვეტების სიგანე"
 
-#: plugins/interface_view.ui:2596
+#: plugins/interface_view.ui:2504
 msgid "Row span"
 msgstr "მწკრივის სიგანე"
 
-#: plugins/interface_view.ui:2643
+#: plugins/interface_view.ui:2551
 msgid "Row headers"
 msgstr "მწკრივის თავსართები"
 
-#: plugins/interface_view.ui:2660
+#: plugins/interface_view.ui:2568
 msgid "Column headers"
 msgstr "სვეტის თავსართები"
 
-#: plugins/interface_view.ui:2676
+#: plugins/interface_view.ui:2584
 msgid "Table"
 msgstr "ცხრილი"
 
-#: plugins/interface_view.ui:2862
+#: plugins/interface_view.ui:2770
 msgid "_TableCell"
 msgstr "_ცხრილისუჯრედი"
 
-#: plugins/interface_view.ui:2922
+#: plugins/interface_view.ui:2820
 msgid "Text"
 msgstr "ტექსტი"
 
-#: plugins/interface_view.ui:2960
+#: plugins/interface_view.ui:2859
 msgid "Offset"
 msgstr "გადაწევა"
 
-#: plugins/interface_view.ui:2998
+#: plugins/interface_view.ui:2897
 msgid "Include defaults"
 msgstr "ნაგულისხმებების ჩასმა"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3020
+#: plugins/interface_view.ui:2919
 msgid "Start: 0"
 msgstr "დასაწყისი: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3038
+#: plugins/interface_view.ui:2937
 msgid "End: 0"
 msgstr "დასასწული: 0"
 
-#: plugins/interface_view.ui:3152
+#: plugins/interface_view.ui:3043
 msgid "Te_xt"
 msgstr "ტე_ქსტი"
 
-#: plugins/interface_view.ui:3207
+#: plugins/interface_view.ui:3093
 msgid "Current value"
 msgstr "მიმდინარე მნიშვნელობა"
 
-#: plugins/interface_view.ui:3275
+#: plugins/interface_view.ui:3161
 msgid "Minimum increment"
 msgstr "მინიმალური ზრდა"
 
-#: plugins/interface_view.ui:3290
+#: plugins/interface_view.ui:3176
 msgid "Maximum value"
 msgstr "მაქსიმალური მნიშვნელობა"
 
-#: plugins/interface_view.ui:3305
+#: plugins/interface_view.ui:3191
 msgid "Minimum value"
 msgstr "მინიმალური მნიშვნელობა"
 
-#: plugins/interface_view.ui:3331
+#: plugins/interface_view.ui:3215
 msgid "Val_ue"
 msgstr "_მნიშვნელობა"
 
-#: plugins/interface_view.ui:3350
+#: plugins/interface_view.ui:3232
 msgid "unknown"
 msgstr "უცნობი"
 
@@ -609,11 +635,11 @@ msgstr "დაწყება"
 msgid "End"
 msgstr "დასასრული"
 
-#: plugins/interface_view.py:923
+#: plugins/interface_view.py:926
 msgid "Too many selectable children"
 msgstr "მეტისმეტად ბევრი მონიშვნადი შვილები"
 
-#: plugins/interface_view.py:1389 plugins/interface_view.py:1392
+#: plugins/interface_view.py:1393 plugins/interface_view.py:1396
 msgid "(Editable)"
 msgstr "(ჩასწორებადი)"
 
@@ -622,7 +648,7 @@ msgstr "(ჩასწორებადი)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1539
+#: plugins/interface_view.py:1543
 #, python-format
 msgid "Start: %d"
 msgstr "დასაწყისი: %d"
@@ -632,7 +658,7 @@ msgstr "დასაწყისი: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1545
+#: plugins/interface_view.py:1549
 #, python-format
 msgid "End: %d"
 msgstr "დასასრული: %d"
@@ -653,15 +679,19 @@ msgstr ""
 msgid "Inspect accessible under mouse"
 msgstr ""
 
-#: plugins/validate.ui:38
+#: plugins/validate.ui:44
 msgid "Sche_ma:"
 msgstr "_სქემა:"
 
-#: plugins/validate.ui:89
+#: plugins/validate.ui:104
 msgid "V_alidate"
 msgstr "_გადამოწმება"
 
-#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+msgid "_Help"
+msgstr "დახმარება"
+
+#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
 msgid "Idle"
 msgstr "უმოქმედო"
 
@@ -684,35 +714,39 @@ msgid "Level"
 msgstr "დონე"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:477
 msgid "Role"
 msgstr "როლი"
 
-#: plugins/validate.py:362
+#: plugins/validate.py:313
+msgid "Save validator output"
+msgstr ""
+
+#: plugins/validate.py:361
 msgid "Saving"
 msgstr "შენახვა"
 
-#: plugins/validate.py:413
+#: plugins/validate.py:412
 msgid "Validating"
 msgstr "გადამოწმება"
 
-#: plugins/validate.py:571
+#: plugins/validate.py:570
 msgid "EXCEPT"
 msgstr "გარდა"
 
-#: plugins/validate.py:578
+#: plugins/validate.py:577
 msgid "ERROR"
 msgstr "შეცდომა"
 
-#: plugins/validate.py:586
+#: plugins/validate.py:585
 msgid "WARN"
 msgstr "გაფრთხ"
 
-#: plugins/validate.py:593
+#: plugins/validate.py:592
 msgid "INFO"
 msgstr "ინფორმაცია"
 
-#: plugins/validate.py:600
+#: plugins/validate.py:599
 msgid "DEBUG"
 msgstr "გამართვა"
 
@@ -814,47 +848,41 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s სახელი ან აღწერა არ გააჩნია"
 
-#: src/lib/accerciser/accerciser.py:80
+#: src/lib/accerciser/accerciser.py:92
+msgid "_Quit"
+msgstr "გასვ_ლა"
+
+#: src/lib/accerciser/accerciser.py:94
 msgid "_Preferences…"
 msgstr "_გამართვა…"
 
-#: src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:96
 msgid "_Contents"
 msgstr "_შინაარსი"
 
-#: src/lib/accerciser/accessible_treeview.py:415
+#: src/lib/accerciser/accerciser.py:98
+msgid "_About"
+msgstr "შესახებ"
+
+#: src/lib/accerciser/accessible_treeview.py:416
 msgid "<dead>"
 msgstr "<მკვდარი>"
 
-#: src/lib/accerciser/accessible_treeview.py:478
+#: src/lib/accerciser/accessible_treeview.py:484
 msgid "Children"
 msgstr "ბავშვები"
 
-#: src/lib/accerciser/accessible_treeview.py:506
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "_Show Applications without children"
 msgstr "უშვილო აპლიკაციების _ჩვენება"
 
-#: src/lib/accerciser/accessible_treeview.py:509
+#: src/lib/accerciser/accessible_treeview.py:521
 msgid "_Refresh Registry"
 msgstr "რეესტრის _განახლება"
 
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:512
-msgid "Refresh all"
-msgstr "ყველას განახლება"
-
-#. Translators: Refresh current tree node's children.
-#.
-#: src/lib/accerciser/accessible_treeview.py:515
+#: src/lib/accerciser/accessible_treeview.py:527
 msgid "Refresh _Node"
 msgstr "_კვანძის განახლება"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:518
-msgid "Refresh selected node’s children"
-msgstr "მონიშნული კვანძის შვილების განახლება"
 
 #: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
@@ -880,51 +908,72 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "წანაცვლება"
 
-#: src/lib/accerciser/main_window.py:43
+#: src/lib/accerciser/main_window.py:44
 msgid "Accerciser Accessibility Explorer"
 msgstr ""
 
-#: src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:74
 msgid "Top panel"
 msgstr "ზედა პანელი"
 
-#: src/lib/accerciser/main_window.py:78
+#: src/lib/accerciser/main_window.py:75
 msgid "Bottom panel"
 msgstr "ქვედა პანელი"
+
+#: src/lib/accerciser/menus.py:17
+msgid "_File"
+msgstr "_ფაილი"
+
+#: src/lib/accerciser/menus.py:19
+msgid "_Edit"
+msgstr "_დამუშავება"
+
+#: src/lib/accerciser/menus.py:25
+msgid "_Bookmarks"
+msgstr "_სანიშნეები"
+
+#: src/lib/accerciser/menus.py:27
+msgid "_View"
+msgstr "_ხედი"
 
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr ""
 
-#: src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
+#: src/lib/accerciser/plugin/view.py:1138
+msgid "_Close"
+msgstr "_დახურვა"
+
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Plugins"
 msgstr "დამატებები"
 
-#: src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
 msgstr "გლობალური მალსახმობი ღილაკები"
 
-#: src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "გამოკვეთა"
 
-#: src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:88
 msgid "Highlight duration:"
 msgstr "ხანგრძლივობის გამოკვეა:"
 
-#: src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:95
 msgid "Border color:"
 msgstr "საზღვრის ფერი:"
 
-#: src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "The border color of the highlight box"
 msgstr ""
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "Fill color:"
 msgstr "შემვსები ფერი:"
 
-#: src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:102
 msgid "The fill color of the highlight box"
 msgstr ""
 
@@ -948,51 +997,55 @@ msgstr ""
 msgid "Web site"
 msgstr "ვებგვერდი"
 
-#: src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:68
 msgid "_Add Bookmark…"
 msgstr "_სანიშნის დამატება…"
 
-#: src/lib/accerciser/bookmarks.py:67
-msgid "Bookmark selected accessible."
-msgstr ""
-
-#: src/lib/accerciser/bookmarks.py:69
+#: src/lib/accerciser/bookmarks.py:70
 msgid "_Edit Bookmarks…"
 msgstr "სანიშნების &ჩასწორება…"
 
-#: src/lib/accerciser/bookmarks.py:70
-msgid "Manage bookmarks."
-msgstr "სანიშნეების მართვა."
-
-#: src/lib/accerciser/bookmarks.py:328
+#: src/lib/accerciser/bookmarks.py:305
 msgid "Edit Bookmarks…"
 msgstr "სანიშნების ჩასწორება…"
 
-#: src/lib/accerciser/bookmarks.py:434
+#: src/lib/accerciser/bookmarks.py:321
+msgid "_Add"
+msgstr "_დამატება"
+
+#: src/lib/accerciser/bookmarks.py:324
+msgid "_Remove"
+msgstr "_წაშლა"
+
+#: src/lib/accerciser/bookmarks.py:327
+msgid "_Jump to"
+msgstr "_გადასვლა"
+
+#: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
 msgstr "სათაური"
 
-#: src/lib/accerciser/bookmarks.py:442
+#: src/lib/accerciser/bookmarks.py:420
 msgid "Application"
 msgstr "აპლიკაცია"
 
-#: src/lib/accerciser/bookmarks.py:450
+#: src/lib/accerciser/bookmarks.py:428
 msgid "Path"
 msgstr "მისამართი"
 
-#: src/lib/accerciser/bookmarks.py:519
+#: src/lib/accerciser/bookmarks.py:497
 msgid "Add Bookmark…"
 msgstr "სანიშნის დამატება…"
 
-#: src/lib/accerciser/bookmarks.py:533
+#: src/lib/accerciser/bookmarks.py:513
 msgid "Title:"
 msgstr "სათაური:"
 
-#: src/lib/accerciser/bookmarks.py:536
+#: src/lib/accerciser/bookmarks.py:516
 msgid "Application:"
 msgstr "აპლიკაცია:"
 
-#: src/lib/accerciser/bookmarks.py:539
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Path:"
 msgstr "მისამართი:"
 
@@ -1000,57 +1053,45 @@ msgstr "მისამართი:"
 msgid "Plugin Errors"
 msgstr "დამატების შეცდომები"
 
+#: src/lib/accerciser/plugin/message.py:294
+msgid "_Refresh"
+msgstr "_განახლება"
+
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:395
+#: src/lib/accerciser/plugin/plugin_manager.py:397
 msgctxt "viewport"
 msgid "View"
 msgstr "ნახვა"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:472
+#: src/lib/accerciser/plugin/plugin_manager.py:474
 msgid "No view"
 msgstr "ხედის გაერშე"
 
-#: src/lib/accerciser/plugin/view.py:377
+#: src/lib/accerciser/plugin/view.py:380
 msgid "_Single plugins view"
 msgstr "_ერთი დამატების ხედი"
 
-#: src/lib/accerciser/plugin/view.py:766
+#: src/lib/accerciser/plugin/view.py:771
 msgid "Plugin View"
 msgstr "დამატების ხედი"
 
-#: src/lib/accerciser/plugin/view.py:769
+#: src/lib/accerciser/plugin/view.py:774
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "დამატების ხედი (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1074
+#: src/lib/accerciser/plugin/view.py:1079
 msgid "_New view…"
 msgstr "_ახალი ხედი…"
 
-#: src/lib/accerciser/plugin/view.py:1130
+#: src/lib/accerciser/plugin/view.py:1135
 msgid "New View…"
 msgstr "ახალი ხედი…"
 
-#: src/lib/accerciser/ui_manager.py:23
-msgid "_File"
-msgstr "_ფაილი"
+#~ msgid "Refresh selected node’s children"
+#~ msgstr "მონიშნული კვანძის შვილების განახლება"
 
-#: src/lib/accerciser/ui_manager.py:24
-msgid "_Edit"
-msgstr "_დამუშავება"
-
-#: src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "_სანიშნები"
-
-#: src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
-msgid "_View"
-msgstr "_ნახვა"
-
-#: src/lib/accerciser/ui_manager.py:27
-msgid "_Help"
-msgstr "დახმარება"
+#~ msgid "Manage bookmarks."
+#~ msgstr "სანიშნეების მართვა."
