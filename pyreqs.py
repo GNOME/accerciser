@@ -11,7 +11,7 @@ available under the terms of the BSD License which accompanies
 this distribution, and is available at
 U{http://www.opensource.org/licenses/bsd-license.php}
 '''
-import sys, os, imp
+import sys, os
 
 PYGTK_REQ = '2.0'
 PYATSPI_REQ = (2, 23, 3)
