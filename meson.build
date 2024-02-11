@@ -56,7 +56,7 @@ endif
 
 # Appdata file
 appdata_file = i18n.merge_file(
-  input: 'accerciser.appdata.xml.in',
+  input: 'org.gtk.accerciser.metainfo.xml.in',
   output: '@BASENAME@',
   type: 'xml',
   po_dir: po_dir,
