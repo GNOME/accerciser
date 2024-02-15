@@ -17,7 +17,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import Wnck as wnck
 from gi.repository import GLib
 from gi.repository import Atk as atk
 
