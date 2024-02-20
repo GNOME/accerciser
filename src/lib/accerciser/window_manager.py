@@ -23,12 +23,13 @@ class WindowManager:
   class.
   '''
 
-  def supportsScreenCoords(self, app):
+  def supportsScreenCoords(self, acc):
     '''
-    Returns False when the app does not support
+    Returns False when the accessible does not support
     querying screen coordinates directly via AT-SPI,
     otherwise True.
     '''
+    app = acc.get_application()
     if app and app.role == pyatspi.ROLE_APPLICATION:
       toolkit = app.get_toolkit_name()
       version = app.get_toolkit_version()
@@ -94,15 +95,12 @@ class WindowManager:
     except NotImplementedError:
       return None
 
-    toplevel = acc
-    while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
-      toplevel = toplevel.parent
-
-    screen_coords_supported = True
-    if toplevel.parent and toplevel.parent.role == pyatspi.ROLE_APPLICATION:
-      screen_coords_supported = self.supportsScreenCoords(toplevel.parent)
+    screen_coords_supported = self.supportsScreenCoords(acc)
 
     if not screen_coords_supported:
+      toplevel = acc
+      while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
+        toplevel = toplevel.parent
       # try to find matching Wnck window and calculate screen coordinates from
       # screen coords of the Wnck window and window-relative coords of the object
       window = self.getWnckWindow(toplevel)
