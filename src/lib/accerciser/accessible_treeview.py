@@ -73,6 +73,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
     self.desktop = desktop_acc
     self._path_to_populate = None
     self._populating_tasks = 0
+    self.isPopulating = False
 
   def _onRowChanged(self, model, path, iter):
     '''
@@ -872,10 +873,10 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     if dummy:
       self._path_to_expand = path
       self.model.popToPath(path)
-      # process all pending events, so the path actually
-      # gets populated via the corresponding idles
+      # process pending events until the path actually
+      # got populated via the corresponding idles
       main_loop_context = GLib.MainContext.default()
-      while main_loop_context.iteration(False):
+      while self.isPopulating and main_loop_context.iteration(False):
         pass
       try:
         dummy = self.model[path][COL_DUMMY]
@@ -927,6 +928,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param model: Model that emitted the signal.
     @type model: L{AccessibleModel}
     '''
+    self.isPopulating = True
     if self.get_window():
       window = self.get_window()
       window.set_cursor(gdk.Cursor(gdk.CursorType.WATCH))
@@ -941,6 +943,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     if self.get_window():
       window = self.get_window()
       window.set_cursor(gdk.Cursor(gdk.CursorType.TOP_LEFT_ARROW))
+    self.isPopulating = False
 
   def _onRowActivated(self, treeview, path, view_column):
     '''
