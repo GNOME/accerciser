@@ -6,6 +6,7 @@ from gi.repository import Wnck as wnck
 
 from accerciser.plugin import Plugin
 from accerciser.i18n import N_, _
+from accerciser.window_manager import WindowManager
 
 import pyatspi
 
@@ -39,6 +40,7 @@ class QuickSelect(Plugin):
 
     self.last_focused = None
     self.last_selected = None
+    self.window_manager = WindowManager()
 
   def _accEventFocusChanged(self, event):
     '''
@@ -141,13 +143,19 @@ class QuickSelect(Plugin):
       else:
         suspect_children = self.last_selected
 
+      if self.window_manager.supportsScreenCoords(self.last_selected):
+        coord_type = pyatspi.DESKTOP_COORDS
+      else:
+        coord_type = pyatspi.WINDOW_COORDS
+        x, y = self.window_manager.convertScreenToWindowCoords(x, y, self.last_selected)
+
       for child in suspect_children:
         try:
           ci = child.queryComponent()
         except NotImplementedError:
           continue
 
-        if ci.contains(x, y, pyatspi.DESKTOP_COORDS) and \
+        if ci.contains(x, y, coord_type) and \
               ci.getLayer() == pyatspi.LAYER_POPUP:
           return child
 
@@ -167,6 +175,12 @@ class QuickSelect(Plugin):
     @return: Child accessible at given coordinates, or None.
     @rtype: L{Accessibility.Accessible}
     '''
+    if self.window_manager.supportsScreenCoords(parent):
+      coord_type = pyatspi.DESKTOP_COORDS
+    else:
+      coord_type = pyatspi.WINDOW_COORDS
+      x, y = self.window_manager.convertScreenToWindowCoords(x, y, parent)
+
     container = parent
     while True:
       container_role = container.getRole()
@@ -182,7 +196,7 @@ class QuickSelect(Plugin):
         break
       else:
         inner_container = container
-      container =  ci.getAccessibleAtPoint(x, y, pyatspi.DESKTOP_COORDS)
+      container =  ci.getAccessibleAtPoint(x, y, coord_type)
       if not container or container.queryComponent() == ci:
         # The gecko bridge simply has getAccessibleAtPoint return itself
         # if there are no further children

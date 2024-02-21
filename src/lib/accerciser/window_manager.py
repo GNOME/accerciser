@@ -114,3 +114,30 @@ class WindowManager:
     # query screen coords directly via AT-SPI
     extents = component_iface.getExtents(pyatspi.DESKTOP_COORDS)
     return extents
+
+  def convertScreenToWindowCoords(self, x, y, acc):
+    '''
+    Convert the given screen coordinates to coordinates relative to
+    the window that the given accessible is in.
+
+    @param x: x screen coordinate to convert to window coordinate.
+    @type  x: int
+    @param y: y screen coordinate to convert to window coordinate.
+    @type  y: int
+    @param acc: accessible in the window relative to which the coordinates
+                should be calculated.
+    @type acc:  Atspi.Accessible
+    @return: The (x, y) coordinates relative to the window that the accessible is in.
+    @rtype: tuple(int, int)
+    '''
+    try:
+      component_iface = acc.queryComponent()
+    except NotImplementedError:
+      return x, y
+
+    acc_screen_extents = self.getScreenExtents(acc)
+    acc_window_extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
+
+    win_x = acc_window_extents.x - acc_screen_extents.x + x
+    win_y = acc_window_extents.y - acc_screen_extents.y + y
+    return (win_x, win_y)
