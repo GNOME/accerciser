@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2020-04-02 14:16+0000\n"
-"PO-Revision-Date: 2020-04-06 20:46+0200\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"POT-Creation-Date: 2023-12-31 10:07+0000\n"
+"PO-Revision-Date: 2024-03-07 19:44+0100\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
 msgid "Accerciser"
@@ -218,7 +218,7 @@ msgstr "Konzola IPython"
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr "Interaktivna konzola za upravljanje izbrane enote dostopnosti"
 
-#: plugins/event_monitor.ui:61
+#: plugins/event_monitor.ui:57
 msgid "Event monitor"
 msgstr "Nadzornik dogajanja"
 
@@ -226,135 +226,165 @@ msgstr "Nadzornik dogajanja"
 msgid "_Monitor Events"
 msgstr "_Nadzor dogodkov"
 
-#: plugins/event_monitor.ui:224
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
+#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+msgid "_Clear"
+msgstr "Po_čisti"
+
+#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+msgid "_Save"
+msgstr "_Shrani"
+
+#: plugins/event_monitor.ui:274
+msgid "Select _All"
+msgstr "Izberi _vse"
+
+#: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
 msgstr "_Počisti izbor"
 
-#: plugins/event_monitor.ui:257
+#: plugins/event_monitor.ui:352
 msgid "Everything"
 msgstr "Vse"
 
-#: plugins/event_monitor.ui:273
+#: plugins/event_monitor.ui:369
 msgid "Selected application"
 msgstr "Izbran program"
 
-#: plugins/event_monitor.ui:289
+#: plugins/event_monitor.ui:386
 msgid "Selected accessible"
 msgstr "Izbrano dostopno"
 
-#: plugins/event_monitor.ui:310
+#: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "Vir"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:736 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:462
-#: src/lib/accerciser/plugin/plugin_manager.py:386
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
+#: plugins/interface_view.py:737 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:468
+#: src/lib/accerciser/plugin/plugin_manager.py:388
 msgid "Name"
 msgstr "Ime"
 
-#: plugins/event_monitor.ui:358
+#: plugins/event_monitor.ui:459
 msgid "Full Name"
 msgstr "Polno ime"
 
-#: plugins/event_monitor.py:51
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Nadzornik dogajanja"
 
-#: plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr "Pokaže dogodke, kot se ti pojavijo preko izbranih vrst in virov"
 
-#: plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Poudari zadnji vnos dogodka"
 
-#: plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
 msgstr "Začni/Zaustavi snemanje dogodkov"
 
-#: plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Počisti dnevnik dogodkov"
 
-#: plugins/interface_view.ui:125
+#: plugins/event_monitor.py:478
+#, fuzzy
+msgid "Save monitor output"
+msgstr "Shrani izhod ogleda"
+
+#: plugins/event_monitor.py:481 plugins/validate.py:316
+#: src/lib/accerciser/plugin/view.py:1136
+msgid "_OK"
+msgstr "V _redu"
+
+#: plugins/event_monitor.py:482 plugins/validate.py:317
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#: plugins/interface_view.ui:119
 msgid "Child count"
 msgstr "Števec podrejenih opravil"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
-#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
-#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
-#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
+#: plugins/interface_view.ui:138 plugins/interface_view.ui:968
+#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
+#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
+#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
+#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
+#: plugins/interface_view.ui:3142
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:344 plugins/interface_view.py:864
+#: plugins/interface_view.ui:170 plugins/interface_view.ui:1492
+#: plugins/interface_view.py:345 plugins/interface_view.py:865
 msgid "(no description)"
 msgstr "(brez opisa)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/interface_view.ui:186 plugins/interface_view.ui:580
+#: plugins/interface_view.ui:1460 plugins/validate.py:230
 #: plugins/validate.py:293
 msgid "Description"
 msgstr "Opis"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+#: plugins/interface_view.ui:215 plugins/interface_view.py:349
 msgid "(no ID)"
 msgstr "(ni določila ID)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+#: plugins/interface_view.ui:231 plugins/interface_view.ui:704
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:325
+#: plugins/interface_view.ui:298
 msgid "States"
 msgstr "Stanja"
 
-#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
-#: plugins/interface_view.ui:2739
+#: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
+#: plugins/interface_view.ui:3021
 msgid "Attributes"
 msgstr "Atributi"
 
-#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+#: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
+#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
 msgid "Show"
 msgstr "Pokaži"
 
-#: plugins/interface_view.ui:551
+#: plugins/interface_view.ui:511
 msgid "Relations"
 msgstr "Povezave"
 
-#: plugins/interface_view.ui:572
+#: plugins/interface_view.ui:530
 msgid "_Accessible"
 msgstr "_dostopnost"
 
-#: plugins/interface_view.ui:637
+#: plugins/interface_view.ui:591
 msgid "Key binding"
 msgstr "Tipkovna bližnjica"
 
-#: plugins/interface_view.ui:691
+#: plugins/interface_view.ui:645
 msgid "Perform action"
 msgstr "Izvajanje dejanja"
 
-#: plugins/interface_view.ui:724
+#: plugins/interface_view.ui:676
 msgid "Acti_on"
 msgstr "_Dejanje"
 
-#: plugins/interface_view.ui:772
+#: plugins/interface_view.ui:719
 msgid "Toolkit"
 msgstr "Zbirka orodij"
 
-#: plugins/interface_view.ui:789
+#: plugins/interface_view.ui:736
 msgid "Version"
 msgstr "Različica"
 
-#: plugins/interface_view.ui:865
+#: plugins/interface_view.ui:810
 msgid "Ap_plication"
 msgstr "_Program"
 
-#: plugins/interface_view.ui:884
+#: plugins/interface_view.ui:829
 msgid "Col_lection"
 msgstr "_Zbirka"
 
@@ -362,210 +392,234 @@ msgstr "_Zbirka"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
-#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
-#: plugins/interface_view.ui:1525
+#: plugins/interface_view.ui:857 plugins/interface_view.ui:894
+#: plugins/interface_view.ui:1042 plugins/interface_view.ui:1420
+#: plugins/interface_view.ui:1440
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:937
+#: plugins/interface_view.ui:877
 msgid "Relative position"
 msgstr "Relativni položaj"
 
-#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
+#: plugins/interface_view.ui:914 plugins/interface_view.ui:1403
 msgid "Size"
 msgstr "Velikost"
 
-#: plugins/interface_view.ui:991
+#: plugins/interface_view.ui:931
 msgid "WIDGET"
 msgstr "GRADNIK"
 
-#: plugins/interface_view.ui:1011
+#: plugins/interface_view.ui:951
 msgid "Layer"
 msgstr "Plast"
 
-#: plugins/interface_view.ui:1048
+#: plugins/interface_view.ui:988
 msgid "MDI-Z-order"
 msgstr "MDI-Z-red"
 
-#: plugins/interface_view.ui:1085
+#: plugins/interface_view.ui:1025
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1120
+#: plugins/interface_view.ui:1060
 msgid "Absolute position"
 msgstr "Absolutni položaj"
 
-#: plugins/interface_view.ui:1139
+#: plugins/interface_view.ui:1077
 msgid "Co_mponent"
 msgstr "_Enota"
 
-#: plugins/interface_view.ui:1158
+#: plugins/interface_view.ui:1096
 msgid "Des_ktop"
 msgstr "_Namizje"
 
-#: plugins/interface_view.ui:1264
+#: plugins/interface_view.ui:1192
 msgid "Locale:"
 msgstr "Jezikovna oznaka:"
 
-#: plugins/interface_view.ui:1305
+#: plugins/interface_view.ui:1231
 msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:299
+#: plugins/interface_view.ui:1252 plugins/validate.py:299
 msgid "Hyperlink"
 msgstr "Hiperpovezava"
 
-#: plugins/interface_view.ui:1438
+#: plugins/interface_view.ui:1358
 msgid "H_ypertext"
 msgstr "_Hiperbesedilo"
 
-#: plugins/interface_view.ui:1471
+#: plugins/interface_view.ui:1386
 msgid "Position"
 msgstr "Položaj"
 
-#: plugins/interface_view.ui:1560
+#: plugins/interface_view.ui:1475
 msgid "Locale"
 msgstr "Jezikovna oznaka"
 
-#: plugins/interface_view.ui:1622
+#: plugins/interface_view.ui:1535
 msgid "_Image"
 msgstr "_Slika"
 
-#: plugins/interface_view.ui:1641
+#: plugins/interface_view.ui:1554
 msgid "Lo_gin Helper"
 msgstr "Pomočnik _prijave"
 
-#: plugins/interface_view.ui:1712
+#: plugins/interface_view.ui:1621
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: plugins/interface_view.ui:1754
+#: plugins/interface_view.ui:1692
 msgid "_Selection"
 msgstr "_Izbor"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:1725
 msgid "Content type"
 msgstr "Vrsta vsebine"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
 msgid "URI"
 msgstr "Naslov URI"
 
-#: plugins/interface_view.ui:1822
+#: plugins/interface_view.ui:1753
 msgid "St_reamable Content"
 msgstr "P_pretočna vsebina"
 
-#: plugins/interface_view.ui:1863
+#: plugins/interface_view.ui:1792
 msgid "Caption:"
 msgstr "Naslov:"
 
-#: plugins/interface_view.ui:1908
+#: plugins/interface_view.ui:1837
 msgid "Summary:"
 msgstr "Povzetek:"
 
-#: plugins/interface_view.ui:2052
+#: plugins/interface_view.ui:1978
 msgid "Selected columns"
 msgstr "Izbrani stolpci"
 
-#: plugins/interface_view.ui:2068
+#: plugins/interface_view.ui:1994
 msgid "Selected rows"
 msgstr "Izbrane vrstice"
 
-#: plugins/interface_view.ui:2084
+#: plugins/interface_view.ui:2010
 msgid "Columns"
 msgstr "Stolpci"
 
-#: plugins/interface_view.ui:2100
+#: plugins/interface_view.ui:2026
 msgid "Rows"
 msgstr "Vrstice"
 
-#: plugins/interface_view.ui:2125
+#: plugins/interface_view.ui:2049
 msgid "Table Information"
 msgstr "Podrobnosti razpredelnice"
 
-#: plugins/interface_view.ui:2171
+#: plugins/interface_view.ui:2093
 msgid "name (x,y)"
 msgstr "ime (x,y)"
 
-#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
 msgid "Header:"
 msgstr "Glava:"
 
-#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
 msgid "<no description>"
 msgstr "<brez opisa>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
 msgid "Extents:"
 msgstr "Razširitve:"
 
-#: plugins/interface_view.ui:2311
+#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
 msgid "Row"
 msgstr "Vrstica"
 
-#: plugins/interface_view.ui:2430
+#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
 msgid "Column"
 msgstr "Stolpec"
 
-#: plugins/interface_view.ui:2448
+#: plugins/interface_view.ui:2358
 msgid "Selected Cell"
 msgstr "Izbrana celica"
 
-#: plugins/interface_view.ui:2472
+#: plugins/interface_view.ui:2380
 msgid "_Table"
 msgstr "_Razpredelnica"
 
-#: plugins/interface_view.ui:2533
+#: plugins/interface_view.ui:2488
+msgid "Column span"
+msgstr "Razpon stolpcev"
+
+#: plugins/interface_view.ui:2504
+msgid "Row span"
+msgstr "Razpon vrstic"
+
+#: plugins/interface_view.ui:2551
+msgid "Row headers"
+msgstr "Glave vrstic"
+
+#: plugins/interface_view.ui:2568
+msgid "Column headers"
+msgstr "Glave stolpcev"
+
+#: plugins/interface_view.ui:2584
+msgid "Table"
+msgstr "Razpredelnica"
+
+#: plugins/interface_view.ui:2770
+msgid "_TableCell"
+msgstr "_Celica razpredelnice"
+
+#: plugins/interface_view.ui:2820
 msgid "Text"
 msgstr "Besedilo"
 
-#: plugins/interface_view.ui:2571
+#: plugins/interface_view.ui:2859
 msgid "Offset"
 msgstr "Odmik"
 
-#: plugins/interface_view.ui:2609
+#: plugins/interface_view.ui:2897
 msgid "Include defaults"
 msgstr "Vključi privzeto"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2631
+#: plugins/interface_view.ui:2919
 msgid "Start: 0"
 msgstr "Začetek: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2649
+#: plugins/interface_view.ui:2937
 msgid "End: 0"
 msgstr "Konec: 0"
 
-#: plugins/interface_view.ui:2763
+#: plugins/interface_view.ui:3043
 msgid "Te_xt"
 msgstr "_Besedilo"
 
-#: plugins/interface_view.ui:2818
+#: plugins/interface_view.ui:3093
 msgid "Current value"
 msgstr "Trenutna vrednost"
 
-#: plugins/interface_view.ui:2886
+#: plugins/interface_view.ui:3161
 msgid "Minimum increment"
 msgstr "Najmanjše povečevanje"
 
-#: plugins/interface_view.ui:2901
+#: plugins/interface_view.ui:3176
 msgid "Maximum value"
 msgstr "Največja vrednost"
 
-#: plugins/interface_view.ui:2916
+#: plugins/interface_view.ui:3191
 msgid "Minimum value"
 msgstr "Najmanjša vrednost"
 
-#: plugins/interface_view.ui:2942
+#: plugins/interface_view.ui:3215
 msgid "Val_ue"
 msgstr "_Vrednost"
 
-#: plugins/interface_view.ui:2961
+#: plugins/interface_view.ui:3232
 msgid "unknown"
 msgstr "neznano"
 
@@ -579,23 +633,23 @@ msgstr "Pregledovalnik vmesnikov"
 msgid "Allows viewing of various interface properties"
 msgstr "Omogoča prikaz različnih lastnosti vmesnikov"
 
-#: plugins/interface_view.py:237
+#: plugins/interface_view.py:238
 msgid "(not implemented)"
 msgstr "(ni del programa)"
 
-#: plugins/interface_view.py:752
+#: plugins/interface_view.py:753
 msgid "Start"
 msgstr "Začetek"
 
-#: plugins/interface_view.py:760
+#: plugins/interface_view.py:761
 msgid "End"
 msgstr "Konec"
 
-#: plugins/interface_view.py:922
+#: plugins/interface_view.py:926
 msgid "Too many selectable children"
 msgstr "Preveč izbirnih podrejenih procesov"
 
-#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
+#: plugins/interface_view.py:1393 plugins/interface_view.py:1396
 msgid "(Editable)"
 msgstr "(Uredljivo)"
 
@@ -604,7 +658,7 @@ msgstr "(Uredljivo)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1425
+#: plugins/interface_view.py:1543
 #, python-format
 msgid "Start: %d"
 msgstr "Začetek: %d"
@@ -614,7 +668,7 @@ msgstr "Začetek: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1431
+#: plugins/interface_view.py:1549
 #, python-format
 msgid "End: %d"
 msgstr "Konec: %d"
@@ -635,15 +689,19 @@ msgstr "Preverjanje zadnje izbrane enote dostopnosti"
 msgid "Inspect accessible under mouse"
 msgstr "Preverjanje enote dostopnosti pod kazalnikom miške"
 
-#: plugins/validate.ui:38
+#: plugins/validate.ui:44
 msgid "Sche_ma:"
 msgstr "She_ma:"
 
-#: plugins/validate.ui:89
+#: plugins/validate.ui:104
 msgid "V_alidate"
 msgstr "Določi _veljavnost"
 
-#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+msgid "_Help"
+msgstr "Pomo_č"
+
+#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
 msgid "Idle"
 msgstr "Nedejavno"
 
@@ -666,35 +724,40 @@ msgid "Level"
 msgstr "Raven"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:477
 msgid "Role"
 msgstr "Vloga"
 
-#: plugins/validate.py:362
+#: plugins/validate.py:313
+#, fuzzy
+msgid "Save validator output"
+msgstr "Shrani izhod preverjalnika"
+
+#: plugins/validate.py:361
 msgid "Saving"
 msgstr "Shranjevanje"
 
-#: plugins/validate.py:413
+#: plugins/validate.py:412
 msgid "Validating"
 msgstr "Določanje veljavnosti"
 
-#: plugins/validate.py:571
+#: plugins/validate.py:570
 msgid "EXCEPT"
 msgstr "IZJEMA"
 
-#: plugins/validate.py:578
+#: plugins/validate.py:577
 msgid "ERROR"
 msgstr "NAPAKA"
 
-#: plugins/validate.py:586
+#: plugins/validate.py:585
 msgid "WARN"
 msgstr "OPOZORILO"
 
-#: plugins/validate.py:593
+#: plugins/validate.py:592
 msgid "INFO"
 msgstr "PODROBNOSTI"
 
-#: plugins/validate.py:600
+#: plugins/validate.py:599
 msgid "DEBUG"
 msgstr "RAZHROŠČEVANJE"
 
@@ -798,47 +861,41 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s nima imena ali opisa"
 
-#: src/lib/accerciser/accerciser.py:80
+#: src/lib/accerciser/accerciser.py:92
+msgid "_Quit"
+msgstr "_Izhod"
+
+#: src/lib/accerciser/accerciser.py:94
 msgid "_Preferences…"
 msgstr "_Možnosti …"
 
-#: src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:96
 msgid "_Contents"
 msgstr "_Vsebina"
 
-#: src/lib/accerciser/accessible_treeview.py:415
+#: src/lib/accerciser/accerciser.py:98
+msgid "_About"
+msgstr "_O programu"
+
+#: src/lib/accerciser/accessible_treeview.py:416
 msgid "<dead>"
 msgstr "<nedejavno>"
 
-#: src/lib/accerciser/accessible_treeview.py:478
+#: src/lib/accerciser/accessible_treeview.py:484
 msgid "Children"
 msgstr "Podrejeno"
 
-#: src/lib/accerciser/accessible_treeview.py:506
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "_Show Applications without children"
 msgstr "_Pokaži programe brez podrejenih oken"
 
-#: src/lib/accerciser/accessible_treeview.py:509
+#: src/lib/accerciser/accessible_treeview.py:521
 msgid "_Refresh Registry"
 msgstr "Osveži _vpisnik"
 
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:512
-msgid "Refresh all"
-msgstr "Osveži vse"
-
-#. Translators: Refresh current tree node's children.
-#.
-#: src/lib/accerciser/accessible_treeview.py:515
+#: src/lib/accerciser/accessible_treeview.py:527
 msgid "Refresh _Node"
 msgstr "Osveži _vozlišče"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:518
-msgid "Refresh selected node’s children"
-msgstr "Osveži podrejene predmete vozlišča"
 
 #: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
@@ -864,51 +921,72 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Dvigalka"
 
-#: src/lib/accerciser/main_window.py:43
+#: src/lib/accerciser/main_window.py:44
 msgid "Accerciser Accessibility Explorer"
 msgstr "Raziskovalnik dostopnosti Accerciser"
 
-#: src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:74
 msgid "Top panel"
 msgstr "Zgornji pult"
 
-#: src/lib/accerciser/main_window.py:78
+#: src/lib/accerciser/main_window.py:75
 msgid "Bottom panel"
 msgstr "Spodnji pult"
+
+#: src/lib/accerciser/menus.py:17
+msgid "_File"
+msgstr "_Datoteka"
+
+#: src/lib/accerciser/menus.py:19
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: src/lib/accerciser/menus.py:25
+msgid "_Bookmarks"
+msgstr "_Zaznamki"
+
+#: src/lib/accerciser/menus.py:27
+msgid "_View"
+msgstr "Po_gled"
 
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Možnosti programa"
 
-#: src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
+#: src/lib/accerciser/plugin/view.py:1138
+msgid "_Close"
+msgstr "Z_apri"
+
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Plugins"
 msgstr "Vstavki"
 
-#: src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
 msgstr "Splošne hitre tipke"
 
-#: src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "Poudarjanje"
 
-#: src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:88
 msgid "Highlight duration:"
 msgstr "Trajanje poudarjanja:"
 
-#: src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:95
 msgid "Border color:"
 msgstr "Barva okvirja:"
 
-#: src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "The border color of the highlight box"
 msgstr "Barva okvirja poudarjanja"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "Fill color:"
 msgstr "Barva polnila:"
 
-#: src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:102
 msgid "The fill color of the highlight box"
 msgstr "Barva polnila poudarjanja"
 
@@ -934,51 +1012,55 @@ msgstr ""
 msgid "Web site"
 msgstr "Spletna stran"
 
-#: src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:68
 msgid "_Add Bookmark…"
 msgstr "_Dodaj zaznamek …"
 
-#: src/lib/accerciser/bookmarks.py:67
-msgid "Bookmark selected accessible."
-msgstr "Izbran zaznamek je dostopen."
-
-#: src/lib/accerciser/bookmarks.py:69
+#: src/lib/accerciser/bookmarks.py:70
 msgid "_Edit Bookmarks…"
 msgstr "_Uredi zaznamke …"
 
-#: src/lib/accerciser/bookmarks.py:70
-msgid "Manage bookmarks."
-msgstr "Uredi zaznamke."
-
-#: src/lib/accerciser/bookmarks.py:328
+#: src/lib/accerciser/bookmarks.py:305
 msgid "Edit Bookmarks…"
 msgstr "Uredi zaznamke …"
 
-#: src/lib/accerciser/bookmarks.py:434
+#: src/lib/accerciser/bookmarks.py:321
+msgid "_Add"
+msgstr "_Dodaj"
+
+#: src/lib/accerciser/bookmarks.py:324
+msgid "_Remove"
+msgstr "_Odstrani"
+
+#: src/lib/accerciser/bookmarks.py:327
+msgid "_Jump to"
+msgstr "_Skoči na"
+
+#: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
 msgstr "Naslov"
 
-#: src/lib/accerciser/bookmarks.py:442
+#: src/lib/accerciser/bookmarks.py:420
 msgid "Application"
 msgstr "Program"
 
-#: src/lib/accerciser/bookmarks.py:450
+#: src/lib/accerciser/bookmarks.py:428
 msgid "Path"
 msgstr "Pot"
 
-#: src/lib/accerciser/bookmarks.py:519
+#: src/lib/accerciser/bookmarks.py:497
 msgid "Add Bookmark…"
 msgstr "Dodaj zaznamek …"
 
-#: src/lib/accerciser/bookmarks.py:533
+#: src/lib/accerciser/bookmarks.py:513
 msgid "Title:"
 msgstr "Naslov:"
 
-#: src/lib/accerciser/bookmarks.py:536
+#: src/lib/accerciser/bookmarks.py:516
 msgid "Application:"
 msgstr "Program:"
 
-#: src/lib/accerciser/bookmarks.py:539
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Path:"
 msgstr "Pot:"
 
@@ -986,91 +1068,39 @@ msgstr "Pot:"
 msgid "Plugin Errors"
 msgstr "Napake vstavkov"
 
+#: src/lib/accerciser/plugin/message.py:294
+msgid "_Refresh"
+msgstr "Osve_ži"
+
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:395
+#: src/lib/accerciser/plugin/plugin_manager.py:397
 msgctxt "viewport"
 msgid "View"
 msgstr "Pogled"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:472
+#: src/lib/accerciser/plugin/plugin_manager.py:474
 msgid "No view"
 msgstr "Brez pogleda"
 
-#: src/lib/accerciser/plugin/view.py:377
+#: src/lib/accerciser/plugin/view.py:380
 msgid "_Single plugins view"
 msgstr "_Enotni pogled vstavkov"
 
-#: src/lib/accerciser/plugin/view.py:766
+#: src/lib/accerciser/plugin/view.py:771
 msgid "Plugin View"
 msgstr "Pogled vstavkov"
 
-#: src/lib/accerciser/plugin/view.py:769
+#: src/lib/accerciser/plugin/view.py:774
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Pogled vstavkov (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1074
+#: src/lib/accerciser/plugin/view.py:1079
 msgid "_New view…"
 msgstr "_Nov pogled …"
 
-#: src/lib/accerciser/plugin/view.py:1130
+#: src/lib/accerciser/plugin/view.py:1135
 msgid "New View…"
 msgstr "Nov pogled …"
-
-#: src/lib/accerciser/ui_manager.py:23
-msgid "_File"
-msgstr "_Datoteka"
-
-#: src/lib/accerciser/ui_manager.py:24
-msgid "_Edit"
-msgstr "_Uredi"
-
-#: src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "_Zaznamki"
-
-#: src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
-msgid "_View"
-msgstr "_Pogled"
-
-#: src/lib/accerciser/ui_manager.py:27
-msgid "_Help"
-msgstr "Pomo_č"
-
-#~| msgid "Accerciser"
-#~ msgid "accerciser"
-#~ msgstr "accerciser"
-
-#~ msgid "<i>_New view...</i>"
-#~ msgstr "<i>_Nov pogled ...</i>"
-
-#~ msgid "<i>(no description)</i>"
-#~ msgstr "<i>(brez opisa)</i>"
-
-#~ msgid ""
-#~ "Accerciser could not see the applications on your desktop.  You must "
-#~ "enable desktop accessibility to fix this problem.  Do you want to enable "
-#~ "it now?"
-#~ msgstr ""
-#~ "Program Accerciser ne zazna programa na namizju. Omogočena mora biti "
-#~ "enota namizne dostopnosti za razrešitev težav. Ali želite enoto omogočiti "
-#~ "takoj?"
-
-#~ msgid "Note: Changes only take effect after logout."
-#~ msgstr "Opomba: spremembe bodo uveljavljene ob naslednji prijavi."
-
-#~ msgid "<b>Event monitor</b>"
-#~ msgstr "<b>Nadzornik dogajanja</b>"
-
-#~ msgid "<b>Description</b>"
-#~ msgstr "<b>Opis</b>"
-
-#~ msgid "<b>Text</b>"
-#~ msgstr "<b>Besedilo</b>"
-
-#~ msgid "<i>Start: 0</i>"
-#~ msgstr "<i>Začetek: 0</i>"
