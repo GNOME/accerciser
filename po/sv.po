@@ -1,51 +1,27 @@
 # Swedish translation for accerciser.
-# Copyright © 2007-2012, 2014, 2015, 2017, 2019, 2023 Free Software Foundation, Inc.
+# Copyright © 2007-2012, 2014, 2015, 2017, 2019, 2023, 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the accerciser package.
 # Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2017, 2019, 2023.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2017, 2019, 2023, 2024.
 # Sebastian Rasmussen <sebras@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-07-11 09:43+0000\n"
-"PO-Revision-Date: 2023-07-11 12:21+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
+"POT-Creation-Date: 2024-03-01 01:55+0000\n"
+"PO-Revision-Date: 2023-12-31 13:05+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+#: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:7
 msgid "Accerciser"
 msgstr "Accerciser"
-
-#: accerciser.appdata.xml.in:7
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Hjälpmedelsutforskare för GNOME-skrivbordet"
-
-#: accerciser.appdata.xml.in:9
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Accerciser är en interaktiv Python-hjälpmedelsutforskare för GNOME-"
-"skrivbordet. Det använder AT-SPI för att inspektera och kontrollera "
-"gränssnittskomponenter, vilket låter dig se om ett program tillhandahåller "
-"riktig information till hjälpmedelstekniker och automatiserade testramverk."
-
-#: accerciser.appdata.xml.in:14
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Accerciser har ett enkelt ramverk för instick som du kan använda för att "
-"skapa anpassade vyer över hjälpmedelsinformation."
 
 #: accerciser.desktop.in:4
 msgid "Give your application an accessibility workout"
@@ -184,6 +160,30 @@ msgstr "Snabbknappskombination"
 msgid "Hotkey combination for related action."
 msgstr "Snabbknappskombination för relaterad åtgärd."
 
+#: org.gtk.accerciser.metainfo.xml.in:8
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Hjälpmedelsutforskare för GNOME-skrivbordet"
+
+#: org.gtk.accerciser.metainfo.xml.in:10
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser är en interaktiv Python-hjälpmedelsutforskare för GNOME-"
+"skrivbordet. Det använder AT-SPI för att inspektera och kontrollera "
+"gränssnittskomponenter, vilket låter dig se om ett program tillhandahåller "
+"riktig information till hjälpmedelstekniker och automatiserade testramverk."
+
+#: org.gtk.accerciser.metainfo.xml.in:15
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser har ett enkelt ramverk för instick som du kan använda för att "
+"skapa anpassade vyer över hjälpmedelsinformation."
+
 #: plugins/api_view.py:32
 msgid "API Browser"
 msgstr "API-bläddrare"
@@ -217,7 +217,7 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
 "Interaktiv konsol för manipulering av aktuell markerad åtkomlig komponent"
 
-#: plugins/event_monitor.ui:61
+#: plugins/event_monitor.ui:57
 msgid "Event monitor"
 msgstr "Händelseövervakare"
 
@@ -225,35 +225,48 @@ msgstr "Händelseövervakare"
 msgid "_Monitor Events"
 msgstr "_Övervaka händelser"
 
-#: plugins/event_monitor.ui:224
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
+#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+msgid "_Clear"
+msgstr "_Töm"
+
+#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+msgid "_Save"
+msgstr "_Spara"
+
+#: plugins/event_monitor.ui:274
+msgid "Select _All"
+msgstr "Markera _allt"
+
+#: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
 msgstr "Tö_m markering"
 
-#: plugins/event_monitor.ui:257
+#: plugins/event_monitor.ui:352
 msgid "Everything"
 msgstr "Allting"
 
-#: plugins/event_monitor.ui:273
+#: plugins/event_monitor.ui:369
 msgid "Selected application"
 msgstr "Markerat program"
 
-#: plugins/event_monitor.ui:289
+#: plugins/event_monitor.ui:386
 msgid "Selected accessible"
 msgstr "Markerad åtkomlig komponent"
 
-#: plugins/event_monitor.ui:310
+#: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "Källa"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:612
-#: plugins/interface_view.py:737 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:462
-#: src/lib/accerciser/plugin/plugin_manager.py:386
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
+#: plugins/interface_view.py:737 plugins/validate.py:297
+#: src/lib/accerciser/accessible_treeview.py:469
+#: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Namn"
 
-#: plugins/event_monitor.ui:358
+#: plugins/event_monitor.ui:459
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
@@ -277,86 +290,99 @@ msgstr "Starta/stoppa händelseinspelning"
 msgid "Clear event log"
 msgstr "Töm händelselogg"
 
-#: plugins/interface_view.ui:125
+#: plugins/event_monitor.py:478
+msgid "Save monitor output"
+msgstr "Spara övervakarutdata"
+
+#: plugins/event_monitor.py:481 plugins/validate.py:318
+#: src/lib/accerciser/plugin/view.py:1135
+msgid "_OK"
+msgstr "_OK"
+
+#: plugins/event_monitor.py:482 plugins/validate.py:319
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#: plugins/interface_view.ui:119
 msgid "Child count"
 msgstr "Antal barn"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1025
-#: plugins/interface_view.ui:1994 plugins/interface_view.ui:2013
-#: plugins/interface_view.ui:2032 plugins/interface_view.ui:2525
-#: plugins/interface_view.ui:2544 plugins/interface_view.ui:2563
-#: plugins/interface_view.ui:3218 plugins/interface_view.ui:3237
-#: plugins/interface_view.ui:3256
+#: plugins/interface_view.ui:138 plugins/interface_view.ui:968
+#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
+#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
+#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
+#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
+#: plugins/interface_view.ui:3142
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1574
+#: plugins/interface_view.ui:170 plugins/interface_view.ui:1492
 #: plugins/interface_view.py:345 plugins/interface_view.py:865
 msgid "(no description)"
 msgstr "(ingen beskrivning)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:623
-#: plugins/interface_view.ui:1542 plugins/validate.py:230
-#: plugins/validate.py:293
+#: plugins/interface_view.ui:186 plugins/interface_view.ui:580
+#: plugins/interface_view.ui:1460 plugins/validate.py:232
+#: plugins/validate.py:295
 msgid "Description"
 msgstr "Beskrivning"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:349
+#: plugins/interface_view.ui:215 plugins/interface_view.py:349
 msgid "(no ID)"
 msgstr "(inget ID)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:754
+#: plugins/interface_view.ui:231 plugins/interface_view.ui:704
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:324
+#: plugins/interface_view.ui:298
 msgid "States"
 msgstr "Tillstånd"
 
-#: plugins/interface_view.ui:395 plugins/interface_view.ui:1239
-#: plugins/interface_view.ui:3128
+#: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
+#: plugins/interface_view.ui:3021
 msgid "Attributes"
 msgstr "Attribut"
 
-#: plugins/interface_view.ui:515 plugins/interface_view.ui:1402
-#: plugins/interface_view.ui:2754 plugins/interface_view.ui:2824
+#: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
+#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
 msgid "Show"
 msgstr "Visa"
 
-#: plugins/interface_view.ui:548
+#: plugins/interface_view.ui:511
 msgid "Relations"
 msgstr "Relationer"
 
-#: plugins/interface_view.ui:569
+#: plugins/interface_view.ui:530
 msgid "_Accessible"
 msgstr "_Åtkomlig komponent"
 
-#: plugins/interface_view.ui:634
+#: plugins/interface_view.ui:591
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: plugins/interface_view.ui:688
+#: plugins/interface_view.ui:645
 msgid "Perform action"
 msgstr "Genomför åtgärd"
 
-#: plugins/interface_view.ui:721
+#: plugins/interface_view.ui:676
 msgid "Acti_on"
 msgstr "Åtgä_rd"
 
-#: plugins/interface_view.ui:769
+#: plugins/interface_view.ui:719
 msgid "Toolkit"
 msgstr "Verktygslåda"
 
-#: plugins/interface_view.ui:786
+#: plugins/interface_view.ui:736
 msgid "Version"
 msgstr "Version"
 
-#: plugins/interface_view.ui:862
+#: plugins/interface_view.ui:810
 msgid "Ap_plication"
 msgstr "_Program"
 
-#: plugins/interface_view.ui:881
+#: plugins/interface_view.ui:829
 msgid "Col_lection"
 msgstr "Sam_ling"
 
@@ -364,235 +390,234 @@ msgstr "Sam_ling"
 #. Component size in pixels
 #. Screen coordinates
 #. Component size
-#: plugins/interface_view.ui:914 plugins/interface_view.ui:951
-#: plugins/interface_view.ui:1099 plugins/interface_view.ui:1502
-#: plugins/interface_view.ui:1522
+#: plugins/interface_view.ui:857 plugins/interface_view.ui:894
+#: plugins/interface_view.ui:1042 plugins/interface_view.ui:1420
+#: plugins/interface_view.ui:1440
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:934
+#: plugins/interface_view.ui:877
 msgid "Relative position"
 msgstr "Relativ position"
 
-#: plugins/interface_view.ui:971 plugins/interface_view.ui:1485
+#: plugins/interface_view.ui:914 plugins/interface_view.ui:1403
 msgid "Size"
 msgstr "Storlek"
 
-#: plugins/interface_view.ui:988
+#: plugins/interface_view.ui:931
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: plugins/interface_view.ui:1008
+#: plugins/interface_view.ui:951
 msgid "Layer"
 msgstr "Lager"
 
-#: plugins/interface_view.ui:1045
+#: plugins/interface_view.ui:988
 msgid "MDI-Z-order"
 msgstr "MDI-Z-ordning"
 
-#: plugins/interface_view.ui:1082
+#: plugins/interface_view.ui:1025
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1117
+#: plugins/interface_view.ui:1060
 msgid "Absolute position"
 msgstr "Absolut position"
 
-#: plugins/interface_view.ui:1136
+#: plugins/interface_view.ui:1077
 msgid "Co_mponent"
 msgstr "Ko_mponent"
 
-#: plugins/interface_view.ui:1155
+#: plugins/interface_view.ui:1096
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: plugins/interface_view.ui:1261
+#: plugins/interface_view.ui:1192
 msgid "Locale:"
 msgstr "Lokal:"
 
-#: plugins/interface_view.ui:1302
+#: plugins/interface_view.ui:1231
 msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1323 plugins/validate.py:299
+#: plugins/interface_view.ui:1252 plugins/validate.py:301
 msgid "Hyperlink"
 msgstr "Hyperlänk"
 
-#: plugins/interface_view.ui:1435
+#: plugins/interface_view.ui:1358
 msgid "H_ypertext"
 msgstr "H_ypertext"
 
-#: plugins/interface_view.ui:1468
+#: plugins/interface_view.ui:1386
 msgid "Position"
 msgstr "Position"
 
-#: plugins/interface_view.ui:1557
+#: plugins/interface_view.ui:1475
 msgid "Locale"
 msgstr "Lokal"
 
-#: plugins/interface_view.ui:1619
+#: plugins/interface_view.ui:1535
 msgid "_Image"
 msgstr "_Bild"
 
-#: plugins/interface_view.ui:1638
+#: plugins/interface_view.ui:1554
 msgid "Lo_gin Helper"
 msgstr "Inlo_ggningshjälpare"
 
-#: plugins/interface_view.ui:1709
+#: plugins/interface_view.ui:1621
 msgid "Select All"
 msgstr "Markera allt"
 
-#: plugins/interface_view.ui:1751
+#: plugins/interface_view.ui:1692
 msgid "_Selection"
 msgstr "_Markering"
 
-#: plugins/interface_view.ui:1789
+#: plugins/interface_view.ui:1725
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: plugins/interface_view.ui:1800 plugins/interface_view.py:745
+#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1819
+#: plugins/interface_view.ui:1753
 msgid "St_reamable Content"
 msgstr "St_römmande innehåll"
 
-#: plugins/interface_view.ui:1860
+#: plugins/interface_view.ui:1792
 msgid "Caption:"
 msgstr "Överskrift:"
 
-#: plugins/interface_view.ui:1905
+#: plugins/interface_view.ui:1837
 msgid "Summary:"
 msgstr "Sammandrag:"
 
-#: plugins/interface_view.ui:2049
+#: plugins/interface_view.ui:1978
 msgid "Selected columns"
 msgstr "Markerade kolumner"
 
-#: plugins/interface_view.ui:2065
+#: plugins/interface_view.ui:1994
 msgid "Selected rows"
 msgstr "Markerade rader"
 
-#: plugins/interface_view.ui:2081
+#: plugins/interface_view.ui:2010
 msgid "Columns"
 msgstr "Kolumner"
 
-#: plugins/interface_view.ui:2097
+#: plugins/interface_view.ui:2026
 msgid "Rows"
 msgstr "Rader"
 
-#: plugins/interface_view.ui:2122
+#: plugins/interface_view.ui:2049
 msgid "Table Information"
 msgstr "Tabellinformation"
 
-#: plugins/interface_view.ui:2168
+#: plugins/interface_view.ui:2093
 msgid "name (x,y)"
 msgstr "namn (x,y)"
 
-#: plugins/interface_view.ui:2222 plugins/interface_view.ui:2341
+#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
 msgid "Header:"
 msgstr "Rubrik:"
 
-#: plugins/interface_view.ui:2235 plugins/interface_view.ui:2354
+#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
 msgid "<no description>"
 msgstr "<ingen beskrivning>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2268 plugins/interface_view.ui:2387
+#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
 msgid "Extents:"
 msgstr "Områden:"
 
-#: plugins/interface_view.ui:2308 plugins/interface_view.ui:2628
+#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
 msgid "Row"
 msgstr "Rad"
 
-#: plugins/interface_view.ui:2427 plugins/interface_view.ui:2612
+#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
 msgid "Column"
 msgstr "Kolumn"
 
-#: plugins/interface_view.ui:2445
+#: plugins/interface_view.ui:2358
 msgid "Selected Cell"
 msgstr "Markerad cell"
 
-#: plugins/interface_view.ui:2469
+#: plugins/interface_view.ui:2380
 msgid "_Table"
 msgstr "_Tabell"
 
-#: plugins/interface_view.ui:2580
+#: plugins/interface_view.ui:2488
 msgid "Column span"
 msgstr "Kolumnutsträckning"
 
-#: plugins/interface_view.ui:2596
+#: plugins/interface_view.ui:2504
 msgid "Row span"
 msgstr "Radutsträckning"
 
-#: plugins/interface_view.ui:2643
+#: plugins/interface_view.ui:2551
 msgid "Row headers"
 msgstr "Radrubriker"
 
-#: plugins/interface_view.ui:2660
+#: plugins/interface_view.ui:2568
 msgid "Column headers"
 msgstr "Kolumnrubriker"
 
-#: plugins/interface_view.ui:2676
+#: plugins/interface_view.ui:2584
 msgid "Table"
 msgstr "Tabell"
 
-#: plugins/interface_view.ui:2862
-#| msgid "_Table"
+#: plugins/interface_view.ui:2770
 msgid "_TableCell"
 msgstr "_TableCell"
 
-#: plugins/interface_view.ui:2922
+#: plugins/interface_view.ui:2820
 msgid "Text"
 msgstr "Text"
 
-#: plugins/interface_view.ui:2960
+#: plugins/interface_view.ui:2859
 msgid "Offset"
 msgstr "Position"
 
-#: plugins/interface_view.ui:2998
+#: plugins/interface_view.ui:2897
 msgid "Include defaults"
 msgstr "Inkludera standardvärden"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3020
+#: plugins/interface_view.ui:2919
 msgid "Start: 0"
 msgstr "Start: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3038
+#: plugins/interface_view.ui:2937
 msgid "End: 0"
 msgstr "Slut: 0"
 
-#: plugins/interface_view.ui:3152
+#: plugins/interface_view.ui:3043
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: plugins/interface_view.ui:3207
+#: plugins/interface_view.ui:3093
 msgid "Current value"
 msgstr "Aktuellt värde"
 
-#: plugins/interface_view.ui:3275
+#: plugins/interface_view.ui:3161
 msgid "Minimum increment"
 msgstr "Minimal ökning"
 
-#: plugins/interface_view.ui:3290
+#: plugins/interface_view.ui:3176
 msgid "Maximum value"
 msgstr "Maximalt värde"
 
-#: plugins/interface_view.ui:3305
+#: plugins/interface_view.ui:3191
 msgid "Minimum value"
 msgstr "Minimalt värde"
 
-#: plugins/interface_view.ui:3331
+#: plugins/interface_view.ui:3215
 msgid "Val_ue"
 msgstr "Vä_rde"
 
-#: plugins/interface_view.ui:3350
+#: plugins/interface_view.ui:3232
 msgid "unknown"
 msgstr "okänd"
 
@@ -618,11 +643,11 @@ msgstr "Start"
 msgid "End"
 msgstr "Slut"
 
-#: plugins/interface_view.py:923
+#: plugins/interface_view.py:926
 msgid "Too many selectable children"
 msgstr "För många valbara barn"
 
-#: plugins/interface_view.py:1389 plugins/interface_view.py:1392
+#: plugins/interface_view.py:1393 plugins/interface_view.py:1396
 msgid "(Editable)"
 msgstr "(Redigerbar)"
 
@@ -631,7 +656,7 @@ msgstr "(Redigerbar)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1539
+#: plugins/interface_view.py:1543
 #, python-format
 msgid "Start: %d"
 msgstr "Start: %d"
@@ -641,7 +666,7 @@ msgstr "Start: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1545
+#: plugins/interface_view.py:1549
 #, python-format
 msgid "End: %d"
 msgstr "Slut: %d"
@@ -662,66 +687,74 @@ msgstr "Inspektera senaste fokuserad åtkomlig komponent"
 msgid "Inspect accessible under mouse"
 msgstr "Inspektera åtkomlig komponent under muspekare"
 
-#: plugins/validate.ui:38
+#: plugins/validate.ui:44
 msgid "Sche_ma:"
 msgstr "Sche_ma:"
 
-#: plugins/validate.ui:89
+#: plugins/validate.ui:104
 msgid "V_alidate"
 msgstr "V_alidera"
 
-#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: plugins/validate.ui:285 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "Overksam"
 
-#: plugins/validate.py:80
+#: plugins/validate.py:82
 msgid "No description"
 msgstr "Ingen beskrivning"
 
-#: plugins/validate.py:167
+#: plugins/validate.py:169
 msgid "AT-SPI Validator"
 msgstr "AT-SPI-validerare"
 
-#: plugins/validate.py:169
+#: plugins/validate.py:171
 msgid "Validates application accessibility"
 msgstr "Validerar hjälpmedel i program"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
+#: plugins/validate.py:225 plugins/validate.py:293
 msgid "Level"
 msgstr "Nivå"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
+#: plugins/validate.py:299 src/lib/accerciser/accessible_treeview.py:478
 msgid "Role"
 msgstr "Roll"
 
-#: plugins/validate.py:362
+#: plugins/validate.py:315
+msgid "Save validator output"
+msgstr "Spara valideringsutdata"
+
+#: plugins/validate.py:363
 msgid "Saving"
 msgstr "Sparar"
 
-#: plugins/validate.py:413
+#: plugins/validate.py:414
 msgid "Validating"
 msgstr "Validerar"
 
-#: plugins/validate.py:571
+#: plugins/validate.py:572
 msgid "EXCEPT"
 msgstr "UNDANTAG"
 
-#: plugins/validate.py:578
+#: plugins/validate.py:579
 msgid "ERROR"
 msgstr "FEL"
 
-#: plugins/validate.py:586
+#: plugins/validate.py:587
 msgid "WARN"
 msgstr "VARNING"
 
-#: plugins/validate.py:593
+#: plugins/validate.py:594
 msgid "INFO"
 msgstr "INFO"
 
-#: plugins/validate.py:600
+#: plugins/validate.py:601
 msgid "DEBUG"
 msgstr "FELSÖKNING"
 
@@ -825,47 +858,41 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s har inget namn eller beskrivning"
 
-#: src/lib/accerciser/accerciser.py:80
+#: src/lib/accerciser/accerciser.py:92
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#: src/lib/accerciser/accerciser.py:94
 msgid "_Preferences…"
 msgstr "_Inställningar…"
 
-#: src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:96
 msgid "_Contents"
 msgstr "_Innehåll"
 
-#: src/lib/accerciser/accessible_treeview.py:415
+#: src/lib/accerciser/accerciser.py:98
+msgid "_About"
+msgstr "_Om"
+
+#: src/lib/accerciser/accessible_treeview.py:417
 msgid "<dead>"
 msgstr "<död>"
 
-#: src/lib/accerciser/accessible_treeview.py:478
+#: src/lib/accerciser/accessible_treeview.py:485
 msgid "Children"
 msgstr "Barn"
 
-#: src/lib/accerciser/accessible_treeview.py:506
+#: src/lib/accerciser/accessible_treeview.py:513
 msgid "_Show Applications without children"
 msgstr "Vi_sa program utan barn"
 
-#: src/lib/accerciser/accessible_treeview.py:509
+#: src/lib/accerciser/accessible_treeview.py:522
 msgid "_Refresh Registry"
 msgstr "Uppdatera _registret"
 
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:512
-msgid "Refresh all"
-msgstr "Uppdatera alla"
-
-#. Translators: Refresh current tree node's children.
-#.
-#: src/lib/accerciser/accessible_treeview.py:515
+#: src/lib/accerciser/accessible_treeview.py:528
 msgid "Refresh _Node"
 msgstr "Uppdatera _nod"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:518
-msgid "Refresh selected node’s children"
-msgstr "Uppdatera markerade nodens barn"
 
 #: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
@@ -891,51 +918,72 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Skift"
 
-#: src/lib/accerciser/main_window.py:43
+#: src/lib/accerciser/main_window.py:44
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser hjälpmedelsutforskare"
 
-#: src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:74
 msgid "Top panel"
 msgstr "Överpanel"
 
-#: src/lib/accerciser/main_window.py:78
+#: src/lib/accerciser/main_window.py:75
 msgid "Bottom panel"
 msgstr "Nederpanel"
+
+#: src/lib/accerciser/menus.py:17
+msgid "_File"
+msgstr "_Arkiv"
+
+#: src/lib/accerciser/menus.py:19
+msgid "_Edit"
+msgstr "R_edigera"
+
+#: src/lib/accerciser/menus.py:25
+msgid "_Bookmarks"
+msgstr "_Bokmärken"
+
+#: src/lib/accerciser/menus.py:27
+msgid "_View"
+msgstr "_Visa"
 
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
 msgstr "Inställningar för accerciser"
 
-#: src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
+#: src/lib/accerciser/plugin/view.py:1137
+msgid "_Close"
+msgstr "S_täng"
+
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Plugins"
 msgstr "Instick"
 
-#: src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
 msgstr "Allmänna snabbtangenter"
 
-#: src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "Markering"
 
-#: src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:89
 msgid "Highlight duration:"
 msgstr "Markeringslängd:"
 
-#: src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:96
 msgid "Border color:"
 msgstr "Ramfärg:"
 
-#: src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "The border color of the highlight box"
 msgstr "Ramfärgen för markeringsrutan"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:100
 msgid "Fill color:"
 msgstr "Fyllnadsfärg:"
 
-#: src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:103
 msgid "The fill color of the highlight box"
 msgstr "Fyllnadsfärgen för markeringsrutan"
 
@@ -965,51 +1013,55 @@ msgstr "Den nya BSD-licensen. Se filerna COPYING och NOTICE för detaljer."
 msgid "Web site"
 msgstr "Webbplats"
 
-#: src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:68
 msgid "_Add Bookmark…"
 msgstr "_Lägg till bokmärke…"
 
-#: src/lib/accerciser/bookmarks.py:67
-msgid "Bookmark selected accessible."
-msgstr "Bokmärk markerad åtkomlig komponent."
-
-#: src/lib/accerciser/bookmarks.py:69
+#: src/lib/accerciser/bookmarks.py:70
 msgid "_Edit Bookmarks…"
 msgstr "R_edigera bokmärken…"
 
-#: src/lib/accerciser/bookmarks.py:70
-msgid "Manage bookmarks."
-msgstr "Hantera bokmärken."
-
-#: src/lib/accerciser/bookmarks.py:328
+#: src/lib/accerciser/bookmarks.py:305
 msgid "Edit Bookmarks…"
 msgstr "Redigera bokmärken…"
 
-#: src/lib/accerciser/bookmarks.py:434
+#: src/lib/accerciser/bookmarks.py:321
+msgid "_Add"
+msgstr "_Lägg till"
+
+#: src/lib/accerciser/bookmarks.py:324
+msgid "_Remove"
+msgstr "_Ta bort"
+
+#: src/lib/accerciser/bookmarks.py:327
+msgid "_Jump to"
+msgstr "_Hoppa till"
+
+#: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
 msgstr "Titel"
 
-#: src/lib/accerciser/bookmarks.py:442
+#: src/lib/accerciser/bookmarks.py:420
 msgid "Application"
 msgstr "Program"
 
-#: src/lib/accerciser/bookmarks.py:450
+#: src/lib/accerciser/bookmarks.py:428
 msgid "Path"
 msgstr "Sökväg"
 
-#: src/lib/accerciser/bookmarks.py:519
+#: src/lib/accerciser/bookmarks.py:497
 msgid "Add Bookmark…"
 msgstr "Lägg till bokmärke…"
 
-#: src/lib/accerciser/bookmarks.py:533
+#: src/lib/accerciser/bookmarks.py:513
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/lib/accerciser/bookmarks.py:536
+#: src/lib/accerciser/bookmarks.py:516
 msgid "Application:"
 msgstr "Program:"
 
-#: src/lib/accerciser/bookmarks.py:539
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Path:"
 msgstr "Sökväg:"
 
@@ -1017,60 +1069,51 @@ msgstr "Sökväg:"
 msgid "Plugin Errors"
 msgstr "Fel i instick"
 
+#: src/lib/accerciser/plugin/message.py:294
+msgid "_Refresh"
+msgstr "_Uppdatera"
+
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:395
+#: src/lib/accerciser/plugin/plugin_manager.py:396
 msgctxt "viewport"
 msgid "View"
 msgstr "Vy"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:472
+#: src/lib/accerciser/plugin/plugin_manager.py:473
 msgid "No view"
 msgstr "Ingen vy"
 
-#: src/lib/accerciser/plugin/view.py:377
+#: src/lib/accerciser/plugin/view.py:379
 msgid "_Single plugins view"
 msgstr "Vy för _enstaka instick"
 
-#: src/lib/accerciser/plugin/view.py:766
+#: src/lib/accerciser/plugin/view.py:770
 msgid "Plugin View"
 msgstr "Insticksvy"
 
-#: src/lib/accerciser/plugin/view.py:769
+#: src/lib/accerciser/plugin/view.py:773
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Insticksvy (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1074
+#: src/lib/accerciser/plugin/view.py:1078
 msgid "_New view…"
 msgstr "_Ny vy…"
 
-#: src/lib/accerciser/plugin/view.py:1130
+#: src/lib/accerciser/plugin/view.py:1134
 msgid "New View…"
 msgstr "Ny vy…"
 
-#: src/lib/accerciser/ui_manager.py:23
-msgid "_File"
-msgstr "_Arkiv"
+#~ msgid "Refresh selected node’s children"
+#~ msgstr "Uppdatera markerade nodens barn"
 
-#: src/lib/accerciser/ui_manager.py:24
-msgid "_Edit"
-msgstr "R_edigera"
+#~ msgid "Bookmark selected accessible."
+#~ msgstr "Bokmärk markerad åtkomlig komponent."
 
-#: src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "_Bokmärken"
-
-#: src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
-msgid "_View"
-msgstr "_Visa"
-
-#: src/lib/accerciser/ui_manager.py:27
-msgid "_Help"
-msgstr "_Hjälp"
+#~ msgid "Manage bookmarks."
+#~ msgstr "Hantera bokmärken."
 
 #~| msgid "Accerciser"
 #~ msgid "accerciser"
