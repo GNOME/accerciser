@@ -17,7 +17,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 from gi.repository import Gio as gio
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import Wnck as wnck
 from gi.repository import GLib
 from gi.repository import Atk as atk
 
@@ -35,6 +34,7 @@ from .hotkey_manager import HotkeyManager, HotkeyTreeView
 from .about_dialog import AccerciserAboutDialog
 from .prefs_dialog import AccerciserPreferencesDialog
 from .main_window import AccerciserMainWindow
+from .window_manager import WindowManager
 from . import menus
 
 class Main(gtk.Application, Tools):
@@ -60,7 +60,8 @@ class Main(gtk.Application, Tools):
     root_atk = atk.get_root()
     root_atk.set_description(str(os.getpid()))
 
-    self.node = Node()
+    window_manager = WindowManager()
+    self.node = Node(window_manager)
     self.set_menubar(menus.main_menu)
 
   def do_activate(self):

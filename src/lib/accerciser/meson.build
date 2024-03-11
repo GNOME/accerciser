@@ -23,6 +23,7 @@ lib_sources = [
   'node.py',
   'prefs_dialog.py',
   'tools.py',
+  'window_manager.py',
 ]
 
 python3.install_sources(
