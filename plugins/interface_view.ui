@@ -2315,68 +2315,25 @@
                 <property name="orientation">vertical</property>
                 <property name="spacing">3</property>
                 <child>
-                  <object class="GtkTable" id="table3">
+                  <!-- n-columns=2 n-rows=7 -->
+                  <object class="GtkGrid">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="halign">start</property>
-                    <property name="n-rows">7</property>
-                    <property name="n-columns">2</property>
                     <property name="column-spacing">12</property>
                     <child>
-                      <object class="GtkLabel" id="tablecell_columnspan_label">
+                      <object class="GtkLabel" id="label66">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label">0</property>
+                        <property name="label" translatable="yes">Row</property>
                         <property name="xalign">0</property>
                         <accessibility>
-                          <relation type="labelled-by" target="label63"/>
+                          <relation type="label-for" target="tablecell_row_label"/>
                         </accessibility>
                       </object>
                       <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">3</property>
-                        <property name="bottom-attach">4</property>
-                        <property name="x-options">GTK_FILL</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="tablecell_rowspan_label">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="labelled-by" target="label64"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">2</property>
-                        <property name="bottom-attach">3</property>
-                        <property name="x-options">GTK_FILL</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="tablecell_column_label">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="labelled-by" target="label65"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">1</property>
-                        <property name="bottom-attach">2</property>
-                        <property name="x-options">GTK_FILL</property>
-                        <property name="y-options">GTK_FILL</property>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">0</property>
                       </packing>
                     </child>
                     <child>
@@ -2391,41 +2348,7 @@
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="x-options">GTK_FILL</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label63">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Column span</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="label-for" target="tablecell_columnspan_label"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="top-attach">3</property>
-                        <property name="bottom-attach">4</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label64">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Row span</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="label-for" target="tablecell_rowspan_label"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="top-attach">2</property>
-                        <property name="bottom-attach">3</property>
-                        <property name="y-options">GTK_FILL</property>
+                        <property name="top-attach">0</property>
                       </packing>
                     </child>
                     <child>
@@ -2439,23 +2362,83 @@
                         </accessibility>
                       </object>
                       <packing>
+                        <property name="left-attach">0</property>
                         <property name="top-attach">1</property>
-                        <property name="bottom-attach">2</property>
-                        <property name="y-options">GTK_FILL</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="label66">
+                      <object class="GtkLabel" id="tablecell_column_label">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Row</property>
+                        <property name="label" translatable="yes">0</property>
                         <property name="xalign">0</property>
                         <accessibility>
-                          <relation type="label-for" target="tablecell_row_label"/>
+                          <relation type="labelled-by" target="label65"/>
                         </accessibility>
                       </object>
                       <packing>
-                        <property name="y-options">GTK_FILL</property>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label64">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Row span</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="tablecell_rowspan_label"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="tablecell_rowspan_label">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="labelled-by" target="label64"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label63">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Column span</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="tablecell_columnspan_label"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="tablecell_columnspan_label">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label">0</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="labelled-by" target="label63"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">3</property>
                       </packing>
                     </child>
                     <child>
@@ -2470,61 +2453,8 @@
                         </accessibility>
                       </object>
                       <packing>
+                        <property name="left-attach">0</property>
                         <property name="top-attach">4</property>
-                        <property name="bottom-attach">5</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label77">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="valign">start</property>
-                        <property name="label" translatable="yes">Column headers</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="label-for" target="vbox16"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="top-attach">5</property>
-                        <property name="bottom-attach">6</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label78">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Table</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="label-for" target="tablecell_table_button"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="top-attach">6</property>
-                        <property name="bottom-attach">7</property>
-                        <property name="y-options">GTK_FILL</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="tablecell_table_button">
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                        <property name="relief">none</property>
-                        <property name="xalign">0</property>
-                        <signal name="clicked" handler="_onTableCellButtonClicked" swapped="no"/>
-                        <accessibility>
-                          <relation type="labelled-by" target="label78"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">6</property>
-                        <property name="bottom-attach">7</property>
                       </packing>
                     </child>
                     <child>
@@ -2593,9 +2523,23 @@
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
                         <property name="top-attach">4</property>
-                        <property name="bottom-attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label77">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="valign">start</property>
+                        <property name="label" translatable="yes">Column headers</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="vbox16"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">5</property>
                       </packing>
                     </child>
                     <child>
@@ -2664,14 +2608,44 @@
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
                         <property name="top-attach">5</property>
-                        <property name="bottom-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label78">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Table</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="tablecell_table_button"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="tablecell_table_button">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="relief">none</property>
+                        <property name="xalign">0</property>
+                        <signal name="clicked" handler="_onTableCellButtonClicked" swapped="no"/>
+                        <accessibility>
+                          <relation type="labelled-by" target="label78"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">6</property>
                       </packing>
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
