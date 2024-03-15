@@ -2950,30 +2950,12 @@
                 <property name="margin-start">12</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkTable" id="table1">
+                  <!-- n-columns=2 n-rows=4 -->
+                  <object class="GtkGrid">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="n-rows">4</property>
-                    <property name="n-columns">2</property>
-                    <property name="column-spacing">3</property>
-                    <property name="homogeneous">True</property>
-                    <child>
-                      <object class="GtkSpinButton" id="spinbutton_value">
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="invisible-char">●</property>
-                        <property name="adjustment">spin_value_adjustement</property>
-                        <signal name="value-changed" handler="_onValueSpinnerChange" swapped="no"/>
-                        <accessibility>
-                          <relation type="labelled-by" target="label40"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="x-options"/>
-                      </packing>
-                    </child>
+                    <property name="column-spacing">6</property>
+                    <property name="row-homogeneous">True</property>
                     <child>
                       <object class="GtkLabel" id="label40">
                         <property name="visible">True</property>
@@ -2984,24 +2966,41 @@
                           <relation type="label-for" target="spinbutton_value"/>
                         </accessibility>
                       </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">0</property>
+                      </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="label_value_inc">
+                      <object class="GtkSpinButton" id="spinbutton_value">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="xalign">0</property>
+                        <property name="can-focus">True</property>
+                        <property name="invisible-char">●</property>
+                        <property name="text" translatable="yes">0</property>
+                        <property name="adjustment">spin_value_adjustement</property>
+                        <signal name="value-changed" handler="_onValueSpinnerChange" swapped="no"/>
                         <accessibility>
-                          <relation type="labelled-by" target="label36"/>
+                          <relation type="labelled-by" target="label40"/>
                         </accessibility>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">3</property>
-                        <property name="bottom-attach">4</property>
-                        <property name="x-options"/>
+                        <property name="top-attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label34">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Minimum value</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="label_value_min"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">1</property>
                       </packing>
                     </child>
                     <child>
@@ -3017,44 +3016,7 @@
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
                         <property name="top-attach">1</property>
-                        <property name="bottom-attach">2</property>
-                        <property name="x-options"/>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label_value_max">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">0</property>
-                        <property name="selectable">True</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="labelled-by" target="label35"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="left-attach">1</property>
-                        <property name="right-attach">2</property>
-                        <property name="top-attach">2</property>
-                        <property name="bottom-attach">3</property>
-                        <property name="x-options"/>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label36">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Minimum increment</property>
-                        <property name="xalign">0</property>
-                        <accessibility>
-                          <relation type="label-for" target="label_value_inc"/>
-                        </accessibility>
-                      </object>
-                      <packing>
-                        <property name="top-attach">3</property>
-                        <property name="bottom-attach">4</property>
                       </packing>
                     </child>
                     <child>
@@ -3068,23 +3030,55 @@
                         </accessibility>
                       </object>
                       <packing>
+                        <property name="left-attach">0</property>
                         <property name="top-attach">2</property>
-                        <property name="bottom-attach">3</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="label34">
+                      <object class="GtkLabel" id="label_value_max">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Minimum value</property>
+                        <property name="label" translatable="yes">0</property>
+                        <property name="selectable">True</property>
                         <property name="xalign">0</property>
                         <accessibility>
-                          <relation type="label-for" target="label_value_min"/>
+                          <relation type="label-for" target="label35"/>
                         </accessibility>
                       </object>
                       <packing>
-                        <property name="top-attach">1</property>
-                        <property name="bottom-attach">2</property>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label36">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Minimum increment</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="label-for" target="label_value_inc"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label_value_inc">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">0</property>
+                        <property name="selectable">True</property>
+                        <property name="xalign">0</property>
+                        <accessibility>
+                          <relation type="labelled-by" target="label35"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">3</property>
                       </packing>
                     </child>
                   </object>
