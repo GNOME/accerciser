@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-12-31 10:07+0000\n"
-"PO-Revision-Date: 2024-03-07 19:44+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
+"POT-Creation-Date: 2024-03-07 18:45+0000\n"
+"PO-Revision-Date: 2024-03-15 09:30+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -21,33 +21,9 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+#: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:7
 msgid "Accerciser"
 msgstr "Accerciser"
-
-#: accerciser.appdata.xml.in:7
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Raziskovalec dostopnosti za namizje GNOME"
-
-#: accerciser.appdata.xml.in:9
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Acceriser je interavktivni raziskovalec dostopnosti za namizje GNOME, razvit "
-"v jeziku Python. Za delovanje in nadzor gradnikov uporablja paket AT_SPI, s "
-"čimer je omogočen ustrezen nadzor nad tehnologijami dostopnosti in "
-"samodejnimi okolji za preizkušanje."
-
-#: accerciser.appdata.xml.in:14
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Program Accerciser vključuje enostaven vstavek, ki omogoča prikazovanje "
-"podrobnosti o dostopnosti."
 
 #: accerciser.desktop.in:4
 msgid "Give your application an accessibility workout"
@@ -186,6 +162,30 @@ msgstr "Kombinacija tipk"
 msgid "Hotkey combination for related action."
 msgstr "Kombinacija tipk za povezano dejanje."
 
+#: org.gtk.accerciser.metainfo.xml.in:8
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Raziskovalec dostopnosti za namizje GNOME"
+
+#: org.gtk.accerciser.metainfo.xml.in:10
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Acceriser je interavktivni raziskovalec dostopnosti za namizje GNOME, razvit "
+"v jeziku Python. Za delovanje in nadzor gradnikov uporablja paket AT_SPI, s "
+"čimer je omogočen ustrezen nadzor nad tehnologijami dostopnosti in "
+"samodejnimi okolji za preizkušanje."
+
+#: org.gtk.accerciser.metainfo.xml.in:15
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Program Accerciser vključuje enostaven vstavek, ki omogoča prikazovanje "
+"podrobnosti o dostopnosti."
+
 #: plugins/api_view.py:32
 msgid "API Browser"
 msgstr "Brskalnik API"
@@ -261,9 +261,9 @@ msgstr "Vir"
 
 #. add accessible's name to buffer
 #: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
-#: plugins/interface_view.py:737 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:468
-#: src/lib/accerciser/plugin/plugin_manager.py:388
+#: plugins/interface_view.py:737 plugins/validate.py:297
+#: src/lib/accerciser/accessible_treeview.py:469
+#: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Ime"
 
@@ -292,16 +292,15 @@ msgid "Clear event log"
 msgstr "Počisti dnevnik dogodkov"
 
 #: plugins/event_monitor.py:478
-#, fuzzy
 msgid "Save monitor output"
-msgstr "Shrani izhod ogleda"
+msgstr "Shrani izhod nadzornika"
 
-#: plugins/event_monitor.py:481 plugins/validate.py:316
-#: src/lib/accerciser/plugin/view.py:1136
+#: plugins/event_monitor.py:481 plugins/validate.py:318
+#: src/lib/accerciser/plugin/view.py:1135
 msgid "_OK"
 msgstr "V _redu"
 
-#: plugins/event_monitor.py:482 plugins/validate.py:317
+#: plugins/event_monitor.py:482 plugins/validate.py:319
 msgid "_Cancel"
 msgstr "Pre_kliči"
 
@@ -325,8 +324,8 @@ msgstr "(brez opisa)"
 
 #. add description to buffer
 #: plugins/interface_view.ui:186 plugins/interface_view.ui:580
-#: plugins/interface_view.ui:1460 plugins/validate.py:230
-#: plugins/validate.py:293
+#: plugins/interface_view.ui:1460 plugins/validate.py:232
+#: plugins/validate.py:295
 msgid "Description"
 msgstr "Opis"
 
@@ -443,7 +442,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1252 plugins/validate.py:299
+#: plugins/interface_view.ui:1252 plugins/validate.py:301
 msgid "Hyperlink"
 msgstr "Hiperpovezava"
 
@@ -701,63 +700,62 @@ msgstr "Določi _veljavnost"
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
+#: plugins/validate.ui:285 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "Nedejavno"
 
-#: plugins/validate.py:80
+#: plugins/validate.py:82
 msgid "No description"
 msgstr "Brez opisa"
 
-#: plugins/validate.py:167
+#: plugins/validate.py:169
 msgid "AT-SPI Validator"
 msgstr "Določilnik veljavnosti AT-SPI"
 
-#: plugins/validate.py:169
+#: plugins/validate.py:171
 msgid "Validates application accessibility"
 msgstr "Določi veljavnost dostopnosti programa"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
+#: plugins/validate.py:225 plugins/validate.py:293
 msgid "Level"
 msgstr "Raven"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:477
+#: plugins/validate.py:299 src/lib/accerciser/accessible_treeview.py:478
 msgid "Role"
 msgstr "Vloga"
 
-#: plugins/validate.py:313
-#, fuzzy
+#: plugins/validate.py:315
 msgid "Save validator output"
-msgstr "Shrani izhod preverjalnika"
+msgstr "Shrani izhod določilnika veljavnosti"
 
-#: plugins/validate.py:361
+#: plugins/validate.py:363
 msgid "Saving"
 msgstr "Shranjevanje"
 
-#: plugins/validate.py:412
+#: plugins/validate.py:414
 msgid "Validating"
 msgstr "Določanje veljavnosti"
 
-#: plugins/validate.py:570
+#: plugins/validate.py:572
 msgid "EXCEPT"
 msgstr "IZJEMA"
 
-#: plugins/validate.py:577
+#: plugins/validate.py:579
 msgid "ERROR"
 msgstr "NAPAKA"
 
-#: plugins/validate.py:585
+#: plugins/validate.py:587
 msgid "WARN"
 msgstr "OPOZORILO"
 
-#: plugins/validate.py:592
+#: plugins/validate.py:594
 msgid "INFO"
 msgstr "PODROBNOSTI"
 
-#: plugins/validate.py:599
+#: plugins/validate.py:601
 msgid "DEBUG"
 msgstr "RAZHROŠČEVANJE"
 
@@ -877,23 +875,23 @@ msgstr "_Vsebina"
 msgid "_About"
 msgstr "_O programu"
 
-#: src/lib/accerciser/accessible_treeview.py:416
+#: src/lib/accerciser/accessible_treeview.py:417
 msgid "<dead>"
 msgstr "<nedejavno>"
 
-#: src/lib/accerciser/accessible_treeview.py:484
+#: src/lib/accerciser/accessible_treeview.py:485
 msgid "Children"
 msgstr "Podrejeno"
 
-#: src/lib/accerciser/accessible_treeview.py:512
+#: src/lib/accerciser/accessible_treeview.py:513
 msgid "_Show Applications without children"
 msgstr "_Pokaži programe brez podrejenih oken"
 
-#: src/lib/accerciser/accessible_treeview.py:521
+#: src/lib/accerciser/accessible_treeview.py:522
 msgid "_Refresh Registry"
 msgstr "Osveži _vpisnik"
 
-#: src/lib/accerciser/accessible_treeview.py:527
+#: src/lib/accerciser/accessible_treeview.py:528
 msgid "Refresh _Node"
 msgstr "Osveži _vozlišče"
 
@@ -954,7 +952,7 @@ msgid "accerciser Preferences"
 msgstr "Možnosti programa"
 
 #: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
-#: src/lib/accerciser/plugin/view.py:1138
+#: src/lib/accerciser/plugin/view.py:1137
 msgid "_Close"
 msgstr "Z_apri"
 
@@ -970,23 +968,23 @@ msgstr "Splošne hitre tipke"
 msgid "Highlighting"
 msgstr "Poudarjanje"
 
-#: src/lib/accerciser/prefs_dialog.py:88
+#: src/lib/accerciser/prefs_dialog.py:89
 msgid "Highlight duration:"
 msgstr "Trajanje poudarjanja:"
 
-#: src/lib/accerciser/prefs_dialog.py:95
+#: src/lib/accerciser/prefs_dialog.py:96
 msgid "Border color:"
 msgstr "Barva okvirja:"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "The border color of the highlight box"
 msgstr "Barva okvirja poudarjanja"
 
-#: src/lib/accerciser/prefs_dialog.py:99
+#: src/lib/accerciser/prefs_dialog.py:100
 msgid "Fill color:"
 msgstr "Barva polnila:"
 
-#: src/lib/accerciser/prefs_dialog.py:102
+#: src/lib/accerciser/prefs_dialog.py:103
 msgid "The fill color of the highlight box"
 msgstr "Barva polnila poudarjanja"
 
@@ -1075,32 +1073,32 @@ msgstr "Osve_ži"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:397
+#: src/lib/accerciser/plugin/plugin_manager.py:396
 msgctxt "viewport"
 msgid "View"
 msgstr "Pogled"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:474
+#: src/lib/accerciser/plugin/plugin_manager.py:473
 msgid "No view"
 msgstr "Brez pogleda"
 
-#: src/lib/accerciser/plugin/view.py:380
+#: src/lib/accerciser/plugin/view.py:379
 msgid "_Single plugins view"
 msgstr "_Enotni pogled vstavkov"
 
-#: src/lib/accerciser/plugin/view.py:771
+#: src/lib/accerciser/plugin/view.py:770
 msgid "Plugin View"
 msgstr "Pogled vstavkov"
 
-#: src/lib/accerciser/plugin/view.py:774
+#: src/lib/accerciser/plugin/view.py:773
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Pogled vstavkov (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1079
+#: src/lib/accerciser/plugin/view.py:1078
 msgid "_New view…"
 msgstr "_Nov pogled …"
 
-#: src/lib/accerciser/plugin/view.py:1135
+#: src/lib/accerciser/plugin/view.py:1134
 msgid "New View…"
 msgstr "Nov pogled …"
