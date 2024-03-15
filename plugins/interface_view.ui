@@ -1324,88 +1324,13 @@
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <child>
-              <object class="GtkTable" id="table_component2">
+              <!-- n-columns=2 n-rows=4 -->
+              <object class="GtkGrid" id="grid_image">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="margin-start">12</property>
-                <property name="n-rows">4</property>
-                <property name="n-columns">2</property>
-                <property name="column-spacing">3</property>
                 <property name="row-spacing">3</property>
-                <child>
-                  <object class="GtkLabel" id="label25">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Position</property>
-                    <property name="xalign">0</property>
-                    <accessibility>
-                      <relation type="label-for" target="img_position_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="top-attach">2</property>
-                    <property name="bottom-attach">3</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label21">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Size</property>
-                    <property name="xalign">0</property>
-                    <accessibility>
-                      <relation type="label-for" target="img_size_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="top-attach">1</property>
-                    <property name="bottom-attach">2</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="img_position_label">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
-                    <property name="selectable">True</property>
-                    <property name="xalign">0</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="label25"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left-attach">1</property>
-                    <property name="right-attach">2</property>
-                    <property name="top-attach">2</property>
-                    <property name="bottom-attach">3</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="img_size_label">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes" comments="Component size">0, 0</property>
-                    <property name="selectable">True</property>
-                    <property name="xalign">0</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="label21"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left-attach">1</property>
-                    <property name="right-attach">2</property>
-                    <property name="top-attach">1</property>
-                    <property name="bottom-attach">2</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
-                  </packing>
-                </child>
+                <property name="column-spacing">3</property>
                 <child>
                   <object class="GtkLabel" id="label59">
                     <property name="visible">True</property>
@@ -1417,25 +1342,8 @@
                     </accessibility>
                   </object>
                   <packing>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label60">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Locale</property>
-                    <property name="xalign">0</property>
-                    <accessibility>
-                      <relation type="label-for" target="img_locale_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="top-attach">3</property>
-                    <property name="bottom-attach">4</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
                   </packing>
                 </child>
                 <child>
@@ -1454,9 +1362,84 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="right-attach">2</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label21">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Size</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="label-for" target="img_size_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="img_size_label">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes" comments="Component size">0, 0</property>
+                    <property name="selectable">True</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="label21"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label25">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Position</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="label-for" target="img_position_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="img_position_label">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
+                    <property name="selectable">True</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="label25"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label60">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Locale</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="label-for" target="img_locale_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">3</property>
                   </packing>
                 </child>
                 <child>
@@ -1472,11 +1455,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="right-attach">2</property>
                     <property name="top-attach">3</property>
-                    <property name="bottom-attach">4</property>
-                    <property name="x-options">GTK_FILL</property>
-                    <property name="y-options">GTK_FILL</property>
                   </packing>
                 </child>
               </object>
