@@ -13,6 +13,16 @@ import pyatspi
 import re
 
 
+class WindowInfo:
+  '''
+  Class that represents relevant information of a (system) window.
+  '''
+
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+
+
 class WindowManager:
   '''
   Class that provides information related to windows on the screen and the
@@ -85,6 +95,24 @@ class WindowManager:
 
     return window
 
+  def getWindowInfo(self, toplevel):
+      '''
+      Get information on the (system) window that the toplevel
+      corresponds to, if possible.
+
+      @param toplevel: The top level for which to receive the corresponding
+                       window info.
+      @type toplevel: Atspi.Accessible
+      @return: The WindowInfo for the toplevel's system window, or None.
+      @rtype: WindowInfo
+      '''
+      window = self.getWnckWindow(toplevel)
+      if not window:
+        return None
+
+      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      return WindowInfo(toplevel_x, toplevel_y)
+
   def getScreenExtents(self, acc):
     '''
     Returns the extents of the given accessible object
@@ -101,14 +129,14 @@ class WindowManager:
       toplevel = acc
       while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
         toplevel = toplevel.parent
-      # try to find matching Wnck window and calculate screen coordinates from
-      # screen coords of the Wnck window and window-relative coords of the object
-      window = self.getWnckWindow(toplevel)
-      if window:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      # try to get position info for the corresponding system window
+      # and calculate screen coordinates from screen coords of the system
+      # window and window-relative coords of the object
+      win_info = self.getWindowInfo(toplevel)
+      if win_info:
         extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
-        extents.x += toplevel_x
-        extents.y += toplevel_y
+        extents.x += win_info.x
+        extents.y += win_info.y
         return extents
 
     # query screen coords directly via AT-SPI
