@@ -13,6 +13,10 @@ import pyatspi
 import re
 
 
+def get_window_manager():
+  return WindowManager()
+
+
 class WindowInfo:
   '''
   Class that represents relevant information of a (system) window.
