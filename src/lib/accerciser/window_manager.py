@@ -192,6 +192,15 @@ class KWinWindowManager(WindowManager):
   KWin API documentation: https://develop.kde.org/docs/plasma/kwin/api/
   '''
 
+  def __init__(self):
+    # assume that KWin has the same major version as KDE Plasma
+    plasma_version_str = os.getenv('KDE_SESSION_VERSION')
+    if plasma_version_str:
+      self.kwin_version = int(plasma_version_str)
+    else:
+      # fall back to 5 for now, might be relevant when KWin is used in non-Plasma environment
+      self.kwin_version = 5
+
   def _getKWinWindowData(self):
     '''
     Retrieve information on all windows from KWin via the KWin scripting
@@ -199,7 +208,10 @@ class KWinWindowManager(WindowManager):
 
     See the JavaScript script used for details on returned information.
     '''
-    kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin-retrieve-window-infos.js')
+    if self.kwin_version >= 6:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
+    else:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
 
     # load the script, the method returns the script number/ID
     session_bus = dbus.SessionBus()
@@ -211,7 +223,11 @@ class KWinWindowManager(WindowManager):
     start_time = datetime.datetime.now()
 
     # run the script
-    script_object_path = '/' + str(script_id)
+    # DBus object path for script has changed between KWin 5 and 6
+    if self.kwin_version >= 6:
+      script_object_path = '/Scripting/Script' + str(script_id)
+    else:
+      script_object_path = '/' + str(script_id)
     script_dbus_object = session_bus.get_object('org.kde.KWin', script_object_path)
     script_interface = dbus.Interface(script_dbus_object, 'org.kde.kwin.Script')
     script_interface.run()
