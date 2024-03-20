@@ -83,8 +83,9 @@ class QuickSelect(Plugin):
     Inspect accessible of widget under mouse.
     '''
     display = gdk.Display.get_default()
-    screen, x, y, flags =  display.get_pointer()
-    del screen # A workaround http://bugzilla.gnome.org/show_bug.cgi?id=593732
+    seat = display.get_default_seat()
+    pointer = seat.get_pointer()
+    screen, x, y =  pointer.get_position()
 
     # First check if the currently selected accessible has the pointer over it.
     # This is an optimization: Instead of searching for
