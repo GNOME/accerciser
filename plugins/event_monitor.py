@@ -452,7 +452,6 @@ class EventMonitor(ViewportPlugin):
           break
     window = textview.get_window(gtk.TextWindowType.TEXT)
     window.set_cursor(cursor)
-    window.get_pointer()
     return False
 
   def _handleAccEvent(self, event):
