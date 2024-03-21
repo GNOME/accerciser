@@ -6,7 +6,7 @@ from gi.repository import Wnck as wnck
 
 from accerciser.plugin import Plugin
 from accerciser.i18n import N_, _
-from accerciser.window_manager import WindowManager
+from accerciser import window_manager
 
 import pyatspi
 
@@ -40,7 +40,7 @@ class QuickSelect(Plugin):
 
     self.last_focused = None
     self.last_selected = None
-    self.window_manager = WindowManager()
+    self.window_manager = window_manager.get_window_manager()
 
   def _accEventFocusChanged(self, event):
     '''

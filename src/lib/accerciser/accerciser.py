@@ -34,8 +34,7 @@ from .hotkey_manager import HotkeyManager, HotkeyTreeView
 from .about_dialog import AccerciserAboutDialog
 from .prefs_dialog import AccerciserPreferencesDialog
 from .main_window import AccerciserMainWindow
-from .window_manager import WindowManager
-from . import menus
+from . import menus, window_manager
 
 class Main(gtk.Application, Tools):
   '''
@@ -60,8 +59,7 @@ class Main(gtk.Application, Tools):
     root_atk = atk.get_root()
     root_atk.set_description(str(os.getpid()))
 
-    window_manager = WindowManager()
-    self.node = Node(window_manager)
+    self.node = Node(window_manager.get_window_manager())
     self.set_menubar(menus.main_menu)
 
   def do_activate(self):

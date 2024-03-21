@@ -80,6 +80,7 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     at-spi2-core >= 2.5.2
     glib2 >= 2.10
     pygobject
+    python3-dbus
     appstream-glib-devel
     yelp-tools
   ```
@@ -92,6 +93,7 @@ As Accerciser uses pygobject, you'll need to have the following libraries:
     appstreamcli
     libgtk-3-dev
     python3
+    python3-dbus
     python-gi-dev
     python3-pyatspi >= 1.9.0
     libatspi2.0-dev >= 2.1.5

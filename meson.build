@@ -91,6 +91,7 @@ gnome.post_install(
 subdir('doc')
 subdir('help')
 subdir('icons')
+subdir('kwin-scripts')
 subdir('plugindata')
 subdir('plugins')
 subdir('po')

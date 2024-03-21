@@ -10,7 +10,30 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 from gi.repository import Wnck
 import pyatspi
+
+import datetime
+import dbus
+import json
+import os
 import re
+import subprocess
+import sys
+
+
+def get_window_manager():
+  if os.getenv('ACCERCISER_WINDOW_MANAGER') == 'kwin':
+    return KWinWindowManager()
+  return WindowManager()
+
+
+class WindowInfo:
+  '''
+  Class that represents relevant information of a (system) window.
+  '''
+
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
 
 
 class WindowManager:
@@ -85,6 +108,24 @@ class WindowManager:
 
     return window
 
+  def getWindowInfo(self, toplevel):
+      '''
+      Get information on the (system) window that the toplevel
+      corresponds to, if possible.
+
+      @param toplevel: The top level for which to receive the corresponding
+                       window info.
+      @type toplevel: Atspi.Accessible
+      @return: The WindowInfo for the toplevel's system window, or None.
+      @rtype: WindowInfo
+      '''
+      window = self.getWnckWindow(toplevel)
+      if not window:
+        return None
+
+      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      return WindowInfo(toplevel_x, toplevel_y)
+
   def getScreenExtents(self, acc):
     '''
     Returns the extents of the given accessible object
@@ -101,14 +142,14 @@ class WindowManager:
       toplevel = acc
       while toplevel.parent and toplevel.parent.role != pyatspi.ROLE_APPLICATION:
         toplevel = toplevel.parent
-      # try to find matching Wnck window and calculate screen coordinates from
-      # screen coords of the Wnck window and window-relative coords of the object
-      window = self.getWnckWindow(toplevel)
-      if window:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      # try to get position info for the corresponding system window
+      # and calculate screen coordinates from screen coords of the system
+      # window and window-relative coords of the object
+      win_info = self.getWindowInfo(toplevel)
+      if win_info:
         extents = component_iface.getExtents(pyatspi.WINDOW_COORDS)
-        extents.x += toplevel_x
-        extents.y += toplevel_y
+        extents.x += win_info.x
+        extents.y += win_info.y
         return extents
 
     # query screen coords directly via AT-SPI
@@ -141,3 +182,89 @@ class WindowManager:
     win_x = acc_window_extents.x - acc_screen_extents.x + x
     win_y = acc_window_extents.y - acc_screen_extents.y + y
     return (win_x, win_y)
+
+
+class KWinWindowManager(WindowManager):
+  '''
+  WindowManager implementation that retrireves information from KWin
+  via its scripting API.
+
+  KWin API documentation: https://develop.kde.org/docs/plasma/kwin/api/
+  '''
+
+  def __init__(self):
+    # assume that KWin has the same major version as KDE Plasma
+    plasma_version_str = os.getenv('KDE_SESSION_VERSION')
+    if plasma_version_str:
+      self.kwin_version = int(plasma_version_str)
+    else:
+      # fall back to 5 for now, might be relevant when KWin is used in non-Plasma environment
+      self.kwin_version = 5
+
+  def _getKWinWindowData(self):
+    '''
+    Retrieve information on all windows from KWin via the KWin scripting
+    API and return it as a list containing a dict entry for each window.
+
+    See the JavaScript script used for details on returned information.
+    '''
+    if self.kwin_version >= 6:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
+    else:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
+
+    # load the script, the method returns the script number/ID
+    session_bus = dbus.SessionBus()
+    scripting_dbus_object = session_bus.get_object('org.kde.KWin', '/Scripting')
+    scripting_interface = dbus.Interface(scripting_dbus_object, 'org.kde.kwin.Scripting')
+    script_id = scripting_interface.loadScript(kwin_script_path)
+
+    # remember time before running the script, for retrieving relevant journal content below
+    start_time = datetime.datetime.now()
+
+    # run the script
+    # DBus object path for script has changed between KWin 5 and 6
+    if self.kwin_version >= 6:
+      script_object_path = '/Scripting/Script' + str(script_id)
+    else:
+      script_object_path = '/' + str(script_id)
+    script_dbus_object = session_bus.get_object('org.kde.KWin', script_object_path)
+    script_interface = dbus.Interface(script_dbus_object, 'org.kde.kwin.Script')
+    script_interface.run()
+
+    # currently, no DBus signals are created when the script prints the relevant information,
+    # see https://bugs.kde.org/show_bug.cgi?id=477069
+    # and https://bugs.kde.org/show_bug.cgi?id=392840
+    # and https://bugs.kde.org/show_bug.cgi?id=445058
+    # As a workaround, retrieve the script output from the journal instead,
+    # s.a. discussion in https://bugs.kde.org/show_bug.cgi?id=445058
+    comm = 'kwin_' + os.getenv('XDG_SESSION_TYPE')
+    journalctl_output = subprocess.run('journalctl _COMM=' + comm + ' --output=cat --since "' + str(start_time) + '"',
+                                       capture_output=True, shell=True).stdout.decode().rstrip().split("\n")
+    lines = [line.lstrip("js: ") for line in journalctl_output]
+    window_data_json = '\n'.join(lines)
+    window_data = json.loads(window_data_json)
+
+    # unload/unregister script again
+    script_interface.stop()
+
+    return window_data
+
+
+  def getWindowInfo(self, toplevel):
+    try:
+      window_infos = self._getKWinWindowData()
+      for win_data in window_infos:
+        window_title = win_data["caption"]
+        if window_title == toplevel.name:
+          return WindowInfo(win_data["bufferGeometry.x"], win_data["bufferGeometry.y"])
+    except Exception:
+      pass
+
+    return None
+
+
+  def supportsScreenCoords(self, acc):
+    # never query screen/desktop coordinates from AT-SPI, but always
+    # use KWin's window position
+    return False
