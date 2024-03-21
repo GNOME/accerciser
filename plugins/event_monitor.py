@@ -401,7 +401,7 @@ class EventMonitor(ViewportPlugin):
     @type iter: gtk.TextIter
     '''
     if event.type == gdk.EventType.BUTTON_RELEASE and \
-           event.button == 1 and not self.monitor_buffer.get_has_selection():
+           event.button.button == 1 and not self.monitor_buffer.get_has_selection():
       self.node.update(getattr(tag, 'acc'))
 
   def _onLinkKeyPress(self, textview, event):
