@@ -215,18 +215,11 @@ class KWinWindowManager(WindowManager):
       # fall back to 5 for now, might be relevant when KWin is used in non-Plasma environment
       self.kwin_version = 5
 
-  def _getKWinWindowData(self):
+  def _runKWinScript(self, kwin_script_path):
     '''
-    Retrieve information on all windows from KWin via the KWin scripting
-    API and return it as a list containing a dict entry for each window.
-
-    See the JavaScript script used for details on returned information.
+    Run KWin script at the given path that returns output in JSON format
+    and return the script output converted to a Python datastructure.
     '''
-    if self.kwin_version >= 6:
-      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
-    else:
-      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
-
     # load the script, the method returns the script number/ID
     session_bus = dbus.SessionBus()
     scripting_dbus_object = session_bus.get_object('org.kde.KWin', '/Scripting')
@@ -256,13 +249,28 @@ class KWinWindowManager(WindowManager):
     journalctl_output = subprocess.run('journalctl _COMM=' + comm + ' --output=cat --since "' + str(start_time) + '"',
                                        capture_output=True, shell=True).stdout.decode().rstrip().split("\n")
     lines = [line.lstrip("js: ") for line in journalctl_output]
-    window_data_json = '\n'.join(lines)
-    window_data = json.loads(window_data_json)
+    data_json = '\n'.join(lines)
+    data = json.loads(data_json)
 
     # unload/unregister script again
     script_interface.stop()
 
-    return window_data
+    return data
+
+
+  def _getKWinWindowData(self):
+    '''
+    Retrieve information on all windows from KWin via the KWin scripting
+    API and return it as a list containing a dict entry for each window.
+
+    See the JavaScript script used for details on returned information.
+    '''
+    if self.kwin_version >= 6:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
+    else:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
+
+    return self._runKWinScript(kwin_script_path)
 
 
   def getWindowInfo(self, toplevel):
