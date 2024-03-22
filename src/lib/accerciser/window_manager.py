@@ -296,6 +296,22 @@ class KWinWindowManager(WindowManager):
     return None
 
 
+  def getWindowOrder(self):
+    try:
+      window_infos = self._getKWinWindowData()
+      windows = [(info["caption"], info["stackingOrder"]) for info in window_infos]
+
+      # sort according to stacking order
+      def get_stacking_order(win):
+        return win[1]
+
+      windows.sort(key=get_stacking_order)
+      window_names = [win[0] for win in windows]
+      return window_names
+    except Exception as e:
+      return []
+
+
   def supportsScreenCoords(self, acc):
     # never query screen/desktop coordinates from AT-SPI, but always
     # use KWin's window position

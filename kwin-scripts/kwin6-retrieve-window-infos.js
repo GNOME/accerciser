@@ -18,7 +18,8 @@ for (let i = 0; i < clients.length; i++) {
       "bufferGeometry.x": clients[i].bufferGeometry.x,
       "bufferGeometry.y": clients[i].bufferGeometry.y,
       "bufferGeometry.width": clients[i].bufferGeometry.width,
-      "bufferGeometry.height": clients[i].bufferGeometry.height
+      "bufferGeometry.height": clients[i].bufferGeometry.height,
+      "stackingOrder": clients[i].stackingOrder
     }
   );
 }
