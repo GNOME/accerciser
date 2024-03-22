@@ -109,6 +109,16 @@ class WindowManager:
 
     return window
 
+  def getWindowOrder(self):
+    '''
+    Get list of names of windows in stacking order.
+
+    The list is in bottom-to-top order.
+    '''
+    wnck_screen = Wnck.Screen.get_default()
+    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
+    return window_order
+
   def getWindowInfo(self, toplevel):
       '''
       Get information on the (system) window that the toplevel

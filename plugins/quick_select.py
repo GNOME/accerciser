@@ -1,8 +1,6 @@
 import gi
 
-from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
-from gi.repository import Wnck as wnck
 
 from accerciser.plugin import Plugin
 from accerciser.i18n import N_, _
@@ -93,10 +91,9 @@ class QuickSelect(Plugin):
       return
 
     # Inspect accessible under mouse
-    desktop = pyatspi.Registry.getDesktop(0)
-    wnck_screen = wnck.Screen.get_default()
-    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
+    window_order = self.window_manager.getWindowOrder()
     top_window = (None, -1)
+    desktop = pyatspi.Registry.getDesktop(0)
     for app in desktop:
       if not app or self.isMyApp(app):
         continue
