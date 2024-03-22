@@ -9,20 +9,19 @@
 // JavaScript script to retrieve window information via KWin API
 
 // build a JSON array containing one object for each window
-json_output = "["
+let window_infos = [];
 const clients = workspace.windowList();
-for (var i = 0; i < clients.length; i++) {
-  json_output += "\n  {";
-  json_output += "\n\"caption\": \"" + clients[i].caption + "\"";
-  json_output += ",\n\"bufferGeometry.x\": " + clients[i].bufferGeometry.x;
-  json_output += ",\n\"bufferGeometry.y\": " + clients[i].bufferGeometry.y;
-  json_output += ",\n\"bufferGeometry.width\": " + clients[i].bufferGeometry.width;
-  json_output += ",\n\"bufferGeometry.height\": " + clients[i].bufferGeometry.height;
-  json_output += "}"
-
-  if (i < clients.length - 1)
-    json_output += ","
+for (let i = 0; i < clients.length; i++) {
+  window_infos.push(
+    {
+      "caption": clients[i].caption,
+      "bufferGeometry.x": clients[i].bufferGeometry.x,
+      "bufferGeometry.y": clients[i].bufferGeometry.y,
+      "bufferGeometry.width": clients[i].bufferGeometry.width,
+      "bufferGeometry.height": clients[i].bufferGeometry.height
+    }
+  );
 }
-json_output += "\n]"
 
+const json_output = JSON.stringify(window_infos);
 print(json_output)
