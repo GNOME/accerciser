@@ -290,3 +290,12 @@ class KWinWindowManager(WindowManager):
     # never query screen/desktop coordinates from AT-SPI, but always
     # use KWin's window position
     return False
+
+
+  def getMousePosition(self):
+    try:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin-retrieve-mouse-pointer-pos.js')
+      data = self._runKWinScript(kwin_script_path)
+      return data["mouse-pointer-pos.x"], data["mouse-pointer-pos.y"]
+    except:
+      return 0, 0
