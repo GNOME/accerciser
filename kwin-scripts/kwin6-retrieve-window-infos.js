@@ -25,4 +25,4 @@ for (let i = 0; i < clients.length; i++) {
 }
 
 const json_output = JSON.stringify(window_infos);
-print(json_output)
+console.info(json_output)

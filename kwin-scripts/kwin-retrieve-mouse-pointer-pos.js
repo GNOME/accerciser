@@ -14,4 +14,4 @@ let mouse_pos = {
 };
 
 const json_output = JSON.stringify(mouse_pos);
-print(json_output)
+console.info(json_output)
