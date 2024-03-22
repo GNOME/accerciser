@@ -177,6 +177,7 @@ class QuickSelect(Plugin):
       x, y = self.window_manager.convertScreenToWindowCoords(x, y, parent)
 
     container = parent
+    inner_container = None
     while True:
       container_role = container.getRole()
       if container_role == pyatspi.ROLE_PAGE_TAB_LIST:
