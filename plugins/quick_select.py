@@ -82,10 +82,7 @@ class QuickSelect(Plugin):
     '''
     Inspect accessible of widget under mouse.
     '''
-    display = gdk.Display.get_default()
-    seat = display.get_default_seat()
-    pointer = seat.get_pointer()
-    screen, x, y =  pointer.get_position()
+    x, y = self.window_manager.getMousePosition()
 
     # First check if the currently selected accessible has the pointer over it.
     # This is an optimization: Instead of searching for

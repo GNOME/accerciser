@@ -8,6 +8,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+from gi.repository import Gdk
 from gi.repository import Wnck
 import pyatspi
 
@@ -182,6 +183,19 @@ class WindowManager:
     win_x = acc_window_extents.x - acc_screen_extents.x + x
     win_y = acc_window_extents.y - acc_screen_extents.y + y
     return (win_x, win_y)
+
+  def getMousePosition(self):
+    '''
+    Get current mouse/pointer position in desktop/global coordinates.
+
+    @return: The (x, y) coordinates of the mouse/pointer position.
+    @rtype: tuple(int, int)
+    '''
+    display = Gdk.Display.get_default()
+    seat = display.get_default_seat()
+    pointer = seat.get_pointer()
+    screen, x, y =  pointer.get_position()
+    return x, y
 
 
 class KWinWindowManager(WindowManager):
