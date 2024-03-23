@@ -8,6 +8,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+from gi.repository import Gdk
 from gi.repository import Wnck
 import pyatspi
 
@@ -108,6 +109,16 @@ class WindowManager:
 
     return window
 
+  def getWindowOrder(self):
+    '''
+    Get list of names of windows in stacking order.
+
+    The list is in bottom-to-top order.
+    '''
+    wnck_screen = Wnck.Screen.get_default()
+    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
+    return window_order
+
   def getWindowInfo(self, toplevel):
       '''
       Get information on the (system) window that the toplevel
@@ -183,6 +194,19 @@ class WindowManager:
     win_y = acc_window_extents.y - acc_screen_extents.y + y
     return (win_x, win_y)
 
+  def getMousePosition(self):
+    '''
+    Get current mouse/pointer position in desktop/global coordinates.
+
+    @return: The (x, y) coordinates of the mouse/pointer position.
+    @rtype: tuple(int, int)
+    '''
+    display = Gdk.Display.get_default()
+    seat = display.get_default_seat()
+    pointer = seat.get_pointer()
+    screen, x, y =  pointer.get_position()
+    return x, y
+
 
 class KWinWindowManager(WindowManager):
   '''
@@ -201,18 +225,11 @@ class KWinWindowManager(WindowManager):
       # fall back to 5 for now, might be relevant when KWin is used in non-Plasma environment
       self.kwin_version = 5
 
-  def _getKWinWindowData(self):
+  def _runKWinScript(self, kwin_script_path):
     '''
-    Retrieve information on all windows from KWin via the KWin scripting
-    API and return it as a list containing a dict entry for each window.
-
-    See the JavaScript script used for details on returned information.
+    Run KWin script at the given path that returns output in JSON format
+    and return the script output converted to a Python datastructure.
     '''
-    if self.kwin_version >= 6:
-      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
-    else:
-      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
-
     # load the script, the method returns the script number/ID
     session_bus = dbus.SessionBus()
     scripting_dbus_object = session_bus.get_object('org.kde.KWin', '/Scripting')
@@ -242,13 +259,28 @@ class KWinWindowManager(WindowManager):
     journalctl_output = subprocess.run('journalctl _COMM=' + comm + ' --output=cat --since "' + str(start_time) + '"',
                                        capture_output=True, shell=True).stdout.decode().rstrip().split("\n")
     lines = [line.lstrip("js: ") for line in journalctl_output]
-    window_data_json = '\n'.join(lines)
-    window_data = json.loads(window_data_json)
+    data_json = '\n'.join(lines)
+    data = json.loads(data_json)
 
     # unload/unregister script again
     script_interface.stop()
 
-    return window_data
+    return data
+
+
+  def _getKWinWindowData(self):
+    '''
+    Retrieve information on all windows from KWin via the KWin scripting
+    API and return it as a list containing a dict entry for each window.
+
+    See the JavaScript script used for details on returned information.
+    '''
+    if self.kwin_version >= 6:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
+    else:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
+
+    return self._runKWinScript(kwin_script_path)
 
 
   def getWindowInfo(self, toplevel):
@@ -264,7 +296,32 @@ class KWinWindowManager(WindowManager):
     return None
 
 
+  def getWindowOrder(self):
+    try:
+      window_infos = self._getKWinWindowData()
+      windows = [(info["caption"], info["stackingOrder"]) for info in window_infos]
+
+      # sort according to stacking order
+      def get_stacking_order(win):
+        return win[1]
+
+      windows.sort(key=get_stacking_order)
+      window_names = [win[0] for win in windows]
+      return window_names
+    except Exception as e:
+      return []
+
+
   def supportsScreenCoords(self, acc):
     # never query screen/desktop coordinates from AT-SPI, but always
     # use KWin's window position
     return False
+
+
+  def getMousePosition(self):
+    try:
+      kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin-retrieve-mouse-pointer-pos.js')
+      data = self._runKWinScript(kwin_script_path)
+      return data["mouse-pointer-pos.x"], data["mouse-pointer-pos.y"]
+    except:
+      return 0, 0
