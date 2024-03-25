@@ -91,7 +91,7 @@ class QuickSelect(Plugin):
       return
 
     # Inspect accessible under mouse
-    window_order = self.window_manager.getWindowOrder()
+    window_order = self.window_manager.getCurrentWorkspaceWindowOrder()
     top_window = (None, -1)
     desktop = pyatspi.Registry.getDesktop(0)
     for app in desktop:

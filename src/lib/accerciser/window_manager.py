@@ -140,18 +140,21 @@ class WindowManager:
 
     return window
 
-  def getWindowOrder(self):
+  def getCurrentWorkspaceWindowOrder(self):
     '''
-    Get list of names of windows in stacking order.
+    Get list of names of windows on the current workspace
+    in stacking order.
 
     The list is in bottom-to-top order.
     '''
     windows = self.getWindowInfos()
 
+    # filter out windows not on the current workspace
+    windows = [win for win in windows if win.on_current_workspace]
+
     # sort according to stacking order
     def get_stacking_index(win):
       return win.stacking_index
-
     windows.sort(key=get_stacking_index)
     window_titles = [win.title for win in windows]
     return window_titles
