@@ -32,12 +32,13 @@ class WindowInfo:
   Class that represents relevant information of a (system) window.
   '''
 
-  def __init__(self, title, x, y, width, height):
+  def __init__(self, title, x, y, width, height, stacking_index=0):
     self.title = title
     self.x = x
     self.y = y
     self.width = width
     self.height = height
+    self.stacking_index = stacking_index
 
 
 class WindowManager:
@@ -80,11 +81,14 @@ class WindowManager:
     '''
     wnck_screen = Wnck.Screen.get_default()
     win_infos = []
-    for window in wnck_screen.get_windows():
+    stacking_index = 0
+    for window in wnck_screen.get_windows_stacked():
       toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
       title = window.get_name()
-      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height)
+      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
+                            stacking_index=stacking_index)
       win_infos.append(win_info)
+      stacking_index = stacking_index + 1
 
     return win_infos
 
@@ -292,7 +296,8 @@ class KWinWindowManager(WindowManager):
         window_title = win_data["caption"]
         if window_title == toplevel.name:
           return WindowInfo(window_title, win_data["bufferGeometry.x"], win_data["bufferGeometry.y"],
-                            win_data["bufferGeometry.width"], win_data["bufferGeometry.height"])
+                            win_data["bufferGeometry.width"], win_data["bufferGeometry.height"],
+                            stacking_index=win_data["stackingOrder"])
     except Exception:
       pass
 
