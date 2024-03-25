@@ -71,19 +71,37 @@ class WindowManager:
         pass
     return True
 
-  def getWnckWindow(self, toplevel):
+  def getWindowInfos(self):
     '''
-    Retrieve the Wnck window for the given toplevel accessible object.
+    Retrieve window information for all (system) windows.
 
-    @param toplevel: The top level for which to receive the corresponding Wnck
-                     window.
-    @type toplevel: Atspi.Accessible
-    @return: The Wnck window for the toplevel, or None.
-    @rtype: Wnck.Window
+    @return: Window information for all windows.
+    @rtype: list[WindowInfo]
     '''
     wnck_screen = Wnck.Screen.get_default()
-    candidates = []
+    win_infos = []
     for window in wnck_screen.get_windows():
+      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      title = window.get_name()
+      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height)
+      win_infos.append(win_info)
+
+    return win_infos
+
+  def getWindowInfo(self, toplevel):
+    '''
+    Get information on the (system) window that the toplevel
+    corresponds to, if possible.
+
+    @param toplevel: The top level for which to receive the corresponding
+                      window info.
+    @type toplevel: Atspi.Accessible
+    @return: The WindowInfo for the toplevel's system window, or None.
+    @rtype: WindowInfo
+    '''
+    candidates = []
+    win_infos = self.getWindowInfos()
+    for window in win_infos:
       # match by name, but also consider windows for which libwnck/the window manager (?)
       # has appended a suffix to distinguish multiple windows with the same name
       # (seen at least on KDE Plasma X11, e.g. first window: "Hypertext",
@@ -92,7 +110,7 @@ class WindowManager:
       # also accept an additional trailing Left-to-Right Mark (U+200E)
       # (also seen on KDE Plasma)
       regex = '^' + toplevel.name + '( <[0-9]*>)?(\u200e)?$'
-      if re.match(regex, window.get_name()):
+      if re.match(regex, window.title):
         candidates.append(window)
 
     window = None
@@ -102,8 +120,7 @@ class WindowManager:
       # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
       atspi_width, atspi_height = toplevel.queryComponent().getSize()
       for candidate in candidates:
-        candidate_x, candidate_y, candidate_width, candidate_height = candidate.get_client_window_geometry()
-        if candidate_width == atspi_width and candidate_height == atspi_height:
+        if candidate.width == atspi_width and candidate.height == atspi_height:
           window = candidate
           break
       # if size doesn't match for any, use first candidate
@@ -121,24 +138,6 @@ class WindowManager:
     wnck_screen = Wnck.Screen.get_default()
     window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
     return window_order
-
-  def getWindowInfo(self, toplevel):
-      '''
-      Get information on the (system) window that the toplevel
-      corresponds to, if possible.
-
-      @param toplevel: The top level for which to receive the corresponding
-                       window info.
-      @type toplevel: Atspi.Accessible
-      @return: The WindowInfo for the toplevel's system window, or None.
-      @rtype: WindowInfo
-      '''
-      window = self.getWnckWindow(toplevel)
-      if not window:
-        return None
-
-      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
-      return WindowInfo(window.get_name(), toplevel_x, toplevel_y, toplevel_width, toplevel_height)
 
   def getScreenExtents(self, acc):
     '''
