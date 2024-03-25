@@ -32,13 +32,15 @@ class WindowInfo:
   Class that represents relevant information of a (system) window.
   '''
 
-  def __init__(self, title, x, y, width, height, stacking_index=0):
+  def __init__(self, title, x, y, width, height, stacking_index=0,
+               on_current_workspace=True):
     self.title = title
     self.x = x
     self.y = y
     self.width = width
     self.height = height
     self.stacking_index = stacking_index
+    self.on_current_workspace = on_current_workspace
 
 
 class WindowManager:
@@ -80,13 +82,18 @@ class WindowManager:
     @rtype: list[WindowInfo]
     '''
     wnck_screen = Wnck.Screen.get_default()
+    active_workspace = wnck_screen.get_active_workspace()
     win_infos = []
     stacking_index = 0
     for window in wnck_screen.get_windows_stacked():
       toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
       title = window.get_name()
+      # workspace can be None if window is on all workspaces, so only consider case
+      # of an actually returned workspace differing from the active one as not on active workspace
+      workspace = window.get_workspace()
+      on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
       win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
-                            stacking_index=stacking_index)
+                            stacking_index=stacking_index, on_current_workspace=on_active_workspace)
       win_infos.append(win_info)
       stacking_index = stacking_index + 1
 
@@ -295,7 +302,8 @@ class KWinWindowManager(WindowManager):
       for win in window_data:
         win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
                               win["bufferGeometry.width"], win["bufferGeometry.height"],
-                              stacking_index=win["stackingOrder"])
+                              stacking_index=win["stackingOrder"],
+                              on_current_workspace=win["isOnCurrentWorkspace"])
         window_infos.append(win_info)
     except Exception:
       pass
