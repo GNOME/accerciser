@@ -32,9 +32,12 @@ class WindowInfo:
   Class that represents relevant information of a (system) window.
   '''
 
-  def __init__(self, x, y):
+  def __init__(self, title, x, y, width, height):
+    self.title = title
     self.x = x
     self.y = y
+    self.width = width
+    self.height = height
 
 
 class WindowManager:
@@ -135,7 +138,7 @@ class WindowManager:
         return None
 
       toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
-      return WindowInfo(toplevel_x, toplevel_y)
+      return WindowInfo(window.get_name(), toplevel_x, toplevel_y, toplevel_width, toplevel_height)
 
   def getScreenExtents(self, acc):
     '''
@@ -289,7 +292,8 @@ class KWinWindowManager(WindowManager):
       for win_data in window_infos:
         window_title = win_data["caption"]
         if window_title == toplevel.name:
-          return WindowInfo(win_data["bufferGeometry.x"], win_data["bufferGeometry.y"])
+          return WindowInfo(window_title, win_data["bufferGeometry.x"], win_data["bufferGeometry.y"],
+                            win_data["bufferGeometry.width"], win_data["bufferGeometry.height"])
     except Exception:
       pass
 
