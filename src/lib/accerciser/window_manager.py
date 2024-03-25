@@ -139,9 +139,15 @@ class WindowManager:
 
     The list is in bottom-to-top order.
     '''
-    wnck_screen = Wnck.Screen.get_default()
-    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
-    return window_order
+    windows = self.getWindowInfos()
+
+    # sort according to stacking order
+    def get_stacking_index(win):
+      return win.stacking_index
+
+    windows.sort(key=get_stacking_index)
+    window_titles = [win.title for win in windows]
+    return window_titles
 
   def getScreenExtents(self, acc):
     '''
@@ -273,52 +279,28 @@ class KWinWindowManager(WindowManager):
 
     return data
 
-
-  def _getKWinWindowData(self):
-    '''
-    Retrieve information on all windows from KWin via the KWin scripting
-    API and return it as a list containing a dict entry for each window.
-
-    See the JavaScript script used for details on returned information.
-    '''
+  def getWindowInfos(self):
+    # Retrieve information on all windows from KWin via the KWin scripting API
+    #
+    # See the JavaScript script used for details on the script output that gets
+    # processed here
     if self.kwin_version >= 6:
       kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
     else:
       kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
 
-    return self._runKWinScript(kwin_script_path)
-
-
-  def getWindowInfo(self, toplevel):
+    window_infos = []
     try:
-      window_infos = self._getKWinWindowData()
-      for win_data in window_infos:
-        window_title = win_data["caption"]
-        if window_title == toplevel.name:
-          return WindowInfo(window_title, win_data["bufferGeometry.x"], win_data["bufferGeometry.y"],
-                            win_data["bufferGeometry.width"], win_data["bufferGeometry.height"],
-                            stacking_index=win_data["stackingOrder"])
+      window_data = self._runKWinScript(kwin_script_path)
+      for win in window_data:
+        win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
+                              win["bufferGeometry.width"], win["bufferGeometry.height"],
+                              stacking_index=win["stackingOrder"])
+        window_infos.append(win_info)
     except Exception:
       pass
 
-    return None
-
-
-  def getWindowOrder(self):
-    try:
-      window_infos = self._getKWinWindowData()
-      windows = [(info["caption"], info["stackingOrder"]) for info in window_infos]
-
-      # sort according to stacking order
-      def get_stacking_order(win):
-        return win[1]
-
-      windows.sort(key=get_stacking_order)
-      window_names = [win[0] for win in windows]
-      return window_names
-    except Exception as e:
-      return []
-
+    return window_infos
 
   def supportsScreenCoords(self, acc):
     # never query screen/desktop coordinates from AT-SPI, but always
