@@ -32,9 +32,15 @@ class WindowInfo:
   Class that represents relevant information of a (system) window.
   '''
 
-  def __init__(self, x, y):
+  def __init__(self, title, x, y, width, height, stacking_index=0,
+               on_current_workspace=True):
+    self.title = title
     self.x = x
     self.y = y
+    self.width = width
+    self.height = height
+    self.stacking_index = stacking_index
+    self.on_current_workspace = on_current_workspace
 
 
 class WindowManager:
@@ -68,19 +74,45 @@ class WindowManager:
         pass
     return True
 
-  def getWnckWindow(self, toplevel):
+  def getWindowInfos(self):
     '''
-    Retrieve the Wnck window for the given toplevel accessible object.
+    Retrieve window information for all (system) windows.
 
-    @param toplevel: The top level for which to receive the corresponding Wnck
-                     window.
-    @type toplevel: Atspi.Accessible
-    @return: The Wnck window for the toplevel, or None.
-    @rtype: Wnck.Window
+    @return: Window information for all windows.
+    @rtype: list[WindowInfo]
     '''
     wnck_screen = Wnck.Screen.get_default()
+    active_workspace = wnck_screen.get_active_workspace()
+    win_infos = []
+    stacking_index = 0
+    for window in wnck_screen.get_windows_stacked():
+      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      title = window.get_name()
+      # workspace can be None if window is on all workspaces, so only consider case
+      # of an actually returned workspace differing from the active one as not on active workspace
+      workspace = window.get_workspace()
+      on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
+      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
+                            stacking_index=stacking_index, on_current_workspace=on_active_workspace)
+      win_infos.append(win_info)
+      stacking_index = stacking_index + 1
+
+    return win_infos
+
+  def getWindowInfo(self, toplevel):
+    '''
+    Get information on the (system) window that the toplevel
+    corresponds to, if possible.
+
+    @param toplevel: The top level for which to receive the corresponding
+                      window info.
+    @type toplevel: Atspi.Accessible
+    @return: The WindowInfo for the toplevel's system window, or None.
+    @rtype: WindowInfo
+    '''
     candidates = []
-    for window in wnck_screen.get_windows():
+    win_infos = self.getWindowInfos()
+    for window in win_infos:
       # match by name, but also consider windows for which libwnck/the window manager (?)
       # has appended a suffix to distinguish multiple windows with the same name
       # (seen at least on KDE Plasma X11, e.g. first window: "Hypertext",
@@ -89,7 +121,7 @@ class WindowManager:
       # also accept an additional trailing Left-to-Right Mark (U+200E)
       # (also seen on KDE Plasma)
       regex = '^' + toplevel.name + '( <[0-9]*>)?(\u200e)?$'
-      if re.match(regex, window.get_name()):
+      if re.match(regex, window.title):
         candidates.append(window)
 
     window = None
@@ -99,8 +131,7 @@ class WindowManager:
       # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
       atspi_width, atspi_height = toplevel.queryComponent().getSize()
       for candidate in candidates:
-        candidate_x, candidate_y, candidate_width, candidate_height = candidate.get_client_window_geometry()
-        if candidate_width == atspi_width and candidate_height == atspi_height:
+        if candidate.width == atspi_width and candidate.height == atspi_height:
           window = candidate
           break
       # if size doesn't match for any, use first candidate
@@ -109,33 +140,24 @@ class WindowManager:
 
     return window
 
-  def getWindowOrder(self):
+  def getCurrentWorkspaceWindowOrder(self):
     '''
-    Get list of names of windows in stacking order.
+    Get list of names of windows on the current workspace
+    in stacking order.
 
     The list is in bottom-to-top order.
     '''
-    wnck_screen = Wnck.Screen.get_default()
-    window_order = [w.get_name() for w in wnck_screen.get_windows_stacked()]
-    return window_order
+    windows = self.getWindowInfos()
 
-  def getWindowInfo(self, toplevel):
-      '''
-      Get information on the (system) window that the toplevel
-      corresponds to, if possible.
+    # filter out windows not on the current workspace
+    windows = [win for win in windows if win.on_current_workspace]
 
-      @param toplevel: The top level for which to receive the corresponding
-                       window info.
-      @type toplevel: Atspi.Accessible
-      @return: The WindowInfo for the toplevel's system window, or None.
-      @rtype: WindowInfo
-      '''
-      window = self.getWnckWindow(toplevel)
-      if not window:
-        return None
-
-      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
-      return WindowInfo(toplevel_x, toplevel_y)
+    # sort according to stacking order
+    def get_stacking_index(win):
+      return win.stacking_index
+    windows.sort(key=get_stacking_index)
+    window_titles = [win.title for win in windows]
+    return window_titles
 
   def getScreenExtents(self, acc):
     '''
@@ -267,50 +289,29 @@ class KWinWindowManager(WindowManager):
 
     return data
 
-
-  def _getKWinWindowData(self):
-    '''
-    Retrieve information on all windows from KWin via the KWin scripting
-    API and return it as a list containing a dict entry for each window.
-
-    See the JavaScript script used for details on returned information.
-    '''
+  def getWindowInfos(self):
+    # Retrieve information on all windows from KWin via the KWin scripting API
+    #
+    # See the JavaScript script used for details on the script output that gets
+    # processed here
     if self.kwin_version >= 6:
       kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin6-retrieve-window-infos.js')
     else:
       kwin_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'kwin-scripts', 'kwin5-retrieve-window-infos.js')
 
-    return self._runKWinScript(kwin_script_path)
-
-
-  def getWindowInfo(self, toplevel):
+    window_infos = []
     try:
-      window_infos = self._getKWinWindowData()
-      for win_data in window_infos:
-        window_title = win_data["caption"]
-        if window_title == toplevel.name:
-          return WindowInfo(win_data["bufferGeometry.x"], win_data["bufferGeometry.y"])
+      window_data = self._runKWinScript(kwin_script_path)
+      for win in window_data:
+        win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
+                              win["bufferGeometry.width"], win["bufferGeometry.height"],
+                              stacking_index=win["stackingOrder"],
+                              on_current_workspace=win["isOnCurrentWorkspace"])
+        window_infos.append(win_info)
     except Exception:
       pass
 
-    return None
-
-
-  def getWindowOrder(self):
-    try:
-      window_infos = self._getKWinWindowData()
-      windows = [(info["caption"], info["stackingOrder"]) for info in window_infos]
-
-      # sort according to stacking order
-      def get_stacking_order(win):
-        return win[1]
-
-      windows.sort(key=get_stacking_order)
-      window_names = [win[0] for win in windows]
-      return window_names
-    except Exception as e:
-      return []
-
+    return window_infos
 
   def supportsScreenCoords(self, acc):
     # never query screen/desktop coordinates from AT-SPI, but always

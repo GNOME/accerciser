@@ -8,10 +8,12 @@
 
 // JavaScript script to retrieve window information via KWin API
 
-// build a JSON array containing one object for each window
+const currentDesktop = workspace.currentDesktop;
+
 let window_infos = [];
 const clients = workspace.windowList();
 for (let i = 0; i < clients.length; i++) {
+  const isOnCurrentDesktop = clients[i].onAllDesktops || clients[i].desktops.includes(currentDesktop);
   window_infos.push(
     {
       "caption": clients[i].caption,
@@ -19,6 +21,7 @@ for (let i = 0; i < clients.length; i++) {
       "bufferGeometry.y": clients[i].bufferGeometry.y,
       "bufferGeometry.width": clients[i].bufferGeometry.width,
       "bufferGeometry.height": clients[i].bufferGeometry.height,
+      "isOnCurrentWorkspace": isOnCurrentDesktop,
       "stackingOrder": clients[i].stackingOrder
     }
   );
