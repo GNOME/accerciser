@@ -15,17 +15,20 @@ function collectWindowInfos() {
     // https://gjs-docs.gnome.org/meta14~14-windowactor/
     // https://gjs-docs.gnome.org/meta14~14/meta.window
     let window_infos = [];
+    const activeWorkspace = global.workspace_manager.get_active_workspace();
     const windows = global.get_window_actors();
     for (let i = 0; i < windows.length; i++)
     {
         let window = windows[i].metaWindow;
+        const isOnActiveWorkspace = window.located_on_workspace(activeWorkspace);
         window_infos.push(
             {
             "caption": window.title,
             "bufferGeometry.x": window.get_buffer_rect().x,
             "bufferGeometry.y": window.get_buffer_rect().y,
             "bufferGeometry.width": window.get_buffer_rect().width,
-            "bufferGeometry.height": window.get_buffer_rect().height
+            "bufferGeometry.height": window.get_buffer_rect().height,
+            "isOnCurrentWorkspace": isOnActiveWorkspace
             }
         );
     }

@@ -356,7 +356,8 @@ class GnomeShellWindowManager(WindowManager):
       window_data = self._getWindowData()
       for win in window_data:
         win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
-                              win["bufferGeometry.width"], win["bufferGeometry.height"])
+                              win["bufferGeometry.width"], win["bufferGeometry.height"],
+                              on_current_workspace=win["isOnCurrentWorkspace"])
         window_infos.append(win_info)
     except Exception:
       pass
