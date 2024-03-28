@@ -40,12 +40,23 @@ const interfaceXml = `
     <method name="GetWindowInfos">
       <arg type="s" direction="out" name="window_infos"/>
     </method>
+    <method name="GetMousePosition">
+      <arg type="u" direction="out" name="x"/>
+      <arg type="u" direction="out" name="y"/>
+  </method>
   </interface>
 </node>`;
 
 
 // implements the methods defined in the XML description above
 class DBusService {
+    GetMousePosition() {
+        const pointer = global.get_pointer();
+        const x = pointer[0];
+        const y = pointer[1];
+        return [x, y];
+    }
+
     GetWindowInfos() {
         return collectWindowInfos();
     }

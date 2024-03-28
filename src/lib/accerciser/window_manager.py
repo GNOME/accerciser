@@ -367,3 +367,13 @@ class GnomeShellWindowManager(WindowManager):
     # never query screen/desktop coordinates from AT-SPI, but always
     # use window position retrieved from Mutter/GNOME Shell extension
     return False
+
+  def getMousePosition(self):
+    try:
+      session_bus = dbus.SessionBus()
+      accerciser_dbus_object = session_bus.get_object('org.gnome.accerciser.Accerciser', '/org/gnome/accerciser/Accerciser')
+      accerciser_interface = dbus.Interface(accerciser_dbus_object, 'org.gnome.accerciser.Accerciser')
+      x, y = accerciser_interface.GetMousePosition()
+      return x, y
+    except Exception:
+      return 0, 0
