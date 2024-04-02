@@ -53,11 +53,17 @@ class WindowManager:
   class.
   '''
 
-  def supportsScreenCoords(self, acc):
+  def getToolkitNameAndVersion(self, acc):
     '''
-    Returns False when the accessible does not support
-    querying screen coordinates directly via AT-SPI,
-    otherwise True.
+    Return the name and major version number of the toolkit
+    used by the application that the given accessible belongs to.
+
+    @param acc: Accessible for whose application to retrieve
+                the toolkit info.
+    @type acc: Atspi.Accessible
+    @return: The toolkit name and major version, or `(None, None)`
+             if that information couldn't be retrieved.
+    @rtype: tuple(str, int)
     '''
     app = acc.get_application()
     if app and app.role == pyatspi.ROLE_APPLICATION:
@@ -67,11 +73,24 @@ class WindowManager:
         return True
       try:
         major_version = int(version.split('.')[0])
-        # Gtk 4 doesn't support global/screen coords
-        if isinstance(toolkit, str) and (toolkit.lower() == 'gtk') and (major_version >= 4):
-          return False
+        return toolkit, major_version
       except ValueError:
         pass
+    return None, None
+
+
+  def supportsScreenCoords(self, acc):
+    '''
+    Returns False when the accessible does not support
+    querying screen coordinates directly via AT-SPI,
+    otherwise True.
+    '''
+    app = acc.get_application()
+    toolkit, major_version = self.getToolkitNameAndVersion(acc)
+    if toolkit and major_version:
+      # Gtk 4 doesn't support global/screen coords
+      if toolkit.lower() == 'gtk' and (major_version >= 4):
+          return False
     return True
 
   def getWindowInfos(self):
