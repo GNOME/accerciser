@@ -27,13 +27,26 @@ def get_window_manager():
   return WindowManager()
 
 
+class WindowGeometry:
+  '''
+  Class that represents the geometry (position and size) of a
+  (system) window.
+  '''
+
+  def __init__(self, x, y, width, height):
+    self.x = x
+    self.y = y
+    self.width = width
+    self.height = height
+
+
 class WindowInfo:
   '''
   Class that represents relevant information of a (system) window.
   '''
 
   def __init__(self, title, x, y, width, height, stacking_index=0,
-               on_current_workspace=True):
+               on_current_workspace=True, buffer_geometry=None):
     self.title = title
     self.x = x
     self.y = y
@@ -41,6 +54,7 @@ class WindowInfo:
     self.height = height
     self.stacking_index = stacking_index
     self.on_current_workspace = on_current_workspace
+    self.buffer_geometry = buffer_geometry
 
 
 class WindowManager:
@@ -132,6 +146,17 @@ class WindowManager:
     candidates = []
     win_infos = self.getWindowInfos()
     for window in win_infos:
+      # for GTK 3 apps (at least seen with gedit and Evince), the window-local
+      # coordinates for accessibles and size of the top-level frame refer to the
+      # buffer geometry, so use that if available
+      if window.buffer_geometry:
+        toolkit, major_version = self.getToolkitNameAndVersion(toplevel)
+        if toolkit and toolkit.lower() == 'gtk' and major_version == 3:
+          window.x = window.buffer_geometry.x
+          window.y = window.buffer_geometry.y
+          window.width = window.buffer_geometry.width
+          window.height = window.buffer_geometry.height
+
       # match by name, but also consider windows for which libwnck/the window manager (?)
       # has appended a suffix to distinguish multiple windows with the same name
       # (seen at least on KDE Plasma X11, e.g. first window: "Hypertext",
@@ -322,10 +347,13 @@ class KWinWindowManager(WindowManager):
     try:
       window_data = self._runKWinScript(kwin_script_path)
       for win in window_data:
-        win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
-                              win["bufferGeometry.width"], win["bufferGeometry.height"],
+        buffer_geometry = WindowGeometry(win["bufferGeometry.x"], win["bufferGeometry.y"],
+                                         win["bufferGeometry.width"], win["bufferGeometry.height"])
+        win_info = WindowInfo(win["caption"], win["geometry.x"], win["geometry.y"],
+                              win["geometry.width"], win["geometry.height"],
                               stacking_index=win["stackingOrder"],
-                              on_current_workspace=win["isOnCurrentWorkspace"])
+                              on_current_workspace=win["isOnCurrentWorkspace"],
+                              buffer_geometry=buffer_geometry)
         window_infos.append(win_info)
     except Exception:
       pass
