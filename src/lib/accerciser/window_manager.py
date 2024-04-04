@@ -86,7 +86,19 @@ class WindowManager:
     win_infos = []
     stacking_index = 0
     for window in wnck_screen.get_windows_stacked():
-      toplevel_x, toplevel_y, toplevel_width, toplevel_height = window.get_client_window_geometry()
+      # client geometry is used unless window has client side decorations,
+      # in which case frame geometry is used;
+      # assume that client side decoration is used when client rect contains the frame rect
+      client_x, client_y, client_width, client_height = window.get_client_window_geometry()
+      frame_x, frame_y, frame_width, frame_height = window.get_geometry()
+      client_contains_frame = (client_x <= frame_x) and (client_y <= frame_y) \
+          and (client_x + client_width >= frame_x + frame_width) \
+          and (client_y + client_height >= frame_y + frame_height)
+      if client_contains_frame:
+        toplevel_x, toplevel_y, toplevel_width, toplevel_height = frame_x, frame_y, frame_width, frame_height
+      else:
+        toplevel_x, toplevel_y, toplevel_width, toplevel_height = client_x, client_y, client_width, client_height
+
       title = window.get_name()
       # workspace can be None if window is on all workspaces, so only consider case
       # of an actually returned workspace differing from the active one as not on active workspace
