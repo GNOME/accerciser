@@ -120,7 +120,7 @@ class WindowManager:
       #
       # also accept an additional trailing Left-to-Right Mark (U+200E)
       # (also seen on KDE Plasma)
-      regex = '^' + toplevel.name + '( <[0-9]*>)?(\u200e)?$'
+      regex = '^' + re.escape(toplevel.name) + '( <[0-9]*>)?(\u200e)?$'
       if re.match(regex, window.title):
         candidates.append(window)
 
