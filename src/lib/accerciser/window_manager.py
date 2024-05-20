@@ -22,8 +22,11 @@ import sys
 
 
 def get_window_manager():
-  if os.getenv('ACCERCISER_WINDOW_MANAGER') == 'kwin':
+  preferred = os.getenv('ACCERCISER_WINDOW_MANAGER')
+  if preferred == 'kwin':
     return KWinWindowManager()
+  if preferred == 'gnomeshell':
+    return GnomeShellWindowManager()
   return WindowManager()
 
 
@@ -325,4 +328,53 @@ class KWinWindowManager(WindowManager):
       data = self._runKWinScript(kwin_script_path)
       return data["mouse-pointer-pos.x"], data["mouse-pointer-pos.y"]
     except:
+      return 0, 0
+
+
+class GnomeShellWindowManager(WindowManager):
+  '''
+  WindowManager implementation that retrieves information from
+  Accerciser's GNOME Shell extension that queries the information
+  from Mutter and provides them via a DBus service.
+  '''
+
+  def _getWindowData(self):
+    '''
+    Query window information from the Accerciser GNOME Shell extension
+    via DBus.
+    '''
+    session_bus = dbus.SessionBus()
+    accerciser_dbus_object = session_bus.get_object('org.gnome.accerciser.Accerciser', '/org/gnome/accerciser/Accerciser')
+    accerciser_interface = dbus.Interface(accerciser_dbus_object, 'org.gnome.accerciser.Accerciser')
+    data_json = accerciser_interface.GetWindowInfos()
+    data = json.loads(data_json)
+    return data
+
+  def getWindowInfos(self):
+    window_infos = []
+    try:
+      window_data = self._getWindowData()
+      for win in window_data:
+        win_info = WindowInfo(win["caption"], win["bufferGeometry.x"], win["bufferGeometry.y"],
+                              win["bufferGeometry.width"], win["bufferGeometry.height"],
+                              on_current_workspace=win["isOnCurrentWorkspace"])
+        window_infos.append(win_info)
+    except Exception:
+      pass
+
+    return window_infos
+
+  def supportsScreenCoords(self, acc):
+    # never query screen/desktop coordinates from AT-SPI, but always
+    # use window position retrieved from Mutter/GNOME Shell extension
+    return False
+
+  def getMousePosition(self):
+    try:
+      session_bus = dbus.SessionBus()
+      accerciser_dbus_object = session_bus.get_object('org.gnome.accerciser.Accerciser', '/org/gnome/accerciser/Accerciser')
+      accerciser_interface = dbus.Interface(accerciser_dbus_object, 'org.gnome.accerciser.Accerciser')
+      x, y = accerciser_interface.GetMousePosition()
+      return x, y
+    except Exception:
       return 0, 0

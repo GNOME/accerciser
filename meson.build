@@ -89,6 +89,7 @@ gnome.post_install(
 
 # Subdirectories
 subdir('doc')
+subdir('gnome-shell-extension')
 subdir('help')
 subdir('icons')
 subdir('kwin-scripts')
