@@ -21,6 +21,10 @@ for (let i = 0; i < clients.length; i++) {
       "bufferGeometry.y": clients[i].bufferGeometry.y,
       "bufferGeometry.width": clients[i].bufferGeometry.width,
       "bufferGeometry.height": clients[i].bufferGeometry.height,
+      "geometry.x": clients[i].bufferGeometry.x,
+      "geometry.y": clients[i].bufferGeometry.y,
+      "geometry.width": clients[i].bufferGeometry.width,
+      "geometry.height": clients[i].bufferGeometry.height,
       "isOnCurrentWorkspace": isOnCurrentDesktop,
       "stackingOrder": clients[i].stackingOrder
     }
