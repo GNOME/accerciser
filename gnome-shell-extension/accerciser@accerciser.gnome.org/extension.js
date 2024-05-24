@@ -21,6 +21,13 @@ function collectWindowInfos() {
     {
         let window = windows[i].metaWindow;
         const isOnActiveWorkspace = window.located_on_workspace(activeWorkspace);
+
+        // client geometry is used unless window has client side decorations,
+        // in which case frame geometry is used;
+        let geometry = window.get_frame_rect();
+        if (!window.is_client_decorated())
+            geometry = window.frame_rect_to_client_rect(geometry);
+
         window_infos.push(
             {
             "caption": window.title,
@@ -28,6 +35,10 @@ function collectWindowInfos() {
             "bufferGeometry.y": window.get_buffer_rect().y,
             "bufferGeometry.width": window.get_buffer_rect().width,
             "bufferGeometry.height": window.get_buffer_rect().height,
+            "geometry.x": geometry.x,
+            "geometry.y": geometry.y,
+            "geometry.width": geometry.width,
+            "geometry.height": geometry.height,
             "isOnCurrentWorkspace": isOnActiveWorkspace
             }
         );
