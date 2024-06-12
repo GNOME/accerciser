@@ -384,6 +384,8 @@ class _SectionAccessible(_InterfaceSection):
 
     self.registerEventListener(self._accEventDescriptionChanged,
                                'object:property-change:accessible-description')
+    self.registerEventListener(self._accEventHelpTextChanged,
+                               'object:property-change:accessible-help-text')
     self.registerEventListener(self._accEventState, 'object:state-changed')
 
   def clearUI(self):
@@ -437,6 +439,21 @@ class _SectionAccessible(_InterfaceSection):
       return
 
     self.desc_label.set_label(self.node.acc.description or _('(no description)'))
+
+  def _accEventHelpTextChanged(self, event):
+    '''
+    Callback for accessible help text changes.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    try:
+        self.help_text_label.set_label(self.node.acc.get_help_text() or _('(no help text)'))
+    except:
+        self.help_text_label.set_label(_('(no help text)'))
 
   def _accEventState(self, event):
     '''
