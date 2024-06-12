@@ -377,6 +377,8 @@ class _SectionAccessible(_InterfaceSection):
                    self.relation_bg, True])
     self.relations_view.expand_all()
 
+    self.registerEventListener(self._accEventDescriptionChanged,
+                               'object:property-change:accessible-description')
     self.registerEventListener(self._accEventState, 'object:state-changed')
 
   def clearUI(self):
@@ -418,6 +420,18 @@ class _SectionAccessible(_InterfaceSection):
       acc = relations[path[0]].getTarget(model[iter][2])
       if acc:
         self.node.update(acc)
+
+  def _accEventDescriptionChanged(self, event):
+    '''
+    Callback for accessible description changes.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    self.desc_label.set_label(self.node.acc.description or _('(no description)'))
 
   def _accEventState(self, event):
     '''
