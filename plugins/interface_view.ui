@@ -200,6 +200,52 @@
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkFrame" id="frame11">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="label-xalign">0</property>
+                    <property name="shadow-type">none</property>
+                    <child>
+                      <object class="GtkLabel" id="label_acc_help_text">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="margin-left">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="label" translatable="yes">(no description)</property>
+                        <property name="selectable">True</property>
+                        <property name="xalign">0</property>
+                        <attributes>
+                          <attribute name="style" value="italic"/>
+                        </attributes>
+                        <accessibility>
+                          <relation type="labelled-by" target="label62"/>
+                        </accessibility>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel" id="label62">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="label" translatable="yes">Help text</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="label_acc_help_text"/>
+                        </accessibility>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkFrame">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
@@ -241,7 +287,7 @@
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
                 <child>
@@ -383,7 +429,7 @@
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">3</property>
+                    <property name="position">4</property>
                   </packing>
                 </child>
                 <child>
@@ -518,7 +564,7 @@
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">4</property>
+                    <property name="position">5</property>
                   </packing>
                 </child>
               </object>
