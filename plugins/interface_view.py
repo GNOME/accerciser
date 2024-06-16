@@ -311,6 +311,7 @@ class _SectionAccessible(_InterfaceSection):
     # Child count and description labels
     self.child_count_label = ui_xml.get_object('label_acc_child count')
     self.desc_label = ui_xml.get_object('label_acc_desc')
+    self.help_text_label = ui_xml.get_object('label_acc_help_text')
     self.id_label = ui_xml.get_object('label_acc_id')
 
     # configure states tree view
@@ -343,6 +344,10 @@ class _SectionAccessible(_InterfaceSection):
 
     self.child_count_label.set_text(str(acc.childCount))
     self.desc_label.set_label(acc.description or _('(no description)'))
+    try:
+        self.help_text_label.set_label(acc.get_help_text() or _('(no help text)'))
+    except:
+        self.help_text_label.set_label(_('(no help text)'))
     try:
         self.id_label.set_label(acc.accessibleId)
     except:
@@ -377,6 +382,10 @@ class _SectionAccessible(_InterfaceSection):
                    self.relation_bg, True])
     self.relations_view.expand_all()
 
+    self.registerEventListener(self._accEventDescriptionChanged,
+                               'object:property-change:accessible-description')
+    self.registerEventListener(self._accEventHelpTextChanged,
+                               'object:property-change:accessible-help-text')
     self.registerEventListener(self._accEventState, 'object:state-changed')
 
   def clearUI(self):
@@ -418,6 +427,33 @@ class _SectionAccessible(_InterfaceSection):
       acc = relations[path[0]].getTarget(model[iter][2])
       if acc:
         self.node.update(acc)
+
+  def _accEventDescriptionChanged(self, event):
+    '''
+    Callback for accessible description changes.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    self.desc_label.set_label(self.node.acc.description or _('(no description)'))
+
+  def _accEventHelpTextChanged(self, event):
+    '''
+    Callback for accessible help text changes.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    try:
+        self.help_text_label.set_label(self.node.acc.get_help_text() or _('(no help text)'))
+    except:
+        self.help_text_label.set_label(_('(no help text)'))
 
   def _accEventState(self, event):
     '''
