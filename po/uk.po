@@ -6,48 +6,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-12-31 10:07+0000\n"
-"PO-Revision-Date: 2024-01-01 14:21+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
+"POT-Creation-Date: 2024-06-16 18:52+0000\n"
+"PO-Revision-Date: 2024-06-17 08:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language-Team: Ukrainian\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+#: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:8
 msgid "Accerciser"
 msgstr "Accerciser"
-
-#: accerciser.appdata.xml.in:7
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Навігатор доступності для стільниці GNOME"
-
-#: accerciser.appdata.xml.in:9
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Accerciser — інтерактивний навігатор доступності, який написано мовою Python "
-"для стільничного середовища GNOME. У програмі використано AT-SPI для ревізії "
-"та керування віджетами. Програма надає вам змогу перевірити, чи надає "
-"програма належну інформацію для роботи технологій доступності, та "
-"скористатися бібліотеками автоматизованої перевірки."
-
-#: accerciser.appdata.xml.in:14
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"У Accerciser передбачено проста бібліотека для роботи з додатками, якою ви "
-"можете скористатися для створення нетипових панелей перегляду відомостей "
-"щодо доступності."
 
 #: accerciser.desktop.in:4
 msgid "Give your application an accessibility workout"
@@ -188,6 +162,32 @@ msgstr "Комбінація клавіш"
 msgid "Hotkey combination for related action."
 msgstr "Комбінація клавіш для відповідних дій."
 
+#: org.gtk.accerciser.metainfo.xml.in:9
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Навігатор доступності для стільниці GNOME"
+
+#: org.gtk.accerciser.metainfo.xml.in:11
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser — інтерактивний навігатор доступності, який написано мовою Python "
+"для стільничного середовища GNOME. У програмі використано AT-SPI для ревізії "
+"та керування віджетами. Програма надає вам змогу перевірити, чи надає "
+"програма належну інформацію для роботи технологій доступності, та "
+"скористатися бібліотеками автоматизованої перевірки."
+
+#: org.gtk.accerciser.metainfo.xml.in:16
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"У Accerciser передбачено проста бібліотека для роботи з додатками, якою ви "
+"можете скористатися для створення нетипових панелей перегляду відомостей "
+"щодо доступності."
+
 #: plugins/api_view.py:32
 msgid "API Browser"
 msgstr "Огляд API"
@@ -228,7 +228,7 @@ msgstr "Монітор подій"
 msgid "_Monitor Events"
 msgstr "_Слідкувати за подіями"
 
-#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1639
 #: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
 msgid "_Clear"
 msgstr "О_чистити"
@@ -262,10 +262,10 @@ msgid "Source"
 msgstr "Джерело"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
-#: plugins/interface_view.py:737 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:468
-#: src/lib/accerciser/plugin/plugin_manager.py:388
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:615
+#: plugins/interface_view.py:773 plugins/validate.py:297
+#: src/lib/accerciser/accessible_treeview.py:469
+#: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Назва"
 
@@ -293,17 +293,16 @@ msgstr "Запустити/зупинити запис подій"
 msgid "Clear event log"
 msgstr "Очистити журнал подій"
 
-#: plugins/event_monitor.py:478
-#| msgid "Save validator output"
+#: plugins/event_monitor.py:477
 msgid "Save monitor output"
 msgstr "Зберегти результати спостереження"
 
-#: plugins/event_monitor.py:481 plugins/validate.py:316
-#: src/lib/accerciser/plugin/view.py:1136
+#: plugins/event_monitor.py:480 plugins/validate.py:318
+#: src/lib/accerciser/plugin/view.py:1135
 msgid "_OK"
 msgstr "_Гаразд"
 
-#: plugins/event_monitor.py:482 plugins/validate.py:317
+#: plugins/event_monitor.py:481 plugins/validate.py:319
 msgid "_Cancel"
 msgstr "_Скасувати"
 
@@ -311,317 +310,323 @@ msgstr "_Скасувати"
 msgid "Child count"
 msgstr "Кількість дочірніх елементів"
 
-#: plugins/interface_view.ui:138 plugins/interface_view.ui:968
-#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
-#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
-#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
-#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
-#: plugins/interface_view.ui:3142
+#: plugins/interface_view.ui:138 plugins/interface_view.ui:1027
+#: plugins/interface_view.ui:1896 plugins/interface_view.ui:1926
+#: plugins/interface_view.ui:1956 plugins/interface_view.ui:2389
+#: plugins/interface_view.ui:2419 plugins/interface_view.ui:2449
+#: plugins/interface_view.ui:3025 plugins/interface_view.ui:3056
+#: plugins/interface_view.ui:3087 plugins/interface_view.ui:3118
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:170 plugins/interface_view.ui:1492
-#: plugins/interface_view.py:345 plugins/interface_view.py:865
+#: plugins/interface_view.ui:170 plugins/interface_view.ui:216
+#: plugins/interface_view.ui:1399 plugins/interface_view.py:346
+#: plugins/interface_view.py:441 plugins/interface_view.py:901
 msgid "(no description)"
 msgstr "(немає опису)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:186 plugins/interface_view.ui:580
-#: plugins/interface_view.ui:1460 plugins/validate.py:230
-#: plugins/validate.py:293
+#: plugins/interface_view.ui:186 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1384 plugins/validate.py:232
+#: plugins/validate.py:295
 msgid "Description"
 msgstr "Опис"
 
-#: plugins/interface_view.ui:215 plugins/interface_view.py:349
+#: plugins/interface_view.ui:232
+#| msgid "H_ypertext"
+msgid "Help text"
+msgstr "Текст довідки"
+
+#: plugins/interface_view.ui:261 plugins/interface_view.py:354
 msgid "(no ID)"
 msgstr "(немає ідентифікатора)"
 
-#: plugins/interface_view.ui:231 plugins/interface_view.ui:704
+#: plugins/interface_view.ui:277 plugins/interface_view.ui:749
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:298
+#: plugins/interface_view.ui:344
 msgid "States"
 msgstr "Стани"
 
-#: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
-#: plugins/interface_view.ui:3021
+#: plugins/interface_view.ui:409 plugins/interface_view.ui:1169
+#: plugins/interface_view.ui:2955
 msgid "Attributes"
 msgstr "Атрибути"
 
-#: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
-#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
+#: plugins/interface_view.ui:526 plugins/interface_view.ui:1326
+#: plugins/interface_view.ui:2554 plugins/interface_view.ui:2639
 msgid "Show"
 msgstr "Показати"
 
-#: plugins/interface_view.ui:511
+#: plugins/interface_view.ui:557
 msgid "Relations"
 msgstr "Зв'язки"
 
-#: plugins/interface_view.ui:530
+#: plugins/interface_view.ui:576
 msgid "_Accessible"
 msgstr "_Об'єкт"
 
-#: plugins/interface_view.ui:591
+#: plugins/interface_view.ui:637
 msgid "Key binding"
 msgstr "Комбінація клавіш"
 
-#: plugins/interface_view.ui:645
+#: plugins/interface_view.ui:691
 msgid "Perform action"
 msgstr "Виконати дію"
 
-#: plugins/interface_view.ui:676
+#: plugins/interface_view.ui:722
 msgid "Acti_on"
 msgstr "Д_ія"
 
-#: plugins/interface_view.ui:719
+#: plugins/interface_view.ui:764
 msgid "Toolkit"
 msgstr "Інструментальне середовище"
 
-#: plugins/interface_view.ui:736
+#: plugins/interface_view.ui:779
 msgid "Version"
 msgstr "Версія"
 
-#: plugins/interface_view.ui:810
+#: plugins/interface_view.ui:841
 msgid "Ap_plication"
 msgstr "Про_грама"
 
-#: plugins/interface_view.ui:829
+#: plugins/interface_view.ui:860
 msgid "Col_lection"
 msgstr "_Набір"
 
-#. Screen coordinates
-#. Component size in pixels
-#. Screen coordinates
-#. Component size
-#: plugins/interface_view.ui:857 plugins/interface_view.ui:894
-#: plugins/interface_view.ui:1042 plugins/interface_view.ui:1420
-#: plugins/interface_view.ui:1440
-msgid "0, 0"
-msgstr "0, 0"
-
-#: plugins/interface_view.ui:877
-msgid "Relative position"
-msgstr "Відносне положення"
-
-#: plugins/interface_view.ui:914 plugins/interface_view.ui:1403
-msgid "Size"
-msgstr "Розмір"
-
-#: plugins/interface_view.ui:931
-msgid "WIDGET"
-msgstr "ВІДЖЕТ"
-
-#: plugins/interface_view.ui:951
-msgid "Layer"
-msgstr "Шар"
-
-#: plugins/interface_view.ui:988
-msgid "MDI-Z-order"
-msgstr "MDI (Z-порядок)"
-
-#: plugins/interface_view.ui:1025
-msgid "Alpha"
-msgstr "Альфа-канал"
-
-#: plugins/interface_view.ui:1060
+#: plugins/interface_view.ui:888
 msgid "Absolute position"
 msgstr "Абсолютне положення"
 
-#: plugins/interface_view.ui:1077
+#. Screen coordinates
+#. Component size in pixels
+#. Component size
+#. Screen coordinates
+#: plugins/interface_view.ui:903 plugins/interface_view.ui:934
+#: plugins/interface_view.ui:965 plugins/interface_view.ui:1433
+#: plugins/interface_view.ui:1464
+msgid "0, 0"
+msgstr "0, 0"
+
+#: plugins/interface_view.ui:919
+msgid "Relative position"
+msgstr "Відносне положення"
+
+#: plugins/interface_view.ui:950 plugins/interface_view.ui:1418
+msgid "Size"
+msgstr "Розмір"
+
+#: plugins/interface_view.ui:981
+msgid "Layer"
+msgstr "Шар"
+
+#: plugins/interface_view.ui:996
+msgid "WIDGET"
+msgstr "ВІДЖЕТ"
+
+#: plugins/interface_view.ui:1012
+msgid "MDI-Z-order"
+msgstr "MDI (Z-порядок)"
+
+#: plugins/interface_view.ui:1043
+msgid "Alpha"
+msgstr "Альфа-канал"
+
+#: plugins/interface_view.ui:1076
 msgid "Co_mponent"
 msgstr "_Компонент"
 
-#: plugins/interface_view.ui:1096
+#: plugins/interface_view.ui:1095
 msgid "Des_ktop"
 msgstr "_Робочий стіл"
 
-#: plugins/interface_view.ui:1192
+#: plugins/interface_view.ui:1191
 msgid "Locale:"
 msgstr "Мова:"
 
-#: plugins/interface_view.ui:1231
+#: plugins/interface_view.ui:1230
 msgid "_Document"
 msgstr "_Документ"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1252 plugins/validate.py:299
+#: plugins/interface_view.ui:1251 plugins/validate.py:301
 msgid "Hyperlink"
 msgstr "Гіперпосилання"
 
-#: plugins/interface_view.ui:1358
+#: plugins/interface_view.ui:1357
 msgid "H_ypertext"
 msgstr "_Гіпертекст"
 
-#: plugins/interface_view.ui:1386
+#: plugins/interface_view.ui:1449
 msgid "Position"
 msgstr "Розташування"
 
-#: plugins/interface_view.ui:1475
+#: plugins/interface_view.ui:1480
 msgid "Locale"
 msgstr "Мова"
 
-#: plugins/interface_view.ui:1535
+#: plugins/interface_view.ui:1513
 msgid "_Image"
 msgstr "_Зображення"
 
-#: plugins/interface_view.ui:1554
+#: plugins/interface_view.ui:1532
 msgid "Lo_gin Helper"
 msgstr "Помі_чник входу у систему"
 
-#: plugins/interface_view.ui:1621
+#: plugins/interface_view.ui:1599
 msgid "Select All"
 msgstr "Виділити все"
 
-#: plugins/interface_view.ui:1692
+#: plugins/interface_view.ui:1670
 msgid "_Selection"
 msgstr "Виді_лення"
 
-#: plugins/interface_view.ui:1725
+#: plugins/interface_view.ui:1703
 msgid "Content type"
 msgstr "Тип змісту"
 
-#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
+#: plugins/interface_view.ui:1714 plugins/interface_view.py:781
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1753
+#: plugins/interface_view.ui:1731
 msgid "St_reamable Content"
 msgstr "_Потоковий зміст"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:1770
 msgid "Caption:"
 msgstr "Підпис:"
 
-#: plugins/interface_view.ui:1837
+#: plugins/interface_view.ui:1815
 msgid "Summary:"
 msgstr "Резюме:"
 
-#: plugins/interface_view.ui:1978
-msgid "Selected columns"
-msgstr "Виділені колонки"
-
-#: plugins/interface_view.ui:1994
-msgid "Selected rows"
-msgstr "Виділені рядки"
-
-#: plugins/interface_view.ui:2010
-msgid "Columns"
-msgstr "Стовпчики"
-
-#: plugins/interface_view.ui:2026
+#: plugins/interface_view.ui:1881
 msgid "Rows"
 msgstr "Рядки"
 
-#: plugins/interface_view.ui:2049
+#: plugins/interface_view.ui:1911
+msgid "Columns"
+msgstr "Стовпчики"
+
+#: plugins/interface_view.ui:1941
+msgid "Selected rows"
+msgstr "Виділені рядки"
+
+#: plugins/interface_view.ui:1971
+msgid "Selected columns"
+msgstr "Виділені колонки"
+
+#: plugins/interface_view.ui:2010
 msgid "Table Information"
 msgstr "Таблична інформація"
 
-#: plugins/interface_view.ui:2093
+#: plugins/interface_view.ui:2054
 msgid "name (x,y)"
 msgstr "назва (x,y)"
 
-#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
+#: plugins/interface_view.ui:2105 plugins/interface_view.ui:2219
 msgid "Header:"
 msgstr "Заголовок:"
 
-#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
+#: plugins/interface_view.ui:2118 plugins/interface_view.ui:2232
 msgid "<no description>"
 msgstr "<без опису>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
+#: plugins/interface_view.ui:2151 plugins/interface_view.ui:2265
 msgid "Extents:"
 msgstr "Розміри:"
 
-#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
+#: plugins/interface_view.ui:2189 plugins/interface_view.ui:2374
 msgid "Row"
 msgstr "Рядок"
 
-#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
+#: plugins/interface_view.ui:2303 plugins/interface_view.ui:2404
 msgid "Column"
 msgstr "Стовпчик"
 
-#: plugins/interface_view.ui:2358
+#: plugins/interface_view.ui:2319
 msgid "Selected Cell"
 msgstr "Позначена комірка"
 
-#: plugins/interface_view.ui:2380
+#: plugins/interface_view.ui:2341
 msgid "_Table"
 msgstr "_Таблиця"
 
-#: plugins/interface_view.ui:2488
-msgid "Column span"
-msgstr "Розмір у стовпчиках"
-
-#: plugins/interface_view.ui:2504
+#: plugins/interface_view.ui:2434
 msgid "Row span"
 msgstr "Розмір у рядках"
 
-#: plugins/interface_view.ui:2551
+#: plugins/interface_view.ui:2464
+msgid "Column span"
+msgstr "Розмір у стовпчиках"
+
+#: plugins/interface_view.ui:2495
 msgid "Row headers"
 msgstr "Заголовки рядків"
 
-#: plugins/interface_view.ui:2568
+#: plugins/interface_view.ui:2580
 msgid "Column headers"
 msgstr "Заголовки стовпчиків"
 
-#: plugins/interface_view.ui:2584
+#: plugins/interface_view.ui:2664
 msgid "Table"
 msgstr "Таблиця"
 
-#: plugins/interface_view.ui:2770
+#: plugins/interface_view.ui:2704
 msgid "_TableCell"
 msgstr "_Комірка таблиці"
 
-#: plugins/interface_view.ui:2820
+#: plugins/interface_view.ui:2754
 msgid "Text"
 msgstr "Текст"
 
-#: plugins/interface_view.ui:2859
+#: plugins/interface_view.ui:2793
 msgid "Offset"
 msgstr "Зсув"
 
-#: plugins/interface_view.ui:2897
+#: plugins/interface_view.ui:2831
 msgid "Include defaults"
 msgstr "Увімкнути типові"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2919
+#: plugins/interface_view.ui:2853
 msgid "Start: 0"
 msgstr "Початок: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2937
+#: plugins/interface_view.ui:2871
 msgid "End: 0"
 msgstr "Кінець: 0"
 
-#: plugins/interface_view.ui:3043
+#: plugins/interface_view.ui:2977
 msgid "Te_xt"
 msgstr "_Текст"
 
-#: plugins/interface_view.ui:3093
+#: plugins/interface_view.ui:3009
 msgid "Current value"
 msgstr "Поточне значення"
 
-#: plugins/interface_view.ui:3161
-msgid "Minimum increment"
-msgstr "Мінімальний приріст"
-
-#: plugins/interface_view.ui:3176
-msgid "Maximum value"
-msgstr "Максимальне значення"
-
-#: plugins/interface_view.ui:3191
+#: plugins/interface_view.ui:3041
 msgid "Minimum value"
 msgstr "Мінімальне значення"
 
-#: plugins/interface_view.ui:3215
+#: plugins/interface_view.ui:3072
+msgid "Maximum value"
+msgstr "Максимальне значення"
+
+#: plugins/interface_view.ui:3103
+msgid "Minimum increment"
+msgstr "Мінімальний приріст"
+
+#: plugins/interface_view.ui:3143
 msgid "Val_ue"
 msgstr "_Значення"
 
-#: plugins/interface_view.ui:3232
+#: plugins/interface_view.ui:3160
 msgid "unknown"
 msgstr "невідоме"
 
@@ -639,19 +644,24 @@ msgstr "Дозволяє вивчати різні властивості інт
 msgid "(not implemented)"
 msgstr "(не реалізовано)"
 
-#: plugins/interface_view.py:753
+#: plugins/interface_view.py:348 plugins/interface_view.py:350
+#: plugins/interface_view.py:454 plugins/interface_view.py:456
+msgid "(no help text)"
+msgstr "(немає тексту довідки)"
+
+#: plugins/interface_view.py:789
 msgid "Start"
 msgstr "Початок"
 
-#: plugins/interface_view.py:761
+#: plugins/interface_view.py:797
 msgid "End"
 msgstr "Кінець"
 
-#: plugins/interface_view.py:926
+#: plugins/interface_view.py:962
 msgid "Too many selectable children"
 msgstr "Надто багато виділених дочірніх об'єктів"
 
-#: plugins/interface_view.py:1393 plugins/interface_view.py:1396
+#: plugins/interface_view.py:1429 plugins/interface_view.py:1432
 msgid "(Editable)"
 msgstr "(Змінюване)"
 
@@ -660,7 +670,7 @@ msgstr "(Змінюване)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1543
+#: plugins/interface_view.py:1579
 #, python-format
 msgid "Start: %d"
 msgstr "Початок: %d"
@@ -670,24 +680,24 @@ msgstr "Початок: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1549
+#: plugins/interface_view.py:1585
 #, python-format
 msgid "End: %d"
 msgstr "Кінець: %d"
 
-#: plugins/quick_select.py:16
+#: plugins/quick_select.py:15
 msgid "Quick Select"
 msgstr "Швидке виділення"
 
-#: plugins/quick_select.py:19
+#: plugins/quick_select.py:18
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr "Модуль, що дозволяє гнучко виділяти об'єкти допоміжних технологій"
 
-#: plugins/quick_select.py:25
+#: plugins/quick_select.py:24
 msgid "Inspect last focused accessible"
 msgstr "Дослідження останнього сфокусованого об'єкту"
 
-#: plugins/quick_select.py:29
+#: plugins/quick_select.py:28
 msgid "Inspect accessible under mouse"
 msgstr "Дослідження об'єкту під вказівником миші"
 
@@ -703,62 +713,62 @@ msgstr "_Перевірити"
 msgid "_Help"
 msgstr "_Довідка"
 
-#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
+#: plugins/validate.ui:285 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "Бездіяльний"
 
-#: plugins/validate.py:80
+#: plugins/validate.py:82
 msgid "No description"
 msgstr "Без опису"
 
-#: plugins/validate.py:167
+#: plugins/validate.py:169
 msgid "AT-SPI Validator"
 msgstr "Перевірка AT-SPI"
 
-#: plugins/validate.py:169
+#: plugins/validate.py:171
 msgid "Validates application accessibility"
 msgstr "Перевірка можливостей доступності"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
+#: plugins/validate.py:225 plugins/validate.py:293
 msgid "Level"
 msgstr "Рівень"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:477
+#: plugins/validate.py:299 src/lib/accerciser/accessible_treeview.py:478
 msgid "Role"
 msgstr "Роль"
 
-#: plugins/validate.py:313
+#: plugins/validate.py:315
 msgid "Save validator output"
 msgstr "Зберегти результати засобу перевірки"
 
-#: plugins/validate.py:361
+#: plugins/validate.py:363
 msgid "Saving"
 msgstr "Збереження"
 
-#: plugins/validate.py:412
+#: plugins/validate.py:414
 msgid "Validating"
 msgstr "Перевірка"
 
-#: plugins/validate.py:570
+#: plugins/validate.py:572
 msgid "EXCEPT"
 msgstr "ВИКЛЮЧЕННЯ"
 
-#: plugins/validate.py:577
+#: plugins/validate.py:579
 msgid "ERROR"
 msgstr "ПОМИЛКА"
 
-#: plugins/validate.py:585
+#: plugins/validate.py:587
 msgid "WARN"
 msgstr "ПОПЕРЕДЖЕННЯ"
 
-#: plugins/validate.py:592
+#: plugins/validate.py:594
 msgid "INFO"
 msgstr "ІНФО"
 
-#: plugins/validate.py:599
+#: plugins/validate.py:601
 msgid "DEBUG"
 msgstr "НАЛАГОДЖЕННЯ"
 
@@ -863,39 +873,39 @@ msgstr ""
 msgid "%s has no name or description"
 msgstr "%s не має назви чи опису"
 
-#: src/lib/accerciser/accerciser.py:92
+#: src/lib/accerciser/accerciser.py:91
 msgid "_Quit"
 msgstr "Ви_йти"
 
-#: src/lib/accerciser/accerciser.py:94
+#: src/lib/accerciser/accerciser.py:93
 msgid "_Preferences…"
 msgstr "_Параметри…"
 
-#: src/lib/accerciser/accerciser.py:96
+#: src/lib/accerciser/accerciser.py:95
 msgid "_Contents"
 msgstr "_Зміст"
 
-#: src/lib/accerciser/accerciser.py:98
+#: src/lib/accerciser/accerciser.py:97
 msgid "_About"
 msgstr "_Про програму"
 
-#: src/lib/accerciser/accessible_treeview.py:416
+#: src/lib/accerciser/accessible_treeview.py:417
 msgid "<dead>"
 msgstr "<застарілий>"
 
-#: src/lib/accerciser/accessible_treeview.py:484
+#: src/lib/accerciser/accessible_treeview.py:485
 msgid "Children"
 msgstr "Дочірні елементи"
 
-#: src/lib/accerciser/accessible_treeview.py:512
+#: src/lib/accerciser/accessible_treeview.py:513
 msgid "_Show Applications without children"
 msgstr "П_оказати програми без підпроцесів"
 
-#: src/lib/accerciser/accessible_treeview.py:521
+#: src/lib/accerciser/accessible_treeview.py:522
 msgid "_Refresh Registry"
 msgstr "_Оновити реєстр"
 
-#: src/lib/accerciser/accessible_treeview.py:527
+#: src/lib/accerciser/accessible_treeview.py:528
 msgid "Refresh _Node"
 msgstr "Оновити _піддерево"
 
@@ -956,7 +966,7 @@ msgid "accerciser Preferences"
 msgstr "параметри accerciser"
 
 #: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
-#: src/lib/accerciser/plugin/view.py:1138
+#: src/lib/accerciser/plugin/view.py:1137
 msgid "_Close"
 msgstr "_Закрити"
 
@@ -972,23 +982,23 @@ msgstr "Глобальні швидкі клавіші"
 msgid "Highlighting"
 msgstr "Підсвічення"
 
-#: src/lib/accerciser/prefs_dialog.py:88
+#: src/lib/accerciser/prefs_dialog.py:89
 msgid "Highlight duration:"
 msgstr "Тривалість підсвічення:"
 
-#: src/lib/accerciser/prefs_dialog.py:95
+#: src/lib/accerciser/prefs_dialog.py:96
 msgid "Border color:"
 msgstr "Колір рамки:"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "The border color of the highlight box"
 msgstr "Колір рамки прямокутника підсвічення"
 
-#: src/lib/accerciser/prefs_dialog.py:99
+#: src/lib/accerciser/prefs_dialog.py:100
 msgid "Fill color:"
 msgstr "Колір заповнення:"
 
-#: src/lib/accerciser/prefs_dialog.py:102
+#: src/lib/accerciser/prefs_dialog.py:103
 msgid "The fill color of the highlight box"
 msgstr "Колір заповнення прямокутника підсвічення"
 
@@ -1077,33 +1087,33 @@ msgstr "_Оновити"
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:397
+#: src/lib/accerciser/plugin/plugin_manager.py:396
 msgctxt "viewport"
 msgid "View"
 msgstr "Область"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:474
+#: src/lib/accerciser/plugin/plugin_manager.py:473
 msgid "No view"
 msgstr "Без області"
 
-#: src/lib/accerciser/plugin/view.py:380
+#: src/lib/accerciser/plugin/view.py:379
 msgid "_Single plugins view"
 msgstr "_Поточна область модулів"
 
-#: src/lib/accerciser/plugin/view.py:771
+#: src/lib/accerciser/plugin/view.py:770
 msgid "Plugin View"
 msgstr "Область модулів"
 
-#: src/lib/accerciser/plugin/view.py:774
+#: src/lib/accerciser/plugin/view.py:773
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "Область модулів (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1079
+#: src/lib/accerciser/plugin/view.py:1078
 msgid "_New view…"
 msgstr "С_творити панель перегляду…"
 
-#: src/lib/accerciser/plugin/view.py:1135
+#: src/lib/accerciser/plugin/view.py:1134
 msgid "New View…"
 msgstr "Створити перегляд…"
 
