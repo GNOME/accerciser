@@ -1,1083 +1,1711 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Nepali Translation Project\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-07-27 14:57+0000\n"
-"PO-Revision-Date: 2019-08-20 02:34+0545\n"
-"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
-"Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
+"POT-Creation-Date: 2024-05-24 08:38+0000\n"
+"PO-Revision-Date: 2024-07-12 15:17+0545\n"
+"Last-Translator: \n"
+"Language-Team: Nepali Language Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
-msgid "Accerciser"
-msgstr "एसस्रसाएइजर"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "pawan chitrakar <chautari@gmail.com>"
 
-#: accerciser.appdata.xml.in:7
-#, fuzzy
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "एसस्रसाएइजर पहुँच एक्सप्लोरर"
+#. (itstool) path: info/title
+#: C/api_browser_plugin.page:4
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "१. एपीआई ब्राउजर प्लगइन"
 
-#: accerciser.appdata.xml.in:9
+#. (itstool) path: info/desc
+#: C/api_browser_plugin.page:6
+msgid "Verifying interfaces, methods, and properties"
+msgstr "इन्टरफेसहरू, विधिहरू, र गुणहरू रुजु गर्दै"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10 C/event_monitor_plugin.page:10
+#: C/howto_setting_up_accerciser.page:11 C/howto_write_a_plugin.page:10 C/index.page:9
+#: C/interface_viewer_plugin.page:10 C/introduction.page:10 C/ipython_plugin.page:10
+#: C/preferences.page:10 C/quick_select_plugin.page:10 C/validator_plugin.page:10
+msgid "Eitan Isaacson"
+msgstr "इटान इसहाकसन"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:14 C/desktop_tree_view.page:14 C/event_monitor_plugin.page:14
+#: C/howto_setting_up_accerciser.page:15 C/howto_write_a_plugin.page:14 C/index.page:13
+#: C/interface_viewer_plugin.page:14 C/introduction.page:14 C/ipython_plugin.page:14
+#: C/preferences.page:14 C/quick_select_plugin.page:14 C/validator_plugin.page:14
+msgid "Peter Parente"
+msgstr "पिटर प्यारेन्ट"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:18 C/desktop_tree_view.page:18 C/event_monitor_plugin.page:18
+#: C/howto_setting_up_accerciser.page:19 C/howto_write_a_plugin.page:18 C/index.page:17
+#: C/interface_viewer_plugin.page:18 C/introduction.page:18 C/ipython_plugin.page:18
+#: C/preferences.page:18 C/quick_select_plugin.page:18 C/validator_plugin.page:18
+msgid "Aline Bessa"
+msgstr "एलाइन बेसा"
+
+#. (itstool) path: license/p
+#: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22 C/event_monitor_plugin.page:22
+#: C/howto_setting_up_accerciser.page:23 C/howto_write_a_plugin.page:22 C/index.page:21
+#: C/interface_viewer_plugin.page:22 C/introduction.page:22 C/ipython_plugin.page:22
+#: C/preferences.page:22 C/quick_select_plugin.page:22 C/validator_plugin.page:22
+msgid "Creative Commons Share Alike 3.0"
+msgstr "क्रिएटिव कमन्स साझा समान ३.०"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
+msgid "API Browser Plugin"
+msgstr "एपीआई ब्राउजर प्लगइन"
+
+#. (itstool) path: page/p
+#: C/api_browser_plugin.page:26
 msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME desktop. "
-"It uses AT-SPI to inspect and control widgets, allowing you to check if an "
-"application is providing correct information to assistive technologies and "
-"automated test frameworks."
+"Given an accessible widget selected in the <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>, the API Browser Plugin shows its implemented AT-SPI interfaces along with its "
+"methods and properties."
 msgstr ""
+"<link xref=\"desktop_tree_view\">एप्लिकेसन ट्री भ्यू</link> मा चयन गरिएको पहुँच योग्य विजेट दिइएको छ, "
+"एपीआई ब्राउजर प्लगइनले यसको विधिहरू र गुणहरूको साथ यसको कार्यान्वयन गरिएको एटी-एसपीआई इन्टरफेसहरू देखाउँदछ।."
 
-#: accerciser.appdata.xml.in:14
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
 msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom views "
-"of accessibility information."
+"The API Browser Plugin allows you to verify interfaces, methods, and properties of a target "
+"accessible widget in an application."
 msgstr ""
+"एपीआई ब्राउजर प्लगइनले तपाईंलाई अनुप्रयोगमा लक्षित पहुँच योग्य विजेटको इन्टरफेस, विधि हरू र गुणहरू प्रमाणित गर्न "
+"अनुमति दिन्छ।."
 
-#: accerciser.desktop.in:4
-msgid "Give your application an accessibility workout"
-msgstr "तपाईँको अनुप्रयोगलाई पहुँच कसरत दिनुहोस्"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: accerciser.desktop.in:6
-msgid "accessibility;development;test;"
-msgstr "accessibility;development;test;"
-
-#: org.a11y.Accerciser.gschema.xml:6
-#, fuzzy
-msgid "A list of plugins that are disabled by default"
-msgstr "अक्षम पारिएको प्लगइन सुची"
-
-#: org.a11y.Accerciser.gschema.xml:7
-msgid "A list of plugins that are disabled by default."
-msgstr "अक्षम पारिएको प्लगइन सुची।."
-
-#: org.a11y.Accerciser.gschema.xml:11
-#, fuzzy
-msgid "Highlight duration"
-msgstr "हाइलाइट"
-
-#: org.a11y.Accerciser.gschema.xml:12
-msgid "The duration of the highlight box when selecting accessible nodes."
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37
+msgctxt "_"
+msgid "external ref='figures/api_browser.png' md5='4f668e4a15d1c308e984d0801b9ecd95'"
 msgstr ""
+"बाह्य रेफरी = 'आंकड़े / api_browser.png' एमडी 5 = '4 एफ 668 ई 4 ए 15 डी 1 सी 308 ई 984 डी 0801 बी 9 "
+"ईसीडी 95'"
 
-#: org.a11y.Accerciser.gschema.xml:16
-msgid "Highlight fill color"
-msgstr "रङ भर्नुहोस्"
+#. (itstool) path: section/title
+#: C/api_browser_plugin.page:46
+msgid "Running the API Browser Plugin"
+msgstr "एपीआई ब्राउजर प्लगइन चलिरहेको छ"
 
-#: org.a11y.Accerciser.gschema.xml:17
-#, fuzzy
-msgid "The color and opacity of the highlight fill."
-msgstr "वृत्तान्त हाइलाइट रङ"
-
-#: org.a11y.Accerciser.gschema.xml:21
-#, fuzzy
-msgid "Highlight border color"
-msgstr "वृत्तान्त हाइलाइट रङ"
-
-#: org.a11y.Accerciser.gschema.xml:22
-#, fuzzy
-msgid "The color and opacity of the highlight border."
-msgstr "वृत्तान्त हाइलाइट रङ"
-
-#: org.a11y.Accerciser.gschema.xml:26
-#, fuzzy
-msgid "Horizontal split"
-msgstr "स्प्लिट"
-
-#: org.a11y.Accerciser.gschema.xml:27
-#, fuzzy
-msgid "Position of the horizontal split of the main window."
-msgstr "मुख्य सञ्झ्यालको पर्दामा स्थान"
-
-#: org.a11y.Accerciser.gschema.xml:31
-#, fuzzy
-msgid "Vertical split"
-msgstr "स्प्लिट"
-
-#: org.a11y.Accerciser.gschema.xml:32
-#, fuzzy
-msgid "Position of the vertical split of the main window."
-msgstr "मुख्य सञ्झ्यालको पर्दामा स्थान"
-
-#: org.a11y.Accerciser.gschema.xml:36
-#, fuzzy
-msgid "Default window height"
-msgstr "पूर्वनिर्धारित उचाई"
-
-#: org.a11y.Accerciser.gschema.xml:37
-msgid "The window height value."
-msgstr "सञ्झ्यालको उचाइ."
-
-#: org.a11y.Accerciser.gschema.xml:41
-#, fuzzy
-msgid "Default window width"
-msgstr "पूर्वनिर्धारित चौडाइ"
-
-#: org.a11y.Accerciser.gschema.xml:42
-msgid "The window width value."
-msgstr "सञ्झ्यालको चौडाइ मान."
-
-#: org.a11y.Accerciser.gschema.xml:51
-#, fuzzy
-msgid "The layout for the bottom panel"
-msgstr "तल विस्तारित किनारा प्यानल"
-
-#: org.a11y.Accerciser.gschema.xml:52
-#, fuzzy
-msgid "The layout for the bottom panel pluginview."
-msgstr "तल विस्तारित किनारा प्यानल"
-
-#: org.a11y.Accerciser.gschema.xml:56
-#, fuzzy
-msgid "The layout for the top panel"
-msgstr "माथि विस्तारित किनारा प्यानल"
-
-#: org.a11y.Accerciser.gschema.xml:57
-#, fuzzy
-msgid "The layout for the top panel pluginview."
-msgstr "माथि विस्तारित किनारा प्यानल"
-
-#: org.a11y.Accerciser.gschema.xml:61
-#, fuzzy
-msgid "Single layout view"
-msgstr "एकल"
-
-#: org.a11y.Accerciser.gschema.xml:62
-msgid "View plugins in a single layout."
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:47
+msgid ""
+"To run the API Browser Plugin, select an accessible widget in the Application Tree View. Double-"
+"clicking a widget highlights it in the application's interface, so you can be sure whether a "
+"certain widget were the one you were looking for."
 msgstr ""
+"एपीआई ब्राउजर प्लगइन चलाउन, अनुप्रयोग ट्री दृश्यमा पहुँच योग्य विजेट चयन गर्नुहोस् । एक विजेट डबल-क्लिक गर्दा "
+"यसलाई अनुप्रयोगको इन्टरफेसमा हाइलाइट गर्दछ, त्यसैले तपाईं निश्चित हुन सक्नुहुनेछ कि निश्चित विजेट तपाईले खोज्नुभएको "
+"थियो।."
 
-#: org.a11y.Accerciser.gschema.xml:66
-#, fuzzy
-msgid "Available new pluginviews"
-msgstr "प्लगइन “%s” उपलब्ध"
-
-#: org.a11y.Accerciser.gschema.xml:67
-msgid "This list contains all the new available pluginviews"
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:53
+msgid ""
+"After that, select one of the widget's interfaces in the combobox. All public methods of the "
+"selected interface will be listed in the plugin's leftmost column. All public properties, with "
+"their corresponding values, will be listed in the plugin's rightmost column."
 msgstr ""
+"त्यसपछि, कम्बोबक्समा विजेटको इन्टरफेसमध्ये एउटा चयन गर्नुहोस् । चयन गरिएको इन्टरफेसका सबै सार्वजनिक विधिहरू "
+"प्लगइनको बायाँ स्तम्भमा सूचीबद्ध गरिनेछ। सबै सार्वजनिक गुणहरू, उनीहरूको सम्बन्धित मानहरूसँग, प्लगइनको दायाँ "
+"स्तम्भमा सूचीबद्ध गरिनेछ।."
 
-#: org.a11y.Accerciser.gschema.xml:73
-#, fuzzy
-msgid "The pluginview layout"
-msgstr "सजावट"
-
-#: org.a11y.Accerciser.gschema.xml:74
-msgid "The default plugin layout for the top panel."
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:59
+msgid ""
+"By default, the API Browser Plugin hides private methods and properties. To see them listed, "
+"unselect the checkbox <cmd>Hide Private Attributes</cmd>. To hide them again, re-select this "
+"checkbox."
 msgstr ""
+"पूर्वनिर्धारित रूपमा, एपीआई ब्राउजर प्लगइनले निजी विधिहरू र गुणहरू लुकाउँदछ। तिनीहरूलाई सूचीबद्ध हेर्नका लागि, "
+"<cmd>निजी विशेषताहरू लुकाउनुहोस्</cmd> चेकबाकस चयन नगर्नुहोस् । तिनीहरूलाई फेरि लुकाउन, यो चेकबाकस पुन: चयन "
+"गर्नुहोस् ।."
 
-#: org.a11y.Accerciser.gschema.xml:78
-msgid "Window height"
-msgstr "सञ्झ्यालको उचाइ"
+#. (itstool) path: info/title
+#: C/desktop_tree_view.page:4
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr "१. अनुप्रयोग ट्री दृश्य"
 
-#: org.a11y.Accerciser.gschema.xml:79
-msgid "Window height value."
-msgstr "सञ्झ्यालको उचाइ मान."
+#. (itstool) path: info/desc
+#: C/desktop_tree_view.page:6
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr "डेस्कटपको पहुँच योग्य पदानुक्रम खोजी गर्दैछ"
 
-#: org.a11y.Accerciser.gschema.xml:83
-msgid "Window width"
-msgstr "सञ्झ्यालको  चौडाई"
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/desktop_tree_view.page:25 C/desktop_tree_view.page:37
+msgid "Application Tree View"
+msgstr "अनुप्रयोग ट्री दृश्य"
 
-#: org.a11y.Accerciser.gschema.xml:84
-msgid "Window width value."
-msgstr "सञ्झ्यालको चौडाइ मान."
-
-#: org.a11y.Accerciser.gschema.xml:90
-msgid "Hotkey combination"
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:27
+msgid ""
+"<app>Accerciser</app>'s interface contains a tree view, namely Application Tree View, that "
+"covers all accessible applications currently running on the desktop. To create this tree view, "
+"<app>Accerciser</app> uses the AT-SPI's registry daemon. This daemon is responsible for keeping "
+"track of all the accessible applications on the desktop and forwarding X events over the AT-SPI "
+"D-Bus. After getting all accessible applications, <app>Accerciser</app> represents each one of "
+"them as a hierarchical structure with expanding nodes."
 msgstr ""
+"<app>एक्सरसिजरको</app> इन्टरफेसले ट्री भ्यू, अर्थात् एप्लिकेशन ट्री भ्यू समावेश गर्दछ, जसले हाल डेस्कटपमा चलिरहेको "
+"सबै पहुँच योग्य अनुप्रयोगहरू समावेश गर्दछ। यो ट्री दृश्य सिर्जना गर्न, <app>एकसेरसिजरले</app> एटी-एसपीआईको "
+"रजिस्ट्री डेमन प्रयोग गर्दछ। यो डेमन डेस्कटपमा सबै पहुँच योग्य अनुप्रयोगहरूको ट्र्याक राख्न र एटी-एसपीआई डी-बसमा "
+"एक्स घटनाहरू अग्रेषित गर्न जिम्मेवार छ। सबै पहुँच योग्य अनुप्रयोगहरू प्राप्त गरेपछि, <app>एक्सरसिजरले</app> ती मध्ये "
+"प्रत्येकलाई विस्तारित नोड्सको साथ पदानुक्रमित संरचनाको रूपमा प्रतिनिधित्व गर्दछ।."
 
-#: org.a11y.Accerciser.gschema.xml:91
-msgid "Hotkey combination for related action."
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/desktop_tree_view.page:38 C/desktop_tree_view.page:43
+msgid ""
+"<app>Accerciser</app>'s Application Tree View represents the interface of each accessible "
+"application running on the desktop as a widget hierarchical structure."
 msgstr ""
+"<app>एक्सरसिजरको</app> अनुप्रयोग ट्री दृश्यले डेस्कटपमा चलिरहेको प्रत्येक पहुँच योग्य अनुप्रयोगको इन्टरफेसलाई विजेट "
+"पदानुक्रमित संरचनाको रूपमा प्रतिनिधित्व गर्दछ।."
 
-#: plugins/api_view.py:32
-#, fuzzy
-msgid "API Browser"
-msgstr "API मद्दत"
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42
+msgctxt "_"
+msgid "external ref='figures/tree_view_accerciser.png' md5='594e06b7889eff705ac194656939e146'"
+msgstr "बाह्य रेफरी ='आंकड़े/tree_view_accerciser.png' एमडी 5 ='594ई06बी7889एफएफ705एसी19466939ई146'"
 
-#: plugins/api_view.py:35
-msgid "Browse the various methods of the current accessible"
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:49
+msgid ""
+"The first node of each application represented in this tree view is the application itself. "
+"When you expand a node, you can see all of its child widgets, which allows a hierarchical view "
+"of the application's interface. For each node, <app>Accerciser</app> provides some basic "
+"information, such as its name, role and number of children."
 msgstr ""
+"यस ट्री दृश्यमा प्रतिनिधित्व गरिएको प्रत्येक अनुप्रयोगको पहिलो नोड अनुप्रयोग नै हो। जब तपाईं नोड विस्तार "
+"गर्नुहुन्छ, तपाईं यसको सबै चाइल्ड विजेटहरू देख्न सक्नुहुन्छ, जसले अनुप्रयोगको इन्टरफेसको पदानुक्रमित दृश्यलाई अनुमति "
+"दिन्छ। प्रत्येक नोडको लागि, <app>एक्सरसिजरले</app> केही आधारभूत जानकारी प्रदान गर्दछ, जस्तै यसको नाम, भूमिका "
+"र बच्चाहरूको संख्या।."
 
-#: plugins/api_view.py:66
-#, fuzzy
-msgid "Hide private attributes"
-msgstr "विशेषता:"
+#. (itstool) path: note/p
+#: C/desktop_tree_view.page:56
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr "धेरै बच्चाहरूसँग नोडहरू विस्तार गर्न लामो समय लाग्छ भनेर सचेत हुनुहोस्।."
 
-#: plugins/api_view.py:79
-msgid "Method"
-msgstr "विधि"
+#. (itstool) path: section/title
+#: C/desktop_tree_view.page:62
+msgid "Bookmarking items in the Application Tree View"
+msgstr "अनुप्रयोग ट्री दृश्यमा पुस्तकचिनो लगाउने वस्तुहरू"
 
-#: plugins/api_view.py:88
-msgid "Property"
-msgstr "गुण"
-
-#: plugins/api_view.py:93
-msgid "Value"
-msgstr "मान"
-
-#: plugins/console.py:32
-msgid "IPython Console"
-msgstr "पाइथन कन्सोल"
-
-#: plugins/console.py:35
-msgid "Interactive console for manipulating currently selected accessible"
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:63
+msgid ""
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View for later "
+"examining. This is helpful when the target application must be restarted - after rebuilding it, "
+"for example. To bookmark an item, select it and do <guiseq><gui>Bookmarks</gui><gui>Add "
+"Bookmark</gui></guiseq> or press <keyseq><key>Ctrl</key><key>d</key></keyseq>."
 msgstr ""
+"<app>एक्सरसिजरले</app> अनुप्रयोग ट्री दृश्यमा पछि जाँचको लागि वस्तुहरू बुकमार्क गर्न अनुमति दिन्छ। उदाहरणका "
+"लागि, यसलाई पुनर्निर्माण गरेपछि - लक्ष्य अनुप्रयोग पुन: सुरु गर्दा यो उपयोगी हुन्छ। वस्तु बुकमार्क गर्न, यसलाई चयन "
+"गर्नुहोस् र <guiseq><gui>बुकमार्क</gui><gui>गर्नुहोस् बुकमार्क थप्नुहोस्</gui></guiseq> वा "
+"<keyseq><key>Ctrl</key><key>d थिच्नुहोस्</key></keyseq>।."
 
-#: plugins/event_monitor.ui:61
-msgid "Event monitor"
-msgstr "घटना निगरानि"
-
-#: plugins/event_monitor.ui:114
-msgid "_Monitor Events"
-msgstr "घटनाहरू निगरानि गर्नुहोस्"
-
-#: plugins/event_monitor.ui:224
-msgid "C_lear Selection"
-msgstr "चयन खाली गर्नुहोस्"
-
-#: plugins/event_monitor.ui:257
-msgid "Everything"
-msgstr "सबै"
-
-#: plugins/event_monitor.ui:273
-#, fuzzy
-msgid "Selected application"
-msgstr "आदेश प्रविष्टि फिल्डमा चयन गरिएका अनुप्रयोग वा आदेश चलाउन यस बटनमा क्लिक गर्नुहोस् ।"
-
-#: plugins/event_monitor.ui:289
-#, fuzzy
-msgid "Selected accessible"
-msgstr "पहुँचयोग्य पुस्तकचिनो "
-
-#: plugins/event_monitor.ui:310
-msgid "Source"
-msgstr "स्रोत"
-
-#. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:735 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:462
-#: src/lib/accerciser/plugin/plugin_manager.py:386
-msgid "Name"
-msgstr "नाम"
-
-#: plugins/event_monitor.ui:358
-msgid "Full Name"
-msgstr "पूरानाम"
-
-#: plugins/event_monitor.py:51
-msgid "Event Monitor"
-msgstr "घटना निगरानि"
-
-#: plugins/event_monitor.py:54
-msgid "Shows events as they occur from selected types and sources"
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:68
+msgid ""
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an application name and a "
+"\"path\" in the application's internal accessible hierarchy to the bookmarked accessible. When "
+"the target application is in a different state - i.e. multiple top level frames -, the path "
+"might not be correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
 msgstr ""
+"<app>एक्सरसिजरमा</app> पहुँच योग्य वस्तुहरूमा पुस्तकचिनोहरू अनुप्रयोग नाम र अनुप्रयोगको आन्तरिक पहुँचयोग्य "
+"पदानुक्रममा बुकमार्क गरिएको पहुँचयोग्यमा \"बाटो\" द्वारा परिभाषित गरिन्छ। जब लक्ष्य अनुप्रयोग फरक अवस्थामा "
+"हुन्छ - अर्थात् एकाधिक शीर्ष स्तर फ्रेमहरू - , बाटो सही नहुन सक्छ। पुस्तकचिनो सम्पादन संवादमा पहुँच गरेर "
+"पुस्तकचिनोहरू सम्पादन <guiseq><gui>गर्नुहोस् पुस्तकचिनोहरू</gui> व्यवस्थापन <gui>गर्न</gui></guiseq> सकिन्छ ।."
 
-#: plugins/event_monitor.py:64
-msgid "Highlight last event entry"
+#. (itstool) path: info/title
+#: C/event_monitor_plugin.page:4
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "४. घटना मनिटर प्लगइन"
+
+#. (itstool) path: info/desc
+#: C/event_monitor_plugin.page:6
+msgid "Monitoring accessible events as they occur"
+msgstr "पहुँच योग्य घटनाहरू घटित हुँदा निगरानी गर्दै"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
+msgid "Event Monitor Plugin"
+msgstr "घटना मोनिटर प्लगइन"
+
+#. (itstool) path: page/p
+#: C/event_monitor_plugin.page:26
+msgid ""
+"The Event Monitor Plugin allows you to view <link href=\"http://accessibility.linuxfoundation."
+"org/a11yspecs/atspi/adoc/atspi-events.html\">AT-SPI events</link> as they occur on the "
+"applications exposed in <app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application "
+"Tree View</link>. The plugin is useful to explore the dynamics of an application's interface "
+"and verify which accessible widgets are related to which AT-SPI events."
 msgstr ""
+"इभेन्ट मोनिटर प्लगइनले तपाईंलाई <ink href= \"http://accessibility.linuxfoundation.org/a11yspecs/"
+"atspi/adoc/atspi-events.html\" >एटी-एसपीआई घटनाहरू हेर्न अनुमति दिन्छ</link> किनकि तिनीहरू "
+"<app>एक्सरसिजरको</app> <link xref=\"desktop_tree_view\">एप्लिकेसन ट्री भ्यूमा उजागर गरिएका "
+"अनुप्रयोगहरूमा हुन्छन्</link>। प्लगइन अनुप्रयोगको इन्टरफेसको गतिशीलता अन्वेषण गर्न र कुन पहुँच योग्य विजेटहरू कुन "
+"एटी-एसपीआई घटनाहरूसँग सम्बन्धित छन् भनेर प्रमाणित गर्न उपयोगी छ।."
 
-#: plugins/event_monitor.py:68
-#, fuzzy
-msgid "Start/stop event recording"
-msgstr "रेकर्ड: रोक्नुहोस्"
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/event_monitor_plugin.page:36 C/event_monitor_plugin.page:41
+msgid ""
+"The Event Monitor Plugin allows you to view AT-SPI events and match them with accessible "
+"widgets."
+msgstr ""
+"इभेन्ट मोनिटर प्लगइनले तपाईंलाई एटी-एसपीआई घटनाहरू हेर्न र पहुँच योग्य विजेटहरूसँग मिलान गर्न अनुमति दिन्छ।."
 
-#: plugins/event_monitor.py:72
-#, fuzzy
-msgid "Clear event log"
-msgstr "दैनिकि"
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40
+msgctxt "_"
+msgid "external ref='figures/event_monitor_plugin.png' md5='d4433124f4833aa7322c7a6ec0b21104'"
+msgstr ""
+"बाह्य रेफरी = 'आंकड़े / event_monitor_plugin.png' एमडी 5 = 'डी 4433124 एफ 4833 एए 7322 सी 7 ए 6 ईसीई "
+"0 बी 21104'"
 
-#: plugins/interface_view.ui:125
-msgid "Child count"
-msgstr "शाखा गणना"
+#. (itstool) path: section/title
+#: C/event_monitor_plugin.page:49
+msgid "Running the Event Monitor Plugin"
+msgstr "इभेन्ट मनिटर प्लगइन चलाउँदैछ"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
-#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
-#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
-#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
-msgid "0"
-msgstr "०"
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:50
+msgid ""
+"When you open the Event Monitor Plugin, you see a list of checkboxes representing all the "
+"different AT-SPI event classes covered by the plugin:"
+msgstr ""
+"जब तपाईं इभेन्ट मनिटर प्लगइन खोल्नुहुन्छ, तपाईँले प्लगइनले ढाकेका सबै फरक एटी-एसपीआई घटना वर्गहरूको प्रतिनिधित्व "
+"गर्ने चेकबक्सहरूको सूची देख्नुहुन्छ:"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:343 plugins/interface_view.py:863
-msgid "(no description)"
-msgstr "(वर्णन छैन)"
-
-#. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:230 plugins/validate.py:293
-msgid "Description"
-msgstr "विवरण"
-
-#: plugins/interface_view.ui:233 plugins/interface_view.py:347
-msgid "(no ID)"
-msgstr "(आई डी-छैन)"
-
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
-msgid "ID"
-msgstr "आईडी"
-
-#: plugins/interface_view.ui:325
-msgid "States"
-msgstr "राज्य"
-
-#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
-#: plugins/interface_view.ui:2739
-msgid "Attributes"
-msgstr "बिषेषताहरु"
-
-#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
-msgid "Show"
-msgstr "देखाउने"
-
-#: plugins/interface_view.ui:551
-msgid "Relations"
-msgstr "सम्बन्ध"
-
-#: plugins/interface_view.ui:572
-msgid "_Accessible"
-msgstr "पहुँचयोग्य"
-
-#: plugins/interface_view.ui:637
-msgid "Key binding"
-msgstr "कुञ्जी बन्धन"
-
-#: plugins/interface_view.ui:691
-msgid "Perform action"
-msgstr "कार्य निष्पादन गर्नुहोस्"
-
-#: plugins/interface_view.ui:724
-msgid "Acti_on"
-msgstr "कार्य"
-
-#: plugins/interface_view.ui:772
-msgid "Toolkit"
-msgstr "टूलकिट"
-
-#: plugins/interface_view.ui:789
-msgid "Version"
-msgstr "संस्करण"
-
-#: plugins/interface_view.ui:865
-msgid "Ap_plication"
-msgstr "अनुप्रयोग"
-
-#: plugins/interface_view.ui:884
-msgid "Col_lection"
-msgstr "सग्रह"
-
-#. Screen coordinates
-#. Component size in pixels
-#. Screen coordinates
-#. Component size
-#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
-#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
-#: plugins/interface_view.ui:1525
-msgid "0, 0"
-msgstr "०,०"
-
-#: plugins/interface_view.ui:937
-#, fuzzy
-msgid "Relative position"
-msgstr "यसमा सम्बन्धित:"
-
-#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
-msgid "Size"
-msgstr "परिमाण"
-
-#: plugins/interface_view.ui:991
-msgid "WIDGET"
-msgstr "औजार"
-
-#: plugins/interface_view.ui:1011
-msgid "Layer"
-msgstr "तह"
-
-#: plugins/interface_view.ui:1048
-#, fuzzy
-msgid "MDI-Z-order"
-msgstr "क्रम"
-
-#: plugins/interface_view.ui:1085
-msgid "Alpha"
-msgstr "अल्फा"
-
-#: plugins/interface_view.ui:1120
-#, fuzzy
-msgid "Absolute position"
-msgstr "ट्याबलेट()"
-
-#: plugins/interface_view.ui:1139
-msgid "Co_mponent"
-msgstr "अवयव"
-
-#: plugins/interface_view.ui:1158
-msgid "Des_ktop"
-msgstr "डेकस्टप"
-
-#: plugins/interface_view.ui:1264
-msgid "Locale:"
-msgstr "लोकेल :"
-
-#: plugins/interface_view.ui:1305
-msgid "_Document"
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:58
+msgid "document"
 msgstr "कागजात"
 
-#. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:299
-msgid "Hyperlink"
-msgstr "Hyperlink"
-
-#: plugins/interface_view.ui:1438
-#, fuzzy
-msgid "H_ypertext"
-msgstr "%H∶%M"
-
-#: plugins/interface_view.ui:1471
-msgid "Position"
-msgstr "अवस्था"
-
-#: plugins/interface_view.ui:1560
-msgid "Locale"
-msgstr "लोकेल"
-
-#: plugins/interface_view.ui:1622
-msgid "_Image"
-msgstr "सबै छविहरू"
-
-#: plugins/interface_view.ui:1641
-#, fuzzy
-msgid "Lo_gin Helper"
-msgstr "लगइन रोक्नुहोस्"
-
-#: plugins/interface_view.ui:1712
-msgid "Select All"
-msgstr "सबै छान्नुहोस्"
-
-#: plugins/interface_view.ui:1754
-msgid "_Selection"
-msgstr "चयन"
-
-#: plugins/interface_view.ui:1792
-#, fuzzy
-#| msgid "_Contents"
-msgid "Content type"
-msgstr "सामाग्री प्रकार क्वेरि गर्न असफल: %s"
-
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
-msgid "URI"
-msgstr "URI"
-
-#: plugins/interface_view.ui:1822
-#, fuzzy
-msgid "St_reamable Content"
-msgstr "st प्रतिलिपि)"
-
-#: plugins/interface_view.ui:1863
-msgid "Caption:"
-msgstr "शिर्षकः"
-
-#: plugins/interface_view.ui:1908
-msgid "Summary:"
-msgstr "सारांश:"
-
-#: plugins/interface_view.ui:2052
-msgid "Selected columns"
-msgstr "चयन गरिएका स्तम्भहरू"
-
-#: plugins/interface_view.ui:2068
-msgid "Selected rows"
-msgstr "चयन गरिएका पङ्क्ति"
-
-#: plugins/interface_view.ui:2084
-msgid "Columns"
-msgstr "स्तम्भहरु"
-
-#: plugins/interface_view.ui:2100
-msgid "Rows"
-msgstr "पंक्तिहरु"
-
-#: plugins/interface_view.ui:2125
-msgid "Table Information"
-msgstr "तालिका सूचना"
-
-#: plugins/interface_view.ui:2171
-msgid "name (x,y)"
-msgstr "दृश्यपोर्ट स्थिति (x, y)"
-
-#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
-msgid "Header:"
-msgstr "हेडर:"
-
-#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
-msgid "<no description>"
-msgstr "<no description>"
-
-#. How many rows the cell spans.
-#. How many columns the cell spans.
-#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
-msgid "Extents:"
-msgstr ""
-
-#: plugins/interface_view.ui:2311
-msgid "Row"
-msgstr "पङ्क्ति"
-
-#: plugins/interface_view.ui:2430
-msgid "Column"
-msgstr "स्तम्भ"
-
-#: plugins/interface_view.ui:2448
-msgid "Selected Cell"
-msgstr "चयन गरिएको कक्ष"
-
-#: plugins/interface_view.ui:2472
-msgid "_Table"
-msgstr "तालिका"
-
-#: plugins/interface_view.ui:2533
-msgid "Text"
-msgstr "पाट"
-
-#: plugins/interface_view.ui:2571
-msgid "Offset"
-msgstr "अफसेट"
-
-#: plugins/interface_view.ui:2609
-#, fuzzy
-msgid "Include defaults"
-msgstr "Include"
-
-#. Start character offset of text attributes span
-#: plugins/interface_view.ui:2631
-msgid "Start: 0"
-msgstr "सुरु:०"
-
-#. End character offset of text attributes span
-#: plugins/interface_view.ui:2649
-msgid "End: 0"
-msgstr "अन्त्य : ०"
-
-#: plugins/interface_view.ui:2763
-msgid "Te_xt"
-msgstr "पाठ"
-
-#: plugins/interface_view.ui:2818
-msgid "Current value"
-msgstr "हालको मान"
-
-#: plugins/interface_view.ui:2886
-msgid "Minimum increment"
-msgstr "न्युनतम बढोत्तरी"
-
-#: plugins/interface_view.ui:2901
-msgid "Maximum value"
-msgstr "अघिकतम मान"
-
-#: plugins/interface_view.ui:2916
-msgid "Minimum value"
-msgstr "न्युनतम मान"
-
-#: plugins/interface_view.ui:2942
-msgid "Val_ue"
-msgstr "मान"
-
-#: plugins/interface_view.ui:2961
-msgid "unknown"
-msgstr "अज्ञात"
-
-#. Translators: this is a plugin name
-#: plugins/interface_view.py:43
-#, fuzzy
-msgid "Interface Viewer"
-msgstr "दर्शक"
-
-#. Translators: this is a plugin description
-#: plugins/interface_view.py:46
-msgid "Allows viewing of various interface properties"
-msgstr ""
-
-#: plugins/interface_view.py:236
-msgid "(not implemented)"
-msgstr "(कार्यान्वयन भएको छैन)"
-
-#: plugins/interface_view.py:751
-msgid "Start"
-msgstr "सुरु"
-
-#: plugins/interface_view.py:759
-msgid "End"
-msgstr "End"
-
-#: plugins/interface_view.py:921
-msgid "Too many selectable children"
-msgstr "त्रुटि: निकै धेरै तर्कहरू"
-
-#: plugins/interface_view.py:1274 plugins/interface_view.py:1277
-msgid "(Editable)"
-msgstr "(सम्पादन योग्य)"
-
-#. Translators: This string appears in Accerciser's Interface Viewer
-#. and refers to a range of characters which has a particular format.
-#. "Start" is the character offset where the formatting begins. If
-#. the first four letters of some text is bold, the start offset of
-#. that bold formatting is 0.
-#: plugins/interface_view.py:1424
-#, python-format
-msgid "Start: %d"
-msgstr "सुरु:%d"
-
-#. Translators: This string appears in Accerciser's Interface Viewer
-#. and refers to a range of characters which has a particular format.
-#. "End" is the character offset where the formatting ends.  If the
-#. first four letters of some text is bold, the end offset of that
-#. bold formatting is 4.
-#: plugins/interface_view.py:1430
-#, python-format
-msgid "End: %d"
-msgstr "अन्त्य: %d"
-
-#: plugins/quick_select.py:16
-msgid "Quick Select"
-msgstr "छिटो चयन"
-
-#: plugins/quick_select.py:19
-msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
-
-#: plugins/quick_select.py:25
-msgid "Inspect last focused accessible"
-msgstr ""
-
-#: plugins/quick_select.py:29
-msgid "Inspect accessible under mouse"
-msgstr ""
-
-#: plugins/validate.ui:38
-#, fuzzy
-msgid "Sche_ma:"
-msgstr "बढाउनुहोस्"
-
-#: plugins/validate.ui:89
-#, fuzzy
-msgid "V_alidate"
-msgstr "%V हप्ता"
-
-#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
-msgid "Idle"
-msgstr "निस्क्रिय"
-
-#: plugins/validate.py:80
-#, fuzzy
-msgid "No description"
-msgstr "NO DESCRIPTION"
-
-#: plugins/validate.py:167
-#, fuzzy
-msgid "AT-SPI Validator"
-msgstr "आगत SPI:"
-
-#: plugins/validate.py:169
-#, fuzzy
-msgid "Validates application accessibility"
-msgstr "तपाईँको अनुप्रयोगलाई पहुँच कसरत दिनुहोस्"
-
-#. log level column
-#. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
-msgid "Level"
-msgstr "निसानी"
-
-#. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
-msgid "Role"
-msgstr "भुमिका"
-
-#: plugins/validate.py:362
-msgid "Saving"
-msgstr "बचत गर्दैछ"
-
-#: plugins/validate.py:413
-msgid "Validating"
-msgstr ""
-
-#: plugins/validate.py:571
-msgid "EXCEPT"
-msgstr "बाहेक"
-
-#: plugins/validate.py:578
-msgid "ERROR"
-msgstr "त्रुटि"
-
-#: plugins/validate.py:586
-msgid "WARN"
-msgstr "चेतावनी"
-
-#: plugins/validate.py:593
-msgid "INFO"
-msgstr "जानकारी"
-
-#: plugins/validate.py:600
-msgid "DEBUG"
-msgstr "डिबग"
-
-#: plugindata/validate/basic.py:8
-msgid "Basic"
-msgstr "आधारभूत"
-
-#: plugindata/validate/basic.py:9
-msgid "Tests fundamental GUI application accessibility"
-msgstr ""
-
-#: plugindata/validate/basic.py:28
-#, python-format
-msgid "actionable %s is not focusable or selectable"
-msgstr ""
-
-#: plugindata/validate/basic.py:46
-#, fuzzy, python-format
-msgid "interactive %s is not actionable"
-msgstr "अन्तरक्रियात्मक पाइथोन कन्सोल"
-
-#: plugindata/validate/basic.py:61
-#, fuzzy
-msgid "more than one focused widget"
-msgstr "यदि बढिमा एउटा फाँट समावेश भए समान विधि"
-
-#: plugindata/validate/basic.py:84
-#, fuzzy, python-format
-msgid "%s has no text interface"
-msgstr "%s विच्छेदन भयो"
-
-#. Translators: The first variable is the role name of the object that has an
-#. index mismatch.
-#.
-#: plugindata/validate/basic.py:104
-#, python-format
-msgid "%s index in parent does not match child index"
-msgstr ""
-
-#: plugindata/validate/basic.py:150
-#, fuzzy, python-format
-msgid "Missing reciprocal for %s relation"
-msgstr "'%s' को लागि आवश्यक मान हराइरहेछ"
-
-#. Translators: The first variable is the role name of the object that is missing
-#. the name or label.
-#.
-#: plugindata/validate/basic.py:199
-#, fuzzy, python-format
-msgid "%s missing name or label"
-msgstr "हराइरहेको उपकरण नाम"
-
-#: plugindata/validate/basic.py:217
-#, python-format
-msgid "focusable %s has a table interface, but not a selection interface"
-msgstr ""
-
-#. Translators: First variable is an accessible role name, the next two
-#. variables are accessible state names.
-#. For example: "button has focused state without focusable state".
-#.
-#: plugindata/validate/basic.py:246
-#, fuzzy, python-format
-msgid "%s has %s state without %s state"
-msgstr ""
-"“%s” डिस्कबाट पुन:स्थापित गर्न सकिएन\n"
-"सुरक्षित अवस्था बिना प्रयास गर्नुहोस्"
-
-#. Translators: The radio button does not belong to a set, thus it is useless.
-#. The first variable is the object's role name.
-#.
-#: plugindata/validate/basic.py:272
-#, fuzzy, python-format
-msgid "%s does not belong to a set"
-msgstr "'%s' कार्यक्रम अवस्थित छैन"
-
-#. Translators: The row or column number retrieved from a table child's
-#. object at a certain index is wrong.
-#. The first variable is the role name of the object, the second is the
-#. given index.
-#.
-#: plugindata/validate/basic.py:307
-#, python-format
-msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
-
-#. Translators: The "parent index" is the order of the child in the parent.
-#. the "row and column index" should be the same value retrieved by the
-#. object's location in the table.
-#. The first variable is the object's role name, the second and third variables
-#. are index numbers.
-#.
-#: plugindata/validate/basic.py:339
-#, python-format
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:63
+msgid "focus"
+msgstr "संकेन्द्रविन्दु"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:68
+msgid "mouse"
+msgstr "माउस"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:73
+msgid "object"
+msgstr "वस्तु"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:78
+msgid "terminal"
+msgstr "टर्मिनल"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:83
+msgid "window"
+msgstr "सञ्झ्याल"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:89
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %(num2)d"
+"If you check a class, all of its event types will be monitored by the plugin. The classes are "
+"exposed as tree structures; therefore, you can refine your selection by expanding them and "
+"checking only the event types you really care about."
+msgstr ""
+"यदि तपाईँले एउटा वर्ग जाँच गर्नुभयो भने, यसका सबै घटना प्रकारहरू प्लगइनद्वारा निगरानी गरिनेछ। वर्गहरू रूख "
+"संरचनाहरूको रूपमा उजागर हुन्छन्; यसैले, तपाईं तिनीहरूलाई विस्तार गरेर र केवल घटना प्रकारहरू जाँच गरेर तपाईंको "
+"चयनलाई परिष्कृत गर्न सक्नुहुन्छ जुन तपाईं वास्तवमा ख्याल राख्नुहुन्छ।."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:95
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the <cmd>Select All</cmd> "
+"button. Similarly, if you want to clear all currently selected event types, press the "
+"<cmd>Clear Selection</cmd> button."
+msgstr ""
+"यदि तपाईं सबै सम्भावित प्रकारका एटी-एसपीआई घटनाहरू अनुगमन गर्न चाहनुहुन्छ भने, <cmd>सबै चयन गर्नुहोस् बटन "
+"थिच्नुहोस्</cmd>। त्यस्तै, यदि तपाईँ हालै चयन गरिएका सबै घटना प्रकारहरू खाली गर्न चाहनुहुन्छ भने, <cmd>चयन खाली "
+"गर्नुहोस् बटन थिच्नुहोस्</cmd>।"
+
+#. (itstool) path: note/p
+#: C/event_monitor_plugin.page:102
+msgid "Selecting only a few event types per monitoring gives you a clearer output."
+msgstr "प्रति निगरानी केही घटना प्रकारहरू मात्र चयन गर्दा तपाईंलाई स्पष्ट आउटपुट दिन्छ।."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:107
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, the Source option "
+"<cmd>Everything</cmd> is selected, indicating that AT-SPI events of all applications will be "
+"monitored. If you want to investigate a single application, select it in the Application Tree "
+"View and click the Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, select it in the "
+"Application Tree View and click the Source radio button <cmd>Selected accessible</cmd>."
+msgstr ""
+"घटना अनुगमन परिष्कृत गर्न अर्को तरिका घटना स्रोत द्वारा हो। पूर्वनिर्धारित रूपमा, स्रोत विकल्प<cmd> सबै कुरा</"
+"cmd> चयन गरिएको छ, सबै अनुप्रयोगहरूको AT-SPI घटनाहरू निगरानी गरिनेछ भनेर संकेत गर्दै। यदि तपाइँ एकल "
+"अनुप्रयोगको खोजी गर्न चाहनुहुन्छ भने, यसलाई अनुप्रयोग ट्री दृश्यमा चयन गर्नुहोस् र स्रोत रेडियो बटनमा क्लिक "
+"गर्नुहोस्<cmd> चयन गरिएको आवेदन</cmd> । त्यसै गरी, यदि तपाइँ एकल पहुँचयोग्य विजेट र यसको सम्बन्धित वंशजहरू "
+"निगरानी गर्न चाहनुहुन्छ भने, यसलाई अनुप्रयोग ट्री दृश्यमा चयन गर्नुहोस् र स्रोत रेडियो बटनमा क्लिक गर्नुहोस्।<cmd> "
+"पहुँचयोग्य चयन गरियो</cmd> ।."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:116
+msgid ""
+"After selecting event types and specifying a Source option, the Event Monitor Plugin starts "
+"monitoring AT-SPI events automatically, because the <cmd>Monitor Events</cmd> button is pressed "
+"by default. Whenever you want to stop monitoring, click the <cmd>Monitor Events</cmd> button. "
+"To restart monitoring, press this button again."
+msgstr ""
+"घटना प्रकारहरू चयन गरेपछि र स्रोत विकल्प निर्दिष्ट गरेपछि, घटना मनिटर प्लगइनले AT-SPI घटनाहरू स्वचालित रूपमा "
+"निगरानी गर्न थाल्छ, किनभने<cmd> घटनाहरू निगरानी गर्नुहोस्</cmd> बटन पूर्वनिर्धारित रूपमा थिचिएको छ। जब "
+"तपाइँ अनुगमन रोक्न चाहानुहुन्छ, क्लिक गर्नुहोस्<cmd> घटनाहरू निगरानी गर्नुहोस्</cmd> टांक। अनुगमन पुन: सुरु गर्न, "
+"यो बटन फेरि थिच्नुहोस्।."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:123
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and the application. "
+"Activating the link for either of these items will cause it to become selected in the "
+"Application Tree View."
+msgstr ""
+"प्रत्येक आगमन घटनाको लागि, घटना मनिटर प्लगइनले स्रोत र अनुप्रयोगलाई संकेत गर्दछ। यी मध्ये कुनै पनि वस्तुको लागि "
+"लिङ्क सक्रिय गर्नाले यसलाई एप्लिकेसन ट्री दृश्यमा चयन गर्न सकिन्छ।."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:128
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just press the <cmd>Save</"
+"cmd> button. To clear the output screen, you just need to click the <cmd>Clear</cmd> button."
+msgstr ""
+"यदि तपाइँ घटना मनिटर प्लगइन द्वारा उत्पन्न आउटपुट बचत गर्न चाहनुहुन्छ भने, केवल थिच्नुहोस्<cmd> बचत गर्नुहोस्</"
+"cmd> टांक। आउटपुट स्क्रिन खाली गर्न, तपाईंले मात्र क्लिक गर्न आवश्यक छ<cmd> खाली गर्नुहोस्</cmd> टांक।."
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:5
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr "१. <app>एक्सरसिजर</app> कसरी स्थापना र चलाउने"
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:6
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "<app>एकरसिजर </app>सेटअप गर्दैछ"
+
+#. (itstool) path: info/desc
+#: C/howto_setting_up_accerciser.page:7
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "तपाईँको प्रणालीमा <app>एक्सरसिजर</app> स्थापना र चलिरहेको छ"
+
+#. (itstool) path: page/title
+#: C/howto_setting_up_accerciser.page:26
+msgid "Setting up <app>Accerciser</app>"
+msgstr "<app>एकरसिजर </app>सेटअप गर्दैछ"
+
+#. (itstool) path: page/p
+#: C/howto_setting_up_accerciser.page:28
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If this is the case, you "
+"can install it via its package manager. Otherwise, you can follow the section below to install "
+"<app>Accerciser</app> manually."
+msgstr ""
+"तपाईँको वितरणमा पहिल्यै प्याक गरिएको <app>एक्सर्साइजर</app> छ कि छैन जाँच गर्नुहोस् । यदि यो मामला हो भने, "
+"तपाईं यसलाई यसको प्याकेज प्रबन्धक मार्फत स्थापना गर्न सक्नुहुनेछ। अन्यथा, तपाईं म्यानुअल रूपमा <app>एक्सर्साइजर</"
+"app> स्थापना गर्न तलको खण्ड पछ्याउन सक्नुहुन्छ।."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:35
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "म्यानुअल रूपमा <app>एकरसिजर</app> स्थापना गर्दै"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:36
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it first. <app>Accerciser</"
+"app>'s source code can either be downloaded from <link href=\"http://ftp.gnome.org/pub/GNOME/"
+"sources/accerciser/\">the gnome.org FTP site</link> or cloned from <link href=\"https://gitlab."
+"gnome.org/GNOME/accerciser\">the gnome.org GIT repository</link>."
+msgstr ""
+"म्यानुअल रूपमा <app>एक्सर्साइजर</app> स्थापना गर्न, तपाईंले यसलाई पहिले डाउनलोड गर्न आवश्यक पर्दछ। "
+"<app>एक्सरसिजरको</app> स्रोत कोड या त <link href=\"http://ftp.gnome.org/pub/GNOME/sources/"
+"accerciser/\" > gnome.org एफटीपी साइटबाट डाउनलोड गर्न सकिन्छ</link> वा <link href=\"https://"
+"gitlab.gnome.org/GNOME/accerciser\" > gnome.org जीआईटी भण्डारबाट क्लोन गर्न सकिन्छ</link>।."
+
+#. (itstool) path: note/p
+#: C/howto_setting_up_accerciser.page:43
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> version 3 or later is not "
+"compatible with your environment."
+msgstr ""
+"यदि तपाईंले GNOME 3 प्रयोग गरिरहनु भएको छैन भने, तपाईंले त्यो फेला पार्न सक्नुहुन्छ<app> Accerciser</app> "
+"संस्करण 3 वा पछिको तपाईंको वातावरणसँग उपयुक्त छैन।."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:50
+msgid "After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr "<app>एक्सरसिजर</app> प्राप्त गरेपछि, यसलाई निम्न आदेशहरू प्रयोग गरेर स्थापना गर्नुहोस्:"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:54
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:55
+msgid "<cmd>meson setup _build .</cmd>"
+msgstr "<cmd>मेसन सेटअप बिल्ड।</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:56
+msgid "<cmd>meson compile -C _build</cmd>"
+msgstr "<cmd>मेसन कम्पाइल -सी बिल्ड</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:57
+msgid "<cmd>sudo meson install -C _build # or meson install -C _build as root</cmd>"
+msgstr "<cmd>सुडो मेसन स्थापना -सी बिल्ड # वा मेसन स्थापना -सी रूटको रूपमा निर्माण</cmd> गर्नुहोस्"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:59
+msgid ""
+"If you find any problems installing <app>Accerciser</app> on your system, it is likely that "
+"some of its dependencies are missing. Check <link href=\"https://live.gnome.org/Accerciser/"
+"#Requirements\"> <app>Accerciser</app>'s wiki</link> to make sure you have all dependencies "
+"properly installed."
 msgstr ""
 
-#: plugindata/validate/basic.py:366
-#, fuzzy, python-format
-msgid "%s has no name or description"
-msgstr "वर्णन: %s\n"
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:67
+msgid "Running <app>Accerciser</app>"
+msgstr "<app>एक्सरसिजर</app>  चलिरहेको छ"
 
-#: src/lib/accerciser/accerciser.py:80
-msgid "_Preferences…"
-msgstr "प्राथमिकता…"
-
-#: src/lib/accerciser/accerciser.py:82
-msgid "_Contents"
-msgstr "सामग्री"
-
-#: src/lib/accerciser/accessible_treeview.py:415
-msgid "<dead>"
-msgstr "<dead>"
-
-#: src/lib/accerciser/accessible_treeview.py:478
-msgid "Children"
-msgstr "शाखाहरु"
-
-#: src/lib/accerciser/accessible_treeview.py:506
-#, fuzzy
-msgid "_Show Applications without children"
-msgstr "सबै अनुप्रयोगहरू देखाउनुहोस्"
-
-#: src/lib/accerciser/accessible_treeview.py:509
-#, fuzzy
-msgid "_Refresh Registry"
-msgstr "ताजा पार्नुहोस्"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:512
-msgid "Refresh all"
-msgstr "ताजा पार्नुहोस्"
-
-#. Translators: Refresh current tree node's children.
-#.
-#: src/lib/accerciser/accessible_treeview.py:515
-#, fuzzy
-msgid "Refresh _Node"
-msgstr "नोड"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:518
-msgid "Refresh selected node’s children"
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:68
+msgid ""
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal window or within the "
+"Run dialog and then press <key>Return</key>."
 msgstr ""
 
-#: src/lib/accerciser/hotkey_manager.py:247
-msgid "Component"
-msgstr "अवयव"
-
-#: src/lib/accerciser/hotkey_manager.py:254
-msgid "Task"
-msgstr "कार्य"
-
-#: src/lib/accerciser/hotkey_manager.py:261
-msgid "Key"
-msgstr "साँचो"
-
-#: src/lib/accerciser/hotkey_manager.py:271
-msgid "Alt"
-msgstr "Alt"
-
-#: src/lib/accerciser/hotkey_manager.py:278
-msgid "Ctrl"
-msgstr "Ctrl"
-
-#: src/lib/accerciser/hotkey_manager.py:286
-msgid "Shift"
-msgstr "Shift"
-
-#: src/lib/accerciser/main_window.py:43
-msgid "Accerciser Accessibility Explorer"
-msgstr "एसस्रसाएइजर पहुँच एक्सप्लोरर"
-
-#: src/lib/accerciser/main_window.py:77
-msgid "Top panel"
-msgstr "माथि प्यानल"
-
-#: src/lib/accerciser/main_window.py:78
-msgid "Bottom panel"
-msgstr "तल प्यानल"
-
-#: src/lib/accerciser/prefs_dialog.py:38
-#, fuzzy
-msgid "accerciser Preferences"
-msgstr "एसस्रसाएइजर"
-
-#: src/lib/accerciser/prefs_dialog.py:45
-msgid "Plugins"
-msgstr "प्लगइनहरू"
-
-#: src/lib/accerciser/prefs_dialog.py:46
-#, fuzzy
-msgid "Global Hotkeys"
-msgstr "ग्लोवल"
-
-#: src/lib/accerciser/prefs_dialog.py:55
-msgid "Highlighting"
-msgstr "हाइलाइटिङ"
-
-#: src/lib/accerciser/prefs_dialog.py:87
-msgid "Highlight duration:"
-msgstr "हाइलाइट अवधिः"
-
-#: src/lib/accerciser/prefs_dialog.py:94
-msgid "Border color:"
-msgstr "किनारा रङ्ग:"
-
-#: src/lib/accerciser/prefs_dialog.py:97
-#, fuzzy
-msgid "The border color of the highlight box"
-msgstr "वृत्तान्त हाइलाइट रङ"
-
-#: src/lib/accerciser/prefs_dialog.py:98
-msgid "Fill color:"
-msgstr "रङ भर्नुहोस्:"
-
-#: src/lib/accerciser/prefs_dialog.py:101
-#, fuzzy
-msgid "The fill color of the highlight box"
-msgstr "वृत्तान्त हाइलाइट रङ"
-
-#: src/lib/accerciser/about_dialog.py:52
-msgid "translator-credits"
-msgstr ""
-"pawan Chitrakar <chautari@gmail.com> Mahesh Subedi <submanesh@hotmail.com> Shiva "
-"Pokharel <pokharelshiva@hotmail.com> Shyam Krishna Bal <shyamkrishna_bal@yahoo.com> "
-"Narayan Kumar Magar <narayan@mpp.org.np>"
-
-#: src/lib/accerciser/about_dialog.py:53
-#, fuzzy
-msgid "An interactive Python accessibility explorer"
-msgstr "अन्तरक्रियात्मक पाइथोन कन्सोल"
-
-#: src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:72
+msgid ""
+"After that, you can use <app>Accerciser</app> to inspect any accessible item shown in the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>'s hierarchy. Select an item and "
+"investigate it using one of <app>Accerciser</app>'s plugins."
 msgstr ""
 
-#: src/lib/accerciser/about_dialog.py:56
-msgid "The New BSD License. See the COPYING and NOTICE files for details."
+#. (itstool) path: info/title
+#: C/howto_write_a_plugin.page:4
+msgctxt "sort"
+msgid "3. Writing New Plugins"
+msgstr "३. नयाँ प्लगइन्स लेख्नु"
+
+#. (itstool) path: info/desc
+#: C/howto_write_a_plugin.page:6
+msgid "Extending <app>Accerciser</app> with your desired functionalities"
+msgstr "तपाईँको इच्छित कार्यक्षमताका साथ <app>एक्सरसिजर</app> विस्तार गर्दै"
+
+#. (itstool) path: page/title
+#: C/howto_write_a_plugin.page:25
+msgid "Writing Plugins for <app>Accerciser</app>"
+msgstr "<app>एक्सरसिजरका</app> लागि प्लगइन हरू लेख्दैछ"
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:26
+msgid ""
+"Extending <app>Accerciser</app> with new plugins became much simpler since <link href=\"https://"
+"wiki.gnome.org/Apps/Accerciser/PluginTutorial\">this tutorial</link> was written. Given that it "
+"provides a very detailed explanation about the topic, this section consists basically of its "
+"original content - only simple editions and updates were done."
 msgstr ""
 
-#: src/lib/accerciser/about_dialog.py:58
-msgid "Web site"
-msgstr "वेब साइट"
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:33
+msgid "<app>Accerciser</app> supports three basic types of plugins:"
+msgstr "<app>एक्सरसिजरले</app> तीन आधारभूत प्रकारका प्लगइनहरू समर्थन गर्दछ:"
 
-#: src/lib/accerciser/bookmarks.py:66
-msgid "_Add Bookmark…"
-msgstr "पुस्तकचिनो थप्नुहोस्…"
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:38
+msgid ""
+"Base plugins - These plugins are derived from the Plugin base class. They do not provide a "
+"visible interface, but could provide additional functionality to <app>Accerciser</app>."
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:67
-msgid "Bookmark selected accessible."
-msgstr "पहुँचयोग्य पुस्तकचिनो "
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:44
+msgid ""
+"Console plugins - These plugins provide simple console output into a text area in a plugin tab. "
+"Not to be confused with the packaged <link xref=\"ipython_plugin\">IPython Console Plugin</"
+"link>."
+msgstr ""
+"कन्सोल प्लगइन्स - यी प्लगइनहरूले प्लगइन ट्याबमा पाठ क्षेत्रमा सरल कन्सोल आउटपुट प्रदान गर्दछ। प्याक गरिएको "
+"<link xref=\"ipython_plugin\">आईपीथन कन्सोल प्लगइन</link> सँग भ्रमित नहुनुहोस्।"
 
-#: src/lib/accerciser/bookmarks.py:69
-msgid "_Edit Bookmarks…"
-msgstr "पुस्तकचिनो सम्पादन"
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:50
+msgid ""
+"Viewport plugins - The majority of <app>Accerciser</app> default plugins. They provide a custom "
+"graphical interface in a tab."
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:70
-msgid "Manage bookmarks."
-msgstr "पुस्तकचिनो प्रबन्ध"
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:58
+msgid "Creating a Base Plugin"
+msgstr "आधार प्लगइन सिर्जना गर्दैछ"
 
-#: src/lib/accerciser/bookmarks.py:328
-msgid "Edit Bookmarks…"
-msgstr "पुस्तकचिनो सम्पादन"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:59
+msgid ""
+"We will create a simplified version of the <link xref=\"quick_select_plugin\">Quick Select "
+"Plugin</link>. This plugin will select the last focused accessible when pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>."
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:434
-msgid "Title"
-msgstr "शीर्षक"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:63
+msgid "First off, the import lines we will use are:"
+msgstr "पहिलो बन्द, हामीले प्रयोग गर्ने आयात लाइनहरू हुन्:"
 
-#: src/lib/accerciser/bookmarks.py:442
-msgid "Application"
-msgstr "अनुप्रयोग"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:66
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:450
-msgid "Path"
-msgstr "पाथ"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:71
+msgid ""
+"Next we will derive a new class from the Plugin base class, and assign some mandatory class "
+"attributes:"
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:519
-msgid "Add Bookmark…"
-msgstr "पुस्तकचिनो थप्नुहोस्"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:75
+#, no-wrap
+msgid ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:533
-msgid "Title:"
-msgstr "शिर्षक"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:80
+msgid ""
+"We will now override the init method, in which we will set a global key action for selecting "
+"the last focused accessible item, register an event listener for the \"focus\" event, and set "
+"the <cmd>last_focused</cmd> instance variable to <cmd>None</cmd>."
+msgstr ""
+"अब हामी इनिट विधिलाई ओभरराइड गर्नेछौं, जसमा हामी अन्तिम फोकस पहुँच योग्य वस्तु चयन गर्नका लागि विश्वव्यापी "
+"कुञ्जी कार्य सेट गर्नेछौं, \"फोकस\" घटनाका लागि घटना श्रोता दर्ता गर्नेछौं, र <cmd>अन्तिम फोकस गरिएको</cmd> "
+"उदाहरण चरलाई <cmd>कुनै मा सेट गर्नेछैनौं</cmd>।"
 
-#: src/lib/accerciser/bookmarks.py:536
-msgid "Application:"
-msgstr "अनुप्रयोग:"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:86
+#, no-wrap
+msgid ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/bookmarks.py:539
-msgid "Path:"
-msgstr "मार्ग:"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:95
+msgid ""
+"Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of tuples. Each tuple is "
+"a global hotkey action, composed by an action description, a desired method to call, a key "
+"symbol of keypress, and a key modifier mask."
+msgstr ""
 
-#: src/lib/accerciser/plugin/message.py:153
-msgid "Plugin Errors"
-msgstr "प्लगइन  त्रुटि:"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:100
+msgid ""
+"In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> instance variable with "
+"the accessible item that has just emitted the \"focus\" event."
+msgstr ""
 
-#. Translators: This is the viewport in which the plugin appears,
-#. it is a noun.
-#.
-#: src/lib/accerciser/plugin/plugin_manager.py:395
-msgctxt "viewport"
-msgid "View"
-msgstr "हेराइ"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:104
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/plugin/plugin_manager.py:472
-#, fuzzy
-msgid "No view"
-msgstr "दृश्य..."
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:109
+msgid ""
+"In the hotkey action callback, we update the application wide node with the last focused "
+"accessible item, if we have recorded it:"
+msgstr ""
 
-#: src/lib/accerciser/plugin/view.py:377
-#, fuzzy
-msgid "_Single plugins view"
-msgstr "एकल"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:113
+#, no-wrap
+msgid ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/plugin/view.py:766
-msgid "Plugin View"
-msgstr "प्लगइन दृश्य"
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:120
+msgid "Creating a Console Plugin"
+msgstr "कन्सोल प्लगइन सिर्जना गर्दै"
 
-#: src/lib/accerciser/plugin/view.py:769
-#, python-format
-msgid "Plugin View (%d)"
-msgstr "(%d) प्लगइन दृश्य"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:121
+msgid ""
+"We will create a console plugin to display focus changes emitted by an accessible item with a "
+"\"push button\" role - remember that it is easy to check what is the role of any item with "
+"<app>Accerciser</app>; you can verify it in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link>, for example."
+msgstr ""
 
-#: src/lib/accerciser/plugin/view.py:1074
-msgid "_New view…"
-msgstr "नयाँ दृश्य…"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:127
+msgid "The needed import lines are:"
+msgstr "आवश्यक आयात लाइनहरू हुन्:"
 
-#: src/lib/accerciser/plugin/view.py:1130
-msgid "New View…"
-msgstr "नयाँ दृश्य…"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:130
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/ui_manager.py:23
-msgid "_File"
-msgstr "फाइल"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:134
+msgid "Then we add a class definition, with a plugin name and description:"
+msgstr "त्यसपछि हामी प्लगइन नाम र वर्णनको साथ एक वर्ग परिभाषा थप्छौं:"
 
-#: src/lib/accerciser/ui_manager.py:24
-msgid "_Edit"
-msgstr "सम्पादन गर्नुहोस्"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:137
+#, no-wrap
+msgid ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "पुस्तकचिनो"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:142
+msgid "We override the init method adding a register listener:"
+msgstr ""
 
-#: src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
-msgid "_View"
-msgstr "दृष्य"
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:145
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+msgstr ""
 
-#: src/lib/accerciser/ui_manager.py:27
-msgid "_Help"
-msgstr "_सहयोग"
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:149
+msgid "In the callback method, all push button events are printed."
+msgstr ""
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:152
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:159
+msgid "Creating a Viewport Plugin"
+msgstr "दृश्यपोर्ट प्लगइन सिर्जना गर्दैछ"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:160
+msgid ""
+"We will create a viewport plugin that allows quick testing of the \"click\" action in "
+"accessible items that support the AT-SPI Action interface and have an action named \"click\". "
+"It will be a simple button that, once clicked, does the \"click\" action in the accessible."
+msgstr ""
+"हामी एक भ्यूपोर्ट प्लगइन सिर्जना गर्नेछौं जसले एटी-एसपीआई एक्शन इन्टरफेससमर्थन गर्ने पहुँचयोग्य वस्तुहरूमा \"क्लिक\" "
+"कार्यको द्रुत परीक्षण गर्न अनुमति दिन्छ र \"क्लिक\" नामक कार्य छ। यो एक साधारण बटन हुनेछ जुन, एक पटक क्लिक "
+"गरेपछि, पहुँच योग्यमा \"क्लिक\" कार्य गर्दछ।"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:166
+msgid "First off, some mandatory import lines:"
+msgstr "पहिलो बन्द, केही अनिवार्य आयात लाइनहरू:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:169
+#, no-wrap
+msgid ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:173
+msgid "Next, a class definition, with a name and description:"
+msgstr "अर्को, एक वर्ग परिभाषा, एक नाम र वर्णन संग:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:176
+#, no-wrap
+msgid ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:181
+msgid ""
+"We override the init method with some UI building, and connecting a callback to a signal for "
+"the button. We set the alignment to allow the button to be centered in the plugin tab, and not "
+"monstrously take up the entire plugin space. Notice that the <cmd>plugin_area</cmd> instance "
+"variable contains a gtk.Frame that could be populated with all the plugin's widgets."
+msgstr ""
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:188
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         self.click_button.set_halign(gtk.Align.CENTER)\n"
+"         self.click_button.set_valign(gtk.Align.CENTER)\n"
+"         self.plugin_area.add(self.click_button)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:199
+msgid ""
+"We also created a convenience method that returns a list of supported actions of the currently "
+"selected accessible item - if it does not support the Action interface, it returns an empty "
+"list:"
+msgstr ""
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:204
+#, no-wrap
+msgid ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:214
+msgid ""
+"The base plugin class has a method call onAccChanged that is called everytime the target "
+"application's selected accessible item changes. We will override it setting the button to be "
+"sensitive only when the current accessible item has the \"click\" action:"
+msgstr ""
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:219
+#, no-wrap
+msgid ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:224
+msgid ""
+"The callback method for button \"clicked\" performs the \"click\" action on the accessible "
+"item. Since this callback could only be called when the button is sensitive, we don't need to "
+"worry about checking if the current accessible has the \"click\" action?"
+msgstr ""
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:229
+#, no-wrap
+msgid ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+msgstr ""
+
+#. (itstool) path: info/title
+#: C/index.page:6
+msgctxt "text"
+msgid "Accerciser"
+msgstr "एकरसिजर"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "Introduction to <app>Accerciser</app>"
+msgstr "<app>एक्सर्सिसरको</app> परिचय"
+
+#. (itstool) path: media/span
+#: C/index.page:26
+msgid "<app>Accerciser</app>'s logo"
+msgstr "<app>एक्सरसिजरको</app> लोगो"
+
+#. (itstool) path: page/title
+#: C/index.page:24
+msgid "<_:media-1/> <app>Accerciser</app>"
+msgstr "<_:media-1/> <app>एक्सरसिजरको</app>"
+
+#. (itstool) path: note/title
+#: C/index.page:31
+msgid "Before You Begin"
+msgstr "सुरु गर्नुअघि"
+
+#. (itstool) path: note/p
+#: C/index.page:32
+msgid "Read the <link xref=\"help:gnome-help/a11y\">Universal Access Help</link>"
+msgstr "<link xref=\"help:gnome-help/a11y\">युनिभर्सल पहुँच मद्दत</link> पढ्नुहोस्"
+
+#. (itstool) path: section/title
+#: C/index.page:37
+msgid "Getting Started"
+msgstr "सुरु आत गर्दै"
+
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Examining the Accessibility of an Application"
+msgstr "अनुप्रयोगको पहुँच जाँच गर्दै"
+
+#. (itstool) path: section/title
+#: C/index.page:43
+msgid "Advanced Topics"
+msgstr "उन्नत विषयहरू"
+
+#. (itstool) path: info/title
+#: C/interface_viewer_plugin.page:4
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "२. इन्टरफेस हेर्ने प्लगइन"
+
+#. (itstool) path: info/desc
+#: C/interface_viewer_plugin.page:6
+msgid "Examining your accessibility implementation"
+msgstr "तपाईँको पहुँच कार्यान्वयन जाँच गर्दैछ"
+
+#. (itstool) path: page/title
+#: C/interface_viewer_plugin.page:25
+msgid "Interface Viewer Plugin"
+msgstr "इन्टरफेस हेर्ने प्लगइन"
+
+#. (itstool) path: page/p
+#: C/interface_viewer_plugin.page:27
+msgid ""
+"The Interface Viewer Plugin shows the information and controls provided by the AT-SPI "
+"interfaces present in each accessible item from the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>. After selecting an item, you can use "
+"this plugin to quickly review its supported interfaces, to retrieve each interface's "
+"information, and to manipulate the item through all the interface’s methods."
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/interface_viewer_plugin.page:35
+msgid "Examining a Menu with the Interface Viewer Plugin"
+msgstr "इन्टरफेस दर्शक प्लगइनसँग मेनु जाँच गर्दैछ"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/interface_viewer_plugin.page:36 C/interface_viewer_plugin.page:42
+msgid ""
+"Given a selected item in the Application Tree View, all of its AT-SPI interfaces will be shown "
+"as sensitive in the Interface Viewer Plugin. Those unsupported will appear grayed out, such as "
+"the Application and Collection interfaces in the figure above."
+msgstr ""
+"अनुप्रयोग ट्री दृश्यमा चयन गरिएको वस्तु दिइएको छ, यसको सबै एटी-एसपीआई इन्टरफेसहरू इन्टरफेस दर्शक प्लगइनमा "
+"संवेदनशील रूपमा देखाइनेछ। ती असमर्थितहरू ग्रे आउट देखा पर्नेछन्, जस्तै माथिको आकृतिमा अनुप्रयोग र संग्रह इन्टरफेसहरू।"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41
+msgctxt "_"
+msgid "external ref='figures/interface_viewer_plugin.png' md5='aed7e1cd60d381f408e087ab0ba28b4f'"
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/interface_viewer_plugin.page:49
+msgid "Running the Interface Viewer Plugin"
+msgstr "इन्टरफेस दर्शक प्लगइन चलिरहेको छ"
+
+#. (itstool) path: section/p
+#: C/interface_viewer_plugin.page:50
+msgid ""
+"The first step to run the Interface Viewer Plugin is to select an item in the <link "
+"xref=\"desktop_tree_view\"> Application Tree View</link>. After that, all AT-SPI interfaces "
+"covered by the plugin will be listed in the plugin's panel. The interfaces implemented by the "
+"selected item will be sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following interfaces can be "
+"explored in <app>Accerciser</app>, assuming the selected item implements them:"
+msgstr ""
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:59
+msgid ""
+"Accessible - This interface shows the selected item's child count (number of child widgets), "
+"description, states, relations, and attributes."
+msgstr ""
+"पहुँचयोग्य - यो इन्टरफेसले चयन गरिएको वस्तुको बाल गणना (बाल विजेटको सङ्ख्या), वर्णन, अवस्था, सम्बन्ध र "
+"विशेषताहरू देखाउँदछ ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:65
+msgid ""
+"Action - This interface shows all the actions that can be performed by the selected item. For "
+"each interface, you will see its name, such as \"press\" or \"click\", followed by a "
+"description and a key binding, if there are any. If you select an action, a \"Perform action\" "
+"button will become sensitive. Press this button to see the item performing the selected action."
+msgstr ""
+"कार्य - यो इन्टरफेसले चयन गरिएको वस्तुद्वारा प्रदर्शन गर्न सकिने सबै कार्यहरू देखाउँदछ । प्रत्येक इन्टरफेसको लागि, "
+"तपाईंले यसको नाम देख्नुहुनेछ, जस्तै \"थिच्नुहोस्\" वा \"क्लिक गर्नुहोस्\", त्यसपछि वर्णन र कुञ्जी बाइन्डिङ, यदि त्यहाँ "
+"कुनै छ भने। यदि तपाईँले कार्य चयन गर्नुभयो भने, \"कार्य सम्पादन गर्नुहोस्\" बटन संवेदनशील हुनेछ । चयन गरिएको कार्य "
+"सम्पादन गर्ने वस्तु हेर्न यो बटन थिच्नुहोस् ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:73
+msgid ""
+"Application - This interface can be implemented by items with role \"application\". It is worth "
+"to point out that items with role \"application\" not necessarily implement this interface. If "
+"the selected item implements it, the interface will show its ID and, if there are any, its "
+"toolkit and version."
+msgstr ""
+"अनुप्रयोग - यो इन्टरफेस भूमिका \"अनुप्रयोग\" को साथ वस्तुहरू द्वारा कार्यान्वयन गर्न सकिन्छ। यो भूमिका "
+"\"अनुप्रयोग\" को साथ वस्तुहरू यो इन्टरफेस लागू गर्न आवश्यक छैन भनेर औंल्याउन लायक छ। यदि चयन गरिएको वस्तुले "
+"यसलाई कार्यान्वयन गर्दछ भने, इन्टरफेसले यसको आईडी देखाउनेछ र यदि त्यहाँ कुनै छ भने, यसको टूलकिट र संस्करण।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:80
+msgid ""
+"Component - This interface shows the selected item's absolute position (with respect to the "
+"desktop coordinate system), relative position (with respect to the window coordinate system), "
+"size, layer type, MDI-Z-order (a short integer indicating the stacking order of the component "
+"in the MDI layer), and alpha (if alpha blending is used)."
+msgstr ""
+"कम्पोनेन्ट - यो इन्टरफेसले चयन गरिएको वस्तुको निरपेक्ष स्थिति (डेस्कटप समन्वय प्रणालीको सन्दर्भमा), सापेक्ष स्थिति "
+"(सञ्झ्याल समन्वय प्रणालीको सम्बन्धमा), साइज, तह प्रकार, एमडीआई-जेड-अर्डर (एमडीआई तहमा घटकको स्ट्याकिंग क्रम "
+"संकेत गर्ने छोटो पूर्णांक), र अल्फा (यदि अल्फा सम्मिश्रण प्रयोग गरिएको छ भने) देखाउँछ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:86
+msgid ""
+"Document - This interface shows the selected item's document attributes and locale description, "
+"if there is one."
+msgstr ""
+"कागजात - यो इन्टरफेसले चयन गरिएको वस्तुको कागजात विशेषताहरू र लोकेल वर्णन देखाउँदछ, यदि त्यहाँ एक छ भने।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:91
+msgid ""
+"Hypertext - This interface shows a list with all the selected item's hypertext hyperlinks. For "
+"each hyperlink, the interface provides its name, URI, start (the index in the hypertext at "
+"which the hyperlink begins) and end (the index in the hypertext at which this hyperlink ends)."
+msgstr ""
+"हाइपरटेक्स्ट - यो इन्टरफेसले सबै चयन गरिएका वस्तुको हाइपरटेक्स्ट हाइपरलिङ्कहरूको सूची देखाउँदछ । प्रत्येक "
+"हाइपरलिङ्कका लागि, इन्टरफेसले यसको नाम, यूआरआई, स्टार्ट (हाइपरटेक्स्टमा अनुक्रमणिका जसमा हाइपरलिङ्क सुरु हुन्छ) "
+"र अन्त्य (हाइपरटेक्स्टमा अनुक्रमणिका जसमा यो हाइपरलिङ्क समाप्त हुन्छ) प्रदान गर्दछ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:98
+msgid ""
+"Image - This interface shows the selected item's description (or \"no description\" if "
+"unspecified), size, position (with respect to the desktop coordinate system), and locale, if "
+"there is one."
+msgstr ""
+"छवि - यो इन्टरफेसले चयन गरिएको वस्तुको वर्णन (वा निर्दिष्ट नगरेमा \"वर्णन छैन\"), साइज, स्थिति (डेस्कटप समन्वय "
+"प्रणालीको सन्दर्भमा), र लोकेल देखाउँदछ, यदि त्यहाँ एक छ भने।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:104
+msgid ""
+"Selection - This interface shows all selectable child items of the selected item. If the "
+"selected item is a menu bar with options \"File\", \"Edit\", \"View\", and \"Help\", and all of "
+"them are selectable, then they will be listed in this interface. If you click a listed option - "
+"\"File\", for example - and want to clear it, just press the \"Clear\" button below the list."
+msgstr ""
+"चयन - यो इन्टरफेसले चयन गरिएको वस्तुका सबै चयन योग्य चाइल्ड वस्तुहरू देखाउँदछ । यदि चयन गरिएको वस्तु \"फाइल\", "
+"\"सम्पादन\", \"दृश्य\", र \"मद्दत\" विकल्पहरूको साथ मेनु पट्टी हो, र ती सबै चयन योग्य छन् भने, तिनीहरू यस "
+"इन्टरफेसमा सूचीबद्ध हुनेछन्। यदि तपाईं सूचीबद्ध विकल्प क्लिक गर्नुहुन्छ - \"फाइल\", उदाहरणका लागि - र यसलाई "
+"खाली गर्न चाहानुहुन्छ भने, सूचीको तल \"खाली गर्नुहोस्\" बटन थिच्नुहोस्।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:112
+msgid ""
+"Streamable Content - This interface shows the selected item's content types and their "
+"corresponding URIs."
+msgstr ""
+"स्ट्रिम गर्न सकिने सामग्री - यो इन्टरफेसले चयन गरिएको वस्तुको सामग्री प्रकार र तिनीहरूको सम्बन्धित यूआरआई हरू "
+"देखाउँदछ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:117
+msgid ""
+"Table - This interface shows the selected item's caption and summary, rows (number of rows), "
+"columns (number of columns), selected rows (number of selected rows), and selected columns "
+"(number of selected columns). For a selected cell, the interface shows its row's and column's "
+"header and extents."
+msgstr ""
+"तालिका - यो इन्टरफेसले चयन गरिएको वस्तुको क्याप्सन र सारांश, पङ्क्तिहरू (पङ्क्तिहरूको सङ्ख्या), स्तम्भहरू "
+"(स्तम्भहरूको सङ्ख्या), चयन गरिएका पङ्क्तिहरू (चयन गरिएका पङ्क्तिहरूको सङ्ख्या), र चयन गरिएका स्तम्भहरू (चयन "
+"गरिएका स्तम्भहरूको सङ्ख्या) देखाउँदछ । चयन गरिएको कक्षका लागि, इन्टरफेसले यसको पङ्क्ति र स्तम्भको हेडर र विस्तार "
+"हरू देखाउँदछ ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:124
+msgid ""
+"TableCell - This interface shows the selected item's row and column index, row and column span, "
+"a list of the row and column header cells and the cell's table. By selecting a header cell in "
+"the list of row or column headers and pressing the \"Show\" button, it's possible to select "
+"that header cell object in Accerciser instead. Pressing the table button causes the table "
+"object to be selected."
+msgstr ""
+"तालिकासेल - यो इन्टरफेसले चयन गरिएको वस्तुको पङ्क्ति र स्तम्भ अनुक्रमणिका, पङ्क्ति र स्तम्भ विस्तार, पङ्क्ति र "
+"स्तम्भ हेडर कक्षहरूको सूची र कक्षको तालिका देखाउँदछ । पङ्क्ति वा स्तम्भ हेडरको सूचीमा हेडर कक्ष चयन गरेर र "
+"\"देखाउनुहोस्\" बटन थिचेर, यसको सट्टामा एक्सरसिजरमा हेडर सेल वस्तु चयन गर्न सम्भव छ। तालिका बटन थिच्दा "
+"तालिका वस्तु चयन हुन्छ ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:132
+msgid ""
+"Text - This interface shows the selected item's text content, that can be editable, and its "
+"attributes. The basic attributes are offset (the number of characters the text has) and "
+"justification. To see possible CSS attributes, click the \"Include defaults\" check box."
+msgstr ""
+"पाठ - यो इन्टरफेसले चयन गरिएको वस्तुको पाठ सामग्री, जुन सम्पादन योग्य हुन सक्छ, र यसको विशेषताहरू देखाउँदछ। "
+"आधारभूत विशेषताहरू अफसेट (पाठमा भएका क्यारेक्टरहरूको संख्या) र औचित्य हुन्। सम्भावित सीएसएस विशेषताहरू हेर्नका "
+"लागि, \"पूर्वनिर्धारितहरू समावेश गर्नुहोस्\" चेक बाकसमा क्लिक गर्नुहोस् ।"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:139
+msgid ""
+"Value - This interface shows the selected item's current value, minimum allowed value, maximum "
+"allowed value, and the minimum increment by which the value may be changed (or zero if this "
+"value cannot be determined). The current value can be manually changed via a spin button."
+msgstr ""
+"मान - यो इन्टरफेसले चयन गरिएको वस्तुको हालको मान, न्यूनतम अनुमति मान, अधिकतम अनुमति मान, र मान परिवर्तन "
+"गर्न सकिने न्यूनतम वृद्धि (वा यदि यो मान निर्धारण गर्न सकिएन भने शून्य) देखाउँदछ । हालको मान स्पिन बटन मार्फत "
+"म्यानुअल रूपमा परिवर्तन गर्न सकिन्छ।"
+
+#. (itstool) path: info/title
+#: C/introduction.page:5
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "१. एक्सर्सिसर के हो?"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:6
+msgid "An interactive accessibility explorer"
+msgstr "एक अन्तरक्रियात्मक पहुँच अन्वेषक"
+
+#. (itstool) path: page/title
+#: C/introduction.page:25
+msgid "What is <app>Accerciser</app>?"
+msgstr "<app>एक्सर्सिसर</app> भनेको के हो?"
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It uses the AT-SPI "
+"library to inspect, examine, and interact with widgets, allowing you to check if an application "
+"is providing correct information to assistive technologies and automated testing frameworks. "
+"<app>Accerciser</app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
+msgstr ""
+"<app>एक्सरसिजर</app> एक इंटरैक्टिव पायथन एक्सेसिबिलिटी एक्सप्लोरर है। यसले एटी-एसपीआई लाइब्रेरीको प्रयोग "
+"विजेटहरूसँग निरीक्षण, परीक्षण र अन्तरक्रिया गर्न प्रयोग गर्दछ, जसले तपाईंलाई अनुप्रयोगले सहायक टेक्नोलोजीहरू र "
+"स्वचालित परीक्षण ढाँचाहरूमा सही जानकारी प्रदान गरिरहेको छ कि छैन भनेर जाँच गर्न अनुमति दिन्छ। "
+"<app>एक्सरसिजर</app> प्लगइन्सको सेटको साथ आउँदछ जुन तपाईँले पहुँच जानकारीको अनुकूल दृश्यहरू सिर्जना गर्न प्रयोग "
+"गर्न सक्नुहुनेछ।"
+
+#. (itstool) path: page/p
+#: C/introduction.page:35
+msgid ""
+"By default, <app>Accerciser</app>'s main interface is comprised of three sections: a tree view "
+"of the entire desktop accessible hierarchy, namely <link xref=\"desktop_tree_view\"> "
+"Application Tree View</link>, and two plugin areas. If you prefer to see all plugins in a "
+"single area, dividing <app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three sections, press "
+"<keyseq><key>ctrl</key><key>t</key></keyseq> again."
+msgstr ""
+
+#. (itstool) path: note/p
+#: C/introduction.page:44
+msgid ""
+"Make sure that accessibility support is enabled in your desktop - otherwise, <app>Accerciser</"
+"app> will not work as expected."
+msgstr ""
+"तपाईँको डेस्कटपमा पहुँच समर्थन सक्षम पारिएको निश्चित गर्नुहोस् - अन्यथा, <app>एक्सरसिजरले</app> अपेक्षित रूपमा "
+"काम गर्दैन।"
+
+#. (itstool) path: figure/title
+#: C/introduction.page:51
+msgid "<app>Accerciser</app>"
+msgstr "<app>एक्सरसिजर</app>"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/introduction.page:52 C/introduction.page:56
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "<app>एक्सरसिजरको</app> पूर्वनिर्धारित इन्टरफेस।"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55
+msgctxt "_"
+msgid "external ref='figures/accerciser-view.png' md5='87ef1d7587097a04dd784e14840f3115'"
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/introduction.page:63
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "<app>एक्सरसिजरको</app> इच्छित श्रोताहरू"
+
+#. (itstool) path: section/p
+#: C/introduction.page:64
+msgid ""
+"<app>Accerciser</app> fits the needs of many different audiences. User interface developers use "
+"it to ensure that their applications are providing all of their features through AT-SPI. "
+"Assistive technology developers are able to see what AT-SPI is providing to their applications. "
+"Automated UI test developers find <app>Accerciser</app> beneficial since it exposes different "
+"events that could be expected from their target application."
+msgstr ""
+"<app>एक्सरसिजर</app> धेरै फरक दर्शकहरूको आवश्यकताहरू फिट गर्दछ। प्रयोगकर्ता इन्टरफेस विकासकर्ताहरूले यो "
+"सुनिश्चित गर्न प्रयोग गर्छन् कि उनीहरूको अनुप्रयोगहरूले एटी-एसपीआई मार्फत उनीहरूको सबै सुविधाहरू प्रदान गरिरहेका "
+"छन्। सहायक टेक्नोलोजी विकासकर्ताहरूले एटी-एसपीआईले उनीहरूको अनुप्रयोगहरूमा के प्रदान गरिरहेको छ भनेर हेर्न सक्षम "
+"छन्। स्वचालित यूआई परीक्षण विकासकर्ताहरूले <app>एक्सरसिजरलाई</app> फाइदाजनक भेट्टाउँछन् किनकि यसले विभिन्न "
+"घटनाहरू उजागर गर्दछ जुन उनीहरूको लक्षित अनुप्रयोगबाट अपेक्षा गर्न सकिन्छ।"
+
+#. (itstool) path: section/title
+#: C/introduction.page:74
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "<app>एक्सरसिजरको</app> प्लगइन आर्किटेक्चर"
+
+#. (itstool) path: section/p
+#: C/introduction.page:75
+msgid ""
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core code is fairly "
+"small and most of its features are part of default plugins:"
+msgstr ""
+"<app>एक्सरसिजरसँग</app> एक एक्सटेन्सिबल, प्लगइन-आधारित आर्किटेक्चर छ। यसको कोर कोड एकदम सानो छ र यसको "
+"अधिकांश सुविधाहरू पूर्वनिर्धारित प्लगइन्सको भाग हो:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:82
+msgid ""
+"<link xref=\"interface_viewer_plugin\">Interface Viewer</link> - A plugin that lets you explore "
+"the AT-SPI interfaces provided by each accessible widget of a target application."
+msgstr ""
+"<link xref=\"interface_viewer_plugin\">इन्टरफेस दर्शक</link> - प्लगइन जसले तपाईंलाई लक्षित अनुप्रयोगको "
+"प्रत्येक पहुँच योग्य विजेटद्वारा प्रदान गरिएको एटी-एसपीआई इन्टरफेसहरू अन्वेषण गर्न दिन्छ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:88
+msgid ""
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that applies tests to verify "
+"the accessibility of a target application."
+msgstr ""
+"<link xref=\"validator_plugin\">एटी-एसपीआई वैधकर्ता</link> - एउटा प्लगइन जसले लक्ष्य अनुप्रयोगको पहुँच "
+"प्रमाणित गर्न परीक्षणहरू लागू गर्दछ ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:94
+msgid ""
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that displays AT-SPI events "
+"emitted by a target application as they occur."
+msgstr ""
+"<link xref=\"event_monitor_plugin\">घटना मोनिटर</link> - एक प्लगइन जसले लक्षित अनुप्रयोगद्वारा "
+"उत्सर्जित एटी-एसपीआई घटनाहरू प्रदर्शन गर्दछ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:100
+msgid ""
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that provides global hotkeys "
+"for quickly selecting accessible widgets in <app>Accerciser</app>'s Application Tree View."
+msgstr ""
+"<link xref=\"quick_select_plugin\">छिटो चयन गर्नुहोस्</link> - एक प्लगइन जसले <app>एक्सरसिजरको</app> "
+"अनुप्रयोग ट्री दृश्यमा पहुँच योग्य विजेटहरू छिटो चयन गर्न विश्वव्यापी हटकीहरू प्रदान गर्दछ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:106
+msgid ""
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows the interfaces, "
+"methods, and attributes available on each accessible widget of a target application."
+msgstr ""
+"<link xref=\"api_browser_plugin\">एपीआई ब्राउजर</link> - एउटा प्लगइन जसले लक्ष्य अनुप्रयोगको प्रत्येक पहुँच "
+"योग्य विजेटमा उपलब्ध इन्टरफेसहरू, विधिहरू र विशेषताहरू देखाउँदछ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:112
+msgid ""
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that provides a full, "
+"interactive Python shell with access to selected accessible widgets of a target application."
+msgstr ""
+"<link xref=\"ipython_plugin\">आईपाइथन कन्सोल</link> - एक प्लगइन जसले लक्ष्य अनुप्रयोगको चयन गरिएको पहुँच "
+"योग्य विजेटहरूमा पहुँचको साथ पूर्ण, अन्तरक्रियात्मक पाइथन शेल प्रदान गर्दछ।"
+
+#. (itstool) path: section/title
+#: C/introduction.page:122
+msgid "More about Accessibility"
+msgstr "पहुँचको बारेमा थप"
+
+#. (itstool) path: section/p
+#: C/introduction.page:123
+msgid ""
+"Accessibility is a core value that should touch all aspects of a Desktop Environment. To help "
+"achieve it in GNOME, some libraries were developed, such as ATK and AT-SPI. Though originated "
+"in GNOME, these libraries are now also used in other Desktop Environments. To learn more about "
+"Accessibility Libraries for GNU/UNIX systems, you can consult:"
+msgstr ""
+"पहुँच एक कोर मान हो जुन डेस्कटप वातावरणका सबै पक्षहरूलाई छुनु पर्दछ। जिनोममा यसलाई प्राप्त गर्न मद्दत गर्न, केही "
+"पुस्तकालयहरू विकास गरिएको थियो, जस्तै एटीके र एटी-एसपीआई। जिनोममा उत्पत्ति भए तापनि यी पुस्तकालयहरू अहिले "
+"अन्य डेस्कटप वातावरणमा पनि प्रयोग गरिन्छ। जीएनयू/युनिक्स प्रणालीका लागि पहुँच पुस्तकालयहरूको बारेमा थप जान्न, "
+"तपाईं परामर्श गर्न सक्नुहुन्छ:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:132
+msgid ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</link> - ATK provides "
+"the set of accessibility interfaces that are implemented by other toolkits and applications. "
+"Using the ATK interfaces, accessibility tools have full access to view and control running "
+"applications."
+msgstr ""
+"<link href=\"http://developer.gnome.org/atk/\">एटीके एक्सेसिबिलिटी टूलकिट</link> - एटीकेले पहुँच "
+"इन्टरफेसहरूको सेट प्रदान गर्दछ जुन अन्य टूलकिट र अनुप्रयोगहरू द्वारा कार्यान्वयन गरिन्छ। एटीके इन्टरफेसहरू प्रयोग "
+"गर्दै, पहुँच उपकरणहरूमा चलिरहेको अनुप्रयोगहरू हेर्न र नियन्त्रण गर्न पूर्ण पहुँच छ।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:139
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> - AT-SPI is the "
+"primary service interface by which assistive technologies query and receive notifications from "
+"running applications. Additional material is available from the <link href=\"http://"
+"accessibility.kde.org/developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
+"link>."
+msgstr ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">एटी-एसपीआई</link> - एटी-एसपीआई "
+"प्राथमिक सेवा इन्टरफेस हो जसद्वारा सहायक टेक्नोलोजीहरू चलिरहेको अनुप्रयोगहरूबाट क्वेरी र सूचनाहरू प्राप्त गर्दछ। "
+"<link href=\"http://accessibility.kde.org/developer/atk.php#coreclasses\">केडीई पहुँच विकास समुदाय</"
+"link> बाट थप सामग्री उपलब्ध छ."
+
+#. (itstool) path: item/p
+#: C/introduction.page:147
+msgid ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html\">GNOME Desktop "
+"Accessibility Guide</link> - A guide for anyone interested in how the GNOME Desktop supports "
+"the needs of users with disabilities."
+msgstr ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html\">जिनोम डेस्कटप पहुँच "
+"मार्गदर्शिका</link> - जिनोम डेस्कटपले अपाङ्गता भएका प्रयोगकर्ताहरूको आवश्यकतालाई कसरी समर्थन गर्दछ भन्ने "
+"कुरामा चासो राख्ने जो कोहीका लागि एक मार्गदर्शिका।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:153
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/\">GNOME Accessibility "
+"Developer's Guide</link> - A guide for developers who want to ensure their applications are "
+"accessible to the widest audience of users."
+msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/\" >जीनोम एक्सेसिबिलिटी "
+"डेभलपर गाइड </link> - विकासकर्ताहरूकोलागि एक गाइड जसले उनीहरूको अनुप्रयोगहरू प्रयोगकर्ताहरूको व्यापक "
+"दर्शकहरूको लागि पहुँच योग्य छन् भनेर सुनिश्चित गर्न चाहन्छन्।"
+
+#. (itstool) path: item/p
+#: C/introduction.page:159
+msgid ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Accessibility Project</link> - The "
+"GNOME Accessibility Project includes the guides listed above along with many other useful links "
+"for users, developers and system administrators."
+msgstr ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">जिनोम पहुँच परियोजना</link> - जिनोम पहुँच "
+"परियोजनाले प्रयोगकर्ताहरू, विकासकर्ताहरू र प्रणाली प्रशासकहरूका लागि धेरै अन्य उपयोगी लिङ्कहरूको साथ माथि "
+"सूचीबद्ध गाइडहरू समावेश गर्दछ।."
+
+#. (itstool) path: info/title
+#: C/ipython_plugin.page:4
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "२. आइपाइथन प्लगइन"
+
+#. (itstool) path: info/desc
+#: C/ipython_plugin.page:6
+msgid "When all else fails"
+msgstr "बाकी सबै विफल भएमा"
+
+#. (itstool) path: page/title
+#: C/ipython_plugin.page:25
+msgid "IPython Console Plugin"
+msgstr "आइपाइथन कन्सोल प्लगइन"
+
+#. (itstool) path: page/p
+#: C/ipython_plugin.page:26
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item in the <link "
+"xref=\"desktop_tree_view\"> Application Tree View</link>. Since the IPython Console Plugin is "
+"an interactive Python shell, you can import any Python modules you want."
+msgstr ""
+"आइपाइथन कन्सोल प्लगइनले <link xref=\"desktop_tree_view\">अनुप्रयोग ट्री दृश्य</link>मा मा चयन गरिएको "
+"वस्तुसँग वास्तविक-समय अन्तरक्रिया अनुमति दिन्छ। आइपाइथन कन्सोल प्लगइन एक अन्तरक्रियात्मक पाइथन शेल भएकोले, "
+"तपाईं आफूले चाहेको कुनै पनि पाइथन मोड्युल आयात गर्न सक्नुहुन्छ।"
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:33
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. Otherwise, the "
+"IPython Console Plugin will not work properly."
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/ipython_plugin.page:40
+msgid "Running the IPython Console Plugin"
+msgstr "आइपाइथन कन्सोल प्लगइन चलाउँदै"
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:41
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed in the Application "
+"Tree View - either an application or a widget. In the plugin, the selected item will correspond "
+"to the variable 'acc'."
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:46
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the console, what can be "
+"useful for discovering pyatspi methods."
+msgstr ""
+
+#. (itstool) path: figure/title
+#: C/ipython_plugin.page:52
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr "आइपिथन कन्सोल प्लगइनसँग चयन गरिएका वस्तुहरू खोजी गर्दैछ"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/ipython_plugin.page:53 C/ipython_plugin.page:58
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and properties related to a "
+"selected item in the Application Tree View."
+msgstr ""
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57
+msgctxt "_"
+msgid "external ref='figures/IPython_plugin.png' md5='1daff78264babd667a8527b3e2b5cace'"
+msgstr ""
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:66
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful documentation about "
+"the corresponding selected accessible item."
+msgstr ""
+
+#. (itstool) path: info/title
+#: C/preferences.page:4
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "४. प्राथमिकताहरू"
+
+#. (itstool) path: info/desc
+#: C/preferences.page:6
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "<app>एक्सरसिजरका</app> प्राथमिकताहरू अनुकूलन गर्दै"
+
+#. (itstool) path: page/title
+#: C/preferences.page:25
+msgid "Configuring <app>Accerciser</app>"
+msgstr "<app>एक्सरसिजर</app> कन्फिगर गर्दैछ"
+
+#. (itstool) path: page/p
+#: C/preferences.page:26
+msgid ""
+"To configure plugins, hotkeys, and highlighting, do either <keyseq><key>ctrl</key><key>p</key></"
+"keyseq> or <guiseq><gui>Edit</gui> <gui>Preferences</gui></guiseq> to open a dialog."
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/preferences.page:32
+msgid "Configuring plugins"
+msgstr "प्लगइन कन्फिगर गर्दैछ"
+
+#. (itstool) path: section/p
+#: C/preferences.page:33
+msgid ""
+"After opening the Preferences Dialog, you will find a list of all available plugins, with "
+"corresponding checkboxes, under the \"Plugins\" tab. To enable or disable a plugin, toggle its "
+"checkbox. Only active plugins can be accessed via <app>Accerciser</app>'s interface."
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/preferences.page:38
+msgid ""
+"Right-clicking on any given plugin allows you to choose its location: \"Top Panel\", \"Bottom "
+"Panel\", and \"New View\". Selecting \"New View\" creates a new window for the plugin."
+msgstr ""
+
+#. (itstool) path: note/p
+#: C/preferences.page:44
+msgid ""
+"You may bypass the Preferences dialog by using drag and drop to move a plugin from a location "
+"to another."
+msgstr ""
+"तपाईँले प्लगइनलाई एक स्थानबाट अर्को स्थानमा सार्न तान्नुहोस् र छोड्नुहोस् प्रयोग गरेर प्राथमिकता संवादलाई बाइपास "
+"गर्न सक्नुहुन्छ ।"
+
+#. (itstool) path: section/title
+#: C/preferences.page:51
+msgid "Configuring global hotkeys"
+msgstr "विश्वव्यापी हटकीहरू कन्फिगर गर्दैछ"
+
+#. (itstool) path: section/p
+#: C/preferences.page:52
+msgid ""
+"Some elements in <app>Accerciser</app> may enable certain functionalities via hotkeys. An "
+"example is the <link xref=\"quick_select_plugin\">Quick Select Plugin</link>. The hotkey "
+"combination for each functionality can be changed via the Preferences dialog, under the "
+"\"Global Hotkeys\" tab. Under this tab, you will find a list of all features for which hotkeys "
+"can be configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> checkboxes to "
+"enable or disable these modifiers."
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/preferences.page:63
+msgid "Configuring widget's highlighting"
+msgstr "विजेटको हाइलाइटिङ कन्फिगर गर्दैछ"
+
+#. (itstool) path: section/p
+#: C/preferences.page:64
+msgid ""
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey <keyseq><key>ctrl</"
+"key><key>alt</key><key>/</key></keyseq>, highlight a specific widget in a target application. "
+"The highlighting duration, border color, and fill color can be customized via the Preferences "
+"dialog, under the \"Highlighting\" tab."
+msgstr ""
+"<app>एक्सरसिजरका</app> केही तत्वहरू, जस्तै ग्लोबल हटकी <keyseq><key>सीटीआरएल</key><key>अल्ट</key> <key>/"
+"</key></keyseq>, लक्षित अनुप्रयोगमा एक विशिष्ट विजेट हाइलाइट गर्दछ। हाइलाइटिङ अवधि, किनारा रङ, र भर्ने "
+"रङ \"हाइलाइटिङ\" ट्याब अन्तर्गत प्राथमिकता संवाद मार्फत अनुकूलित गर्न सकिन्छ।"
+
+#. (itstool) path: info/title
+#: C/quick_select_plugin.page:4
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "५. द्रुत चयन प्लगइन"
+
+#. (itstool) path: info/desc
+#: C/quick_select_plugin.page:6
+msgid "Locating the object you need"
+msgstr "तपाईँलाई आवश्यक वस्तु फेला पार्दैछ"
+
+#. (itstool) path: page/title
+#: C/quick_select_plugin.page:25
+msgid "Quick Select Plugin"
+msgstr "द्रुत चयन प्लगइन"
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:26
+msgid ""
+"The Quick Select Plugin does not provide a visible interface like the other default "
+"<app>Accerciser</app> plugins - instead, it adds facilities for quickly selecting items in the "
+"<link xref=\"desktop_tree_view\">Application Tree View</link> via global hotkeys. Originally, "
+"these hotkeys were part of <app>Accerciser</app>'s core code, turning into the Quick Select "
+"Plugin later."
+msgstr ""
+"क्विक सेलेक्ट प्लगइनले अन्य पूर्वनिर्धारित <app>एक्सरसिजर</app> प्लगइन्स जस्तै दृश्यात्मक इन्टरफेस प्रदान गर्दैन - "
+"यसको सट्टामा, यसले <लिङ्क एक्सरेफ =\"desktop_tree_view\" मा वस्तुहरू छिटो चयन गर्नका लागि सुविधाहरू थप्दछ "
+"></link>विश्वव्यापी हटकीहरू मार्फत अनुप्रयोग ट्री दृश्य। मूलतः, यी हटकीहरू <app>एक्सर्साइजरको</app> कोर "
+"कोडको भाग थिए, पछि क्विक सेलेक्ट प्लगइनमा परिणत भए।"
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:32
+msgid ""
+"The Quick Select Plugin provides two global hotkeys. Pressing <keyseq><key>ctrl</key><key>alt</"
+"key><key>a</key></keyseq> selects the last focused accessible widget in the Application Tree "
+"View. Pressing <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and highlights it in the "
+"target application."
+msgstr ""
+"क्विक सेलेक्ट प्लगइनले दुई ग्लोबल हटकीहरू प्रदान गर्दछ। <keyseq><key>Ctrl</key><key>alt</key><key>a</key></"
+"keyseq> थिच्दा अनुप्रयोग ट्री दृश्यमा अन्तिम फोकस गरिएको पहुँच योग्य विजेट चयन गर्दछ । <keyseq><key>Ctrl</"
+"key><key>अल्ट</key><key></key></keyseq> थिच्दा/ अनुप्रयोग ट्री दृश्यमा सूचक अन्तर्गत पहुँच योग्य विजेट चयन "
+"गर्दछ र यसलाई लक्षित अनुप्रयोगमा हाइलाइट गर्दछ ।"
+
+#. (itstool) path: info/title
+#: C/validator_plugin.page:4
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "३. वैधकर्ता पूर्वनिर्धारित प्लगइन"
+
+#. (itstool) path: info/desc
+#: C/validator_plugin.page:6
+msgid "Testing an application for accessibility"
+msgstr "पहुँचका लागि अनुप्रयोग परीक्षण गर्दै"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/validator_plugin.page:25 C/validator_plugin.page:32
+msgid "AT-SPI Validator Plugin"
+msgstr "एटी-एसपीआई वैधकर्ता प्लगइन"
+
+#. (itstool) path: page/p
+#: C/validator_plugin.page:26
+msgid ""
+"The AT-SPI Validator Plugin generates a report with accessibility issues related to a target "
+"application. For each error, the report includes the severity level and a brief description."
+msgstr ""
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/validator_plugin.page:33 C/validator_plugin.page:38
+msgid ""
+"The AT-SPI Validator Plugin generates useful reports for verifying the accessibility of a "
+"target application."
+msgstr ""
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37
+msgctxt "_"
+msgid "external ref='figures/validator_report.png' md5='0275b1c51e9f01c953cba87aee7b8764'"
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/validator_plugin.page:46
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "एटी-एसपीआई वैधकर्ता प्लगइन चलिरहेको छ"
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:47
+msgid ""
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree View. The validator "
+"will generate the report with respect to the selected item and all of its descendant widgets in "
+"the tree hierarchy."
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:53
+msgid ""
+"After selecting an item, choose a validation schema in the combobox and press the "
+"<cmd>Validate</cmd> button to start generating the report. If you want to cancel the execution, "
+"just press the <cmd>Validate</cmd> button again."
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:59
+msgid ""
+"The generated report is interactive. Therefore, you can double-click any error found to check "
+"which of the target application widgets is causing it. The corresponding widget will then "
+"appear selected in the <link xref=\"desktop_tree_view\"> Application Tree View</link> and "
+"highlighted in the target application."
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:64
+msgid ""
+"If you want to save the generated report in your system, just click the <cmd>Save</cmd> button. "
+"To clear the validation screen, press the <cmd>Clear</cmd> button."
+msgstr ""
+"यदि तपाईं आफ्नो प्रणालीमा उत्पन्न रिपोर्ट बचत गर्न चाहनुहुन्छ भने, बस <cmd>बचत</cmd> बटन क्लिक गर्नुहोस्। "
+"प्रमाणीकरण स्क्रिन खाली गर्न, <cmd>खाली बटन </cmd> थिच्नुहोस्।"
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:68
+msgid ""
+"To get more information about an error in the generated report, make sure the corresponding "
+"item is selected and press the <cmd>Help</cmd> button. It will open a Help Page in your default "
+"browser."
+msgstr ""
+"जेनेरेट गरिएको प्रतिवेदनमा त्रुटिको बारेमा थप जानकारी प्राप्त गर्न, सम्बन्धित वस्तु चयन गरिएको सुनिश्चित गर्नुहोस् "
+"र <cmd>मद्दत </cmd>बटन थिच्नुहोस् । यसले तपाईँको पूर्वनिर्धारित ब्राउजरमा सहायता पृष्ठ खोल्नेछ ।"
