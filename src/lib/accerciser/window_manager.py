@@ -136,6 +136,18 @@ class WindowManager:
         toplevel_x, toplevel_y, toplevel_width, toplevel_height = client_x, client_y, client_width, client_height
 
       title = window.get_name()
+
+      # strip additional trailing Left-to-Right Mark (U+200E), seen with libwnck and KWin
+      if title[-1] == '\u200e':
+        title = title[0:-1]
+
+      # KWin 5 (but not KWin 6) adds suffix to window title when there are multiple windows with the
+      # same name, e.g. first window: "Hypertext", second window: "Hypertext <2>".
+      # Remove the suffix as the accessible name retrieved from AT-SPI2 doesn't have it either
+      regex = '^.* <[0-9]+>$'
+      if re.match(regex, title):
+        title = title[0:title.rfind(' ')]
+
       # workspace can be None if window is on all workspaces, so only consider case
       # of an actually returned workspace differing from the active one as not on active workspace
       workspace = window.get_workspace()
@@ -172,15 +184,8 @@ class WindowManager:
           window.width = window.buffer_geometry.width
           window.height = window.buffer_geometry.height
 
-      # match by name, but also consider windows for which libwnck/the window manager (?)
-      # has appended a suffix to distinguish multiple windows with the same name
-      # (seen at least on KDE Plasma X11, e.g. first window: "Hypertext",
-      # second window: "Hypertext <2>") - but in the a11y tree, both have the same name
-      #
-      # also accept an additional trailing Left-to-Right Mark (U+200E)
-      # (also seen on KDE Plasma)
-      regex = '^' + re.escape(toplevel.name) + '( <[0-9]*>)?(\u200e)?$'
-      if re.match(regex, window.title):
+      # match by name
+      if toplevel.name == window.title:
         candidates.append(window)
 
     window = None
