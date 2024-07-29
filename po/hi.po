@@ -1,621 +1,739 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Hindi translation of accerciser.
+# Copyright (C) 2006, 2007 IBM Corporation
+# This file is distributed under the same license as the PACKAGE package.#
 # Rajesh Ranjan &lt;rranjan@redhat.com&gt;, 2007.
 # chandankumar <chandankumar.093047@gmail.com>, 2012.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: hi\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=accerc"
-"iser&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-27 18:01+0000\n"
-"PO-Revision-Date: 2012-04-07 14:22+0530\n"
-"Last-Translator: chandankumar <chandankumar.093047@gmail.com>\n"
+"Project-Id-Version: accerciser-3-38\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
+"POT-Creation-Date: 2023-11-27 16:07+0000\n"
+"PO-Revision-Date: 2024-06-30 22:09+0530\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Generator: Lokalize 1.2\n"
-"Language: hi\n"
+"X-Generator: Gtranslator 46.1\n"
 
-#: ../accerciser.desktop.in.in.h:1
+#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
 msgid "Accerciser"
-msgstr "एक्सेर्साइसर "
+msgstr "Accerciser"
 
-#: ../accerciser.desktop.in.in.h:2
-msgid "Give your application an accessibility workout"
-msgstr "अपने अनुप्रयोग को पहुंचनीयता व्यायाम का लाभ दें"
+#: accerciser.appdata.xml.in:7
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "गनोम डेस्कटॉप के लिए अभिगम्यता अन्वेषक"
 
-#: ../accerciser.desktop.in.in.h:3 ../src/lib/accerciser/main_window.py:42
-msgid "Accerciser Accessibility Explorer"
-msgstr "एक्सेर्साइसर पहुंचनीयता अन्वेषक"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:1
-msgid "A list of plugins that are disabled by default"
-msgstr "उन प्लग-इनों की सूची जिन्हें डिफोल्ट रूप से निष्क्रिय किया गया है"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:2
-#| msgid "A list of plugins that are disabled by default"
-msgid "A list of plugins that are disabled by default."
-msgstr "उन प्लग-इनों की सूची जिन्हें डिफोल्ट रूप से निष्क्रिय किया गया है"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:3
-msgid "Highlight duration"
-msgstr "अवधि को हाइलाइट रकें"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:4
-#| msgid "The duration of the highlight box when selecting accessible nodes"
-msgid "The duration of the highlight box when selecting accessible nodes."
-msgstr "पहुंचनीय आसंधि नोड को चुनते समय हाइलाइट बक्से की अवधि."
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:5
-msgid "Highlight fill color"
-msgstr "भराई के रंग को हाइलाइट करें"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:6
-msgid "The color and opacity of the highlight fill."
-msgstr "हाइलाइट किया गया भराई का रंग और पारदर्शिता।"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:7
-msgid "Highlight border color"
-msgstr "सीमांत (बोर्डर) के रंग को हाइलाइट करें"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:8
-msgid "The color and opacity of the highlight border."
-msgstr "हाइलाइट किए गए सीमांत का रंग और अपारदर्शिता।"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:17
-#| msgid "The default plugin layout for the bottom panel"
-msgid "The layout for the bottom panel"
-msgstr "नीचे के पैनल के लिए लेआउट"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:18
-#| msgid "The default plugin layout for the bottom panel"
-msgid "The layout for the bottom panel pluginview."
-msgstr "नीचे पैनल pluginview के लिए लेआउट."
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:19
-#| msgid "The default plugin layout for the top panel"
-msgid "The layout for the top panel"
-msgstr "ऊपरी पटल के लिए खाका"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:20
-#| msgid "The default plugin layout for the top panel"
-msgid "The layout for the top panel pluginview."
-msgstr "शीर्ष पैनल pluginview के लिए लेआउट."
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:21
-#| msgid "_Single plugins view"
-msgid "Single layout view"
-msgstr "एकल लेआउट दृश्य"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:23
-#| msgid "_Single plugins view"
-msgid "Available new pluginviews"
-msgstr "नई pluginviews उपलब्ध है"
-
-#: ../org.a11y.Accerciser.gschema.xml.in.h:26
-#| msgid "The default plugin layout for the top panel"
-msgid "The default plugin layout for the top panel."
-msgstr "ऊपरी पटल के लिए डिफोल्ट प्लग-इन खाका."
-
-#: ../plugins/api_view.py:32
-msgid "API Browser"
-msgstr "एपीआई विचरक"
-
-#: ../plugins/api_view.py:35
-msgid "Browse the various methods of the current accessible"
+#: accerciser.appdata.xml.in:9
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
 msgstr ""
-"इस समय जिसे प्राप्त किया गया हो, उसकी विभिन्न विधियों (मेथड) में विचरण करें"
+"Accerciser गनोम डेस्कटॉप के लिए एक अंतर्क्रियात्मक पायथन अभिगम्यता अन्वेषक है। यह विजेट्स "
+"का निरीक्षण और नियंत्रण करने के लिए AT-SPI का उपयोग करता है, जिससे आप यह जांच सकते हैं "
+"कि कोई अनुप्रयोग सहायक प्रौद्योगिकियों और स्वचालित परीक्षण ढांचे के लिए सही जानकारी "
+"प्रदान कर रहा है या नहीं।"
 
-#: ../plugins/api_view.py:66
+#: accerciser.appdata.xml.in:14
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser के पास एक सरल प्लगइन फ्रेमवर्क है जिसका उपयोग आप अभिगम्यता जानकारी के "
+"कस्टम दृश्य बनाने के लिए कर सकते हैं।"
+
+#: accerciser.desktop.in:4
+msgid "Give your application an accessibility workout"
+msgstr "अपने अनुप्रयोग को अभिगम्यता व्यायाम का लाभ दें"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: accerciser.desktop.in:6
+msgid "accessibility;development;test;"
+msgstr "अभिगम्यता;विकास;परीक्षण;अभिगम्यता;विकास;परीक्षण;"
+
+#: org.a11y.Accerciser.gschema.xml:6
+msgid "A list of plugins that are disabled by default"
+msgstr "तयशुदा रूप से अक्षम प्लगइन्स की एक सूची"
+
+#: org.a11y.Accerciser.gschema.xml:7
+msgid "A list of plugins that are disabled by default."
+msgstr "तयशुदा रूप से अक्षम प्लगइन्स की एक सूची।"
+
+#: org.a11y.Accerciser.gschema.xml:11
+msgid "Highlight duration"
+msgstr "अवधि चिन्हांकित करें"
+
+#: org.a11y.Accerciser.gschema.xml:12
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "सुलभ नोड्स का चयन करते समय चिन्हांकित बॉक्स की अवधि।"
+
+#: org.a11y.Accerciser.gschema.xml:16
+msgid "Highlight fill color"
+msgstr "भरण रंग को चिन्हांकित करें"
+
+#: org.a11y.Accerciser.gschema.xml:17
+msgid "The color and opacity of the highlight fill."
+msgstr "चिन्हांकित भरण का रंग और अपारदर्शिता।"
+
+#: org.a11y.Accerciser.gschema.xml:21
+msgid "Highlight border color"
+msgstr "बॉर्डर रंग को चिन्हांकित करें"
+
+#: org.a11y.Accerciser.gschema.xml:22
+msgid "The color and opacity of the highlight border."
+msgstr "चिन्हांकित बॉर्डर का रंग और अपारदर्शिता।"
+
+#: org.a11y.Accerciser.gschema.xml:26
+msgid "Horizontal split"
+msgstr "क्षैतिज विभाजन"
+
+#: org.a11y.Accerciser.gschema.xml:27
+msgid "Position of the horizontal split of the main window."
+msgstr "मुख्य खिड़की के क्षैतिज विभाजन की स्थिति।"
+
+#: org.a11y.Accerciser.gschema.xml:31
+msgid "Vertical split"
+msgstr "ऊर्ध्वाधर विभाजन"
+
+#: org.a11y.Accerciser.gschema.xml:32
+msgid "Position of the vertical split of the main window."
+msgstr "मुख्य खिड़की के ऊर्ध्वाधर विभाजन की स्थिति।"
+
+#: org.a11y.Accerciser.gschema.xml:36
+msgid "Default window height"
+msgstr "तयशुदा खिड़की ऊंचाई"
+
+#: org.a11y.Accerciser.gschema.xml:37
+msgid "The window height value."
+msgstr "खिड़की ऊंचाई मान।"
+
+#: org.a11y.Accerciser.gschema.xml:41
+msgid "Default window width"
+msgstr "तयशुदा खिड़की चौड़ाई"
+
+#: org.a11y.Accerciser.gschema.xml:42
+msgid "The window width value."
+msgstr "खिड़की चौड़ाई मान।"
+
+#: org.a11y.Accerciser.gschema.xml:51
+msgid "The layout for the bottom panel"
+msgstr "निचले पैनल के लिए अभिन्यास"
+
+#: org.a11y.Accerciser.gschema.xml:52
+msgid "The layout for the bottom panel pluginview."
+msgstr "निचले पैनल प्लगइनव्यू के लिए अभिन्यास।"
+
+#: org.a11y.Accerciser.gschema.xml:56
+msgid "The layout for the top panel"
+msgstr "शीर्ष पैनल के लिए अभिन्यास"
+
+#: org.a11y.Accerciser.gschema.xml:57
+msgid "The layout for the top panel pluginview."
+msgstr "शीर्ष पैनल प्लगइनव्यू के लिए अभिन्यास।"
+
+#: org.a11y.Accerciser.gschema.xml:61
+msgid "Single layout view"
+msgstr "एकल अभिन्यास दृश्य"
+
+#: org.a11y.Accerciser.gschema.xml:62
+msgid "View plugins in a single layout."
+msgstr "प्लगइन्स को एक ही अभिन्यास में देखें।"
+
+#: org.a11y.Accerciser.gschema.xml:66
+msgid "Available new pluginviews"
+msgstr "नए प्लगइनव्यू उपलब्ध हैं"
+
+#: org.a11y.Accerciser.gschema.xml:67
+msgid "This list contains all the new available pluginviews"
+msgstr "इस सूची में सभी नए उपलब्ध प्लगइनव्यू शामिल हैं"
+
+#: org.a11y.Accerciser.gschema.xml:73
+msgid "The pluginview layout"
+msgstr "प्लगइनव्यू अभिन्यास"
+
+#: org.a11y.Accerciser.gschema.xml:74
+msgid "The default plugin layout for the top panel."
+msgstr "शीर्ष पैनल के लिए तयशुदा प्लगइन अभिन्यास।"
+
+#: org.a11y.Accerciser.gschema.xml:78
+msgid "Window height"
+msgstr "खिड़की ऊंचाई"
+
+#: org.a11y.Accerciser.gschema.xml:79
+msgid "Window height value."
+msgstr "खिड़की ऊंचाई मान।"
+
+#: org.a11y.Accerciser.gschema.xml:83
+msgid "Window width"
+msgstr "खिड़की चौड़ाई"
+
+#: org.a11y.Accerciser.gschema.xml:84
+msgid "Window width value."
+msgstr "खिड़की चौड़ाई मान।"
+
+#: org.a11y.Accerciser.gschema.xml:90
+msgid "Hotkey combination"
+msgstr "हॉटकी संयोजन"
+
+#: org.a11y.Accerciser.gschema.xml:91
+msgid "Hotkey combination for related action."
+msgstr "संबंधित कार्रवाई के लिए हॉटकी संयोजन।"
+
+#: plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API ब्राउज़र"
+
+#: plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "वर्तमान पहुंच के विभिन्न तरीकों को ब्राउज़ करें"
+
+#: plugins/api_view.py:66
 msgid "Hide private attributes"
-msgstr "निजी गुणों को छिपाएं"
+msgstr "निजी गुण छिपाएं"
 
-#: ../plugins/api_view.py:79
+#: plugins/api_view.py:79
 msgid "Method"
 msgstr "विधि"
 
-#: ../plugins/api_view.py:88
+#: plugins/api_view.py:88
 msgid "Property"
-msgstr "गुणधर्म"
+msgstr "गुण"
 
-#: ../plugins/api_view.py:93
+#: plugins/api_view.py:93
 msgid "Value"
 msgstr "मान"
 
-#: ../plugins/console.py:32
+#: plugins/console.py:32
 msgid "IPython Console"
-msgstr "आईपाइथन कन्सोल"
+msgstr "IPython कन्सोल"
 
-#: ../plugins/console.py:35
+#: plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
-msgstr "इस समय चुने गए एक्सेसेबेल से काम लेने के लिए अंतर्क्रियात्मक कन्सोल"
+msgstr "वर्तमान में चयनित पहुंच में हेरफेर के लिए अंतर्क्रियात्मक कंसोल"
 
-#: ../plugins/event_monitor.ui.h:1
-#| msgid "Event Monitor"
-msgid "<b>Event monitor</b>"
-msgstr "<b>घटना मानिटर</b>"
+#: plugins/event_monitor.ui:61
+msgid "Event monitor"
+msgstr "घटना मॉनिटर"
 
-#: ../plugins/event_monitor.ui.h:2
+#: plugins/event_monitor.ui:114
 msgid "_Monitor Events"
-msgstr "घटनाओं को मानिटर करें (_M)"
+msgstr "घटनाओं की निगरानी करें (_M)"
 
-#: ../plugins/event_monitor.ui.h:3
+#: plugins/event_monitor.ui:224
 msgid "C_lear Selection"
-msgstr "चुनाव को हटाएं (C_)"
+msgstr "चयन साफ करें (_l)"
 
-#: ../plugins/event_monitor.ui.h:4
+#: plugins/event_monitor.ui:257
 msgid "Everything"
-msgstr "सभी"
+msgstr "सबकुछ"
 
-#: ../plugins/event_monitor.ui.h:5
+#: plugins/event_monitor.ui:273
 msgid "Selected application"
-msgstr "चुने गए अनुप्रयोग"
+msgstr "चयनित अनुप्रयोग"
 
-#: ../plugins/event_monitor.ui.h:6
+#: plugins/event_monitor.ui:289
 msgid "Selected accessible"
-msgstr "चुने गए एक्सेसेबेल"
+msgstr "सुलभ चयनित"
 
-#: ../plugins/event_monitor.ui.h:7
+#: plugins/event_monitor.ui:310
 msgid "Source"
 msgstr "स्रोत"
 
-#: ../plugins/event_monitor.py:51
+#. add accessible's name to buffer
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
+#: plugins/interface_view.py:736 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
+#: src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "नाम"
+
+#: plugins/event_monitor.ui:358
+msgid "Full Name"
+msgstr "पूरा नाम"
+
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "घटना मानिटर"
 
-#: ../plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
-msgstr ""
-"चुने गए प्रकारों और स्रोतों से घटनाएं जैसे-जैसे घटित होती हैं, उन्हें दर्शाता "
-"है"
+msgstr "घटनाओं को वैसे ही दिखाता है जैसे वे चयनित प्रकारों और स्रोतों से घटित होती हैं"
 
-#: ../plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
-msgstr "अंतिम प्रविष्ट घटना को हाइलाइट करो"
+msgstr "अंतिम घटना प्रविष्टि को चिन्हांकित करें"
 
-#: ../plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
-msgstr "घटना रेकोर्डिंग शुरू करो/रोको"
+msgstr "घटना रिकॉर्डिंग प्रारंभ/बंद करें"
 
-#: ../plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
-msgstr "घटना रोजनामचा मिटाओ"
+msgstr "घटना लॉग साफ करें"
 
-#: ../plugins/interface_view.ui.h:1
-msgid "<b>Child count</b>"
-msgstr "<b>बाल गणना</b>"
+#: plugins/interface_view.ui:125
+msgid "Child count"
+msgstr "बाल गणना"
 
-#: ../plugins/interface_view.ui.h:2
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
+#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
+#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
+#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
 msgid "0"
 msgstr "0"
 
-#: ../plugins/interface_view.ui.h:3 ../plugins/interface_view.py:338
-#: ../plugins/interface_view.py:836
-#| msgid "No description"
-msgid "<i>(no description)</i>"
-msgstr "<i>(कोई विवरण नहीं)</i>"
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
+#: plugins/interface_view.py:344 plugins/interface_view.py:864
+msgid "(no description)"
+msgstr "(कोई विवरण नहीं)"
 
-#: ../plugins/interface_view.ui.h:4
-#| msgid "Description"
-msgid "<b>Description</b>"
-msgstr "<b>वर्णन</b>"
+#. add description to buffer
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
+msgid "Description"
+msgstr "विवरण"
 
-#: ../plugins/interface_view.ui.h:5
-msgid "<b>States</b>"
-msgstr "<b>राज्य</b>"
+#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+msgid "(no ID)"
+msgstr "(कोई ID नहीं)"
 
-#: ../plugins/interface_view.ui.h:6
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+msgid "ID"
+msgstr "ID"
+
+#: plugins/interface_view.ui:325
+msgid "States"
+msgstr "अवस्था"
+
+#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
+#: plugins/interface_view.ui:2739
+msgid "Attributes"
+msgstr "गुण"
+
+#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
 msgid "Show"
 msgstr "दिखाएं"
 
-#: ../plugins/interface_view.ui.h:7
-msgid "<b>Relations</b>"
-msgstr "<b>संबंध</b>"
+#: plugins/interface_view.ui:551
+msgid "Relations"
+msgstr "संबंध"
 
-#: ../plugins/interface_view.ui.h:8
-msgid "<b>Attributes</b>"
-msgstr "<b>गुणधर्म</b>"
-
-#: ../plugins/interface_view.ui.h:9
+#: plugins/interface_view.ui:572
 msgid "_Accessible"
-msgstr "पहुंचनीय"
+msgstr "सुलभ (_A)"
 
-#: ../plugins/interface_view.ui.h:10
+#: plugins/interface_view.ui:637
+msgid "Key binding"
+msgstr "कुंजी बंधन"
+
+#: plugins/interface_view.ui:691
 msgid "Perform action"
-msgstr "कार्रवाई संपन्न करें"
+msgstr "कार्रवाई करें"
 
-#: ../plugins/interface_view.ui.h:11
+#: plugins/interface_view.ui:724
 msgid "Acti_on"
 msgstr "कार्रवाई (_o)"
 
-#: ../plugins/interface_view.ui.h:12
-msgid "ID"
-msgstr "आईडी"
-
-#: ../plugins/interface_view.ui.h:13
+#: plugins/interface_view.ui:772
 msgid "Toolkit"
-msgstr "औजार बक्सा"
+msgstr "टूलकिट"
 
-#: ../plugins/interface_view.ui.h:14
+#: plugins/interface_view.ui:789
 msgid "Version"
 msgstr "संस्करण"
 
-#: ../plugins/interface_view.ui.h:15
+#: plugins/interface_view.ui:865
 msgid "Ap_plication"
-msgstr "अनुप्रयोग"
+msgstr "अनुप्रयोग (_p)"
 
-#: ../plugins/interface_view.ui.h:16
+#: plugins/interface_view.ui:884
 msgid "Col_lection"
-msgstr "संग्रह"
+msgstr "संग्रह (_l)"
 
-#. Component                                 size
-#: ../plugins/interface_view.ui.h:18
+#. Screen coordinates
+#. Component size in pixels
+#. Screen coordinates
+#. Component size
+#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
+#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
+#: plugins/interface_view.ui:1525
 msgid "0, 0"
 msgstr "0,0"
 
-#: ../plugins/interface_view.ui.h:19
+#: plugins/interface_view.ui:937
 msgid "Relative position"
-msgstr "सापेक्ष स्थिति"
+msgstr "तुलनात्मक स्थिति"
 
-#: ../plugins/interface_view.ui.h:20
+#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
 msgid "Size"
 msgstr "आकार"
 
-#: ../plugins/interface_view.ui.h:21
+#: plugins/interface_view.ui:991
 msgid "WIDGET"
-msgstr "विडजेट"
+msgstr "विजेट"
 
-#: ../plugins/interface_view.ui.h:22
+#: plugins/interface_view.ui:1011
 msgid "Layer"
-msgstr "स्तर"
+msgstr "परत"
 
-#: ../plugins/interface_view.ui.h:23
+#: plugins/interface_view.ui:1048
 msgid "MDI-Z-order"
-msgstr "एमडीआई-जेड-क्रम"
+msgstr "MDI-Z-क्रम"
 
-#: ../plugins/interface_view.ui.h:24
+#: plugins/interface_view.ui:1085
 msgid "Alpha"
 msgstr "अल्फा"
 
-#: ../plugins/interface_view.ui.h:25
+#: plugins/interface_view.ui:1120
 msgid "Absolute position"
 msgstr "निरपेक्ष स्थिति"
 
-#: ../plugins/interface_view.ui.h:26
+#: plugins/interface_view.ui:1139
 msgid "Co_mponent"
-msgstr "घटक"
+msgstr "अवयव (_m)"
 
-#: ../plugins/interface_view.ui.h:27
+#: plugins/interface_view.ui:1158
 msgid "Des_ktop"
-msgstr "डेस्कटोप"
+msgstr "डेस्कटॉप (_k)"
 
-#: ../plugins/interface_view.ui.h:28
+#: plugins/interface_view.ui:1264
 msgid "Locale:"
 msgstr "स्थान-विशिष्ट:"
 
-#: ../plugins/interface_view.ui.h:29
+#: plugins/interface_view.ui:1305
 msgid "_Document"
-msgstr "प्रलेख"
+msgstr "दस्तावेज़ (_D)"
 
 #. add url role to buffer
-#: ../plugins/interface_view.ui.h:30 ../plugins/validate.py:286
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
 msgid "Hyperlink"
-msgstr "हाइपरकड़ी"
+msgstr "हाइपरलिंक"
 
-#: ../plugins/interface_view.ui.h:31
+#: plugins/interface_view.ui:1438
 msgid "H_ypertext"
-msgstr "हाइपरपाठ"
+msgstr "हाइपरपाठ (_y)"
 
-#: ../plugins/interface_view.ui.h:32
+#: plugins/interface_view.ui:1471
 msgid "Position"
 msgstr "स्थिति"
 
-#. add description to buffer
-#: ../plugins/interface_view.ui.h:33 ../plugins/validate.py:217
-#: ../plugins/validate.py:280
-msgid "Description"
-msgstr "वर्णन"
-
-#: ../plugins/interface_view.ui.h:34
+#: plugins/interface_view.ui:1560
 msgid "Locale"
 msgstr "स्थान-विशिष्ट"
 
-#: ../plugins/interface_view.ui.h:35
+#: plugins/interface_view.ui:1622
 msgid "_Image"
 msgstr "छवि (_I)"
 
-#: ../plugins/interface_view.ui.h:36
+#: plugins/interface_view.ui:1641
 msgid "Lo_gin Helper"
-msgstr "प्रवेश सहायक"
+msgstr "लॉगिन हेल्पर (_g)"
 
-#: ../plugins/interface_view.ui.h:37
+#: plugins/interface_view.ui:1712
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: ../plugins/interface_view.ui.h:38
+#: plugins/interface_view.ui:1754
 msgid "_Selection"
 msgstr "चयन (_S)"
 
-#: ../plugins/interface_view.ui.h:39
+#: plugins/interface_view.ui:1792
+msgid "Content type"
+msgstr "सामग्री प्रकार"
+
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+msgid "URI"
+msgstr "URI"
+
+#: plugins/interface_view.ui:1822
 msgid "St_reamable Content"
-msgstr "प्रवाहित करनेयोग्य विषयवस्तु"
+msgstr "स्ट्रीमयोग्य सामग्री (_r)"
 
-#: ../plugins/interface_view.ui.h:40
-msgid "<i>Caption:</i>"
-msgstr "<i>शीर्षक:</i>"
+#: plugins/interface_view.ui:1863
+msgid "Caption:"
+msgstr "कैप्शन:"
 
-#: ../plugins/interface_view.ui.h:41
-msgid "<i>Summary:</i>"
-msgstr "<i>सारांश:</i>"
+#: plugins/interface_view.ui:1908
+msgid "Summary:"
+msgstr "सारांश:"
 
-#: ../plugins/interface_view.ui.h:42
+#: plugins/interface_view.ui:2052
 msgid "Selected columns"
-msgstr "चुने गए स्तंभ"
+msgstr "चयनित कॉलम"
 
-#: ../plugins/interface_view.ui.h:43
+#: plugins/interface_view.ui:2068
 msgid "Selected rows"
-msgstr "चुनी गई पंक्तियां"
+msgstr "चयनित पंक्तियां"
 
-#: ../plugins/interface_view.ui.h:44
+#: plugins/interface_view.ui:2084
 msgid "Columns"
-msgstr "स्तंभ"
+msgstr "कॉलम"
 
-#: ../plugins/interface_view.ui.h:45
+#: plugins/interface_view.ui:2100
 msgid "Rows"
 msgstr "पंक्तियां"
 
-#: ../plugins/interface_view.ui.h:46
-#| msgid "&lt;b&gt;Table Information&lt;/b&gt;"
-msgid "<b>Table Information</b>"
-msgstr "<b>सारणी सूचना</b>"
+#: plugins/interface_view.ui:2125
+msgid "Table Information"
+msgstr "तालिका सूचना"
 
-#: ../plugins/interface_view.ui.h:47
+#: plugins/interface_view.ui:2171
 msgid "name (x,y)"
 msgstr "नाम (x,y)"
 
-#: ../plugins/interface_view.ui.h:48
+#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
 msgid "Header:"
-msgstr "शीर्षक:"
+msgstr "शीर्षलेख:"
 
-#: ../plugins/interface_view.ui.h:49
-#| msgid "No description"
+#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
 msgid "<no description>"
 msgstr "<no description>"
 
+#. How many rows the cell spans.
 #. How many columns the cell spans.
-#: ../plugins/interface_view.ui.h:51
+#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
 msgid "Extents:"
 msgstr "विस्तार:"
 
-#: ../plugins/interface_view.ui.h:52
+#: plugins/interface_view.ui:2311
 msgid "Row"
 msgstr "पंक्ति"
 
-#: ../plugins/interface_view.ui.h:53
+#: plugins/interface_view.ui:2430
 msgid "Column"
-msgstr "स्तंभ"
+msgstr "कॉलम"
 
-#: ../plugins/interface_view.ui.h:54
-#| msgid "&lt;b&gt;Selected Cell&lt;/b&gt;"
-msgid "<b>Selected Cell</b>"
-msgstr "<b>चुनी गई कोशिका</b>"
+#: plugins/interface_view.ui:2448
+msgid "Selected Cell"
+msgstr "चयनित कक्ष"
 
-#: ../plugins/interface_view.ui.h:55
+#: plugins/interface_view.ui:2472
 msgid "_Table"
-msgstr "सारणी (_T)"
+msgstr "तालिका (_T)"
 
-#: ../plugins/interface_view.ui.h:56
-msgid "<b>Text</b>"
-msgstr "<b>पाठ</b>"
+#: plugins/interface_view.ui:2533
+msgid "Text"
+msgstr "पाठ"
 
-#: ../plugins/interface_view.ui.h:57
+#: plugins/interface_view.ui:2571
 msgid "Offset"
 msgstr "ओफसेट"
 
-#: ../plugins/interface_view.ui.h:58
+#: plugins/interface_view.ui:2609
 msgid "Include defaults"
-msgstr "डिफोल्टों को शामिल करें"
+msgstr "तयशुदा शामिल करें"
 
 #. Start character offset of text attributes span
-#: ../plugins/interface_view.ui.h:60
-msgid "<i>Start: 0</i>"
-msgstr "<i>प्रारंभ: 0</i>"
+#: plugins/interface_view.ui:2631
+msgid "Start: 0"
+msgstr "प्रारंभ: 0"
 
-#. End chaacter                                                 offset of text attributes span
-#: ../plugins/interface_view.ui.h:62
-msgid "<i>End: 0</i>"
-msgstr "<i>अंत: 0</i>"
+#. End character offset of text attributes span
+#: plugins/interface_view.ui:2649
+msgid "End: 0"
+msgstr "अंत: 0"
 
-#: ../plugins/interface_view.ui.h:63
+#: plugins/interface_view.ui:2763
 msgid "Te_xt"
 msgstr "पाठ (_x)"
 
-#: ../plugins/interface_view.ui.h:64
+#: plugins/interface_view.ui:2818
 msgid "Current value"
-msgstr "मौजूदा मान"
+msgstr "वर्तमान मान"
 
-#: ../plugins/interface_view.ui.h:65
+#: plugins/interface_view.ui:2886
 msgid "Minimum increment"
 msgstr "न्यूनतम वृद्धि"
 
-#: ../plugins/interface_view.ui.h:66
+#: plugins/interface_view.ui:2901
 msgid "Maximum value"
 msgstr "अधिकतम मान"
 
-#: ../plugins/interface_view.ui.h:67
+#: plugins/interface_view.ui:2916
 msgid "Minimum value"
 msgstr "न्यूनतम मान"
 
-#: ../plugins/interface_view.ui.h:68
+#: plugins/interface_view.ui:2942
 msgid "Val_ue"
-msgstr "मान"
+msgstr "मान (_u)"
 
-#: ../plugins/interface_view.ui.h:69
-msgid "<b>unknown</b>"
-msgstr "<b>अज्ञात</b>"
+#: plugins/interface_view.ui:2961
+msgid "unknown"
+msgstr "अज्ञात"
 
 #. Translators: this is a plugin name
-#: ../plugins/interface_view.py:42
+#: plugins/interface_view.py:44
 msgid "Interface Viewer"
 msgstr "अंतराफलक दर्शक"
 
 #. Translators: this is a plugin description
-#: ../plugins/interface_view.py:45
+#: plugins/interface_view.py:47
 msgid "Allows viewing of various interface properties"
 msgstr "अंतराफलक के विभिन्न गुणों को देखने देता है"
 
-#: ../plugins/interface_view.py:233 ../plugins/interface_view.py:235
-#: ../plugins/interface_view.py:236
+#: plugins/interface_view.py:237
 msgid "(not implemented)"
 msgstr "(क्रियान्वित नहीं हुआ है)"
 
-#. add accessible's name to buffer
-#: ../plugins/interface_view.py:708 ../plugins/validate.py:282
-#: ../src/lib/accerciser/accessible_treeview.py:502
-#: ../src/lib/accerciser/plugin/plugin_manager.py:385
-msgid "Name"
-msgstr "नाम"
-
-#: ../plugins/interface_view.py:716
-msgid "URI"
-msgstr "यूआरआई"
-
-#: ../plugins/interface_view.py:724
+#: plugins/interface_view.py:752
 msgid "Start"
 msgstr "प्रारंभ"
 
-#: ../plugins/interface_view.py:732
+#: plugins/interface_view.py:760
 msgid "End"
 msgstr "अंत"
 
-#: ../plugins/interface_view.py:894
+#: plugins/interface_view.py:922
 msgid "Too many selectable children"
-msgstr "बहुत अधिक चयनीय शिशु हैं"
+msgstr "चयन योग्य बहुत सारे बच्चे"
 
-#: ../plugins/interface_view.py:1239 ../plugins/interface_view.py:1242
-msgid "<i>(Editable)</i>"
-msgstr "<i>(संशोधनीय)</i>"
+#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
+msgid "(Editable)"
+msgstr "(संपादन योग्य)"
 
-#: ../plugins/quick_select.py:16
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: plugins/interface_view.py:1425
+#, python-format
+msgid "Start: %d"
+msgstr "प्रारंभ: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: plugins/interface_view.py:1431
+#, python-format
+msgid "End: %d"
+msgstr "अंतः %d"
+
+#: plugins/quick_select.py:16
 msgid "Quick Select"
-msgstr "तेज चुनाव"
+msgstr "शीघ्र चयन"
 
-#: ../plugins/quick_select.py:19
+#: plugins/quick_select.py:19
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr "प्लग-इन जिसमें हैं एक्सेसेबेलों को तेजी से चुनने के लिए कई विधियां"
+msgstr "त्वरित रूप से सुलभ वस्तुओं का चयन करने के विभिन्न तरीकों के साथ प्लगइन।"
 
-#: ../plugins/quick_select.py:25
+#: plugins/quick_select.py:25
 msgid "Inspect last focused accessible"
-msgstr "अंतिम बार फोकस किए गए एक्सेसेबल को जांचें"
+msgstr "अंतिम केंद्रित पहुंच का निरीक्षण करें"
 
-#: ../plugins/quick_select.py:29
+#: plugins/quick_select.py:29
 msgid "Inspect accessible under mouse"
-msgstr "माउस के अधीन जो एक्सेसेबल है, उसे जांचें"
+msgstr "माउस के नीचे पहुंच का निरीक्षण करें"
 
-#: ../plugins/validate.ui.h:1
+#: plugins/validate.ui:38
 msgid "Sche_ma:"
-msgstr "स्कीमा:"
+msgstr "स्कीमा (_m):"
 
-#: ../plugins/validate.ui.h:2
+#: plugins/validate.ui:89
 msgid "V_alidate"
-msgstr "सत्यापन"
+msgstr "सत्यापन (_a)"
 
-#: ../plugins/validate.ui.h:3 ../plugins/validate.py:363
-#: ../plugins/validate.py:415
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
 msgid "Idle"
 msgstr "खाली"
 
-#: ../plugins/validate.py:67
+#: plugins/validate.py:80
 msgid "No description"
 msgstr "कोई विवरण नहीं"
 
-#: ../plugins/validate.py:155
+#: plugins/validate.py:167
 msgid "AT-SPI Validator"
-msgstr "एटी-एसपीआई सत्यापक"
+msgstr "AT-SPI सत्यापक"
 
-#: ../plugins/validate.py:157
+#: plugins/validate.py:169
 msgid "Validates application accessibility"
-msgstr "अनुप्रयोग की पहुंचनीयता का सत्यापन करता है"
+msgstr "अनुप्रयोग अभिगम्यता का सत्यापन करता है"
 
 #. log level column
 #. add level to buffer
-#: ../plugins/validate.py:210 ../plugins/validate.py:278
+#: plugins/validate.py:223 plugins/validate.py:291
 msgid "Level"
 msgstr "स्तर"
 
 #. add accessible's role to buffer
-#: ../plugins/validate.py:284 ../src/lib/accerciser/accessible_treeview.py:512
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
 msgid "Role"
 msgstr "भूमिका"
 
-#: ../plugins/validate.py:349
+#: plugins/validate.py:362
 msgid "Saving"
 msgstr "सहेज रहे हैं"
 
-#: ../plugins/validate.py:397
+#: plugins/validate.py:413
 msgid "Validating"
-msgstr "पुष्टि कर रहे हैं"
+msgstr "सत्यापित किया जा रहा"
 
-#: ../plugins/validate.py:553
+#: plugins/validate.py:571
 msgid "EXCEPT"
 msgstr "अपवाद"
 
-#: ../plugins/validate.py:560
+#: plugins/validate.py:578
 msgid "ERROR"
 msgstr "त्रुटि"
 
-#: ../plugins/validate.py:568
+#: plugins/validate.py:586
 msgid "WARN"
 msgstr "चेतावनी"
 
-#: ../plugins/validate.py:575
+#: plugins/validate.py:593
 msgid "INFO"
 msgstr "सूचना"
 
-#: ../plugins/validate.py:582
+#: plugins/validate.py:600
 msgid "DEBUG"
-msgstr "दोषमुक्त करें"
+msgstr "डीबग"
 
-#: ../plugindata/validate/basic.py:8
+#: plugindata/validate/basic.py:8
 msgid "Basic"
 msgstr "मूल"
 
-#: ../plugindata/validate/basic.py:9
+#: plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr "मूलभूत जीयूआई अनुप्रयोग पहुंचनीयता का परीक्षण करता है"
+msgstr "मूलभूत GUI अनुप्रयोग अभिगम्यता का परीक्षण करता है"
 
-#: ../plugindata/validate/basic.py:28
+#: plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr "%s जिस पर कार्रवाई हो सकती है, वह न तो फोकस करने योग्य है न ही चयनीय"
+msgstr "कार्रवाईयोग्य %s फोकसयोग्य या चयनयोग्य नहीं है"
 
-#: ../plugindata/validate/basic.py:46
+#: plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
 msgstr "अंतर्क्रियात्मक %s कार्रवाई करने योग्य नहीं है"
 
-#: ../plugindata/validate/basic.py:61
+#: plugindata/validate/basic.py:61
 msgid "more than one focused widget"
-msgstr "एक से अधिक विडजेट फोकस में है"
+msgstr "एक से अधिक केंद्रित विजेट"
 
-#: ../plugindata/validate/basic.py:87
+#: plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
-msgstr "%s का कोई पाठ अंतराफलक नहीं है"
+msgstr "%s में कोई पाठ इंटरफ़ेस नहीं है"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
 #.
-#: ../plugindata/validate/basic.py:107
+#: plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
 msgstr "अभिभावक में %s सूची शिशु सूची सेमेल नहीं खाती"
 
-#: ../plugindata/validate/basic.py:153
+#: plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
 msgstr "%s संबंध के लिए अन्योन्य गायब है"
@@ -623,14 +741,13 @@ msgstr "%s संबंध के लिए अन्योन्य गाय�
 #. Translators: The first variable is the role name of the object that is missing
 #. the name or label.
 #.
-#: ../plugindata/validate/basic.py:202
+#: plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
 msgstr "%s गायब नाम या सूचक"
 
-#: ../plugindata/validate/basic.py:220
+#: plugindata/validate/basic.py:217
 #, python-format
-#| msgid "focusable %s has table interface, no selection interface"
 msgid "focusable %s has a table interface, but not a selection interface"
 msgstr "फोकस योग्य %s में सारणी अंतराफलक है, लेकिन कोई चयनीय अंतराफलक नहीं है"
 
@@ -638,7 +755,7 @@ msgstr "फोकस योग्य %s में सारणी अंतर�
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
 #.
-#: ../plugindata/validate/basic.py:249
+#: plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
 msgstr "%s में %s स्थिति है, पर उसके साथ %s स्थिति नहीं है"
@@ -646,7 +763,7 @@ msgstr "%s में %s स्थिति है, पर उसके साथ
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
 #.
-#: ../plugindata/validate/basic.py:275
+#: plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
 msgstr "%s किसी समुच्चय का सदस्य नहीं है"
@@ -656,7 +773,7 @@ msgstr "%s किसी समुच्चय का सदस्य नही�
 #. The first variable is the role name of the object, the second is the
 #. given index.
 #.
-#: ../plugindata/validate/basic.py:310
+#: plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
 msgstr "%(rolename)s सूची %(num)d पंक्ति और स्तंभ से मेल नहीं खाते"
@@ -667,362 +784,260 @@ msgstr "%(rolename)s सूची %(num)d पंक्ति और स्तं
 #. The first variable is the object's role name, the second and third variables
 #. are index numbers.
 #.
-#: ../plugindata/validate/basic.py:342
+#: plugindata/validate/basic.py:339
 #, python-format
 msgid ""
-"%(rolename)s parent index %(num1)d does not match row and column index %"
-"(num2)d"
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
 msgstr ""
-"%(rolename)s अभिभावक सूची %(num1)d पंक्ति और स्तंभ सूची %(num2)d से मेल नहीं "
-"खाते"
+"%(rolename)s अभिभावक सूची %(num1)d पंक्ति और स्तंभ सूची %(num2)d से मेल नहीं खाते"
 
-#: ../plugindata/validate/basic.py:369
+#: plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s का कोई नाम या विवरण नहीं"
 
-#: ../src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:80
 msgid "_Preferences…"
-msgstr "पसंद (_P)…"
+msgstr "प्राथमिकताएं (_P)…"
 
-#: ../src/lib/accerciser/accerciser.py:84
+#: src/lib/accerciser/accerciser.py:82
 msgid "_Contents"
 msgstr "विषय सूची (_C)"
 
-#: ../src/lib/accerciser/accerciser.py:125
-msgid ""
-"Accerciser could not see the applications on your desktop.  You must enable "
-"desktop accessibility to fix this problem.  Do you want to enable it now?"
-msgstr ""
-"एक्सेरसाइसर आपके डेस्कटोप में मौजूद अनुप्रयोग नहीं देख पाया। इस समस्या के "
-"समाधान के लिए "
-"आपको डेस्कटोप पहुंचनीयता को सक्रिय करना होगा। क्या आप इसे सक्रिय करना चाहते "
-"हैं?"
-
-#: ../src/lib/accerciser/accerciser.py:142
-msgid "Note: Changes only take effect after logout."
-msgstr "टिप्पणी: परिवर्तन सत्रांत (लोगआउट) के बाद ही प्रभाव में आएंगे।"
-
-#: ../src/lib/accerciser/accessible_treeview.py:458
+#: src/lib/accerciser/accessible_treeview.py:415
 msgid "<dead>"
 msgstr "<dead>"
 
-#: ../src/lib/accerciser/accessible_treeview.py:519
+#: src/lib/accerciser/accessible_treeview.py:478
 msgid "Children"
-msgstr "शिशु"
+msgstr "उप"
 
-#: ../src/lib/accerciser/accessible_treeview.py:548
-msgid "_Hide/Show Applications without children"
-msgstr "बच्चों के बिना अनुप्रयोग छिपाएँ/दिखाएँ (_H)"
+#: src/lib/accerciser/accessible_treeview.py:506
+msgid "_Show Applications without children"
+msgstr "बच्चों के बिना अनुप्रयोग दिखाएं (_S)"
 
-#: ../src/lib/accerciser/accessible_treeview.py:551
+#: src/lib/accerciser/accessible_treeview.py:509
 msgid "_Refresh Registry"
 msgstr "पंजी ताजा करें (_R)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:554
+#: src/lib/accerciser/accessible_treeview.py:512
 msgid "Refresh all"
-msgstr "सभी को ताजा करें"
+msgstr "सभी ताज़ा करें"
 
-#. Translators: Refresh current tree node’s children.
+#. Translators: Refresh current tree node's children.
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:557
+#: src/lib/accerciser/accessible_treeview.py:515
 msgid "Refresh _Node"
-msgstr "आसंधि (नोड) को ताजा करें (_N)"
+msgstr "नोड ताजा करें (_N)"
 
 #. Translators: Appears as tooltip
 #.
-#: ../src/lib/accerciser/accessible_treeview.py:560
+#: src/lib/accerciser/accessible_treeview.py:518
 msgid "Refresh selected node’s children"
-msgstr "चुनी गई आसंधियों (नोड) के शिशुओं को ताजा करें"
+msgstr "चयनित नोड के उप को ताज़ा करें"
 
-#: ../src/lib/accerciser/hotkey_manager.py:247
+#: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
-msgstr "घटक"
+msgstr "अवयव"
 
-#: ../src/lib/accerciser/hotkey_manager.py:254
+#: src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
 msgstr "कार्य"
 
-#: ../src/lib/accerciser/hotkey_manager.py:261
+#: src/lib/accerciser/hotkey_manager.py:261
 msgid "Key"
 msgstr "कुंजी"
 
-#: ../src/lib/accerciser/hotkey_manager.py:271
+#: src/lib/accerciser/hotkey_manager.py:271
 msgid "Alt"
-msgstr "आल्ट"
+msgstr "Alt"
 
-#: ../src/lib/accerciser/hotkey_manager.py:278
+#: src/lib/accerciser/hotkey_manager.py:278
 msgid "Ctrl"
-msgstr "कंट्रोल"
+msgstr "Ctrl"
 
-#: ../src/lib/accerciser/hotkey_manager.py:286
+#: src/lib/accerciser/hotkey_manager.py:286
 msgid "Shift"
-msgstr "शिफ्ट"
+msgstr "Shift"
 
-#: ../src/lib/accerciser/main_window.py:76
+#: src/lib/accerciser/main_window.py:43
+msgid "Accerciser Accessibility Explorer"
+msgstr "एक्सेर्साइसर अभिगम्यता अन्वेषक"
+
+#: src/lib/accerciser/main_window.py:77
 msgid "Top panel"
-msgstr "ऊपरी पटल"
+msgstr "शीर्ष फलक"
 
-#: ../src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:78
 msgid "Bottom panel"
-msgstr "निचला पटल"
+msgstr "निचला फलक"
 
-#: ../src/lib/accerciser/prefs_dialog.py:38
+#: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr "एक्सेर्साइसर पसंद"
+msgstr "Accerciser प्राथमिकताएं"
 
-#: ../src/lib/accerciser/prefs_dialog.py:45
+#: src/lib/accerciser/prefs_dialog.py:45
 msgid "Plugins"
 msgstr "प्लगइन्स"
 
-#: ../src/lib/accerciser/prefs_dialog.py:46
+#: src/lib/accerciser/prefs_dialog.py:46
 msgid "Global Hotkeys"
-msgstr "सार्वत्रिक फटाफट कुंजियां"
+msgstr "वैश्विक हॉटकी"
 
-#: ../src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:55
 msgid "Highlighting"
-msgstr "हाइलाइटन"
+msgstr "चिन्हांकन"
 
-#: ../src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:87
 msgid "Highlight duration:"
-msgstr "हाइलाइट अवधि:"
+msgstr "चिन्हांकित अवधि:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:94
 msgid "Border color:"
 msgstr "सीमांत रंग:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:97
 msgid "The border color of the highlight box"
-msgstr "हाइलाइट बक्से का सीमांत रंग"
+msgstr "चिन्हांकित बक्से का सीमांत रंग"
 
-#: ../src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:98
 msgid "Fill color:"
 msgstr "भराई का रंग:"
 
-#: ../src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:101
 msgid "The fill color of the highlight box"
-msgstr "हाइलाइट बक्से का भराई रंग"
+msgstr "चिन्हांकित बॉक्स का भरण रंग"
 
-#: ../src/lib/accerciser/about_dialog.py:52
+#: src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
 "रविशंकर श्रीवास्तव (raviratlami@yahoo.com)\n"
 "राजेश रंजन (rajeshkajha@yahoo.com)\n"
-" ल. बालसुब्रमण्यम (l.balasubramaniam@gmail.com)"
+"ल. बालसुब्रमण्यम (l.balasubramaniam@gmail.com)\n"
+"Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024"
 
-#: ../src/lib/accerciser/about_dialog.py:53
+#: src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
 msgstr "एक अंतर्क्रियात्मक पाइथन पहुंचनीयता अन्वेषक"
 
-#: ../src/lib/accerciser/about_dialog.py:54
-#| msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+#: src/lib/accerciser/about_dialog.py:54
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr "एक्सेर्साइसर सर्वाधिकार © 2006, 2007 आईबीएम निगम (बीएसडी)"
+msgstr "Accerciser कॉपीराइट © 2006, 2007 IBM कॉर्पोरेशन (BSD)"
 
-#: ../src/lib/accerciser/about_dialog.py:56
-msgid "The New BSD License See the COPYING and NOTICE files for details."
-msgstr "नया बीएसडी लाइसेन्स विवरण के लिए देखिए प्रतिलिपीकरण और सूचना फाइलें"
+#: src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License. See the COPYING and NOTICE files for details."
+msgstr "नया BSD लाइसेंस। विवरण के लिए प्रतिलिपि और नोटिस फ़ाइलें देखें।"
 
-#: ../src/lib/accerciser/about_dialog.py:58
+#: src/lib/accerciser/about_dialog.py:58
 msgid "Web site"
-msgstr "जाल स्थल"
+msgstr "वेबसाइट"
 
-#: ../src/lib/accerciser/bookmarks.py:64
+#: src/lib/accerciser/bookmarks.py:66
 msgid "_Add Bookmark…"
-msgstr "पसंद जोड़ें… (_A)"
+msgstr "बुकमार्क जोड़ें (_A)…"
 
-#: ../src/lib/accerciser/bookmarks.py:65
+#: src/lib/accerciser/bookmarks.py:67
 msgid "Bookmark selected accessible."
-msgstr "चुने गए एक्सेसेबलों को पुस्तक-चिह्नित करें"
+msgstr "बुकमार्क चयनित सुलभ।"
 
-#: ../src/lib/accerciser/bookmarks.py:67
+#: src/lib/accerciser/bookmarks.py:69
 msgid "_Edit Bookmarks…"
-msgstr "पुस्तक चिह्न संपादित करें (_E)…"
+msgstr "बुकमार्क संपादन (_E)…"
 
-#: ../src/lib/accerciser/bookmarks.py:68
+#: src/lib/accerciser/bookmarks.py:70
 msgid "Manage bookmarks."
-msgstr "पुस्तक-चिह्नों को प्रबंधित करें।"
+msgstr "बुकमार्क प्रबंधित करें।"
 
-#: ../src/lib/accerciser/bookmarks.py:327
+#: src/lib/accerciser/bookmarks.py:328
 msgid "Edit Bookmarks…"
-msgstr "पुस्तक चिह्नों को संपादित करें…"
+msgstr "बुकमार्क संपादन…"
 
-#: ../src/lib/accerciser/bookmarks.py:432
+#: src/lib/accerciser/bookmarks.py:434
 msgid "Title"
 msgstr "शीर्षक"
 
-#: ../src/lib/accerciser/bookmarks.py:440
+#: src/lib/accerciser/bookmarks.py:442
 msgid "Application"
 msgstr "अनुप्रयोग"
 
-#: ../src/lib/accerciser/bookmarks.py:448
+#: src/lib/accerciser/bookmarks.py:450
 msgid "Path"
 msgstr "पथ"
 
-#: ../src/lib/accerciser/bookmarks.py:517
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Add Bookmark…"
-msgstr "पुस्तक-चिह्न जोड़ें…"
+msgstr "बुकमार्क जोड़ें…"
 
-#: ../src/lib/accerciser/bookmarks.py:531
+#: src/lib/accerciser/bookmarks.py:533
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: ../src/lib/accerciser/bookmarks.py:534
+#: src/lib/accerciser/bookmarks.py:536
 msgid "Application:"
 msgstr "अनुप्रयोग:"
 
-#: ../src/lib/accerciser/bookmarks.py:537
+#: src/lib/accerciser/bookmarks.py:539
 msgid "Path:"
-msgstr "पथः"
+msgstr "पथ:"
 
-#: ../src/lib/accerciser/plugin/message.py:153
+#: src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
 msgstr "प्लग-इन त्रुटियां"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: ../src/lib/accerciser/plugin/plugin_manager.py:394
-#| msgid "View"
+#: src/lib/accerciser/plugin/plugin_manager.py:395
 msgctxt "viewport"
 msgid "View"
 msgstr "दृश्य"
 
-#: ../src/lib/accerciser/plugin/plugin_manager.py:471
+#: src/lib/accerciser/plugin/plugin_manager.py:472
 msgid "No view"
 msgstr "कोई दृश्य नहीं है"
 
-#: ../src/lib/accerciser/plugin/view.py:378
+#: src/lib/accerciser/plugin/view.py:377
 msgid "_Single plugins view"
-msgstr "एकल प्लग-इन दृश्य"
+msgstr "एकल प्लगइन्स दृश्य (_S)"
 
-#: ../src/lib/accerciser/plugin/view.py:767
+#: src/lib/accerciser/plugin/view.py:766
 msgid "Plugin View"
 msgstr "प्लग-इन दृश्य"
 
-#: ../src/lib/accerciser/plugin/view.py:770
+#: src/lib/accerciser/plugin/view.py:769
 #, python-format
 msgid "Plugin View (%d)"
 msgstr "प्लग-इन दृश्य (%d)"
 
-#: ../src/lib/accerciser/plugin/view.py:1075
-#| msgid "New View…"
-msgid "<i>_New view…</i>"
-msgstr "<i>नया दृश्य…</i> (_N)"
+#: src/lib/accerciser/plugin/view.py:1074
+msgid "_New view…"
+msgstr "नया दृश्य (_N)…"
 
-#: ../src/lib/accerciser/plugin/view.py:1131
+#: src/lib/accerciser/plugin/view.py:1130
 msgid "New View…"
 msgstr "नया दृश्य…"
 
-#: ../src/lib/accerciser/ui_manager.py:23
+#: src/lib/accerciser/ui_manager.py:23
 msgid "_File"
-msgstr "फाइल (&F)"
+msgstr "फाइल (_F)"
 
-#: ../src/lib/accerciser/ui_manager.py:24
+#: src/lib/accerciser/ui_manager.py:24
 msgid "_Edit"
-msgstr "संपादित करें"
+msgstr "संपादन (_E)"
 
-#: ../src/lib/accerciser/ui_manager.py:25
-#| msgid "_Bookmarks"
+#: src/lib/accerciser/ui_manager.py:25
 msgctxt "menu"
 msgid "_Bookmarks"
-msgstr "पसंद (_B)"
+msgstr "बुकमार्क (_B)"
 
-#: ../src/lib/accerciser/ui_manager.py:26
-#| msgid "_View"
+#: src/lib/accerciser/ui_manager.py:26
 msgctxt "menu"
 msgid "_View"
-msgstr "दृश्य_(V)"
+msgstr "दृश्य (_V)"
 
-#: ../src/lib/accerciser/ui_manager.py:27
+#: src/lib/accerciser/ui_manager.py:27
 msgid "_Help"
-msgstr "मदद"
-
-#~ msgid "&lt;b&gt;Event monitor&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;घटना मानिटरr&lt;/b&gt;"
-
-#~ msgid "Full name"
-#~ msgstr "पूरा नाम"
-
-#~ msgid "&lt;b&gt;Attributes&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;गुणधर्म&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;Child count&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;शिशुओं की गिनती&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;Description&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;विवरण&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;Relations&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;संबंध&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;States&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;स्थितियां&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;Text&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;पाठ&lt;/b&gt;"
-
-#~ msgid "&lt;b&gt;unknown&lt;/b&gt;"
-#~ msgstr "&lt;b&gt;अज्ञात&lt;/b&gt;"
-
-#~ msgid "&lt;i&gt;(no description)&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;(कोई विवरण नहीं है)&lt;/i&gt;"
-
-#~ msgid "&lt;i&gt;Caption:&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;अनुशीर्षक:&lt;/i&gt;"
-
-#~ msgid "&lt;i&gt;End: 0&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;समाप्त: 0&lt;/i&gt;"
-
-#~ msgid "&lt;i&gt;Start: 0&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;शुरू कीजिए: 0&lt;/i&gt;"
-
-#~ msgid "&lt;i&gt;Summary:&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;सारांश:&lt;/i&gt;"
-
-#~ msgid "&lt;no description&gt;"
-#~ msgstr "&lt;कोई वर्णन नहीं&gt;"
-
-#~ msgid "Key binding"
-#~ msgstr "कुंजी बंधन"
-
-#~ msgid "Content type"
-#~ msgstr "विषय प्रकार"
-
-#~ msgid "&lt;i&gt;(Editable)&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;(संपादनीय)&lt;/i&gt;"
-
-#~ msgid "Dogtail"
-#~ msgstr "श्वानपुच्छ"
-
-#~ msgid "LDTP"
-#~ msgstr "एलडीटीपी"
-
-#~ msgid "Native"
-#~ msgstr "वतनी"
-
-#~ msgid "Script Type"
-#~ msgstr "लिपि प्रकार"
-
-#~ msgid "Script Recorder"
-#~ msgstr "लिपि रेकोर्डर"
-
-#~ msgid "Creates dogtail style scripts"
-#~ msgstr "श्वानपुच्छ शैली की लिपियां निर्मित करता है"
-
-#~ msgid "The current script will be lost."
-#~ msgstr "वर्तमान लिपि (स्क्रिप्ट) खो जाएगी।"
-
-#~ msgid "Confirm clear"
-#~ msgstr "मिटाने की पुष्टि करें"
-
-#~ msgid "&lt;dead&gt;"
-#~ msgstr "&lt;मृत&gt;"
-
-#~ msgid "&lt;i&gt;_New view...&lt;/i&gt;"
-#~ msgstr "&lt;i&gt;नया दृश्य...&lt;/i&gt;"
-
-#~ msgid "C"
-#~ msgstr "सी"
+msgstr "सहायता (_H)"
