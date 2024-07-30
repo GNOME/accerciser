@@ -16,10 +16,11 @@ import gi
 
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
-from gi.repository import Wnck as wnck
 from gi.repository import GObject
 
 import sys, os, glob
+
+from . import window_manager
 
 from pyatspi.constants import *
 
@@ -32,8 +33,8 @@ if not os.path.exists(ICONS_PATH):
 def getIcon(acc):
   '''
   Loads an icon for the given application or accessible widget. Tries to use
-  the current theme or wnck to get application icons. Uses icons from
-  at-poke for widgets.
+  the current theme or the window manager to get application icons. Uses own
+  icons for widgets.
   '''
   theme = gtk.IconTheme.get_default()
   try:
@@ -45,15 +46,11 @@ def getIcon(acc):
         return theme.load_icon(acc.name, 24, gtk.IconLookupFlags.USE_BUILTIN)
       except GObject.GError:
         pass
-      # then try wnck
-      s = wnck.Screen.get_default()
-      s.force_update()
-      for win in s.get_windows():
-        wname = win.get_name()
-        for child in acc:
-          if child.name == wname:
-            return win.get_mini_icon()
-      return None
+
+      # then try the WindowManager
+      win_manager = window_manager.get_window_manager()
+      icon = win_manager.getApplicationIcon(acc)
+      return icon
     else:
       name = role_name.replace(' ', '')
       try:

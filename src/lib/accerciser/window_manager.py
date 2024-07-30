@@ -218,6 +218,26 @@ class WindowManager:
     window_titles = [win.title for win in windows]
     return window_titles
 
+  def getApplicationIcon(self, app):
+    '''
+    Get the icon of one of the top-level windows of the given application.
+
+    The default implementation uses Wnck.
+
+    @param app: The application accessible for which to retrieve a window icon.
+    @type toplevel: Atspi.Accessible
+    @return: The icon, or None.
+    @rtype: GdkPixbuf.Pixbuf
+    '''
+    s = Wnck.Screen.get_default()
+    s.force_update()
+    for win in s.get_windows():
+      wname = win.get_name()
+      for child in app:
+        if child.name == wname:
+          return win.get_mini_icon()
+    return None
+
   def getScreenExtents(self, acc):
     '''
     Returns the extents of the given accessible object
