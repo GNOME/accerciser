@@ -484,10 +484,17 @@ class GnomeShellWindowManager(WindowManager):
       for win in window_data:
         buffer_geometry = WindowGeometry(win["bufferGeometry.x"], win["bufferGeometry.y"],
                                          win["bufferGeometry.width"], win["bufferGeometry.height"])
+
+        # try both of "gtk_application_id" and "sandboxed_app_id" to retrieve an app ID
+        app_id = win["gtk_application_id"]
+        if not app_id:
+          app_id = win["sandboxed_app_id"]
+
         win_info = WindowInfo(win["caption"], win["geometry.x"], win["geometry.y"],
                               win["geometry.width"], win["geometry.height"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
-                              buffer_geometry=buffer_geometry)
+                              buffer_geometry=buffer_geometry,
+                              app_id=app_id)
         window_infos.append(win_info)
     except Exception:
       pass
@@ -508,3 +515,6 @@ class GnomeShellWindowManager(WindowManager):
       return x, y
     except Exception:
       return 0, 0
+
+  def getApplicationIcon(self, app):
+    return self.getApplicationIconViaAppID(app)

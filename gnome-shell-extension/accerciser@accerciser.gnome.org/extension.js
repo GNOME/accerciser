@@ -39,7 +39,9 @@ function collectWindowInfos() {
             "geometry.y": geometry.y,
             "geometry.width": geometry.width,
             "geometry.height": geometry.height,
-            "isOnCurrentWorkspace": isOnActiveWorkspace
+            "gtk_application_id":  window.get_gtk_application_id(),
+            "isOnCurrentWorkspace": isOnActiveWorkspace,
+            "sandboxed_app_id": window.get_sandboxed_app_id()
             }
         );
     }
