@@ -22,10 +22,11 @@ function collectWindowInfos() {
         let window = windows[i].metaWindow;
         const isOnActiveWorkspace = window.located_on_workspace(activeWorkspace);
 
-        // client geometry is used unless window has client side decorations,
-        // in which case frame geometry is used;
         let geometry = window.get_frame_rect();
-        if (!window.is_client_decorated())
+        // convert to client rect if the window doesn't have client side
+        // decorations (but only if meta_window_is_client_decorated is available
+        // to check that; it was dropped in Mutter/GNOME 47)
+        if (window.is_client_decorated && !window.is_client_decorated())
             geometry = window.frame_rect_to_client_rect(geometry);
 
         window_infos.push(
