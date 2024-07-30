@@ -35,6 +35,7 @@ for (let i = 0; i < clients.length; i++) {
       "bufferGeometry.y": clients[i].bufferGeometry.y,
       "bufferGeometry.width": clients[i].bufferGeometry.width,
       "bufferGeometry.height": clients[i].bufferGeometry.height,
+      "desktopFileName": clients[i].desktopFileName,
       "geometry.x": geometry.x,
       "geometry.y": geometry.y,
       "geometry.width": geometry.width,

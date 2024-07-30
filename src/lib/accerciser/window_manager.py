@@ -9,8 +9,14 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
 from gi.repository import Gdk
+from gi.repository import GdkPixbuf
 from gi.repository import Wnck
 import pyatspi
+
+import xdg
+import xdg.BaseDirectory
+import xdg.DesktopEntry
+import xdg.IconTheme
 
 import datetime
 import dbus
@@ -49,7 +55,8 @@ class WindowInfo:
   '''
 
   def __init__(self, title, x, y, width, height, stacking_index=0,
-               on_current_workspace=True, buffer_geometry=None):
+               on_current_workspace=True, buffer_geometry=None,
+               app_id=None):
     self.title = title
     self.x = x
     self.y = y
@@ -58,6 +65,7 @@ class WindowInfo:
     self.stacking_index = stacking_index
     self.on_current_workspace = on_current_workspace
     self.buffer_geometry = buffer_geometry
+    self.app_id = app_id
 
 
 class WindowManager:
@@ -218,6 +226,63 @@ class WindowManager:
     window_titles = [win.title for win in windows]
     return window_titles
 
+  def getApplicationIcon(self, app):
+    '''
+    Get the icon of one of the top-level windows of the given application.
+
+    The default implementation uses Wnck.
+
+    @param app: The application accessible for which to retrieve a window icon.
+    @type toplevel: Atspi.Accessible
+    @return: The icon, or None.
+    @rtype: GdkPixbuf.Pixbuf
+    '''
+    s = Wnck.Screen.get_default()
+    s.force_update()
+    for win in s.get_windows():
+      wname = win.get_name()
+      for child in app:
+        if child.name == wname:
+          return win.get_mini_icon()
+    return None
+
+  def getApplicationIconViaAppID(self, app):
+    '''
+    Get the icon of one of the top-level windows of the given application,
+    using the app ID set for the top-level windows.
+
+    This is primarily meant as a helper method to implement the
+    above getApplicationIcon method in deriving classes.
+
+    @param app: The application accessible for which to retrieve a window icon.
+    @type toplevel: Atspi.Accessible
+    @return: The icon, or None.
+    @rtype: GdkPixbuf.Pixbuf
+    '''
+    # see also the FreeDesktop Desktop entry spec:
+    # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+    try:
+      window_infos = self.getWindowInfos()
+      for toplevel in app:
+        for win in window_infos:
+          if win.title == toplevel.name:
+            desktop_file_name = win.app_id
+            if desktop_file_name:
+              for dir in xdg.BaseDirectory.xdg_data_dirs:
+                desktop_file = os.path.join(dir, 'applications', desktop_file_name + '.desktop')
+                if os.path.exists(desktop_file):
+                  desktop_entry = xdg.DesktopEntry.DesktopEntry(desktop_file)
+                  icon = desktop_entry.getIcon()
+                  if icon:
+                    icon_path = xdg.IconTheme.getIconPath(icon)
+                    if icon_path:
+                      # load pixbuf with max size of 24x24 pixel
+                      pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(icon_path, 24, 24, True)
+                      if pixbuf:
+                        return pixbuf
+    except Exception:
+      pass
+
   def getScreenExtents(self, acc):
     '''
     Returns the extents of the given accessible object
@@ -368,7 +433,8 @@ class KWinWindowManager(WindowManager):
                               win["geometry.width"], win["geometry.height"],
                               stacking_index=win["stackingOrder"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
-                              buffer_geometry=buffer_geometry)
+                              buffer_geometry=buffer_geometry,
+                              app_id=win["desktopFileName"])
         window_infos.append(win_info)
     except Exception:
       pass
@@ -389,6 +455,8 @@ class KWinWindowManager(WindowManager):
     except:
       return 0, 0
 
+  def getApplicationIcon(self, app):
+    return self.getApplicationIconViaAppID(app)
 
 class GnomeShellWindowManager(WindowManager):
   '''
@@ -416,10 +484,17 @@ class GnomeShellWindowManager(WindowManager):
       for win in window_data:
         buffer_geometry = WindowGeometry(win["bufferGeometry.x"], win["bufferGeometry.y"],
                                          win["bufferGeometry.width"], win["bufferGeometry.height"])
+
+        # try both of "gtk_application_id" and "sandboxed_app_id" to retrieve an app ID
+        app_id = win["gtk_application_id"]
+        if not app_id:
+          app_id = win["sandboxed_app_id"]
+
         win_info = WindowInfo(win["caption"], win["geometry.x"], win["geometry.y"],
                               win["geometry.width"], win["geometry.height"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
-                              buffer_geometry=buffer_geometry)
+                              buffer_geometry=buffer_geometry,
+                              app_id=app_id)
         window_infos.append(win_info)
     except Exception:
       pass
@@ -440,3 +515,6 @@ class GnomeShellWindowManager(WindowManager):
       return x, y
     except Exception:
       return 0, 0
+
+  def getApplicationIcon(self, app):
+    return self.getApplicationIconViaAppID(app)
