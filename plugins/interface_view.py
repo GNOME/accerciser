@@ -717,12 +717,6 @@ class _SectionDocument(_InterfaceSection):
     self.attr_model.clear()
     self.label_locale.set_text('')
 
-class _SectionHyperlink(_InterfaceSection):
-  interface_name = 'Hyperlink'
-  '''
-  A placeholder class for Hyperlink interface section.
-  '''
-
 class _SectionCollection(_InterfaceSection):
   interface_name = 'Collection'
   '''
@@ -740,6 +734,98 @@ class _SectionLoginHelper(_InterfaceSection):
   '''
   A placeholder class for LoginHelper interface section.
   '''
+
+class _SectionHyperlink(_InterfaceSection):
+  '''
+  A class that populates a Hyperlink interface section.
+  '''
+  interface_name = 'Hyperlink'
+
+  def init(self, ui_xml):
+    '''
+    Initialization that is specific to the Hyperlink interface.
+
+    @param ui_xml: Interface viewer glade xml.
+    @type ui_xml: gtk.glade.XML
+    '''
+    self.anchor_count_label = ui_xml.get_object('hyperlink_anchorcount_label')
+    self.start_index_label = ui_xml.get_object('hyperlink_startindex_label')
+    self.end_index_label = ui_xml.get_object('hyperlink_endindex_label')
+    self.valid_label = ui_xml.get_object('hyperlink_valid_label')
+
+    # configure anchors tree view
+    treeview = ui_xml.get_object('hyperlink_treeview')
+    self.link_model = gtk.TreeStore(int, # index
+                          str, # Name of object
+                          str, # URI
+                          object) # Anchor object
+    treeview.set_model(self.link_model)
+
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('Name'))
+    tvc.set_sizing(gtk.TreeViewColumnSizing.AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.add_attribute(crt, 'text', 1)
+    treeview.append_column(tvc)
+
+    crt = gtk.CellRendererText()
+    tvc = gtk.TreeViewColumn(_('URI'))
+    tvc.set_sizing(gtk.TreeViewColumnSizing.AUTOSIZE)
+    tvc.set_resizable(True)
+    tvc.pack_start(crt, True)
+    tvc.add_attribute(crt, 'text', 2)
+    treeview.append_column(tvc)
+
+    selection = treeview.get_selection()
+    show_button = ui_xml.get_object('hyperlink_button_show')
+    show_button.set_sensitive(self._isSelectedInView(selection))
+    selection.connect('changed', self._onViewSelectionChanged, show_button)
+
+  def populateUI(self, acc):
+    '''
+    Populate the Hyperlink section with relevant data of the
+    currently selected accessible.
+
+    @param acc: The currently selected accessible.
+    @type acc: Accessibility.Accessible
+    '''
+    link = acc.queryHyperlink()
+
+    self.anchor_count_label.set_text(str(link.get_n_anchors()))
+    self.start_index_label.set_text(str(link.get_start_index()))
+    self.end_index_label.set_text(str(link.get_end_index()))
+    self.valid_label.set_text(str(link.is_valid()))
+
+    for anchor_index in range(link.nAnchors):
+      acc_obj = link.getObject(anchor_index)
+      self.link_model.append(None,
+                             [anchor_index, acc_obj.name,
+                              link.getURI(anchor_index), acc_obj])
+
+  def clearUI(self):
+    '''
+    Clear all section-specific data.
+    '''
+    self.link_model.clear()
+
+  def _onShowSelected(self, link_view, *more_args):
+    '''
+    Callback for row activation or button press. Selects the related
+    accessible in the main application.
+
+    @param link_view: The links tree view.
+    @type link_view: gtk.TreeView
+    @param *more_args: More arguments that are provided by signals,
+                       but we discard them all.
+    @type *more_args: list
+    '''
+    selection = link_view.get_selection()
+    model, iter = selection.get_selected()
+    if iter:
+      acc = model[iter][3]
+      if acc:
+        self.node.update(acc)
 
 class _SectionHypertext(_InterfaceSection):
   '''
