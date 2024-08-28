@@ -56,7 +56,7 @@ class WindowInfo:
 
   def __init__(self, title, x, y, width, height, stacking_index=0,
                on_current_workspace=True, buffer_geometry=None,
-               app_id=None):
+               app_id=None, process_id=0):
     self.title = title
     self.x = x
     self.y = y
@@ -66,6 +66,7 @@ class WindowInfo:
     self.on_current_workspace = on_current_workspace
     self.buffer_geometry = buffer_geometry
     self.app_id = app_id
+    self.process_id = process_id
 
 
 class WindowManager:
@@ -160,8 +161,10 @@ class WindowManager:
       # of an actually returned workspace differing from the active one as not on active workspace
       workspace = window.get_workspace()
       on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
+      pid = window.get_pid()
       win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
-                            stacking_index=stacking_index, on_current_workspace=on_active_workspace)
+                            stacking_index=stacking_index, on_current_workspace=on_active_workspace,
+                            process_id=pid)
       win_infos.append(win_info)
       stacking_index = stacking_index + 1
 
@@ -200,6 +203,15 @@ class WindowManager:
     if len(candidates) == 1:
       window = candidates[0]
     elif len(candidates) > 1:
+      # filter by process ID if any window has the same one
+      # (not guaranteed e.g. for Flatpak)
+      pid_candidates = []
+      for candidate in candidates:
+        if candidate.process_id == toplevel.get_process_id():
+          pid_candidates.append(candidate)
+      if pid_candidates:
+        candidates = pid_candidates
+
       # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
       atspi_width, atspi_height = toplevel.queryComponent().getSize()
       for candidate in candidates:
@@ -439,7 +451,7 @@ class KWinWindowManager(WindowManager):
                               stacking_index=win["stackingOrder"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
                               buffer_geometry=buffer_geometry,
-                              app_id=win["desktopFileName"])
+                              app_id=win["desktopFileName"], process_id=win["pid"])
         window_infos.append(win_info)
     except Exception:
       pass
@@ -499,7 +511,7 @@ class GnomeShellWindowManager(WindowManager):
                               win["geometry.width"], win["geometry.height"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
                               buffer_geometry=buffer_geometry,
-                              app_id=app_id)
+                              app_id=app_id, process_id=win["pid"])
         window_infos.append(win_info)
     except Exception:
       pass

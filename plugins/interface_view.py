@@ -313,6 +313,7 @@ class _SectionAccessible(_InterfaceSection):
     self.desc_label = ui_xml.get_object('label_acc_desc')
     self.help_text_label = ui_xml.get_object('label_acc_help_text')
     self.id_label = ui_xml.get_object('label_acc_id')
+    self.process_id_label = ui_xml.get_object('label_process_id')
 
     # configure states tree view
     self.states_model = ui_xml.get_object('states_liststore')
@@ -352,6 +353,7 @@ class _SectionAccessible(_InterfaceSection):
         self.id_label.set_label(acc.accessibleId)
     except:
         self.id_label.set_label(_('(no ID)'))
+    self.process_id_label.set_text(str(acc.get_process_id()))
 
     states = [pyatspi.stateToString(s) for s in acc.getState().getStates()]
     states.sort()
