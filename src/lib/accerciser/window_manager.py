@@ -203,6 +203,15 @@ class WindowManager:
     if len(candidates) == 1:
       window = candidates[0]
     elif len(candidates) > 1:
+      # filter by process ID if any window has the same one
+      # (not guaranteed e.g. for Flatpak)
+      pid_candidates = []
+      for candidate in candidates:
+        if candidate.process_id == toplevel.get_process_id():
+          pid_candidates.append(candidate)
+      if pid_candidates:
+        candidates = pid_candidates
+
       # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
       atspi_width, atspi_height = toplevel.queryComponent().getSize()
       for candidate in candidates:
