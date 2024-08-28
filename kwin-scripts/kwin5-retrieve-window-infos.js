@@ -40,6 +40,7 @@ for (let i = 0; i < clients.length; i++) {
       "geometry.width": clients[i].bufferGeometry.width,
       "geometry.height": clients[i].bufferGeometry.height,
       "isOnCurrentWorkspace": isOnCurrentDesktop,
+      "pid": clients[i].pid,
       "stackingOrder": clients[i].stackingOrder
     }
   );

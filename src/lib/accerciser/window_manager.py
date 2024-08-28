@@ -442,7 +442,7 @@ class KWinWindowManager(WindowManager):
                               stacking_index=win["stackingOrder"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
                               buffer_geometry=buffer_geometry,
-                              app_id=win["desktopFileName"])
+                              app_id=win["desktopFileName"], process_id=win["pid"])
         window_infos.append(win_info)
     except Exception:
       pass
