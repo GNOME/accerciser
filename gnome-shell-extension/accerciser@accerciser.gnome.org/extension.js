@@ -42,6 +42,7 @@ function collectWindowInfos() {
             "geometry.height": geometry.height,
             "gtk_application_id":  window.get_gtk_application_id(),
             "isOnCurrentWorkspace": isOnActiveWorkspace,
+            "pid": window.get_pid(),
             "sandboxed_app_id": window.get_sandboxed_app_id()
             }
         );

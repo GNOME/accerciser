@@ -502,7 +502,7 @@ class GnomeShellWindowManager(WindowManager):
                               win["geometry.width"], win["geometry.height"],
                               on_current_workspace=win["isOnCurrentWorkspace"],
                               buffer_geometry=buffer_geometry,
-                              app_id=app_id)
+                              app_id=app_id, process_id=win["pid"])
         window_infos.append(win_info)
     except Exception:
       pass
