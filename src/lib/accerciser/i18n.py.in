@@ -55,7 +55,7 @@ def bind(domain, locale_dir):
 # use the current system locale
 locale.setlocale(locale.LC_ALL, '')
 # build the path to where the main translation file lives
-LOCALE_DIR = "@localedir@".replace('${prefix}', '@prefix@')
+LOCALE_DIR = os.path.join('@prefix@', '@localedir@')
 DOMAIN = '@GETTEXT_PACKAGE@'
 # build a default instance to the LSR domain and locale directory
 _ = bind(DOMAIN, LOCALE_DIR)
