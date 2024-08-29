@@ -1,12 +1,18 @@
+fs = import('fs')
+
 subdir('plugin')
+
+localedir = get_option('localedir')
+if not fs.is_absolute(localedir)
+    localedir = join_paths(get_option('prefix'), localedir)
+endif
 
 lib_i18n_py = configure_file(
   input: 'i18n.py.in',
   output: '@BASENAME@',
   configuration: {
     'GETTEXT_PACKAGE': meson.project_name(),
-    'localedir': get_option('localedir'),
-    'prefix': get_option('prefix'),
+    'localedir': localedir,
   }
 )
 
