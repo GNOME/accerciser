@@ -1042,7 +1042,7 @@ class _SectionSelection(_InterfaceSection):
     if acc.childCount > 50:
       theme = gtk.IconTheme.get_default()
       try:
-        warning_icon = theme.load_icon('gtk-dialog-warning', 24,
+        warning_icon = theme.load_icon('dialog-warning', 24,
                                        gtk.IconLookupFlags.USE_BUILTIN)
       except:
         warning_icon = None
