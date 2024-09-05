@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-06-16 18:52+0000\n"
-"PO-Revision-Date: 2024-06-18 00:41+0200\n"
+"POT-Creation-Date: 2024-08-28 09:11+0000\n"
+"PO-Revision-Date: 2024-08-28 16:19+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:8
 msgid "Accerciser"
@@ -225,7 +225,7 @@ msgstr "Händelseövervakare"
 msgid "_Monitor Events"
 msgstr "_Övervaka händelser"
 
-#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1639
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1904
 #: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
 msgid "_Clear"
 msgstr "_Töm"
@@ -259,9 +259,9 @@ msgid "Source"
 msgstr "Källa"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:439 plugins/interface_view.ui:615
-#: plugins/interface_view.py:773 plugins/validate.py:297
-#: src/lib/accerciser/accessible_treeview.py:469
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:664
+#: plugins/interface_view.py:767 plugins/interface_view.py:861
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:469
 #: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Namn"
@@ -307,24 +307,26 @@ msgstr "A_vbryt"
 msgid "Child count"
 msgstr "Antal barn"
 
-#: plugins/interface_view.ui:138 plugins/interface_view.ui:1027
-#: plugins/interface_view.ui:1896 plugins/interface_view.ui:1926
-#: plugins/interface_view.ui:1956 plugins/interface_view.ui:2389
-#: plugins/interface_view.ui:2419 plugins/interface_view.ui:2449
-#: plugins/interface_view.ui:3025 plugins/interface_view.ui:3056
-#: plugins/interface_view.ui:3087 plugins/interface_view.ui:3118
+#: plugins/interface_view.ui:138 plugins/interface_view.ui:323
+#: plugins/interface_view.ui:1076 plugins/interface_view.ui:1329
+#: plugins/interface_view.ui:1360 plugins/interface_view.ui:1390
+#: plugins/interface_view.ui:2161 plugins/interface_view.ui:2191
+#: plugins/interface_view.ui:2221 plugins/interface_view.ui:2654
+#: plugins/interface_view.ui:2684 plugins/interface_view.ui:2714
+#: plugins/interface_view.ui:3290 plugins/interface_view.ui:3321
+#: plugins/interface_view.ui:3352 plugins/interface_view.ui:3383
 msgid "0"
 msgstr "0"
 
 #: plugins/interface_view.ui:170 plugins/interface_view.ui:216
-#: plugins/interface_view.ui:1399 plugins/interface_view.py:346
-#: plugins/interface_view.py:441 plugins/interface_view.py:901
+#: plugins/interface_view.ui:1664 plugins/interface_view.py:347
+#: plugins/interface_view.py:443 plugins/interface_view.py:989
 msgid "(no description)"
 msgstr "(ingen beskrivning)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:186 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1384 plugins/validate.py:232
+#: plugins/interface_view.ui:186 plugins/interface_view.ui:675
+#: plugins/interface_view.ui:1649 plugins/validate.py:232
 #: plugins/validate.py:295
 msgid "Description"
 msgstr "Beskrivning"
@@ -333,65 +335,70 @@ msgstr "Beskrivning"
 msgid "Help text"
 msgstr "Hjälptext"
 
-#: plugins/interface_view.ui:261 plugins/interface_view.py:354
+#: plugins/interface_view.ui:261 plugins/interface_view.py:355
 msgid "(no ID)"
 msgstr "(inget ID)"
 
-#: plugins/interface_view.ui:277 plugins/interface_view.ui:749
+#: plugins/interface_view.ui:277 plugins/interface_view.ui:798
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:344
+#: plugins/interface_view.ui:304
+msgid "Process ID"
+msgstr "Process-ID"
+
+#: plugins/interface_view.ui:393
 msgid "States"
 msgstr "Tillstånd"
 
-#: plugins/interface_view.ui:409 plugins/interface_view.ui:1169
-#: plugins/interface_view.ui:2955
+#: plugins/interface_view.ui:458 plugins/interface_view.ui:1218
+#: plugins/interface_view.ui:3220
 msgid "Attributes"
 msgstr "Attribut"
 
-#: plugins/interface_view.ui:526 plugins/interface_view.ui:1326
-#: plugins/interface_view.ui:2554 plugins/interface_view.ui:2639
+#: plugins/interface_view.ui:575 plugins/interface_view.ui:1484
+#: plugins/interface_view.ui:1591 plugins/interface_view.ui:2819
+#: plugins/interface_view.ui:2904
 msgid "Show"
 msgstr "Visa"
 
-#: plugins/interface_view.ui:557
+#: plugins/interface_view.ui:606
 msgid "Relations"
 msgstr "Relationer"
 
-#: plugins/interface_view.ui:576
+#: plugins/interface_view.ui:625
 msgid "_Accessible"
 msgstr "_Åtkomlig komponent"
 
-#: plugins/interface_view.ui:637
+#: plugins/interface_view.ui:686
 msgid "Key binding"
 msgstr "Tangentbindning"
 
-#: plugins/interface_view.ui:691
+#: plugins/interface_view.ui:740
 msgid "Perform action"
 msgstr "Genomför åtgärd"
 
-#: plugins/interface_view.ui:722
+#: plugins/interface_view.ui:771
 msgid "Acti_on"
 msgstr "Åtgä_rd"
 
-#: plugins/interface_view.ui:764
+#: plugins/interface_view.ui:813
 msgid "Toolkit"
 msgstr "Verktygslåda"
 
-#: plugins/interface_view.ui:779
+#: plugins/interface_view.ui:828
 msgid "Version"
 msgstr "Version"
 
-#: plugins/interface_view.ui:841
+#: plugins/interface_view.ui:890
 msgid "Ap_plication"
 msgstr "_Program"
 
-#: plugins/interface_view.ui:860
+#: plugins/interface_view.ui:909
 msgid "Col_lection"
 msgstr "Sam_ling"
 
-#: plugins/interface_view.ui:888
+#: plugins/interface_view.ui:937
 msgid "Absolute position"
 msgstr "Absolut position"
 
@@ -399,230 +406,247 @@ msgstr "Absolut position"
 #. Component size in pixels
 #. Component size
 #. Screen coordinates
-#: plugins/interface_view.ui:903 plugins/interface_view.ui:934
-#: plugins/interface_view.ui:965 plugins/interface_view.ui:1433
-#: plugins/interface_view.ui:1464
+#: plugins/interface_view.ui:952 plugins/interface_view.ui:983
+#: plugins/interface_view.ui:1014 plugins/interface_view.ui:1698
+#: plugins/interface_view.ui:1729
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:919
+#: plugins/interface_view.ui:968
 msgid "Relative position"
 msgstr "Relativ position"
 
-#: plugins/interface_view.ui:950 plugins/interface_view.ui:1418
+#: plugins/interface_view.ui:999 plugins/interface_view.ui:1683
 msgid "Size"
 msgstr "Storlek"
 
-#: plugins/interface_view.ui:981
+#: plugins/interface_view.ui:1030
 msgid "Layer"
 msgstr "Lager"
 
-#: plugins/interface_view.ui:996
+#: plugins/interface_view.ui:1045
 msgid "WIDGET"
 msgstr "WIDGET"
 
-#: plugins/interface_view.ui:1012
+#: plugins/interface_view.ui:1061
 msgid "MDI-Z-order"
 msgstr "MDI-Z-ordning"
 
-#: plugins/interface_view.ui:1043
+#: plugins/interface_view.ui:1092
 msgid "Alpha"
 msgstr "Alfa"
 
-#: plugins/interface_view.ui:1076
+#: plugins/interface_view.ui:1125
 msgid "Co_mponent"
 msgstr "Ko_mponent"
 
-#: plugins/interface_view.ui:1095
+#: plugins/interface_view.ui:1144
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: plugins/interface_view.ui:1191
+#: plugins/interface_view.ui:1240
 msgid "Locale:"
 msgstr "Lokal:"
 
-#: plugins/interface_view.ui:1230
+#: plugins/interface_view.ui:1279
 msgid "_Document"
 msgstr "_Dokument"
 
+#: plugins/interface_view.ui:1313
+msgid "Anchor count"
+msgstr "Antal ankare"
+
+#: plugins/interface_view.ui:1345
+msgid "Start index"
+msgstr "Startindex"
+
+#: plugins/interface_view.ui:1375
+msgid "End index"
+msgstr "Slutindex"
+
+#: plugins/interface_view.ui:1405
+msgid "Valid"
+msgstr "Giltig"
+
 #. add url role to buffer
-#: plugins/interface_view.ui:1251 plugins/validate.py:301
+#: plugins/interface_view.ui:1516 plugins/validate.py:301
 msgid "Hyperlink"
 msgstr "Hyperlänk"
 
-#: plugins/interface_view.ui:1357
+#: plugins/interface_view.ui:1622
 msgid "H_ypertext"
 msgstr "H_ypertext"
 
-#: plugins/interface_view.ui:1449
+#: plugins/interface_view.ui:1714
 msgid "Position"
 msgstr "Position"
 
-#: plugins/interface_view.ui:1480
+#: plugins/interface_view.ui:1745
 msgid "Locale"
 msgstr "Lokal"
 
-#: plugins/interface_view.ui:1513
+#: plugins/interface_view.ui:1778
 msgid "_Image"
 msgstr "_Bild"
 
-#: plugins/interface_view.ui:1532
+#: plugins/interface_view.ui:1797
 msgid "Lo_gin Helper"
 msgstr "Inlo_ggningshjälpare"
 
-#: plugins/interface_view.ui:1599
+#: plugins/interface_view.ui:1864
 msgid "Select All"
 msgstr "Markera allt"
 
-#: plugins/interface_view.ui:1670
+#: plugins/interface_view.ui:1935
 msgid "_Selection"
 msgstr "_Markering"
 
-#: plugins/interface_view.ui:1703
+#: plugins/interface_view.ui:1968
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: plugins/interface_view.ui:1714 plugins/interface_view.py:781
+#: plugins/interface_view.ui:1979 plugins/interface_view.py:775
+#: plugins/interface_view.py:869
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1731
+#: plugins/interface_view.ui:1996
 msgid "St_reamable Content"
 msgstr "St_römmande innehåll"
 
-#: plugins/interface_view.ui:1770
+#: plugins/interface_view.ui:2035
 msgid "Caption:"
 msgstr "Överskrift:"
 
-#: plugins/interface_view.ui:1815
+#: plugins/interface_view.ui:2080
 msgid "Summary:"
 msgstr "Sammandrag:"
 
-#: plugins/interface_view.ui:1881
+#: plugins/interface_view.ui:2146
 msgid "Rows"
 msgstr "Rader"
 
-#: plugins/interface_view.ui:1911
+#: plugins/interface_view.ui:2176
 msgid "Columns"
 msgstr "Kolumner"
 
-#: plugins/interface_view.ui:1941
+#: plugins/interface_view.ui:2206
 msgid "Selected rows"
 msgstr "Markerade rader"
 
-#: plugins/interface_view.ui:1971
+#: plugins/interface_view.ui:2236
 msgid "Selected columns"
 msgstr "Markerade kolumner"
 
-#: plugins/interface_view.ui:2010
+#: plugins/interface_view.ui:2275
 msgid "Table Information"
 msgstr "Tabellinformation"
 
-#: plugins/interface_view.ui:2054
+#: plugins/interface_view.ui:2319
 msgid "name (x,y)"
 msgstr "namn (x,y)"
 
-#: plugins/interface_view.ui:2105 plugins/interface_view.ui:2219
+#: plugins/interface_view.ui:2370 plugins/interface_view.ui:2484
 msgid "Header:"
 msgstr "Rubrik:"
 
-#: plugins/interface_view.ui:2118 plugins/interface_view.ui:2232
+#: plugins/interface_view.ui:2383 plugins/interface_view.ui:2497
 msgid "<no description>"
 msgstr "<ingen beskrivning>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2151 plugins/interface_view.ui:2265
+#: plugins/interface_view.ui:2416 plugins/interface_view.ui:2530
 msgid "Extents:"
 msgstr "Områden:"
 
-#: plugins/interface_view.ui:2189 plugins/interface_view.ui:2374
+#: plugins/interface_view.ui:2454 plugins/interface_view.ui:2639
 msgid "Row"
 msgstr "Rad"
 
-#: plugins/interface_view.ui:2303 plugins/interface_view.ui:2404
+#: plugins/interface_view.ui:2568 plugins/interface_view.ui:2669
 msgid "Column"
 msgstr "Kolumn"
 
-#: plugins/interface_view.ui:2319
+#: plugins/interface_view.ui:2584
 msgid "Selected Cell"
 msgstr "Markerad cell"
 
-#: plugins/interface_view.ui:2341
+#: plugins/interface_view.ui:2606
 msgid "_Table"
 msgstr "_Tabell"
 
-#: plugins/interface_view.ui:2434
+#: plugins/interface_view.ui:2699
 msgid "Row span"
 msgstr "Radutsträckning"
 
-#: plugins/interface_view.ui:2464
+#: plugins/interface_view.ui:2729
 msgid "Column span"
 msgstr "Kolumnutsträckning"
 
-#: plugins/interface_view.ui:2495
+#: plugins/interface_view.ui:2760
 msgid "Row headers"
 msgstr "Radrubriker"
 
-#: plugins/interface_view.ui:2580
+#: plugins/interface_view.ui:2845
 msgid "Column headers"
 msgstr "Kolumnrubriker"
 
-#: plugins/interface_view.ui:2664
+#: plugins/interface_view.ui:2929
 msgid "Table"
 msgstr "Tabell"
 
-#: plugins/interface_view.ui:2704
+#: plugins/interface_view.ui:2969
 msgid "_TableCell"
 msgstr "_TableCell"
 
-#: plugins/interface_view.ui:2754
+#: plugins/interface_view.ui:3019
 msgid "Text"
 msgstr "Text"
 
-#: plugins/interface_view.ui:2793
+#: plugins/interface_view.ui:3058
 msgid "Offset"
 msgstr "Position"
 
-#: plugins/interface_view.ui:2831
+#: plugins/interface_view.ui:3096
 msgid "Include defaults"
 msgstr "Inkludera standardvärden"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2853
+#: plugins/interface_view.ui:3118
 msgid "Start: 0"
 msgstr "Start: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2871
+#: plugins/interface_view.ui:3136
 msgid "End: 0"
 msgstr "Slut: 0"
 
-#: plugins/interface_view.ui:2977
+#: plugins/interface_view.ui:3242
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: plugins/interface_view.ui:3009
+#: plugins/interface_view.ui:3274
 msgid "Current value"
 msgstr "Aktuellt värde"
 
-#: plugins/interface_view.ui:3041
+#: plugins/interface_view.ui:3306
 msgid "Minimum value"
 msgstr "Minimalt värde"
 
-#: plugins/interface_view.ui:3072
+#: plugins/interface_view.ui:3337
 msgid "Maximum value"
 msgstr "Maximalt värde"
 
-#: plugins/interface_view.ui:3103
+#: plugins/interface_view.ui:3368
 msgid "Minimum increment"
 msgstr "Minimal ökning"
 
-#: plugins/interface_view.ui:3143
+#: plugins/interface_view.ui:3408
 msgid "Val_ue"
 msgstr "Vä_rde"
 
-#: plugins/interface_view.ui:3160
+#: plugins/interface_view.ui:3425
 msgid "unknown"
 msgstr "okänd"
 
@@ -640,24 +664,24 @@ msgstr "Tillåter visning av olika gränssnittsegenskaper"
 msgid "(not implemented)"
 msgstr "(inte implementerad)"
 
-#: plugins/interface_view.py:348 plugins/interface_view.py:350
-#: plugins/interface_view.py:454 plugins/interface_view.py:456
+#: plugins/interface_view.py:349 plugins/interface_view.py:351
+#: plugins/interface_view.py:456 plugins/interface_view.py:458
 msgid "(no help text)"
 msgstr "(ingen hjälptext)"
 
-#: plugins/interface_view.py:789
+#: plugins/interface_view.py:877
 msgid "Start"
 msgstr "Start"
 
-#: plugins/interface_view.py:797
+#: plugins/interface_view.py:885
 msgid "End"
 msgstr "Slut"
 
-#: plugins/interface_view.py:962
+#: plugins/interface_view.py:1050
 msgid "Too many selectable children"
 msgstr "För många valbara barn"
 
-#: plugins/interface_view.py:1429 plugins/interface_view.py:1432
+#: plugins/interface_view.py:1517 plugins/interface_view.py:1520
 msgid "(Editable)"
 msgstr "(Redigerbar)"
 
@@ -666,7 +690,7 @@ msgstr "(Redigerbar)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1579
+#: plugins/interface_view.py:1667
 #, python-format
 msgid "Start: %d"
 msgstr "Start: %d"
@@ -676,7 +700,7 @@ msgstr "Start: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1585
+#: plugins/interface_view.py:1673
 #, python-format
 msgid "End: %d"
 msgstr "Slut: %d"
