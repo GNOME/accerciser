@@ -90,11 +90,11 @@ class Main(gtk.Application, Tools):
     menu_items = [
         (menus.file_menu, 'quit', 'application-exit', _('_Quit'),
          '<control>q', self._onQuit),
-        (menus.edit_menu, 'preferences', 'preferences-system-symbolic', _('_Preferences…'),
+        (menus.edit_menu, 'preferences', 'preferences-system', _('_Preferences…'),
          '<control>p', self._onShowPreferences),
-        (menus.help_menu, 'contents', 'help-browser-symbolic', _('_Contents'),
+        (menus.help_menu, 'contents', 'help-browser', _('_Contents'),
          'F1', self._onHelp),
-        (menus.help_menu, 'about', 'help-about-symbolic', _('_About'),
+        (menus.help_menu, 'about', 'help-about', _('_About'),
          None, self._onAbout)]
 
     self.addMenuItems(menu_items)
