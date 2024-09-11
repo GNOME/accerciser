@@ -433,7 +433,7 @@ class PluginManager(gtk.ListStore, ToolsAccessor):
 
     def _showPopup(self, button, time, path, pos_func=None, data=None):
       '''
-      Convinience function for showing the view manager's popup menu.
+      Convenience function for showing the view manager's popup menu.
 
       @param button: Mouse button that was clicked.
       @type button: integer

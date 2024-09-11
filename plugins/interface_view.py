@@ -223,7 +223,7 @@ class _InterfaceSection(object):
 
   def _setExpanderChildrenSensitive(self, sensitive, expander=None):
     '''
-    Convinience method for making the expander's children insensitive.
+    Convenience method for making the expander's children insensitive.
     We don't want tomake the expander itself insensitive because the user might
     still want to keep it open or close it when it is disabled.
 
@@ -248,7 +248,7 @@ class _InterfaceSection(object):
 
   def _isSelectedInView(self, selection):
     '''
-    Convinience method for determining if a given treeview selection has any
+    Convenience method for determining if a given treeview selection has any
     selected nodes.
 
     @param selection: Selection to check.
@@ -263,7 +263,7 @@ class _InterfaceSection(object):
 
   def _onViewSelectionChanged(self, selection, *widgets):
     '''
-    Convinience callback for selection changes. Useful for setting given
+    Convenience callback for selection changes. Useful for setting given
     widgets to be sensitive only when something is selected, for example
     action buttons.
 
@@ -1550,7 +1550,7 @@ class _SectionText(_InterfaceSection):
 
   def _attrStringToDict(self, attr_string):
     '''
-    Convinience method for converting attribute strings to dictionaries.
+    Convenience method for converting attribute strings to dictionaries.
 
     @param attr_string: "key:value" pairs seperated by semi-colons.
     @type attr_string: string
