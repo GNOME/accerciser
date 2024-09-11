@@ -398,18 +398,6 @@ class _SectionAccessible(_InterfaceSection):
     self.states_model.clear()
     self.attr_model.clear()
 
-  def _relationSelectFunc(self, path):
-    '''
-    Make relation-type headers unselectable.
-
-    @param path: The path about to be selected
-    @type path: tuple
-
-    @return: True if selectable
-    @rtype: boolean
-    '''
-    return not len(path) == 1
-
   def _onRelationShow(self, relations_view, *more_args):
     '''
     Callback for row activation or button press. Selects the related
