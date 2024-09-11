@@ -296,6 +296,8 @@ class _SectionAccessible(_InterfaceSection):
   @type relation_bg: gtk.gdk.Color
   @ivar attr_model: Model for accessible attributes.
   @type attr_model: gtk.ListStore
+  @ivar show_button: Button to jump to the selected relation target object.
+  @type show_button: gtk.Button
   '''
 
   interface_name = 'Accessible'
@@ -327,9 +329,9 @@ class _SectionAccessible(_InterfaceSection):
     self.relation_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
 
     selection = self.relations_view.get_selection()
-    show_button = ui_xml.get_object('button_relation_show')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
+    self.show_button = ui_xml.get_object('button_relation_show')
+    self.show_button.set_sensitive(self._isRelationTargetSelected())
+    selection.connect('changed', self._onRelationsSelectionChanged)
 
     # configure accessible attributes tree view
     self.attr_model = ui_xml.get_object('accattrib_liststore')
@@ -397,6 +399,25 @@ class _SectionAccessible(_InterfaceSection):
     self.relations_model.clear()
     self.states_model.clear()
     self.attr_model.clear()
+
+  def _isRelationTargetSelected(self):
+    '''
+    Returns whether a relation target object is currently selected
+    in the relations tree view.
+    '''
+    selection = self.relations_view.get_selection()
+    model, iter = selection.get_selected()
+    # target objects are children of the node displaying the relation type
+    return model and iter and model.get_path(iter).get_depth() > 1
+
+  def _onRelationsSelectionChanged(self, selection):
+    '''
+    Callback for selection change in the relations tree view.
+
+    @param selection: The selection object that triggered the callback.
+    @type selection: gtk.TreeSelection
+    '''
+    self.show_button.set_sensitive(self._isRelationTargetSelected())
 
   def _onRelationShow(self, relations_view, *more_args):
     '''
