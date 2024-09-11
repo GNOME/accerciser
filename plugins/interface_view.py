@@ -290,10 +290,6 @@ class _SectionAccessible(_InterfaceSection):
   @type relations_view: gtk.TreeView
   @ivar relations_model: Model for accessible relations.
   @type relations_view: gtk.TreeStore
-  @ivar header_bg: Background color for relation header.
-  @type header_bg: gtk.gdk.Color
-  @ivar relation_bg: Background color for relation row.
-  @type relation_bg: gtk.gdk.Color
   @ivar attr_model: Model for accessible attributes.
   @type attr_model: gtk.ListStore
   @ivar show_button: Button to jump to the selected relation target object.
@@ -325,8 +321,6 @@ class _SectionAccessible(_InterfaceSection):
     self.relations_model = ui_xml.get_object('relations_treestore')
     # preset the different bg colors
     style = self.relations_view.get_style_context()
-    self.header_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
-    self.relation_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
 
     selection = self.relations_view.get_selection()
     self.show_button = ui_xml.get_object('button_relation_show')
@@ -377,13 +371,13 @@ class _SectionAccessible(_InterfaceSection):
       iter = self.relations_model.append(
           None, [None,
                  markup_escape_text(r_type_name), -1,
-                 self.header_bg, False])
+                 False])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
         self.relations_model.append(
             iter, [getIcon(acc),
                    markup_escape_text(acc.name), i,
-                   self.relation_bg, True])
+                   True])
     self.relations_view.expand_all()
 
     self.registerEventListener(self._accEventDescriptionChanged,
