@@ -295,7 +295,7 @@ class AccessibleModel(gtk.TreeStore, ToolsAccessor):
 
   def _endPopTask(self):
     '''
-    Convinience function for stopping a populating task.
+    Convenience function for stopping a populating task.
     '''
     self._populating_tasks -= 1
     if self._populating_tasks == 0:

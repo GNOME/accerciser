@@ -29,7 +29,7 @@ COL_LOCALIZED_COMP = 5
 
 def _charToKeySym(key):
   '''
-  A convinience function to convert either a character, or key name to it's
+  A convenience function to convert either a character, or key name to it's
   respective keyval
 
   @param key: The character or key name to convert.

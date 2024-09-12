@@ -223,7 +223,7 @@ class _InterfaceSection(object):
 
   def _setExpanderChildrenSensitive(self, sensitive, expander=None):
     '''
-    Convinience method for making the expander's children insensitive.
+    Convenience method for making the expander's children insensitive.
     We don't want tomake the expander itself insensitive because the user might
     still want to keep it open or close it when it is disabled.
 
@@ -248,7 +248,7 @@ class _InterfaceSection(object):
 
   def _isSelectedInView(self, selection):
     '''
-    Convinience method for determining if a given treeview selection has any
+    Convenience method for determining if a given treeview selection has any
     selected nodes.
 
     @param selection: Selection to check.
@@ -263,7 +263,7 @@ class _InterfaceSection(object):
 
   def _onViewSelectionChanged(self, selection, *widgets):
     '''
-    Convinience callback for selection changes. Useful for setting given
+    Convenience callback for selection changes. Useful for setting given
     widgets to be sensitive only when something is selected, for example
     action buttons.
 
@@ -290,12 +290,10 @@ class _SectionAccessible(_InterfaceSection):
   @type relations_view: gtk.TreeView
   @ivar relations_model: Model for accessible relations.
   @type relations_view: gtk.TreeStore
-  @ivar header_bg: Background color for relation header.
-  @type header_bg: gtk.gdk.Color
-  @ivar relation_bg: Background color for relation row.
-  @type relation_bg: gtk.gdk.Color
   @ivar attr_model: Model for accessible attributes.
   @type attr_model: gtk.ListStore
+  @ivar show_button: Button to jump to the selected relation target object.
+  @type show_button: gtk.Button
   '''
 
   interface_name = 'Accessible'
@@ -323,13 +321,11 @@ class _SectionAccessible(_InterfaceSection):
     self.relations_model = ui_xml.get_object('relations_treestore')
     # preset the different bg colors
     style = self.relations_view.get_style_context()
-    self.header_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
-    self.relation_bg = style.get_background_color(gtk.StateFlags.NORMAL).to_string()
 
     selection = self.relations_view.get_selection()
-    show_button = ui_xml.get_object('button_relation_show')
-    show_button.set_sensitive(self._isSelectedInView(selection))
-    selection.connect('changed', self._onViewSelectionChanged, show_button)
+    self.show_button = ui_xml.get_object('button_relation_show')
+    self.show_button.set_sensitive(self._isRelationTargetSelected())
+    selection.connect('changed', self._onRelationsSelectionChanged)
 
     # configure accessible attributes tree view
     self.attr_model = ui_xml.get_object('accattrib_liststore')
@@ -375,13 +371,13 @@ class _SectionAccessible(_InterfaceSection):
       iter = self.relations_model.append(
           None, [None,
                  markup_escape_text(r_type_name), -1,
-                 self.header_bg, False])
+                 False])
       for i in range(relation.getNTargets()):
         acc = relation.getTarget(i)
         self.relations_model.append(
             iter, [getIcon(acc),
                    markup_escape_text(acc.name), i,
-                   self.relation_bg, True])
+                   True])
     self.relations_view.expand_all()
 
     self.registerEventListener(self._accEventDescriptionChanged,
@@ -398,17 +394,24 @@ class _SectionAccessible(_InterfaceSection):
     self.states_model.clear()
     self.attr_model.clear()
 
-  def _relationSelectFunc(self, path):
+  def _isRelationTargetSelected(self):
     '''
-    Make relation-type headers unselectable.
-
-    @param path: The path about to be selected
-    @type path: tuple
-
-    @return: True if selectable
-    @rtype: boolean
+    Returns whether a relation target object is currently selected
+    in the relations tree view.
     '''
-    return not len(path) == 1
+    selection = self.relations_view.get_selection()
+    model, iter = selection.get_selected()
+    # target objects are children of the node displaying the relation type
+    return model and iter and model.get_path(iter).get_depth() > 1
+
+  def _onRelationsSelectionChanged(self, selection):
+    '''
+    Callback for selection change in the relations tree view.
+
+    @param selection: The selection object that triggered the callback.
+    @type selection: gtk.TreeSelection
+    '''
+    self.show_button.set_sensitive(self._isRelationTargetSelected())
 
   def _onRelationShow(self, relations_view, *more_args):
     '''
@@ -1550,7 +1553,7 @@ class _SectionText(_InterfaceSection):
 
   def _attrStringToDict(self, attr_string):
     '''
-    Convinience method for converting attribute strings to dictionaries.
+    Convenience method for converting attribute strings to dictionaries.
 
     @param attr_string: "key:value" pairs seperated by semi-colons.
     @type attr_string: string

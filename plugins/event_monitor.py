@@ -351,7 +351,7 @@ class EventMonitor(ViewportPlugin):
 
   def _writeText(self, text, *tags):
     '''
-    Convinience function for inserting text in to the text buffer.
+    Convenience function for inserting text in to the text buffer.
     If tags are provided they are applied to the inserted text.
 
     @param text: Text to insert
