@@ -16,13 +16,6 @@ import sys, os
 PYGTK_REQ = '2.0'
 GTK_VERSION = (2, 8, 0)
 
-try:
-  # stop the gail bridge from loading during build
-  val = os.environ['GTK_MODULES']
-  os.environ['GTK_MODULES'] = val.replace('gail:atk-bridge', '')
-except KeyError:
-  pass
-
 # test for python modules
 modules = ['pygtk', 'gtk', 'Gtk.gdk', 'wnck']
 for name in modules:

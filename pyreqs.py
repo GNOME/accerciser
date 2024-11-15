@@ -17,13 +17,6 @@ PYGTK_REQ = '2.0'
 PYATSPI_REQ = (2, 23, 3)
 GTK_VERSION = (2, 8, 0)
 
-try:
-  # stop the gail bridge from loading during build
-  val = os.environ['GTK_MODULES']
-  os.environ['GTK_MODULES'] = val.replace('gail:atk-bridge', '')
-except KeyError:
-  pass
-
 # test for python modules
 modules = ['pyatspi', 'cairo', 'rsvg', 'gi', 'gi.repository.Gtk', \
           'gi.repository.GConf', 'gi.repository.Gdk', 'gi.repository.Atk', \
