@@ -28,9 +28,6 @@ def migrate_data (old_path, new_path):
       print("Unable to migrate ", old_path)
     os.umask(mask)
 
-# Load gail module no matter what the desktop-wide settings are.
-os.environ['GTK_MODULES'] = 'gail:atk-bridge'
-
 # workaround for "libwnck is designed to work in X11 only, no valid display found"
 os.environ['GDK_BACKEND'] = 'x11'
 
