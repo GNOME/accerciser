@@ -195,9 +195,9 @@ class Main(gtk.Application, Tools):
     uri = "help:accerciser"
     if page:
         uri += "/%s" % page
-    gtk.show_uri(gdk.Screen.get_default(),
-                 uri,
-                 gtk.get_current_event_time())
+    gtk.show_uri_on_window(self.window,
+                           uri,
+                           gtk.get_current_event_time())
     return True
 
   def _onShowPreferences(self, action, data=None):
