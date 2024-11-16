@@ -19,15 +19,6 @@ from gi.repository import GLib
 
 import sys, os
 
-def migrate_data (old_path, new_path):
-  if os.path.exists(old_path) and not os.path.exists(new_path):
-    mask = os.umask(0o77)
-    try:
-      os.renames(old_path, new_path)
-    except:
-      print("Unable to migrate ", old_path)
-    os.umask(mask)
-
 # workaround for "libwnck is designed to work in X11 only, no valid display found"
 os.environ['GDK_BACKEND'] = 'x11'
 
@@ -64,16 +55,6 @@ except Exception:
 else:
   # TODO: REVIEW
   gtk.Window.set_default_icon_list(icons)
-
-# Try migration
-old_plugin_dir = os.path.join(os.environ['HOME'], '.accerciser', 'plugins')
-new_plugin_dir = os.path.join(GLib.get_user_data_dir(), 'accerciser', 'plugins')
-migrate_data(old_plugin_dir, new_plugin_dir)
-old_bookmarks = os.path.join(os.environ['HOME'], '.accerciser', 'bookmarks.xml')
-new_bookmarks = os.path.join(GLib.get_user_config_dir(), 'accerciser', 'bookmarks.xml')
-migrate_data(old_bookmarks, new_bookmarks)
-old_plugindata = os.path.join(os.environ['HOME'], '.accerciser', 'plugindata')
-new_plugindata = os.path.join(GLib.get_user_data_dir(), 'accerciser', 'plugindata')
 
 
 import accerciser
