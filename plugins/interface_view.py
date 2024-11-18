@@ -13,6 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 import gi
 
+from gi.repository import Atspi
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
 from gi.repository import Pango
@@ -637,16 +638,16 @@ class _SectionComponent(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
-    ci = acc.queryComponent()
-    bbox = ci.getExtents(pyatspi.DESKTOP_COORDS)
+    ci = acc.get_component()
+    bbox = ci.get_extents(Atspi.CoordType.SCREEN)
     self.label_posabs.set_text('%d, %d' % (bbox.x, bbox.y))
     self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
-    bbox = ci.getExtents(pyatspi.WINDOW_COORDS)
+    bbox = ci.get_extents(Atspi.CoordType.WINDOW)
     self.label_posrel.set_text('%d, %d' % (bbox.x, bbox.y))
-    layer = ci.getLayer()
-    self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_', ''))
-    self.label_zorder.set_text(repr(ci.getMDIZOrder()))
-    self.label_alpha.set_text(repr(ci.getAlpha()))
+    layer = ci.get_layer()
+    self.label_layer.set_text(repr(ci.get_layer()).replace('LAYER_', ''))
+    self.label_zorder.set_text(repr(ci.get_mdi_z_order()))
+    self.label_alpha.set_text(repr(ci.get_alpha()))
     self.registerEventListener(self._accEventComponent,
                                'object:bounds-changed',
                                'object:visible-data-changed')
