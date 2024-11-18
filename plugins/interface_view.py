@@ -13,6 +13,7 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 import gi
 
+from gi.repository import Atspi
 from gi.repository import Gtk as gtk
 from gi.repository import GdkPixbuf
 from gi.repository import Pango
@@ -602,8 +603,10 @@ class _SectionComponent(_InterfaceSection):
   '''
   A class that populates a Component interface section.
 
-  @ivar label_posrel: Relative position label
-  @type label_posrel: gtk.Label
+  @ivar label_posrelwin: Window relative position label
+  @type label_posrelwin: gtk.Label
+  @ivar label_posrelparent: Parent relative position label
+  @type posrelparent: gtk.Label
   @ivar label_posabs: Absolute position label
   @type label_posabs: gtk.Label
   @ivar label_layer: Layer label
@@ -623,7 +626,8 @@ class _SectionComponent(_InterfaceSection):
     @type ui_xml: gtk.glade.XML
     '''
     self.label_posabs = ui_xml.get_object('absolute_position_label')
-    self.label_posrel = ui_xml.get_object('relative_position_label')
+    self.label_posrelwin = ui_xml.get_object('window_relative_position_label')
+    self.label_posrelparent = ui_xml.get_object('parent_relative_position_label')
     self.label_size = ui_xml.get_object('size_label')
     self.label_layer = ui_xml.get_object('layer_label')
     self.label_zorder = ui_xml.get_object('zorder_label')
@@ -637,16 +641,18 @@ class _SectionComponent(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
-    ci = acc.queryComponent()
-    bbox = ci.getExtents(pyatspi.DESKTOP_COORDS)
+    ci = acc.get_component()
+    bbox = ci.get_extents(Atspi.CoordType.SCREEN)
     self.label_posabs.set_text('%d, %d' % (bbox.x, bbox.y))
     self.label_size.set_text('%dx%d' % (bbox.width, bbox.height))
-    bbox = ci.getExtents(pyatspi.WINDOW_COORDS)
-    self.label_posrel.set_text('%d, %d' % (bbox.x, bbox.y))
-    layer = ci.getLayer()
-    self.label_layer.set_text(repr(ci.getLayer()).replace('LAYER_', ''))
-    self.label_zorder.set_text(repr(ci.getMDIZOrder()))
-    self.label_alpha.set_text(repr(ci.getAlpha()))
+    bbox = ci.get_extents(Atspi.CoordType.WINDOW)
+    self.label_posrelwin.set_text('%d, %d' % (bbox.x, bbox.y))
+    bbox = ci.get_extents(Atspi.CoordType.PARENT)
+    self.label_posrelparent.set_text('%d, %d' % (bbox.x, bbox.y))
+    layer = ci.get_layer()
+    self.label_layer.set_text(repr(ci.get_layer()).replace('LAYER_', ''))
+    self.label_zorder.set_text(repr(ci.get_mdi_z_order()))
+    self.label_alpha.set_text(repr(ci.get_alpha()))
     self.registerEventListener(self._accEventComponent,
                                'object:bounds-changed',
                                'object:visible-data-changed')
@@ -654,7 +660,8 @@ class _SectionComponent(_InterfaceSection):
     '''
     Clear all section-specific data.
     '''
-    self.label_posrel.set_text('')
+    self.label_posrelwin.set_text('')
+    self.label_posrelparent.set_text('')
     self.label_posabs.set_text('')
     self.label_size.set_text('')
     self.label_layer.set_text('')
