@@ -914,7 +914,7 @@
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <child>
-              <!-- n-columns=2 n-rows=6 -->
+              <!-- n-columns=2 n-rows=7 -->
               <object class="GtkGrid" id="grid_component">
                 <property name="name">grid_component</property>
                 <property name="visible">True</property>
@@ -957,10 +957,10 @@
                   <object class="GtkLabel" id="label33">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Relative position</property>
+                    <property name="label" translatable="yes">Window relative position</property>
                     <property name="xalign">0</property>
                     <accessibility>
-                      <relation type="label-for" target="relative_position_label"/>
+                      <relation type="label-for" target="window_relative_position_label"/>
                     </accessibility>
                   </object>
                   <packing>
@@ -969,7 +969,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="relative_position_label">
+                  <object class="GtkLabel" id="window_relative_position_label">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
@@ -985,6 +985,37 @@
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkLabel" id="label73">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Parent relative position</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="label-for" target="parent_relative_position_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="parent_relative_position_label">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes" comments="Screen coordinates">0, 0</property>
+                    <property name="selectable">True</property>
+                    <property name="xalign">0</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="label73"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkLabel" id="label14">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
@@ -996,7 +1027,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
-                    <property name="top-attach">2</property>
+                    <property name="top-attach">3</property>
                   </packing>
                 </child>
                 <child>
@@ -1012,7 +1043,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="top-attach">2</property>
+                    <property name="top-attach">3</property>
                   </packing>
                 </child>
                 <child>
@@ -1027,7 +1058,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
-                    <property name="top-attach">3</property>
+                    <property name="top-attach">4</property>
                   </packing>
                 </child>
                 <child>
@@ -1043,7 +1074,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="top-attach">3</property>
+                    <property name="top-attach">4</property>
                   </packing>
                 </child>
                 <child>
@@ -1058,7 +1089,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
-                    <property name="top-attach">4</property>
+                    <property name="top-attach">5</property>
                   </packing>
                 </child>
                 <child>
@@ -1074,7 +1105,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="top-attach">4</property>
+                    <property name="top-attach">5</property>
                   </packing>
                 </child>
                 <child>
@@ -1089,7 +1120,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
-                    <property name="top-attach">5</property>
+                    <property name="top-attach">6</property>
                   </packing>
                 </child>
                 <child>
@@ -1105,7 +1136,7 @@
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
-                    <property name="top-attach">5</property>
+                    <property name="top-attach">6</property>
                   </packing>
                 </child>
               </object>
