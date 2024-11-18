@@ -32,15 +32,6 @@ libs = os.path.join(sys.prefix, 'lib',
 # point to the proper site-packages path
 sys.path.insert(1, libs)
 
-# TODO: Remove completely gnome dependency
-# make this program accessible
-#
-#import gnome
-## make this program accessible
-#props = { gnome.PARAM_APP_DATADIR : os.path.join(sys.prefix, 'share')}
-#gnome.program_init('accerciser', '@VERSION@',
-#                   properties=props, argv=['accerciser'] + sys.argv[1:])
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
 # initialize threads
