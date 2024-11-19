@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-08-28 09:11+0000\n"
-"PO-Revision-Date: 2024-08-28 20:40+0800\n"
+"POT-Creation-Date: 2024-11-18 22:35+0000\n"
+"PO-Revision-Date: 2024-11-19 08:59+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 46.1\n"
+"X-Generator: Gtranslator 47.0\n"
 
 #: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:8
 msgid "Accerciser"
@@ -226,12 +226,12 @@ msgstr "事件监视器"
 msgid "_Monitor Events"
 msgstr "监视器事件(_M)"
 
-#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1904
-#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1927
+#: plugins/validate.ui:199 src/lib/accerciser/plugin/message.py:293
 msgid "_Clear"
 msgstr "清除(_C)"
 
-#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+#: plugins/event_monitor.ui:208 plugins/validate.ui:153
 msgid "_Save"
 msgstr "保存(_S)"
 
@@ -260,8 +260,8 @@ msgid "Source"
 msgstr "来源"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:439 plugins/interface_view.ui:664
-#: plugins/interface_view.py:767 plugins/interface_view.py:861
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:656
+#: plugins/interface_view.py:777 plugins/interface_view.py:871
 #: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:469
 #: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
@@ -304,103 +304,103 @@ msgstr "确定(_O)"
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: plugins/interface_view.ui:119
+#: plugins/interface_view.ui:116
 msgid "Child count"
 msgstr "子节点数"
 
-#: plugins/interface_view.ui:138 plugins/interface_view.ui:323
-#: plugins/interface_view.ui:1076 plugins/interface_view.ui:1329
-#: plugins/interface_view.ui:1360 plugins/interface_view.ui:1390
-#: plugins/interface_view.ui:2161 plugins/interface_view.ui:2191
-#: plugins/interface_view.ui:2221 plugins/interface_view.ui:2654
-#: plugins/interface_view.ui:2684 plugins/interface_view.ui:2714
-#: plugins/interface_view.ui:3290 plugins/interface_view.ui:3321
-#: plugins/interface_view.ui:3352 plugins/interface_view.ui:3383
+#: plugins/interface_view.ui:135 plugins/interface_view.ui:319
+#: plugins/interface_view.ui:1099 plugins/interface_view.ui:1352
+#: plugins/interface_view.ui:1383 plugins/interface_view.ui:1413
+#: plugins/interface_view.ui:2184 plugins/interface_view.ui:2214
+#: plugins/interface_view.ui:2244 plugins/interface_view.ui:2674
+#: plugins/interface_view.ui:2704 plugins/interface_view.ui:2734
+#: plugins/interface_view.ui:3309 plugins/interface_view.ui:3340
+#: plugins/interface_view.ui:3371 plugins/interface_view.ui:3402
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:170 plugins/interface_view.ui:216
-#: plugins/interface_view.ui:1664 plugins/interface_view.py:347
-#: plugins/interface_view.py:443 plugins/interface_view.py:989
+#: plugins/interface_view.ui:167 plugins/interface_view.ui:212
+#: plugins/interface_view.ui:1687 plugins/interface_view.py:344
+#: plugins/interface_view.py:447 plugins/interface_view.py:999
 msgid "(no description)"
 msgstr "（没有描述）"
 
 #. add description to buffer
-#: plugins/interface_view.ui:186 plugins/interface_view.ui:675
-#: plugins/interface_view.ui:1649 plugins/validate.py:232
+#: plugins/interface_view.ui:183 plugins/interface_view.ui:667
+#: plugins/interface_view.ui:1672 plugins/validate.py:232
 #: plugins/validate.py:295
 msgid "Description"
 msgstr "描述"
 
-#: plugins/interface_view.ui:232
+#: plugins/interface_view.ui:228
 msgid "Help text"
 msgstr "帮助文本"
 
-#: plugins/interface_view.ui:261 plugins/interface_view.py:355
+#: plugins/interface_view.ui:257 plugins/interface_view.py:352
 msgid "(no ID)"
 msgstr "（没有 ID）"
 
-#: plugins/interface_view.ui:277 plugins/interface_view.ui:798
+#: plugins/interface_view.ui:273 plugins/interface_view.ui:790
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:304
+#: plugins/interface_view.ui:300
 msgid "Process ID"
 msgstr "进程 ID"
 
-#: plugins/interface_view.ui:393
+#: plugins/interface_view.ui:389
 msgid "States"
 msgstr "状态"
 
-#: plugins/interface_view.ui:458 plugins/interface_view.ui:1218
-#: plugins/interface_view.ui:3220
+#: plugins/interface_view.ui:454 plugins/interface_view.ui:1241
+#: plugins/interface_view.ui:3239
 msgid "Attributes"
 msgstr "属性"
 
-#: plugins/interface_view.ui:575 plugins/interface_view.ui:1484
-#: plugins/interface_view.ui:1591 plugins/interface_view.ui:2819
-#: plugins/interface_view.ui:2904
+#: plugins/interface_view.ui:567 plugins/interface_view.ui:1507
+#: plugins/interface_view.ui:1614 plugins/interface_view.ui:2839
+#: plugins/interface_view.ui:2924
 msgid "Show"
 msgstr "显示"
 
-#: plugins/interface_view.ui:606
+#: plugins/interface_view.ui:598
 msgid "Relations"
 msgstr "关系"
 
 # 意译，待商榷
-#: plugins/interface_view.ui:625
+#: plugins/interface_view.ui:617
 msgid "_Accessible"
 msgstr "可访问控件(_A)"
 
-#: plugins/interface_view.ui:686
+#: plugins/interface_view.ui:678
 msgid "Key binding"
 msgstr "键绑定"
 
-#: plugins/interface_view.ui:740
+#: plugins/interface_view.ui:732
 msgid "Perform action"
 msgstr "执行动作"
 
-#: plugins/interface_view.ui:771
+#: plugins/interface_view.ui:763
 msgid "Acti_on"
 msgstr "动作(_O)"
 
-#: plugins/interface_view.ui:813
+#: plugins/interface_view.ui:805
 msgid "Toolkit"
 msgstr "工具箱"
 
-#: plugins/interface_view.ui:828
+#: plugins/interface_view.ui:820
 msgid "Version"
 msgstr "版本"
 
-#: plugins/interface_view.ui:890
+#: plugins/interface_view.ui:882
 msgid "Ap_plication"
 msgstr "应用程序(_P)"
 
-#: plugins/interface_view.ui:909
+#: plugins/interface_view.ui:901
 msgid "Col_lection"
 msgstr "集合(_L)"
 
-#: plugins/interface_view.ui:937
+#: plugins/interface_view.ui:929
 msgid "Absolute position"
 msgstr "绝对位置"
 
@@ -408,282 +408,286 @@ msgstr "绝对位置"
 #. Component size in pixels
 #. Component size
 #. Screen coordinates
-#: plugins/interface_view.ui:952 plugins/interface_view.ui:983
-#: plugins/interface_view.ui:1014 plugins/interface_view.ui:1698
-#: plugins/interface_view.ui:1729
+#: plugins/interface_view.ui:944 plugins/interface_view.ui:975
+#: plugins/interface_view.ui:1006 plugins/interface_view.ui:1037
+#: plugins/interface_view.ui:1721 plugins/interface_view.ui:1752
 msgid "0, 0"
 msgstr "0, 0"
 
-#: plugins/interface_view.ui:968
-msgid "Relative position"
-msgstr "相对位置"
+#: plugins/interface_view.ui:960
+msgid "Window relative position"
+msgstr "窗口相对位置"
 
-#: plugins/interface_view.ui:999 plugins/interface_view.ui:1683
+#: plugins/interface_view.ui:991
+msgid "Parent relative position"
+msgstr "父级相对位置"
+
+#: plugins/interface_view.ui:1022 plugins/interface_view.ui:1706
 msgid "Size"
 msgstr "大小"
 
-#: plugins/interface_view.ui:1030
+#: plugins/interface_view.ui:1053
 msgid "Layer"
 msgstr "层"
 
-#: plugins/interface_view.ui:1045
+#: plugins/interface_view.ui:1068
 msgid "WIDGET"
 msgstr "部件"
 
-#: plugins/interface_view.ui:1061
+#: plugins/interface_view.ui:1084
 msgid "MDI-Z-order"
 msgstr "MDI Z 序"
 
-#: plugins/interface_view.ui:1092
+#: plugins/interface_view.ui:1115
 msgid "Alpha"
 msgstr "字母"
 
-#: plugins/interface_view.ui:1125
+#: plugins/interface_view.ui:1148
 msgid "Co_mponent"
 msgstr "组件(_M)"
 
-#: plugins/interface_view.ui:1144
+#: plugins/interface_view.ui:1167
 msgid "Des_ktop"
 msgstr "桌面(_K)"
 
-#: plugins/interface_view.ui:1240
+#: plugins/interface_view.ui:1263
 msgid "Locale:"
 msgstr "语系："
 
-#: plugins/interface_view.ui:1279
+#: plugins/interface_view.ui:1302
 msgid "_Document"
 msgstr "文档(_D)"
 
-#: plugins/interface_view.ui:1313
+#: plugins/interface_view.ui:1336
 msgid "Anchor count"
 msgstr "锚点计数"
 
-#: plugins/interface_view.ui:1345
+#: plugins/interface_view.ui:1368
 msgid "Start index"
 msgstr "开始索引"
 
-#: plugins/interface_view.ui:1375
+#: plugins/interface_view.ui:1398
 msgid "End index"
 msgstr "结束索引"
 
-#: plugins/interface_view.ui:1405
+#: plugins/interface_view.ui:1428
 msgid "Valid"
 msgstr "有效"
 
 #. add url role to buffer
-#: plugins/interface_view.ui:1516 plugins/validate.py:301
+#: plugins/interface_view.ui:1539 plugins/validate.py:301
 msgid "Hyperlink"
 msgstr "超链接"
 
-#: plugins/interface_view.ui:1622
+#: plugins/interface_view.ui:1645
 msgid "H_ypertext"
 msgstr "超文本(_Y)"
 
-#: plugins/interface_view.ui:1714
+#: plugins/interface_view.ui:1737
 msgid "Position"
 msgstr "位置"
 
-#: plugins/interface_view.ui:1745
+#: plugins/interface_view.ui:1768
 msgid "Locale"
 msgstr "语系"
 
-#: plugins/interface_view.ui:1778
+#: plugins/interface_view.ui:1801
 msgid "_Image"
 msgstr "图像(_I)"
 
-#: plugins/interface_view.ui:1797
+#: plugins/interface_view.ui:1820
 msgid "Lo_gin Helper"
 msgstr "登录辅助工具(_G)"
 
-#: plugins/interface_view.ui:1864
+#: plugins/interface_view.ui:1887
 msgid "Select All"
 msgstr "全部选中"
 
-#: plugins/interface_view.ui:1935
+#: plugins/interface_view.ui:1958
 msgid "_Selection"
 msgstr "选择(_S)"
 
-#: plugins/interface_view.ui:1968
+#: plugins/interface_view.ui:1991
 msgid "Content type"
 msgstr "内容类型"
 
-#: plugins/interface_view.ui:1979 plugins/interface_view.py:775
-#: plugins/interface_view.py:869
+#: plugins/interface_view.ui:2002 plugins/interface_view.py:785
+#: plugins/interface_view.py:879
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1996
+#: plugins/interface_view.ui:2019
 msgid "St_reamable Content"
 msgstr "流式内容(_R)"
 
-#: plugins/interface_view.ui:2035
+#: plugins/interface_view.ui:2058
 msgid "Caption:"
 msgstr "标题："
 
-#: plugins/interface_view.ui:2080
+#: plugins/interface_view.ui:2103
 msgid "Summary:"
 msgstr "摘要："
 
-#: plugins/interface_view.ui:2146
+#: plugins/interface_view.ui:2169
 msgid "Rows"
 msgstr "行"
 
-#: plugins/interface_view.ui:2176
+#: plugins/interface_view.ui:2199
 msgid "Columns"
 msgstr "列"
 
-#: plugins/interface_view.ui:2206
+#: plugins/interface_view.ui:2229
 msgid "Selected rows"
 msgstr "所选行"
 
-#: plugins/interface_view.ui:2236
+#: plugins/interface_view.ui:2259
 msgid "Selected columns"
 msgstr "所选列"
 
-#: plugins/interface_view.ui:2275
+#: plugins/interface_view.ui:2298
 msgid "Table Information"
 msgstr "表格信息"
 
-#: plugins/interface_view.ui:2319
+#: plugins/interface_view.ui:2342
 msgid "name (x,y)"
 msgstr "名字 (x,y)"
 
-#: plugins/interface_view.ui:2370 plugins/interface_view.ui:2484
+#: plugins/interface_view.ui:2392 plugins/interface_view.ui:2505
 msgid "Header:"
 msgstr "标题："
 
-#: plugins/interface_view.ui:2383 plugins/interface_view.ui:2497
+#: plugins/interface_view.ui:2405 plugins/interface_view.ui:2518
 msgid "<no description>"
 msgstr "<没有描述>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2416 plugins/interface_view.ui:2530
+#: plugins/interface_view.ui:2437 plugins/interface_view.ui:2550
 msgid "Extents:"
 msgstr "范围："
 
-#: plugins/interface_view.ui:2454 plugins/interface_view.ui:2639
+#: plugins/interface_view.ui:2475 plugins/interface_view.ui:2659
 msgid "Row"
 msgstr "行"
 
-#: plugins/interface_view.ui:2568 plugins/interface_view.ui:2669
+#: plugins/interface_view.ui:2588 plugins/interface_view.ui:2689
 msgid "Column"
 msgstr "列"
 
-#: plugins/interface_view.ui:2584
+#: plugins/interface_view.ui:2604
 msgid "Selected Cell"
 msgstr "选中的单元"
 
-#: plugins/interface_view.ui:2606
+#: plugins/interface_view.ui:2626
 msgid "_Table"
 msgstr "表格(_T)"
 
-#: plugins/interface_view.ui:2699
+#: plugins/interface_view.ui:2719
 msgid "Row span"
 msgstr "行跨度"
 
-#: plugins/interface_view.ui:2729
+#: plugins/interface_view.ui:2749
 msgid "Column span"
 msgstr "列跨度"
 
-#: plugins/interface_view.ui:2760
+#: plugins/interface_view.ui:2780
 msgid "Row headers"
 msgstr "行首"
 
-#: plugins/interface_view.ui:2845
+#: plugins/interface_view.ui:2865
 msgid "Column headers"
 msgstr "列首"
 
-#: plugins/interface_view.ui:2929
+#: plugins/interface_view.ui:2949
 msgid "Table"
 msgstr "表格"
 
-#: plugins/interface_view.ui:2969
+#: plugins/interface_view.ui:2989
 msgid "_TableCell"
 msgstr "表格单元"
 
-#: plugins/interface_view.ui:3019
+#: plugins/interface_view.ui:3039
 msgid "Text"
 msgstr "文本"
 
-#: plugins/interface_view.ui:3058
+#: plugins/interface_view.ui:3078
 msgid "Offset"
 msgstr "偏移"
 
-#: plugins/interface_view.ui:3096
+#: plugins/interface_view.ui:3116
 msgid "Include defaults"
 msgstr "包含默认值"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3118
+#: plugins/interface_view.ui:3137
 msgid "Start: 0"
 msgstr "开始：0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3136
+#: plugins/interface_view.ui:3155
 msgid "End: 0"
 msgstr "结束：0"
 
-#: plugins/interface_view.ui:3242
+#: plugins/interface_view.ui:3261
 msgid "Te_xt"
 msgstr "文本(_X)"
 
-#: plugins/interface_view.ui:3274
+#: plugins/interface_view.ui:3293
 msgid "Current value"
 msgstr "当前值"
 
-#: plugins/interface_view.ui:3306
+#: plugins/interface_view.ui:3325
 msgid "Minimum value"
 msgstr "最小值"
 
-#: plugins/interface_view.ui:3337
+#: plugins/interface_view.ui:3356
 msgid "Maximum value"
 msgstr "最大值"
 
-#: plugins/interface_view.ui:3368
+#: plugins/interface_view.ui:3387
 msgid "Minimum increment"
 msgstr "最小增量"
 
-#: plugins/interface_view.ui:3408
+#: plugins/interface_view.ui:3427
 msgid "Val_ue"
 msgstr "值(_U)"
 
-#: plugins/interface_view.ui:3425
+#: plugins/interface_view.ui:3444
 msgid "unknown"
 msgstr "未知"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:44
+#: plugins/interface_view.py:45
 msgid "Interface Viewer"
 msgstr "界面查看器"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:47
+#: plugins/interface_view.py:48
 msgid "Allows viewing of various interface properties"
 msgstr "允许查看各种界面属性"
 
-#: plugins/interface_view.py:238
+#: plugins/interface_view.py:239
 msgid "(not implemented)"
 msgstr "（未实现）"
 
-#: plugins/interface_view.py:349 plugins/interface_view.py:351
-#: plugins/interface_view.py:456 plugins/interface_view.py:458
+#: plugins/interface_view.py:346 plugins/interface_view.py:348
+#: plugins/interface_view.py:460 plugins/interface_view.py:462
 msgid "(no help text)"
 msgstr "（无帮助文本）"
 
-#: plugins/interface_view.py:877
+#: plugins/interface_view.py:887
 msgid "Start"
 msgstr "开始"
 
-#: plugins/interface_view.py:885
+#: plugins/interface_view.py:895
 msgid "End"
 msgstr "结束"
 
-#: plugins/interface_view.py:1050
+#: plugins/interface_view.py:1060
 msgid "Too many selectable children"
 msgstr "太多可选择的子节点"
 
-#: plugins/interface_view.py:1517 plugins/interface_view.py:1520
+#: plugins/interface_view.py:1527 plugins/interface_view.py:1530
 msgid "(Editable)"
 msgstr "（可编辑）"
 
@@ -692,7 +696,7 @@ msgstr "（可编辑）"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1667
+#: plugins/interface_view.py:1677
 #, python-format
 msgid "Start: %d"
 msgstr "开始：%d"
@@ -702,7 +706,7 @@ msgstr "开始：%d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1673
+#: plugins/interface_view.py:1683
 #, python-format
 msgid "End: %d"
 msgstr "结束：%d"
@@ -723,19 +727,19 @@ msgstr "检查上次获得焦点的可访问对象"
 msgid "Inspect accessible under mouse"
 msgstr "检查鼠标下面的可访问对象"
 
-#: plugins/validate.ui:44
+#: plugins/validate.ui:43
 msgid "Sche_ma:"
 msgstr "Sche_ma："
 
-#: plugins/validate.ui:104
+#: plugins/validate.ui:103
 msgid "V_alidate"
 msgstr "校验(_A)"
 
-#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+#: plugins/validate.ui:246 src/lib/accerciser/menus.py:33
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: plugins/validate.ui:285 plugins/validate.py:377 plugins/validate.py:434
+#: plugins/validate.ui:284 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "空闲"
 
@@ -1024,10 +1028,12 @@ msgstr "高亮框的填充颜色"
 #: src/lib/accerciser/about_dialog.py:52
 msgid "translator-credits"
 msgstr ""
-"Liu Yubao <yubao.liu@gmail.com>\n"
-"Ray Wang <wanglei1123@gmail.com>\n"
-"Tong Hui <tonghuix@gmail.com>\n"
-"lumingzh <lumingzh@qq.com>"
+"Liu Yubao <yubao.liu@gmail.com>, 2008\n"
+"Ray Wang <wanglei1123@gmail.com>, 2008\n"
+"QAed by Funda Wang <fundawang@gmail.com>, 2008\n"
+"YunQiang Su <wzssyqa@gmail.com>, 2011,2012\n"
+"Tong Hui <tonghuix@gmail.com>, 2014\n"
+"lumingzh <lumingzh@qq.com>, 2024"
 
 #: src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
