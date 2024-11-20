@@ -33,7 +33,7 @@ def get_window_manager():
     return KWinWindowManager()
   if preferred == 'gnomeshell':
     return GnomeShellWindowManager()
-  return WindowManager()
+  return WnckWindowManager()
 
 
 class WindowGeometry:
@@ -75,8 +75,8 @@ class WindowManager:
   screen itself.
   This includes fetching information from the X11 window manager or
   Wayland compositor.
-  Any handling specific to a particular window system should be done in this
-  class.
+  Any handling specific to a particular window system should be done in
+  (a subclass of) this class.
   '''
 
   def getToolkitNameAndVersion(self, acc):
@@ -123,52 +123,13 @@ class WindowManager:
     '''
     Retrieve window information for all (system) windows.
 
+    The default implementation returns an empty list.
+    Subclasses should override this.
+
     @return: Window information for all windows.
     @rtype: list[WindowInfo]
     '''
-    wnck_screen = Wnck.Screen.get_default()
-    active_workspace = wnck_screen.get_active_workspace()
-    win_infos = []
-    stacking_index = 0
-    for window in wnck_screen.get_windows_stacked():
-      # client geometry is used unless window has client side decorations,
-      # in which case frame geometry is used;
-      # assume that client side decoration is used when client rect contains the frame rect
-      client_x, client_y, client_width, client_height = window.get_client_window_geometry()
-      frame_x, frame_y, frame_width, frame_height = window.get_geometry()
-      client_contains_frame = (client_x <= frame_x) and (client_y <= frame_y) \
-          and (client_x + client_width >= frame_x + frame_width) \
-          and (client_y + client_height >= frame_y + frame_height)
-      if client_contains_frame:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = frame_x, frame_y, frame_width, frame_height
-      else:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = client_x, client_y, client_width, client_height
-
-      title = window.get_name()
-
-      # strip additional trailing Left-to-Right Mark (U+200E), seen with libwnck and KWin
-      if title[-1] == '\u200e':
-        title = title[0:-1]
-
-      # KWin 5 (but not KWin 6) adds suffix to window title when there are multiple windows with the
-      # same name, e.g. first window: "Hypertext", second window: "Hypertext <2>".
-      # Remove the suffix as the accessible name retrieved from AT-SPI2 doesn't have it either
-      regex = '^.* <[0-9]+>$'
-      if re.match(regex, title):
-        title = title[0:title.rfind(' ')]
-
-      # workspace can be None if window is on all workspaces, so only consider case
-      # of an actually returned workspace differing from the active one as not on active workspace
-      workspace = window.get_workspace()
-      on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
-      pid = window.get_pid()
-      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
-                            stacking_index=stacking_index, on_current_workspace=on_active_workspace,
-                            process_id=pid)
-      win_infos.append(win_info)
-      stacking_index = stacking_index + 1
-
-    return win_infos
+    return []
 
   def getWindowInfo(self, toplevel):
     '''
@@ -212,7 +173,7 @@ class WindowManager:
       if pid_candidates:
         candidates = pid_candidates
 
-      # in case of multiple candidates, prefer one where size reported by AT-SPI matches Wnck one
+      # in case of multiple candidates, prefer one for which size reported by AT-SPI matches
       atspi_width, atspi_height = toplevel.queryComponent().getSize()
       for candidate in candidates:
         if candidate.width == atspi_width and candidate.height == atspi_height:
@@ -247,20 +208,14 @@ class WindowManager:
     '''
     Get the icon of one of the top-level windows of the given application.
 
-    The default implementation uses Wnck.
+    The default implementation returns None.
+    Subclasses should override this.
 
     @param app: The application accessible for which to retrieve a window icon.
     @type toplevel: Atspi.Accessible
     @return: The icon, or None.
     @rtype: GdkPixbuf.Pixbuf
     '''
-    s = Wnck.Screen.get_default()
-    s.force_update()
-    for win in s.get_windows():
-      wname = win.get_name()
-      for child in app:
-        if child.name == wname:
-          return win.get_mini_icon()
     return None
 
   def getApplicationIconViaAppID(self, app):
@@ -535,3 +490,60 @@ class GnomeShellWindowManager(WindowManager):
 
   def getApplicationIcon(self, app):
     return self.getApplicationIconViaAppID(app)
+
+class WnckWindowManager(WindowManager):
+
+  def getWindowInfos(self):
+    wnck_screen = Wnck.Screen.get_default()
+    active_workspace = wnck_screen.get_active_workspace()
+    win_infos = []
+    stacking_index = 0
+    for window in wnck_screen.get_windows_stacked():
+      # client geometry is used unless window has client side decorations,
+      # in which case frame geometry is used;
+      # assume that client side decoration is used when client rect contains the frame rect
+      client_x, client_y, client_width, client_height = window.get_client_window_geometry()
+      frame_x, frame_y, frame_width, frame_height = window.get_geometry()
+      client_contains_frame = (client_x <= frame_x) and (client_y <= frame_y) \
+          and (client_x + client_width >= frame_x + frame_width) \
+          and (client_y + client_height >= frame_y + frame_height)
+      if client_contains_frame:
+        toplevel_x, toplevel_y, toplevel_width, toplevel_height = frame_x, frame_y, frame_width, frame_height
+      else:
+        toplevel_x, toplevel_y, toplevel_width, toplevel_height = client_x, client_y, client_width, client_height
+
+      title = window.get_name()
+
+      # strip additional trailing Left-to-Right Mark (U+200E), seen with libwnck and KWin
+      if title[-1] == '\u200e':
+        title = title[0:-1]
+
+      # KWin 5 (but not KWin 6) adds suffix to window title when there are multiple windows with the
+      # same name, e.g. first window: "Hypertext", second window: "Hypertext <2>".
+      # Remove the suffix as the accessible name retrieved from AT-SPI2 doesn't have it either
+      regex = '^.* <[0-9]+>$'
+      if re.match(regex, title):
+        title = title[0:title.rfind(' ')]
+
+      # workspace can be None if window is on all workspaces, so only consider case
+      # of an actually returned workspace differing from the active one as not on active workspace
+      workspace = window.get_workspace()
+      on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
+      pid = window.get_pid()
+      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
+                            stacking_index=stacking_index, on_current_workspace=on_active_workspace,
+                            process_id=pid)
+      win_infos.append(win_info)
+      stacking_index = stacking_index + 1
+
+    return win_infos
+
+  def getApplicationIcon(self, app):
+    s = Wnck.Screen.get_default()
+    s.force_update()
+    for win in s.get_windows():
+      wname = win.get_name()
+      for child in app:
+        if child.name == wname:
+          return win.get_mini_icon()
+    return None
