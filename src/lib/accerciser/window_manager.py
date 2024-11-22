@@ -10,7 +10,6 @@ is available at U{http://www.opensource.org/licenses/bsd-license.php}
 
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
-from gi.repository import Wnck
 import pyatspi
 
 import xdg
@@ -22,7 +21,6 @@ import datetime
 import dbus
 import json
 import os
-import re
 import subprocess
 import sys
 
@@ -493,57 +491,59 @@ class GnomeShellWindowManager(WindowManager):
 
 class WnckWindowManager(WindowManager):
 
+  def _runWnckScript(self, args):
+    '''
+    Run Python script that uses Wnck to retrieve window information
+    with the given arguments and return the script (JSON) output converted
+    to a Python data structure.
+    '''
+    try:
+      # run script with env var GDK_BACKEND=x11 because Wnck only works on X11/XWayland
+      env_vars = os.environ
+      env_vars['GDK_BACKEND'] = 'x11'
+      wnck_script_path = os.path.join(sys.prefix, 'share', 'accerciser', 'wnck-window-infos.py')
+      all_args = [wnck_script_path] + args
+      script_output = subprocess.run(all_args,
+                                     capture_output=True,
+                                     check=True,
+                                     env=env_vars
+                                    ).stdout.decode()
+      data = json.loads(script_output)
+      return data
+    except Exception:
+      return None
+
   def getWindowInfos(self):
-    wnck_screen = Wnck.Screen.get_default()
-    active_workspace = wnck_screen.get_active_workspace()
-    win_infos = []
-    stacking_index = 0
-    for window in wnck_screen.get_windows_stacked():
-      # client geometry is used unless window has client side decorations,
-      # in which case frame geometry is used;
-      # assume that client side decoration is used when client rect contains the frame rect
-      client_x, client_y, client_width, client_height = window.get_client_window_geometry()
-      frame_x, frame_y, frame_width, frame_height = window.get_geometry()
-      client_contains_frame = (client_x <= frame_x) and (client_y <= frame_y) \
-          and (client_x + client_width >= frame_x + frame_width) \
-          and (client_y + client_height >= frame_y + frame_height)
-      if client_contains_frame:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = frame_x, frame_y, frame_width, frame_height
-      else:
-        toplevel_x, toplevel_y, toplevel_width, toplevel_height = client_x, client_y, client_width, client_height
+    window_data = self._runWnckScript(['window-infos'])
+    if not window_data:
+      return []
 
-      title = window.get_name()
-
-      # strip additional trailing Left-to-Right Mark (U+200E), seen with libwnck and KWin
-      if title[-1] == '\u200e':
-        title = title[0:-1]
-
-      # KWin 5 (but not KWin 6) adds suffix to window title when there are multiple windows with the
-      # same name, e.g. first window: "Hypertext", second window: "Hypertext <2>".
-      # Remove the suffix as the accessible name retrieved from AT-SPI2 doesn't have it either
-      regex = '^.* <[0-9]+>$'
-      if re.match(regex, title):
-        title = title[0:title.rfind(' ')]
-
-      # workspace can be None if window is on all workspaces, so only consider case
-      # of an actually returned workspace differing from the active one as not on active workspace
-      workspace = window.get_workspace()
-      on_active_workspace = (not workspace) or (not active_workspace) or window.is_on_workspace(active_workspace)
-      pid = window.get_pid()
-      win_info = WindowInfo(title, toplevel_x, toplevel_y, toplevel_width, toplevel_height,
-                            stacking_index=stacking_index, on_current_workspace=on_active_workspace,
-                            process_id=pid)
-      win_infos.append(win_info)
-      stacking_index = stacking_index + 1
-
-    return win_infos
+    window_infos = []
+    for win in window_data:
+      win_info = WindowInfo(win["caption"], win["geometry.x"], win["geometry.y"],
+                            win["geometry.width"], win["geometry.height"],
+                            stacking_index=win["stackingOrder"],
+                            on_current_workspace=win["isOnCurrentWorkspace"],
+                            process_id=win["pid"])
+      window_infos.append(win_info)
+    return window_infos
 
   def getApplicationIcon(self, app):
-    s = Wnck.Screen.get_default()
-    s.force_update()
-    for win in s.get_windows():
-      wname = win.get_name()
-      for child in app:
-        if child.name == wname:
-          return win.get_mini_icon()
-    return None
+    window_names = [app.get_child_at_index(i).get_name() for i in range(0, app.get_child_count())]
+    response = self._runWnckScript(['icon'] + window_names)
+    if not response or not ('pixels' in response):
+      return None
+
+    try:
+      pixbuf = GdkPixbuf.Pixbuf.new_from_data(
+        bytes.fromhex(response['pixels']),
+        GdkPixbuf.Colorspace.RGB,
+        response['has_alpha'],
+        response['bits_per_sample'],
+        response['width'],
+        response['height'],
+        response['rowstride']
+      )
+      return pixbuf
+    except:
+      return None

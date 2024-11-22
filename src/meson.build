@@ -13,3 +13,13 @@ configure_file(
   install: true,
   install_dir: get_option('bindir'),
 )
+
+configure_file(
+  input: 'wnck-window-infos.py',
+  output: 'wnck-window-infos.py',
+  configuration: {
+    'PYTHON': python3.full_path(),
+  },
+  install: true,
+  install_dir: get_option('datadir') / meson.project_name(),
+)
