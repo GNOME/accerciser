@@ -1430,6 +1430,8 @@ class _SectionText(_InterfaceSection):
   @type offset_spin: gtk.SpinButton
   @ivar text_view: Text view of provided text.
   @type text_view: gtk.TextView
+  @ivar label_caret_offset: Label for caret offset
+  @type text_view: gtk.Label
   @ivar text_buffer: Text buffer of provided text.
   @type text_buffer: gtk.TextBuffer
   @ivar toggle_defaults: Toggle button for viewing default text attributes.
@@ -1460,6 +1462,7 @@ class _SectionText(_InterfaceSection):
 
     self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
     self.text_view = ui_xml.get_object('textview_text')
+    self.label_caret_offset = ui_xml.get_object('label_caret_offset')
     pango_ctx = self.text_view.get_pango_context()
     for f in pango_ctx.list_families():
         name = f.get_name()
@@ -1508,25 +1511,24 @@ class _SectionText(_InterfaceSection):
     '''
     self.offset_spin.set_value(0)
 
-    ti = acc.queryText()
+    ti = acc.get_text_iface()
 
-    text = ti.getText(0, ti.characterCount)
+    text = Atspi.Text.get_text(ti, 0, ti.get_character_count())
     self.text_buffer.set_text(text)
 
-    self.offset_spin.get_adjustment().upper = ti.characterCount
+    self.label_caret_offset.set_text(str(ti.get_caret_offset()))
+
+    self.offset_spin.get_adjustment().upper = ti.get_character_count()
 
     self.popTextAttr(offset=0)
 
-    try:
-      eti = acc.queryEditableText()
-    except:
-      eti = None
+    eti = acc.get_editable_text_iface()
 
     expander_label = self.expander.get_label_widget()
     label_text = expander_label.get_label()
     label_text = label_text.replace(_('(Editable)'), '')
     label_text = label_text.strip(' ')
-    if eti and acc.getState().contains(pyatspi.STATE_EDITABLE):
+    if eti and acc.get_state_set().contains(Atspi.StateType.EDITABLE):
       label_text += ' ' + _('(Editable)')
       self.text_view.set_editable(True)
     else:
@@ -1540,6 +1542,8 @@ class _SectionText(_InterfaceSection):
 
     self.registerEventListener(self._accEventText,
                                'object:text-changed')
+    self.registerEventListener(self._accEventTextCaretMoved,
+                               'object:text-caret-moved')
 
   def clearUI(self):
     '''
@@ -1557,26 +1561,6 @@ class _SectionText(_InterfaceSection):
     self.label_end.set_text('')
     self.text_buffer.set_text('')
     self.attr_model.clear()
-
-  def _attrStringToDict(self, attr_string):
-    '''
-    Convenience method for converting attribute strings to dictionaries.
-
-    @param attr_string: "key:value" pairs seperated by semi-colons.
-    @type attr_string: string
-
-    @return: Dictionary of attributes
-    @rtype: dictionary
-    '''
-    if not attr_string:
-      return {}
-    attr_dict = {}
-    for attr_pair in attr_string.split(';'):
-      key, value = attr_pair.split(':', 1)
-      if ((key[0]==' ') and (len(key) > 0)): #at-spi 1
-        key = key[1:]
-      attr_dict[key] = value
-    return attr_dict
 
   def _onTextModified(self, text_buffer):
     '''
@@ -1634,9 +1618,8 @@ class _SectionText(_InterfaceSection):
     use attribute mark's offset.
     @type offset: integer
     '''
-    try:
-      ti = self.node.acc.queryText()
-    except:
+    ti = self.node.acc.get_text_iface()
+    if not ti:
       return
 
     if offset is None:
@@ -1645,13 +1628,12 @@ class _SectionText(_InterfaceSection):
       offset = iter.get_offset()
 
     show_default = self.toggle_defaults.get_active()
-    attr, start, end = ti.getAttributes(offset)
+    attr, start, end = ti.get_text_attributes(offset)
     if show_default:
-      def_attr = ti.getDefaultAttributes()
-      attr_dict = self._attrStringToDict(def_attr)
-      attr_dict.update(self._attrStringToDict(attr))
+      attr_dict = ti.get_default_attributes()
+      attr_dict.update(attr)
     else:
-      attr_dict = self._attrStringToDict(attr)
+      attr_dict = attr
 
     attr_list = list(attr_dict.keys())
     attr_list.sort()
@@ -1703,9 +1685,9 @@ class _SectionText(_InterfaceSection):
         start,end = s
         startOffset = start.get_offset()
         endOffset = end.get_offset()
-        text = self.node.acc.queryText()
-        (x, y, width, height) = text.getRangeExtents(startOffset, endOffset, pyatspi.DESKTOP_COORDS)
-        ah = node._HighLight(x, y, width, height,
+        text = self.node.acc.get_text_iface()
+        rect = text.get_range_extents(startOffset, endOffset, Atspi.CoordType.SCREEN)
+        ah = node._HighLight(rect.x, rect.y, rect.width, rect.height,
                              node.FILL_COLOR, node.FILL_ALPHA,
                              node.BORDER_COLOR, node.BORDER_ALPHA,
                              2.0, 0)
@@ -1717,7 +1699,7 @@ class _SectionText(_InterfaceSection):
     '''
     Callback for accessible text changes. Updates the text buffer accordingly.
 
-    @param event: Event that triggered thi callback.
+    @param event: Event that triggered this callback.
     @type event: Accessibility.Event
     '''
     if self.node.acc != event.source:
@@ -1726,7 +1708,7 @@ class _SectionText(_InterfaceSection):
     if event.type.major == 'text-changed':
       current_text = self.text_buffer.get_text(self.text_buffer.get_start_iter(),
                                                self.text_buffer.get_end_iter(), False)
-      if event.source.queryText().getText(0, -1) == current_text:
+      if Atspi.Text.get_text(event.source.get_text_iface(), 0, -1) == current_text:
         # text already up to date
         return
 
@@ -1749,6 +1731,23 @@ class _SectionText(_InterfaceSection):
         self.text_buffer.delete(text_iter, text_iter_end)
         self.text_buffer.handler_unblock(self._text_delete_handler)
 
+  def _accEventTextCaretMoved(self, event):
+    '''
+    Callback for object:text-caret-moved events. Updates the displayed
+    caret position accordingly.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    ti = self.node.acc.get_text_iface()
+    if not ti:
+      return
+
+    self.label_caret_offset.set_text(str(ti.get_caret_offset()))
+
   def _onITextInsert(self, text_buffer, iter, text, length):
     '''
     Callback for text inserts in the text buffer. Sends changes to examined
@@ -1763,15 +1762,14 @@ class _SectionText(_InterfaceSection):
     @param length: The length of theinserted text.
     @type length: integer
     '''
-    try:
-      eti = self.node.acc.queryEditableText()
-    except:
+    eti = self.node.acc.get_editable_text_iface()
+    if not eti:
       return
 
     call = (iter.get_offset(), text, length)
 
     self.outgoing_calls['itext_insert'].append(call)
-    eti.insertText(*call)
+    eti.insert_text(*call)
 
   def _onITextDelete(self, text_buffer, start, end):
     '''
@@ -1785,15 +1783,14 @@ class _SectionText(_InterfaceSection):
     @param end: The end offset of the delete action.
     @type end: integer
     '''
-    try:
-      eti = self.node.acc.queryEditableText()
-    except:
+    eti = self.node.acc.get_editable_text_iface()
+    if not eti:
       return
 
     call = (start.get_offset(), end.get_offset())
 
     self.outgoing_calls['itext_delete'].append(call)
-    eti.deleteText(*call)
+    eti.delete_text(*call)
 
   def _onTextFocusChanged(self, text_view, event):
     '''
