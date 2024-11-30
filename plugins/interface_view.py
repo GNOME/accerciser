@@ -1430,6 +1430,8 @@ class _SectionText(_InterfaceSection):
   @type offset_spin: gtk.SpinButton
   @ivar text_view: Text view of provided text.
   @type text_view: gtk.TextView
+  @ivar label_caret_offset: Label for caret offset
+  @type text_view: gtk.Label
   @ivar text_buffer: Text buffer of provided text.
   @type text_buffer: gtk.TextBuffer
   @ivar toggle_defaults: Toggle button for viewing default text attributes.
@@ -1460,6 +1462,7 @@ class _SectionText(_InterfaceSection):
 
     self.offset_spin = ui_xml.get_object('spinbutton_text_offset')
     self.text_view = ui_xml.get_object('textview_text')
+    self.label_caret_offset = ui_xml.get_object('label_caret_offset')
     pango_ctx = self.text_view.get_pango_context()
     for f in pango_ctx.list_families():
         name = f.get_name()
@@ -1513,6 +1516,8 @@ class _SectionText(_InterfaceSection):
     text = Atspi.Text.get_text(ti, 0, ti.get_character_count())
     self.text_buffer.set_text(text)
 
+    self.label_caret_offset.set_text(str(ti.get_caret_offset()))
+
     self.offset_spin.get_adjustment().upper = ti.get_character_count()
 
     self.popTextAttr(offset=0)
@@ -1537,6 +1542,8 @@ class _SectionText(_InterfaceSection):
 
     self.registerEventListener(self._accEventText,
                                'object:text-changed')
+    self.registerEventListener(self._accEventTextCaretMoved,
+                               'object:text-caret-moved')
 
   def clearUI(self):
     '''
@@ -1692,7 +1699,7 @@ class _SectionText(_InterfaceSection):
     '''
     Callback for accessible text changes. Updates the text buffer accordingly.
 
-    @param event: Event that triggered thi callback.
+    @param event: Event that triggered this callback.
     @type event: Accessibility.Event
     '''
     if self.node.acc != event.source:
@@ -1723,6 +1730,23 @@ class _SectionText(_InterfaceSection):
         self.text_buffer.handler_block(self._text_delete_handler)
         self.text_buffer.delete(text_iter, text_iter_end)
         self.text_buffer.handler_unblock(self._text_delete_handler)
+
+  def _accEventTextCaretMoved(self, event):
+    '''
+    Callback for object:text-caret-moved events. Updates the displayed
+    caret position accordingly.
+
+    @param event: Event that triggered this callback.
+    @type event: Accessibility.Event
+    '''
+    if self.node.acc != event.source:
+      return
+
+    ti = self.node.acc.get_text_iface()
+    if not ti:
+      return
+
+    self.label_caret_offset.set_text(str(ti.get_caret_offset()))
 
   def _onITextInsert(self, text_buffer, iter, text, length):
     '''
