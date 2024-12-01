@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accesciser trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-11-18 22:35+0000\n"
-"PO-Revision-Date: 2024-11-19 18:23+0200\n"
+"POT-Creation-Date: 2024-11-30 22:33+0000\n"
+"PO-Revision-Date: 2024-12-01 17:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -316,8 +316,9 @@ msgstr "Кількість дочірніх елементів"
 #: plugins/interface_view.ui:2184 plugins/interface_view.ui:2214
 #: plugins/interface_view.ui:2244 plugins/interface_view.ui:2674
 #: plugins/interface_view.ui:2704 plugins/interface_view.ui:2734
-#: plugins/interface_view.ui:3309 plugins/interface_view.ui:3340
-#: plugins/interface_view.ui:3371 plugins/interface_view.ui:3402
+#: plugins/interface_view.ui:3077 plugins/interface_view.ui:3352
+#: plugins/interface_view.ui:3383 plugins/interface_view.ui:3414
+#: plugins/interface_view.ui:3445
 msgid "0"
 msgstr "0"
 
@@ -355,7 +356,7 @@ msgid "States"
 msgstr "Стани"
 
 #: plugins/interface_view.ui:454 plugins/interface_view.ui:1241
-#: plugins/interface_view.ui:3239
+#: plugins/interface_view.ui:3282
 msgid "Attributes"
 msgstr "Атрибути"
 
@@ -416,12 +417,10 @@ msgid "0, 0"
 msgstr "0, 0"
 
 #: plugins/interface_view.ui:960
-#| msgid "Relative position"
 msgid "Window relative position"
 msgstr "Розташування відносно вікна"
 
 #: plugins/interface_view.ui:991
-#| msgid "Relative position"
 msgid "Parent relative position"
 msgstr "Розташування відносно батьківського віджета"
 
@@ -613,49 +612,54 @@ msgstr "_Комірка таблиці"
 msgid "Text"
 msgstr "Текст"
 
-#: plugins/interface_view.ui:3078
+#: plugins/interface_view.ui:3062
+#| msgid "Offset"
+msgid "Caret Offset"
+msgstr "Зсув каретки"
+
+#: plugins/interface_view.ui:3121
 msgid "Offset"
 msgstr "Зсув"
 
-#: plugins/interface_view.ui:3116
+#: plugins/interface_view.ui:3159
 msgid "Include defaults"
 msgstr "Увімкнути типові"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3137
+#: plugins/interface_view.ui:3180
 msgid "Start: 0"
 msgstr "Початок: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3155
+#: plugins/interface_view.ui:3198
 msgid "End: 0"
 msgstr "Кінець: 0"
 
-#: plugins/interface_view.ui:3261
+#: plugins/interface_view.ui:3304
 msgid "Te_xt"
 msgstr "_Текст"
 
-#: plugins/interface_view.ui:3293
+#: plugins/interface_view.ui:3336
 msgid "Current value"
 msgstr "Поточне значення"
 
-#: plugins/interface_view.ui:3325
+#: plugins/interface_view.ui:3368
 msgid "Minimum value"
 msgstr "Мінімальне значення"
 
-#: plugins/interface_view.ui:3356
+#: plugins/interface_view.ui:3399
 msgid "Maximum value"
 msgstr "Максимальне значення"
 
-#: plugins/interface_view.ui:3387
+#: plugins/interface_view.ui:3430
 msgid "Minimum increment"
 msgstr "Мінімальний приріст"
 
-#: plugins/interface_view.ui:3427
+#: plugins/interface_view.ui:3470
 msgid "Val_ue"
 msgstr "_Значення"
 
-#: plugins/interface_view.ui:3444
+#: plugins/interface_view.ui:3487
 msgid "unknown"
 msgstr "невідоме"
 
@@ -690,7 +694,7 @@ msgstr "Кінець"
 msgid "Too many selectable children"
 msgstr "Надто багато виділених дочірніх об'єктів"
 
-#: plugins/interface_view.py:1527 plugins/interface_view.py:1530
+#: plugins/interface_view.py:1529 plugins/interface_view.py:1532
 msgid "(Editable)"
 msgstr "(Змінюване)"
 
@@ -699,7 +703,7 @@ msgstr "(Змінюване)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1677
+#: plugins/interface_view.py:1659
 #, python-format
 msgid "Start: %d"
 msgstr "Початок: %d"
@@ -709,7 +713,7 @@ msgstr "Початок: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1683
+#: plugins/interface_view.py:1665
 #, python-format
 msgid "End: %d"
 msgstr "Кінець: %d"
