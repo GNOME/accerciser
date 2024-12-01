@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-11-18 22:35+0000\n"
-"PO-Revision-Date: 2024-11-20 15:55+0100\n"
+"POT-Creation-Date: 2024-11-30 22:33+0000\n"
+"PO-Revision-Date: 2024-12-01 10:05+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -314,8 +314,9 @@ msgstr "Števec podrejenih opravil"
 #: plugins/interface_view.ui:2184 plugins/interface_view.ui:2214
 #: plugins/interface_view.ui:2244 plugins/interface_view.ui:2674
 #: plugins/interface_view.ui:2704 plugins/interface_view.ui:2734
-#: plugins/interface_view.ui:3309 plugins/interface_view.ui:3340
-#: plugins/interface_view.ui:3371 plugins/interface_view.ui:3402
+#: plugins/interface_view.ui:3077 plugins/interface_view.ui:3352
+#: plugins/interface_view.ui:3383 plugins/interface_view.ui:3414
+#: plugins/interface_view.ui:3445
 msgid "0"
 msgstr "0"
 
@@ -353,7 +354,7 @@ msgid "States"
 msgstr "Stanja"
 
 #: plugins/interface_view.ui:454 plugins/interface_view.ui:1241
-#: plugins/interface_view.ui:3239
+#: plugins/interface_view.ui:3282
 msgid "Attributes"
 msgstr "Atributi"
 
@@ -609,49 +610,53 @@ msgstr "_Celica razpredelnice"
 msgid "Text"
 msgstr "Besedilo"
 
-#: plugins/interface_view.ui:3078
+#: plugins/interface_view.ui:3062
+msgid "Caret Offset"
+msgstr "Odmik strežice"
+
+#: plugins/interface_view.ui:3121
 msgid "Offset"
 msgstr "Odmik"
 
-#: plugins/interface_view.ui:3116
+#: plugins/interface_view.ui:3159
 msgid "Include defaults"
 msgstr "Vključi privzeto"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3137
+#: plugins/interface_view.ui:3180
 msgid "Start: 0"
 msgstr "Začetek: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3155
+#: plugins/interface_view.ui:3198
 msgid "End: 0"
 msgstr "Konec: 0"
 
-#: plugins/interface_view.ui:3261
+#: plugins/interface_view.ui:3304
 msgid "Te_xt"
 msgstr "_Besedilo"
 
-#: plugins/interface_view.ui:3293
+#: plugins/interface_view.ui:3336
 msgid "Current value"
 msgstr "Trenutna vrednost"
 
-#: plugins/interface_view.ui:3325
+#: plugins/interface_view.ui:3368
 msgid "Minimum value"
 msgstr "Najmanjša vrednost"
 
-#: plugins/interface_view.ui:3356
+#: plugins/interface_view.ui:3399
 msgid "Maximum value"
 msgstr "Največja vrednost"
 
-#: plugins/interface_view.ui:3387
+#: plugins/interface_view.ui:3430
 msgid "Minimum increment"
 msgstr "Najmanjše povečevanje"
 
-#: plugins/interface_view.ui:3427
+#: plugins/interface_view.ui:3470
 msgid "Val_ue"
 msgstr "_Vrednost"
 
-#: plugins/interface_view.ui:3444
+#: plugins/interface_view.ui:3487
 msgid "unknown"
 msgstr "neznano"
 
@@ -686,7 +691,7 @@ msgstr "Konec"
 msgid "Too many selectable children"
 msgstr "Preveč izbirnih podrejenih procesov"
 
-#: plugins/interface_view.py:1527 plugins/interface_view.py:1530
+#: plugins/interface_view.py:1529 plugins/interface_view.py:1532
 msgid "(Editable)"
 msgstr "(Uredljivo)"
 
@@ -695,7 +700,7 @@ msgstr "(Uredljivo)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1677
+#: plugins/interface_view.py:1659
 #, python-format
 msgid "Start: %d"
 msgstr "Začetek: %d"
@@ -705,7 +710,7 @@ msgstr "Začetek: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1683
+#: plugins/interface_view.py:1665
 #, python-format
 msgid "End: %d"
 msgstr "Konec: %d"
