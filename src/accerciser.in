@@ -13,13 +13,13 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 import gi
-gi.require_version('Wnck', '3.0')
 
 from gi.repository import GLib
 
 import sys, os
 
-# workaround for "libwnck is designed to work in X11 only, no valid display found"
+# force running on X11/XWayland because window positioning
+# needed for the highlighting feature doesn't work on Wayland
 os.environ['GDK_BACKEND'] = 'x11'
 
 # make the accerciser directory part of the path to aid user imports
