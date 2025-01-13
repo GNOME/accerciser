@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-11-18 22:35+0000\n"
-"PO-Revision-Date: 2024-11-21 01:28+0100\n"
+"POT-Creation-Date: 2025-01-12 11:10+0000\n"
+"PO-Revision-Date: 2025-01-13 13:16+0100\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -163,10 +163,14 @@ msgid "Hotkey combination for related action."
 msgstr "Kombinace horkých kláves pro přidružené akce."
 
 #: org.gtk.accerciser.metainfo.xml.in:9
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
+#: org.gtk.accerciser.metainfo.xml.in:13
 msgid "Accessibility explorer for the GNOME desktop"
 msgstr "Průzkumník přístupnosti pro pracovní prostředí GNOME"
 
-#: org.gtk.accerciser.metainfo.xml.in:11
+#: org.gtk.accerciser.metainfo.xml.in:15
 msgid ""
 "Accerciser is an interactive Python accessibility explorer for the GNOME "
 "desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
@@ -178,7 +182,7 @@ msgstr ""
 "umožní vám zkontrolovat, jestli aplikace poskytuje správné informace "
 "technologiím zpřístupnění a automatizovat test vývojového rámce."
 
-#: org.gtk.accerciser.metainfo.xml.in:16
+#: org.gtk.accerciser.metainfo.xml.in:20
 msgid ""
 "Accerciser has a simple plugin framework which you can use to create custom "
 "views of accessibility information."
@@ -316,8 +320,9 @@ msgstr "Počet potomků"
 #: plugins/interface_view.ui:2184 plugins/interface_view.ui:2214
 #: plugins/interface_view.ui:2244 plugins/interface_view.ui:2674
 #: plugins/interface_view.ui:2704 plugins/interface_view.ui:2734
-#: plugins/interface_view.ui:3309 plugins/interface_view.ui:3340
-#: plugins/interface_view.ui:3371 plugins/interface_view.ui:3402
+#: plugins/interface_view.ui:3077 plugins/interface_view.ui:3352
+#: plugins/interface_view.ui:3383 plugins/interface_view.ui:3414
+#: plugins/interface_view.ui:3445
 msgid "0"
 msgstr "0"
 
@@ -355,7 +360,7 @@ msgid "States"
 msgstr "Stavy"
 
 #: plugins/interface_view.ui:454 plugins/interface_view.ui:1241
-#: plugins/interface_view.ui:3239
+#: plugins/interface_view.ui:3282
 msgid "Attributes"
 msgstr "Atributy"
 
@@ -611,49 +616,55 @@ msgstr "Buňka_Tabulky"
 msgid "Text"
 msgstr "Text"
 
-#: plugins/interface_view.ui:3078
+#: plugins/interface_view.ui:3062
+#, fuzzy
+#| msgid "Offset"
+msgid "Caret Offset"
+msgstr "Posun"
+
+#: plugins/interface_view.ui:3121
 msgid "Offset"
 msgstr "Posun"
 
-#: plugins/interface_view.ui:3116
+#: plugins/interface_view.ui:3159
 msgid "Include defaults"
 msgstr "Včetně výchozích"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3137
+#: plugins/interface_view.ui:3180
 msgid "Start: 0"
 msgstr "Začátek: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3155
+#: plugins/interface_view.ui:3198
 msgid "End: 0"
 msgstr "Konec: 0"
 
-#: plugins/interface_view.ui:3261
+#: plugins/interface_view.ui:3304
 msgid "Te_xt"
 msgstr "Te_xt"
 
-#: plugins/interface_view.ui:3293
+#: plugins/interface_view.ui:3336
 msgid "Current value"
 msgstr "Aktuální hodnota"
 
-#: plugins/interface_view.ui:3325
+#: plugins/interface_view.ui:3368
 msgid "Minimum value"
 msgstr "Minimální hodnota"
 
-#: plugins/interface_view.ui:3356
+#: plugins/interface_view.ui:3399
 msgid "Maximum value"
 msgstr "Maximální hodnota"
 
-#: plugins/interface_view.ui:3387
+#: plugins/interface_view.ui:3430
 msgid "Minimum increment"
 msgstr "Minimální přírůstek"
 
-#: plugins/interface_view.ui:3427
+#: plugins/interface_view.ui:3470
 msgid "Val_ue"
 msgstr "H_odnota"
 
-#: plugins/interface_view.ui:3444
+#: plugins/interface_view.ui:3487
 msgid "unknown"
 msgstr "neznámý"
 
@@ -688,7 +699,7 @@ msgstr "Konec"
 msgid "Too many selectable children"
 msgstr "Příliš mnoho zvolitelných potomků"
 
-#: plugins/interface_view.py:1527 plugins/interface_view.py:1530
+#: plugins/interface_view.py:1529 plugins/interface_view.py:1532
 msgid "(Editable)"
 msgstr "(upravitelné)"
 
@@ -697,7 +708,7 @@ msgstr "(upravitelné)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1677
+#: plugins/interface_view.py:1659
 #, python-format
 msgid "Start: %d"
 msgstr "Začátek: %d"
@@ -707,7 +718,7 @@ msgstr "Začátek: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1683
+#: plugins/interface_view.py:1665
 #, python-format
 msgid "End: %d"
 msgstr "Konec: %d"
