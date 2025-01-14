@@ -6,14 +6,14 @@
 # QAed by Funda Wang <fundawang@gmail.com>, 2008
 # YunQiang Su <wzssyqa@gmail.com>, 2011, 2012.
 # Tong Hui <tonghuix@gmail.com>, 2014.
-# lumingzh <lumingzh@qq.com>, 2024.
+# lumingzh <lumingzh@qq.com>, 2024-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
-"POT-Creation-Date: 2024-11-18 22:35+0000\n"
-"PO-Revision-Date: 2024-11-19 08:59+0800\n"
+"POT-Creation-Date: 2025-01-12 11:10+0000\n"
+"PO-Revision-Date: 2025-01-14 13:44+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 47.0\n"
+"X-Generator: Gtranslator 47.1\n"
 
 #: accerciser.desktop.in:3 org.gtk.accerciser.metainfo.xml.in:8
 msgid "Accerciser"
@@ -166,10 +166,14 @@ msgid "Hotkey combination for related action."
 msgstr "相关动作的热键组合。"
 
 #: org.gtk.accerciser.metainfo.xml.in:9
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
+#: org.gtk.accerciser.metainfo.xml.in:13
 msgid "Accessibility explorer for the GNOME desktop"
 msgstr "GNOME 桌面的无障碍功能探测器"
 
-#: org.gtk.accerciser.metainfo.xml.in:11
+#: org.gtk.accerciser.metainfo.xml.in:15
 msgid ""
 "Accerciser is an interactive Python accessibility explorer for the GNOME "
 "desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
@@ -179,7 +183,7 @@ msgstr ""
 "Accerciser 是 GNOME 桌面交互性的 Python 无障碍功能探测器，其使用 AT-SPI 检查"
 "和控制构建，允许检查应用程序是否为无障碍功能和自动测试框架提供正确的信息。"
 
-#: org.gtk.accerciser.metainfo.xml.in:16
+#: org.gtk.accerciser.metainfo.xml.in:20
 msgid ""
 "Accerciser has a simple plugin framework which you can use to create custom "
 "views of accessibility information."
@@ -314,8 +318,9 @@ msgstr "子节点数"
 #: plugins/interface_view.ui:2184 plugins/interface_view.ui:2214
 #: plugins/interface_view.ui:2244 plugins/interface_view.ui:2674
 #: plugins/interface_view.ui:2704 plugins/interface_view.ui:2734
-#: plugins/interface_view.ui:3309 plugins/interface_view.ui:3340
-#: plugins/interface_view.ui:3371 plugins/interface_view.ui:3402
+#: plugins/interface_view.ui:3077 plugins/interface_view.ui:3352
+#: plugins/interface_view.ui:3383 plugins/interface_view.ui:3414
+#: plugins/interface_view.ui:3445
 msgid "0"
 msgstr "0"
 
@@ -353,7 +358,7 @@ msgid "States"
 msgstr "状态"
 
 #: plugins/interface_view.ui:454 plugins/interface_view.ui:1241
-#: plugins/interface_view.ui:3239
+#: plugins/interface_view.ui:3282
 msgid "Attributes"
 msgstr "属性"
 
@@ -610,49 +615,53 @@ msgstr "表格单元"
 msgid "Text"
 msgstr "文本"
 
-#: plugins/interface_view.ui:3078
-msgid "Offset"
-msgstr "偏移"
+#: plugins/interface_view.ui:3062
+msgid "Caret Offset"
+msgstr "光标位移"
 
-#: plugins/interface_view.ui:3116
+#: plugins/interface_view.ui:3121
+msgid "Offset"
+msgstr "位移"
+
+#: plugins/interface_view.ui:3159
 msgid "Include defaults"
 msgstr "包含默认值"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:3137
+#: plugins/interface_view.ui:3180
 msgid "Start: 0"
 msgstr "开始：0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:3155
+#: plugins/interface_view.ui:3198
 msgid "End: 0"
 msgstr "结束：0"
 
-#: plugins/interface_view.ui:3261
+#: plugins/interface_view.ui:3304
 msgid "Te_xt"
 msgstr "文本(_X)"
 
-#: plugins/interface_view.ui:3293
+#: plugins/interface_view.ui:3336
 msgid "Current value"
 msgstr "当前值"
 
-#: plugins/interface_view.ui:3325
+#: plugins/interface_view.ui:3368
 msgid "Minimum value"
 msgstr "最小值"
 
-#: plugins/interface_view.ui:3356
+#: plugins/interface_view.ui:3399
 msgid "Maximum value"
 msgstr "最大值"
 
-#: plugins/interface_view.ui:3387
+#: plugins/interface_view.ui:3430
 msgid "Minimum increment"
 msgstr "最小增量"
 
-#: plugins/interface_view.ui:3427
+#: plugins/interface_view.ui:3470
 msgid "Val_ue"
 msgstr "值(_U)"
 
-#: plugins/interface_view.ui:3444
+#: plugins/interface_view.ui:3487
 msgid "unknown"
 msgstr "未知"
 
@@ -687,7 +696,7 @@ msgstr "结束"
 msgid "Too many selectable children"
 msgstr "太多可选择的子节点"
 
-#: plugins/interface_view.py:1527 plugins/interface_view.py:1530
+#: plugins/interface_view.py:1529 plugins/interface_view.py:1532
 msgid "(Editable)"
 msgstr "（可编辑）"
 
@@ -696,7 +705,7 @@ msgstr "（可编辑）"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1677
+#: plugins/interface_view.py:1659
 #, python-format
 msgid "Start: %d"
 msgstr "开始：%d"
@@ -706,7 +715,7 @@ msgstr "开始：%d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1683
+#: plugins/interface_view.py:1665
 #, python-format
 msgid "End: %d"
 msgstr "结束：%d"
@@ -1033,7 +1042,7 @@ msgstr ""
 "QAed by Funda Wang <fundawang@gmail.com>, 2008\n"
 "YunQiang Su <wzssyqa@gmail.com>, 2011,2012\n"
 "Tong Hui <tonghuix@gmail.com>, 2014\n"
-"lumingzh <lumingzh@qq.com>, 2024"
+"lumingzh <lumingzh@qq.com>, 2024-2025"
 
 #: src/lib/accerciser/about_dialog.py:53
 msgid "An interactive Python accessibility explorer"
