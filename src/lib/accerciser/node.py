@@ -153,10 +153,10 @@ class _HighLight(gtk.Window):
     self.w, self.h = w + padding*2, h + padding*2
 
     # Determine if we are compositing.
-    self._composited = self.is_composited()
+    screen = self.get_screen()
+    self._composited = screen.is_composited()
     if self._composited:
       # Prepare window for transparency.
-      screen = self.get_screen()
       visual = screen.get_rgba_visual()
       self.set_visual(visual)
 
