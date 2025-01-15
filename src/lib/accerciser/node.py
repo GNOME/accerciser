@@ -207,7 +207,13 @@ class _HighLight(gtk.Window):
     cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
     cr.set_operator(cairo_operator)
 
-    svgh.render_cairo(cr)
+    rect = rsvg.Rectangle()
+    rect.x = 0
+    rect.y = 0
+    rect.width = self.w
+    rect.height = self.h
+
+    svgh.render_document(cr, rect)
     del svgh
 
 if __name__ == "__main__":
