@@ -153,10 +153,10 @@ class _HighLight(gtk.Window):
     self.w, self.h = w + padding*2, h + padding*2
 
     # Determine if we are compositing.
-    self._composited = self.is_composited()
+    screen = self.get_screen()
+    self._composited = screen.is_composited()
     if self._composited:
       # Prepare window for transparency.
-      screen = self.get_screen()
       visual = screen.get_rgba_visual()
       self.set_visual(visual)
 
@@ -181,7 +181,7 @@ class _HighLight(gtk.Window):
       stroke_opacity=stroke_alpha)
 
     # Connect "draw"
-    self.connect("draw", self._onExpose)
+    self.connect("draw", self._onDraw)
 
   def highlight(self, duration=500):
     if duration > 0:
@@ -190,7 +190,7 @@ class _HighLight(gtk.Window):
     else:
       self.destroy()
 
-  def _onExpose(self, widget, event):
+  def _onDraw(self, widget, cr):
     svgh = rsvg.Handle()
     try:
       svgh.write(bytes(self.svg, "utf-8"))
@@ -204,13 +204,16 @@ class _HighLight(gtk.Window):
       cairo_operator = cairo.OPERATOR_OVER
     else:
       cairo_operator = cairo.OPERATOR_SOURCE
-    window = self.get_window()
-    cr = window.cairo_create()
     cr.set_source_rgba(1.0, 1.0, 1.0, 0.0)
     cr.set_operator(cairo_operator)
-    cr.paint()
 
-    svgh.render_cairo(cr)
+    rect = rsvg.Rectangle()
+    rect.x = 0
+    rect.y = 0
+    rect.width = self.w
+    rect.height = self.h
+
+    svgh.render_document(cr, rect)
     del svgh
 
 if __name__ == "__main__":
