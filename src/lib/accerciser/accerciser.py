@@ -102,7 +102,6 @@ class Main(gtk.Application, Tools):
     self.last_focused = None
     self.window.show_all()
 
-    GLib.timeout_add(200, self._pumpEvents)
     try:
       # async is a reserved keyword in Python 3.7+, so we pass the args as dict
       pyatspi.Registry.start(**{'async': True, 'gil': False})
@@ -152,10 +151,6 @@ class Main(gtk.Application, Tools):
     '''
     for menu, name, icon_name, label, accel, callback in menu_items:
       self.addMenuItem(menu, name, icon_name, label, accel, callback)
-
-  def _pumpEvents(self):
-    pyatspi.Registry.pumpQueuedEvents()
-    return True
 
   def _shutDown(self):
     '''
