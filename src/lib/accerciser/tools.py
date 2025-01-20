@@ -21,11 +21,6 @@ class Tools(object):
   '''
   A class with some common methods that more than a few classes will need.
 
-  @cvar SETTINGS_PATH: Directory in which the L{SETTINGS_FILE} resides.
-  @type SETTINGS_PATH: string
-  @cvar SETTINGS_FILE: The file that contains information we with to persist
-  across session.
-  @type SETTINGS_FILE: string
   @ivar my_app_id: Unique L{Accessibility.Application} ID of current
   instance.
   @type my_app_id: integer
