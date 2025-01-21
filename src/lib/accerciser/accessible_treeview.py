@@ -695,7 +695,7 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     @param event: The event which triggered this handler.
     @type event: L{pyatspi.event.Event}
     '''
-    if self.isMyApp(event.source):
+    if self.isMyApp(event.source) or self.isMyApp(event.any_data):
       # Bad karma
       return
     if self.model.isInModel(event.source):

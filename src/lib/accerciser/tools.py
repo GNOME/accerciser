@@ -21,14 +21,8 @@ class Tools(object):
   '''
   A class with some common methods that more than a few classes will need.
 
-  @cvar SETTINGS_PATH: Directory in which the L{SETTINGS_FILE} resides.
-  @type SETTINGS_PATH: string
-  @cvar SETTINGS_FILE: The file that contains information we with to persist
-  across session.
-  @type SETTINGS_FILE: string
-  @ivar my_app_id: Unique L{Accessibility.Application} ID of current
-  instance.
-  @type my_app_id: integer
+  @ivar pid: Process ID of current Accerciser instance.
+  @type pid: integer
   '''
 
   def isMyApp(self, acc):
@@ -41,24 +35,17 @@ class Tools(object):
     @return: True if L{acc} is a member of current app instance.
     @rtype: boolean
     '''
+    if not hasattr(self, 'pid'):
+      self.pid = os.getpid()
+
     if not acc:
       return False
     try:
-      app = acc.getApplication()
+      app = acc.get_application()
+      # check whether PID is set as description, set in Main.do_startup
+      return app.get_description() == str(self.pid)
     except Exception as e:
       return False
-    try:
-      app_id = app.id
-    except:
-      return False
-    if hasattr(self, 'my_app_id'):
-      if self.my_app_id == app_id:
-        return True
-    else:
-      if app.description == str(os.getpid()):
-        self.my_app_id = app_id
-        return True
-    return False
 
 
 class Proxy(object):
