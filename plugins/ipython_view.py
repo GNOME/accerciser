@@ -335,7 +335,12 @@ class IterableIPShell:
         return str1
       if possibilities[1]:
         common_prefix = reduce(_commonPrefix, possibilities[1]) or split_line[-1]
-        completed = line[:-len(split_line[-1])]+common_prefix
+        autocomplete_start_index = line.rfind(possibilities[0])
+        completed = line[0:autocomplete_start_index] + common_prefix
+        # suggestions for current line consist of text not used for completion + completion matches
+        unmatched_text = line[-len(split_line[-1]):autocomplete_start_index]
+        suggestions = [unmatched_text + p for p in possibilities[1]]
+        possibilities = (possibilities[0], suggestions)
       else:
         completed = line
     else:
