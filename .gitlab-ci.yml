@@ -1,23 +1,33 @@
+include:
+  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+    inputs:
+      job-stage: "release"
+      dist-job-name: "build-release-tarball"
+      tarball-artifact-path: "${TARBALL_ARTIFACT_PATH}"
+
 stages:
-  - build
+  - "build"
+  - "release"
 
 # Common variables
 variables:
   COMMON_MESON_FLAGS: "--fatal-meson-warnings --werror"
   MESON_TEST_TIMEOUT_MULTIPLIER: 2
+  MESON_BUILD_DIR: "_build"
+  TARBALL_ARTIFACT_PATH: "${MESON_BUILD_DIR}/meson-dist/${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 .default-build:
   script:
     - apt-get update
     - apt-get install -o APT::Install-Recommends=false -y git meson appstream desktop-file-utils gettext yelp-tools python3 ipython3 libatspi2.0-dev libgtk-3-dev pkg-config python-gi-dev python3-pyatspi
-    - meson setup ${COMMON_MESON_FLAGS} ${EXTRA_MESON_FLAGS} _build .
-    - meson compile -C _build
-    - meson dist -C _build
+    - meson setup ${COMMON_MESON_FLAGS} ${EXTRA_MESON_FLAGS} "${MESON_BUILD_DIR}" .
+    - meson compile -C "${MESON_BUILD_DIR}"
+    - meson dist -C "${MESON_BUILD_DIR}"
   artifacts:
     when: always
     name: "accerciser-${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
     paths:
-      - "_build/meson-logs/meson-log.txt"
+      - "${MESON_BUILD_DIR}/meson-logs/meson-log.txt"
 
 debian-stable:
   extends: .default-build
@@ -25,3 +35,15 @@ debian-stable:
   image: debian:stable
   variables:
     EXTRA_MESON_FLAGS: "-Dbuildtype=debug"
+
+build-release-tarball:
+  stage: "build"
+  script:
+    - dnf install --assumeyes git meson appstream desktop-file-utils gettext yelp-tools python3 ipython3 at-spi2-core-devel gtk3-devel pkg-config python3-gobject-devel pkg-config python3-pyatspi
+    - meson setup "${MESON_BUILD_DIR}"
+    - meson dist -C "${MESON_BUILD_DIR}" --include-subprojects
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    when: "always"
+    paths:
+      - "${TARBALL_ARTIFACT_PATH}"

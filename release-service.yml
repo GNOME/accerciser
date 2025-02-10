@@ -1,0 +1,52 @@
+spec:
+  inputs:
+    job-name:
+      default: "release-service"
+      description: "Name for the job"
+    job-stage:
+      default: "deploy"
+      description: "Stage to run the job"
+    dist-job-name:
+      description: "The name of the job that produced the dist tarball in your pipeline"
+    tarball-artifact-path:
+      description: "The path of the exported tarball"
+---
+"$[[ inputs.job-name ]]":
+  image: "registry.gitlab.com/gitlab-org/release-cli:latest"
+  stage: $[[ inputs.job-stage ]]
+  tags:
+    - gnome-release-service
+  needs:
+    - job: $[[ inputs.dist-job-name ]]
+      artifacts: true
+  variables:
+    GNOME_RELEASE_SERVICE_API_URL: "https://gnome-release-route-gnome-release-service.apps.openshift.gnome.org"
+    GNOME_RELEASE_SERVICE_API_INSTALL_MODULE_RELEASE_ENDPOINT: "$GNOME_RELEASE_SERVICE_API_URL/install-module-release"
+  id_tokens:
+    JWT_TOKEN:
+      aud: gnome-release-service
+  before_script: []
+  script:
+    - apk add --no-cache curl
+    - ls -al "$[[ inputs.tarball-artifact-path ]]"
+
+    # https://gitlab.com/gitlab-org/gitlab/-/issues/382536
+    - echo "Fixing up release tag message for gitlab"
+    - a=$(git tag -l $CI_COMMIT_TAG --format='%(contents)')
+    - printf '%s\n' "${a%%-----BEGIN*}" > tag_msg.txt
+
+    - >-
+      curl --fail-with-body -X POST "$GNOME_RELEASE_SERVICE_API_INSTALL_MODULE_RELEASE_ENDPOINT"
+      -H "Authorization: Bearer $JWT_TOKEN"
+      -F "tarball=@$[[ inputs.tarball-artifact-path ]]"
+  after_script: []
+  artifacts:
+    when: 'always'
+    expire_in: "1 days"
+    paths:
+    - tag_msg.txt
+  rules:
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_REF_PROTECTED
+  release:
+    tag_name: $CI_COMMIT_TAG
+    description: "./tag_msg.txt"
