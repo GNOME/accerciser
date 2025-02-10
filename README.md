@@ -1,6 +1,6 @@
 # Accerciser 
 
-3.44.1
+3.46.0
 Just 15 minutes a day for better accessibility!
 
 ## Description
