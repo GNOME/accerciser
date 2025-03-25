@@ -481,6 +481,8 @@ class ConsoleView(gtk.TextView):
       ansi_tags = self.color_pat.findall(text)
       for tag in ansi_tags:
         i = segments.index(tag)
+        if tag not in self.ANSI_COLORS:
+          tag = '0;30'
         self.text_buffer.insert_with_tags_by_name(self.text_buffer.get_end_iter(),
                                              segments[i+1], tag)
         segments.pop(i)
