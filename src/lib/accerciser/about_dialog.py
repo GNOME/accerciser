@@ -22,6 +22,8 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   '''
   Creates a dialog with info about the program.
 
+  @cvar APPNAME: Application name.
+  @type APPNAME: string
   @cvar AUTHORS: List of authors.
   @type AUTHORS: list of string
   @cvar ARTISTS: List of artists.
@@ -41,6 +43,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
   @cvar WEB_LABEL: Label of URL button.
   @type WEB_LABEL: string
   '''
+  APPNAME = _('Accerciser')
   AUTHORS = ['Eitan Isaacson <eitan@ascender.com>',
              'Peter Parente <pparente@us.ibm.com>',
              'Brian Nitz <brian.nitz@oracle.com>',
@@ -69,6 +72,7 @@ class AccerciserAboutDialog(gtk.AboutDialog):
     gtk.AboutDialog.set_copyright(self, self.COPYRIGHT)
     gtk.AboutDialog.set_license(self, self.LICENSE)
     gtk.AboutDialog.set_logo_icon_name(self, 'accerciser')
+    gtk.AboutDialog.set_program_name(self, self.APPNAME)
 #    gtk.AboutDialog.set_version(self, program.get_app_version())
     gtk.AboutDialog.set_website(self, self.WEB_URL)
     gtk.AboutDialog.set_website_label(self, self.WEB_LABEL)
