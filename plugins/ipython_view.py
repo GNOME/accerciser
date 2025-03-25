@@ -190,7 +190,7 @@ class IterableIPShell:
     try:
       line = self.IP.raw_input(self.prompt)
     except KeyboardInterrupt:
-      self.IP.write('\nKeyboardInterrupt\n')
+      self.write('\nKeyboardInterrupt\n')
       if self.no_input_splitter:
         self.lines = []
       else:
