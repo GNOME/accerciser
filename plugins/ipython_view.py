@@ -177,7 +177,8 @@ class IterableIPShell:
 
     self.prompt = self.generatePrompt(self.iter_more)
 
-    self.IP.hooks.pre_prompt_hook()
+    if IPython.version_info < (9,):
+        self.IP.hooks.pre_prompt_hook()
     if self.iter_more:
         try:
             self.prompt = self.generatePrompt(True)
