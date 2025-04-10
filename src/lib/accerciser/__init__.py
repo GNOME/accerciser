@@ -33,4 +33,4 @@ def main():
   '''
   from .accerciser import Main
   main = Main()
-  main.run()
+  main.run(sys.argv)
