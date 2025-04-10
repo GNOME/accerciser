@@ -44,7 +44,8 @@ class Main(gtk.Application, Tools):
   COL_FILLED = 2
 
   def __init__(self, *args, **kwargs):
-    gtk.Application.__init__(self, *args, **kwargs)
+    gtk.Application.__init__(self, *args, **kwargs,
+                             application_id="org.gtk.accerciser")
     self.window = None
 
   def do_startup(self):
@@ -71,6 +72,10 @@ class Main(gtk.Application, Tools):
     configures the tree view, and initializes the tree with the contents of the
     desktop.
     '''
+    if self.window:
+        self.window.present()
+        return
+
     self.window = AccerciserMainWindow(application=self, node=self.node)
     self.window.connect('delete-event', self._onDeleteEvent)
     self.window.connect('destroy', self._onQuit)
