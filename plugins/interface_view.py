@@ -586,10 +586,9 @@ class _SectionApplication(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
-    ai = acc.queryApplication()
-    self.label_id.set_text(repr(ai.id))
-    self.label_tk.set_text(ai.toolkitName)
-    self.label_version.set_text(ai.version)
+    self.label_id.set_text(repr(acc.get_id()))
+    self.label_tk.set_text(acc.get_toolkit_name())
+    self.label_version.set_text(acc.get_toolkit_version())
 
   def clearUI(self):
     '''
