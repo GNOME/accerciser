@@ -564,6 +564,8 @@ class _SectionApplication(_InterfaceSection):
   @type label_tk: gtk.Label
   @ivar label_version: Label for toolkit version.
   @type label_version: gtk.Label
+  @ivar label_atspi_version: Label for AT-SPI IPC version.
+  @type label_atspi_version: gtk.Label
   '''
   interface_name = 'Application'
   def init(self, ui_xml):
@@ -577,6 +579,7 @@ class _SectionApplication(_InterfaceSection):
     self.label_id = ui_xml.get_object('label_app_id')
     self.label_tk = ui_xml.get_object('label_app_tk')
     self.label_version = ui_xml.get_object('label_app_version')
+    self.label_atspi_version = ui_xml.get_object('label_atspi_version')
 
   def populateUI(self, acc):
     '''
@@ -586,10 +589,10 @@ class _SectionApplication(_InterfaceSection):
     @param acc: The currently selected accessible.
     @type acc: Accessibility.Accessible
     '''
-    ai = acc.queryApplication()
-    self.label_id.set_text(repr(ai.id))
-    self.label_tk.set_text(ai.toolkitName)
-    self.label_version.set_text(ai.version)
+    self.label_id.set_text(repr(acc.get_id()))
+    self.label_tk.set_text(acc.get_toolkit_name())
+    self.label_version.set_text(acc.get_toolkit_version())
+    self.label_atspi_version.set_text(acc.get_atspi_version() or '')
 
   def clearUI(self):
     '''
@@ -598,6 +601,7 @@ class _SectionApplication(_InterfaceSection):
     self.label_id.set_text('')
     self.label_tk.set_text('')
     self.label_version.set_text('')
+    self.label_atspi_version.set_text('')
 
 class _SectionComponent(_InterfaceSection):
   '''
