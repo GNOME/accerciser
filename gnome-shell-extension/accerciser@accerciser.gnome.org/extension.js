@@ -12,8 +12,8 @@ import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 function collectWindowInfos() {
     // API doc:
-    // https://gjs-docs.gnome.org/meta14~14-windowactor/
-    // https://gjs-docs.gnome.org/meta14~14/meta.window
+    // https://gjs-docs.gnome.org/meta16~16-windowactor/
+    // https://gjs-docs.gnome.org/meta16~16/meta.window
     let window_infos = [];
     const activeWorkspace = global.workspace_manager.get_active_workspace();
     const windows = global.get_window_actors();
@@ -22,12 +22,20 @@ function collectWindowInfos() {
         let window = windows[i].metaWindow;
         const isOnActiveWorkspace = window.located_on_workspace(activeWorkspace);
 
-        let geometry = window.get_frame_rect();
-        // convert to client rect if the window doesn't have client side
-        // decorations (but only if meta_window_is_client_decorated is available
-        // to check that; it was dropped in Mutter/GNOME 47)
-        if (window.is_client_decorated && !window.is_client_decorated())
-            geometry = window.frame_rect_to_client_rect(geometry);
+        let geometry = null;
+        // meta_window_get_client_content_rect available from GNOME/Mutter 47 on
+        if (window.get_client_content_rect)
+        {
+            geometry = window.get_client_content_rect();
+        }
+        else
+        {
+            // for GNOME/Mutter 46, convert frame rect to client rect if the
+            // window doesn't have client side decorations
+            geometry = window.get_frame_rect();
+            if (window.is_client_decorated && !window.is_client_decorated())
+                geometry = window.frame_rect_to_client_rect(geometry);
+        }
 
         window_infos.push(
             {
