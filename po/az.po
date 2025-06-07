@@ -1,0 +1,2067 @@
+# Azerbaijani translation for accerciser.
+# Copyright (C) 2025 accerciser's COPYRIGHT HOLDER
+# This file is distributed under the same license as the accerciser package.
+# Ramal Rəhimov <jhonaluman@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser master\n"
+"POT-Creation-Date: 2025-05-23 11:15+0000\n"
+"PO-Revision-Date: 2025-05-27 23:13+0400\n"
+"Last-Translator: Ramal Rəhimov <jhonaluman@gmail.com>\n"
+"Language-Team: Azerbaijani <az@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: az\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 48.0\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Tərcümə: Ramal Rəhimov <jhonaluman@gmail.com>, 2025"
+
+#. (itstool) path: info/title
+#: C/api_browser_plugin.page:4
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "1. API Brauzer Əlavəsi"
+
+#. (itstool) path: info/desc
+#: C/api_browser_plugin.page:6
+msgid "Verifying interfaces, methods, and properties"
+msgstr "İnterfeyslərin, metodların və xüsusiyyətlərin yoxlanılması"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10
+#: C/event_monitor_plugin.page:10 C/howto_setting_up_accerciser.page:11
+#: C/howto_write_a_plugin.page:10 C/index.page:9
+#: C/interface_viewer_plugin.page:10 C/introduction.page:10
+#: C/ipython_plugin.page:10 C/preferences.page:10 C/quick_select_plugin.page:10
+#: C/validator_plugin.page:10
+msgid "Eitan Isaacson"
+msgstr "Eitan Isaacson"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:14 C/desktop_tree_view.page:14
+#: C/event_monitor_plugin.page:14 C/howto_setting_up_accerciser.page:15
+#: C/howto_write_a_plugin.page:14 C/index.page:13
+#: C/interface_viewer_plugin.page:14 C/introduction.page:14
+#: C/ipython_plugin.page:14 C/preferences.page:14 C/quick_select_plugin.page:14
+#: C/validator_plugin.page:14
+msgid "Peter Parente"
+msgstr "Peter Parente"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:18 C/desktop_tree_view.page:18
+#: C/event_monitor_plugin.page:18 C/howto_setting_up_accerciser.page:19
+#: C/howto_write_a_plugin.page:18 C/index.page:17
+#: C/interface_viewer_plugin.page:18 C/introduction.page:18
+#: C/ipython_plugin.page:18 C/preferences.page:18 C/quick_select_plugin.page:18
+#: C/validator_plugin.page:18
+msgid "Aline Bessa"
+msgstr "Aline Bessa"
+
+#. (itstool) path: license/p
+#: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22
+#: C/event_monitor_plugin.page:22 C/howto_setting_up_accerciser.page:23
+#: C/howto_write_a_plugin.page:22 C/index.page:21
+#: C/interface_viewer_plugin.page:22 C/introduction.page:22
+#: C/ipython_plugin.page:22 C/preferences.page:22 C/quick_select_plugin.page:22
+#: C/validator_plugin.page:22
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Eyni Şərtlərlə Paylaş 3.0"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
+msgid "API Browser Plugin"
+msgstr "API Brauzer Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/api_browser_plugin.page:26
+msgid ""
+"Given an accessible widget selected in the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>, the API Browser "
+"Plugin shows its implemented AT-SPI interfaces along with its methods and "
+"properties."
+msgstr ""
+"<link xref=\"desktop_tree_view\">Tətbiq Ağacı Baxışı</link> bölməsində "
+"seçilmiş əlçatan vidjetə əsasən, API Brauzer Əlavəsi həmin vidjetin həyata "
+"keçirdiyi AT-SPI interfeyslərini, metodlarını və xüsusiyyətlərini göstərir."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
+msgid ""
+"The API Browser Plugin allows you to verify interfaces, methods, and "
+"properties of a target accessible widget in an application."
+msgstr ""
+"API Brauzer Əlavəsi tətbiqdəki hədəf əlçatan vidjetin interfeyslərini, "
+"metodlarını və xüsusiyyətlərini yoxlamağa imkan verir."
+
+#. (itstool) path: figure/media
+#: C/api_browser_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/api_browser.png' md5='4f668e4a15d1c308e984d0801b9ecd95'"
+msgstr ""
+"external ref='figures/api_browser.png' md5='4f668e4a15d1c308e984d0801b9ecd95'"
+
+#. (itstool) path: section/title
+#: C/api_browser_plugin.page:46
+msgid "Running the API Browser Plugin"
+msgstr "API Brauzer Əlavəsinin İşə Salınması"
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:47
+msgid ""
+"To run the API Browser Plugin, select an accessible widget in the "
+"Application Tree View. Double-clicking a widget highlights it in the "
+"application's interface, so you can be sure whether a certain widget were "
+"the one you were looking for."
+msgstr ""
+"API Brauzer Əlavəsini işə salmaq üçün Tətbiq Ağacı Baxışında bir əlçatan "
+"vidjeti seçin. Vidjetin üzərinə iki dəfə klik etdikdə o, tətbiqin "
+"interfeysində vurğulanır və siz axtardığınız vidjetin həmin olub-olmadığını "
+"dəqiqləşdirə bilərsiniz."
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:53
+msgid ""
+"After that, select one of the widget's interfaces in the combobox. All "
+"public methods of the selected interface will be listed in the plugin's "
+"leftmost column. All public properties, with their corresponding values, "
+"will be listed in the plugin's rightmost column."
+msgstr ""
+"Bundan sonra, kombinasiyalı qutudan vidjetin interfeyslərindən birini seçin. "
+"Seçilmiş interfeysə aid bütün açıq metodlar əlavə pəncərənin ən sol "
+"sütununda, uyğun dəyərləri ilə birlikdə bütün açıq xüsusiyyətlər isə ən sağ "
+"sütununda göstəriləcək."
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:59
+msgid ""
+"By default, the API Browser Plugin hides private methods and properties. To "
+"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
+"To hide them again, re-select this checkbox."
+msgstr ""
+"Standart olaraq, API Brauzer Əlavəsi şəxsi (private) metodları və "
+"xüsusiyyətləri gizlədir. Onları görmək üçün <cmd>Şəxsi atributları gizlət</"
+"cmd> seçim qutusundakı işarəni götürün. Onları yenidən gizlətmək üçün bu "
+"qutunu yenidən işarələyin."
+
+#. (itstool) path: info/title
+#: C/desktop_tree_view.page:4
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr "1. Tətbiq Ağacı Baxışı"
+
+#. (itstool) path: info/desc
+#: C/desktop_tree_view.page:6
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr "Masaüstünün əlçatan iyerarxiyasını araşdırmaq"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/desktop_tree_view.page:25 C/desktop_tree_view.page:37
+msgid "Application Tree View"
+msgstr "Tətbiq Ağacı Baxışı"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:27
+msgid ""
+"<app>Accerciser</app>'s interface contains a tree view, namely Application "
+"Tree View, that covers all accessible applications currently running on the "
+"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
+"registry daemon. This daemon is responsible for keeping track of all the "
+"accessible applications on the desktop and forwarding X events over the AT-"
+"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
+"represents each one of them as a hierarchical structure with expanding nodes."
+msgstr ""
+"<app>Accerciser</app> tətbiqinin interfeysində hazırda masaüstündə işləyən "
+"bütün əlçatan tətbiqləri əhatə edən Tətbiq Ağacı Baxışı adlanan ağac "
+"görünüşü mövcuddur. Bu ağacı yaratmaq üçün <app>Accerciser</app>, AT-SPI-nin "
+"reyestr xidmətindən (daemon) istifadə edir. Bu xidmət masaüstündəki bütün "
+"əlçatan tətbiqləri izləməyə və X hadisələrini AT-SPI D-Bus üzərindən "
+"ötürməyə cavabdehdir. Bütün əlçatan tətbiqləri əldə etdikdən sonra, "
+"<app>Accerciser</app> hər birini genişlənə bilən düyünlərlə iyerarxik "
+"quruluşda təqdim edir."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/desktop_tree_view.page:38 C/desktop_tree_view.page:43
+msgid ""
+"<app>Accerciser</app>'s Application Tree View represents the interface of "
+"each accessible application running on the desktop as a widget hierarchical "
+"structure."
+msgstr ""
+"<app>Accerciser</app> tətbiqinin Tətbiq Ağacı Baxışı masaüstündə işləyən hər "
+"bir əlçatan tətbiqin interfeysini vidjetlərin iyerarxik quruluşu şəklində "
+"təqdim edir."
+
+#. (itstool) path: figure/media
+#: C/desktop_tree_view.page:42
+msgctxt "_"
+msgid ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='594e06b7889eff705ac194656939e146'"
+msgstr ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='594e06b7889eff705ac194656939e146'"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:49
+msgid ""
+"The first node of each application represented in this tree view is the "
+"application itself. When you expand a node, you can see all of its child "
+"widgets, which allows a hierarchical view of the application's interface. "
+"For each node, <app>Accerciser</app> provides some basic information, such "
+"as its name, role and number of children."
+msgstr ""
+"Bu ağac görünüşündə təqdim olunan hər bir tətbiqin ilk düyünü birbaşa "
+"tətbiqin özüdür. Düyünü genişləndirdikdə onun bütün alt vidjetlərini görə "
+"bilərsiniz ki, bu da tətbiqin interfeysini iyerarxik şəkildə təqdim etməyə "
+"imkan verir. Hər bir düyün üçün <app>Accerciser</app> əsas məlumatları "
+"təqdim edir: adı, rolu və alt elementlərinin sayı."
+
+#. (itstool) path: note/p
+#: C/desktop_tree_view.page:56
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr "Qeyd: Çoxlu alt elementi olan düyünlərin genişlənməsi uzun çəkə bilər."
+
+#. (itstool) path: section/title
+#: C/desktop_tree_view.page:62
+msgid "Bookmarking items in the Application Tree View"
+msgstr "Tətbiq Ağacı Baxışında elementlərin əlfəcinlənməsi"
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:63
+msgid ""
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
+"for later examining. This is helpful when the target application must be "
+"restarted - after rebuilding it, for example. To bookmark an item, select it "
+"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
+"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
+msgstr ""
+"<app>Accerciser</app> Tətbiq Ağacı Baxışındakı elementləri sonradan "
+"araşdırmaq üçün əlfəcinləməyə imkan verir. Bu xüsusilə hədəf tətbiqin "
+"yenidən başladılması (məsələn, təkrar yığıldıqdan sonra) lazım gəldikdə "
+"faydalıdır. Elementi əlfəcinləmək üçün onu seçin və <guiseq><gui>Əlfəcinlər</"
+"gui><gui>Əlfəcin əlavə et</gui></guiseq> menyusunu istifadə edin və ya "
+"<keyseq><key>Ctrl</key><key>d</key></keyseq> düymələrini basın."
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:68
+msgid ""
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
+"application name and a \"path\" in the application's internal accessible "
+"hierarchy to the bookmarked accessible. When the target application is in a "
+"different state - i.e. multiple top level frames -, the path might not be "
+"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
+msgstr ""
+"<app>Accerciser</app> tətbiqində əlçatan elementlərə qoyulmuş əlfəcinlər "
+"tətbiqin adı və həmin tətbiqin daxili əlçatan iyerarxiyasındakı 'yol' "
+"əsasında müəyyən edilir. Əgər hədəf tətbiq fərqli vəziyyətdədirsə (məsələn, "
+"bir neçə üst səviyyəli çərçivə varsa), bu yol düzgün olmaya bilər. "
+"Əlfəcinləri <guiseq><gui>Əlfəcinlər</gui><gui>Əlfəcinləri redaktə et</gui></"
+"guiseq> menyusu vasitəsilə idarə edə bilərsiniz."
+
+#. (itstool) path: info/title
+#: C/event_monitor_plugin.page:4
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "4. Hadisə Monitoru Əlavəsi"
+
+#. (itstool) path: info/desc
+#: C/event_monitor_plugin.page:6
+msgid "Monitoring accessible events as they occur"
+msgstr "Əlçatan hadisələrin baş verdiyi anda izlənməsi"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
+msgid "Event Monitor Plugin"
+msgstr "Hadisə Monitoru Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/event_monitor_plugin.page:26
+msgid ""
+"The Event Monitor Plugin allows you to view <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-"
+"events.html\">AT-SPI events</link> as they occur on the applications exposed "
+"in <app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>. The plugin is useful to explore the dynamics of an "
+"application's interface and verify which accessible widgets are related to "
+"which AT-SPI events."
+msgstr ""
+"Hadisə Monitoru Əlavəsi <link xref=\"desktop_tree_view\">Tətbiq Ağacı "
+"Baxışında</link> göstərilən tətbiqlərdə baş verən <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-"
+"events.html\">AT-SPI hadisələrini</link> izləməyə imkan verir. Bu əlavə, "
+"tətbiqin interfeysində baş verən dinamikaları öyrənmək və hansı AT-SPI "
+"hadisələrinin hansı əlçatan vidjetlərlə əlaqəli olduğunu müəyyənləşdirmək "
+"üçün faydalıdır."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/event_monitor_plugin.page:36 C/event_monitor_plugin.page:41
+msgid ""
+"The Event Monitor Plugin allows you to view AT-SPI events and match them "
+"with accessible widgets."
+msgstr ""
+"Hadisə Monitoru Əlavəsi sizə AT-SPI hadisələrini görməyə və onları müvafiq "
+"əlçatan vidjetlərlə uyğunlaşdırmağa imkan verir."
+
+#. (itstool) path: figure/media
+#: C/event_monitor_plugin.page:40
+msgctxt "_"
+msgid ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='d4433124f4833aa7322c7a6ec0b21104'"
+msgstr ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='d4433124f4833aa7322c7a6ec0b21104'"
+
+#. (itstool) path: section/title
+#: C/event_monitor_plugin.page:49
+msgid "Running the Event Monitor Plugin"
+msgstr "Hadisə Monitoru Əlavəsini İşə Salmaq"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:50
+msgid ""
+"When you open the Event Monitor Plugin, you see a list of checkboxes "
+"representing all the different AT-SPI event classes covered by the plugin:"
+msgstr ""
+"Hadisə Monitoru Əlavəsini açdıqda, əlavənin əhatə etdiyi bütün müxtəlif AT-"
+"SPI hadisə siniflərini təmsil edən seçim qutularının siyahısını görəcəksiniz:"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:58
+msgid "document"
+msgstr "sənəd"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:63
+msgid "focus"
+msgstr "fokus"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:68
+msgid "mouse"
+msgstr "siçan"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:73
+msgid "object"
+msgstr "obyekt"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:78
+msgid "terminal"
+msgstr "terminal"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:83
+msgid "window"
+msgstr "pəncərə"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:89
+msgid ""
+"If you check a class, all of its event types will be monitored by the "
+"plugin. The classes are exposed as tree structures; therefore, you can "
+"refine your selection by expanding them and checking only the event types "
+"you really care about."
+msgstr ""
+"Əgər bir sinfi işarələsəniz, həmin sinfə aid bütün hadisə növləri plagin "
+"tərəfindən izlənəcək. Siniflər ağac strukturu şəklində təqdim olunur; bu "
+"səbəbdən siz onları genişləndirərək yalnız maraqlandığınız hadisə növlərini "
+"seçməklə seçiminizi daha da dəqiqləşdirə bilərsiniz."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:95
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the "
+"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
+"selected event types, press the <cmd>Clear Selection</cmd> button."
+msgstr ""
+"AT-SPI hadisələrinin bütün mümkün növlərini izləmək istəyirsinizsə, "
+"<cmd>Hamısını seç</cmd> düyməsini klikləyin. Eyni şəkildə, hazırda seçilmiş "
+"bütün hadisə növlərini silmək üçün <cmd>Seçimi təmizlə</cmd> düyməsinə "
+"klikləyin."
+
+#. (itstool) path: note/p
+#: C/event_monitor_plugin.page:102
+msgid ""
+"Selecting only a few event types per monitoring gives you a clearer output."
+msgstr ""
+"Hər monitorinq üçün yalnız bir neçə hadisə növü seçmək daha aydın nəticə "
+"verir."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:107
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, "
+"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
+"events of all applications will be monitored. If you want to investigate a "
+"single application, select it in the Application Tree View and click the "
+"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, "
+"select it in the Application Tree View and click the Source radio button "
+"<cmd>Selected accessible</cmd>."
+msgstr ""
+"Hadisə monitorinqini dəqiqləşdirməyin başqa bir yolu hadisə mənbəyinə "
+"görədir. Standart olaraq <cmd>Hamısı</cmd> mənbə seçimi aktivdir və bu, "
+"bütün tətbiqlərin AT-SPI hadisələrinin izlənəcəyini göstərir. Əgər yalnız "
+"bir tətbiqi araşdırmaq istəyirsinizsə, onu Tətbiq Ağacı Baxışında seçin və "
+"<cmd>Seçilmiş tətbiq</cmd> radio düyməsini klikləyin. Eynilə, əgər yalnız "
+"bir əlçatan vidjet və onun alt elementlərini izləmək istəyirsinizsə, onu "
+"seçin və <cmd>Seçilmiş əlçatan</cmd> radio düyməsini klikləyin."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:116
+msgid ""
+"After selecting event types and specifying a Source option, the Event "
+"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
+"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
+"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
+"monitoring, press this button again."
+msgstr ""
+"Hadisə növlərini seçdikdən və Mənbə seçimlərini təyin etdikdən sonra, Hadisə "
+"Monitoru Plagini AT-SPI hadisələrini avtomatik olaraq izləməyə başlayır, "
+"çünki <cmd>Hadisələri izlə</cmd> düyməsi standart olaraq aktivdir. İzləməni "
+"dayandırmaq istədikdə, həmin düyməni klikləyin. Izləməyə yenidən başlamaq "
+"üçün yenidən həmin düyməyə klikləyin."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:123
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and "
+"the application. Activating the link for either of these items will cause it "
+"to become selected in the Application Tree View."
+msgstr ""
+"Gələn hər bir hadisə üçün Hadisə Monitoru Plagini onun mənbəyini və "
+"tətbiqini göstərir. Hər iki element üzrə keçid aktivləşdirildikdə, həmin "
+"obyekt Tətbiq Ağacı Baxışında seçilmiş olur."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:128
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just "
+"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
+"to click the <cmd>Clear</cmd> button."
+msgstr ""
+"Hadisə Monitoru Plagininin yaratdığı nəticəni yadda saxlamaq istəyirsinizsə, "
+"sadəcə <cmd>Yadda saxla</cmd> düyməsini klikləyin. Nəticə ekranını "
+"təmizləmək üçün <cmd>Təmizlə</cmd> düyməsinə klikləyin."
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:5
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr "2. <app>Accerciser</app>-in quraşdırılması və işə salınması"
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:6
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "<app>Accerciser</app>-in qurulması"
+
+#. (itstool) path: info/desc
+#: C/howto_setting_up_accerciser.page:7
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "<app>Accerciser</app>-in sisteminizdə quraşdırılması və işə salınması"
+
+#. (itstool) path: page/title
+#: C/howto_setting_up_accerciser.page:26
+msgid "Setting up <app>Accerciser</app>"
+msgstr "<app>Accerciser</app>-in qurulması"
+
+#. (itstool) path: page/p
+#: C/howto_setting_up_accerciser.page:28
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If "
+"this is the case, you can install it via its package manager. Otherwise, you "
+"can follow the section below to install <app>Accerciser</app> manually."
+msgstr ""
+"İstifadə etdiyiniz distributivdə <app>Accerciser</app>-in paket şəklində "
+"mövcud olub-olmadığını yoxlayın. Əgər mövcuddursa, onu paket meneceri "
+"vasitəsilə quraşdıra bilərsiniz. Əks halda, aşağıdakı bölməyə baxaraq "
+"<app>Accerciser</app>-i əl ilə quraşdıra bilərsiniz."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:35
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "<app>Accerciser</app>-in əl ilə quraşdırılması"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:36
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it "
+"first. <app>Accerciser</app>'s source code can either be downloaded from "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the "
+"gnome.org FTP site</link> or cloned from <link href=\"https://"
+"gitlab.gnome.org/GNOME/accerciser\">the gnome.org GIT repository</link>."
+msgstr ""
+"<app>Accerciser</app>-i əl ilə quraşdırmaq üçün əvvəlcə onu yükləməlisiniz. "
+"<app>Accerciser</app>-in ilkin mənbə kodunu ya <link href=\"http://"
+"ftp.gnome.org/pub/GNOME/sources/accerciser/\">gnome.org-un FTP saytından</"
+"link> yükləyə, ya da <link href=\"https://gitlab.gnome.org/GNOME/"
+"accerciser\">gnome.org-un GIT repozitoriyasından</link> klonlaya bilərsiniz."
+
+#. (itstool) path: note/p
+#: C/howto_setting_up_accerciser.page:43
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
+"version 3 or later is not compatible with your environment."
+msgstr ""
+"Əgər siz GNOME 3 istifadə etmirsinizsə, <app>Accerciser</app>-in 3-cü və ya "
+"daha sonrakı versiyalarının mühitinizlə uyğun gəlmədiyini görə bilərsiniz."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:50
+msgid ""
+"After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr ""
+"<app>Accerciser</app>-i əldə etdikdən sonra, onu aşağıdakı əmrlərlə "
+"quraşdırın:"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:54
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:55
+msgid "<cmd>meson setup _build .</cmd>"
+msgstr "<cmd>meson setup _build .</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:56
+msgid "<cmd>meson compile -C _build</cmd>"
+msgstr "<cmd>meson compile -C _build</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:57
+msgid ""
+"<cmd>sudo meson install -C _build # or meson install -C _build as root</cmd>"
+msgstr ""
+"<cmd>sudo meson install -C _build # və ya root kimi: meson install -C "
+"_build</cmd>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:59
+msgid ""
+"If you find any problems installing <app>Accerciser</app> on your system, it "
+"is likely that some of its dependencies are missing. Check <link "
+"href=\"https://live.gnome.org/Accerciser/#Requirements\"> <app>Accerciser</"
+"app>'s wiki</link> to make sure you have all dependencies properly installed."
+msgstr ""
+"Əgər sisteminizdə <app>Accerciser</app>-in quraşdırılması ilə bağlı "
+"problemlə qarşılaşırsınızsa, çox güman ki, onun bəzi asılılıqları çatışmır. "
+"<link href=\"https://live.gnome.org/Accerciser/#Requirements\"> "
+"<app>Accerciser</app>-in vikisinə</link> baxaraq bütün asılılıqların düzgün "
+"quraşdırıldığından əmin olun."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:67
+msgid "Running <app>Accerciser</app>"
+msgstr "<app>Accerciser</app>-in işə salınması"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:68
+msgid ""
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
+"window or within the Run dialog and then press <key>Return</key>."
+msgstr ""
+"<app>Accerciser</app>-i başlatmaq üçün terminal pəncərəsində və ya \"İcra "
+"et\" dialoqunda <cmd>accerciser</cmd> yazın və <key>Enter</key> düyməsini "
+"basın."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:72
+msgid ""
+"After that, you can use <app>Accerciser</app> to inspect any accessible item "
+"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
+"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
+"app>'s plugins."
+msgstr ""
+"Bundan sonra siz <app>Accerciser</app>-dən istifadə edərək <link "
+"xref=\"desktop_tree_view\">Tətbiqlər Ağacı Görünüşü</link> iyerarxiyasında "
+"göstərilən istənilən əlçatan elementi yoxlaya bilərsiniz. Bir elementi seçin "
+"və onu <app>Accerciser</app>-in əlavələrindən biri ilə təhlil edin."
+
+#. (itstool) path: info/title
+#: C/howto_write_a_plugin.page:4
+msgctxt "sort"
+msgid "3. Writing New Plugins"
+msgstr "3. Yeni əlavələrin yazılması"
+
+#. (itstool) path: info/desc
+#: C/howto_write_a_plugin.page:6
+msgid "Extending <app>Accerciser</app> with your desired functionalities"
+msgstr "<app>Accerciser</app>-ə istədiyiniz funksiyaları əlavə etmə"
+
+#. (itstool) path: page/title
+#: C/howto_write_a_plugin.page:25
+msgid "Writing Plugins for <app>Accerciser</app>"
+msgstr "<app>Accerciser</app> üçün əlavələrin yazılması"
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:26
+msgid ""
+"Extending <app>Accerciser</app> with new plugins became much simpler since "
+"<link href=\"https://wiki.gnome.org/Apps/Accerciser/PluginTutorial\">this "
+"tutorial</link> was written. Given that it provides a very detailed "
+"explanation about the topic, this section consists basically of its original "
+"content - only simple editions and updates were done."
+msgstr ""
+"<app>Accerciser</app>-ə yeni əlavələr əlavə etmək <link href=\"https://"
+"wiki.gnome.org/Apps/Accerciser/PluginTutorial\">bu dərslik</link> "
+"yazıldıqdan sonra daha da sadələşdi. Dərslik mövzunu ətraflı izah "
+"etdiyindən, bu bölmə əsasən onun orijinal məzmunundan ibarətdir – sadəcə "
+"kiçik redaktələr və yeniləmələr edilmişdir."
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:33
+msgid "<app>Accerciser</app> supports three basic types of plugins:"
+msgstr "<app>Accerciser</app> üç əsas əlavə növünü dəstəkləyir:"
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:38
+msgid ""
+"Base plugins - These plugins are derived from the Plugin base class. They do "
+"not provide a visible interface, but could provide additional functionality "
+"to <app>Accerciser</app>."
+msgstr ""
+"Əsas əlavələr – Bu əlavələr Plugin əsas sinfindən törəmişdir. Onlar görünən "
+"interfeys təqdim etmirlər, lakin <app>Accerciser</app>-ə əlavə funksionallıq "
+"təmin edə bilərlər."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:44
+msgid ""
+"Console plugins - These plugins provide simple console output into a text "
+"area in a plugin tab. Not to be confused with the packaged <link "
+"xref=\"ipython_plugin\">IPython Console Plugin</link>."
+msgstr ""
+"Konsol əlavələri – Bu əlavələr əlavələr panelindəki mətn sahəsinə sadə "
+"konsol çıxışı təmin edir. Onları paketlənmiş <link "
+"xref=\"ipython_plugin\">IPython Konsol Əlavəsi</link> ilə qarışdırmayın."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:50
+msgid ""
+"Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
+"They provide a custom graphical interface in a tab."
+msgstr ""
+"Baxış paneli əlavələri – <app>Accerciser</app>-in əksər standart əlavələri "
+"bu növdəndir. Bunlar ayrıca vərəqdə xüsusi qrafik interfeys təqdim edir."
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:58
+msgid "Creating a Base Plugin"
+msgstr "Əsas Əlavənin Yaradılması"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:59
+msgid ""
+"We will create a simplified version of the <link "
+"xref=\"quick_select_plugin\">Quick Select Plugin</link>. This plugin will "
+"select the last focused accessible when pressing <keyseq><key>ctrl</"
+"key><key>alt</key><key>e</key></keyseq>."
+msgstr ""
+"<link xref=\"quick_select_plugin\">Sürətli Seçim Əlavəsi</link>-nin "
+"sadələşdirilmiş versiyasını yaradacağıq. Bu əlavə <keyseq><key>Ctrl</"
+"key><key>Alt</key><key>E</key></keyseq> düymələrinə basıldıqda son "
+"fokuslanmış əlçatan elementi seçəcək."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:63
+msgid "First off, the import lines we will use are:"
+msgstr "Əvvəlcə istifadə edəcəyimiz import sətirləri bunlardır:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:66
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:71
+msgid ""
+"Next we will derive a new class from the Plugin base class, and assign some "
+"mandatory class attributes:"
+msgstr ""
+"Sonra Plugin əsas sinfindən yeni bir sinif yaradacağıq və ona bəzi vacib "
+"sinif atributlarını təyin edəcəyik:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:75
+#, no-wrap
+msgid ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+msgstr ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Fokus Seçimi'\n"
+"        plugin_description = 'Son fokuslanmış əlçatan obyektin seçilməsinə imkan verir.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:80
+msgid ""
+"We will now override the init method, in which we will set a global key "
+"action for selecting the last focused accessible item, register an event "
+"listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
+"instance variable to <cmd>None</cmd>."
+msgstr ""
+"İndi <code>init</code> metodunu yenidən müəyyən edəcəyik. Burada son "
+"fokuslanmış əlçatan obyektin seçilməsi üçün qlobal düymə əməliyyatı təyin "
+"edəcəyik, \"fokus\" hadisəsi üçün dinləyici qeydiyyatdan keçirəcəyik və "
+"<cmd>last_focused</cmd> dəyişənini <cmd>None</cmd> olaraq təyin edəcəyik."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:86
+#, no-wrap
+msgid ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+msgstr ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Son fokuslanmış əlçatan obyektə baxış',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:95
+msgid ""
+"Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of "
+"tuples. Each tuple is a global hotkey action, composed by an action "
+"description, a desired method to call, a key symbol of keypress, and a key "
+"modifier mask."
+msgstr ""
+"<cmd>global_hotkeys</cmd> nümunə dəyişəninin siyahı şəklində qoşalılardan "
+"ibarət olduğunu nəzərə alın. Hər bir qoşalı qlobal qısayol əməliyyatını "
+"təmsil edir – bu əməliyyat təsviri, çağırılacaq metod, düymə simvolu və "
+"düymə dəyişdirici maskasından ibarətdir."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:100
+msgid ""
+"In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> "
+"instance variable with the accessible item that has just emitted the "
+"\"focus\" event."
+msgstr ""
+"\"fokus\" hadisəsinin geri çağırılmasında, <cmd>last_focused</cmd> nümunə "
+"dəyişənini bu hadisəni göndərmiş əlçatan obyektlə doldururuq."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:104
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:109
+msgid ""
+"In the hotkey action callback, we update the application wide node with the "
+"last focused accessible item, if we have recorded it:"
+msgstr ""
+"Qısayol düyməsinin əməliyyatı üçün geri çağırmada, əgər qeyd olunubsa, "
+"tətbiqdəki əsas düyünü son fokuslanmış əlçatan obyektlə yeniləyirik:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:113
+#, no-wrap
+msgid ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+msgstr ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:120
+msgid "Creating a Console Plugin"
+msgstr "Konsol Əlavəsinin Yaradılması"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:121
+msgid ""
+"We will create a console plugin to display focus changes emitted by an "
+"accessible item with a \"push button\" role - remember that it is easy to "
+"check what is the role of any item with <app>Accerciser</app>; you can "
+"verify it in the <link xref=\"desktop_tree_view\">Application Tree View</"
+"link>, for example."
+msgstr ""
+"\"Push button\" (təzyiq düyməsi) roluna malik əlçatan element tərəfindən "
+"göndərilən fokus dəyişikliklərini göstərmək üçün konsol əlavəsi yaradacağıq — "
+"unutmayın ki, hər hansı bir elementin rolunu <app>Accerciser</app> vasitəsilə "
+"asanlıqla yoxlamaq olar; məsələn, bunu <link xref=\"desktop_tree_view\">Tətbiq Ağacı Baxışında</link> "
+"yoxlaya bilərsiniz."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:127
+msgid "The needed import lines are:"
+msgstr "Tələb olunan import sətirləri bunlardır:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:130
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:134
+msgid "Then we add a class definition, with a plugin name and description:"
+msgstr ""
+"Sonra bir sinif təyin edirik və ona əlavənin adını və təsvirini əlavə edirik:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:137
+#, no-wrap
+msgid ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+msgstr ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Basılan Düymə Fokus'\n"
+"        plugin_description = 'Basılan düymə fokuslandıqda hadisəni çap edir.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:142
+msgid "We override the init method adding a register listener:"
+msgstr "init metodunu yenidən yazırıq və dinləyici qeydiyyatını əlavə edirik:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:145
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:149
+msgid "In the callback method, all push button events are printed."
+msgstr "Geri çağırma metodunda bütün basılan düymə hadisələri çap olunur."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:152
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:159
+msgid "Creating a Viewport Plugin"
+msgstr "Qrafik Görünüşlü Əlavənin Yaradılması"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:160
+msgid ""
+"We will create a viewport plugin that allows quick testing of the \"click\" "
+"action in accessible items that support the AT-SPI Action interface and have "
+"an action named \"click\". It will be a simple button that, once clicked, "
+"does the \"click\" action in the accessible."
+msgstr ""
+"AT-SPI Əməliyyat interfeysini dəstəkləyən və \"click\" adlı əməliyyatı olan "
+"əlçatan obyektlərdə "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:166
+msgid "First off, some mandatory import lines:"
+msgstr "Əvvəlcə vacib olan bəzi import sətirləri:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:169
+#, no-wrap
+msgid ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+msgstr ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:173
+msgid "Next, a class definition, with a name and description:"
+msgstr "Sonra isə bir sinif təyini, adı və təsviri ilə birlikdə:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:176
+#, no-wrap
+msgid ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Klikləyici'\n"
+"        plugin_description = 'Əlçatan obyektlərdə \"click\" əməliyyatını yoxlayır.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:181
+msgid ""
+"We override the init method with some UI building, and connecting a callback "
+"to a signal for the button. We set the alignment to allow the button to be "
+"centered in the plugin tab, and not monstrously take up the entire plugin "
+"space. Notice that the <cmd>plugin_area</cmd> instance variable contains a "
+"gtk.Frame that could be populated with all the plugin's widgets."
+msgstr ""
+"`init` metodunu yenidən yazırıq, burada bir istifadəçi interfeysi qururuq və "
+"düyməyə siqnal üçün geri çağırma funksiyası qoşuruq. Düymənin əlavənin "
+"səhifəsində ortalanması və bütün sahəni tutmaması üçün düzülüşü təyin "
+"edirik. Nəzərə alın ki, <cmd>plugin_area</cmd> dəyişəni `gtk.Frame` "
+"obyektidir və bu sahə bütün əlavə vidcetləri ilə doldurula bilər."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:188
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         self.click_button.set_halign(gtk.Align.CENTER)\n"
+"         self.click_button.set_valign(gtk.Align.CENTER)\n"
+"         self.plugin_area.add(self.click_button)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         self.click_button = gtk.Button('Klikləyin!')\n"
+"         self.click_button.set_halign(gtk.Align.CENTER)\n"
+"         self.click_button.set_valign(gtk.Align.CENTER)\n"
+"         self.plugin_area.add(self.click_button)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:199
+msgid ""
+"We also created a convenience method that returns a list of supported "
+"actions of the currently selected accessible item - if it does not support "
+"the Action interface, it returns an empty list:"
+msgstr ""
+"Bundan əlavə, cari seçilmiş əlçatan obyektin dəstəklədiyi əməliyyatların "
+"siyahısını qaytaran köməkçi metod yaratmışıq – əgər bu obyekt Action "
+"interfeysini dəstəkləmirsə, boş siyahı qaytarır:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:204
+#, no-wrap
+msgid ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+msgstr ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:214
+msgid ""
+"The base plugin class has a method call onAccChanged that is called "
+"everytime the target application's selected accessible item changes. We will "
+"override it setting the button to be sensitive only when the current "
+"accessible item has the \"click\" action:"
+msgstr ""
+"Əsas əlavə sinifində `onAccChanged` adlı metod var və bu metod hədəf "
+"tətbiqin seçilmiş əlçatan obyektində dəyişiklik olduqda çağırılır. Bu metodu "
+"yenidən yazaraq düymənin yalnız cari obyektin \"click\" əməliyyatını "
+"dəstəklədiyi halda aktivləşməsini təmin edəcəyik:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:219
+#, no-wrap
+msgid ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+msgstr ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:224
+msgid ""
+"The callback method for button \"clicked\" performs the \"click\" action on "
+"the accessible item. Since this callback could only be called when the "
+"button is sensitive, we don't need to worry about checking if the current "
+"accessible has the \"click\" action?"
+msgstr ""
+"Düymənin \"clicked\" siqnalı üçün geri çağırma funksiyası cari əlçatan "
+"obyekt üzərində \"click\" əməliyyatını icra edir. Bu funksiyanın yalnız "
+"düymə aktiv olduqda çağırıla biləcəyini bildiyimiz üçün, obyektin \"click\" "
+"əməliyyatına malik olub-olmadığını ayrıca yoxlamağa ehtiyac yoxdur."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:229
+#, no-wrap
+msgid ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+msgstr ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+
+#. (itstool) path: info/title
+#: C/index.page:6
+msgctxt "text"
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "Introduction to <app>Accerciser</app>"
+msgstr "<app>Accerciser</app> tətbiqinə giriş"
+
+#. (itstool) path: media/span
+#: C/index.page:26
+msgid "<app>Accerciser</app>'s logo"
+msgstr "<app>Accerciser</app> loqosu"
+
+#. (itstool) path: page/title
+#: C/index.page:24
+msgid "<_:media-1/> <app>Accerciser</app>"
+msgstr "<_:media-1/> <app>Accerciser</app>"
+
+#. (itstool) path: note/title
+#: C/index.page:31
+msgid "Before You Begin"
+msgstr "Başlamazdan əvvəl"
+
+#. (itstool) path: note/p
+#: C/index.page:32
+msgid ""
+"Read the <link xref=\"help:gnome-help/a11y\">Universal Access Help</link>"
+msgstr ""
+"<link xref=\"help:gnome-help/a11y\">Universal Əlçatanlıq Yardımı</link> "
+"bölməsini oxuyun"
+
+#. (itstool) path: section/title
+#: C/index.page:37
+msgid "Getting Started"
+msgstr "Başlayaq"
+
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Examining the Accessibility of an Application"
+msgstr "Tətbiqin əlçatanlığını yoxlamaq"
+
+#. (itstool) path: section/title
+#: C/index.page:43
+msgid "Advanced Topics"
+msgstr "Əlavə Mövzular"
+
+#. (itstool) path: info/title
+#: C/interface_viewer_plugin.page:4
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "2. İnterfeys Göstəricisi Əlavəsi"
+
+#. (itstool) path: info/desc
+#: C/interface_viewer_plugin.page:6
+msgid "Examining your accessibility implementation"
+msgstr "Əlçatanlıq tətbiqinizin yoxlanması"
+
+#. (itstool) path: page/title
+#: C/interface_viewer_plugin.page:25
+msgid "Interface Viewer Plugin"
+msgstr "İnterfeys Göstəricisi Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/interface_viewer_plugin.page:27
+msgid ""
+"The Interface Viewer Plugin shows the information and controls provided by "
+"the AT-SPI interfaces present in each accessible item from the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>. After selecting an "
+"item, you can use this plugin to quickly review its supported interfaces, to "
+"retrieve each interface's information, and to manipulate the item through "
+"all the interface’s methods."
+msgstr ""
+"İnterfeys Göstəricisi Əlavəsi <link xref=\"desktop_tree_view\">Tətbiq Ağacı "
+"Görünüşü</link>ndəki hər bir əlçatan obyektin daxilində olan AT-SPI "
+"interfeysləri tərəfindən təqdim olunan məlumatları və idarəetmələri "
+"göstərir. Bir obyekt seçdikdən sonra, bu əlavəni istifadə edərək onun "
+"dəstəklədiyi interfeysləri tez şəkildə nəzərdən keçirə, hər interfeys "
+"haqqında məlumat əldə edə və həmin obyekt üzərində bu interfeyslərin bütün "
+"metodları ilə əməliyyatlar apara bilərsiniz."
+
+#. (itstool) path: figure/title
+#: C/interface_viewer_plugin.page:35
+msgid "Examining a Menu with the Interface Viewer Plugin"
+msgstr "İnterfeys Göstəricisi Əlavəsi ilə Menyunun Yoxlanması"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/interface_viewer_plugin.page:36 C/interface_viewer_plugin.page:42
+msgid ""
+"Given a selected item in the Application Tree View, all of its AT-SPI "
+"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
+"unsupported will appear grayed out, such as the Application and Collection "
+"interfaces in the figure above."
+msgstr ""
+"Tətbiq Ağacı Görünüşündə seçilmiş obyekt üçün, onun bütün AT-SPI "
+"interfeysləri İnterfeys Göstəricisi Əlavəsində aktiv (həssas) şəkildə "
+"göstəriləcək. Dəstəklənməyən interfeyslər boz rəngdə göstəriləcək, məsələn "
+"yuxarıdakı şəkildə Application və Collection interfeysləri kimi."
+
+#. (itstool) path: section/title
+#: C/interface_viewer_plugin.page:49
+msgid "Running the Interface Viewer Plugin"
+msgstr "İnterfeys Göstəricisi Əlavəsinin İşə Salınması"
+
+#. (itstool) path: section/p
+#: C/interface_viewer_plugin.page:50
+msgid ""
+"The first step to run the Interface Viewer Plugin is to select an item in "
+"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
+"that, all AT-SPI interfaces covered by the plugin will be listed in the "
+"plugin's panel. The interfaces implemented by the selected item will be "
+"sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following "
+"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
+"item implements them:"
+msgstr ""
+"İnterfeys Göstəricisi Əlavəsini işə salmaq üçün ilk addım <link "
+"xref=\"desktop_tree_view\">Tətbiq Ağacı Görünüşü</link>ndə bir obyekt "
+"seçməkdir. Bundan sonra, əlavənin dəstəklədiyi bütün AT-SPI interfeysləri "
+"əlavənin panelində siyahılanacaq. Seçilmiş obyektin həyata keçirdiyi "
+"interfeyslər aktiv olacaq və siz hər birinə klikləməklə ya məlumat əldə edə, "
+"ya da interfeysin təqdim etdiyi metodlarla qarşılıqlı əlaqə qura bilərsiniz. "
+"Əgər seçilmiş obyekt bu interfeysləri dəstəkləyirsə, <app>Accerciser</app> "
+"daxilində aşağıdakı interfeysləri araşdıra bilərsiniz:"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:59
+msgid ""
+"Accessible - This interface shows the selected item's child count (number of "
+"child widgets), description, states, relations, and attributes."
+msgstr ""
+"Accessible – Bu interfeys seçilmiş obyektin alt obyektlərinin sayı, təsviri, "
+"vəziyyətləri, əlaqələri və atributlarını göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:65
+msgid ""
+"Action - This interface shows all the actions that can be performed by the "
+"selected item. For each interface, you will see its name, such as \"press\" "
+"or \"click\", followed by a description and a key binding, if there are any. "
+"If you select an action, a \"Perform action\" button will become sensitive. "
+"Press this button to see the item performing the selected action."
+msgstr ""
+"Action – Bu interfeys seçilmiş obyekt tərəfindən icra edilə bilən bütün "
+"əməliyyatları göstərir. Hər bir əməliyyat üçün onun adı (məsələn, \"press\" "
+"və ya \"click\"), təsviri və varsa, klaviatura qısayolu göstərilir. "
+"Əməliyyatı seçdikdə, \"Əməliyyatı icra et\" düyməsi aktivləşəcək. Bu düyməni "
+"basmaqla obyektin həmin əməliyyatı necə icra etdiyini müşahidə edə "
+"bilərsiniz."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:73
+msgid ""
+"Application - This interface can be implemented by items with role "
+"\"application\". It is worth to point out that items with role "
+"\"application\" not necessarily implement this interface. If the selected "
+"item implements it, the interface will show its ID and, if there are any, "
+"its toolkit and version."
+msgstr ""
+"Application – Bu interfeys \"application\" roluna malik obyektlər tərəfindən "
+"həyata keçirilə bilər. Qeyd etmək lazımdır ki, \"application\" roluna malik "
+"obyektlər bu interfeysi mütləq şəkildə dəstəkləmir. Əgər seçilmiş obyekt bu "
+"interfeysi dəstəkləyirsə, onun ID-si və varsa, istifadə etdiyi toolkit və "
+"versiya göstərilir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:80
+msgid ""
+"Component - This interface shows the selected item's absolute position (with "
+"respect to the desktop coordinate system), relative position (with respect "
+"to the window coordinate system), size, layer type, MDI-Z-order (a short "
+"integer indicating the stacking order of the component in the MDI layer), "
+"and alpha (if alpha blending is used)."
+msgstr ""
+"Component – Bu interfeys seçilmiş obyektin masaüstü koordinat sisteminə görə "
+"mütləq mövqeyini, pəncərə koordinat sisteminə görə nisbi mövqeyini, "
+"ölçüsünü, qat növünü, MDI-Z-sırasını (komponentin MDI qatında yerləşmə "
+"sırasını göstərən qısa tam ədəd) və alfa dəyərini (əgər şəffaflıq effekti "
+"istifadə olunursa) göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:86
+msgid ""
+"Document - This interface shows the selected item's document attributes and "
+"locale description, if there is one."
+msgstr ""
+"Document – Bu interfeys seçilmiş obyektin sənəd atributlarını və varsa, "
+"yerli təsvirini göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:91
+msgid ""
+"Hypertext - This interface shows a list with all the selected item's "
+"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
+"URI, start (the index in the hypertext at which the hyperlink begins) and "
+"end (the index in the hypertext at which this hyperlink ends)."
+msgstr ""
+"Hypertext – Bu interfeys seçilmiş obyektin hiperlinklərini göstərir. Hər "
+"hiperlink üçün adı, URI-si, başlanğıc indeksi və son indeksi (hipermətn "
+"daxilindəki mövqelər) təqdim olunur."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:98
+msgid ""
+"Image - This interface shows the selected item's description (or \"no "
+"description\" if unspecified), size, position (with respect to the desktop "
+"coordinate system), and locale, if there is one."
+msgstr ""
+"Image – Bu interfeys seçilmiş obyektin təsvirini (və ya əgər təyin "
+"edilməyibsə \"təsvir yoxdur\"), ölçüsünü, masaüstü koordinat sisteminə görə "
+"mövqeyini və varsa yerli parametrini göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:104
+msgid ""
+"Selection - This interface shows all selectable child items of the selected "
+"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
+"\"View\", and \"Help\", and all of them are selectable, then they will be "
+"listed in this interface. If you click a listed option - \"File\", for "
+"example - and want to clear it, just press the \"Clear\" button below the "
+"list."
+msgstr ""
+"Selection – Bu interfeys seçilmiş obyektin seçilə bilən bütün alt "
+"obyektlərini göstərir. Əgər seçilmiş obyekt \"File\", \"Edit\", \"View\" və "
+"\"Help\" seçimləri olan bir menyu panelidirsə və bu seçimlərin hamısı seçilə "
+"bilirsə, onlar bu interfeysdə siyahı şəklində göstəriləcək. Məsələn, "
+"\"File\" seçimini kliklədikdən sonra onu silmək istəsəniz, siyahının "
+"altındakı \"Təmizlə\" düyməsini basın."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:112
+msgid ""
+"Streamable Content - This interface shows the selected item's content types "
+"and their corresponding URIs."
+msgstr ""
+"Streamable Content – Bu interfeys seçilmiş obyektin axın şəklində ötürülə "
+"bilən məzmun növlərini və onlara uyğun URI-ləri göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:117
+msgid ""
+"Table - This interface shows the selected item's caption and summary, rows "
+"(number of rows), columns (number of columns), selected rows (number of "
+"selected rows), and selected columns (number of selected columns). For a "
+"selected cell, the interface shows its row's and column's header and extents."
+msgstr ""
+"Cədvəl – Bu interfeys seçilmiş obyektin başlığını və xülasəsini, sətrlərin "
+"sayını, sütunların sayını, seçilmiş sətrlərin və seçilmiş sütunların sayını "
+"göstərir. Seçilmiş xana üçün interfeys onun sətir və sütun başlıqlarını və "
+"əhatəsini göstərir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:124
+msgid ""
+"TableCell - This interface shows the selected item's row and column index, "
+"row and column span, a list of the row and column header cells and the "
+"cell's table. By selecting a header cell in the list of row or column "
+"headers and pressing the \"Show\" button, it's possible to select that "
+"header cell object in Accerciser instead. Pressing the table button causes "
+"the table object to be selected."
+msgstr ""
+"CədvəlXanası – Bu interfeys seçilmiş obyektin sətir və sütun indeksini, "
+"sətir və sütun əhatəsini, sətir və sütun başlıq xanası siyahısını və xananın "
+"daxil olduğu cədvəli göstərir. Sətir və ya sütun başlıq siyahısından bir "
+"xananı seçərək \"Göstər\" düyməsinə basmaq həmin başlıq obyektinin "
+"Accerciser-də seçilməsinə səbəb olur. \"Cədvəl\" düyməsinə basmaqla isə "
+"cədvəl obyekti seçilir."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:132
+msgid ""
+"Text - This interface shows the selected item's text content, that can be "
+"editable, and its attributes. The basic attributes are offset (the number of "
+"characters the text has) and justification. To see possible CSS attributes, "
+"click the \"Include defaults\" check box."
+msgstr ""
+"Mətn – Bu interfeys seçilmiş obyektin mətn məzmununu (redaktə oluna bilən) "
+"və onun atributlarını göstərir. Əsas atributlara simvol sayı (offset) və "
+"hizalanma daxildir. Mövcud CSS atributlarını görmək üçün \"Standartları "
+"daxil et\" qutusunu işarələyin."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:139
+msgid ""
+"Value - This interface shows the selected item's current value, minimum "
+"allowed value, maximum allowed value, and the minimum increment by which the "
+"value may be changed (or zero if this value cannot be determined). The "
+"current value can be manually changed via a spin button."
+msgstr ""
+"Dəyər – Bu interfeys seçilmiş obyektin cari dəyərini, icazə verilən minimum "
+"və maksimum dəyərləri və dəyərin dəyişdirilə biləcəyi minimum artım "
+"miqdarını göstərir (əgər bu dəyər müəyyən edilə bilmirsə, sıfır göstərilir). "
+"Cari dəyəri spin düyməsi ilə əl ilə dəyişmək mümkündür."
+
+#. (itstool) path: info/title
+#: C/introduction.page:5
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "1. Accerciser nədir?"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:6
+msgid "An interactive accessibility explorer"
+msgstr "İnteraktiv əlçatanlıq araşdırıcısı"
+
+#. (itstool) path: page/title
+#: C/introduction.page:25
+msgid "What is <app>Accerciser</app>?"
+msgstr "<app>Accerciser</app> nədir?"
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
+"uses the AT-SPI library to inspect, examine, and interact with widgets, "
+"allowing you to check if an application is providing correct information to "
+"assistive technologies and automated testing frameworks. <app>Accerciser</"
+"app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
+msgstr ""
+"<app>Accerciser</app> – Python ilə yazılmış interaktiv əlçatanlıq "
+"araşdırıcısıdır. O, vidjetləri yoxlamaq, təhlil etmək və onlarla qarşılıqlı "
+"əlaqə qurmaq üçün AT-SPI kitabxanasından istifadə edir. Bu, tətbiqin "
+"yardımçı texnologiyalara və avtomatlaşdırılmış test sistemlərinə düzgün "
+"məlumat verib-vermədiyini yoxlamağa imkan yaradır. <app>Accerciser</app> "
+"əlçatanlıq məlumatlarını fərdi görünüşlə əks etdirmək üçün istifadə oluna "
+"biləcək əlavələrlə təchiz olunmuşdur."
+
+#. (itstool) path: page/p
+#: C/introduction.page:35
+msgid ""
+"By default, <app>Accerciser</app>'s main interface is comprised of three "
+"sections: a tree view of the entire desktop accessible hierarchy, namely "
+"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+"plugin areas. If you prefer to see all plugins in a single area, dividing "
+"<app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
+"sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
+msgstr ""
+"Standart olaraq, <app>Accerciser</app>-in əsas interfeysi üç hissədən "
+"ibarətdir: bütün masaüstü əlçatanlıq iyerarxiyasının ağac görünüşü – yəni "
+"<link xref=\"desktop_tree_view\"> Tətbiq Ağacı Baxışı</link> – və iki əlavə "
+"sahəsi. Əgər bütün əlavələri bir sahədə görmək, yəni interfeysi üç yerə "
+"deyil, iki yerə bölmək istəyirsinizsə, <keyseq><key>Ctrl</key><key>T</key></"
+"keyseq> düymələrini basın. Üç hissəyə qayıtmaq üçün eyni düymə birləşməsini "
+"yenidən basın."
+
+#. (itstool) path: note/p
+#: C/introduction.page:44
+msgid ""
+"Make sure that accessibility support is enabled in your desktop - otherwise, "
+"<app>Accerciser</app> will not work as expected."
+msgstr ""
+"Masaüstünüzdə əlçatanlıq dəstəyinin aktiv olduğundan əmin olun – əks halda "
+"<app>Accerciser</app> gözlənildiyi kimi işləməyəcək."
+
+#. (itstool) path: figure/title
+#: C/introduction.page:51
+msgid "<app>Accerciser</app>"
+msgstr "<app>Accerciser</app>"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/introduction.page:52 C/introduction.page:56
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "<app>Accerciser</app>-in standart interfeysi."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser-view.png' "
+"md5='87ef1d7587097a04dd784e14840f3115'"
+msgstr ""
+"external ref='figures/accerciser-view.png' "
+"md5='87ef1d7587097a04dd784e14840f3115'"
+
+#. (itstool) path: section/title
+#: C/introduction.page:63
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "<app>Accerciser</app>-in nəzərdə tutulduğu auditoriya"
+
+#. (itstool) path: section/p
+#: C/introduction.page:64
+msgid ""
+"<app>Accerciser</app> fits the needs of many different audiences. User "
+"interface developers use it to ensure that their applications are providing "
+"all of their features through AT-SPI. Assistive technology developers are "
+"able to see what AT-SPI is providing to their applications. Automated UI "
+"test developers find <app>Accerciser</app> beneficial since it exposes "
+"different events that could be expected from their target application."
+msgstr ""
+"<app>Accerciser</app> müxtəlif istifadəçi qruplarının ehtiyaclarını ödəyir. "
+"İstifadəçi interfeysi proqramçıları tətbiqlərinin bütün funksiyaları AT-SPI "
+"vasitəsilə əldə oluna bildiyini yoxlamaq üçün bu vasitədən istifadə edirlər. "
+"Yardımçı texnologiya proqramçıları AT-SPI tərəfindən onların tətbiqlərinə "
+"təqdim edilən məlumatları görə bilirlər. Avtomatlaşdırılmış interfeys "
+"testlərini hazırlayanlar üçün <app>Accerciser</app> faydalıdır, çünki bu "
+"vasitə hədəf tətbiqdən alınacaq müxtəlif hadisələri göstərir."
+
+#. (itstool) path: section/title
+#: C/introduction.page:74
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "<app>Accerciser</app>-in əlavə (plugin) arxitekturası"
+
+#. (itstool) path: section/p
+#: C/introduction.page:75
+msgid ""
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
+"code is fairly small and most of its features are part of default plugins:"
+msgstr ""
+"<app>Accerciser</app> genişləndirilə bilən, əlavələrə əsaslanan bir "
+"arxitekturaya malikdir. Onun əsas kod bazası kifayət qədər kiçikdir və "
+"funksionallıqlarının əksəriyyəti standart əlavələrdən ibarətdir:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:82
+msgid ""
+"<link xref=\"interface_viewer_plugin\">Interface Viewer</link> - A plugin "
+"that lets you explore the AT-SPI interfaces provided by each accessible "
+"widget of a target application."
+msgstr ""
+"<link xref=\"interface_viewer_plugin\">İnterfeys Göstəricisi</link> – Hədəf "
+"tətbiqin əlçatan vidjetləri tərəfindən təqdim edilən AT-SPI interfeyslərini "
+"araşdırmağa imkan verən əlavə."
+
+#. (itstool) path: item/p
+#: C/introduction.page:88
+msgid ""
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
+"applies tests to verify the accessibility of a target application."
+msgstr ""
+"<link xref=\"validator_plugin\">AT-SPI Doğrulayıcısı</link> – Hədəf tətbiqin "
+"əlçatanlığını yoxlamaq üçün testlər tətbiq edən əlavə."
+
+#. (itstool) path: item/p
+#: C/introduction.page:94
+msgid ""
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
+"displays AT-SPI events emitted by a target application as they occur."
+msgstr ""
+"<link xref=\"event_monitor_plugin\">Hadisə Monitoru</link> – Hədəf tətbiq "
+"tərəfindən yaranan AT-SPI hadisələrini real vaxtda göstərən əlavə."
+
+#. (itstool) path: item/p
+#: C/introduction.page:100
+msgid ""
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
+"provides global hotkeys for quickly selecting accessible widgets in "
+"<app>Accerciser</app>'s Application Tree View."
+msgstr ""
+"<link xref=\"quick_select_plugin\">Sürətli Seçim</link> – <app>Accerciser</"
+"app>-in Tətbiq Ağacı Baxışında əlçatan vidjetləri tez seçmək üçün qlobal "
+"klaviatura qısa yolları təqdim edən əlavə."
+
+#. (itstool) path: item/p
+#: C/introduction.page:106
+msgid ""
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
+"the interfaces, methods, and attributes available on each accessible widget "
+"of a target application."
+msgstr ""
+"<link xref=\"api_browser_plugin\">API Baxıcısı</link> – Hədəf tətbiqin hər "
+"bir əlçatan vidjetində mövcud olan interfeysləri, metodları və atributları "
+"göstərən əlavə."
+
+#. (itstool) path: item/p
+#: C/introduction.page:112
+msgid ""
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
+"provides a full, interactive Python shell with access to selected accessible "
+"widgets of a target application."
+msgstr ""
+"<link xref=\"ipython_plugin\">IPython Konsolu</link> – Hədəf tətbiqin "
+"seçilmiş əlçatan vidjetlərinə çıxışı olan tam interaktiv Python komanda "
+"mühitini təmin edən əlavə."
+
+#. (itstool) path: section/title
+#: C/introduction.page:122
+msgid "More about Accessibility"
+msgstr "Əlçatanlıq haqqında daha ətraflı"
+
+#. (itstool) path: section/p
+#: C/introduction.page:123
+msgid ""
+"Accessibility is a core value that should touch all aspects of a Desktop "
+"Environment. To help achieve it in GNOME, some libraries were developed, "
+"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
+"also used in other Desktop Environments. To learn more about Accessibility "
+"Libraries for GNU/UNIX systems, you can consult:"
+msgstr ""
+"Əlçatanlıq masaüstü mühitinin bütün aspektlərinə təsir etməli olan əsas bir "
+"dəyərdir. GNOME mühitində bunu həyata keçirmək üçün ATK və AT-SPI kimi "
+"kitabxanalar yaradılmışdır. Bu kitabxanalar əvvəlcə GNOME üçün hazırlanmış "
+"olsa da, hazırda digər masaüstü mühitlərində də istifadə olunur. GNU/UNIX "
+"sistemləri üçün əlçatanlıq kitabxanaları haqqında daha çox məlumat almaq "
+"üçün aşağıdakı mənbələrə baxa bilərsiniz:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:132
+msgid ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
+"link> - ATK provides the set of accessibility interfaces that are "
+"implemented by other toolkits and applications. Using the ATK interfaces, "
+"accessibility tools have full access to view and control running "
+"applications."
+msgstr ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Əlçatanlıq Alət Dəsti</"
+"link> – ATK digər alət dəstləri və tətbiqlər tərəfindən həyata keçirilən "
+"əlçatanlıq interfeyslərini təqdim edir. ATK interfeyslərindən istifadə "
+"etməklə əlçatanlıq vasitələri işlək tətbiqləri tam şəkildə görmək və idarə "
+"etmək imkanı əldə edir."
+
+#. (itstool) path: item/p
+#: C/introduction.page:139
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"- AT-SPI is the primary service interface by which assistive technologies "
+"query and receive notifications from running applications. Additional "
+"material is available from the <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">KDE Əlçatanlıq İnkişaf Mərkəzi</link>."
+msgstr ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"– AT-SPI yardımçı texnologiyaların işləyən tətbiqlərdən sorğu göndərməsi və "
+"bildirişlər alması üçün əsas xidmət interfeysidir. Əlavə materiallara <link "
+"href=\"http://accessibility.kde.org/developer/atk.php#coreclasses\">KDE "
+"Əlçatanlıq İnkişaf Mərkəzi</link> səhifəsindən baxa bilərsiniz."
+
+#. (itstool) path: item/p
+#: C/introduction.page:147
+msgid ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/"
+"a11y.html\">GNOME Desktop Accessibility Guide</link> - A guide for anyone "
+"interested in how the GNOME Desktop supports the needs of users with "
+"disabilities."
+msgstr ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/"
+"a11y.html\">GNOME Masaüstü Əlçatanlıq Bələdçisi</link> – GNOME masaüstü "
+"mühitinin əlilliyi olan istifadəçilərin ehtiyaclarını necə qarşıladığını "
+"öyrənmək istəyən hər kəs üçün bələdçi."
+
+#. (itstool) path: item/p
+#: C/introduction.page:153
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
+"want to ensure their applications are accessible to the widest audience of "
+"users."
+msgstr ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Əlçatanlıq Tərtibatçı Bələdçisi</link> – Tətbiqlərinin mümkün qədər "
+"geniş istifadəçi kütləsi üçün əlçatan olmasını təmin etmək istəyən "
+"proqramçılar üçün bələdçi."
+
+#. (itstool) path: item/p
+#: C/introduction.page:159
+msgid ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Accessibility "
+"Project</link> - The GNOME Accessibility Project includes the guides listed "
+"above along with many other useful links for users, developers and system "
+"administrators."
+msgstr ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Əlçatanlıq "
+"Layihəsi</link> – GNOME Əlçatanlıq Layihəsi yuxarıda qeyd olunan "
+"bələdçilərlə yanaşı, istifadəçilər, proqramçılar və sistem administratorları "
+"üçün bir çox digər faydalı keçidləri də özündə birləşdirir."
+
+#. (itstool) path: info/title
+#: C/ipython_plugin.page:4
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "2. IPython Əlavəsi"
+
+#. (itstool) path: info/desc
+#: C/ipython_plugin.page:6
+msgid "When all else fails"
+msgstr "Heç nə işləməyəndə"
+
+#. (itstool) path: page/title
+#: C/ipython_plugin.page:25
+msgid "IPython Console Plugin"
+msgstr "IPython Konsolu Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/ipython_plugin.page:26
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item "
+"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
+"the IPython Console Plugin is an interactive Python shell, you can import "
+"any Python modules you want."
+msgstr ""
+"IPython Konsolu Əlavəsi <link xref=\"desktop_tree_view\">Tətbiq Ağacı "
+"Baxışında</link> seçilmiş elementlərlə real vaxtda qarşılıqlı əlaqə qurmağa "
+"imkan verir. Bu əlavə interaktiv Python qabığı olduğuna görə, istədiyiniz "
+"Python modullarını daxil edə bilərsiniz."
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:33
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. "
+"Otherwise, the IPython Console Plugin will not work properly."
+msgstr ""
+"Sisteminizdə müstəqil IPython paketinin quraşdırıldığından əmin olun. Əks "
+"halda, IPython Konsolu Əlavəsi düzgün işləməyəcək."
+
+#. (itstool) path: section/title
+#: C/ipython_plugin.page:40
+msgid "Running the IPython Console Plugin"
+msgstr "IPython Konsolu Əlavəsinin işə salınması"
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:41
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed "
+"in the Application Tree View - either an application or a widget. In the "
+"plugin, the selected item will correspond to the variable 'acc'."
+msgstr ""
+"IPython Konsolu Əlavəsini işə salmaq üçün Tətbiq Ağacı Baxışında göstərilən "
+"əlçatan elementlərdən birini – ya tətbiqi, ya da vidjeti seçin. Əlavədə bu "
+"seçilmiş element 'acc' dəyişəninə uyğun gələcək."
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:46
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the "
+"console, what can be useful for discovering pyatspi methods."
+msgstr ""
+"<key>Tab</key> düyməsinə basmaq konsolda hazırkı əmr üçün tamamlamaları "
+"göstərir, bu da pyatspi metodlarını öyrənmək üçün faydalı ola bilər."
+
+#. (itstool) path: figure/title
+#: C/ipython_plugin.page:52
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr "Seçilmiş elementlərin IPython Konsolu Əlavəsi ilə araşdırılması"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/ipython_plugin.page:53 C/ipython_plugin.page:58
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and "
+"properties related to a selected item in the Application Tree View."
+msgstr ""
+"IPython Konsolu Əlavəsi Tətbiq Ağacı Baxışında seçilmiş elementə aid "
+"metodları, sabitləri və xüsusiyyətləri araşdırmağa imkan verir."
+
+#. (itstool) path: figure/media
+#. Bu, şəkil və ya video kimi xarici fayla istinaddır. Fayl dəyişdikdə, md5 heş kodu da dəyişəcək ki, siz lokal surətinizi yeniləməli olduğunuzu bilin. msgstr ümumiyyətlə istifadə olunmur. Faylı yenilədikdən sonra msgstr-i istədiyiniz kimi təyin edə bilərsiniz.
+#: C/ipython_plugin.page:57
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='1daff78264babd667a8527b3e2b5cace'"
+msgstr ""
+"external ref='figures/IPython_plugin.png' md5='1daff78264babd667a8527b3e2b5cace'"
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:66
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
+"documentation about the corresponding selected accessible item."
+msgstr ""
+"IPython Konsolu Əlavəsində <cmd>help(acc)</cmd> yazmaq, seçilmiş əlçatan "
+"element barədə faydalı sənədləşməni göstərir."
+
+#. (itstool) path: info/title
+#: C/preferences.page:4
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "4. Parametrlər"
+
+#. (itstool) path: info/desc
+#: C/preferences.page:6
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "<app>Accerciser</app> proqramının parametrlərinin fərdiləşdirilməsi"
+
+#. (itstool) path: page/title
+#: C/preferences.page:25
+msgid "Configuring <app>Accerciser</app>"
+msgstr "<app>Accerciser</app> proqramının qurulması"
+
+#. (itstool) path: page/p
+#: C/preferences.page:26
+msgid ""
+"To configure plugins, hotkeys, and highlighting, do either "
+"<keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui> "
+"<gui>Preferences</gui></guiseq> to open a dialog."
+msgstr ""
+"Əlavələri, qısa düymələri və vurğulamaları qurmaq üçün ya <keyseq><key>ctrl</"
+"key><key>p</key></keyseq>, ya da <guiseq><gui>Düzəliş</gui> "
+"<gui>Parametrlər</gui></guiseq> seçin."
+
+#. (itstool) path: section/title
+#: C/preferences.page:32
+msgid "Configuring plugins"
+msgstr "Əlavələrin qurulması"
+
+#. (itstool) path: section/p
+#: C/preferences.page:33
+msgid ""
+"After opening the Preferences Dialog, you will find a list of all available "
+"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
+"or disable a plugin, toggle its checkbox. Only active plugins can be "
+"accessed via <app>Accerciser</app>'s interface."
+msgstr ""
+"Parametrlər pəncərəsi açıldıqdan sonra \"Əlavələr\" bölməsində bütün mövcud "
+"əlavələrin siyahısını və onların yanında seçim qutularını görəcəksiniz. Bir "
+"əlavəni aktivləşdirmək və ya deaktiv etmək üçün onun qutusunu işarələyin. "
+"Yalnız aktiv olan əlavələr <app>Accerciser</app> interfeysi vasitəsilə "
+"əlçatan olur."
+
+#. (itstool) path: section/p
+#: C/preferences.page:38
+msgid ""
+"Right-clicking on any given plugin allows you to choose its location: \"Top "
+"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
+"a new window for the plugin."
+msgstr ""
+"Hər hansı bir əlavənin üzərində sağ klikləməklə onun yerləşmə yerini seçmək "
+"olar: \"Yuxarı Panel\", \"Aşağı Panel\" və \"Yeni Baxış\". \"Yeni Baxış\" "
+"seçildikdə əlavə üçün yeni pəncərə yaradılır."
+
+#. (itstool) path: note/p
+#: C/preferences.page:44
+msgid ""
+"You may bypass the Preferences dialog by using drag and drop to move a "
+"plugin from a location to another."
+msgstr ""
+"Parametrlər pəncərəsini keçmək üçün əlavəni bir yerdən başqa yerə sürükləyib "
+"buraxa bilərsiniz."
+
+#. (itstool) path: section/title
+#: C/preferences.page:51
+msgid "Configuring global hotkeys"
+msgstr "Qlobal qısa düymələrin qurulması"
+
+#. (itstool) path: section/p
+#: C/preferences.page:52
+msgid ""
+"Some elements in <app>Accerciser</app> may enable certain functionalities "
+"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
+"Select Plugin</link>. The hotkey combination for each functionality can be "
+"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
+"this tab, you will find a list of all features for which hotkeys can be "
+"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
+"checkboxes to enable or disable these modifiers."
+msgstr ""
+"<app>Accerciser</app>-in bəzi elementləri qısa düymələr vasitəsilə müəyyən "
+"funksiyaları aktivləşdirə bilər. Məsələn, <link "
+"xref=\"quick_select_plugin\">Quick Select Plugin</link>. Hər bir funksiyanın "
+"qısa düymə kombinasiyası Parametrlər pəncərəsində \"Qlobal Qısa Düymələr\" "
+"bölməsində dəyişdirilə bilər. Bu bölmədə, qısa düymələri quraşdırıla bilən "
+"bütün funksiyaların siyahısını görəcəksiniz. Bu dəyişdiriciləri "
+"aktivləşdirmək və ya deaktiv etmək üçün <cmd>ctrl</cmd>, <cmd>alt</cmd> və "
+"<cmd>shift</cmd> seçim qutularından istifadə edin."
+
+#. (itstool) path: section/title
+#: C/preferences.page:63
+msgid "Configuring widget's highlighting"
+msgstr "Vidjetin vurğulanmasının qurulması"
+
+#. (itstool) path: section/p
+#: C/preferences.page:64
+msgid ""
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, highlight a "
+"specific widget in a target application. The highlighting duration, border "
+"color, and fill color can be customized via the Preferences dialog, under "
+"the \"Highlighting\" tab."
+msgstr ""
+"<app>Accerciser</app>-in bəzi elementləri, məsələn, qlobal qısa düymə "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, hədəf "
+"proqramdakı müəyyən vidjeti vurğulayır. Vurğulama müddəti, kənar rəngi və "
+"doldurma rəngi Parametrlər pəncərəsində \"Vurğulama\" bölməsindən "
+"fərdiləşdirilə bilər."
+
+#. (itstool) path: info/title
+#: C/quick_select_plugin.page:4
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "5. Quick Select Əlavəsi"
+
+#. (itstool) path: info/desc
+#: C/quick_select_plugin.page:6
+msgid "Locating the object you need"
+msgstr "Lazım olan obyektin tapılması"
+
+#. (itstool) path: page/title
+#: C/quick_select_plugin.page:25
+msgid "Quick Select Plugin"
+msgstr "Quick Select Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:26
+msgid ""
+"The Quick Select Plugin does not provide a visible interface like the other "
+"default <app>Accerciser</app> plugins - instead, it adds facilities for "
+"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
+"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
+"later."
+msgstr ""
+"Quick Select Əlavəsi digər standart <app>Accerciser</app> əlavələri kimi "
+"görünən interfeys təqdim etmir - əvəzinə, qlobal qısa düymələr vasitəsilə "
+"<link xref=\"desktop_tree_view\">Tətbiq Ağacı Baxışında</link> elementlərin "
+"sürətli seçimini təmin edir. Bu qısa düymələr əvvəlcə <app>Accerciser</app>-"
+"in əsas kod hissəsi idi və sonra Quick Select Əlavəsinə çevrildi."
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:32
+msgid ""
+"The Quick Select Plugin provides two global hotkeys. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
+"focused accessible widget in the Application Tree View. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and "
+"highlights it in the target application."
+msgstr ""
+"Quick Select Əlavəsi iki qlobal qısa düymə təqdim edir. <keyseq><key>ctrl</"
+"key><key>alt</key><key>a</key></keyseq> düymələrini basmaq Application Tree "
+"View-də son diqqət çəkmiş əlçatan vidjeti seçir. <keyseq><key>ctrl</"
+"key><key>alt</key><key>/</key></keyseq> düymələrini basmaq isə göstərici "
+"altında olan əlçatan vidjeti seçir və hədəf proqramda onu vurğulayır."
+
+#. (itstool) path: info/title
+#: C/validator_plugin.page:4
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "3. Validator Əlavəsi (Default)"
+
+#. (itstool) path: info/desc
+#: C/validator_plugin.page:6
+msgid "Testing an application for accessibility"
+msgstr "Proqramın əlçatanlığının yoxlanması"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/validator_plugin.page:25 C/validator_plugin.page:32
+msgid "AT-SPI Validator Plugin"
+msgstr "AT-SPI Validator Əlavəsi"
+
+#. (itstool) path: page/p
+#: C/validator_plugin.page:26
+msgid ""
+"The AT-SPI Validator Plugin generates a report with accessibility issues "
+"related to a target application. For each error, the report includes the "
+"severity level and a brief description."
+msgstr ""
+"AT-SPI Validator Əlavəsi hədəf proqramla bağlı əlçatanlıq problemlərini "
+"əhatə edən hesabat yaradır. Hər səhv üçün hesabatda ciddi səviyyə və qısa "
+"təsvir göstərilir."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/validator_plugin.page:33 C/validator_plugin.page:38
+msgid ""
+"The AT-SPI Validator Plugin generates useful reports for verifying the "
+"accessibility of a target application."
+msgstr ""
+"AT-SPI Validator Əlavəsi hədəf proqramın əlçatanlığını yoxlamaq üçün faydalı "
+"hesabatlar hazırlayır."
+
+#. (itstool) path: figure/media
+#: C/validator_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/validator_report.png' "
+"md5='0275b1c51e9f01c953cba87aee7b8764'"
+msgstr ""
+"external ref='figures/validator_report.png' md5='0275b1c51e9f01c953cba87aee7b8764'"
+
+#. (itstool) path: section/title
+#: C/validator_plugin.page:46
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "AT-SPI Validator Əlavəsinin işə salınması"
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:47
+msgid ""
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
+"View. The validator will generate the report with respect to the selected "
+"item and all of its descendant widgets in the tree hierarchy."
+msgstr ""
+"AT-SPI Validator Əlavəsini işə salmaq üçün Application Tree View-də bir "
+"element seçin. Validator seçilmiş element və onun altındakı bütün vidjetlərə "
+"əsaslanaraq hesabat yaradır."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:53
+msgid ""
+"After selecting an item, choose a validation schema in the combobox and "
+"press the <cmd>Validate</cmd> button to start generating the report. If you "
+"want to cancel the execution, just press the <cmd>Validate</cmd> button "
+"again."
+msgstr ""
+"Element seçildikdən sonra siyahıdan yoxlama sxemini seçin və hesabat "
+"yaratmaq üçün <cmd>Yoxla</cmd> düyməsini basın. İcranı ləğv etmək üçün "
+"<cmd>Yoxla</cmd> düyməsini yenidən basmaq kifayətdir."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:59
+msgid ""
+"The generated report is interactive. Therefore, you can double-click any "
+"error found to check which of the target application widgets is causing it. "
+"The corresponding widget will then appear selected in the <link "
+"xref=\"desktop_tree_view\"> Application Tree View</link> and highlighted in "
+"the target application."
+msgstr ""
+"Yaradılmış hesabat interaktivdir. Ona görə, tapılmış səhvlərin üzərinə iki "
+"dəfə klikləyərək səhvə səbəb olan hədəf proqram vidjetini görə bilərsiniz. "
+"Müvafiq vidjet Application Tree View-də seçilmiş və hədəf proqramda "
+"vurğulanmış olacaq."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:64
+msgid ""
+"If you want to save the generated report in your system, just click the "
+"<cmd>Save</cmd> button. To clear the validation screen, press the "
+"<cmd>Clear</cmd> button."
+msgstr ""
+"Yaradılmış hesabatı sisteminizdə saxlamaq istəyirsinizsə, <cmd>Saxla</cmd> "
+"düyməsini basın. Yoxlama ekranını təmizləmək üçün <cmd>Təmizlə</cmd> "
+"düyməsini basın."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:68
+msgid ""
+"To get more information about an error in the generated report, make sure "
+"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
+"will open a Help Page in your default browser."
+msgstr ""
+"Yaradılmış hesabatda səhv haqqında daha çox məlumat almaq üçün müvafiq "
+"elementin seçildiyinə əmin olun və <cmd>Kömək</cmd> düyməsini basın. Bu, "
+"standart brauzerinizdə kömək səhifəsini açacaq."
