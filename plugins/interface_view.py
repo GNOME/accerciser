@@ -103,13 +103,15 @@ class InterfaceViewer(ViewportPlugin):
         section.disable()
 
     pyatspi.Registry.registerEventListener(
-        self.onAccNameChanged, 'object:property-change:accessible-name')
+        self.onAccNameOrRoleChanged, 'object:property-change:accessible-name',
+        'object:property-change:accessible-role')
 
-  def onAccNameChanged(self, event):
+  def onAccNameOrRoleChanged(self, event):
     '''
-    Listener for accessible name changes, if it is ours, change the name.
+    Listener for accessible name/role changes, if it is ours, change the name.
 
-    @param event: 'object:property-change:accessible-name' event.
+    @param event: 'object:property-change:accessible-name' or
+                  'object:property-change:accessible-role' event.
     @type acc: Accessibility.Event
     '''
     if event.source != self.node.acc:

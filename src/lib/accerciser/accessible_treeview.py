@@ -506,6 +506,9 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
     pyatspi.Registry.registerEventListener(
         self._accEventNameChanged,
         'object:property-change:accessible-name')
+    pyatspi.Registry.registerEventListener(
+        self._accEventRoleChanged,
+        'object:property-change:accessible-role')
 
     self._hide_leaves = True
 
@@ -687,6 +690,26 @@ class AccessibleTreeView(gtk.TreeView, ToolsAccessor):
           pass
       else:
           self.model[iter][COL_NAME] = event.source.name
+
+  def _accEventRoleChanged(self, event):
+    '''
+    Event handler for "object:property-change:accessible-role".
+    Updates the treeview accordingly.
+
+    @param event: The event which triggered this handler.
+    @type event: L{pyatspi.event.Event}
+    '''
+    if self.isMyApp(event.source) or event.source == self.desktop:
+      # Bad karma
+      return
+    if self.model.isInModel(event.source):
+      try:
+        path = self.model.getAccPath(event.source)
+        iter = self.model.get_iter(path)
+      except:
+          pass
+      else:
+          self.model[iter][COL_ROLE] = event.source.getLocalizedRoleName()
 
   def _accEventChildChanged(self, event):
     '''
