@@ -4,7 +4,8 @@
 #
 # Wouter Bolsterlee <wbolster@gnome.org>, 2008–2010
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
-# Nathan Follens <nthn@unseen.is>, 2019-2020.
+# Nathan Follens <nfollens@gnome.org>, 2019-2020, 2025.
+# Dick Groskamp <dikgro@yahoo.co.uk>, 2025.
 #
 # Enkele als zelfstandig naamwoord gebruikte werkwoorden:
 # - accessible        toegankelijke
@@ -16,62 +17,39 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2019-09-22 13:12+0000\n"
-"PO-Revision-Date: 2020-02-26 15:02+0100\n"
-"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
+"POT-Creation-Date: 2025-10-10 11:01+0000\n"
+"PO-Revision-Date: 2025-10-11 22:49+0200\n"
+"Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
+"Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.6\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+#: accerciser.desktop.in:2 org.gtk.accerciser.metainfo.xml.in:8
+#: src/lib/accerciser/about_dialog.py:46
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: accerciser.appdata.xml.in:7
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr "Toegankelijkheidsverkenner voor het Gnome-bureaublad"
-
-#: accerciser.appdata.xml.in:9
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-"Accerciser is een interactieve Python-toegankelijkheidsverkenner voor het "
-"Gnome-bureaublad. Het gebruikt AT-SPI voor het beheren en inspecteren van "
-"widgets, waarmee u kunt controleren of een toepassing de juiste informatie "
-"levert aan toegankelijkheidstechnologieën en automatische-testraamwerken."
-
-#: accerciser.appdata.xml.in:14
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-"Accerciser heeft een eenvoudig plugin-raamwerk waarmee u aangepaste "
-"weergaven van toegankelijkheidsinformatie kunt maken."
-
-#: accerciser.desktop.in:4
+#: accerciser.desktop.in:3
 msgid "Give your application an accessibility workout"
 msgstr "Geef uw toepassing een toegankelijkheidstraining"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: accerciser.desktop.in:6
+#: accerciser.desktop.in:5
 msgid "accessibility;development;test;"
-msgstr "accessibility;toegankelijkheid;development;ontwikkeling;test;"
+msgstr "accessibility;development;test;toegankelijkheid;ontwikkeling;"
 
 #: org.a11y.Accerciser.gschema.xml:6
 msgid "A list of plugins that are disabled by default"
-msgstr "Lijst van standaard uitgeschakelde plugins"
+msgstr "Lijst van standaard uitgeschakelde plug-ins"
 
 #: org.a11y.Accerciser.gschema.xml:7
 msgid "A list of plugins that are disabled by default."
-msgstr "Lijst van standaard uitgeschakelde plugins."
+msgstr "Lijst van standaard uitgeschakelde plug-ins."
 
 #: org.a11y.Accerciser.gschema.xml:11
 msgid "Highlight duration"
@@ -137,7 +115,7 @@ msgstr "De weergave van het onderpaneel"
 
 #: org.a11y.Accerciser.gschema.xml:52
 msgid "The layout for the bottom panel pluginview."
-msgstr "De weergave van plugins in het onderpaneel."
+msgstr "De weergave van plug-ins in het onderpaneel."
 
 #: org.a11y.Accerciser.gschema.xml:56
 msgid "The layout for the top panel"
@@ -145,7 +123,7 @@ msgstr "De weergave van het bovenpaneel"
 
 #: org.a11y.Accerciser.gschema.xml:57
 msgid "The layout for the top panel pluginview."
-msgstr "De weergave van plugins in het bovenpaneel."
+msgstr "De weergave van plug-ins in het bovenpaneel."
 
 #: org.a11y.Accerciser.gschema.xml:61
 msgid "Single layout view"
@@ -153,23 +131,23 @@ msgstr "Enkele weergave"
 
 #: org.a11y.Accerciser.gschema.xml:62
 msgid "View plugins in a single layout."
-msgstr "Plugins in een enkele weergave tonen."
+msgstr "Plug-ins in een enkele weergave tonen."
 
 #: org.a11y.Accerciser.gschema.xml:66
 msgid "Available new pluginviews"
-msgstr "Beschikbare nieuwe pluginweergaves"
+msgstr "Beschikbare nieuwe plug-inweergaves"
 
 #: org.a11y.Accerciser.gschema.xml:67
 msgid "This list contains all the new available pluginviews"
-msgstr "Deze lijst bevat alle nieuw beschikbare pluginweergaves"
+msgstr "Deze lijst bevat alle nieuw beschikbare plug-inweergaves"
 
 #: org.a11y.Accerciser.gschema.xml:73
 msgid "The pluginview layout"
-msgstr "De pluginweergave"
+msgstr "De opmaak van de plug-inweergave"
 
 #: org.a11y.Accerciser.gschema.xml:74
 msgid "The default plugin layout for the top panel."
-msgstr "De standaard pluginweergave voor het bovenpaneel."
+msgstr "De standaardopmaak van de plug-inweergave voor het bovenpaneel."
 
 #: org.a11y.Accerciser.gschema.xml:78
 msgid "Window height"
@@ -194,6 +172,34 @@ msgstr "Toetscombinatie"
 #: org.a11y.Accerciser.gschema.xml:91
 msgid "Hotkey combination for related action."
 msgstr "Toetscombinatie voor de gerelateerde actie."
+
+#: org.gtk.accerciser.metainfo.xml.in:9
+msgid "The GNOME Project"
+msgstr "Het GNOME-project"
+
+#: org.gtk.accerciser.metainfo.xml.in:13
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Toegankelijkheidsverkenner voor het Gnome-bureaublad"
+
+#: org.gtk.accerciser.metainfo.xml.in:15
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Accerciser is een interactieve Python-toegankelijkheidsverkenner voor het "
+"Gnome-bureaublad. Het gebruikt AT-SPI voor het beheren en inspecteren van "
+"widgets, waarmee u kunt controleren of een toepassing de juiste informatie "
+"levert aan toegankelijkheidstechnologieën en automatische-testraamwerken."
+
+#: org.gtk.accerciser.metainfo.xml.in:20
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser heeft een eenvoudig plug-inraamwerk waarmee u aangepaste "
+"weergaven van toegankelijkheidsinformatie kunt maken."
 
 #: plugins/api_view.py:32
 msgid "API Browser"
@@ -228,7 +234,7 @@ msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
 "Interactieve console voor het manipuleren van de geselecteerde toegankelijke"
 
-#: plugins/event_monitor.ui:61
+#: plugins/event_monitor.ui:57
 msgid "Event monitor"
 msgstr "Gebeurtenisobservatie"
 
@@ -236,381 +242,481 @@ msgstr "Gebeurtenisobservatie"
 msgid "_Monitor Events"
 msgstr "_Gebeurtenissen observeren"
 
-#: plugins/event_monitor.ui:224
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:2005
+#: plugins/validate.ui:199 src/lib/accerciser/plugin/message.py:293
+msgid "_Clear"
+msgstr "_Wissen"
+
+#: plugins/event_monitor.ui:208 plugins/validate.ui:153
+msgid "_Save"
+msgstr "Op_slaan"
+
+#: plugins/event_monitor.ui:274
+msgid "Select _All"
+msgstr "_Alles selecteren"
+
+#: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
 msgstr "Selectie _wissen"
 
-#: plugins/event_monitor.ui:257
+#: plugins/event_monitor.ui:352
 msgid "Everything"
 msgstr "Alles"
 
-#: plugins/event_monitor.ui:273
+#: plugins/event_monitor.ui:369
 msgid "Selected application"
 msgstr "Geselecteerde toepassing"
 
-#: plugins/event_monitor.ui:289
+#: plugins/event_monitor.ui:386
 msgid "Selected accessible"
 msgstr "Geselecteerde toegankelijke"
 
-#: plugins/event_monitor.ui:310
+#: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "Bron"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
-#: plugins/interface_view.py:736 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:462
-#: src/lib/accerciser/plugin/plugin_manager.py:386
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:704
+#: plugins/interface_view.py:785 plugins/interface_view.py:879
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:469
+#: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Naam"
 
-#: plugins/event_monitor.ui:358
+#: plugins/event_monitor.ui:459
 msgid "Full Name"
 msgstr "Volledige naam"
 
-#: plugins/event_monitor.py:51
+#: plugins/event_monitor.py:52
 msgid "Event Monitor"
 msgstr "Gebeurtenisobservatie"
 
-#: plugins/event_monitor.py:54
+#: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
 "Gebeurtenissen van geselecteerde types en bronnen tonen terwijl ze "
 "plaatsvinden"
 
-#: plugins/event_monitor.py:64
+#: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
 msgstr "Laatste gebeurtenis oplichten"
 
-#: plugins/event_monitor.py:68
+#: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
 msgstr "Opname van gebeurtenissen starten/stoppen"
 
-#: plugins/event_monitor.py:72
+#: plugins/event_monitor.py:73
 msgid "Clear event log"
 msgstr "Gebeurtenislogboek wissen"
 
-#: plugins/interface_view.ui:125
-msgid "Child count"
-msgstr "Aantal kinderen"
+#: plugins/event_monitor.py:477
+msgid "Save monitor output"
+msgstr "Monitoruitvoer opslaan"
 
-#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
-#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
-#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
-#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
+#: plugins/event_monitor.py:480 plugins/validate.py:318
+#: src/lib/accerciser/plugin/view.py:1135
+msgid "_OK"
+msgstr "_Oké"
+
+#: plugins/event_monitor.py:481 plugins/validate.py:319
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: plugins/interface_view.ui:116
+msgid "Child count"
+msgstr "Aantal onderliggende"
+
+#: plugins/interface_view.ui:135 plugins/interface_view.ui:367
+#: plugins/interface_view.ui:1177 plugins/interface_view.ui:1430
+#: plugins/interface_view.ui:1461 plugins/interface_view.ui:1491
+#: plugins/interface_view.ui:2262 plugins/interface_view.ui:2292
+#: plugins/interface_view.ui:2322 plugins/interface_view.ui:2752
+#: plugins/interface_view.ui:2782 plugins/interface_view.ui:2812
+#: plugins/interface_view.ui:3155 plugins/interface_view.ui:3430
+#: plugins/interface_view.ui:3461 plugins/interface_view.ui:3492
+#: plugins/interface_view.ui:3523
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
-#: plugins/interface_view.py:344 plugins/interface_view.py:864
+#: plugins/interface_view.ui:167 plugins/interface_view.ui:212
+#: plugins/interface_view.ui:1765 plugins/interface_view.py:347
+#: plugins/interface_view.py:451 plugins/interface_view.py:1007
 msgid "(no description)"
 msgstr "(geen beschrijving)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
-#: plugins/interface_view.ui:1545 plugins/validate.py:230
-#: plugins/validate.py:293
+#: plugins/interface_view.ui:183 plugins/interface_view.ui:715
+#: plugins/interface_view.ui:1750 plugins/validate.py:232
+#: plugins/validate.py:295
 msgid "Description"
 msgstr "Beschrijving"
 
-#: plugins/interface_view.ui:233 plugins/interface_view.py:348
+#: plugins/interface_view.ui:228
+msgid "Help text"
+msgstr "Hulptekst"
+
+#: plugins/interface_view.ui:257 plugins/interface_view.py:355
 msgid "(no ID)"
 msgstr "(geen ID)"
 
-#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+#: plugins/interface_view.ui:273 plugins/interface_view.ui:838
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:325
-msgid "States"
-msgstr "Toestanden"
-
-#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
-#: plugins/interface_view.ui:2739
-msgid "Attributes"
-msgstr "Attributen"
-
-#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
-msgid "Show"
-msgstr "Tonen"
-
-#: plugins/interface_view.ui:551
-msgid "Relations"
-msgstr "Relaties"
-
-#: plugins/interface_view.ui:572
-msgid "_Accessible"
-msgstr "_Toegankelijke"
-
-#: plugins/interface_view.ui:637
-msgid "Key binding"
-msgstr "Sneltoets"
-
-#: plugins/interface_view.ui:691
-msgid "Perform action"
-msgstr "Actie uitvoeren"
-
-#: plugins/interface_view.ui:724
-msgid "Acti_on"
-msgstr "Acti_e"
-
-#: plugins/interface_view.ui:772
-msgid "Toolkit"
-msgstr "Toolkit"
-
-#: plugins/interface_view.ui:789
-msgid "Version"
-msgstr "Versie"
-
-#: plugins/interface_view.ui:865
-msgid "Ap_plication"
-msgstr "Toe_passing"
-
-#: plugins/interface_view.ui:884
-msgid "Col_lection"
-msgstr "_Collection"
-
-#. Screen coordinates
-#. Component size in pixels
-#. Screen coordinates
-#. Component size
-#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
-#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
-#: plugins/interface_view.ui:1525
-msgid "0, 0"
-msgstr "0, 0"
-
-#: plugins/interface_view.ui:937
-msgid "Relative position"
-msgstr "Relatieve positie"
-
-#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
-msgid "Size"
-msgstr "Grootte"
-
-#: plugins/interface_view.ui:991
-msgid "WIDGET"
-msgstr "WIDGET"
-
-#: plugins/interface_view.ui:1011
-msgid "Layer"
-msgstr "Laag"
-
-#: plugins/interface_view.ui:1048
-msgid "MDI-Z-order"
-msgstr "MDI-Z-volgorde"
-
-#: plugins/interface_view.ui:1085
-msgid "Alpha"
-msgstr "Alpha"
-
-#: plugins/interface_view.ui:1120
-msgid "Absolute position"
-msgstr "Absolute positie"
-
-#: plugins/interface_view.ui:1139
-msgid "Co_mponent"
-msgstr "Co_mponent"
-
-#: plugins/interface_view.ui:1158
-msgid "Des_ktop"
-msgstr "_Bureaublad"
-
-#: plugins/interface_view.ui:1264
-msgid "Locale:"
-msgstr "Taalinstelling:"
-
-#: plugins/interface_view.ui:1305
-msgid "_Document"
-msgstr "_Document"
-
-#. add url role to buffer
-#: plugins/interface_view.ui:1326 plugins/validate.py:299
-msgid "Hyperlink"
-msgstr "Hyperlink"
-
-#: plugins/interface_view.ui:1438
-msgid "H_ypertext"
-msgstr "H_ypertext"
-
-#: plugins/interface_view.ui:1471
-msgid "Position"
-msgstr "Positie"
-
-#: plugins/interface_view.ui:1560
+#: plugins/interface_view.ui:300 plugins/interface_view.ui:1846
 msgid "Locale"
 msgstr "Taalinstelling"
 
-#: plugins/interface_view.ui:1622
+#: plugins/interface_view.ui:348
+msgid "Process ID"
+msgstr "Proces-ID"
+
+#: plugins/interface_view.ui:437
+msgid "States"
+msgstr "Toestanden"
+
+#: plugins/interface_view.ui:502 plugins/interface_view.ui:1319
+#: plugins/interface_view.ui:3360
+msgid "Attributes"
+msgstr "Attributen"
+
+#: plugins/interface_view.ui:615 plugins/interface_view.ui:1585
+#: plugins/interface_view.ui:1692 plugins/interface_view.ui:2917
+#: plugins/interface_view.ui:3002
+msgid "Show"
+msgstr "Tonen"
+
+#: plugins/interface_view.ui:646
+msgid "Relations"
+msgstr "Relaties"
+
+#: plugins/interface_view.ui:665
+msgid "_Accessible"
+msgstr "_Toegankelijke"
+
+#: plugins/interface_view.ui:726
+msgid "Key binding"
+msgstr "Sneltoets"
+
+#: plugins/interface_view.ui:780
+msgid "Perform action"
+msgstr "Actie uitvoeren"
+
+#: plugins/interface_view.ui:811
+msgid "Acti_on"
+msgstr "Acti_e"
+
+#: plugins/interface_view.ui:853
+msgid "Toolkit"
+msgstr "Toolkit"
+
+#: plugins/interface_view.ui:868
+msgid "Version"
+msgstr "Versie"
+
+#: plugins/interface_view.ui:928
+msgid "AT-SPI IPC Version"
+msgstr "AT-SPI-IPC-versie"
+
+#: plugins/interface_view.ui:960
+msgid "Ap_plication"
+msgstr "Toe_passing"
+
+#: plugins/interface_view.ui:979
+msgid "Col_lection"
+msgstr "_Collection"
+
+#: plugins/interface_view.ui:1007
+msgid "Absolute position"
+msgstr "Absolute positie"
+
+#. Screen coordinates
+#. Component size in pixels
+#. Component size
+#. Screen coordinates
+#: plugins/interface_view.ui:1022 plugins/interface_view.ui:1053
+#: plugins/interface_view.ui:1084 plugins/interface_view.ui:1115
+#: plugins/interface_view.ui:1799 plugins/interface_view.ui:1830
+msgid "0, 0"
+msgstr "0, 0"
+
+#: plugins/interface_view.ui:1038
+msgid "Window relative position"
+msgstr "Relatieve positie van venster"
+
+#: plugins/interface_view.ui:1069
+msgid "Parent relative position"
+msgstr "Relatieve positie van bovenliggend venster"
+
+#: plugins/interface_view.ui:1100 plugins/interface_view.ui:1784
+msgid "Size"
+msgstr "Grootte"
+
+#: plugins/interface_view.ui:1131
+msgid "Layer"
+msgstr "Laag"
+
+#: plugins/interface_view.ui:1146
+msgid "WIDGET"
+msgstr "WIDGET"
+
+#: plugins/interface_view.ui:1162
+msgid "MDI-Z-order"
+msgstr "MDI-Z-volgorde"
+
+#: plugins/interface_view.ui:1193
+msgid "Alpha"
+msgstr "Alpha"
+
+#: plugins/interface_view.ui:1226
+msgid "Co_mponent"
+msgstr "Co_mponent"
+
+#: plugins/interface_view.ui:1245
+msgid "Des_ktop"
+msgstr "_Bureaublad"
+
+#: plugins/interface_view.ui:1341
+msgid "Locale:"
+msgstr "Taalinstelling:"
+
+#: plugins/interface_view.ui:1380
+msgid "_Document"
+msgstr "_Document"
+
+#: plugins/interface_view.ui:1414
+msgid "Anchor count"
+msgstr "Aantal ankers"
+
+#: plugins/interface_view.ui:1446
+msgid "Start index"
+msgstr "Begin index"
+
+#: plugins/interface_view.ui:1476
+msgid "End index"
+msgstr "Einde index"
+
+#: plugins/interface_view.ui:1506
+msgid "Valid"
+msgstr "Geldig"
+
+#. add url role to buffer
+#: plugins/interface_view.ui:1617 plugins/validate.py:301
+msgid "Hyperlink"
+msgstr "Hyperlink"
+
+#: plugins/interface_view.ui:1723
+msgid "H_ypertext"
+msgstr "H_ypertext"
+
+#: plugins/interface_view.ui:1815
+msgid "Position"
+msgstr "Positie"
+
+#: plugins/interface_view.ui:1879
 msgid "_Image"
 msgstr "_Afbeelding"
 
-#: plugins/interface_view.ui:1641
+#: plugins/interface_view.ui:1898
 msgid "Lo_gin Helper"
 msgstr "Lo_gin-hulpje"
 
-#: plugins/interface_view.ui:1712
+#: plugins/interface_view.ui:1965
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: plugins/interface_view.ui:1754
+#: plugins/interface_view.ui:2036
 msgid "_Selection"
 msgstr "_Selectie"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:2069
 msgid "Content type"
 msgstr "Inhoudstype"
 
-#: plugins/interface_view.ui:1803 plugins/interface_view.py:744
+#: plugins/interface_view.ui:2080 plugins/interface_view.py:793
+#: plugins/interface_view.py:887
 msgid "URI"
 msgstr "URI"
 
 # Vrij vertaald (Wouter Bolsterlee)
-#: plugins/interface_view.ui:1822
+#: plugins/interface_view.ui:2097
 msgid "St_reamable Content"
 msgstr "Ver_zendbare inhoud"
 
-#: plugins/interface_view.ui:1863
+#: plugins/interface_view.ui:2136
 msgid "Caption:"
 msgstr "Bijschrift:"
 
-#: plugins/interface_view.ui:1908
+#: plugins/interface_view.ui:2181
 msgid "Summary:"
 msgstr "Samenvatting:"
 
-#: plugins/interface_view.ui:2052
-msgid "Selected columns"
-msgstr "Geselecteerde kolommen"
-
-#: plugins/interface_view.ui:2068
-msgid "Selected rows"
-msgstr "Geselecteerde rijen"
-
-#: plugins/interface_view.ui:2084
-msgid "Columns"
-msgstr "Kolommen"
-
-#: plugins/interface_view.ui:2100
+#: plugins/interface_view.ui:2247
 msgid "Rows"
 msgstr "Rijen"
 
-#: plugins/interface_view.ui:2125
+#: plugins/interface_view.ui:2277
+msgid "Columns"
+msgstr "Kolommen"
+
+#: plugins/interface_view.ui:2307
+msgid "Selected rows"
+msgstr "Geselecteerde rijen"
+
+#: plugins/interface_view.ui:2337
+msgid "Selected columns"
+msgstr "Geselecteerde kolommen"
+
+#: plugins/interface_view.ui:2376
 msgid "Table Information"
 msgstr "Tabelinformatie"
 
-#: plugins/interface_view.ui:2171
+#: plugins/interface_view.ui:2420
 msgid "name (x,y)"
 msgstr "naam (x,y)"
 
-#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+#: plugins/interface_view.ui:2470 plugins/interface_view.ui:2583
 msgid "Header:"
 msgstr "Koptekst:"
 
-#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+#: plugins/interface_view.ui:2483 plugins/interface_view.ui:2596
 msgid "<no description>"
 msgstr "<geen beschrijving>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+#: plugins/interface_view.ui:2515 plugins/interface_view.ui:2628
 msgid "Extents:"
 msgstr "Bereik:"
 
-#: plugins/interface_view.ui:2311
+#: plugins/interface_view.ui:2553 plugins/interface_view.ui:2737
 msgid "Row"
 msgstr "Rij"
 
-#: plugins/interface_view.ui:2430
+#: plugins/interface_view.ui:2666 plugins/interface_view.ui:2767
 msgid "Column"
 msgstr "Kolom"
 
-#: plugins/interface_view.ui:2448
+#: plugins/interface_view.ui:2682
 msgid "Selected Cell"
 msgstr "Geselecteerde cel"
 
-#: plugins/interface_view.ui:2472
+#: plugins/interface_view.ui:2704
 msgid "_Table"
 msgstr "_Tabel"
 
-#: plugins/interface_view.ui:2533
+#: plugins/interface_view.ui:2797
+msgid "Row span"
+msgstr "Rijbreedte"
+
+#: plugins/interface_view.ui:2827
+msgid "Column span"
+msgstr "Kolombreedte"
+
+#: plugins/interface_view.ui:2858
+msgid "Row headers"
+msgstr "Rijkoppen"
+
+#: plugins/interface_view.ui:2943
+msgid "Column headers"
+msgstr "Kolomkoppen"
+
+#: plugins/interface_view.ui:3027
+msgid "Table"
+msgstr "Tabel"
+
+#: plugins/interface_view.ui:3067
+msgid "_TableCell"
+msgstr "_Tabelcel"
+
+#: plugins/interface_view.ui:3117
 msgid "Text"
 msgstr "Tekst"
 
-#: plugins/interface_view.ui:2571
+#: plugins/interface_view.ui:3140
+msgid "Caret Offset"
+msgstr "Cursorverschuiving"
+
+#: plugins/interface_view.ui:3199
 msgid "Offset"
 msgstr "Verschuiving"
 
-#: plugins/interface_view.ui:2609
+#: plugins/interface_view.ui:3237
 msgid "Include defaults"
 msgstr "Standaardinstellingen gebruiken"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2631
+#: plugins/interface_view.ui:3258
 msgid "Start: 0"
 msgstr "Start: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2649
+#: plugins/interface_view.ui:3276
 msgid "End: 0"
 msgstr "Einde: 0"
 
-#: plugins/interface_view.ui:2763
+#: plugins/interface_view.ui:3382
 msgid "Te_xt"
 msgstr "Te_kst"
 
-#: plugins/interface_view.ui:2818
+#: plugins/interface_view.ui:3414
 msgid "Current value"
 msgstr "Huidige waarde"
 
-#: plugins/interface_view.ui:2886
-msgid "Minimum increment"
-msgstr "Minimale ophoging"
-
-#: plugins/interface_view.ui:2901
-msgid "Maximum value"
-msgstr "Maximale waarde"
-
-#: plugins/interface_view.ui:2916
+#: plugins/interface_view.ui:3446
 msgid "Minimum value"
 msgstr "Minimale waarde"
 
-#: plugins/interface_view.ui:2942
+#: plugins/interface_view.ui:3477
+msgid "Maximum value"
+msgstr "Maximale waarde"
+
+#: plugins/interface_view.ui:3508
+msgid "Minimum increment"
+msgstr "Minimale ophoging"
+
+#: plugins/interface_view.ui:3548
 msgid "Val_ue"
 msgstr "_Waarde"
 
-#: plugins/interface_view.ui:2961
+#: plugins/interface_view.ui:3565
 msgid "unknown"
 msgstr "onbekend"
 
 # FIXME: Iemand een beter idee? (Wouter Bolsterlee)
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:44
+#: plugins/interface_view.py:45
 msgid "Interface Viewer"
 msgstr "Interfaceviewer"
 
 # Vrij vertaald (Wouter Bolsterlee)
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:47
+#: plugins/interface_view.py:48
 msgid "Allows viewing of various interface properties"
 msgstr "Diverse interface-eigenschappen bekijken"
 
-#: plugins/interface_view.py:237
+#: plugins/interface_view.py:241
 msgid "(not implemented)"
 msgstr "(niet geïmplementeerd)"
 
-#: plugins/interface_view.py:752
+#: plugins/interface_view.py:349 plugins/interface_view.py:351
+#: plugins/interface_view.py:464 plugins/interface_view.py:466
+msgid "(no help text)"
+msgstr "(geen hulptekst)"
+
+#: plugins/interface_view.py:895
 msgid "Start"
 msgstr "Start"
 
-#: plugins/interface_view.py:760
+#: plugins/interface_view.py:903
 msgid "End"
 msgstr "Einde"
 
-#: plugins/interface_view.py:922
+#: plugins/interface_view.py:1068
 msgid "Too many selectable children"
-msgstr "Te veel selecteerbare kinderen"
+msgstr "Te veel selecteerbare onderliggende"
 
-#: plugins/interface_view.py:1275 plugins/interface_view.py:1278
+#: plugins/interface_view.py:1537 plugins/interface_view.py:1540
 msgid "(Editable)"
 msgstr "(Bewerkbaar)"
 
@@ -619,7 +725,7 @@ msgstr "(Bewerkbaar)"
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1425
+#: plugins/interface_view.py:1667
 #, python-format
 msgid "Start: %d"
 msgstr "Start: %d"
@@ -629,88 +735,96 @@ msgstr "Start: %d"
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1431
+#: plugins/interface_view.py:1673
 #, python-format
 msgid "End: %d"
 msgstr "Einde: %d"
 
-#: plugins/quick_select.py:16
+#: plugins/quick_select.py:15
 msgid "Quick Select"
 msgstr "Snel selecteren"
 
-#: plugins/quick_select.py:19
+#: plugins/quick_select.py:18
 msgid "Plugin with various methods of selecting accessibles quickly."
 msgstr ""
-"Plugin met verschillende methoden om toegankelijken snel te selecteren."
+"Plug-in met verschillende methoden om toegankelijken snel te selecteren."
 
-#: plugins/quick_select.py:25
+#: plugins/quick_select.py:24
 msgid "Inspect last focused accessible"
 msgstr "Laatste toegankelijke met focus inspecteren"
 
-#: plugins/quick_select.py:29
+#: plugins/quick_select.py:28
 msgid "Inspect accessible under mouse"
 msgstr "Toegankelijke onder muis inspecteren"
 
-#: plugins/validate.ui:38
+#: plugins/validate.ui:43
 msgid "Sche_ma:"
 msgstr "Sche_ma:"
 
-#: plugins/validate.ui:89
+#: plugins/validate.ui:103
 msgid "V_alidate"
 msgstr "V_alideren"
 
-#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+#: plugins/validate.ui:246 src/lib/accerciser/menus.py:33
+msgid "_Help"
+msgstr "_Hulp"
+
+#: plugins/validate.ui:284 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "Inactief"
 
-#: plugins/validate.py:80
+#: plugins/validate.py:82
 msgid "No description"
 msgstr "Geen beschrijving"
 
-#: plugins/validate.py:167
+#: plugins/validate.py:169
 msgid "AT-SPI Validator"
 msgstr "AT-SPI-validator"
 
-#: plugins/validate.py:169
+#: plugins/validate.py:171
 msgid "Validates application accessibility"
 msgstr "Toepassingstoegankelijkheid valideren"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
+#: plugins/validate.py:225 plugins/validate.py:293
 msgid "Level"
 msgstr "Niveau"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
+#: plugins/validate.py:299 src/lib/accerciser/accessible_treeview.py:478
 msgid "Role"
 msgstr "Rol"
 
-#: plugins/validate.py:362
+#: plugins/validate.py:315
+msgid "Save validator output"
+msgstr "Validator-uitvoer opslaan"
+
+#: plugins/validate.py:363
 msgid "Saving"
 msgstr "Opslaan"
 
-#: plugins/validate.py:413
+#: plugins/validate.py:414
 msgid "Validating"
 msgstr "Valideren"
 
-#: plugins/validate.py:571
+#: plugins/validate.py:572
 msgid "EXCEPT"
 msgstr "BEHALVE"
 
-#: plugins/validate.py:578
+#: plugins/validate.py:579
 msgid "ERROR"
 msgstr "FOUT"
 
-#: plugins/validate.py:586
+#: plugins/validate.py:587
 msgid "WARN"
 msgstr "WAARSCHUWING"
 
-#: plugins/validate.py:593
+#: plugins/validate.py:594
 msgid "INFO"
 msgstr "INFO"
 
-#: plugins/validate.py:600
+#: plugins/validate.py:601
 msgid "DEBUG"
 msgstr "DEBUG"
 
@@ -747,7 +861,7 @@ msgstr "%s heeft geen tekst-interface"
 #: plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr "%s-index in ouder komt niet overeen met kind-index"
+msgstr "%s-index in bovenliggende komt niet overeen met onderliggende index"
 
 #: plugindata/validate/basic.py:150
 #, python-format
@@ -806,55 +920,49 @@ msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
 "%(num2)d"
 msgstr ""
-"%(rolename)s-ouderindex %(num1)d komt niet overeen met rij- en kolomindex "
-"%(num2)d"
+"%(rolename)s-bovenliggende index %(num1)d komt niet overeen met rij- en "
+"kolomindex %(num2)d"
 
 #: plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
 msgstr "%s heeft geen naam of beschrijving"
 
-#: src/lib/accerciser/accerciser.py:80
+#: src/lib/accerciser/accerciser.py:96
+msgid "_Quit"
+msgstr "A_fsluiten"
+
+#: src/lib/accerciser/accerciser.py:98
 msgid "_Preferences…"
 msgstr "_Voorkeuren…"
 
-#: src/lib/accerciser/accerciser.py:82
+#: src/lib/accerciser/accerciser.py:100
 msgid "_Contents"
 msgstr "In_houd"
 
-#: src/lib/accerciser/accessible_treeview.py:415
+#: src/lib/accerciser/accerciser.py:102
+msgid "_About"
+msgstr "_Over"
+
+#: src/lib/accerciser/accessible_treeview.py:417
 msgid "<dead>"
 msgstr "<dood>"
 
-#: src/lib/accerciser/accessible_treeview.py:478
+#: src/lib/accerciser/accessible_treeview.py:485
 msgid "Children"
-msgstr "Kinderen"
+msgstr "Onderliggende"
 
-#: src/lib/accerciser/accessible_treeview.py:506
+#: src/lib/accerciser/accessible_treeview.py:516
 msgid "_Show Applications without children"
-msgstr "Toepa_ssingen zonder kinderen tonen"
+msgstr "Toepa_ssingen zonder onderliggende tonen"
 
-#: src/lib/accerciser/accessible_treeview.py:509
+#: src/lib/accerciser/accessible_treeview.py:525
 msgid "_Refresh Registry"
 msgstr "Register _verversen"
 
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:512
-msgid "Refresh all"
-msgstr "Alle verversen"
-
-#. Translators: Refresh current tree node's children.
-#.
-#: src/lib/accerciser/accessible_treeview.py:515
+#: src/lib/accerciser/accessible_treeview.py:531
 msgid "Refresh _Node"
 msgstr "_Node verversen"
-
-#. Translators: Appears as tooltip
-#.
-#: src/lib/accerciser/accessible_treeview.py:518
-msgid "Refresh selected node’s children"
-msgstr "Kinderen van geselecteerde node verversen"
 
 #: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
@@ -880,187 +988,203 @@ msgstr "Ctrl"
 msgid "Shift"
 msgstr "Shift"
 
-#: src/lib/accerciser/main_window.py:43
+#: src/lib/accerciser/main_window.py:44
 msgid "Accerciser Accessibility Explorer"
 msgstr "Accerciser toegankelijkheidsverkenner"
 
-#: src/lib/accerciser/main_window.py:77
+#: src/lib/accerciser/main_window.py:74
 msgid "Top panel"
 msgstr "Bovenpaneel"
 
-#: src/lib/accerciser/main_window.py:78
+#: src/lib/accerciser/main_window.py:75
 msgid "Bottom panel"
 msgstr "Onderpaneel"
 
+#: src/lib/accerciser/menus.py:17
+msgid "_File"
+msgstr "_Bestand"
+
+#: src/lib/accerciser/menus.py:19
+msgid "_Edit"
+msgstr "Be_werken"
+
+#: src/lib/accerciser/menus.py:25
+msgid "_Bookmarks"
+msgstr "_Bladwijzers"
+
+#: src/lib/accerciser/menus.py:27
+msgid "_View"
+msgstr "Weerga_ve"
+
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr "Accerciser-voorkeuren"
+msgstr "Voorkeuren voor accerciser"
 
-#: src/lib/accerciser/prefs_dialog.py:45
-msgid "Plugins"
-msgstr "Plugins"
+#: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
+#: src/lib/accerciser/plugin/view.py:1137
+msgid "_Close"
+msgstr "Sl_uiten"
 
 #: src/lib/accerciser/prefs_dialog.py:46
+msgid "Plugins"
+msgstr "Plug-ins"
+
+#: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
 msgstr "Globale sneltoetsen"
 
-#: src/lib/accerciser/prefs_dialog.py:55
+#: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "Oplichten"
 
-#: src/lib/accerciser/prefs_dialog.py:87
+#: src/lib/accerciser/prefs_dialog.py:89
 msgid "Highlight duration:"
 msgstr "Duur van oplichten:"
 
-#: src/lib/accerciser/prefs_dialog.py:94
+#: src/lib/accerciser/prefs_dialog.py:96
 msgid "Border color:"
 msgstr "Randkleur:"
 
-#: src/lib/accerciser/prefs_dialog.py:97
+#: src/lib/accerciser/prefs_dialog.py:99
 msgid "The border color of the highlight box"
 msgstr "De randkleur van het oplichtende vlak"
 
-#: src/lib/accerciser/prefs_dialog.py:98
+#: src/lib/accerciser/prefs_dialog.py:100
 msgid "Fill color:"
 msgstr "Vulkleur:"
 
-#: src/lib/accerciser/prefs_dialog.py:101
+#: src/lib/accerciser/prefs_dialog.py:103
 msgid "The fill color of the highlight box"
 msgstr "De vulkleur van het oplichtende vlak"
 
-#: src/lib/accerciser/about_dialog.py:52
+#: src/lib/accerciser/about_dialog.py:55
 msgid "translator-credits"
 msgstr ""
 "Wouter Bolsterlee\n"
 "Justin van Steijn\n"
-"Nathan Follens\n"
-"\n"
-"Meer info over Gnome-NL http://nl.gnome.org"
+"Nathan Follens <nfollens@gnome.org>\n"
+"Dick Groskamp <dikgro@yahoo.co.uk>\n"
+"Meer info over GNOME-NL https://nl.gnome.org"
 
-#: src/lib/accerciser/about_dialog.py:53
+#: src/lib/accerciser/about_dialog.py:56
 msgid "An interactive Python accessibility explorer"
 msgstr "Interactieve Python-verkenner voor toegankelijkheid"
 
-#: src/lib/accerciser/about_dialog.py:54
+#: src/lib/accerciser/about_dialog.py:57
 msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
 
-#: src/lib/accerciser/about_dialog.py:56
+#: src/lib/accerciser/about_dialog.py:59
 msgid "The New BSD License. See the COPYING and NOTICE files for details."
 msgstr ""
 "De nieuwe BSD-licentie. Zie de bestanden ‘COPYING’ and ‘NOTICE’ voor meer "
 "informatie."
 
-#: src/lib/accerciser/about_dialog.py:58
+#: src/lib/accerciser/about_dialog.py:61
 msgid "Web site"
 msgstr "Website"
 
-#: src/lib/accerciser/bookmarks.py:66
+#: src/lib/accerciser/bookmarks.py:68
 msgid "_Add Bookmark…"
 msgstr "_Bladwijzer toevoegen…"
 
-#: src/lib/accerciser/bookmarks.py:67
-msgid "Bookmark selected accessible."
-msgstr "Huidige toegankelijke als bladwijzer opslaan."
-
-#: src/lib/accerciser/bookmarks.py:69
+#: src/lib/accerciser/bookmarks.py:70
 msgid "_Edit Bookmarks…"
 msgstr "Bladwijzers be_werken…"
 
-#: src/lib/accerciser/bookmarks.py:70
-msgid "Manage bookmarks."
-msgstr "Bladwijzers beheren."
-
-#: src/lib/accerciser/bookmarks.py:328
+#: src/lib/accerciser/bookmarks.py:305
 msgid "Edit Bookmarks…"
 msgstr "Bladwijzers bewerken…"
 
-#: src/lib/accerciser/bookmarks.py:434
+#: src/lib/accerciser/bookmarks.py:321
+msgid "_Add"
+msgstr "_Toevoegen"
+
+#: src/lib/accerciser/bookmarks.py:324
+msgid "_Remove"
+msgstr "Ve_rwijderen"
+
+#: src/lib/accerciser/bookmarks.py:327
+msgid "_Jump to"
+msgstr "_Ga naar"
+
+#: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
 msgstr "Titel"
 
-#: src/lib/accerciser/bookmarks.py:442
+#: src/lib/accerciser/bookmarks.py:420
 msgid "Application"
 msgstr "Toepassing"
 
-#: src/lib/accerciser/bookmarks.py:450
+#: src/lib/accerciser/bookmarks.py:428
 msgid "Path"
 msgstr "Pad"
 
-#: src/lib/accerciser/bookmarks.py:519
+#: src/lib/accerciser/bookmarks.py:497
 msgid "Add Bookmark…"
 msgstr "Bladwijzer toevoegen…"
 
-#: src/lib/accerciser/bookmarks.py:533
+#: src/lib/accerciser/bookmarks.py:513
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/lib/accerciser/bookmarks.py:536
+#: src/lib/accerciser/bookmarks.py:516
 msgid "Application:"
 msgstr "Toepassing:"
 
-#: src/lib/accerciser/bookmarks.py:539
+#: src/lib/accerciser/bookmarks.py:519
 msgid "Path:"
 msgstr "Pad:"
 
 #: src/lib/accerciser/plugin/message.py:153
 msgid "Plugin Errors"
-msgstr "Pluginfouten"
+msgstr "Plug-infouten"
+
+#: src/lib/accerciser/plugin/message.py:294
+msgid "_Refresh"
+msgstr "Ve_rnieuwen"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
 #.
-#: src/lib/accerciser/plugin/plugin_manager.py:395
+#: src/lib/accerciser/plugin/plugin_manager.py:396
 msgctxt "viewport"
 msgid "View"
 msgstr "Weergave"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:472
+#: src/lib/accerciser/plugin/plugin_manager.py:473
 msgid "No view"
 msgstr "Geen weergave"
 
-#: src/lib/accerciser/plugin/view.py:377
+#: src/lib/accerciser/plugin/view.py:379
 msgid "_Single plugins view"
-msgstr "_Enkele plugin-weergave"
+msgstr "_Enkele plug-inweergave"
 
-#: src/lib/accerciser/plugin/view.py:766
+#: src/lib/accerciser/plugin/view.py:770
 msgid "Plugin View"
-msgstr "Pluginweergave"
+msgstr "Plug-inweergave"
 
-#: src/lib/accerciser/plugin/view.py:769
+#: src/lib/accerciser/plugin/view.py:773
 #, python-format
 msgid "Plugin View (%d)"
-msgstr "Pluginweergave (%d)"
+msgstr "Plug-inweergave (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1074
+#: src/lib/accerciser/plugin/view.py:1078
 msgid "_New view…"
 msgstr "_Nieuwe weergave…"
 
-#: src/lib/accerciser/plugin/view.py:1130
+#: src/lib/accerciser/plugin/view.py:1134
 msgid "New View…"
 msgstr "Nieuwe weergave…"
 
-#: src/lib/accerciser/ui_manager.py:23
-msgid "_File"
-msgstr "_Bestand"
+#~ msgid "Refresh selected node’s children"
+#~ msgstr "Kinderen van geselecteerde node verversen"
 
-#: src/lib/accerciser/ui_manager.py:24
-msgid "_Edit"
-msgstr "Be_werken"
+#~ msgid "Bookmark selected accessible."
+#~ msgstr "Huidige toegankelijke als bladwijzer opslaan."
 
-#: src/lib/accerciser/ui_manager.py:25
-msgctxt "menu"
-msgid "_Bookmarks"
-msgstr "Bl_adwijzers"
-
-#: src/lib/accerciser/ui_manager.py:26
-msgctxt "menu"
-msgid "_View"
-msgstr "Beel_d"
-
-#: src/lib/accerciser/ui_manager.py:27
-msgid "_Help"
-msgstr "_Hulp"
+#~ msgid "Manage bookmarks."
+#~ msgstr "Bladwijzers beheren."
 
 #~| msgid "Accerciser"
 #~ msgid "accerciser"
