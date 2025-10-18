@@ -1,5 +1,5 @@
 project('accerciser',
-  version: '3.46.2',
+  version: '3.48.0',
   meson_version: '>= 1.0.0',
 )
 
