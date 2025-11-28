@@ -472,13 +472,16 @@ class _SectionAccessible(_InterfaceSection):
     @param event: Event that triggered this callback.
     @type event: Accessibility.Event
     '''
+    # don't try to interact with newly defunct object
+    if event.type == 'object:state-changed:defunct' and event.detail1 == 1:
+      return
+
     if self.node.acc == event.source:
       self.states_model.clear()
       try:
         states = [pyatspi.stateToString(s) for s in \
                     self.node.acc.getState().getStates()]
       except LookupError:
-        # Maybe we got a defunct state, in which case the object is diseased.
         states = []
       states.sort()
       list(map(self.states_model.append, [[state] for state in states]))
