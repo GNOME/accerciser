@@ -19,7 +19,7 @@ from gi.repository import Gdk as gdk
 from gi.repository import GLib
 from gi.repository import Pango
 
-from pkg_resources import parse_version
+from packaging.version import parse as parse_version
 
 import re
 import sys

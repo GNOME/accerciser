@@ -19,7 +19,7 @@ endif
 # See https://github.com/mesonbuild/meson/issues/3551
 python_modules = {}
 
-foreach _module : [ 'IPython' ]
+foreach _module : [ 'IPython', 'packaging' ]
   # Source: https://docs.python.org/3/library/importlib.html#checking-if-a-module-can-be-imported
   script = f'import importlib.util; import sys; exit(1) if importlib.util.find_spec(\'@_module@\') is None else exit(0)'
   mod_available = (run_command(python3, '-c', script, check: false).returncode() == 0)
@@ -103,4 +103,5 @@ subdir('pixmaps')
 summary({
   'prefix': get_option('prefix'),
   'IPython Support': python_modules['IPython'],
+  'python version checking': python_modules['packaging'],
 })
