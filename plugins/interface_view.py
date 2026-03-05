@@ -11,6 +11,7 @@ available under the terms of the BSD which accompanies this distribution, and
 is available at U{http://www.opensource.org/licenses/bsd-license.php}
 '''
 
+import traceback
 import gi
 
 from gi.repository import Atspi
@@ -143,7 +144,10 @@ class InterfaceViewer(ViewportPlugin):
     for section_obj in self.sections:
       section_obj.disable()
       if section_obj.interface_name in interfaces:
-        section_obj.enable(acc)
+        try:
+          section_obj.enable(acc)
+        except Exception:
+          traceback.print_exc()
 
 class _InterfaceSection(object):
   '''
