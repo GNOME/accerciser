@@ -827,7 +827,8 @@ class _SectionHyperlink(_InterfaceSection):
     for anchor_index in range(link.nAnchors):
       acc_obj = link.getObject(anchor_index)
       self.link_model.append(None,
-                             [anchor_index, acc_obj.name,
+                             [anchor_index,
+                              acc_obj.name if acc_obj is not None else '',
                               link.getURI(anchor_index), acc_obj])
 
   def clearUI(self):
@@ -939,13 +940,16 @@ class _SectionHypertext(_InterfaceSection):
                                       link.endIndex, None])
       for anchor_index in range(link.nAnchors):
         acc_obj = link.getObject(anchor_index)
+        # handle the buggy case where there is no linked object
+        name, description = ((acc_obj.name, acc_obj.description)
+                             if acc_obj is not None else
+                             ('', ''))
         self.links_model.append(iter,
-                                [link_index, acc_obj.name, acc_obj.description,
+                                [link_index, name, description,
                                  link.getURI(anchor_index),
                                  link.startIndex, link.endIndex, acc_obj])
         if anchor_index == 0:
-          self.links_model[iter][1] = \
-              acc_obj.name # Otherwise the link is nameless.
+          self.links_model[iter][1] = name  # Otherwise the link is nameless.
 
 
   def clearUI(self):
