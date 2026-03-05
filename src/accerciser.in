@@ -31,6 +31,8 @@ libs = os.path.join(sys.prefix, 'lib',
                     'python@PYTHON_VERSION@', 'site-packages')
 # point to the proper site-packages path
 sys.path.insert(1, libs)
+# to support local installations, insert the installation libdir
+sys.path.insert(1, '@libdir@')
 
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk

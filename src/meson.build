@@ -7,6 +7,7 @@ configure_file(
     'PYTHON': python3.full_path(),
     'PYTHON_VERSION': python3.language_version(),
     'prefix': get_option('prefix'),
+    'libdir': python3.get_path('purelib').replace(python3.get_path('data'), get_option('prefix')),
     'VERSION': meson.project_version(),
     'PACKAGE': meson.project_name(),
   },
