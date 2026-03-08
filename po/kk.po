@@ -1,100 +1,86 @@
 # Kazakh translation for accerciser.
 # Copyright (C) 2016 accerciser's COPYRIGHT HOLDER
 # This file is distributed under the same license as the accerciser package.
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2016.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2016-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: accerciser master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
-"POT-Creation-Date: 2023-12-31 10:07+0000\n"
-"PO-Revision-Date: 2024-03-08 10:59+0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues/\n"
+"POT-Creation-Date: 2026-03-05 14:26+0000\n"
+"PO-Revision-Date: 2026-03-08 15:45+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
-#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+#: accerciser.desktop.in:2 org.gtk.accerciser.metainfo.xml.in:8
+#: src/lib/accerciser/about_dialog.py:46
 msgid "Accerciser"
 msgstr "Accerciser"
 
-#: accerciser.appdata.xml.in:7
-msgid "Accessibility explorer for the GNOME desktop"
-msgstr ""
-
-#: accerciser.appdata.xml.in:9
-msgid ""
-"Accerciser is an interactive Python accessibility explorer for the GNOME "
-"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
-"check if an application is providing correct information to assistive "
-"technologies and automated test frameworks."
-msgstr ""
-
-#: accerciser.appdata.xml.in:14
-msgid ""
-"Accerciser has a simple plugin framework which you can use to create custom "
-"views of accessibility information."
-msgstr ""
-
-#: accerciser.desktop.in:4
+#: accerciser.desktop.in:3
 msgid "Give your application an accessibility workout"
 msgstr ""
+"Қолжетімділік мүмкіндіктерін тексеру үшін қолданбаңызға жаттығу жасаңыз"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: accerciser.desktop.in:6
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: accerciser.desktop.in:5
 msgid "accessibility;development;test;"
-msgstr ""
+msgstr "қолжетімділік;әзірлеу;тест;"
 
 #: org.a11y.Accerciser.gschema.xml:6
 msgid "A list of plugins that are disabled by default"
-msgstr ""
+msgstr "Әдепкі бойынша сөндірілген плагиндер тізімі"
 
 #: org.a11y.Accerciser.gschema.xml:7
 msgid "A list of plugins that are disabled by default."
-msgstr ""
+msgstr "Әдепкі бойынша сөндірілген плагиндер тізімі."
 
 #: org.a11y.Accerciser.gschema.xml:11
 msgid "Highlight duration"
-msgstr ""
+msgstr "Түспен ерекшелеу ұзақтығы"
 
 #: org.a11y.Accerciser.gschema.xml:12
 msgid "The duration of the highlight box when selecting accessible nodes."
-msgstr ""
+msgstr "Қолжетімді түйіндерді таңдаған кездегі ерекшелеу қорабының ұзақтығы."
 
 #: org.a11y.Accerciser.gschema.xml:16
 msgid "Highlight fill color"
-msgstr ""
+msgstr "Ерекшелеудің толтыру түсі"
 
 #: org.a11y.Accerciser.gschema.xml:17
 msgid "The color and opacity of the highlight fill."
-msgstr ""
+msgstr "Ерекшелеудің толтыру түсі мен мөлдірлігі."
 
 #: org.a11y.Accerciser.gschema.xml:21
 msgid "Highlight border color"
-msgstr ""
+msgstr "Ерекшелеудің жиек түсі"
 
 #: org.a11y.Accerciser.gschema.xml:22
 msgid "The color and opacity of the highlight border."
-msgstr ""
+msgstr "Ерекшелеу жиегінің түсі мен мөлдірлігі."
 
 #: org.a11y.Accerciser.gschema.xml:26
 msgid "Horizontal split"
-msgstr ""
+msgstr "Горизонталды бөлу"
 
 #: org.a11y.Accerciser.gschema.xml:27
 msgid "Position of the horizontal split of the main window."
-msgstr ""
+msgstr "Бас терезенің горизонталды бөліну орны."
 
 #: org.a11y.Accerciser.gschema.xml:31
 msgid "Vertical split"
-msgstr ""
+msgstr "Вертикалды бөлу"
 
 #: org.a11y.Accerciser.gschema.xml:32
 msgid "Position of the vertical split of the main window."
-msgstr ""
+msgstr "Бас терезенің вертикалды бөліну орны."
 
 #: org.a11y.Accerciser.gschema.xml:36
 msgid "Default window height"
@@ -114,43 +100,43 @@ msgstr "Терезенің ені мәні."
 
 #: org.a11y.Accerciser.gschema.xml:51
 msgid "The layout for the bottom panel"
-msgstr ""
+msgstr "Төменгі панель жаймасы"
 
 #: org.a11y.Accerciser.gschema.xml:52
 msgid "The layout for the bottom panel pluginview."
-msgstr ""
+msgstr "Төменгі панель плагин көрінісінің жаймасы."
 
 #: org.a11y.Accerciser.gschema.xml:56
 msgid "The layout for the top panel"
-msgstr ""
+msgstr "Жоғарғы панель жаймасы"
 
 #: org.a11y.Accerciser.gschema.xml:57
 msgid "The layout for the top panel pluginview."
-msgstr ""
+msgstr "Жоғарғы панель плагин көрінісінің жаймасы."
 
 #: org.a11y.Accerciser.gschema.xml:61
 msgid "Single layout view"
-msgstr ""
+msgstr "Бірыңғай жайма көрінісі"
 
 #: org.a11y.Accerciser.gschema.xml:62
 msgid "View plugins in a single layout."
-msgstr ""
+msgstr "Плагиндерді бірыңғай жаймада көру."
 
 #: org.a11y.Accerciser.gschema.xml:66
 msgid "Available new pluginviews"
-msgstr ""
+msgstr "Қолжетімді жаңа плагин көріністері"
 
 #: org.a11y.Accerciser.gschema.xml:67
 msgid "This list contains all the new available pluginviews"
-msgstr ""
+msgstr "Бұл тізімде қолжетімді барлық жаңа плагин көріністері бар"
 
 #: org.a11y.Accerciser.gschema.xml:73
 msgid "The pluginview layout"
-msgstr ""
+msgstr "Плагин көрінісінің жаймасы"
 
 #: org.a11y.Accerciser.gschema.xml:74
 msgid "The default plugin layout for the top panel."
-msgstr ""
+msgstr "Жоғарғы панель үшін әдепкі плагин жаймасы."
 
 #: org.a11y.Accerciser.gschema.xml:78
 msgid "Window height"
@@ -170,23 +156,52 @@ msgstr "Терезенің ені мәні."
 
 #: org.a11y.Accerciser.gschema.xml:90
 msgid "Hotkey combination"
-msgstr ""
+msgstr "Жарлықтар комбинациясы"
 
 #: org.a11y.Accerciser.gschema.xml:91
 msgid "Hotkey combination for related action."
+msgstr "Қатысты әрекет үшін жарлықтар комбинациясы."
+
+#: org.gtk.accerciser.metainfo.xml.in:9
+msgid "The GNOME Project"
+msgstr "GNOME жобасы"
+
+#: org.gtk.accerciser.metainfo.xml.in:13
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "GNOME жұмыс үстеліне арналған қолжетімділік шолғышы"
+
+#: org.gtk.accerciser.metainfo.xml.in:15
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
 msgstr ""
+"Accerciser — GNOME жұмыс үстеліне арналған интерактивті Python "
+"қолжетімділік шолғышы. Ол виджеттерді тексеру және басқару үшін AT-SPI "
+"пайдаланады, бұл сізге қолданбаның көмекші технологияларға және "
+"автоматтандырылған тест құрылымдарына дұрыс ақпарат беріп жатқанын "
+"тексеруге мүмкіндік береді."
+
+#: org.gtk.accerciser.metainfo.xml.in:20
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Accerciser құрамында қолжетімділік ақпаратының жеке көріністерін жасауға "
+"болатын қарапайым плагин құрылымы бар."
 
 #: plugins/api_view.py:32
 msgid "API Browser"
-msgstr ""
+msgstr "API браузері"
 
 #: plugins/api_view.py:35
 msgid "Browse the various methods of the current accessible"
-msgstr ""
+msgstr "Ағымдағы қолжетімді объектінің әртүрлі әдістерін шолу"
 
 #: plugins/api_view.py:66
 msgid "Hide private attributes"
-msgstr ""
+msgstr "Жеке атрибуттарды жасыру"
 
 #: plugins/api_view.py:79
 msgid "Method"
@@ -207,32 +222,33 @@ msgstr "IPython консолі"
 #: plugins/console.py:35
 msgid "Interactive console for manipulating currently selected accessible"
 msgstr ""
+"Қазір таңдалған қолжетімді объектіні манипуляциялауға арналған интерактивті "
+"консоль"
 
 #: plugins/event_monitor.ui:57
 msgid "Event monitor"
-msgstr ""
+msgstr "Оқиғалар бақылаушысы"
 
 #: plugins/event_monitor.ui:114
 msgid "_Monitor Events"
-msgstr ""
+msgstr "_Оқиғаларды бақылау"
 
-#: plugins/event_monitor.ui:161 plugins/interface_view.ui:1661
-#: plugins/validate.ui:200 src/lib/accerciser/plugin/message.py:293
+#: plugins/event_monitor.ui:161 plugins/interface_view.ui:2005
+#: plugins/validate.ui:199 src/lib/accerciser/plugin/message.py:293
 msgid "_Clear"
-msgstr ""
+msgstr "_Тазарту"
 
-#: plugins/event_monitor.ui:208 plugins/validate.ui:154
+#: plugins/event_monitor.ui:208 plugins/validate.ui:153
 msgid "_Save"
-msgstr ""
+msgstr "_Сақтау"
 
 #: plugins/event_monitor.ui:274
-#| msgid "Select All"
 msgid "Select _All"
-msgstr ""
+msgstr "Барлығын _таңдау"
 
 #: plugins/event_monitor.ui:320
 msgid "C_lear Selection"
-msgstr ""
+msgstr "Таңдауды _тазарту"
 
 #: plugins/event_monitor.ui:352
 msgid "Everything"
@@ -244,517 +260,559 @@ msgstr "Таңдалған қолданба"
 
 #: plugins/event_monitor.ui:386
 msgid "Selected accessible"
-msgstr ""
+msgstr "Таңдалған қолжетімді объект"
 
 #: plugins/event_monitor.ui:407
 msgid "Source"
 msgstr "Қайнар көзі"
 
 #. add accessible's name to buffer
-#: plugins/event_monitor.ui:439 plugins/interface_view.ui:569
-#: plugins/interface_view.py:737 plugins/validate.py:295
-#: src/lib/accerciser/accessible_treeview.py:468
-#: src/lib/accerciser/plugin/plugin_manager.py:388
+#: plugins/event_monitor.ui:439 plugins/interface_view.ui:704
+#: plugins/interface_view.py:792 plugins/interface_view.py:887
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:469
+#: src/lib/accerciser/plugin/plugin_manager.py:387
 msgid "Name"
 msgstr "Аты"
 
 #: plugins/event_monitor.ui:459
-#| msgid "Name"
 msgid "Full Name"
-msgstr ""
+msgstr "Толық аты"
 
 #: plugins/event_monitor.py:52
 msgid "Event Monitor"
-msgstr ""
+msgstr "Оқиғалар мониторы"
 
 #: plugins/event_monitor.py:55
 msgid "Shows events as they occur from selected types and sources"
 msgstr ""
+"Таңдалған түрлер мен көздерден оқиғалар туындаған кезде оларды көрсетеді"
 
 #: plugins/event_monitor.py:65
 msgid "Highlight last event entry"
-msgstr ""
+msgstr "Соңғы оқиға жазбасын түспен ерекшелеу"
 
 #: plugins/event_monitor.py:69
 msgid "Start/stop event recording"
-msgstr ""
+msgstr "Оқиғаларды жазуды бастау/тоқтату"
 
 #: plugins/event_monitor.py:73
 msgid "Clear event log"
-msgstr ""
+msgstr "Оқиғалар журналын тазарту"
 
-#: plugins/event_monitor.py:478
+#: plugins/event_monitor.py:477
 msgid "Save monitor output"
-msgstr ""
+msgstr "Монитор нәтижесін сақтау"
 
-#: plugins/event_monitor.py:481 plugins/validate.py:316
-#: src/lib/accerciser/plugin/view.py:1136
+#: plugins/event_monitor.py:480 plugins/validate.py:318
+#: src/lib/accerciser/plugin/view.py:1135
 msgid "_OK"
-msgstr ""
+msgstr "_ОК"
 
-#: plugins/event_monitor.py:482 plugins/validate.py:317
+#: plugins/event_monitor.py:481 plugins/validate.py:319
 msgid "_Cancel"
-msgstr ""
+msgstr "_Бас тарту"
 
-#: plugins/interface_view.ui:119
+#: plugins/interface_view.ui:116
 msgid "Child count"
-msgstr ""
+msgstr "Еншілес объектілер саны"
 
-#: plugins/interface_view.ui:138 plugins/interface_view.ui:968
-#: plugins/interface_view.ui:1923 plugins/interface_view.ui:1942
-#: plugins/interface_view.ui:1961 plugins/interface_view.ui:2433
-#: plugins/interface_view.ui:2452 plugins/interface_view.ui:2471
-#: plugins/interface_view.ui:3104 plugins/interface_view.ui:3123
-#: plugins/interface_view.ui:3142
+#: plugins/interface_view.ui:135 plugins/interface_view.ui:367
+#: plugins/interface_view.ui:1177 plugins/interface_view.ui:1430
+#: plugins/interface_view.ui:1461 plugins/interface_view.ui:1491
+#: plugins/interface_view.ui:2262 plugins/interface_view.ui:2292
+#: plugins/interface_view.ui:2322 plugins/interface_view.ui:2752
+#: plugins/interface_view.ui:2782 plugins/interface_view.ui:2812
+#: plugins/interface_view.ui:3155 plugins/interface_view.ui:3430
+#: plugins/interface_view.ui:3461 plugins/interface_view.ui:3492
+#: plugins/interface_view.ui:3523
 msgid "0"
 msgstr "0"
 
-#: plugins/interface_view.ui:170 plugins/interface_view.ui:1492
-#: plugins/interface_view.py:345 plugins/interface_view.py:865
+#: plugins/interface_view.ui:167 plugins/interface_view.ui:212
+#: plugins/interface_view.ui:1765 plugins/interface_view.py:351
+#: plugins/interface_view.py:455 plugins/interface_view.py:1018
 msgid "(no description)"
-msgstr ""
+msgstr "(сипаттамасы жоқ)"
 
 #. add description to buffer
-#: plugins/interface_view.ui:186 plugins/interface_view.ui:580
-#: plugins/interface_view.ui:1460 plugins/validate.py:230
-#: plugins/validate.py:293
+#: plugins/interface_view.ui:183 plugins/interface_view.ui:715
+#: plugins/interface_view.ui:1750 plugins/validate.py:232
+#: plugins/validate.py:295
 msgid "Description"
 msgstr "Сипаттамасы"
 
-#: plugins/interface_view.ui:215 plugins/interface_view.py:349
-msgid "(no ID)"
-msgstr ""
+#: plugins/interface_view.ui:228
+msgid "Help text"
+msgstr "Анықтама мәтіні"
 
-#: plugins/interface_view.ui:231 plugins/interface_view.ui:704
+#: plugins/interface_view.ui:257 plugins/interface_view.py:359
+msgid "(no ID)"
+msgstr "(ID жоқ)"
+
+#: plugins/interface_view.ui:273 plugins/interface_view.ui:838
 msgid "ID"
 msgstr "ID"
 
-#: plugins/interface_view.ui:298
-msgid "States"
-msgstr ""
-
-#: plugins/interface_view.ui:363 plugins/interface_view.ui:1170
-#: plugins/interface_view.ui:3021
-msgid "Attributes"
-msgstr "Атрибуттар"
-
-#: plugins/interface_view.ui:480 plugins/interface_view.ui:1327
-#: plugins/interface_view.ui:2663 plugins/interface_view.ui:2734
-msgid "Show"
-msgstr "Көрсету"
-
-#: plugins/interface_view.ui:511
-msgid "Relations"
-msgstr ""
-
-#: plugins/interface_view.ui:530
-msgid "_Accessible"
-msgstr ""
-
-#: plugins/interface_view.ui:591
-msgid "Key binding"
-msgstr ""
-
-#: plugins/interface_view.ui:645
-msgid "Perform action"
-msgstr ""
-
-#: plugins/interface_view.ui:676
-msgid "Acti_on"
-msgstr ""
-
-#: plugins/interface_view.ui:719
-msgid "Toolkit"
-msgstr ""
-
-#: plugins/interface_view.ui:736
-msgid "Version"
-msgstr "Нұсқасы"
-
-#: plugins/interface_view.ui:810
-msgid "Ap_plication"
-msgstr ""
-
-#: plugins/interface_view.ui:829
-msgid "Col_lection"
-msgstr ""
-
-#. Screen coordinates
-#. Component size in pixels
-#. Screen coordinates
-#. Component size
-#: plugins/interface_view.ui:857 plugins/interface_view.ui:894
-#: plugins/interface_view.ui:1042 plugins/interface_view.ui:1420
-#: plugins/interface_view.ui:1440
-msgid "0, 0"
-msgstr "0, 0"
-
-#: plugins/interface_view.ui:877
-msgid "Relative position"
-msgstr ""
-
-#: plugins/interface_view.ui:914 plugins/interface_view.ui:1403
-msgid "Size"
-msgstr "Өлшемі"
-
-#: plugins/interface_view.ui:931
-msgid "WIDGET"
-msgstr "ВИДЖЕТ"
-
-#: plugins/interface_view.ui:951
-msgid "Layer"
-msgstr "Қабат"
-
-#: plugins/interface_view.ui:988
-msgid "MDI-Z-order"
-msgstr ""
-
-#: plugins/interface_view.ui:1025
-msgid "Alpha"
-msgstr "Мөлдір"
-
-#: plugins/interface_view.ui:1060
-msgid "Absolute position"
-msgstr ""
-
-#: plugins/interface_view.ui:1077
-msgid "Co_mponent"
-msgstr ""
-
-#: plugins/interface_view.ui:1096
-msgid "Des_ktop"
-msgstr ""
-
-#: plugins/interface_view.ui:1192
-msgid "Locale:"
-msgstr "Локаль:"
-
-#: plugins/interface_view.ui:1231
-msgid "_Document"
-msgstr ""
-
-#. add url role to buffer
-#: plugins/interface_view.ui:1252 plugins/validate.py:299
-msgid "Hyperlink"
-msgstr ""
-
-#: plugins/interface_view.ui:1358
-msgid "H_ypertext"
-msgstr ""
-
-#: plugins/interface_view.ui:1386
-msgid "Position"
-msgstr "Орналасуы"
-
-#: plugins/interface_view.ui:1475
+#: plugins/interface_view.ui:300 plugins/interface_view.ui:1846
 msgid "Locale"
 msgstr "Локаль"
 
-#: plugins/interface_view.ui:1535
+#: plugins/interface_view.ui:348
+msgid "Process ID"
+msgstr "Процесс ID"
+
+#: plugins/interface_view.ui:437
+msgid "States"
+msgstr "Күйлер"
+
+#: plugins/interface_view.ui:502 plugins/interface_view.ui:1319
+#: plugins/interface_view.ui:3360
+msgid "Attributes"
+msgstr "Атрибуттар"
+
+#: plugins/interface_view.ui:615 plugins/interface_view.ui:1585
+#: plugins/interface_view.ui:1692 plugins/interface_view.ui:2917
+#: plugins/interface_view.ui:3002
+msgid "Show"
+msgstr "Көрсету"
+
+#: plugins/interface_view.ui:646
+msgid "Relations"
+msgstr "Байланыстар"
+
+#: plugins/interface_view.ui:665
+msgid "_Accessible"
+msgstr "_Қолжетімді"
+
+#: plugins/interface_view.ui:726
+msgid "Key binding"
+msgstr "Пернелер үйлесімі"
+
+#: plugins/interface_view.ui:780
+msgid "Perform action"
+msgstr "Әрекетті орындау"
+
+#: plugins/interface_view.ui:811
+msgid "Acti_on"
+msgstr "Әре_кет"
+
+#: plugins/interface_view.ui:853
+msgid "Toolkit"
+msgstr "Саймандар жинағы"
+
+#: plugins/interface_view.ui:868
+msgid "Version"
+msgstr "Нұсқасы"
+
+#: plugins/interface_view.ui:928
+msgid "AT-SPI IPC Version"
+msgstr "AT-SPI IPC нұсқасы"
+
+#: plugins/interface_view.ui:960
+msgid "Ap_plication"
+msgstr "Қол_данба"
+
+#: plugins/interface_view.ui:979
+msgid "Col_lection"
+msgstr "Жи_нақ"
+
+#: plugins/interface_view.ui:1007
+msgid "Absolute position"
+msgstr "Абсолютті орналасуы"
+
+#. Screen coordinates
+#. Component size in pixels
+#. Component size
+#. Screen coordinates
+#: plugins/interface_view.ui:1022 plugins/interface_view.ui:1053
+#: plugins/interface_view.ui:1084 plugins/interface_view.ui:1115
+#: plugins/interface_view.ui:1799 plugins/interface_view.ui:1830
+msgid "0, 0"
+msgstr "0, 0"
+
+#: plugins/interface_view.ui:1038
+msgid "Window relative position"
+msgstr "Терезеге қатысты орналасуы"
+
+#: plugins/interface_view.ui:1069
+msgid "Parent relative position"
+msgstr "Аталыққа қатысты орналасуы"
+
+#: plugins/interface_view.ui:1100 plugins/interface_view.ui:1784
+msgid "Size"
+msgstr "Өлшемі"
+
+#: plugins/interface_view.ui:1131
+msgid "Layer"
+msgstr "Қабат"
+
+#: plugins/interface_view.ui:1146
+msgid "WIDGET"
+msgstr "ВИДЖЕТ"
+
+#: plugins/interface_view.ui:1162
+msgid "MDI-Z-order"
+msgstr "MDI-Z-реттілігі"
+
+#: plugins/interface_view.ui:1193
+msgid "Alpha"
+msgstr "Мөлдір"
+
+#: plugins/interface_view.ui:1226
+msgid "Co_mponent"
+msgstr "Компо_нент"
+
+#: plugins/interface_view.ui:1245
+msgid "Des_ktop"
+msgstr "Жұмыс үсте_лі"
+
+#: plugins/interface_view.ui:1341
+msgid "Locale:"
+msgstr "Локаль:"
+
+#: plugins/interface_view.ui:1380
+msgid "_Document"
+msgstr "_Құжат"
+
+#: plugins/interface_view.ui:1414
+msgid "Anchor count"
+msgstr "Байланыс саны"
+
+#: plugins/interface_view.ui:1446
+msgid "Start index"
+msgstr "Бастапқы нұсқағыш"
+
+#: plugins/interface_view.ui:1476
+msgid "End index"
+msgstr "Соңғы нұсқағыш"
+
+#: plugins/interface_view.ui:1506
+msgid "Valid"
+msgstr "Жарамды"
+
+#. add url role to buffer
+#: plugins/interface_view.ui:1617 plugins/validate.py:301
+msgid "Hyperlink"
+msgstr "Гиперсілтеме"
+
+#: plugins/interface_view.ui:1723
+msgid "H_ypertext"
+msgstr "Г_ипермәтін"
+
+#: plugins/interface_view.ui:1815
+msgid "Position"
+msgstr "Орналасуы"
+
+#: plugins/interface_view.ui:1879
 msgid "_Image"
 msgstr "_Сурет"
 
-#: plugins/interface_view.ui:1554
+#: plugins/interface_view.ui:1898
 msgid "Lo_gin Helper"
-msgstr ""
+msgstr "Жүйеге кіру көмекшісі"
 
-#: plugins/interface_view.ui:1621
+#: plugins/interface_view.ui:1965
 msgid "Select All"
 msgstr "Барлығын таңдау"
 
-#: plugins/interface_view.ui:1692
+#: plugins/interface_view.ui:2036
 msgid "_Selection"
 msgstr "_Таңдалған"
 
-#: plugins/interface_view.ui:1725
-#| msgid "_Contents"
+#: plugins/interface_view.ui:2069
 msgid "Content type"
-msgstr ""
+msgstr "Мазмұн түрі"
 
-#: plugins/interface_view.ui:1736 plugins/interface_view.py:745
+#: plugins/interface_view.ui:2080 plugins/interface_view.py:800
+#: plugins/interface_view.py:895
 msgid "URI"
 msgstr "URI"
 
-#: plugins/interface_view.ui:1753
+#: plugins/interface_view.ui:2097
 msgid "St_reamable Content"
-msgstr ""
+msgstr "Ағынмен берілетін мазмұн"
 
-#: plugins/interface_view.ui:1792
+#: plugins/interface_view.ui:2136
 msgid "Caption:"
-msgstr ""
+msgstr "Тақырыпша:"
 
-#: plugins/interface_view.ui:1837
+#: plugins/interface_view.ui:2181
 msgid "Summary:"
 msgstr "Қорытынды:"
 
-#: plugins/interface_view.ui:1978
-msgid "Selected columns"
-msgstr ""
-
-#: plugins/interface_view.ui:1994
-msgid "Selected rows"
-msgstr ""
-
-#: plugins/interface_view.ui:2010
-msgid "Columns"
-msgstr "Бағандар"
-
-#: plugins/interface_view.ui:2026
+#: plugins/interface_view.ui:2247
 msgid "Rows"
 msgstr "Жолдар"
 
-#: plugins/interface_view.ui:2049
+#: plugins/interface_view.ui:2277
+msgid "Columns"
+msgstr "Бағандар"
+
+#: plugins/interface_view.ui:2307
+msgid "Selected rows"
+msgstr "Таңдалған жолдар"
+
+#: plugins/interface_view.ui:2337
+msgid "Selected columns"
+msgstr "Таңдалған бағандар"
+
+#: plugins/interface_view.ui:2376
 msgid "Table Information"
-msgstr ""
+msgstr "Кесте ақпараты"
 
-#: plugins/interface_view.ui:2093
+#: plugins/interface_view.ui:2420
 msgid "name (x,y)"
-msgstr ""
+msgstr "аты (x,y)"
 
-#: plugins/interface_view.ui:2144 plugins/interface_view.ui:2258
+#: plugins/interface_view.ui:2470 plugins/interface_view.ui:2583
 msgid "Header:"
-msgstr ""
+msgstr "Жоғарғы колонтитул:"
 
-#: plugins/interface_view.ui:2157 plugins/interface_view.ui:2271
+#: plugins/interface_view.ui:2483 plugins/interface_view.ui:2596
 msgid "<no description>"
-msgstr ""
+msgstr "<сипаттамасы жоқ>"
 
 #. How many rows the cell spans.
 #. How many columns the cell spans.
-#: plugins/interface_view.ui:2190 plugins/interface_view.ui:2304
+#: plugins/interface_view.ui:2515 plugins/interface_view.ui:2628
 msgid "Extents:"
-msgstr ""
+msgstr "Ауқымы:"
 
-#: plugins/interface_view.ui:2228 plugins/interface_view.ui:2536
+#: plugins/interface_view.ui:2553 plugins/interface_view.ui:2737
 msgid "Row"
 msgstr "Жол"
 
-#: plugins/interface_view.ui:2342 plugins/interface_view.ui:2520
+#: plugins/interface_view.ui:2666 plugins/interface_view.ui:2767
 msgid "Column"
 msgstr "Баған"
 
-#: plugins/interface_view.ui:2358
+#: plugins/interface_view.ui:2682
 msgid "Selected Cell"
-msgstr ""
+msgstr "Таңдалған ұяшық"
 
-#: plugins/interface_view.ui:2380
+#: plugins/interface_view.ui:2704
 msgid "_Table"
 msgstr "Кес_те"
 
-#: plugins/interface_view.ui:2488
-#| msgid "Columns"
-msgid "Column span"
-msgstr ""
-
-#: plugins/interface_view.ui:2504
+#: plugins/interface_view.ui:2797
 msgid "Row span"
-msgstr ""
+msgstr "Жолды біріктіру"
 
-#: plugins/interface_view.ui:2551
+#: plugins/interface_view.ui:2827
+msgid "Column span"
+msgstr "Бағанды біріктіру"
+
+#: plugins/interface_view.ui:2858
 msgid "Row headers"
-msgstr ""
+msgstr "Жол тақырыптамалары"
 
-#: plugins/interface_view.ui:2568
-#| msgid "Columns"
+#: plugins/interface_view.ui:2943
 msgid "Column headers"
-msgstr ""
+msgstr "Баған тақырыптамалары"
 
-#: plugins/interface_view.ui:2584
-#| msgid "_Table"
+#: plugins/interface_view.ui:3027
 msgid "Table"
-msgstr ""
+msgstr "Кесте"
 
-#: plugins/interface_view.ui:2770
-#| msgid "_Table"
+#: plugins/interface_view.ui:3067
 msgid "_TableCell"
-msgstr ""
+msgstr "_Кесте ұяшығы"
 
-#: plugins/interface_view.ui:2820
+#: plugins/interface_view.ui:3117
 msgid "Text"
 msgstr "Мәтін"
 
-#: plugins/interface_view.ui:2859
-msgid "Offset"
-msgstr ""
+#: plugins/interface_view.ui:3140
+msgid "Caret Offset"
+msgstr "Курсор ығысуы"
 
-#: plugins/interface_view.ui:2897
+#: plugins/interface_view.ui:3199
+msgid "Offset"
+msgstr "Ығысу"
+
+#: plugins/interface_view.ui:3237
 msgid "Include defaults"
-msgstr ""
+msgstr "Үнсіз келісім бойынша параметрлерді қосу"
 
 #. Start character offset of text attributes span
-#: plugins/interface_view.ui:2919
+#: plugins/interface_view.ui:3258
 msgid "Start: 0"
-msgstr ""
+msgstr "Басталуы: 0"
 
 #. End character offset of text attributes span
-#: plugins/interface_view.ui:2937
+#: plugins/interface_view.ui:3276
 msgid "End: 0"
-msgstr ""
+msgstr "Аяқталуы: 0"
 
-#: plugins/interface_view.ui:3043
+#: plugins/interface_view.ui:3382
 msgid "Te_xt"
-msgstr ""
+msgstr "Мә_тін"
 
-#: plugins/interface_view.ui:3093
+#: plugins/interface_view.ui:3414
 msgid "Current value"
 msgstr "Ағымдағы мәні"
 
-#: plugins/interface_view.ui:3161
-msgid "Minimum increment"
-msgstr ""
-
-#: plugins/interface_view.ui:3176
-msgid "Maximum value"
-msgstr ""
-
-#: plugins/interface_view.ui:3191
+#: plugins/interface_view.ui:3446
 msgid "Minimum value"
-msgstr ""
+msgstr "Минималды мәні"
 
-#: plugins/interface_view.ui:3215
+#: plugins/interface_view.ui:3477
+msgid "Maximum value"
+msgstr "Максималды мәні"
+
+#: plugins/interface_view.ui:3508
+msgid "Minimum increment"
+msgstr "Минималды өсім"
+
+#: plugins/interface_view.ui:3548
 msgid "Val_ue"
-msgstr ""
+msgstr "_Мән"
 
-#: plugins/interface_view.ui:3232
+#: plugins/interface_view.ui:3565
 msgid "unknown"
 msgstr "белгісіз"
 
 #. Translators: this is a plugin name
-#: plugins/interface_view.py:44
+#: plugins/interface_view.py:46
 msgid "Interface Viewer"
-msgstr ""
+msgstr "Интерфейс қараушысы"
 
 #. Translators: this is a plugin description
-#: plugins/interface_view.py:47
+#: plugins/interface_view.py:49
 msgid "Allows viewing of various interface properties"
-msgstr ""
+msgstr "Әртүрлі интерфейс қасиеттерін көруге мүмкіндік береді"
 
-#: plugins/interface_view.py:238
+#: plugins/interface_view.py:245
 msgid "(not implemented)"
-msgstr ""
+msgstr "(іске асырылмаған)"
 
-#: plugins/interface_view.py:753
+#: plugins/interface_view.py:353 plugins/interface_view.py:355
+#: plugins/interface_view.py:468 plugins/interface_view.py:470
+msgid "(no help text)"
+msgstr "(анықтама мәтіні жоқ)"
+
+#: plugins/interface_view.py:903
 msgid "Start"
 msgstr "Бастау"
 
-#: plugins/interface_view.py:761
+#: plugins/interface_view.py:911
 msgid "End"
 msgstr "Соңы"
 
-#: plugins/interface_view.py:926
+#: plugins/interface_view.py:1079
 msgid "Too many selectable children"
-msgstr ""
+msgstr "Таңдауға болатын еншілес объектілер тым көп"
 
-#: plugins/interface_view.py:1393 plugins/interface_view.py:1396
+#: plugins/interface_view.py:1548 plugins/interface_view.py:1551
 msgid "(Editable)"
-msgstr ""
+msgstr "(Түзетіледі)"
 
 #. Translators: This string appears in Accerciser's Interface Viewer
 #. and refers to a range of characters which has a particular format.
 #. "Start" is the character offset where the formatting begins. If
 #. the first four letters of some text is bold, the start offset of
 #. that bold formatting is 0.
-#: plugins/interface_view.py:1543
+#: plugins/interface_view.py:1678
 #, python-format
 msgid "Start: %d"
-msgstr ""
+msgstr "Басталуы: %d"
 
 #. Translators: This string appears in Accerciser's Interface Viewer
 #. and refers to a range of characters which has a particular format.
 #. "End" is the character offset where the formatting ends.  If the
 #. first four letters of some text is bold, the end offset of that
 #. bold formatting is 4.
-#: plugins/interface_view.py:1549
+#: plugins/interface_view.py:1684
 #, python-format
 msgid "End: %d"
-msgstr ""
+msgstr "Аяқталуы: %d"
 
-#: plugins/quick_select.py:16
+#: plugins/quick_select.py:15
 msgid "Quick Select"
-msgstr ""
+msgstr "Жылдам таңдау"
 
-#: plugins/quick_select.py:19
+#: plugins/quick_select.py:18
 msgid "Plugin with various methods of selecting accessibles quickly."
-msgstr ""
+msgstr "Қолжетімді объектілерді жылдам таңдаудың әртүрлі әдістері бар плагин."
 
-#: plugins/quick_select.py:25
+#: plugins/quick_select.py:24
 msgid "Inspect last focused accessible"
-msgstr ""
+msgstr "Соңғы фокусталған қолжетімді объектіні тексеру"
 
-#: plugins/quick_select.py:29
+#: plugins/quick_select.py:28
 msgid "Inspect accessible under mouse"
-msgstr ""
+msgstr "Тышқан астындағы қолжетімді объектіні тексеру"
 
-#: plugins/validate.ui:44
+#: plugins/validate.ui:43
 msgid "Sche_ma:"
-msgstr ""
+msgstr "Схема:"
 
-#: plugins/validate.ui:104
+#: plugins/validate.ui:103
 msgid "V_alidate"
-msgstr ""
+msgstr "В_алидациялау"
 
-#: plugins/validate.ui:247 src/lib/accerciser/menus.py:33
+#: plugins/validate.ui:246 src/lib/accerciser/menus.py:33
 msgid "_Help"
 msgstr "_Көмек"
 
-#: plugins/validate.ui:285 plugins/validate.py:375 plugins/validate.py:432
+#: plugins/validate.ui:284 plugins/validate.py:377 plugins/validate.py:434
 msgid "Idle"
 msgstr "Іссіз"
 
-#: plugins/validate.py:80
+#: plugins/validate.py:82
 msgid "No description"
-msgstr ""
-
-#: plugins/validate.py:167
-msgid "AT-SPI Validator"
-msgstr ""
+msgstr "Сипаттамасы жоқ"
 
 #: plugins/validate.py:169
+msgid "AT-SPI Validator"
+msgstr "AT-SPI валидаторы"
+
+#: plugins/validate.py:171
 msgid "Validates application accessibility"
-msgstr ""
+msgstr "Қолданбаның қолжетімділігін тексереді"
 
 #. log level column
 #. add level to buffer
-#: plugins/validate.py:223 plugins/validate.py:291
+#: plugins/validate.py:225 plugins/validate.py:293
 msgid "Level"
 msgstr "Деңгей"
 
 #. add accessible's role to buffer
-#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:477
+#: plugins/validate.py:299 src/lib/accerciser/accessible_treeview.py:478
 msgid "Role"
-msgstr ""
+msgstr "Рөл"
 
-#: plugins/validate.py:313
+#: plugins/validate.py:315
 msgid "Save validator output"
-msgstr ""
+msgstr "Валидатор нәтижесін сақтау"
 
-#: plugins/validate.py:361
+#: plugins/validate.py:363
 msgid "Saving"
 msgstr "Сақталуда"
 
-#: plugins/validate.py:412
+#: plugins/validate.py:414
 msgid "Validating"
-msgstr ""
+msgstr "Тексерілуде"
 
-#: plugins/validate.py:570
+#: plugins/validate.py:572
 msgid "EXCEPT"
-msgstr ""
+msgstr "ЕРЕКШЕ"
 
-#: plugins/validate.py:577
+#: plugins/validate.py:579
 msgid "ERROR"
 msgstr "ҚАТЕ"
 
-#: plugins/validate.py:585
+#: plugins/validate.py:587
 msgid "WARN"
 msgstr "ЕСКЕРТУ"
 
-#: plugins/validate.py:592
+#: plugins/validate.py:594
 msgid "INFO"
 msgstr "АҚПАРАТ"
 
-#: plugins/validate.py:599
+#: plugins/validate.py:601
 msgid "DEBUG"
-msgstr ""
+msgstr "ЖӨНДЕУ"
 
 #: plugindata/validate/basic.py:8
 msgid "Basic"
@@ -762,137 +820,135 @@ msgstr "Қарапайым"
 
 #: plugindata/validate/basic.py:9
 msgid "Tests fundamental GUI application accessibility"
-msgstr ""
+msgstr "GUI қолданбасының негізгі қолжетімділігін сынау"
 
 #: plugindata/validate/basic.py:28
 #, python-format
 msgid "actionable %s is not focusable or selectable"
-msgstr ""
+msgstr "әрекет ететін %s фокусталатын немесе таңдалатын емес"
 
 #: plugindata/validate/basic.py:46
 #, python-format
 msgid "interactive %s is not actionable"
-msgstr ""
+msgstr "интерактивті %s әрекет ететін емес"
 
 #: plugindata/validate/basic.py:61
 msgid "more than one focused widget"
-msgstr ""
+msgstr "бірден артық фокусталған виджет"
 
 #: plugindata/validate/basic.py:84
 #, python-format
 msgid "%s has no text interface"
-msgstr ""
+msgstr "%s мәтіндік интерфейсі жоқ"
 
 #. Translators: The first variable is the role name of the object that has an
 #. index mismatch.
-#.
 #: plugindata/validate/basic.py:104
 #, python-format
 msgid "%s index in parent does not match child index"
-msgstr ""
+msgstr "%s ата-аналық элементіндегі индексі еншілес индекске сәйкес келмейді"
 
 #: plugindata/validate/basic.py:150
 #, python-format
 msgid "Missing reciprocal for %s relation"
-msgstr ""
+msgstr "%s қатынасы үшін өзара байланыс жоқ"
 
-#. Translators: The first variable is the role name of the object that is missing
+#. Translators: The first variable is the role name of the object that is
+#. missing
 #. the name or label.
-#.
 #: plugindata/validate/basic.py:199
 #, python-format
 msgid "%s missing name or label"
-msgstr ""
+msgstr "%s атауы немесе белгісі жоқ"
 
 #: plugindata/validate/basic.py:217
 #, python-format
 msgid "focusable %s has a table interface, but not a selection interface"
-msgstr ""
+msgstr "фокусталатын %s кесте интерфейсіне ие, бірақ таңдау интерфейсі жоқ"
 
 #. Translators: First variable is an accessible role name, the next two
 #. variables are accessible state names.
 #. For example: "button has focused state without focusable state".
-#.
 #: plugindata/validate/basic.py:246
 #, python-format
 msgid "%s has %s state without %s state"
-msgstr ""
+msgstr "%s құрамында %s күйі бар, бірақ %s күйі жоқ"
 
 #. Translators: The radio button does not belong to a set, thus it is useless.
 #. The first variable is the object's role name.
-#.
 #: plugindata/validate/basic.py:272
 #, python-format
 msgid "%s does not belong to a set"
-msgstr ""
+msgstr "%s жиынға жатпайды"
 
 #. Translators: The row or column number retrieved from a table child's
 #. object at a certain index is wrong.
 #. The first variable is the role name of the object, the second is the
 #. given index.
-#.
 #: plugindata/validate/basic.py:307
 #, python-format
 msgid "%(rolename)s index %(num)d does not match row and column"
-msgstr ""
+msgstr "%(rolename)s индексі %(num)d жол және бағанға сәйкес келмейді"
 
 #. Translators: The "parent index" is the order of the child in the parent.
 #. the "row and column index" should be the same value retrieved by the
 #. object's location in the table.
-#. The first variable is the object's role name, the second and third variables
+#. The first variable is the object's role name, the second and third
+#. variables
 #. are index numbers.
-#.
 #: plugindata/validate/basic.py:339
 #, python-format
 msgid ""
 "%(rolename)s parent index %(num1)d does not match row and column index "
 "%(num2)d"
 msgstr ""
+"%(rolename)s ата-аналық индексі %(num1)d жол және баған индексіне %(num2)d "
+"сәйкес келмейді"
 
 #: plugindata/validate/basic.py:366
 #, python-format
 msgid "%s has no name or description"
-msgstr ""
-
-#: src/lib/accerciser/accerciser.py:92
-msgid "_Quit"
-msgstr ""
-
-#: src/lib/accerciser/accerciser.py:94
-msgid "_Preferences…"
-msgstr ""
+msgstr "%s атауы немесе сипаттамасы жоқ"
 
 #: src/lib/accerciser/accerciser.py:96
+msgid "_Quit"
+msgstr "_Шығу"
+
+#: src/lib/accerciser/accerciser.py:98
+msgid "_Preferences…"
+msgstr "_Баптаулар…"
+
+#: src/lib/accerciser/accerciser.py:100
 msgid "_Contents"
 msgstr "Құра_масы"
 
-#: src/lib/accerciser/accerciser.py:98
+#: src/lib/accerciser/accerciser.py:102
 msgid "_About"
-msgstr ""
+msgstr "_Осы туралы"
 
-#: src/lib/accerciser/accessible_treeview.py:416
+#: src/lib/accerciser/accessible_treeview.py:417
 msgid "<dead>"
-msgstr ""
+msgstr "<жойылған>"
 
-#: src/lib/accerciser/accessible_treeview.py:484
+#: src/lib/accerciser/accessible_treeview.py:485
 msgid "Children"
-msgstr ""
+msgstr "Еншілес элементтер"
 
-#: src/lib/accerciser/accessible_treeview.py:512
+#: src/lib/accerciser/accessible_treeview.py:516
 msgid "_Show Applications without children"
-msgstr ""
+msgstr "_Еншілес элементтері жоқ қолданбаларды көрсету"
 
-#: src/lib/accerciser/accessible_treeview.py:521
+#: src/lib/accerciser/accessible_treeview.py:525
 msgid "_Refresh Registry"
-msgstr ""
+msgstr "Реестрді _жаңарту"
 
-#: src/lib/accerciser/accessible_treeview.py:527
+#: src/lib/accerciser/accessible_treeview.py:531
 msgid "Refresh _Node"
-msgstr ""
+msgstr "_Торапты жаңарту"
 
 #: src/lib/accerciser/hotkey_manager.py:247
 msgid "Component"
-msgstr ""
+msgstr "Компонент"
 
 #: src/lib/accerciser/hotkey_manager.py:254
 msgid "Task"
@@ -916,15 +972,15 @@ msgstr "Shift"
 
 #: src/lib/accerciser/main_window.py:44
 msgid "Accerciser Accessibility Explorer"
-msgstr ""
+msgstr "Accerciser қолжетімділік шолғышы"
 
 #: src/lib/accerciser/main_window.py:74
 msgid "Top panel"
-msgstr ""
+msgstr "Жоғарғы панель"
 
 #: src/lib/accerciser/main_window.py:75
 msgid "Bottom panel"
-msgstr ""
+msgstr "Төменгі панель"
 
 #: src/lib/accerciser/menus.py:17
 msgid "_File"
@@ -939,19 +995,17 @@ msgid "_Bookmarks"
 msgstr "Б_етбелгілер"
 
 #: src/lib/accerciser/menus.py:27
-#| msgctxt "menu"
-#| msgid "_View"
 msgid "_View"
-msgstr ""
+msgstr "_Түрі"
 
 #: src/lib/accerciser/prefs_dialog.py:38
 msgid "accerciser Preferences"
-msgstr ""
+msgstr "accerciser баптаулары"
 
 #: src/lib/accerciser/prefs_dialog.py:39 src/lib/accerciser/bookmarks.py:306
-#: src/lib/accerciser/plugin/view.py:1138
+#: src/lib/accerciser/plugin/view.py:1137
 msgid "_Close"
-msgstr ""
+msgstr "_Жабу"
 
 #: src/lib/accerciser/prefs_dialog.py:46
 msgid "Plugins"
@@ -959,59 +1013,61 @@ msgstr "Плагиндер"
 
 #: src/lib/accerciser/prefs_dialog.py:47
 msgid "Global Hotkeys"
-msgstr ""
+msgstr "Глобалды жарлықтар"
 
 #: src/lib/accerciser/prefs_dialog.py:56
 msgid "Highlighting"
 msgstr "Түспен ерекшелеу"
 
-#: src/lib/accerciser/prefs_dialog.py:88
+#: src/lib/accerciser/prefs_dialog.py:89
 msgid "Highlight duration:"
-msgstr ""
+msgstr "Түспен ерекшелеу ұзақтығы:"
 
-#: src/lib/accerciser/prefs_dialog.py:95
+#: src/lib/accerciser/prefs_dialog.py:96
 msgid "Border color:"
-msgstr ""
-
-#: src/lib/accerciser/prefs_dialog.py:98
-msgid "The border color of the highlight box"
-msgstr ""
+msgstr "Жиек түсі:"
 
 #: src/lib/accerciser/prefs_dialog.py:99
+msgid "The border color of the highlight box"
+msgstr "Түспен ерекшелеу өрісінің жиек түсі"
+
+#: src/lib/accerciser/prefs_dialog.py:100
 msgid "Fill color:"
 msgstr "Толтыру түсі:"
 
-#: src/lib/accerciser/prefs_dialog.py:102
+#: src/lib/accerciser/prefs_dialog.py:103
 msgid "The fill color of the highlight box"
-msgstr ""
+msgstr "Түспен ерекшелеу өрісінің толтыру түсі"
 
-#: src/lib/accerciser/about_dialog.py:52
+#: src/lib/accerciser/about_dialog.py:55
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/lib/accerciser/about_dialog.py:53
-msgid "An interactive Python accessibility explorer"
-msgstr ""
-
-#: src/lib/accerciser/about_dialog.py:54
-msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
-msgstr ""
-
 #: src/lib/accerciser/about_dialog.py:56
+msgid "An interactive Python accessibility explorer"
+msgstr "Интерактивті Python қолжетімділік шолғышы"
+
+#: src/lib/accerciser/about_dialog.py:57
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+
+#: src/lib/accerciser/about_dialog.py:59
 msgid "The New BSD License. See the COPYING and NOTICE files for details."
 msgstr ""
+"Жаңа BSD лицензиясы. Толығырақ ақпарат алу үшін COPYING және NOTICE "
+"файлдарын қараңыз."
 
-#: src/lib/accerciser/about_dialog.py:58
+#: src/lib/accerciser/about_dialog.py:61
 msgid "Web site"
 msgstr "Веб сайты"
 
 #: src/lib/accerciser/bookmarks.py:68
 msgid "_Add Bookmark…"
-msgstr "Бе_тбелгіні қосу…"
+msgstr "Бетбелгіні қ_осу…"
 
 #: src/lib/accerciser/bookmarks.py:70
 msgid "_Edit Bookmarks…"
-msgstr "Бе_тбелгілерді түзету…"
+msgstr "Бетбелгілерді тү_зету…"
 
 #: src/lib/accerciser/bookmarks.py:305
 msgid "Edit Bookmarks…"
@@ -1019,15 +1075,15 @@ msgstr "Бетбелгілерді түзету…"
 
 #: src/lib/accerciser/bookmarks.py:321
 msgid "_Add"
-msgstr ""
+msgstr "Қ_осу"
 
 #: src/lib/accerciser/bookmarks.py:324
 msgid "_Remove"
-msgstr ""
+msgstr "Ө_шіру"
 
 #: src/lib/accerciser/bookmarks.py:327
 msgid "_Jump to"
-msgstr ""
+msgstr "Ө_ту"
 
 #: src/lib/accerciser/bookmarks.py:412
 msgid "Title"
@@ -1063,40 +1119,39 @@ msgstr "Плагин қателері"
 
 #: src/lib/accerciser/plugin/message.py:294
 msgid "_Refresh"
-msgstr ""
+msgstr "_Жаңарту"
 
 #. Translators: This is the viewport in which the plugin appears,
 #. it is a noun.
-#.
-#: src/lib/accerciser/plugin/plugin_manager.py:397
+#: src/lib/accerciser/plugin/plugin_manager.py:396
 msgctxt "viewport"
 msgid "View"
 msgstr "Көрініс"
 
-#: src/lib/accerciser/plugin/plugin_manager.py:474
+#: src/lib/accerciser/plugin/plugin_manager.py:473
 msgid "No view"
 msgstr "Көрініс жоқ"
 
-#: src/lib/accerciser/plugin/view.py:380
+#: src/lib/accerciser/plugin/view.py:379
 msgid "_Single plugins view"
-msgstr ""
+msgstr "_Плагиндердің жеке көрінісі"
 
-#: src/lib/accerciser/plugin/view.py:771
+#: src/lib/accerciser/plugin/view.py:770
 msgid "Plugin View"
-msgstr ""
+msgstr "Плагин көрінісі"
 
-#: src/lib/accerciser/plugin/view.py:774
+#: src/lib/accerciser/plugin/view.py:773
 #, python-format
 msgid "Plugin View (%d)"
-msgstr ""
+msgstr "Плагин көрінісі (%d)"
 
-#: src/lib/accerciser/plugin/view.py:1079
+#: src/lib/accerciser/plugin/view.py:1078
 msgid "_New view…"
-msgstr ""
+msgstr "_Жаңа көрініс…"
 
-#: src/lib/accerciser/plugin/view.py:1135
+#: src/lib/accerciser/plugin/view.py:1134
 msgid "New View…"
-msgstr ""
+msgstr "Жаңа көрініс…"
 
 #~ msgid "Manage bookmarks."
 #~ msgstr "Бетбелгілерді басқару."
