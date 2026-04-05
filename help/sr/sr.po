@@ -1,0 +1,1713 @@
+# Serbian translation for accerciser.
+# Copyright (C) 2026 accerciser's COPYRIGHT HOLDER
+# This file is distributed under the same license as the accerciser package.
+# Марко Костић <marko.m.kostic@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser master\n"
+"POT-Creation-Date: 2026-03-31 19:53+0000\n"
+"PO-Revision-Date: 2026-04-04 21:13+0200\n"
+"Last-Translator: Марко Костић <marko.m.kostic@gmail.com>\n"
+"Language-Team: Serbian <Serbian>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Марко Костић <marko.m.kostic@gmail.com>\n"
+"Превод на српски језик https://гном.срб"
+
+#. (itstool) path: info/title
+#: C/api_browser_plugin.page:4
+msgctxt "sort"
+msgid "1. API Browser Plugin"
+msgstr "1. Прикључак прегледача АПИ-ја"
+
+#. (itstool) path: info/desc
+#: C/api_browser_plugin.page:6
+msgid "Verifying interfaces, methods, and properties"
+msgstr "Проверавање сучеља, метода и својстава"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:10 C/desktop_tree_view.page:10
+#: C/event_monitor_plugin.page:10 C/howto_setting_up_accerciser.page:11
+#: C/howto_write_a_plugin.page:10 C/index.page:9
+#: C/interface_viewer_plugin.page:10 C/introduction.page:10
+#: C/ipython_plugin.page:10 C/preferences.page:10 C/quick_select_plugin.page:10
+#: C/validator_plugin.page:10
+msgid "Eitan Isaacson"
+msgstr "Еитан Исаксон"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:14 C/desktop_tree_view.page:14
+#: C/event_monitor_plugin.page:14 C/howto_setting_up_accerciser.page:15
+#: C/howto_write_a_plugin.page:14 C/index.page:13
+#: C/interface_viewer_plugin.page:14 C/introduction.page:14
+#: C/ipython_plugin.page:14 C/preferences.page:14 C/quick_select_plugin.page:14
+#: C/validator_plugin.page:14
+msgid "Peter Parente"
+msgstr "Питер Паренте"
+
+#. (itstool) path: credit/name
+#: C/api_browser_plugin.page:18 C/desktop_tree_view.page:18
+#: C/event_monitor_plugin.page:18 C/howto_setting_up_accerciser.page:19
+#: C/howto_write_a_plugin.page:18 C/index.page:17
+#: C/interface_viewer_plugin.page:18 C/introduction.page:18
+#: C/ipython_plugin.page:18 C/preferences.page:18 C/quick_select_plugin.page:18
+#: C/validator_plugin.page:18
+msgid "Aline Bessa"
+msgstr "Алине Беса"
+
+#. (itstool) path: license/p
+#: C/api_browser_plugin.page:22 C/desktop_tree_view.page:22
+#: C/event_monitor_plugin.page:22 C/howto_setting_up_accerciser.page:23
+#: C/howto_write_a_plugin.page:22 C/index.page:21
+#: C/interface_viewer_plugin.page:22 C/introduction.page:22
+#: C/ipython_plugin.page:22 C/preferences.page:22 C/quick_select_plugin.page:22
+#: C/validator_plugin.page:22
+msgid "Creative Commons Share Alike 3.0"
+msgstr "Creative Commons Share Alike 3.0"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/api_browser_plugin.page:25 C/api_browser_plugin.page:32
+msgid "API Browser Plugin"
+msgstr "Прикључак прегледача АПИ-ја"
+
+#. (itstool) path: page/p
+#: C/api_browser_plugin.page:26
+msgid ""
+"Given an accessible widget selected in the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>, the API Browser "
+"Plugin shows its implemented AT-SPI interfaces along with its methods and "
+"properties."
+msgstr "За дати приступачни елемент изабран у <link xref=\"desktop_tree_view\">прегледу стабла програма</link>, прикључак прегледача АПИ-ја приказује његова примењена AT-SPI сучеља заједно са његовим методама и својствима."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/api_browser_plugin.page:33 C/api_browser_plugin.page:38
+msgid ""
+"The API Browser Plugin allows you to verify interfaces, methods, and "
+"properties of a target accessible widget in an application."
+msgstr "Прикључак прегледача АПИ-ја вам омогућава да проверите сучеља, методе и својства циљног приступачног елемента у програму."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/api_browser_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/api_browser.png' md5='4f668e4a15d1c308e984d0801b9ecd95'"
+msgstr "external ref='figures/api_browser.png' md5='4f668e4a15d1c308e984d0801b9ecd95'"
+
+#. (itstool) path: section/title
+#: C/api_browser_plugin.page:46
+msgid "Running the API Browser Plugin"
+msgstr "Покретање прикључка прегледача АПИ-ја"
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:47
+msgid ""
+"To run the API Browser Plugin, select an accessible widget in the "
+"Application Tree View. Double-clicking a widget highlights it in the "
+"application's interface, so you can be sure whether a certain widget were "
+"the one you were looking for."
+msgstr "Да покренете прикључак прегледача АПИ-ја, изаберите приступачни елемент у прегледу стабла програма. Двоструки клик на елемент га истиче у сучељу програма, тако да можете бити сигурни да ли је одређени елемент онај који сте тражили."
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:53
+msgid ""
+"After that, select one of the widget's interfaces in the combobox. All "
+"public methods of the selected interface will be listed in the plugin's "
+"leftmost column. All public properties, with their corresponding values, "
+"will be listed in the plugin's rightmost column."
+msgstr "Након тога, изаберите једно од сучеља елемента у падајућој листи. Све јавне методе изабраног сучеља биће наведене у крајњој левој колони прикључка. Сва јавна својства, са њиховим одговарајућим вредностима, биће наведена у крајњој десној колони прикључка."
+
+#. (itstool) path: section/p
+#: C/api_browser_plugin.page:59
+msgid ""
+"By default, the API Browser Plugin hides private methods and properties. To "
+"see them listed, unselect the checkbox <cmd>Hide Private Attributes</cmd>. "
+"To hide them again, re-select this checkbox."
+msgstr "Подразумевано, прикључак прегледача АПИ-ја скрива приватне методе и својства. Да бисте их видели наведене, поништите избор у пољу за потврду <cmd>Сакриј приватне атрибуте</cmd>. Да бисте их поново сакрили, поново означите ово поље."
+
+#. (itstool) path: info/title
+#: C/desktop_tree_view.page:4
+msgctxt "sort"
+msgid "1. Application Tree View"
+msgstr "1. Преглед стабла програма"
+
+#. (itstool) path: info/desc
+#: C/desktop_tree_view.page:6
+msgid "Exploring the accessible hierarchy of the desktop"
+msgstr "Истраживање приступачне хијерархије радне површине"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/desktop_tree_view.page:25 C/desktop_tree_view.page:37
+msgid "Application Tree View"
+msgstr "Преглед стабла програма"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:27
+msgid ""
+"<app>Accerciser</app>'s interface contains a tree view, namely Application "
+"Tree View, that covers all accessible applications currently running on the "
+"desktop. To create this tree view, <app>Accerciser</app> uses the AT-SPI's "
+"registry daemon. This daemon is responsible for keeping track of all the "
+"accessible applications on the desktop and forwarding X events over the AT-"
+"SPI D-Bus. After getting all accessible applications, <app>Accerciser</app> "
+"represents each one of them as a hierarchical structure with expanding nodes."
+msgstr "Прочеље <app>Аксерсајзера</app> садржи преглед стабла, односно преглед стабла програма, који обухвата све приступачне програме који су тренутно покренути на радној површини. Да би направио овај преглед стабла, <app>Аксерсајзер</app> користи AT-SPI услужника регистра. Овај услужник је одговоран за праћење свих приступачних програма на радној површини и прослеђивање X догађаја преко AT-SPI D-Bus-а. Након добављања свих приступачних програма, <app>Аксерсајзер</app> представља сваки од њих као хијерархијску структуру са гранама које се могу проширити."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/desktop_tree_view.page:38 C/desktop_tree_view.page:43
+msgid ""
+"<app>Accerciser</app>'s Application Tree View represents the interface of "
+"each accessible application running on the desktop as a widget hierarchical "
+"structure."
+msgstr "<app>Аксерсајзеров</app> преглед стабла програма представља прочеље сваког приступачног програма покренутог на радној површини као хијерархијску структуру елемената."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/desktop_tree_view.page:42
+msgctxt "_"
+msgid ""
+"external ref='figures/tree_view_accerciser.png' "
+"md5='594e06b7889eff705ac194656939e146'"
+msgstr "external ref='figures/tree_view_accerciser.png' md5='594e06b7889eff705ac194656939e146'"
+
+#. (itstool) path: page/p
+#: C/desktop_tree_view.page:49
+msgid ""
+"The first node of each application represented in this tree view is the "
+"application itself. When you expand a node, you can see all of its child "
+"widgets, which allows a hierarchical view of the application's interface. "
+"For each node, <app>Accerciser</app> provides some basic information, such "
+"as its name, role and number of children."
+msgstr "Први чвор сваког програма представљеног у овом прегледу стабла је сам програм. Када раширите чвор, можете видети све његове садржане елементе, што омогућава хијерархијски преглед сучеља програма. За сваки чвор, <app>Аксерсајзер</app> пружа неке основне податке, као што су његов назив, улога и број деце."
+
+#. (itstool) path: note/p
+#: C/desktop_tree_view.page:56
+msgid "Be aware that nodes with many children take a long time to expand."
+msgstr "Имајте на уму да је чворовима са много деце потребно доста времена да се рашире."
+
+#. (itstool) path: section/title
+#: C/desktop_tree_view.page:62
+msgid "Bookmarking items in the Application Tree View"
+msgstr "Обележавање ставки у прегледу стабла програма"
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:63
+msgid ""
+"<app>Accerciser</app> allows bookmarking items in the Application Tree View "
+"for later examining. This is helpful when the target application must be "
+"restarted - after rebuilding it, for example. To bookmark an item, select it "
+"and do <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press "
+"<keyseq><key>Ctrl</key><key>d</key></keyseq>."
+msgstr "<app>Аксерсајзер</app> омогућава обележавање ставки у прегледу стабла програма за касније прегледање. Ово је корисно када се циљни програм мора поново покренути — након поновне изградње, на пример. Да обележите ставку, изаберите је и идите на <guiseq><gui>Обележивачи</gui><gui>Додај обележивач</gui></guiseq> или притисните <keyseq><key>Ctrl</key><key>d</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/desktop_tree_view.page:68
+msgid ""
+"Bookmarks to accessible items in <app>Accerciser</app> are defined by an "
+"application name and a \"path\" in the application's internal accessible "
+"hierarchy to the bookmarked accessible. When the target application is in a "
+"different state - i.e. multiple top level frames -, the path might not be "
+"correct. Bookmarks could be managed by accessing the bookmark editing dialog "
+"through <guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq>."
+msgstr "Обележивачи ка приступачним ставкама у <app>Аксерсајзеру</app> су одређени називом програма и „путањом“ у унутрашњој приступачној хијерархији програма до обележеног приступачног елемента. Када је циљни програм у другачијем стању — нпр. више оквира највишег нивоа —, путања можда неће бити исправна. Обележивачима се може управљати приступањем прозорчету за уређивање обележивача кроз <guiseq><gui>Обележивачи</gui><gui>Уреди обележиваче</gui></guiseq>."
+
+#. (itstool) path: info/title
+#: C/event_monitor_plugin.page:4
+msgctxt "sort"
+msgid "4. Event Monitor Plugin"
+msgstr "4. Прикључак за надзор догађаја"
+
+#. (itstool) path: info/desc
+#: C/event_monitor_plugin.page:6
+msgid "Monitoring accessible events as they occur"
+msgstr "Надгледање приступачних догађаја како се појављују"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/event_monitor_plugin.page:25 C/event_monitor_plugin.page:35
+msgid "Event Monitor Plugin"
+msgstr "Прикључак за надзор догађаја"
+
+#. (itstool) path: page/p
+#: C/event_monitor_plugin.page:26
+msgid ""
+"The Event Monitor Plugin allows you to view <link href=\"http://"
+"accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-"
+"events.html\">AT-SPI events</link> as they occur on the applications exposed "
+"in <app>Accerciser</app>'s <link xref=\"desktop_tree_view\">Application Tree "
+"View</link>. The plugin is useful to explore the dynamics of an "
+"application's interface and verify which accessible widgets are related to "
+"which AT-SPI events."
+msgstr "Прикључак за надзор догађаја вам омогућава да прегледате <link href=\"http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html\">AT-SPI догађаје</link> како се појављују у програмима изложеним у <app>Аксерсајзеровом</app> <link xref=\"desktop_tree_view\">прегледу стабла програма</link>. Прикључак је користан за истраживање динамике сучеља програма и проверу који су приступачни елементи повезани са којим AT-SPI догађајима."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/event_monitor_plugin.page:36 C/event_monitor_plugin.page:41
+msgid ""
+"The Event Monitor Plugin allows you to view AT-SPI events and match them "
+"with accessible widgets."
+msgstr "Прикључак за надзор догађаја вам омогућава да прегледате AT-SPI догађаје и упарите их са приступачним елементима."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/event_monitor_plugin.page:40
+msgctxt "_"
+msgid ""
+"external ref='figures/event_monitor_plugin.png' "
+"md5='d4433124f4833aa7322c7a6ec0b21104'"
+msgstr "external ref='figures/event_monitor_plugin.png' md5='d4433124f4833aa7322c7a6ec0b21104'"
+
+#. (itstool) path: section/title
+#: C/event_monitor_plugin.page:49
+msgid "Running the Event Monitor Plugin"
+msgstr "Покретање прикључка за надзор догађаја"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:50
+msgid ""
+"When you open the Event Monitor Plugin, you see a list of checkboxes "
+"representing all the different AT-SPI event classes covered by the plugin:"
+msgstr "Када отворите прикључак за надзор догађаја, видећете списак кућица за означавање које представљају све различите класе AT-SPI догађаја које прикључак покрива:"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:58
+msgid "document"
+msgstr "документ"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:63
+msgid "focus"
+msgstr "фокус"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:68
+msgid "mouse"
+msgstr "миш"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:73
+msgid "object"
+msgstr "објекат"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:78
+msgid "terminal"
+msgstr "терминал"
+
+#. (itstool) path: item/p
+#: C/event_monitor_plugin.page:83
+msgid "window"
+msgstr "прозор"
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:89
+msgid ""
+"If you check a class, all of its event types will be monitored by the "
+"plugin. The classes are exposed as tree structures; therefore, you can "
+"refine your selection by expanding them and checking only the event types "
+"you really care about."
+msgstr "Ако означите класу, прикључак ће надгледати све њене врсте догађаја. Класе су изложене као структуре стабла; стога, можете прочистити свој избор ширењем истих и означавањем само оних врста догађаја који вас заиста занимају."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:95
+msgid ""
+"If you want to monitor all possible types of AT-SPI events, press the "
+"<cmd>Select All</cmd> button. Similarly, if you want to clear all currently "
+"selected event types, press the <cmd>Clear Selection</cmd> button."
+msgstr "Ако желите да надгледате све могуће врсте AT-SPI догађаја, притисните дугме <cmd>Изабери све</cmd>. Слично томе, ако желите да поништите све тренутно изабране врсте догађаја, притисните дугме <cmd>Очисти избор</cmd>."
+
+#. (itstool) path: note/p
+#: C/event_monitor_plugin.page:102
+msgid ""
+"Selecting only a few event types per monitoring gives you a clearer output."
+msgstr "Одабир само неколико врста догађаја по надгледању даје вам јаснији излаз."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:107
+msgid ""
+"Another way to refine event monitoring is by the event source. By default, "
+"the Source option <cmd>Everything</cmd> is selected, indicating that AT-SPI "
+"events of all applications will be monitored. If you want to investigate a "
+"single application, select it in the Application Tree View and click the "
+"Source radio button <cmd>Selected application</cmd>. Likewise, if you want "
+"to monitor a single accessible widget and its corresponding descendants, "
+"select it in the Application Tree View and click the Source radio button "
+"<cmd>Selected accessible</cmd>."
+msgstr "Други начин за пречишћавање надгледања догађаја је према извору догађаја. Подразумевано је изабрана опција извора <cmd>Све</cmd>, што указује да ће бити надгледани AT-SPI догађаји свих програма. Ако желите да истражите појединачни програм, изаберите га у прегледу стабла програма и кликните на радио дугме извора <cmd>Изабрани програм</cmd>. Исто тако, ако желите да надгледате појединачни приступачни елемент и његове одговарајуће наследнике, изаберите га у прегледу стабла програма и кликните на радио дугме извора <cmd>Изабрани приступачни елемент</cmd>."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:116
+msgid ""
+"After selecting event types and specifying a Source option, the Event "
+"Monitor Plugin starts monitoring AT-SPI events automatically, because the "
+"<cmd>Monitor Events</cmd> button is pressed by default. Whenever you want to "
+"stop monitoring, click the <cmd>Monitor Events</cmd> button. To restart "
+"monitoring, press this button again."
+msgstr "Након избора врста догађаја и навођења опције извора, прикључак за надзор догађаја почиње аутоматски да надгледа AT-SPI догађаје, јер је дугме <cmd>Надгледај догађаје</cmd> подразумевано притиснуто. Кад год желите да прекинете надгледање, кликните на дугме <cmd>Надгледај догађаје</cmd>. Да поново покренете надгледање, поново притисните ово дугме."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:123
+msgid ""
+"For each incoming event, the Event Monitor Plugin indicates the source and "
+"the application. Activating the link for either of these items will cause it "
+"to become selected in the Application Tree View."
+msgstr "За сваки долазни догађај, прикључак „Надзор догађаја“ указује на извор и програм. Активирање везе за било коју од ових ставки ће довести до тога да она постане изабрана у „Прегледу стабла програма“."
+
+#. (itstool) path: section/p
+#: C/event_monitor_plugin.page:128
+msgid ""
+"If you want to save the output generated by the Event Monitor Plugin, just "
+"press the <cmd>Save</cmd> button. To clear the output screen, you just need "
+"to click the <cmd>Clear</cmd> button."
+msgstr "Ако желите да сачувате излаз који је створио прикључак „Надзор догађаја“, само притисните дугме <cmd>Сачувај</cmd>. Да бисте очистили екран излаза, потребно је само да кликнете на дугме <cmd>Очисти</cmd>."
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:5
+msgctxt "sort"
+msgid "2. How to install and run <app>Accerciser</app>"
+msgstr "sort:2. Како инсталирати и покренути <app>Аксерсајзер</app>"
+
+#. (itstool) path: info/title
+#: C/howto_setting_up_accerciser.page:6
+msgctxt "link"
+msgid "Setting up <app>Accerciser</app>"
+msgstr "link:Подешавање <app>Аксерсајзера</app>"
+
+#. (itstool) path: info/desc
+#: C/howto_setting_up_accerciser.page:7
+msgid "Installing and running <app>Accerciser</app> on your system"
+msgstr "Инсталирање и покретање <app>Аксерсајзера</app> на вашем систему"
+
+#. (itstool) path: page/title
+#: C/howto_setting_up_accerciser.page:26
+msgid "Setting up <app>Accerciser</app>"
+msgstr "Подешавање <app>Аксерсајзера</app>"
+
+#. (itstool) path: page/p
+#: C/howto_setting_up_accerciser.page:28
+msgid ""
+"Check if your distribution has <app>Accerciser</app> already packaged. If "
+"this is the case, you can install it via its package manager. Otherwise, you "
+"can follow the section below to install <app>Accerciser</app> manually."
+msgstr "Проверите да ли ваша дистрибуција већ има упакован <app>Аксерсајзер</app>. Ако је то случај, можете га инсталирати путем његовог управника пакета. У супротном, можете пратити одељак испод да бисте ручно инсталирали <app>Аксерсајзер</app>."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:35
+msgid "Installing <app>Accerciser</app> manually"
+msgstr "Ручно инсталирање <app>Аксерсајзера</app>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:36
+msgid ""
+"To install <app>Accerciser</app> manually, you will need to download it "
+"first. <app>Accerciser</app>'s source code can either be downloaded from "
+"<link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">the "
+"gnome.org FTP site</link> or cloned from <link href=\"https://"
+"gitlab.gnome.org/GNOME/accerciser\">the gnome.org GIT repository</link>."
+msgstr "Да бисте ручно инсталирали <app>Аксерсајзер</app>, мораћете га прво преузети. Изворни код <app>Аксерсајзера</app> се може или преузети са <link href=\"http://ftp.gnome.org/pub/GNOME/sources/accerciser/\">ФТП сајта gnome.org</link> или клонирати из <link href=\"https://gitlab.gnome.org/GNOME/accerciser\">ГИТ ризнице gnome.org</link>."
+
+#. (itstool) path: note/p
+#: C/howto_setting_up_accerciser.page:43
+msgid ""
+"If you are not using GNOME 3, you may find that <app>Accerciser</app> "
+"version 3 or later is not compatible with your environment."
+msgstr "Ако не користите Гном 3, можда ћете открити да <app>Аксерсајзер</app> издања 3 или новији није сагласан са вашим окружењем."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:50
+msgid ""
+"After getting <app>Accerciser</app>, install it using the following commands:"
+msgstr "Након што набавите <app>Аксерсајзер</app>, инсталирајте га користећи следеће наредбе:"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:54
+msgid "<cmd>cd accerciser</cmd>"
+msgstr "<cmd>cd accerciser</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:55
+msgid "<cmd>meson setup _build .</cmd>"
+msgstr "<cmd>meson setup _build .</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:56
+msgid "<cmd>meson compile -C _build</cmd>"
+msgstr "<cmd>meson compile -C _build</cmd>"
+
+#. (itstool) path: item/p
+#: C/howto_setting_up_accerciser.page:57
+msgid ""
+"<cmd>sudo meson install -C _build # or meson install -C _build as root</cmd>"
+msgstr "<cmd>sudo meson install -C _build # или meson install -C _build као администратор</cmd>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:59
+msgid ""
+"If you find any problems installing <app>Accerciser</app> on your system, it "
+"is likely that some of its dependencies are missing. Check <link "
+"href=\"https://live.gnome.org/Accerciser/#Requirements\"> <app>Accerciser</"
+"app>'s wiki</link> to make sure you have all dependencies properly installed."
+msgstr "Ако наиђете на било какве проблеме приликом инсталирања <app>Аксерсајзера</app> на ваш систем, вероватно је да неке од његових зависности недостају. Проверите <link href=\"https://live.gnome.org/Accerciser/#Requirements\">вики <app>Аксерсајзера</app></link> како бисте се уверили да су све зависности исправно инсталиране."
+
+#. (itstool) path: section/title
+#: C/howto_setting_up_accerciser.page:67
+msgid "Running <app>Accerciser</app>"
+msgstr "Покретање <app>Аксерсајзера</app>"
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:68
+msgid ""
+"To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal "
+"window or within the Run dialog and then press <key>Return</key>."
+msgstr "Да бисте покренули <app>Аксерсајзер</app>, укуцајте <cmd>accerciser</cmd> у прозору терминала или унутар прозорчета „Покрени“, а затим притисните <key>Return</key>."
+
+#. (itstool) path: section/p
+#: C/howto_setting_up_accerciser.page:72
+msgid ""
+"After that, you can use <app>Accerciser</app> to inspect any accessible item "
+"shown in the <link xref=\"desktop_tree_view\">Application Tree View</link>'s "
+"hierarchy. Select an item and investigate it using one of <app>Accerciser</"
+"app>'s plugins."
+msgstr "Након тога, можете користити <app>Аксерсајзер</app> за преглед било које приступачне ставке приказане у хијерархији <link xref=\"desktop_tree_view\">Прегледа стабла радне површине</link>. Изаберите ставку и истражите је користећи један од прикључака <app>Аксерсајзера</app>."
+
+#. (itstool) path: info/title
+#: C/howto_write_a_plugin.page:4
+msgctxt "sort"
+msgid "3. Writing New Plugins"
+msgstr "sort:3. Писање нових прикључака"
+
+#. (itstool) path: info/desc
+#: C/howto_write_a_plugin.page:6
+msgid "Extending <app>Accerciser</app> with your desired functionalities"
+msgstr "Проширивање <app>Аксерсајзера</app> жељеним функционалностима"
+
+#. (itstool) path: page/title
+#: C/howto_write_a_plugin.page:25
+msgid "Writing Plugins for <app>Accerciser</app>"
+msgstr "Писање прикључака за <app>Аксерсајзер</app>"
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:26
+msgid ""
+"Extending <app>Accerciser</app> with new plugins became much simpler since "
+"<link href=\"https://wiki.gnome.org/Apps/Accerciser/PluginTutorial\">this "
+"tutorial</link> was written. Given that it provides a very detailed "
+"explanation about the topic, this section consists basically of its original "
+"content - only simple editions and updates were done."
+msgstr "Проширивање <app>Аксерсајзера</app> новим прикључцима постало је много једноставније откако је <link href=\"https://wiki.gnome.org/Apps/Accerciser/PluginTutorial\">ово увежбавање</link> написано. С обзиром на то да оно пружа веома детаљно објашњење о овој теми, овај одељак се у основи састоји од његовог изворног садржаја — урађена су само једноставна уређивања и ажурирања."
+
+#. (itstool) path: page/p
+#: C/howto_write_a_plugin.page:33
+msgid "<app>Accerciser</app> supports three basic types of plugins:"
+msgstr "<app>Аксерсајзер</app> подржава три основне врсте прикључака:"
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:38
+msgid ""
+"Base plugins - These plugins are derived from the Plugin base class. They do "
+"not provide a visible interface, but could provide additional functionality "
+"to <app>Accerciser</app>."
+msgstr "Основни прикључци — Ови прикључци су изведени из основне класе прикључака. Они не пружају видљиво прочеље, али могу пружити додатну функционалност <app>Аксерсајзеру</app>."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:44
+msgid ""
+"Console plugins - These plugins provide simple console output into a text "
+"area in a plugin tab. Not to be confused with the packaged <link "
+"xref=\"ipython_plugin\">IPython Console Plugin</link>."
+msgstr "Конзолни прикључци — Ови прикључци пружају једноставан конзолни излаз унутар текстуалног подручја у језичку прикључка. Не треба их мешати са упакованим <link xref=\"ipython_plugin\">прикључком ИПитон конзоле</link>."
+
+#. (itstool) path: item/p
+#: C/howto_write_a_plugin.page:50
+msgid ""
+"Viewport plugins - The majority of <app>Accerciser</app> default plugins. "
+"They provide a custom graphical interface in a tab."
+msgstr "Прикључци погледа — Већина подразумеваних прикључака <app>Аксерсајзера</app>. Они пружају произвољно графичко прочеље унутар језичка."
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:58
+msgid "Creating a Base Plugin"
+msgstr "Стварање основног прикључка"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:59
+msgid ""
+"We will create a simplified version of the <link "
+"xref=\"quick_select_plugin\">Quick Select Plugin</link>. This plugin will "
+"select the last focused accessible when pressing <keyseq><key>ctrl</"
+"key><key>alt</key><key>e</key></keyseq>."
+msgstr "Направићемо поједностављену верзију <link xref=\"quick_select_plugin\">прикључка за брзи одабир</link>. Овај прикључак ће одабрати последњи фокусирани приступачан елемент притиском на <keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:63
+msgid "First off, the import lines we will use are:"
+msgstr "Најпре, линије за увоз које ћемо користити су:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:66
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import Plugin\n"
+"      import gtk\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:71
+msgid ""
+"Next we will derive a new class from the Plugin base class, and assign some "
+"mandatory class attributes:"
+msgstr "Затим ћемо извести нову класу из основне класе прикључака и доделити неке обавезне атрибуте класе:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:75
+#, no-wrap
+msgid ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+msgstr ""
+"\n"
+"      class FocusSelect(Plugin):\n"
+"        plugin_name = 'Focus Select'\n"
+"        plugin_description = 'Allows selecting last focused accessible.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:80
+msgid ""
+"We will now override the init method, in which we will set a global key "
+"action for selecting the last focused accessible item, register an event "
+"listener for the \"focus\" event, and set the <cmd>last_focused</cmd> "
+"instance variable to <cmd>None</cmd>."
+msgstr "Сада ћемо преклопити метод „init“, у којем ћемо поставити општу радњу тастера за одабир последњег фокусираног приступачног елемента, регистровати ослушкивач догађаја за догађај „focus“ и поставити променљиву примерка <cmd>last_focused</cmd> на <cmd>None</cmd>."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:86
+#, no-wrap
+msgid ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+msgstr ""
+"\n"
+"      def init(self):\n"
+"        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"        self.global_hotkeys = [('Inspect last focused accessible',\n"
+"                                self.inspectLastFocused,\n"
+"                                gtk.keysyms.e,\n"
+"                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]\n"
+"        self.last_focused = None\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:95
+msgid ""
+"Notice that the <cmd>global_hotkeys</cmd> instance variable is a list of "
+"tuples. Each tuple is a global hotkey action, composed by an action "
+"description, a desired method to call, a key symbol of keypress, and a key "
+"modifier mask."
+msgstr "Приметите да је променљива примерка <cmd>global_hotkeys</cmd> списак торки. Свака торка је општа радња пречице, састављена од описа радње, жељеног метода за позивање, симбола тастера за притисак и маске измењивача тастера."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:100
+msgid ""
+"In the \"focus\" event callback, we assign the <cmd>last_focused</cmd> "
+"instance variable with the accessible item that has just emitted the "
+"\"focus\" event."
+msgstr "У повратном позиву догађаја „focus“, додељујемо променљивој примерка <cmd>last_focused</cmd> приступачан елемент који је управо емитовао догађај „focus“."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:104
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if not self.isMyApp(event.source):\n"
+"          self.last_focused = event.source\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:109
+msgid ""
+"In the hotkey action callback, we update the application wide node with the "
+"last focused accessible item, if we have recorded it:"
+msgstr "У повратном позиву радње пречице, ажурирамо чвор на нивоу целог програма последњим фокусираним приступачним елементом, ако смо га забележили:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:113
+#, no-wrap
+msgid ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+msgstr ""
+"\n"
+"      def inspectLastFocused(self):\n"
+"        if self.last_focused:\n"
+"          self.node.update(self.last_focused)\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:120
+msgid "Creating a Console Plugin"
+msgstr "Прављење прикључка конзоле"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:121
+msgid ""
+"We will create a console plugin to display focus changes emitted by an "
+"accessible item with a \"push button\" role - remember that it is easy to "
+"check what is the role of any item with <app>Accerciser</app>; you can "
+"verify it in the <link xref=\"desktop_tree_view\">Application Tree View</"
+"link>, for example."
+msgstr "Направићемо прикључак конзоле за приказ измена фокуса које емитује приступачна ставка са улогом „дугме“ – запамтите да је лако проверити улогу било које ставке помоћу <app>Аксерсајзера</app>; то можете потврдити у <link xref=\"desktop_tree_view\">Прегледу стабла програма</link>, на пример."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:127
+msgid "The needed import lines are:"
+msgstr "Потребни редови за увоз су:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:130
+#, no-wrap
+msgid ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+msgstr ""
+"\n"
+"      from accerciser.plugin import ConsolePlugin\n"
+"      import pyatspi\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:134
+msgid "Then we add a class definition, with a plugin name and description:"
+msgstr "Затим додајемо дефиницију класе, са називом и описом прикључка:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:137
+#, no-wrap
+msgid ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+msgstr ""
+"\n"
+"      class PushButtonFocus(ConsolePlugin):\n"
+"        plugin_name = 'Push Button Focus'\n"
+"        plugin_description = 'Print event when pushbutton get\\'s focus.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:142
+msgid "We override the init method adding a register listener:"
+msgstr "Преклапамо метод init додајући ослушкивач регистра:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:145
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:149
+msgid "In the callback method, all push button events are printed."
+msgstr "У повратном методу се штампају сви догађаји дугмета."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:152
+#, no-wrap
+msgid ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\n')\n"
+"    "
+msgstr ""
+"\n"
+"      def accEventFocusChanged(self, event):\n"
+"        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:\n"
+"          self.appendText(str(event)+'\\\n"
+"')\n"
+"    "
+
+#. (itstool) path: section/title
+#: C/howto_write_a_plugin.page:159
+msgid "Creating a Viewport Plugin"
+msgstr "Прављење прикључка погледа"
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:160
+msgid ""
+"We will create a viewport plugin that allows quick testing of the \"click\" "
+"action in accessible items that support the AT-SPI Action interface and have "
+"an action named \"click\". It will be a simple button that, once clicked, "
+"does the \"click\" action in the accessible."
+msgstr "Направићемо прикључак погледа који омогућава брзо тестирање радње „клик“ у приступачним ставкама које подржавају AT-SPI Action прочеље и имају радњу под називом „клик“. То ће бити обично дугме које, када се кликне, извршава радњу „клик“ у приступачном елементу."
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:166
+msgid "First off, some mandatory import lines:"
+msgstr "Најпре, неки обавезни редови за увоз:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:169
+#, no-wrap
+msgid ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+msgstr ""
+"\n"
+"      import gtk\n"
+"      from accerciser.plugin import ViewportPlugin\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:173
+msgid "Next, a class definition, with a name and description:"
+msgstr "Затим, дефиниција класе, са називом и описом:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:176
+#, no-wrap
+msgid ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+msgstr ""
+"\n"
+"      class Clicker(ViewportPlugin):\n"
+"        plugin_name = 'Clicker'\n"
+"        plugin_description = 'Test the \"click\" action in relevant accessibles.'\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:181
+msgid ""
+"We override the init method with some UI building, and connecting a callback "
+"to a signal for the button. We set the alignment to allow the button to be "
+"centered in the plugin tab, and not monstrously take up the entire plugin "
+"space. Notice that the <cmd>plugin_area</cmd> instance variable contains a "
+"gtk.Frame that could be populated with all the plugin's widgets."
+msgstr "Превазилазимо метод „init“ неком изградњом корисничког сучеља и повезивањем повратног позива на сигнал за дугме. Постављамо поравнање како бисмо омогућили да дугме буде усредиштено у језичку прикључка, а не да заузме читав простор прикључка. Приметите да променљива примерка <cmd>plugin_area</cmd> садржи „gtk.Frame“ који се може попунити свим елементима прикључка."
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:188
+#, no-wrap
+msgid ""
+"\n"
+"       def init(self):\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         self.click_button.set_halign(gtk.Align.CENTER)\n"
+"         self.click_button.set_valign(gtk.Align.CENTER)\n"
+"         self.plugin_area.add(self.click_button)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+msgstr ""
+"\n"
+"       def init(self):\n"
+"         self.click_button = gtk.Button('Click me!')\n"
+"         self.click_button.set_halign(gtk.Align.CENTER)\n"
+"         self.click_button.set_valign(gtk.Align.CENTER)\n"
+"         self.plugin_area.add(self.click_button)\n"
+"\n"
+"         self.click_button.connect('clicked', self.onClick)\n"
+"\n"
+"         self.show_all()\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:199
+msgid ""
+"We also created a convenience method that returns a list of supported "
+"actions of the currently selected accessible item - if it does not support "
+"the Action interface, it returns an empty list:"
+msgstr "Такође смо направили помоћни метод који враћа списак подржаних радњи тренутно изабране приступачне ставке — ако не подржава прочеље „Action“, враћа празан списак:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:204
+#, no-wrap
+msgid ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+msgstr ""
+"\n"
+"       def accSupportedActions(self):\n"
+"       try:\n"
+"         ai = self.node.acc.queryAction()\n"
+"       except NotImplementedError:\n"
+"         action_names = []\n"
+"       else:\n"
+"         action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"       return action_names\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:214
+msgid ""
+"The base plugin class has a method call onAccChanged that is called "
+"everytime the target application's selected accessible item changes. We will "
+"override it setting the button to be sensitive only when the current "
+"accessible item has the \"click\" action:"
+msgstr "Основна класа прикључка има позив метода „onAccChanged“ који се позива сваки пут када се промени изабрана приступачна ставка циљног програма. Превазићи ћемо га постављањем дугмета да буде осетљиво само када тренутна приступачна ставка има радњу „click“:"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:219
+#, no-wrap
+msgid ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+msgstr ""
+"\n"
+"       def onAccChanged(self, acc):\n"
+"         has_click = 'click' in self.accSupportedActions()\n"
+"         self.click_button.set_sensitive(has_click)\n"
+"    "
+
+#. (itstool) path: section/p
+#: C/howto_write_a_plugin.page:224
+msgid ""
+"The callback method for button \"clicked\" performs the \"click\" action on "
+"the accessible item. Since this callback could only be called when the "
+"button is sensitive, we don't need to worry about checking if the current "
+"accessible has the \"click\" action?"
+msgstr "Метод повратног позива за дугме „clicked“ обавља радњу „click“ на приступачној ставци. Будући да се овај повратни позив може позвати само када је дугме осетљиво, не морамо да бринемо о провери да ли тренутна приступачна ставка има радњу „click“?"
+
+#. (itstool) path: section/code
+#: C/howto_write_a_plugin.page:229
+#, no-wrap
+msgid ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+msgstr ""
+"\n"
+"      def onClick(self, button):\n"
+"        ai = self.node.acc.queryAction()\n"
+"        action_names = [ai.getName(i) for i in xrange(ai.nActions)]\n"
+"        ai.doAction(action_names.index('click'))\n"
+"    "
+
+#. (itstool) path: info/title
+#: C/index.page:6
+msgctxt "text"
+msgid "Accerciser"
+msgstr "Аксерсајзер"
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "Introduction to <app>Accerciser</app>"
+msgstr "Увод у <app>Аксерсајзер</app>"
+
+#. (itstool) path: media/span
+#: C/index.page:26
+msgid "<app>Accerciser</app>'s logo"
+msgstr "Лого <app>Аксерсајзера</app>"
+
+#. (itstool) path: page/title
+#: C/index.page:24
+msgid "<_:media-1/> <app>Accerciser</app>"
+msgstr "<_:media-1/> <app>Аксерсајзер</app>"
+
+#. (itstool) path: note/title
+#: C/index.page:31
+msgid "Before You Begin"
+msgstr "Пре него што почнете"
+
+#. (itstool) path: note/p
+#: C/index.page:32
+msgid ""
+"Read the <link xref=\"help:gnome-help/a11y\">Universal Access Help</link>"
+msgstr "Прочитајте <link xref=\"help:gnome-help/a11y\">помоћ за универзални приступ</link>"
+
+#. (itstool) path: section/title
+#: C/index.page:37
+msgid "Getting Started"
+msgstr "Започните"
+
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Examining the Accessibility of an Application"
+msgstr "Испитивање приступачности програма"
+
+#. (itstool) path: section/title
+#: C/index.page:43
+msgid "Advanced Topics"
+msgstr "Напредне теме"
+
+#. (itstool) path: info/title
+#: C/interface_viewer_plugin.page:4
+msgctxt "sort"
+msgid "2. Interface Viewer Plugin"
+msgstr "2. Прикључак прегледача сучеља"
+
+#. (itstool) path: info/desc
+#: C/interface_viewer_plugin.page:6
+msgid "Examining your accessibility implementation"
+msgstr "Испитивање ваше примене приступачности"
+
+#. (itstool) path: page/title
+#: C/interface_viewer_plugin.page:25
+msgid "Interface Viewer Plugin"
+msgstr "Прикључак прегледача сучеља"
+
+#. (itstool) path: page/p
+#: C/interface_viewer_plugin.page:27
+msgid ""
+"The Interface Viewer Plugin shows the information and controls provided by "
+"the AT-SPI interfaces present in each accessible item from the <link "
+"xref=\"desktop_tree_view\">Application Tree View</link>. After selecting an "
+"item, you can use this plugin to quickly review its supported interfaces, to "
+"retrieve each interface's information, and to manipulate the item through "
+"all the interface’s methods."
+msgstr "Прикључак прегледача сучеља приказује податке и контроле које обезбеђују АТ-СПИ сучеља присутна у свакој приступачној ставци из <link xref=\"desktop_tree_view\">прегледа стабла програма</link>. Након избора ставке, можете користити овај прикључак да брзо прегледате њена подржана сучеља, да добавите податке сваког сучеља и да управљате ставком кроз све методе сучеља."
+
+#. (itstool) path: figure/title
+#: C/interface_viewer_plugin.page:35
+msgid "Examining a Menu with the Interface Viewer Plugin"
+msgstr "Испитивање изборника помоћу прикључка прегледача сучеља"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/interface_viewer_plugin.page:36 C/interface_viewer_plugin.page:42
+msgid ""
+"Given a selected item in the Application Tree View, all of its AT-SPI "
+"interfaces will be shown as sensitive in the Interface Viewer Plugin. Those "
+"unsupported will appear grayed out, such as the Application and Collection "
+"interfaces in the figure above."
+msgstr "За дату изабрану ставку у прегледу стабла програма, сва њена АТ-СПИ сучеља ће бити приказана као осетљива у прикључку прегледача сучеља. Она која нису подржана ће изгледати засенчено, као што су сучеља „Application“ и „Collection“ на горњој слици."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/interface_viewer_plugin.page:41
+msgctxt "_"
+msgid ""
+"external ref='figures/interface_viewer_plugin.png' "
+"md5='aed7e1cd60d381f408e087ab0ba28b4f'"
+msgstr "external ref='figures/interface_viewer_plugin.png' md5='aed7e1cd60d381f408e087ab0ba28b4f'"
+
+#. (itstool) path: section/title
+#: C/interface_viewer_plugin.page:49
+msgid "Running the Interface Viewer Plugin"
+msgstr "Покретање прикључка прегледача сучеља"
+
+#. (itstool) path: section/p
+#: C/interface_viewer_plugin.page:50
+msgid ""
+"The first step to run the Interface Viewer Plugin is to select an item in "
+"the <link xref=\"desktop_tree_view\"> Application Tree View</link>. After "
+"that, all AT-SPI interfaces covered by the plugin will be listed in the "
+"plugin's panel. The interfaces implemented by the selected item will be "
+"sensitive, so you can click each one of them to either retrieve their "
+"provided information or to interact with available methods. The following "
+"interfaces can be explored in <app>Accerciser</app>, assuming the selected "
+"item implements them:"
+msgstr "Први корак за покретање прикључка прегледача сучеља је избор ставке у <link xref=\"desktop_tree_view\">прегледу стабла програма</link>. Након тога, сва АТ-СПИ сучеља која покрива прикључак ће бити наведена у панелу прикључка. Сучеља која је применила изабрана ставка ће бити осетљива, тако да можете кликнути на свако од њих како бисте добавили њиве податке или ступили у интеракцију са доступним методама. Следећа сучеља се могу истражити у <app>Аксерсајзеру</app>, под претпоставком да их изабрана ставка примењује:"
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:59
+msgid ""
+"Accessible - This interface shows the selected item's child count (number of "
+"child widgets), description, states, relations, and attributes."
+msgstr "Приступачност — Овај интерфејс приказује број деце изабране ставке (број садржаних елемената), опис, стања, односе и атрибуте."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:65
+msgid ""
+"Action - This interface shows all the actions that can be performed by the "
+"selected item. For each interface, you will see its name, such as \"press\" "
+"or \"click\", followed by a description and a key binding, if there are any. "
+"If you select an action, a \"Perform action\" button will become sensitive. "
+"Press this button to see the item performing the selected action."
+msgstr "Радња — Овај интерфејс приказује све радње које изабрана ставка може да изврши. За сваки интерфејс видећете његов назив, као што је „притисни“ или „кликни“, након чега следи опис и веза тастера, ако постоје. Ако изаберете радњу, дугме „Изврши радњу“ ће постати активно. Притисните ово дугме да бисте видели како ставка извршава изабрану радњу."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:73
+msgid ""
+"Application - This interface can be implemented by items with role "
+"\"application\". It is worth to point out that items with role "
+"\"application\" not necessarily implement this interface. If the selected "
+"item implements it, the interface will show its ID and, if there are any, "
+"its toolkit and version."
+msgstr "Апликација — Овај интерфејс могу применити ставке са улогом „апликација“. Вреди истаћи да ставке са улогом „апликација“ не морају обавезно да примењују овај интерфејс. Ако га изабрана ставка примењује, интерфејс ће приказати њен ИД и, ако постоје, њен скуп алата и верзију."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:80
+msgid ""
+"Component - This interface shows the selected item's absolute position (with "
+"respect to the desktop coordinate system), relative position (with respect "
+"to the window coordinate system), size, layer type, MDI-Z-order (a short "
+"integer indicating the stacking order of the component in the MDI layer), "
+"and alpha (if alpha blending is used)."
+msgstr "Компонента — Овај интерфејс приказује апсолутни положај изабране ставке (у односу на координатни систем радне површине), релативни положај (у односу на координатни систем прозора), величину, врсту слоја, MDI-Z-поредак (кратак цео број који указује на редослед ређања компоненте у MDI слоју) и алфу (ако се користи стапање алфе)."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:86
+msgid ""
+"Document - This interface shows the selected item's document attributes and "
+"locale description, if there is one."
+msgstr "Документ — Овај интерфејс приказује атрибуте документа изабране ставке и опис локалитета, ако постоји."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:91
+msgid ""
+"Hypertext - This interface shows a list with all the selected item's "
+"hypertext hyperlinks. For each hyperlink, the interface provides its name, "
+"URI, start (the index in the hypertext at which the hyperlink begins) and "
+"end (the index in the hypertext at which this hyperlink ends)."
+msgstr "Хипертекст — Овај интерфејс приказује списак са свим хипервезама хипертекста изабране ставке. За сваку хипервезу, интерфејс пружа њен назив, УРИ, почетак (индекс у хипертексту на којем хипервеза почиње) и крај (индекс у хипертексту на којем се ова хипервеза завршава)."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:98
+msgid ""
+"Image - This interface shows the selected item's description (or \"no "
+"description\" if unspecified), size, position (with respect to the desktop "
+"coordinate system), and locale, if there is one."
+msgstr "Слика — Овај интерфејс приказује опис изабране ставке (или „без описа“ ако није наведен), величину, положај (у односу на координатни систем радне површине) и локалитет, ако постоји."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:104
+msgid ""
+"Selection - This interface shows all selectable child items of the selected "
+"item. If the selected item is a menu bar with options \"File\", \"Edit\", "
+"\"View\", and \"Help\", and all of them are selectable, then they will be "
+"listed in this interface. If you click a listed option - \"File\", for "
+"example - and want to clear it, just press the \"Clear\" button below the "
+"list."
+msgstr "Одабир — Овај интерфејс приказује све ставке деце изабране ставке које се могу изабрати. Ако је изабрана ставка трака менија са опцијама „Датотека“, „Уреди“, „Преглед“ и „Помоћ“, и све се могу изабрати, оне ће бити наведене у овом интерфејсу. Ако кликнете на наведену опцију — на пример „Датотека“ — и желите да је поништите, само притисните дугме „Очисти“ испод списка."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:112
+msgid ""
+"Streamable Content - This interface shows the selected item's content types "
+"and their corresponding URIs."
+msgstr "Проточни садржај — Овај интерфејс приказује врсте садржаја изабране ставке и њихове одговарајуће УРИ-је."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:117
+msgid ""
+"Table - This interface shows the selected item's caption and summary, rows "
+"(number of rows), columns (number of columns), selected rows (number of "
+"selected rows), and selected columns (number of selected columns). For a "
+"selected cell, the interface shows its row's and column's header and extents."
+msgstr "Табела — Овај интерфејс приказује наслов и сажетак изабране ставке, редове (број редова), колоне (број колона), изабране редове (број изабраних редова) и изабране колоне (број изабраних колона). За изабрану ћелију, интерфејс приказује заглавље и опсеге њеног реда и колоне."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:124
+msgid ""
+"TableCell - This interface shows the selected item's row and column index, "
+"row and column span, a list of the row and column header cells and the "
+"cell's table. By selecting a header cell in the list of row or column "
+"headers and pressing the \"Show\" button, it's possible to select that "
+"header cell object in Accerciser instead. Pressing the table button causes "
+"the table object to be selected."
+msgstr "Ћелија табеле — Овај интерфејс приказује индекс реда и колоне изабране ставке, распон реда и колоне, списак ћелија заглавља реда и колоне и табелу ћелије. Одабиром ћелије заглавља на списку заглавља редова или колона и притиском на дугме „Прикажи“, могуће је уместо тога изабрати тај објекат ћелије заглавља у Аксерсајзеру. Притисак на дугме табеле доводи до избора објекта табеле."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:132
+msgid ""
+"Text - This interface shows the selected item's text content, that can be "
+"editable, and its attributes. The basic attributes are offset (the number of "
+"characters the text has) and justification. To see possible CSS attributes, "
+"click the \"Include defaults\" check box."
+msgstr "Текст — Овај интерфејс приказује текстуални садржај изабране ставке, који може бити измењив, и његове атрибуте. Основни атрибути су померај (број знакова које текст има) и поравнање. Да бисте видели могуће ЦСС атрибуте, кликните на поље за потврду „Укључи подразумевано“."
+
+#. (itstool) path: item/p
+#: C/interface_viewer_plugin.page:139
+msgid ""
+"Value - This interface shows the selected item's current value, minimum "
+"allowed value, maximum allowed value, and the minimum increment by which the "
+"value may be changed (or zero if this value cannot be determined). The "
+"current value can be manually changed via a spin button."
+msgstr "Вредност — Овај интерфејс приказује тренутну вредност изабране ставке, најмању дозвољену вредност, највећу дозвољену вредност и најмањи помак за који се вредност може променити (или нулу ако се ова вредност не може одредити). Тренутна вредност се може ручно променити путем вртећег дугмета."
+
+#. (itstool) path: info/title
+#: C/introduction.page:5
+msgctxt "sort"
+msgid "1. What is Accerciser?"
+msgstr "1. Шта је Аксерсајзер?"
+
+#. (itstool) path: info/desc
+#: C/introduction.page:6
+msgid "An interactive accessibility explorer"
+msgstr "Међудејствени истраживач приступачности"
+
+#. (itstool) path: page/title
+#: C/introduction.page:25
+msgid "What is <app>Accerciser</app>?"
+msgstr "Шта је <app>Аксерсајзер</app>?"
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>Accerciser</app> is an interactive Python accessibility explorer. It "
+"uses the AT-SPI library to inspect, examine, and interact with widgets, "
+"allowing you to check if an application is providing correct information to "
+"assistive technologies and automated testing frameworks. <app>Accerciser</"
+"app> comes with a set of plugins that you can use to create custom views of "
+"accessibility information."
+msgstr "<app>Аксерсајзер</app> је међудејствени Пајтонов истраживач приступачности. Користи библиотеку AT-SPI за преглед, испитивање и међудејство са елементима, омогућавајући вам да проверите да ли апликација пружа исправне информације технологијама за испомоћ и оквирима за аутоматизовано тестирање. <app>Аксерсајзер</app> долази са скупом прикључака које можете користити за прављење произвољних приказа информација о приступачности."
+
+#. (itstool) path: page/p
+#: C/introduction.page:35
+msgid ""
+"By default, <app>Accerciser</app>'s main interface is comprised of three "
+"sections: a tree view of the entire desktop accessible hierarchy, namely "
+"<link xref=\"desktop_tree_view\"> Application Tree View</link>, and two "
+"plugin areas. If you prefer to see all plugins in a single area, dividing "
+"<app>Accerciser</app>'s interface in two sections instead of three, press "
+"<keyseq><key>ctrl </key><key>t</key></keyseq>. To re-divide it in three "
+"sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again."
+msgstr "Подразумевано, главни интерфејс <app>Аксерсајзера</app> се састоји од три одељка: приказа стабла читаве хијерархије приступачности радне површине, односно <link xref=\"desktop_tree_view\">Приказа стабла апликација</link>, и две области прикључака. Ако више волите да видите све прикључке у једној области, делећи интерфејс <app>Аксерсајзера</app> на два одељка уместо на три, притисните <keyseq><key>ctrl </key><key>t</key></keyseq>. Да бисте га поново поделили на три одељка, поново притисните <keyseq><key>ctrl</key><key>t</key></keyseq>."
+
+#. (itstool) path: note/p
+#: C/introduction.page:44
+msgid ""
+"Make sure that accessibility support is enabled in your desktop - otherwise, "
+"<app>Accerciser</app> will not work as expected."
+msgstr "Уверите се да је подршка за приступачност омогућена на вашој радној површини — у супротном, <app>Аксерсајзер</app> неће радити очекивано."
+
+#. (itstool) path: figure/title
+#: C/introduction.page:51
+msgid "<app>Accerciser</app>"
+msgstr "<app>Аксерсајзер</app>"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/introduction.page:52 C/introduction.page:56
+msgid "<app>Accerciser</app>'s default interface."
+msgstr "Подразумевано прочеље <app>Аксерсајзера</app>."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/introduction.page:55
+msgctxt "_"
+msgid ""
+"external ref='figures/accerciser-view.png' "
+"md5='87ef1d7587097a04dd784e14840f3115'"
+msgstr "external ref='figures/accerciser-view.png' md5='87ef1d7587097a04dd784e14840f3115'"
+
+#. (itstool) path: section/title
+#: C/introduction.page:63
+msgid "<app>Accerciser</app>'s intended audience"
+msgstr "Намењена публика <app>Аксерсајзера</app>"
+
+#. (itstool) path: section/p
+#: C/introduction.page:64
+msgid ""
+"<app>Accerciser</app> fits the needs of many different audiences. User "
+"interface developers use it to ensure that their applications are providing "
+"all of their features through AT-SPI. Assistive technology developers are "
+"able to see what AT-SPI is providing to their applications. Automated UI "
+"test developers find <app>Accerciser</app> beneficial since it exposes "
+"different events that could be expected from their target application."
+msgstr "<app>Аксерсајзер</app> одговара потребама многих различитих корисника. Програмери корисничког сучеља га користе како би осигурали да њихови програми пружају све своје могућности кроз АТ-СПИ. Програмери технологија за испомоћ могу да виде шта АТ-СПИ пружа њиховим програмима. Програмери аутоматизованих тестова корисничког сучеља сматрају <app>Аксерсајзер</app> корисним јер излаже различите догађаје који се могу очекивати од циљног програма."
+
+#. (itstool) path: section/title
+#: C/introduction.page:74
+msgid "<app>Accerciser</app>'s plugin architecture"
+msgstr "Архитектура прикључака <app>Аксерсајзера</app>"
+
+#. (itstool) path: section/p
+#: C/introduction.page:75
+msgid ""
+"<app>Accerciser</app> has an extensible, plugin-based architecture. Its core "
+"code is fairly small and most of its features are part of default plugins:"
+msgstr "<app>Аксерсајзер</app> има прошириву архитектуру засновану на прикључцима. Његов кључни код је прилично мали и већина његових могућности је део подразумеваних прикључака:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:82
+msgid ""
+"<link xref=\"interface_viewer_plugin\">Interface Viewer</link> - A plugin "
+"that lets you explore the AT-SPI interfaces provided by each accessible "
+"widget of a target application."
+msgstr "<link xref=\"interface_viewer_plugin\">Прегледач сучеља</link> — Прикључак који вам омогућава да истражите АТ-СПИ сучеља која пружа сваки приступачни елемент циљног програма."
+
+#. (itstool) path: item/p
+#: C/introduction.page:88
+msgid ""
+"<link xref=\"validator_plugin\">AT-SPI Validator</link> - A plugin that "
+"applies tests to verify the accessibility of a target application."
+msgstr "<link xref=\"validator_plugin\">АТ-СПИ проверивач</link> — Прикључак који примењује тестове за проверу приступачности циљног програма."
+
+#. (itstool) path: item/p
+#: C/introduction.page:94
+msgid ""
+"<link xref=\"event_monitor_plugin\">Event Monitor</link> - A plugin that "
+"displays AT-SPI events emitted by a target application as they occur."
+msgstr "<link xref=\"event_monitor_plugin\">Надзор догађаја</link> — Прикључак који приказује АТ-СПИ догађаје које емитује циљни програм како се они дешавају."
+
+#. (itstool) path: item/p
+#: C/introduction.page:100
+msgid ""
+"<link xref=\"quick_select_plugin\">Quick Select</link> - A plugin that "
+"provides global hotkeys for quickly selecting accessible widgets in "
+"<app>Accerciser</app>'s Application Tree View."
+msgstr "<link xref=\"quick_select_plugin\">Брзи одабир</link> — Прикључак који обезбеђује опште пречице за брзи одабир приступачних елемената у <app>Аксерсајзеровом</app> прегледу стабла програма."
+
+#. (itstool) path: item/p
+#: C/introduction.page:106
+msgid ""
+"<link xref=\"api_browser_plugin\">API Browser</link> - A plugin that shows "
+"the interfaces, methods, and attributes available on each accessible widget "
+"of a target application."
+msgstr "<link xref=\"api_browser_plugin\">АПИ прегледач</link> — Прикључак који приказује сучеља, методе и атрибуте доступне на сваком приступачном елементу циљног програма."
+
+#. (itstool) path: item/p
+#: C/introduction.page:112
+msgid ""
+"<link xref=\"ipython_plugin\">IPython Console</link> - A plugin that "
+"provides a full, interactive Python shell with access to selected accessible "
+"widgets of a target application."
+msgstr "<link xref=\"ipython_plugin\">ИПитон конзола</link> — Прикључак који обезбеђује потпуну, интерактивну Питон шкољку са приступом одабраним приступачним елементима циљног програма."
+
+#. (itstool) path: section/title
+#: C/introduction.page:122
+msgid "More about Accessibility"
+msgstr "Више о приступачности"
+
+#. (itstool) path: section/p
+#: C/introduction.page:123
+msgid ""
+"Accessibility is a core value that should touch all aspects of a Desktop "
+"Environment. To help achieve it in GNOME, some libraries were developed, "
+"such as ATK and AT-SPI. Though originated in GNOME, these libraries are now "
+"also used in other Desktop Environments. To learn more about Accessibility "
+"Libraries for GNU/UNIX systems, you can consult:"
+msgstr "Приступачност је кључна вредност која треба да се тиче свих аспеката радног окружења. Како би се то постигло у Гному, развијене су неке библиотеке, као што су АТК и АТ-СПИ. Иако потичу из Гнома, ове библиотеке се сада користе и у другим радним окружењима. Да бисте сазнали више о библиотекама приступачности за ГНУ/Јуникс системе, можете погледати:"
+
+#. (itstool) path: item/p
+#: C/introduction.page:132
+msgid ""
+"<link href=\"http://developer.gnome.org/atk/\">ATK Accessibility Toolkit</"
+"link> - ATK provides the set of accessibility interfaces that are "
+"implemented by other toolkits and applications. Using the ATK interfaces, "
+"accessibility tools have full access to view and control running "
+"applications."
+msgstr "<link href=\"http://developer.gnome.org/atk/\">АТК скуп алата за приступачност</link> — АТК обезбеђује скуп сучеља приступачности која су имплементирана у другим скуповима алата и програмима. Коришћењем АТК сучеља, алати приступачности имају потпуни приступ за преглед и управљање покренутим програмима."
+
+#. (itstool) path: item/p
+#: C/introduction.page:139
+msgid ""
+"<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">AT-SPI</link> "
+"- AT-SPI is the primary service interface by which assistive technologies "
+"query and receive notifications from running applications. Additional "
+"material is available from the <link href=\"http://accessibility.kde.org/"
+"developer/atk.php#coreclasses\">KDE Accessibility Development Community</"
+"link>."
+msgstr "<link href=\"http://developer.gnome.org/at-spi-cspi/stable/\">АТ-СПИ</link> — АТ-СПИ је главно прочеље услуге преко којег технологије за испомоћ упућују упите и примају обавештења од покренутих програма. Додатни материјал је доступан од <link href=\"http://accessibility.kde.org/developer/atk.php#coreclasses\">КДЕ заједнице за развој приступачности</link>."
+
+#. (itstool) path: item/p
+#: C/introduction.page:147
+msgid ""
+"<link href=\"https://help.gnome.org/users/gnome-help/stable/"
+"a11y.html\">GNOME Desktop Accessibility Guide</link> - A guide for anyone "
+"interested in how the GNOME Desktop supports the needs of users with "
+"disabilities."
+msgstr "<link href=\"https://help.gnome.org/users/gnome-help/stable/a11y.html\">Водич кроз приступачност Гномове радне површи</link> — Водич за све које занима како Гномова радна површина подржава потребе корисника са инвалидитетом."
+
+#. (itstool) path: item/p
+#: C/introduction.page:153
+msgid ""
+"<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/"
+"\">GNOME Accessibility Developer's Guide</link> - A guide for developers who "
+"want to ensure their applications are accessible to the widest audience of "
+"users."
+msgstr "<link href=\"http://developer.gnome.org/accessibility-devel-guide/stable/\">Гномов водич за програмере приступачности</link> — Водич за програмере који желе да осигурају да су њихови програми приступачни најширем кругу корисника."
+
+#. (itstool) path: item/p
+#: C/introduction.page:159
+msgid ""
+"<link href=\"https://wiki.gnome.org/Accessibility\">GNOME Accessibility "
+"Project</link> - The GNOME Accessibility Project includes the guides listed "
+"above along with many other useful links for users, developers and system "
+"administrators."
+msgstr "<link href=\"https://wiki.gnome.org/Accessibility\">Пројекат Гномове приступачности</link> — Пројекат Гномове приступачности укључује горе наведене водиче заједно са многим другим корисним везама за кориснике, програмере и администраторе система."
+
+#. (itstool) path: info/title
+#: C/ipython_plugin.page:4
+msgctxt "sort"
+msgid "2. IPython Plugin"
+msgstr "sort:2. ИПитон прикључак"
+
+#. (itstool) path: info/desc
+#: C/ipython_plugin.page:6
+msgid "When all else fails"
+msgstr "Када све друго закаже"
+
+#. (itstool) path: page/title
+#: C/ipython_plugin.page:25
+msgid "IPython Console Plugin"
+msgstr "Прикључак ИПитон конзоле"
+
+#. (itstool) path: page/p
+#: C/ipython_plugin.page:26
+msgid ""
+"The IPython Console Plugin allows real-time interaction with a selected item "
+"in the <link xref=\"desktop_tree_view\"> Application Tree View</link>. Since "
+"the IPython Console Plugin is an interactive Python shell, you can import "
+"any Python modules you want."
+msgstr "Прикључак ИПитон конзоле омогућава међудејство у реалном времену са изабраном ставком у <link xref=\"desktop_tree_view\">прегледу стабла програма</link>. Пошто је прикључак ИПитон конзоле интерактивна Пајтон шкољка, можете увести било које Пајтон модуле које желите."
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:33
+msgid ""
+"Make sure you have the standalone package IPython installed in your system. "
+"Otherwise, the IPython Console Plugin will not work properly."
+msgstr "Проверите да ли имате инсталиран самостални пакет „IPython“ у вашем систему. У супротном, прикључак ИПитон конзоле неће радити исправно."
+
+#. (itstool) path: section/title
+#: C/ipython_plugin.page:40
+msgid "Running the IPython Console Plugin"
+msgstr "Покретање прикључка ИПитон конзоле"
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:41
+msgid ""
+"To run the IPython Console Plugin, select one of the accessible items listed "
+"in the Application Tree View - either an application or a widget. In the "
+"plugin, the selected item will correspond to the variable 'acc'."
+msgstr "Да бисте покренули прикључак ИПитон конзоле, изаберите једну од приступачних ставки наведених у прегледу стабла програма — било програм или елемент. У прикључку, изабрана ставка ће одговарати променљивој „acc“."
+
+#. (itstool) path: section/p
+#: C/ipython_plugin.page:46
+msgid ""
+"Pressing <key>Tab</key> shows completions for the current command in the "
+"console, what can be useful for discovering pyatspi methods."
+msgstr "Притисак на тастер <key>Tab</key> приказује довршавања за тренутну наредбу у конзоли, што може бити корисно за откривање „pyatspi“ метода."
+
+#. (itstool) path: figure/title
+#: C/ipython_plugin.page:52
+msgid "Investigating selected items with the IPython Console Plugin"
+msgstr "Истраживање изабраних ставки помоћу прикључка ИПитон конзоле"
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/ipython_plugin.page:53 C/ipython_plugin.page:58
+msgid ""
+"The IPython Console Plugin lets you investigate methods, constants, and "
+"properties related to a selected item in the Application Tree View."
+msgstr "Прикључак ИПитон конзоле вам омогућава да истражите методе, константе и својства повезана са изабраном ставком у прегледу стабла програма."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/ipython_plugin.page:57
+msgctxt "_"
+msgid ""
+"external ref='figures/IPython_plugin.png' "
+"md5='1daff78264babd667a8527b3e2b5cace'"
+msgstr "external ref='figures/IPython_plugin.png' md5='1daff78264babd667a8527b3e2b5cace'"
+
+#. (itstool) path: note/p
+#: C/ipython_plugin.page:66
+msgid ""
+"Typing <cmd>help(acc)</cmd> in the IPython Console Plugin shows some useful "
+"documentation about the corresponding selected accessible item."
+msgstr "Куцање <cmd>help(acc)</cmd> у прикључку ИПитон конзоле приказује корисну документацију о одговарајућој изабраној приступачној ставци."
+
+#. (itstool) path: info/title
+#: C/preferences.page:4
+msgctxt "sort"
+msgid "4. Preferences"
+msgstr "4. Поставке"
+
+#. (itstool) path: info/desc
+#: C/preferences.page:6
+msgid "Customizing <app>Accerciser</app>'s preferences"
+msgstr "Прилагођавање поставки <app>Аксерсајзера</app>"
+
+#. (itstool) path: page/title
+#: C/preferences.page:25
+msgid "Configuring <app>Accerciser</app>"
+msgstr "Подешавање <app>Аксерсајзера</app>"
+
+#. (itstool) path: page/p
+#: C/preferences.page:26
+msgid ""
+"To configure plugins, hotkeys, and highlighting, do either "
+"<keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui> "
+"<gui>Preferences</gui></guiseq> to open a dialog."
+msgstr "Да бисте подесили прикључке, пречице и истицање, притисните <keyseq><key>ctrl</key><key>p</key></keyseq> или изаберите <guiseq><gui>Уреди</gui> <gui>Поставке</gui></guiseq> да бисте отворили прозорче."
+
+#. (itstool) path: section/title
+#: C/preferences.page:32
+msgid "Configuring plugins"
+msgstr "Подешавање прикључака"
+
+#. (itstool) path: section/p
+#: C/preferences.page:33
+msgid ""
+"After opening the Preferences Dialog, you will find a list of all available "
+"plugins, with corresponding checkboxes, under the \"Plugins\" tab. To enable "
+"or disable a plugin, toggle its checkbox. Only active plugins can be "
+"accessed via <app>Accerciser</app>'s interface."
+msgstr "Након отварања прозорчета поставки, наћи ћете списак свих доступних прикључака, са одговарајућим кућицама за избор, под језичком „Прикључци“. Да бисте омогућили или онемогућили прикључак, промените стање његове кућице за избор. Само активним прикључцима се може приступити преко сучеља <app>Аксерсајзера</app>."
+
+#. (itstool) path: section/p
+#: C/preferences.page:38
+msgid ""
+"Right-clicking on any given plugin allows you to choose its location: \"Top "
+"Panel\", \"Bottom Panel\", and \"New View\". Selecting \"New View\" creates "
+"a new window for the plugin."
+msgstr "Десни клик на било који прикључак омогућава вам да изаберете његово место: „Горњи панел“, „Доњи панел“ и „Нови преглед“. Избор „Новог прегледа“ прави нови прозор за прикључак."
+
+#. (itstool) path: note/p
+#: C/preferences.page:44
+msgid ""
+"You may bypass the Preferences dialog by using drag and drop to move a "
+"plugin from a location to another."
+msgstr "Можете заобићи прозорче поставки коришћењем превлачења и испуштања да бисте преместили прикључак са једног места на друго."
+
+#. (itstool) path: section/title
+#: C/preferences.page:51
+msgid "Configuring global hotkeys"
+msgstr "Подешавање општих пречица"
+
+#. (itstool) path: section/p
+#: C/preferences.page:52
+msgid ""
+"Some elements in <app>Accerciser</app> may enable certain functionalities "
+"via hotkeys. An example is the <link xref=\"quick_select_plugin\">Quick "
+"Select Plugin</link>. The hotkey combination for each functionality can be "
+"changed via the Preferences dialog, under the \"Global Hotkeys\" tab. Under "
+"this tab, you will find a list of all features for which hotkeys can be "
+"configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and <cmd>shift</cmd> "
+"checkboxes to enable or disable these modifiers."
+msgstr "Неки елементи у <app>Аксерсајзеру</app> могу омогућити одређене функционалности путем пречица. Пример је <link xref=\"quick_select_plugin\">прикључак за брзи избор</link>. Комбинација тастера пречице за сваку функционалност се може изменити у прозорчету поставки, под језичком „Опште пречице“. Под овим језичком ћете пронаћи списак свих функција за које се могу подесити пречице. Користите кућице за потврду <cmd>ctrl</cmd>, <cmd>alt</cmd> и <cmd>shift</cmd> да омогућите или онемогућите ове измењиваче."
+
+#. (itstool) path: section/title
+#: C/preferences.page:63
+msgid "Configuring widget's highlighting"
+msgstr "Подешавање истицања елемента"
+
+#. (itstool) path: section/p
+#: C/preferences.page:64
+msgid ""
+"Some of <app>Accerciser</app>'s elements, such as the global hotkey "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, highlight a "
+"specific widget in a target application. The highlighting duration, border "
+"color, and fill color can be customized via the Preferences dialog, under "
+"the \"Highlighting\" tab."
+msgstr "Неки од елемената <app>Аксерсајзера</app>, као што је општа пречица <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, истичу одређени елемент у циљном програму. Трајање истицања, боја ивице и боја испуне се могу прилагодити у прозорчету поставки, под језичком „Истицање“."
+
+#. (itstool) path: info/title
+#: C/quick_select_plugin.page:4
+msgctxt "sort"
+msgid "5. Quick Select Plugin"
+msgstr "5. Прикључак за брзи избор"
+
+#. (itstool) path: info/desc
+#: C/quick_select_plugin.page:6
+msgid "Locating the object you need"
+msgstr "Проналажење предмета који вам је потребан"
+
+#. (itstool) path: page/title
+#: C/quick_select_plugin.page:25
+msgid "Quick Select Plugin"
+msgstr "Прикључак за брзи избор"
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:26
+msgid ""
+"The Quick Select Plugin does not provide a visible interface like the other "
+"default <app>Accerciser</app> plugins - instead, it adds facilities for "
+"quickly selecting items in the <link xref=\"desktop_tree_view\">Application "
+"Tree View</link> via global hotkeys. Originally, these hotkeys were part of "
+"<app>Accerciser</app>'s core code, turning into the Quick Select Plugin "
+"later."
+msgstr "Прикључак за брзи избор не пружа видљиво прочеље као остали подразумевани прикључци <app>Аксерсајзера</app> — уместо тога, он додаје могућности за брзи избор ставки у <link xref=\"desktop_tree_view\">прегледу стабна програма</link> путем општих пречица. Првобитно су ове пречице биле део главног кода <app>Аксерсајзера</app>, а касније су претворене у прикључак за брзи избор."
+
+#. (itstool) path: page/p
+#: C/quick_select_plugin.page:32
+msgid ""
+"The Quick Select Plugin provides two global hotkeys. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> selects the last "
+"focused accessible widget in the Application Tree View. Pressing "
+"<keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> selects the "
+"accessible widget under the pointer in the Application Tree View and "
+"highlights it in the target application."
+msgstr "Прикључак за брзи избор пружа две опште пречице. Притисак на <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> бира последњи фокусирани приступачни елемент у прегледу стабла програма. Притисак на <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> бира приступачни елемент испод показивача у прегледу стабла програма и истиче га у циљном програму."
+
+#. (itstool) path: info/title
+#: C/validator_plugin.page:4
+msgctxt "sort"
+msgid "3. Validator Default Plugin"
+msgstr "3. Подразумевани прикључак потврђивача"
+
+#. (itstool) path: info/desc
+#: C/validator_plugin.page:6
+msgid "Testing an application for accessibility"
+msgstr "Тестирање приступачности програма"
+
+#. (itstool) path: page/title
+#. (itstool) path: figure/title
+#: C/validator_plugin.page:25 C/validator_plugin.page:32
+msgid "AT-SPI Validator Plugin"
+msgstr "Прикључак АТ-СПИ потврђивача"
+
+#. (itstool) path: page/p
+#: C/validator_plugin.page:26
+msgid ""
+"The AT-SPI Validator Plugin generates a report with accessibility issues "
+"related to a target application. For each error, the report includes the "
+"severity level and a brief description."
+msgstr "Прикључак АТ-СПИ потврђивача ствара извештај са проблемима приступачности који се односе на циљни програм. За сваку грешку, извештај укључује ниво озбиљности и кратак опис."
+
+#. (itstool) path: figure/desc
+#. (itstool) path: media/p
+#: C/validator_plugin.page:33 C/validator_plugin.page:38
+msgid ""
+"The AT-SPI Validator Plugin generates useful reports for verifying the "
+"accessibility of a target application."
+msgstr "Прикључак АТ-СПИ потвђивача ствара корисне извештаје за проверу приступачности циљног програма."
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/validator_plugin.page:37
+msgctxt "_"
+msgid ""
+"external ref='figures/validator_report.png' "
+"md5='0275b1c51e9f01c953cba87aee7b8764'"
+msgstr "external ref='figures/validator_report.png' md5='0275b1c51e9f01c953cba87aee7b8764'"
+
+#. (itstool) path: section/title
+#: C/validator_plugin.page:46
+msgid "Running the AT-SPI Validator Plugin"
+msgstr "Покретање прикључка АТ-СПИ потврђивача"
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:47
+msgid ""
+"To run the AT-SPI Validator Plugin, select an item in the Application Tree "
+"View. The validator will generate the report with respect to the selected "
+"item and all of its descendant widgets in the tree hierarchy."
+msgstr "Да бисте покренули прикључак АТ-СПИ потврђивача, изаберите ставку у прегледу стабла програма. Потврђивач ће створити извештај у односу на изабрану ставку и све њене садржане елементе у хијерархији стабла."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:53
+msgid ""
+"After selecting an item, choose a validation schema in the combobox and "
+"press the <cmd>Validate</cmd> button to start generating the report. If you "
+"want to cancel the execution, just press the <cmd>Validate</cmd> button "
+"again."
+msgstr "Након избора ставке, одаберите шему потврђивања у падајућој листи и притисните дугме <cmd>Провери</cmd> да започнете стварање извештаја. Ако желите да откажете извршавање, само поново притисните дугме <cmd>Провери</cmd>."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:59
+msgid ""
+"The generated report is interactive. Therefore, you can double-click any "
+"error found to check which of the target application widgets is causing it. "
+"The corresponding widget will then appear selected in the <link "
+"xref=\"desktop_tree_view\"> Application Tree View</link> and highlighted in "
+"the target application."
+msgstr "Створени извештај је међудејствен. Због тога можете двапут кликнути на било коју пронађену грешку да проверите који елемент циљног програма је узрокује. Одговарајући елемент ће се затим појавити изабран у <link xref=\"desktop_tree_view\">прегледу стабла програма</link> и истакнут у циљном програму."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:64
+msgid ""
+"If you want to save the generated report in your system, just click the "
+"<cmd>Save</cmd> button. To clear the validation screen, press the "
+"<cmd>Clear</cmd> button."
+msgstr "Ако желите да сачувате створени извештај у вашем систему, само кликните на дугме <cmd>Сачувај</cmd>. Да очистите екран потврђивања, притисните дугме <cmd>Очисти</cmd>."
+
+#. (itstool) path: section/p
+#: C/validator_plugin.page:68
+msgid ""
+"To get more information about an error in the generated report, make sure "
+"the corresponding item is selected and press the <cmd>Help</cmd> button. It "
+"will open a Help Page in your default browser."
+msgstr "Да добијете више података о грешци у створеном извештају, уверите се да је одговарајућа ставка изабрана и притисните дугме <cmd>Помоћ</cmd>. То ће отворити страницу помоћи у вашем подразумеваном веб прегледачу."
