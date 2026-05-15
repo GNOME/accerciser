@@ -174,7 +174,7 @@ class HasLabelName(Validator):
   def _checkForReadable(self, acc):
     if acc.name and acc.name.strip():
       return True
-    if acc in self.TEXT_CAN_LABEL:
+    if acc.getRole() in self.TEXT_CAN_LABEL:
       try:
         t = acc.queryText()
       except NotImplementedError:
