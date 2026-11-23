@@ -30,6 +30,8 @@ from functools import reduce
 
 try:
   import IPython
+  import IPython.terminal.interactiveshell
+  import IPython.terminal.embed
 except ImportError:
   IPython = None
 
