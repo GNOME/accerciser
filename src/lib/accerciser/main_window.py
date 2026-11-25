@@ -148,8 +148,9 @@ class AccerciserMainWindow(gtk.ApplicationWindow):
     '''
     Save the dimensions of the main window, and the position of the panes.
     '''
-    self.gsettings.set_int('window-width', self.get_allocated_width())
-    self.gsettings.set_int('window-height', self.get_allocated_height())
+    width, height = self.get_size()
+    self.gsettings.set_int('window-width', width)
+    self.gsettings.set_int('window-height', height)
     self.gsettings.set_int('hpaned', self._hpaned.get_position())
     if self.pluginview2.get_n_pages():
       position = self._vpaned.get_position()
